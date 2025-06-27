@@ -93,6 +93,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -102,11 +103,23 @@
         "enable_country_selector": false,
         "enable_language_selector": false
       }
+    },
+    "offer_announcement_nfkc8A": {
+      "type": "offer-announcement",
+      "name": "Offer Announcement",
+      "settings": {
+        "background_color": "#01491c",
+        "prepend_text": "Exclusive Offer",
+        "link_text": "Buy 1 Get 1 Free!",
+        "append_text": "Shop Now 👉",
+        "link": ""
+      }
     }
   },
   "order": [
     "marquee_labels_CjAgNU",
     "header",
-    "announcement-bar"
+    "announcement-bar",
+    "offer_announcement_nfkc8A"
   ]
 }
