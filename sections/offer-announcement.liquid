@@ -1,9 +1,9 @@
-<div class="py-1 bg-green-700/85" style="background-color: {{ section.settings.background_color }}de;">
+<div class="py-2 bg-green-700/85" style="background-color: {{ section.settings.background_color }}de;">
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-center">
-            <a href="{{ section.settings.link }}" class="text-white font-semibold">
+            <a href="{{ section.settings.link }}" class="text-white font-medium no-underline flex items-center text-nowrap text-sm md:text-base">
                 {{ section.settings.prepend_text }}
-                <span class="text-white inline-block mx-1 font-bold bg-green-700" style="background-color: {{ section.settings.background_color }};">{{ section.settings.link_text }}</span>
+                <span class="text-white inline-block mx-2 font-bold bg-green-700 px-2 py-0.5 rounded [transform:rotate(-3deg)]" style="background-color: {{ section.settings.background_color }};">{{ section.settings.link_text }}</span>
                 {{ section.settings.append_text }}
             </a>
         </div>
