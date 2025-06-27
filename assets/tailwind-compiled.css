@@ -1,8 +1,16 @@
 /*!**************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/tailwind.css ***!
   \**************************************************************************************************************/
+.static {
+    position: static
+}
+
 .fixed {
     position: fixed
+}
+
+.relative {
+    position: relative
 }
 
 .sticky {
@@ -23,6 +31,10 @@
 
 .inline-block {
     display: inline-block
+}
+
+.inline {
+    display: inline
 }
 
 .flex {
@@ -73,6 +85,10 @@
 
 .whitespace-nowrap {
     white-space: nowrap
+}
+
+.border {
+    border-width: 1px
 }
 
 .py-3 {
