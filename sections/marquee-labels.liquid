@@ -1,0 +1,47 @@
+<div class="marquee-labels color-{{ section.settings.color_scheme }} o">
+    <div class="marquee-labels__inner">
+        <div class="marquee-labels__item">
+            <div class="marquee-labels__item-icon">
+                <img src="{{ section.blocks.first.settings.icon | image_url: width: 100 }}" alt="{{ section.blocks.first.settings.label }}" width="100" height="100">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Marquee Labels",
+    "max_blocks": 12,
+    "class": "announcement-bar-section",
+    "enabled_on": {
+        "groups": ["header"]
+    },
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:sections.all.colors.label",
+            "default": "scheme-4"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "label",
+            "name": "Label",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "label",
+                    "label": "Label",
+                    "default": "Free Shipping"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
