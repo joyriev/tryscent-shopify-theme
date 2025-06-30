@@ -1,35 +1,45 @@
 {%- style -%}
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-    }
-  
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-      }
-    }
-  {%- endstyle -%}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
 
-<sectio id="{{ section.id }}" class="section-{{ section.id }}-padding" style="background-color: {{ section.settings.background_color }}">
+@media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+{%- endstyle -%}
+
+<div id="{{ section.id }}" class="section-{{ section.id }}-padding" style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="flex flex-col justify-center">
-            <h1>{{ section.settings.title }}</h1>
-            <p>{{ section.settings.subtitle }}</p>
-            <div class="flex flex-wrap gap-4">
+        <div class="flex flex-col justify-center text-center [&>*]:m-0 gap-6">
+            <h1 class="text-3xl font-bold">{{ section.settings.title }}</h1>
+            <p class="text-lg font-medium">{{ section.settings.subtitle }}</p>
+            <div class="flex flex-wrap gap-4 justify-center items-center">
                 {% for block in section.blocks %}
-                    <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_text }}</a>
+                    <a href="{{ block.settings.button_link }}" class="bg-black text-white px-5 py-2 no-underline rounded-full">{{ block.settings.button_text }}</a>
+                {% endfor %}
+            </div>
+            <div class="flex flex-wrap gap-4 justify-center items-center">
+                {% for block in section.blocks %}
+                    {% if block.settings.perk_image != blank %}
+                    <div class="flex flex-col items-center gap-2">
+                        <img class="max-w-full h-auto" src="{{ block.settings.perk_image | image_url: width: 1500 }}" alt="Perk Image">
+                        <p class="text-sm font-medium">{{ block.settings.perk_title }}</p>
+                    </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
         <div>
-            {{ section.settings.image | image_url: width: 1500 | image_tag }}
+            <img class="max-w-full h-auto" src="{{ section.settings.image | image_url: width: 1500 }}" alt="Hero Image">
         </div>
     </div>
   </div>
-</section>
+</div>
 
 {% schema %}
 {
@@ -100,6 +110,23 @@
                     "id": "button_link",
                     "label": "Button Link"
                 }
+            ]
+        },
+        {
+            "type": "perks",
+            "name": "Perks",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "perk_image",
+                    "label": "Perk Image"
+                },
+                {
+                    "type": "text",
+                    "id": "perk_title",
+                    "label": "Perk Title",
+                    "default": "Perk Title"
+                }                
             ]
         }
     ],
