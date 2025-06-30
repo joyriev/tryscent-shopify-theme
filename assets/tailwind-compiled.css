@@ -87,6 +87,10 @@
     grid-template-columns: repeat(1, minmax(0, 1fr))
 }
 
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
 .flex-col {
     flex-direction: column
 }
@@ -117,6 +121,14 @@
 
 .gap-2 {
     gap: 8px
+}
+
+.gap-8 {
+    gap: 32px
+}
+
+.gap-0 {
+    gap: 0px
 }
 
 .overflow-hidden {
@@ -193,6 +205,15 @@
     padding-right: 20px
 }
 
+.px-3 {
+    padding-left: 12px;
+    padding-right: 12px
+}
+
+.pt-8 {
+    padding-top: 32px
+}
+
 .text-center {
     text-align: center
 }
@@ -237,6 +258,10 @@
 
 .font-semibold {
     font-weight: 600
+}
+
+.font-black {
+    font-weight: 900
 }
 
 .uppercase {
@@ -326,8 +351,36 @@
         font-size: 12px;
         line-height: 16px
     }
+
+    .md\:text-5xl {
+        font-size: 48px;
+        line-height: 1
+    }
 }
 
 .\[\&\>\*\]\:m-0>* {
     margin: 0px
+}
+
+.\[\&\>div\:nth-child\(2\)\]\:border>div:nth-child(2) {
+    border-width: 1px
+}
+
+.\[\&\>div\:nth-child\(2\)\]\:border-x>div:nth-child(2) {
+    border-left-width: 1px;
+    border-right-width: 1px
+}
+
+.\[\&\>div\:nth-child\(2\)\]\:border-y-0>div:nth-child(2) {
+    border-top-width: 0px;
+    border-bottom-width: 0px
+}
+
+.\[\&\>div\:nth-child\(2\)\]\:border-solid>div:nth-child(2) {
+    border-style: solid
+}
+
+.\[\&\>div\:nth-child\(2\)\]\:border-gray-200>div:nth-child(2) {
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity, 1))
 }

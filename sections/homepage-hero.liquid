@@ -15,18 +15,18 @@
 <div id="{{ section.id }}" class="section-{{ section.id }}-padding" style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="flex flex-col justify-center text-center [&>*]:m-0 gap-6 md:px-10">
-            <h1 class="text-3xl font-bold">{{ section.settings.title }}</h1>
+        <div class="flex flex-col justify-center text-center [&>*]:m-0 gap-8 md:px-10">
+            <h1 class="text-3xl md:text-5xl font-black uppercase">{{ section.settings.title }}</h1>
             <p class="text-lg font-medium">{{ section.settings.subtitle }}</p>
             <div class="flex flex-wrap gap-4 justify-center items-center">
                 {% for block in section.blocks %}
                     <a href="{{ block.settings.button_link }}" class="bg-black text-white px-5 py-2 no-underline rounded-full">{{ block.settings.button_text }}</a>
                 {% endfor %}
             </div>
-            <div class="flex flex-wrap gap-4 justify-center items-center">
+            <div class="grid grid-cols-3 gap-0 [&>div:nth-child(2)]:border-x [&>div:nth-child(2)]:border-gray-200 [&>div:nth-child(2)]:border-solid [&>div:nth-child(2)]:border-y-0 pt-8">
                 {% for block in section.blocks %}
                     {% if block.settings.perk_image != blank %}
-                    <div class="flex flex-col items-center gap-2">
+                    <div class="flex flex-col items-center gap-2 px-3">
                         <img class="max-w-full h-auto" src="{{ block.settings.perk_image | image_url: width: 1500 }}" alt="Perk Image">
                         <p class="text-sm font-medium">{{ block.settings.perk_title }}</p>
                     </div>
