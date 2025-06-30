@@ -1,0 +1,106 @@
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+  
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+<sectio id="{{ section.id }}" class="section-{{ section.id }}-padding" style="background-color: {{ section.settings.background_color }}">
+  <div class="page-width">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex flex-col justify-center">
+            <h1>{{ section.settings.title }}</h1>
+            <p>{{ section.settings.subtitle }}</p>
+            <div class="flex flex-wrap gap-4">
+                {% for block in section.blocks %}
+                    <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_text }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+            {{ section.settings.image | image_url: width: 1500 | image_tag }}
+        </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+    "name": "Homepage Hero",
+    "class": "homepage-hero",
+    "settings": [
+         {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#fcfbf9"
+         },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Homepage Hero"
+        },
+        {
+            "type": "text",
+            "id": "subtitle",
+            "label": "Subtitle",
+            "default": "Homepage Hero"
+        }, {
+            "type": "header",
+            "content": "Section Padding "
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding Top",
+            "default": 50,
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding Bottom",
+            "default": 50,
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "px"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "button",
+            "name": "Button",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "Button Text"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button Link"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
