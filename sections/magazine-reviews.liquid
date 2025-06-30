@@ -20,10 +20,10 @@
     <div class="page-width">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           {% for block in section.blocks %}
-              {% if block.settings.perk_image != blank %}
+              {% if block.settings.review_image != blank %}
               <div class="flex flex-col items-center">
-                  <img class="max-w-full h-auto" src="{{ block.settings.perk_image | image_url: width: 150 }}" alt="Perk Image">
-                  <p class="mb-0 text-center">{{ block.settings.perk_title }}</p>
+                  <img class="max-w-full h-auto" src="{{ block.settings.review_image | image_url: width: 150 }}" alt="Perk Image">
+                  <p class="mb-0 text-center">{{ block.settings.review_content }}</p>
               </div>
               {% endif %}
           {% endfor %}
@@ -65,18 +65,18 @@
       ],
       "blocks": [
         {
-          "type": "perks",
-          "name": "Perks",
+          "type": "review",
+          "name": "Review",
           "settings": [
             {
               "type": "image_picker",
-              "id": "perk_image",
-              "label": "Perk Image"
+              "id": "review_image",
+              "label": "Review Image"
             }, {
               "type": "text",
-              "id": "perk_title",
-              "label": "Perk Title",
-              "default": "Perk Title"
+              "id": "review_content",
+              "label": "Review Content",
+              "default": "Review Content"
             }
           ]
         }
