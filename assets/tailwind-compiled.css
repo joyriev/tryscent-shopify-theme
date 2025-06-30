@@ -35,24 +35,12 @@
     margin-right: auto
 }
 
-.mr-1 {
-    margin-right: 4px
-}
-
-.mt-4 {
-    margin-top: 16px
-}
-
-.mt-8 {
-    margin-top: 32px
-}
-
-.mt-6 {
-    margin-top: 24px
-}
-
 .mb-0 {
     margin-bottom: 0px
+}
+
+.mr-1 {
+    margin-right: 4px
 }
 
 .mt-2 {
@@ -87,59 +75,21 @@
     display: none
 }
 
-.size-20 {
-    width: 80px;
-    height: 80px
-}
-
-.size-10 {
-    width: 40px;
-    height: 40px
-}
-
 .size-7 {
     width: 28px;
     height: 28px
-}
-
-.h-auto {
-    height: auto
-}
-
-.h-\[150px\] {
-    height: 150px
-}
-
-.h-full {
-    height: 100%
 }
 
 .h-\[60px\] {
     height: 60px
 }
 
-.w-\[150px\] {
-    width: 150px
-}
-
-.w-full {
-    width: 100%
-}
-
-.w-2\/3 {
-    width: 66.666667%
+.h-auto {
+    height: auto
 }
 
 .max-w-full {
     max-width: 100%
-}
-
-.max-w-56 {
-    max-width: 224px
-}
-
-.max-w-20 {
-    max-width: 80px
 }
 
 .grid-cols-1 {
@@ -148,10 +98,6 @@
 
 .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr))
-}
-
-.grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr))
 }
 
 .grid-cols-4 {
@@ -174,36 +120,32 @@
     justify-content: center
 }
 
+.gap-0 {
+    gap: 0px
+}
+
 .gap-1 {
     gap: 4px
 }
 
-.gap-6 {
-    gap: 24px
-}
-
-.gap-4 {
-    gap: 16px
+.gap-12 {
+    gap: 48px
 }
 
 .gap-2 {
     gap: 8px
 }
 
+.gap-4 {
+    gap: 16px
+}
+
+.gap-6 {
+    gap: 24px
+}
+
 .gap-8 {
     gap: 32px
-}
-
-.gap-0 {
-    gap: 0px
-}
-
-.gap-5 {
-    gap: 20px
-}
-
-.gap-12 {
-    gap: 48px
 }
 
 .overflow-hidden {
@@ -236,6 +178,11 @@
     border-width: 1px
 }
 
+.bg-black {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
+}
+
 .bg-green-700 {
     --tw-bg-opacity: 1;
     background-color: rgb(21 128 61 / var(--tw-bg-opacity, 1))
@@ -245,34 +192,24 @@
     background-color: rgb(21 128 61 / 0.85)
 }
 
-.bg-black {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
-}
-
-.object-contain {
-    -o-object-fit: contain;
-       object-fit: contain
-}
-
-.object-cover {
-    -o-object-fit: cover;
-       object-fit: cover
-}
-
-.object-center {
-    -o-object-position: center;
-       object-position: center
-}
-
 .px-2 {
     padding-left: 8px;
     padding-right: 8px
 }
 
+.px-3 {
+    padding-left: 12px;
+    padding-right: 12px
+}
+
 .px-4 {
     padding-left: 16px;
     padding-right: 16px
+}
+
+.px-5 {
+    padding-left: 20px;
+    padding-right: 20px
 }
 
 .py-0\.5 {
@@ -290,22 +227,22 @@
     padding-bottom: 12px
 }
 
-.px-5 {
-    padding-left: 20px;
-    padding-right: 20px
-}
-
-.px-3 {
-    padding-left: 12px;
-    padding-right: 12px
-}
-
 .pt-8 {
     padding-top: 32px
 }
 
 .text-center {
     text-align: center
+}
+
+.text-3xl {
+    font-size: 30px;
+    line-height: 36px
+}
+
+.text-lg {
+    font-size: 18px;
+    line-height: 28px
 }
 
 .text-sm {
@@ -318,24 +255,8 @@
     line-height: 16px
 }
 
-.text-4xl {
-    font-size: 36px;
-    line-height: 40px
-}
-
-.text-lg {
-    font-size: 18px;
-    line-height: 28px
-}
-
-.text-3xl {
-    font-size: 30px;
-    line-height: 36px
-}
-
-.text-5xl {
-    font-size: 48px;
-    line-height: 1
+.font-black {
+    font-weight: 900
 }
 
 .font-bold {
@@ -348,10 +269,6 @@
 
 .font-semibold {
     font-weight: 600
-}
-
-.font-black {
-    font-weight: 900
 }
 
 .uppercase {
@@ -431,14 +348,14 @@
         grid-template-columns: repeat(3, minmax(0, 1fr))
     }
 
-    .md\:px-20 {
-        padding-left: 80px;
-        padding-right: 80px
-    }
-
     .md\:px-10 {
         padding-left: 40px;
         padding-right: 40px
+    }
+
+    .md\:text-5xl {
+        font-size: 48px;
+        line-height: 1
     }
 
     .md\:text-base {
@@ -450,23 +367,10 @@
         font-size: 12px;
         line-height: 16px
     }
-
-    .md\:text-5xl {
-        font-size: 48px;
-        line-height: 1
-    }
-
-    .md\:font-semibold {
-        font-weight: 600
-    }
 }
 
 .\[\&\>\*\]\:m-0>* {
     margin: 0px
-}
-
-.\[\&\>div\:nth-child\(2\)\]\:border>div:nth-child(2) {
-    border-width: 1px
 }
 
 .\[\&\>div\:nth-child\(2\)\]\:border-x>div:nth-child(2) {

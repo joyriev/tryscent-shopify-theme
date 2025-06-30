@@ -293,6 +293,12 @@
       >
     {%- endif -%}
 
+    {% comment %} Load Swiper CDN content {% endcomment %}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     {% comment %} Load Tailwind CSS {% endcomment %}
     <link rel="stylesheet" href="{{ 'tailwind-compiled.css' | asset_url }}" media="all">
 
