@@ -55,6 +55,10 @@
     margin-bottom: 0px
 }
 
+.mt-2 {
+    margin-top: 8px
+}
+
 .block {
     display: block
 }
@@ -102,8 +106,40 @@
     height: auto
 }
 
+.h-\[150px\] {
+    height: 150px
+}
+
+.h-full {
+    height: 100%
+}
+
+.h-\[60px\] {
+    height: 60px
+}
+
+.w-\[150px\] {
+    width: 150px
+}
+
+.w-full {
+    width: 100%
+}
+
+.w-2\/3 {
+    width: 66.666667%
+}
+
 .max-w-full {
     max-width: 100%
+}
+
+.max-w-56 {
+    max-width: 224px
+}
+
+.max-w-20 {
+    max-width: 80px
 }
 
 .grid-cols-1 {
@@ -166,6 +202,10 @@
     gap: 20px
 }
 
+.gap-12 {
+    gap: 48px
+}
+
 .overflow-hidden {
     overflow: hidden
 }
@@ -208,6 +248,21 @@
 .bg-black {
     --tw-bg-opacity: 1;
     background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
+}
+
+.object-contain {
+    -o-object-fit: contain;
+       object-fit: contain
+}
+
+.object-cover {
+    -o-object-fit: cover;
+       object-fit: cover
+}
+
+.object-center {
+    -o-object-position: center;
+       object-position: center
 }
 
 .px-2 {
