@@ -23,7 +23,7 @@
             {% if block.settings.perk_image != blank %}
             <div class="flex flex-col items-center">
                 <img class="size-7 md:size-10" src="{{ block.settings.perk_image | image_url: width: 150 }}" alt="Perk Image">
-                <p class="text-xs md:text-base md:font-semibold m-0">{{ block.settings.perk_title }}</p>
+                <p class="text-xs md:text-base md:font-semibold m-0 text-center">{{ block.settings.perk_title }}</p>
             </div>
             {% endif %}
         {% endfor %}
@@ -33,7 +33,7 @@
 
 {% schema %}
   {
-    "name": "√Feature Highlights",
+    "name": "Feature Highlights",
     "settings": [
       {
         "type": "color",
