@@ -17,22 +17,24 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <div class="swiper-container">
+    <div class="swiper-container overflow-hidden -mx-[15px]">
       <div class="swiper-wrapper">
-        {% for block in section.blocks %}
-          {% if block.settings.review_image != blank %}
-            <div class="swiper-slide">
-              <div class="flex flex-col items-center">
-                <div class="h-[60px] flex items-center justify-center">
-                  <img
-                    class="max-w-full h-auto"
-                    src="{{ block.settings.review_image | image_url }}"
-                    alt="Perk Image">
+        {% for i in (1..2) %}
+          {% for block in section.blocks %}
+            {% if block.settings.review_image != blank %}
+              <div class="swiper-slide">
+                <div class="flex flex-col items-center">
+                  <div class="h-[60px] flex items-center justify-center">
+                    <img
+                      class="max-w-full h-auto"
+                      src="{{ block.settings.review_image | image_url }}"
+                      alt="Perk Image">
+                  </div>
+                  <p class="mb-0 text-center mt-2 leading-snug">{{ block.settings.review_content }}</p>
                 </div>
-                <p class="mb-0 text-center mt-2">{{ block.settings.review_content }}</p>
               </div>
-            </div>
-          {% endif %}
+            {% endif %}
+          {% endfor %}
         {% endfor %}
       </div>
     </div>
@@ -40,18 +42,29 @@
 </div>
 
 <script>
-  const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: false,
-    centeredSlides: true,
-    slidesPerView: 3,
-    spaceBetween: 12,
-    breakpoints: {
-      749: {
-        slidesPerView: 1.2,
-      }
-    }
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.swiper-container', 
+      
+        {
+          "loop":  true ,
+          "centeredSlides": true,
+          "initialSlide": 0,
+          "slidesPerView": 2,
+          "loopedSlides": 3,
+          "slidesPerGroup": 1,
+          "disableOnInteraction": true,
+          "spaceBetween": 35,
+          "breakpoints": {
+            "768": {
+              "slidesPerView": 3,
+              "spaceBetween": 25,
+              "centeredSlides": false
+            }
+          }
+          
+        }
+      
+    );
   });
 </script>
 
