@@ -104,6 +104,26 @@
     },
     "our_story_eatfky": {
       "type": "our-story",
+      "blocks": {
+        "statistic_Cxte6k": {
+          "type": "statistic",
+          "settings": {
+            "number": "170+",
+            "label": "Scents Crafted"
+          }
+        },
+        "statistic_RM7Ent": {
+          "type": "statistic",
+          "settings": {
+            "number": "2M+",
+            "label": "Orders Fulfilled"
+          }
+        }
+      },
+      "block_order": [
+        "statistic_Cxte6k",
+        "statistic_RM7Ent"
+      ],
       "name": "Our Story",
       "settings": {
         "background_color": "#121212",
