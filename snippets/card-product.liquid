@@ -117,7 +117,7 @@
               <a
                 href="{{ card_product.url }}"
                 id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}"
-                class="full-unstyled-link"
+                class="full-unstyled-link text-base"
                 aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
               >
                 {{ card_product.title | escape }}
@@ -154,7 +154,7 @@
             <a
               href="{{ card_product.url }}"
               id="CardLink-{{ section_id }}-{{ card_product.id }}"
-              class="full-unstyled-link"
+              class="full-unstyled-link text-base font-semibold !no-underline hover:opacity-75 line-clamp-1"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
               {{ card_product.title | escape }}
@@ -203,8 +203,7 @@
                 </span>
               </p>
             {%- endif -%}
-
-            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            {% render 'price', product: card_product, price_class: '', show_compare_at_price: false %}
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid
