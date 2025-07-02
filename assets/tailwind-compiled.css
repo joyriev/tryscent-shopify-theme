@@ -104,6 +104,10 @@
     display: flex
 }
 
+.\!flex {
+    display: flex !important
+}
+
 .table {
     display: table
 }
@@ -139,6 +143,10 @@
 
 .max-w-full {
     max-width: 100%
+}
+
+.list-none {
+    list-style-type: none
 }
 
 .grid-cols-1 {
@@ -252,6 +260,10 @@
 .object-cover {
     -o-object-fit: cover;
        object-fit: cover
+}
+
+.p-0 {
+    padding: 0px
 }
 
 .px-2 {
