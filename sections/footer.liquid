@@ -159,6 +159,9 @@
                 {%- if section.settings.newsletter_heading != blank -%}
                   <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
                 {%- endif -%}
+                {%- if section.settings.newsletter_description != blank -%}
+                  <p class="leading-snug text-sm">{{ section.settings.newsletter_description }}</p>
+                {%- endif -%}
                 {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                   <input type="hidden" name="contact[tags]" value="newsletter">
                   <div class="newsletter-form__field-wrapper">
@@ -436,6 +439,12 @@
       "id": "newsletter_heading",
       "default": "t:sections.footer.settings.newsletter_heading.default",
       "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_description",
+      "label": "Description",
+      "default": "Subscribe to receive updates, access to exclusive deals, and more."
     },
     {
       "type": "header",
