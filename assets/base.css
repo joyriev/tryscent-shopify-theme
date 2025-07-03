@@ -2938,6 +2938,17 @@ details-disclosure > details {
   }
 }
 
+.tabs-cta-ripple-animation {
+  box-shadow: 0px 0px 0px 0px #137c44;
+  animation: ripple infinite 1s;
+}
+
+@keyframes ripple {
+  100% {
+    box-shadow: 0px 0px 0px 10px #ffffff;
+  }
+}
+
 .gradient {
   background: rgb(var(--color-background));
   background: var(--gradient-background);

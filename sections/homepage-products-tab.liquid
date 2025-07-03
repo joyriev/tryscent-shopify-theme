@@ -70,6 +70,14 @@
         {% endif %}
       </div>
     {% endfor %}
+    <div class="text-center mt-14">
+      <a
+        href="{{ section.settings.button_link }}"
+        class="no-underline text-white font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-widest text-lg transition-colors tabs-cta-ripple-animation"
+        aria-label="{{ section.settings.button_text }}">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
   </div>
 </div>
 
@@ -108,7 +116,20 @@
         "id": "background_color",
         "label": "Background Color",
         "default": "#fcfbf9"
-      }, {
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "View All"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "default": "/collections/all"
+      },
+      {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
       }, {
