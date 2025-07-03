@@ -19,7 +19,7 @@
   <div class="page-width">
     <div class="flex justify-center border-0 border-b border-b-gray-100 border-solid [&>.active]:[border-bottom:3px_solid_#c8202f]">
       {% for block in section.blocks %}
-        <button class="bg-transparent border-0 font-semibold text-lg px-4 py-3 cursor-pointer products-tab-btn">
+        <button class="bg-transparent border-0 font-semibold text-sm md:text-lg px-4 py-3 cursor-pointer products-tab-btn">
           {{ block.settings.tab_title }}
         </button>
       {% endfor %}
@@ -32,11 +32,7 @@
             id="product-grid"
             data-id="{{ section.id }}"
             style="display: flex !important;"
-            class="
-                grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
-                grid--{{ section.settings.columns_desktop }}-col-desktop
-                {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
-              ">
+            class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
             {% assign skip_card_product_styles = false %}
             {%- for product in collection.products limit: 8 -%}
               {% assign lazy_load = false %}
