@@ -131,23 +131,33 @@ TODO: Get reviews ready from Cal and Karima.
               </a>
             </h3>
           </div>
-          <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
-              >
-                {{- 'products.product.sold_out' | t -}}
-              </span>
-            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-              >
-                {{- 'products.product.on_sale' | t -}}
-              </span>
-            {%- endif -%}
-          </div>
+          {% if product.tags contains 'onsale' %}
+            <div class="card__badge {{ settings.badge_position }}">
+              {%- if card_product.available == false -%}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
+                >
+                  {{- 'products.product.sold_out' | t -}}
+                </span>
+              {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+                <span
+                  id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+                  class="badge badge--bottom-left font-semibold bg-[#c8202f] text-white"
+                >
+                  {%- assign discount = 0 -%}
+                  {%- if card_product.compare_at_price > card_product.price and card_product.compare_at_price > 0 -%}
+                    {%- assign discount = card_product.compare_at_price | minus: card_product.price | times: 100 | divided_by: card_product.compare_at_price | round -%}
+                  {%- endif -%}
+                  {%- if discount > 0 -%}
+                  SAVE {{ discount }}%
+                  {%- else -%}
+                    {{- 'products.product.on_sale' | t -}}
+                  {%- endif -%}
+                </span>
+              {%- endif -%}
+            </div>
+          {% endif %}
         </div>
       </div>
       <div class="card__content">
@@ -567,7 +577,15 @@ TODO: Get reviews ready from Cal and Karima.
               id="Badge-{{ section_id }}-{{ card_product.id }}"
               class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
             >
-              {{- 'products.product.on_sale' | t -}}
+              {%- assign discount = 0 -%}
+              {%- if card_product.compare_at_price > card_product.price and card_product.compare_at_price > 0 -%}
+                {%- assign discount = card_product.compare_at_price | minus: card_product.price | times: 100 | divided_by: card_product.compare_at_price | round -%}
+              {%- endif -%}
+              {%- if discount > 0 -%}
+                {{ discount }}% OFF
+              {%- else -%}
+                {{- 'products.product.on_sale' | t -}}
+              {%- endif -%}
             </span>
           {%- endif -%}
         </div>
