@@ -2932,6 +2932,12 @@ details-disclosure > details {
   word-break: break-word;
 }
 
+@media (max-width: 768px) {
+  .badge {
+    font-size: 8px;
+  }
+}
+
 .gradient {
   background: rgb(var(--color-background));
   background: var(--gradient-background);
