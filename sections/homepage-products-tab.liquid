@@ -17,15 +17,87 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <div class="grid grid-cols-4 gap-4">
+    <div class="flex justify-center border-0 border-b border-b-gray-100 border-solid [&>.active]:[border-bottom:3px_solid_#c8202f]">
       {% for block in section.blocks %}
-        <div class="flex flex-col items-center gap-1">
-          <p class="text-xs md:text-base m-0 text-center text-black">{{ block.settings.tab_title }}</p>
-        </div>
+        <button class="bg-transparent border-0 font-semibold text-lg px-4 py-3 cursor-pointer products-tab-btn">
+          {{ block.settings.tab_title }}
+        </button>
       {% endfor %}
     </div>
+    {% for block in section.blocks %}
+      <div class="tab-content pt-6 [display:none]">
+        {% assign collection = block.settings.collection %}
+        {% if collection and collection.products.size > 0 %}
+          <ul
+            id="product-grid"
+            data-id="{{ section.id }}"
+            style="display: flex !important;"
+            class="
+                grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                grid--{{ section.settings.columns_desktop }}-col-desktop
+                {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
+              ">
+            {% assign skip_card_product_styles = false %}
+            {%- for product in collection.products limit: 8 -%}
+              {% assign lazy_load = false %}
+              {%- if forloop.index > 2 -%}
+                {%- assign lazy_load = true -%}
+              {%- endif -%}
+              <li
+                class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+                {% endif %}>
+                {% render 'card-product'
+                  , card_product: product
+                  , media_aspect_ratio: section.settings.image_ratio
+                  , image_shape: section.settings.image_shape
+                  , show_secondary_image: section.settings.show_secondary_image
+                  , show_vendor: section.settings.show_vendor
+                  , show_rating: section.settings.show_rating
+                  , lazy_load: lazy_load
+                  , skip_styles: skip_card_product_styles
+                  , quick_add: section.settings.quick_add
+                  , section_id: section.id
+                %}
+              </li>
+              {%- assign skip_card_product_styles = true -%}
+            {%- endfor -%}
+          </ul>
+        {% else %}
+          <p class="text-gray-500">No products found in this collection.</p>
+        {% endif %}
+      </div>
+    {% endfor %}
   </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('#{{ section.id }} .products-tab-btn');
+        const tabContents = document.querySelectorAll('#{{ section.id }} .tab-content');
+
+        buttons.forEach((button, index) => {
+            // Add click event listener to each button
+            button.addEventListener('click', (event) => {
+                // Hide all tab contents
+                tabContents.forEach(content => content.style.display = 'none');
+                buttons.forEach(btn => btn.classList.remove('active'));
+                
+                // Show the clicked tab's content
+                button.classList.add('active');
+                tabContents[index].style.display = 'block';
+            });
+        });
+    
+        // Show the first tab content by default
+        if (tabContents.length > 0) {
+            buttons[0].classList.add('active');
+            tabContents[0].style.display = 'block';
+        }
+    });
+</script>
 
 {% schema %}
   {
