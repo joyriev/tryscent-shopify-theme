@@ -131,7 +131,7 @@ TODO: Get reviews ready from Cal and Karima.
               </a>
             </h3>
           </div>
-          {% if product.tags contains 'onsale' %}
+          {% if card_product.tags contains 'onsale' %}
             <div class="card__badge {{ settings.badge_position }}">
               {%- if card_product.available == false -%}
                 <span
