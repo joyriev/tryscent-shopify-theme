@@ -45,9 +45,14 @@
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
+        "collapsible_tab_rPeLzE": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "clipboard",
+            "content": "{{ block.settings.page.content }}",
+            "page": ""
+          }
         },
         "share": {
           "type": "share",
@@ -63,7 +68,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
+        "collapsible_tab_rPeLzE",
         "share"
       ],
       "settings": {
