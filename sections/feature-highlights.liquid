@@ -15,18 +15,21 @@
 <div
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
-  style="background-color: {{ section.settings.background_color }}"
->
+  style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
     <div class="grid grid-cols-4 gap-4">
-        {% for block in section.blocks %}
-            {% if block.settings.perk_image != blank %}
-            <div class="flex flex-col items-center gap-1">
-                <img class="size-7 md:size-10" src="{{ block.settings.perk_image | image_url: width: 150 }}" alt="Perk Image">
-                <p class="text-xs md:text-base m-0 text-center text-black">{{ block.settings.perk_title }}</p>
-            </div>
-            {% endif %}
-        {% endfor %}
+      {% for block in section.blocks %}
+        {% if block.settings.perk_image != blank %}
+          <div class="flex flex-col items-center gap-1">
+            <img
+              class="size-7 md:size-10"
+              src="{{ block.settings.perk_image | image_url: width: 150 }}"
+              alt="Perk Image">
+            <p class="text-xs md:text-base m-0 text-center text-black">{{ block.settings.perk_title }}</p>
+            <p>{{ section.settings.perk_content }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -77,6 +80,11 @@
             "id": "perk_title",
             "label": "Perk Title",
             "default": "Perk Title"
+          }, {
+            "type": "text",
+            "id": "perk_content",
+            "label": "Perk Content",
+            "default": "Perk Content"
           }
         ]
       }
