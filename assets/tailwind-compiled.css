@@ -92,6 +92,14 @@
     margin-top: 44px
 }
 
+.mt-8 {
+    margin-top: 32px
+}
+
+.mt-4 {
+    margin-top: 16px
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -113,6 +121,10 @@
 
 .flex {
     display: flex
+}
+
+.\!flex {
+    display: flex !important
 }
 
 .table {
@@ -246,6 +258,10 @@
     border-radius: 8px
 }
 
+.rounded-xl {
+    border-radius: 12px
+}
+
 .border {
     border-width: 1px
 }
@@ -254,12 +270,21 @@
     border-width: 0px
 }
 
+.border-2 {
+    border-width: 2px
+}
+
 .border-b {
     border-bottom-width: 1px
 }
 
 .border-solid {
     border-style: solid
+}
+
+.border-gray-200 {
+    --tw-border-opacity: 1;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity, 1))
 }
 
 .border-b-gray-100 {
