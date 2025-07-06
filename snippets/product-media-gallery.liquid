@@ -9,21 +9,21 @@
         alt="{{ image.alt }}"
         height="{{ image.height }}"
         width="{{ image.width }}"
-        class="productSwiperImage swiper-slide rounded-lg border-2 border-solid border-gray-200">
+        class="productSwiperImage swiper-slide rounded-lg">
     {% endfor %}
   </div>
-  <div class="swiper-pagination"></div>
+  <div class="swiper-pagination md:hidden"></div>
   <div
     data-text="text"
     id="productSwiperPrev"
-    class="swiper-button-prev !flex"></div>
+    class="swiper-button-prev !flex bg-white !w-10 [&]:after:!text-xl [&]:after:text-gray-900"></div>
   <div
     data-text="text"
     id="productSwiperNext"
-    class="swiper-button-next !flex"></div>
+    class="swiper-button-next !flex bg-white !w-10 [&]:after:!text-xl [&]:after:text-gray-900"></div>
 </div>
 <div id="productThumbnails" class="swiper mt-4">
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper [&>.swiper-slide-thumb-active]:border-[#226139] [&>.swiper-slide-thumb-active]:opacity-100">
     {% for image in product.images %}
       <img
         id="slider-thumbnail-{{ forloop.index0 }}"
@@ -31,7 +31,7 @@
         alt="{{ image.alt }}"
         height="150"
         width="150"
-        class="productThumbnail swiper-slide slide border-2 border-solid border-gray-200 rounded-lg" />
+        class="productThumbnail swiper-slide slide max-w-28 opacity-70 border-2 border-solid border-gray-200 rounded-lg cursor-pointer" />
     {% endfor %}
   </div>
 </div>
