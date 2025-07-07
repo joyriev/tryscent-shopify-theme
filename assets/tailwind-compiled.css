@@ -29,6 +29,10 @@
     isolation: isolate
 }
 
+.z-10 {
+    z-index: 10
+}
+
 .col-span-3 {
     grid-column: span 3 / span 3
 }
@@ -552,6 +556,10 @@
     font-style: italic
 }
 
+.not-italic {
+    font-style: normal
+}
+
 .leading-snug {
     line-height: 1.375
 }
@@ -574,6 +582,10 @@
 
 .\!tracking-normal {
     letter-spacing: 0em !important
+}
+
+.tracking-tighter {
+    letter-spacing: -0.05em
 }
 
 .text-\[\#c8202f\] {
@@ -599,6 +611,11 @@
 .text-gray-200 {
     --tw-text-opacity: 1;
     color: rgb(229 231 235 / var(--tw-text-opacity, 1))
+}
+
+.text-gray-900 {
+    --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity, 1))
 }
 
 .line-through {

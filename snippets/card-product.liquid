@@ -231,6 +231,11 @@ TODO: Get reviews ready from Cal and Karima.
               {{ card_product.title | escape }}
             </a>
           </h3>
+
+          <div class="line-clamp-1 relative z-10">
+            <span class="italic text-sm tracking-tighter">Inspired by</span> <a href="/search?q={{ card_product.metafields.custom.inspired_by }}" class="font-semibold text-base not-italic tracking-tight text-gray-900 no-underline">{{ card_product.metafields.custom.inspired_by }}</a>
+          </div>
+
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
