@@ -17,15 +17,15 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <div class="grid grid-cols-4 gap-5 items-center">
-      <div>
-        <h2 class="text-xl font-semibold text-white">Our Bestsellers</h2>
+    <div class="md:flex gap-5 items-center">
+      <div class="flex-shrink-0">
+        <h2 class="text-xl font-semibold text-white text-center">Our Bestsellers</h2>
       </div>
       <div class="col-span-3">
         <ul class="list-none p-0 flex gap-4 flex-wrap justify-center [&>li:last-child]:!border-0 [&>li-last-child]:!pr-0">
-          {% for product in collections.all.products limit: 25 %}
+          {% for product in collections.all.products limit: 20 %}
             {% if product.metafields.custom.inspired_by %}
-              <li class="text-gray-200 pr-4 border-0 border-r border-white border-solid leading-none">Inspired by
+              <li class="text-gray-200 pr-4 border-0 border-r border-white border-solid leading-none text-sm tracking-wide">Inspired by
                 <a class="font-semibold text-gray-200 hover:text-white" href="{{ product.url }}">{{ product.metafields.custom.inspired_by }}</a>
               </li>
             {% endif %}
