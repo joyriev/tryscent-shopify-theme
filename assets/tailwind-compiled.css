@@ -211,6 +211,10 @@
     cursor: pointer
 }
 
+.list-none {
+    list-style-type: none
+}
+
 .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr))
 }
@@ -267,6 +271,10 @@
     gap: 32px
 }
 
+.gap-5 {
+    gap: 20px
+}
+
 .overflow-hidden {
     overflow: hidden
 }
@@ -313,6 +321,10 @@
     border-bottom-width: 1px
 }
 
+.border-r {
+    border-right-width: 1px
+}
+
 .border-solid {
     border-style: solid
 }
@@ -330,6 +342,11 @@
 .border-\[\#226139\] {
     --tw-border-opacity: 1;
     border-color: rgb(34 97 57 / var(--tw-border-opacity, 1))
+}
+
+.border-white {
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
 .border-b-gray-100 {
@@ -432,6 +449,18 @@
     padding-top: 32px
 }
 
+.pr-5 {
+    padding-right: 20px
+}
+
+.pr-3 {
+    padding-right: 12px
+}
+
+.pr-4 {
+    padding-right: 16px
+}
+
 .text-center {
     text-align: center
 }
@@ -472,6 +501,11 @@
 
 .text-\[1\.5rem\] {
     font-size: 24px
+}
+
+.text-xl {
+    font-size: 20px;
+    line-height: 28px
 }
 
 .\!font-black {
@@ -518,6 +552,10 @@
     line-height: 1.375
 }
 
+.leading-none {
+    line-height: 1
+}
+
 .tracking-tight {
     letter-spacing: -0.025em
 }
@@ -552,6 +590,11 @@
 .text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+}
+
+.text-gray-200 {
+    --tw-text-opacity: 1;
+    color: rgb(229 231 235 / var(--tw-text-opacity, 1))
 }
 
 .line-through {
@@ -615,6 +658,11 @@
 .hover\:bg-\[\#02491c\]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(2 73 28 / var(--tw-bg-opacity, 1))
+}
+
+.hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1))
 }
 
 .hover\:no-underline:hover {
@@ -789,6 +837,30 @@
 .\[\&\>div\:nth-child\(2\)\]\:border-gray-200>div:nth-child(2) {
     --tw-border-opacity: 1;
     border-color: rgb(229 231 235 / var(--tw-border-opacity, 1))
+}
+
+.\[\&\>li-last-child\]\:\!pr-0>li-last-child {
+    padding-right: 0px !important
+}
+
+.\[\&\>li\:last-child\]\:\!border-0>li:last-child {
+    border-width: 0px !important
+}
+
+.\[\&\>li\]\:last\:border-0:last-child>li {
+    border-width: 0px
+}
+
+.\[\&\>li\]\:last\:\!border-0:last-child>li {
+    border-width: 0px !important
+}
+
+.\[\&\>li\]\:last\:pr-0:last-child>li {
+    padding-right: 0px
+}
+
+.\[\&\>li\]\:last\:\!pr-0:last-child>li {
+    padding-right: 0px !important
 }
 
 .\[\&\]\:after\:text-xl::after {
