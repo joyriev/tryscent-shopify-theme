@@ -103,8 +103,11 @@
                   {% endfor %}
                 </ul>
               {%- when 'money_back' -%}
-                <div class="line-clamp-1 relative !-my-2">
-                  <span class="italic tracking-tighter">Money Back Guarantee</span>
+                <div class="grid grid-cols-[64px_auto] items-center gap-3">
+                  <img src="{{ block.settings.image | img_url: '64x64' }}" height="64" width="64" alt="{{ block.settings.label }}" class="w-full h-auto" />
+                  <div class="m-0 leading-snug tracking-normal [&>p]:m-0">
+                    {{ block.settings.text }}
+                  </div>
                 </div>
               {%- when 'text' -%}
                 <p
