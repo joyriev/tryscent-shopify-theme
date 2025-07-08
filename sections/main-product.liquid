@@ -115,7 +115,8 @@
                     {{ product.metafields.custom.cta_review.value.content | metafield_tag }}
                   </div>
                   <h3 class="mb-0 mt-2 text-base font-semibold text-gray-500 tracking-normal">
-                    {{ product.metafields.custom.cta_review.value.author }} -- *****
+                    {{ product.metafields.custom.cta_review.value.author }}
+                    <span class="jdgm-prev-badge__stars text-sm ml-2" data-score="5.00" tabindex="0" aria-label="5.00 stars" role="button"> <span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span> </span>
                   </h3>
                 </div>
               {%- when 'text' -%}
@@ -1007,6 +1008,11 @@
     {
       "type": "cta_review",
       "name": "CTA Review",
+      "limit": 1
+    },
+    {
+      "type": "videos",
+      "name": "Videos",
       "limit": 1
     },
     {
