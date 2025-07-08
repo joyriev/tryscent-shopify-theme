@@ -93,6 +93,12 @@
                 <div class="line-clamp-1 relative !-my-2">
                   <span class="italic tracking-tighter">Inspired by</span> <a href="/search?q={{ product.metafields.custom.inspired_by | url_encode }}" class="font-semibold text-lg not-italic tracking-tight text-gray-900 ![text-decoration:none]">{{ product.metafields.custom.inspired_by }}</a>
                 </div>
+              {%- when 'selling_points' -%}
+                <ul>
+                  <li>First item</li>
+                  <li>Second item</li>
+                  <li>Third item</li>
+                </ul>
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -740,6 +746,11 @@
     {
       "type": "inspired_by",
       "name": "Inspired By",
+      "limit": 1
+    },
+    {
+      "type": "selling_points",
+      "name": "Selling Points",
       "limit": 1
     },
     {
