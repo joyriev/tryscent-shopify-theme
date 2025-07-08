@@ -109,6 +109,13 @@
                     {{ block.settings.text }}
                   </div>
                 </div>
+              {%- when 'cta_review' -%}
+                <div>
+                  <div>
+                    {{ block.settings.text }}
+                  </div>
+                  <h3>{{ block.settings.label }}</h3>
+                </div>
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -992,6 +999,23 @@
           "type": "richtext",
           "id": "text",
           "label": "Money Back Guarantee Text"
+        }
+      ]
+    },
+    {
+      "type": "cta_review",
+      "name": "CTA Review",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "CTA Review Text"
+        },
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name"
         }
       ]
     },
