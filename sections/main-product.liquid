@@ -110,11 +110,13 @@
                   </div>
                 </div>
               {%- when 'cta_review' -%}
-                <div>
-                  <div>
+                <div class="pt-6 border-0 border-t border-solid border-gray-200">
+                  <div class="leading-snug tracking-normal italic [&_p]:!m-0 text-lg">
                     {{ product.metafields.custom.cta_review.value.content | metafield_tag }}
                   </div>
-                  <h3>{{ product.metafields.custom.cta_review.value.author }}</h3>
+                  <h3 class="mb-0 mt-2 text-base font-semibold text-gray-500 tracking-normal">
+                    {{ product.metafields.custom.cta_review.value.author }} -- *****
+                  </h3>
                 </div>
               {%- when 'text' -%}
                 <p

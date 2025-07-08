@@ -359,6 +359,10 @@
     border-right-width: 1px
 }
 
+.border-t {
+    border-top-width: 1px
+}
+
 .border-solid {
     border-style: solid
 }
@@ -513,6 +517,22 @@
 
 .\!pt-3 {
     padding-top: 12px !important
+}
+
+.pt-2 {
+    padding-top: 8px
+}
+
+.pt-1 {
+    padding-top: 4px
+}
+
+.pt-3 {
+    padding-top: 12px
+}
+
+.pt-5 {
+    padding-top: 20px
 }
 
 .text-center {
@@ -953,6 +973,10 @@
     margin: 0px
 }
 
+.\[\&\>p\]\:\!m-0>p {
+    margin: 0px !important
+}
+
 .\[\&\]\:after\:\!text-xl::after {
     content: var(--tw-content);
     font-size: 20px !important;
@@ -963,4 +987,8 @@
     content: var(--tw-content);
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity, 1))
+}
+
+.\[\&_p\]\:\!m-0 p {
+    margin: 0px !important
 }
