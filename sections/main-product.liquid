@@ -102,6 +102,10 @@
                     </li>
                   {% endfor %}
                 </ul>
+              {%- when 'money_back' -%}
+                <div class="line-clamp-1 relative !-my-2">
+                  <span class="italic tracking-tighter">Money Back Guarantee</span>
+                </div>
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -970,6 +974,24 @@
       "type": "selling_points",
       "name": "Selling Points",
       "limit": 1
+    },
+    {
+      "type": "money_back",
+      "name": "Money Back Guarantee",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Money Back Guarantee Badge"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Money Back Guarantee Text",
+          "default": "30-Day Money Back Guarantee"
+        }
+      ]
     },
     {
       "type": "text",
