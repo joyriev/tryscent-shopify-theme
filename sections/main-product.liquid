@@ -94,9 +94,9 @@
                   <span class="italic tracking-tighter">Inspired by</span> <a href="/search?q={{ product.metafields.custom.inspired_by | url_encode }}" class="font-semibold text-lg not-italic tracking-tight text-gray-900 ![text-decoration:none]">{{ product.metafields.custom.inspired_by }}</a>
                 </div>
               {%- when 'selling_points' -%}
-                <ul class="list-none ">
+                <ul class="list-none p-0">
                   {% for item in product.metafields.custom.selling_points.value %}
-                    <li>{{ item }}</li>
+                    <li class="">{{ item }}</li>
                   {% endfor %}
                 </ul>
               {%- when 'text' -%}
