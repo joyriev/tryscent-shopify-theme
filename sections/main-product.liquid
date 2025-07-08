@@ -112,7 +112,7 @@
               {%- when 'cta_review' -%}
                 <div>
                   <div>
-                    {{ block.settings.text }}
+                    {{ product.metafields.custom.cta_review.value.author }}
                   </div>
                   <h3>{{ block.settings.label }}</h3>
                 </div>
@@ -1005,19 +1005,7 @@
     {
       "type": "cta_review",
       "name": "CTA Review",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "text",
-          "label": "CTA Review Text"
-        },
-        {
-          "type": "text",
-          "id": "reviewer_name",
-          "label": "Reviewer Name"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "text",
