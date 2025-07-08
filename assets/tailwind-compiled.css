@@ -217,6 +217,14 @@
     grid-template-columns: repeat(4, minmax(0, 1fr))
 }
 
+.grid-cols-\[100px_auto\] {
+    grid-template-columns: 100px auto
+}
+
+.grid-cols-\[150px_auto\] {
+    grid-template-columns: 150px auto
+}
+
 .flex-col {
     flex-direction: column
 }
