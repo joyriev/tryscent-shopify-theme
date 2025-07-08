@@ -112,9 +112,9 @@
               {%- when 'cta_review' -%}
                 <div>
                   <div>
-                    {{ product.metafields.custom.cta_review.value.author }}
+                    {{ product.metafields.custom.cta_review.value.content | metafield_tag }}
                   </div>
-                  <h3>{{ block.settings.label }}</h3>
+                  <h3>{{ product.metafields.custom.cta_review.value.author }}</h3>
                 </div>
               {%- when 'text' -%}
                 <p
