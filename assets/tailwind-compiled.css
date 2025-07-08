@@ -17,16 +17,16 @@
     position: sticky
 }
 
-.top-6 {
-    top: 24px
-}
-
 .-top-\[9999999px\] {
     top: -9999999px
 }
 
 .left-\[-9999999px\] {
     left: -9999999px
+}
+
+.top-6 {
+    top: 24px
 }
 
 .isolate {
@@ -41,12 +41,12 @@
     grid-column: span 3 / span 3
 }
 
-.m-0 {
-    margin: 0px
-}
-
 .\!m-0 {
     margin: 0px !important
+}
+
+.m-0 {
+    margin: 0px
 }
 
 .\!-my-2 {
@@ -69,6 +69,10 @@
     margin-right: auto
 }
 
+.\!mb-0 {
+    margin-bottom: 0px !important
+}
+
 .mb-0 {
     margin-bottom: 0px
 }
@@ -83,6 +87,10 @@
 
 .mb-\[-44px\] {
     margin-bottom: -44px
+}
+
+.ml-2 {
+    margin-left: 8px
 }
 
 .mr-1 {
@@ -123,14 +131,6 @@
 
 .mt-\[44px\] {
     margin-top: 44px
-}
-
-.\!mb-0 {
-    margin-bottom: 0px !important
-}
-
-.ml-2 {
-    margin-left: 8px
 }
 
 .line-clamp-1 {
@@ -245,24 +245,12 @@
     grid-template-columns: repeat(4, minmax(0, 1fr))
 }
 
-.grid-cols-\[100px_auto\] {
-    grid-template-columns: 100px auto
-}
-
-.grid-cols-\[150px_auto\] {
-    grid-template-columns: 150px auto
+.grid-cols-\[64px_auto\] {
+    grid-template-columns: 64px auto
 }
 
 .grid-cols-\[92px_auto\] {
     grid-template-columns: 92px auto
-}
-
-.grid-cols-\[24px_auto\] {
-    grid-template-columns: 24px auto
-}
-
-.grid-cols-\[64px_auto\] {
-    grid-template-columns: 64px auto
 }
 
 .flex-col {
@@ -293,6 +281,10 @@
     gap: 8px
 }
 
+.gap-3 {
+    gap: 12px
+}
+
 .gap-4 {
     gap: 16px
 }
@@ -307,10 +299,6 @@
 
 .gap-8 {
     gap: 32px
-}
-
-.gap-3 {
-    gap: 12px
 }
 
 .overflow-hidden {
@@ -376,14 +364,14 @@
     border-color: rgb(229 231 235 / var(--tw-border-opacity, 1))
 }
 
-.border-white {
-    --tw-border-opacity: 1;
-    border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
-}
-
 .border-gray-300 {
     --tw-border-opacity: 1;
     border-color: rgb(209 213 219 / var(--tw-border-opacity, 1))
+}
+
+.border-white {
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
 .border-b-gray-100 {
@@ -424,22 +412,17 @@
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
-.object-contain {
-    -o-object-fit: contain;
-       object-fit: contain
-}
-
 .object-cover {
     -o-object-fit: cover;
        object-fit: cover
 }
 
-.p-0 {
-    padding: 0px
-}
-
 .\!p-0 {
     padding: 0px !important
+}
+
+.p-0 {
+    padding: 0px
 }
 
 .px-2 {
@@ -487,6 +470,22 @@
     padding-bottom: 12px
 }
 
+.\!pb-3 {
+    padding-bottom: 12px !important
+}
+
+.\!pt-3 {
+    padding-top: 12px !important
+}
+
+.pb-2 {
+    padding-bottom: 8px
+}
+
+.pb-6 {
+    padding-bottom: 24px
+}
+
 .pr-4 {
     padding-right: 16px
 }
@@ -499,56 +498,17 @@
     padding-top: 32px
 }
 
-.pb-4 {
-    padding-bottom: 16px
-}
-
-.pt-4 {
-    padding-top: 16px
-}
-
-.\!pb-4 {
-    padding-bottom: 16px !important
-}
-
-.\!pt-4 {
-    padding-top: 16px !important
-}
-
-.\!pb-3 {
-    padding-bottom: 12px !important
-}
-
-.\!pt-3 {
-    padding-top: 12px !important
-}
-
-.pt-2 {
-    padding-top: 8px
-}
-
-.pt-1 {
-    padding-top: 4px
-}
-
-.pt-3 {
-    padding-top: 12px
-}
-
-.pt-5 {
-    padding-top: 20px
-}
-
-.pb-2 {
-    padding-bottom: 8px
-}
-
 .text-center {
     text-align: center
 }
 
 .\!font-sans {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important
+}
+
+.\!text-lg {
+    font-size: 18px !important;
+    line-height: 28px !important
 }
 
 .text-2xl {
@@ -588,11 +548,6 @@
 .text-xs {
     font-size: 12px;
     line-height: 16px
-}
-
-.\!text-lg {
-    font-size: 18px !important;
-    line-height: 28px !important
 }
 
 .\!font-black {
@@ -651,6 +606,10 @@
     letter-spacing: 0em !important
 }
 
+.tracking-normal {
+    letter-spacing: 0em
+}
+
 .tracking-tight {
     letter-spacing: -0.025em
 }
@@ -665,10 +624,6 @@
 
 .tracking-widest {
     letter-spacing: 0.1em
-}
-
-.tracking-normal {
-    letter-spacing: 0em
 }
 
 .text-\[\#c8202f\] {
@@ -761,22 +716,6 @@
     to {
         transform: translateX(-50%)
     }
-}
-
-.after\:\!rounded::after {
-    content: var(--tw-content);
-    border-radius: 4px !important
-}
-
-.after\:border-2::after {
-    content: var(--tw-content);
-    border-width: 2px
-}
-
-.after\:border-gray-300::after {
-    content: var(--tw-content);
-    --tw-border-opacity: 1;
-    border-color: rgb(209 213 219 / var(--tw-border-opacity, 1))
 }
 
 .after\:\!shadow-none::after {
@@ -979,10 +918,6 @@
 
 .\[\&\>p\]\:m-0>p {
     margin: 0px
-}
-
-.\[\&\>p\]\:\!m-0>p {
-    margin: 0px !important
 }
 
 .\[\&\]\:after\:\!text-xl::after {
