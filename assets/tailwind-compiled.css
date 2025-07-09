@@ -133,8 +133,8 @@
     margin-top: 44px
 }
 
-.mb-6 {
-    margin-bottom: 24px
+.ml-1 {
+    margin-left: 4px
 }
 
 .line-clamp-1 {
@@ -213,12 +213,24 @@
     width: 100%
 }
 
+.w-\[900px\] {
+    width: 900px
+}
+
 .max-w-28 {
     max-width: 112px
 }
 
 .max-w-full {
     max-width: 100%
+}
+
+.max-w-\[100\%\] {
+    max-width: 100%
+}
+
+.max-w-\[120px\] {
+    max-width: 120px
 }
 
 .flex-shrink-0 {
@@ -263,6 +275,10 @@
 
 .flex-wrap {
     flex-wrap: wrap
+}
+
+.items-end {
+    align-items: flex-end
 }
 
 .items-center {
@@ -335,6 +351,16 @@
     border-radius: 8px
 }
 
+.rounded-b-xl {
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px
+}
+
+.rounded-t-xl {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px
+}
+
 .border {
     border-width: 1px
 }
@@ -359,6 +385,10 @@
     border-top-width: 1px
 }
 
+.border-b-2 {
+    border-bottom-width: 2px
+}
+
 .border-solid {
     border-style: solid
 }
@@ -376,6 +406,20 @@
 .border-white {
     --tw-border-opacity: 1;
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
+}
+
+.border-\[\#4D8127\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(77 129 39 / var(--tw-border-opacity, 1))
+}
+
+.border-black\/5 {
+    border-color: rgb(0 0 0 / 0.05)
+}
+
+.border-gray-400 {
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity, 1))
 }
 
 .border-b-gray-100 {
@@ -414,6 +458,11 @@
 .bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+}
+
+.\!bg-\[\#4D8127\] {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(77 129 39 / var(--tw-bg-opacity, 1)) !important
 }
 
 .object-cover {
@@ -472,6 +521,11 @@
 .py-3 {
     padding-top: 12px;
     padding-bottom: 12px
+}
+
+.py-4 {
+    padding-top: 16px;
+    padding-bottom: 16px
 }
 
 .\!pb-3 {
@@ -660,6 +714,10 @@
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
 }
 
+.text-white\/60 {
+    color: rgb(255 255 255 / 0.6)
+}
+
 .line-through {
     text-decoration-line: line-through
 }
@@ -684,6 +742,11 @@
 
 .outline {
     outline-style: solid
+}
+
+.invert {
+    --tw-invert: invert(100%);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
 }
 
 .filter {
@@ -809,6 +872,11 @@
     .md\:text-xs {
         font-size: 12px;
         line-height: 16px
+    }
+
+    .md\:text-sm {
+        font-size: 14px;
+        line-height: 20px
     }
 }
 
