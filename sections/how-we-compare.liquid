@@ -17,13 +17,13 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <h2 class="text-center text-2xl font-bold">How We Compare</h2>
+    <h2 class="text-center text-2xl font-bold">{{ section.settings.title }}</h2>
     <div class="grid gap-0 w-[900px] max-w-[100%] grid-cols-3 mx-auto">
       <div class="flex items-end border-0 border-b-2 border-[#226139] border-solid px-4 py-4 text-sm font-black md:text-base">
         Inspired by
       </div>
       <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b-2 border-[#226139] bg-black px-4 py-4 text-sm font-black text-white md:text-base">
-        <img src="//www.theessencevault.co.uk/cdn/shop/files/tev-logo-new.svg?v=6784564525491228933" class="lg:max-wi-[150px] max-w-[120px] invert">
+        <img src="{{ section.settings.logo | image_url: width: 150 }}" class="lg:max-wi-[150px] max-w-[120px] invert">
       </div>
       <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b-2 border-[#226139] bg-white px-4 py-4 text-center text-sm font-black md:text-base">
         Other brands
@@ -105,7 +105,19 @@
         "id": "background_color",
         "label": "Background Color",
         "default": "#fcfbf9"
-      }, {
+      }, 
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "How We Compare"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
       }, {
