@@ -69,6 +69,16 @@
     margin-right: auto
 }
 
+.my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px
+}
+
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto
+}
+
 .\!mb-0 {
     margin-bottom: 0px !important
 }
@@ -422,6 +432,11 @@
     border-color: rgb(156 163 175 / var(--tw-border-opacity, 1))
 }
 
+.border-\[\#226139\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 97 57 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -463,6 +478,11 @@
 .\!bg-\[\#4D8127\] {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(77 129 39 / var(--tw-bg-opacity, 1)) !important
+}
+
+.\!bg-\[\#226139\] {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(34 97 57 / var(--tw-bg-opacity, 1)) !important
 }
 
 .object-cover {
