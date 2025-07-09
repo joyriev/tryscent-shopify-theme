@@ -28,6 +28,30 @@
       <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b-2 border-[#226139] bg-white px-4 py-4 text-center text-sm font-black md:text-base">
         Other brands
       </div>
+      {% for block in section.blocks %}
+        {% if block.type == "product" %}
+          <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
+            {{ block.settings.name }}
+          </div>
+          <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
+            {{ block.settings.our_price }}
+          </div>
+          <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
+            {{ block.settings.other_brands }}
+          </div>
+        {% endif %}
+        {% if block.type == "offer" %}
+          <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
+            {{ block.settings.name }}
+          </div>
+          <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base  !bg-[#226139] ">
+            {{ block.settings.our_price }}
+          </div>
+          <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
+            {{ block.settings.other_brands }}
+          </div>
+        {% endif %}
+      {% endfor %}
       <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
         Aventus
       </div>
@@ -78,19 +102,9 @@
       <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
         $524.00
       </div>
-      <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        100ml x3 Perfume Set
-      </div>
-      <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base  !bg-[#226139] ">
-        $44.99
-        <s class="ml-1 text-xs font-semibold text-white/60 md:text-sm">$74.97</s>
-      </div>
-      <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        $916.00
-      </div>
-      <div></div>
-      <div class="rounded-b-xl bg-black px-4 py-4"></div>
-      <div></div>
+      <div class="!block"></div>
+      <div class="rounded-b-xl bg-black px-4 py-4 !block"></div>
+      <div class="!block"></div>
     </div>
     <div class="text-center mt-14">
       <a href="/collections/all" class="no-underline text-white font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-widest text-lg transition-colors tabs-cta-ripple-animation" aria-label="View All">
@@ -155,6 +169,30 @@
             "id": "name",
             "label": "Name",
             "default": "Product Name"
+          },
+          {
+            "type": "text",
+            "id": "our_price",
+            "label": "OurPrice",
+            "default": "00.00"
+          },
+          {
+            "type": "text",
+            "id": "other_brands",
+            "label": "Other Brands Price",
+            "default": "00.00"
+          }
+        ]
+      },
+      {
+        "type": "offer",
+        "name": "Bundle Offer Row",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name",
+            "default": "Buy 3 Get 5"
           },
           {
             "type": "text",
