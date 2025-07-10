@@ -75,6 +75,8 @@
 {% endfor %}
 
 <script>
+
+  console.log({{ product.variants.first | json }});
   
   document.addEventListener("DOMContentLoaded", function () {
 
