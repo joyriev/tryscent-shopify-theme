@@ -9,6 +9,10 @@
     position: fixed
 }
 
+.absolute {
+    position: absolute
+}
+
 .relative {
     position: relative
 }
@@ -39,6 +43,18 @@
 
 .right-0 {
     right: 0px
+}
+
+.top-0 {
+    top: 0px
+}
+
+.left-1\/2 {
+    left: 50%
+}
+
+.top-1\/2 {
+    top: 50%
 }
 
 .isolate {
@@ -215,6 +231,21 @@
     height: 28px
 }
 
+.size-16 {
+    width: 64px;
+    height: 64px
+}
+
+.size-12 {
+    width: 48px;
+    height: 48px
+}
+
+.size-10 {
+    width: 40px;
+    height: 40px
+}
+
 .h-\[206px\] {
     height: 206px
 }
@@ -277,6 +308,16 @@
 
 .flex-shrink-0 {
     flex-shrink: 0
+}
+
+.-translate-x-1\/2 {
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.-translate-y-1\/2 {
+    --tw-translate-y: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .cursor-pointer {
@@ -477,6 +518,12 @@
     border-color: rgb(34 97 57 / var(--tw-border-opacity, 1))
 }
 
+.border-x-gray-950 {
+    --tw-border-opacity: 1;
+    border-left-color: rgb(3 7 18 / var(--tw-border-opacity, 1));
+    border-right-color: rgb(3 7 18 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -523,6 +570,15 @@
 .\!bg-\[\#226139\] {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(34 97 57 / var(--tw-bg-opacity, 1)) !important
+}
+
+.bg-gray-900\/50 {
+    background-color: rgb(17 24 39 / 0.5)
+}
+
+.bg-gray-200 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1))
 }
 
 .object-cover {
@@ -829,6 +885,10 @@
 
 .\[transform\:rotate\(-3deg\)\] {
     transform: rotate(-3deg)
+}
+
+.\[transform\:translate\(-50\%\2c -50\%\)\] {
+    transform: translate(-50%,-50%)
 }
 
 .animate-move-left {
