@@ -800,6 +800,11 @@
     line-height: 16px
 }
 
+.text-4xl {
+    font-size: 36px;
+    line-height: 40px
+}
+
 .\!font-black {
     font-weight: 900 !important
 }
@@ -1115,6 +1120,16 @@
     .md\:text-sm {
         font-size: 14px;
         line-height: 20px
+    }
+
+    .md\:text-4xl {
+        font-size: 36px;
+        line-height: 40px
+    }
+
+    .md\:text-xl {
+        font-size: 20px;
+        line-height: 28px
     }
 }
 

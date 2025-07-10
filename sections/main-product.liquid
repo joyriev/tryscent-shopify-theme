@@ -96,7 +96,7 @@
               {%- when 'selling_points' -%}
                 <ul class="list-none p-0">
                   {% for item in product.metafields.custom.selling_points.value %}
-                    <li class="flex gap-2 items-center">
+                    <li class="flex gap-2 items-center text-gray-950">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#0df662" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                       {{ item }}
                     </li>
@@ -105,7 +105,7 @@
               {%- when 'money_back' -%}
                 <div class="grid grid-cols-[64px_auto] items-center gap-3">
                   <img src="{{ block.settings.image | img_url: '64x64' }}" height="64" width="64" alt="{{ block.settings.label }}" class="w-full h-auto" />
-                  <div class="m-0 leading-snug tracking-normal [&>p]:m-0">
+                  <div class="m-0 leading-snug tracking-normal [&>p]:m-0 text-gray-950">
                     {{ block.settings.text }}
                   </div>
                 </div>
@@ -263,7 +263,7 @@
                     <summary>
                       <div class="summary__title">
                         {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title inline-richtext">
+                        <h2 class="h4 accordion__title inline-richtext font-bold">
                           {{ block.settings.heading | default: block.settings.page.title | escape }}
                         </h2>
                       </div>
