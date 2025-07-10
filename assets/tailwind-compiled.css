@@ -29,12 +29,28 @@
     top: 24px
 }
 
+.bottom-0 {
+    bottom: 0px
+}
+
+.left-0 {
+    left: 0px
+}
+
+.right-0 {
+    right: 0px
+}
+
 .isolate {
     isolation: isolate
 }
 
 .z-10 {
     z-index: 10
+}
+
+.z-50 {
+    z-index: 50
 }
 
 .col-span-3 {
@@ -215,6 +231,10 @@
     height: 100%
 }
 
+.h-10 {
+    height: 40px
+}
+
 .\!min-h-\[56px\] {
     min-height: 56px !important
 }
@@ -229,6 +249,10 @@
 
 .w-\[900px\] {
     width: 900px
+}
+
+.w-10 {
+    width: 40px
 }
 
 .max-w-28 {
@@ -307,6 +331,10 @@
     justify-content: center
 }
 
+.justify-between {
+    justify-content: space-between
+}
+
 .gap-0 {
     gap: 0px
 }
@@ -367,6 +395,10 @@
 
 .rounded-lg {
     border-radius: 8px
+}
+
+.rounded-md {
+    border-radius: 6px
 }
 
 .rounded-b-xl {
