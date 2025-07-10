@@ -34,10 +34,10 @@
             {{ block.settings.name }}
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-            {{ block.settings.our_price }}
+            {{ block.settings.our_price | money }}
           </div>
           <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-            {{ block.settings.other_brands }}
+            {{ block.settings.other_brands | money }}
           </div>
         {% endif %}
         {% if block.type == "offer" %}
@@ -45,63 +45,13 @@
             {{ block.settings.name }}
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base  !bg-[#226139] ">
-            {{ block.settings.our_price }}
+            {{ block.settings.our_price | money }}
           </div>
           <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-            {{ block.settings.other_brands }}
+            {{ block.settings.other_brands | money }}
           </div>
         {% endif %}
       {% endfor %}
-      <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        Aventus
-      </div>
-      <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-        $8.99
-        <s class="ml-1 text-xs font-semibold text-white/60 md:text-sm"></s>
-      </div>
-      <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        $400.00
-      </div>
-      <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        Baracatt Rouge
-      </div>
-      <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-        $8.99
-        <s class="ml-1 text-xs font-semibold text-white/60 md:text-sm"></s>
-      </div>
-      <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        $333.00
-      </div>
-      <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        Ombre Nomade
-      </div>
-      <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-        $8.99
-        <s class="ml-1 text-xs font-semibold text-white/60 md:text-sm"></s>
-      </div>
-      <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        $320.00
-      </div>
-      <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        Black Opium
-      </div>
-      <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-        $8.99
-        <s class="ml-1 text-xs font-semibold text-white/60 md:text-sm"></s>
-      </div>
-      <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        $148.00
-      </div>
-      <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        Lost Cherry
-      </div>
-      <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-        $8.99
-        <s class="ml-1 text-xs font-semibold text-white/60 md:text-sm"></s>
-      </div>
-      <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-        $524.00
-      </div>
       <div class="!block"></div>
       <div class="rounded-b-xl bg-black px-4 py-4 !block"></div>
       <div class="!block"></div>
