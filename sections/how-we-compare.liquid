@@ -34,12 +34,8 @@
             {{ block.settings.name }}
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-            <span class="currency-symbol">{{ cart.currency.symbol }}</span>
-            <span class="price-amount" 
-                  data-base-price="{{ block.settings.our_price }}"
-                  data-currency="{{ cart.currency.iso_code }}"
-                  data-original-currency="USD">
-              {{ block.settings.our_price }}
+            <span data-base-price="{{ block.settings.our_price }}" >
+              ${{ block.settings.our_price }}
             </span>
           </div>
           <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
@@ -76,25 +72,22 @@
 
     const originalPrice = "{{ product.variants.first.price }}";
     const convertedPrice = "{{ product.price }}";
+    const currencySymbol = "{{ cart.currency.symbol }}";
 
     if (convertedPrice && originalPrice) {
       let exchange = Number(convertedPrice) / Number(originalPrice);
       const exchangeRate = exchange.toFixed(2);
-      console.log(exchangeRate);
-    }
-    
-    const priceElement = document.querySelector("[data-hardcoded-price]");
-
-    const priceCents = priceElement.dataset.hardcodedPrice;
-
-    console.log(Shopify.formatMoney);
-    
-
-    if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
-
-      console.log(Shopify.formatMoney(priceCents, "{{ shop.money_format | escape }}"));
       
-      priceElement.innerHTML = Shopify.formatMoney(priceCents, "{{ shop.money_format | escape }}");
+      const priceElements = document.querySelectorAll("[data-base-price]");
+
+      priceElements.forEach(element => {
+        const basePrice = element.dataset.basePrice;
+
+        const convertedPrice = Number(basePrice) * Number(exchangeRate);
+
+        element.innerHTML = `${currencySymbol}${convertedPrice.toFixed(2)}`;
+      });
+
     }
   });
 </script>
