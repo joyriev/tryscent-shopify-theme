@@ -76,6 +76,12 @@
 
     const originalPrice = "{{ product.variants.first.price }}";
     const convertedPrice = "{{ product.price }}";
+
+    if (convertedPrice && originalPrice) {
+      const exchangeRate = Number(convertedPrice) / Number(originalPrice);
+
+      console.log(exchangeRate);
+    }
     
     const priceElement = document.querySelector("[data-hardcoded-price]");
 
