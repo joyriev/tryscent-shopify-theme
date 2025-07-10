@@ -65,9 +65,13 @@
       <div class="!block"></div>
     </div>
     <div class="text-center mt-14">
-      <a href="/collections/all" class="no-underline text-white font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-widest text-lg transition-colors tabs-cta-ripple-animation" aria-label="View All">
-        View All
+      <a href="{{ section.settings.btn_url }}" class="no-underline text-white font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-widest text-lg transition-colors tabs-cta-ripple-animation" aria-label="View All">
+        {{ section.settings.btn_text }}
       </a>
+    </div>
+    <div>
+      <p class="text-center text-sm font-semibold">{{ section.settings.review_text }}</p>
+      <p class="text-center text-sm font-semibold">{{ section.settings.review_author }}</p>
     </div>
   </div>
 </div>
@@ -124,6 +128,30 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button Text",
+        "default": "View All"
+      },
+      {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button URL",
+        "default": "/collections/all"
+      },
+      {
+        "type": "text",
+        "id": "review_text",
+        "label": "Review Text",
+        "default": "Review Content"
+      },
+      {
+        "type": "text",
+        "id": "review_author",
+        "label": "Review Author",
+        "default": "John Doe"
       },
       {
         "type": "header",
