@@ -251,56 +251,11 @@
         "padding_bottom": 92
       }
     },
-    "collapsible_content_HFezG9": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_hMbU4z": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_Y3Bz3a": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_pap7Pb": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_UKQErG": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_hMbU4z",
-        "collapsible_row_Y3Bz3a",
-        "collapsible_row_pap7Pb",
-        "collapsible_row_UKQErG"
-      ],
-      "name": "t:sections.collapsible_content.presets.name",
+    "faq-section": {
+      "type": "faq-section",
       "settings": {
         "caption": "",
-        "heading": "Frequently Asked Questions",
+        "heading": "Collapsible content",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
@@ -311,6 +266,49 @@
         "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "rich_text_R93mr3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_JGmcgf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_xQwbif": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_JKYzAm": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_JGmcgf",
+        "text_xQwbif",
+        "button_JKYzAm"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "1751863713a9594609": {
@@ -327,14 +325,6 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "floating-atc": {
-      "type": "floating-atc",
-      "settings": {}
-    },
-    "faq-section": {
-      "type": "faq-section",
-      "settings": {}
     },
     "related-products": {
       "type": "related-products",
@@ -362,10 +352,10 @@
   "order": [
     "main",
     "how_we_compare_h38DdP",
-    "collapsible_content_HFezG9",
-    "1751863713a9594609",
-    "floating-atc",
     "faq-section",
-    "related-products"
+    "rich_text_R93mr3",
+    "1751863713a9594609",
+    "related-products",
+    "floating-atc"
   ]
 }
