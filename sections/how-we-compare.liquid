@@ -80,7 +80,7 @@
   
   document.addEventListener("DOMContentLoaded", function () {
 
-    const originalPrice = "{{ lowest_price }}";
+    const originalPrice = "{{ lowest_price | money_without_currency }}";
     const convertedPrice = "{{ product.price }}";
     const currencySymbol = "{{ cart.currency.symbol }}";
 
