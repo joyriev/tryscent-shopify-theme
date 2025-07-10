@@ -69,9 +69,17 @@
         {{ section.settings.btn_text }}
       </a>
     </div>
-    <div>
-      <p class="text-center text-sm font-semibold">{{ section.settings.review_text }}</p>
-      <p class="text-center text-sm font-semibold">{{ section.settings.review_author }}</p>
+    <div class="max-w-[800px] mx-auto flex flex-col items-center justify-center mt-16">
+      <span class="jdgm-prev-badge__stars" data-score="4.83" tabindex="0" aria-label="4.83 stars" role="button"> <span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span> </span>
+      <p class="text-center m-0 mt-2 leading-snug tracking-normal mb-4 text-lg text-gray-950">{{ section.settings.review_text }}</p>
+      <div class="flex items-center justify-center gap-2">
+        <h3 class="text-center text-lg font-semibold m-0">{{ section.settings.review_author }} 
+        </h3>
+        <p class="text-center text-sm font-semibold m-0 flex items-center gap-0 tracking-tight">
+          Verified Buyer 
+          <img src="{{ 'verified-badge.svg' | asset_url }}" alt="Verified" class="size-4">
+        </p>
+      </div>
     </div>
   </div>
 </div>
