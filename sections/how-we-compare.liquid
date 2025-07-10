@@ -38,8 +38,10 @@
               ${{ block.settings.our_price }}
             </span>
           </div>
-          <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-            {{ cart.currency.symbol }}{{ block.settings.other_brands }}
+          <div class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
+            <span data-base-price="{{ block.settings.other_brands }}" >
+              ${{ block.settings.other_brands }}
+            </span>
           </div>
         {% endif %}
         {% if block.type == "offer" %}
@@ -47,10 +49,14 @@
             {{ block.settings.name }}
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base  !bg-[#226139] ">
-            {{ cart.currency.symbol }}{{ block.settings.our_price }}
+            <span data-base-price="{{ block.settings.our_price }}" >
+              ${{ block.settings.our_price }}
+            </span>
           </div>
-          <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-            {{ cart.currency.symbol }}{{ block.settings.other_brands }}
+          <div class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
+            <span data-base-price="{{ block.settings.other_brands }}" >
+              ${{ block.settings.other_brands }}
+            </span>
           </div>
         {% endif %}
       {% endfor %}
