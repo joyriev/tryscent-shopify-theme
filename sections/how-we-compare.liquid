@@ -66,11 +66,19 @@
   </div>
 </div>
 
+{% assign lowest_price = product.variants.first.price %}
+
+{% for variant in product.variants %}
+  {% if variant.price < lowest_price %}
+    {% assign lowest_price = variant.price %}
+  {% endif %}
+{% endfor %}
+
 <script>
   
   document.addEventListener("DOMContentLoaded", function () {
 
-    const originalPrice = "{{ product.variants.first.price }}";
+    const originalPrice = "{{ lowest_price }}";
     const convertedPrice = "{{ product.price }}";
     const currencySymbol = "{{ cart.currency.symbol }}";
 
