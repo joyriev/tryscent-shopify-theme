@@ -70,6 +70,9 @@
 
     const priceCents = priceElement.dataset.hardcodedPrice;
 
+    console.log(Shopify.formatMoney);
+    
+
     if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
 
       console.log(Shopify.formatMoney(priceCents, "{{ shop.money_format | escape }}"));
