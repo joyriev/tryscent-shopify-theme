@@ -34,10 +34,10 @@
             {{ block.settings.name }}
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-            {{ block.settings.our_price | money }}
+            {{ cart.currency.symbol }} <span data-hardcoded-price="{{ block.settings.our_price }}">{{ block.settings.our_price }}</span>
           </div>
           <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-            {{ block.settings.other_brands | money }}
+            {{ cart.currency.symbol }}{{ block.settings.other_brands }}
           </div>
         {% endif %}
         {% if block.type == "offer" %}
@@ -45,10 +45,10 @@
             {{ block.settings.name }}
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base  !bg-[#226139] ">
-            {{ block.settings.our_price | money }}
+            {{ cart.currency.symbol }}{{ block.settings.our_price }}
           </div>
           <div data-hardcoded-price="" class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-            {{ block.settings.other_brands | money }}
+            {{ cart.currency.symbol }}{{ block.settings.other_brands }}
           </div>
         {% endif %}
       {% endfor %}
@@ -63,6 +63,19 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const priceElement = document.querySelector("[data-hardcoded-price]");
+
+    const priceCents = priceElement.dataset.hardcodedPrice;
+
+    if (typeof Shopify !== 'undefined' && Shopify.formatMoney) {
+      priceElement.innerHTML = Shopify.formatMoney(priceCents, "{{ shop.money_format | escape }}");
+    }
+  });
+</script>
+
 
 {% schema %}
   {
