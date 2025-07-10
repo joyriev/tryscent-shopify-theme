@@ -74,6 +74,7 @@
 
     const originalPrice = "899";
     const convertedPrice = "{{ product.price }}";
+    const productPrice = "{{ product.price | money_without_currency }}";
     const currencySymbol = "{{ cart.currency.symbol }}";
 
     if (convertedPrice && originalPrice) {
@@ -87,7 +88,12 @@
 
         const convertedPrice = Number(basePrice) * Number(exchangeRate);
 
-        element.innerHTML = `${currencySymbol}${convertedPrice.toFixed(2)}`;
+        if (productPrice.includes(',')) {
+          const formattedPrice = convertedPrice.toFixed(2).replace('.', ',');
+          element.innerHTML = `${currencySymbol}${formattedPrice}`;
+        } else {
+          element.innerHTML = `${currencySymbol}${convertedPrice.toFixed(2)}`;
+        }
       });
     }
   });
