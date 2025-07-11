@@ -478,7 +478,162 @@
         },
         "unpurchasable_product": {
           "title": "Ukjøpelig produkt",
-          "header": "Noen varer ble fjernet fra handlekurven din"
+          "header": "Noen varer ble fjernet fra handlekurven din",
+          "status_column_header": "Ikke tilgjengelig",
+          "message": "Disse varene er ikke tilgjengelige for B2B-bestillinger."
+        },
+        "unpurchasable_product_generic": {
+          "header": "Noen varer ble fjernet fra handlekurven din",
+          "title": "Ukjøpelig produkt",
+          "message": "Disse varene er ikke tilgjengelige.",
+          "status_column_header": "Ikke tilgjengelig"
+        },
+        "unfulfillable_product": {
+          "title": "Levering ikke tilgjengelig",
+          "message": {
+            "one": "%{delivery_method} er ikke lenger tilgjengelig for denne varen.",
+            "other": "%{delivery_method} er ikke lenger tilgjengelig for disse varene."
+          },
+          "default_message": {
+            "one": "Den valgte leveringsmetoden er ikke lenger tilgjengelig for denne varen.",
+            "other": "Den valgte leveringsmetoden er ikke lenger tilgjengelig for disse varene."
+          }
+        },
+        "unshippable_product": {
+          "title": "Ingen levering tilgjengelig",
+          "header": {
+            "one": "Ingen levering tilgjengelig for %{count} vare",
+            "other": "Ingen levering tilgjengelig for %{count} varer"
+          },
+          "message": {
+            "one": "Denne varen vil bli fjernet fra handlekurven din fordi det ikke finnes noen leveringsmetoder tilgjengelig for adressen din.",
+            "other": "Disse varene vil bli fjernet fra handlekurven din fordi det ikke finnes noen leveringsmetoder tilgjengelig for adressen din."
+          },
+          "status_column_header": "Ingen levering"
+        },
+        "price_update": {
+          "title": "Prisoppdatering",
+          "description": "Prisene på disse varene har endret seg og er oppdatert i handlekurven din."
+        },
+        "price_and_quantity_update": {
+          "title": "Pris- og mengdeoppdatering",
+          "description": "Prisene og tilgjengelige mengder for disse varene har endret seg og er oppdatert i handlekurven din."
+        },
+        "out_of_stock": {
+          "description": "Disse varene er ikke lenger tilgjengelige og har blitt fjernet fra handlekurven din.",
+          "items_unavailable": "Noen varer er ikke lenger tilgjengelige og har blitt fjernet fra handlekurven din."
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Utilgjengelig produkt",
+          "other": "Utilgjengelige produkter"
+        },
+        "products_not_available": {
+          "one": "Dette produktet vil bli fjernet fra handlekurven din fordi det ikke er tilgjengelig i ditt land/region.",
+          "other": "Disse produktene vil bli fjernet fra handlekurven din fordi de ikke er tilgjengelige i ditt land/region."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Dette produktet er ikke tilgjengelig i ditt land/område.",
+          "other": "Disse produktene er ikke tilgjengelige i ditt land/område."
+        },
+        "unavailable_label": "Utilgjengelig"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Dette produktet er ikke tilgjengelig for levering til %{location_name}.",
+          "some_products_other": "Disse produktene er ikke tilgjengelige for levering til %{location_name}.",
+          "all_products_one": "Produktet i handlekurven din er ikke tilgjengelig for levering til %{location_name}.",
+          "all_products_other": "Produktene i handlekurven din er ikke tilgjengelige for levering til %{location_name}."
+        },
+        "missing_country_fallback": "landet ditt",
+        "indeterminate_location_fallback": "din plassering",
+        "cart_updated": "Handlekurven din er oppdatert.",
+        "change_address_only": "Endre leveringsadresse for å fortsette.",
+        "change_address_or_remove": "Endre leveringsadresse eller %{remove_action}.",
+        "remove_items_action": {
+          "one": "fjern utilgjengelig vare",
+          "other": "fjern utilgjengelige elementer"
+        },
+        "empty_cart_action": "tøm handlekurven og gå tilbake til butikken"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "other": "Ingen levering tilgjengelig for %{count} varer",
+            "one": "Ingen levering tilgjengelig for %{count} vare"
+          },
+          "message": {
+            "one": "Denne varen vil bli fjernet fra handlekurven din fordi det ikke finnes noen leveringsmetoder tilgjengelig for adressen din.",
+            "other": "Disse varene vil bli fjernet fra handlekurven din fordi det ikke finnes noen leveringsmetoder tilgjengelig for adressen din."
+          },
+          "label": "Ingen levering"
+        }
+      },
+      "order_summary": {
+        "title": "Ordreoversikt",
+        "group_title_label": "Del av \"%{group_title}\"",
+        "number_items": {
+          "other": "%{count} elementer",
+          "one": "%{count} vare"
+        },
+        "view_all_items": {
+          "one": "Vis %{count} element",
+          "other": "Vis alle %{count} elementer"
+        },
+        "more_items_modal": {
+          "search_item": "Søk",
+          "clear_search": "Tøm søk",
+          "empty_results": "Ingen resultater funnet for \"%{searchText}\". Sjekk stavemåten eller bruk et annet ord eller uttrykk.",
+          "number_items_shown": "%{shownNumber} av %{totalNumber} elementer"
+        },
+        "order_name_label": "Bestilling %{name}",
+        "shopping_cart_label": "Handlekurv",
+        "discount_title": "Rabatt",
+        "discount_title_stacking": {
+          "one": "Rabatt",
+          "other": "Rabatter"
+        },
+        "discount_order_stacking": {
+          "one": "Ordre rabatt",
+          "other": "Ordre rabatter"
+        },
+        "discount_not_found": "Kan ikke finne en gyldig rabatt som samsvarer med den angitte koden",
+        "discount_label": "Rabattkode",
+        "discount_placeholder": "Rabattkode",
+        "discount_code_applied": "Rabattkode brukt",
+        "discount_code_allocations_mismatch": "Din <strong style=\"text-transform:uppercase\">%{code}</strong> rabattkode har endret seg. Gå gjennom handlekurven din og prøv igjen.",
+        "gift_card_applied": "Gavekort brukt",
+        "gift_card_title": "Gavekort",
+        "enter_shipping_address": "Skriv inn leveringsadresse",
+        "gift_card_label": "Gavekort",
+        "gift_card_placeholder": "Gavekort",
+        "gift_card_and_discount_title": "Rabattkode eller gavekort",
+        "gift_card_and_discount_label": "Rabattkode eller gavekort",
+        "gift_card_and_discount_placeholder": "Rabattkode eller gavekort",
+        "remove_gift_card_label": "Klar gavekort",
+        "remove_discount_label": "Fjern rabatt",
+        "return_restocking_fee_label": "Restocking gebyr",
+        "return_shipping_fee_label": "Returfrakt",
+        "free_shipping_discount_label": "Gratis frakt",
+        "applied_free_shipping_discount_label": "Brukt",
+        "apply_discount_button_label": "Søk",
+        "applied_discount_message": "%{amount} avslag på total ordrepris",
+        "discount_has_been_applied": "Rabatt er blitt brukt",
+        "gift_card_has_been_removed": "Gavekortet er fjernet",
+        "discount_has_been_removed": "Rabatten er fjernet",
+        "gift_card_has_been_applied": "Gavekort er brukt",
+        "gift_card_subscriptions_notice": "Gavekort gjelder kun for din første betaling",
+        "discount_already_applied": "En rabatt er blitt brukt på denne bestillingen. Du kan ikke legge til en annen rabatt.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkode er ikke gyldig for varene i handlekurven din",
+        "discount_requires_customer_notice": "Skriv inn leveringsinformasjonen din for å bruke rabattkoden <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkode er ikke tilgjengelig for deg akkurat nå",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkode krever kvalifisert kunde",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkode er ikke tilgjengelig for din leveringsadresse",
+        "customer_already_used_once_per_customer_discount_notice": "Rabattkoden <strong style=\"text-transform:uppercase\">%{code}</strong> er allerede brukt",
+        "subtotal_label": "Delsum",
+        "subtotal_label_with_quantity": {
+          "one": "Delsum · %{count} vare"
         }
       }
     },
