@@ -433,8 +433,101 @@
         },
         "unpurchasable_product": {
           "title": "Onkoopbare produk",
-          "header": "Sommige items is uit jou mandjie verwyder"
+          "header": "Sommige items is uit jou mandjie verwyder",
+          "status_column_header": "Nie beskikbaar nie",
+          "message": "Hierdie items is nie beskikbaar vir B2B-bestellings nie."
+        },
+        "unpurchasable_product_generic": {
+          "title": "Onkoopbare produk",
+          "header": "Sommige items is uit jou mandjie verwyder",
+          "message": "Hierdie items is nie beskikbaar nie.",
+          "status_column_header": "Nie beskikbaar nie"
+        },
+        "unfulfillable_product": {
+          "title": "Aflewering nie beskikbaar nie",
+          "message": {
+            "one": "%{delivery_method} is nie meer beskikbaar vir hierdie item nie.",
+            "other": "%{delivery_method} is nie meer beskikbaar vir hierdie items nie."
+          },
+          "default_message": {
+            "one": "Die gekose afleweringsmetode is nie meer beskikbaar vir hierdie item nie.",
+            "other": "Die gekose afleweringsmetode is nie meer beskikbaar vir hierdie items nie."
+          }
+        },
+        "unshippable_product": {
+          "header": {
+            "one": "Geen aflewering beskikbaar vir %{count} item nie",
+            "other": "Geen aflewering beskikbaar vir %{count} items nie"
+          },
+          "title": "Geen aflewering beskikbaar nie",
+          "status_column_header": "Geen aflewering nie",
+          "message": {
+            "one": "Hierdie item sal uit jou mandjie verwyder word omdat daar geen afleweringsmetodes beskikbaar is vir jou adres nie.",
+            "other": "Hierdie items sal uit jou mandjie verwyder word omdat daar geen afleweringsmetodes beskikbaar is vir jou adres nie."
+          }
+        },
+        "price_update": {
+          "title": "Prysopdatering",
+          "description": "Pryse vir hierdie items het verander en is in jou mandjie opgedateer."
+        },
+        "price_and_quantity_update": {
+          "description": "Pryse en beskikbare hoeveelhede vir hierdie items het verander en is in jou mandjie opgedateer.",
+          "title": "Prys- en hoeveelheidopdatering"
+        },
+        "out_of_stock": {
+          "description": "Hierdie items is nie meer beskikbaar nie en is uit jou mandjie verwyder.",
+          "items_unavailable": "Sommige items is nie meer beskikbaar nie en is uit jou mandjie verwyder."
         }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Onbeskikbare produk",
+          "other": "Onbeskikbare produkte"
+        },
+        "products_not_available": {
+          "other": "Hierdie produkte sal uit jou mandjie verwyder word omdat hulle nie in jou land/streek beskikbaar is nie.",
+          "one": "Hierdie produk sal uit jou mandjie verwyder word omdat dit nie in jou land/streek beskikbaar is nie."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Hierdie produk is nie beskikbaar in jou land/streek nie.",
+          "other": "Hierdie produkte is nie beskikbaar in jou land/streek nie."
+        },
+        "unavailable_label": "Onbeskikbaar"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Hierdie produk is nie beskikbaar vir aflewering na %{location_name} nie.",
+          "some_products_other": "Hierdie produkte is nie beskikbaar vir aflewering na %{location_name} nie.",
+          "all_products_one": "Die produk in jou mandjie is nie beskikbaar vir aflewering na %{location_name} nie.",
+          "all_products_other": "Die produkte in jou mandjie is nie beskikbaar vir aflewering na %{location_name} nie."
+        },
+        "missing_country_fallback": "jou land",
+        "indeterminate_location_fallback": "jou ligging",
+        "cart_updated": "Jou mandjie is opgedateer.",
+        "change_address_only": "Verander afleweringsadres om voort te gaan.",
+        "change_address_or_remove": "Verander afleweringsadres of %{remove_action}.",
+        "remove_items_action": {
+          "one": "verwyder onbeskikbare item",
+          "other": "verwyder onbeskikbare items"
+        },
+        "empty_cart_action": "leë mandjie en keer terug na winkel"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Geen aflewering beskikbaar vir %{count} item nie",
+            "other": "Geen aflewering beskikbaar vir %{count} items nie"
+          },
+          "message": {
+            "other": "Hierdie items sal uit jou mandjie verwyder word omdat daar geen afleweringsmetodes beskikbaar is vir jou adres nie.",
+            "one": "Hierdie item sal uit jou mandjie verwyder word omdat daar geen afleweringsmetodes beskikbaar is vir jou adres nie."
+          },
+          "label": "Geen aflewering nie"
+        }
+      },
+      "order_summary": {
+        "title": "Bestel opsomming",
+        "group_title_label": "Deel van \"%{group_title}\""
       }
     }
   },
