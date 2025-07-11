@@ -3540,7 +3540,76 @@
       "default": "Standaard",
       "back_button_accessibility_label": "Terug na {{paymentMethodStepTitle}}",
       "generic_card": "Kaart",
-      "expiration_warning_button_accessibility_label": "Wys vervaldatum waarskuwing vir {{paymentMethodName}} wat eindig op {{lastDigits}}"
+      "expiration_warning_button_accessibility_label": "Wys vervaldatum waarskuwing vir {{paymentMethodName}} wat eindig op {{lastDigits}}",
+      "card_update_consent_subscriptions": "Hierdie betaalmetode sal gestoor word vir toekomstige aankope en kan gebruik word vir enige herhalende of uitgestelde aankoop.",
+      "expired": "Hierdie kaart is verval",
+      "card_update_consent": "Hierdie betaalmetode sal vir toekomstige aankope gestoor word.",
+      "digital_wallet_title": "Digitale Beursie",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Voeg Google Pay-betalingsmetode by",
+        "loading_accessibility_message": "Laai Google Pay",
+        "loading": "Laai Google Pay",
+        "errors": {
+          "generic": "Daar was 'n probleem met Google Pay. Probeer weer of gebruik 'n ander betaalmetode.",
+          "missing_billing_address": "Google Pay vereis 'n faktuuradres. Voeg asseblief een by jou rekening."
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "Voeg PayPal-betalingsmetode by",
+        "loading_accessibility_message": "Laai PayPal"
+      },
+      "credit_or_debit_card_title": "Krediet- of debietkaart",
+      "apple_pay": {
+        "loading": "Laai Apple Pay",
+        "errors": {
+          "generic": "Daar was 'n probleem met Apple Pay. Probeer weer of gebruik 'n ander betaalmetode.",
+          "not_available": "Apple Pay is nie beskikbaar op hierdie toestel nie.",
+          "missing_billing_address": "Apple Pay vereis 'n faktuuradres. Voeg asseblief een by jou rekening."
+        }
+      },
+      "store_credit": {
+        "label": "Winkelkrediet",
+        "accesibility_label": "Winkelkrediet - {{formattedBalance}}",
+        "expirable_amounts_button": "Kyk na vervalbare bedrae",
+        "details_modal": {
+          "expiration_date_label": "Vervaldatum",
+          "amount_label": "Bedrag",
+          "title": "Verstrygbaar winkelkrediet",
+          "balance_label": "Balans",
+          "date_label": "Datum",
+          "event_label": "Gebeurtenis",
+          "events": {
+            "order_payment": "Bestelling betaling",
+            "adjustment": "Aanpassing",
+            "order_refund": "Bestelling terugbetaling",
+            "payment_failure": "Betalingsfout",
+            "order_cancellation": "Bestelling kansellasie",
+            "payment_returned": "Betaling terugbetaal",
+            "tax_finalization": "Belastingafhandeling"
+          },
+          "expirable_amount_label": "Totale vervalbare bedrag",
+          "expirable_balance_info": "Sommige van jou balans sal op 'n toekomstige datum verval",
+          "expirable_amounts_info": "Bedrae wat vroeër verval, word eerste by die betaalpunt toegepas",
+          "pagination": {
+            "load_more_label": "Laai meer",
+            "load_more_accessibility_label": "Laai meer vervalbare bedrae"
+          },
+          "expirable_amounts_button": "Kyk",
+          "expired_amounts_button": "Kyk na vervalde bedrae"
+        },
+        "expirable_amounts_label": "Verstrygbaar bedrae"
+      },
+      "expires_soon": "Hierdie kaart verval binnekort",
+      "payment_details": {
+        "billing_title": "Faktuuradres",
+        "title": "Betalingsmetode besonderhede",
+        "payment_method_expiring_on": "Verval op {{expiryDate}}",
+        "card_info_title": "Kaartinligting",
+        "close_payment_modal": "Maak toe",
+        "preauthorized_payments": "Voorgereguleerde betalings",
+        "payment_method_expired_on": "Verstryk op {{expiryDate}}",
+        "credit_card_details_accessibility_label": "eindigend in {{lastDigits}}"
+      }
     }
   }
 }
