@@ -2348,9 +2348,156 @@
           "previous": "Forrige side",
           "next": "Neste side",
           "label": {
-            "one": "%{first} - %{last} av %{count} butikk"
+            "one": "%{first} - %{last} av %{count} butikk",
+            "other": "%{first} - %{last} av %{count} butikker"
+          }
+        },
+        "reveal_more_label": {
+          "other": "Vis %{count} flere steder",
+          "one": "Vis %{count} flere steder"
+        }
+      },
+      "captcha": {
+        "title": "Fullfør CAPTCHA for å fortsette",
+        "errors": {
+          "not_solved": "Fullfør CAPTCHA for å fortsette"
+        }
+      },
+      "clipboard": {
+        "copied": "Kopiert",
+        "failed_to_copy": "Klarte ikke å kopiere"
+      },
+      "discount_errors": {
+        "generic_error": "Bestillingen din kunne ikke behandles fordi rabattkoden din ikke lenger er tilgjengelig. Gå gjennom totalbeløpet for bestillingen din og prøv igjen."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Du har ikke lenger tillatelse til å legge inn B2B-bestillinger. %{logout_url} for å legge inn en personlig bestilling i stedet.",
+        "log_out_link_text": "Logg ut",
+        "lost_permissions_subtitle": "Du har ikke lenger tillatelse til å legge inn B2B-bestillinger, logg ut for å legge inn en personlig bestilling.",
+        "lost_permissions_title": "Ingen lokasjonstillatelser"
+      },
+      "shop_pay_external": {
+        "title": "Shop Pay-kasse",
+        "errors": {
+          "problem_loading": "Det oppstod et problem med å laste Shop Pay",
+          "try_again_later": "Sjekk tilkoblingen din eller lukk dette vinduet og prøv igjen om noen øyeblikk.",
+          "checkout_has_expired": "Din utsjekking har utløpt. Lukk dette vinduet og prøv å sjekke ut igjen fra {{shopName}}."
+        },
+        "return_to_store": "Gå tilbake til {{shopName}}",
+        "return_to_store_simple": "Gå tilbake til butikken"
+      },
+      "wallets": {
+        "return_to_store": "Gå tilbake til butikken",
+        "return_to_checkout": "Gå tilbake til kassen",
+        "redirect_hint": "Du vil bli bedt om å logge inn med {{walletName}}.",
+        "logged_in": "Tilkoblet til {{email}}",
+        "shipping_line_label": "Frakt",
+        "connect_shipping_methods": "{{method1}} og {{method2}}",
+        "payment_in_progress_title": "Betaling pågår",
+        "payment_in_progress_body": "Din betaling behandles. Bestillingen din vil bli fullført snart.",
+        "call_to_action": "Betal med {{walletName}}",
+        "redirection_notice": "Etter å ha klikket på \"{{buttonLabel}}\", vil du bli omdirigert til {{walletName}} for å fullføre kjøpet ditt sikkert.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} ikke tilgjengelig",
+            "description": "{{walletName}} var ikke tilgjengelig. Bruk en annen betalingsmetode eller prøv igjen senere.",
+            "instructions": "Det oppsto et problem med {{walletName}}. Gå tilbake til butikken for å prøve igjen eller velg en annen betalingsmåte.",
+            "unavailable_for_country": "{{walletName}} er ikke tilgjengelig i {{countryName}}. Velg en annen betalingsmetode for å fullføre kjøpet ditt"
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} er for øyeblikket utilgjengelig for bestillingen din. For å fortsette kjøpet, velg en annen betalingsmetode."
+          },
+          "discount_code": "Kan ikke bruke denne rabattkoden. Vennligst sjekk koden din og prøv igjen.",
+          "generic": "Det oppsto et problem med {{walletName}}. Prøv igjen eller bruk en annen betalingsmetode.",
+          "terminal": "Det oppsto et problem med {{walletName}}. Vennligst bruk en annen betalingsmetode.",
+          "detour": {
+            "price_change": "Noen varepriser har endret seg. Lukk {{walletName}} for å gjennomgå bestillingen din og prøv igjen.",
+            "queue": "Du har blitt plassert i en kø for utsjekking. Lukk {{walletName}} for å fortsette.",
+            "stock_problems": "Noen varer er ikke lenger tilgjengelige. Lukk {{walletName}} og prøv igjen.",
+            "currency_change": "Du kan ikke bruke en annen adresse med {{walletName}}. Bruk den opprinnelige adressen, eller prøv en annen betalingsmetode."
+          },
+          "unsupported": {
+            "wallet_is_unavailable": "{{walletName}} kan ikke brukes med denne adressen. Velg en annen adresse eller lukk {{walletName}} for å fullføre kjøpet ditt",
+            "address": "Forhandleren kan ikke levere til denne adressen",
+            "postal_code": "Denne plasseringen støttes ikke"
+          },
+          "outdated": {
+            "shipping_method": "Fraktalternativene har endret seg for bestillingen din. Gå gjennom valget ditt.",
+            "payment_terms": "Betalingsbetingelsene har endret seg. Vennligst gjennomgå bestillingen din"
+          },
+          "invalid": {
+            "shipping_address": "Skriv inn en gyldig leveringsadresse",
+            "billing_address": "Skriv inn en gyldig faktureringsadresse",
+            "shipping_option": "Velg et gyldig fraktalternativ",
+            "email": "Skriv inn en gyldig e-postadresse",
+            "zone": "Skriv inn en gyldig stat / provins",
+            "emirate": "Skriv inn en gyldig emirat",
+            "postal_code": "Skriv inn en gyldig postnummer / postkode",
+            "billing_phone": "Skriv inn et gyldig telefonnummer for faktureringsadressen",
+            "billing_zone": "Skriv inn en gyldig faktureringsadresse stat / provins",
+            "phone": "Skriv inn et gyldig telefonnummer",
+            "reduction_code": "Skriv inn en gyldig rabattkode eller gavekort",
+            "billing_must_match_shipping": "Må samsvare med leveringsadressen",
+            "billing_zip": "Skriv inn en gyldig faktureringsadresse postnummer / postkode"
+          },
+          "missing": {
+            "first_name": "Skriv inn et fornavn",
+            "billing_first_name": "Skriv inn et fornavn for fakturaadressen",
+            "last_name": "Skriv inn et etternavn",
+            "address1": "Skriv inn en adresse",
+            "billing_address1": "Skriv inn en fakturaadresse",
+            "address2": "Skriv inn en leilighet, suite, osv.",
+            "billing_address2": "Skriv inn en faktureringsadresse leilighet, suite, osv.",
+            "city": "Skriv inn en by",
+            "billing_city": "Skriv inn en faktureringsadresse by",
+            "province": "Velg en stat / provins",
+            "billing_province": "Velg en faktureringsadresse stat / provins",
+            "country": "Velg et land/område",
+            "zip": "Skriv inn et postnummer",
+            "billing_zip": "Skriv inn et faktureringsadresse postnummer",
+            "phone": "Skriv inn et telefonnummer",
+            "contact_info": "Skriv inn kontaktinformasjon"
+          },
+          "formatting": {
+            "name_contains_emojis": "Slett emoji fra navnet ditt",
+            "postal_code_contains_emoji": "Slett emoji fra postnummeret ditt",
+            "first_name_too_long": "Fornavn inneholder for mange bokstaver",
+            "last_name_too_long": "Etternavnet inneholder for mange bokstaver",
+            "address_too_long": "Adresselinjen er for lang"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Din leveringsadresse er ugyldig. Velg en annen adresse eller bruk en ny."
+        },
+        "scrim": {
+          "and_return_to_checkout": "og gå tilbake til kassen",
+          "cancel": "Avbryt",
+          "continue_purchase_in_window": "Fortsett kjøpet ditt i {{walletName}}-vinduet"
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "Reduser størrelsen på notatet til 5000 eller færre tegn."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Gavekortprisen må være større enn 0.",
+            "gift_card_price_must_not_exceed_limit": "Gavekortprisen må ikke overstige %{gift_card_limit}.",
+            "subtotal_limit_reached": "Maksimal verdi for linjeelementer er nådd."
           }
         }
+      },
+      "units": {
+        "milligram": "mg",
+        "gram": "g",
+        "centiliter": "kl",
+        "milliliter": "ml",
+        "kilogram": "kg",
+        "meter": "m",
+        "ounce": "unser",
+        "cubic_meter": "m³",
+        "centimeter": "cm",
+        "millimeter": "mm",
+        "square_meter": "m²",
+        "pound": "lb"
       }
     },
     "sentence": {
