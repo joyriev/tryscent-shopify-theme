@@ -175,7 +175,71 @@
             "installments_unsupported_subscriptions": "Afbetalings ondersteun nie intekeninge nie.",
             "installments_unsupported_billing": "Afbetalings ondersteun nie hierdie faktuuradres nie.",
             "installments_ineligible_line_item": "Afbetalings is gedeaktiveer vir 'n lynitem in hierdie aankoop.",
-            "shop_cash_not_allowed": "Winkel kontant nie toegelaat sonder Winkel Betaal nie."
+            "shop_cash_not_allowed": "Winkel kontant nie toegelaat sonder Winkel Betaal nie.",
+            "shop_cash_unsupported_subscriptions": "Shop Cash ondersteun nie intekeninge nie.",
+            "shop_cash_not_available": "Shop Cash word nie in hierdie uitklok ondersteun nie.",
+            "shop_cash_not_enabled": "Shop Cash is nie geaktiveer vir hierdie winkel nie.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash laat nie die aankoop van geskenkkaarte toe nie.",
+            "invalid_address_type": "Die verskafde adres tipe is ongeldig vir hierdie betaalmetode.",
+            "unexpected_retail_attributions": "Kleinhandeltoewysings onverwags verskaf vir kredietkaartbetaling.",
+            "missing_retail_attributions": "Kleinhandeltoewysings is vereis vir handmatig ingevoerde kredietkaartbetalings.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash ondersteun nie hierdie betaalproses nie.",
+            "invalid_card_source": "Hierdie sessie het nie toestemming om hierdie kaartbron te gebruik nie.",
+            "shop_cash_unsupported_shipping": "Shop Cash ondersteun nie handelsware sonder versending nie.",
+            "wallet_content_missing": "Sakinhoud ontbreek.",
+            "payment_instrument_not_found": "Kon nie betaalmetode vind nie",
+            "unauthorized_capture_method": "Die konfigurasie van die betaalvasleggingmetode is nie toegelaat nie.",
+            "saved_payment_methods_not_allowed": "Gestoor betaalmetodes is nie toegelaat nie.",
+            "saved_payment_methods_not_enabled": "Gestoor betaalmetodes is nie geaktiveer vir hierdie winkel nie.",
+            "saved_payment_methods_cvv_verification_disabled": "Die gekose betaalmetode vereis CVV-verifikasie wat nie vir hierdie winkel geaktiveer is nie. Kies 'n ander betaalmetode.",
+            "store_credit_not_enabled": "Winkelkrediet is nie vir hierdie winkel geaktiveer nie.",
+            "store_credit_account_not_found": "Winkelkredietrekening nie gevind nie.",
+            "store_credit_account_mismatch": "Winkelkredietrekening stem nie ooreen met die koper se identiteit nie.",
+            "store_credit_mismatched_currency": "Die winkelkredietrekening se geldeenheid stem nie ooreen met die betaalpunt se geldeenheid nie.",
+            "store_credit_insufficient_funds": "Daar is onvoldoende fondse in die winkelkredietrekening.",
+            "store_credit_buying_gift_card": "Jy kan nie winkelkrediet gebruik om 'n geskenkkaart te koop nie.",
+            "gift_cards_not_allowed_for_b2b": "Geskenkkaarte is nie toegelaat in B2B-winkels nie.",
+            "paypal_express_address_invalid": "PayPal het 'n ongeldige adres teruggestuur.",
+            "method_required": "'n Betalingsmetode moet voorgestel word.",
+            "shop_cash_unsupported_currency": "Shop Cash ondersteun nie hierdie geldeenheid nie.",
+            "market_manager_blocks_wallet_payments": "Betalingsmetode word nie deur die markbestuurder ondersteun nie."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Winkel aanvaar nie fooitjies nie.",
+            "tips_not_allowed_for_b2b": "Wenke is nie toegelaat in B2B-winkels nie.",
+            "only_one_tip_line_allowed": "Meervoudige wenklyne word nie ondersteun nie.",
+            "currency_change_reset": "Wenks is teruggestel as gevolg van geldeenheidverandering.",
+            "tips_not_allowed_for_deferred_purchase_options": "Wenke word nog nie ondersteun vir uitgestelde aankoopopsies nie."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Hierdie konsepbestelling bestaan nie in die huidige winkel nie.",
+            "staff_member_not_exist": "Hierdie personeel bestaan nie in die huidige winkel nie.",
+            "location_not_exist": "Hierdie ligging bestaan nie in die huidige winkel nie.",
+            "point_of_sale_device_not_exist": "Hierdie verkooppunttoestel bestaan nie in die huidige winkel nie.",
+            "unresolvable_target_merchandise_lines": "Die voorgestelde verkooptoeskrywings is onoplosbaar gegewe die huidige onderhandelingskonteks."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Jou koper se voorstel moet nie-onderhandelbare_terme bevat.",
+            "invalid_signature": "Die handtekening vir {{target_terms}} is ongeldig."
+          },
+          "inventory": {
+            "missing_quantity_value": "Hoeveelheidsveld ontbreek in die koper se voorraadlyne.",
+            "changing_behavior_not_allowed": "Hierdie kliënt het nie toestemming om voorraadgedrag te verander nie.",
+            "only_one_inventory_behavior_allowed": "Tans word slegs een voorraadgedrag per uitklok toegelaat."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Weiering van fooie is nie toegelaat vir hierdie uitklok nie."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Kleinhandeltoewysing is nie toegelaat vir hierdie uitklok nie.",
+            "retail_attribution_required": "Kleinhandeltoewysing is vereis vir hierdie uitklok."
+          },
+          "captcha": {
+            "metadata_missing": "Om 'n captcha te voltooi is vereis vir hierdie uitklok.",
+            "token_missing": "'n Captcha-token moet verskaf word om hierdie uitklok te voltooi.",
+            "metadata_mismatch": "Verskafde captcha-verskaffer en tipe stem nie ooreen met die verwagte waardes nie.",
+            "job_enqueue_failed": "Die captcha-valideringswerk kon nie in die waglys geplaas word nie.",
+            "job_already_queued": "Captcha-validasie is reeds in die ry geplaas vir hierdie captcha-token."
           }
         }
       },
