@@ -1881,7 +1881,151 @@
           "current": "Nåværende forsendelsessted"
         },
         "pick_up_in_store_marker": {
-          "current": "Nåværende forsendelsessted"
+          "current": "Nåværende forsendelsessted",
+          "shipping": "Hentested"
+        },
+        "fulfillment": {
+          "product_image_label": "Produktbilde",
+          "description_label": "Beskrivelse",
+          "unfulfilled_table_title": "Varer som klargjøres for sending",
+          "fulfilled_table_title": "Varer i denne forsendelsen",
+          "quantity_label": "Antall"
+        },
+        "order_updates_description_missing": "Du mottar ikke fraktoppdateringer.",
+        "order_updates_subscribe_to_email_notifications": "Få fraktoppdateringer på e-post",
+        "order_updates_subscribe_to_email_or_phone_notifications": "Få fraktoppdateringer via e-post eller tekstmelding",
+        "order_updates_subscribe_to_phone_notifications": "Få fraktoppdateringer via tekstmelding",
+        "order_updates_submit_subscription": "Send",
+        "track_shipment": "Spor forsendelse",
+        "other_options": "Andre alternativer",
+        "delivery_information_label": "Leveringsinformasjon:",
+        "gift_card_sent_confirmation": "Gavekort sendt",
+        "qr_code": {
+          "send_link_to_phone": "Eller send en lenke til telefonen din",
+          "title": "Spor på telefonen din"
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Skann med telefonen din"
+          },
+          "sms": {
+            "title": "Eller send en lenke til telefonen din"
+          }
+        },
+        "view_business_customer_account": "Se konto",
+        "breadcrumbs_submitted": "Innsendt",
+        "breadcrumbs_in_review": "Under vurdering",
+        "breadcrumbs_confirmed": "Bekreftet",
+        "missing_shipping_address_banner": {
+          "title": "Bestillingen har ikke en leveringsadresse",
+          "text_html": "%{contact_us} for å legge til adressen din",
+          "contact_us": "Kontakt oss"
+        },
+        "first_payment_complete": "Første betaling fullført",
+        "in_store_purchase": "Kjøp i butikk",
+        "location_title": "Lokasjon",
+        "company_location_section_title": "Selskap og beliggenhet",
+        "thank_you_ready_for_picked_up": "Bestillingen din ble hentet på %{address}.",
+        "ready_for_delivery": "Klar for levering",
+        "order_updates_subscribe_to_email_notifications_failed": "Vi kan ikke lagre denne e-posten for oppdateringer. Vennligst prøv igjen eller bruk en annen e-post.",
+        "order_updates_subscribe_to_email_notifications_email_already_exists": "E-posten du skrev inn finnes allerede.",
+        "subscriptions_management": {
+          "title": "Abonnement",
+          "description": "Fortsett til kontoen din for å se og administrere abonnementene dine.",
+          "button_label": "Administrer abonnementet ditt"
+        },
+        "manage_order_label": "Administrer bestillingen din",
+        "gift_card_confirmation_by_text_typ": {
+          "one": "Du vil motta en tekstmelding med gavekortet ditt om noen minutter.",
+          "other": "Du vil motta en tekstmelding med gavekortene dine om noen minutter."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "one": "Du vil motta en e-post med gavekortet ditt om noen minutter.",
+          "other": "Du vil motta en e-post med gavekortene dine om noen minutter."
+        },
+        "gift_card_email_title": {
+          "one": "Gavekort ble sendt på e-post",
+          "other": "Gavekort ble sendt på e-post"
+        },
+        "gift_card_text_title": {
+          "one": "Gavekort ble sendt via tekstmelding",
+          "other": "Gavekort ble sendt via tekstmelding"
+        },
+        "resend_gift_cards_by_email": "Send e-post på nytt",
+        "resend_gift_cards_by_text": "Send tekstmelding på nytt",
+        "gift_card_resent_confirmation": {
+          "one": "Gavekortet ble sendt på nytt.",
+          "other": "Gavekort ble sendt på nytt."
+        },
+        "gift_card_resend_failure": {
+          "other": "Det oppstod et problem med å sende gavekortene dine på nytt. Prøv igjen eller kontakt oss.",
+          "one": "Det oppstod et problem med å sende gavekortet ditt på nytt. Prøv igjen eller kontakt oss."
+        },
+        "verify_shop_account_title": "Verifiser din Shop-konto",
+        "vat_invoices": {
+          "title": "MVA-fakturaer"
+        },
+        "verify_shop_account_message": "Informasjonen din ble lagret hos Shop, bekreft kontoen din for å bruke den automatisk i millioner av butikker.",
+        "verify_shop_account_confirmation": "Betalingsdetaljer lagret",
+        "announcement": {
+          "close": "Lukk"
+        },
+        "verify_shop_account_cta": "Bekreft kontoen din"
+      },
+      "vaulted": {
+        "change_button": "Endre"
+      },
+      "review": {
+        "title": "Gjennomgang",
+        "review_title": "Fullfør bestillingen din",
+        "review_and_confirm_title": "Gjennomgå og bekreft",
+        "checkout_as_guest": "Sjekk ut som gjest",
+        "account_more_actions": "Flere handlinger for denne kontoen",
+        "checkout_a_different_way": "Sjekk ut en annen måte",
+        "blocks": {
+          "contact_method_title": "Kontakt",
+          "billing_address_title": "Fakturering",
+          "shipping_address_title": "Send til",
+          "shipping_method_title": "Fraktmetode",
+          "payment_method_title": "Betalingsmetode",
+          "change_link_label": "Endre",
+          "change_contact_method_link_label": "Endre kontaktinformasjon",
+          "change_billing_address_link_label": "Endre faktureringsadresse",
+          "change_shipping_address_link_label": "Endre leveringsadresse",
+          "change_payment_method_link_label": "Endre betalingsmetode",
+          "change_shipping_method_link_label": "Endre fraktmetode",
+          "pick_up_in_store_shipping_method_html": "Henting i butikk · %{location_name}",
+          "purchase_order_number_title": "PO-nummer",
+          "change_purchase_order_number_label": "Endre PO-nummer",
+          "change_delivery_method_link_label": "Endre leveringsmetode",
+          "no_address": "(Ingen adresse)",
+          "no_purchase_order_number": "(Ingen PO-nummer)",
+          "due_after_order_reviewed_html": "Forfall etter at bestillingen er gjennomgått",
+          "review_title_free_order": "Gå gjennom og fullfør bestillingen din",
+          "payment_method_saved_company_location": "Lagre kort for dette stedet",
+          "company_location": "Selskapslokasjon"
+        },
+        "block_title": "Gå gjennom informasjonen din",
+        "item_header": {
+          "change_value": "Endre verdi",
+          "section": "Seksjon",
+          "value": "Verdi"
+        }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Send meg e-post med nyheter og tilbud",
+        "post_accept_marketing_checkbox_label": "Du er abonnert på å motta nyheter og tilbud på e-post",
+        "pending_accept_marketing_checkbox_label": "Sjekk e-posten din for å bekrefte abonnementet ditt på nyheter og tilbud",
+        "accept_sms_checkbox_label": "Send meg en melding med nyheter og tilbud",
+        "disclaimer": {
+          "privacy_policy": "Personvernerklæring",
+          "terms_of_service": "Vilkår for bruk"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Personvernerklæring",
+            "terms_of_service": "Vilkår for bruk"
+          }
         }
       }
     },
