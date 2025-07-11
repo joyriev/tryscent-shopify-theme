@@ -1953,11 +1953,389 @@
       "no_address_location": {
         "title": "Ligging sonder adres",
         "alt_header": "Ontbrekende versendingsadres",
-        "header": "Jy het nie 'n versendingsadres vir hierdie ligging nie"
+        "header": "Jy het nie 'n versendingsadres vir hierdie ligging nie",
+        "email_us_button_label": "Stuur vir ons 'n e-pos",
+        "message": "Kontak ons om 'n adres vir hierdie ligging by te voeg om die uitcheck te voltooi."
       },
       "cart_checkout_validation": {
         "runtime_error": "Daar was 'n probleem met die verwerking van jou versoek, kontak asseblief die winkel eienaar."
+      },
+      "order_errors": {
+        "inventory_reservation_failure": "Sommige items is nie meer beskikbaar nie.",
+        "network_failure": "Jou bestelling kon nie ingedien word nie weens 'n netwerkfout. Kontroleer jou verbinding en probeer weer.",
+        "creation_failure": "Daar was 'n probleem met die skep van jou bestelling. Probeer weer, of kontak ons vir meer besonderhede."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Daar was 'n probleem met die verwerking van jou bestelling. Probeer weer oor 'n paar minute."
+      },
+      "session_errors": {
+        "session_not_unique": "Daar was 'n probleem met die verwerking van jou bestelling. Ververs hierdie bladsy om terug te keer na die winkel.",
+        "session_already_finished": "Hierdie bestelling is reeds ingedien. Jy kan teruggaan na die winkel om 'n nuwe bestelling te begin."
+      },
+      "pickup_point": {
+        "location_is_currently_closed": "Gesluit",
+        "business_hours": "Oopmaakure",
+        "or": "of",
+        "search_button": "Soek",
+        "open_twenty_four_hours": "Oop 24/7",
+        "address_label": "Adres",
+        "no_business_hours": "Geen openingstye beskikbaar nie",
+        "selector_tab_list": "Lys",
+        "title": "Afhaalpunt",
+        "selector_tabs": "Afhaalpunt kieser",
+        "selector_tab_map": "Kaart",
+        "pickup_unavailable_banner_title": {
+          "one": "Geen afhaalpunte beskikbaar vir jou item nie",
+          "other": "Geen afhaalpunte beskikbaar vir jou items nie"
+        },
+        "could_not_resolve_address": "Jou adres kon nie gevind word nie. Probeer weer of gebruik 'n ander adres",
+        "no_pickup_points_near_you": "Geen afhaalpunte naby die gekose adres gevind nie",
+        "paginator": {
+          "next_accessibility_label": "Volgende bladsy",
+          "previous_accessibility_label": "Vorige bladsy",
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} van %{count} punt",
+            "other": "%{pickup_point_index} van %{count} punte"
+          },
+          "header": {
+            "one": "Wys %{first} - %{last} van %{count} punt",
+            "other": "Wys %{first} - %{last} van %{count} punte"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} van %{count} punt",
+            "other": "%{first} - %{last} van %{count} punte"
+          }
+        },
+        "no_pickup_points_found": "Geen afhaalpunte gevind nie",
+        "no_pickup_points_near_location": "Geen afhaalpunte naby jou ligging gevind nie",
+        "change": "Verander ligging",
+        "number_of_pickup_points_near_location": {
+          "other": "%{count} afhaalpunte naby jou ligging",
+          "one": "%{count} afhaalpunt naby jou ligging"
+        },
+        "waiting_on_pickup_point_location_notice": "Soek na afhaalpunte...",
+        "geolocation": {
+          "errors": {
+            "permission_not_allowed": "Laat toe om jou ligging te deel.",
+            "unsuported_by_browser": "Kry van geoligging word nie deur jou blaaier ondersteun nie. Probeer weer of gebruik 'n ander blaaier.",
+            "permission_denied": "Kon nie jou ligging kry nie. Probeer weer."
+          },
+          "shared_location_button": "Gebruik my ligging"
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "Keer terug na mandjie",
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} om die hoeveelhede by te werk",
+        "subscription_changed": "Een van jou intekeninge het verander.",
+        "company_location_changed": "Jou mandjie is opgedateer. Hersien jou bestelling voordat jy dit indien.",
+        "company_location_changed_product_removed": "Jou mandjie is opgedateer omdat sommige produkte nie by hierdie ligging beskikbaar is nie. Hersien jou bestelling voordat jy dit indien.",
+        "individual_violations_title": {
+          "PaymentViolations": "Faktuuradres",
+          "DeliveryViolations": "Afleweringsadres",
+          "OtherViolations": "Bestelinligting",
+          "UnhandledViolations": "Bestelinligting"
+        },
+        "violations_title": "{{violation}} ontbreek of is ongeldig",
+        "all_violations_email_link": "e-pos",
+        "all_violations_content": "Bel of {{emailLink}} ons om hierdie inligting op te dateer en jou bestelling te voltooi:",
+        "editable_shipping_address_violations_email_link": "kontak ons",
+        "editable_shipping_address_violations_message_title": "Voeg hierdie inligting by om jou bestelling te voltooi:",
+        "editable_shipping_address_violations_message_footer": "Om die adres vir hierdie ligging permanent op te dateer, {{emailLink}}.",
+        "shipping_address_incomplete_title": "Versendingsadres is onvolledig",
+        "calculating_shipping": "Versending word nog bereken. Probeer weer oor 'n paar sekondes. Jy is nog nie gehef nie.",
+        "payment_method_not_available_with_payment_terms": "Die betaalmetode wat u gekies het, is nie meer beskikbaar nie omdat betaling vir hierdie bestelling nou op {{paymentTerms}} terme is.",
+        "payment_method_not_available_with_fulfillment_terms": "Die betaalmetode wat u gekies het, is nie meer beskikbaar nie omdat betaling vir hierdie bestelling nou by nakoming verskuldig is.",
+        "payment_method_not_available_with_fixed_terms": "Die betaalmetode wat u gekies het, is nie meer beskikbaar nie omdat betaling vir hierdie bestelling later verskuldig is.",
+        "contact_information": {
+          "title": "Kontakinligting is ongeldig",
+          "header": "Om jou inligting op te dateer, {{emailLink}}.",
+          "email_link": "kontak ons"
+        },
+        "generic_processing_error": {
+          "body": "Jy is nie gehef nie. Probeer weer of gebruik 'n ander betaalmetode.",
+          "title": "Daar was 'n probleem met die verwerking van jou bestelling"
+        },
+        "calculating_taxes": "Belasting word nog steeds bereken. Probeer weer oor 'n paar sekondes. Jy is nog nie gehef nie."
+      },
+      "error_page": {
+        "terminal": {
+          "title": "Daar was 'n probleem met ons betaalproses",
+          "action": {
+            "cta": "Vernuwe Bladsy"
+          },
+          "message": "Vernuwe hierdie bladsy of probeer weer oor 'n paar minute",
+          "request_id": "Versoek-ID: {{requestId}}"
+        }
+      },
+      "review_address_modal": {
+        "title": "Hersien adres",
+        "subtitle": {
+          "one": "Hierdie bestelling sal na die adres gestuur word wat deur {{merchant}} verskaf is.",
+          "other": "Hierdie bestelling sal na 'n adres gestuur word wat deur {{merchant}} verskaf is. Kies 'n versendingsadres."
+        },
+        "subtitle_no_match": "Hierdie adres stem nie ooreen met enige van jou gestoor adresse nie.",
+        "subtitle_must_use": "Jou bestelling sal na hierdie adres gestuur word.",
+        "continue": "Gaan voort met hierdie adres",
+        "return_to_cart": "Keer terug na mandjie",
+        "use_saved_address": "Gebruik 'n ander adres"
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Hersiening",
+          "link_label": "{{partnerDisplayName}} Terme en Voorwaardes"
+        }
+      },
+      "local_pickup": {
+        "location_address_search_label": "Adres",
+        "toggle_location": "Verander ligging",
+        "or": "OF",
+        "cancel": "Kanselleer",
+        "location_information": {
+          "one": "Daar is %{count} winkel met voorraad naby %{address}",
+          "other": "Daar is %{count} winkels met voorraad naby %{address}"
+        },
+        "your_location": "jou ligging",
+        "all_stores_far_away": {
+          "title": "Die naaste plekke is meer as %{distance} weg",
+          "ship_to_address_link": "stuur na adres",
+          "description": "Kies 'n ligging of %{ship_to_address_link}"
+        },
+        "no_stores_found": "Geen winkels gevind nie",
+        "could_not_resolve_address": "Jou adres kon nie gevind word nie. Probeer weer of gebruik 'n ander adres",
+        "paginator": {
+          "previous": "Vorige bladsy",
+          "next": "Volgende bladsy",
+          "accessibility_label": "Plaaslike afhaling paginering",
+          "label": {
+            "one": "%{first} - %{last} van %{count} winkel",
+            "other": "%{first} - %{last} van %{count} winkels"
+          }
+        },
+        "search_button": "Vind winkels",
+        "reveal_more_label": {
+          "one": "Wys %{count} meer plekke",
+          "other": "Wys nog %{count} plekke"
+        }
+      },
+      "online_store_chat": {
+        "title": "Vrae? Gesels met ons"
+      },
+      "captcha": {
+        "title": "Voltooi die CAPTCHA om voort te gaan",
+        "errors": {
+          "not_solved": "Voltooi die CAPTCHA om voort te gaan"
+        }
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Jy het nie meer toestemming om B2B-bestellings te plaas nie. %{logout_url} om eerder 'n persoonlike bestelling te plaas.",
+        "log_out_link_text": "Teken uit",
+        "lost_permissions_subtitle": "Jy het nie meer toestemming om B2B-bestellings te plaas nie, meld af om 'n persoonlike bestelling te plaas.",
+        "lost_permissions_title": "Geen liggingstoestemmings nie"
+      },
+      "clipboard": {
+        "copied": "Gekopieer",
+        "failed_to_copy": "Kon nie kopieer nie"
+      },
+      "shop_pay_external": {
+        "title": "Shop Pay Kassiere",
+        "return_to_store_simple": "Keer terug na winkel",
+        "errors": {
+          "try_again_later": "Kontroleer jou verbinding of sluit hierdie venster en probeer weer oor 'n paar oomblikke.",
+          "problem_loading": "Daar is 'n probleem met die laai van Shop Pay",
+          "checkout_has_expired": "Jou betaalproses het verval. Maak hierdie venster toe en probeer weer uitcheck by {{shopName}}."
+        },
+        "return_to_store": "Keer terug na {{shopName}}"
+      },
+      "discount_errors": {
+        "generic_error": "Jou bestelling kon nie verwerk word nie omdat jou afslagkode nie meer beskikbaar is nie. Hersien jou bestellingstotaal en probeer weer."
+      },
+      "wallets": {
+        "return_to_store": "Keer terug na winkel",
+        "shipping_line_label": "Versending",
+        "return_to_checkout": "Keer terug na betaalpunt",
+        "logged_in": "Verbinde met {{email}}",
+        "redirect_hint": "Jy sal gevra word om aan te meld met {{walletName}}.",
+        "connect_shipping_methods": "{{method1}} en {{method2}}",
+        "payment_in_progress_title": "Betaling aan die gang",
+        "payment_in_progress_body": "Jou betaling word verwerk. Jou bestelling sal binnekort voltooi word.",
+        "call_to_action": "Betaal met {{walletName}}",
+        "redirection_notice": "Nadat jy op \"{{buttonLabel}}\" geklik het, sal jy na {{walletName}} herlei word om jou aankoop veilig te voltooi.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} nie beskikbaar nie",
+            "description": "{{walletName}} was nie beskikbaar nie. Gebruik 'n ander betaalmetode of probeer later weer.",
+            "unavailable_for_country": "{{walletName}} is nie beskikbaar in {{countryName}} nie. Kies 'n ander betaalmetode om jou aankoop te voltooi",
+            "instructions": "Daar was 'n probleem met {{walletName}}. Gaan terug na die winkel om weer te probeer of kyk na 'n ander manier."
+          },
+          "generic": "Daar was 'n probleem met {{walletName}}. Probeer weer of gebruik 'n ander betaalmetode.",
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} is tans nie beskikbaar vir jou bestelling nie. Om jou aankoop voort te sit, kies 'n ander betaalmetode."
+          },
+          "discount_code": "Kan nie hierdie afslagkode toepas nie. Kontroleer asseblief jou kode en probeer weer.",
+          "detour": {
+            "stock_problems": "Sommige items is nie meer beskikbaar nie. Sluit {{walletName}} en probeer weer.",
+            "currency_change": "Jy kan nie 'n ander adres met {{walletName}} gebruik nie. Gebruik die oorspronklike adres, of probeer 'n ander betaalmetode.",
+            "price_change": "Sommige itempryse het verander. Sluit {{walletName}} om jou bestelling te hersien en probeer weer.",
+            "queue": "Jy is in 'n ry geplaas om af te betaal. Sluit {{walletName}} om voort te gaan."
+          },
+          "unsupported": {
+            "postal_code": "Hierdie ligging word nie ondersteun nie",
+            "address": "Die handelaar kan nie na hierdie adres lewer nie",
+            "wallet_is_unavailable": "{{walletName}} kan nie met hierdie adres gebruik word nie. Kies 'n ander adres of sluit {{walletName}} om jou aankoop te voltooi."
+          },
+          "terminal": "Daar was 'n probleem met {{walletName}}. Gebruik asseblief 'n ander betaalmetode.",
+          "invalid": {
+            "shipping_address": "Voer 'n geldige versendingsadres in",
+            "email": "Voer 'n geldige e-pos in",
+            "billing_address": "Voer 'n geldige faktuuradres in",
+            "shipping_option": "Kies 'n geldige versendingsopsie",
+            "zone": "Voer 'n geldige staat / provinsie in",
+            "postal_code": "Voer 'n geldige poskode in",
+            "phone": "Voer 'n geldige telefoonnommer in",
+            "reduction_code": "Voer 'n geldige afslagkode of geskenkkaart in",
+            "billing_zone": "Voer 'n geldige faktuuradresstaat / provinsie in",
+            "emirate": "Voer 'n geldige emiraat in",
+            "billing_phone": "Voer 'n geldige telefoonnommer vir die faktuuradres in",
+            "billing_zip": "Voer 'n geldige faktuuradres-poskode in",
+            "billing_must_match_shipping": "Moet ooreenstem met afleweringsadres"
+          },
+          "outdated": {
+            "shipping_method": "Die versendingsopsies het verander vir jou bestelling. Hersien jou keuse.",
+            "payment_terms": "Die betalingsvoorwaardes het verander. Kontroleer asseblief jou bestelling"
+          },
+          "missing": {
+            "first_name": "Voer 'n voornaam in",
+            "last_name": "Voer 'n van in",
+            "address1": "Voer 'n adres in",
+            "address2": "Voer 'n woonstel, suite, ens. in",
+            "billing_first_name": "Voer eers 'n faktuuradres voornaam in",
+            "city": "Voer 'n stad in",
+            "province": "Kies 'n staat / provinsie",
+            "country": "Kies 'n land/streek",
+            "zip": "Voer 'n poskode in",
+            "billing_address1": "Voer 'n faktuuradres in",
+            "phone": "Voer 'n telefoonnommer in",
+            "contact_info": "Voer kontakbesonderhede in",
+            "billing_city": "Voer 'n faktuuradresstad in",
+            "billing_address2": "Voer 'n faktuuradres woonstel, suite, ens. in.",
+            "billing_province": "Kies 'n faktuuradres staat / provinsie",
+            "billing_zip": "Voer 'n faktuuradres-poskode in"
+          },
+          "formatting": {
+            "name_contains_emojis": "Verwyder emoji van jou naam",
+            "address_too_long": "Adreslyn is te lank",
+            "postal_code_contains_emoji": "Verwyder emoji uit jou poskode",
+            "first_name_too_long": "Voornaam bevat te veel letters",
+            "last_name_too_long": "Van bevat te veel letters"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Jou versendingsadres is ongeldig. Kies 'n ander adres of gebruik 'n nuwe een."
+        },
+        "scrim": {
+          "and_return_to_checkout": "en keer terug na Kassie uitchecken",
+          "cancel": "Kanselleer",
+          "continue_purchase_in_window": "Gaan voort met jou aankoop in die {{walletName}}-venster"
+        }
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Geskenkkaartprys moet groter as 0 wees.",
+            "gift_card_price_must_not_exceed_limit": "Geskenkkaartprys mag nie meer as %{gift_card_limit} wees nie.",
+            "subtotal_limit_reached": "Die maksimum waarde van lynitems is bereik."
+          }
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "Verminder die grootte van die nota tot 5000 of minder karakters."
+      },
+      "units": {
+        "milligram": "mg",
+        "gram": "g",
+        "centiliter": "klu",
+        "milliliter": "ml",
+        "kilogram": "kg",
+        "cubic_meter": "m³",
+        "millimeter": "mm",
+        "centimeter": "cm",
+        "meter": "m",
+        "square_meter": "m²",
+        "ounce": "oz",
+        "pound": "lb",
+        "fluid_ounce": "vloeistof onse",
+        "inch": "in",
+        "pint": "pt",
+        "quart": "qt",
+        "square_foot": "vt²",
+        "foot": "ft",
+        "yard": "yd",
+        "item": "item",
+        "gallon": "gal"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "Die adres word nie ondersteun vir die huidige lidmaatskap nie."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Navigeer na Aanlyn Winkel"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "Meer inligting oor %{context}",
+        "additional_payment_methods": "Bykomende betaalmetodes"
       }
+    },
+    "pagination": {
+      "previous": "Vorige",
+      "next": "Volgende"
+    },
+    "attributes": {
+      "email": "e-pos",
+      "password": "wagwoord",
+      "password_confirmation": "Die wagwoordbevestiging",
+      "signature": "Adres",
+      "first_name": "voornaam",
+      "body": "liggaam",
+      "last_name": "van"
+    },
+    "links": {
+      "powered_by_shopify": "Aangedryf deur Shopify",
+      "learn_more": "Leer meer"
+    },
+    "feed": {
+      "more": "Meer"
+    },
+    "addresses": {
+      "zip_code": "Poskode",
+      "postal_code": "Poskode",
+      "postcode": "Poskode",
+      "region": "Streek",
+      "prefecture": "Prefektuur",
+      "province": "Provinsie",
+      "state": "Staat",
+      "state_and_territory": "Staat/gebied",
+      "county": "Provinsie",
+      "pincode": "Poskode",
+      "governorate": "Goewermentsgebied",
+      "emirate": "Emirate",
+      "confirm": "Is jy seker jy wil hierdie adres uitvee?"
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "Bestverkopende",
+        "manual": "Uitgelig",
+        "az": "Alfabeties, A-Z",
+        "price_ascending": "Prys, laag na hoog",
+        "za": "Alfabeties, Z-A",
+        "date_ascending": "Datum, oud na nuut",
+        "price_descending": "Prys, hoog na laag",
+        "date_descending": "Datum, nuut na oud"
+      }
+    },
+    "errors": {
+      "blocked_address": "Hierdie ligging word nie ondersteun nie",
+      "blank": "kan nie leeg wees nie",
+      "empty": "kan nie leeg wees nie",
+      "credit_card_session_expired": "Kredietkaart magtiging het verval, voer asseblief jou betalingsinligting weer in. Jou kaart is nie gehef nie."
     }
   },
   "sections": {
