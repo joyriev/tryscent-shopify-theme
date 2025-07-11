@@ -3468,7 +3468,128 @@
       "logged_in_account_no_permission_to_order": "Du er logget inn som {{email}}. Denne kontoen har ikke tillatelse til å administrere denne bestillingen.",
       "log_in_to_a_different_account": "Logg inn på en annen konto",
       "fees": {
-        "restocking_fee": "Restocking gebyr"
+        "restocking_fee": "Restocking gebyr",
+        "return_shipping_fee": "Returfrakt"
+      },
+      "link_sent": "Lenke sendt",
+      "cash_rounding": "Kontantavrunding",
+      "vat_invoices": {
+        "title": "MVA-fakturaer"
+      },
+      "adjusted_payment": "Justert betaling",
+      "adjusted_total": "Justert total"
+    },
+    "addresses": {
+      "add_button_text": "Legg til",
+      "add_button": "Legg til adresse",
+      "add_button_accessibility_label": "Legg til adresse",
+      "back_button": "Tilbake",
+      "back_button_accessibility_label": "Tilbake til redigering av adresse {{address}}",
+      "add_address_banner": "Legg til adresser som skal brukes ved utsjekking",
+      "no_addresses_banner": "Ingen adresser lagt til",
+      "cancel_deletion_button": "Avbryt",
+      "cancel_deletion_button_accessibility_label": "Avbryt sletting av {{address}}",
+      "address_deleted_notification": "Adresse slettet",
+      "default_address": {
+        "title": "Standardadresse",
+        "title_accessibility_label": "Standardadresse: {{address}}"
+      },
+      "cancel_adding_address_accessibility_label": "Avbryt å legge til adresse",
+      "delete_button_accessibility_label": "Slett {{address}}",
+      "delete_button": "Slett",
+      "delete_confirmation_button": "Slett adresse",
+      "delete_confirmation_button_accessibility_label": "Slett {{address}}",
+      "delete_confirmation_message": "Slette adresse? Eksisterende bestillinger påvirkes ikke.",
+      "delete_confirmation_title": "Slette adresse?",
+      "delete_confirmation_description": "Eksisterende bestillinger påvirkes ikke.",
+      "edit_button": "Rediger",
+      "edit_button_accessibility_label": "Rediger {{address}}",
+      "edit_section_accessibility_label": "Rediger {{address}}",
+      "edit_modal_title": {
+        "default": "Rediger adresse",
+        "billing": "Rediger fakturaadresse",
+        "shipping": "Rediger leveringsadresse"
+      },
+      "loading_accessibility_message": "Laster adresse",
+      "loading_addresses_accessibility_message": "Laster adresser",
+      "loading_billing_accessibility_message": "Laster faktureringsadresse",
+      "loading_finished_accessibility_message": "Ny side med adresser er lastet inn",
+      "loading_shipping_accessibility_message": "Laster inn leveringsadresse",
+      "pagination": {
+        "load_more": "Last inn mer",
+        "load_more_accessibility_label": "Last inn flere adresser"
+      },
+      "title": "Adresser",
+      "save_new_address_accessibility_label": "Lagre adresse",
+      "billing_address_dropdown_placeholder": "Fakturaadresse"
+    },
+    "address_form": {
+      "attention_company": "Firma/oppmerksomhet",
+      "attention": "Oppmerksomhet",
+      "attention_help_text": "Navnet på en person eller avdeling",
+      "auto_complete_close_accessibility_label": "Lukk forslag",
+      "auto_complete_title": "Forslag",
+      "billing_address": "Bruk som fakturaadresse",
+      "cancel": "Avbryt",
+      "cancel_accessibility_label": "Avbryt redigering av adresse {{address}}",
+      "default_address_update_success_notification": "Standardadresse oppdatert",
+      "creation_success_notification": "Adresse lagt til",
+      "default_address_creation_success_notification": "Standardadresse lagt til",
+      "loading_add_form_accessibility_message": "Laster nytt adresseformular",
+      "default_address": "Dette er min standardadresse",
+      "loading_edit_form_accessibility_message": "Laster redigeringsskjema for adresse",
+      "loading_form_accessibility_message": "Laster adresse skjema",
+      "loading_finished_accessibility_message": "Adresseformular har lastet",
+      "save": "Lagre",
+      "save_accessibility_label": "Lagre adresse {{address}}",
+      "section_title_accessibility_label": "Legg til adresse",
+      "update_success_notification": "Adresse oppdatert"
+    },
+    "B2B": {
+      "account_information": {
+        "company_card_name_label": "Firmanavn",
+        "company_card_section_accessibility_label": "Selskap"
+      },
+      "locations": {
+        "contact_email": "E-post",
+        "contact_list_title": "Folk",
+        "contact_name": "Navn",
+        "contact_permissions": "Tillatelser",
+        "location_picker_accessibility_label": "Stedsnavn: {{locationName}}",
+        "location_picker_label": "Stedsnavn",
+        "contact_phone_number": "Telefonnummer",
+        "deposit_percentage": "{{percentage}} innskudd",
+        "own_role_contact_name": "Du",
+        "pagination": {
+          "load_more_accessibility_label": "Last inn flere steder",
+          "load_more": "Last inn mer"
+        },
+        "payment_details_title": "Betalingsdetaljer",
+        "payment_terms": "Betalingsbetingelser",
+        "permissions_label": "Dine tillatelser",
+        "permissions_title": "Tillatelser",
+        "section_title": "Lokasjon",
+        "shipping_address_required": "Legg til en leveringsadresse på dette stedet for å begynne å legge inn bestillinger.",
+        "staff_and_permissions_title": "Ansatte og tillatelser",
+        "tax_details_title": "Skattedetaljer",
+        "tax_id": "Skatte-ID",
+        "tax_exemptions": "Skattefritak",
+        "multiple_tax_exemptions": "{{taxExemptionsCount}} flere",
+        "multiple_tax_exemptions_and": "og",
+        "tax_exemptions_modal_close": "Lukk",
+        "taxes_none": "Ingen",
+        "tax_exemptions_modal_button_accessibility_label": "Se alle skattefritak",
+        "net_payment_terms_description": "{{name}}: betalinger forfalt innen {{numberOfDays}} dager",
+        "tax_exemption_not_applicable": "N/A"
+      },
+      "location_selection": {
+        "continue_to_store": "Fortsett å lagre",
+        "description": "Hvis du allerede har varer i handlekurven, kan endring av sted påvirke priser og mengder i handlekurven.",
+        "description_switch_later": "Du kan alltid bytte senere",
+        "list_accessibility_label": "Steder liste",
+        "list_loading_accessibility_message": "Laster liste over steder",
+        "list_loading_address_accessibility_message": "Laster adresse for {{locationName}}",
+        "list_item_without_address_accessibility_label": "{{name}}: Ingen adresse"
       }
     }
   }
