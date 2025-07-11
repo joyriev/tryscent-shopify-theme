@@ -3336,10 +3336,140 @@
         "title": "Betaling",
         "payment_type": {
           "gift_card": "Gavekort",
-          "store_credit": "Butikkreditt"
+          "store_credit": "Butikkreditt",
+          "cash_on_delivery": "Kontant ved levering (COD)",
+          "money_order": "Postanvisning",
+          "manual": "Manuell",
+          "bank_deposit": "Bankinnskudd"
+        },
+        "card_payment_details": "slutter med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "slutter med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Butikkreditt - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Betalt med Shop Pay avdrag",
+          "view_schedule": "Se timeplan"
+        },
+        "manual_payment_methods": {
+          "money_order": "Postanvisning - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Kontant ved levering (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Bankinnskudd - {{formattedTransactionAmount}}",
+          "manual": "Manuell - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "Vis alle",
+          "show_less": "Vis mindre",
+          "details": "Detaljer",
+          "payment_details": "Betalingsdetaljer"
+        },
+        "emv_details": {
+          "auth": "AUTORISER:",
+          "source": "KILDE:",
+          "aid": "AID:"
         }
       },
-      "not_applicable": "N/A"
+      "not_applicable": "N/A",
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Betalt med Shop Pay avdrag",
+        "description": "Hold oversikt over betalingsplanen din med påminnelser i Shop-appen.",
+        "payment_reminders_button": "Få betalingspåminnelser",
+        "desktop_qr_code_content": {
+          "title": "Skann etter påminnelser",
+          "description": "Få påminnelser om avdragene dine med Shop."
+        }
+      },
+      "refunded_amount": "Refundert",
+      "request_return_failed": "Det oppsto et problem med å behandle forespørselen din. Vennligst prøv igjen.",
+      "login_card": {
+        "resend_link_and_login": "For å se bestillingsdetaljene dine, logg inn eller send en ny lenke til e-posten eller telefonnummeret som ble brukt ved utsjekking.",
+        "resend_link_only": "For å se bestillingsdetaljene dine, send en ny lenke til e-posten eller telefonnummeret som ble brukt ved utsjekking.",
+        "log_in": "Logg inn",
+        "resend_link": "Send ny lenke",
+        "link_expired": "Lenken er utløpt"
+      },
+      "remaining_amount": "Gjenstående",
+      "marketing_section_title": "Nyheter og tilbud",
+      "marketing_description": "Du vil motta markedsførings-e-poster. Du kan melde deg av når som helst.",
+      "marketing_checkbox_label": "Send meg e-post med nyheter og tilbud",
+      "marketing_checkmark_label": "Du er abonnert på å motta nyheter og tilbud på e-post",
+      "returns": {
+        "expand_events_label": "Vis detaljer",
+        "hide_events_label": "Skjul detaljer",
+        "ineligible_return_message": "Ingen varer i denne bestillingen kan returneres.",
+        "ineligible_return_message_when_returned": "Ingen ekstra varer i denne bestillingen kan returneres.",
+        "print_shipping_label": "Skriv ut fraktetikett",
+        "return_and_refund_modal_header": "Refusjonspolicy",
+        "tracking_number": "Sporingsnummer:",
+        "exchange_header": "Bytt varer",
+        "exchange_subheader": "Byttevarer vil bli lagt til bestillingen når returen er fullført."
+      },
+      "shipping": {
+        "address": "Leveringsadresse",
+        "address_map_marker": "Leveringsadresse",
+        "summary": "Frakt",
+        "method": "Fraktmetode",
+        "free": "Gratis",
+        "one_time": "Engangsfrakt",
+        "subscription": "Abonnementsfrakt",
+        "free_shipping_discount": "Gratis frakt"
+      },
+      "pickup": {
+        "pickup": "Henting",
+        "pickup_location": "Hentested",
+        "pickup_point": "Hentested"
+      },
+      "show_items": "Vis elementer",
+      "show_order_summary": "Vis bestillingsoppsummering",
+      "hide_order_summary": "Skjul bestillingsoppsummering",
+      "subtitle": "Bekreftet {{date}}",
+      "subtotal": "Delsum",
+      "summary_list_title_accessibility_label": "Bestill varer",
+      "summary_title": "Ordreoversikt",
+      "summary_totals_title_accessibility_label": "Ordrebeløp",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Last ned Shop for å spore pakken",
+        "track_order_with_shop": "Spor bestilling med Shop",
+        "title_header": "Skann med telefonen din",
+        "real_time_delivery_updates": "Shop vil sende deg sanntidsleveringsoppdateringer når bestillingen din er sendt."
+      },
+      "edit_summary": {
+        "added": "Lagt til",
+        "added_with_quantity": "Lagt til {{quantity}}",
+        "removed": "Fjernet",
+        "removed_with_quantity": "Fjernet {{quantity}}",
+        "updated_at": "Bestillingen din ble oppdatert den {{date}}",
+        "returned_with_quantities": "Returnert {{delta}} av {{total}}",
+        "returned": "Returnert",
+        "removed_with_quantities": "Fjernet {{delta}} av {{total}}",
+        "return_line_item_removed": "Fjernet fra retur",
+        "return_line_item_removed_with_quantities": "Fjernet {{delta}} fra retur"
+      },
+      "shop_pay": {
+        "order_completed_with": "Bestilling fullført med",
+        "learn_more": "Lær mer"
+      },
+      "taxes": "Skatter",
+      "taxes_included": "Inkludert {{amount}} i skatter",
+      "duties_and_taxes_included": "Totalt inkluderer avgifter og skatter. Ingen ekstra kostnader ved levering.",
+      "duties": "Avgifter",
+      "ok_duties_tooltip": "Denne bestillingen sendes fra et annet land, så avgifter er lagt til din bestillingssum.",
+      "error_duties_tooltip": "Denne bestillingen sendes fra et annet land, så avgifter og skatter kan bli belastet ved levering.",
+      "zero_duties_tooltip": "Denne bestillingen sendes fra et annet land. Avgifter belastes ikke på bestillinger av denne verdien.",
+      "tip": "Tips",
+      "title": "Bestilling {{name}}",
+      "total": "Totalt",
+      "unit_price": "{{price}}/stk",
+      "pagination": {
+        "load_more": "Last inn mer",
+        "load_more_accessibility_label": "Last inn flere elementer",
+        "loading_accessibility_label": "Laster inn varer"
+      },
+      "login_to_view_all_order_details": "Logg inn for å se alle ordredetaljer.",
+      "log_in": "Logg inn",
+      "logged_in_account_no_permission_to_order": "Du er logget inn som {{email}}. Denne kontoen har ikke tillatelse til å administrere denne bestillingen.",
+      "log_in_to_a_different_account": "Logg inn på en annen konto",
+      "fees": {
+        "restocking_fee": "Restocking gebyr"
+      }
     }
   }
 }
