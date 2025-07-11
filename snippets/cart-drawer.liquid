@@ -544,7 +544,7 @@
           <button
             type="submit"
             id="CartDrawer-Checkout"
-            class="cart__checkout-button button"
+            class="cart__checkout-button button rounded bg-[#226139] font-bold text-xl tracking-wider shadow"
             name="checkout"
             form="CartDrawer-Form"
             {% if cart == empty %}
@@ -553,7 +553,7 @@
             {{ 'sections.cart.checkout' | t }}
           </button>
         </div>
-        <div class="payment-icons-inline">
+        <div class="flex gap-1 space-between mt-6">
           {% assign enabled_payment_types = 'visa,master,american_express,paypal,ideal,klarna,google_pay,apple_pay,shopify_pay' | remove: ' ' | split: ','
           %}
           {% for type in enabled_payment_types %}
