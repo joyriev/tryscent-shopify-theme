@@ -1861,7 +1861,102 @@
         "presets_description": "Kies 'n wenk persentasie",
         "custom_label": "Pasgemaakte wenk",
         "update_tip": "Werk wenk by",
-        "add_tip": "Voeg wenk by"
+        "add_tip": "Voeg wenk by",
+        "no_tip_label": "Geen",
+        "message": "Dankie, ons waardeer dit."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "other": "Koop %{product_name} en %{count} ander items",
+          "zero": "Koop %{product_name}",
+          "one": "Koop %{product_name} en %{count} ander item"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "one": "dag",
+            "other": "%{count} dae"
+          },
+          "week": {
+            "one": "week",
+            "other": "%{count} weke"
+          },
+          "month": {
+            "one": "maand",
+            "other": "%{count} maande"
+          },
+          "year": {
+            "one": "jaar",
+            "other": "%{count} jaar"
+          }
+        },
+        "recurring_totals": "%{total_price} elke %{interval}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Eerste betaling %{total_price}",
+            "other": "Eerste %{count} betalings van %{total_price} elk"
+          },
+          "following_cycles": ", dan %{total_price} elke %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount": "Eerste betaling %{total_price_with_discount}, dan %{recurring_total}",
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", dan %{count} betaling by %{total_price}",
+            "other": ", dan %{count} betalings teen %{total_price} elk"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Betalingsmetodes",
+        "title": "Betalingsmetodes",
+        "update_card_button_label": "Werk kaart by",
+        "delete_customer_mandate": {
+          "success_message": "Jou betaalmetode is suksesvol verwyder",
+          "generic_error": "Daar was 'n probleem met die verwerking van jou versoek."
+        }
+      },
+      "throttle": {
+        "cart_summary_heading": "Jou mandjie",
+        "too_many_attempts": {
+          "message": "Te veel pogings",
+          "description": "Probeer asseblief weer oor 'n paar minute"
+        },
+        "line_to_check_out": "Jy is in die ry om uit te check",
+        "merchandise": {
+          "sold_out": "Uitverkoop",
+          "available": "Beskikbaar"
+        },
+        "inventory": {
+          "sold_out": {
+            "heading": "Jou mandjie is uitverkoop",
+            "storefront_body": "Gaan terug na die winkel om aan te hou winkel.",
+            "link": "Terug na winkel",
+            "no_storefront_body": "Ongelukkig is die item wat u wil koop nie meer beskikbaar nie."
+          },
+          "partial_inventory_banner": "Deel van jou mandjie is uitverkoop en sal nie beskikbaar wees om by die betaalpunt te koop nie."
+        },
+        "title": "Waglys",
+        "estimated_wait_time": {
+          "calculating": "Berekening van geskatte wagtyd",
+          "less_than_one": "Geskatte wagtyd: Minder as 'n minuut",
+          "one": "Geskatte wagtyd: {{count}} minuut",
+          "other": "Geskatte wagtyd: {{count}} minute"
+        },
+        "time_to_checkout_title": "Tyd om uit te check - {{shopName}}",
+        "footer": {
+          "body": "Items in your kar is nie gereserveer totdat jy die uitklok voltooi nie.",
+          "heading": "Moet nie hierdie bladsy herlaai nie, dit sal outomaties opdateer."
+        },
+        "last_checked": "(Laaste nagegaan: {{time}})"
+      },
+      "no_address_location": {
+        "title": "Ligging sonder adres",
+        "alt_header": "Ontbrekende versendingsadres",
+        "header": "Jy het nie 'n versendingsadres vir hierdie ligging nie"
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Daar was 'n probleem met die verwerking van jou versoek, kontak asseblief die winkel eienaar."
       }
     }
   },
