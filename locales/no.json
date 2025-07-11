@@ -2934,7 +2934,136 @@
       "orders_link_label": "Bestillinger",
       "open_menu_accessibility_label": "Åpne hovednavigasjon",
       "subscriptions_link_label": "Abonnementer",
-      "shop_logo_accessibility_label": "{{shopName}} logo"
+      "shop_logo_accessibility_label": "{{shopName}} logo",
+      "switch_country": "Bytt land",
+      "no_countries_found": "Ingen land funnet",
+      "settings_link": "Innstillinger",
+      "country_switcher_toast_message": "Land byttet til {{countryName}}",
+      "location_switcher_toast_message": "Sted byttet til {{locationName}}",
+      "switch_location": "Bytt plassering",
+      "no_locations_found": "Ingen steder funnet",
+      "try_new_search": "Prøv et nytt søk",
+      "view_details": "Vis detaljer",
+      "company_location": "Selskapslokasjon",
+      "search": "Søk"
+    },
+    "account_information": {
+      "loading_accessibility_message": "Laster kontoinformasjon",
+      "loading_finished_accessibility_message": "Kontoinformasjon er lastet inn",
+      "profile_card": {
+        "cancel": "Avbryt",
+        "cancel_accessibility_label": "Avbryt redigering av profil",
+        "edit": "Rediger",
+        "edit_accessibility_label": "Rediger profil",
+        "email_help_text": "E-post brukt for pålogging kan ikke endres",
+        "first_name": "Fornavn",
+        "last_name": "Etternavn",
+        "no_name_provided_accessibility_label": "Ingen navn lagt til",
+        "phone_number_help_text": "Telefonnummeret som brukes for pålogging kan ikke endres",
+        "save": "Lagre",
+        "save_accessibility_label": "Lagre profil",
+        "title": "Profil"
+      },
+      "profile_update_confirmation_message": "Profil oppdatert",
+      "title": "Profil",
+      "people": {
+        "pagination": {
+          "load_more": "Last inn mer",
+          "load_more_accessibility_label": "Last inn flere personer",
+          "loading_accessibility_label": "Laster inn personer"
+        }
+      },
+      "add_button": "Legg til"
+    },
+    "orders": {
+      "list_layout_accessibility_label": "Layoutalternativer",
+      "list_title": "Bestillinger",
+      "list_title_with_pending_orders": "Bestillinger:",
+      "list_title_confirmed_orders_accessibility_label": "Bestillinger: bekreftet",
+      "list_title_pending_orders_accessibility_label": "Bestillinger: ventende",
+      "switch_order_type_pending_orders_accessibility_label": "Bytt ordretype, viser for øyeblikket ventende ordre",
+      "switch_order_type_confirmed_orders_accessibility_label": "Bytt ordretype, viser for øyeblikket bekreftede ordre",
+      "order_list": {
+        "column_headers": {
+          "order": "Bestilling",
+          "total": "Totalt",
+          "actions_accessibility_label": "Handlinger",
+          "products_accessibility_label": "Produkter"
+        },
+        "delivered": "Levert {{date}}",
+        "empty_state_order_source_description": "Kun bestillinger gjort av {{email}} vil vises her.",
+        "empty_state_subtitle": "Gå til butikken for å legge inn en bestilling.",
+        "empty_state_title": "Ingen bestillinger ennå",
+        "empty_state_with_location_title": "Ingen bestillinger for {{locationName}}",
+        "empty_state_title_for_pending_orders": "Ingen ubehandlede bestillinger",
+        "no_order_banner": "For å teste utvidelsen din på siden for bestillingsstatus, opprett en bestilling.",
+        "estimated_delivery": "Forventet {{date}}",
+        "estimated_shortform": "Etablert {{date}}",
+        "two_images_accessibility_label": "Bestillingen inkluderer {{lineItemName1}}, {{lineItemName2}}",
+        "one_images_accessibility_label": "Bestillingen inkluderer {{lineItemName1}}",
+        "three_images_accessibility_label": "Bestillingen inkluderer {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "Bestillingen inkluderer {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "more_than_four_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, og {{numberOfAdditionalProducts}} flere produkter",
+        "more_than_three_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}}, {{lineItemName2}}, og {{numberOfAdditionalProducts}} flere produkter",
+        "plus_more_products": "+{{numberOfAdditionalProducts}} produkter",
+        "carousel": {
+          "one_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} antall {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} antall {{lineItemQuantity1}}, {{lineItemName2}} antall {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} antall {{lineItemQuantity1}}, {{lineItemName2}} antall {{lineItemQuantity2}}, {{lineItemName3}} antall {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} antall {{lineItemQuantity1}}, {{lineItemName2}} antall {{lineItemQuantity2}}, {{lineItemName3}} antall {{lineItemQuantity3}}, {{lineItemName4}} antall {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} antall {{lineItemQuantity1}}, {{lineItemName2}} antall {{lineItemQuantity2}}, {{lineItemName3}} antall {{lineItemQuantity3}}, {{lineItemName4}} antall {{lineItemQuantity4}}, {{lineItemName5}} antall {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} antall {{lineItemQuantity1}}, {{lineItemName2}} antall {{lineItemQuantity2}}, {{lineItemName3}} antall {{lineItemQuantity3}}, {{lineItemName4}} antall {{lineItemQuantity4}}, {{lineItemName5}} antall {{lineItemQuantity5}}, {{lineItemName6}} antall {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} antall {{lineItemQuantity1}}, {{lineItemName2}} antall {{lineItemQuantity2}}, {{lineItemName3}} antall {{lineItemQuantity3}}, {{lineItemName4}} antall {{lineItemQuantity4}}, {{lineItemName5}} antall {{lineItemQuantity5}}, {{lineItemName6}} antall {{lineItemQuantity6}} og mer",
+          "previous": "Forrige",
+          "view_order_details": "Se bestillingsdetaljer",
+          "next": "Neste"
+        },
+        "items": {
+          "one": "{{count}} vare",
+          "other": "{{count}} elementer"
+        },
+        "no_filtered_results_description": "Fjern eller juster filtre for å se bestillingene dine",
+        "no_filtered_results_title": "Ingen filtrerte resultater",
+        "order_number": "Bestilling {{name}}",
+        "order_link": "Se bestilling {{name}}",
+        "pagination": {
+          "nav_accessibility_label": "Bestillingsnavigasjonsknapper",
+          "next_accessibility_label": "Neste bestillinger",
+          "next": "Neste",
+          "previous": "Forrige",
+          "previous_accessibility_label": "Tidligere bestillinger",
+          "load_more": "Last inn mer",
+          "load_more_accessibility_label": "Last inn flere bestillinger"
+        },
+        "orders_title": "Bekreftet",
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Se bestilling for detaljer",
+            "estimated_delivery": "Forventet {{date}}",
+            "last_updated": "Sist oppdatert {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Estimert levering {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "overdue": "Betaling forfalt",
+            "due": "Betaling forfalt {{date}}",
+            "due_today": "Betaling forfalt i dag",
+            "due_without_date": "Betaling forfalt",
+            "due_on_fulfillment": "Betaling forfaller ved oppfyllelse",
+            "pay_to_confirm": "Betal for å bekrefte",
+            "payment_not_due": "Betaling ikke forfalt ennå"
+          },
+          "list_view": {
+            "overdue": "Forsinket",
+            "due": "Forfallsdato {{date}}",
+            "due_today": "Forfall i dag",
+            "paid": "Betalt"
+          }
+        }
+      }
     }
   }
 }
