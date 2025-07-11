@@ -3123,8 +3123,132 @@
         "address": "Afleweringsadres",
         "address_map_marker": "Afleweringsadres",
         "summary": "Versending",
-        "method": "Versendingsmetode"
-      }
+        "method": "Versendingsmetode",
+        "free": "Vry",
+        "one_time": "Eenmalige versending",
+        "subscription": "Intekenaarversending",
+        "free_shipping_discount": "Gratis Versending"
+      },
+      "pickup": {
+        "pickup": "Ophaling",
+        "pickup_location": "Afhaalplek",
+        "pickup_point": "Afhaalpunt"
+      },
+      "show_order_summary": "Wys bestellingsopsomming",
+      "hide_order_summary": "Versteek bestellingsopsomming",
+      "subtotal": "Subtotaal",
+      "show_items": "Wys items",
+      "summary_title": "Bestelopsomming",
+      "subtitle": "Bevestig {{date}}",
+      "shop_order_tracking": {
+        "title_header": "Skandeer met jou foon",
+        "download_shop_to_track": "Laai Winkel af om pakket op te spoor",
+        "track_order_with_shop": "Volg bestelling met Shop",
+        "real_time_delivery_updates": "Winkel sal jou regstreekse afleweringsopdaterings stuur sodra jou bestelling gestuur is."
+      },
+      "summary_totals_title_accessibility_label": "Bestel totalen",
+      "edit_summary": {
+        "added": "Bygevoeg",
+        "removed": "Verwyder",
+        "returned": "Terugbesorg",
+        "added_with_quantity": "Bygevoeg {{quantity}}",
+        "return_line_item_removed": "Verwyder van terugkeer",
+        "return_line_item_removed_with_quantities": "Verwyder {{delta}} van terugkeer",
+        "removed_with_quantity": "Verwyder {{quantity}}",
+        "returned_with_quantities": "Terugbesorg {{delta}} van {{total}}",
+        "removed_with_quantities": "Verwyder {{delta}} van {{total}}",
+        "updated_at": "Jou bestelling is op {{date}} opgedateer"
+      },
+      "summary_list_title_accessibility_label": "Bestel items",
+      "shop_pay": {
+        "learn_more": "Leer meer",
+        "order_completed_with": "Bestelling voltooi met"
+      },
+      "taxes": "Belastings",
+      "duties": "Doeane",
+      "error_duties_tooltip": "Hierdie bestelling word van 'n ander land af gestuur, so heffings en belasting mag by aflewering gehef word.",
+      "tip": "Fooi",
+      "title": "Bestel {{name}}",
+      "taxes_included": "Ingesluit {{amount}} in belasting",
+      "total": "Totaal",
+      "pagination": {
+        "load_more": "Laai meer",
+        "load_more_accessibility_label": "Laai meer items",
+        "loading_accessibility_label": "Laai items in"
+      },
+      "ok_duties_tooltip": "Hierdie bestelling word van 'n ander land af gestuur, so heffings is by jou bestellingsbedrag gevoeg.",
+      "duties_and_taxes_included": "Totaal sluit pligte en belasting in. Geen ekstra koste by aflewering nie.",
+      "login_to_view_all_order_details": "Meld aan om alle bestelbesonderhede te sien.",
+      "log_in": "Teken in",
+      "unit_price": "{{price}}/stuk",
+      "zero_duties_tooltip": "Hierdie bestelling word van 'n ander land af gestuur. Doeaneheffings word nie gehef op bestellings van hierdie waarde nie.",
+      "fees": {
+        "restocking_fee": "Herbevoorradingsfooi",
+        "return_shipping_fee": "Terugstuurversending"
+      },
+      "log_in_to_a_different_account": "Meld aan by 'n ander rekening",
+      "logged_in_account_no_permission_to_order": "Jy is aangemeld as {{email}}. Hierdie rekening het nie toestemming om hierdie bestelling te bestuur nie.",
+      "cash_rounding": "Kontant afronding",
+      "vat_invoices": {
+        "title": "BTW-fakture"
+      },
+      "link_sent": "Skakel gestuur",
+      "adjusted_payment": "Aangepaste betaling",
+      "adjusted_total": "Aangepaste totaal"
+    },
+    "addresses": {
+      "add_button": "Voeg adres by",
+      "add_button_text": "Voeg",
+      "add_button_accessibility_label": "Voeg adres by",
+      "back_button": "Terug",
+      "back_button_accessibility_label": "Terug na die redigering van adres {{address}}",
+      "add_address_banner": "Voeg adresse by om by die betaalpunt te gebruik",
+      "cancel_deletion_button": "Kanselleer",
+      "no_addresses_banner": "Geen adresse bygevoeg nie",
+      "cancel_adding_address_accessibility_label": "Kanselleer die toevoeging van adres",
+      "address_deleted_notification": "Adres verwyder",
+      "delete_button": "Verwyder",
+      "cancel_deletion_button_accessibility_label": "Kanselleer die verwydering van {{address}}",
+      "default_address": {
+        "title": "Standaardadres",
+        "title_accessibility_label": "Standaardadres: {{address}}"
+      },
+      "delete_confirmation_button": "Verwyder adres",
+      "delete_button_accessibility_label": "Verwyder {{address}}",
+      "delete_confirmation_button_accessibility_label": "Verwyder {{address}}",
+      "edit_button": "Wysig",
+      "delete_confirmation_title": "Verwyder adres?",
+      "delete_confirmation_description": "Bestaande bestellings word nie beïnvloed nie.",
+      "edit_modal_title": {
+        "default": "Wysig adres",
+        "shipping": "Wysig versendingsadres",
+        "billing": "Wysig faktuuradres"
+      },
+      "delete_confirmation_message": "Verwyder adres? Bestaande bestellings word nie beïnvloed nie.",
+      "edit_button_accessibility_label": "Wysig {{address}}",
+      "edit_section_accessibility_label": "Wysig {{address}}",
+      "loading_accessibility_message": "Laai adres",
+      "pagination": {
+        "load_more": "Laai meer",
+        "load_more_accessibility_label": "Laai meer adresse"
+      },
+      "loading_billing_accessibility_message": "Laai faktuuradres",
+      "loading_finished_accessibility_message": "Nuwe bladsy van adresse is gelaai",
+      "title": "Adresse",
+      "billing_address_dropdown_placeholder": "Faktuuradres",
+      "save_new_address_accessibility_label": "Stoor adres",
+      "loading_addresses_accessibility_message": "Laai adresse op",
+      "loading_shipping_accessibility_message": "Laai versendingsadres op"
+    },
+    "address_form": {
+      "auto_complete_close_accessibility_label": "Maak voorstelle toe",
+      "auto_complete_title": "Voorstelle",
+      "cancel": "Kanselleer",
+      "attention": "Aandag",
+      "billing_address": "Gebruik as faktuuradres",
+      "attention_help_text": "Die naam van 'n persoon of departement",
+      "attention_company": "Maatskappy/aandag",
+      "cancel_accessibility_label": "Kanselleer die redigering van adres {{address}}"
     }
   }
 }
