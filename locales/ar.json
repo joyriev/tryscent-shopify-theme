@@ -2959,8 +2959,80 @@
         "resume_tracking": "تتبع السيرة الذاتية",
         "submitted_label": "تم الإرسال",
         "submitted_description": "مراجعة تفاصيل الطلب والدفع.",
-        "there_was_a_problem_label": "حدثت مشكلة"
-      }
+        "there_was_a_problem_label": "حدثت مشكلة",
+        "track_shipment": "تتبع الشحنة",
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "الإدارة مع أمازون",
+            "new_window_disclaimer": "(يفتح نافذة جديدة)"
+          }
+        },
+        "view_order_for_details": "عرض الطلب للتفاصيل",
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "الإدارة على أمازون"
+        },
+        "request_return": "طلب الإرجاع",
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "التسليم مضمون بواسطة",
+            "external_promise_brand_label": "التوصيل بواسطة",
+            "not_delivered_by_label": "تم التسليم بعد {{date}}",
+            "delivery_guarantee_expired_label": "انتهت صلاحية ضمان التسليم",
+            "modal_accessibility_button_label": "تفاصيل وعد التسليم",
+            "download_shop_app_button_label": "قم بتنزيل Shop للتتبع",
+            "track_with_shop_button_label": "تتبع مع Shop",
+            "claim_shop_cash_button_label": "استرد نقود Shop"
+          },
+          "details_modal": {
+            "title": "ضمان التسليم",
+            "active_delivery_guarantee_label": "التسليم بحلول {{date}}",
+            "expired_delivery_guarantee_description": "ضمان وعد Shop لمدة 30 يومًا لهذا الطلب قد انتهى.",
+            "expired_badge_label": "منتهي الصلاحية",
+            "order_includes_guarantees_label": "طلبك يتضمن {{deliveryAgreementsCount}} ضمانات",
+            "order_includes_guarantees_description": "تضمن Shop Promise توصيلًا سريعًا وموثوقًا. اطلب استرداد Shop Cash إذا وصل طلبك بعد {{date}}.",
+            "delivered_after_label": "تم التسليم بعد {{date}}",
+            "delivered_after_description": "نظرًا لأن طلبك وصل متأخرًا، فأنت مؤهل للمطالبة بـ {{amount}} Shop Cash.",
+            "claimed_shop_cash_description": "بسبب وصول هذا الطلب متأخرًا، لقد طالبت بـ {{amount}} Shop Cash.",
+            "learn_more_button_label": "تعرف على المزيد",
+            "eligible_to_claim_shop_cash_description": "نظرًا لأن طلبك وصل متأخرًا، فأنت مؤهل للمطالبة بـ {{amount}} Shop Cash.",
+            "claim_shop_cash_button_label": "استرد نقود Shop",
+            "view_balance_in_shop_button_label": "عرض الرصيد في Shop",
+            "scan_to_claim_shop_cash_label": "امسح للمطالبة بـ {{amount}} Shop Cash"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "التوصيل مدعوم من",
+            "mixed_brands_label": "التوصيل مضمون",
+            "not_delivered_by_label": "لم يتم التسليم بحلول {{date}}",
+            "modal_accessibility_button_label": "تفاصيل وعد التسليم"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "استلم Shop Cash الخاص بك",
+            "no_shop_app_label": "{{appDownloadLink}} للمطالبة بـ Shop Cash",
+            "download_shop_app_label": "تحميل Shop"
+          },
+          "details_modal": {
+            "title": "التوصيل مدعوم من",
+            "modal_accessiblity_label": "تفاصيل وعد التسليم",
+            "delivery_guarantee_label": "ضمان التسليم",
+            "delivery_by_label": "التسليم بحلول {{date}}",
+            "delivery_guaranteed_by_label": "التسليم مضمون بحلول {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "تضمن Shop Promise توصيلًا سريعًا وموثوقًا. اطلب Shop Cash إذا وصل طلبك متأخرًا.",
+              "may_be_eligible_not_authorized_label": "قد تكون مؤهلاً للمطالبة بـ Shop Cash لأن هذا الطلب وصل متأخراً. سجّل الدخول لعرض التفاصيل.",
+              "redeemed_label": "لقد قمت بالفعل بالمطالبة بـ Shop Cash لأن هذا الطلب وصل متأخرًا.",
+              "expired_label": "هذا الطلب غير مؤهل لمطالبة بالتسليم المتأخر لأن ضمان الـ 30 يومًا قد انتهى.",
+              "no_longer_guaranteed_label": "لم تعد هذه العناصر مدعومة بضمان التسليم.",
+              "no_shop_cash_label": "هذا الطلب غير مؤهل لمطالبة بالتأخير في التسليم لأنه لم يتم دفعه باستخدام Shop Pay.",
+              "claim_shop_cash_title": "امسح للمطالبة بـ {{amount}} في Shop Cash",
+              "claim_shop_cash_description": "يمكنك استخدام Shop Cash الخاص بك في عمليات الشراء المستقبلية في تطبيق Shop."
+            }
+          }
+        }
+      },
+      "status_mark_as_delivered": "وضع علامة كمُسلَّم",
+      "fulfillment_status_title": "حالة التنفيذ: {{status}}"
     }
   }
 }

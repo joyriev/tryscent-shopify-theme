@@ -4181,7 +4181,69 @@
       "sign_in": "Teken in"
     },
     "order": {
-      "title": "Bestel {{ name }}"
+      "title": "Bestel {{ name }}",
+      "billing_address": "Faktuuradres",
+      "date_html": "Geplaas op {{ date }}",
+      "cancelled_reason": "Rede: {{ reason }}",
+      "payment_status": "Betalingsstatus",
+      "cancelled_html": "Bestelling gekanselleer op {{ date }}",
+      "discount": "Afslag",
+      "shipping_address": "Versendingsadres",
+      "shipping": "Versending",
+      "product": "Produk",
+      "price": "Prys",
+      "quantity": "Hoeveelheid",
+      "total": "Totaal",
+      "total_refunded": "Terugbetaal",
+      "track_shipment": "Volg versending",
+      "tax": "Belasting",
+      "tracking_company": "Draer",
+      "sku": "SKU",
+      "fulfillment_status": "Vervullingsstatus",
+      "tracking_number": "Volgnommer",
+      "subtotal": "Subtotaal",
+      "total_duties": "Doeane",
+      "fulfilled_at_html": "Vervul {{ date }}",
+      "tracking_url": "Volgskakel"
+    },
+    "orders": {
+      "order_number": "Bestel",
+      "date": "Datum",
+      "payment_status": "Betalingsstatus",
+      "title": "Bestelgeskiedenis",
+      "total": "Totaal",
+      "fulfillment_status": "Vervullingsstatus",
+      "none": "Jy het nog geen bestellings geplaas nie.",
+      "order_number_link": "Bestelnommer {{ number }}"
+    },
+    "recover_password": {
+      "title": "Stel jou wagwoord terug",
+      "subtext": "Ons sal vir jou 'n e-pos stuur om jou wagwoord te herstel",
+      "success": "Ons het vir jou 'n e-pos gestuur met 'n skakel om jou wagwoord op te dateer."
+    },
+    "register": {
+      "title": "Skep rekening",
+      "first_name": "Voornaam",
+      "last_name": "Vannaam",
+      "email": "E-pos",
+      "password": "Wagwoord",
+      "submit": "Skep"
+    },
+    "reset_password": {
+      "password": "Wagwoord",
+      "password_confirm": "Bevestig wagwoord",
+      "title": "Stel rekening wagwoord terug",
+      "subtext": "Voer 'n nuwe wagwoord in",
+      "submit": "Stel wagwoord terug"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "gift_card_code": "Geskenkkaartkode",
+      "shop_link": "Besoek aanlynwinkel",
+      "subtext": "Jou geskenkkaart",
+      "how_to_use_gift_card": "Gebruik die geskenkkaartkode aanlyn of QR-kode in die winkel",
+      "title": "Hier is jou {{ value }} geskenkkaartbalans vir {{ shop }}!"
     }
   }
 }
