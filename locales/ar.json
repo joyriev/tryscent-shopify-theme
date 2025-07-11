@@ -4018,7 +4018,148 @@
       "filter_and_operator_subtitle": "تطابق الكل",
       "apply": "تقديم",
       "clear_all": "إزالة الكل",
-      "clear": "مسح"
+      "clear": "مسح",
+      "filter_and_sort": "تصفية وفرز",
+      "filters_selected": {
+        "one": "{{ count }} مختار",
+        "other": "{{ count }} مختار"
+      },
+      "from": "من",
+      "filter_by_label": "تصفية:",
+      "filter_button": "تصفية",
+      "show_more": "عرض المزيد",
+      "filter_selected_accessibility": "{{ type }} (تم اختيار {{ count }} من الفلاتر)",
+      "show_less": "عرض أقل",
+      "max_price": "أعلى سعر هو {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} من {{ count }} منتج",
+        "other": "{{ product_count }} من {{ count }} منتجات"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} منتج",
+        "other": "{{ count }} منتجات"
+      },
+      "reset": "إعادة تعيين",
+      "sort_button": "فرز",
+      "sort_by_label": "رتب حسب:",
+      "to": "لـ",
+      "clear_filter": "إزالة الفلتر"
+    }
+  },
+  "templates": {
+    "search": {
+      "no_results": "لم يتم العثور على نتائج لـ \"{{ terms }}\". تحقق من التهجئة أو استخدم كلمة أو عبارة مختلفة.",
+      "page": "صفحة",
+      "products": "المنتجات",
+      "results_pages_with_count": {
+        "one": "{{ count }} صفحة",
+        "other": "{{ count }} صفحات"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} اقتراح",
+        "other": "{{ count }} اقتراحات"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} منتج",
+        "other": "{{ count }} منتجات"
+      },
+      "results_with_count": {
+        "one": "{{ count }} نتيجة",
+        "other": "{{ count }} نتائج"
+      },
+      "results_with_count_and_term": {
+        "one": "تم العثور على {{ count }} نتيجة لـ \"{{ terms }}\"",
+        "other": "تم العثور على {{ count }} نتائج لـ \"{{ terms }}\""
+      },
+      "suggestions": "اقتراحات",
+      "title": "نتائج البحث",
+      "search_for": "ابحث عن \"{{ terms }}\"",
+      "pages": "الصفحات"
+    },
+    "cart": {
+      "cart": "عربة التسوق"
+    },
+    "contact": {
+      "form": {
+        "name": "اسم",
+        "title": "نموذج الاتصال",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "comment": "تعليق",
+        "post_success": "شكراً لتواصلك معنا. سنرد عليك في أقرب وقت ممكن.",
+        "send": "إرسال",
+        "error_heading": "يرجى تعديل ما يلي:"
+      }
+    },
+    "404": {
+      "title": "الصفحة غير موجودة"
+    }
+  },
+  "localization": {
+    "country_label": "البلد/المنطقة",
+    "language_label": "اللغة",
+    "update_language": "تحديث اللغة",
+    "country_results_count": "تم العثور على {{ count }} دولة/منطقة",
+    "popular_countries_regions": "الدول/المناطق الشعبية",
+    "search": "بحث",
+    "update_country": "تحديث البلد/المنطقة"
+  },
+  "customer": {
+    "account": {
+      "details": "تفاصيل الحساب",
+      "title": "الحساب",
+      "view_addresses": "عرض العناوين",
+      "return": "العودة إلى تفاصيل الحساب"
+    },
+    "account_fallback": "الحساب",
+    "activate_account": {
+      "subtext": "أنشئ كلمة المرور الخاصة بك لتفعيل حسابك.",
+      "title": "تفعيل الحساب",
+      "password": "كلمة المرور",
+      "password_confirm": "تأكيد كلمة المرور",
+      "submit": "تفعيل الحساب",
+      "cancel": "رفض الدعوة"
+    },
+    "addresses": {
+      "title": "العناوين",
+      "default": "افتراضي",
+      "add_new": "أضف عنوانًا جديدًا",
+      "edit_address": "تعديل العنوان",
+      "first_name": "الاسم الأول",
+      "last_name": "الاسم الأخير",
+      "company": "شركة",
+      "address1": "العنوان 1",
+      "address2": "العنوان 2",
+      "city": "مدينة",
+      "country": "البلد/المنطقة",
+      "province": "المحافظة",
+      "zip": "الرمز البريدي",
+      "phone": "هاتف",
+      "set_default": "تعيين كعنوان افتراضي",
+      "update": "تحديث العنوان",
+      "add": "أضف عنوان",
+      "cancel": "إلغاء",
+      "delete": "حذف",
+      "edit": "تحرير",
+      "delete_confirm": "هل أنت متأكد أنك ترغب في حذف هذا العنوان؟"
+    },
+    "log_in": "تسجيل الدخول",
+    "log_out": "تسجيل الخروج",
+    "login_page": {
+      "cancel": "إلغاء",
+      "create_account": "إنشاء حساب",
+      "email": "البريد الإلكتروني",
+      "forgot_password": "هل نسيت كلمة المرور؟",
+      "guest_continue": "استمر",
+      "password": "كلمة المرور",
+      "guest_title": "المتابعة كضيف",
+      "title": "تسجيل الدخول",
+      "submit": "إرسال",
+      "sign_in": "تسجيل الدخول",
+      "alternate_provider_separator": "أو"
+    },
+    "order": {
+      "title": "طلب {{ name }}"
     }
   }
 }
