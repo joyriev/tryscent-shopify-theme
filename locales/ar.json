@@ -466,8 +466,119 @@
         "customer_already_used_once_per_customer_discount_notice": "تم استخدام رمز الخصم <strong style=\"text-transform:uppercase\">%{code}</strong> بالفعل",
         "subtotal_label": "المجموع الفرعي",
         "subtotal_label_with_quantity": {
-          "one": "المجموع الفرعي · %{count} عنصر"
-        }
+          "one": "المجموع الفرعي · %{count} عنصر",
+          "other": "المجموع الفرعي · %{count} عناصر"
+        },
+        "pickup_unavailable_banner_title": {
+          "one": "لا توجد متاجر متاحة مع العنصر الخاص بك",
+          "other": "لا توجد متاجر متاحة مع عناصرك"
+        },
+        "shipping_label": "الشحن",
+        "pickup_label": "الاستلام من المتجر",
+        "no_pickup_location": "لا توجد مواقع استلام متاحة.",
+        "pickup_unavailable_banner_body": {
+          "ship_to_address_instead_html": "%{link} بدلاً من ذلك",
+          "ship_to_address": "الشحن إلى العنوان"
+        },
+        "tip_label": "إكرامية",
+        "calculating_shipping": "جارٍ الحساب…",
+        "calculating": "جارٍ الحساب…",
+        "shipping_default_value": "محسوب في الخطوة التالية",
+        "shipping_discount_title": "خصم الشحن",
+        "shipping_pending_message": "غير متوفر بعد",
+        "shipping_policy_link": "تكاليف الشحن",
+        "taxes_label": "الضرائب",
+        "information_estimated_taxes_label": "الضرائب (مقدرة)",
+        "estimated_taxes_finalization_tooltip_content": "سيتم تأكيد الضريبة النهائية والإجمالي عبر البريد الإلكتروني أو الرسائل النصية بعد تقديم طلبك.",
+        "estimated_taxes_label": "الضرائب المقدرة",
+        "order_total_label": "إجمالي الطلب",
+        "price_before_discount_aria_text": "السعر الأصلي",
+        "price_after_discount_aria_text": "السعر المخفض",
+        "discount_code_aria_text": "رمز الخصم",
+        "total_savings": "إجمالي التوفير",
+        "total_label": "الإجمالي",
+        "total_due_label": "المجموع المستحق",
+        "total_price_label": "السعر الإجمالي",
+        "total_outstanding_label": "المبلغ المطلوب دفعه",
+        "deposit_label": "إيداع",
+        "total_due_today_label": "الإجمالي المستحق اليوم",
+        "total_due_later_label": "الإجمالي المستحق لاحقًا",
+        "partial_total_label": "الإجمالي",
+        "free_total_label": "مجاني",
+        "free_shipping_total_label": "مجاني",
+        "paid_label": "مدفوع",
+        "payment_due_label": "المبلغ المستحق",
+        "vat_label_html": "بما في ذلك %{amount} في الضرائب",
+        "duties_included_label": "الإجمالي يشمل الضرائب والرسوم. لا توجد رسوم إضافية على التوصيل.",
+        "discount_and_gift_card_savings_notice": "بعد %{discount_amount} من الخصومات و %{gift_card_amount} من بطاقات الهدايا",
+        "discount_savings_notice": "بعد %{discount_amount} من الخصومات",
+        "gift_card_savings_notice": "بعد %{gift_card_amount} في بطاقات الهدايا",
+        "cost_table_title": "ملخص التكلفة",
+        "cost_table_item_column_header": "عنصر",
+        "cost_table_value_column_header": "القيمة",
+        "description_label": "الوصف",
+        "price_label": "السعر",
+        "price_per_item": {
+          "accessibility_label": "%{price} لكل عنصر",
+          "label": "%{price}/لكل"
+        },
+        "quantity_label": "الكمية",
+        "product_change_label": "تغيير",
+        "product_image_quantity_label": "الكمية",
+        "scroll_order_summary": "قم بالتمرير لمزيد من العناصر",
+        "expand_order_summary_short": "عرض",
+        "product_image_label": "صورة المنتج",
+        "collapse_order_summary_short": "إخفاء",
+        "expand_order_summary": "عرض ملخص الطلب",
+        "collapse_order_summary": "إخفاء ملخص الطلب",
+        "original_price": "السعر الأصلي",
+        "sale_price": "سعر البيع",
+        "total_updated_label": "السعر الإجمالي المحدث:",
+        "order_total_updated_label": "المجموع المحدث",
+        "total_already_paid_label": "مدفوع",
+        "unit_price": {
+          "accessible_separator": "لكل",
+          "per_item": {
+            "single": "%{price} لكل واحد",
+            "one": "%{price} لكل %{count} عنصر",
+            "other": "%{price} لكل %{count} عناصر"
+          }
+        },
+        "gift_card_ending": "بطاقة هدية تنتهي بـ %{last_characters}",
+        "estimated_tax_label": "الضريبة المقدرة",
+        "multiple_shipping_lines_label": "إجمالي الشحن",
+        "recurring_subtotal_label": "المجموع الفرعي المتكرر",
+        "recurring_total_label": "الإجمالي المتكرر",
+        "recurring_total_tooltip": "لا يشمل الشحن أو الضرائب أو الرسوم أو أي خصومات قابلة للتطبيق.",
+        "confirmation_number_label": "تأكيد #%{confirmation_number}",
+        "percent_off_shipping": "خصم %{percent}% على الشحن",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يمكن استخدامه مع خصوماتك الحالية.",
+        "amount_off_shipping": "خصم %{amount} على الشحن",
+        "deferred_payment_info": {
+          "description_html": "لأي استفسارات حول طلبك، %{contact_us}.",
+          "title": "دفع %{amount_due} مستحق في %{due_at}",
+          "paid_today": "الإجمالي المدفوع اليوم",
+          "paid_today_next": "مدفوع اليوم",
+          "due_on_fulfillment_title": "دفع %{amount_due} مستحق عند التنفيذ",
+          "due_on_receipt_title": "دفع %{amount_due} مستحق عند الاستلام"
+        },
+        "deferred_balance_info": {
+          "title": "الرصيد المستحق {{amount_due}} يجب دفعه في {{due_at}}",
+          "due_on_fulfillment_title": "الرصيد المستحق {{amount_due}} يجب دفعه عند التنفيذ"
+        },
+        "payment_terms_totals": {
+          "due_today": "الإجمالي المستحق اليوم",
+          "due_today_next": "مستحق اليوم",
+          "due_later": "الإجمالي المستحق %{due_at}",
+          "due_on_fulfillment": "الإجمالي المستحق عند التنفيذ",
+          "due_on_fulfillment_next": "مستحق عند التنفيذ",
+          "due_on_receipt": "الإجمالي المستحق عند الاستلام",
+          "due_later_checkout_to_draft": "الإجمالي المستحق لاحقًا",
+          "total_paid": "الإجمالي المدفوع"
+        },
+        "maximum_discount_code_limit_reached": "لقد وصلت إلى الحد الأقصى لعدد رموز الخصم. قم بإزالة رمز موجود لاستخدام <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يعمل الآن. اتصل بنا للمساعدة.",
+        "due_on_fulfillment": "مستحق عند التنفيذ"
       }
     }
   }
