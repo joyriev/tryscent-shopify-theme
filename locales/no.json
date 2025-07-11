@@ -1168,7 +1168,153 @@
         "apple_pay_payment_error": "Betalingen din kunne ikke fullføres. Prøv igjen eller bruk en annen betalingsmetode.",
         "purchase_options_card_update_agreement_label_html": "Ved å oppdatere betalingsmetoden din, godkjenner du betalinger for alle tilbakevendende eller utsatte kjøp i henhold til denne butikkens <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">cancellation policy</a>.",
         "subscription_agreement_label_html": "Jeg forstår at jeg godtar et abonnement. Det vil fornye seg til prisen og frekvensen som er oppgitt, inntil det avsluttes eller er\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">avbrutt</a>.\n",
-        "purchase_options_agreement_label_html": "Jeg forstår at ett eller flere elementer i handlekurven min er et utsatt eller tilbakevendende kjøp. Ved å fortsette, godtar jeg %{subscription_policy}\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">cancellation policy</a>\nog gir deg fullmakt til å belaste betalingsmetoden min til prisene, frekvensen og datoene som er oppført på denne siden til min\nbestillingen er fullført eller jeg avbryter, hvis tillatt.\n"
+        "purchase_options_agreement_label_html": "Jeg forstår at ett eller flere elementer i handlekurven min er et utsatt eller tilbakevendende kjøp. Ved å fortsette, godtar jeg %{subscription_policy}\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">cancellation policy</a>\nog gir deg fullmakt til å belaste betalingsmetoden min til prisene, frekvensen og datoene som er oppført på denne siden til min\nbestillingen er fullført eller jeg avbryter, hvis tillatt.\n",
+        "paypal": {
+          "connect": "Klikk for å koble til PayPal-kontoen din"
+        },
+        "no_taxes_banner_content": "Skatt vil ikke bli belastet på denne bestillingen. Når du har mottatt betaling, kan ikke skatt legges til.",
+        "taxes_not_included": "Skatter ikke inkludert",
+        "apple": {
+          "not_available": "Apple Pay er ikke tilgjengelig i denne nettleseren. For å koble til Apple Pay-kontoen din må du bruke Safari på en Apple-enhet.",
+          "connect": "Klikk for å koble til Apple Pay-kontoen din"
+        },
+        "google": {
+          "connect": "Klikk for å koble til Google Pay-kontoen din",
+          "error_authorizing": "Feil ved autorisering av betaling"
+        },
+        "account_connected": "Konto tilkoblet.",
+        "pending_payment": {
+          "due_notice": "Din betaling på %{amount_due} forfaller %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "Din betaling på %{amount_due} forfaller.",
+            "instruction_html": "Foreta betalingen din på Multibanco eller online ved å bruke detaljene nedenfor. For spørsmål eller for å oppdatere betalingsdetaljer, %{contact_us}.",
+            "entity": "Enhet",
+            "reference": "Referanse",
+            "amount": "Beløp",
+            "find_nearest_atm": "Finn nærmeste minibank"
+          }
+        },
+        "update_payment_method": "Oppdater betalingsmetode",
+        "order_covered_by_store_credit_notice": "Bestillingen din dekkes av butikkreditten din.",
+        "order_covered_by_redeemables_notice": "Bestillingen din er dekket.",
+        "store_credit": {
+          "label": "Butikkreditt",
+          "apply_label": "Bruk butikkreditt",
+          "add_label": "Legg til butikkreditt",
+          "manage_label": "Administrer butikkreditt",
+          "buying_gift_card": "Du kan ikke bruke butikkreditt til å kjøpe et gavekort",
+          "no_fixed_selling_plans": "Du kan ikke bruke butikkreditt med utsatte kjøpsalternativer"
+        },
+        "clear": "Tøm",
+        "billing_must_match_shipping_notice": "Betalingsmetodens faktureringsadresse må samsvare med leveringsadressen.",
+        "same_billing_address_checkbox_label": "Bruk leveringsadresse som fakturaadresse",
+        "location_billing_address_label": "Faktureringsadresse for plassering",
+        "fact_billing_address_label": "Fakturaadresse",
+        "location_shipping_address_label": "Leveringsadresse for plassering",
+        "use_order_billing_address_label": "Bruk bestillingsfakturaadresse",
+        "use_location_billing_address_label": "Bruk faktureringsadresse for plassering",
+        "use_location_shipping_address_label": "Bruk leveringsadresse for sted",
+        "no_working_method_error": "Denne butikken kan ikke godta betalinger akkurat nå. Oppdater denne siden eller kom tilbake senere.",
+        "brand_not_available": "Denne butikken godtar ikke {{brand}}. Vennligst bruk et annet kort for å betale.",
+        "shipping_rate_updated": "Tilgjengelige fraktmetoder er oppdatert. Bekreft valget ditt før du går til kassen.",
+        "billing_address_invalid_phone": "Oppdater telefonnummeret i fakturaadressen for {{label}} {{last_digits}} for å fortsette.",
+        "billing_address_invalid_phone_no_card": "Oppdater telefonnummeret i fakturaadressen din for å fortsette.",
+        "preview_not_available": {
+          "title": "Forhåndsvisning ikke tilgjengelig",
+          "content": "Ikke bekymre deg, denne ekspressutsjekkingen fungerer for kundene dine.",
+          "button": "Ok"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Skriv inn en gyldig utstedelsesdato",
+              "issue_number": "Skriv inn et gyldig saksnummer"
+            },
+            "invalid": {
+              "verification_value": "Skriv inn en gyldig CVV eller sikkerhetskode"
+            }
+          }
+        },
+        "simulated_checkout": "Forhåndsvisning kommer snart",
+        "simulated_express_checkout": "Lommebøker er utilgjengelige i redaktørforhåndsvisningen på grunn av din region eller nettleser",
+        "vaulting_agreement_label": "Lagre betalingsinformasjonen min hos %{company} for en raskere utsjekking.",
+        "business_customer_vaulting_payment_label": "Lagre dette kortet ved utsjekking og gi %{company} tillatelse til å belaste det for fremtidige kjøp for dette stedet. Alle kontakter tilknyttet dette stedet kan bruke kortet.",
+        "purchase_options_and_vaulting_agreement_label": "Én eller flere varer i handlekurven din er et utsatt eller abonnementskjøp. Ved å fortsette med betalingen godtar du at betalingsmetoden din automatisk belastes til prisen og frekvensen som er oppgitt på denne siden, inntil det avsluttes eller du kansellerer. Alle kanselleringer er underlagt %{cancellation_policy_label}.",
+        "mor_disclaimer_html": "Ved å klikke nedenfor og fullføre bestillingen, godtar du å kjøpe varen(e) dine fra Global-e som registrert selger\nfor denne transaksjonen, i henhold til Global-es <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Vilkår og betingelser</a>\nog <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Personvernregler</a>. Global-e er en internasjonal\noppfyllelsestjenesteleverandør til %{shop_name}",
+        "saved_credit_card_info": "Siste fire sifre",
+        "saved_credit_card": "Ditt lagrede kredittkort",
+        "saved_credit_card_cvv_verification": "For verifiseringsformål, vennligst skriv inn kortets sikkerhetskode.",
+        "use_different_credit_card_label": "Bruk et annet kort",
+        "saved_credit_card_actions": {
+          "edit": "Rediger",
+          "delete": "Slett"
+        },
+        "saved_credit_cards_modal": {
+          "view_all_label": "Se alle lagrede kort",
+          "done": "Ferdig",
+          "cancel": "Avbryt"
+        },
+        "add_credit_card_modal": {
+          "title": "Legg til kort",
+          "save": "Lagre",
+          "cancel": "Avbryt"
+        },
+        "delete_credit_card_modal": {
+          "title": "Slett kort",
+          "confirmation": "Er du sikker på at du vil slette {{brandName}} som slutter på {{lastDigits}}?",
+          "cancel": "Avbryt",
+          "delete": "Slett"
+        },
+        "edit_credit_card_modal": {
+          "title": "Rediger kort",
+          "done": "Ferdig",
+          "cancel": "Avbryt",
+          "description": "Du kan bare endre faktureringsadressen til kortet ditt.",
+          "fields": {
+            "card_number": "Kortnummer",
+            "default": "Sett som standard",
+            "expiry": "Utløpsdato",
+            "security_code": "Sikkerhetskode",
+            "name": "Navn på kort",
+            "billing": "Fakturer til"
+          }
+        },
+        "purchase_options_cancellation_policy_label": "avbestillingsregler",
+        "expired_cards_info": {
+          "one": "Det er %{count} utløpt kort, som du kan se og redigere i kontoen din.",
+          "other": "Det er %{count} utløpte kort, som du kan se og redigere i kontoen din."
+        },
+        "local_payment_method_receiver_notice": "Etter at du har lagt inn bestillingen, vil du motta betalingsdetaljer. Foreta betalingen i en minibank eller på nett innen {{dueDays}} dager.",
+        "order_edit_banner_title": "Betaling av {{amount_owed}} er nødvendig",
+        "order_edit_banner_subtitle": "Bestillingen din {{order_number}} ble oppdatert. Gå gjennom disse endringene, og betal deretter for å bekrefte bestillingen din.",
+        "order_edit_banner_items_added": {
+          "one": "Lagt til",
+          "other": "Lagt til %{count}"
+        },
+        "order_edit_banner_items_removed": {
+          "with_quantities": "Fjernet {{delta}} av {{quantity}}",
+          "in_full": "Fjernet"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Returnert {{quantity}}",
+          "with_quantities": "Returnert {{delta}} av {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Fjernet fra retur",
+          "with_quantities": "Fjernet {{delta}} fra retur"
+        },
+        "order_edit_banner_single_item_added": "Lagt til",
+        "order_edit_banner_multiple_items_added": "La til {{amount}}",
+        "order_edit_banner_single_item_removed": "Fjernet",
+        "order_edit_banner_multiple_items_removed": "Fjernet {{amount}}",
+        "order_edit_banner_single_item_returned": "Returnert",
+        "order_edit_banner_multiple_items_returned": "Returnert {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Fjernet fra retur",
+        "order_edit_banner_multiple_items_return_line_item_removed": "Fjernet {{amount}} fra retur",
+        "gift_card_wrapper": {
+          "heading": "Gavekort"
+        },
+        "order_edit_banner_updated_order_label": "Oppdatert ordre"
       }
     },
     "sentence": {
