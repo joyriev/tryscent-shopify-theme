@@ -3453,8 +3453,94 @@
         }
       },
       "purchase_order_number": {
-        "add_accessibility_label": "Voeg PO-nommer by"
+        "add_accessibility_label": "Voeg PO-nommer by",
+        "cancel": "Kanselleer",
+        "add_modal_title": "Voeg PO-nommer by",
+        "discard": "Weggooi",
+        "close_modal_accessibility_label": "Sluit PO-nommer venster",
+        "discard_changes_modal_title": "Verwerp veranderinge?",
+        "modal_po_number_input_label": "PO nommer",
+        "edit_modal_title": "Wysig PO-nommer",
+        "edit_accessibility_label": "Wysig PO-nommer",
+        "save": "Stoor",
+        "empty_state": "Geen PO-nommer nie",
+        "title": "PO #{{poNumber}}",
+        "modal_po_number_input_max_length_error": "PO-nommers het 'n maksimum van {{maxLength}} karakters."
       }
+    },
+    "errors": {
+      "banner_title": {
+        "one": "Daar is {{count}} fout",
+        "other": "Daar is {{count}} foute"
+      },
+      "addresses_loading_issue": {
+        "description": "Verbindingsfout. Kontroleer jou internetverbinding en probeer weer."
+      },
+      "address_deletion_error": {
+        "description": "Daar was 'n probleem met die verwydering van hierdie adres. Probeer weer of herlaai die bladsy."
+      },
+      "load_orders_error": {
+        "description": "Probeer weer of kom later terug.",
+        "title": "Kan nie bestellings laai nie",
+        "retry_button": "Probeer weer"
+      },
+      "failed_address_creation": {
+        "description": "Daar was 'n probleem met die skep van jou adres. Probeer om hierdie bladsy te herlaai of kyk jou internetverbinding na."
+      },
+      "failed_address_update": {
+        "description": "Daar was 'n probleem met die opdatering van jou adres. Probeer om hierdie bladsy te herlaai of kyk jou internetverbinding na."
+      },
+      "not_found": {
+        "title": "Daar is 'n probleem met die laai van hierdie bladsy",
+        "description": "Kontroleer die URL of probeer weer oor 'n paar minute."
+      },
+      "load_paypal_error": {
+        "description": "Daar is 'n probleem met die laai van PayPal. Probeer asseblief weer."
+      },
+      "logout_everywhere": {
+        "description": "Iets het verkeerd gegaan tydens uitlog. Probeer asseblief weer."
+      },
+      "no_access_to_locations": {
+        "description": "Jy het nie toegang tot enige plekke nie"
+      },
+      "retry_action_label": "Probeer weer",
+      "resend_link": {
+        "too_many_requests": "Te veel versoeke. Probeer later weer.",
+        "generic": "Mislukte versoek"
+      },
+      "order_not_found": {
+        "description": "Hierdie bestelling bestaan nie of jy het nie toestemming om dit te sien nie.",
+        "title": "Bestelling nie gevind nie"
+      },
+      "load_extension_error": {
+        "title": "Fout",
+        "refresh_button": "Herlaai bladsy",
+        "description": "Herlaai hierdie bladsy of probeer weer oor 'n paar minute."
+      },
+      "profile_update_error": {
+        "description": "Daar was 'n probleem met die opdatering van jou profiel. Probeer om hierdie bladsy te herlaai of kyk jou internetverbinding na."
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "message": "Te veel pogings",
+        "description": "Probeer asseblief weer oor 'n paar minute"
+      }
+    },
+    "payment_methods": {
+      "title": "Betalingsmetodes",
+      "add_payment_method_button": "Voeg betaalmetode by",
+      "delete_payment_method_button": "Verwyder",
+      "edit_payment_method_brand_button_accessibility_label": "Wysig {{paymentMethodName}}",
+      "no_payment_methods_banner": "Geen betaalmetodes bygevoeg nie",
+      "edit_payment_method_button_accessibility_label": "Wysig {{paymentMethodName}} wat eindig op {{lastDigits}}",
+      "back_button": "Terug",
+      "add_payment_method_banner": "Voeg betaalmetode by vir vinniger afhandeling of vooraf-gemagtigde dienste",
+      "delete_payment_method_button_accessibility_label": "Verwyder {{paymentMethodName}}",
+      "default": "Standaard",
+      "back_button_accessibility_label": "Terug na {{paymentMethodStepTitle}}",
+      "generic_card": "Kaart",
+      "expiration_warning_button_accessibility_label": "Wys vervaldatum waarskuwing vir {{paymentMethodName}} wat eindig op {{lastDigits}}"
     }
   }
 }
