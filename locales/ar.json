@@ -311,7 +311,162 @@
         },
         "unpurchasable_product": {
           "title": "منتج غير قابل للشراء",
-          "header": "تمت إزالة بعض العناصر من سلة التسوق الخاصة بك"
+          "header": "تمت إزالة بعض العناصر من سلة التسوق الخاصة بك",
+          "status_column_header": "غير متوفر",
+          "message": "هذه العناصر غير متوفرة لطلبات الأعمال بين الشركات."
+        },
+        "unpurchasable_product_generic": {
+          "header": "تمت إزالة بعض العناصر من سلة التسوق الخاصة بك",
+          "title": "منتج غير قابل للشراء",
+          "message": "هذه العناصر غير متوفرة.",
+          "status_column_header": "غير متوفر"
+        },
+        "unfulfillable_product": {
+          "title": "التوصيل غير متوفر",
+          "message": {
+            "one": "لم يعد %{delivery_method} متاحًا لهذا العنصر.",
+            "other": "لم يعد %{delivery_method} متاحًا لهذه العناصر."
+          },
+          "default_message": {
+            "one": "طريقة التوصيل المختارة لم تعد متاحة لهذا العنصر.",
+            "other": "طريقة التوصيل المختارة لم تعد متاحة لهذه العناصر."
+          }
+        },
+        "unshippable_product": {
+          "title": "لا يوجد توصيل متاح",
+          "header": {
+            "one": "لا يوجد توصيل متاح لـ %{count} عنصر",
+            "other": "لا تتوفر خدمة التوصيل لـ %{count} عناصر"
+          },
+          "message": {
+            "one": "سيتم إزالة هذا العنصر من سلة التسوق الخاصة بك لأنه لا توجد طرق توصيل متاحة لعنوانك.",
+            "other": "سيتم إزالة هذه العناصر من سلة التسوق الخاصة بك لأنه لا توجد طرق توصيل متاحة لعنوانك."
+          },
+          "status_column_header": "لا تسليم"
+        },
+        "price_update": {
+          "title": "تحديث السعر",
+          "description": "تم تغيير أسعار هذه العناصر وتم تحديثها في سلة التسوق الخاصة بك."
+        },
+        "price_and_quantity_update": {
+          "title": "تحديث السعر والكمية",
+          "description": "تغيرت الأسعار والكميات المتاحة لهذه العناصر وتم تحديثها في سلة التسوق الخاصة بك."
+        },
+        "out_of_stock": {
+          "description": "هذه العناصر لم تعد متوفرة وقد تم إزالتها من سلة التسوق الخاصة بك.",
+          "items_unavailable": "بعض العناصر لم تعد متوفرة وقد تم إزالتها من سلة التسوق الخاصة بك."
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "المنتج غير متوفر",
+          "other": "المنتجات غير المتوفرة"
+        },
+        "products_not_available": {
+          "one": "سيتم إزالة هذا المنتج من سلة التسوق الخاصة بك لأنه غير متوفر في بلدك/منطقتك.",
+          "other": "سيتم إزالة هذه المنتجات من سلة التسوق الخاصة بك لأنها غير متوفرة في بلدك/منطقتك."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "هذا المنتج غير متوفر في بلدك/منطقتك.",
+          "other": "هذه المنتجات غير متوفرة في بلدك/منطقتك."
+        },
+        "unavailable_label": "غير متوفر"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "هذا المنتج غير متوفر للتوصيل إلى %{location_name}.",
+          "some_products_other": "هذه المنتجات غير متوفرة للتوصيل إلى %{location_name}.",
+          "all_products_other": "المنتجات في سلة التسوق الخاصة بك غير متوفرة للتوصيل إلى %{location_name}.",
+          "all_products_one": "المنتج في سلة التسوق الخاصة بك غير متوفر للتوصيل إلى %{location_name}."
+        },
+        "missing_country_fallback": "بلدك",
+        "indeterminate_location_fallback": "موقعك",
+        "cart_updated": "تم تحديث سلة التسوق الخاصة بك.",
+        "change_address_only": "غيّر عنوان التسليم للمتابعة.",
+        "change_address_or_remove": "تغيير عنوان التسليم أو %{remove_action}.",
+        "remove_items_action": {
+          "one": "إزالة العنصر غير المتوفر",
+          "other": "إزالة العناصر غير المتوفرة"
+        },
+        "empty_cart_action": "إفراغ السلة والعودة إلى المتجر"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "لا يوجد توصيل متاح لـ %{count} عنصر",
+            "other": "لا تتوفر خدمة التوصيل لـ %{count} عناصر"
+          },
+          "message": {
+            "one": "سيتم إزالة هذا العنصر من سلة التسوق الخاصة بك لأنه لا توجد طرق توصيل متاحة لعنوانك.",
+            "other": "سيتم إزالة هذه العناصر من سلة التسوق الخاصة بك لأنه لا توجد طرق توصيل متاحة لعنوانك."
+          },
+          "label": "لا تسليم"
+        }
+      },
+      "order_summary": {
+        "title": "ملخص الطلب",
+        "group_title_label": "جزء من \"%{group_title}\"",
+        "number_items": {
+          "one": "%{count} عنصر",
+          "other": "%{count} عناصر"
+        },
+        "more_items_modal": {
+          "search_item": "بحث",
+          "clear_search": "مسح البحث",
+          "empty_results": "لم يتم العثور على نتائج لـ \"%{searchText}\". تحقق من التهجئة أو استخدم كلمة أو عبارة مختلفة.",
+          "number_items_shown": "%{shownNumber} من %{totalNumber} عناصر"
+        },
+        "view_all_items": {
+          "other": "عرض جميع %{count} العناصر",
+          "one": "عرض %{count} عنصر"
+        },
+        "order_name_label": "طلب %{name}",
+        "shopping_cart_label": "عربة التسوق",
+        "discount_title_stacking": {
+          "other": "الخصومات",
+          "one": "خصم"
+        },
+        "discount_title": "خصم",
+        "discount_order_stacking": {
+          "one": "خصم الطلب",
+          "other": "خصومات الطلب"
+        },
+        "discount_label": "رمز الخصم",
+        "discount_code_applied": "تم تطبيق رمز الخصم",
+        "discount_not_found": "غير قادر على العثور على خصم صالح يطابق الرمز المدخل",
+        "discount_placeholder": "رمز الخصم",
+        "discount_code_allocations_mismatch": "رمز الخصم <strong style=\"text-transform:uppercase\">%{code}</strong> الخاص بك قد تغير. راجع سلة التسوق الخاصة بك وحاول مرة أخرى.",
+        "gift_card_applied": "تم تطبيق بطاقة الهدايا",
+        "gift_card_title": "بطاقة هدايا",
+        "gift_card_label": "بطاقة هدايا",
+        "enter_shipping_address": "أدخل عنوان الشحن",
+        "gift_card_placeholder": "بطاقة هدايا",
+        "gift_card_and_discount_title": "رمز الخصم أو بطاقة الهدايا",
+        "gift_card_and_discount_label": "رمز الخصم أو بطاقة الهدايا",
+        "gift_card_and_discount_placeholder": "رمز الخصم أو بطاقة الهدايا",
+        "remove_gift_card_label": "مسح بطاقة الهدايا",
+        "remove_discount_label": "إزالة الخصم",
+        "return_restocking_fee_label": "رسوم إعادة التخزين",
+        "return_shipping_fee_label": "الشحن العائد",
+        "free_shipping_discount_label": "شحن مجاني",
+        "applied_free_shipping_discount_label": "مُطبَّق",
+        "apply_discount_button_label": "تقديم",
+        "applied_discount_message": "خصم %{amount} من إجمالي سعر الطلب",
+        "discount_has_been_applied": "تم تطبيق الخصم",
+        "discount_has_been_removed": "تمت إزالة الخصم",
+        "gift_card_has_been_applied": "تم تطبيق بطاقة الهدايا",
+        "gift_card_has_been_removed": "تمت إزالة بطاقة الهدايا",
+        "gift_card_subscriptions_notice": "بطاقات الهدايا ستُطبق فقط على دفعتك الأولى",
+        "discount_already_applied": "تم تطبيق خصم على هذا الطلب. لا يمكنك إضافة خصم آخر.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> رمز الخصم غير صالح للعناصر في سلة التسوق الخاصة بك",
+        "discount_requires_customer_notice": "أدخل معلومات الشحن الخاصة بك لتطبيق رمز الخصم <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> رمز الخصم غير متاح لك في الوقت الحالي",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> رمز الخصم يتطلب زبون مؤهل",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> رمز الخصم غير متوفر لعنوان الشحن الخاص بك",
+        "customer_already_used_once_per_customer_discount_notice": "تم استخدام رمز الخصم <strong style=\"text-transform:uppercase\">%{code}</strong> بالفعل",
+        "subtotal_label": "المجموع الفرعي",
+        "subtotal_label_with_quantity": {
+          "one": "المجموع الفرعي · %{count} عنصر"
         }
       }
     }
