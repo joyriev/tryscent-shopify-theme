@@ -1542,7 +1542,139 @@
         "shipping_must_match_billing": "Fakturaadresse må samsvare med leveringsadresse. Vennligst bruk en annen betalingsmetode.",
         "pick_up_card": "Kortet ditt ble avvist. Prøv igjen eller bruk en annen betalingsmetode.",
         "cannot_verify": "Betalingsinformasjonen din kunne ikke bekreftes. Sjekk kortdetaljene dine og prøv igjen.",
-        "invalid_number": "Skriv inn et gyldig kortnummer"
+        "invalid_number": "Skriv inn et gyldig kortnummer",
+        "invalid_expiry_date": "Skriv inn en gyldig utløpsdato",
+        "expired_card": "Kortet ditt har utløpt. Bruk en annen betalingsmetode.",
+        "payment_method_not_applicable": "Denne betalingsmetoden er ikke gyldig. Bruk en annen betalingsmetode.",
+        "card_declined": "Kortet ditt ble avvist. Prøv igjen eller bruk en annen betalingsmetode.",
+        "invalid_cvc": "Skriv inn en gyldig sikkerhetskode",
+        "processing_error": "Det oppstod et problem med behandlingen av betalingen din. Prøv igjen eller bruk en annen betalingsmetode.",
+        "processing_error_checkout_as_guest": "Det oppstod et problem med behandlingen av betalingen din. Prøv igjen med en annen betalingsmetode eller {{checkout_as_guest_link}}.",
+        "selected_payment_method": "Det oppsto et problem med den valgte betalingsmetoden, og du har ikke blitt belastet. Prøv igjen eller bruk en annen betalingsmetode.",
+        "payment_method_billing_address": "Det oppstod et problem med faktureringsadressen til den valgte betalingsmetoden, og du har ikke blitt belastet. Sjekk adressen og prøv igjen, eller bruk en annen betalingsmetode.",
+        "call_issuer": "Kortet ditt ble avvist. Bruk en annen betalingsmetode eller kontakt banken din for mer informasjon.",
+        "test_mode_live_card": "Denne butikken kan ikke godta ekte bestillinger eller ekte betalinger.",
+        "transient_error": "Det oppstod et problem med behandlingen av betalingen din. Prøv å oppdatere denne siden eller sjekk internettforbindelsen din.",
+        "missing_shipping_address": "Betalingen din kunne ikke behandles fordi leveringsadressen din mangler. Legg til en leveringsadresse og prøv igjen.",
+        "invalid_shipping_address": "Betalingen din kunne ikke behandles fordi vi ikke fant leveringsadressen din. Sjekk leveringsadressen din og prøv igjen.",
+        "successful_offsite_with_gift_card_error": "Det oppsto et problem med behandlingen av gavekortbetalingen din. Prøv igjen eller bruk en annen betalingsmetode.",
+        "development_store_order_limit_reached": "Du har nådd grensen for bestillinger i utviklingsbutikken med denne betalingsbehandleren. For å legge inn en ny bestilling må du bruke en test betalingsgateway. Lær mer om %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "For å legge inn en testbestilling må du bruke en test betalingsgateway. Lær mer om %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "testing av bestillinger i utviklingsbutikker",
+        "payment_above_threshold": "Betalingsbeløpet overstiger det monetære grense for denne regionen. Reduser totalen og prøv igjen",
+        "risky": "Det oppstod et problem med behandlingen av betalingen din. Prøv igjen eller bruk en annen betalingsmetode.",
+        "expired_buyer_action": "Betalingsmetoden tidsavbrøt. Vennligst prøv igjen.",
+        "name_mismatch": "Vennligst sjekk kortdetaljene dine. Navnet på kortet ditt og faktureringsadressen stemmer ikke overens."
+      },
+      "shipping_errors": {
+        "shipping_method": "Fraktalternativene har endret seg for bestillingen din. Gå gjennom valget ditt og prøv igjen.",
+        "shipping_method_not_available_generic": {
+          "one": "Bestillingen din kan ikke sendes til den valgte adressen. Gå gjennom adressen din for å sikre at den er korrekt, og prøv igjen, eller velg en annen adresse.",
+          "other": "Noen varer i handlekurven din kan ikke sendes til adressen du oppga. Gå gjennom adressen din for å sikre at den er korrekt, og prøv igjen, eller velg en annen adresse."
+        },
+        "shipping_method_not_available": "Handlekurven din er oppdatert, og varene du la til kan ikke sendes til adressen din. Fjern varene for å fullføre bestillingen.",
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Varene i handlekurven oppfyller ikke pris- eller vektkravene for å kvalifisere for frakt. Oppdater handlekurven og prøv igjen.",
+        "shipping_method_not_available_updated": {
+          "one": "Varen du la til sendes ikke til din lokasjon. Fjern den for å gå til kassen, eller kontakt butikken.",
+          "other": "Én eller flere varer du la til sendes ikke til din lokasjon. Fjern dem for å gå til kassen, eller kontakt butikken."
+        },
+        "payment_method_not_supported": "Du kan ikke bruke denne betalingsmetoden for %{country}. Vennligst bruk en annen betalingsmetode for å sende til dette landet.",
+        "empty_state": "Skriv inn leveringsadressen din for å se tilgjengelige leveringsmetoder.",
+        "title": "Frakt ikke tilgjengelig",
+        "invalid_selected_address": "Valgt leveringsadresse er ikke gyldig",
+        "invalid_selected_address_with_update_link": "Den valgte leveringsadressen er ikke gyldig. %{update_address_link} eller velg en annen adresse",
+        "unavailable_selected_address_for_region": "Frakt er ikke tilgjengelig for {{region}}. Velg en annen adresse for å fortsette",
+        "unavailable_selected_address": "Frakt ikke tilgjengelig for valgt adresse"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Expressutkjøring",
+        "or": "ELLER",
+        "or_pay_another_way": "Eller betal på en annen måte",
+        "or_check_out_another_way": "Eller sjekk ut en annen måte",
+        "or_pay_with_credit_card": "Eller betal med kredittkort",
+        "show_more_options": "Vis flere alternativer",
+        "hide_more_options": "Skjul flere alternativer"
+      },
+      "post_purchase": {
+        "page_title": "Etter kjøp",
+        "title": "Etter kjøp",
+        "escape_action": "Se ordrebekreftelse ›",
+        "escape_confirmation": "Du har betalt for bestillingen din.",
+        "components": {
+          "close": "Lukk",
+          "expand": "Se mer",
+          "processing": "Behandler…",
+          "submit": "Send"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Omdirigerer…",
+        "redirecting_title": "Omdirigerer…",
+        "redirecting_notice": "Vent mens vi omdirigerer deg.",
+        "redirecting_to_bank": "Omdirigerer til {{bank}}",
+        "complete_your_purchase_title": "Fullfør kjøpet ditt",
+        "continue_to_payment_gateway_notice": "Fortsett til betaling for å legge til betalingsinformasjonen din.",
+        "continue_to_payment_gateway_button_label": "Fortsett til betaling",
+        "complete_your_purchase_title_error": "Korriger betalingsinformasjonen din",
+        "continue_to_payment_gateway_notice_error": "Betalingsinformasjonen din kunne ikke bekreftes.",
+        "continue_to_payment_gateway_button_label_error": "Oppdater betalingsinformasjon",
+        "page_title": "Behandler bestilling",
+        "title": "Behandler bestilling",
+        "your_order_has_been_received_title": "Takk for bestillingen din",
+        "you_will_receive_confirmation": "Vi mottar mange bestillinger akkurat nå. Du bør snart motta en bekreftelse på e-post eller SMS. Hvis du ikke mottar den innen en time, gi oss beskjed.",
+        "you_will_not_be_charged": "Du vil ikke bli belastet ennå",
+        "wait": {
+          "short": "Bestillingen din behandles.",
+          "medium": {
+            "one": "Bestillingen din behandles. Anslått ventetid er %{count} minutt.",
+            "other": "Bestillingen din behandles. Anslått ventetid er %{count} minutter."
+          },
+          "long": "Du vil motta en e-post så snart bestillingen din er behandlet. Det er for øyeblikket et høyt volum av bestillinger.",
+          "no_auto_refresh_html": "Hvis du ikke blir automatisk omdirigert, %{link}.",
+          "refresh_this_page": "oppdater denne siden"
+        },
+        "action_required": "Handling kreves",
+        "modal_notice": "Vi kontakter {{paymentMethod}}"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Fullfør kjøpet ditt ved å bruke koden din for {{paymentMethod}}",
+        "timer_message": "Du har {{timeLeft}} til å betale",
+        "header": "Betal med {{paymentMethod}}",
+        "qr_code": {
+          "instructions": "Fullfør kjøpet ditt ved å bruke koden din for {{paymentMethod}}"
+        },
+        "external": {
+          "instructions": "Bekreft betalingen i appen din for å fullføre dette kjøpet"
+        },
+        "close": "Lukk utfordringen",
+        "open_app_text": "Åpne {{paymentMethod}}-appen",
+        "copy_text": "Kopier {{paymentMethod}}-kode"
+      },
+      "failed_payment": {
+        "page_title": "Betalingen kunne ikke behandles",
+        "title": "Betalingen kunne ikke behandles",
+        "payment_not_processed_title": "Betalingen din kunne ikke behandles",
+        "payment_not_processed_text": "Du har ikke blitt belastet. Gå tilbake til handlekurven for å fullføre kjøpet ditt.",
+        "return_to_cart_button_label": "Gå tilbake til handlekurven"
+      },
+      "payment_gateway": {
+        "credit_card_label": "Kredittkort",
+        "bank_deposit_label": "Bankinnskudd",
+        "cash_on_delivery_label": "Kontant ved levering (COD)",
+        "money_order_label": "Postanvisning",
+        "debit_card_label": "Debetkort",
+        "deferred_payment_label": "Velg betalingsmetode senere",
+        "fixed_payment_label": "Din betaling forfaller den {{dueDate}}.",
+        "generic_payment_terms": "Du er på {{translatedName}} vilkår. Din betaling forfaller den {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} på en konto med tilgang til dette stedet for å legge til eller bruke lagrede betalingsmetoder.",
+            "link": "Logg inn"
+          }
+        },
+        "direct_payment_terms": "Du er på {{translatedName}} vilkår. Kortet ditt vil bli belastet den {{dueDate}}.",
+        "fixed_direct_payment_terms": "Kortet ditt vil bli belastet den {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Betalingen din forfaller når bestillingen din er fullført."
       }
     },
     "sentence": {
