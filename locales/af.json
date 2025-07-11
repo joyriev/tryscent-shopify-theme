@@ -4037,10 +4037,151 @@
       "apply": "Pas toe",
       "clear": "Duidelik",
       "clear_all": "Verwyder alles",
-      "filter_and_operator_subtitle": "Pas alles aan"
+      "filter_and_operator_subtitle": "Pas alles aan",
+      "filter_by_label": "Filter:",
+      "filter_and_sort": "Filter en sorteer",
+      "filter_button": "Filter",
+      "from": "Van",
+      "show_less": "Wys minder",
+      "filters_selected": {
+        "one": "{{ count }} geselekteer",
+        "other": "{{ count }} geselekteer"
+      },
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filters gekies)",
+      "show_more": "Wys meer",
+      "product_count": {
+        "one": "{{ product_count }} van {{ count }} produk",
+        "other": "{{ product_count }} van {{ count }} produkte"
+      },
+      "max_price": "Die hoogste prys is {{ price }}",
+      "sort_button": "Sorteer",
+      "reset": "Stel terug",
+      "product_count_simple": {
+        "other": "{{ count }} produkte",
+        "one": "{{ count }} produk"
+      },
+      "sort_by_label": "Sorteer volgens:",
+      "to": "Aan",
+      "clear_filter": "Verwyder filter"
     },
     "modal": {
       "label": "Mediagallery"
+    }
+  },
+  "templates": {
+    "search": {
+      "products": "Produkte",
+      "page": "Bladsy",
+      "no_results": "Geen resultate gevind vir “{{ terms }}”. Kontroleer die spelling of gebruik ’n ander woord of frase.",
+      "results_suggestions_with_count": {
+        "other": "{{ count }} voorstelle",
+        "one": "{{ count }} voorstel"
+      },
+      "results_pages_with_count": {
+        "other": "{{ count }} bladsye",
+        "one": "{{ count }} bladsy"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} produk",
+        "other": "{{ count }} produkte"
+      },
+      "results_with_count": {
+        "one": "{{ count }} resultaat",
+        "other": "{{ count }} resultate"
+      },
+      "results_with_count_and_term": {
+        "one": "{{ count }} resultaat gevind vir “{{ terms }}”",
+        "other": "{{ count }} resultate gevind vir “{{ terms }}”"
+      },
+      "suggestions": "Voorstelle",
+      "title": "Soekresultate",
+      "search_for": "Soek na “{{ terms }}”",
+      "pages": "Bladsye"
+    },
+    "cart": {
+      "cart": "Winkelmandjie"
+    },
+    "contact": {
+      "form": {
+        "name": "Naam",
+        "email": "E-pos",
+        "phone": "Telefoonnommer",
+        "comment": "Kommentaar",
+        "title": "Kontakvorm",
+        "send": "Stuur",
+        "error_heading": "Stel asseblief die volgende aan:",
+        "post_success": "Dankie dat u ons gekontak het. Ons sal so gou moontlik by u terugkom."
+      }
+    },
+    "404": {
+      "title": "Bladsy nie gevind nie"
+    }
+  },
+  "localization": {
+    "country_label": "Land/streek",
+    "language_label": "Taal",
+    "update_language": "Werk taal by",
+    "search": "Soek",
+    "popular_countries_regions": "Gewilde lande/streke",
+    "country_results_count": "{{ count }} lande/streke gevind",
+    "update_country": "Werk land/streek by"
+  },
+  "customer": {
+    "account": {
+      "title": "Rekening",
+      "details": "Rekeningbesonderhede",
+      "view_addresses": "Kyk adresse",
+      "return": "Keer terug na Rekeningbesonderhede"
+    },
+    "account_fallback": "Rekening",
+    "activate_account": {
+      "password": "Wagwoord",
+      "title": "Aktiveer rekening",
+      "password_confirm": "Bevestig wagwoord",
+      "submit": "Aktiveer rekening",
+      "subtext": "Skep jou wagwoord om jou rekening te aktiveer.",
+      "cancel": "Weier uitnodiging"
+    },
+    "addresses": {
+      "title": "Adresse",
+      "default": "Standaard",
+      "edit_address": "Wysig adres",
+      "first_name": "Voornaam",
+      "last_name": "Vannaam",
+      "company": "Maatskappy",
+      "city": "Stad",
+      "country": "Land/streek",
+      "province": "Provinsie",
+      "add_new": "Voeg 'n nuwe adres by",
+      "phone": "Telefoon",
+      "add": "Voeg adres by",
+      "address1": "Adres 1",
+      "update": "Werk adres by",
+      "cancel": "Kanselleer",
+      "edit": "Wysig",
+      "address2": "Adres 2",
+      "delete": "Verwyder",
+      "delete_confirm": "Is jy seker jy wil hierdie adres uitvee?",
+      "zip": "Poskode/ZIP-kode",
+      "set_default": "Stel as standaardadres"
+    },
+    "log_in": "Teken in",
+    "log_out": "Teken uit",
+    "login_page": {
+      "cancel": "Kanselleer",
+      "email": "E-pos",
+      "guest_continue": "Voortgaan",
+      "password": "Wagwoord",
+      "create_account": "Skep rekening",
+      "forgot_password": "Het jy jou wagwoord vergeet?",
+      "submit": "Dien in",
+      "alternate_provider_separator": "of",
+      "guest_title": "Gaan voort as 'n gas",
+      "title": "Teken in",
+      "sign_in": "Teken in"
+    },
+    "order": {
+      "title": "Bestel {{ name }}"
     }
   }
 }
