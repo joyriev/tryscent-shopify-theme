@@ -2460,10 +2460,152 @@
           "forgot_your_store_link_text": "نسيت متجرك",
           "admin_link_text": "المسؤول",
           "add_storefront": "يمكنك إعداد موقعك الإلكتروني عن طريق إضافة قناة المتجر الإلكتروني في %{admin_link}. إذا كنت تواجه مشكلة في الدخول إلى متجرك، جرب صفحة %{forgot_your_store_link}."
+        },
+        "ctas": {
+          "sell_in_person": {
+            "link_text": "ابدأ التجربة المجانية",
+            "header": "البيع شخصيًا",
+            "caption": "احصل على الميزات التي تحتاجها لتشغيل متجرك بالتجزئة سواء كنت تبدأ أو توسع عملك."
+          },
+          "open_a_store": {
+            "header": "افتح متجر Shopify جديد",
+            "caption": "ابدأ تجربة مجانية لمدة 3 أيام، ثم استمر مقابل 1 دولار شهريًا للأشهر الثلاثة القادمة.",
+            "link_text": "سجّل الآن"
+          },
+          "editions": {
+            "header": "اطلع على إصدارات Shopify",
+            "caption": "مع أكثر من 100 تحديث للمنتجات، يمكنك أن تكون أكثر إنتاجية وإبداعًا وقوة في التجارة أكثر مما كنت تتخيل.",
+            "link_text": "استكشف الإصدارات الأخيرة"
+          },
+          "store_owner": {
+            "header": "هل أنت صاحب المتجر؟",
+            "caption": "هل تواجه مشكلة في الدخول إلى متجرك؟ جرب ميزة %{forgot_your_store_link}. إذا كنت ترغب في إعادة تفعيل متجرك، اتصل بـ %{shopify_support_link}.",
+            "shopify_support_link_text": "دعم Shopify"
+          }
         }
       },
       "product_not_available": "المنتج غير منشور لهذا العميل.",
       "verify_email": "لقد أرسلنا بريدًا إلكترونيًا إلى %{customer_email}، يرجى النقر على الرابط المرفق للتحقق من عنوان بريدك الإلكتروني."
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "خطأ في إعادة تعيين كلمة المرور",
+        "subscribe_error": "خطأ في الاشتراك",
+        "unsubscribe_error": "خطأ في إلغاء الاشتراك",
+        "no_account_found": "لم يتم العثور على حساب بهذا البريد الإلكتروني.",
+        "invalid_credentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+        "denylisted_reset_password": "لا يمكن الوصول إلى حسابك لأن كلمة المرور الحالية غير آمنة. ستتلقى رسالة بريد إلكتروني لتحديث كلمة المرور الخاصة بك.",
+        "signup_disabled": "تم تعطيل إنشاء حساب العميل."
+      },
+      "address": {
+        "error_updating": "خطأ في تحديث العنوان",
+        "updated": "تم تحديث العنوان بنجاح.",
+        "created": "تم إنشاء العنوان بنجاح",
+        "error_creating": "خطأ في إنشاء العنوان.",
+        "deleted": "تم حذف العنوان بنجاح",
+        "error_deleting": "خطأ في حذف العنوان."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "أُضيف %{delta}",
+          "increment_item": "أُضيف %{delta}",
+          "decrement_item": "تمت إزالة %{delta} من %{total}",
+          "decrement_fulfilled_line_item": "تم إرجاع %{delta} من %{total}",
+          "decrement_return_line_item": "تمت إزالة %{delta} من الإرجاع"
+        }
+      },
+      "order": {
+        "not_available": "هذا الطلب غير متوفر",
+        "financial_status": {
+          "authorized": "مُخوَّل",
+          "pending": "قيد الانتظار",
+          "paid": "مدفوع",
+          "unpaid": "غير مدفوع",
+          "voided": "ملغى",
+          "partially_paid": "مدفوع جزئياً",
+          "partially_refunded": "تم استرداد جزء من المبلغ",
+          "expired": "منتهي الصلاحية",
+          "refunded": "تم استرداده"
+        },
+        "fulfillment_status": {
+          "fulfilled": "تم التنفيذ",
+          "complete": "مكتمل",
+          "partial": "جزئي",
+          "unfulfilled": "غير مُلبّى",
+          "restocked": "تم إعادة التخزين"
+        },
+        "transaction_status": {
+          "success": "نجاح",
+          "pending": "قيد الانتظار",
+          "failure": "فشل",
+          "error": "خطأ"
+        },
+        "cancel_reason": {
+          "declined": "تم رفض الدفع",
+          "staff": "خطأ الموظف",
+          "fraud": "طلب احتيالي",
+          "customer": "قام العميل بتغيير/إلغاء الطلب",
+          "other": "أخرى",
+          "inventory": "العناصر غير متوفرة"
+        },
+        "cash_on_delivery": "الدفع عند الاستلام (COD)"
+      },
+      "cart": {
+        "only_n_items_available": "يمكنك إضافة %{count} %{name} فقط إلى السلة.",
+        "too_many_items_in_cart": "لا يمكنك إضافة المزيد من %{name} إلى السلة.",
+        "only_one_added_to_cart": "تمت إضافة عنصر واحد فقط إلى سلة التسوق الخاصة بك بسبب التوفر.",
+        "only_n_added_to_cart": "تمت إضافة %{quantity} عناصر فقط إلى سلة التسوق الخاصة بك بسبب التوفر.",
+        "maximum_available_quantity_reached": "الكمية القصوى من هذا العنصر موجودة بالفعل في سلة التسوق الخاصة بك.",
+        "less_than_minimum": "هذا العنصر له حد أدنى %{min}.",
+        "more_than_maximum": "هذا العنصر له حد أقصى %{max}.",
+        "all_items_in_cart": "جميع %{count} %{name} في سلة التسوق الخاصة بك.",
+        "empty_update": "لا يمكن تحديث عربة التسوق الفارغة",
+        "missing_parameters": "لا يوجد معرف صالح أو معلمة السطر",
+        "not_respect_step": "يمكنك إضافة هذا العنصر فقط بزيادات قدرها %{step}.",
+        "generic_error": "خطأ في السلة",
+        "invalid_input": "معامل %{parameter} غير صالح.",
+        "link_expired": "انتهت صلاحية الرابط",
+        "product_not_available": "المنتج غير متوفر",
+        "too_many_line_items_error": "عربة التسوق الخاصة بك لا يمكن أن تحتوي على أكثر من %{max} عناصر.",
+        "changed": "تم تغيير العربة",
+        "link_no_longer_exists": "الرابط لم يعد موجودًا.",
+        "items_changed": "تم تغيير عنصر واحد أو أكثر.",
+        "product_sold_out": "المنتج '%{name}' نفد من المخزون بالفعل.",
+        "variant_not_found": "لا يمكن العثور على المتغير",
+        "selling_plan_not_available_for_company_locations": "الشراء لمرة واحدة فقط متاح لطلبات B2B",
+        "variant_requires_selling_plan": "يمكن شراء المتغير فقط مع خطة بيع.",
+        "digital_product_not_available_for_company_locations": "لا يمكن إضافة هذا العنصر إلى طلب B2B",
+        "selling_plan_not_applicable": "لا يمكن تطبيق خطة البيع على المتغير",
+        "buyer_cannot_purchase_for_company_locations": "لا يمكنك الشراء لهذا الموقع",
+        "shipping_address_not_required": "هذه العربة لا تتطلب شحنًا",
+        "shipping_address_invalid": "حدثت مشكلة في حساب أسعار الشحن الخاصة بك. تابع إلى صفحة الدفع لاختيار سعر الشحن قبل إكمال طلبك.",
+        "bundle_requires_components": "لا يمكن إضافة منتج الحزمة '%{name}' إلى السلة.",
+        "gift_card_with_components_not_supported": "لا يمكن إضافة منتج الحزمة '%{name}' إلى السلة.",
+        "gift_card_price_must_be_greater_than_zero": "لا يمكن إضافة منتج الحزمة '%{name}' إلى السلة.",
+        "view_lines_limit_reached": "يجب أن تكون الأسطر أقل من %{limit}",
+        "gift_card_recipient_validation_error": "المستلم المحدد لبطاقة الهدايا غير صالح",
+        "cart_too_large": "العربة كبيرة جدًا.",
+        "cart_attributes_error": "سمات السلة تحتوي على بيانات غير صالحة.",
+        "merchandise_line_transformers": {
+          "run_error": "حدث خطأ في سلة التسوق الخاصة بك."
+        },
+        "stock_problems_html": "عنصر واحد أو أكثر لم يعد متاحًا. لقد قدمنا <a href='%{link}'>عربة محدثة</a>."
+      },
+      "storefront": {
+        "invalid_password": "كلمة المرور غير صحيحة، يرجى المحاولة مرة أخرى."
+      },
+      "tags": {
+        "add_articles": "تضييق البحث إلى المقالات التي تحتوي أيضًا على الوسم %{tag}",
+        "add_products": "تضييق الاختيار إلى المنتجات التي تطابق الوسم %{tag}",
+        "remove_articles": "وسّع البحث ليشمل المقالات التي لم يتم وسمها بـ %{tag}",
+        "remove_products": "إزالة الوسم %{tag}"
+      }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "شكراً لاشتراكك في قائمتنا البريدية.",
+        "disclaimer": "يمكنك إلغاء الاشتراك في أي وقت."
+      }
     }
   }
 }
