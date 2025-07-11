@@ -1195,7 +1195,81 @@
         "vaulting_agreement_label": "Stoor my betalingsinligting by %{company} vir 'n vinniger afhandeling.",
         "simulated_express_checkout": "Beursies is nie beskikbaar in die redigeerder-voorskou nie as gevolg van jou streek of blaaier",
         "business_customer_vaulting_payment_label": "Stoor hierdie kaart by die betaalpunt en magtig %{company} om dit te hef vir toekomstige aankope by hierdie ligging. Alle kontakte wat aan hierdie ligging toegewys is, kan die kaart gebruik.",
-        "purchase_options_and_vaulting_agreement_label": "Een of meer items in jou mandjie is 'n uitgestelde of intekenaarsaankoop. Deur voort te gaan met jou betaling, stem jy in dat jou betaalmetode outomaties gehef sal word teen die prys en frekwensie wat op hierdie bladsy gelys word totdat dit eindig of jy kanselleer. Alle kansellasies is onderhewig aan die %{cancellation_policy_label}."
+        "purchase_options_and_vaulting_agreement_label": "Een of meer items in jou mandjie is 'n uitgestelde of intekenaarsaankoop. Deur voort te gaan met jou betaling, stem jy in dat jou betaalmetode outomaties gehef sal word teen die prys en frekwensie wat op hierdie bladsy gelys word totdat dit eindig of jy kanselleer. Alle kansellasies is onderhewig aan die %{cancellation_policy_label}.",
+        "use_different_credit_card_label": "Gebruik 'n ander kaart",
+        "saved_credit_card_actions": {
+          "edit": "Wysig",
+          "delete": "Verwyder"
+        },
+        "purchase_options_cancellation_policy_label": "kansellasiebeleid",
+        "saved_credit_card": "Jou gestoor kredietkaart",
+        "saved_credit_card_info": "Laaste vier syfers",
+        "saved_credit_cards_modal": {
+          "cancel": "Kanselleer",
+          "done": "Klaar",
+          "view_all_label": "Kyk na alle gestoorde kaarte"
+        },
+        "saved_credit_card_cvv_verification": "Vir verifikasiedoeleindes, voer asseblief jou kaart se sekuriteitskode in.",
+        "add_credit_card_modal": {
+          "save": "Stoor",
+          "cancel": "Kanselleer",
+          "title": "Voeg kaart by"
+        },
+        "delete_credit_card_modal": {
+          "cancel": "Kanselleer",
+          "delete": "Verwyder",
+          "confirmation": "Is jy seker jy wil die {{brandName}} wat eindig op {{lastDigits}} verwyder?",
+          "title": "Verwyder kaart"
+        },
+        "edit_credit_card_modal": {
+          "done": "Klaar",
+          "cancel": "Kanselleer",
+          "title": "Wysig kaart",
+          "fields": {
+            "default": "Stel as verstek",
+            "card_number": "Kaartnommer",
+            "security_code": "Sekuriteitskode",
+            "name": "Naam op kaart",
+            "billing": "Faktureer aan",
+            "expiry": "Vervaldatum"
+          },
+          "description": "Jy kan slegs die faktuuradres van jou kaart wysig."
+        },
+        "expired_cards_info": {
+          "one": "Daar is %{count} vervalde kaart, wat jy in jou rekening kan sien en wysig.",
+          "other": "Daar is %{count} vervalde kaarte, wat jy in jou rekening kan sien en wysig."
+        },
+        "order_edit_banner_title": "Betaling van {{amount_owed}} is nodig",
+        "order_edit_banner_items_added": {
+          "one": "Bygevoeg",
+          "other": "Bygevoeg %{count}"
+        },
+        "order_edit_banner_subtitle": "Jou bestelling {{order_number}} is opgedateer. Hersien hierdie veranderinge, en betaal dan om jou bestelling te bevestig.",
+        "order_edit_banner_items_removed": {
+          "in_full": "Verwyder",
+          "with_quantities": "Verwyder {{delta}} van {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Terugbesorg {{quantity}}",
+          "with_quantities": "Terugbesorg {{delta}} van {{quantity}}"
+        },
+        "order_edit_banner_single_item_added": "Bygevoeg",
+        "local_payment_method_receiver_notice": "Nadat u u bestelling geplaas het, sal u betalingsbesonderhede ontvang. Maak die betaling by 'n OTM of aanlyn binne {{dueDays}} dae.",
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Verwyder van terugkeer",
+          "with_quantities": "Verwyder {{delta}} van terugkeer"
+        },
+        "order_edit_banner_single_item_removed": "Verwyder",
+        "order_edit_banner_multiple_items_added": "Bygevoeg {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Verwyder {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Verwyder van terugkeer",
+        "order_edit_banner_single_item_returned": "Teruggekeer",
+        "order_edit_banner_updated_order_label": "Opgedateerde bestelling",
+        "order_edit_banner_multiple_items_returned": "Terugbesorg {{amount}}",
+        "gift_card_wrapper": {
+          "heading": "Geskenkkaart"
+        },
+        "order_edit_banner_multiple_items_return_line_item_removed": "Verwyder {{amount}} van terugkeer"
       }
     }
   },
