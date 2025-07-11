@@ -1018,6 +1018,10 @@
     transform: translate(-50%,-50%)
 }
 
+.\[transform\:translateY\(100\%\)\] {
+    transform: translateY(100%)
+}
+
 .animate-move-left {
     animation: move-left 50s linear infinite
 }
@@ -1214,6 +1218,15 @@
         font-size: 30px;
         line-height: 36px
     }
+}
+
+.\[\&\.active\]\:translate-y-\[0\].active {
+    --tw-translate-y: 0;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.\[\&\.active\]\:\[transform\:translateY\(0\)\].active {
+    transform: translateY(0)
 }
 
 .\[\&\>\*\]\:m-0>* {
