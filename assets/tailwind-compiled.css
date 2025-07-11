@@ -1,6 +1,10 @@
 /*!**************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/tailwind.css ***!
   \**************************************************************************************************************/
+.visible {
+    visibility: visible
+}
+
 .static {
     position: static
 }
@@ -250,6 +254,10 @@
 
 .w-full {
     width: 100%
+}
+
+.w-auto {
+    width: auto
 }
 
 .max-w-28 {
@@ -819,6 +827,18 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
+.shadow-lg {
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.shadow-\[0_0_20px_5px_rgba\(0\2c 0\2c 0\2c 0\.1\)\] {
+    --tw-shadow: 0 0 20px 5px rgba(0,0,0,0.1);
+    --tw-shadow-colored: 0 0 20px 5px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
 .outline {
     outline-style: solid
 }
@@ -836,6 +856,16 @@
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms
+}
+
+.transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+
+.duration-500 {
+    transition-duration: 500ms
 }
 
 .\[display\:none\] {
@@ -885,6 +915,11 @@
     background-color: rgb(2 73 28 / var(--tw-bg-opacity, 1))
 }
 
+.hover\:bg-\[\#1c522f\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(28 82 47 / var(--tw-bg-opacity, 1))
+}
+
 .hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
@@ -911,6 +946,10 @@
         margin-top: 56px
     }
 
+    .md\:block {
+        display: block
+    }
+
     .md\:flex {
         display: flex
     }
@@ -922,6 +961,14 @@
     .md\:size-10 {
         width: 40px;
         height: 40px
+    }
+
+    .md\:w-full {
+        width: 100%
+    }
+
+    .md\:w-auto {
+        width: auto
     }
 
     .md\:grid-cols-2 {
