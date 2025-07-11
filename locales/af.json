@@ -2189,14 +2189,153 @@
             "email": "Voer 'n geldige e-pos in",
             "billing_address": "Voer 'n geldige faktuuradres in",
             "shipping_option": "Kies 'n geldige versendingsopsie",
-            "zone": "Voer 'n geldige staat / provinsie in"
+            "zone": "Voer 'n geldige staat / provinsie in",
+            "postal_code": "Voer 'n geldige poskode in",
+            "phone": "Voer 'n geldige telefoonnommer in",
+            "reduction_code": "Voer 'n geldige afslagkode of geskenkkaart in",
+            "billing_zone": "Voer 'n geldige faktuuradresstaat / provinsie in",
+            "emirate": "Voer 'n geldige emiraat in",
+            "billing_phone": "Voer 'n geldige telefoonnommer vir die faktuuradres in",
+            "billing_zip": "Voer 'n geldige faktuuradres-poskode in",
+            "billing_must_match_shipping": "Moet ooreenstem met afleweringsadres"
           },
           "outdated": {
             "shipping_method": "Die versendingsopsies het verander vir jou bestelling. Hersien jou keuse.",
             "payment_terms": "Die betalingsvoorwaardes het verander. Kontroleer asseblief jou bestelling"
+          },
+          "missing": {
+            "first_name": "Voer 'n voornaam in",
+            "last_name": "Voer 'n van in",
+            "address1": "Voer 'n adres in",
+            "address2": "Voer 'n woonstel, suite, ens. in",
+            "billing_first_name": "Voer eers 'n faktuuradres voornaam in",
+            "city": "Voer 'n stad in",
+            "province": "Kies 'n staat / provinsie",
+            "country": "Kies 'n land/streek",
+            "zip": "Voer 'n poskode in",
+            "billing_address1": "Voer 'n faktuuradres in",
+            "phone": "Voer 'n telefoonnommer in",
+            "contact_info": "Voer kontakbesonderhede in",
+            "billing_city": "Voer 'n faktuuradresstad in",
+            "billing_address2": "Voer 'n faktuuradres woonstel, suite, ens. in.",
+            "billing_province": "Kies 'n faktuuradres staat / provinsie",
+            "billing_zip": "Voer 'n faktuuradres-poskode in"
+          },
+          "formatting": {
+            "name_contains_emojis": "Verwyder emoji van jou naam",
+            "address_too_long": "Adreslyn is te lank",
+            "postal_code_contains_emoji": "Verwyder emoji uit jou poskode",
+            "first_name_too_long": "Voornaam bevat te veel letters",
+            "last_name_too_long": "Van bevat te veel letters"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Jou versendingsadres is ongeldig. Kies 'n ander adres of gebruik 'n nuwe een."
+        },
+        "scrim": {
+          "and_return_to_checkout": "en keer terug na Kassie uitchecken",
+          "cancel": "Kanselleer",
+          "continue_purchase_in_window": "Gaan voort met jou aankoop in die {{walletName}}-venster"
+        }
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Geskenkkaartprys moet groter as 0 wees.",
+            "gift_card_price_must_not_exceed_limit": "Geskenkkaartprys mag nie meer as %{gift_card_limit} wees nie.",
+            "subtotal_limit_reached": "Die maksimum waarde van lynitems is bereik."
           }
         }
+      },
+      "note": {
+        "length_exceeds_maximum": "Verminder die grootte van die nota tot 5000 of minder karakters."
+      },
+      "units": {
+        "milligram": "mg",
+        "gram": "g",
+        "centiliter": "klu",
+        "milliliter": "ml",
+        "kilogram": "kg",
+        "cubic_meter": "m³",
+        "millimeter": "mm",
+        "centimeter": "cm",
+        "meter": "m",
+        "square_meter": "m²",
+        "ounce": "oz",
+        "pound": "lb",
+        "fluid_ounce": "vloeistof onse",
+        "inch": "in",
+        "pint": "pt",
+        "quart": "qt",
+        "square_foot": "vt²",
+        "foot": "ft",
+        "yard": "yd",
+        "item": "item",
+        "gallon": "gal"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "Die adres word nie ondersteun vir die huidige lidmaatskap nie."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Navigeer na Aanlyn Winkel"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "Meer inligting oor %{context}",
+        "additional_payment_methods": "Bykomende betaalmetodes"
       }
+    },
+    "pagination": {
+      "previous": "Vorige",
+      "next": "Volgende"
+    },
+    "attributes": {
+      "email": "e-pos",
+      "password": "wagwoord",
+      "password_confirmation": "Die wagwoordbevestiging",
+      "signature": "Adres",
+      "first_name": "voornaam",
+      "body": "liggaam",
+      "last_name": "van"
+    },
+    "links": {
+      "powered_by_shopify": "Aangedryf deur Shopify",
+      "learn_more": "Leer meer"
+    },
+    "feed": {
+      "more": "Meer"
+    },
+    "addresses": {
+      "zip_code": "Poskode",
+      "postal_code": "Poskode",
+      "postcode": "Poskode",
+      "region": "Streek",
+      "prefecture": "Prefektuur",
+      "province": "Provinsie",
+      "state": "Staat",
+      "state_and_territory": "Staat/gebied",
+      "county": "Provinsie",
+      "pincode": "Poskode",
+      "governorate": "Goewermentsgebied",
+      "emirate": "Emirate",
+      "confirm": "Is jy seker jy wil hierdie adres uitvee?"
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "Bestverkopende",
+        "manual": "Uitgelig",
+        "az": "Alfabeties, A-Z",
+        "price_ascending": "Prys, laag na hoog",
+        "za": "Alfabeties, Z-A",
+        "date_ascending": "Datum, oud na nuut",
+        "price_descending": "Prys, hoog na laag",
+        "date_descending": "Datum, nuut na oud"
+      }
+    },
+    "errors": {
+      "blocked_address": "Hierdie ligging word nie ondersteun nie",
+      "blank": "kan nie leeg wees nie",
+      "empty": "kan nie leeg wees nie",
+      "credit_card_session_expired": "Kredietkaart magtiging het verval, voer asseblief jou betalingsinligting weer in. Jou kaart is nie gehef nie."
     }
   },
   "sections": {
