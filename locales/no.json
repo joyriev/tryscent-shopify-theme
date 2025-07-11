@@ -2701,8 +2701,112 @@
     "email_marketing": {
       "subscribed": {
         "confirmation": "Takk for at du abonnerer på vår e-postliste.",
-        "disclaimer": "Du kan melde deg av når som helst."
+        "disclaimer": "Du kan melde deg av når som helst.",
+        "unsubscribe": "Avslutt abonnement"
+      },
+      "unsubscribed": {
+        "preview": "Du forhåndsviser hva kundene vil se når de melder seg av.",
+        "disclaimer": "Du vil ikke motta flere markedsføringsoppdateringer fra oss. Du kan abonnere igjen når som helst.",
+        "confirmation": "Du har meldt deg av vår e-postliste."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Du har valgt å spore åpning av e-post.</b>",
+          "visibility": "E-poståpningsrater vil bli rapportert anonymt. Vi vil bare se om du har åpnet en e-post som en del av en aggregert e-poståpningsrate.",
+          "preview_bar": "Du forhåndsviser hva kundene vil se når de velger å aktivere e-poståpningssporing.",
+          "opt_out_html": "Du kan <a style='text-decoration:underline;' href='%{link}'>velge å ikke delta</a> i sporing av e-poståpninger hvis du ikke ønsker å dele denne informasjonen."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Du har valgt å ikke spore åpning av e-post.</b>",
+          "visibility": "Vi vil ikke se om du har åpnet e-postene våre.",
+          "preview_bar": "Du forhåndsviser hva kundene vil se når de velger å ikke spore åpning av e-post.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Meld deg på</a> for sporing av åpning av e-post."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Vi sporer ikke lenger noen e-poståpninger.</b>",
+          "privacy_policy": "Etter at denne e-posten ble sendt, oppdaterte vi vår personvernerklæring, og vi sporer ikke lenger åpninger."
+        },
+        "track": {
+          "status_html": "<b>E-poståpning spores.</b>",
+          "visibility": "Vi vil bare se om du har åpnet e-posten, som en del av den totale e-poståpningsraten."
+        },
+        "updated_policy": {
+          "status_html": "<b>E-poståpning spores.</b>",
+          "visibility": "Vi har oppdatert vår policy, og sporer nå e-poståpninger. Åpningsrater for e-post vil bli rapportert anonymt. Vi vil bare se om du har åpnet en e-post som en del av den totale e-poståpningsraten.",
+          "opt_out_html": "Hvis du ikke ønsker å dele denne informasjonen, kan du <a style='text-decoration:underline;' href='%{link}'>avmelde deg.</a>"
+        }
       }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "På lager",
+          "out_of_stock": "Utsolgt"
+        }
+      },
+      "boolean": {
+        "true_label": "Ja",
+        "false_label": "Nei"
+      }
+    },
+    "search": {
+      "error": "Det oppsto et problem med å laste inn søkeresultatene dine. Vennligst oppdater siden eller prøv igjen senere.",
+      "sorting": {
+        "relevance": "Relevans",
+        "price_ascending": "Pris, lav til høy",
+        "price_descending": "Pris, høy til lav"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Feil - %{title}",
+      "products": "Produkter",
+      "shopping_cart": "Din handlekurv",
+      "account": "Konto",
+      "create_account": "Opprett konto",
+      "reset_account": "Tilbakestill konto",
+      "addresses": "Adresser",
+      "order": "Bestilling %{name}",
+      "search": "Søk",
+      "search_results": {
+        "one": "Søk: %{count} resultat funnet for \"%{terms}\"",
+        "other": "Søk: %{count} resultater funnet for \"%{terms}\""
+      },
+      "collections": "Samlinger",
+      "not_found": "404 Ikke Funnet",
+      "challenge": "Utfordring",
+      "checkpoint": "Sjekkpunkt"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} rabatter er brukt"
+    },
+    "challenge": {
+      "message": "For å fortsette, la oss vite at du ikke er en robot.",
+      "error": "Svaret ditt var ikke riktig, vennligst prøv igjen.",
+      "submit_button_text": "Send"
+    },
+    "checkpoint": {
+      "message": "Løs Captcha for å fortsette",
+      "error": "Captcha-validering mislyktes",
+      "submit_button_text": "Send"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Vanligvis klar om 1 time",
+        "five_or_more_days": "Vanligvis klar om 5+ dager",
+        "two_to_four_days": "Vanligvis klar innen 2-4 dager",
+        "two_hours": "Vanligvis klar om 2 timer",
+        "twenty_four_hours": "Vanligvis klar innen 24 timer",
+        "four_hours": "Vanligvis klar om 4 timer",
+        "zero_to_two_hours": "Vanligvis klar om 2 timer",
+        "two_to_four_hours": "Vanligvis klar om 4 timer",
+        "immediately": "Klar for henting nå",
+        "next_day": "Klar for henting neste dag"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Denne varen er et tilbakevendende eller utsatt kjøp. Ved å fortsette godtar jeg %{cancellationPolicyLink} og gir deg fullmakt til å belaste betalingsmetoden min til prisene, hyppigheten og datoene som er oppført på denne siden, inntil bestillingen min er fullført eller jeg avbestiller, hvis det er tillatt.",
+      "buyer_consent_cart": "Én eller flere av varene i handlekurven din er et tilbakevendende eller utsatt kjøp. Ved å fortsette godtar jeg %{cancellationPolicyLink} og gir deg fullmakt til å belaste betalingsmetoden min til prisene, hyppigheten og datoene som er oppført på denne siden, inntil bestillingen min er fullført eller jeg avbestiller, hvis det er tillatt.",
+      "cancellation_policy": "avbestillingsregler"
     }
   },
   "sections": {
@@ -2781,6 +2885,56 @@
         "one": "{{ quantity }} vare lagt til"
       },
       "variant": "Variant"
+    }
+  },
+  "customer_accounts": {
+    "date": {
+      "humanize": {
+        "lessThanOneYearAgo": "{{date}} kl. {{time}}",
+        "lessThanOneHourAgo": {
+          "one": "{{count}} minutter siden",
+          "other": "{{count}} minutter siden"
+        },
+        "lessThanOneMinuteAgo": "Akkurat nå",
+        "lessThanOneWeekAgo": "{{weekday}} kl. {{time}}",
+        "yesterday": "I går kl {{time}}",
+        "today": "I dag kl. {{time}}",
+        "tomorrow": "I morgen kl {{time}}",
+        "lessThanOneWeekAway": "{{weekday}} kl. {{time}}",
+        "lessThanOneYearAway": "{{date}} kl. {{time}}"
+      }
+    },
+    "enable_javascript": "For å se kontoen din, aktiver JavaScript i nettleserinnstillingene dine eller logg inn med en annen nettleser.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Skjul kontomeny",
+        "label": "Konto",
+        "show_accessibility_label": "Vis konto-meny",
+        "nav_accessibility_label": "Konto navigasjon",
+        "open_menu_accessibility_label": "Åpne kontonavigasjon",
+        "close_menu_accessibility_label": "Lukk kontonavigasjon",
+        "loading_message": "Laster kontonavigasjon"
+      },
+      "action_menu_accessibility_label": "Flere handlinger",
+      "close_menu_accessibility_label": "Lukk hovednavigasjon",
+      "contact_email_subject": "Kontakt fra {{shopName}} nettbutikk",
+      "contact_link": "Kontaktinformasjon",
+      "delete_confirmation": {
+        "cancel": "Avbryt",
+        "delete": "Slett"
+      },
+      "dismiss_toast": "Avvis",
+      "document_title": "{{sectionName}} - {{shopName}} - Konto",
+      "go_to_store_link": "Gå til butikken",
+      "log_out_link": "Logg ut",
+      "loading_message": "Laster",
+      "logout_overlay_label": "Logger deg ut...",
+      "nav_label_accessibility_label": "Hovednavigasjon",
+      "navigation_accessibility_message": "Du navigerte til {{sectionName}}",
+      "orders_link_label": "Bestillinger",
+      "open_menu_accessibility_label": "Åpne hovednavigasjon",
+      "subscriptions_link_label": "Abonnementer",
+      "shop_logo_accessibility_label": "{{shopName}} logo"
     }
   }
 }
