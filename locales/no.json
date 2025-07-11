@@ -4338,6 +4338,95 @@
   "localization": {
     "country_label": "Land/region",
     "language_label": "Språk",
-    "update_language": "Oppdater språk"
+    "update_language": "Oppdater språk",
+    "search": "Søk",
+    "country_results_count": "{{ count }} land/regioner funnet",
+    "popular_countries_regions": "Populære land/regioner",
+    "update_country": "Oppdater land/region"
+  },
+  "customer": {
+    "account": {
+      "title": "Konto",
+      "details": "Konto detaljer",
+      "view_addresses": "Se adresser",
+      "return": "Gå tilbake til kontodetaljer"
+    },
+    "account_fallback": "Konto",
+    "activate_account": {
+      "title": "Aktiver konto",
+      "subtext": "Opprett passordet ditt for å aktivere kontoen din.",
+      "password": "Passord",
+      "password_confirm": "Bekreft passord",
+      "submit": "Aktiver konto",
+      "cancel": "Avslå invitasjon"
+    },
+    "addresses": {
+      "default": "Standard",
+      "title": "Adresser",
+      "add_new": "Legg til en ny adresse",
+      "first_name": "Fornavn",
+      "edit_address": "Rediger adresse",
+      "last_name": "Etternavn",
+      "company": "Selskap",
+      "address1": "Adresse 1",
+      "address2": "Adresse 2",
+      "city": "By",
+      "country": "Land/region",
+      "province": "Provins",
+      "phone": "Telefon",
+      "zip": "Postnummer",
+      "set_default": "Angi som standardadresse",
+      "update": "Oppdater adresse",
+      "add": "Legg til adresse",
+      "cancel": "Avbryt",
+      "delete": "Slett",
+      "edit": "Rediger",
+      "delete_confirm": "Er du sikker på at du vil slette denne adressen?"
+    },
+    "log_out": "Logg ut",
+    "log_in": "Logg inn",
+    "login_page": {
+      "cancel": "Avbryt",
+      "create_account": "Opprett konto",
+      "email": "E-post",
+      "forgot_password": "Glemt passordet ditt?",
+      "guest_continue": "Fortsett",
+      "guest_title": "Fortsett som gjest",
+      "password": "Passord",
+      "title": "Logg inn",
+      "sign_in": "Logg inn",
+      "submit": "Send",
+      "alternate_provider_separator": "eller"
+    },
+    "order": {
+      "title": "Bestill {{ name }}"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "copy_code": "Kopier gavekortkode",
+      "add_to_apple_wallet": "Legg til i Apple Wallet",
+      "copy_code_success": "Kode kopiert vellykket",
+      "expiration_date": "Utløper {{ expires_on }}",
+      "expired": "Utløpt",
+      "qr_image_alt": "QR-kode — skann for å løse inn gavekort"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Jeg vil sende dette som en gave",
+      "expanded": "Gavekortmottaker-skjema utvidet",
+      "collapsed": "Gavekortmottaker skjema skjult",
+      "email_label": "Mottakerens e-post",
+      "email_label_optional_for_no_js_behavior": "Mottakerens e-post (valgfritt)",
+      "name_label": "Mottakers navn (valgfritt)",
+      "email": "E-post",
+      "name": "Navn",
+      "message_label": "Melding (valgfritt)",
+      "message": "Melding",
+      "max_characters": "{{ max_chars }} tegn maks",
+      "send_on": "Returner bare gyldig YAML (ingen ```-gjerder, ingen ekstra nøkler, ingen forklaring), i nøyaktig dette formatet:\n\nKilde:\nYYYY-MM-DD",
+      "send_on_label": "Send videre (valgfritt)"
+    }
   }
 }
