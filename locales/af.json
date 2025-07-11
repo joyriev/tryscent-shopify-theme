@@ -3670,8 +3670,130 @@
       "payment_delete": {
         "description_without_replacement": "Hierdie betaalmetode sal nie meer beskikbaar wees vir toekomstige aankope nie.",
         "title": "Verwyder betaalmetode",
-        "description_with_replacement": "Deletasie van hierdie betaalmetode sal voorafgeautoriseerde betalings beïnvloed. Jy kan dit opsioneel vervang met 'n ander betaalmetode om voort te gaan met die ontvangs van komende bestellings."
+        "description_with_replacement": "Deletasie van hierdie betaalmetode sal voorafgeautoriseerde betalings beïnvloed. Jy kan dit opsioneel vervang met 'n ander betaalmetode om voort te gaan met die ontvangs van komende bestellings.",
+        "warning_message_without_replacement": {
+          "with_pending_orders": "Deletasie van hierdie betaalmetode sal dit van jou rekening verwyder en dit sal nie meer beskikbaar wees vir toekomstige aankope nie. Dit sal steeds gehef word vir enige uitstaande saldo's op bestaande bestellings.",
+          "with_pending_orders_and_subscriptions": "Deletasie van hierdie betaalmetode sal voorafgeautoriseerde betalings beïnvloed. Hierdie betaalmetode sal steeds gehef word vir enige uitstaande saldo's op bestaande bestellings, maar jy sal nie komende intekeningsbestellings ontvang nie. Voeg 'n alternatiewe betaalmetode by om voort te gaan met die ontvangs van intekeningsbestellings.",
+          "with_subscriptions": "Die verwydering van hierdie betaalmetode sal voorafgemagtigde betalings beïnvloed. Voeg 'n alternatiewe betaalmetode by om voort te gaan met die ontvangs van komende bestellings."
+        },
+        "warning_message_with_replacement": {
+          "with_subscriptions": "Die verwydering van hierdie betaalmetode sal voorafgemagtigde betalings beïnvloed. Vervang dit met 'n alternatiewe betaalmetode om voort te gaan met die ontvangs van komende bestellings.",
+          "with_pending_orders": "Deletasie van hierdie betaalmetode sal dit van jou rekening verwyder en dit sal nie meer beskikbaar wees vir toekomstige aankope nie. Tensy jy 'n alternatiewe betaalmetode kies, sal dit steeds gehef word vir enige uitstaande saldo's op bestaande bestellings.",
+          "with_pending_orders_and_subscriptions": "Die verwydering van hierdie betaalmetode sal voorafgeautoriseerde betalings beïnvloed. Tensy u 'n alternatiewe betaalmetode kies, sal hierdie betaalmetode steeds gehef word vir enige uitstaande saldo's op bestaande bestellings. Deur 'n alternatiewe betaalmetode te kies, kan u toekomstige intekeningsbestellings sonder onderbreking ontvang."
+        },
+        "payment_method_selector_placeholder": "Kies 'n alternatiewe betaalmetode (opsioneel)",
+        "payment_method_selector_no_alternative_payment": "Geen vervangingsmetode nie",
+        "replace_method_with_new_method_description": "Jou {{currentPaymentMethodName}} sal verwyder word en vervang word met jou {{newPaymentMethodName}}.",
+        "delete_and_replace_button": "Verwyder en vervang",
+        "loading_available_payment_methods_accessibility_label": "Laai beskikbare betaalmetodes",
+        "error_when_deleting": "Ons vra omverskoning, maar iets het verkeerd geloop en ons kon nie hierdie betaalmetode verwyder nie. Probeer asseblief later weer of herlaai die bladsy.",
+        "deleted_successfully": "Betalingsmetode suksesvol verwyder.",
+        "delete_and_replace_button_accessibility_label": "Verwyder {{currentPaymentMethodName}} en vervang dit met {{newPaymentMethodName}}."
+      },
+      "add_payment_method": {
+        "title": "Voeg betaalmetode by",
+        "billing_address": {
+          "title": "Faktuuradres",
+          "add_billing_address_button": "Voeg nuut by",
+          "choose_billing_address_from_list_button": "Kies uit lys",
+          "add_billing_address_button_accessibility_label": "Voeg nuwe faktuuradres by",
+          "missing_billing_address_error_message": "Verskaf asseblief 'n faktuuradres",
+          "choose_billing_address_from_list_button_accessibility_label": "Kies 'n faktuuradres uit die lys",
+          "default_checkbox": "Stel as standaard betaalmetode in"
+        },
+        "payment_method_added_confirmation": "Betalingsmetode bygevoeg"
+      },
+      "three_d_secure": {
+        "title": "3D Secure"
       }
+    },
+    "payment_method_brands": {
+      "visa": "Visa",
+      "mastercard": "Mastercard",
+      "discover": "Ontdek",
+      "americanexpress": "American Express",
+      "dinersclub": "Diners Club",
+      "elo": "Elo",
+      "jcb": "JCB",
+      "maestro": "Maestro",
+      "visaelectron": "Visa Electron",
+      "forbrugsforeningen": "Verbruikersvereniging",
+      "hipercard": "Hipercard",
+      "unionpay": "UnionPay",
+      "dankort": "Dankort",
+      "laser": "Laser",
+      "shoppay": "Winkel Betaal",
+      "applepay": "Apple Pay",
+      "googlepay": "Google Pay",
+      "storecredit": "Winkelkrediet",
+      "paypal": "PayPal",
+      "bogus": "Bogus"
+    },
+    "privacy_banner": {
+      "cookie_preferences_link": "Koekie-voorkeure"
+    },
+    "shop_policies": {
+      "legal_notice": "Regskennisgewing",
+      "refund_policy": "Terugbetalingsbeleid",
+      "privacy_policy": "Privaatheidsbeleid",
+      "shipping_policy": "Versendingsbeleid",
+      "subscription_policy": "Kansellasiebeleid",
+      "terms_of_sale": "Verkoopsvoorwaardes",
+      "terms_of_service": "Diensvoorwaardes"
+    },
+    "ui_components": {
+      "clear": "Duidelik",
+      "clipboardCopied": "Gekopieer",
+      "clipboardFailedToCopy": "Kon nie kopieer nie",
+      "closeNotification": "Maak toe",
+      "expandNotification": "Blaai meer",
+      "closeModal": "Maak toe",
+      "submit": "Dien in",
+      "processing": "Verwerking…",
+      "increase": "Verhoog {{type}}",
+      "decrease": "Verminder {{type}}",
+      "minimumReached": "Minimum van {{value}} bereik",
+      "maximumReached": "Maksimum van {{value}} bereik",
+      "january": "Januarie",
+      "february": "Februarie",
+      "march": "Maart",
+      "may": "Mag",
+      "june": "Junie",
+      "july": "Julie",
+      "august": "Augustus",
+      "october": "Oktober",
+      "december": "Desember",
+      "monday": "Maandag",
+      "april": "April",
+      "tuesday": "Dinsdag",
+      "september": "September",
+      "wednesday": "Woensdag",
+      "november": "November",
+      "thursday": "Donderdag",
+      "friday": "Vrydag",
+      "saturday": "Saterdag",
+      "sunday": "Sondag",
+      "wednesdayAbbreviation": "Ons",
+      "saturdayAbbreviation": "Sa",
+      "tuesdayAbbreviation": "Tu",
+      "fridayAbbreviation": "Fr",
+      "thursdayAbbreviation": "Th",
+      "showNextMonth": "Wys volgende maand, {{month}} {{year}}",
+      "mondayAbbreviation": "Mo",
+      "showPreviousMonth": "Wys vorige maand, {{month}} {{year}}",
+      "rangeStart": "Reeks begin",
+      "inRange": "In bereik",
+      "rangeEnd": "Reikwydte einde",
+      "removeTag": "Verwyder etiket",
+      "month": {
+        "one": "maand"
+      },
+      "sundayAbbreviation": "Su",
+      "autocompleteOptionsAvailable": {
+        "one": "{{count}} item beskikbaar",
+        "other": "{{count}} items beskikbaar"
+      },
+      "removeItem": "Verwyder {{label}}"
     }
   }
 }
