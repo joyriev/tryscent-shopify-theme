@@ -3032,7 +3032,141 @@
         }
       },
       "status_mark_as_delivered": "وضع علامة كمُسلَّم",
-      "fulfillment_status_title": "حالة التنفيذ: {{status}}"
+      "fulfillment_status_title": "حالة التنفيذ: {{status}}",
+      "buy_again_accessibility_label": "اشترِ مرة أخرى للطلب {{orderId}}",
+      "manage": "إدارة",
+      "manage_accessiblity_label": "إدارة الطلب {{orderId}}",
+      "buy_again": "اشترِ مرة أخرى"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_label": "عرض التفاصيل",
+        "expand_events_accessibility_label": "عرض تفاصيل شحن الطلب",
+        "hide_events_label": "إخفاء التفاصيل",
+        "hide_events_accessibility_label": "إخفاء تفاصيل شحن الطلب"
+      },
+      "addresses_section_title": "الفوترة والشحن",
+      "order_details": "تفاصيل الطلب",
+      "order_details_skeleton_accessibility_label": "تسجيل الدخول لعرض جميع تفاصيل الطلب.",
+      "billing_address": "عنوان الفواتير",
+      "card_ending_with": "ينتهي بـ {{lastDigits}}",
+      "contact": "اتصل",
+      "company": "شركة",
+      "contact_information": "معلومات الاتصال",
+      "company_and_location": "الشركة والموقع",
+      "fully_refunded_label": "مُرَدّ",
+      "group_title_label": "جزء من: {{groupTitle}}",
+      "view_controls": {
+        "gallery": "معرض",
+        "list": "قائمة"
+      },
+      "grouped_view_components": {
+        "expand_line_items": "عرض {{count}} عناصر",
+        "collapse_line_items": "إخفاء {{count}} عناصر",
+        "line_item_summary": "{{refundableQuantity}} × {{productTitle}}",
+        "line_item_summary_list_accessibility_label": "العناصر في حزمة {{productTitle}}",
+        "line_item_summary_accessibility_label": "{{productTitle}}، الكمية: {{refundableQuantity}}"
+      },
+      "discount": "خصم",
+      "hide_items": "إخفاء العناصر",
+      "loading": "جارٍ تحميل تفاصيل الطلب",
+      "loading_finished_accessibility_message": "تم تحميل تفاصيل الطلب",
+      "location": "الموقع",
+      "image_gallery": {
+        "product_name_and_quantity": "كمية {{productName}} {{quantity}}",
+        "previous": "عرض العناصر السابقة",
+        "next": "عرض العناصر التالية",
+        "load_more_items": {
+          "one": "تحميل {{count}} عناصر إضافية",
+          "other": "تحميل {{count}} عناصر إضافية"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "عرض ملخص الطلب",
+        "closed": "إخفاء ملخص الطلب"
+      },
+      "no_data": "لا شيء",
+      "no_data_provided_accessibility_label": "{{fieldName}} فارغ",
+      "not_applicable": "غير متوفر",
+      "partially_refunded_label": "تم استرداد جزء من المبلغ",
+      "paid_amount": "مدفوع",
+      "payment": {
+        "status_in_review": "الدفع مستحق بعد المراجعة",
+        "status_unpaid": "الدفع مستحق في {{date}}",
+        "title": "الدفع",
+        "payment_type": {
+          "gift_card": "بطاقة هدايا",
+          "store_credit": "رصيد المتجر",
+          "money_order": "حوالة مالية",
+          "bank_deposit": "إيداع بنكي",
+          "cash_on_delivery": "الدفع عند الاستلام (COD)",
+          "manual": "يدوي"
+        },
+        "card_payment_details": "ينتهي بـ {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "ينتهي بـ {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "رصيد المتجر - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "مدفوع بأقساط Shop Pay",
+          "view_schedule": "عرض الجدول"
+        },
+        "manual_payment_methods": {
+          "money_order": "أمر دفع - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "الدفع عند الاستلام (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "إيداع بنكي - {{formattedTransactionAmount}}",
+          "manual": "دليل - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "عرض الكل",
+          "show_less": "عرض أقل",
+          "details": "التفاصيل",
+          "payment_details": "تفاصيل الدفع"
+        },
+        "emv_details": {
+          "auth": "المصادقة:",
+          "aid": "المساعدة:",
+          "source": "المصدر:"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "تم الدفع بأقساط Shop Pay",
+        "description": "ابقَ على اطلاع بجدول مدفوعاتك مع التذكيرات في تطبيق Shop.",
+        "payment_reminders_button": "احصل على تذكيرات الدفع",
+        "desktop_qr_code_content": {
+          "title": "مسح للتذكيرات",
+          "description": "احصل على تذكيرات بأقساطك مع Shop."
+        }
+      },
+      "refunded_amount": "تم الاسترداد",
+      "request_return_failed": "حدثت مشكلة أثناء معالجة طلبك. يرجى المحاولة مرة أخرى.",
+      "login_card": {
+        "resend_link_and_login": "لعرض تفاصيل طلبك، قم بتسجيل الدخول أو أرسل رابطًا جديدًا إلى البريد الإلكتروني أو رقم الهاتف المستخدم عند الدفع.",
+        "resend_link_only": "لعرض تفاصيل طلبك، أرسل رابطًا جديدًا إلى البريد الإلكتروني أو رقم الهاتف المستخدم عند الدفع.",
+        "log_in": "تسجيل الدخول",
+        "resend_link": "إرسال رابط جديد",
+        "link_expired": "انتهت صلاحية الرابط"
+      },
+      "remaining_amount": "المتبقي",
+      "marketing_section_title": "الأخبار والعروض",
+      "marketing_description": "ستتلقى رسائل تسويقية عبر البريد الإلكتروني. يمكنك إلغاء الاشتراك في أي وقت.",
+      "marketing_checkbox_label": "أرسل لي بريدًا إلكترونيًا بالأخبار والعروض",
+      "marketing_checkmark_label": "أنت مشترك لتلقي الأخبار والعروض عبر البريد الإلكتروني",
+      "returns": {
+        "expand_events_label": "عرض التفاصيل",
+        "hide_events_label": "إخفاء التفاصيل",
+        "ineligible_return_message": "لا توجد عناصر في هذا الطلب مؤهلة للإرجاع.",
+        "print_shipping_label": "طباعة ملصق الشحن",
+        "ineligible_return_message_when_returned": "لا توجد عناصر إضافية في هذا الطلب مؤهلة للإرجاع.",
+        "return_and_refund_modal_header": "سياسة الاسترداد",
+        "tracking_number": "رقم التتبع:",
+        "exchange_header": "تبادل العناصر",
+        "exchange_subheader": "سيتم إضافة العناصر المستبدلة إلى الطلب بمجرد اكتمال الإرجاع."
+      },
+      "shipping": {
+        "address": "عنوان الشحن",
+        "address_map_marker": "عنوان الشحن",
+        "method": "طريقة الشحن",
+        "summary": "الشحن"
+      }
     }
   }
 }
