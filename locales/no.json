@@ -2497,12 +2497,144 @@
         "centimeter": "cm",
         "millimeter": "mm",
         "square_meter": "m²",
-        "pound": "lb"
+        "pound": "lb",
+        "inch": "i",
+        "foot": "fot",
+        "pint": "pt",
+        "yard": "yd",
+        "fluid_ounce": "fl oz",
+        "gallon": "gal",
+        "item": "vare",
+        "quart": "qt",
+        "square_foot": "ft²"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "Adressen støttes ikke for det nåværende medlemskapet."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Naviger til nettbutikk"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "Mer informasjon om %{context}",
+        "additional_payment_methods": "Ytterligere betalingsmetoder"
       }
     },
     "sentence": {
       "two_words_connector": "og",
       "last_word_connector": ", og"
+    },
+    "pagination": {
+      "previous": "Forrige",
+      "next": "Neste"
+    },
+    "links": {
+      "powered_by_shopify": "Drevet av Shopify",
+      "learn_more": "Lær mer"
+    },
+    "feed": {
+      "more": "Mer"
+    },
+    "attributes": {
+      "email": "e-post",
+      "password": "passord",
+      "password_confirmation": "Passordbekreftelsen",
+      "first_name": "fornavn",
+      "last_name": "etternavn",
+      "body": "kropp",
+      "signature": "Adresse"
+    },
+    "addresses": {
+      "zip_code": "Postnummer",
+      "postal_code": "Postnummer",
+      "postcode": "Postnummer",
+      "pincode": "PIN-kode",
+      "prefecture": "Prefektur",
+      "province": "Provins",
+      "state": "Stat",
+      "state_and_territory": "Stat/territorium",
+      "county": "Fylke",
+      "emirate": "Emirat",
+      "governorate": "Guvernement",
+      "confirm": "Er du sikker på at du vil slette denne adressen?",
+      "region": "Region"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Utvalgt",
+        "best_selling": "Bestselgende",
+        "az": "Alfabetisk, A-Å",
+        "za": "Alfabetisk, Z-A",
+        "price_ascending": "Pris, lav til høy",
+        "price_descending": "Pris, høy til lav",
+        "date_ascending": "Dato, gammel til ny",
+        "date_descending": "Dato, ny til gammel"
+      }
+    },
+    "errors": {
+      "blank": "kan ikke være tom",
+      "blocked_address": "Denne plasseringen støttes ikke",
+      "credit_card_session_expired": "Kredittkortautorisasjonen har utløpt, vennligst oppgi betalingsinformasjonen din på nytt. Kortet ditt har ikke blitt belastet.",
+      "empty": "kan ikke være tom",
+      "discount_disabled": "Denne rabatten er deaktivert",
+      "discount_limit_reached": "Denne rabatten har nådd sin bruksgrense",
+      "discount_not_found": "Kan ikke finne en gyldig rabatt som samsvarer med den angitte koden",
+      "discount_expired": "Denne rabatten er ikke gyldig lenger",
+      "customer_already_used_once_per_customer_discount_notice": "Denne rabatten har nådd sin bruksgrense",
+      "invalid_email": "må være en gyldig e-postadresse",
+      "gift_card_code_invalid": "Koden er ugyldig",
+      "gift_card_already_applied": "Kode er allerede brukt på kassen din",
+      "gift_card_currency_mismatch": "Gavekortet ditt er i %{gift_card_currency}. Kontakt oss for å få det utstedt på nytt i %{checkout_currency}.",
+      "gift_card_depleted": "Det er ingen midler igjen på dette gavekortet",
+      "gift_card_disabled": "Gavekort er deaktivert",
+      "gift_card_expired": "Gavekortet er utløpt",
+      "invalid": "er ugyldig",
+      "bad_domain": "inneholder et ugyldig domenenavn",
+      "taken": "er allerede tatt",
+      "contains_html_tags": "kan ikke inneholde HTML-tagger",
+      "too_short": "er for kort (minimum er %{count} tegn)",
+      "password_mismatch": "må samsvare med det oppgitte passordet",
+      "too_long": "er for lang (maksimum er %{count} tegn)",
+      "contains_spaces": "starter eller slutter med mellomrom.",
+      "email_domain_invalid": "leverandør støttes ikke",
+      "invalid_for_country": "er ikke gyldig for %{country}",
+      "invalid_province_in_country": "er ikke en gyldig provins i %{country}",
+      "invalid_for_country_and_province": "er ikke gyldig for %{province} og %{country}",
+      "invalid_state_in_country": "er ikke en gyldig stat i %{country}",
+      "invalid_region_in_country": "er ikke en gyldig region i %{country}",
+      "less_than_or_equal_to": "må være mindre enn eller lik %{count}",
+      "full_name_required": "Skriv inn et fornavn og et etternavn",
+      "not_supported": "støttes ikke",
+      "invalid_for_card_type": "er ikke gyldig",
+      "invalid_type": "beklager, vi godtar ikke kort av denne typen",
+      "invalid_format": "formatet er ikke gyldig",
+      "expired": "har utløpt",
+      "invalid_start_date_or_issue_number_for_debit": "en gyldig startdato eller utgavenummer er påkrevd",
+      "invalid_expiry_year": "er ikke et gyldig utløpsår",
+      "reset_password_html": "Denne e-postadressen er allerede knyttet til en konto. Hvis denne kontoen er din, kan du <a href=\"/account/login#recover\">tilbakestille passordet ditt</a>",
+      "verify_email": "Vi har sendt en e-post til %{customer_email}, vennligst klikk på lenken som er inkludert for å bekrefte e-postadressen din.",
+      "product_not_available": "produktet er ikke publisert for denne kunden.",
+      "shop_404": {
+        "title": "Lag en netthandelsnettsted og selg på nett! Netthandelsprogramvare fra Shopify",
+        "heros": {
+          "store_unavailable": "Beklager, denne butikken er for øyeblikket utilgjengelig.",
+          "store_not_exist": "Denne butikken finnes ikke.",
+          "no_storefront": "Denne butikken har ikke en nettside ennå."
+        },
+        "links": {
+          "explore_other_stores": "Utforsk andre butikker",
+          "start_free_trial": "Start en gratis prøveperiode"
+        },
+        "owner_ctas": {
+          "header": "Er du butikkeier?",
+          "fix_domain": "Fullfør oppsettet av din nye nettadresse, gå til %{domain_settings_link}. Klikk på «Koble til domene» og skriv inn: %{domain}.<br>Hvis du har problemer med å komme inn i butikken din, prøv siden %{forgot_your_store_link}.",
+          "fix_domain_link_text": "dine domeninnstillinger",
+          "forgot_your_store_link_text": "glemte butikken din",
+          "add_storefront": "Du kan sette opp nettstedet ditt ved å legge til Online Store-kanalen i din %{admin_link}. Hvis du har problemer med å komme inn i butikken din, prøv siden %{forgot_your_store_link}.",
+          "admin_link_text": "administrator"
+        }
+      }
     }
   },
   "sections": {
