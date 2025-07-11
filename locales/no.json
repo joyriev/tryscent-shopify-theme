@@ -298,12 +298,188 @@
             "may": "Mai",
             "june": "Juni",
             "july": "Juli",
-            "april": "april"
+            "april": "april",
+            "december": "Desember",
+            "october": "Oktober",
+            "august": "August",
+            "november": "November",
+            "september": "September"
           }
+        },
+        "datepicker": {
+          "show_next_month": "Vis neste måned, {{month}} {{year}}",
+          "show_previous_month": "Vis forrige måned, {{month}} {{year}}",
+          "range_start": "Område start",
+          "in_range": "Innen rekkevidde",
+          "range_end": "Rekkevidde slutt"
+        },
+        "list_formatter": {
+          "and": {
+            "lastWordConnector": "{{previousWords}}, og {{lastWord}}",
+            "twoWordConnector": "{{firstWord}} og {{secondWord}}"
+          },
+          "or": {
+            "lastWordConnector": "{{previousWords}}, eller {{lastWord}}",
+            "twoWordConnector": "{{firstWord}} eller {{secondWord}}"
+          }
+        },
+        "map": {
+          "cluster_title": {
+            "one": "Klynge av {{number}} markør",
+            "other": "Klynge av {{number}} markører"
+          }
+        },
+        "sheet": {
+          "expand": "Utvid"
+        },
+        "dropzone": {
+          "add_file": "Legg til fil",
+          "invalid_file_type": "Filtype ikke støttet",
+          "dragged_over": "Slipp fil for å laste opp"
         }
       },
       "address_management": {
         "confirm_address_deletion": "Er du sikker på at du vil slette adressen {{address}}?"
+      },
+      "contact": {
+        "title": "Informasjon",
+        "address_title": "Adresse",
+        "shipping_used_as_billing_notice": "Dette vil også bli brukt som din faktureringsadresse for denne bestillingen.",
+        "delivery_option_title": "Leveringsmetode",
+        "contact_method_title": "Kontakt",
+        "email_label": "E-post",
+        "email_placeholder": "E-post",
+        "email_or_phone_label": "E-post eller mobiltelefonnummer",
+        "email_or_phone_placeholder": "E-post eller mobiltelefonnummer",
+        "stored_addresses_label": "Lagrede adresser",
+        "available_addresses_label": "Tilgjengelige adresser",
+        "new_address_label": "Bruk en ny adresse",
+        "first_name_label": "Fornavn",
+        "optional_first_name_label": "Fornavn (valgfritt)",
+        "company_label": "Selskap",
+        "last_name_label": "Etternavn",
+        "company_attention_label": "Firma/Oppmerksomhet",
+        "optional_company_attention_label": "Selskap/Oppmerksomhet (valgfritt)",
+        "optional_company_label": "Firma (valgfritt)",
+        "address1_label": "Adresse",
+        "address2_label": "Leilighet, suite, osv.",
+        "optional_address2_label": "Leilighet, suite, osv. (valgfritt)",
+        "city_label": "By",
+        "country_label": "Land/Region",
+        "country_code": "Land/Region kode",
+        "province_placeholder": "Provins",
+        "county_label": "Fylke",
+        "state_label": "Stat",
+        "province_label": "Provins",
+        "county_placeholder": "Fylke",
+        "state_placeholder": "Stat",
+        "region_none": "Ingen valgt",
+        "prefecture_label": "Prefektur",
+        "prefecture_placeholder": "Prefektur",
+        "governorate_label": "Guvernement",
+        "governorate_placeholder": "Guvernement",
+        "emirate_placeholder": "Emirat",
+        "state_and_territory_label": "Stat/territorium",
+        "emirate_label": "Emirat",
+        "state_and_territory_placeholder": "Stat/territorium",
+        "phone_label": "Telefon",
+        "optional_phone_label": "Telefon (valgfritt)",
+        "phone_placeholder": "Telefon",
+        "phone_tooltip": "I tilfelle vi trenger å kontakte deg angående bestillingen din",
+        "zip_code_label": "Postnummer",
+        "optional_zip_code_label": "Postnummer (valgfritt)",
+        "region_placeholder": "Region",
+        "zip_code_placeholder": "Postnummer",
+        "postal_code_label": "Postnummer",
+        "optional_postal_code_label": "Postnummer (valgfritt)",
+        "postal_code_placeholder": "Postnummer",
+        "postcode_label": "Postnummer",
+        "optional_postcode_label": "Postnummer (valgfritt)",
+        "postcode_placeholder": "Postnummer",
+        "region_label": "Region",
+        "pincode_label": "PIN-kode",
+        "optional_pincode_label": "PIN-kode (valgfritt)",
+        "pincode_placeholder": "PIN-kode",
+        "civic_number_warning": "Legg til et husnummer hvis du har ett",
+        "optional_last_name_label": "Etternavn (valgfritt)",
+        "different_shipping_address_label": "Send til en annen adresse",
+        "different_shipping_address_text": "Bruk en engangsadresse for denne bestillingen",
+        "change_company_location_link_label": "Endre bedriftssted",
+        "change_location_link_label": "Endre sted",
+        "ship_to_company": "Send til {{companyName}}"
+      },
+      "delivery_options": {
+        "free_total_label": "Gratis",
+        "ship": "Skip",
+        "ship_to_address": "Send til adresse",
+        "shipping_address": "Leveringsadresse",
+        "pick_up": "Hent",
+        "pick_up_from_store": "Henting i butikk",
+        "pick_up_locations": "Butikksteder",
+        "pick_up_in_one_hour": "Vanligvis klar om 1 time",
+        "pick_up_in_two_hours": "Vanligvis klar om 2 timer",
+        "pick_up_in_twenty_four_hours": "Vanligvis klar innen 24 timer",
+        "pick_up_in_four_hours": "Vanligvis klar om 4 timer",
+        "pick_up_in_five_or_more_days": "Vanligvis klar om 5+ dager",
+        "pick_up_in_zero_to_two_hours": "Klar for henting om 2 timer",
+        "pick_up_in_two_to_four_days": "Vanligvis klar innen 2-4 dager",
+        "pick_up_in_two_to_four_hours": "Klar for henting om 4 timer",
+        "pick_up_immediately": "Klar for henting nå",
+        "pick_up_next_day": "Klar for henting neste dag",
+        "retail_method_definition": "Detaljhandel frakt",
+        "pickup_point_method_definition": "Send til hentepunkt",
+        "none_method_definition": "Ingen frakt",
+        "subscription_pickup_information": "Denne leveringsmetoden vil gjelde for alle varer i denne bestillingen og for alle fremtidige bestillinger for dette abonnementet."
+      },
+      "customer_account": {
+        "not_user_label": "Ikke %{first_name}?",
+        "have_an_account_label": "Har du en konto?",
+        "sign_in_link_label": "Logg inn",
+        "sign_out_link_label": "Logg ut",
+        "invalid_address": "Valgt adresse er ugyldig. %{update_address_link} eller velg en annen adresse.",
+        "save_my_information_label": "Lagre denne informasjonen til neste gang",
+        "incomplete_address": "Valgt adresse er ufullstendig. %{update_address_link} eller velg en annen adresse.",
+        "rollup_label": "Konto",
+        "invalid_shipping_method_summary": "Velg en gyldig leveringsadresse for å se tilgjengelige fraktmetoder",
+        "saved_address_option_description": {
+          "one": "Du har {{count}} lagret adresse.",
+          "other": "Du har {{count}} lagrede adresser."
+        },
+        "saved_address_option_link": "Bruk en lagret adresse",
+        "saved_address_modal_title": "Bruk min lagrede adresse"
+      },
+      "stock": {
+        "page_title": "Lagerproblemer",
+        "title": "Utsolgt",
+        "items_unavailable_notice": "Noen varer er ikke lenger tilgjengelige.",
+        "product_column_header": "Produkter",
+        "quantity_column_header": "Antall",
+        "price_column_header": "Pris",
+        "removed_from_cart_notice": "Fjernet fra handlekurv",
+        "sold_out_label": "Utsolgt",
+        "reduced_label": "Redusert",
+        "reduced_with_quantity_label": "Kun %{quantity_available} igjen",
+        "remove_from_cart_button_label": "Fjern fra handlekurv",
+        "continue_shopping_button_label": "Fortsett",
+        "go_back_to_cart_button_label": "Gå tilbake til handlekurven min",
+        "remove": "Fjern",
+        "return_to_store_label": "Gå tilbake til butikken",
+        "continue_cta_label": "Fortsett til kassen",
+        "item_label": {
+          "one": "{{count}} vare",
+          "other": "{{count}} elementer"
+        },
+        "empty_cart_label": "Din handlekurv er tom",
+        "status_column_header": "Status",
+        "quantity_update": {
+          "page_title": "Oppdatering av mengde",
+          "title": "Oppdatering av mengde",
+          "description": "Tilgjengelige mengder for disse varene har endret seg og er oppdatert i handlekurven din."
+        },
+        "unpurchasable_product": {
+          "title": "Ukjøpelig produkt",
+          "header": "Noen varer ble fjernet fra handlekurven din"
+        }
       }
     },
     "sentence": {
