@@ -4196,9 +4196,148 @@
         "gallery_viewer": "Galleri-visning",
         "load_image": "Last inn bilde {{ index }} i gallerivisning",
         "load_model": "Last 3D-modell {{ index }} i gallerivisning",
-        "load_video": "Spill av video {{ index }} i gallerivisning"
+        "load_video": "Spill av video {{ index }} i gallerivisning",
+        "play_model": "Spill 3D-visning",
+        "open_media": "Åpne media {{ index }} i modal",
+        "play_video": "Spill video",
+        "image_available": "Bilde {{ index }} er nå tilgjengelig i gallerivisning"
       },
-      "sku": "SKU"
+      "sku": "SKU",
+      "quantity": {
+        "label": "Antall",
+        "input_label": "Antall for {{ product }}",
+        "increase": "Øk mengden for {{ product }}",
+        "decrease": "Reduser mengde for {{ product }}",
+        "minimum_of": "Minimum av {{ quantity }}",
+        "maximum_of": "Maksimum av {{ quantity }}",
+        "multiples_of": "Økninger på {{ quantity }}",
+        "max_of": "Maks {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i handlekurven",
+        "note": "Se regler for antall",
+        "min_of": "Min {{ quantity }}"
+      },
+      "volume_pricing": {
+        "title": "Volumpriser",
+        "note": "Volumpriser tilgjengelig",
+        "price_at_each_html": "til {{ price }}/stk"
+      },
+      "pickup_availability": {
+        "view_store_info": "Se butikkinformasjon",
+        "pick_up_available": "Henting tilgjengelig",
+        "check_other_stores": "Sjekk tilgjengelighet i andre butikker",
+        "pick_up_available_at_html": "Henting tilgjengelig på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Henting er for øyeblikket utilgjengelig på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Kunne ikke laste inn tilgjengelighet for henting",
+        "refresh": "Oppdater"
+      },
+      "price": {
+        "regular_price": "Vanlig pris",
+        "sale_price": "Salgspris",
+        "from_price_html": "Fra {{ price }}",
+        "unit_price": "Enhetspris"
+      },
+      "sold_out": "Utsolgt",
+      "share": "Del dette produktet",
+      "unavailable": "Utilgjengelig",
+      "vendor": "Leverandør",
+      "value_unavailable": "{{ option_value }} - Utilgjengelig",
+      "variant_sold_out_or_unavailable": "Variant utsolgt eller utilgjengelig",
+      "video_exit_message": "{{ title }} åpner fullskjermvideo i samme vindu.",
+      "xr_button": "Se i ditt rom",
+      "xr_button_label": "Se i ditt rom, last inn gjenstand i vindu for utvidet virkelighet",
+      "view_full_details": "Se fullstendige detaljer",
+      "duties_included": "Plikter inkludert.",
+      "taxes_included": "Skatter inkludert.",
+      "duties_and_taxes_included": "Avgifter og skatter inkludert.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beregnet ved utsjekking."
+    },
+    "modal": {
+      "label": "Mediegalleri"
+    },
+    "facets": {
+      "filter_and_operator_subtitle": "Match alle",
+      "apply": "Søk",
+      "clear": "Tøm",
+      "clear_all": "Fjern alle",
+      "from": "Fra",
+      "filters_selected": {
+        "one": "{{ count }} valgt",
+        "other": "{{ count }} valgt"
+      },
+      "filter_and_sort": "Filtrer og sorter",
+      "filter_button": "Filtrer",
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filtre valgt)",
+      "show_more": "Vis mer",
+      "show_less": "Vis mindre",
+      "max_price": "Den høyeste prisen er {{ price }}",
+      "product_count": {
+        "one": "{{ product_count }} av {{ count }} produkt",
+        "other": "{{ product_count }} av {{ count }} produkter"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkter"
+      },
+      "sort_button": "Sorter",
+      "sort_by_label": "Sorter etter:",
+      "reset": "Tilbakestill",
+      "filter_by_label": "Filter:",
+      "to": "Til",
+      "clear_filter": "Fjern filter"
     }
+  },
+  "templates": {
+    "search": {
+      "page": "Side",
+      "products": "Produkter",
+      "results_pages_with_count": {
+        "one": "{{ count }} side",
+        "other": "{{ count }} sider"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} forslag",
+        "other": "{{ count }} forslag"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkter"
+      },
+      "results_with_count": {
+        "one": "{{ count }} resultat",
+        "other": "{{ count }} resultater"
+      },
+      "title": "Søkeresultater",
+      "suggestions": "Forslag",
+      "pages": "Sider",
+      "no_results": "Ingen resultater funnet for “{{ terms }}”. Sjekk stavemåten eller bruk et annet ord eller uttrykk.",
+      "results_with_count_and_term": {
+        "one": "{{ count }} resultat funnet for “{{ terms }}”",
+        "other": "{{ count }} resultater funnet for “{{ terms }}”"
+      },
+      "search_for": "Søk etter “{{ terms }}”"
+    },
+    "cart": {
+      "cart": "Handlekurv"
+    },
+    "contact": {
+      "form": {
+        "title": "Kontaktskjema",
+        "name": "Navn",
+        "email": "E-post",
+        "phone": "Telefonnummer",
+        "comment": "Kommentar",
+        "send": "Send inn",
+        "post_success": "Takk for at du kontaktet oss. Vi vil komme tilbake til deg så snart som mulig.",
+        "error_heading": "Vennligst juster følgende:"
+      }
+    },
+    "404": {
+      "title": "Siden ble ikke funnet"
+    }
+  },
+  "localization": {
+    "country_label": "Land/region",
+    "language_label": "Språk",
+    "update_language": "Oppdater språk"
   }
 }
