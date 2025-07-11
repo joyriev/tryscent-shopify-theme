@@ -3608,7 +3608,69 @@
         "close_payment_modal": "Maak toe",
         "preauthorized_payments": "Voorgereguleerde betalings",
         "payment_method_expired_on": "Verstryk op {{expiryDate}}",
-        "credit_card_details_accessibility_label": "eindigend in {{lastDigits}}"
+        "credit_card_details_accessibility_label": "eindigend in {{lastDigits}}",
+        "close_payment_modal_accessibility_label": "Sluit betaalmetode besonderhede venster",
+        "pre_authorized_payments": "Vooraf gemagtigde betalings",
+        "payment_details_loading": "Laai betaalmetode besonderhede",
+        "payment_method_not_found_error": "Kon nie betaalmetode vind nie",
+        "edit_payment_method_button": "Wysig",
+        "next_payment_due": "Volgende betaling verskuldig {{dueDateInMonthDayYear}}",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} items in totaal, vertoon {{totalItemsToDisplay}} items.",
+        "loading_shop_pay": "Laai Shop Pay",
+        "edit_payment_method_button_accessibility_label": "Wysig betaalmetode wat eindig op {{lastDigits}}",
+        "invalid_payment_method": "Ongeldige betaalmetode",
+        "default_checkbox": "Stel as verstek",
+        "replace_payment_method": "Vervang betaalmetode",
+        "invalid_payment_method_message": "Gebruik 'n nuwe kredietkaart om voort te gaan met die ontvangs van komende bestellings.",
+        "total_amount_of_subscription_line_items_left": "en {{total}} meer",
+        "default_checkbox_accessibility_label": "Stel hierdie betaalmetode as standaard in",
+        "checkout_card_banner": "Hierdie betaalmetode kan slegs gebruik word vir vooraf-gemagtigde betalings. Dit sal nie by die betaalpunt verskyn as jy by hierdie winkel aangemeld is nie."
+      },
+      "edit_payment_method": {
+        "save_payment_method_button": "Stoor",
+        "cancel_edit_payment_method_button": "Kanselleer",
+        "title": "Wysig betaalmetode",
+        "billing_address": "Faktuuradres",
+        "future_purchases_notice": "Hierdie betaalmetode sal vir toekomstige aankope gestoor word.",
+        "payment_method_updated_toast": "Betalingsmetode opgedateer",
+        "billing_address_add_new": "Voeg nuut by",
+        "billing_address_choose_from_list": "Kies uit lys",
+        "generic_error": "Daar was 'n probleem met die opdatering. Probeer asseblief weer."
+      },
+      "card_fields": {
+        "card_number_label": "Kaartnommer",
+        "card_number_placeholder": "Kaartnommer",
+        "name_on_card_label": "Naam op kaart",
+        "name_on_card_placeholder": "Naam op kaart",
+        "card_expiry_label": "Vervaldatum (MM / JJ)",
+        "card_expiry_placeholder": "Vervaldatum (MM / JJ)",
+        "card_verification_value_label": "Sekuriteitskode",
+        "card_verification_value_placeholder": "Sekuriteitskode",
+        "card_start_label": "Uitgiftedatum (MM / JJ)",
+        "card_start_placeholder": "Uitgiftedatum (MM / JJ)",
+        "tooltip": {
+          "tooltip_accessibility_label": "Meer inligting",
+          "card_verification_value_explanation_amex": "4-syfer sekuriteitskode aan die voorkant van jou kaart",
+          "card_verification_value_explanation_other": "3-syfer sekuriteitskode aan die agterkant van jou kaart",
+          "card_verification_value_explanation": "3-syfer sekuriteitskode wat gewoonlik op die agterkant van jou kaart gevind word. American Express-kaarte het 'n 4-syfer kode aan die voorkant.",
+          "card_security_notice": "Alle transaksies is veilig en gekodeer."
+        },
+        "field_errors": {
+          "credit_card_number_invalid": "Voer 'n geldige kaartnommer in",
+          "credit_card_verification_value_blank": "Voer die CVV of sekuriteitskode op jou kaart in",
+          "credit_card_name_invalid": "Voer jou naam presies in soos dit op jou kaart geskryf is",
+          "credit_card_expiry_invalid": "Voer 'n geldige kaartvervaldatum in"
+        },
+        "unavailable": {
+          "text": "Krediet- en debietkaartbetalings is tans nie beskikbaar nie.",
+          "link_text": "Vernu hierdie bladsy",
+          "suffix": "of probeer later weer."
+        }
+      },
+      "payment_delete": {
+        "description_without_replacement": "Hierdie betaalmetode sal nie meer beskikbaar wees vir toekomstige aankope nie.",
+        "title": "Verwyder betaalmetode",
+        "description_with_replacement": "Deletasie van hierdie betaalmetode sal voorafgeautoriseerde betalings beïnvloed. Jy kan dit opsioneel vervang met 'n ander betaalmetode om voort te gaan met die ontvangs van komende bestellings."
       }
     }
   }
