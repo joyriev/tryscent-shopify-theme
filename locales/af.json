@@ -2566,8 +2566,22 @@
     },
     "store_availability": {
       "pick_up_time": {
-        "one_hour": "Gewoonlik gereed binne 1 uur"
+        "one_hour": "Gewoonlik gereed binne 1 uur",
+        "two_hours": "Gewoonlik gereed binne 2 uur",
+        "two_to_four_days": "Gewoonlik gereed in 2-4 dae",
+        "four_hours": "Gewoonlik gereed binne 4 uur",
+        "five_or_more_days": "Gewoonlik gereed in 5+ dae",
+        "twenty_four_hours": "Gewoonlik gereed binne 24 uur",
+        "zero_to_two_hours": "Gewoonlik gereed binne 2 uur",
+        "two_to_four_hours": "Gewoonlik gereed binne 4 uur",
+        "immediately": "Gereed vir afhaling nou",
+        "next_day": "Gereed vir afhaling die volgende dag"
       }
+    },
+    "subscriptions": {
+      "cancellation_policy": "kansellasiebeleid",
+      "buyer_consent_product": "Hierdie item is 'n herhalende of uitgestelde aankoop. Deur voort te gaan, stem ek in tot die %{cancellationPolicyLink} en magtig ek jou om my betaalmetode te hef teen die pryse, frekwensie en datums wat op hierdie bladsy gelys word totdat my bestelling vervul is of ek kanselleer, indien toegelaat.",
+      "buyer_consent_cart": "Een of meer van die items in jou mandjie is 'n herhalende of uitgestelde aankoop. Deur voort te gaan, stem ek in tot die %{cancellationPolicyLink} en magtig ek jou om my betaalmetode te hef teen die pryse, frekwensie en datums wat op hierdie bladsy gelys word totdat my bestelling vervul is of ek kanselleer, indien toegelaat."
     }
   },
   "sections": {
@@ -2589,5 +2603,55 @@
       "max_error": "Hierdie item het 'n maksimum van {{ max }}",
       "step_error": "Jy kan hierdie item slegs in stappe van {{ step }} byvoeg."
     }
+  },
+  "customer_accounts": {
+    "date": {
+      "humanize": {
+        "lessThanOneYearAgo": "{{date}} om {{time}}",
+        "lessThanOneHourAgo": {
+          "one": "{{count}} minute gelede",
+          "other": "{{count}} minute gelede"
+        },
+        "lessThanOneWeekAgo": "{{weekday}} om {{time}}",
+        "yesterday": "Gister om {{time}}",
+        "today": "Vandag om {{time}}",
+        "lessThanOneWeekAway": "{{weekday}} om {{time}}",
+        "lessThanOneYearAway": "{{date}} om {{time}}",
+        "lessThanOneMinuteAgo": "Net nou",
+        "tomorrow": "Môre om {{time}}"
+      }
+    },
+    "navigation_and_structure": {
+      "account_menu": {
+        "label": "Rekening",
+        "show_accessibility_label": "Wys Rekeningkieslys",
+        "nav_accessibility_label": "Rekening navigasie",
+        "close_menu_accessibility_label": "Sluit Rekening navigasie",
+        "loading_message": "Laai rekening navigasie",
+        "open_menu_accessibility_label": "Maak Rekening navigasie oop",
+        "hide_accessibility_label": "Versteek Rekeningkieslys"
+      },
+      "contact_link": "Kontakinligting",
+      "action_menu_accessibility_label": "Meer aksies",
+      "contact_email_subject": "Kontak van {{shopName}} aanlyn winkel",
+      "delete_confirmation": {
+        "delete": "Verwyder",
+        "cancel": "Kanselleer"
+      },
+      "close_menu_accessibility_label": "Sluit hoofnavigasie",
+      "log_out_link": "Teken uit",
+      "dismiss_toast": "Kanselleer",
+      "document_title": "{{sectionName}} - {{shopName}} - Rekening",
+      "go_to_store_link": "Gaan na winkel",
+      "loading_message": "Laai tans",
+      "nav_label_accessibility_label": "Hoofnavigasie",
+      "logout_overlay_label": "Teken jou uit...",
+      "orders_link_label": "Bestellings",
+      "subscriptions_link_label": "Intekeninge",
+      "navigation_accessibility_message": "Jy het na {{sectionName}} genavigeer",
+      "open_menu_accessibility_label": "Maak hoofnavigasie oop",
+      "shop_logo_accessibility_label": "{{shopName}} logo"
+    },
+    "enable_javascript": "Om jou rekening te sien, skakel JavaScript in jou blaaierinstellings aan of meld aan met 'n ander blaaier."
   }
 }
