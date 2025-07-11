@@ -34,14 +34,12 @@
             {{ block.settings.name }}
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
-            <span data-base-price="{{ block.settings.our_price }}" >
-              ${{ block.settings.our_price }}
-            </span>
+            <span data-base-price="{{ block.settings.our_price }}">
+              ${{ block.settings.our_price }}</span>
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-            <span data-base-price="{{ block.settings.other_brands }}" >
-              ${{ block.settings.other_brands }}
-            </span>
+            <span data-base-price="{{ block.settings.other_brands }}">
+              ${{ block.settings.other_brands }}</span>
           </div>
         {% endif %}
         {% if block.type == "offer" %}
@@ -49,14 +47,12 @@
             {{ block.settings.name }}
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base  !bg-[#226139] ">
-            <span data-base-price="{{ block.settings.our_price }}" >
-              ${{ block.settings.our_price }}
-            </span>
+            <span data-base-price="{{ block.settings.our_price }}">
+              ${{ block.settings.our_price }}</span>
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
-            <span data-base-price="{{ block.settings.other_brands }}" >
-              ${{ block.settings.other_brands }}
-            </span>
+            <span data-base-price="{{ block.settings.other_brands }}">
+              ${{ block.settings.other_brands }}</span>
           </div>
         {% endif %}
       {% endfor %}
@@ -65,31 +61,51 @@
       <div class="!block"></div>
     </div>
     <div class="text-center mt-14">
-      <a href="{{ section.settings.btn_url }}" class="no-underline text-white font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-widest text-lg transition-colors tabs-cta-ripple-animation" aria-label="View All">
+      <a
+        href="{{ section.settings.btn_url }}"
+        class="no-underline text-white font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-widest text-lg transition-colors tabs-cta-ripple-animation"
+        aria-label="View All">
         {{ section.settings.btn_text }}
       </a>
     </div>
     <div class="max-w-[800px] mx-auto flex flex-col items-center justify-center mt-16">
-      <span class="jdgm-prev-badge__stars" data-score="4.83" tabindex="0" aria-label="4.83 stars" role="button"> <span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span><span class="jdgm-star jdgm--on"></span> </span>
+      <span
+        class="jdgm-prev-badge__stars"
+        data-score="4.83"
+        tabindex="0"
+        aria-label="4.83 stars"
+        role="button">
+        <span class="jdgm-star jdgm--on"></span>
+        <span class="jdgm-star jdgm--on"></span>
+        <span class="jdgm-star jdgm--on"></span>
+        <span class="jdgm-star jdgm--on"></span>
+        <span class="jdgm-star jdgm--on"></span>
+      </span>
       <p class="text-center m-0 mt-2 leading-snug tracking-normal mb-4 text-lg text-gray-950">{{ section.settings.review_text }}</p>
       <div class="flex items-center justify-center gap-2">
-        <h3 class="text-center text-lg font-semibold m-0">{{ section.settings.review_author }} 
-        </h3>
+        <h3 class="text-center text-lg font-semibold m-0">{{ section.settings.review_author }}</h3>
         <p class="text-center text-sm font-semibold m-0 flex items-center gap-0 tracking-tight">
-          Verified Buyer 
-          <img src="{{ 'verified-badge.svg' | asset_url }}" alt="Verified" class="size-4">
+          Verified Buyer
+          <img
+            src="{{ 'verified-badge.svg' | asset_url }}"
+            alt="Verified"
+            class="size-4">
         </p>
       </div>
     </div>
   </div>
 </div>
 
+{% liquid
+  assign iron_soil = all_products["iron-soil-50-ml"]
+%}
+
 <script>
   
   document.addEventListener("DOMContentLoaded", function () {
 
-    const originalPrice = "899";
-    const convertedPrice = "{{ product.price }}";
+    const originalPrice = "{{ iron_soil.metafields.custom.original_lowest_price }}";
+    const convertedPrice = "{{ iron_soil.price }}";
     const productPrice = "{{ product.price | money_without_currency }}";
     const currencySymbol = "{{ cart.currency.symbol }}";
 
@@ -125,7 +141,7 @@
         "id": "background_color",
         "label": "Background Color",
         "default": "#fcfbf9"
-      }, 
+      },
       {
         "type": "text",
         "id": "title",
@@ -142,26 +158,22 @@
         "id": "btn_text",
         "label": "Button Text",
         "default": "View All"
-      },
-      {
+      }, {
         "type": "url",
         "id": "btn_url",
         "label": "Button URL",
         "default": "/collections/all"
-      },
-      {
+      }, {
         "type": "text",
         "id": "review_text",
         "label": "Review Text",
         "default": "Review Content"
-      },
-      {
+      }, {
         "type": "text",
         "id": "review_author",
         "label": "Review Author",
         "default": "John Doe"
-      },
-      {
+      }, {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
       }, {
@@ -194,22 +206,19 @@
             "id": "name",
             "label": "Name",
             "default": "Product Name"
-          },
-          {
+          }, {
             "type": "text",
             "id": "our_price",
             "label": "OurPrice",
             "default": "00.00"
-          },
-          {
+          }, {
             "type": "text",
             "id": "other_brands",
             "label": "Other Brands Price",
             "default": "00.00"
           }
         ]
-      },
-      {
+      }, {
         "type": "offer",
         "name": "Bundle Offer Row",
         "settings": [
@@ -218,14 +227,12 @@
             "id": "name",
             "label": "Name",
             "default": "Buy 3 Get 5"
-          },
-          {
+          }, {
             "type": "text",
             "id": "our_price",
             "label": "OurPrice",
             "default": "00.00"
-          },
-          {
+          }, {
             "type": "text",
             "id": "other_brands",
             "label": "Other Brands Price",
