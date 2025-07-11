@@ -2604,8 +2604,162 @@
     "email_marketing": {
       "subscribed": {
         "confirmation": "شكراً لاشتراكك في قائمتنا البريدية.",
-        "disclaimer": "يمكنك إلغاء الاشتراك في أي وقت."
+        "disclaimer": "يمكنك إلغاء الاشتراك في أي وقت.",
+        "unsubscribe": "إلغاء الاشتراك"
+      },
+      "unsubscribed": {
+        "disclaimer": "لن تتلقى أي تحديثات تسويقية منا بعد الآن. يمكنك الاشتراك مرة أخرى في أي وقت.",
+        "preview": "أنت تستعرض ما سيراه العملاء عند إلغاء اشتراكهم.",
+        "confirmation": "لقد ألغيت اشتراكك من قائمتنا البريدية."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>لقد اخترت تفعيل تتبع فتح البريد الإلكتروني.</b>",
+          "visibility": "سيتم الإبلاغ عن معدلات فتح البريد الإلكتروني بشكل مجهول. سنرى فقط ما إذا كنت قد فتحت بريدًا إلكترونيًا كجزء من معدل فتح البريد الإلكتروني المجمع.",
+          "preview_bar": "أنت تستعرض ما سيراه العملاء عند اختيارهم تتبع فتح البريد الإلكتروني.",
+          "opt_out_html": "يمكنك <a style='text-decoration:underline;' href='%{link}'>الانسحاب</a> من تتبع فتح البريد الإلكتروني إذا كنت لا ترغب في مشاركة هذه المعلومات."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>لقد اخترت عدم تتبع فتح البريد الإلكتروني.</b>",
+          "visibility": "لن نرى إذا كنت قد فتحت رسائلنا الإلكترونية.",
+          "preview_bar": "أنت تستعرض ما سيراه العملاء عندما يختارون عدم تتبع فتح البريد الإلكتروني.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>اشترك</a> في تتبع فتح البريد الإلكتروني."
+        },
+        "no_longer_track": {
+          "status_html": "<b>لم نعد نتتبع فتحات البريد الإلكتروني.</b>",
+          "privacy_policy": "بعد إرسال هذا البريد الإلكتروني، قمنا بتحديث سياسة الخصوصية الخاصة بنا ولم نعد نتتبع الفتحات."
+        },
+        "track": {
+          "status_html": "<b>تم الإبلاغ عن تتبع فتح البريد الإلكتروني.</b>",
+          "visibility": "سنرى فقط إذا كنت قد فتحت البريد الإلكتروني، كجزء من معدل فتح البريد الإلكتروني الإجمالي."
+        },
+        "updated_policy": {
+          "status_html": "<b>تم الإبلاغ عن تتبع فتح البريد الإلكتروني.</b>",
+          "visibility": "لقد قمنا بتحديث سياستنا، ونحن الآن نتتبع فتحات البريد الإلكتروني. سيتم الإبلاغ عن معدلات فتح البريد الإلكتروني بشكل مجهول. سنرى فقط إذا كنت قد فتحت بريدًا إلكترونيًا كجزء من إجمالي معدل فتح البريد الإلكتروني.",
+          "opt_out_html": "إذا كنت لا ترغب في مشاركة هذه المعلومات، يمكنك <a style='text-decoration:underline;' href='%{link}'>إلغاء الاشتراك.</a>"
+        }
       }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "متوفر في المخزون",
+          "out_of_stock": "غير متوفر في المخزون"
+        }
+      },
+      "boolean": {
+        "true_label": "نعم",
+        "false_label": "لا"
+      }
+    },
+    "search": {
+      "error": "حدثت مشكلة في تحميل نتائج البحث الخاصة بك. يرجى تحديث الصفحة أو المحاولة مرة أخرى لاحقًا.",
+      "sorting": {
+        "relevance": "الأهمية",
+        "price_ascending": "السعر، من الأقل إلى الأعلى",
+        "price_descending": "السعر، من الأعلى إلى الأدنى"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "خطأ - %{title}",
+      "products": "المنتجات",
+      "shopping_cart": "عربة التسوق الخاصة بك",
+      "account": "الحساب",
+      "create_account": "إنشاء حساب",
+      "reset_account": "إعادة تعيين الحساب",
+      "addresses": "العناوين",
+      "order": "طلب %{name}",
+      "search": "بحث",
+      "search_results": {
+        "one": "بحث: %{count} نتيجة وجدت لـ \"%{terms}\"",
+        "other": "بحث: تم العثور على %{count} نتائج لـ \"%{terms}\""
+      },
+      "collections": "المجموعات",
+      "not_found": "٤٠٤ غير موجود",
+      "challenge": "تحدي",
+      "checkpoint": "نقطة التفتيش"
+    },
+    "challenge": {
+      "message": "للمتابعة، أخبرنا أنك لست روبوتًا.",
+      "error": "إجابتك لم تكن صحيحة، يرجى المحاولة مرة أخرى.",
+      "submit_button_text": "إرسال"
+    },
+    "cart": {
+      "discounts_with_count": "تم تطبيق %{count} خصومات"
+    },
+    "checkpoint": {
+      "message": "حل كابتشا للمتابعة",
+      "error": "فشل التحقق من كابتشا",
+      "submit_button_text": "إرسال"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "عادةً جاهز في غضون ساعة",
+        "twenty_four_hours": "عادةً جاهز خلال 24 ساعة",
+        "two_hours": "عادةً جاهز في غضون ساعتين",
+        "two_to_four_days": "عادةً جاهز في 2-4 أيام",
+        "five_or_more_days": "عادةً جاهز في غضون 5 أيام أو أكثر",
+        "four_hours": "عادةً جاهز في 4 ساعات",
+        "zero_to_two_hours": "عادةً جاهز في غضون ساعتين",
+        "two_to_four_hours": "عادةً جاهز في 4 ساعات",
+        "immediately": "جاهز للاستلام الآن",
+        "next_day": "جاهز للاستلام في اليوم التالي"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "هذا العنصر هو عملية شراء متكررة أو مؤجلة. من خلال المتابعة، أوافق على %{cancellationPolicyLink} وأفوضكم بخصم طريقة الدفع الخاصة بي بالأسعار والتكرار والتواريخ المدرجة في هذه الصفحة حتى يتم تنفيذ طلبي أو ألغيها، إذا كان ذلك مسموحًا.",
+      "buyer_consent_cart": "واحد أو أكثر من العناصر في سلة التسوق الخاصة بك هو عملية شراء متكررة أو مؤجلة. من خلال المتابعة، أوافق على %{cancellationPolicyLink} وأفوضك بخصم طريقة الدفع الخاصة بي بالأسعار والتكرار والتواريخ المدرجة في هذه الصفحة حتى يتم تنفيذ طلبي أو ألغيها، إذا كان ذلك مسموحًا.",
+      "cancellation_policy": "سياسة الإلغاء"
+    }
+  },
+  "customer_accounts": {
+    "date": {
+      "humanize": {
+        "lessThanOneYearAgo": "{{date}} في {{time}}",
+        "lessThanOneHourAgo": {
+          "one": "منذ {{count}} دقيقة",
+          "other": "منذ {{count}} دقيقة"
+        },
+        "lessThanOneMinuteAgo": "الآن فقط",
+        "lessThanOneWeekAgo": "{{weekday}} في {{time}}",
+        "yesterday": "أمس في {{time}}",
+        "today": "اليوم في {{time}}",
+        "tomorrow": "غداً في {{time}}",
+        "lessThanOneWeekAway": "{{weekday}} في {{time}}",
+        "lessThanOneYearAway": "{{date}} في {{time}}"
+      }
+    },
+    "enable_javascript": "لعرض حسابك، قم بتمكين JavaScript في إعدادات المتصفح الخاص بك أو قم بتسجيل الدخول باستخدام متصفح آخر.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "إخفاء قائمة الحساب",
+        "label": "الحساب",
+        "show_accessibility_label": "عرض قائمة الحساب",
+        "nav_accessibility_label": "تصفح الحساب",
+        "open_menu_accessibility_label": "فتح تنقل الحساب",
+        "close_menu_accessibility_label": "إغلاق تنقل الحساب",
+        "loading_message": "جارٍ تحميل تنقل الحساب"
+      },
+      "action_menu_accessibility_label": "المزيد من الإجراءات",
+      "close_menu_accessibility_label": "إغلاق التنقل الرئيسي",
+      "contact_email_subject": "اتصال من متجر {{shopName}} الإلكتروني",
+      "contact_link": "معلومات الاتصال",
+      "delete_confirmation": {
+        "cancel": "إلغاء",
+        "delete": "حذف"
+      },
+      "dismiss_toast": "رفض",
+      "document_title": "{{sectionName}} - {{shopName}} - الحساب",
+      "go_to_store_link": "اذهب إلى المتجر",
+      "loading_message": "جارٍ التحميل",
+      "log_out_link": "تسجيل الخروج",
+      "logout_overlay_label": "تسجيل خروجك...",
+      "nav_label_accessibility_label": "التنقل الرئيسي",
+      "navigation_accessibility_message": "لقد انتقلت إلى {{sectionName}}",
+      "open_menu_accessibility_label": "افتح التنقل الرئيسي",
+      "orders_link_label": "الطلبات",
+      "shop_logo_accessibility_label": "شعار {{shopName}}",
+      "subscriptions_link_label": "الاشتراكات"
     }
   }
 }
