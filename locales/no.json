@@ -3671,7 +3671,162 @@
         }
       },
       "purchase_order_number": {
-        "add_accessibility_label": "Legg til PO-nummer"
+        "add_accessibility_label": "Legg til PO-nummer",
+        "cancel": "Avbryt",
+        "discard_changes_modal_title": "Kaste endringer?",
+        "add_modal_title": "Legg til PO-nummer",
+        "discard": "Forkast",
+        "close_modal_accessibility_label": "Lukk PO-nummer-modalen",
+        "edit_modal_title": "Rediger PO-nummer",
+        "edit_accessibility_label": "Rediger PO-nummer",
+        "empty_state": "Ingen PO-nummer",
+        "modal_po_number_input_label": "PO-nummer",
+        "modal_po_number_input_max_length_error": "PO-numre har maksimalt {{maxLength}} tegn.",
+        "save": "Lagre",
+        "title": "PO #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Det oppstod et problem med å slette denne adressen. Prøv igjen eller oppdater siden."
+      },
+      "addresses_loading_issue": {
+        "description": "Tilkoblingsfeil. Sjekk internettforbindelsen din og prøv igjen."
+      },
+      "banner_title": {
+        "other": "Det er {{count}} feil",
+        "one": "Det er {{count}} feil"
+      },
+      "failed_address_creation": {
+        "description": "Det oppstod et problem med å opprette adressen din. Prøv å oppdatere siden eller sjekk internettforbindelsen din."
+      },
+      "failed_address_update": {
+        "description": "Det oppstod et problem med å oppdatere adressen din. Prøv å oppdatere siden eller sjekk internettforbindelsen din."
+      },
+      "load_orders_error": {
+        "title": "Kan ikke laste inn bestillinger",
+        "description": "Prøv igjen eller kom tilbake senere.",
+        "retry_button": "Prøv igjen"
+      },
+      "load_paypal_error": {
+        "description": "Det oppstod et problem med å laste PayPal. Vennligst prøv igjen."
+      },
+      "logout_everywhere": {
+        "description": "Noe gikk galt under utlogging. Vennligst prøv igjen."
+      },
+      "no_access_to_locations": {
+        "description": "Du har ikke tilgang til noen steder"
+      },
+      "not_found": {
+        "description": "Sjekk URL-en eller prøv igjen om noen minutter.",
+        "title": "Det oppstod et problem med å laste denne siden"
+      },
+      "order_not_found": {
+        "description": "Denne bestillingen finnes ikke eller du har ikke tillatelse til å se den.",
+        "title": "Bestilling ikke funnet"
+      },
+      "profile_update_error": {
+        "description": "Det oppstod et problem med å oppdatere profilen din. Prøv å oppdatere siden eller sjekk internettforbindelsen din."
+      },
+      "retry_action_label": "Prøv igjen",
+      "resend_link": {
+        "too_many_requests": "For mange forespørsler. Prøv igjen senere.",
+        "generic": "Mislykket forespørsel"
+      },
+      "load_extension_error": {
+        "title": "Feil",
+        "description": "Oppdater denne siden eller prøv igjen om noen minutter.",
+        "refresh_button": "Oppdater siden"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "message": "For mange forsøk",
+        "description": "Vennligst prøv igjen om noen minutter"
+      }
+    },
+    "payment_methods": {
+      "title": "Betalingsmetoder",
+      "add_payment_method_button": "Legg til betalingsmetode",
+      "no_payment_methods_banner": "Ingen betalingsmetoder lagt til",
+      "add_payment_method_banner": "Legg til betalingsmetode for raskere utsjekking eller forhåndsgodkjente tjenester",
+      "edit_payment_method_button_accessibility_label": "Rediger {{paymentMethodName}} som slutter på {{lastDigits}}",
+      "edit_payment_method_brand_button_accessibility_label": "Rediger {{paymentMethodName}}",
+      "delete_payment_method_button": "Slett",
+      "delete_payment_method_button_accessibility_label": "Slett {{paymentMethodName}}",
+      "back_button": "Tilbake",
+      "back_button_accessibility_label": "Tilbake til {{paymentMethodStepTitle}}",
+      "default": "Standard",
+      "generic_card": "Kort",
+      "expiration_warning_button_accessibility_label": "Vis utløpsvarsel for {{paymentMethodName}} som slutter på {{lastDigits}}",
+      "digital_wallet_title": "Digital lommebok",
+      "expired": "Dette kortet er utløpt",
+      "card_update_consent": "Denne betalingsmetoden vil bli lagret for fremtidige kjøp.",
+      "expires_soon": "Dette kortet utløper snart",
+      "card_update_consent_subscriptions": "Denne betalingsmetoden vil bli lagret for fremtidige kjøp og kan brukes for alle tilbakevendende eller utsatte kjøp.",
+      "credit_or_debit_card_title": "Kreditt- eller debetkort",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Legg til Google Pay betalingsmetode",
+        "loading_accessibility_message": "Laster Google Pay",
+        "loading": "Laster Google Pay",
+        "errors": {
+          "generic": "Det oppstod et problem med Google Pay. Prøv igjen eller bruk en annen betalingsmetode.",
+          "missing_billing_address": "Google Pay krever en faktureringsadresse. Vennligst legg til en på kontoen din."
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "Legg til PayPal betalingsmetode",
+        "loading_accessibility_message": "Laster PayPal"
+      },
+      "apple_pay": {
+        "loading": "Laster Apple Pay",
+        "errors": {
+          "generic": "Det oppstod et problem med Apple Pay. Prøv igjen eller bruk en annen betalingsmetode.",
+          "not_available": "Apple Pay er ikke tilgjengelig på denne enheten.",
+          "missing_billing_address": "Apple Pay krever en fakturaadresse. Vennligst legg til en på kontoen din."
+        }
+      },
+      "store_credit": {
+        "label": "Butikkreditt",
+        "accesibility_label": "Butikkreditt - {{formattedBalance}}",
+        "expirable_amounts_label": "Utløpsbeløp",
+        "expirable_amounts_button": "Vis utløpbare beløp",
+        "details_modal": {
+          "title": "Utløpbar butikkreditt",
+          "balance_label": "Balanse",
+          "expiration_date_label": "Utløpsdato",
+          "amount_label": "Beløp",
+          "date_label": "Dato",
+          "event_label": "Arrangement",
+          "events": {
+            "adjustment": "Justering",
+            "order_payment": "Bestillingsbetaling",
+            "order_refund": "Bestillingsrefusjon",
+            "payment_failure": "Betalingsfeil",
+            "payment_returned": "Betaling returnert",
+            "order_cancellation": "Avbestilling av ordre",
+            "tax_finalization": "Skatteavslutning"
+          },
+          "expirable_balance_info": "Noe av saldoen din vil utløpe på en fremtidig dato",
+          "expirable_amount_label": "Total utløpbar mengde",
+          "expirable_amounts_info": "Beløp som utløper tidligere, brukes først ved utsjekking",
+          "expirable_amounts_button": "Vis",
+          "expired_amounts_button": "Se utløpte beløp",
+          "pagination": {
+            "load_more_label": "Last inn mer",
+            "load_more_accessibility_label": "Last inn flere utløpbare beløp"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "Betalingsmetodedetaljer",
+        "credit_card_details_accessibility_label": "slutter med {{lastDigits}}",
+        "billing_title": "Fakturaadresse",
+        "card_info_title": "Kortinformasjon",
+        "payment_method_expiring_on": "Utløper den {{expiryDate}}",
+        "payment_method_expired_on": "Utløpt den {{expiryDate}}",
+        "preauthorized_payments": "Forhåndsgodkjente betalinger",
+        "close_payment_modal": "Lukk"
       }
     }
   }
