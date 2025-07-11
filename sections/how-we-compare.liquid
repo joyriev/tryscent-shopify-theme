@@ -63,7 +63,7 @@
     <div class="text-center mt-14">
       <a
         href="{{ section.settings.btn_url }}"
-        class="no-underline text-white font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-widest text-lg transition-colors tabs-cta-ripple-animation"
+        class="no-underline text-white tracking-normal font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full text-lg transition-colors tabs-cta-ripple-animation"
         aria-label="View All">
         {{ section.settings.btn_text }}
       </a>
@@ -104,7 +104,7 @@
   
   document.addEventListener("DOMContentLoaded", function () {
 
-    const originalPrice = "{{ iron_soil.metafields.custom.original_lowest_price }}";
+    const originalPrice = "{{ iron_soil.metafields.custom.price_for_compare_table }}";
     const convertedPrice = "{{ iron_soil.price }}";
     const productPrice = "{{ product.price | money_without_currency }}";
     const currencySymbol = "{{ cart.currency.symbol }}";
