@@ -301,13 +301,76 @@
             "april": "April",
             "june": "Junie",
             "may": "Mag",
-            "july": "Julie"
+            "july": "Julie",
+            "december": "Desember",
+            "september": "September",
+            "october": "Oktober",
+            "november": "November",
+            "august": "Augustus"
           }
         },
-        "remove_tag": "Verwyder etiket"
+        "remove_tag": "Verwyder etiket",
+        "datepicker": {
+          "show_previous_month": "Wys vorige maand, {{month}} {{year}}",
+          "show_next_month": "Wys volgende maand, {{month}} {{year}}",
+          "range_start": "Reeks begin",
+          "in_range": "In bereik",
+          "range_end": "Reikwydte einde"
+        },
+        "list_formatter": {
+          "or": {
+            "lastWordConnector": "{{previousWords}}, of {{lastWord}}",
+            "twoWordConnector": "{{firstWord}} of {{secondWord}}"
+          },
+          "and": {
+            "lastWordConnector": "{{previousWords}}, en {{lastWord}}",
+            "twoWordConnector": "{{firstWord}} en {{secondWord}}"
+          }
+        },
+        "map": {
+          "cluster_title": {
+            "one": "Groepering van {{number}} merker",
+            "other": "Groepering van {{number}} merkers"
+          }
+        },
+        "sheet": {
+          "expand": "Brei uit"
+        },
+        "dropzone": {
+          "add_file": "Voeg lêer by",
+          "dragged_over": "Laat lêer val om op te laai",
+          "invalid_file_type": "Lêertipe word nie ondersteun nie"
+        }
       },
       "address_management": {
         "confirm_address_deletion": "Is jy seker jy wil die adres {{address}} verwyder?"
+      },
+      "contact": {
+        "address_title": "Adres",
+        "contact_method_title": "Kontak",
+        "delivery_option_title": "Afleweringsmetode",
+        "title": "Inligting",
+        "shipping_used_as_billing_notice": "Dit sal ook as jou faktuuradres vir hierdie bestelling gebruik word.",
+        "email_label": "E-pos",
+        "email_placeholder": "E-pos",
+        "email_or_phone_label": "E-pos of selfoonnommer",
+        "email_or_phone_placeholder": "E-pos of selfoonnommer",
+        "new_address_label": "Gebruik 'n nuwe adres",
+        "first_name_label": "Voornaam",
+        "available_addresses_label": "Beskikbare adresse",
+        "company_label": "Maatskappy",
+        "last_name_label": "Vannaam",
+        "company_attention_label": "Maatskappy/Aandag",
+        "address1_label": "Adres",
+        "stored_addresses_label": "Gestoor adresse",
+        "optional_company_attention_label": "Maatskappy/Aandag (opsioneel)",
+        "optional_company_label": "Maatskappy (opsioneel)",
+        "address2_label": "Appartement, suite, ens.",
+        "optional_address2_label": "Appartement, suite, ens. (opsioneel)",
+        "city_label": "Stad",
+        "country_label": "Land/Streek",
+        "country_code": "Land/Streek kode",
+        "optional_first_name_label": "Voornaam (opsioneel)"
       }
     }
   },
