@@ -3375,9 +3375,85 @@
             "banner_due": {
               "one": "Jou betaling is oor {{count}} dag",
               "other": "Jou betaling is oor {{count}} dae verskuldig"
+            },
+            "title_with_date": "Betaling verskuldig {{date}}",
+            "title_due_on_fulfillment": "Betaling verskuldig by nakoming",
+            "description_overdue": "Jou betaling is laat.",
+            "title_due_on_receipt": "Betaling nog nie verskuldig nie",
+            "description_partially_paid": "Hierdie bestelling is gedeeltelik betaal. Jy het 'n oorblywende balans.",
+            "description_authorized": "Jou betaalmetode sal op die vervaldatum gehef word, of jy kan nou betaal.",
+            "description_waiting_for_manual_payment": "Hierdie bestelling het 'n hangende betaling. Die balans sal opgedateer word wanneer betaling ontvang is.",
+            "description_due_on_receipt": "Jy sal 'n faktuur ontvang wanneer betaling verskuldig is.",
+            "description_due_on_fulfillment": "Betaling is verskuldig sodra alle items in hierdie bestelling vervul is.",
+            "description_due_on_receipt_partially_paid": "Hierdie bestelling is gedeeltelik betaal. Jy het 'n oorblywende balans. Jy sal 'n faktuur ontvang wanneer betaling verskuldig is.",
+            "description_due_on_fulfillment_partially_paid": "Hierdie bestelling is gedeeltelik betaal. Jy het 'n oorblywende balans. Betaling is verskuldig sodra alle items in hierdie bestelling vervul is."
+          },
+          "draft": {
+            "title": "Betaling nog nie verskuldig nie",
+            "in_review": {
+              "title": "Betaling nog nie verskuldig nie",
+              "description": "Betalingsbesonderhede word bepaal wanneer die bestelling bevestig word."
+            },
+            "description": "Betalingsbesonderhede word bepaal wanneer die bestelling bevestig word.",
+            "submitted": {
+              "title": "Betaal om te bevestig",
+              "description": "Dien betaling in om hierdie bestelling te bevestig.",
+              "deposit": {
+                "title": "Betaling is verskuldig",
+                "due_later": "Die balans is op {{translatedName}} terme en is verskuldig op {{dueDate}}.",
+                "due_on_fulfillment": "Die balans is verskuldig sodra alle items in hierdie bestelling vervul is.",
+                "due_on_date": "Die balans is verskuldig op {{dueDate}}.",
+                "due_on_receipt": "Jy sal 'n faktuur ontvang vir die oorblywende balans."
+              }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}} sal verskuldig wees wanneer jou bestelling bevestig word. Die balans sal op {{translatedName}} terme wees.",
+              "due_on_fulfillment": "{{depositAmount}} sal verskuldig wees wanneer jou bestelling bevestig word. Die balans sal verskuldig wees wanneer die bestelling vervul is.",
+              "due_on_receipt": "{{depositAmount}} sal verskuldig wees wanneer jou bestelling bevestig word. Die balans sal later verskuldig wees.",
+              "due_on_date": "{{depositAmount}} sal verskuldig wees wanneer jou bestelling bevestig word. Die balans sal verskuldig wees op {{dueDate}}."
             }
-          }
+          },
+          "paid": {
+            "title": "Betaal",
+            "description": "Jou bestelling is ten volle betaal.",
+            "title_with_date": "Betaal op {{date}}"
+          },
+          "refund": {
+            "title": "Terugbetaal",
+            "title_with_date": "Terugbetaal op {{date}}",
+            "description_full_refund": "Jy het 'n volle terugbetaling vir hierdie bestelling ontvang.",
+            "description_multiple_refunds": "Jy het gedeeltelike terugbetalings vir hierdie bestelling ontvang.",
+            "description_single_refund": "Jy het 'n gedeeltelike terugbetaling vir hierdie bestelling ontvang."
+          },
+          "canceled": {
+            "title": "Betaling gekanselleer",
+            "description": "Jy is nie aangekla nie."
+          },
+          "pay_now": "Betaal nou",
+          "pay_now_accessibility_label": "Betaal nou vir bestelling {{orderName}}",
+          "title": "Betalingsstatus"
+        },
+        "order_timeline": {
+          "expand_events_label": "Wys besonderhede",
+          "hide_events_label": "Versteek besonderhede",
+          "expand_events_accessibility_label": "Wys konsepbestelbesonderhede",
+          "hide_events_accessibility_label": "Versteek konsepbestelbesonderhede"
+        },
+        "title": "Bestel {{name}}",
+        "subtitle": "Ingedien {{date}}"
+      },
+      "payment_methods": {
+        "payment_details": {
+          "order_label": "Bestel {{name}}",
+          "draft_label": "Konsepbevel {{name}}"
+        },
+        "payment_delete": {
+          "description_without_replacement": "Hierdie betaalmetode sal nie meer beskikbaar wees vir toekomstige aankope vanaf hierdie plek nie.",
+          "description_with_replacement": "Deletasie van hierdie betaalmetode sal voorafgeautoriseerde betalings vir hierdie ligging beïnvloed. Vervang dit met 'n alternatiewe betaalmetode om voort te gaan met die ontvangs van komende bestellings."
         }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Voeg PO-nommer by"
       }
     }
   }
