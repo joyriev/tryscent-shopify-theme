@@ -2635,6 +2635,74 @@
           "admin_link_text": "administrator"
         }
       }
+    },
+    "notices": {
+      "order": {
+        "cancel_reason": {
+          "customer": "Kunden endret/avbestilte bestillingen",
+          "inventory": "Elementer utilgjengelige",
+          "staff": "Ansattfeil",
+          "fraud": "Svindelordre",
+          "other": "Annet"
+        },
+        "cash_on_delivery": "Kontant ved levering (COD)"
+      },
+      "cart": {
+        "only_n_items_available": "Du kan bare legge til %{count} %{name} i handlekurven.",
+        "too_many_items_in_cart": "Du kan ikke legge til flere %{name} i handlekurven.",
+        "only_one_added_to_cart": "Bare 1 vare ble lagt til i handlekurven din på grunn av tilgjengelighet.",
+        "only_n_added_to_cart": "Bare %{quantity} varer ble lagt til i handlekurven din på grunn av tilgjengelighet.",
+        "maximum_available_quantity_reached": "Maksimal mengde av denne varen er allerede i handlekurven din.",
+        "less_than_minimum": "Denne varen har et minimum på %{min}.",
+        "more_than_maximum": "Denne varen har en maksimum på %{max}.",
+        "not_respect_step": "Du kan bare legge til dette elementet i trinn på %{step}.",
+        "all_items_in_cart": "Alle %{count} %{name} er i handlekurven din.",
+        "missing_parameters": "ingen gyldig id- eller linjeparameter",
+        "empty_update": "kan ikke oppdatere tom handlekurv",
+        "generic_error": "Handlekurvfeil",
+        "invalid_input": "%{parameter} parameter er ugyldig.",
+        "product_not_available": "Produktet er ikke tilgjengelig",
+        "too_many_line_items_error": "Handlekurven din kan ikke inneholde mer enn %{max} varer.",
+        "link_expired": "Lenken er utløpt",
+        "changed": "Handlekurv endret",
+        "link_no_longer_exists": "Lenken eksisterer ikke lenger.",
+        "items_changed": "Én eller flere elementer har endret seg.",
+        "product_sold_out": "Produktet '%{name}' er allerede utsolgt.",
+        "variant_not_found": "Kan ikke finne variant",
+        "variant_requires_selling_plan": "Variant kan kun kjøpes med en salgsplan.",
+        "selling_plan_not_available_for_company_locations": "Kun engangskjøp er tilgjengelig for B2B-bestillinger",
+        "digital_product_not_available_for_company_locations": "Denne varen kan ikke legges til i en B2B-bestilling",
+        "buyer_cannot_purchase_for_company_locations": "Du kan ikke kjøpe for dette stedet",
+        "selling_plan_not_applicable": "Kan ikke bruke salgsplan på variant",
+        "shipping_address_not_required": "Denne handlekurven krever ikke frakt",
+        "shipping_address_invalid": "Det oppsto et problem med å beregne fraktkostnadene dine. Fortsett til kassen for å velge en fraktkostnad før du fullfører bestillingen din.",
+        "bundle_requires_components": "Pakkeproduktet '%{name}' kan ikke legges til i handlekurven.",
+        "gift_card_with_components_not_supported": "Pakkeproduktet '%{name}' kan ikke legges til i handlekurven.",
+        "gift_card_price_must_be_greater_than_zero": "Pakkeproduktet '%{name}' kan ikke legges til i handlekurven.",
+        "gift_card_recipient_validation_error": "Den angitte gavekortmottakeren er ugyldig",
+        "view_lines_limit_reached": "Linjer må være mindre enn %{limit}",
+        "cart_attributes_error": "Vognegenskaper inneholder ugyldige data.",
+        "cart_too_large": "Handlekurven er for stor.",
+        "merchandise_line_transformers": {
+          "run_error": "Det oppstod en feil i handlekurven din."
+        },
+        "stock_problems_html": "Ett eller flere elementer er ikke lenger tilgjengelige. Vi har gitt en <a href='%{link}'>oppdatert handlekurv</a>."
+      },
+      "tags": {
+        "add_products": "Begrens utvalget til produkter som matcher taggen %{tag}",
+        "add_articles": "Begrens søket til artikler som også har taggen %{tag}",
+        "remove_articles": "Utvid søket til artikler som ikke er merket %{tag}",
+        "remove_products": "Fjern tag %{tag}"
+      },
+      "storefront": {
+        "invalid_password": "Passord feil, vennligst prøv igjen."
+      }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Takk for at du abonnerer på vår e-postliste.",
+        "disclaimer": "Du kan melde deg av når som helst."
+      }
     }
   },
   "sections": {
