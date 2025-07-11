@@ -1953,10 +1953,92 @@
       "no_address_location": {
         "title": "Ligging sonder adres",
         "alt_header": "Ontbrekende versendingsadres",
-        "header": "Jy het nie 'n versendingsadres vir hierdie ligging nie"
+        "header": "Jy het nie 'n versendingsadres vir hierdie ligging nie",
+        "email_us_button_label": "Stuur vir ons 'n e-pos",
+        "message": "Kontak ons om 'n adres vir hierdie ligging by te voeg om die uitcheck te voltooi."
       },
       "cart_checkout_validation": {
         "runtime_error": "Daar was 'n probleem met die verwerking van jou versoek, kontak asseblief die winkel eienaar."
+      },
+      "order_errors": {
+        "inventory_reservation_failure": "Sommige items is nie meer beskikbaar nie.",
+        "network_failure": "Jou bestelling kon nie ingedien word nie weens 'n netwerkfout. Kontroleer jou verbinding en probeer weer.",
+        "creation_failure": "Daar was 'n probleem met die skep van jou bestelling. Probeer weer, of kontak ons vir meer besonderhede."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Daar was 'n probleem met die verwerking van jou bestelling. Probeer weer oor 'n paar minute."
+      },
+      "session_errors": {
+        "session_not_unique": "Daar was 'n probleem met die verwerking van jou bestelling. Ververs hierdie bladsy om terug te keer na die winkel.",
+        "session_already_finished": "Hierdie bestelling is reeds ingedien. Jy kan teruggaan na die winkel om 'n nuwe bestelling te begin."
+      },
+      "pickup_point": {
+        "location_is_currently_closed": "Gesluit",
+        "business_hours": "Oopmaakure",
+        "or": "of",
+        "search_button": "Soek",
+        "open_twenty_four_hours": "Oop 24/7",
+        "address_label": "Adres",
+        "no_business_hours": "Geen openingstye beskikbaar nie",
+        "selector_tab_list": "Lys",
+        "title": "Afhaalpunt",
+        "selector_tabs": "Afhaalpunt kieser",
+        "selector_tab_map": "Kaart",
+        "pickup_unavailable_banner_title": {
+          "one": "Geen afhaalpunte beskikbaar vir jou item nie",
+          "other": "Geen afhaalpunte beskikbaar vir jou items nie"
+        },
+        "could_not_resolve_address": "Jou adres kon nie gevind word nie. Probeer weer of gebruik 'n ander adres",
+        "no_pickup_points_near_you": "Geen afhaalpunte naby die gekose adres gevind nie",
+        "paginator": {
+          "next_accessibility_label": "Volgende bladsy",
+          "previous_accessibility_label": "Vorige bladsy",
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} van %{count} punt",
+            "other": "%{pickup_point_index} van %{count} punte"
+          },
+          "header": {
+            "one": "Wys %{first} - %{last} van %{count} punt",
+            "other": "Wys %{first} - %{last} van %{count} punte"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} van %{count} punt",
+            "other": "%{first} - %{last} van %{count} punte"
+          }
+        },
+        "no_pickup_points_found": "Geen afhaalpunte gevind nie",
+        "no_pickup_points_near_location": "Geen afhaalpunte naby jou ligging gevind nie",
+        "change": "Verander ligging",
+        "number_of_pickup_points_near_location": {
+          "other": "%{count} afhaalpunte naby jou ligging",
+          "one": "%{count} afhaalpunt naby jou ligging"
+        },
+        "waiting_on_pickup_point_location_notice": "Soek na afhaalpunte...",
+        "geolocation": {
+          "errors": {
+            "permission_not_allowed": "Laat toe om jou ligging te deel.",
+            "unsuported_by_browser": "Kry van geoligging word nie deur jou blaaier ondersteun nie. Probeer weer of gebruik 'n ander blaaier.",
+            "permission_denied": "Kon nie jou ligging kry nie. Probeer weer."
+          },
+          "shared_location_button": "Gebruik my ligging"
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "Keer terug na mandjie",
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} om die hoeveelhede by te werk",
+        "subscription_changed": "Een van jou intekeninge het verander.",
+        "company_location_changed": "Jou mandjie is opgedateer. Hersien jou bestelling voordat jy dit indien.",
+        "company_location_changed_product_removed": "Jou mandjie is opgedateer omdat sommige produkte nie by hierdie ligging beskikbaar is nie. Hersien jou bestelling voordat jy dit indien."
+      },
+      "error_page": {
+        "terminal": {
+          "title": "Daar was 'n probleem met ons betaalproses",
+          "action": {
+            "cta": "Vernuwe Bladsy"
+          },
+          "message": "Vernuwe hierdie bladsy of probeer weer oor 'n paar minute",
+          "request_id": "Versoek-ID: {{requestId}}"
+        }
       }
     }
   },
