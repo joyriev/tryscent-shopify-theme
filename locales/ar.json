@@ -3582,7 +3582,138 @@
       "back_button_accessibility_label": "العودة إلى {{paymentMethodStepTitle}}",
       "default": "افتراضي",
       "generic_card": "بطاقة",
-      "expiration_warning_button_accessibility_label": "عرض تحذير انتهاء الصلاحية لـ {{paymentMethodName}} التي تنتهي بـ {{lastDigits}}"
+      "expiration_warning_button_accessibility_label": "عرض تحذير انتهاء الصلاحية لـ {{paymentMethodName}} التي تنتهي بـ {{lastDigits}}",
+      "expired": "هذه البطاقة منتهية الصلاحية",
+      "expires_soon": "ستنتهي صلاحية هذه البطاقة قريبًا",
+      "card_update_consent": "سيتم حفظ طريقة الدفع هذه للمشتريات المستقبلية.",
+      "card_update_consent_subscriptions": "سيتم حفظ طريقة الدفع هذه للمشتريات المستقبلية وقد تُستخدم لأي عملية شراء متكررة أو مؤجلة.",
+      "digital_wallet_title": "المحفظة الرقمية",
+      "credit_or_debit_card_title": "بطاقة ائتمان أو خصم",
+      "google_pay": {
+        "iframe_title_accessibility_label": "أضف طريقة دفع Google Pay",
+        "loading_accessibility_message": "جارٍ تحميل Google Pay",
+        "loading": "جارٍ تحميل Google Pay",
+        "errors": {
+          "generic": "حدثت مشكلة في Google Pay. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
+          "missing_billing_address": "يتطلب Google Pay عنوانًا للفوترة. يرجى إضافة واحد إلى حسابك."
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "أضف طريقة دفع PayPal",
+        "loading_accessibility_message": "جارٍ تحميل PayPal"
+      },
+      "apple_pay": {
+        "loading": "جارٍ تحميل Apple Pay",
+        "errors": {
+          "not_available": "Apple Pay غير متوفر على هذا الجهاز.",
+          "generic": "حدثت مشكلة في Apple Pay. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
+          "missing_billing_address": "يتطلب Apple Pay عنوانًا للفوترة. يرجى إضافة واحد إلى حسابك."
+        }
+      },
+      "store_credit": {
+        "label": "رصيد المتجر",
+        "accesibility_label": "رصيد المتجر - {{formattedBalance}}",
+        "expirable_amounts_button": "عرض المبالغ القابلة للانتهاء",
+        "details_modal": {
+          "balance_label": "الرصيد",
+          "title": "رصيد المتجر القابل للانتهاء",
+          "expiration_date_label": "تاريخ الانتهاء",
+          "amount_label": "المبلغ",
+          "date_label": "التاريخ",
+          "events": {
+            "adjustment": "تعديل",
+            "order_payment": "دفع الطلب",
+            "order_refund": "استرداد الطلب",
+            "payment_failure": "فشل الدفع",
+            "tax_finalization": "تسوية الضرائب",
+            "payment_returned": "تم إرجاع الدفعة",
+            "order_cancellation": "إلغاء الطلب"
+          },
+          "event_label": "حدث",
+          "expirable_balance_info": "بعض رصيدك سينتهي في تاريخ مستقبلي",
+          "expirable_amount_label": "إجمالي المبلغ القابل للانتهاء",
+          "expirable_amounts_info": "يتم تطبيق المبالغ التي تنتهي صلاحيتها قريبًا أولاً عند الدفع",
+          "expirable_amounts_button": "عرض",
+          "expired_amounts_button": "عرض المبالغ المنتهية الصلاحية",
+          "pagination": {
+            "load_more_accessibility_label": "تحميل المزيد من المبالغ القابلة للانتهاء",
+            "load_more_label": "تحميل المزيد"
+          }
+        },
+        "expirable_amounts_label": "المبالغ القابلة للانتهاء"
+      },
+      "payment_details": {
+        "credit_card_details_accessibility_label": "ينتهي بـ {{lastDigits}}",
+        "title": "تفاصيل طريقة الدفع",
+        "billing_title": "عنوان الفواتير",
+        "card_info_title": "معلومات البطاقة",
+        "payment_method_expiring_on": "تنتهي صلاحيتها في {{expiryDate}}",
+        "payment_method_expired_on": "انتهت صلاحيته في {{expiryDate}}",
+        "preauthorized_payments": "المدفوعات المسبقة التفويض",
+        "close_payment_modal": "إغلاق",
+        "pre_authorized_payments": "المدفوعات المسبقة التفويض",
+        "payment_details_loading": "جارٍ تحميل تفاصيل طريقة الدفع",
+        "total_amount_of_subscription_line_items_left": "و {{total}} أكثر",
+        "close_payment_modal_accessibility_label": "إغلاق نافذة تفاصيل طريقة الدفع",
+        "payment_method_not_found_error": "غير قادر على العثور على طريقة الدفع",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} عناصر إجمالاً، عرض {{totalItemsToDisplay}} عناصر.",
+        "next_payment_due": "الدفعة التالية مستحقة في {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button": "تحرير",
+        "edit_payment_method_button_accessibility_label": "تحرير طريقة الدفع التي تنتهي بـ {{lastDigits}}",
+        "loading_shop_pay": "جارٍ تحميل Shop Pay",
+        "invalid_payment_method": "طريقة دفع غير صالحة",
+        "invalid_payment_method_message": "استخدم بطاقة ائتمان جديدة للاستمرار في استلام الطلبات القادمة.",
+        "replace_payment_method": "استبدال طريقة الدفع",
+        "checkout_card_banner": "يمكن استخدام طريقة الدفع هذه فقط للمدفوعات المسبقة التفويض. لن تظهر عند الخروج إذا كنت مسجلاً الدخول إلى هذا المتجر.",
+        "default_checkbox": "تعيين كافتراضي",
+        "default_checkbox_accessibility_label": "اجعل طريقة الدفع هذه هي الافتراضية"
+      },
+      "edit_payment_method": {
+        "title": "تحرير طريقة الدفع",
+        "cancel_edit_payment_method_button": "إلغاء",
+        "save_payment_method_button": "حفظ",
+        "payment_method_updated_toast": "تم تحديث طريقة الدفع",
+        "billing_address_add_new": "أضف جديد",
+        "billing_address_choose_from_list": "اختر من القائمة",
+        "billing_address": "عنوان الفواتير",
+        "future_purchases_notice": "سيتم حفظ طريقة الدفع هذه للمشتريات المستقبلية.",
+        "generic_error": "حدثت مشكلة أثناء التحديث. يرجى المحاولة مرة أخرى."
+      },
+      "card_fields": {
+        "card_number_label": "رقم البطاقة",
+        "card_number_placeholder": "رقم البطاقة",
+        "name_on_card_label": "الاسم على البطاقة",
+        "name_on_card_placeholder": "الاسم على البطاقة",
+        "card_expiry_label": "تاريخ الانتهاء (شهر / سنة)",
+        "card_expiry_placeholder": "تاريخ الانتهاء (شهر / سنة)",
+        "card_verification_value_label": "رمز الأمان",
+        "card_verification_value_placeholder": "رمز الأمان",
+        "card_start_label": "تاريخ الإصدار (شهر / سنة)",
+        "card_start_placeholder": "تاريخ الإصدار (شهر / سنة)",
+        "tooltip": {
+          "card_verification_value_explanation_amex": "رمز الأمان المكون من 4 أرقام على مقدمة بطاقتك",
+          "tooltip_accessibility_label": "مزيد من المعلومات",
+          "card_verification_value_explanation_other": "رمز الأمان المكون من 3 أرقام على ظهر بطاقتك",
+          "card_security_notice": "جميع المعاملات آمنة ومشفرة.",
+          "card_verification_value_explanation": "رمز الأمان المكون من 3 أرقام الموجود عادة على ظهر بطاقتك. بطاقات أمريكان إكسبريس تحتوي على رمز مكون من 4 أرقام يقع على الأمام."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "أدخل اسمك تمامًا كما هو مكتوب على بطاقتك",
+          "credit_card_number_invalid": "أدخل رقم بطاقة صالح",
+          "credit_card_expiry_invalid": "أدخل تاريخ انتهاء صلاحية البطاقة صالح",
+          "credit_card_verification_value_blank": "أدخل رمز CVV أو رمز الأمان على بطاقتك"
+        },
+        "unavailable": {
+          "text": "مدفوعات بطاقات الائتمان والخصم غير متوفرة حالياً.",
+          "link_text": "تحديث هذه الصفحة",
+          "suffix": "أو حاول مرة أخرى لاحقًا."
+        }
+      },
+      "payment_delete": {
+        "description_without_replacement": "لن تكون هذه الطريقة في الدفع متاحة للشراءات المستقبلية.",
+        "title": "حذف طريقة الدفع",
+        "description_with_replacement": "حذف طريقة الدفع هذه سيؤثر على المدفوعات المسبقة التفويض. يمكنك اختيارياً استبدالها بطريقة دفع أخرى لمواصلة استلام الطلبات القادمة."
+      }
     }
   }
 }
