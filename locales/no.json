@@ -890,11 +890,73 @@
               "other": "hver %{count} dag"
             },
             "week": {
-              "one": "hver uke"
+              "one": "hver uke",
+              "other": "hver %{count} uke"
+            },
+            "month": {
+              "other": "hver %{count} måneder",
+              "one": "hver måned"
+            },
+            "year": {
+              "other": "hver %{count} år",
+              "one": "hvert år"
             }
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} per levering",
+          "prepaid_shipping_price_label": "%{shipping_price} per levering x %{delivery_interval_count}",
+          "initial_order_discounted": "Først fraktkostnad %{discounted_shipping_cost}, deretter %{frequency_description}",
+          "prepaid_initial_order_discounted": "Første fraktkostnad %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Første fraktkostnad %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Først fraktkostnad %{discounted_shipping_price} %{prepaid_delivery_frequency}, deretter %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Først fraktkostnad %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), deretter %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "Inkludert",
+          "recurring_order_shipping_price": "fulgt av %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "Første bestilling inkludert, etterfulgt av %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} per levering), etterfulgt av %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Første bestilling gratis",
+            "other": "Første %{count} bestillinger gratis"
+          },
+          "free_for_first_n_order": {
+            "one": "For første bestilling",
+            "other": "For de første %{count} bestillingene"
           }
         },
-        "estimated_time_range": "Anslått %{min_time}–%{max_time}"
+        "estimated_time_range": "Anslått %{min_time}–%{max_time}",
+        "one_time_purchase_shipping": "Engangsfrakt",
+        "duties_and_taxes_title": "Avgifter og skatter",
+        "shipping_information_required_notice": "Fraktinformasjon er påkrevd. {{link}}.",
+        "shipping_information_redirect_link": "Skriv inn informasjonen din her",
+        "loading_progressive_rates": "Søker etter flere priser…",
+        "no_other_methods_available": "Ingen andre metoder tilgjengelig",
+        "duties_and_taxes_options": {
+          "ddu_title": "Betal ved levering",
+          "ddu_caption": "Ekstra gebyrer kan påløpe",
+          "ddp_title": "Betal nå",
+          "ddp_caption": "Ingen ekstra gebyrer ved levering"
+        },
+        "shipping_method_combinations": {
+          "combination": "%{rest} og %{current}"
+        },
+        "shipping_used_as_billing_notice": "Dette vil også bli brukt som din faktureringsadresse for denne bestillingen.",
+        "address_update": "Oppdater adresse",
+        "add_address": "Bruk en annen adresse",
+        "shipping_address_title": "Send til",
+        "add_delivery_instructions": "Legg til leveringsinstruksjoner",
+        "edit": "Rediger",
+        "delete": "Slett",
+        "address_more": "Flere handlinger for denne adressen",
+        "address_edit": "Rediger adresse",
+        "address_delete": "Slett adresse",
+        "address_confirm": "Er du sikker på at du vil slette denne adressen fra kontoen din?",
+        "address_default": "Sett som standard",
+        "address_form": {
+          "add_address": "Legg til adresse",
+          "save": "Lagre",
+          "cancel": "Avbryt",
+          "generic_error": "Det oppstod et problem med å lagre adressen din. Vennligst prøv igjen.",
+          "one_time_address_subtitle": "Bruk en engangsadresse for denne bestillingen"
+        }
       }
     },
     "sentence": {
