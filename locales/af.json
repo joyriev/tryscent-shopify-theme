@@ -1123,7 +1123,319 @@
         "no_real_orders_dev_store": "Hierdie winkel kan nie regte bestellings of regte betalings aanvaar nie.",
         "waiting_on_payment_methods": "Kry beskikbare betaalmetodes...",
         "apple_pay_payment_error": "Jou betaling kon nie voltooi word nie. Probeer weer of gebruik 'n ander betaalmetode.",
-        "purchase_options_agreement_label_html": "Ek verstaan dat een of meer items in my mandjie 'n uitgestelde of herhalende aankoop is. Deur voort te gaan, stem ek in met die\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">cancellation policy</a>\nen magtig jou om my betaalmetode te hef teen die pryse, frekwensie en datums wat op hierdie bladsy gelys is totdat my\nbestelling word vervul of ek kanselleer, indien toegelaat.\n"
+        "purchase_options_agreement_label_html": "Ek verstaan dat een of meer items in my mandjie 'n uitgestelde of herhalende aankoop is. Deur voort te gaan, stem ek in met die\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">cancellation policy</a>\nen magtig jou om my betaalmetode te hef teen die pryse, frekwensie en datums wat op hierdie bladsy gelys is totdat my\nbestelling word vervul of ek kanselleer, indien toegelaat.\n",
+        "paypal": {
+          "connect": "Klik om jou PayPal-rekening te koppel"
+        },
+        "apple": {
+          "not_available": "Apple Pay is nie beskikbaar in hierdie blaaier nie. Om jou Apple Pay-rekening te koppel, moet jy Safari op 'n Apple-toestel gebruik.",
+          "connect": "Klik om jou Apple Pay-rekening te koppel"
+        },
+        "no_taxes_banner_content": "Belasting sal nie op hierdie bestelling gehef word nie. Sodra jy betaling ontvang het, kan belasting nie meer bygevoeg word nie.",
+        "taxes_not_included": "Belasting nie ingesluit nie",
+        "account_connected": "Rekening gekoppel.",
+        "google": {
+          "connect": "Klik om met jou Google Pay-rekening te koppel",
+          "error_authorizing": "Fout met die magtiging van betaling"
+        },
+        "pending_payment": {
+          "due_notice": "Jou betaling van %{amount_due} is verskuldig op %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "Jou betaling van %{amount_due} is verskuldig.",
+            "entity": "Entiteit",
+            "amount": "Bedrag",
+            "instruction_html": "Maak jou betaling by Multibanco of aanlyn met die besonderhede hieronder. Vir vrae of om betalingsbesonderhede op te dateer, %{contact_us}.",
+            "reference": "Verwysing",
+            "find_nearest_atm": "Vind naaste OTM"
+          }
+        },
+        "update_payment_method": "Werk betaalmetode by",
+        "order_covered_by_redeemables_notice": "Jou bestelling is gedek.",
+        "order_covered_by_store_credit_notice": "Jou bestelling word gedek deur jou winkelkrediet.",
+        "mor_disclaimer_html": "Deur hieronder te klik en jou bestelling te voltooi, stem jy in om jou item(s) by Global-e as handelaar van rekord vir hierdie transaksie te koop, volgens Global-e se <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Terme en Voorwaardes</a> en <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Privaatheidsbeleid</a>. Global-e is 'n internasionale afleweringsdiensverskaffer aan %{shop_name}",
+        "store_credit": {
+          "label": "Winkelkrediet",
+          "apply_label": "Pas winkelkrediet toe",
+          "add_label": "Voeg winkelkrediet by",
+          "no_fixed_selling_plans": "Jy kan nie winkelkrediet gebruik met uitgestelde koopopsies nie",
+          "manage_label": "Bestuur winkelkrediet",
+          "buying_gift_card": "Jy kan nie winkelkrediet gebruik om ’n geskenkkaart te koop nie"
+        },
+        "clear": "Duidelik",
+        "fact_billing_address_label": "Faktuuradres",
+        "same_billing_address_checkbox_label": "Gebruik versendingsadres as faktuuradres",
+        "location_billing_address_label": "Ligging faktuuradres",
+        "billing_must_match_shipping_notice": "Die betaalmetode se faktuuradres moet ooreenstem met die versendingsadres.",
+        "use_order_billing_address_label": "Gebruik bestellingsfaktuuradres",
+        "location_shipping_address_label": "Posadres van afleweringsadres",
+        "use_location_billing_address_label": "Gebruik ligging faktuuradres",
+        "use_location_shipping_address_label": "Gebruik ligging versendingsadres",
+        "brand_not_available": "Hierdie winkel aanvaar nie {{brand}} nie. Gebruik asseblief 'n ander kaart om te betaal.",
+        "billing_address_invalid_phone": "Werk die telefoonnommer in jou faktuuradres vir {{label}} {{last_digits}} by om voort te gaan.",
+        "shipping_rate_updated": "Beskikbare versendingsmetodes is opgedateer. Bevestig jou keuse voordat jy uitcheck.",
+        "billing_address_invalid_phone_no_card": "Werk die telefoonnommer in jou faktuuradres by om voort te gaan.",
+        "no_working_method_error": "Hierdie winkel kan tans nie betalings aanvaar nie. Ververs hierdie bladsy of kom later terug.",
+        "preview_not_available": {
+          "title": "Voorskou nie beskikbaar nie",
+          "button": "Ok",
+          "content": "Moet nie bekommer nie, hierdie uitdruklike afhandeling werk vir jou kliënte."
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Voer 'n geldige uitgiftedatum in",
+              "issue_number": "Voer 'n geldige kwessie nommer in"
+            },
+            "invalid": {
+              "verification_value": "Voer 'n geldige CVV of sekuriteitskode in"
+            }
+          }
+        },
+        "simulated_checkout": "Voorskou binnekort",
+        "vaulting_agreement_label": "Stoor my betalingsinligting by %{company} vir 'n vinniger afhandeling.",
+        "simulated_express_checkout": "Beursies is nie beskikbaar in die redigeerder-voorskou nie as gevolg van jou streek of blaaier",
+        "business_customer_vaulting_payment_label": "Stoor hierdie kaart by die betaalpunt en magtig %{company} om dit te hef vir toekomstige aankope by hierdie ligging. Alle kontakte wat aan hierdie ligging toegewys is, kan die kaart gebruik.",
+        "purchase_options_and_vaulting_agreement_label": "Een of meer items in jou mandjie is 'n uitgestelde of intekenaarsaankoop. Deur voort te gaan met jou betaling, stem jy in dat jou betaalmetode outomaties gehef sal word teen die prys en frekwensie wat op hierdie bladsy gelys word totdat dit eindig of jy kanselleer. Alle kansellasies is onderhewig aan die %{cancellation_policy_label}.",
+        "use_different_credit_card_label": "Gebruik 'n ander kaart",
+        "saved_credit_card_actions": {
+          "edit": "Wysig",
+          "delete": "Verwyder"
+        },
+        "purchase_options_cancellation_policy_label": "kansellasiebeleid",
+        "saved_credit_card": "Jou gestoor kredietkaart",
+        "saved_credit_card_info": "Laaste vier syfers",
+        "saved_credit_cards_modal": {
+          "cancel": "Kanselleer",
+          "done": "Klaar",
+          "view_all_label": "Kyk na alle gestoorde kaarte"
+        },
+        "saved_credit_card_cvv_verification": "Vir verifikasiedoeleindes, voer asseblief jou kaart se sekuriteitskode in.",
+        "add_credit_card_modal": {
+          "save": "Stoor",
+          "cancel": "Kanselleer",
+          "title": "Voeg kaart by"
+        },
+        "delete_credit_card_modal": {
+          "cancel": "Kanselleer",
+          "delete": "Verwyder",
+          "confirmation": "Is jy seker jy wil die {{brandName}} wat eindig op {{lastDigits}} verwyder?",
+          "title": "Verwyder kaart"
+        },
+        "edit_credit_card_modal": {
+          "done": "Klaar",
+          "cancel": "Kanselleer",
+          "title": "Wysig kaart",
+          "fields": {
+            "default": "Stel as verstek",
+            "card_number": "Kaartnommer",
+            "security_code": "Sekuriteitskode",
+            "name": "Naam op kaart",
+            "billing": "Faktureer aan",
+            "expiry": "Vervaldatum"
+          },
+          "description": "Jy kan slegs die faktuuradres van jou kaart wysig."
+        },
+        "expired_cards_info": {
+          "one": "Daar is %{count} vervalde kaart, wat jy in jou rekening kan sien en wysig.",
+          "other": "Daar is %{count} vervalde kaarte, wat jy in jou rekening kan sien en wysig."
+        },
+        "order_edit_banner_title": "Betaling van {{amount_owed}} is nodig",
+        "order_edit_banner_items_added": {
+          "one": "Bygevoeg",
+          "other": "Bygevoeg %{count}"
+        },
+        "order_edit_banner_subtitle": "Jou bestelling {{order_number}} is opgedateer. Hersien hierdie veranderinge, en betaal dan om jou bestelling te bevestig.",
+        "order_edit_banner_items_removed": {
+          "in_full": "Verwyder",
+          "with_quantities": "Verwyder {{delta}} van {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Terugbesorg {{quantity}}",
+          "with_quantities": "Terugbesorg {{delta}} van {{quantity}}"
+        },
+        "order_edit_banner_single_item_added": "Bygevoeg",
+        "local_payment_method_receiver_notice": "Nadat u u bestelling geplaas het, sal u betalingsbesonderhede ontvang. Maak die betaling by 'n OTM of aanlyn binne {{dueDays}} dae.",
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Verwyder van terugkeer",
+          "with_quantities": "Verwyder {{delta}} van terugkeer"
+        },
+        "order_edit_banner_single_item_removed": "Verwyder",
+        "order_edit_banner_multiple_items_added": "Bygevoeg {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Verwyder {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Verwyder van terugkeer",
+        "order_edit_banner_single_item_returned": "Teruggekeer",
+        "order_edit_banner_updated_order_label": "Opgedateerde bestelling",
+        "order_edit_banner_multiple_items_returned": "Terugbesorg {{amount}}",
+        "gift_card_wrapper": {
+          "heading": "Geskenkkaart",
+          "payment_tag": "Geskenkkaart",
+          "add_label": "Voeg 'n geskenkkaart by",
+          "gift_card_label": "Geskenkkaart %{identifier}",
+          "manage_label": "Bestuur geskenkkaarte",
+          "apply_another_gift_card_label": "Pas nog 'n geskenkkaart toe",
+          "apply_gift_card_label": "Pas 'n geskenkkaart toe"
+        },
+        "order_edit_banner_multiple_items_return_line_item_removed": "Verwyder {{amount}} van terugkeer",
+        "gift_card_store_credit": {
+          "add_label": "Voeg 'n geskenkkaart of winkelkrediet by",
+          "manage_label": "Bestuur geskenkkaarte of winkelkrediet"
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "Pasgemaakte Ter Plaas Betalingsbevestiging"
+        },
+        "gift_card_checkbox_label": "Pas geskenkkaart toe",
+        "markets_pro_disclaimer_privacy_policy": "Privaatheidsbeleid",
+        "markets_pro_disclaimer_terms_and_conditions": "Terme en Voorwaardes",
+        "markets_pro_disclaimer_privacy_policy_title": "Handelaar van Rekord Privaatheidsbeleid",
+        "purchase_order_number": {
+          "title": "PO nommer",
+          "label": "PO nommer (opsioneel)"
+        },
+        "markets_pro_disclaimer_terms_and_conditions_title": "Handelaar van Rekord Terme en Voorwaardes",
+        "markets_pro_disclaimer_label": "Deur hieronder te klik en jou bestelling te voltooi, stem jy in om jou item(s) by Global-e te koop as handelaar van rekord vir hierdie transaksie, op Global-e se %{markets_pro_terms} en %{privacy_policy}. Global-e is 'n internasionale afleweringsdiensverskaffer aan %{shop_name}.",
+        "waiting_on_taxes_notice": "Berekening van belastings",
+        "alternative_payment_currency_total_notice": "Nota: jy sal %{amount_due} gehef word.",
+        "waiting_on_taxes_message": "As jou belastings nie binne die volgende paar sekondes bereken word nie, herlaai die bladsy.",
+        "alternative_payment_currency_total_manual_payment_notice": "Nota: omgeskakelde totaal is %{amount_due}.",
+        "payment_method_incompatible_with_payment_terms": "Betalingsmetode is onversoenbaar met betalingsvoorwaardes.",
+        "payment_method": "Betalingsmetode",
+        "expired_payment_method": "Geselekteerde betaalmetode het verval",
+        "payment_method_update_failed": "Betalingsmetode-opdatering het misluk.",
+        "pay_in_installments_split_pay_short": "4 betalings van %{amount}",
+        "gift_cards_unavailable": "Jou geskenkkaart kan nie meer op hierdie bestelling toegepas word nie en is verwyder",
+        "proposed_gateway_unavailable": "Die voorgestelde betaalhek is nie beskikbaar nie",
+        "payment_flexibility_terms_id_mismatch": "Betalingsbuigsaamheid terme ID ooreenkoms ontbreek"
+      },
+      "billing": {
+        "billing_address_title": "Faktureer aan",
+        "same_as_shipping": "Dieselfde as afleweringsadres",
+        "add_address": "Gebruik 'n ander adres",
+        "edit": "Wysig",
+        "delete": "Verwyder",
+        "address_more": "Meer aksies vir hierdie adres",
+        "address_edit": "Wysig adres",
+        "address_delete": "Verwyder adres",
+        "address_confirm": "Is jy seker jy wil hierdie adres van jou rekening verwyder?",
+        "address_form": {
+          "add_address": "Voeg adres by",
+          "save": "Stoor",
+          "cancel": "Kanselleer"
+        }
+      },
+      "company_location": {
+        "location_title": "Maatskappy ligging"
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "Huidige balans %{amount}",
+        "billing_address_title": "Faktuuradres",
+        "express_payment_gateway_label": "Druk uit",
+        "free_label": "Vry",
+        "credit_card_expires_on_notice": "Verval op %{month}/%{year}",
+        "manual_payment_gateway_label": "Handleiding"
+      },
+      "field_errors": {
+        "handle_phone_invalid": "Voer 'n geldige telefoonnommer in",
+        "handle_email_invalid": "Voer 'n geldige e-pos in",
+        "email_invalid": "Voer 'n geldige e-pos in",
+        "address_first_name_blank": "Voer 'n voornaam in",
+        "address_first_name_too_long": "Voornaam is te lank (maksimum is 255 karakters)",
+        "email_or_phone_blank": "Voer 'n e-pos of telefoonnommer in",
+        "address_first_name_contains_emojis": "Voornaam kan nie emosies bevat nie",
+        "email_or_phone_invalid": "Voer 'n geldige e-pos of 'n selfoonnommer in",
+        "address_first_name_contains_url": "Voornaam kan nie 'n URL bevat nie",
+        "address_last_name_blank": "Voer 'n van in",
+        "address_first_name_contains_html_tags": "Voornaam kan nie HTML-merkers bevat nie.",
+        "address_first_name_contains_mathematical_symbols": "Voornaam kan nie wiskundige simbole bevat nie",
+        "address_last_name_contains_emojis": "Van kan nie emosies bevat nie",
+        "address_last_name_contains_url": "Van kan nie 'n URL bevat nie",
+        "address_last_name_contains_html_tags": "Van kan nie HTML-merkers bevat nie.",
+        "address_address1_blank": "Voer 'n adres in",
+        "address_last_name_contains_mathematical_symbols": "Van kan nie wiskundige simbole bevat nie",
+        "address_address1_contains_emojis": "Address1 kan nie emosies bevat nie",
+        "address_address1_too_long": "Die eerste adreslyn is te lank (maksimum is 255 karakters)",
+        "address_address1_contains_html_tags": "Address1 kan nie HTML-merkers bevat nie.",
+        "address_last_name_too_long": "Van is te lank (maksimum is 255 karakters)",
+        "address_address2_blank": "Voer 'n woonstel, suite, ens. in",
+        "address_address2_too_long": "Die tweede adreslyn is te lank (maksimum is 255 karakters)",
+        "address_address2_contains_mathematical_symbols": "Die tweede adreslyn kan nie wiskundige simbole bevat nie",
+        "address_address2_contains_html_tags": "Address2 kan nie HTML-merkers bevat nie.",
+        "address_city_blank": "Voer 'n stad in",
+        "address_city_contains_emojis": "Stad kan nie emosies bevat nie",
+        "address_city_too_long": "Stad is te lank (maksimum is 255 karakters)",
+        "address_city_contains_html_tags": "Stad kan nie HTML-merkers bevat nie.",
+        "address_country_blank": "Kies 'n land/streek",
+        "address_city_contains_mathematical_symbols": "Stad kan nie wiskundige simbole bevat nie",
+        "address_address1_contains_mathematical_symbols": "Die eerste adreslyn kan nie wiskundige simbole bevat nie",
+        "address_province_invalid": "Kies 'n geldige staat / provinsie",
+        "address_address2_contains_emojis": "Address2 kan nie emosies bevat nie",
+        "address_country_not_supported": "Ons verskeep nie na hierdie land of streek nie. Voer 'n nuwe versendingsadres in en probeer weer.",
+        "address_province_blank": "Kies 'n staat / provinsie",
+        "address_company_contains_emojis": "Maatskappy kan nie emosies bevat nie",
+        "address_company_too_long": "Maatskappy naam is te lank (maksimum is 255 karakters)",
+        "address_phone_blank": "Voer 'n geldige telefoonnommer in",
+        "address_company_contains_html_tags": "Maatskappy kan nie HTML-merkers bevat nie.",
+        "address_company_blank": "Voer 'n maatskappynaam in",
+        "address_phone_invalid": "Voer 'n geldige telefoonnommer in",
+        "address_phone_contains_emojis": "Telefoonnommer kan nie emosies bevat nie",
+        "address_zip_blocked_address": "Hierdie ligging word nie ondersteun nie",
+        "address_zip_blank": "Voer 'n poskode in",
+        "address_zip_too_long": "Poskode is te lank (maksimum is 255 karakters)",
+        "address_company_contains_mathematical_symbols": "Maatskappy kan nie wiskundige simbole bevat nie",
+        "address_zip_not_supported": "Hierdie ligging word nie ondersteun nie",
+        "address_zip_invalid_for_country": "Voer 'n geldige poskode / poskode vir %{country} in",
+        "address_zip_invalid_for_province": "Voer 'n geldige poskode / poskode in vir %{province}",
+        "address_zip_contains_emojis": "Poskode / poskode kan nie emosies bevat nie",
+        "address_zip_invalid_for_country_and_province": "Voer 'n geldige poskode / poskode in vir %{province}, %{country}",
+        "address_generic_invalid": "Ongeldige inskrywing",
+        "address_generic_blank": "Vereiste veld",
+        "address_generic_error": "Veldfout",
+        "address_zip_contains_mathematical_symbols": "Poskode / poskode kan nie wiskundige simbole bevat nie",
+        "credit_card_name_blank": "Voer jou naam presies in soos dit op jou kaart geskryf is",
+        "credit_card_name_invalid": "Voer jou naam presies in soos dit op jou kaart geskryf is",
+        "credit_card_number_invalid": "Voer 'n geldige kaartnommer in",
+        "credit_card_expiry_invalid": "Voer 'n geldige vervaldatum in",
+        "credit_card_year_invalid": "Voer 'n geldige vervaldatumjaar in",
+        "credit_card_month_invalid": "Voer 'n geldige vervalmaand in",
+        "credit_card_start_invalid": "Voer 'n geldige kaart begindatum in",
+        "credit_card_start_month_invalid": "Voer 'n geldige kaart beginmaand in",
+        "credit_card_start_year_invalid": "Voer 'n geldige kaart beginjaar in",
+        "credit_card_verification_value_blank": "Voer die CVV of sekuriteitskode op jou kaart in",
+        "credit_card_number_blank": "Voer 'n kaartnommer in",
+        "reduction_code_gift_card_code_invalid": "Voer 'n geldige geskenkkaart in",
+        "reduction_code_discount_not_found": "Voer 'n geldige afslagkode in",
+        "reduction_code_code_not_found": "Voer 'n geldige afslagkode of geskenkkaart in",
+        "delivery_zone_not_found": "Die gespesifiseerde sone is nie in die gespesifiseerde land gevind nie.",
+        "shipping_line_phone_invalid": "Voer 'n geldige telefoonnommer in",
+        "reduction_code_gift_card_unusable": "Jy kan nie 'n geskenkkaart gebruik om 'n ander geskenkkaart te koop nie",
+        "reduction_code_gift_cards_not_supported_with_deferred_purchase_options": "Geskenkkaarte word nie ondersteun met uitgestelde aankoopopsies nie.",
+        "shipping_line_phone_blank": "Voer 'n telefoonnommer in om hierdie afleweringsmetode te gebruik",
+        "delivery_line_detail_changed": "Sommige afleweringsbesonderhede mag verander het. Verifieer jou versendingsmetode en probeer weer.",
+        "gift_card_disabled": "Hierdie geskenkkaart is nie meer beskikbaar nie",
+        "gift_card_already_applied": "Hierdie geskenkkaart is reeds op jou bestelling toegepas",
+        "tips_invalid_tip_amount": "Voer 'n wenk in wat minder as %{amount} is",
+        "gift_cards_not_supported_with_deferred_purchase_options": "Geskenkkaarte word nie ondersteun met uitgestelde aankoopopsies nie.",
+        "gift_card_expired": "Hierdie geskenkkaart het verval",
+        "payment_gateway_missing": "Kies 'n betaalmetode.",
+        "gift_card_currency_mismatch": "Slegs geskenkkaarte in %{checkout_currency} kan met hierdie bestelling gebruik word",
+        "gift_card_depleted": "Hierdie geskenkkaart het geen fondse oor nie",
+        "payment_gateway_needs_paid_plan_error": "Hierdie betaalmetode is tans nie in die winkel beskikbaar nie",
+        "payment_gateway_incompatible_with_multi_currency": "Om hierdie uitklok in jou plaaslike geldeenheid te voltooi, moet jy met kredietkaart betaal.",
+        "payment_gateway_not_in_test_mode": "is nie ingestel om bestellings te toets nie. Hierdie winkel kan nie regte bestellings of regte betalings aanvaar nie.",
+        "gift_card_buying_gift_card": "Jy kan nie 'n geskenkkaart gebruik om 'n ander geskenkkaart te koop nie",
+        "payment_gateway_unsupported_for_subscriptions": "Hierdie betaalmetode is nie beskikbaar vir intekeningsbestellings nie.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Hierdie betaalmetode is nie beskikbaar vir uitgestelde aankoopopsies nie.",
+        "payment_gateway_unsupported_for_country": "Hierdie betaalmetode is nie beskikbaar vir jou versendingsland nie.",
+        "payment_gateway_unsupported_for_development_store_html": "Om 'n toetsbestelling te plaas, moet jy 'n toetsbetaalpoort gebruik. Leer meer oor <a href=\"%{docs_link}\">toetsbestellings in ontwikkelingswinkels</a>.",
+        "physical_gift_card_invalid_quantity": "Fisiese geskenkkaartlynitems moet 'n hoeveelheid hê wat ooreenstem met die aantal geskenkkaartkodes.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Jy het die limiet bereik vir ontwikkelingswinkelbestellings met hierdie betaalverwerker. Om nog 'n bestelling te plaas, moet jy 'n toets-betaalpoort gebruik. Leer meer oor <a href=\"%{docs_link}\">toetsbestellings in ontwikkelingswinkels</a>.",
+        "physical_gift_card_duplicate_code": "Fisiese geskenkkaartlynitem bevat dubbele kode.",
+        "purchase_options_agreement_blank": "Om voort te gaan met jou aankoop, stem in met die uitgestelde of herhalende aankoopvoorwaardes.",
+        "email_blank": "Voer 'n e-pos in",
+        "physical_gift_card_invalid_code": "Fisiese geskenkkaartkode is ongeldig.",
+        "phone_blank": "Voer 'n telefoonnommer in",
+        "address_country_invalid": "Kies 'n land/streek uit die lys",
+        "address_zip_invalid": "Voer 'n geldige poskode in",
+        "gift_card_invalid": "Geskenkkaart \"••••%{last_four_characters}\" is nie meer geldig nie"
       }
     }
   },
