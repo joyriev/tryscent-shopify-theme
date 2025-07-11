@@ -3954,5 +3954,71 @@
       "previous_slide": "انزلق إلى اليسار",
       "name": "شريط التمرير"
     }
+  },
+  "products": {
+    "product": {
+      "quantity": {
+        "label": "الكمية",
+        "input_label": "الكمية لـ {{ product }}",
+        "increase": "زيادة الكمية لـ {{ product }}",
+        "decrease": "تقليل الكمية لـ {{ product }}",
+        "minimum_of": "الحد الأدنى من {{ quantity }}",
+        "maximum_of": "الحد الأقصى لـ {{ quantity }}",
+        "multiples_of": "زيادات بمقدار {{ quantity }}",
+        "max_of": "الحد الأقصى {{ quantity }}",
+        "min_of": "الحد الأدنى {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> في السلة",
+        "note": "عرض قواعد الكمية"
+      },
+      "media": {
+        "play_video": "تشغيل الفيديو",
+        "image_available": "الصورة {{ index }} متاحة الآن في عرض المعرض",
+        "open_media": "افتح الوسائط {{ index }} في النافذة المنبثقة",
+        "play_model": "تشغيل عارض ثلاثي الأبعاد"
+      },
+      "volume_pricing": {
+        "title": "تسعير حسب الحجم",
+        "price_at_each_html": "بسعر {{ price }}/للواحد",
+        "note": "تسعير حسب الحجم متاح"
+      },
+      "pickup_availability": {
+        "view_store_info": "عرض معلومات المتجر",
+        "check_other_stores": "تحقق من التوفر في متاجر أخرى",
+        "pick_up_available": "التوصيل متاح",
+        "pick_up_available_at_html": "التوصيل متاح في <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "الاستلام غير متوفر حالياً في <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "تعذر تحميل توفر الاستلام",
+        "refresh": "تحديث"
+      },
+      "price": {
+        "from_price_html": "من {{ price }}",
+        "regular_price": "السعر العادي",
+        "sale_price": "سعر البيع",
+        "unit_price": "سعر الوحدة"
+      },
+      "share": "شارك هذا المنتج",
+      "sold_out": "نفد المخزون",
+      "vendor": "البائع",
+      "unavailable": "غير متوفر",
+      "value_unavailable": "{{ option_value }} - غير متوفر",
+      "variant_sold_out_or_unavailable": "النسخة نفدت أو غير متوفرة",
+      "video_exit_message": "{{ title }} يفتح فيديو ملء الشاشة في نفس النافذة.",
+      "view_full_details": "عرض التفاصيل الكاملة",
+      "xr_button": "عرض في مساحتك",
+      "xr_button_label": "عرض في مساحتك، تحميل العنصر في نافذة الواقع المعزز",
+      "taxes_included": "الضرائب مشمولة.",
+      "duties_included": "المهام شملت.",
+      "duties_and_taxes_included": "الرسوم والضرائب مشمولة.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">الشحن</a> محسوب عند الدفع."
+    },
+    "modal": {
+      "label": "معرض الوسائط"
+    },
+    "facets": {
+      "filter_and_operator_subtitle": "تطابق الكل",
+      "apply": "تقديم",
+      "clear_all": "إزالة الكل",
+      "clear": "مسح"
+    }
   }
 }
