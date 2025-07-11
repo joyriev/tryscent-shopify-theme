@@ -18,8 +18,9 @@
     style="background-color: {{ section.settings.background_color }}">
     <div class="page-width">
       <div class="max-w-[800px] mx-auto text-center">
+        <img src="{{ section.settings.icon | image_url: width: 100 }}" alt="Money Back Guarantee" class="size-10 mx-auto mb-4">
         <h2 class="text-2xl md:text-4xl font-bold">{{ section.settings.title }}</h2>
-        <div class="text-lg md:text-xl">{{ section.settings.description }}</div>
+        <div class="text-lg md:text-xl text-gray-950">{{ section.settings.description }}</div>
       </div>
     </div>
   </div>
@@ -33,6 +34,11 @@
           "id": "background_color",
           "label": "Background Color",
           "default": "#fcfbf9"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         },
         {
           "type": "text",
