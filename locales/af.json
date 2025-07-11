@@ -527,7 +527,69 @@
       },
       "order_summary": {
         "title": "Bestel opsomming",
-        "group_title_label": "Deel van \"%{group_title}\""
+        "group_title_label": "Deel van \"%{group_title}\"",
+        "more_items_modal": {
+          "search_item": "Soek",
+          "clear_search": "Maak soektog skoon",
+          "number_items_shown": "%{shownNumber} van %{totalNumber} items",
+          "empty_results": "Geen resultate gevind vir \"%{searchText}\". Kontroleer die spelling of gebruik 'n ander woord of frase."
+        },
+        "number_items": {
+          "other": "%{count} items",
+          "one": "%{count} item"
+        },
+        "view_all_items": {
+          "other": "Kyk na alle %{count} items",
+          "one": "Kyk na %{count} item"
+        },
+        "order_name_label": "Bestel %{name}",
+        "shopping_cart_label": "Inkopiemandjie",
+        "discount_title": "Afslag",
+        "discount_title_stacking": {
+          "one": "Afslag",
+          "other": "Afslag"
+        },
+        "discount_order_stacking": {
+          "other": "Bestel afslag",
+          "one": "Bestelafslag"
+        },
+        "discount_code_allocations_mismatch": "Jou <strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode het verander. Hersien jou mandjie en probeer weer.",
+        "discount_placeholder": "Afslagkode",
+        "discount_not_found": "Kon nie 'n geldige afslag vind wat ooreenstem met die ingevoerde kode nie",
+        "discount_code_applied": "Afslagkode toegepas",
+        "gift_card_applied": "Geskenkkaart toegepas",
+        "discount_label": "Afslagkode",
+        "gift_card_title": "Geskenkkaart",
+        "enter_shipping_address": "Voer versendingsadres in",
+        "gift_card_label": "Geskenkkaart",
+        "gift_card_placeholder": "Geskenkkaart",
+        "gift_card_and_discount_title": "Afslagkode of geskenkkaart",
+        "gift_card_and_discount_label": "Afslagkode of geskenkkaart",
+        "remove_gift_card_label": "Maak geskenkkaart skoon",
+        "gift_card_and_discount_placeholder": "Afslagkode of geskenkkaart",
+        "return_restocking_fee_label": "Herbevoorradingsfooi",
+        "remove_discount_label": "Verwyder afslag",
+        "return_shipping_fee_label": "Terugstuurversending",
+        "free_shipping_discount_label": "Gratis versending",
+        "applied_free_shipping_discount_label": "Toegepas",
+        "apply_discount_button_label": "Pas toe",
+        "applied_discount_message": "%{amount} afslag op totale bestelwaarde",
+        "discount_has_been_removed": "Afslag is verwyder",
+        "gift_card_subscriptions_notice": "Geskenkkaarte sal slegs op jou eerste betaling van toepassing wees",
+        "discount_has_been_applied": "Afslag is toegepas",
+        "gift_card_has_been_applied": "Geskenkkaart is toegepas",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is nie geldig vir die items in jou mandjie nie",
+        "discount_already_applied": "'n Afslag is op hierdie bestelling toegepas. Jy kan nie nog 'n afslag byvoeg nie.",
+        "discount_requires_customer_notice": "Voer jou versendingsinligting in om die <strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode toe te pas",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode vereis geskikte kliënt",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is tans nie beskikbaar vir jou nie",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is nie beskikbaar vir jou versendingsadres nie",
+        "customer_already_used_once_per_customer_discount_notice": "Die <strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is reeds gebruik",
+        "subtotal_label_with_quantity": {
+          "one": "Subtotaal · %{count} item"
+        },
+        "subtotal_label": "Subtotaal",
+        "gift_card_has_been_removed": "Geskenkkaart is verwyder"
       }
     }
   },
