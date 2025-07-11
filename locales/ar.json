@@ -2330,8 +2330,140 @@
         "meter": "م",
         "square_meter": "م²",
         "ounce": "أونصة",
-        "pound": "رطل"
+        "pound": "رطل",
+        "fluid_ounce": "أونصة سائلة",
+        "quart": "كيوت",
+        "inch": "في",
+        "pint": "البرتغالية",
+        "gallon": "فتاة",
+        "foot": "قدم",
+        "yard": "يد",
+        "square_foot": "قدم²",
+        "item": "عنصر"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "العنوان غير مدعوم للعضوية الحالية."
+      },
+      "tooltip": {
+        "accessibility_label_context": "مزيد من المعلومات حول %{context}",
+        "additional_payment_methods": "طرق دفع إضافية"
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "انتقل إلى المتجر الإلكتروني"
+        }
       }
+    },
+    "pagination": {
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "links": {
+      "learn_more": "تعرف على المزيد",
+      "powered_by_shopify": "مدعوم من Shopify"
+    },
+    "feed": {
+      "more": "المزيد"
+    },
+    "attributes": {
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "password_confirmation": "تأكيد كلمة المرور",
+      "first_name": "الاسم الأول",
+      "last_name": "الاسم الأخير",
+      "body": "الجسم",
+      "signature": "العنوان"
+    },
+    "addresses": {
+      "zip_code": "الرمز البريدي",
+      "postal_code": "الرمز البريدي",
+      "postcode": "الرمز البريدي",
+      "pincode": "الرمز البريدي",
+      "region": "المنطقة",
+      "province": "المحافظة",
+      "prefecture": "محافظة",
+      "state": "الدولة",
+      "state_and_territory": "الولاية/الإقليم",
+      "county": "المقاطعة",
+      "emirate": "إمارة",
+      "governorate": "محافظة",
+      "confirm": "هل أنت متأكد أنك ترغب في حذف هذا العنوان؟"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "مميز",
+        "best_selling": "الأكثر مبيعًا",
+        "az": "ترتيب أبجدي، من الألف إلى الياء",
+        "za": "ترتيب أبجدي، من ز إلى أ",
+        "price_ascending": "السعر، من الأقل إلى الأعلى",
+        "price_descending": "السعر، من الأعلى إلى الأدنى",
+        "date_ascending": "التاريخ، من القديم إلى الجديد",
+        "date_descending": "التاريخ، من الجديد إلى القديم"
+      }
+    },
+    "errors": {
+      "blank": "لا يمكن أن يكون فارغًا",
+      "blocked_address": "هذا الموقع غير مدعوم",
+      "credit_card_session_expired": "انتهت صلاحية تفويض بطاقة الائتمان، يرجى إدخال معلومات الدفع الخاصة بك مرة أخرى. لم يتم خصم أي مبلغ من بطاقتك.",
+      "empty": "لا يمكن أن يكون فارغًا",
+      "invalid_email": "يجب أن يكون عنوان بريد إلكتروني صالح",
+      "discount_disabled": "تم تعطيل هذا الخصم",
+      "discount_expired": "هذا الخصم لم يعد صالحًا",
+      "discount_limit_reached": "وصل هذا الخصم إلى حد استخدامه",
+      "discount_not_found": "غير قادر على العثور على خصم صالح يطابق الرمز المدخل",
+      "customer_already_used_once_per_customer_discount_notice": "وصل هذا الخصم إلى حد استخدامه",
+      "gift_card_already_applied": "تم تطبيق الرمز بالفعل على عملية الدفع الخاصة بك",
+      "gift_card_code_invalid": "الرمز غير صالح",
+      "gift_card_currency_mismatch": "بطاقة الهدايا الخاصة بك هي بعملة %{gift_card_currency}. اتصل بنا لإعادة إصدارها بعملة %{checkout_currency}.",
+      "gift_card_depleted": "لا توجد أموال متبقية على بطاقة الهدية هذه",
+      "gift_card_disabled": "بطاقة الهدايا معطلة",
+      "gift_card_expired": "بطاقة الهدايا منتهية الصلاحية",
+      "invalid": "غير صالح",
+      "taken": "تم أخذه بالفعل",
+      "bad_domain": "يحتوي على اسم نطاق غير صالح",
+      "contains_html_tags": "لا يمكن أن يحتوي على علامات HTML",
+      "too_long": "طويل جدًا (الحد الأقصى هو %{count} حرفًا)",
+      "password_mismatch": "يجب أن يتطابق مع كلمة المرور المقدمة",
+      "too_short": "قصير جدًا (الحد الأدنى هو %{count} أحرف)",
+      "contains_spaces": "يبدأ أو ينتهي بمسافات.",
+      "email_domain_invalid": "المزود غير مدعوم",
+      "invalid_for_country": "غير صالح لـ %{country}",
+      "invalid_for_country_and_province": "غير صالح لـ %{province} و %{country}",
+      "invalid_province_in_country": "ليست محافظة صالحة في %{country}",
+      "invalid_state_in_country": "ليست حالة صالحة في %{country}",
+      "invalid_region_in_country": "ليست منطقة صالحة في %{country}",
+      "invalid_for_card_type": "غير صالح",
+      "invalid_type": "عذرًا، نحن لا نقبل بطاقات من هذا النوع",
+      "full_name_required": "أدخل الاسم الأول واسم العائلة",
+      "not_supported": "غير مدعوم",
+      "less_than_or_equal_to": "يجب أن يكون أقل من أو يساوي %{count}",
+      "expired": "انتهت صلاحيته",
+      "invalid_format": "التنسيق غير صالح",
+      "invalid_expiry_year": "ليس سنة انتهاء صلاحية صالحة",
+      "invalid_start_date_or_issue_number_for_debit": "تاريخ بدء صالح أو رقم إصدار مطلوب",
+      "reset_password_html": "عنوان البريد الإلكتروني هذا مرتبط بالفعل بحساب. إذا كان هذا الحساب يخصك، يمكنك <a href=\"/account/login#recover\">إعادة تعيين كلمة المرور الخاصة بك</a>",
+      "shop_404": {
+        "title": "أنشئ موقع تجارة إلكترونية وابدأ البيع عبر الإنترنت! برنامج التجارة الإلكترونية من Shopify",
+        "heros": {
+          "store_unavailable": "عذراً، هذا المتجر غير متاح حالياً.",
+          "store_not_exist": "هذا المتجر غير موجود.",
+          "no_storefront": "هذا المتجر لا يملك موقعًا إلكترونيًا بعد."
+        },
+        "links": {
+          "explore_other_stores": "استكشف متاجر أخرى",
+          "start_free_trial": "ابدأ تجربة مجانية"
+        },
+        "owner_ctas": {
+          "header": "هل أنت صاحب المتجر؟",
+          "fix_domain": "أكمل إعداد عنوان الويب الجديد الخاص بك، انتقل إلى %{domain_settings_link}. انقر على \"اتصال النطاق\" وأدخل: %{domain}.<br>إذا كنت تواجه مشكلة في الدخول إلى متجرك، جرب صفحة %{forgot_your_store_link}.",
+          "fix_domain_link_text": "إعدادات النطاق الخاص بك",
+          "forgot_your_store_link_text": "نسيت متجرك",
+          "admin_link_text": "المسؤول",
+          "add_storefront": "يمكنك إعداد موقعك الإلكتروني عن طريق إضافة قناة المتجر الإلكتروني في %{admin_link}. إذا كنت تواجه مشكلة في الدخول إلى متجرك، جرب صفحة %{forgot_your_store_link}."
+        }
+      },
+      "product_not_available": "المنتج غير منشور لهذا العميل.",
+      "verify_email": "لقد أرسلنا بريدًا إلكترونيًا إلى %{customer_email}، يرجى النقر على الرابط المرفق للتحقق من عنوان بريدك الإلكتروني."
     }
   }
 }
