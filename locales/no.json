@@ -3200,8 +3200,146 @@
         "resume_tracking": "Gjenoppta sporing",
         "submitted_label": "Innsendt",
         "submitted_description": "Gå gjennom bestillings- og betalingsdetaljer.",
-        "there_was_a_problem_label": "Det var et problem"
-      }
+        "there_was_a_problem_label": "Det var et problem",
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "Administrer på Amazon"
+        },
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "Administrer med Amazon",
+            "new_window_disclaimer": "(åpner et nytt vindu)"
+          }
+        },
+        "track_shipment": "Spor forsendelse",
+        "view_order_for_details": "Se bestilling for detaljer",
+        "request_return": "Be om retur",
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "Levering garantert innen",
+            "external_promise_brand_label": "Levering av",
+            "not_delivered_by_label": "Levert etter {{date}}",
+            "delivery_guarantee_expired_label": "Leveringsgaranti utløpt",
+            "modal_accessibility_button_label": "Detaljer om leveringsløfte",
+            "download_shop_app_button_label": "Last ned Shop for å spore",
+            "track_with_shop_button_label": "Spor med Shop",
+            "claim_shop_cash_button_label": "Krev Shop-penger"
+          },
+          "details_modal": {
+            "title": "Leveringsgaranti",
+            "active_delivery_guarantee_label": "Levering innen {{date}}",
+            "expired_badge_label": "Utløpt",
+            "expired_delivery_guarantee_description": "Denne bestillingens 30-dagers Shop Promise-garanti har utløpt.",
+            "order_includes_guarantees_label": "Bestillingen din inkluderer {{deliveryAgreementsCount}} garantier",
+            "order_includes_guarantees_description": "Shop Promise garanterer rask og pålitelig levering. Krev Shop Cash hvis bestillingen din kommer etter {{date}}.",
+            "delivered_after_label": "Levert etter {{date}}",
+            "delivered_after_description": "Fordi bestillingen din kom sent, har du rett til å kreve {{amount}} Shop Cash.",
+            "claimed_shop_cash_description": "Fordi denne bestillingen kom sent, krevde du {{amount}} Shop Cash.",
+            "eligible_to_claim_shop_cash_description": "Fordi bestillingen din kom sent, har du rett til å kreve {{amount}} Shop Cash.",
+            "learn_more_button_label": "Lær mer",
+            "claim_shop_cash_button_label": "Krev Shop-penger",
+            "view_balance_in_shop_button_label": "Se saldo i Shop",
+            "scan_to_claim_shop_cash_label": "Skann for å kreve {{amount}} Shop Cash"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Levering støttet av",
+            "mixed_brands_label": "Levering garantert",
+            "not_delivered_by_label": "Ikke levert innen {{date}}",
+            "modal_accessibility_button_label": "Detaljer om leveringsløfte"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Krev din Shop Cash",
+            "no_shop_app_label": "{{appDownloadLink}} for å kreve Shop Cash",
+            "download_shop_app_label": "Last ned Shop"
+          },
+          "details_modal": {
+            "title": "Levering støttet av",
+            "modal_accessiblity_label": "Detaljer om leveringsløfte",
+            "delivery_guarantee_label": "Leveringsgaranti",
+            "delivery_by_label": "Levering innen {{date}}",
+            "delivery_guaranteed_by_label": "Levering garantert innen {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garanterer rask, pålitelig levering. Krev Shop Cash hvis bestillingen din kommer for sent.",
+              "may_be_eligible_not_authorized_label": "Du kan være kvalifisert til å kreve Shop Cash fordi denne bestillingen kom sent. Logg inn for å se detaljer.",
+              "redeemed_label": "Du har allerede krevd Shop Cash fordi denne bestillingen kom sent.",
+              "expired_label": "Denne bestillingen er ikke kvalifisert for krav om sen levering fordi 30-dagers garantien har utløpt.",
+              "no_shop_cash_label": "Denne bestillingen er ikke kvalifisert for krav om sen levering fordi den ikke ble betalt med Shop Pay.",
+              "no_longer_guaranteed_label": "Disse varene er ikke lenger dekket av en leveringsgaranti.",
+              "claim_shop_cash_description": "Du kan bruke Shop Cash på fremtidige kjøp i Shop-appen.",
+              "claim_shop_cash_title": "Skann for å kreve {{amount}} i Shop Cash"
+            }
+          }
+        }
+      },
+      "status_mark_as_delivered": "Merk som levert",
+      "fulfillment_status_title": "Fullføringsstatus: {{status}}",
+      "buy_again": "Kjøp igjen",
+      "manage": "Administrere",
+      "manage_accessiblity_label": "Administrer bestilling {{orderId}}",
+      "buy_again_accessibility_label": "Kjøp igjen for bestilling {{orderId}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_label": "Vis detaljer",
+        "expand_events_accessibility_label": "Vis detaljer for ordrelevering",
+        "hide_events_label": "Skjul detaljer",
+        "hide_events_accessibility_label": "Skjul detaljer om ordrelevering"
+      },
+      "addresses_section_title": "Fakturering og frakt",
+      "order_details": "Ordredetaljer",
+      "order_details_skeleton_accessibility_label": "Logg inn for å se alle ordredetaljer.",
+      "billing_address": "Fakturaadresse",
+      "card_ending_with": "slutter med {{lastDigits}}",
+      "contact": "Kontakt",
+      "contact_information": "Kontaktinformasjon",
+      "company_and_location": "Selskap og beliggenhet",
+      "company": "Selskap",
+      "fully_refunded_label": "REFUNDERT",
+      "group_title_label": "Del av: {{groupTitle}}",
+      "view_controls": {
+        "gallery": "Galleri",
+        "list": "Liste"
+      },
+      "grouped_view_components": {
+        "expand_line_items": "Vis {{count}} elementer",
+        "collapse_line_items": "Skjul {{count}} elementer",
+        "line_item_summary_accessibility_label": "{{productTitle}}, Antall: {{refundableQuantity}}",
+        "line_item_summary": "{{refundableQuantity}} x {{productTitle}}",
+        "line_item_summary_list_accessibility_label": "Elementer i {{productTitle}}-pakken"
+      },
+      "discount": "Rabatt",
+      "hide_items": "Skjul elementer",
+      "loading": "Laster ordredetaljer",
+      "loading_finished_accessibility_message": "Ordredetaljer er lastet inn",
+      "location": "Lokasjon",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} antall {{quantity}}",
+        "next": "Vis neste elementer",
+        "previous": "Vis tidligere elementer",
+        "load_more_items": {
+          "one": "Last inn {{count}} flere elementer",
+          "other": "Last inn {{count}} flere elementer"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "Vis bestillingsoppsummering",
+        "closed": "Skjul bestillingsoppsummering"
+      },
+      "no_data": "Ingen",
+      "no_data_provided_accessibility_label": "{{fieldName}} er tom",
+      "paid_amount": "Betalt",
+      "partially_refunded_label": "DELVIS REFUNDERT",
+      "payment": {
+        "status_in_review": "Betaling forfaller etter gjennomgang",
+        "status_unpaid": "Betaling forfaller {{date}}",
+        "title": "Betaling",
+        "payment_type": {
+          "gift_card": "Gavekort",
+          "store_credit": "Butikkreditt"
+        }
+      },
+      "not_applicable": "N/A"
     }
   }
 }
