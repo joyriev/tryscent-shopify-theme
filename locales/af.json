@@ -2474,6 +2474,100 @@
           "declined": "Betaling geweier"
         }
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "unsubscribe": "Ontteken"
+      },
+      "unsubscribed": {
+        "preview": "Jy sien vooraf wat kliënte sal sien wanneer hulle afteken.",
+        "confirmation": "Jy het ingeteken van ons poslys af.",
+        "disclaimer": "Jy sal nie meer enige bemarkingsopdaterings van ons ontvang nie. Jy kan enige tyd weer inteken."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Jy het ingeteken op e-pos oopvolg.</b>",
+          "preview_bar": "Jy sien vooraf wat kliënte sal sien wanneer hulle kies om e-pos oopvolg te aktiveer.",
+          "opt_out_html": "Jy kan <a style='text-decoration:underline;' href='%{link}'>afmeld</a> vir e-pos oopvolg as jy nie hierdie inligting wil deel nie.",
+          "visibility": "E-pos oopkoerse sal anoniem gerapporteer word. Ons sal slegs kan sien of jy ’n e-pos oopgemaak het as deel van ’n saamgestelde e-pos oopkoers."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Jy het uitgeskakel vir e-pos oopvolg.</b>",
+          "visibility": "Ons sal nie sien of jy ons e-posse oopgemaak het nie.",
+          "preview_bar": "Jy sien vooraf wat kliënte sal sien wanneer hulle kies om uit te teken van e-pos oopvolg.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Sluit aan</a> by e-pos oopvolg."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Ons hou nie meer enige e-pos openings dop nie.</b>",
+          "privacy_policy": "Nadat hierdie e-pos gestuur is, het ons ons privaatheidsbeleid opgedateer en ons hou nie meer by wanneer dit oopgemaak word nie."
+        },
+        "track": {
+          "status_html": "<b>E-pos oopvolg word gerapporteer.</b>",
+          "visibility": "Ons sal slegs sien of jy die e-pos oopgemaak het, as deel van die totale e-pos oopmaakkoers."
+        },
+        "updated_policy": {
+          "status_html": "<b>E-pos oopvolg word gerapporteer.</b>",
+          "visibility": "Ons het ons beleid opgedateer, en volg nou e-pos openings. E-pos openingsyfers sal anoniem gerapporteer word. Ons sal slegs sien of jy ’n e-pos as deel van die totale e-pos openingsyfer oopgemaak het.",
+          "opt_out_html": "As jy nie hierdie inligting wil deel nie, kan jy <a style='text-decoration:underline;' href='%{link}'>afteken.</a>"
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "out_of_stock": "Uit voorraad",
+          "in_stock": "In voorraad"
+        }
+      },
+      "boolean": {
+        "true_label": "Ja",
+        "false_label": "Nee"
+      }
+    },
+    "search": {
+      "sorting": {
+        "price_ascending": "Prys, laag na hoog",
+        "price_descending": "Prys, hoog na laag",
+        "relevance": "Relevansie"
+      },
+      "error": "Daar was 'n probleem met die laai van jou soekresultate. Ververs asseblief die bladsy of probeer later weer."
+    },
+    "page_titles": {
+      "products": "Produkte",
+      "account": "Rekening",
+      "blog_or_article_with_error": "Fout - %{title}",
+      "shopping_cart": "Jou Inkopiemandjie",
+      "order": "Bestel %{name}",
+      "create_account": "Skep Rekening",
+      "reset_account": "Stel rekening terug",
+      "search": "Soek",
+      "addresses": "Adresse",
+      "collections": "Versamelings",
+      "search_results": {
+        "other": "Soek: %{count} resultate gevind vir \"%{terms}\"",
+        "one": "Soek: %{count} resultaat gevind vir \"%{terms}\""
+      },
+      "challenge": "Uitdaging",
+      "checkpoint": "Kontrolepunt",
+      "not_found": "404 Nie Gevind Nie"
+    },
+    "challenge": {
+      "submit_button_text": "Dien in",
+      "message": "Om voort te gaan, laat weet ons dat jy nie 'n robot is nie.",
+      "error": "Jou antwoord was nie korrek nie, probeer asseblief weer."
+    },
+    "cart": {
+      "discounts_with_count": "%{count} afslag is toegepas"
+    },
+    "checkpoint": {
+      "error": "Captcha-validasie het misluk",
+      "message": "Los Captcha op om voort te gaan",
+      "submit_button_text": "Dien in"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Gewoonlik gereed binne 1 uur"
+      }
     }
   },
   "sections": {
