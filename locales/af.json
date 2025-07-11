@@ -586,10 +586,121 @@
         "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is nie beskikbaar vir jou versendingsadres nie",
         "customer_already_used_once_per_customer_discount_notice": "Die <strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is reeds gebruik",
         "subtotal_label_with_quantity": {
-          "one": "Subtotaal · %{count} item"
+          "one": "Subtotaal · %{count} item",
+          "other": "Subtotaal · %{count} items"
         },
         "subtotal_label": "Subtotaal",
-        "gift_card_has_been_removed": "Geskenkkaart is verwyder"
+        "gift_card_has_been_removed": "Geskenkkaart is verwyder",
+        "pickup_label": "Ophaling in winkel",
+        "pickup_unavailable_banner_title": {
+          "one": "Geen winkels beskikbaar met jou item nie",
+          "other": "Geen winkels beskikbaar met jou items nie"
+        },
+        "shipping_label": "Versending",
+        "no_pickup_location": "Daar is geen afhaalplekke beskikbaar nie.",
+        "pickup_unavailable_banner_body": {
+          "ship_to_address": "Stuur na adres",
+          "ship_to_address_instead_html": "%{link} in plaas daarvan"
+        },
+        "tip_label": "Wenks",
+        "calculating": "Bereken…",
+        "calculating_shipping": "Bereken…",
+        "shipping_default_value": "Bereken by die volgende stap",
+        "shipping_pending_message": "Nog nie beskikbaar nie",
+        "shipping_policy_link": "Versendingskoste",
+        "shipping_discount_title": "Versendingskorting",
+        "estimated_taxes_label": "Geskatte belastings",
+        "taxes_label": "Belastinge",
+        "information_estimated_taxes_label": "Belasting (geskat)",
+        "order_total_label": "Bestelling Totaal",
+        "price_before_discount_aria_text": "Oorspronklike prys",
+        "estimated_taxes_finalization_tooltip_content": "Die finale belasting en totaal sal per e-pos of teks bevestig word nadat u u bestelling geplaas het.",
+        "discount_code_aria_text": "Afslagkode",
+        "total_due_label": "Totaal verskuldig",
+        "total_label": "Totaal",
+        "total_price_label": "Totale prys",
+        "deposit_label": "Deposito",
+        "total_due_today_label": "Totaal vandag verskuldig",
+        "total_due_later_label": "Totaal later verskuldig",
+        "partial_total_label": "Totaal",
+        "free_total_label": "Gratis",
+        "free_shipping_total_label": "Gratis",
+        "paid_label": "Betaal",
+        "price_after_discount_aria_text": "Afslagprys",
+        "payment_due_label": "Betaling verskuldig",
+        "total_savings": "Totale besparings",
+        "total_outstanding_label": "Bedrag om te betaal",
+        "vat_label_html": "Ingesluit %{amount} in belasting",
+        "discount_and_gift_card_savings_notice": "Na %{discount_amount} in afslag en %{gift_card_amount} in geskenkkaarte",
+        "gift_card_savings_notice": "Na %{gift_card_amount} in geskenkkaarte",
+        "discount_savings_notice": "Na %{discount_amount} in afslag",
+        "cost_table_value_column_header": "Waarde",
+        "duties_included_label": "Totaal sluit belasting en heffings in. Geen ekstra koste by aflewering nie.",
+        "description_label": "Beskrywing",
+        "price_label": "Prys",
+        "quantity_label": "Hoeveelheid",
+        "cost_table_title": "Koste opsomming",
+        "cost_table_item_column_header": "Item",
+        "price_per_item": {
+          "label": "%{price}/stuk",
+          "accessibility_label": "%{price} per item"
+        },
+        "product_image_quantity_label": "Hoeveelheid",
+        "product_image_label": "Produkbeeld",
+        "scroll_order_summary": "Blaai vir meer items",
+        "expand_order_summary_short": "Wys",
+        "expand_order_summary": "Wys bestellingsopsomming",
+        "collapse_order_summary_short": "Versteek",
+        "original_price": "Oorspronklike prys",
+        "collapse_order_summary": "Versteek bestellingsopsomming",
+        "total_already_paid_label": "Betaal",
+        "sale_price": "Verkoopprys",
+        "order_total_updated_label": "Bygewerkte totaal",
+        "unit_price": {
+          "per_item": {
+            "single": "%{price} elk",
+            "other": "%{price} per %{count} items",
+            "one": "%{price} per %{count} item"
+          },
+          "accessible_separator": "per"
+        },
+        "product_change_label": "Verander",
+        "total_updated_label": "Bygewerkte totale prys:",
+        "estimated_tax_label": "Geskatte belasting",
+        "recurring_subtotal_label": "Terugkerende subtotaal",
+        "multiple_shipping_lines_label": "Versending totaal",
+        "recurring_total_label": "Terugkerende totaal",
+        "gift_card_ending": "Geskenkkaart wat eindig met %{last_characters}",
+        "recurring_total_tooltip": "Sluit nie versending, belasting, heffings, of enige toepaslike afslag in nie.",
+        "percent_off_shipping": "%{percent}% af aflewering",
+        "confirmation_number_label": "Bevestiging #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> kon nie saam met jou bestaande afslag gebruik word nie.",
+        "amount_off_shipping": "%{amount} afslag op versending",
+        "deferred_payment_info": {
+          "paid_today": "Totaal vandag betaal",
+          "paid_today_next": "Vandag betaal",
+          "title": "Betaling van %{amount_due} is verskuldig op %{due_at}",
+          "description_html": "Vir vrae oor jou bestelling, %{contact_us}.",
+          "due_on_fulfillment_title": "Betaling van %{amount_due} is verskuldig by nakoming",
+          "due_on_receipt_title": "Betaling van %{amount_due} is verskuldig by ontvangs"
+        },
+        "payment_terms_totals": {
+          "due_today": "Totaal vandag verskuldig",
+          "due_today_next": "Vandag verskuldig",
+          "due_on_fulfillment": "Totaal verskuldig by uitvoering",
+          "due_on_fulfillment_next": "Verskuldig by nakoming",
+          "due_on_receipt": "Totaal verskuldig by ontvangs",
+          "due_later_checkout_to_draft": "Totaal later verskuldig",
+          "total_paid": "Totaal betaal",
+          "due_later": "Totaal verskuldig %{due_at}"
+        },
+        "deferred_balance_info": {
+          "title": "Balans van {{amount_due}} is verskuldig op {{due_at}}",
+          "due_on_fulfillment_title": "Balans van {{amount_due}} is verskuldig by nakoming"
+        },
+        "due_on_fulfillment": "Verskuldig by nakoming",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> werk tans nie. Kontak ons vir hulp.",
+        "maximum_discount_code_limit_reached": "Jy het die maksimum aantal afslagkodes bereik. Verwyder 'n bestaande kode om <strong style=\"text-transform:uppercase\">%{code}</strong> te gebruik."
       }
     }
   },
