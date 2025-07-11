@@ -2775,12 +2775,80 @@
             "overdue": "Agterstallig",
             "due": "Weens {{date}}",
             "due_today": "Vandag verskuldig",
-            "paid": "Betaal"
+            "paid": "Betaal",
+            "due_without_date": "Vanweë",
+            "payment_not_due": "Nog nie verskuldig nie",
+            "pay_to_confirm": "Betaal om te bevestig",
+            "due_on_fulfillment": "Verskuldig by nakoming"
           }
-        }
+        },
+        "sort_by": "Sorteer volgens: {{option}}",
+        "sort_title": "Sorteer",
+        "sort_hide_options_accessibility_label": "Versteek sorteeropsies vir bevestigde bestellings.",
+        "sort_show_options_accessibility_label": "Wys sorteeropsies vir bevestigde bestellings.",
+        "sort_currently_sorted_by_accessibility_label": "Tans gesorteer volgens: {{option}}",
+        "sort": {
+          "location": {
+            "ascending": "Ligging (A-Z)",
+            "descending": "Ligging (Z-A)"
+          },
+          "date": {
+            "newest": "Nuutste na oudste",
+            "oldest": "Oudste na nuutste"
+          },
+          "order_number": {
+            "ascending": "Bestelnommer (laag na hoog)",
+            "descending": "Bestelnommer (hoog na laag)"
+          },
+          "order_total": {
+            "ascending": "Bestelling totaal (laag na hoog)",
+            "descending": "Bestelling totaal (hoog na laag)"
+          }
+        },
+        "location_filter_picker": {
+          "all_location": "Alle liggings",
+          "current_location": "Huidige ligging",
+          "switch_view": "Skakel kyk"
+        },
+        "filter": {
+          "apply": "Pas toe",
+          "clear_section": "Maak afdeling skoon",
+          "clear_all": "Maak alles skoon",
+          "date": {
+            "start_date": "Begindatum",
+            "end_date": "Einddatum",
+            "title": "Besteldatum",
+            "today": "Vandag",
+            "custom": "Pasgemaak",
+            "last_30_days": "Laaste 30 dae",
+            "last_7_days": "Laaste 7 dae",
+            "last_90_days": "Laaste 90 dae",
+            "last_365_days": "Laaste 12 maande"
+          }
+        },
+        "filter_title": "Filter",
+        "show_order_actions_accessibility_label": "Wys bestelaksies vir bestelling {{name}}"
       },
       "switch_order_type_pending_orders_accessibility_label": "Skakel bestellings tipe, tans besigtig hangende bestellings",
-      "switch_order_type_confirmed_orders_accessibility_label": "Skakel bestellings tipe, tans besigtig bevestigde bestellings"
+      "switch_order_type_confirmed_orders_accessibility_label": "Skakel bestellings tipe, tans besigtig bevestigde bestellings",
+      "order_status": {
+        "attempted_delivery_label": "Beoogde aflewering",
+        "confirmed_description": "Ons het jou bestelling ontvang.",
+        "preparing_for_shipping_label": "Voorbereiding vir versending",
+        "attempted_delivery_description": "Die afleweringspoging was onsuksesvol.",
+        "on_its_way_description": "Hierdie versending is onderweg.",
+        "attempted_to_deliver_label": "Poging om te lewer",
+        "out_for_delivery_description": "Hierdie versending is uit vir aflewering.",
+        "ready_for_pickup_label": "Gereed vir afhaling",
+        "preparing_for_shipping_description": "Hierdie items word voorberei vir versending.",
+        "ready_for_pickup_description": "Hierdie items is gereed vir afhaling. Bring asseblief jou bestelbevestiging wanneer jy jou bestelling afhaal.",
+        "picked_up_label": "Opgetel",
+        "ready_for_pickup_location": "Jou bestelling is gereed vir afhaling by die ligging",
+        "canceled_title": "Jou bestelling is gekanselleer",
+        "picked_up_description": "Hierdie items is opgetel.",
+        "canceled_description": "Jou bestelling is gekanselleer op {{date}}.",
+        "canceled_label": "Geannuleer"
+      }
     }
   }
 }

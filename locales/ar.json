@@ -578,7 +578,156 @@
         },
         "maximum_discount_code_limit_reached": "لقد وصلت إلى الحد الأقصى لعدد رموز الخصم. قم بإزالة رمز موجود لاستخدام <strong style=\"text-transform:uppercase\">%{code}</strong>.",
         "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يعمل الآن. اتصل بنا للمساعدة.",
-        "due_on_fulfillment": "مستحق عند التنفيذ"
+        "due_on_fulfillment": "مستحق عند التنفيذ",
+        "subscriptions": "الاشتراكات",
+        "duties_label": "الرسوم",
+        "error_duties_tooltip": "يتم شحن هذا الطلب من دولة أخرى، لذا قد يتم فرض رسوم وضرائب عند التسليم.",
+        "may_be_charged_on_delivery": "قد يتم تحصيلها عند التسليم",
+        "duties_and_taxes_label": "الرسوم والضرائب",
+        "total_updated_label_with_price": "السعر الإجمالي المحدث: %{totalPrice}",
+        "updated_shipping_method": "طريقة الشحن المحدثة: %{shipping_method}",
+        "recurring_payments": "المدفوعات المتكررة",
+        "recurring_total_multiple_label": "هذا الطلب يحتوي على رسوم متكررة لعدة عناصر.",
+        "deferred_total_due_date_label": "المبلغ الإجمالي المستحق {{date}}",
+        "deferred_total_due_date_label_next": "مستحق في %{date}",
+        "full_price": "السعر الكامل: %{price}",
+        "custom_discount": "خصم مخصص",
+        "expand_component_information": {
+          "one": "عرض %{count} عنصر",
+          "other": "عرض %{count} عناصر"
+        },
+        "collapse_component_information": {
+          "one": "إخفاء %{count} عنصر",
+          "other": "إخفاء %{count} عناصر"
+        },
+        "discount_discovery": {
+          "add_code": "أضف خصم",
+          "merchandise_quantity_label": {
+            "one": "%{count} عنصر",
+            "other": "%{count} عناصر"
+          }
+        },
+        "alternative_payment_currency_total": "تم الشحن بمبلغ %{amount_due}"
+      },
+      "shipping": {
+        "title": "الشحن",
+        "delivery_title": "التسليم",
+        "shipping_method_title": "طريقة الشحن",
+        "shipping_method_one_time_purchase_group_title": "شراء لمرة واحدة",
+        "shipping_method_first_shipment_group_title": {
+          "one": "الشحنة الأولى",
+          "other": "الشحنات الأولى"
+        },
+        "shipping_method_subscription_group_title": "الاشتراك",
+        "shipping_method_recurring_shipments_group_title": {
+          "one": "شحنة متكررة",
+          "other": "الشحنات المتكررة"
+        },
+        "subscription_local_delivery": "توصيل الاشتراك المحلي",
+        "subscription_shipping": "شحن الاشتراك",
+        "subscription_pickup": "استلام الاشتراك",
+        "waiting_on_rate_notice": "جاري الحصول على أسعار الشحن المتاحة…",
+        "waiting_on_pickup_location_notice": "جاري الحصول على مواقع الاستلام المتاحة…",
+        "no_rates_for_cart_or_destination_notice": "لا توجد طرق شحن متاحة لسلة التسوق أو العنوان الخاص بك",
+        "no_rates_for_country_notice": "لم يتم العثور على أسعار شحن لهذا العنوان.",
+        "no_pickup_location_notice": "على الأقل واحد من منتجاتك غير متوفر للاستلام",
+        "no_rates_contact_notice": "اتصل بنا لمزيد من المعلومات",
+        "free_rate_label": "مجاني",
+        "cheapest_rate_label": "الأرخص",
+        "please_enter_your_shipping_information_notice": "يرجى إدخال معلومات الشحن الخاصة بك.",
+        "estimated_delivery_date": {
+          "one": "%{count} يوم عمل",
+          "other": "%{count} أيام عمل"
+        },
+        "estimated_delivery_date_range": "من %{minimum} إلى %{maximum} أيام عمل",
+        "estimated_delivery_time": "التسليم المتوقع %{time}",
+        "estimated_delivery_time_range": "التسليم المقدر %{min_time}–%{max_time}",
+        "delivery_today": "التوصيل في نفس اليوم %{time}",
+        "delivery_tomorrow": "التوصيل في اليوم التالي %{time}",
+        "two_day_delivery": "توصيل خلال يومين %{time}",
+        "delivery": "التسليم %{time}",
+        "arrives_time": "يصل %{time}",
+        "estimated_time": "المقدر %{time}",
+        "default_description": "تشحن خلال يوم عمل واحد",
+        "unbranded_default_description": "جاهز للشحن",
+        "shipping_line_phone_label": "رقم الهاتف المحمول (مطلوب)",
+        "shipping_line_phone": "قد يستخدم ساعي البريد هذا الرقم للاتصال بك.",
+        "shipping_line_delivery_phone_label": "رقم الهاتف المحمول",
+        "shipping_line_delivery_phone": "قد يتم الاتصال بك لتزويدك بتحديثات حول تسليمك.",
+        "optional_shipping_line_delivery_instructions_label": "تعليمات التسليم (اختياري)",
+        "shipping_line_delivery_instructions": "أدخل المعلومات اللازمة مثل رموز الأبواب أو تعليمات التسليم.",
+        "other_method": {
+          "zero": "لا توجد طرق أخرى متاحة",
+          "one": "طريقة أخرى متاحة في %{count}",
+          "other": "%{count} طرق أخرى متاحة تبدأ من"
+        },
+        "shipping_rate_discounted_amount": "كان: %{original_amount}. الآن: %{amount}",
+        "local_delivery": "التوصيل المحلي",
+        "prime_not_available": {
+          "default": "التوصيل السريع غير متوفر لطلبك. تم تحديث خيارات الشحن الخاصة بك."
+        },
+        "arrives_time_range": "يصل في %{min_time}–%{max_time}",
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "شحن مجاني لمزيد من %{count} توصيل",
+            "other": "شحن مجاني لـ %{count} توصيلات إضافية"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "شحن مجاني لـ %{count} توصيل",
+            "other": "شحن مجاني لـ %{count} عمليات توصيل"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "شحن مجاني لـ %{count} توصيلات إضافية، ثم %{recurring_order_shipping_price}",
+            "other": "شحن مجاني لـ %{count} توصيلات إضافية، ثم %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "other": "شحن مجاني لـ %{count} عمليات توصيل، ثم %{recurring_order_shipping_price}",
+            "one": "شحن مجاني لـ %{count} توصيل، ثم %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} توصيل إضافي مقابل %{shipping_price}",
+            "other": "%{count} توصيلات إضافية مقابل %{shipping_price} لكل منها"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{count} توصيل مقابل %{shipping_price}",
+            "other": "%{count} توصيلات إضافية مقابل %{shipping_price} لكل منها"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} مقابل %{count} توصيل إضافي",
+            "other": "%{shipping_price} مقابل %{count} توصيلات إضافية (%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{shipping_price} مقابل %{count} توصيل",
+            "other": "%{shipping_price} مقابل %{count} عمليات تسليم (%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{shipping_price} مقابل %{count} توصيل إضافي، يليه %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} مقابل %{count} توصيلات إضافية (%{per_delivery_cost})، تليها %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{shipping_price} مقابل %{count} توصيل، تليها %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} مقابل %{count} عمليات تسليم (%{per_delivery_cost})، تليها %{recurring_order_shipping_price}"
+          },
+          "subscription_free_with_frequency_label": "شحن مجاني %{delivery_frequency}",
+          "prepaid_free_shipping_with_cycles": {
+            "one": "شحن مجاني لأول %{cycle}، يتبعه %{recurring_order_shipping_price}",
+            "other": "شحن مجاني لأول %{cycle}، يتبعه %{recurring_order_shipping_price}"
+          },
+          "prepaid_delivery_frequency": {
+            "one": "لـ %{count} توصيل",
+            "other": "لـ %{count} عمليات تسليم"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "one": "كل يوم",
+              "other": "كل %{count} أيام"
+            },
+            "week": {
+              "one": "كل أسبوع"
+            }
+          }
+        },
+        "estimated_time_range": "المقدر %{min_time}–%{max_time}"
       }
     }
   }
