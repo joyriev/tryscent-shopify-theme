@@ -3834,8 +3834,125 @@
       "removeItem": "إزالة {{label}}",
       "removeTag": "إزالة الوسم",
       "month": {
-        "one": "شهر"
+        "one": "شهر",
+        "other": "أشهر"
+      },
+      "expandSheet": "توسيع",
+      "mapClusterTitle": {
+        "other": "عنقود من {{number}} علامات",
+        "one": "عنقود من {{number}} علامة"
+      },
+      "qrCode": "رمز الاستجابة السريعة",
+      "addFile": "أضف ملف",
+      "dropzoneInvalidFileType": "نوع الملف غير مدعوم",
+      "dropzoneDraggedOver": "اسحب الملف للتحميل"
+    },
+    "profile_preview_bar": {
+      "customize_button": "تخصيص",
+      "navigate_to_admin": "انتقل إلى المسؤول",
+      "hide_bar": "إخفاء الشريط",
+      "close_preview": "إغلاق المعاينة",
+      "previewing": "أنت تقوم بمعاينة:",
+      "saved_at": "تم الحفظ في {{date}} عند {{time}}",
+      "not_available": "بيانات الملف الشخصي غير متوفرة",
+      "viewing": "أنت تشاهد:",
+      "actions_button": "الإجراءات"
+    },
+    "active_inspector": {
+      "extension": {
+        "select": "اختر الامتداد المسمى {{extensionName}}",
+        "unselect": "إلغاء تحديد الامتداد المسمى {{extensionName}}",
+        "move_down": "نقل الامتداد إلى الموضع التالي",
+        "move_up": "نقل الامتداد إلى الموضع السابق",
+        "remove": "إزالة الامتداد",
+        "move_down_tooltip": "الانتقال إلى الموضع التالي",
+        "move_up_tooltip": "الانتقال إلى الموضع السابق",
+        "remove_tooltip": "إزالة"
       }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "لا يمكن فتح هذا الرابط داخل المحرر. سيتم فتحه في نافذة جديدة ({{resolved_to_link}}). انقر على موافق للمتابعة."
+    },
+    "settings": {
+      "title": "الإعدادات",
+      "loading_accessibility_message": "جارٍ تحميل صفحة الإعدادات",
+      "log_out_everywhere": {
+        "description": "إذا فقدت جهازًا أو كانت لديك مخاوف أمنية، قم بتسجيل الخروج من جميع الأماكن لضمان أمان حسابك.",
+        "title": "تسجيل الخروج من كل الأماكن",
+        "button": "تسجيل الخروج من كل الأماكن",
+        "warning_message": "سيتم تسجيل خروجك من هذا الجهاز أيضًا."
+      }
+    },
+    "shop_ads": {
+      "title": "عروض حصرية من Shop",
+      "button": "استكشف على Shop",
+      "subtitle": "متاح لفترة محدودة",
+      "previous_button": "السابق",
+      "next_button": "التالي"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "enabled": "يمكن للعملاء طلب وإدارة عمليات الإرجاع بأنفسهم.",
+        "disabled": "يجب على العملاء الاتصال بالتاجر لطلب الإرجاع."
+      }
+    }
+  },
+  "general": {
+    "password_page": {
+      "login_form_password_label": "كلمة المرور",
+      "login_form_heading": "أدخل المتجر باستخدام كلمة المرور:",
+      "login_password_button": "أدخل باستخدام كلمة المرور",
+      "login_form_error": "كلمة المرور خاطئة!",
+      "login_form_password_placeholder": "كلمة المرور الخاصة بك",
+      "login_form_submit": "أدخل",
+      "admin_link_html": "هل أنت صاحب المتجر؟ <a href=\"/admin\" class=\"link underlined-link\">سجّل الدخول هنا</a>",
+      "powered_by_shopify_html": "سيتم تشغيل هذا المتجر بواسطة {{ shopify }}"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "شارك على فيسبوك",
+        "share_on_twitter": "شارك على X",
+        "share_on_pinterest": "تثبيت على Pinterest"
+      },
+      "links": {
+        "twitter": "X (تويتر)",
+        "facebook": "فيسبوك",
+        "pinterest": "بينتيريست",
+        "instagram": "إنستغرام",
+        "snapchat": "سناب شات",
+        "tumblr": "تمبلر",
+        "youtube": "يوتيوب",
+        "vimeo": "فيميو",
+        "tiktok": "تيك توك"
+      }
+    },
+    "continue_shopping": "تابع التسوق",
+    "pagination": {
+      "label": "الترقيم",
+      "page": "الصفحة {{ number }}",
+      "next": "الصفحة التالية",
+      "previous": "الصفحة السابقة"
+    },
+    "search": {
+      "search": "بحث",
+      "reset": "مسح مصطلح البحث"
+    },
+    "cart": {
+      "view": "عرض السلة ({{ count }})",
+      "view_empty_cart": "عرض السلة",
+      "item_added": "تمت إضافة العنصر إلى سلة التسوق الخاصة بك"
+    },
+    "share": {
+      "close": "إغلاق المشاركة",
+      "copy_to_clipboard": "نسخ الرابط",
+      "share_url": "رابط",
+      "success_message": "تم نسخ الرابط إلى الحافظة"
+    },
+    "slider": {
+      "of": "من",
+      "next_slide": "انزلق إلى اليمين",
+      "previous_slide": "انزلق إلى اليسار",
+      "name": "شريط التمرير"
     }
   }
 }
