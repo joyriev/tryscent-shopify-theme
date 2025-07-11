@@ -1,0 +1,790 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "shopify": {
+    "sentence": {
+      "two_words_connector": "en",
+      "last_word_connector": ", en"
+    },
+    "checkout": {
+      "general": {
+        "error_page_title": "Fout",
+        "page_title": "Kassa",
+        "skip_to_content": "Spring na inhoud",
+        "breadcrumb": "Broodkrummels",
+        "complete_purchase_button_label": "Voltooi bestelling",
+        "continue_button_label": "Voortgaan",
+        "pay_now_button_label": "Betaal nou",
+        "authenticate_purchase_button_label": "Verifieer betaling",
+        "edit_link_label": "Wysig",
+        "all_rights_reserved": "Alle regte voorbehou %{shop_name}",
+        "print_policies_link_label": "Druk",
+        "cart": "Winkelmandjie",
+        "close_modal_label": "Maak toe",
+        "close_notice_label": "Maak toe",
+        "expand_notice_label": "Blaai meer",
+        "continue_to_shipping_method": "Gaan voort na versending",
+        "continue_to_payment_method": "Gaan voort na betaling",
+        "continue_to_review": "Hersien bestelling",
+        "back_to_cart": "Terug na mandjie",
+        "back_to_contact_information": "Terug na inligting",
+        "back_to_shipping_method": "Terug na versending",
+        "back_to_payment_method": "Terug na betaling",
+        "choose_payment_method": "Kies 'n betalingsmetode",
+        "choose_shipping_method": "Kies 'n versendingsmetode",
+        "choose_billing_address": "Kies 'n faktuuradres",
+        "contact_us_html": "Kontak ons vir meer inligting",
+        "autocomplete_title": "Voorstelle",
+        "autocomplete_single_item": "1 item beskikbaar",
+        "autocomplete_multi_item": "{{number}} items beskikbaar",
+        "autocomplete_selection": "{{number}} van {{total}}",
+        "autocomplete_close": "Maak voorstelle toe",
+        "forwarding_indicator": {
+          "external": "Maak eksterne webwerf oop.",
+          "new_window": "Maak in 'n nuwe venster oop.",
+          "external_and_new_window": "Maak eksterne webwerf in 'n nuwe venster oop."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Kassa"
+        },
+        "tooltip_accessibility_label": "Meer inligting",
+        "qr_code": "QR-kode",
+        "errors": {
+          "only_empty_terms_accepted": "Hierdie beleid aanvaar slegs leë terme.",
+          "session_identifier_not_unique_error": "Iets het verkeerd gegaan met jou bestelling, probeer asseblief weer om af te sluit.",
+          "line_item_limit_reached": "Die maksimum aantal lynitems is bereik.",
+          "session_is_already_finished": "Hierdie afrekeningsessie is reeds finaliseer.",
+          "merchandise": {
+            "only_value_constraint": "Slegs presiese waardes is toegelaat in die handelsware invoer.",
+            "merchandise_not_found": "Produk nie gevind nie.",
+            "merchandise_variant_not_found": "Produkvariant nie gevind nie.",
+            "merchandise_not_applicable": "Produkvariante kan nie gekoop word nie.",
+            "mixed_currencies": "Kassa bevat lynitems met verskillende geldeenhede.",
+            "gift_card_not_supported": "Geskenkbewyse word nie op hierdie afhandeling ondersteun nie.",
+            "bundle_products_not_supported_for_b2b": "Gegroepeerde items kan nie by B2B-bestellings vir hierdie ligging gevoeg word nie.",
+            "gift_card_used": "Geskenkkaartkode {{code}} is reeds aan 'n geskenkkaart toegeken. Kodes word geformateer voor vergelyking.",
+            "gift_card_quantity_mismatch": "Wanneer geskenkkaartkodes gespesifiseer word, moet die lynitem hoeveelheid en die aantal geskenkkaartkodes ooreenstem.",
+            "gift_card_not_unique": "Geskenkkaart met kode {{code}} kom meer as een keer in hierdie afhandeling voor. Kodes word geformateer voor vergelyking.",
+            "gift_card_invalid": "Geskenkkaartkode {{code}} is ongeldig.",
+            "gift_card_code_changed": "Geskenkkaartkode {{proposed_code}} is verander na {{formatted_code}} om aan die formaatreëls te voldoen.",
+            "gift_card_with_attributes_not_supported": "Geskenkbewyse met pasgemaakte eienskappe word nie op hierdie afhandeling ondersteun nie.",
+            "gift_card_with_components_not_supported": "Geskenkbewyse met komponente word nie op hierdie afhandeling ondersteun nie.",
+            "selling_plan_mismatch": "Die intekening is opgedateer.",
+            "selling_plan_not_supported": "Intekeninge word nie ondersteun nie.",
+            "selling_plan_not_supported_b2b": "Intekeninge word nie vir B2B-kassa ondersteun nie.",
+            "price_mismatch": "Die voorheen voorgestelde prys vir hierdie goedere was ongeldig en is opgedateer.",
+            "inventory_not_found": "Geen voorraad gevind vir hierdie goedere.",
+            "product_not_published_in_buyer_location": "Produk is nie gepubliseer in koper se ligging nie.",
+            "product_not_published": "Produk is nie gepubliseer nie.",
+            "duplicated_stable_id": "Hierdie handelslyn het dieselfde stabiele-ID as 'n ander lyn.",
+            "minimum_quantity_not_met": "Die hoeveelheid van sommige items voldoen nie aan die minimum vereiste nie.",
+            "maximum_quantity_exceeded": "Die hoeveelheid van sommige items oorskry die maksimum toegelate.",
+            "quantity_increment_not_met": "Die hoeveelheid van sommige items voldoen nie aan die bestelgrense nie.",
+            "quantity_rules_not_met": "Die hoeveelheid van sommige items voldoen nie aan die bestelgrense nie.",
+            "bundle_requires_components": "Hierdie bundel handelsware het geen komponente nie.",
+            "title_too_long": "Die titel van die handelsware is te lank.",
+            "title_empty": "Die titel van die handelsware is leeg."
+          },
+          "buyer_identity": {
+            "business_customer_does_not_match_company": "Maatskappy kontak het nie toegang tot die maatskappy nie.",
+            "customer_account_required": "Kliënt moet aanmeld om voort te gaan.",
+            "company_location_required": "Kliënt moet 'n maatskappy ligging kies om voort te gaan.",
+            "company_purchase_permission_required": "Kliënt het nie toestemming om maatskappybestellings te plaas nie.",
+            "lost_access_to_company": "Kliënt het toegang tot enige maatskappy verloor.",
+            "personal_order_not_allowed": "Persoonlike bestellings is nie toegelaat vir hierdie winkel.",
+            "contact_info_does_not_match_customer_account": "Gespesifiseerde kliëntinligting moet ooreenstem met die ingelogde kliëntrekening.",
+            "phone_number_does_not_match_expected_pattern": "Die gespesifiseerde telefoonnommer stem nie ooreen met die verwagte patroon.",
+            "email_required": "'n E-pos is nodig wanneer die goedere gekoop word met 'n intekening.",
+            "email_domain_is_invalid": "Hierdie gespesifiseerde domein kan nie opgelos word nie.",
+            "missing_contact_method": "Ontbreek 'n geldige kontakmetode.",
+            "checkout_completion_target_is_missing": "Kassie voltooiing teiken ontbreek.",
+            "invalid_customer_profile": "'n Ongeldige kliëntprofiel is verskaf.",
+            "buyer_identity_presentment_currency_does_not_match": "Daar was 'n probleem met die verwerking van jou bestelling. Probeer weer oor 'n paar minute.",
+            "checkout_completion_target_is_invalid_proc": "Ongeldige afhandeling voltooiingsdoelwit.",
+            "customer_profile_access_restricted": "Kassie het nie toestemming om toegang tot die kliëntprofiel te kry nie."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "Mandjie mag slegs een afleweringslyn hê.",
+            "wrong_number_of_delivery_lines": "'n Afleweringslyn moet vir elke groep handelsware gespesifiseer word.",
+            "external_delivery_promise_error": "'n Eksterne afleweringsbelofte haal fout op.",
+            "pickup_points_unavailable": "Afhaalpunte is tans nie beskikbaar nie.",
+            "destination_address_required": "'n Bestemmingsadres is nodig om voort te gaan.",
+            "options_instructions_invalid": "Die gespesifiseerde instruksies stem nie ooreen met die verwagte patroon nie.",
+            "local_pickup_delivery_line_detail_changed": "Die huidige plaaslike afhaal-afleweringsstrategie moet verander word om voort te gaan.",
+            "local_pickup_no_delivery_strategy_available": "Geen beskikbare plaaslike afhaal-afleweringsstrategie gevind nie.",
+            "invalid_origin_location_id": "Kon nie 'n Ligging vind wat ooreenstem met die oorsprongligging-ID nie.",
+            "origin_location_id_required": "'n Oorsprongligging-ID is nodig wanneer die RETAIL afleweringsmetode versoek word.",
+            "fulfillment_constraints_not_satisfied": "Een of meer nakomingsbeperkings is nie nagekom nie.",
+            "prefetch_shipping_rates_used": "Vooraf gelaaide versendingskoerse moet nooit koerse teruggee nie.",
+            "auto_fulfill_not_allowed": "Hierdie sessie is nie gemagtig om die nakomingsgedrag te oorskryf nie.",
+            "origin_location_id_not_allowed": "Die versoekte afleweringsmetodes ondersteun nie 'n oorsprongligging-ID nie.",
+            "must_fulfill_from_constraint_not_satisfied": "Voldoeningbeperkings word nie nagekom nie omdat items nie van vereiste plekke nagekom kan word nie.",
+            "out_of_stock_at_origin_location": "Geen voorraad by die oorspronklike ligging nie.",
+            "delivery_strategy_conditions_not_satisfied": "Afleweringsstrategieë is beskikbaar vir hierdie ligging, maar hul voorwaardes is nie vervul nie.",
+            "auto_fulfill_required": "Outomatiese vervulling is vereis wanneer die RETAIL afleweringsmetode versoek word.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Voldoeningbeperkings word nie nagekom nie omdat items nie van dieselfde plek af nagekom kan word nie.",
+            "invalid_signature": "Ongeldige afslaghandtekening."
+          },
+          "discount": {
+            "custom_discount_not_honoured": "Die verskafde pasgemaakte afslag is nie geëer nie.",
+            "discounts_not_allowed_for_b2b": "Afslag is nie toegelaat in B2B-winkels nie.",
+            "unsupported_expectation": "Die verskafde afslaglyn het 'n verwagting bevat wat die beleid nie kon interpreteer nie.",
+            "additional_requested_discount_discarded": "Jou afslag is geldig maar nie toepaslik nie. Kontroleer afslagterme.",
+            "allocations_mismatch": "Jou afslagkode het verander. Hersien jou mandjie en probeer weer.",
+            "discount_title_too_long": "Afslag titel kan nie langer as 255 karakters wees nie.",
+            "additional_requested_discount_code_discarded": "{{code}} is geldig maar nie van toepassing nie. Kontroleer afslagterme."
+          },
+          "tax": {
+            "new_tax_must_be_accepted": "Belastinge wat met jou bestelling geassosieer word, het verander. Hersien en probeer weer.",
+            "delivery_price_is_abstract": "Die verwante afleweringsprys is abstrak.",
+            "unresolvable_tax_terms": "Die voorgestelde terme is onoplosbaar gegewe die huidige onderhandelingskonteks.",
+            "tax_inclusivity_mismatch": "Heronderhandel met konkrete totalTaxAndDutyAmount of totalAmountIncludedInTarget waarde.",
+            "delivery_tax_exemption_not_supported": "Belastingvrystellings vir afleweringslyne word tans nie ondersteun nie.",
+            "tax_exemption_not_supported": "Belastingvrystellings word nie ondersteun vir die huidige onderhandelingsessie nie.",
+            "merchandise_terms_must_be_defined": "Handelsvoorwaardes moet gedefinieer word.",
+            "proposed_allocations_required": "Ontbrekende 'voorgestelde toewysings' veld.",
+            "merchandise_discount_terms_must_be_defined": "Merchandise afslagterme moet gedefinieer word.",
+            "delivery_terms_must_be_defined": "Afleweringsvoorwaardes moet gedefinieer word.",
+            "allocated_required": "Ontbrekende 'allocated' veld.",
+            "value_required": "Ontbrekende 'value' veld.",
+            "line_splits_not_supported": "'merchandise lines' veld moet geskei word sodat elkeen 'n enkele lyn komponent in die verkoper voorstel het.",
+            "delivery_discount_terms_must_be_defined": "Afleweringskortingsvoorwaardes moet gedefinieer word."
+          },
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "Handmatige betalings word nie toegelaat in B2B-winkels nie.",
+            "positive_amount_expected": "Bedrag om te betaal moet groter as 0 wees.",
+            "subscription_terms_not_accepted": "Intekenaarvoorwaardes nie aanvaar nie.",
+            "total_amount_mismatch": "Totale bedrag om te betaal stem nie ooreen met die som van die betalingsbedrae nie.",
+            "missing_session_id": "Ontbrekende kredietkaart sessie-inligting.",
+            "credit_card_last_name_required": "'van' kan nie leeg wees nie.",
+            "credit_card_update_failed": "Kredietkaartopdatering het misluk.",
+            "installments_gift_card_not_allowed": "Afbetalings laat nie die gebruik van geskenkkaarte toe nie.",
+            "installments_unsupported_currency": "Afbetalings ondersteun nie hierdie geldeenheid nie.",
+            "gateway_not_supported": "Betalingshek ondersteun nie die stoor van die betaalmetode nie.",
+            "installments_unsupported_shipping": "Afbetalings ondersteun nie versending na hierdie adres nie.",
+            "installments_test_mode_not_allowed": "Toetsmodus nie toegelaat nie.",
+            "shop_cash_not_found": "Winkelkontant is nie gevind nie.",
+            "installments_amount_invalid": "Ongeldige bedrag vir paaiementstransaksie.",
+            "installments_unsupported_subscriptions": "Afbetalings ondersteun nie intekeninge nie.",
+            "installments_unsupported_billing": "Afbetalings ondersteun nie hierdie faktuuradres nie.",
+            "installments_ineligible_line_item": "Afbetalings is gedeaktiveer vir 'n lynitem in hierdie aankoop.",
+            "shop_cash_not_allowed": "Winkel kontant nie toegelaat sonder Winkel Betaal nie.",
+            "shop_cash_unsupported_subscriptions": "Shop Cash ondersteun nie intekeninge nie.",
+            "shop_cash_not_available": "Shop Cash word nie in hierdie uitklok ondersteun nie.",
+            "shop_cash_not_enabled": "Shop Cash is nie geaktiveer vir hierdie winkel nie.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash laat nie die aankoop van geskenkkaarte toe nie.",
+            "invalid_address_type": "Die verskafde adres tipe is ongeldig vir hierdie betaalmetode.",
+            "unexpected_retail_attributions": "Kleinhandeltoewysings onverwags verskaf vir kredietkaartbetaling.",
+            "missing_retail_attributions": "Kleinhandeltoewysings is vereis vir handmatig ingevoerde kredietkaartbetalings.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash ondersteun nie hierdie betaalproses nie.",
+            "invalid_card_source": "Hierdie sessie het nie toestemming om hierdie kaartbron te gebruik nie.",
+            "shop_cash_unsupported_shipping": "Shop Cash ondersteun nie handelsware sonder versending nie.",
+            "wallet_content_missing": "Sakinhoud ontbreek.",
+            "payment_instrument_not_found": "Kon nie betaalmetode vind nie",
+            "unauthorized_capture_method": "Die konfigurasie van die betaalvasleggingmetode is nie toegelaat nie.",
+            "saved_payment_methods_not_allowed": "Gestoor betaalmetodes is nie toegelaat nie.",
+            "saved_payment_methods_not_enabled": "Gestoor betaalmetodes is nie geaktiveer vir hierdie winkel nie.",
+            "saved_payment_methods_cvv_verification_disabled": "Die gekose betaalmetode vereis CVV-verifikasie wat nie vir hierdie winkel geaktiveer is nie. Kies 'n ander betaalmetode.",
+            "store_credit_not_enabled": "Winkelkrediet is nie vir hierdie winkel geaktiveer nie.",
+            "store_credit_account_not_found": "Winkelkredietrekening nie gevind nie.",
+            "store_credit_account_mismatch": "Winkelkredietrekening stem nie ooreen met die koper se identiteit nie.",
+            "store_credit_mismatched_currency": "Die winkelkredietrekening se geldeenheid stem nie ooreen met die betaalpunt se geldeenheid nie.",
+            "store_credit_insufficient_funds": "Daar is onvoldoende fondse in die winkelkredietrekening.",
+            "store_credit_buying_gift_card": "Jy kan nie winkelkrediet gebruik om 'n geskenkkaart te koop nie.",
+            "gift_cards_not_allowed_for_b2b": "Geskenkkaarte is nie toegelaat in B2B-winkels nie.",
+            "paypal_express_address_invalid": "PayPal het 'n ongeldige adres teruggestuur.",
+            "method_required": "'n Betalingsmetode moet voorgestel word.",
+            "shop_cash_unsupported_currency": "Shop Cash ondersteun nie hierdie geldeenheid nie.",
+            "market_manager_blocks_wallet_payments": "Betalingsmetode word nie deur die markbestuurder ondersteun nie."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Winkel aanvaar nie fooitjies nie.",
+            "tips_not_allowed_for_b2b": "Wenke is nie toegelaat in B2B-winkels nie.",
+            "only_one_tip_line_allowed": "Meervoudige wenklyne word nie ondersteun nie.",
+            "currency_change_reset": "Wenks is teruggestel as gevolg van geldeenheidverandering.",
+            "tips_not_allowed_for_deferred_purchase_options": "Wenke word nog nie ondersteun vir uitgestelde aankoopopsies nie."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Hierdie konsepbestelling bestaan nie in die huidige winkel nie.",
+            "staff_member_not_exist": "Hierdie personeel bestaan nie in die huidige winkel nie.",
+            "location_not_exist": "Hierdie ligging bestaan nie in die huidige winkel nie.",
+            "point_of_sale_device_not_exist": "Hierdie verkooppunttoestel bestaan nie in die huidige winkel nie.",
+            "unresolvable_target_merchandise_lines": "Die voorgestelde verkooptoeskrywings is onoplosbaar gegewe die huidige onderhandelingskonteks."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Jou koper se voorstel moet nie-onderhandelbare_terme bevat.",
+            "invalid_signature": "Die handtekening vir {{target_terms}} is ongeldig."
+          },
+          "inventory": {
+            "missing_quantity_value": "Hoeveelheidsveld ontbreek in die koper se voorraadlyne.",
+            "changing_behavior_not_allowed": "Hierdie kliënt het nie toestemming om voorraadgedrag te verander nie.",
+            "only_one_inventory_behavior_allowed": "Tans word slegs een voorraadgedrag per uitklok toegelaat."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Weiering van fooie is nie toegelaat vir hierdie uitklok nie."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Kleinhandeltoewysing is nie toegelaat vir hierdie uitklok nie.",
+            "retail_attribution_required": "Kleinhandeltoewysing is vereis vir hierdie uitklok."
+          },
+          "captcha": {
+            "metadata_missing": "Om 'n captcha te voltooi is vereis vir hierdie uitklok.",
+            "token_missing": "'n Captcha-token moet verskaf word om hierdie uitklok te voltooi.",
+            "metadata_mismatch": "Verskafde captcha-verskaffer en tipe stem nie ooreen met die verwagte waardes nie.",
+            "job_enqueue_failed": "Die captcha-valideringswerk kon nie in die waglys geplaas word nie.",
+            "job_already_queued": "Captcha-validasie is reeds in die ry geplaas vir hierdie captcha-token.",
+            "token_invalid": "Die verskafte captcha-token was ongeldig. Voltooi 'n nuwe captcha om met die uitcheck voort te gaan.",
+            "token_not_valid_for_session": "Die verskafte captcha kan nie met hierdie betaalproses gebruik word nie.",
+            "token_expired": "Die verskafte captcha-token het verval. Voltooi 'n nuwe captcha om met die uitcheck voort te gaan."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "Die bedrag wat ontvang is, moet in die winkel se geldeenheid wees."
+          },
+          "checkout_source": {
+            "revoked": "Hierdie betaalpunt is nie meer beskikbaar nie."
+          }
+        },
+        "full_price": "Volle prys:",
+        "loading": "Laai…",
+        "loading_title": "Kassie - {{shopName}}",
+        "google_map_title": "Google Map",
+        "full_title": "{{pageTitle}} - {{shopName}} - Kassie",
+        "title": "Kassie - {{shopName}}",
+        "submit_order_button_label": "Dien bestelling in",
+        "confirm_order_button_label": "Bevestig bestelling",
+        "submit_for_review_button_label": "Dien in vir hersiening",
+        "submit_for_review_notice_label": "Betaling sal nie verskuldig wees totdat jou bestelling hersien is nie",
+        "continue_to_payment_plans_button_label": "Gaan voort na betaalplanne",
+        "back_button_label": "Keer terug",
+        "autocomplete_zero_item": "Geen items beskikbaar nie",
+        "choose_delivery_strategy": "Kies 'n afleweringsmetode",
+        "autocomplete_powered_by_google": "Aangedryf deur {{brandName}}",
+        "processing": "Verwerking…",
+        "stepper": {
+          "increase": "Verhoog {{type}}",
+          "decrease": "Verminder {{type}}",
+          "minimum_reached": "Minimum van {{value}} bereik",
+          "maximum_reached": "Maksimum van {{value}} bereik"
+        },
+        "remove_item": "Verwyder %{label}",
+        "submit": "Dien in",
+        "dates": {
+          "weekdays": {
+            "monday": "Maandag",
+            "wednesday": "Woensdag",
+            "friday": "Vrydag",
+            "thursday": "Donderdag",
+            "saturday": "Saterdag",
+            "sunday": "Sondag",
+            "tuesday": "Dinsdag"
+          },
+          "weekdays_abbreviation": {
+            "monday": "Mo",
+            "tuesday": "Tu",
+            "friday": "Fr",
+            "wednesday": "Ons",
+            "thursday": "Th",
+            "saturday": "Sa",
+            "sunday": "Su"
+          },
+          "months": {
+            "january": "Januarie",
+            "february": "Februarie",
+            "march": "Maart",
+            "april": "April",
+            "june": "Junie",
+            "may": "Mag",
+            "july": "Julie",
+            "december": "Desember",
+            "september": "September",
+            "october": "Oktober",
+            "november": "November",
+            "august": "Augustus"
+          }
+        },
+        "remove_tag": "Verwyder etiket",
+        "datepicker": {
+          "show_previous_month": "Wys vorige maand, {{month}} {{year}}",
+          "show_next_month": "Wys volgende maand, {{month}} {{year}}",
+          "range_start": "Reeks begin",
+          "in_range": "In bereik",
+          "range_end": "Reikwydte einde"
+        },
+        "list_formatter": {
+          "or": {
+            "lastWordConnector": "{{previousWords}}, of {{lastWord}}",
+            "twoWordConnector": "{{firstWord}} of {{secondWord}}"
+          },
+          "and": {
+            "lastWordConnector": "{{previousWords}}, en {{lastWord}}",
+            "twoWordConnector": "{{firstWord}} en {{secondWord}}"
+          }
+        },
+        "map": {
+          "cluster_title": {
+            "one": "Groepering van {{number}} merker",
+            "other": "Groepering van {{number}} merkers"
+          }
+        },
+        "sheet": {
+          "expand": "Brei uit"
+        },
+        "dropzone": {
+          "add_file": "Voeg lêer by",
+          "dragged_over": "Laat lêer val om op te laai",
+          "invalid_file_type": "Lêertipe word nie ondersteun nie"
+        }
+      },
+      "address_management": {
+        "confirm_address_deletion": "Is jy seker jy wil die adres {{address}} verwyder?"
+      },
+      "contact": {
+        "address_title": "Adres",
+        "contact_method_title": "Kontak",
+        "delivery_option_title": "Afleweringsmetode",
+        "title": "Inligting",
+        "shipping_used_as_billing_notice": "Dit sal ook as jou faktuuradres vir hierdie bestelling gebruik word.",
+        "email_label": "E-pos",
+        "email_placeholder": "E-pos",
+        "email_or_phone_label": "E-pos of selfoonnommer",
+        "email_or_phone_placeholder": "E-pos of selfoonnommer",
+        "new_address_label": "Gebruik 'n nuwe adres",
+        "first_name_label": "Voornaam",
+        "available_addresses_label": "Beskikbare adresse",
+        "company_label": "Maatskappy",
+        "last_name_label": "Vannaam",
+        "company_attention_label": "Maatskappy/Aandag",
+        "address1_label": "Adres",
+        "stored_addresses_label": "Gestoor adresse",
+        "optional_company_attention_label": "Maatskappy/Aandag (opsioneel)",
+        "optional_company_label": "Maatskappy (opsioneel)",
+        "address2_label": "Appartement, suite, ens.",
+        "optional_address2_label": "Appartement, suite, ens. (opsioneel)",
+        "city_label": "Stad",
+        "country_label": "Land/Streek",
+        "country_code": "Land/Streek kode",
+        "optional_first_name_label": "Voornaam (opsioneel)"
+      },
+      "delivery_options": {
+        "pick_up_in_two_to_four_days": "Gewoonlik gereed in 2-4 dae",
+        "pick_up_in_zero_to_two_hours": "Gereed vir afhaling oor 2 uur",
+        "pick_up_in_four_hours": "Gewoonlik gereed binne 4 uur",
+        "pick_up_in_five_or_more_days": "Gewoonlik gereed in 5+ dae",
+        "pick_up_in_twenty_four_hours": "Gewoonlik gereed binne 24 uur",
+        "pick_up_next_day": "Gereed vir afhaling die volgende dag",
+        "pick_up_immediately": "Gereed vir afhaling nou",
+        "retail_method_definition": "Kleinhandel versending",
+        "pickup_point_method_definition": "Stuur na afhaalpunt",
+        "pick_up_in_two_to_four_hours": "Gereed vir afhaling oor 4 uur",
+        "none_method_definition": "Geen versending nie",
+        "subscription_pickup_information": "Hierdie afleweringsmetode sal van toepassing wees op alle items in hierdie bestelling en op alle toekomstige bestellings vir hierdie intekening."
+      },
+      "customer_account": {
+        "have_an_account_label": "Het jy 'n rekening?",
+        "sign_in_link_label": "Teken in",
+        "sign_out_link_label": "Teken uit",
+        "not_user_label": "Nie %{first_name}?",
+        "save_my_information_label": "Stoor hierdie inligting vir volgende keer",
+        "invalid_address": "Geselekteerde adres is ongeldig. %{update_address_link} of kies 'n ander adres.",
+        "invalid_shipping_method_summary": "Kies 'n geldige versendingsadres om beskikbare versendingsmetodes te sien",
+        "incomplete_address": "Geselekteerde adres is onvolledig. %{update_address_link} of kies 'n ander adres.",
+        "saved_address_option_description": {
+          "one": "Jy het {{count}} gestoor adres.",
+          "other": "Jy het {{count}} gestoor adresse."
+        },
+        "rollup_label": "Rekening",
+        "saved_address_modal_title": "Gebruik my gestoor adres",
+        "saved_address_option_link": "Gebruik 'n gestoor adres"
+      },
+      "stock": {
+        "page_title": "Voorraadkwessies",
+        "quantity_column_header": "Hoeveelheid",
+        "product_column_header": "Produkte",
+        "title": "Uit voorraad",
+        "items_unavailable_notice": "Sommige items is nie meer beskikbaar nie.",
+        "price_column_header": "Prys",
+        "sold_out_label": "Uitverkoop",
+        "status_column_header": "Status",
+        "removed_from_cart_notice": "Verwyder uit mandjie",
+        "continue_shopping_button_label": "Voortgaan",
+        "reduced_with_quantity_label": "Net %{quantity_available} oor",
+        "reduced_label": "Verminderde",
+        "remove": "Verwyder",
+        "remove_from_cart_button_label": "Verwyder uit mandjie",
+        "go_back_to_cart_button_label": "Gaan terug na my mandjie",
+        "empty_cart_label": "Jou mandjie is leeg",
+        "return_to_store_label": "Keer terug na winkel",
+        "continue_cta_label": "Gaan voort met uitchecken",
+        "item_label": {
+          "one": "{{count}} item",
+          "other": "{{count}} items"
+        },
+        "quantity_update": {
+          "title": "Hoeveelheidsopdatering",
+          "page_title": "Hoeveelheidsopdatering",
+          "description": "Beskikbare hoeveelhede vir hierdie items het verander en is in jou mandjie opgedateer."
+        },
+        "unpurchasable_product": {
+          "title": "Onkoopbare produk",
+          "header": "Sommige items is uit jou mandjie verwyder",
+          "status_column_header": "Nie beskikbaar nie",
+          "message": "Hierdie items is nie beskikbaar vir B2B-bestellings nie."
+        },
+        "unpurchasable_product_generic": {
+          "title": "Onkoopbare produk",
+          "header": "Sommige items is uit jou mandjie verwyder",
+          "message": "Hierdie items is nie beskikbaar nie.",
+          "status_column_header": "Nie beskikbaar nie"
+        },
+        "unfulfillable_product": {
+          "title": "Aflewering nie beskikbaar nie",
+          "message": {
+            "one": "%{delivery_method} is nie meer beskikbaar vir hierdie item nie.",
+            "other": "%{delivery_method} is nie meer beskikbaar vir hierdie items nie."
+          },
+          "default_message": {
+            "one": "Die gekose afleweringsmetode is nie meer beskikbaar vir hierdie item nie.",
+            "other": "Die gekose afleweringsmetode is nie meer beskikbaar vir hierdie items nie."
+          }
+        },
+        "unshippable_product": {
+          "header": {
+            "one": "Geen aflewering beskikbaar vir %{count} item nie",
+            "other": "Geen aflewering beskikbaar vir %{count} items nie"
+          },
+          "title": "Geen aflewering beskikbaar nie",
+          "status_column_header": "Geen aflewering nie",
+          "message": {
+            "one": "Hierdie item sal uit jou mandjie verwyder word omdat daar geen afleweringsmetodes beskikbaar is vir jou adres nie.",
+            "other": "Hierdie items sal uit jou mandjie verwyder word omdat daar geen afleweringsmetodes beskikbaar is vir jou adres nie."
+          }
+        },
+        "price_update": {
+          "title": "Prysopdatering",
+          "description": "Pryse vir hierdie items het verander en is in jou mandjie opgedateer."
+        },
+        "price_and_quantity_update": {
+          "description": "Pryse en beskikbare hoeveelhede vir hierdie items het verander en is in jou mandjie opgedateer.",
+          "title": "Prys- en hoeveelheidopdatering"
+        },
+        "out_of_stock": {
+          "description": "Hierdie items is nie meer beskikbaar nie en is uit jou mandjie verwyder.",
+          "items_unavailable": "Sommige items is nie meer beskikbaar nie en is uit jou mandjie verwyder."
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Onbeskikbare produk",
+          "other": "Onbeskikbare produkte"
+        },
+        "products_not_available": {
+          "other": "Hierdie produkte sal uit jou mandjie verwyder word omdat hulle nie in jou land/streek beskikbaar is nie.",
+          "one": "Hierdie produk sal uit jou mandjie verwyder word omdat dit nie in jou land/streek beskikbaar is nie."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Hierdie produk is nie beskikbaar in jou land/streek nie.",
+          "other": "Hierdie produkte is nie beskikbaar in jou land/streek nie."
+        },
+        "unavailable_label": "Onbeskikbaar"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Hierdie produk is nie beskikbaar vir aflewering na %{location_name} nie.",
+          "some_products_other": "Hierdie produkte is nie beskikbaar vir aflewering na %{location_name} nie.",
+          "all_products_one": "Die produk in jou mandjie is nie beskikbaar vir aflewering na %{location_name} nie.",
+          "all_products_other": "Die produkte in jou mandjie is nie beskikbaar vir aflewering na %{location_name} nie."
+        },
+        "missing_country_fallback": "jou land",
+        "indeterminate_location_fallback": "jou ligging",
+        "cart_updated": "Jou mandjie is opgedateer.",
+        "change_address_only": "Verander afleweringsadres om voort te gaan.",
+        "change_address_or_remove": "Verander afleweringsadres of %{remove_action}.",
+        "remove_items_action": {
+          "one": "verwyder onbeskikbare item",
+          "other": "verwyder onbeskikbare items"
+        },
+        "empty_cart_action": "leë mandjie en keer terug na winkel"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Geen aflewering beskikbaar vir %{count} item nie",
+            "other": "Geen aflewering beskikbaar vir %{count} items nie"
+          },
+          "message": {
+            "other": "Hierdie items sal uit jou mandjie verwyder word omdat daar geen afleweringsmetodes beskikbaar is vir jou adres nie.",
+            "one": "Hierdie item sal uit jou mandjie verwyder word omdat daar geen afleweringsmetodes beskikbaar is vir jou adres nie."
+          },
+          "label": "Geen aflewering nie"
+        }
+      },
+      "order_summary": {
+        "title": "Bestel opsomming",
+        "group_title_label": "Deel van \"%{group_title}\"",
+        "more_items_modal": {
+          "search_item": "Soek",
+          "clear_search": "Maak soektog skoon",
+          "number_items_shown": "%{shownNumber} van %{totalNumber} items",
+          "empty_results": "Geen resultate gevind vir \"%{searchText}\". Kontroleer die spelling of gebruik 'n ander woord of frase."
+        },
+        "number_items": {
+          "other": "%{count} items",
+          "one": "%{count} item"
+        },
+        "view_all_items": {
+          "other": "Kyk na alle %{count} items",
+          "one": "Kyk na %{count} item"
+        },
+        "order_name_label": "Bestel %{name}",
+        "shopping_cart_label": "Inkopiemandjie",
+        "discount_title": "Afslag",
+        "discount_title_stacking": {
+          "one": "Afslag",
+          "other": "Afslag"
+        },
+        "discount_order_stacking": {
+          "other": "Bestel afslag",
+          "one": "Bestelafslag"
+        },
+        "discount_code_allocations_mismatch": "Jou <strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode het verander. Hersien jou mandjie en probeer weer.",
+        "discount_placeholder": "Afslagkode",
+        "discount_not_found": "Kon nie 'n geldige afslag vind wat ooreenstem met die ingevoerde kode nie",
+        "discount_code_applied": "Afslagkode toegepas",
+        "gift_card_applied": "Geskenkkaart toegepas",
+        "discount_label": "Afslagkode",
+        "gift_card_title": "Geskenkkaart",
+        "enter_shipping_address": "Voer versendingsadres in",
+        "gift_card_label": "Geskenkkaart",
+        "gift_card_placeholder": "Geskenkkaart",
+        "gift_card_and_discount_title": "Afslagkode of geskenkkaart",
+        "gift_card_and_discount_label": "Afslagkode of geskenkkaart",
+        "remove_gift_card_label": "Maak geskenkkaart skoon",
+        "gift_card_and_discount_placeholder": "Afslagkode of geskenkkaart",
+        "return_restocking_fee_label": "Herbevoorradingsfooi",
+        "remove_discount_label": "Verwyder afslag",
+        "return_shipping_fee_label": "Terugstuurversending",
+        "free_shipping_discount_label": "Gratis versending",
+        "applied_free_shipping_discount_label": "Toegepas",
+        "apply_discount_button_label": "Pas toe",
+        "applied_discount_message": "%{amount} afslag op totale bestelwaarde",
+        "discount_has_been_removed": "Afslag is verwyder",
+        "gift_card_subscriptions_notice": "Geskenkkaarte sal slegs op jou eerste betaling van toepassing wees",
+        "discount_has_been_applied": "Afslag is toegepas",
+        "gift_card_has_been_applied": "Geskenkkaart is toegepas",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is nie geldig vir die items in jou mandjie nie",
+        "discount_already_applied": "'n Afslag is op hierdie bestelling toegepas. Jy kan nie nog 'n afslag byvoeg nie.",
+        "discount_requires_customer_notice": "Voer jou versendingsinligting in om die <strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode toe te pas",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode vereis geskikte kliënt",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is tans nie beskikbaar vir jou nie",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is nie beskikbaar vir jou versendingsadres nie",
+        "customer_already_used_once_per_customer_discount_notice": "Die <strong style=\"text-transform:uppercase\">%{code}</strong> afslagkode is reeds gebruik",
+        "subtotal_label_with_quantity": {
+          "one": "Subtotaal · %{count} item",
+          "other": "Subtotaal · %{count} items"
+        },
+        "subtotal_label": "Subtotaal",
+        "gift_card_has_been_removed": "Geskenkkaart is verwyder",
+        "pickup_label": "Ophaling in winkel",
+        "pickup_unavailable_banner_title": {
+          "one": "Geen winkels beskikbaar met jou item nie",
+          "other": "Geen winkels beskikbaar met jou items nie"
+        },
+        "shipping_label": "Versending",
+        "no_pickup_location": "Daar is geen afhaalplekke beskikbaar nie.",
+        "pickup_unavailable_banner_body": {
+          "ship_to_address": "Stuur na adres",
+          "ship_to_address_instead_html": "%{link} in plaas daarvan"
+        },
+        "tip_label": "Wenks",
+        "calculating": "Bereken…",
+        "calculating_shipping": "Bereken…",
+        "shipping_default_value": "Bereken by die volgende stap",
+        "shipping_pending_message": "Nog nie beskikbaar nie",
+        "shipping_policy_link": "Versendingskoste",
+        "shipping_discount_title": "Versendingskorting",
+        "estimated_taxes_label": "Geskatte belastings",
+        "taxes_label": "Belastinge",
+        "information_estimated_taxes_label": "Belasting (geskat)",
+        "order_total_label": "Bestelling Totaal",
+        "price_before_discount_aria_text": "Oorspronklike prys",
+        "estimated_taxes_finalization_tooltip_content": "Die finale belasting en totaal sal per e-pos of teks bevestig word nadat u u bestelling geplaas het.",
+        "discount_code_aria_text": "Afslagkode",
+        "total_due_label": "Totaal verskuldig",
+        "total_label": "Totaal",
+        "total_price_label": "Totale prys",
+        "deposit_label": "Deposito",
+        "total_due_today_label": "Totaal vandag verskuldig",
+        "total_due_later_label": "Totaal later verskuldig",
+        "partial_total_label": "Totaal",
+        "free_total_label": "Gratis",
+        "free_shipping_total_label": "Gratis",
+        "paid_label": "Betaal",
+        "price_after_discount_aria_text": "Afslagprys",
+        "payment_due_label": "Betaling verskuldig",
+        "total_savings": "Totale besparings",
+        "total_outstanding_label": "Bedrag om te betaal",
+        "vat_label_html": "Ingesluit %{amount} in belasting",
+        "discount_and_gift_card_savings_notice": "Na %{discount_amount} in afslag en %{gift_card_amount} in geskenkkaarte",
+        "gift_card_savings_notice": "Na %{gift_card_amount} in geskenkkaarte",
+        "discount_savings_notice": "Na %{discount_amount} in afslag",
+        "cost_table_value_column_header": "Waarde",
+        "duties_included_label": "Totaal sluit belasting en heffings in. Geen ekstra koste by aflewering nie.",
+        "description_label": "Beskrywing",
+        "price_label": "Prys",
+        "quantity_label": "Hoeveelheid",
+        "cost_table_title": "Koste opsomming",
+        "cost_table_item_column_header": "Item",
+        "price_per_item": {
+          "label": "%{price}/stuk",
+          "accessibility_label": "%{price} per item"
+        },
+        "product_image_quantity_label": "Hoeveelheid",
+        "product_image_label": "Produkbeeld",
+        "scroll_order_summary": "Blaai vir meer items",
+        "expand_order_summary_short": "Wys",
+        "expand_order_summary": "Wys bestellingsopsomming",
+        "collapse_order_summary_short": "Versteek",
+        "original_price": "Oorspronklike prys",
+        "collapse_order_summary": "Versteek bestellingsopsomming",
+        "total_already_paid_label": "Betaal",
+        "sale_price": "Verkoopprys",
+        "order_total_updated_label": "Bygewerkte totaal",
+        "unit_price": {
+          "per_item": {
+            "single": "%{price} elk",
+            "other": "%{price} per %{count} items",
+            "one": "%{price} per %{count} item"
+          },
+          "accessible_separator": "per"
+        },
+        "product_change_label": "Verander",
+        "total_updated_label": "Bygewerkte totale prys:",
+        "estimated_tax_label": "Geskatte belasting",
+        "recurring_subtotal_label": "Terugkerende subtotaal",
+        "multiple_shipping_lines_label": "Versending totaal",
+        "recurring_total_label": "Terugkerende totaal",
+        "gift_card_ending": "Geskenkkaart wat eindig met %{last_characters}",
+        "recurring_total_tooltip": "Sluit nie versending, belasting, heffings, of enige toepaslike afslag in nie.",
+        "percent_off_shipping": "%{percent}% af aflewering",
+        "confirmation_number_label": "Bevestiging #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> kon nie saam met jou bestaande afslag gebruik word nie.",
+        "amount_off_shipping": "%{amount} afslag op versending",
+        "deferred_payment_info": {
+          "paid_today": "Totaal vandag betaal",
+          "paid_today_next": "Vandag betaal",
+          "title": "Betaling van %{amount_due} is verskuldig op %{due_at}",
+          "description_html": "Vir vrae oor jou bestelling, %{contact_us}.",
+          "due_on_fulfillment_title": "Betaling van %{amount_due} is verskuldig by nakoming",
+          "due_on_receipt_title": "Betaling van %{amount_due} is verskuldig by ontvangs"
+        },
+        "payment_terms_totals": {
+          "due_today": "Totaal vandag verskuldig",
+          "due_today_next": "Vandag verskuldig",
+          "due_on_fulfillment": "Totaal verskuldig by uitvoering",
+          "due_on_fulfillment_next": "Verskuldig by nakoming",
+          "due_on_receipt": "Totaal verskuldig by ontvangs",
+          "due_later_checkout_to_draft": "Totaal later verskuldig",
+          "total_paid": "Totaal betaal",
+          "due_later": "Totaal verskuldig %{due_at}"
+        },
+        "deferred_balance_info": {
+          "title": "Balans van {{amount_due}} is verskuldig op {{due_at}}",
+          "due_on_fulfillment_title": "Balans van {{amount_due}} is verskuldig by nakoming"
+        },
+        "due_on_fulfillment": "Verskuldig by nakoming",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> werk tans nie. Kontak ons vir hulp.",
+        "maximum_discount_code_limit_reached": "Jy het die maksimum aantal afslagkodes bereik. Verwyder 'n bestaande kode om <strong style=\"text-transform:uppercase\">%{code}</strong> te gebruik.",
+        "duties_label": "Doeane",
+        "duties_and_taxes_label": "Pligte en belastinge",
+        "may_be_charged_on_delivery": "Mag by aflewering gehef word",
+        "subscriptions": "Intekeninge",
+        "total_updated_label_with_price": "Bygewerkte totale prys: %{totalPrice}",
+        "error_duties_tooltip": "Hierdie bestelling word van 'n ander land af gestuur, so heffings en belasting mag by aflewering gehef word.",
+        "deferred_total_due_date_label_next": "Vervaldatum %{date}",
+        "updated_shipping_method": "Bygewerkte versendingsmetode: %{shipping_method}",
+        "recurring_total_multiple_label": "Hierdie bestelling het 'n herhalende koste vir verskeie items.",
+        "deferred_total_due_date_label": "Totaal verskuldig {{date}}",
+        "recurring_payments": "Terugkerende Betalings",
+        "full_price": "Volle prys: %{price}",
+        "custom_discount": "Pasgemaakte afslag",
+        "expand_component_information": {
+          "one": "Wys %{count} item",
+          "other": "Wys %{count} items"
+        },
+        "collapse_component_information": {
+          "other": "Versteek %{count} items",
+          "one": "Versteek %{count} item"
+        },
+        "discount_discovery": {
+          "add_code": "Voeg afslag by",
+          "merchandise_quantity_label": {
+            "one": "%{count} item",
+            "other": "%{count} items"
+          }
+        },
+        "alternative_payment_currency_total": "Aangerekende bedrag is %{amount_due}"
+      },
+      "shipping": {
+        "title": "Versending",
+        "shipping_method_title": "Versendingsmetode",
+        "shipping_method_first_shipment_group_title": {
+          "one": "Eerste versending",
+          "other": "Eerste versendings"
+        },
+        "delivery_title": "Aflewering",
+        "shipping_method_one_time_purchase_group_title": "Eenmalige aankoop",
+        "shipping_method_subscription_group_title": "Intekening",
+        "subscription_shipping": "Intekenaarversending",
+        "shipping_method_recurring_shipments_group_title": {
+          "one": "Terugkerende versending",
+          "other": "Terugkerende versendings"
+        },
+        "subscription_local_delivery": "Intekening plaaslike aflewering",
+        "subscription_pickup": "Intekenaarophaling",
+        "waiting_on_rate_notice": "Kry beskikbare versendingskoerse…",
+        "waiting_on_pickup_location_notice": "Kry beskikbare afhaalplekke…",
+        "no_rates_contact_notice": "Kontak ons vir meer inligting",
+        "no_rates_for_cart_or_destination_notice": "Daar is geen versendingsmetodes beskikbaar vir jou mandjie of adres nie",
+        "no_pickup_location_notice": "Ten minste een van jou produkte is nie beskikbaar vir afhaling nie",
+        "free_rate_label": "Vry",
+        "no_rates_for_country_notice": "Geen versendingskoerse gevind vir hierdie adres nie.",
+        "cheapest_rate_label": "Goedkoopste",
+        "estimated_delivery_date": {
+          "other": "%{count} besigheidsdae",
+          "one": "%{count} besigheidsdag"
+        },
+        "please_enter_your_shipping_information_notice": "Voer asseblief jou versendingsinligting in.",
+        "estimated_delivery_date_range": "%{minimum} tot %{maximum} werksdae",
+        "estimated_delivery_time": "Geskatte aflewering %{time}",
+        "estimated_delivery_time_range": "Geskatte aflewering %{min_time}–%{max_time}"
+      }
+    }
+  },
+  "sections": {
+    "quick_order_list": {
+      "product_variants": "Produk variante",
+      "items_removed": {
+        "one": "{{ quantity }} item verwyder",
+        "other": "{{ quantity }} items verwyder"
+      },
+      "total_items": "Totale items",
+      "cancel": "Kanselleer",
+      "items_added": {
+        "other": "{{ quantity }} items bygevoeg"
+      },
+      "remove_all_single_item_confirmation": "Verwyder 1 item van jou mandjie?",
+      "remove_all": "Verwyder alles",
+      "remove_all_items_confirmation": "Verwyder alle {{ quantity }} items uit jou mandjie?",
+      "min_error": "Hierdie item het 'n minimum van {{ min }}",
+      "max_error": "Hierdie item het 'n maksimum van {{ max }}",
+      "step_error": "Jy kan hierdie item slegs in stappe van {{ step }} byvoeg."
+    }
+  }
+}
