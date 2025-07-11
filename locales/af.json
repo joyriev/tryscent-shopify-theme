@@ -3248,7 +3248,137 @@
       "billing_address": "Gebruik as faktuuradres",
       "attention_help_text": "Die naam van 'n persoon of departement",
       "attention_company": "Maatskappy/aandag",
-      "cancel_accessibility_label": "Kanselleer die redigering van adres {{address}}"
+      "cancel_accessibility_label": "Kanselleer die redigering van adres {{address}}",
+      "creation_success_notification": "Adres bygevoeg",
+      "default_address_update_success_notification": "Standaardadres opgedateer",
+      "loading_add_form_accessibility_message": "Laai nuwe adresvorm",
+      "default_address": "Dit is my standaardadres",
+      "default_address_creation_success_notification": "Standaardadres bygevoeg",
+      "save": "Stoor",
+      "section_title_accessibility_label": "Voeg adres by",
+      "loading_form_accessibility_message": "Laai adresvorm",
+      "loading_edit_form_accessibility_message": "Laai redigeer adresvorm",
+      "update_success_notification": "Adres opgedateer",
+      "loading_finished_accessibility_message": "Adresvorm is gelaai",
+      "save_accessibility_label": "Stoor adres {{address}}"
+    },
+    "B2B": {
+      "account_information": {
+        "company_card_section_accessibility_label": "Maatskappy",
+        "company_card_name_label": "Maatskappy naam"
+      },
+      "locations": {
+        "contact_email": "E-pos",
+        "contact_permissions": "Toestemmings",
+        "contact_name": "Naam",
+        "contact_list_title": "Mense",
+        "contact_phone_number": "Telefoonnommer",
+        "location_picker_label": "Ligging naam",
+        "pagination": {
+          "load_more": "Laai meer",
+          "load_more_accessibility_label": "Laai meer plekke op"
+        },
+        "location_picker_accessibility_label": "Ligging naam: {{locationName}}",
+        "net_payment_terms_description": "{{name}}: betalings verskuldig binne {{numberOfDays}} dae",
+        "deposit_percentage": "{{percentage}} deposito",
+        "own_role_contact_name": "Jy",
+        "payment_details_title": "Betalingsbesonderhede",
+        "permissions_title": "Toestemmings",
+        "section_title": "Ligging",
+        "payment_terms": "Betalingsvoorwaardes",
+        "permissions_label": "Jou toestemmings",
+        "staff_and_permissions_title": "Personeel en toestemmings",
+        "shipping_address_required": "Voeg 'n versendingsadres by hierdie ligging om bestellings te begin plaas.",
+        "tax_id": "Belastingnommer",
+        "tax_exemptions": "Belastingvrystellings",
+        "multiple_tax_exemptions_and": "en",
+        "tax_exemptions_modal_close": "Maak toe",
+        "taxes_none": "Geen",
+        "multiple_tax_exemptions": "{{taxExemptionsCount}} meer",
+        "tax_exemption_not_applicable": "N/A",
+        "tax_details_title": "Belasting besonderhede",
+        "tax_exemptions_modal_button_accessibility_label": "Kyk na alle belastingvrystellings"
+      },
+      "location_selection": {
+        "description_switch_later": "Jy kan altyd later oorskakel",
+        "continue_to_store": "Gaan voort om te stoor",
+        "description": "As jy reeds items in jou mandjie het, kan die verandering van plekke die mandjiepryse en hoeveelhede beïnvloed.",
+        "list_accessibility_label": "Lyste van liggings",
+        "list_item_without_address_accessibility_label": "{{name}}: Geen adres nie",
+        "list_loading_accessibility_message": "Laai lys van plekke",
+        "list_loading_address_accessibility_message": "Laai adres vir {{locationName}}",
+        "no_locations_found": "Geen plekke gevind nie",
+        "list_loading_finished_accessibility_message": "Lys van liggings is gelaai",
+        "no_location_title": "Persoonlike bestellings slegs",
+        "loading_store_accessibility_message": "Gaan winkel toe",
+        "no_location_description": "Jy het nie meer toestemming om bestellings vir {{company}} te plaas nie. Jy kan steeds persoonlike bestellings plaas.",
+        "selection_cancel_button": "Kanselleer",
+        "search": "Soek plekke",
+        "selection_continue_button": "Voortgaan",
+        "title_choose_location": "Kies 'n ligging",
+        "clear_search": "Maak soektog skoon",
+        "selection_confirmation_button": "Kies ligging",
+        "try_new_search": "Probeer 'n nuwe soektog",
+        "title": "Vir watter ligging koop jy?",
+        "search_location_title": "Kies 'n ligging"
+      },
+      "addresses": {
+        "add_billing_address_section_accessibility_label": "Voeg faktuuradres by",
+        "billing_address_card_title": "Faktuuradres",
+        "add_shipping_address_button": "Voeg versendingsadres by",
+        "add_shipping_address_section_accessibility_label": "Voeg versendingsadres by",
+        "add_billing_address_button": "Voeg faktuuradres by",
+        "cancel_adding_shipping_address_accessibility_label": "Kanselleer die toevoeging van versendingsadres",
+        "save_new_billing_address_accessibility_label": "Stoor faktuuradres",
+        "shipping_address_card_title": "Afleweringsadres",
+        "cancel_adding_billing_address_accessibility_label": "Kanselleer die toevoeging van die faktuuradres",
+        "save_new_shipping_address_accessibility_label": "Stoor versendingsadres"
+      },
+      "orders": {
+        "draft_order_list": {
+          "show_all": "Wys alles",
+          "hide_all": "Versteek alles",
+          "title": "Hangende",
+          "show_all_orders_in_review": "Wys alle bestellings in hersiening",
+          "hide_all_accessibility_label": "Versteek alle bestellings in hersiening",
+          "show_all_accessibility_label": "Wys alle bestellings in hersiening",
+          "show_less_orders_in_review": "Wys minder bestellings in hersiening",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Jy het geen hangende bestellings nie",
+            "pending_orders": {
+              "one": "Jy het {{count}} hangende bestelling",
+              "other": "Jy het {{count}} hangende bestellings"
+            },
+            "more_than_pagination_length": "Jy het meer as {{count}} hangende bestellings"
+          },
+          "pagination": {
+            "nav_accessibility_label": "Bestellings in hersiening navigasieknoppies"
+          }
+        },
+        "order_list_column_headers_location": "Ligging",
+        "order_list_column_headers_contact": "Kontak",
+        "order_list_column_headers_status": "Status",
+        "removed_company_contact_tooltip": "Verwyder van maatskappy"
+      },
+      "draft_order_details": {
+        "loading": "Laai bestellingsbesonderhede",
+        "loading_finished_accessibility_message": "Bestelbesonderhede is gelaai",
+        "draft_order_subtitle": "Bevestig {{date}} van bestelling {{draftOrderName}}",
+        "payment_status": {
+          "pending": {
+            "banner_due_today": "U betaling is vandag verskuldig",
+            "banner_overdue": {
+              "one": "Jou betaling is {{count}} dag laat",
+              "other": "Jou betaling is {{count}} dae agterstallig"
+            },
+            "title": "Betaling verskuldig",
+            "banner_due": {
+              "one": "Jou betaling is oor {{count}} dag",
+              "other": "Jou betaling is oor {{count}} dae verskuldig"
+            }
+          }
+        }
+      }
     }
   }
 }
