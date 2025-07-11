@@ -3050,13 +3050,81 @@
         "title": "Betaling",
         "payment_type": {
           "gift_card": "Geskenkkaart",
-          "store_credit": "Winkelkrediet"
+          "store_credit": "Winkelkrediet",
+          "money_order": "Geldbestelling",
+          "cash_on_delivery": "Kontant op Aflewering (COD)",
+          "bank_deposit": "Bankdeposito",
+          "manual": "Handleiding"
         },
         "status_in_review": "Betaling verskuldig na hersiening",
-        "status_unpaid": "Betaling verskuldig op {{date}}"
+        "status_unpaid": "Betaling verskuldig op {{date}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Betaal met Shop Pay paaiemente",
+          "view_schedule": "Kyk skedule"
+        },
+        "card_payment_details": "eindig met {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Winkelkrediet - {{formattedTransactionAmount}}",
+        "manual_payment_methods": {
+          "money_order": "Geldbestelling - {{formattedTransactionAmount}}",
+          "bank_deposit": "Bankdeposito - {{formattedTransactionAmount}}",
+          "manual": "Handleiding - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Kontant op Aflewering (COD) - {{formattedTransactionAmount}}"
+        },
+        "gift_card_payment_details": "eindig met {{lastDigits}} - {{formattedTransactionAmount}}",
+        "transactions": {
+          "details": "Besonderhede",
+          "show_all": "Wys alles",
+          "show_less": "Wys minder",
+          "payment_details": "Betalingsbesonderhede"
+        },
+        "emv_details": {
+          "aid": "HULP:",
+          "source": "SOURCE:",
+          "auth": "OORWEEG:"
+        }
       },
       "no_data_provided_accessibility_label": "{{fieldName}} is leeg",
-      "partially_refunded_label": "DEELWESE TERUGBETAAL"
+      "partially_refunded_label": "DEELWESE TERUGBETAAL",
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Betaal met Shop Pay-afbetalings",
+        "payment_reminders_button": "Kry betalingsherinnerings",
+        "desktop_qr_code_content": {
+          "title": "Soek vir herinneringe",
+          "description": "Kry herinneringe van jou paaiemente met Shop."
+        },
+        "description": "Bly op hoogte van jou betalingskedule met herinnerings in die Shop-app."
+      },
+      "refunded_amount": "Terugbetaal",
+      "login_card": {
+        "resend_link_only": "Om jou bestelbesonderhede te sien, stuur 'n nuwe skakel na die e-pos of telefoonnommer wat by die betaalpunt gebruik is.",
+        "resend_link_and_login": "Om jou bestelbesonderhede te sien, meld aan of stuur 'n nuwe skakel na die e-pos of telefoonnommer wat by die betaalpunt gebruik is.",
+        "log_in": "Teken in",
+        "resend_link": "Stuur nuwe skakel",
+        "link_expired": "Skakel verval"
+      },
+      "marketing_checkbox_label": "Stuur vir my e-pos met nuus en aanbiedings",
+      "remaining_amount": "Oorblywend",
+      "request_return_failed": "Daar was 'n probleem met die verwerking van jou versoek. Probeer asseblief weer.",
+      "marketing_section_title": "Nuus en aanbiedings",
+      "marketing_checkmark_label": "Jy is ingeteken om e-pos nuus en aanbiedings te ontvang",
+      "returns": {
+        "expand_events_label": "Wys besonderhede",
+        "hide_events_label": "Versteek besonderhede",
+        "return_and_refund_modal_header": "Terugbetalingsbeleid",
+        "tracking_number": "Volgnommer:",
+        "exchange_header": "Ruil items uit",
+        "print_shipping_label": "Druk versendingsetiket",
+        "exchange_subheader": "Ruilitems sal by die bestelling gevoeg word sodra die teruggawe voltooi is.",
+        "ineligible_return_message": "Geen items in hierdie bestelling is geskik vir terugstuur nie.",
+        "ineligible_return_message_when_returned": "Geen addisionele items in hierdie bestelling is geskik vir terugkeer nie."
+      },
+      "marketing_description": "Jy sal bemarkings-e-posse ontvang. Jy kan te eniger tyd afteken.",
+      "shipping": {
+        "address": "Afleweringsadres",
+        "address_map_marker": "Afleweringsadres",
+        "summary": "Versending",
+        "method": "Versendingsmetode"
+      }
     }
   }
 }
