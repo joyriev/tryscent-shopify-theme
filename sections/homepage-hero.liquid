@@ -18,7 +18,7 @@
         <div class="flex flex-col justify-center text-center [&>*]:m-0 gap-8 md:px-10">
             <h1 class="text-3xl md:text-5xl font-black uppercase">{{ section.settings.title }}</h1>
             <p class="text-lg font-medium">{{ section.settings.subtitle }}</p>
-            <div class="flex gap-4 justify-center items-center">
+            <div class="flex flex-wrap md:flex-nowrap gap-4 justify-center items-center">
                 {% for block in section.blocks %}
                     {% if block.type == 'button' %}
                         <a href="{{ block.settings.button_link }}" class="bg-black text-white px-6 py-4 no-underline rounded-full leading-snug"> Save 90% on <br />{{ block.settings.button_text }}</a>
