@@ -3060,9 +3060,147 @@
             "overdue": "Forsinket",
             "due": "Forfallsdato {{date}}",
             "due_today": "Forfall i dag",
-            "paid": "Betalt"
+            "paid": "Betalt",
+            "due_without_date": "Forfall",
+            "pay_to_confirm": "Betal for å bekrefte",
+            "payment_not_due": "Ikke forfalt ennå",
+            "due_on_fulfillment": "Forfall ved oppfyllelse"
           }
-        }
+        },
+        "sort_by": "Sorter etter: {{option}}",
+        "sort_show_options_accessibility_label": "Vis sorteringsalternativer for bekreftede bestillinger.",
+        "sort_hide_options_accessibility_label": "Skjul sorteringsalternativer for bekreftede bestillinger.",
+        "sort_currently_sorted_by_accessibility_label": "Sortert etter: {{option}}",
+        "sort_title": "Sorter",
+        "sort": {
+          "date": {
+            "newest": "Nyeste til eldste",
+            "oldest": "Eldste til nyeste"
+          },
+          "location": {
+            "ascending": "Sted (A-Å)",
+            "descending": "Sted (Z-A)"
+          },
+          "order_number": {
+            "ascending": "Bestillingsnummer (lav til høy)",
+            "descending": "Bestillingsnummer (høy til lav)"
+          },
+          "order_total": {
+            "ascending": "Bestillingssum (lav til høy)",
+            "descending": "Bestillingssum (høy til lav)"
+          }
+        },
+        "location_filter_picker": {
+          "all_location": "Alle steder",
+          "switch_view": "Bytt visning",
+          "current_location": "Nåværende plassering"
+        },
+        "filter_title": "Filtrer",
+        "filter": {
+          "clear_section": "Klar seksjon",
+          "clear_all": "Tøm alt",
+          "date": {
+            "start_date": "Startdato",
+            "end_date": "Sluttdato",
+            "title": "Bestillingsdato",
+            "today": "I dag",
+            "last_7_days": "Siste 7 dager",
+            "last_30_days": "Siste 30 dager",
+            "last_90_days": "Siste 90 dager",
+            "last_365_days": "Siste 12 måneder",
+            "custom": "Tilpasset"
+          },
+          "apply": "Søk"
+        },
+        "show_order_actions_accessibility_label": "Vis ordrehandlinger for ordre {{name}}"
+      },
+      "order_status": {
+        "attempted_delivery_label": "Forsøkt levering",
+        "attempted_delivery_description": "Leveringsforsøket var mislykket.",
+        "attempted_to_deliver_label": "Forsøkt å levere",
+        "confirmed_description": "Vi har mottatt bestillingen din.",
+        "on_its_way_description": "Denne forsendelsen er på vei.",
+        "out_for_delivery_description": "Denne forsendelsen er ute for levering.",
+        "preparing_for_shipping_label": "Forbereder for sending",
+        "preparing_for_shipping_description": "Disse varene blir klargjort for sending.",
+        "ready_for_pickup_label": "Klar for henting",
+        "ready_for_pickup_location": "Bestillingen din er klar for henting på stedet",
+        "ready_for_pickup_description": "Disse varene er klare for henting. Vennligst ta med ordrebekreftelsen når du henter bestillingen din.",
+        "picked_up_label": "Plukket opp",
+        "picked_up_description": "Disse varene er hentet.",
+        "canceled_description": "Bestillingen din ble kansellert den {{date}}.",
+        "canceled_label": "Avlyst",
+        "canceled_title": "Bestillingen din har blitt kansellert",
+        "confirmed_label": "Bekreftet",
+        "come_back": "Kom tilbake til denne siden for oppdateringer om forsendelsesstatusen din.",
+        "company_tracking_number": "{{company}} sporingsnummer:",
+        "confirmed_title": "Bestillingen din er bekreftet",
+        "confirmed_description_pickup": "Du vil motta en e-post når bestillingen din er klar for henting.",
+        "confirmed_description_digital": "Du vil motta en e-post når bestillingen din er klar.",
+        "confirmed_description_gift_card_text": "Du vil motta en tekstmelding når bestillingen din er klar.",
+        "delivered_description": "Denne forsendelsen er levert.",
+        "complete_label": "Fullført",
+        "delivered_label": "Levert",
+        "delivered_title": "Forsendelsen din er levert",
+        "delivered_description_digital": {
+          "one": "Denne varen er komplett.",
+          "other": "Disse elementene er komplette."
+        },
+        "delivered_description_gift_card": {
+          "one": "Gavekortet ble sendt på e-post.",
+          "other": "Gavekort ble sendt på e-post."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "Gavekort ble sendt via tekstmelding.",
+          "other": "Gavekort ble sendt via tekstmelding."
+        },
+        "gift_card_label": {
+          "one": "Gavekort",
+          "other": "Gavekort"
+        },
+        "gift_card_resend_button": {
+          "one": "Send gavekort på nytt",
+          "other": "Send gavekort på nytt"
+        },
+        "gift_resend_success": {
+          "one": "Gavekort sendt på nytt",
+          "other": "Gavekort sendt på nytt"
+        },
+        "gift_resend_failure": {
+          "other": "Det oppstod et problem med å sende gavekortene dine på nytt. Prøv igjen eller kontakt oss.",
+          "one": "Det oppstod et problem med å sende gavekortet ditt på nytt. Prøv igjen eller kontakt oss."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "Gavekortet vil bli sendt i en separat e-post.",
+          "other": "Hvert gavekort vil bli sendt i en egen e-post."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "Gavekortet vil bli sendt i en separat tekst.",
+          "other": "Hvert gavekort vil bli sendt i en egen tekstmelding."
+        },
+        "status_timestamp": "Oppdatert {{date}}",
+        "estimated_delivery": "Forventet {{date}}",
+        "delivered": "Ankommet {{date}}",
+        "buy_with_prime_logo_accessibility_label": "Amazon Kjøp med Prime-logo",
+        "in_review_description": "Vi gir deg beskjed hvis vi trenger mer informasjon eller når bestillingen din er bekreftet.",
+        "in_review_label": "Under vurdering",
+        "in_review_title": "Bestillingen din blir gjennomgått",
+        "last_updated": "Sist oppdatert {{date}}",
+        "multiple_shipments_label": "Flere forsendelser",
+        "multiple_statuses_label": "Flere bestillingsstatusser",
+        "no_tracking_number": "Det finnes ikke noe sporingsnummer for denne forsendelsen.",
+        "tracking_number": {
+          "one": "Sporingsnummer",
+          "other": "Sporingsnumre"
+        },
+        "on_its_way_label": "På vei",
+        "on_its_way_title": "Forsendelsen din er på vei",
+        "out_for_delivery_label": "Ut på levering",
+        "out_for_delivery_title": "Forsendelsen din er ute for levering",
+        "resume_tracking": "Gjenoppta sporing",
+        "submitted_label": "Innsendt",
+        "submitted_description": "Gå gjennom bestillings- og betalingsdetaljer.",
+        "there_was_a_problem_label": "Det var et problem"
       }
     }
   }
