@@ -1,0 +1,132 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "shopify": {
+    "checkout": {
+      "general": {
+        "page_title": "Kasse",
+        "error_page_title": "Feil",
+        "skip_to_content": "Hopp til innhold",
+        "breadcrumb": "Brødsmuler",
+        "continue_button_label": "Fortsett",
+        "pay_now_button_label": "Betal nå",
+        "complete_purchase_button_label": "Fullfør bestilling",
+        "authenticate_purchase_button_label": "Autentiser betaling",
+        "all_rights_reserved": "Alle rettigheter reservert %{shop_name}",
+        "edit_link_label": "Rediger",
+        "print_policies_link_label": "Skriv ut",
+        "cart": "Handlekurv",
+        "close_modal_label": "Lukk",
+        "expand_notice_label": "Se mer",
+        "close_notice_label": "Lukk",
+        "continue_to_shipping_method": "Fortsett til frakt",
+        "continue_to_payment_method": "Fortsett til betaling",
+        "continue_to_review": "Gjennomgå bestilling",
+        "back_to_shipping_method": "Returnere til frakt",
+        "back_to_cart": "Gå tilbake til handlekurven",
+        "back_to_payment_method": "Gå tilbake til betaling",
+        "back_to_contact_information": "Gå tilbake til informasjon",
+        "choose_shipping_method": "Velg en fraktmetode",
+        "choose_billing_address": "Velg en fakturaadresse",
+        "choose_payment_method": "Velg en betalingsmetode",
+        "contact_us_html": "Kontakt oss for mer informasjon",
+        "autocomplete_title": "Forslag",
+        "autocomplete_single_item": "1 vare tilgjengelig",
+        "autocomplete_multi_item": "{{number}} varer tilgjengelig",
+        "autocomplete_selection": "{{number}} av {{total}}",
+        "autocomplete_close": "Lukk forslag",
+        "forwarding_indicator": {
+          "new_window": "Åpnes i et nytt vindu.",
+          "external": "Åpner ekstern nettside.",
+          "external_and_new_window": "Åpner ekstern nettside i et nytt vindu."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Kasse"
+        },
+        "tooltip_accessibility_label": "Mer informasjon",
+        "qr_code": "QR-kode",
+        "errors": {
+          "only_empty_terms_accepted": "Denne policyen godtar kun tomme vilkår.",
+          "session_identifier_not_unique_error": "Noe gikk galt med bestillingen din, vennligst prøv å fullføre kjøpet på nytt.",
+          "line_item_limit_reached": "Maksimalt antall linjeelementer er nådd.",
+          "merchandise": {
+            "only_value_constraint": "Kun eksakte verdier er tillatt i vareinnføringen.",
+            "merchandise_not_found": "Produkt ikke funnet.",
+            "merchandise_variant_not_found": "Produktvariant ikke funnet.",
+            "merchandise_not_applicable": "Produktvariant kan ikke kjøpes.",
+            "mixed_currencies": "Kassen inneholder linjeelementer med forskjellige valutaer.",
+            "gift_card_quantity_mismatch": "Når du angir gavekortkoder, må antall linjeelementer og antall gavekortkoder samsvare.",
+            "bundle_products_not_supported_for_b2b": "Pakker med varer kan ikke legges til B2B-bestillinger for denne lokasjonen.",
+            "gift_card_not_supported": "Gavekort støttes ikke ved denne utsjekkingen.",
+            "gift_card_not_unique": "Gavekort med kode {{code}} forekommer mer enn én gang i denne utsjekkingen. Koder formateres før sammenligning.",
+            "gift_card_used": "Gavekortkode {{code}} er allerede tilordnet et gavekort. Koder formateres før sammenligning.",
+            "gift_card_invalid": "Gavekortkode {{code}} er ugyldig.",
+            "gift_card_code_changed": "Gavekortkoden {{proposed_code}} ble endret til {{formatted_code}} for å overholde formateringsreglene.",
+            "gift_card_with_attributes_not_supported": "Gavekort med tilpassede attributter støttes ikke i denne kassen.",
+            "selling_plan_mismatch": "Abonnementet er oppdatert.",
+            "gift_card_with_components_not_supported": "Gavekort med komponenter støttes ikke ved denne utsjekkingen.",
+            "selling_plan_not_supported": "Abonnementer støttes ikke.",
+            "selling_plan_not_supported_b2b": "Abonnementer støttes ikke for B2B-kassen.",
+            "price_mismatch": "Den tidligere foreslåtte prisen for denne varen var ugyldig og har blitt oppdatert.",
+            "inventory_not_found": "Ingen lagerbeholdning funnet for denne varen.",
+            "product_not_published": "Produktet er ikke publisert.",
+            "product_not_published_in_buyer_location": "Produktet er ikke publisert i kjøperens område.",
+            "duplicated_stable_id": "Denne varelinjen har samme stable-ID som en annen linje.",
+            "minimum_quantity_not_met": "Mengden av noen varer oppfyller ikke minimumskravet.",
+            "maximum_quantity_exceeded": "Mengden av noen varer overskrider den tillatte maksimumsgrensen.",
+            "quantity_increment_not_met": "Mengden av noen varer oppfyller ikke bestillingsgrensene.",
+            "quantity_rules_not_met": "Mengden av noen varer oppfyller ikke bestillingsgrensene.",
+            "bundle_requires_components": "Denne pakkens varer har ingen komponenter.",
+            "title_too_long": "Varebeskrivelsen er for lang.",
+            "title_empty": "Varebetegnelsen er tom."
+          },
+          "session_is_already_finished": "Denne utsjekkingsøkten er allerede fullført.",
+          "buyer_identity": {
+            "business_customer_does_not_match_company": "Firmaets kontaktperson har ikke tilgang til firmaet.",
+            "customer_account_required": "Kunden må logge inn for å fortsette.",
+            "company_location_required": "Kunden må velge et bedriftssted for å fortsette.",
+            "company_purchase_permission_required": "Kunden har ikke tillatelse til å legge inn bedriftsbestillinger.",
+            "personal_order_not_allowed": "Personlige bestillinger er ikke tillatt for denne butikken.",
+            "lost_access_to_company": "Kunden mistet tilgang til alle selskaper.",
+            "contact_info_does_not_match_customer_account": "Spesifisert kundeinformasjon skal samsvare med den innloggede kundekontoen.",
+            "phone_number_does_not_match_expected_pattern": "Det angitte telefonnummeret samsvarer ikke med det forventede mønsteret.",
+            "email_required": "En e-post er påkrevd når varen kjøpes ved bruk av et abonnement.",
+            "email_domain_is_invalid": "Dette angitte domenet kan ikke løses.",
+            "missing_contact_method": "Mangler en gyldig kontaktmetode.",
+            "checkout_completion_target_is_missing": "Mål for fullføring av utsjekking mangler.",
+            "invalid_customer_profile": "En ugyldig kundeprofil ble oppgitt.",
+            "customer_profile_access_restricted": "Kassen har ikke tillatelse til å få tilgang til kundeprofilen.",
+            "checkout_completion_target_is_invalid_proc": "Ugyldig mål for fullføring av utsjekking.",
+            "buyer_identity_presentment_currency_does_not_match": "Det oppsto et problem med behandlingen av bestillingen din. Prøv igjen om noen minutter."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "Handlekurven må kun ha én leveringslinje.",
+            "wrong_number_of_delivery_lines": "En leveringslinje må spesifiseres for hver gruppe varer.",
+            "external_delivery_promise_error": "En ekstern leveringsløftehentingsfeil.",
+            "options_instructions_invalid": "De angitte instruksjonene samsvarer ikke med det forventede mønsteret.",
+            "destination_address_required": "En destinasjonsadresse er påkrevd for å fortsette.",
+            "pickup_points_unavailable": "Hentesteder er for øyeblikket utilgjengelige.",
+            "local_pickup_delivery_line_detail_changed": "Den nåværende strategien for lokal henting må endres for å fortsette.",
+            "local_pickup_no_delivery_strategy_available": "Ingen tilgjengelig lokal henting leveringsstrategi funnet.",
+            "origin_location_id_required": "En opprinnelsessted-ID kreves når leveringsmetoden RETAIL etterspørres.",
+            "invalid_origin_location_id": "Kunne ikke finne en plassering som samsvarer med opprinnelsesplasseringens ID."
+          }
+        }
+      },
+      "address_management": {
+        "confirm_address_deletion": "Er du sikker på at du vil slette adressen {{address}}?"
+      }
+    },
+    "sentence": {
+      "two_words_connector": "og",
+      "last_word_connector": ", og"
+    }
+  }
+}
