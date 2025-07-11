@@ -3826,8 +3826,136 @@
         "payment_method_expiring_on": "Utløper den {{expiryDate}}",
         "payment_method_expired_on": "Utløpt den {{expiryDate}}",
         "preauthorized_payments": "Forhåndsgodkjente betalinger",
-        "close_payment_modal": "Lukk"
+        "close_payment_modal": "Lukk",
+        "pre_authorized_payments": "Forhåndsgodkjente betalinger",
+        "close_payment_modal_accessibility_label": "Lukk betalingsmetodedetaljer-modal",
+        "payment_details_loading": "Laster betalingsmetodedetaljer",
+        "payment_method_not_found_error": "Kan ikke finne betalingsmetode",
+        "total_amount_of_subscription_line_items_left": "og {{total}} mer",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} elementer totalt, viser {{totalItemsToDisplay}} elementer.",
+        "next_payment_due": "Neste betaling forfaller {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button": "Rediger",
+        "loading_shop_pay": "Laster inn Shop Pay",
+        "edit_payment_method_button_accessibility_label": "Rediger betalingsmetode som slutter på {{lastDigits}}",
+        "invalid_payment_method": "Ugyldig betalingsmetode",
+        "invalid_payment_method_message": "Bruk et nytt kredittkort for å fortsette å motta kommende bestillinger.",
+        "replace_payment_method": "Bytt betalingsmetode",
+        "checkout_card_banner": "Denne betalingsmetoden kan kun brukes for forhåndsgodkjente betalinger. Den vil ikke vises i kassen hvis du er logget inn i denne butikken.",
+        "default_checkbox": "Sett som standard",
+        "default_checkbox_accessibility_label": "Angi denne betalingsmetoden som standard"
+      },
+      "edit_payment_method": {
+        "title": "Rediger betalingsmetode",
+        "save_payment_method_button": "Lagre",
+        "cancel_edit_payment_method_button": "Avbryt",
+        "payment_method_updated_toast": "Betalingsmetode oppdatert",
+        "billing_address": "Fakturaadresse",
+        "billing_address_add_new": "Legg til ny",
+        "billing_address_choose_from_list": "Velg fra listen",
+        "future_purchases_notice": "Denne betalingsmetoden vil bli lagret for fremtidige kjøp.",
+        "generic_error": "Det oppstod et problem med oppdateringen. Vennligst prøv igjen."
+      },
+      "card_fields": {
+        "card_number_label": "Kortnummer",
+        "name_on_card_label": "Navn på kort",
+        "card_number_placeholder": "Kortnummer",
+        "name_on_card_placeholder": "Navn på kort",
+        "card_expiry_label": "Utløpsdato (MM / ÅÅ)",
+        "card_expiry_placeholder": "Utløpsdato (MM / ÅÅ)",
+        "card_verification_value_label": "Sikkerhetskode",
+        "card_verification_value_placeholder": "Sikkerhetskode",
+        "card_start_label": "Utstedelsesdato (MM / YY)",
+        "card_start_placeholder": "Utstedelsesdato (MM / YY)",
+        "tooltip": {
+          "tooltip_accessibility_label": "Mer informasjon",
+          "card_verification_value_explanation_amex": "4-sifret sikkerhetskode på forsiden av kortet ditt",
+          "card_verification_value_explanation_other": "3-sifret sikkerhetskode på baksiden av kortet ditt",
+          "card_verification_value_explanation": "3-sifret sikkerhetskode som vanligvis finnes på baksiden av kortet ditt. American Express-kort har en 4-sifret kode som er plassert på forsiden.",
+          "card_security_notice": "Alle transaksjoner er sikre og krypterte."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Skriv inn navnet ditt nøyaktig slik det står på kortet ditt",
+          "credit_card_number_invalid": "Skriv inn et gyldig kortnummer",
+          "credit_card_expiry_invalid": "Skriv inn en gyldig kortutløpsdato",
+          "credit_card_verification_value_blank": "Skriv inn CVV eller sikkerhetskoden på kortet ditt"
+        },
+        "unavailable": {
+          "text": "Kreditt- og debetkortbetalinger er ikke tilgjengelige akkurat nå.",
+          "link_text": "Oppdater denne siden",
+          "suffix": "eller prøv igjen senere."
+        }
+      },
+      "payment_delete": {
+        "title": "Slett betalingsmetode",
+        "description_without_replacement": "Denne betalingsmetoden vil ikke lenger være tilgjengelig for fremtidige kjøp.",
+        "description_with_replacement": "Sletting av denne betalingsmetoden vil påvirke forhåndsgodkjente betalinger. Du kan eventuelt erstatte den med en annen betalingsmetode for å fortsette å motta kommende bestillinger.",
+        "warning_message_with_replacement": {
+          "with_pending_orders": "Å slette denne betalingsmetoden vil fjerne den fra kontoen din og den vil ikke lenger være tilgjengelig for fremtidige kjøp. Med mindre du velger en alternativ betalingsmetode, vil den fortsatt bli belastet for eventuelle utestående saldoer på eksisterende bestillinger.",
+          "with_subscriptions": "Sletting av denne betalingsmetoden vil påvirke forhåndsgodkjente betalinger. Erstatt den med en alternativ betalingsmetode for å fortsette å motta kommende bestillinger.",
+          "with_pending_orders_and_subscriptions": "Sletting av denne betalingsmetoden vil påvirke forhåndsgodkjente betalinger. Med mindre du velger en alternativ betalingsmetode, vil denne betalingsmetoden fortsatt bli belastet for eventuelle utestående saldoer på eksisterende bestillinger. Å velge en alternativ betalingsmetode vil gjøre det mulig for deg å motta kommende abonnementbestillinger uten avbrudd."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Sletting av denne betalingsmetoden vil påvirke forhåndsgodkjente betalinger. Denne betalingsmetoden vil fortsatt bli belastet for eventuelle utestående saldoer på eksisterende bestillinger, men du vil ikke motta kommende abonnementbestillinger. Legg til en alternativ betalingsmetode for å fortsette å motta abonnementbestillinger.",
+          "with_pending_orders": "Å slette denne betalingsmetoden vil fjerne den fra kontoen din og den vil ikke lenger være tilgjengelig for fremtidige kjøp. Den vil fortsatt bli belastet for eventuelle utestående saldoer på eksisterende bestillinger.",
+          "with_subscriptions": "Sletting av denne betalingsmetoden vil påvirke forhåndsgodkjente betalinger. Legg til en alternativ betalingsmetode for å fortsette å motta kommende bestillinger."
+        },
+        "payment_method_selector_placeholder": "Velg en erstatningsbetalingsmetode (valgfritt)",
+        "replace_method_with_new_method_description": "Din {{currentPaymentMethodName}} vil bli slettet og erstattet med din {{newPaymentMethodName}}.",
+        "payment_method_selector_no_alternative_payment": "Ingen erstatningsmetode",
+        "error_when_deleting": "Vi beklager, men noe gikk galt, og vi kunne ikke slette denne betalingsmetoden. Vennligst prøv igjen senere eller oppdater siden.",
+        "delete_and_replace_button": "Slett og erstatt",
+        "delete_and_replace_button_accessibility_label": "Slett {{currentPaymentMethodName}} og erstatt med {{newPaymentMethodName}}.",
+        "loading_available_payment_methods_accessibility_label": "Laster tilgjengelige betalingsmetoder",
+        "deleted_successfully": "Betalingsmetode slettet vellykket."
+      },
+      "add_payment_method": {
+        "title": "Legg til betalingsmetode",
+        "payment_method_added_confirmation": "Betalingsmetode lagt til",
+        "billing_address": {
+          "title": "Fakturaadresse",
+          "add_billing_address_button": "Legg til ny",
+          "add_billing_address_button_accessibility_label": "Legg til ny fakturaadresse",
+          "choose_billing_address_from_list_button": "Velg fra listen",
+          "missing_billing_address_error_message": "Vennligst oppgi en fakturaadresse",
+          "choose_billing_address_from_list_button_accessibility_label": "Velg en fakturaadresse fra listen",
+          "default_checkbox": "Angi som standard betalingsmetode"
+        }
+      },
+      "three_d_secure": {
+        "title": "3D Sikkerhet"
       }
+    },
+    "payment_method_brands": {
+      "discover": "Oppdag",
+      "visa": "Visum",
+      "americanexpress": "American Express",
+      "mastercard": "Mastercard",
+      "visaelectron": "Visa Electron",
+      "jcb": "JCB",
+      "dinersclub": "Diners Club",
+      "elo": "Elo",
+      "forbrugsforeningen": "Forbruksforeningen",
+      "dankort": "Dankort",
+      "maestro": "Maestro",
+      "shoppay": "Shop Betal",
+      "googlepay": "Google Betal",
+      "unionpay": "UnionPay",
+      "hipercard": "Hipercard",
+      "laser": "Laser",
+      "storecredit": "Butikkreditt",
+      "bogus": "Falsk",
+      "applepay": "Apple Pay",
+      "paypal": "PayPal"
+    },
+    "privacy_banner": {
+      "cookie_preferences_link": "Innstillinger for informasjonskapsler"
+    },
+    "shop_policies": {
+      "legal_notice": "Juridisk merknad",
+      "privacy_policy": "Personvernerklæring",
+      "refund_policy": "Refusjonspolicy",
+      "subscription_policy": "Avbestillingspolicy",
+      "shipping_policy": "Fraktpolicy"
     }
   }
 }
