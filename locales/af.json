@@ -1436,6 +1436,527 @@
         "address_country_invalid": "Kies 'n land/streek uit die lys",
         "address_zip_invalid": "Voer 'n geldige poskode in",
         "gift_card_invalid": "Geskenkkaart \"••••%{last_four_characters}\" is nie meer geldig nie"
+      },
+      "payment_gateway": {
+        "order_due_on_fulfillment_payment": "Jou kaart sal gehef word sodra jou bestelling vervul is.",
+        "order_due_on_receipt_choose_later": "Jou betaling sal by ontvangs verskuldig wees.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} is vandag verskuldig. Die balans sal later verskuldig wees.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} is vandag verskuldig. Die balans sal verskuldig wees sodra jou bestelling vervul is.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "Jou kaart sal gehef word sodra jou bestelling bevestig is.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} is vandag verskuldig. Die balans sal op {{dueDate}} verskuldig wees.",
+        "draft_order_payment_due_later_terms": "Jy sal op {{translatedName}} terme wees sodra jou bestelling bevestig is.",
+        "draft_order_payment_due_on_fulfillment": "Jou betaling sal verskuldig wees sodra jou bestelling bevestig en uitgevoer is.",
+        "order_deposit_due_now": "{{depositAmount}} is vandag verskuldig. Die balans is op {{translatedName}} terme en is verskuldig op {{dueDate}}.",
+        "draft_order_deposit_due_later": "{{depositAmount}} sal verskuldig wees wanneer jou bestelling bevestig word. Die balans sal op {{translatedName}} terme wees.",
+        "draft_order_payment_due_later_no_terms": "Jou betaling sal verskuldig wees sodra jou bestelling bevestig is.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} sal verskuldig wees wanneer jou bestelling bevestig word. Die balans sal betaal word sodra jou bestelling vervul is."
+      },
+      "thank_you": {
+        "title": "Dankie vir jou aankoop!",
+        "return_to_store_link_label": "Gaan voort met inkopies doen",
+        "confirmation_email_sent_text": "'n Bevestigings-e-pos is gestuur na %{email}",
+        "print_link_label": "Druk kwitansie",
+        "payment_information_title": "Betalingsinligting",
+        "page_title": "Dankie, %{display_name}!",
+        "page_title_no_name": "Dankie!",
+        "shipping_information_title": "Versendingsinligting",
+        "contact_information_title": "Kontakinligting",
+        "cancelled_page_title": "Bestelling gekanselleer",
+        "failed_pending_payment_page_title": "Daar is 'n probleem met jou betaling",
+        "billing_address_title": "Faktuuradres",
+        "company_location_title": "Ligging",
+        "shipping_address_title": "Afleweringsadres",
+        "payment_method_title": "Betalingsmetode",
+        "shipping_method_title": "Versendingsmetode",
+        "customer_information_title": "Bestelbesonderhede",
+        "purchase_order_number_title": "PO nommer #%{purchase_order_number}",
+        "estimated_arrival": "Geskatte afleweringsdatum:",
+        "shipping_address_map_title": "Google-kaart wat die penpunt van die versendingsadres vertoon: %{address}",
+        "tracking_number": "Volgnommer:",
+        "company_tracking_number": "%{company} opsporingsnommer:",
+        "re-order": "Herorden die dieselfde items",
+        "estimated_delivery": "Huidige afleweringsberaming:",
+        "resend_gift_cards": "Stuur geskenkkaarte weer",
+        "gift_card_title": "Geskenkkaarte",
+        "gift_card_confirmation_by_text": "As jy dit nie ontvang het nie, stuur die teks weer of kontak ons.",
+        "confirmed": "Bevestig",
+        "thank_you_title": "Jou bestelling is bevestig",
+        "gift_card_confirmation_by_email": "As u dit nie ontvang het nie, stuur die e-pos weer of kontak ons.",
+        "thank_you_title_payments_app_failed_pending_payment": "U betaling kon nie verwerk word nie",
+        "thank_you_title_payment": "Jou betaling is bevestig",
+        "thank_you_title_payments_app_pending_buyer_action_required": "Jou bestelling is ontvang",
+        "thank_you_title_payments_app_pending_default": "Jou betaling word verwerk",
+        "thank_you_title_review": "Jou bestelling is ingedien vir hersiening",
+        "thank_you_confirmed_order_with_email": "Jy sal binnekort 'n bevestigings-e-pos met jou bestellingsnommer ontvang.",
+        "thank_you_confirmed_order_with_phone": "Jy sal binnekort 'n bevestigingsteks met jou bestellingsnommer ontvang.",
+        "thank_you_confirmed_order_with_email_and_phone": "Jy sal binnekort 'n bevestigings-e-pos met jou bestellingsnommer ontvang.",
+        "thank_you_confirmed_order_with_email_pick_up": "Jy sal 'n e-pos ontvang wanneer jou bestelling gereed is vir afhaling.",
+        "thank_you_confirmed_order_with_email_and_phone_pick_up": "Jy sal 'n e-pos ontvang wanneer jou bestelling gereed is vir afhaling.",
+        "thank_you_confirmed_order_with_email_payment": "Jy het 'n betaling gemaak op jou bestelling %{date}.",
+        "thank_you_confirmed_order_with_phone_payment": "Jy het 'n betaling gemaak op jou bestelling %{date}.",
+        "thank_you_confirmed_order_with_phone_pick_up": "Jy sal 'n boodskap ontvang wanneer jou bestelling gereed is vir afhaling.",
+        "thank_you_confirmed_order_with_email_and_phone_payment": "Jy het 'n betaling gemaak op jou bestelling %{date}.",
+        "thank_you_confirmed_order_with_missing": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_confirmed_order_with_missing_payment": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_confirmed_order_with_draft": "Ons sal jou laat weet as ons meer inligting nodig het of wanneer jou bestelling bevestig is.",
+        "thank_you_confirmed_order_with_draft_payment": "Ons sal jou laat weet as ons meer inligting nodig het of wanneer jou bestelling bevestig is.",
+        "thank_you_confirmed_order_with_draft_pick_up": "Ons sal jou laat weet as ons meer inligting nodig het of wanneer jou bestelling bevestig is.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing_payment": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_payments_app_failed_pending_payment": "Jy is nie gehef vir jou bestelling nie. Gaan terug na jou mandjie om jou bestelling te hersien en weer te betaal.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing_pick_up": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone": "Jy sal binnekort 'n bevestigings-e-pos met jou bestellingsnommer ontvang.",
+        "thank_you_payments_app_failed_pending_payment_payment": "Jy is nie vir jou bestelling gehef nie. Gaan terug na jou mandjie om jou bestelling te hersien en weer te betaal.",
+        "thank_you_payments_app_failed_pending_payment_pick_up": "Jy is nie gehef vir jou bestelling nie. Gaan terug na jou mandjie om jou bestelling te hersien en weer te betaal.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone_payment": "Jy sal binnekort 'n bevestigings-e-pos met jou bestellingsnommer ontvang.",
+        "thank_you_confirmed_order_with_missing_pick_up": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone_pick_up": "Jy sal binnekort 'n bevestigings-e-pos met jou bestellingsnommer ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_email": "Jy sal binnekort 'n bevestigings-e-pos met jou bestellingsnommer ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_pick_up": "Jy sal binnekort 'n bevestigings-e-pos met jou bestellingsnommer ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_payment": "Jy sal binnekort 'n bevestigings-e-pos met jou bestellingsnommer ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone": "Jy sal binnekort 'n bevestigingsteks met jou bestellingsnommer ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone_payment": "Jy sal binnekort 'n bevestigingsteks met jou bestellingsnommer ontvang.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone_pick_up": "Jy sal binnekort 'n bevestigingsteks met jou bestellingsnommer ontvang.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_pick_up": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_payment": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos met u bestelnommer.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_pick_up": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos met u bestelnommer.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_pick_up": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos met u bestelnommer.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_payment": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos met u bestelnommer.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos met u bestelnommer.",
+        "thank_you_payments_app_pending_payment_description_provider_action_required_default": "Jou betaling word verwerk. Jy sal 'n e-pos ontvang wanneer jou betaling bevestig is.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_payment": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos met u bestelnommer.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone": "Nadat u u betaling voltooi het, ontvang u 'n bevestigingsteks met u bestelnommer.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone_payment": "Nadat u u betaling voltooi het, ontvang u 'n bevestigingsteks met u bestelnommer.",
+        "order_status_confirmed_order_with_email_payment": "Jy het 'n betaling gemaak op jou bestelling %{date}.",
+        "order_status_confirmed_order_with_phone_payment": "Jy het 'n betaling gemaak op jou bestelling %{date}.",
+        "order_status_confirmed_order_with_phone": "Jy mag 'n teks ontvang wanneer jou bestelling gereed is.",
+        "order_status_confirmed_order_with_email_and_phone_payment": "Jy het 'n betaling gemaak op jou bestelling %{date}.",
+        "order_status_confirmed_order_with_email_pick_up": "Jy sal 'n e-pos ontvang wanneer jou bestelling gereed is vir afhaling.",
+        "order_status_confirmed_order_with_email": "Jy sal 'n e-pos ontvang wanneer jou bestelling gereed is.",
+        "order_status_confirmed_order_with_phone_pick_up": "Jy sal 'n boodskap ontvang wanneer jou bestelling gereed is vir afhaling.",
+        "order_status_payments_app_pending_payment_description_default_with_missing": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "order_status_confirmed_order_with_email_and_phone": "Jy sal 'n e-pos ontvang wanneer jou bestelling gereed is.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone_pick_up": "Nadat u u betaling voltooi het, ontvang u 'n bevestigingsteks met u bestelnommer.",
+        "order_status_confirmed_order_with_email_and_phone_pick_up": "Jy sal 'n e-pos en teks ontvang wanneer jou bestelling gereed is vir afhaling.",
+        "order_status_payments_app_pending_payment_description_default_with_missing_pick_up": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "order_status_payments_app_pending_payment_description_default_with_missing_payment": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "order_status_payments_app_pending_payment_description_default_with_email_and_phone_payment": "Jy sal binnekort 'n bevestigings-e-pos ontvang. Volg jou bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_default_with_email_and_phone_pick_up": "Jy sal binnekort 'n bevestigings-e-pos ontvang. Volg jou bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_default_with_email_pick_up": "Jy sal binnekort 'n bevestigings-e-pos ontvang. Volg jou bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_default_with_email_payment": "Jy sal binnekort 'n bevestigings-e-pos ontvang. Volg jou bestelling met die Shop-toepassing.",
+        "order_status_payments_app_pending_payment_description_default_with_email": "Jy sal binnekort 'n bevestigings-e-pos ontvang. Volg jou bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_default_with_email_and_phone": "Jy sal binnekort 'n bevestigings-e-pos ontvang. Volg jou bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_missing": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_missing_payment": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_missing_pick_up": "Kontak ons per e-pos of telefoon om 'n bestellingsbevestiging te ontvang.",
+        "order_status_payments_app_pending_payment_description_default_with_phone_payment": "Jy sal binnekort 'n bevestigingsteks kry. Volg jou bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_default_with_phone": "Jy sal binnekort 'n bevestigingsteks kry. Volg jou bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_default_with_phone_pick_up": "Jy sal binnekort 'n bevestigingsteks kry. Volg jou bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos. Volg u bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_payment": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos. Volg u bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_pick_up": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos. Volg u bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_payment": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos. Volg u bestelling met die Shop-toepassing.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos. Volg u bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_phone_payment": "Nadat u u betaling voltooi het, ontvang u 'n bevestigingsteks. Volg u bestelling met die Shop-app.",
+        "order_status_payments_app_failed_pending_payment": "Jy is nie gehef vir jou bestelling nie. Gaan terug na jou mandjie om jou bestelling te hersien en weer te betaal.",
+        "order_status_payments_app_failed_pending_payment_payment": "Jy is nie gehef vir jou bestelling nie. Gaan terug na jou mandjie om jou bestelling te hersien en weer te betaal.",
+        "order_status_payments_app_failed_pending_payment_pick_up": "Jy is nie gehef vir jou bestelling nie. Gaan terug na jou mandjie om jou bestelling te hersien en weer te betaal.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_phone": "Nadat u u betaling voltooi het, ontvang u 'n bevestigingsteks. Volg u bestelling met die Shop-app.",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_phone_pick_up": "Nadat u u betaling voltooi het, ontvang u 'n bevestigingsteks. Volg u bestelling met die Shop-app.",
+        "order_status_confirmed_order_local": "Ons maak jou bestelling gereed vir aflewering.",
+        "order_status_confirmed_order_local_payment": "Ons maak jou bestelling gereed.",
+        "order_status_confirmed_order_local_pick_up": "Ons maak jou bestelling gereed.",
+        "order_status_updates_with_phone": "U kan versendings- en afleweringsopdaterings per teks ontvang.",
+        "order_status_updates_with_email_and_phone": "Jy sal versendings- en afleweringsopdaterings per e-pos ontvang.",
+        "order_status_updates_with_email": "Jy sal versendings- en afleweringsopdaterings per e-pos ontvang.",
+        "confirmed_title": "Jou bestelling is bevestig",
+        "order_status_updates_with_missing": "Kies hoe jy wil afleweringsopdaterings ontvang.",
+        "order_status_confirmed_with_installments_payment_return": "Wys asseblief weer aandag aan die verkoopsassistent.",
+        "ready_for_pickup_title": "Jou bestelling is gereed vir afhaling",
+        "order_status_payments_app_pending_payment_description_buyer_action_required_with_email_and_phone_pick_up": "Nadat u u betaling voltooi het, ontvang u 'n bevestigings-e-pos. Volg u bestelling met die Shop-app.",
+        "order_status_confirmed_with_installments_payment_confirm": "Jy sal binnekort 'n bevestigings-e-pos ontvang met jou bestellingsnommer en besonderhede van jou paaiementskedule.",
+        "confirmed_description": "Ons het jou bestelling aanvaar, en ons maak dit gereed. Kom terug na hierdie bladsy vir opdaterings oor jou versendingsstatus.",
+        "ready_for_delivery_title": "Jou bestelling is gereed vir aflewering",
+        "order_updates_title": "Bestelling opdaterings",
+        "ready_for_delivery_description": "Ons het jou bestelling voorberei.",
+        "ready_for_pickup_description": "Jou bestelling is gereed vir afhaling. Bring asseblief jou bestelbevestiging wanneer jy jou bestelling afhaal.",
+        "order_updates_past_step_prefix": "Vorige stap:",
+        "shop_phone_description": "Jy sal 'n teks ontvang met 'n skakel na die Shop-app om jou bestelling op te spoor.",
+        "order_updates_current_step_prefix": "Huidige stap:",
+        "order_updates_description_html": "Opdaterings sal aan %{customer_contact} gestuur word",
+        "in_transit": "Op pad",
+        "order_updates_upcoming_step_prefix": "Volgende stap:",
+        "in_transit_description": "Jy sal opdaterings oor die vordering daarvan ontvang.",
+        "in_transit_title": "Jou bestelling is onderweg",
+        "out_for_delivery": "Uit vir aflewering",
+        "in_transit_description_today": "Jy behoort jou bestelling vandag te ontvang.",
+        "out_for_delivery_title": "Jou bestelling is uit vir aflewering",
+        "no_tracking_number": "Daar is geen opsporingsnommer vir hierdie bestelling nie.",
+        "out_for_delivery_local_title": "Jou bestelling is uit vir aflewering",
+        "in_transit_description_days": "Jy behoort jou bestelling binne die volgende %{number} dae te ontvang.",
+        "in_transit_description_tomorrow": "Jy behoort jou bestelling binne die volgende dag te ontvang.",
+        "attempted_delivery": "Beoogde aflewering",
+        "out_for_delivery_description_html": "Jou bestelling is onderweg en behoort vandag te arriveer. As dit nie binne die volgende 2 dae afgelewer word nie, %{contact_us}.",
+        "attempted_delivery_description_html": "'n Poging is aangewend om jou bestelling te lewer, maar dit was onsuksesvol. %{contact_us} om 'n ander leweringspoging te reël.",
+        "attempted_delivery_title": "'n Poging is aangewend om jou bestelling te lewer",
+        "attempted_delivery_local_title": "Gemiste aflewering",
+        "delivered_title": "Jou bestelling is afgelewer",
+        "delivered_local_title": "Jou bestelling is afgelewer",
+        "attempted_delivery_local_description_html": "Ons kon nie jou bestelling lewer nie. Om 'n ander aflewering te skeduleer, %{contact_us}.",
+        "choose_payment_method_later": "Kies betaalmetode later",
+        "delivered": "Afgelewer",
+        "picked_up_title": "Jou bestelling is afgehaal",
+        "contact_us": "Kontak ons",
+        "contact_us_lowercase": "kontak ons",
+        "out_for_delivery_local_description_html": "Jou bestelling sal binnekort arriveer.",
+        "picked_up_description_html": "Jou bestelling is by %{location_name} op %{date} afgehaal.",
+        "contact_us_html": "Het jy hulp nodig? %{contact_us}",
+        "failure": "Nie afgelewer nie",
+        "delivered_description_html": "Jou bestelling is afgelewer by die adres wat jy verskaf het. As jy dit nie ontvang het nie, of as jy enige ander probleme het, %{contact_us}.",
+        "updated_time": "Opgedateer %{time_ago} gelede",
+        "failed_title": "Jou bestelling kon nie afgelewer word nie",
+        "failed_contact_merchant_no_company": "Kontak ons om aflewering te reël.",
+        "failed_contact_merchant": "Kontak %{company} om aflewering te reël.",
+        "delivered_local_description_html": "Het jy jou bestelling nie ontvang nie? %{let_us_know}.",
+        "let_us_know": "Laat weet ons",
+        "non_shippable_title": "Jou bestelling is voltooi",
+        "login_title": "Meld aan om alle bestelbesonderhede te sien",
+        "login_description": "Jy kan jou bestelnommer in die kwitansie vind wat jy via e-pos ontvang het.",
+        "login_not_customer_html": "Nie %{name}? Jy kan %{link}",
+        "cancelled_title": "Jou bestelling is gekanselleer",
+        "login_reorder_link_text": {
+          "one": "koop ook hierdie produk",
+          "other": "koop ook hierdie produkte"
+        },
+        "login_description_phone": "Jy kan jou bestelnommer in die kwitansie vind wat jy via teksboodskap ontvang het.",
+        "customer_information_hidden_fields_message": "Meld aan om alle klantinligting te sien.",
+        "order_number_label": "Bestelnommer",
+        "login": "Teken in",
+        "customer_validation_error": "Voer 'n geldige e-pos of bestellingsnommer in.",
+        "cancelled_description": "Jou bestelling is gekanselleer op %{date}. Kontak ons as jy enige vrae het.",
+        "marker": {
+          "shipping": "Afleweringsadres",
+          "current": "Huidige versendingsplek"
+        },
+        "customer_validation_error_phone": "Voer 'n geldige telefoon- of bestelnommer in.",
+        "unfulfilled_items_description": "Ons is tans besig om hierdie items vir versending voor te berei.",
+        "unfulfilled_items_title": "Voorbereiding vir versending",
+        "pick_up_in_store_marker": {
+          "current": "Huidige versendingsplek",
+          "shipping": "Afhaalplek"
+        },
+        "fulfillment": {
+          "fulfilled_table_title": "Items in hierdie versending",
+          "product_image_label": "Produkbeeld",
+          "description_label": "Beskrywing",
+          "quantity_label": "Hoeveelheid",
+          "unfulfilled_table_title": "Items wat voorberei word vir versending"
+        },
+        "order_updates_subscribe_to_email_notifications": "Kry versendingsopdaterings per e-pos",
+        "order_updates_subscribe_to_email_or_phone_notifications": "Kry versendingsopdaterings per e-pos of teks",
+        "order_updates_submit_subscription": "Dien in",
+        "order_updates_subscribe_to_phone_notifications": "Kry versendingsopdaterings per teks",
+        "delivery_information_label": "Afleweringsinligting:",
+        "order_updates_description_missing": "Jy ontvang nie versendingsopdaterings nie.",
+        "track_shipment": "Volg versending",
+        "other_options": "Ander opsies",
+        "gift_card_sent_confirmation": "Geskenkkaarte gestuur",
+        "qr_code": {
+          "title": "Volg op jou foon",
+          "send_link_to_phone": "Of stuur 'n skakel na jou foon"
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Skandeer met jou foon"
+          },
+          "sms": {
+            "title": "Of stuur 'n skakel na jou foon"
+          }
+        },
+        "breadcrumbs_submitted": "Ingedien",
+        "breadcrumbs_confirmed": "Bevestig",
+        "view_business_customer_account": "Kyk rekening",
+        "missing_shipping_address_banner": {
+          "contact_us": "Kontak ons",
+          "title": "Bestelling het nie 'n versendingsadres nie",
+          "text_html": "%{contact_us} om jou adres by te voeg"
+        },
+        "breadcrumbs_in_review": "In hersiening",
+        "location_title": "Ligging",
+        "company_location_section_title": "Maatskappy en ligging",
+        "first_payment_complete": "Eerste betaling voltooi",
+        "in_store_purchase": "In-winkel aankoop",
+        "thank_you_ready_for_picked_up": "Jou bestelling is by %{address} afgehaal.",
+        "ready_for_delivery": "Gereed vir aflewering",
+        "subscriptions_management": {
+          "title": "Intekening",
+          "button_label": "Bestuur jou intekening",
+          "description": "Gaan voort na jou rekening om jou intekeninge te sien en te bestuur."
+        },
+        "order_updates_subscribe_to_email_notifications_failed": "Ons kan nie hierdie e-pos vir opdaterings stoor nie. Probeer asseblief weer of gebruik 'n ander e-pos.",
+        "manage_order_label": "Bestuur jou bestelling",
+        "gift_card_confirmation_by_text_typ": {
+          "one": "Jy sal binne 'n paar minute 'n teks met jou geskenkkaart ontvang.",
+          "other": "Jy sal binne 'n paar minute 'n teks met jou geskenkkaarte ontvang."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "other": "Jy sal binne 'n paar minute 'n e-pos met jou geskenkkaarte ontvang.",
+          "one": "Jy sal binne 'n paar minute 'n e-pos met jou geskenkkaart ontvang."
+        },
+        "gift_card_email_title": {
+          "one": "Geskenkkaart is per e-pos gestuur",
+          "other": "Geskenkkaarte is per e-pos gestuur"
+        },
+        "order_updates_subscribe_to_email_notifications_email_already_exists": "Die e-pos wat jy ingevoer het bestaan reeds.",
+        "gift_card_text_title": {
+          "one": "Geskenkkaart is per SMS gestuur",
+          "other": "Geskenkkaarte is per SMS gestuur"
+        },
+        "resend_gift_cards_by_text": "Stuur teksboodskap weer",
+        "gift_card_resent_confirmation": {
+          "one": "Geskenkkaart is weer gestuur.",
+          "other": "Geskenkkaarte is weer gestuur."
+        },
+        "resend_gift_cards_by_email": "Stuur e-pos weer",
+        "verify_shop_account_title": "Verifieer jou Winkelrekening",
+        "verify_shop_account_message": "Jou inligting is gestoor by Shop, verifieer jou rekening om dit outomaties op miljoene winkels te gebruik.",
+        "verify_shop_account_cta": "Verifieer jou rekening",
+        "verify_shop_account_confirmation": "Betaalbesonderhede gestoor",
+        "announcement": {
+          "close": "Maak toe"
+        },
+        "vat_invoices": {
+          "title": "BTW-fakture"
+        },
+        "gift_card_resend_failure": {
+          "other": "Daar was 'n probleem met die herstuur van jou geskenkkaarte. Probeer weer of kontak ons.",
+          "one": "Daar was 'n probleem met die herstuur van jou geskenkkaart. Probeer weer of kontak ons."
+        }
+      },
+      "vaulted": {
+        "change_button": "Verander"
+      },
+      "review": {
+        "review_and_confirm_title": "Hersien en bevestig",
+        "title": "Hersiening",
+        "account_more_actions": "Meer aksies vir hierdie rekening",
+        "review_title": "Voltooi jou bestelling",
+        "blocks": {
+          "contact_method_title": "Kontak",
+          "shipping_address_title": "Stuur na",
+          "shipping_method_title": "Versendingsmetode",
+          "payment_method_title": "Betalingsmetode",
+          "change_link_label": "Verander",
+          "billing_address_title": "Fakturering",
+          "change_billing_address_link_label": "Verander faktuuradres",
+          "change_contact_method_link_label": "Verander kontakbesonderhede",
+          "purchase_order_number_title": "PO nommer",
+          "change_payment_method_link_label": "Verander betaalmetode",
+          "change_shipping_address_link_label": "Verander afleweringsadres",
+          "change_shipping_method_link_label": "Verander versendingsmetode",
+          "pick_up_in_store_shipping_method_html": "Afhaal in winkel · %{location_name}",
+          "change_purchase_order_number_label": "Verander PO-nommer",
+          "change_delivery_method_link_label": "Verander afleweringsmetode",
+          "no_purchase_order_number": "(Geen PO-nommer)",
+          "company_location": "Maatskappy ligging",
+          "payment_method_saved_company_location": "Stoor kaart vir hierdie ligging",
+          "review_title_free_order": "Hersien en voltooi jou bestelling",
+          "due_after_order_reviewed_html": "Betaalbaar nadat bestelling hersien is",
+          "no_address": "(Geen adres)"
+        },
+        "checkout_as_guest": "Betaal as gasheer uit",
+        "checkout_a_different_way": "Kyk na 'n ander manier",
+        "item_header": {
+          "value": "Waarde",
+          "section": "Afdeling",
+          "change_value": "Verander waarde"
+        },
+        "block_title": "Hersien jou inligting"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Stuur vir my e-pos met nuus en aanbiedings",
+        "post_accept_marketing_checkbox_label": "Jy is ingeteken om e-pos nuus en aanbiedings te ontvang",
+        "disclaimer": {
+          "privacy_policy": "Privaatheidsbeleid",
+          "terms_of_service": "Diensvoorwaardes"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Privaatheidsbeleid",
+            "terms_of_service": "Diensvoorwaardes",
+            "description_transactional_html": "U mag teksboodskappe ontvang wat verband hou met bestelbevestiging en versendingsopdaterings. Antwoord STOP om uit te teken. Antwoord HELP vir hulp. Boodskapfrekwensie wissel. Boodskap- en datatariewe mag van toepassing wees. Kyk na ons %{privacy_policy_modal_link} en %{terms_of_service_modal_link}.",
+            "description_html": "Deur aan te meld via teks, stem jy in om herhalende outomatiese bemarkingsboodskappe te ontvang, insluitend mandjie-herinneringe, by die verskafde telefoonnommer. Toestemming is nie 'n voorwaarde vir aankoop nie. Antwoord STOP om uit te teken. Antwoord HELP vir hulp. Boodskapfrekwensie wissel. Msg- en datatariewe kan van toepassing wees. Kyk na ons %{privacy_policy_link} en %{terms_of_service_link}."
+          },
+          "mobile_phone_number": "Selfoonnommer",
+          "get_offers_by_text": "Kry aanbiedings per teks"
+        },
+        "pending_accept_marketing_checkbox_label": "Kyk na jou e-pos om jou intekening op nuus en aanbiedings te bevestig",
+        "accept_sms_checkbox_label": "Stuur vir my 'n boodskap met nuus en aanbiedings",
+        "unsubscribe": {
+          "title": "Jy het uitgeteken",
+          "description": "Jy sal nie meer mandjie-herinneringe van ons ontvang nie."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Skryf my in vir nuus en aanbiedings van hierdie winkel"
+      },
+      "shop_policies": {
+        "refund_policy": "Terugbetalingsbeleid",
+        "privacy_policy": "Privaatheidsbeleid",
+        "terms_of_service": "Diensvoorwaardes",
+        "legal_notice": "Regskennisgewing",
+        "shipping_policy": "Versendingsbeleid",
+        "contact_information": "Kontakinligting",
+        "terms_of_sale": "Verkoopsvoorwaardes",
+        "subscription_policy": "Kansellasiebeleid",
+        "cookie_preferences": "Koekie-voorkeure",
+        "purchase_options_policy": "Koopopsiebeleid",
+        "purchase_options_cancellation_policy": "Kansellasiebeleid"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Handelaar van Rekord Terme en Voorwaardes",
+        "privacy_policy": "Handelaar van Rekord Privaatheidsbeleid"
+      },
+      "order_payment_collection": {
+        "changes_summary": {
+          "added": {
+            "one": "Bygevoeg",
+            "other": "Bygevoeg %{count}"
+          },
+          "removed": "Verwyder",
+          "returned": "Teruggegee %{count}",
+          "subtracted": "Verwyder %{count}",
+          "return_line_item_removed": "Verwyder %{count} van terugkeer"
+        },
+        "custom_line_item_description": "Bedrag om te betaal vir bestelling %{order_name}",
+        "additional_payment_requested": "Betaling van %{total_outstanding} is nodig",
+        "order_updated_on": "Jou bestelling is op %{last_edited_at} opgedateer.",
+        "pay_now": "Betaal nou",
+        "checkout_review_and_pay": "Jou bestelling %{order_name} is opgedateer. Hersien hierdie veranderinge, en betaal dan om jou bestelling te bevestig.",
+        "order_review_and_pay": "Jou bestelling is opgedateer. Hersien en betaal om jou bestelling te bevestig."
+      },
+      "notifications": {
+        "title": "Kennisgewings"
+      },
+      "markets": {
+        "invalid_market_manager_error": "Hersien jou kontakbesonderhede voordat jy betaling voltooi"
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Jou kredietkaart sal met %{amount} gehef word",
+        "change_currency_link": "Verander na %{currency_name}",
+        "payment_total_label": "Betaling totaal",
+        "card_provider_fx_charges_warning": "Jou kaartverskaffer mag fooie hef op %{currency_code} transaksies.",
+        "currency_not_supported_by_shop": "Die geldeenheid wat u gekies het, is nie meer beskikbaar nie. Alle pryse is nou in %{currency_code}."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Jou land/streek is opgedateer. Voer jou versendingsadres in om met die uitcheck voort te gaan."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Jou mandjie is opgedateer gebaseer op jou versendingsland.",
+        "cart_and_currency_updated_based_on_country": "Jou mandjie en geldeenheid is opgedateer gebaseer op jou versendingsland."
+      },
+      "tips": {
+        "title": "Voeg wenk by",
+        "description": "Wys jou ondersteuning vir die span by %{shop_name}",
+        "presets_description": "Kies 'n wenk persentasie",
+        "custom_label": "Pasgemaakte wenk",
+        "update_tip": "Werk wenk by",
+        "add_tip": "Voeg wenk by",
+        "no_tip_label": "Geen",
+        "message": "Dankie, ons waardeer dit."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "other": "Koop %{product_name} en %{count} ander items",
+          "zero": "Koop %{product_name}",
+          "one": "Koop %{product_name} en %{count} ander item"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "one": "dag",
+            "other": "%{count} dae"
+          },
+          "week": {
+            "one": "week",
+            "other": "%{count} weke"
+          },
+          "month": {
+            "one": "maand",
+            "other": "%{count} maande"
+          },
+          "year": {
+            "one": "jaar",
+            "other": "%{count} jaar"
+          }
+        },
+        "recurring_totals": "%{total_price} elke %{interval}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Eerste betaling %{total_price}",
+            "other": "Eerste %{count} betalings van %{total_price} elk"
+          },
+          "following_cycles": ", dan %{total_price} elke %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount": "Eerste betaling %{total_price_with_discount}, dan %{recurring_total}",
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", dan %{count} betaling by %{total_price}",
+            "other": ", dan %{count} betalings teen %{total_price} elk"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Betalingsmetodes",
+        "title": "Betalingsmetodes",
+        "update_card_button_label": "Werk kaart by",
+        "delete_customer_mandate": {
+          "success_message": "Jou betaalmetode is suksesvol verwyder",
+          "generic_error": "Daar was 'n probleem met die verwerking van jou versoek."
+        }
+      },
+      "throttle": {
+        "cart_summary_heading": "Jou mandjie",
+        "too_many_attempts": {
+          "message": "Te veel pogings",
+          "description": "Probeer asseblief weer oor 'n paar minute"
+        },
+        "line_to_check_out": "Jy is in die ry om uit te check",
+        "merchandise": {
+          "sold_out": "Uitverkoop",
+          "available": "Beskikbaar"
+        },
+        "inventory": {
+          "sold_out": {
+            "heading": "Jou mandjie is uitverkoop",
+            "storefront_body": "Gaan terug na die winkel om aan te hou winkel.",
+            "link": "Terug na winkel",
+            "no_storefront_body": "Ongelukkig is die item wat u wil koop nie meer beskikbaar nie."
+          },
+          "partial_inventory_banner": "Deel van jou mandjie is uitverkoop en sal nie beskikbaar wees om by die betaalpunt te koop nie."
+        },
+        "title": "Waglys",
+        "estimated_wait_time": {
+          "calculating": "Berekening van geskatte wagtyd",
+          "less_than_one": "Geskatte wagtyd: Minder as 'n minuut",
+          "one": "Geskatte wagtyd: {{count}} minuut",
+          "other": "Geskatte wagtyd: {{count}} minute"
+        },
+        "time_to_checkout_title": "Tyd om uit te check - {{shopName}}",
+        "footer": {
+          "body": "Items in your kar is nie gereserveer totdat jy die uitklok voltooi nie.",
+          "heading": "Moet nie hierdie bladsy herlaai nie, dit sal outomaties opdateer."
+        },
+        "last_checked": "(Laaste nagegaan: {{time}})"
+      },
+      "no_address_location": {
+        "title": "Ligging sonder adres",
+        "alt_header": "Ontbrekende versendingsadres",
+        "header": "Jy het nie 'n versendingsadres vir hierdie ligging nie"
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Daar was 'n probleem met die verwerking van jou versoek, kontak asseblief die winkel eienaar."
       }
     }
   },
