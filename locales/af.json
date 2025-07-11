@@ -2990,7 +2990,73 @@
         }
       },
       "status_mark_as_delivered": "Merk as afgelewer",
-      "fulfillment_status_title": "Vervullingsstatus: {{status}}"
+      "fulfillment_status_title": "Vervullingsstatus: {{status}}",
+      "manage": "Bestuur",
+      "buy_again": "Koop weer",
+      "manage_accessiblity_label": "Bestuur bestelling {{orderId}}",
+      "buy_again_accessibility_label": "Koop weer vir bestelling {{orderId}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_label": "Wys besonderhede",
+        "hide_events_label": "Versteek besonderhede",
+        "expand_events_accessibility_label": "Wys bestellingsversendingsbesonderhede",
+        "hide_events_accessibility_label": "Versteek bestellingsversendingsbesonderhede"
+      },
+      "order_details": "Bestelbesonderhede",
+      "addresses_section_title": "Fakturering en versending",
+      "billing_address": "Faktuuradres",
+      "contact": "Kontak",
+      "contact_information": "Kontakinligting",
+      "company": "Maatskappy",
+      "company_and_location": "Maatskappy en ligging",
+      "card_ending_with": "eindig met {{lastDigits}}",
+      "group_title_label": "Deel van: {{groupTitle}}",
+      "order_details_skeleton_accessibility_label": "Meld aan om alle bestelbesonderhede te sien.",
+      "fully_refunded_label": "TERUGBETAALD",
+      "view_controls": {
+        "gallery": "Galery",
+        "list": "Lys"
+      },
+      "grouped_view_components": {
+        "expand_line_items": "Wys {{count}} items",
+        "line_item_summary": "{{refundableQuantity}} x {{productTitle}}",
+        "collapse_line_items": "Versteek {{count}} items",
+        "line_item_summary_accessibility_label": "{{productTitle}}, Hoeveelheid: {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "Items in {{productTitle}} bondel"
+      },
+      "discount": "Afslag",
+      "location": "Ligging",
+      "loading": "Laai bestellingsbesonderhede",
+      "hide_items": "Versteek items",
+      "image_gallery": {
+        "next": "Wys volgende items",
+        "product_name_and_quantity": "{{productName}} hoeveelheid {{quantity}}",
+        "previous": "Wys vorige items",
+        "load_more_items": {
+          "other": "Laai nog {{count}} items",
+          "one": "Laai nog {{count}} items"
+        }
+      },
+      "loading_finished_accessibility_message": "Bestelbesonderhede is gelaai",
+      "mobile_summary_toggle_button": {
+        "open": "Wys bestellingsopsomming",
+        "closed": "Versteek bestellingsopsomming"
+      },
+      "no_data": "Geen",
+      "paid_amount": "Betaal",
+      "not_applicable": "N/A",
+      "payment": {
+        "title": "Betaling",
+        "payment_type": {
+          "gift_card": "Geskenkkaart",
+          "store_credit": "Winkelkrediet"
+        },
+        "status_in_review": "Betaling verskuldig na hersiening",
+        "status_unpaid": "Betaling verskuldig op {{date}}"
+      },
+      "no_data_provided_accessibility_label": "{{fieldName}} is leeg",
+      "partially_refunded_label": "DEELWESE TERUGBETAAL"
     }
   }
 }
