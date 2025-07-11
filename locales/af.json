@@ -2917,8 +2917,80 @@
         "out_for_delivery_title": "Jou versending is uit vir aflewering",
         "submitted_description": "Hersien bestelling en betalingsbesonderhede.",
         "there_was_a_problem_label": "Daar was 'n probleem",
-        "resume_tracking": "Hervat opsporing"
-      }
+        "resume_tracking": "Hervat opsporing",
+        "view_order_for_details": "Kyk bestelling vir besonderhede",
+        "track_shipment": "Volg versending",
+        "request_return": "Versoek terugkeer",
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "Bestuur met Amazon",
+            "new_window_disclaimer": "(open 'n nuwe venster)"
+          }
+        },
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "Bestuur op Amazon"
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "Aflewering gewaarborg deur",
+            "external_promise_brand_label": "Aflewering deur",
+            "modal_accessibility_button_label": "Afleweringsbelofte besonderhede",
+            "delivery_guarantee_expired_label": "Afleweringswaarborg verval",
+            "not_delivered_by_label": "Afgelewer na {{date}}",
+            "download_shop_app_button_label": "Laai Winkel af om te volg",
+            "claim_shop_cash_button_label": "Eis Winkel Kontant",
+            "track_with_shop_button_label": "Volg met Winkel"
+          },
+          "details_modal": {
+            "expired_badge_label": "Verstryk",
+            "title": "Afleweringswaarborg",
+            "delivered_after_label": "Afgelewer na {{date}}",
+            "active_delivery_guarantee_label": "Aflewering teen {{date}}",
+            "order_includes_guarantees_label": "Jou bestelling sluit {{deliveryAgreementsCount}} waarborge in",
+            "expired_delivery_guarantee_description": "Hierdie bestelling se 30-dae Winkelbelofte waarborg het verval.",
+            "learn_more_button_label": "Leer meer",
+            "claim_shop_cash_button_label": "Eis Winkel Kontant",
+            "delivered_after_description": "Omdat jou bestelling laat aangekom het, is jy geregtig om {{amount}} Shop Cash te eis.",
+            "order_includes_guarantees_description": "Shop Promise waarborg vinnige, betroubare aflewering. Eis Shop Cash as jou bestelling na {{date}} arriveer.",
+            "claimed_shop_cash_description": "Omdat hierdie bestelling laat aangekom het, het jy {{amount}} Shop Cash geëis.",
+            "view_balance_in_shop_button_label": "Kyk balans in Winkel",
+            "eligible_to_claim_shop_cash_description": "Omdat jou bestelling laat aangekom het, is jy geregtig om {{amount}} Shop Cash te eis.",
+            "scan_to_claim_shop_cash_label": "Skandeer om {{amount}} Winkel Kontant te eis"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "modal_accessibility_button_label": "Afleweringsbelofte besonderhede",
+            "mixed_brands_label": "Aflewering gewaarborg",
+            "single_brand_label": "Aflewering ondersteun deur",
+            "not_delivered_by_label": "Nie afgelewer teen {{date}} nie"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Eis jou Winkel Kontant op",
+            "no_shop_app_label": "{{appDownloadLink}} om Shop Cash te eis",
+            "download_shop_app_label": "Laai Winkel af"
+          },
+          "details_modal": {
+            "title": "Aflewering ondersteun deur",
+            "modal_accessiblity_label": "Afleweringsbelofte besonderhede",
+            "delivery_guarantee_label": "Afleweringswaarborg",
+            "delivery_by_label": "Aflewering teen {{date}}",
+            "delivery_guaranteed_by_label": "Aflewering gewaarborg teen {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise waarborg vinnige, betroubare aflewering. Eis Shop Cash as jou bestelling laat aankom.",
+              "redeemed_label": "Jy het reeds Shop Cash geëis omdat hierdie bestelling laat aangekom het.",
+              "may_be_eligible_not_authorized_label": "Jy mag in aanmerking kom om Shop Cash te eis omdat hierdie bestelling laat aangekom het. Meld aan om besonderhede te sien.",
+              "claim_shop_cash_title": "Skandeer om {{amount}} in Shop Cash te eis",
+              "no_longer_guaranteed_label": "Hierdie items word nie meer deur 'n afleweringswaarborg gedek nie.",
+              "claim_shop_cash_description": "Jy kan jou Shop Kontant gebruik op toekomstige aankope in die Shop-app.",
+              "expired_label": "Hierdie bestelling kom nie in aanmerking vir 'n laat aflewerings-eis nie omdat die 30-dae waarborg verval het.",
+              "no_shop_cash_label": "Hierdie bestelling kom nie in aanmerking vir 'n laat afleweringsaanspraak nie omdat dit nie met Shop Pay betaal is nie."
+            }
+          }
+        }
+      },
+      "status_mark_as_delivered": "Merk as afgelewer",
+      "fulfillment_status_title": "Vervullingsstatus: {{status}}"
     }
   }
 }
