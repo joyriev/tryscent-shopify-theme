@@ -3417,10 +3417,172 @@
               "other": "موعد استحقاق دفعتك خلال {{count}} أيام"
             },
             "banner_due_today": "دفعتك مستحقة اليوم",
-            "title": "المبلغ المستحق"
-          }
+            "title": "المبلغ المستحق",
+            "title_due_on_fulfillment": "الدفع مستحق عند التنفيذ",
+            "title_with_date": "المبلغ المستحق {{date}}",
+            "description_partially_paid": "تم دفع جزء من هذا الطلب. لديك رصيد متبقٍ.",
+            "title_due_on_receipt": "الدفع غير مستحق بعد",
+            "description_overdue": "دفعك متأخر.",
+            "description_authorized": "سيتم خصم طريقة الدفع الخاصة بك في تاريخ الاستحقاق، أو يمكنك الدفع الآن.",
+            "description_waiting_for_manual_payment": "هذا الطلب يحتوي على دفعة معلقة. سيتم تحديث الرصيد عند استلام الدفعة.",
+            "description_due_on_receipt": "ستتلقى فاتورة عند استحقاق الدفع.",
+            "description_due_on_receipt_partially_paid": "تم دفع هذا الطلب جزئيًا. لديك رصيد متبقي. ستتلقى فاتورة عند استحقاق الدفع.",
+            "description_due_on_fulfillment": "يستحق الدفع بمجرد استكمال جميع العناصر في هذا الطلب.",
+            "description_due_on_fulfillment_partially_paid": "تم دفع جزء من هذا الطلب. لديك رصيد متبقي. يجب السداد بمجرد استكمال جميع العناصر في هذا الطلب."
+          },
+          "draft": {
+            "description": "يتم تحديد تفاصيل الدفع عند تأكيد الطلب.",
+            "title": "الدفع لم يحين بعد",
+            "in_review": {
+              "description": "يتم تحديد تفاصيل الدفع عند تأكيد الطلب.",
+              "title": "الدفع لم يحين بعد"
+            },
+            "submitted": {
+              "description": "قدّم الدفع لتأكيد هذا الطلب.",
+              "title": "ادفع للتأكيد",
+              "deposit": {
+                "title": "الدفع مستحق",
+                "due_later": "الرصيد وفقًا لشروط {{translatedName}} ويستحق في {{dueDate}}.",
+                "due_on_fulfillment": "يستحق الرصيد بمجرد استكمال جميع العناصر في هذا الطلب.",
+                "due_on_receipt": "ستتلقى فاتورة بالمبلغ المتبقي.",
+                "due_on_date": "الرصيد مستحق في {{dueDate}}."
+              }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}} سيكون مستحقًا عند تأكيد طلبك. سيكون الرصيد وفقًا لشروط {{translatedName}}.",
+              "due_on_fulfillment": "{{depositAmount}} سيكون مستحقًا عند تأكيد طلبك. وسيكون الرصيد مستحقًا عند تنفيذ الطلب.",
+              "due_on_receipt": "{{depositAmount}} سيكون مستحقًا عند تأكيد طلبك. وسيكون الرصيد مستحقًا لاحقًا.",
+              "due_on_date": "{{depositAmount}} سيكون مستحقًا عند تأكيد طلبك. وسيكون الرصيد مستحقًا في {{dueDate}}."
+            }
+          },
+          "paid": {
+            "title": "مدفوع",
+            "title_with_date": "تم الدفع {{date}}",
+            "description": "تم دفع طلبك بالكامل."
+          },
+          "refund": {
+            "title": "تم الاسترداد",
+            "title_with_date": "تم استرداد المبلغ {{date}}",
+            "description_full_refund": "لقد تلقيت استردادًا كاملاً لهذا الطلب.",
+            "description_single_refund": "لقد تلقيت استردادًا جزئيًا لهذا الطلب.",
+            "description_multiple_refunds": "لقد تلقيت استردادات جزئية لهذا الطلب."
+          },
+          "canceled": {
+            "title": "تم إلغاء الدفع",
+            "description": "لم يتم تحصيل أي رسوم منك."
+          },
+          "pay_now": "ادفع الآن",
+          "pay_now_accessibility_label": "ادفع الآن للطلب {{orderName}}",
+          "title": "حالة الدفع"
+        },
+        "order_timeline": {
+          "expand_events_label": "عرض التفاصيل",
+          "expand_events_accessibility_label": "عرض تفاصيل طلب المسودة",
+          "hide_events_label": "إخفاء التفاصيل",
+          "hide_events_accessibility_label": "إخفاء تفاصيل طلب المسودة"
+        },
+        "subtitle": "تم الإرسال {{date}}",
+        "title": "طلب {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "لن يكون هذا الأسلوب في الدفع متاحًا للشراءات المستقبلية من هذا الموقع.",
+          "description_with_replacement": "حذف طريقة الدفع هذه سيؤثر على المدفوعات المسبقة التفويض لهذا الموقع. استبدلها بطريقة دفع بديلة للاستمرار في استلام الطلبات القادمة."
+        },
+        "payment_details": {
+          "order_label": "طلب {{name}}",
+          "draft_label": "مسودة الطلب {{name}}"
         }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "أضف رقم أمر الشراء",
+        "add_modal_title": "أضف رقم أمر الشراء",
+        "discard": "تجاهل",
+        "cancel": "إلغاء",
+        "close_modal_accessibility_label": "إغلاق نافذة رقم أمر الشراء",
+        "discard_changes_modal_title": "هل تريد تجاهل التغييرات؟",
+        "edit_accessibility_label": "تعديل رقم أمر الشراء",
+        "edit_modal_title": "تعديل رقم أمر الشراء",
+        "empty_state": "لا يوجد رقم طلب شراء",
+        "modal_po_number_input_label": "رقم أمر الشراء",
+        "modal_po_number_input_max_length_error": "أرقام أوامر الشراء تحتوي على حد أقصى يبلغ {{maxLength}} حرفًا.",
+        "save": "حفظ",
+        "title": "رقم طلب الشراء #{{poNumber}}"
       }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "حدثت مشكلة أثناء حذف هذا العنوان. حاول مرة أخرى أو قم بتحديث الصفحة."
+      },
+      "addresses_loading_issue": {
+        "description": "خطأ في الاتصال. تحقق من اتصال الإنترنت الخاص بك وحاول مرة أخرى."
+      },
+      "banner_title": {
+        "one": "هناك {{count}} خطأ",
+        "other": "هناك {{count}} أخطاء"
+      },
+      "failed_address_creation": {
+        "description": "حدثت مشكلة أثناء إنشاء عنوانك. حاول تحديث هذه الصفحة أو تحقق من اتصال الإنترنت الخاص بك."
+      },
+      "failed_address_update": {
+        "description": "حدثت مشكلة في تحديث عنوانك. حاول تحديث هذه الصفحة أو تحقق من اتصال الإنترنت الخاص بك."
+      },
+      "load_orders_error": {
+        "title": "غير قادر على تحميل الطلبات",
+        "description": "أعد المحاولة أو عد لاحقًا.",
+        "retry_button": "أعد المحاولة"
+      },
+      "load_paypal_error": {
+        "description": "هناك مشكلة في تحميل PayPal. يرجى المحاولة مرة أخرى."
+      },
+      "logout_everywhere": {
+        "description": "حدث خطأ أثناء تسجيل الخروج. يرجى المحاولة مرة أخرى."
+      },
+      "no_access_to_locations": {
+        "description": "ليس لديك حق الوصول إلى أي مواقع"
+      },
+      "not_found": {
+        "description": "تحقق من عنوان URL أو حاول مرة أخرى بعد بضع دقائق.",
+        "title": "هناك مشكلة في تحميل هذه الصفحة"
+      },
+      "order_not_found": {
+        "description": "هذا الطلب غير موجود أو ليس لديك إذن لعرضه.",
+        "title": "الطلب غير موجود"
+      },
+      "profile_update_error": {
+        "description": "حدثت مشكلة أثناء تحديث ملفك الشخصي. حاول تحديث هذه الصفحة أو تحقق من اتصال الإنترنت الخاص بك."
+      },
+      "retry_action_label": "أعد المحاولة",
+      "resend_link": {
+        "too_many_requests": "طلبات كثيرة جدًا. حاول مرة أخرى لاحقًا.",
+        "generic": "فشل الطلب"
+      },
+      "load_extension_error": {
+        "title": "خطأ",
+        "description": "قم بتحديث هذه الصفحة أو حاول مرة أخرى بعد بضع دقائق.",
+        "refresh_button": "تحديث الصفحة"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "description": "يرجى المحاولة مرة أخرى بعد بضع دقائق",
+        "message": "محاولات كثيرة جدًا"
+      }
+    },
+    "payment_methods": {
+      "title": "طرق الدفع",
+      "add_payment_method_button": "أضف طريقة الدفع",
+      "add_payment_method_banner": "أضف طريقة دفع لتسريع عملية الدفع أو الخدمات المصرح بها مسبقًا",
+      "no_payment_methods_banner": "لم تتم إضافة طرق دفع",
+      "edit_payment_method_button_accessibility_label": "تحرير {{paymentMethodName}} المنتهي بـ {{lastDigits}}",
+      "delete_payment_method_button": "حذف",
+      "edit_payment_method_brand_button_accessibility_label": "تعديل {{paymentMethodName}}",
+      "delete_payment_method_button_accessibility_label": "حذف {{paymentMethodName}}",
+      "back_button": "عودة",
+      "back_button_accessibility_label": "العودة إلى {{paymentMethodStepTitle}}",
+      "default": "افتراضي",
+      "generic_card": "بطاقة",
+      "expiration_warning_button_accessibility_label": "عرض تحذير انتهاء الصلاحية لـ {{paymentMethodName}} التي تنتهي بـ {{lastDigits}}"
     }
   }
 }
