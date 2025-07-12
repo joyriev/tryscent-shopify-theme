@@ -2630,6 +2630,28 @@
           "forgot_your_store_link_text": "glemte butikken din",
           "add_storefront": "Du kan sette opp nettstedet ditt ved å legge til Online Store-kanalen i din %{admin_link}. Hvis du har problemer med å komme inn i butikken din, prøv siden %{forgot_your_store_link}.",
           "admin_link_text": "administrator"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Selg personlig",
+            "caption": "Få funksjonene du trenger for å drive din detaljhandel, enten du er i startfasen eller vokser.",
+            "link_text": "Start gratis prøveperiode"
+          },
+          "open_a_store": {
+            "header": "Åpne en ny Shopify-butikk",
+            "link_text": "Registrer deg nå",
+            "caption": "Start en 3-dagers gratis prøveperiode, og fortsett deretter for $1/måned i de neste 3 månedene."
+          },
+          "editions": {
+            "header": "Sjekk ut Shopify Editions",
+            "caption": "Med over 100 produktoppdateringer kan du være mer produktiv og kreativ, og kraftfull i handel enn du noen gang har forestilt deg.",
+            "link_text": "Utforsk nyeste utgaver"
+          },
+          "store_owner": {
+            "header": "Er du butikkeier?",
+            "caption": "Har du problemer med å komme inn i butikken din? Prøv funksjonen %{forgot_your_store_link}. Hvis du ønsker å reaktivere butikken din, kontakt %{shopify_support_link}.",
+            "shopify_support_link_text": "Shopify støtte"
+          }
         }
       }
     },
@@ -2640,9 +2662,35 @@
           "inventory": "Elementer utilgjengelige",
           "staff": "Ansattfeil",
           "fraud": "Svindelordre",
-          "other": "Annet"
+          "other": "Annet",
+          "declined": "Betaling avvist"
         },
-        "cash_on_delivery": "Kontant ved levering (COD)"
+        "cash_on_delivery": "Kontant ved levering (COD)",
+        "financial_status": {
+          "authorized": "Autorisert",
+          "pending": "Venter",
+          "paid": "Betalt",
+          "unpaid": "Ubetalt",
+          "voided": "Ugyldig",
+          "partially_paid": "Delvis betalt",
+          "partially_refunded": "Delvis refundert",
+          "refunded": "Refundert",
+          "expired": "Utløpt"
+        },
+        "not_available": "Denne bestillingen er ikke tilgjengelig",
+        "fulfillment_status": {
+          "fulfilled": "Oppfylt",
+          "complete": "Fullført",
+          "partial": "Delvis",
+          "unfulfilled": "Uoppfylt",
+          "restocked": "Påfyllt"
+        },
+        "transaction_status": {
+          "failure": "Feil",
+          "success": "Suksess",
+          "pending": "Venter",
+          "error": "Feil"
+        }
       },
       "cart": {
         "only_n_items_available": "Du kan bare legge til %{count} %{name} i handlekurven.",
@@ -2693,6 +2741,32 @@
       },
       "storefront": {
         "invalid_password": "Passord feil, vennligst prøv igjen."
+      },
+      "customer": {
+        "password_reset_error": "Feil ved tilbakestilling av passord",
+        "subscribe_error": "Abonneringsfeil",
+        "unsubscribe_error": "Avmeldingsfeil",
+        "no_account_found": "Ingen konto funnet med den e-posten.",
+        "invalid_credentials": "Feil e-post eller passord.",
+        "denylisted_reset_password": "Kontoen din kunne ikke nås fordi det nåværende passordet ikke er sikkert. Du vil motta en e-post for å oppdatere passordet ditt.",
+        "signup_disabled": "Opprettelse av kundekonto er deaktivert."
+      },
+      "address": {
+        "updated": "Adresse oppdatert.",
+        "error_updating": "Feil ved oppdatering av adresse",
+        "created": "Adresse opprettet",
+        "error_creating": "Feil ved oppretting av adresse.",
+        "deleted": "Adresse slettet",
+        "error_deleting": "Feil ved sletting av adresse."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Lagt til %{delta}",
+          "increment_item": "Lagt til %{delta}",
+          "decrement_item": "Fjernet %{delta} av %{total}",
+          "decrement_fulfilled_line_item": "Returnert %{delta} av %{total}",
+          "decrement_return_line_item": "Fjernet %{delta} fra retur"
+        }
       }
     },
     "email_marketing": {
