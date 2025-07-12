@@ -4201,7 +4201,10 @@
         "play_video": "تشغيل الفيديو",
         "image_available": "الصورة {{ index }} متاحة الآن في عرض المعرض",
         "open_media": "افتح الوسائط {{ index }} في النافذة المنبثقة",
-        "play_model": "تشغيل عارض ثلاثي الأبعاد"
+        "play_model": "تشغيل عارض ثلاثي الأبعاد",
+        "load_image": "تحميل الصورة {{ index }} في عرض المعرض",
+        "load_model": "تحميل نموذج ثلاثي الأبعاد {{ index }} في عرض المعرض",
+        "gallery_viewer": "عارض المعرض"
       },
       "volume_pricing": {
         "title": "تسعير حسب الحجم",
@@ -4236,7 +4239,20 @@
       "taxes_included": "الضرائب مشمولة.",
       "duties_included": "المهام شملت.",
       "duties_and_taxes_included": "الرسوم والضرائب مشمولة.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">الشحن</a> محسوب عند الدفع."
+      "shipping_policy_html": "<a href=\"{{ link }}\">الشحن</a> محسوب عند الدفع.",
+      "choose_options": "اختر الخيارات",
+      "add_to_cart": "أضف إلى السلة",
+      "choose_product_options": "اختر الخيارات لـ {{ product_name }}",
+      "inventory_in_stock": "متوفر في المخزون",
+      "inventory_in_stock_show_count": "{{ quantity }} في المخزون",
+      "description": "الوصف",
+      "inventory_low_stock": "المخزون منخفض",
+      "inventory_low_stock_show_count": "المخزون منخفض: تبقى {{ quantity }}",
+      "inventory_out_of_stock_continue_selling": "متوفر في المخزون",
+      "inventory_out_of_stock": "غير متوفر في المخزون",
+      "sku": "رمز التخزين",
+      "on_sale": "تخفيض",
+      "product_variants": "متغيرات المنتج"
     },
     "modal": {
       "label": "معرض الوسائط"
@@ -4415,5 +4431,52 @@
       "send_on_label": "أرسل في (اختياري)",
       "send_on": "يرجى إدخال اسم المستخدم وكلمة المرور للمتابعة.\nSource:\n2024-06-15"
     }
+  },
+  "newsletter": {
+    "button_label": "اشترك",
+    "label": "البريد الإلكتروني",
+    "success": "شكراً للاشتراك"
+  },
+  "accessibility": {
+    "skip_to_text": "تخطي إلى المحتوى",
+    "skip_to_product_info": "تخطي إلى معلومات المنتج",
+    "close": "إغلاق",
+    "unit_price_separator": "لكل",
+    "vendor": "البائع:",
+    "error": "خطأ",
+    "link_messages": {
+      "new_window": "يفتح في نافذة جديدة.",
+      "external": "يفتح موقع ويب خارجي."
+    },
+    "loading": "جارٍ التحميل...",
+    "total_reviews": "إجمالي التقييمات",
+    "refresh_page": "اختيار تحديد يؤدي إلى تحديث كامل للصفحة.",
+    "star_reviews_info": "{{ rating_value }} من أصل {{ rating_max }} نجوم",
+    "collapsible_content_title": "محتوى قابل للطي",
+    "complementary_products": "منتجات تكميلية"
+  },
+  "blogs": {
+    "article": {
+      "blog": "مدونة",
+      "read_more_title": "اقرأ المزيد: {{ title }}",
+      "comments": {
+        "one": "{{ count }} تعليق",
+        "other": "{{ count }} تعليقات"
+      },
+      "comment_form_title": "اترك تعليقًا",
+      "moderated": "يرجى الملاحظة، يجب الموافقة على التعليقات قبل نشرها.",
+      "email": "البريد الإلكتروني",
+      "message": "تعليق",
+      "post": "نشر تعليق",
+      "back_to_blog": "العودة إلى المدونة",
+      "share": "شارك هذه المقالة",
+      "success": "تم نشر تعليقك بنجاح! شكراً لك!",
+      "success_moderated": "تم نشر تعليقك بنجاح. سنقوم بنشره بعد قليل، حيث يتم مراقبة مدونتنا.",
+      "name": "اسم"
+    }
+  },
+  "onboarding": {
+    "collection_title": "اسم مجموعتك",
+    "product_title": "مثال على عنوان المنتج"
   }
 }
