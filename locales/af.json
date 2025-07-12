@@ -1473,7 +1473,12 @@
         "phone_blank": "Voer 'n telefoonnommer in",
         "address_country_invalid": "Kies 'n land/streek uit die lys",
         "address_zip_invalid": "Voer 'n geldige poskode in",
-        "gift_card_invalid": "Geskenkkaart \"••••%{last_four_characters}\" is nie meer geldig nie"
+        "gift_card_invalid": "Geskenkkaart \"••••%{last_four_characters}\" is nie meer geldig nie",
+        "vaulting_agreement_blank": "Jou kaart moet gestoor word omdat betaling vir die balans van hierdie bestelling later verskuldig is.",
+        "sms_marketing_phone_invalid": "Voer 'n geldige telefoonnommer in",
+        "address_suggestion_did_you_mean_html": "Het jy %{html} bedoel?",
+        "split_cart_international_shipping_not_supported": "Alle items moet dieselfde afleweringsmetode gebruik wanneer internasionaal gestuur word. Werk die afleweringsmetode by of skep verskeie bestellings.",
+        "invalid_delivery_address_reference_handle": "Afleweringsadres verwysingshandvatsel kon nie aan enige beskikbare afleweringsadresse gekoppel word nie."
       },
       "payment_gateway": {
         "order_due_on_fulfillment_payment": "Jou kaart sal gehef word sodra jou bestelling vervul is.",
@@ -2320,6 +2325,124 @@
       "tooltip": {
         "accessibility_label_context": "Meer inligting oor %{context}",
         "additional_payment_methods": "Bykomende betaalmetodes"
+      },
+      "store_credit_errors": {
+        "generic_error": "Daar was 'n probleem met jou winkelkrediet. Probeer weer of herlaai die bladsy."
+      },
+      "redeemable_errors": {
+        "shop_cash": {
+          "currency_mismatch": "Die geldeenheid het verander. Hersien asseblief jou Winkelkontant en aanbod."
+        },
+        "gift_card": {
+          "duplicate": "Die geskenkkaart is reeds op jou bestelling toegepas",
+          "insufficient_funds": "Hierdie geskenkkaart het geen fondse oor nie",
+          "expired": "Hierdie geskenkkaart het verval",
+          "not_available": "Hierdie geskenkkaart is nie meer beskikbaar nie",
+          "invalid": "Voer 'n geldige geskenkkaart in",
+          "currency_mismatch": "Slegs geskenkkaarte in %{shop_currency} word aanvaar",
+          "generic": "Die geskenkkaart kon nie by die betaalproses gevoeg word nie",
+          "throttle_limit_exceeded": "Jy het die maksimum aantal pogings oorskry. Probeer later weer.",
+          "no_longer_available": "Hierdie geskenkkaart kan nie meer met hierdie uitklok gebruik word nie"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "Die %{position} %{name} handelsware-instruksie bevat 'n leë stabiele ID.",
+        "invalid_stable_id_target": "Die %{position} %{name} handelsware-instruksie verwys na stabiele ID %{stable_id}, maar daardie stabiele ID is nie in handelswarelyne nie.",
+        "duplicate_variant_id": "Die %{position} %{name} handelsware-instruksie bevat 'n duplikaat variant-ID %{variant_id}.",
+        "invalid_variant_id_target": "Die %{name} handelsware-instruksie verwys na variant-ID %{variant_id}, maar daardie variant is nie in handelswarelyne nie.",
+        "invalid_price_override_target": "Die prysoorheersingsinstruksie vir lynitem %{stable_id} is ongeldig aangesien dit 'n bondelkomponent is."
+      },
+      "payment_errors": {
+        "amount_too_small": "Die minimum betalingsbedrag moet hoër as $0.50 USD wees. Probeer asseblief weer met 'n hoër bedrag.",
+        "available_methods_updated": "Beskikbare betaalmetodes is opgedateer.",
+        "method_not_available": "Die versoekte betaalmetode is nie beskikbaar nie. Kies 'n ander betaalmetode en probeer weer.",
+        "generic_error": "Daar was 'n probleem met die verwerking van jou betaling. Probeer weer of gebruik 'n ander betaalmetode.",
+        "rejected_transaction": "Jou betaling is geweier. Probeer weer of gebruik 'n ander betaalmetode.",
+        "credit_card_processing": "Jou betaling kan nie om tegniese redes verwerk word nie. Probeer weer oor 'n paar minute of gebruik 'n ander betaalmetode.",
+        "checkout_amount_changed": "Jou betaling kon nie verwerk word nie omdat die bedrag wat by die betaalpunt verskuldig is, verander het. Kontroleer asseblief jou bestelling en probeer weer.",
+        "deferred_payment_not_allowed": "Uitgestelde betalings word nie toegelaat nie. Kontroleer asseblief jou bestelling en probeer weer.",
+        "deferred_payment_required": "Hierdie bestelling vereis 'n uitgestelde betaling. Kontroleer asseblief jou bestelling en probeer weer.",
+        "deferred_amount_changed": "Jou betaling kon nie verwerk word nie omdat die uitgestelde betalingsbedrag verander het. Kontroleer asseblief jou bestelling en probeer weer.",
+        "deferred_date_changed": "Jou betaling kon nie verwerk word nie omdat die uitgestelde betalingsdatum verander het. Kontroleer asseblief jou bestelling en probeer weer.",
+        "order_total_changed": "Jou bestelling totaal het verander. Hersien en probeer weer.",
+        "payment_processing": "Jou betaling kan nie vir tegniese redes verwerk word nie. Probeer weer of gebruik 'n ander betaalmetode.",
+        "payment_processing_no_retry": "Jou betaling kan nie om tegniese redes verwerk word nie. Probeer asseblief 'n ander betaalmetode.",
+        "paypal_zero_amount": "Jy kan nie PayPal gebruik vir %{amount} bestellings nie. Bevestig dat jou bestelling korrek is en betaal sonder PayPal.",
+        "paypal_invalid_token": "PayPal was nie beskikbaar nie. Probeer weer of gebruik 'n ander betaalopsie.",
+        "pay_later_failed": "Daar was 'n fout met die verwerking van jou betaling met Pay later. Kies 'n ander betaalmetode en probeer weer.",
+        "three_d_secure_failed": "Jou betaling kon nie geverifieer word nie. Probeer weer of gebruik 'n ander betaalmetode.",
+        "three_d_secure_failed_duplicate": "Die kredietkaart se 3D Secure-verifikasie het misluk omdat 'n ander reeds aan die gang is.",
+        "three_d_secure_throttled": "Te veel pogings; wag asseblief voordat u weer probeer",
+        "three_d_secure_failed_payment_method": "Jou kaart kon nie geverifieer word nie. Probeer weer of voeg ’n ander kaart by.",
+        "subscription_agreement_blank": "Om 'n intekening te koop, moet jou betalingsbesonderhede gestoor word. Om voort te gaan, bevestig dat jy saamstem of verwyder intekeningitems van jou bestelling.",
+        "insufficient_funds": "Jou betaling is geweier weens onvoldoende fondse. Probeer weer of gebruik 'n ander betaalmetode.",
+        "multiple_deferred_payment_not_allowed": "Slegs een uitgestelde betaling per versoek toegelaat. Kontroleer asseblief jou versoek en probeer weer.",
+        "shipping_must_match_billing": "Faktuuradres moet ooreenstem met versendingsadres. Gebruik asseblief 'n ander betaalmetode.",
+        "decision_rule_block": "Daar was 'n probleem met die verwerking van jou betaling. Kontak asseblief die winkel eienaar.",
+        "cannot_verify": "Jou betalingsbesonderhede kon nie geverifieer word nie. Kontroleer jou kaartbesonderhede en probeer weer.",
+        "pick_up_card": "Jou kaart is geweier. Probeer weer of gebruik 'n ander betaalmetode.",
+        "invalid_number": "Voer 'n geldige kaartnommer in",
+        "invalid_cvc": "Voer 'n geldige sekuriteitskode in",
+        "expired_card": "Jou kaart het verval. Gebruik 'n ander betaalmetode.",
+        "payment_method_not_applicable": "Hierdie betaalmetode is nie van toepassing nie. Gebruik 'n ander betaalmetode.",
+        "card_declined": "Jou kaart is geweier. Probeer weer of gebruik 'n ander betaalmetode.",
+        "processing_error": "Daar was 'n probleem met die verwerking van jou betaling. Probeer weer of gebruik 'n ander betaalmetode.",
+        "selected_payment_method": "Daar was 'n probleem met jou gekose betaalmetode en jy is nie gehef nie. Probeer weer of gebruik 'n ander betaalmetode.",
+        "payment_method_billing_address": "Daar was 'n probleem met die faktuuradres van jou gekose betaalmetode en jy is nie gehef nie. Kontroleer die adres en probeer weer of gebruik 'n ander betaalmetode.",
+        "invalid_expiry_date": "Voer 'n geldige vervaldatum in",
+        "call_issuer": "Jou kaart is geweier. Gebruik 'n ander betaalmetode of kontak jou bank vir meer inligting.",
+        "test_mode_live_card": "Hierdie winkel kan nie regte bestellings of regte betalings aanvaar nie.",
+        "transient_error": "Daar was 'n probleem met die verwerking van jou betaling. Probeer om hierdie bladsy te herlaai of kyk jou internetverbinding na.",
+        "missing_shipping_address": "Jou betaling kon nie verwerk word nie omdat jou versendingsadres ontbreek. Voeg 'n versendingsadres by en probeer weer.",
+        "invalid_shipping_address": "Jou betaling kon nie verwerk word nie omdat ons jou versendingsadres nie kon vind nie. Kontroleer jou versendingsadres en probeer weer.",
+        "processing_error_checkout_as_guest": "Daar was 'n probleem met die verwerking van jou betaling. Probeer weer met 'n ander betaalmetode of {{checkout_as_guest_link}}.",
+        "successful_offsite_with_gift_card_error": "Daar was 'n probleem met die verwerking van jou geskenkkaartbetaling. Probeer weer of gebruik 'n ander betaalmetode.",
+        "development_store_order_limit_reached": "Jy het die limiet bereik vir ontwikkelingswinkelbestellings met hierdie betaalverwerker. Om nog ’n bestelling te plaas, moet jy ’n toetsbetaalpoort gebruik. Leer meer oor %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "Om 'n toetsbestelling te plaas, moet jy 'n toets-betaalpoort gebruik. Leer meer oor %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "toets bestellings in ontwikkelingswinkels",
+        "payment_above_threshold": "Die betalingsbedrag is bo die monetêre limiet vir hierdie streek. Verminder die totaal en probeer weer.",
+        "risky": "Daar was 'n probleem met die verwerking van jou betaling. Probeer weer of gebruik 'n ander betaalmetode.",
+        "expired_buyer_action": "Die betaalmetode het tydelik opgehou werk. Probeer asseblief weer.",
+        "name_mismatch": "Kontroleer asseblief jou kaartbesonderhede. Die naam op jou kaart en die faktuuradres stem nie ooreen nie."
+      },
+      "shipping_errors": {
+        "shipping_method_not_available": "Jou mandjie is opgedateer en die items wat jy bygevoeg het kan nie na jou adres gestuur word nie. Verwyder die items om jou bestelling te voltooi.",
+        "shipping_method_not_available_generic": {
+          "one": "Jou bestelling kan nie na die gekose adres gestuur word nie. Hersien jou adres om te verseker dit is korrek en probeer weer, of kies 'n ander adres.",
+          "other": "Sommige items in jou mandjie kan nie na die adres wat jy ingevoer het gestuur word nie. Hersien jou adres om te verseker dit is korrek en probeer weer, of kies 'n ander adres."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Items in die mandjie voldoen nie aan prys- of gewigvereistes om vir versending in aanmerking te kom nie. Werk jou mandjie op en probeer weer.",
+        "shipping_method": "Die versendingsopsies het verander vir jou bestelling. Hersien jou keuse en probeer weer.",
+        "shipping_method_not_available_updated": {
+          "one": "Die item wat jy bygevoeg het, word nie na jou ligging gestuur nie. Verwyder dit om uit te check, of kontak die winkel.",
+          "other": "Een of meer items wat jy bygevoeg het, word nie na jou ligging gestuur nie. Verwyder dit om uit te check, of kontak die winkel."
+        },
+        "payment_method_not_supported": "Jy kan nie hierdie betaalmetode vir %{country} gebruik nie. Gebruik asseblief 'n ander betaalmetode om na hierdie land te versend.",
+        "empty_state": "Voer jou versendingsadres in om beskikbare versendingsmetodes te sien.",
+        "title": "Versending nie beskikbaar nie",
+        "invalid_selected_address": "Geselekteerde versendingsadres is nie geldig nie",
+        "invalid_selected_address_with_update_link": "Geselekteerde versendingsadres is nie geldig nie. %{update_address_link} of kies 'n ander adres",
+        "unavailable_selected_address": "Versending nie beskikbaar vir geselekteerde adres nie",
+        "unavailable_selected_address_for_region": "Versending is nie beskikbaar vir {{region}} nie. Kies 'n ander adres om voort te gaan"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Uitdruklike afhandeling",
+        "or": "OF",
+        "or_pay_another_way": "Of betaal op 'n ander manier",
+        "or_check_out_another_way": "Of kyk na 'n ander manier",
+        "show_more_options": "Wys meer opsies",
+        "or_pay_with_credit_card": "Of betaal met kredietkaart",
+        "hide_more_options": "Versteek meer opsies"
+      },
+      "post_purchase": {
+        "page_title": "Na-aankoop",
+        "title": "Na-aankoop",
+        "escape_confirmation": "Jy het vir jou bestelling betaal.",
+        "escape_action": "Kyk na bestellingsbevestiging ›",
+        "components": {
+          "close": "Maak toe",
+          "expand": "Blaai meer"
+        }
       }
     },
     "pagination": {
