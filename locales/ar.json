@@ -3046,9 +3046,59 @@
             "overdue": "متأخر",
             "due": "مستحق في {{date}}",
             "paid": "مدفوع",
-            "due_today": "مستحق اليوم"
+            "due_today": "مستحق اليوم",
+            "pay_to_confirm": "ادفع للتأكيد",
+            "payment_not_due": "لم يحين موعده بعد",
+            "due_without_date": "مستحق",
+            "due_on_fulfillment": "مستحق عند التنفيذ"
           }
-        }
+        },
+        "sort_by": "الترتيب حسب: {{option}}",
+        "sort_hide_options_accessibility_label": "إخفاء خيارات الفرز للطلبات المؤكدة.",
+        "sort_show_options_accessibility_label": "عرض خيارات الفرز للطلبات المؤكدة.",
+        "sort_currently_sorted_by_accessibility_label": "مرتبة حالياً حسب: {{option}}",
+        "sort_title": "فرز",
+        "sort": {
+          "date": {
+            "oldest": "الأقدم إلى الأحدث",
+            "newest": "الأحدث إلى الأقدم"
+          },
+          "location": {
+            "ascending": "الموقع (أ-ي)",
+            "descending": "الموقع (ز-أ)"
+          },
+          "order_number": {
+            "ascending": "رقم الطلب (من الأقل إلى الأعلى)",
+            "descending": "رقم الطلب (من الأعلى إلى الأدنى)"
+          },
+          "order_total": {
+            "descending": "إجمالي الطلب (من الأعلى إلى الأدنى)",
+            "ascending": "إجمالي الطلب (من الأقل إلى الأعلى)"
+          }
+        },
+        "location_filter_picker": {
+          "all_location": "جميع المواقع",
+          "current_location": "الموقع الحالي",
+          "switch_view": "تبديل العرض"
+        },
+        "filter": {
+          "clear_section": "مسح القسم",
+          "clear_all": "مسح الكل",
+          "apply": "تقديم",
+          "date": {
+            "start_date": "تاريخ البدء",
+            "end_date": "تاريخ الانتهاء",
+            "today": "اليوم",
+            "last_7_days": "آخر 7 أيام",
+            "last_90_days": "آخر 90 يومًا",
+            "last_30_days": "آخر 30 يومًا",
+            "title": "تاريخ الطلب",
+            "custom": "مخصص",
+            "last_365_days": "آخر 12 شهراً"
+          }
+        },
+        "filter_title": "تصفية",
+        "show_order_actions_accessibility_label": "عرض إجراءات الطلب للطلب {{name}}"
       },
       "order_status": {
         "come_back": "عد إلى هذه الصفحة للحصول على تحديثات حول حالة شحنتك.",
@@ -3190,7 +3240,23 @@
               "claim_shop_cash_description": "يمكنك استخدام Shop Cash الخاص بك في عمليات الشراء المستقبلية في تطبيق Shop."
             }
           }
-        }
+        },
+        "attempted_delivery_label": "محاولة التسليم",
+        "attempted_delivery_description": "لم تنجح محاولة التسليم.",
+        "attempted_to_deliver_label": "تمت محاولة التسليم",
+        "on_its_way_description": "هذه الشحنة في طريقها.",
+        "confirmed_description": "لقد استلمنا طلبك.",
+        "out_for_delivery_description": "هذه الشحنة في طريقها للتسليم.",
+        "preparing_for_shipping_label": "التحضير للشحن",
+        "preparing_for_shipping_description": "يتم تجهيز هذه العناصر للشحن.",
+        "ready_for_pickup_label": "جاهز للاستلام",
+        "ready_for_pickup_description": "هذه العناصر جاهزة للاستلام. يرجى إحضار تأكيد الطلب عند استلام طلبك.",
+        "ready_for_pickup_location": "طلبك جاهز للاستلام في الموقع",
+        "picked_up_label": "تم الالتقاط",
+        "picked_up_description": "تم استلام هذه العناصر.",
+        "canceled_description": "تم إلغاء طلبك في {{date}}.",
+        "canceled_label": "ملغاة",
+        "canceled_title": "تم إلغاء طلبك"
       },
       "status_mark_as_delivered": "وضع علامة كمُسلَّم",
       "fulfillment_status_title": "حالة التنفيذ: {{status}}",
