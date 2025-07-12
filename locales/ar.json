@@ -4401,7 +4401,60 @@
       "alternate_provider_separator": "أو"
     },
     "order": {
-      "title": "طلب {{ name }}"
+      "title": "طلب {{ name }}",
+      "payment_status": "حالة الدفع",
+      "billing_address": "عنوان الفواتير",
+      "cancelled_html": "تم إلغاء الطلب في {{ date }}",
+      "date_html": "تم وضعه في {{ date }}",
+      "cancelled_reason": "السبب: {{ reason }}",
+      "shipping_address": "عنوان الشحن",
+      "fulfillment_status": "حالة التنفيذ",
+      "shipping": "الشحن",
+      "product": "المنتج",
+      "discount": "خصم",
+      "sku": "رمز التخزين",
+      "quantity": "الكمية",
+      "total": "الإجمالي",
+      "total_refunded": "تم استرداده",
+      "price": "السعر",
+      "tax": "الضريبة",
+      "fulfilled_at_html": "تم التنفيذ {{ date }}",
+      "track_shipment": "تتبع الشحنة",
+      "tracking_number": "رقم التتبع",
+      "tracking_company": "كاريير",
+      "total_duties": "الرسوم الجمركية",
+      "tracking_url": "رابط التتبع",
+      "subtotal": "المجموع الفرعي"
+    },
+    "orders": {
+      "title": "تاريخ الطلبات",
+      "order_number": "طلب",
+      "order_number_link": "رقم الطلب {{ number }}",
+      "date": "التاريخ",
+      "fulfillment_status": "حالة الإنجاز",
+      "total": "الإجمالي",
+      "none": "لم تقم بوضع أي طلبات بعد.",
+      "payment_status": "حالة الدفع"
+    },
+    "recover_password": {
+      "subtext": "سنرسل لك بريدًا إلكترونيًا لإعادة تعيين كلمة المرور الخاصة بك",
+      "title": "إعادة تعيين كلمة المرور الخاصة بك",
+      "success": "لقد أرسلنا لك بريدًا إلكترونيًا يحتوي على رابط لتحديث كلمة المرور الخاصة بك."
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "first_name": "الاسم الأول",
+      "last_name": "الاسم الأخير",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "submit": "إنشاء"
+    },
+    "reset_password": {
+      "title": "إعادة تعيين كلمة مرور الحساب",
+      "subtext": "أدخل كلمة مرور جديدة",
+      "password_confirm": "تأكيد كلمة المرور",
+      "submit": "إعادة تعيين كلمة المرور",
+      "password": "كلمة المرور"
     }
   },
   "gift_cards": {
@@ -4411,7 +4464,12 @@
       "copy_code": "نسخ رمز بطاقة الهدايا",
       "expiration_date": "تنتهي صلاحية {{ expires_on }}",
       "copy_code_success": "تم نسخ الكود بنجاح",
-      "expired": "منتهي الصلاحية"
+      "expired": "منتهي الصلاحية",
+      "subtext": "بطاقة الهدايا الخاصة بك",
+      "how_to_use_gift_card": "استخدم رمز بطاقة الهدايا عبر الإنترنت أو رمز الاستجابة السريعة في المتجر",
+      "title": "إليك رصيد بطاقة الهدايا الخاصة بك بقيمة {{ value }} لـ {{ shop }}!",
+      "gift_card_code": "رمز بطاقة الهدايا",
+      "shop_link": "زيارة المتجر الإلكتروني"
     }
   },
   "recipient": {
