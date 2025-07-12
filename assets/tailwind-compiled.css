@@ -296,6 +296,14 @@
     max-width: 100%
 }
 
+.max-w-14 {
+    max-width: 56px
+}
+
+.max-w-20 {
+    max-width: 80px
+}
+
 .flex-shrink {
     flex-shrink: 1
 }
@@ -988,6 +996,10 @@
 
     .md\:w-auto {
         width: auto
+    }
+
+    .md\:max-w-28 {
+        max-width: 112px
     }
 
     .md\:grid-cols-2 {
