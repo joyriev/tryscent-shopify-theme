@@ -2820,6 +2820,24 @@
       "min_error": "Hierdie item het 'n minimum van {{ min }}",
       "max_error": "Hierdie item het 'n maksimum van {{ max }}",
       "step_error": "Jy kan hierdie item slegs in stappe van {{ step }} byvoeg."
+    },
+    "announcements": {
+      "next_announcement": "Volgende aankondiging",
+      "previous_announcement": "Vorige aankondiging",
+      "carousel": "Karrousel",
+      "announcement": "Aankondiging",
+      "announcement_bar": "Aankondigingsbalk"
+    },
+    "header": {
+      "announcement": "Aankondiging",
+      "menu": "Spyskaart",
+      "cart_count": {
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      }
+    },
+    "cart": {
+      "title": "Jou mandjie"
     }
   },
   "customer_accounts": {
@@ -4459,7 +4477,30 @@
       "shop_link": "Besoek aanlynwinkel",
       "subtext": "Jou geskenkkaart",
       "how_to_use_gift_card": "Gebruik die geskenkkaartkode aanlyn of QR-kode in die winkel",
-      "title": "Hier is jou {{ value }} geskenkkaartbalans vir {{ shop }}!"
+      "title": "Hier is jou {{ value }} geskenkkaartbalans vir {{ shop }}!",
+      "add_to_apple_wallet": "Voeg by Apple Wallet",
+      "copy_code_success": "Kode suksesvol gekopieer",
+      "qr_image_alt": "QR-kode — skandeer om geskenkkaart in te wissel",
+      "expiration_date": "Verval {{ expires_on }}",
+      "copy_code": "Kopieer geskenkkaartkode",
+      "expired": "Verstryk"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Ek wil dit as 'n geskenk stuur",
+      "expanded": "Geskenkkaart ontvanger vorm uitgebrei",
+      "collapsed": "Geskenkkaart ontvanger vorm ingeklapte",
+      "email_label": "Ontvanger e-pos",
+      "email": "E-pos",
+      "email_label_optional_for_no_js_behavior": "Ontvanger e-pos (opsioneel)",
+      "name_label": "Ontvanger se naam (opsioneel)",
+      "name": "Naam",
+      "message_label": "Boodskap (opsioneel)",
+      "message": "Boodskap",
+      "max_characters": "{{ max_chars }} karakters maksimum",
+      "send_on_label": "Stuur op (opsioneel)",
+      "send_on": "YYYY-MM-DD"
     }
   }
 }
