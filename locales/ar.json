@@ -95,7 +95,12 @@
           "captcha": {
             "token_expired": "انتهت صلاحية رمز التحقق المقدم. أكمل رمز تحقق جديد للمتابعة في إتمام الشراء.",
             "token_invalid": "رمز التحقق المقدم غير صالح. أكمل رمز تحقق جديد للمتابعة في إتمام الشراء.",
-            "token_not_valid_for_session": "لا يمكن استخدام رمز التحقق المقدم مع هذه الخروج."
+            "token_not_valid_for_session": "لا يمكن استخدام رمز التحقق المقدم مع هذه الخروج.",
+            "metadata_missing": "إكمال اختبار التحقق مطلوب لإتمام هذه العملية.",
+            "metadata_mismatch": "مزود الكابتشا والنوع المقدم لا يتطابقان مع القيم المتوقعة.",
+            "token_missing": "يجب تقديم رمز التحقق لإكمال هذه العملية.",
+            "job_already_queued": "تم بالفعل وضع التحقق من الكابتشا في قائمة الانتظار لهذا الرمز الكابتشا.",
+            "job_enqueue_failed": "فشل مهمة التحقق من الكابتشا في الدخول إلى قائمة الانتظار."
           },
           "checkout_source": {
             "revoked": "لم يعد هذا الخروج متاحًا."
@@ -185,7 +190,64 @@
             "installments_ineligible_line_item": "التقسيط معطل لبند في هذا الشراء.",
             "installments_unsupported_billing": "الأقساط لا تدعم عنوان الفوترة هذا.",
             "shop_cash_not_found": "لم يتم العثور على Shop Cash.",
-            "shop_cash_not_allowed": "النقد في المتجر غير مسموح به بدون Shop Pay."
+            "shop_cash_not_allowed": "النقد في المتجر غير مسموح به بدون Shop Pay.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash لا يدعم هذا الدفع.",
+            "shop_cash_not_enabled": "ميزة Shop Cash غير مفعلة لهذا المتجر.",
+            "shop_cash_not_available": "لا يتم دعم Shop Cash في هذه الخروج.",
+            "shop_cash_unsupported_subscriptions": "Shop Cash لا يدعم الاشتراكات.",
+            "shop_cash_unsupported_shipping": "Shop Cash لا يدعم البضائع التي لا تتطلب شحنًا.",
+            "invalid_address_type": "نوع العنوان المقدم غير صالح لطريقة الدفع هذه.",
+            "missing_retail_attributions": "تتطلب نسب البيع بالتجزئة لمدفوعات بطاقات الائتمان التي يتم إدخالها يدويًا.",
+            "unexpected_retail_attributions": "تم توفير نسب البيع بالتجزئة بشكل غير متوقع لدفعة بطاقة الائتمان.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash لا يسمح بشراء بطاقات الهدايا.",
+            "invalid_card_source": "هذه الجلسة لا تملك إذنًا لاستخدام مصدر البطاقة هذا.",
+            "wallet_content_missing": "محتوى المحفظة مفقود.",
+            "payment_instrument_not_found": "تعذر العثور على طريقة الدفع",
+            "saved_payment_methods_not_allowed": "طرق الدفع المحفوظة غير مسموح بها.",
+            "saved_payment_methods_not_enabled": "طرق الدفع المحفوظة غير مفعلة لهذا المتجر.",
+            "unauthorized_capture_method": "لا يُسمح بتكوين طريقة التقاط الدفع.",
+            "saved_payment_methods_cvv_verification_disabled": "طريقة الدفع المختارة تتطلب التحقق من CVV والذي لم يتم تفعيله لهذا المتجر. يرجى اختيار طريقة دفع مختلفة.",
+            "store_credit_not_enabled": "رصيد المتجر غير مفعل لهذا المتجر.",
+            "store_credit_account_not_found": "لم يتم العثور على حساب رصيد المتجر.",
+            "store_credit_account_mismatch": "حساب رصيد المتجر لا يتطابق مع هوية المشتري.",
+            "store_credit_mismatched_currency": "عملة حساب رصيد المتجر لا تتطابق مع عملة الدفع.",
+            "store_credit_insufficient_funds": "لا توجد أموال كافية في حساب رصيد المتجر.",
+            "store_credit_buying_gift_card": "لا يمكنك استخدام رصيد المتجر لشراء بطاقة هدية.",
+            "gift_cards_not_allowed_for_b2b": "بطاقات الهدايا غير مسموح بها في متاجر B2B.",
+            "method_required": "يجب اقتراح طريقة دفع.",
+            "paypal_express_address_invalid": "أعاد PayPal عنوانًا غير صالح.",
+            "shop_cash_unsupported_currency": "Shop Cash لا يدعم هذه العملة.",
+            "market_manager_blocks_wallet_payments": "طريقة الدفع غير مدعومة من قبل مدير السوق."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Shop لا يقبل البقشيش.",
+            "only_one_tip_line_allowed": "خطوط النصائح المتعددة غير مدعومة.",
+            "currency_change_reset": "تم إعادة تعيين البقشيش بسبب تغيير العملة.",
+            "tips_not_allowed_for_deferred_purchase_options": "الإكراميات غير مدعومة بعد لخيارات الشراء المؤجل.",
+            "tips_not_allowed_for_b2b": "الإكراميات غير مسموح بها في متاجر B2B."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "هذا الطلب المسودة غير موجود في المتجر الحالي.",
+            "staff_member_not_exist": "هذا الموظف غير موجود في المتجر الحالي.",
+            "location_not_exist": "هذا الموقع غير موجود في المتجر الحالي.",
+            "point_of_sale_device_not_exist": "جهاز نقطة البيع هذا غير موجود في المتجر الحالي.",
+            "unresolvable_target_merchandise_lines": "لا يمكن حل نسب البيع المقترحة بالنظر إلى سياق التفاوض الحالي."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "يجب أن يحتوي عرض المشتري الخاص بك على شروط غير قابلة للتفاوض.",
+            "invalid_signature": "التوقيع لـ {{target_terms}} غير صالح."
+          },
+          "inventory": {
+            "missing_quantity_value": "حقل الكمية مفقود في خطوط جرد المشتري.",
+            "changing_behavior_not_allowed": "هذا العميل لا يملك إذنًا لتغيير سلوك المخزون.",
+            "only_one_inventory_behavior_allowed": "حالياً يُسمح بسلوك جرد واحد فقط لكل عملية دفع."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "رفض الرسوم غير مسموح به في هذه الخروج."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "لا يُسمح بالنسبة الترويجية للبيع بالتجزئة لهذا السداد.",
+            "retail_attribution_required": "تتطلب هذه العملية في نقطة البيع تحديد المصدر."
           }
         },
         "full_price": "السعر الكامل:",
