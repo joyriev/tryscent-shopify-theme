@@ -6,7 +6,6 @@
         assign img_size = section.settings.img_width | append: 'x' | append: section.settings.img_height
     %}
 
-
     <style>
         #md-sticky-atc {
             position: fixed;
@@ -19,7 +18,6 @@
             transform: translateY(100%);
             transition: all .15s ease-out;
             border-top: 0.1rem solid rgba(var(--color-foreground),.08);
-            box-shadow:rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }
         #md-sticky-atc.show {
             visibility: visible;
@@ -29,36 +27,26 @@
         .atc-sticky-btn quantity-input.quantity {
             width: 25%;
         }
-          #md-sticky-atc .page-width {
-            background: #e9ffd938;
-        }
-          #md-sticky-atc .page-width {
-            background: #e9ffd938;
+        #md-sticky-atc .page-width-inner {
+            padding: 16px 0;
         }
         @media (min-width: 990px) {
             #md-sticky-atc .page-width-inner {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding:10px 0;
             }
         }
         #md-sticky-atc .product-content {
             display: flex;
             align-items: center;
-            padding-bottom: .5rem;
+            padding-bottom: 1rem;
         }
         @media (min-width: 990px) {
             #md-sticky-atc .product-content {
                 padding-bottom: 0;
                 padding-right: 2rem;
             }
-        }
-        #md-sticky-atc .product-content .product__title {
-          margin: 0 0 .5rem;
-          font-family: 'Inter';
-          font-size: 16px;
-          color: #000;
         }
         #md-sticky-atc .product-content .price {
             display: flex;
@@ -67,18 +55,7 @@
         #md-sticky-atc .product-content img {
             margin-right: .75rem;
         }
-        #md-sticky-atc .product-form .select {
-            width: auto;
-            margin-right: .75rem;
-        }
-        @media (min-width: 990px) {
-            #md-sticky-atc .product-form .select {
-                flex-grow: 0;
-            }
-        }
-        #md-sticky-atc .product-form .select__select {
-            padding-right: 4rem;
-        }
+
         #md-sticky-atc .product-form .quantity-input-wrapper {
             display: flex;
             align-items: center;
@@ -102,13 +79,6 @@
             flex-shrink: 0;
             flex-grow: 1;
             margin: 0;
-        }
-        @media (min-width: 990px) {
-          #md-sticky-atc .product-form button[name="add"] {
-            background: #548234;
-            border-radius: 4px;
-            text-transform: uppercase;
-          }
         }
         @media (max-width: 800px) {
           #md-sticky-atc {
@@ -238,20 +208,20 @@
 
 
 
-    <div id="md-sticky-atc" class="atc-sticky-btn color-{{ section.settings.color_scheme }}" aria-hidden="true" data-offset="{{ section.settings.offset }}">
+    <div id="md-sticky-atc" class="atc-sticky-btn shadow-[0_0_20px_5px_rgba(0,0,0,0.1)] color-{{ section.settings.color_scheme }}" aria-hidden="true" data-offset="{{ section.settings.offset }}">
         <div class="page-width">
             <div class="page-width-inner">
                 <div class="product-content">
                     {% if section.settings.show_img %}
                         <img
                             src="{{ image | img_url: img_size, crop: 'center' }}"
-                            class=""
+                            class="rounded-lg"
                             width="{{ section.settings.img_width }}"
                             height="{{ section.settings.img_height }}"
                             loading="lazy">
                     {% endif %}
                     <div class="">
-                        <h3 class="product__title {{ section.settings.title_size }}">
+                        <h3 class="product__title text-lg font-semibold !m-0">
                             {{ product.title }}
                         </h3>
                         <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -271,8 +241,8 @@
                     </div>
                     {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate' -%}
                         <div class="quantity-input-wrapper">
-                            <div class="select" style="{% if product.has_only_default_variant %}display: none;{% endif %}">
-                                <select class="select__select" name="id" aria-label="Select variant">
+                            <div class="select mr-2 w-auto" style="{% if product.has_only_default_variant %}display: none;{% endif %}">
+                                <select class="select__select !w-auto !px-6" name="id" aria-label="Select variant">
                                     {% for variant in product.variants %}
                                         {% assign variant_image = variant.image | default: product.featured_image %}
                                         <option 
@@ -307,7 +277,7 @@
                                     </button>
                                 </quantity-input>
                             {% endif %}
-                            <button type="submit" name="add" class="product-form__submit button button--{{ section.settings.btn_style }}">
+                            <button type="submit" name="add" class="product-form__submit button bg-[#226139] rounded hover:bg-[#1c522f] uppercase tracking-wider">
                                 <span>
                                     {%- if current_variant.available -%}
                                         {{ 'products.product.add_to_cart' | t }}
