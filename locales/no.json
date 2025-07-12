@@ -3660,7 +3660,21 @@
         "list_accessibility_label": "Steder liste",
         "list_loading_accessibility_message": "Laster liste over steder",
         "list_loading_address_accessibility_message": "Laster adresse for {{locationName}}",
-        "list_item_without_address_accessibility_label": "{{name}}: Ingen adresse"
+        "list_item_without_address_accessibility_label": "{{name}}: Ingen adresse",
+        "list_loading_finished_accessibility_message": "Listen over steder er lastet",
+        "loading_store_accessibility_message": "Går til butikken",
+        "no_location_description": "Du har ikke lenger tillatelse til å legge inn bestillinger for {{company}}. Du kan fortsatt legge inn personlige bestillinger.",
+        "no_location_title": "Personlige bestillinger kun",
+        "no_locations_found": "Ingen steder funnet",
+        "search": "Søk steder",
+        "search_location_title": "Velg et sted",
+        "selection_cancel_button": "Avbryt",
+        "selection_confirmation_button": "Velg sted",
+        "selection_continue_button": "Fortsett",
+        "title": "Hvilken lokasjon kjøper du for?",
+        "title_choose_location": "Velg et sted",
+        "clear_search": "Tøm søk",
+        "try_new_search": "Prøv et nytt søk"
       },
       "draft_order_details": {
         "payment_status": {
@@ -3675,7 +3689,17 @@
             "description_due_on_receipt": "Du vil motta en faktura når betalingen forfaller.",
             "description_due_on_receipt_partially_paid": "Denne bestillingen ble delvis betalt. Du har en gjenværende saldo. Du vil motta en faktura når betalingen forfaller.",
             "description_due_on_fulfillment": "Betaling forfaller når alle varer i denne bestillingen er levert.",
-            "description_due_on_fulfillment_partially_paid": "Denne bestillingen ble delvis betalt. Du har en gjenværende saldo. Betaling forfaller når alle varer i denne bestillingen er levert."
+            "description_due_on_fulfillment_partially_paid": "Denne bestillingen ble delvis betalt. Du har en gjenværende saldo. Betaling forfaller når alle varer i denne bestillingen er levert.",
+            "banner_overdue": {
+              "one": "Din betaling er {{count}} dag forsinket",
+              "other": "Betalingen din er {{count}} dager forsinket"
+            },
+            "banner_due": {
+              "one": "Din betaling forfaller om {{count}} dag",
+              "other": "Din betaling forfaller om {{count}} dager"
+            },
+            "banner_due_today": "Betalingen din forfaller i dag",
+            "title": "Betaling forfalt"
           },
           "draft": {
             "description": "Betalingsdetaljer avgjøres når bestillingen er bekreftet.",
@@ -3729,7 +3753,10 @@
           "hide_events_accessibility_label": "Skjul utkast til bestillingsdetaljer"
         },
         "subtitle": "Innsendt {{date}}",
-        "title": "Bestilling {{name}}"
+        "title": "Bestilling {{name}}",
+        "draft_order_subtitle": "Bekreftet {{date}} fra bestilling {{draftOrderName}}",
+        "loading": "Laster ordredetaljer",
+        "loading_finished_accessibility_message": "Ordredetaljer er lastet inn"
       },
       "payment_methods": {
         "payment_delete": {
@@ -3755,6 +3782,44 @@
         "modal_po_number_input_max_length_error": "PO-numre har maksimalt {{maxLength}} tegn.",
         "save": "Lagre",
         "title": "PO #{{poNumber}}"
+      },
+      "addresses": {
+        "add_billing_address_button": "Legg til fakturaadresse",
+        "add_billing_address_section_accessibility_label": "Legg til fakturaadresse",
+        "add_shipping_address_button": "Legg til leveringsadresse",
+        "billing_address_card_title": "Fakturaadresse",
+        "cancel_adding_billing_address_accessibility_label": "Avbryt å legge til fakturaadresse",
+        "cancel_adding_shipping_address_accessibility_label": "Avbryt å legge til leveringsadresse",
+        "save_new_billing_address_accessibility_label": "Lagre fakturaadresse",
+        "save_new_shipping_address_accessibility_label": "Lagre leveringsadresse",
+        "add_shipping_address_section_accessibility_label": "Legg til leveringsadresse",
+        "shipping_address_card_title": "Leveringsadresse"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Skjul alt",
+          "show_all": "Vis alle",
+          "hide_all_accessibility_label": "Skjul alle bestillinger under gjennomgang",
+          "show_all_accessibility_label": "Vis alle bestillinger under gjennomgang",
+          "show_less_orders_in_review": "Vis færre bestillinger under gjennomgang",
+          "show_all_orders_in_review": "Vis alle bestillinger under gjennomgang",
+          "title": "Venter",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Du har ingen ventende bestillinger",
+            "pending_orders": {
+              "one": "Du har {{count}} ventende bestilling",
+              "other": "Du har {{count}} ventende bestillinger"
+            },
+            "more_than_pagination_length": "Du har mer enn {{count}} ventende bestillinger"
+          },
+          "pagination": {
+            "nav_accessibility_label": "Navigasjonsknapper for ordre under gjennomgang"
+          }
+        },
+        "order_list_column_headers_location": "Lokasjon",
+        "order_list_column_headers_contact": "Kontakt",
+        "removed_company_contact_tooltip": "Fjernet fra selskapet",
+        "order_list_column_headers_status": "Status"
       }
     },
     "errors": {
@@ -4318,8 +4383,6 @@
       "xr_button_label": "Se i ditt rom, last inn gjenstand i vindu for utvidet virkelighet",
       "view_full_details": "Se fullstendige detaljer",
       "duties_included": "Plikter inkludert.",
-      "taxes_included": "Skatter inkludert.",
-      "duties_and_taxes_included": "Avgifter og skatter inkludert.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beregnet ved utsjekking."
     },
     "modal": {
