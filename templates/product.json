@@ -424,7 +424,25 @@
     },
     "floating-atc": {
       "type": "floating-atc",
+      "disabled": true,
       "settings": {}
+    },
+    "sticky_atc_LtrHcp": {
+      "type": "sticky-atc",
+      "name": "Sticky ATC",
+      "settings": {
+        "enable_section": true,
+        "color_scheme": "",
+        "title_size": "h4",
+        "show_img": true,
+        "img_width": "80",
+        "img_height": "80",
+        "show_quantity_input": true,
+        "btn_style": "primary",
+        "offset": 0,
+        "pt": 0.5,
+        "pb": 0.5
+      }
     }
   },
   "order": [
@@ -434,6 +452,7 @@
     "tryscent_guarantee_8hATfM",
     "1751863713a9594609",
     "related-products",
-    "floating-atc"
+    "floating-atc",
+    "sticky_atc_LtrHcp"
   ]
 }
