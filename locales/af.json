@@ -2632,13 +2632,70 @@
           "failure": "Mislukking"
         },
         "cancel_reason": {
-          "declined": "Betaling geweier"
+          "declined": "Betaling geweier",
+          "staff": "Personeelfout",
+          "customer": "Kliënt het bestelling verander/gekanselleer",
+          "inventory": "Items onbeskikbaar",
+          "other": "Ander",
+          "fraud": "Bedrieglike bestelling"
+        },
+        "cash_on_delivery": "Kontant op Aflewering (COD)"
+      },
+      "cart": {
+        "only_n_items_available": "Jy kan net %{count} %{name} by die mandjie voeg.",
+        "maximum_available_quantity_reached": "Die maksimum hoeveelheid van hierdie item is reeds in jou mandjie.",
+        "only_n_added_to_cart": "Slegs %{quantity} items is by jou mandjie gevoeg weens beskikbaarheid.",
+        "only_one_added_to_cart": "Net 1 item is by jou mandjie gevoeg weens beskikbaarheid.",
+        "too_many_items_in_cart": "Jy kan nie meer %{name} by die mandjie voeg nie.",
+        "less_than_minimum": "Hierdie item het 'n minimum van %{min}.",
+        "more_than_maximum": "Hierdie item het 'n maksimum van %{max}.",
+        "not_respect_step": "Jy kan hierdie item slegs in stappe van %{step} byvoeg.",
+        "all_items_in_cart": "Al die %{count} %{name} is in jou mandjie.",
+        "empty_update": "kan nie leë mandjie opdateer nie",
+        "missing_parameters": "geen geldige id of lynparameter nie",
+        "too_many_line_items_error": "Jou mandjie kan nie meer as %{max} items bevat nie.",
+        "generic_error": "Mandjie Fout",
+        "invalid_input": "%{parameter} parameter is ongeldig.",
+        "link_expired": "Skakel verval",
+        "product_not_available": "Produk is nie beskikbaar nie",
+        "link_no_longer_exists": "Skakel bestaan nie meer nie.",
+        "changed": "Mandjie verander",
+        "items_changed": "Een of meer items het verander.",
+        "product_sold_out": "Die produk '%{name}' is reeds uitverkoop.",
+        "variant_not_found": "Kan nie variant vind nie",
+        "variant_requires_selling_plan": "Variant kan slegs met 'n verkoopplan gekoop word.",
+        "selling_plan_not_available_for_company_locations": "Slegs eenmalige aankoop is beskikbaar vir B2B-bestellings",
+        "digital_product_not_available_for_company_locations": "Hierdie item kan nie by 'n B2B-bestelling gevoeg word nie",
+        "buyer_cannot_purchase_for_company_locations": "Jy kan nie vir hierdie ligging koop nie",
+        "selling_plan_not_applicable": "Kan nie verkoopplan op variant toepas nie",
+        "shipping_address_not_required": "Hierdie wa benodig nie versending nie",
+        "shipping_address_invalid": "Daar was 'n probleem met die berekening van jou versendingskoste. Gaan voort na die betaalproses om 'n versendingskoste te kies voordat jy jou bestelling voltooi.",
+        "bundle_requires_components": "Die bondelproduk '%{name}' kan nie by die mandjie gevoeg word nie.",
+        "view_lines_limit_reached": "Lyne moet minder as %{limit} wees",
+        "gift_card_price_must_be_greater_than_zero": "Die bondelproduk '%{name}' kan nie by die mandjie gevoeg word nie.",
+        "gift_card_recipient_validation_error": "Die gespesifiseerde geskenkkaartontvanger is ongeldig",
+        "gift_card_with_components_not_supported": "Die bondelproduk '%{name}' kan nie by die mandjie gevoeg word nie.",
+        "cart_too_large": "Mandjie is te groot.",
+        "stock_problems_html": "Een of meer items is nie meer beskikbaar nie. Ons het 'n <a href='%{link}'>opgedateerde mandjie</a> verskaf.",
+        "cart_attributes_error": "Karaktereienskappe bevat ongeldig data.",
+        "merchandise_line_transformers": {
+          "run_error": "'n Fout het in jou mandjie voorgekom."
         }
+      },
+      "storefront": {
+        "invalid_password": "Wagwoord verkeerd, probeer asseblief weer."
+      },
+      "tags": {
+        "add_articles": "Beperk soektog tot artikels wat ook die etiket %{tag} het",
+        "add_products": "Beperk seleksie tot produkte wat ooreenstem met die etiket %{tag}",
+        "remove_articles": "Verbred soektog na artikels wat nie gemerk is met %{tag} nie",
+        "remove_products": "Verwyder tag %{tag}"
       }
     },
     "email_marketing": {
       "subscribed": {
-        "unsubscribe": "Ontteken"
+        "unsubscribe": "Ontteken",
+        "confirmation": "Dankie dat u ingeteken het op ons poslys."
       },
       "unsubscribed": {
         "preview": "Jy sien vooraf wat kliënte sal sien wanneer hulle afteken.",
@@ -4187,9 +4244,7 @@
       "variant_sold_out_or_unavailable": "Variant uitverkoop of nie beskikbaar nie",
       "view_full_details": "Kyk na volledige besonderhede",
       "xr_button": "Kyk in jou ruimte",
-      "taxes_included": "Belasting ingesluit.",
       "video_exit_message": "{{ title }} open volskermvideo in dieselfde venster.",
-      "duties_and_taxes_included": "Pligte en belasting ingesluit.",
       "duties_included": "Pligte ingesluit.",
       "xr_button_label": "Kyk in jou ruimte, laai item in verhoogde werklikheid venster",
       "shipping_policy_html": "<a href=\"{{ link }}\">Versending</a> bereken by afhandeling."
