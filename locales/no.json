@@ -1130,8 +1130,7 @@
         "paypal_wallet_label": "PayPal-lommebok",
         "shop_pay_installments_label": "Shop Pay avdrag",
         "paypal_modal": {
-          "order_contains_subscriptions": "Abonnement",
-          "order_contains_fixed_selling_plans": "Totalt kan ikke inkludere skatter, frakt, utsatte avgifter og noen rabatter. Fortsett til kassen for beløpet som skal betales i dag."
+          "order_contains_subscriptions": "Abonnement"
         },
         "klarna_pay_later_label": "Betal senere med Klarna",
         "klarna_pay_now_label": "Betal nå med Klarna",
@@ -2900,7 +2899,9 @@
       "login": {
         "title": "Har du en konto?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logg inn</a> for å sjekke ut raskere."
-      }
+      },
+      "title": "Din handlekurv",
+      "caption": "Handlekurvartikler"
     },
     "footer": {
       "payment": "Betalingsmetoder"
@@ -2947,6 +2948,21 @@
         "one": "{{ quantity }} vare lagt til"
       },
       "variant": "Variant"
+    },
+    "announcements": {
+      "next_announcement": "Neste kunngjøring",
+      "announcement_bar": "Kunngjøringslinje",
+      "previous_announcement": "Forrige kunngjøring",
+      "carousel": "Karusell",
+      "announcement": "Kunngjøring"
+    },
+    "header": {
+      "menu": "Meny",
+      "announcement": "Kunngjøring",
+      "cart_count": {
+        "one": "{{ count }} element",
+        "other": "{{ count }} elementer"
+      }
     }
   },
   "customer_accounts": {
