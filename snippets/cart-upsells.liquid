@@ -42,7 +42,7 @@
                         value="{{ variant.id }}"
                         data-price="{{ variant.price | money_without_currency }}"
                         data-img="{{ variant_image | image_url: width: 200 }}"
-                        {% if variant.id == variant.id %}
+                        {% if forloop.first %}
                         selected{% endif %}>
                         {{ variant.title }} - {{ variant.price | money }}
                       </option>
