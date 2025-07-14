@@ -57,6 +57,14 @@
     top: 0px
 }
 
+.-left-\[99999px\] {
+    left: -99999px
+}
+
+.-top-\[99999px\] {
+    top: -99999px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -325,6 +333,10 @@
 
 .w-full {
     width: 100%
+}
+
+.min-w-\[92px\] {
+    min-width: 92px
 }
 
 .max-w-28 {
