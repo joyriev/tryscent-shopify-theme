@@ -65,6 +65,22 @@
     top: -99999px
 }
 
+.left-\[50\%\] {
+    left: 50%
+}
+
+.left-\[80\%\] {
+    left: 80%
+}
+
+.top-\[-8px\] {
+    top: -8px
+}
+
+.top-\[-15px\] {
+    top: -15px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -283,6 +299,11 @@
     height: 28px
 }
 
+.size-10 {
+    width: 40px;
+    height: 40px
+}
+
 .h-\[206px\] {
     height: 206px
 }
@@ -305,6 +326,10 @@
 
 .\!h-8 {
     height: 32px !important
+}
+
+.h-3 {
+    height: 12px
 }
 
 .\!min-h-\[56px\] {
@@ -381,6 +406,16 @@
 
 .flex-grow {
     flex-grow: 1
+}
+
+.-translate-x-\[50\%\] {
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
+.-translate-x-\[80\%\] {
+    --tw-translate-x: -80%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .transform {
@@ -593,6 +628,11 @@
     border-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
 }
 
+.border-green-500 {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 197 94 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -677,6 +717,16 @@
 
 .bg-white\/10 {
     background-color: rgb(255 255 255 / 0.1)
+}
+
+.bg-green-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
+}
+
+.bg-blue-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1))
 }
 
 .object-cover {
@@ -768,6 +818,11 @@
     padding-right: 12px !important
 }
 
+.py-1 {
+    padding-top: 4px;
+    padding-bottom: 4px
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -802,6 +857,10 @@
 
 .pr-2 {
     padding-right: 8px
+}
+
+.pb-4 {
+    padding-bottom: 16px
 }
 
 .text-center {
@@ -1057,8 +1116,22 @@
     transition-duration: 150ms
 }
 
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+
 .duration-500 {
     transition-duration: 500ms
+}
+
+.duration-300 {
+    transition-duration: 300ms
+}
+
+.ease-in-out {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .\[display\:none\] {
@@ -1079,6 +1152,10 @@
 
 .\[transform\:rotate\(-3deg\)\] {
     transform: rotate(-3deg)
+}
+
+.\[transform\:translateX\(-50\%\)\] {
+    transform: translateX(-50%)
 }
 
 .\[transform\:translateY\(100\%\)\] {

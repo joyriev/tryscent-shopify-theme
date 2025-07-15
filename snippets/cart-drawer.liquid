@@ -10,6 +10,7 @@
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 <cart-drawer class="[visibility:hidden] drawer{% if cart == empty %} is-empty{% endif %}">
   <div id="CartDrawer" class="cart-drawer">
@@ -61,6 +62,7 @@
         </button>
       </div>
       <div class="flex-grow overflow-y-auto -mr-3 pr-3">
+        {% render 'cart-progress' %}
         <cart-drawer-items
           {% if cart == empty %}
           class=" is-empty"
@@ -443,7 +445,6 @@
             <div id="CartDrawer-CartErrors" role="alert"></div>
           </form>
         </cart-drawer-items>
-
         {% render 'cart-upsells' %}
       </div>
 
