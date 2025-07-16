@@ -397,7 +397,7 @@ function updateProgress() {
   const cartTotal = parseFloat(cartTotalElement.dataset.cartTotal);
   const progressBar = document.getElementById("progress-bar");
   const shippingPill = document.getElementById("shipping-pill");
-  const giftPill = document.getElementById("gift-pill");
+  // const giftPill = document.getElementById("gift-pill");
   const milestoneMessage = document.getElementById("milestone-message");
   const currencyRate = Shopify.currency.rate;
   const currencySymbol = cartTotalElement.dataset.currencySymbol;
@@ -425,21 +425,17 @@ function updateProgress() {
     shippingPill.classList.add("border-gray-200");
   }
 
-  if (cartTotal >= freeGiftThreshold) {
-    giftPill.classList.remove("border-gray-200");
-    giftPill.classList.add("border-green-500");
-  } else {
-    giftPill.classList.remove("border-green-500");
-    giftPill.classList.add("border-gray-200");
-  }
+  // if (cartTotal >= freeGiftThreshold) {
+  //   giftPill.classList.remove("border-gray-200");
+  //   giftPill.classList.add("border-green-500");
+  // } else {
+  //   giftPill.classList.remove("border-green-500");
+  //   giftPill.classList.add("border-gray-200");
+  // }
 
   // Update milestone message
-  if (cartTotal >= freeGiftThreshold) {
-    milestoneMessage.textContent =
-      "🎁 You've unlocked a free gift and free shipping!";
-  } else if (cartTotal >= freeShippingThreshold) {
-    const remainingForGift = Math.ceil(freeGiftThreshold - cartTotal);
-    milestoneMessage.textContent = `🎉 Free shipping unlocked! Add ${currencySymbol}${remainingForGift} more for a free gift!`;
+  if (cartTotal >= freeShippingThreshold) {
+    milestoneMessage.textContent = "🎁 You've unlocked free shipping!";
   } else {
     const remainingForShipping = Math.ceil(freeShippingThreshold - cartTotal);
     milestoneMessage.textContent = `Add ${currencySymbol}${remainingForShipping} more to unlock free shipping.`;
