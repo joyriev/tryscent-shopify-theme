@@ -136,6 +136,25 @@
                     </div>
                   {% endfor %}
                 </div>
+              {%- when 'cta_banner' -%}
+                <div class="my-6 w-full px-4">
+                  <div class="bg-[#F6F6F6] relative rounded-lg  bg-[bottom_-4rem_right_-2em] bg-no-repeat px-5 py-6  lg:mx-auto lg:!bg-[length:40%] lg:bg-[bottom_-5rem_right_1rem]" style="background-image: url(//www.theessencevault.co.uk/cdn/shop/files/3-pack_large.png?v=17774925250372151442); background-size: 200px;">
+                      <div class="absolute -top-2 left-[50%] -translate-x-[50%] bg-red-500 text-white px-2 py-0 text-[9px] !leading-5 rounded-t-sm w-auto uppercase !tracking-[1.8px] font-bold flex-wrap mb-2">
+                        Bundle &amp; Save
+                      </div>
+                      <div class="flex flex-col  lg:w-2/3 lg:text-left">
+                        <h4 class="mb-0 font-sans !text-base font-black uppercase tracking-normal">
+                            100ml x3 Perfume Set
+                        </h4>
+                        <div>
+                            <span class="text-red-600">-39%</span>
+                            <span class="font-bold text-black">£44.99</span>
+                            <strike class="text-gray-500 text-[0.85em]">£74.97</strike>
+                        </div>
+                        <a href="/products/100ml-x3-perfume-set-tev" class="btn btn--secondary rounded-full mt-4 min-h-0 font-bold !text-xs !max-w-[150px]">Shop now</a>
+                      </div>
+                  </div>
+                </div>
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -1089,6 +1108,47 @@
           "type": "video",
           "id": "video4",
           "label": "Video 4"
+        }
+      ]
+    },
+    {
+      "type": "cta_banner",
+      "name": "CTA Banner",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "CTA Banner Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "CTA Banner Text"
+        },{
+          "type": "text",
+          "id": "original_price",
+          "label": "Original Price"
+        },
+        {
+          "type": "text",
+          "id": "discount_price",
+          "label": "Discount Price"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "CTA Banner Button Text"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "CTA Banner Button Link"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text"
         }
       ]
     },
