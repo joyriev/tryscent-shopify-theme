@@ -76,7 +76,7 @@
       {% endif %}
       {{ input_dataset }}>
     <label for="{{ input_id }}" class="flex-grow relative">
-      <p class="mt-0 mb-[2px] leading-none font-semibold text-lg">
+      <p class="mt-0 mb-[2px] leading-none font-semibold">
         {{ value -}}
         {{ label_unavailable }}
       </p>
@@ -84,12 +84,12 @@
       {% if ml_value != "" and ml_value != "0" %}
         {% assign ml_value_int = ml_value | times: 1 %}
         {% assign per_ml_price = product.variants[forloop.index0].price | divided_by: ml_value_int %}
-        <span class="tracking-normal">
+        <span class="tracking-normal text-sm">
           ({{ per_ml_price | money }}/ML)
         </span>
       {% endif %}
       {% if ml_value == "50" %}
-        <span class="absolute bg-red-500 text-white left-1/2 [transform:translateX(-50%)] -top-2.5 px-2 py-1 rounded-[2px] uppercase text-[10px] whitespace-nowrap">
+        <span class="absolute bg-red-500 text-white left-1/2 [transform:translateX(-50%)] -top-2.5 px-2 py-1 rounded-[2px] uppercase text-[9px] whitespace-nowrap font-semibold">
           Best Value
         </span>
       {% endif %}
