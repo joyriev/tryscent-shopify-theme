@@ -7,12 +7,13 @@
   - block: {Object} block object.
   - picker_type: {String} type of picker to dispay
 
+
   Usage:
   {% render 'product-variant-options',
-  product: product,
-  option: option,
-  block: block
-  picker_type: picker_type
+    product: product,
+    option: option,
+    block: block
+    picker_type: picker_type
   %}
 {% endcomment %}
 {%- liquid
@@ -41,25 +42,39 @@
   {%- capture input_id -%}
     {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
   {%- endcapture -%}
+
   {%- capture input_name -%}
     {{ option.name }}-{{ option.position }}
   {%- endcapture -%}
+
   {%- capture input_dataset -%}
     data-product-url="{{ value.product_url }}"
     data-option-value-id="{{ value.id }}"
   {%- endcapture -%}
+
   {%- capture label_unavailable -%}
     <span class="visually-hidden label-unavailable">
       {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
     </span>
   {%- endcapture -%}
+
   {%- if picker_type == 'swatch' -%}
     {%- capture help_text -%}
       <span class="visually-hidden">{{ value | escape }}</span>
       {{ label_unavailable }}
     {%- endcapture -%}
     {%
-      render 'swatch-input', id: input_id, name: input_name, value: value | escape, swatch: value.swatch, product_form_id: product_form_id, checked: value.selected, visually_disabled: option_disabled, shape: block.settings.swatch_shape, help_text: help_text, additional_props: input_dataset
+      render 'swatch-input',
+      id: input_id,
+      name: input_name,
+      value: value | escape,
+      swatch: value.swatch,
+      product_form_id: product_form_id,
+      checked: value.selected,
+      visually_disabled: option_disabled,
+      shape: block.settings.swatch_shape,
+      help_text: help_text,
+      additional_props: input_dataset
     %}
   {%- elsif picker_type == 'button' -%}
     <input
@@ -69,45 +84,32 @@
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
       {% if value.selected %}
-      checked
+        checked
       {% endif %}
       {% if option_disabled %}
-      class="disabled"
+        class="disabled"
       {% endif %}
-      {{ input_dataset }}>
-    <label for="{{ input_id }}" class="flex-grow relative">
-      <p class="mt-0 mb-[2px] leading-none font-semibold">
-        {{ value -}}
-        {{ label_unavailable }}
-      </p>
-      {% assign ml_value = value | remove: 'ML' | remove: 'ml' | remove: ' ' | remove: ',' | remove: '-' | remove: '+' | remove: '(' | remove: ')' %}
-      {% if ml_value != "" and ml_value != "0" %}
-        {% assign ml_value_int = ml_value | times: 1 %}
-        {% assign per_ml_price = product.variants[forloop.index0].price | divided_by: ml_value_int %}
-        <span class="tracking-normal text-sm">
-          ({{ per_ml_price | money }}/ML)
-        </span>
-      {% endif %}
-      {% if ml_value == "50" %}
-        <span class="absolute bg-red-500 text-white left-1/2 [transform:translateX(-50%)] -top-2.5 px-2 py-1 rounded-[2px] uppercase text-[9px] whitespace-nowrap font-semibold">
-          Best Value
-        </span>
-      {% endif %}
+      {{ input_dataset }}
+    >
+    <label for="{{ input_id }}">
+      {{ value -}}
+      {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       id="{{ input_id }}"
       value="{{ value | escape }}"
       {% if value.selected %}
-      selected="selected"
+        selected="selected"
       {% endif %}
       {% if swatch_value and picker_type == 'swatch_dropdown' %}
-      data-option-swatch-value="{{ swatch_value }}"
-      {% if swatch_focal_point %}
-      data-option-swatch-focal-point="{{ swatch_focal_point }}"
+        data-option-swatch-value="{{ swatch_value }}"
+        {% if swatch_focal_point %}
+          data-option-swatch-focal-point="{{ swatch_focal_point }}"
+        {% endif %}
       {% endif %}
-      {% endif %}
-      {{ input_dataset }}>
+      {{ input_dataset }}
+    >
       {% if option_disabled -%}
         {{- 'products.product.value_unavailable' | t: option_value: value -}}
       {%- else -%}
