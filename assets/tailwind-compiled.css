@@ -1229,6 +1229,10 @@
         display: block
     }
 
+    .lg\:inline-block {
+        display: inline-block
+    }
+
     .lg\:flex {
         display: flex
     }
@@ -1253,9 +1257,18 @@
         gap: 64px
     }
 
+    .lg\:px-20 {
+        padding-left: 80px;
+        padding-right: 80px
+    }
+
     .lg\:text-3xl {
         font-size: 30px;
         line-height: 36px
+    }
+
+    .lg\:\[display\:none\] {
+        display: none
     }
 }
 

@@ -98,6 +98,12 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  @media screen and (max-width: 989px) {
+    .header {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
 {%- endstyle -%}
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -162,7 +168,7 @@
               settings.logo
               | image_url: width: 600
               | image_tag:
-                class: 'header__heading-logo motion-reduce',
+                class: 'header__heading-logo motion-reduce [display:none] lg:inline-block',
                 widths: widths,
                 height: logo_height,
                 width: settings.logo_width,
@@ -170,6 +176,7 @@
                 sizes: sizes,
                 preload: true
             }}
+            <img src="{{ 'tryscent-mobile-logo.png' | asset_url }}" alt="{{ logo_alt }}" class="header__heading-logo motion-reduce inline-block lg:[display:none]" width="45" height="45">
           </div>
         {%- else -%}
           <span class="h2">{{ shop.name }}</span>
@@ -180,7 +187,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    <div class="[grid-area:search] [display:none] lg:block px-20">
+    <div class="[grid-area:search] px-2 lg:px-20">
       {%- if settings.predictive_search_enabled -%}
         <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
       {%- else -%}
@@ -285,9 +292,9 @@
     {%- endif -%}
 
     <div class="header__icons">
-      <div class="lg:hidden">
+      {% comment %} <div class="lg:hidden">
         {% render 'header-search', input_id: 'Search-In-Modal' %}
-      </div>
+      </div> {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
         <a
