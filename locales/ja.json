@@ -532,5 +532,43 @@
         }
       }
     }
+  },
+  "customer_accounts": {
+    "account_information": {
+      "verify_new_email_modal": {
+        "title": "メールを確認する",
+        "one_time_password_label": "6桁のコード",
+        "description": "{{email}} に送信されたコードを入力してください",
+        "email_resend_button": "コードを再送信する",
+        "email_resend_button_accessibility_label": "確認コードを再送信する",
+        "verify_button": "確認する",
+        "verify_button_accessibility_label": "ワンタイムパスワードを確認する",
+        "cancel_button": "キャンセル",
+        "cancel_button_accessibility_label": "メール編集をキャンセルする"
+      },
+      "email_update_success_modal": {
+        "title": "メールを確認する",
+        "description": "メールアドレスが正常に更新されました。ログイン画面にリダイレクトしています。"
+      }
+    },
+    "email_capture": {
+      "brand_logo_alt_text": "%{shop_name} ロゴ",
+      "privacy_link_text": "プライバシー",
+      "terms_of_service_link_text": "条件",
+      "processing": "処理中…",
+      "step_one": {
+        "page_title": "メールアドレスを入力してください - %{shop_name}",
+        "heading": "メールアドレスを入力してください",
+        "subheading": "メールアドレスを入力してください。確認コードをお送りします。",
+        "input_field_label": "メール",
+        "button": "続ける"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "有効なメールアドレスを入力してください",
+          "invalid_code": "正しい6桁のコードを入力してください"
+        }
+      }
+    }
   }
 }
