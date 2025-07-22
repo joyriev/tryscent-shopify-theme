@@ -439,6 +439,10 @@
     justify-content: center
 }
 
+.\!justify-center {
+    justify-content: center !important
+}
+
 .justify-between {
     justify-content: space-between
 }
@@ -473,6 +477,18 @@
 
 .gap-8 {
     gap: 32px
+}
+
+.gap-10 {
+    gap: 40px
+}
+
+.\!gap-10 {
+    gap: 40px !important
+}
+
+.\!gap-14 {
+    gap: 56px !important
 }
 
 .overflow-hidden {
@@ -1249,8 +1265,16 @@
         width: 50%
     }
 
+    .lg\:\!flex-none {
+        flex: none !important
+    }
+
     .lg\:flex-row {
         flex-direction: row
+    }
+
+    .lg\:\!flex-nowrap {
+        flex-wrap: nowrap !important
     }
 
     .lg\:gap-16 {
@@ -1340,6 +1364,44 @@
     color: rgb(17 24 39 / var(--tw-text-opacity, 1))
 }
 
+.\[\&_img\]\:rounded-xl img {
+    border-radius: 12px
+}
+
 .\[\&_p\]\:\!m-0 p {
     margin: 0px !important
+}
+
+.\[\&_p\]\:mb-6 p {
+    margin-bottom: 24px
+}
+
+.\[\&_p\]\:\!mb-6 p {
+    margin-bottom: 24px !important
+}
+
+.\[\&_p\]\:\!mb-5 p {
+    margin-bottom: 20px !important
+}
+
+.\[\&_p\]\:text-lg p {
+    font-size: 18px;
+    line-height: 28px
+}
+
+.\[\&_p\]\:leading-snug p {
+    line-height: 1.375
+}
+
+.\[\&_p\]\:tracking-tight p {
+    letter-spacing: -0.025em
+}
+
+.\[\&_p\]\:tracking-normal p {
+    letter-spacing: 0em
+}
+
+.\[\&_p\]\:text-gray-950 p {
+    --tw-text-opacity: 1;
+    color: rgb(3 7 18 / var(--tw-text-opacity, 1))
 }
