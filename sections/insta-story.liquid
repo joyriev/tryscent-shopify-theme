@@ -1,0 +1,56 @@
+<div class="color{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'story' -%}
+        <a href="{{ block.settings.link }}">
+          <img
+            src="{{ block.settings.image | image_url: 'master' }}"
+            alt="{{ block.settings.title }}"
+            height="100"
+            width="100">
+          <h2>{{ block.settings.title }}</h2>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Insta Story",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "primary",
+        "label": "Color Scheme"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "story",
+        "name": "Story",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Insta Story"
+      }
+    ]
+  }
+{% endschema %}
