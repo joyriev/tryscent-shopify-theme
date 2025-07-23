@@ -15,9 +15,17 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .shopify-section-group-header-group {
+    visibility: hidden;
+    position: fixed;
+    top: -99999px;
+    left: -99999px;
+  }
 {%- endstyle -%}
 
-<div id="spin-to-win-product">
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+<div id="spin-to-win-product" class="section-{{ section.id }}-padding">
   <div class="page-width">
     <div style="display: flex;" class="product product--large product--left product--stacked product--mobile-hide grid grid--1-col grid--2-col-tablet">
       <div class="grid__item product__media-wrapper pb-6">
