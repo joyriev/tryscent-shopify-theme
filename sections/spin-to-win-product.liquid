@@ -1,5 +1,5 @@
 {% liquid
-  assign product = all_products | where: 'id', section.settings.product_id | first
+  assign product = section.settings.product_id
   assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
 %}
 
@@ -22,7 +22,8 @@
     <div style="display: flex;" class="product product--large product--left product--stacked product--mobile-hide grid grid--1-col grid--2-col-tablet">
       <div class="grid__item product__media-wrapper pb-6">
         {% render 'product-media-gallery'
-          , variant_images: variant_images %}
+          , variant_images: variant_images
+          , product_param: product %}
       </div>
       <div class="product__info-wrapper grid__item scroll-trigger animate--slide-in">
         {{ product.title }}
@@ -39,6 +40,10 @@
     {{ product | structured_data }}
   </script>
 </div>
+
+<script>
+    console.log({{ variant_images | json }});
+</script>
 
 {% schema %}
   {
