@@ -2162,8 +2162,192 @@
       "review_address_modal": {
         "title": "Adres recenzji",
         "subtitle_no_match": "Ten adres nie pasuje do żadnego z Twoich zapisanych adresów.",
-        "continue": "Kontynuuj z tym adresem"
+        "continue": "Kontynuuj z tym adresem",
+        "return_to_cart": "Powrót do koszyka"
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Recenzja",
+          "link_label": "Warunki korzystania z {{partnerDisplayName}}"
+        }
+      },
+      "online_store_chat": {
+        "title": "Masz pytania? Porozmawiaj z nami"
+      },
+      "local_pickup": {
+        "location_information": {
+          "one": "Jest %{count} sklep z zapasami blisko %{address}",
+          "other": "Jest %{count} sklepów z zapasami blisko %{address}"
+        },
+        "location_information_next": {
+          "one": "Jest %{count} lokalizacja z zapasami blisko Ciebie",
+          "other": "W pobliżu Ciebie znajduje się %{count} lokalizacji z zapasami"
+        },
+        "your_location": "twoja lokalizacja",
+        "all_stores_far_away": {
+          "title": "Najbliższe lokalizacje są oddalone o ponad %{distance}",
+          "ship_to_address_link": "adres dostawy"
+        },
+        "could_not_resolve_address": "Nie można było znaleźć Twojego adresu. Spróbuj ponownie lub użyj innego adresu",
+        "paginator": {
+          "accessibility_label": "Paginacja odbioru lokalnego",
+          "label": {
+            "one": "%{first} - %{last} z %{count} sklepów"
+          }
+        },
+        "reveal_more_label": {
+          "one": "Pokaż %{count} więcej lokalizacji",
+          "other": "Pokaż %{count} więcej lokalizacji"
+        }
+      },
+      "captcha": {
+        "title": "Ukończ CAPTCHA, aby kontynuować",
+        "errors": {
+          "not_solved": "Ukończ CAPTCHA, aby kontynuować"
+        }
+      },
+      "discount_errors": {
+        "generic_error": "Twoje zamówienie nie mogło zostać przetworzone, ponieważ Twój kod rabatowy jest już niedostępny. Sprawdź całkowitą kwotę zamówienia i spróbuj ponownie."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Nie masz już uprawnień do składania zamówień B2B. %{logout_url}, aby złożyć zamówienie osobiste.",
+        "lost_permissions_subtitle": "Nie masz już uprawnień do składania zamówień B2B, wyloguj się, aby złożyć zamówienie osobiste."
+      },
+      "shop_pay_external": {
+        "title": "Kasa Shop Pay",
+        "errors": {
+          "problem_loading": "Wystąpił problem z ładowaniem Shop Pay",
+          "try_again_later": "Sprawdź swoje połączenie lub zamknij to okno i spróbuj ponownie za kilka chwil.",
+          "checkout_has_expired": "Twoja sesja realizacji zamówienia wygasła. Zamknij to okno i spróbuj ponownie dokonać zakupu w {{shopName}}."
+        },
+        "return_to_store_simple": "Powrót do sklepu"
+      },
+      "wallets": {
+        "return_to_store": "Powrót do sklepu",
+        "return_to_checkout": "Powrót do kasy",
+        "redirect_hint": "Zostaniesz poproszony o zalogowanie się za pomocą {{walletName}}.",
+        "call_to_action": "Zapłać za pomocą {{walletName}}",
+        "redirection_notice": "Po kliknięciu \"{{buttonLabel}}\" zostaniesz przekierowany do {{walletName}}, aby bezpiecznie dokończyć zakup.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} niedostępny",
+            "description": "{{walletName}} nie był dostępny. Użyj innej metody płatności lub spróbuj ponownie później.",
+            "instructions": "Wystąpił problem z {{walletName}}. Wróć do sklepu, aby spróbować ponownie lub wybierz inną metodę płatności.",
+            "unavailable_for_country": "{{walletName}} nie jest dostępny w {{countryName}}. Wybierz inną metodę płatności, aby dokończyć zakup"
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} jest obecnie niedostępny dla Twojego zamówienia. Aby kontynuować zakup, wybierz inną metodę płatności."
+          },
+          "generic": "Wystąpił problem z {{walletName}}. Spróbuj ponownie lub użyj innej metody płatności.",
+          "discount_code": "Nie można zastosować tego kodu rabatowego. Proszę sprawdzić kod i spróbować ponownie.",
+          "terminal": "Wystąpił problem z {{walletName}}. Proszę użyć innej metody płatności.",
+          "detour": {
+            "stock_problems": "Niektóre przedmioty nie są już dostępne. Zamknij {{walletName}} i spróbuj ponownie.",
+            "price_change": "Niektóre ceny przedmiotów uległy zmianie. Zamknij {{walletName}}, aby przejrzeć swoje zamówienie i spróbować ponownie.",
+            "queue": "Zostałeś umieszczony w kolejce do kasy. Zamknij {{walletName}}, aby kontynuować.",
+            "currency_change": "Nie możesz użyć innego adresu z {{walletName}}. Użyj oryginalnego adresu lub spróbuj innej metody płatności."
+          },
+          "unsupported": {
+            "address": "Sprzedawca nie może dostarczyć na ten adres",
+            "wallet_is_unavailable": "{{walletName}} nie może być używany z tym adresem. Wybierz inny adres lub zamknij {{walletName}}, aby dokończyć zakup"
+          },
+          "outdated": {
+            "shipping_method": "Opcje wysyłki zostały zmienione dla Twojego zamówienia. Sprawdź swój wybór.",
+            "payment_terms": "Warunki płatności uległy zmianie. Proszę przejrzeć swoje zamówienie"
+          },
+          "invalid": {
+            "email": "Wprowadź prawidłowy adres e-mail",
+            "zone": "Wprowadź prawidłowy stan / prowincję",
+            "billing_zone": "Wprowadź prawidłowy stan / prowincję adresu rozliczeniowego",
+            "postal_code": "Wprowadź prawidłowy kod pocztowy / ZIP",
+            "phone": "Wprowadź prawidłowy numer telefonu",
+            "billing_phone": "Wprowadź prawidłowy numer telefonu do adresu rozliczeniowego",
+            "reduction_code": "Wprowadź ważny kod rabatowy lub kartę podarunkową",
+            "billing_must_match_shipping": "Musi odpowiadać adresowi wysyłki",
+            "billing_zip": "Wprowadź prawidłowy kod pocztowy adresu rozliczeniowego"
+          },
+          "missing": {
+            "first_name": "Wprowadź imię",
+            "billing_first_name": "Wprowadź imię do adresu rozliczeniowego",
+            "last_name": "Wprowadź nazwisko",
+            "address1": "Wprowadź adres",
+            "billing_address1": "Wprowadź adres rozliczeniowy",
+            "address2": "Wprowadź numer mieszkania, apartamentu itp.",
+            "billing_address2": "Wprowadź adres rozliczeniowy, mieszkanie, apartament itp.",
+            "city": "Wprowadź miasto",
+            "billing_city": "Wprowadź miasto adresu rozliczeniowego",
+            "province": "Wybierz stan / prowincję",
+            "billing_province": "Wybierz stan / prowincję adresu rozliczeniowego",
+            "zip": "Wprowadź kod pocztowy / ZIP",
+            "billing_zip": "Wprowadź kod pocztowy adresu rozliczeniowego"
+          },
+          "formatting": {
+            "name_contains_emojis": "Usuń emoji ze swojego imienia",
+            "postal_code_contains_emoji": "Usuń emoji z twojego kodu pocztowego",
+            "first_name_too_long": "Imię zawiera zbyt wiele liter",
+            "last_name_too_long": "Nazwisko zawiera zbyt wiele liter"
+          }
+        },
+        "scrim": {
+          "and_return_to_checkout": "i wróć do Kasy"
+        }
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Cena karty podarunkowej musi być większa niż 0.",
+            "gift_card_price_must_not_exceed_limit": "Cena karty podarunkowej nie może przekraczać %{gift_card_limit}.",
+            "subtotal_limit_reached": "Osiągnięto maksymalną wartość pozycji na liście.",
+            "signature_mismatch": "Niezgodność podpisu towaru dla linii {{stable_id}}."
+          }
+        }
+      },
+      "units": {
+        "centiliter": "klucz",
+        "pound": "funt",
+        "gallon": "dziewczyna",
+        "inch": "w",
+        "square_foot": "stopy²",
+        "item": "przedmiot"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "Adres nie jest obsługiwany dla bieżącego członkostwa."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Przejdź do Sklepu Internetowego"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "Więcej informacji o %{context}"
       }
+    },
+    "pagination": {
+      "previous": "Poprzedni",
+      "next": "Dalej"
+    },
+    "links": {
+      "powered_by_shopify": "Zasilane przez Shopify"
+    },
+    "attributes": {
+      "body": "ciało"
+    },
+    "addresses": {
+      "province": "Prowincja",
+      "state_and_territory": "Stan/terytorium"
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "Bestseller",
+        "price_ascending": "Cena, od najniższej do najwyższej",
+        "price_descending": "Cena, od najwyższej do najniższej",
+        "date_ascending": "Data, od starego do nowego",
+        "date_descending": "Data, od nowego do starego"
+      }
+    },
+    "errors": {
+      "blank": "nie może być puste",
+      "credit_card_session_expired": "Autoryzacja karty kredytowej wygasła, prosimy o ponowne wprowadzenie informacji o płatności. Twoja karta nie została obciążona."
     }
   }
 }
