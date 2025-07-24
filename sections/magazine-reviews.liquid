@@ -4,6 +4,14 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .reviews-thumbnail .swiper-slide {
+    opacity: 0.5;
+  }
+
+  .reviews-thumbnail .swiper-slide-active {
+    opacity: 1;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -19,8 +27,24 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    {% comment %} Swiper Thumbnails {% endcomment %}
-
+    <div class="reviews-thumbnail overflow-hidden mb-2 md:hidden">
+      <div class="swiper-wrapper">
+        {% for i in (1..2) %}
+          {% for block in section.blocks %}
+            {% if block.settings.review_image != blank %}
+              <div class="swiper-slide">
+                <img
+                  class="max-w-full h-auto"
+                  src="{{ block.settings.review_image | image_url }}"
+                  alt="Perk Image"
+                  width="{{ block.settings.review_image.width }}"
+                  height="{{ block.settings.review_image.height }}">
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
     <div class="swiper-container overflow-hidden -mx-[15px]">
       <div class="swiper-wrapper">
         {% for i in (1..2) %}
@@ -48,26 +72,47 @@
 </div>
 
 <script>
+
   document.addEventListener('DOMContentLoaded', function() {
-    const swiper = new Swiper('.swiper-container', 
-        {
-          "loop":  true ,
-          "centeredSlides": true,
-          "initialSlide": 0,
-          "slidesPerView": 1.2,
-          "loopedSlides": 3,
-          "slidesPerGroup": 1,
-          "disableOnInteraction": true,
-          "spaceBetween": 60,
-          "breakpoints": {
-            "768": {
-              "slidesPerView": 3,
-              "spaceBetween": 25,
-              "centeredSlides": false
-            }
-          }
+    // Initialize main slider
+    const mainSwiper = new Swiper('.swiper-container', {
+      loop: true,
+      centeredSlides: true,
+      initialSlide: 0,
+      slidesPerView: 1.2,
+      loopedSlides: 3,
+      slidesPerGroup: 1,
+      disableOnInteraction: true,
+      spaceBetween: 60,
+      breakpoints: {
+        "768": {
+          "slidesPerView": 3,
+          "spaceBetween": 25,
+          "centeredSlides": false
         }
-    );
+      }
+    });
+
+    // Initialize thumbnail slider
+    const thumbnailSwiper = new Swiper('.reviews-thumbnail', {
+      slidesPerView: 2.3,
+      spaceBetween: 10,
+      centeredSlides: true,
+      slideToClickedSlide: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+
+    // Connect both sliders
+    mainSwiper.controller.control = thumbnailSwiper;
+    thumbnailSwiper.controller.control = mainSwiper;
+
+    // Handle thumbnail click
+    document.querySelectorAll('.reviews-thumbnail .swiper-slide').forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        mainSwiper.slideToLoop(index);
+      });
+    });
   });
 </script>
 
