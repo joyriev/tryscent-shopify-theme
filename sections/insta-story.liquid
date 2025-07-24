@@ -1,7 +1,7 @@
 <style>
   .insta-story-card:nth-child(2) h2 {
     color: transparent;
-    background-image: linear-gradient(to right, #6e32e9, #ff19a8, #fed45d);
+    background-image: linear-gradient(to bottom, #6e32e9, #ff19a8, #fed45d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -15,7 +15,7 @@
           <a href="{{ block.settings.link }}" class="insta-story-card no-underline text-center flex flex-col">
             <div class="[background-image:linear-gradient(to_bottom,_#6e32e9,_#ff19a8,_#fed45d)] flex p-[2px] rounded-full aspect-square relative">
               <img
-                src="{{ block.settings.image | image_url: width: 400 }}"
+                src="{{ block.settings.image | image_url: width: 200 }}"
                 alt="{{ block.settings.title }}"
                 height="100"
                 width="100"
