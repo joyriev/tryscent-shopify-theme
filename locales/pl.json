@@ -921,6 +921,306 @@
           "one": "usuń niedostępny przedmiot",
           "other": "usuń niedostępne elementy"
         }
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Brak dostępnej dostawy dla %{count} przedmiotu",
+            "other": "Brak dostępnej dostawy dla %{count} przedmiotów"
+          },
+          "message": {
+            "one": "Ten przedmiot zostanie usunięty z Twojego koszyka, ponieważ dla Twojego adresu nie ma dostępnych metod dostawy.",
+            "other": "Te przedmioty zostaną usunięte z Twojego koszyka, ponieważ dla Twojego adresu nie ma dostępnych metod dostawy."
+          }
+        }
+      },
+      "order_summary": {
+        "group_title_label": "Część \"%{group_title}\"",
+        "number_items": {
+          "one": "%{count} przedmiot",
+          "other": "%{count} przedmiotów"
+        },
+        "view_all_items": {
+          "one": "Wyświetl %{count} element",
+          "other": "Zobacz wszystkie %{count} elementy"
+        },
+        "more_items_modal": {
+          "search_item": "Szukaj",
+          "empty_results": "Nie znaleziono wyników dla \"%{searchText}\". Sprawdź pisownię lub użyj innego słowa lub wyrażenia.",
+          "number_items_shown": "%{shownNumber} z %{totalNumber} elementów"
+        },
+        "shopping_cart_label": "Koszyk zakupowy",
+        "discount_order_stacking": {
+          "other": "Rabaty na zamówienie"
+        },
+        "discount_not_found": "Nie można znaleźć ważnego rabatu odpowiadającego wprowadzonego kodowi",
+        "discount_code_applied": "Kod rabatowy zastosowany",
+        "discount_code_allocations_mismatch": "Twój <strong style=\"text-transform:uppercase\">%{code}</strong> kod rabatowy został zmieniony. Sprawdź swój koszyk i spróbuj ponownie.",
+        "gift_card_applied": "Karta podarunkowa zastosowana",
+        "enter_shipping_address": "Wprowadź adres wysyłki",
+        "gift_card_title": "Karta podarunkowa",
+        "gift_card_label": "Karta podarunkowa",
+        "gift_card_placeholder": "Karta podarunkowa",
+        "gift_card_and_discount_title": "Kod rabatowy lub karta podarunkowa",
+        "gift_card_and_discount_label": "Kod rabatowy lub karta podarunkowa",
+        "gift_card_and_discount_placeholder": "Kod rabatowy lub karta podarunkowa",
+        "remove_gift_card_label": "Wyczyść kartę podarunkową",
+        "return_restocking_fee_label": "Opłata za uzupełnienie zapasów",
+        "return_shipping_fee_label": "Zwrot przesyłki",
+        "applied_discount_message": "%{amount} zniżki od całkowitej ceny zamówienia",
+        "gift_card_has_been_applied": "Karta podarunkowa została zastosowana",
+        "gift_card_has_been_removed": "Karta podarunkowa została usunięta",
+        "gift_card_subscriptions_notice": "Karty podarunkowe będą miały zastosowanie tylko do Twojej pierwszej płatności",
+        "discount_already_applied": "Do tego zamówienia zastosowano rabat. Nie możesz dodać kolejnego rabatu.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> kod rabatowy nie jest ważny dla produktów w Twoim koszyku",
+        "discount_requires_customer_notice": "Wprowadź swoje dane wysyłkowe, aby zastosować kod rabatowy <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> kod rabatowy nie jest teraz dla Ciebie dostępny",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> kod rabatowy wymaga uprawnionego klienta",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> kod rabatowy nie jest dostępny dla Twojego adresu wysyłki",
+        "customer_already_used_once_per_customer_discount_notice": "Kod rabatowy <strong style=\"text-transform:uppercase\">%{code}</strong> został już użyty",
+        "subtotal_label_with_quantity": {
+          "one": "Suma częściowa · %{count} przedmiot",
+          "other": "Suma częściowa · %{count} przedmiotów"
+        },
+        "no_pickup_location": "Nie ma dostępnych miejsc odbioru.",
+        "pickup_unavailable_banner_title": {
+          "one": "Brak dostępnych sklepów z Twoim produktem",
+          "other": "Brak sklepów z Twoimi przedmiotami"
+        },
+        "pickup_unavailable_banner_body": {
+          "ship_to_address": "Wysłać do adresu",
+          "ship_to_address_instead_html": "%{link} zamiast"
+        },
+        "tip_label": "Wskazówka",
+        "shipping_default_value": "Obliczone na następnym kroku",
+        "shipping_pending_message": "Jeszcze niedostępne",
+        "price_after_discount_aria_text": "Cena po obniżce",
+        "total_savings": "Całkowite oszczędności",
+        "total_label": "Całkowity",
+        "total_due_label": "Do zapłaty ogółem",
+        "deposit_label": "Depozyt",
+        "total_due_today_label": "Razem do zapłaty dzisiaj",
+        "total_due_later_label": "Do zapłaty później",
+        "partial_total_label": "Całkowity",
+        "free_total_label": "Darmowe",
+        "free_shipping_total_label": "Darmowe",
+        "paid_label": "Zapłacono",
+        "payment_due_label": "Płatność do zapłaty",
+        "discount_and_gift_card_savings_notice": "Po %{discount_amount} rabatu i %{gift_card_amount} w kartach podarunkowych",
+        "discount_savings_notice": "Po %{discount_amount} rabatu",
+        "gift_card_savings_notice": "Po %{gift_card_amount} w kartach podarunkowych",
+        "cost_table_title": "Podsumowanie kosztów",
+        "cost_table_item_column_header": "Element",
+        "price_per_item": {
+          "accessibility_label": "%{price} za sztukę",
+          "label": "%{price}/szt"
+        },
+        "scroll_order_summary": "Przewiń, aby zobaczyć więcej elementów",
+        "sale_price": "Cena sprzedaży",
+        "total_already_paid_label": "Zapłacono",
+        "unit_price": {
+          "accessible_separator": "na",
+          "per_item": {
+            "single": "%{price} za sztukę",
+            "one": "%{price} za %{count} przedmiot",
+            "other": "%{price} za %{count} przedmiotów"
+          }
+        },
+        "gift_card_ending": "Karta podarunkowa kończąca się na %{last_characters}",
+        "multiple_shipping_lines_label": "Całkowity koszt wysyłki",
+        "recurring_subtotal_label": "Powtarzająca się suma częściowa",
+        "recurring_total_label": "Suma cykliczna",
+        "recurring_total_tooltip": "Nie obejmuje kosztów wysyłki, podatków, ceł ani żadnych obowiązujących rabatów.",
+        "confirmation_number_label": "Potwierdzenie #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> nie można było użyć z Twoimi istniejącymi rabatami.",
+        "percent_off_shipping": "%{percent}% zniżki na wysyłkę",
+        "amount_off_shipping": "%{amount} zniżki na wysyłkę",
+        "deferred_payment_info": {
+          "title": "Płatność w wysokości %{amount_due} jest należna do %{due_at}",
+          "description_html": "W przypadku pytań dotyczących Twojego zamówienia, %{contact_us}.",
+          "paid_today": "Łącznie zapłacono dzisiaj",
+          "due_on_fulfillment_title": "Płatność w wysokości %{amount_due} jest należna przy realizacji",
+          "due_on_receipt_title": "Płatność w wysokości %{amount_due} jest wymagana przy odbiorze"
+        },
+        "deferred_balance_info": {
+          "title": "Saldo w wysokości {{amount_due}} jest należne do {{due_at}}",
+          "due_on_fulfillment_title": "Saldo w wysokości {{amount_due}} jest należne przy realizacji"
+        },
+        "payment_terms_totals": {
+          "due_today": "Razem do zapłaty dzisiaj",
+          "due_today_next": "Do dzisiaj",
+          "due_later": "Do zapłaty %{due_at}",
+          "due_on_fulfillment": "Razem do zapłaty przy realizacji",
+          "due_on_fulfillment_next": "Płatne przy realizacji",
+          "due_on_receipt": "Razem do zapłaty przy odbiorze",
+          "due_later_checkout_to_draft": "Do zapłaty później",
+          "total_paid": "Razem zapłacono"
+        },
+        "maximum_discount_code_limit_reached": "Osiągnąłeś maksymalną liczbę kodów rabatowych. Usuń istniejący kod, aby użyć <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> nie działa w tej chwili. Skontaktuj się z nami, aby uzyskać pomoc.",
+        "due_on_fulfillment": "Płatne przy realizacji",
+        "may_be_charged_on_delivery": "Może być pobrana przy dostawie",
+        "recurring_payments": "Płatności cykliczne",
+        "recurring_total_multiple_label": "To zamówienie zawiera powtarzające się opłaty za wiele przedmiotów.",
+        "deferred_total_due_date_label": "Do zapłaty {{date}}",
+        "deferred_total_due_date_label_next": "Do %{date}",
+        "custom_discount": "Niestandardowa zniżka",
+        "expand_component_information": {
+          "one": "Pokaż %{count} element",
+          "other": "Pokaż %{count} elementów"
+        },
+        "collapse_component_information": {
+          "one": "Ukryj %{count} element",
+          "other": "Ukryj %{count} elementów"
+        },
+        "discount_discovery": {
+          "merchandise_quantity_label": {
+            "one": "%{count} przedmiot",
+            "other": "%{count} przedmiotów"
+          }
+        },
+        "alternative_payment_currency_total": "Obciążono kwotą %{amount_due}"
+      },
+      "shipping": {
+        "shipping_method_recurring_shipments_group_title": {
+          "one": "Wysyłka cykliczna",
+          "other": "Regularne wysyłki"
+        },
+        "subscription_shipping": "Wysyłka subskrypcyjna",
+        "subscription_local_delivery": "Subskrypcja lokalnej dostawy",
+        "subscription_pickup": "Odbiór subskrypcji",
+        "waiting_on_rate_notice": "Pobieranie dostępnych stawek wysyłki…",
+        "waiting_on_pickup_location_notice": "Pobieranie dostępnych miejsc odbioru…",
+        "no_rates_for_cart_or_destination_notice": "Nie ma dostępnych metod wysyłki dla Twojego koszyka lub adresu",
+        "no_pickup_location_notice": "Przynajmniej jeden z Twoich produktów nie jest dostępny do odbioru",
+        "free_rate_label": "Darmowe",
+        "cheapest_rate_label": "Najtańszy",
+        "please_enter_your_shipping_information_notice": "Proszę wprowadzić swoje dane wysyłkowe.",
+        "estimated_delivery_date": {
+          "other": "%{count} dni roboczych"
+        },
+        "estimated_delivery_time": "Szacowany czas dostawy %{time}",
+        "estimated_delivery_time_range": "Szacowany czas dostawy %{min_time}–%{max_time}",
+        "arrives_time": "Przybywa %{time}",
+        "arrives_time_range": "Przybywa w ciągu %{min_time}–%{max_time}",
+        "estimated_time": "Szacowany %{time}",
+        "estimated_time_range": "Szacowany czas %{min_time}–%{max_time}",
+        "shipping_line_phone": "Twój kurier może użyć tego numeru, aby się z tobą skontaktować.",
+        "shipping_line_delivery_phone": "Możesz zostać skontaktowany w sprawie aktualizacji dotyczących Twojej dostawy.",
+        "optional_shipping_line_delivery_instructions_label": "Instrukcje dostawy (opcjonalnie)",
+        "shipping_line_delivery_instructions": "Wprowadź niezbędne informacje, takie jak kody do drzwi lub instrukcje dotyczące dostawy.",
+        "other_method": {
+          "one": "%{count} inna metoda dostępna na",
+          "other": "%{count} innych dostępnych metod zaczynając od"
+        },
+        "shipping_rate_discounted_amount": "Było: %{original_amount}. Teraz: %{amount}",
+        "prime_not_available": {
+          "default": "Dostawa Prime nie jest dostępna dla Twojego zamówienia. Twoje opcje wysyłki zostały zaktualizowane."
+        },
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "Darmowa wysyłka przy %{count} kolejnych dostawach",
+            "other": "Darmowa wysyłka przy %{count} kolejnych dostawach"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "Darmowa wysyłka przy %{count} kolejnych dostawach, potem %{recurring_order_shipping_price}",
+            "other": "Darmowa wysyłka przy %{count} kolejnych dostawach, potem %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "Darmowa wysyłka dla %{count} dostawy, następnie %{recurring_order_shipping_price}",
+            "other": "Darmowa wysyłka dla %{count} dostaw, następnie %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} więcej dostaw za %{shipping_price}",
+            "other": "%{count} więcej dostaw za %{shipping_price} każda"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{count} dostawa za %{shipping_price}",
+            "other": "%{count} więcej dostaw za %{shipping_price} każda"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Darmowa wysyłka przez pierwszy %{cycle}, następnie %{recurring_order_shipping_price}",
+            "other": "Darmowa wysyłka przez pierwszy %{cycle}, następnie %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} za %{count} dodatkową dostawę",
+            "other": "%{shipping_price} za %{count} dodatkowych dostaw (%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{shipping_price} za %{count} dostawę",
+            "other": "%{shipping_price} za %{count} dostaw (%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{shipping_price} za %{count} dodatkową dostawę, następnie %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} za %{count} dodatkowych dostaw (%{per_delivery_cost}), a następnie %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{shipping_price} za %{count} dostawę, następnie %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} za %{count} dostaw (%{per_delivery_cost}), następnie %{recurring_order_shipping_price}"
+          },
+          "prepaid_delivery_frequency": {
+            "other": "dla %{count} dostaw"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "one": "każdego dnia"
+            },
+            "week": {
+              "other": "co %{count} tygodni"
+            },
+            "month": {
+              "other": "co %{count} miesięcy"
+            },
+            "year": {
+              "one": "co roku",
+              "other": "co %{count} lat"
+            }
+          },
+          "initial_order_discounted": "Najpierw koszt wysyłki %{discounted_shipping_cost}, potem %{frequency_description}",
+          "prepaid_initial_order_discounted": "Pierwszy koszt wysyłki %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Pierwszy koszt wysyłki %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Najpierw koszt wysyłki %{discounted_shipping_price} %{prepaid_delivery_frequency}, potem %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "W zestawie",
+          "recurring_order_shipping_price": "następnie %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "Pierwsze zamówienie wliczone, następnie %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "other": "Pierwsze %{count} zamówienia za darmo"
+          },
+          "free_for_first_n_order": {
+            "one": "Na pierwsze zamówienie",
+            "other": "Dla pierwszych %{count} zamówień"
+          }
+        },
+        "one_time_purchase_shipping": "Jednorazowa wysyłka",
+        "shipping_information_required_notice": "Informacje o wysyłce są wymagane. {{link}}.",
+        "loading_progressive_rates": "Wyszukiwanie więcej stawek…",
+        "duties_and_taxes_options": {
+          "ddu_title": "Płatność przy odbiorze",
+          "ddp_caption": "Brak dodatkowych opłat za dostawę"
+        },
+        "shipping_used_as_billing_notice": "To będzie również używane jako Twój adres rozliczeniowy dla tego zamówienia.",
+        "address_update": "Aktualizuj adres",
+        "shipping_address_title": "Dostawa do",
+        "add_delivery_instructions": "Dodaj instrukcje dostawy",
+        "address_more": "Więcej akcji dla tego adresu",
+        "address_default": "Ustaw jako domyślne",
+        "address_form": {
+          "generic_error": "Wystąpił problem z zapisaniem Twojego adresu. Proszę spróbuj ponownie."
+        },
+        "different_shipping_method_summary": "Wprowadź inny adres wysyłki, aby zobaczyć dostępne metody wysyłki",
+        "method_summary": {
+          "incomplete_address_entered": "Wprowadź pełny adres wysyłki, aby zobaczyć dostępne metody wysyłki",
+          "incomplete_address_selected": "Wybierz pełny adres wysyłki, aby zobaczyć dostępne metody wysyłki"
+        },
+        "local_pickup": {
+          "search_address": "Szukaj adresu"
+        },
+        "split_shipping_merchandise_quantity_label_standard": "%{quantity} przedmiotów",
+        "pre_order_ships_now": "Wysyłka teraz",
+        "pre_order_ships_later": "Wysyłka później",
+        "pre_order_ships_date": "Wysyłki %{date}",
+        "split_shipping_shipment_notice": "Twoje zamówienie dotrze w %{quantity_shipments}",
+        "split_shipping_first_shipment_notice": "Twoje pierwsze zamówienie dotrze w %{quantity_shipments}"
       }
     }
   }
