@@ -19,6 +19,8 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
+    {% comment %} Swiper Thumbnails {% endcomment %}
+
     <div class="swiper-container overflow-hidden -mx-[15px]">
       <div class="swiper-wrapper">
         {% for i in (1..2) %}
@@ -26,13 +28,15 @@
             {% if block.settings.review_image != blank %}
               <div class="swiper-slide">
                 <div class="flex flex-col items-center">
-                  <div class="h-[60px] flex items-center justify-center">
+                  <div class="h-[60px] items-center justify-center [display:none] md:[display:block]">
                     <img
                       class="max-w-full h-auto"
                       src="{{ block.settings.review_image | image_url }}"
-                      alt="Perk Image">
+                      alt="Perk Image"
+                      width="{{ block.settings.review_image.width }}"
+                      height="{{ block.settings.review_image.height }}">
                   </div>
-                  <p class="mb-0 text-center mt-2 leading-snug">{{ block.settings.review_content }}</p>
+                  <p class="mb-0 text-center mt-2 font-medium text-gray-950 text-lg leading-snug">{{ block.settings.review_content }}</p>
                 </div>
               </div>
             {% endif %}
@@ -46,16 +50,15 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const swiper = new Swiper('.swiper-container', 
-      
         {
           "loop":  true ,
           "centeredSlides": true,
           "initialSlide": 0,
-          "slidesPerView": 2,
+          "slidesPerView": 1.2,
           "loopedSlides": 3,
           "slidesPerGroup": 1,
           "disableOnInteraction": true,
-          "spaceBetween": 35,
+          "spaceBetween": 60,
           "breakpoints": {
             "768": {
               "slidesPerView": 3,
@@ -63,9 +66,7 @@
               "centeredSlides": false
             }
           }
-          
         }
-      
     );
   });
 </script>
