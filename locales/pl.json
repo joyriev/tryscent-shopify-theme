@@ -2686,6 +2686,154 @@
           }
         }
       }
+    },
+    "order_details": {
+      "payment": {
+        "payment_type": {
+          "store_credit": "Kredyt sklepu",
+          "money_order": "Weksel pieniężny",
+          "cash_on_delivery": "Płatność przy odbiorze (COD)",
+          "bank_deposit": "Wpłata bankowa",
+          "manual": "Instrukcja"
+        },
+        "card_payment_details": "kończący się na {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "kończący się na {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Kredyt sklepu - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Zapłacono w ratach Shop Pay",
+          "view_schedule": "Zobacz harmonogram"
+        },
+        "manual_payment_methods": {
+          "money_order": "Weksel pieniężny - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Płatność przy odbiorze (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Wpłata bankowa - {{formattedTransactionAmount}}",
+          "manual": "Instrukcja - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "payment_details": "Szczegóły płatności"
+        },
+        "emv_details": {
+          "auth": "UWIERZYTELNIANIE:",
+          "aid": "POMOC:"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Zapłacono za pomocą rat Shop Pay",
+        "description": "Bądź na bieżąco ze swoim harmonogramem płatności dzięki przypomnieniom w aplikacji Shop.",
+        "desktop_qr_code_content": {
+          "description": "Otrzymuj przypomnienia o swoich ratach z Shop."
+        }
+      },
+      "refunded_amount": "Zwrócono",
+      "request_return_failed": "Wystąpił problem z przetworzeniem Twojego żądania. Proszę spróbuj ponownie.",
+      "login_card": {
+        "resend_link_and_login": "Aby zobaczyć szczegóły zamówienia, zaloguj się lub wyślij nowy link na adres e-mail lub numer telefonu użyty podczas realizacji zamówienia.",
+        "resend_link_only": "Aby zobaczyć szczegóły zamówienia, wyślij nowy link na adres e-mail lub numer telefonu użyty podczas realizacji zamówienia.",
+        "log_in": "Zaloguj się"
+      },
+      "remaining_amount": "Pozostały",
+      "marketing_description": "Będziesz otrzymywać e-maile marketingowe. Możesz zrezygnować w dowolnym momencie.",
+      "marketing_checkbox_label": "Wyślij mi e-mailem wiadomości i oferty",
+      "marketing_checkmark_label": "Jesteś subskrybentem otrzymywania wiadomości e-mail i ofert",
+      "returns": {
+        "ineligible_return_message": "Żadne przedmioty w tym zamówieniu nie kwalifikują się do zwrotu.",
+        "ineligible_return_message_when_returned": "Żadne dodatkowe przedmioty w tym zamówieniu nie kwalifikują się do zwrotu.",
+        "return_and_refund_modal_header": "Polityka zwrotów",
+        "exchange_header": "Wymień przedmioty",
+        "exchange_subheader": "Przedmioty wymiany zostaną dodane do zamówienia po zakończeniu zwrotu."
+      },
+      "shipping": {
+        "free": "Darmowe",
+        "one_time": "Jednorazowa wysyłka",
+        "subscription": "Wysyłka subskrypcyjna"
+      },
+      "pickup": {
+        "pickup": "Odbiór osobisty",
+        "pickup_location": "Miejsce odbioru"
+      },
+      "show_items": "Pokaż przedmioty",
+      "summary_list_title_accessibility_label": "Elementy zamówienia",
+      "summary_totals_title_accessibility_label": "Podsumowanie zamówienia",
+      "shop_order_tracking": {
+        "track_order_with_shop": "Śledź zamówienie w Shop",
+        "title_header": "Skanuj swoim telefonem",
+        "real_time_delivery_updates": "Shop wyśle Ci aktualizacje dostawy w czasie rzeczywistym, gdy Twoje zamówienie zostanie wysłane."
+      },
+      "edit_summary": {
+        "added": "Dodane",
+        "added_with_quantity": "Dodano {{quantity}}",
+        "updated_at": "Twoje zamówienie zostało zaktualizowane dnia {{date}}",
+        "returned": "Zwrócone",
+        "return_line_item_removed": "Usunięto z zwrotu",
+        "return_line_item_removed_with_quantities": "Usunięto {{delta}} z zwrotu"
+      },
+      "shop_pay": {
+        "order_completed_with": "Zamówienie zakończone"
+      },
+      "taxes_included": "W tym {{amount}} podatków",
+      "duties_and_taxes_included": "Suma obejmuje cła i podatki. Brak dodatkowych opłat przy dostawie.",
+      "ok_duties_tooltip": "To zamówienie jest wysyłane z innego kraju, więc do całkowitej kwoty zamówienia zostały doliczone cła.",
+      "error_duties_tooltip": "To zamówienie jest wysyłane z innego kraju, więc opłaty celne i podatki mogą być naliczone przy dostawie.",
+      "zero_duties_tooltip": "To zamówienie jest wysyłane z innego kraju. Cła nie są naliczane przy zamówieniach o takiej wartości.",
+      "tip": "Wskazówka",
+      "total": "Całkowity",
+      "pagination": {
+        "load_more_accessibility_label": "Załaduj więcej elementów",
+        "loading_accessibility_label": "Ładowanie elementów"
+      },
+      "login_to_view_all_order_details": "Zaloguj się, aby zobaczyć wszystkie szczegóły zamówienia.",
+      "logged_in_account_no_permission_to_order": "Jesteś zalogowany jako {{email}}. To konto nie ma uprawnień do zarządzania tym zamówieniem.",
+      "fees": {
+        "restocking_fee": "Opłata za uzupełnienie zapasów",
+        "return_shipping_fee": "Zwrot przesyłki"
+      },
+      "cash_rounding": "Zaokrąglenie gotówki"
+    },
+    "addresses": {
+      "back_button": "Wstecz",
+      "add_address_banner": "Dodaj adresy do użycia przy kasie",
+      "no_addresses_banner": "Brak dodanych adresów",
+      "address_deleted_notification": "Adres usunięty",
+      "default_address": {
+        "title": "Domyślny adres",
+        "title_accessibility_label": "Domyślny adres: {{address}}"
+      },
+      "delete_confirmation_message": "Usunąć adres? Istniejące zamówienia nie zostaną naruszone.",
+      "delete_confirmation_title": "Usunąć adres?",
+      "delete_confirmation_description": "Istniejące zamówienia nie są dotknięte.",
+      "loading_finished_accessibility_message": "Nowa strona adresów została załadowana"
+    },
+    "address_form": {
+      "attention_company": "Firma/uwaga",
+      "creation_success_notification": "Adres dodany",
+      "default_address": "To jest mój domyślny adres",
+      "default_address_creation_success_notification": "Domyślny adres dodany",
+      "default_address_update_success_notification": "Domyślny adres zaktualizowany",
+      "loading_add_form_accessibility_message": "Ładowanie nowego formularza adresu",
+      "loading_finished_accessibility_message": "Formularz adresu został załadowany",
+      "update_success_notification": "Adres zaktualizowany"
+    },
+    "B2B": {
+      "locations": {
+        "net_payment_terms_description": "{{name}}: płatności do zapłaty w ciągu {{numberOfDays}} dni",
+        "deposit_percentage": "{{percentage}} depozyt",
+        "payment_details_title": "Szczegóły płatności",
+        "staff_and_permissions_title": "Personel i uprawnienia",
+        "tax_details_title": "Szczegóły podatkowe",
+        "tax_id": "Identyfikator podatkowy",
+        "multiple_tax_exemptions_and": "i",
+        "taxes_none": "None",
+        "tax_exemption_not_applicable": "N/D",
+        "tax_exemptions_modal_button_accessibility_label": "Zobacz wszystkie zwolnienia podatkowe"
+      },
+      "location_selection": {
+        "continue_to_store": "Kontynuuj przechowywanie",
+        "description": "Jeśli masz już przedmioty w koszyku, zmiana lokalizacji może wpłynąć na ceny i ilości w koszyku.",
+        "description_switch_later": "Możesz zawsze przełączyć się później",
+        "list_loading_finished_accessibility_message": "Lista lokalizacji została załadowana",
+        "loading_store_accessibility_message": "Idę do sklepu",
+        "no_location_title": "Tylko zamówienia osobiste"
+      }
     }
   }
 }
