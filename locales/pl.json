@@ -2832,7 +2832,173 @@
         "description_switch_later": "Możesz zawsze przełączyć się później",
         "list_loading_finished_accessibility_message": "Lista lokalizacji została załadowana",
         "loading_store_accessibility_message": "Idę do sklepu",
-        "no_location_title": "Tylko zamówienia osobiste"
+        "no_location_title": "Tylko zamówienia osobiste",
+        "no_location_description": "Nie masz już uprawnień do składania zamówień dla {{company}}. Nadal możesz składać zamówienia osobiste.",
+        "title": "Na jaką lokalizację kupujesz?"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all_accessibility_label": "Ukryj wszystkie zamówienia w przeglądzie",
+          "show_all_accessibility_label": "Pokaż wszystkie zamówienia w przeglądzie",
+          "show_all_orders_in_review": "Pokaż wszystkie zamówienia w przeglądzie",
+          "show_less_orders_in_review": "Pokaż mniej zamówień w przeglądzie",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Nie masz żadnych oczekujących zamówień",
+            "pending_orders": {
+              "other": "Masz {{count}} oczekujących zamówień"
+            },
+            "more_than_pagination_length": "Masz więcej niż {{count}} oczekujących zamówień"
+          },
+          "pagination": {
+            "nav_accessibility_label": "Przyciski nawigacyjne zamówień w przeglądzie"
+          }
+        }
+      },
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Twoja płatność jest opóźniona o {{count}} dzień"
+            },
+            "banner_due": {
+              "one": "Twoja płatność jest należna za {{count}} dzień",
+              "other": "Twoja płatność jest należna za {{count}} dni"
+            },
+            "banner_due_today": "Twoja płatność jest należna dzisiaj",
+            "title": "Płatność do zapłaty",
+            "title_with_date": "Płatność do {{date}}",
+            "title_due_on_receipt": "Płatność jeszcze nie jest wymagalna",
+            "title_due_on_fulfillment": "Płatność wymagana przy realizacji",
+            "description_partially_paid": "To zamówienie zostało częściowo opłacone. Pozostała Ci do zapłaty kwota.",
+            "description_authorized": "Twoja metoda płatności zostanie obciążona w dniu wymagalności, lub możesz zapłacić teraz.",
+            "description_waiting_for_manual_payment": "To zamówienie ma oczekującą płatność. Saldo zostanie zaktualizowane po otrzymaniu płatności.",
+            "description_due_on_receipt": "Otrzymasz fakturę, gdy płatność będzie należna.",
+            "description_due_on_receipt_partially_paid": "To zamówienie zostało częściowo opłacone. Pozostała Ci do zapłaty kwota. Otrzymasz fakturę, gdy płatność będzie wymagana.",
+            "description_due_on_fulfillment": "Płatność jest należna po zrealizowaniu wszystkich pozycji w tym zamówieniu.",
+            "description_due_on_fulfillment_partially_paid": "To zamówienie zostało częściowo opłacone. Pozostała do zapłaty kwota. Płatność jest wymagana po zrealizowaniu wszystkich pozycji w tym zamówieniu."
+          },
+          "draft": {
+            "description": "Szczegóły płatności są ustalane w momencie potwierdzenia zamówienia.",
+            "title": "Płatność jeszcze nie jest wymagalna",
+            "in_review": {
+              "description": "Szczegóły płatności są ustalane w momencie potwierdzenia zamówienia.",
+              "title": "Płatność jeszcze nie jest wymagalna"
+            },
+            "submitted": {
+              "description": "Złóż płatność, aby potwierdzić to zamówienie.",
+              "deposit": {
+                "title": "Płatność jest należna",
+                "due_later": "Saldo jest na warunkach {{translatedName}} i jest należne do {{dueDate}}.",
+                "due_on_fulfillment": "Saldo jest należne po zrealizowaniu wszystkich pozycji w tym zamówieniu.",
+                "due_on_receipt": "Otrzymasz fakturę za pozostałą kwotę.",
+                "due_on_date": "Saldo jest należne do {{dueDate}}."
+              }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}} będzie należne po potwierdzeniu zamówienia. Saldo będzie zgodne z warunkami {{translatedName}}.",
+              "due_on_fulfillment": "{{depositAmount}} będzie należne po potwierdzeniu zamówienia. Saldo będzie należne po realizacji zamówienia.",
+              "due_on_receipt": "{{depositAmount}} będzie należne po potwierdzeniu zamówienia. Saldo będzie należne później.",
+              "due_on_date": "{{depositAmount}} będzie należne po potwierdzeniu zamówienia. Saldo będzie należne w dniu {{dueDate}}."
+            }
+          },
+          "paid": {
+            "title": "Zapłacono",
+            "title_with_date": "Zapłacono {{date}}"
+          },
+          "refund": {
+            "title": "Zwrócono",
+            "title_with_date": "Zwrócono {{date}}",
+            "description_full_refund": "Otrzymałeś pełny zwrot pieniędzy za to zamówienie.",
+            "description_single_refund": "Otrzymałeś częściowy zwrot pieniędzy za to zamówienie.",
+            "description_multiple_refunds": "Otrzymałeś częściowe zwroty za to zamówienie."
+          },
+          "canceled": {
+            "title": "Płatność anulowana",
+            "description": "Nie zostałeś obciążony opłatą."
+          }
+        },
+        "order_timeline": {
+          "expand_events_accessibility_label": "Pokaż szczegóły zamówienia roboczego",
+          "hide_events_accessibility_label": "Ukryj szczegóły zamówienia roboczego"
+        }
+      }
+    },
+    "payment_methods": {
+      "store_credit": {
+        "details_modal": {
+          "expiration_date_label": "Data ważności",
+          "event_label": "Wydarzenie",
+          "events": {
+            "adjustment": "Regulacja",
+            "order_refund": "Zwrot zamówienia",
+            "payment_failure": "Niepowodzenie płatności",
+            "tax_finalization": "Rozliczenie podatkowe"
+          },
+          "expirable_balance_info": "Część Twojego salda wygaśnie w przyszłości",
+          "expirable_amount_label": "Całkowita kwota wygasająca",
+          "expirable_amounts_info": "Kwoty wygasające wcześniej są stosowane jako pierwsze przy kasie",
+          "expirable_amounts_button": "Zobacz",
+          "pagination": {
+            "load_more_accessibility_label": "Załaduj więcej kwot wygasających"
+          }
+        }
+      },
+      "payment_details": {
+        "credit_card_details_accessibility_label": "kończący się na {{lastDigits}}",
+        "payment_method_expiring_on": "Wygasa {{expiryDate}}",
+        "payment_method_expired_on": "Wygasło dnia {{expiryDate}}",
+        "preauthorized_payments": "Płatności z góry autoryzowane",
+        "close_payment_modal_accessibility_label": "Zamknij modal szczegółów metody płatności",
+        "pre_authorized_payments": "Płatności z góry autoryzowane",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} przedmiotów łącznie, wyświetlanych {{totalItemsToDisplay}} przedmiotów.",
+        "next_payment_due": "Następna płatność do {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button_accessibility_label": "Edytuj metodę płatności kończącą się na {{lastDigits}}",
+        "invalid_payment_method_message": "Użyj nowej karty kredytowej, aby kontynuować otrzymywanie nadchodzących zamówień.",
+        "replace_payment_method": "Zmień metodę płatności",
+        "checkout_card_banner": "Ta metoda płatności może być używana tylko do płatności z uprzednią autoryzacją. Nie pojawi się przy kasie, jeśli jesteś zalogowany w tym sklepie.",
+        "default_checkbox": "Ustaw jako domyślne"
+      },
+      "edit_payment_method": {
+        "payment_method_updated_toast": "Metoda płatności zaktualizowana",
+        "future_purchases_notice": "Ta metoda płatności zostanie zapisana na przyszłe zakupy.",
+        "generic_error": "Wystąpił problem z aktualizacją. Proszę spróbować ponownie."
+      },
+      "card_fields": {
+        "name_on_card_label": "Nazwa na karcie",
+        "name_on_card_placeholder": "Nazwa na karcie",
+        "card_verification_value_label": "Kod bezpieczeństwa",
+        "card_verification_value_placeholder": "Kod bezpieczeństwa",
+        "tooltip": {
+          "card_verification_value_explanation_amex": "4-cyfrowy kod bezpieczeństwa z przodu twojej karty",
+          "card_verification_value_explanation_other": "3-cyfrowy kod zabezpieczający na odwrocie twojej karty",
+          "card_verification_value_explanation": "3-cyfrowy kod zabezpieczający zwykle znajduje się na odwrocie twojej karty. Karty American Express mają 4-cyfrowy kod umieszczony z przodu.",
+          "card_security_notice": "Wszystkie transakcje są bezpieczne i zaszyfrowane."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Wpisz swoje imię dokładnie tak, jak jest napisane na twojej karcie",
+          "credit_card_number_invalid": "Wprowadź prawidłowy numer karty",
+          "credit_card_verification_value_blank": "Wprowadź CVV lub kod zabezpieczający z karty"
+        },
+        "unavailable": {
+          "text": "Płatności kartą kredytową i debetową są obecnie niedostępne.",
+          "link_text": "Odśwież tę stronę"
+        }
+      },
+      "payment_delete": {
+        "description_without_replacement": "Ta metoda płatności nie będzie już dostępna przy przyszłych zakupach.",
+        "description_with_replacement": "Usunięcie tej metody płatności wpłynie na płatności z góry autoryzowane. Możesz opcjonalnie zastąpić ją inną metodą płatności, aby nadal otrzymywać nadchodzące zamówienia.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "Usunięcie tej metody płatności wpłynie na płatności z góry autoryzowane. Jeśli nie wybierzesz innej metody płatności, ta metoda nadal będzie obciążana za wszelkie zaległe salda na istniejących zamówieniach. Wybór innej metody płatności pozwoli Ci otrzymywać nadchodzące zamówienia subskrypcyjne bez przerw.",
+          "with_pending_orders": "Usunięcie tej metody płatności spowoduje jej usunięcie z Twojego konta i nie będzie już dostępna do przyszłych zakupów. Jeśli nie wybierzesz innej metody płatności, nadal będzie ona obciążana za wszelkie zaległe salda na istniejących zamówieniach.",
+          "with_subscriptions": "Usunięcie tej metody płatności wpłynie na płatności z góry autoryzowane. Zastąp ją alternatywną metodą płatności, aby nadal otrzymywać nadchodzące zamówienia."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Usunięcie tej metody płatności wpłynie na płatności z góry autoryzowane. Ta metoda płatności będzie nadal obciążana za wszelkie zaległe salda na istniejących zamówieniach, ale nie będziesz otrzymywać nadchodzących zamówień subskrypcyjnych. Dodaj alternatywną metodę płatności, aby nadal otrzymywać zamówienia subskrypcyjne.",
+          "with_pending_orders": "Usunięcie tej metody płatności spowoduje jej usunięcie z Twojego konta i nie będzie już dostępna do przyszłych zakupów. Nadal będzie obciążana za wszelkie zaległe salda na istniejących zamówieniach.",
+          "with_subscriptions": "Usunięcie tej metody płatności wpłynie na płatności z góry autoryzowane. Dodaj alternatywną metodę płatności, aby nadal otrzymywać nadchodzące zamówienia."
+        },
+        "payment_method_selector_placeholder": "Wybierz metodę płatności zastępczej (opcjonalnie)",
+        "replace_method_with_new_method_description": "Twój {{currentPaymentMethodName}} zostanie usunięty i zastąpiony przez {{newPaymentMethodName}}."
       }
     }
   }
