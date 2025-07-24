@@ -2348,6 +2348,186 @@
     "errors": {
       "blank": "nie może być puste",
       "credit_card_session_expired": "Autoryzacja karty kredytowej wygasła, prosimy o ponowne wprowadzenie informacji o płatności. Twoja karta nie została obciążona."
+    },
+    "notices": {
+      "cart": {
+        "gift_card_price_must_be_greater_than_zero": "Produkt zestawu '%{name}' nie może zostać dodany do koszyka.",
+        "gift_card_recipient_validation_error": "Wskazany odbiorca karty podarunkowej jest nieprawidłowy",
+        "view_lines_limit_reached": "Linie muszą mieć mniej niż %{limit}",
+        "cart_too_large": "Koszyk jest zbyt duży.",
+        "merchandise_line_transformers": {
+          "run_error": "Wystąpił błąd w Twoim koszyku."
+        }
+      },
+      "tags": {
+        "add_articles": "Zawęź wyszukiwanie do artykułów również posiadających tag %{tag}",
+        "remove_articles": "Poszerz wyszukiwanie do artykułów, które nie są oznaczone tagiem %{tag}"
+      }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "disclaimer": "Możesz zrezygnować w dowolnym momencie.",
+        "unsubscribe": "Wypisz się"
+      },
+      "unsubscribed": {
+        "confirmation": "Wypisałeś się z naszej listy mailingowej.",
+        "disclaimer": "Nie będziesz otrzymywać od nas więcej aktualizacji marketingowych. Możesz ponownie subskrybować w dowolnym momencie.",
+        "preview": "Podglądasz, co zobaczą klienci, gdy się wypiszą."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Wyraziłeś zgodę na śledzenie otwarć e-maili.</b>",
+          "visibility": "Wskaźniki otwarć e-maili będą raportowane anonimowo. Będziemy widzieć jedynie, czy otworzyłeś e-mail jako część zagregowanego wskaźnika otwarć e-maili.",
+          "opt_out_html": "Możesz <a style='text-decoration:underline;' href='%{link}'>zrezygnować</a> ze śledzenia otwarć e-maili, jeśli nie chcesz udostępniać tych informacji.",
+          "preview_bar": "Podglądasz, co klienci zobaczą, gdy zdecydują się na śledzenie otwarć e-maili."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Wyłączyłeś śledzenie otwarć e-maili.</b>",
+          "visibility": "Nie zobaczymy, czy otworzyłeś nasze e-maile.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Zapisz się</a> do śledzenia otwarć e-maili.",
+          "preview_bar": "Podglądasz, co zobaczą klienci, gdy zrezygnują ze śledzenia otwarć e-maili."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Nie śledzimy już otwarć żadnych e-maili.</b>",
+          "privacy_policy": "Po wysłaniu tego e-maila zaktualizowaliśmy naszą politykę prywatności i nie śledzimy już otwarć."
+        },
+        "track": {
+          "status_html": "<b>Śledzenie otwarcia e-maila jest zgłaszane.</b>",
+          "visibility": "Będziemy widzieć tylko, czy otworzyłeś e-mail, jako część całkowitego wskaźnika otwarć e-maili."
+        },
+        "updated_policy": {
+          "status_html": "<b>Śledzenie otwarcia e-maila jest zgłaszane.</b>",
+          "visibility": "Zaktualizowaliśmy naszą politykę i teraz śledzimy otwarcia e-maili. Wskaźniki otwarć e-maili będą raportowane anonimowo. Będziemy widzieć tylko, czy otworzyłeś e-mail jako część całkowitego wskaźnika otwarć e-maili.",
+          "opt_out_html": "Jeśli nie chcesz udostępniać tych informacji, możesz <a style='text-decoration:underline;' href='%{link}'>zrezygnować z subskrypcji.</a>"
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "out_of_stock": "Niedostępne"
+        }
+      }
+    },
+    "search": {
+      "error": "Wystąpił problem z ładowaniem wyników wyszukiwania. Proszę odświeżyć stronę lub spróbować ponownie później.",
+      "sorting": {
+        "relevance": "Istotność",
+        "price_ascending": "Cena, od najniższej do najwyższej",
+        "price_descending": "Cena, od najwyższej do najniższej"
+      }
+    },
+    "page_titles": {
+      "shopping_cart": "Twój koszyk zakupowy",
+      "search_results": {
+        "one": "Wyszukiwanie: znaleziono %{count} wynik dla \"%{terms}\"",
+        "other": "Wyszukiwanie: znaleziono %{count} wyników dla \"%{terms}\""
+      }
+    },
+    "cart": {
+      "discounts_with_count": "Zastosowano %{count} rabatów"
+    },
+    "challenge": {
+      "message": "Aby kontynuować, daj nam znać, że nie jesteś robotem.",
+      "error": "Twoja odpowiedź była niepoprawna, spróbuj ponownie."
+    },
+    "checkpoint": {
+      "message": "Rozwiąż Captcha, aby kontynuować",
+      "error": "Weryfikacja Captcha nie powiodła się"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Zazwyczaj gotowe w 1 godzinę",
+        "two_hours": "Zazwyczaj gotowe w 2 godziny",
+        "four_hours": "Zazwyczaj gotowe w 4 godziny",
+        "twenty_four_hours": "Zazwyczaj gotowe w 24 godziny",
+        "two_to_four_days": "Zazwyczaj gotowe w 2-4 dni",
+        "five_or_more_days": "Zazwyczaj gotowe w 5+ dni",
+        "zero_to_two_hours": "Zazwyczaj gotowe w 2 godziny",
+        "two_to_four_hours": "Zazwyczaj gotowe w 4 godziny"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Ten przedmiot jest zakupem cyklicznym lub odroczonym. Kontynuując, zgadzam się z %{cancellationPolicyLink} i upoważniam do obciążania mojej metody płatności cenami, częstotliwością i datami wymienionymi na tej stronie, aż do zrealizowania mojego zamówienia lub anulowania, jeśli jest to dozwolone.",
+      "buyer_consent_cart": "Jedna lub więcej pozycji w Twoim koszyku to zakup cykliczny lub odroczony. Kontynuując, zgadzam się z %{cancellationPolicyLink} i upoważniam Cię do obciążania mojej metody płatności według cen, częstotliwości i dat wymienionych na tej stronie, aż do realizacji mojego zamówienia lub anulowania, jeśli jest to dozwolone.",
+      "cancellation_policy": "polityka anulowania"
+    }
+  },
+  "customer_accounts": {
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "one": "{{count}} minutę temu",
+          "other": "{{count}} minut temu"
+        }
+      }
+    },
+    "enable_javascript": "Aby wyświetlić swoje konto, włącz JavaScript w ustawieniach przeglądarki lub zaloguj się za pomocą innej przeglądarki.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Ukryj menu konta",
+        "show_accessibility_label": "Pokaż menu konta",
+        "open_menu_accessibility_label": "Nawigacja otwarcia konta"
+      },
+      "action_menu_accessibility_label": "Więcej akcji",
+      "contact_email_subject": "Kontakt ze sklepu internetowego {{shopName}}",
+      "contact_link": "Informacje kontaktowe",
+      "document_title": "{{sectionName}} - {{shopName}} - Konto",
+      "go_to_store_link": "Idź do sklepu",
+      "log_out_link": "Wyloguj się",
+      "nav_label_accessibility_label": "Główna nawigacja",
+      "navigation_accessibility_message": "Nawigowałeś do {{sectionName}}",
+      "shop_logo_accessibility_label": "logo {{shopName}}",
+      "country_switcher_toast_message": "Kraj zmieniony na {{countryName}}",
+      "location_switcher_toast_message": "Lokalizacja zmieniona na {{locationName}}",
+      "view_details": "Zobacz szczegóły",
+      "search": "Szukaj"
+    },
+    "account_information": {
+      "profile_card": {
+        "email_help_text": "Adres e-mail używany do logowania nie może zostać zmieniony",
+        "no_name_provided_accessibility_label": "Brak dodanej nazwy",
+        "phone_number_help_text": "Numer telefonu używany do logowania nie może zostać zmieniony"
+      },
+      "verify_new_email_modal": {
+        "title": "Zweryfikuj e-mail",
+        "description": "Wprowadź kod wysłany na {{email}}",
+        "verify_button_accessibility_label": "Zweryfikuj jednorazowe hasło",
+        "cancel_button_accessibility_label": "Anuluj edycję e-maila"
+      },
+      "email_update_success_modal": {
+        "title": "Zweryfikuj e-mail",
+        "description": "Email został pomyślnie zaktualizowany. Przekierowywanie do logowania."
+      },
+      "profile_update_confirmation_message": "Profil zaktualizowany"
+    },
+    "orders": {
+      "switch_order_type_pending_orders_accessibility_label": "Zmień typ zamówienia, obecnie wyświetlane są zamówienia oczekujące",
+      "switch_order_type_confirmed_orders_accessibility_label": "Zmień typ zamówienia, obecnie wyświetlane są potwierdzone zamówienia",
+      "order_list": {
+        "column_headers": {
+          "total": "Całkowity",
+          "actions_accessibility_label": "Akcje"
+        },
+        "empty_state_order_source_description": "Tylko zamówienia złożone przez {{email}} będą tutaj widoczne.",
+        "empty_state_title": "Brak zamówień",
+        "no_order_banner": "Aby przetestować swoje rozszerzenie na stronie statusu zamówienia, utwórz zamówienie.",
+        "estimated_shortform": "Zał. {{date}}",
+        "estimated_delivery": "Oczekiwany {{date}}",
+        "one_images_accessibility_label": "Zamówienie zawiera {{lineItemName1}}",
+        "two_images_accessibility_label": "Zamówienie zawiera {{lineItemName1}}, {{lineItemName2}}",
+        "three_images_accessibility_label": "Zamówienie zawiera {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "Zamówienie zawiera {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}}, {{lineItemName2}} oraz {{numberOfAdditionalProducts}} więcej produktów",
+        "more_than_four_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}} oraz {{numberOfAdditionalProducts}} więcej produktów",
+        "plus_more_products": "+{{numberOfAdditionalProducts}} produktów",
+        "carousel": {
+          "one_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}, {{lineItemName3}} ilość {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}, {{lineItemName3}} ilość {{lineItemQuantity3}}, {{lineItemName4}} ilość {{lineItemQuantity4}}"
+        }
+      }
     }
   }
 }
