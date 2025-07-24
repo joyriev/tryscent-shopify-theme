@@ -550,6 +550,23 @@
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Seu pedido só pode ser enviado para {{countriesList}}. Adicione um novo endereço para continuar."
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "A localização da empresa está configurada para enviar todos os pedidos como rascunhos para revisão.",
+        "missing_address": "Nenhum endereço de entrega disponível: O endereço da localização da empresa está ausente e o uso de endereço único está desativado."
+      },
+      "local_pickup": {
+        "location_information_next": {
+          "one": "Há %{count} local com estoque próximo a você",
+          "other": "Há %{count} locais com estoque próximo a você"
+        }
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "signature_mismatch": "Incompatibilidade de assinatura de mercadoria para a linha {{stable_id}}."
+          }
+        }
       }
     }
   },
