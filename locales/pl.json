@@ -2525,7 +2525,165 @@
           "one_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}",
           "two_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}",
           "three_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}, {{lineItemName3}} ilość {{lineItemQuantity3}}",
-          "four_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}, {{lineItemName3}} ilość {{lineItemQuantity3}}, {{lineItemName4}} ilość {{lineItemQuantity4}}"
+          "four_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}, {{lineItemName3}} ilość {{lineItemQuantity3}}, {{lineItemName4}} ilość {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}, {{lineItemName3}} ilość {{lineItemQuantity3}}, {{lineItemName4}} ilość {{lineItemQuantity4}}, {{lineItemName5}} ilość {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}, {{lineItemName3}} ilość {{lineItemQuantity3}}, {{lineItemName4}} ilość {{lineItemQuantity4}}, {{lineItemName5}} ilość {{lineItemQuantity5}}, {{lineItemName6}} ilość {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "Zamówienie zawiera {{lineItemName1}} ilość {{lineItemQuantity1}}, {{lineItemName2}} ilość {{lineItemQuantity2}}, {{lineItemName3}} ilość {{lineItemQuantity3}}, {{lineItemName4}} ilość {{lineItemQuantity4}}, {{lineItemName5}} ilość {{lineItemQuantity5}}, {{lineItemName6}} ilość {{lineItemQuantity6}} i więcej",
+          "view_order_details": "Zobacz szczegóły zamówienia",
+          "previous": "Poprzedni",
+          "next": "Dalej"
+        },
+        "items": {
+          "one": "{{count}} przedmiot",
+          "other": "{{count}} przedmioty"
+        },
+        "no_filtered_results_title": "Brak przefiltrowanych wyników",
+        "order_link": "Zobacz zamówienie {{name}}",
+        "orders_title": "Potwierdzono",
+        "pagination": {
+          "nav_accessibility_label": "Przyciski nawigacji zamówień",
+          "next": "Dalej",
+          "previous": "Poprzedni"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Zobacz szczegóły zamówienia",
+            "estimated_delivery": "Oczekiwany {{date}}",
+            "last_updated": "Ostatnia aktualizacja {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Szacowana dostawa {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "overdue": "Płatność zaległa",
+            "due": "Płatność do {{date}}",
+            "due_today": "Płatność wymagana dzisiaj",
+            "due_without_date": "Płatność do zapłaty",
+            "due_on_fulfillment": "Płatność wymagana przy realizacji",
+            "payment_not_due": "Płatność jeszcze nie jest wymagalna"
+          },
+          "list_view": {
+            "due": "Do {{date}}",
+            "due_today": "Do dzisiaj",
+            "paid": "Zapłacono",
+            "due_without_date": "Należy",
+            "due_on_fulfillment": "Płatne przy realizacji",
+            "payment_not_due": "Jeszcze nie wymagalne"
+          }
+        },
+        "sort_currently_sorted_by_accessibility_label": "Aktualnie sortowane według: {{option}}",
+        "sort": {
+          "order_number": {
+            "ascending": "Numer zamówienia (od najmniejszego do największego)",
+            "descending": "Numer zamówienia (od najwyższego do najniższego)"
+          },
+          "order_total": {
+            "ascending": "Łączna wartość zamówienia (od najniższej do najwyższej)",
+            "descending": "Łączna wartość zamówienia (od najwyższej do najniższej)"
+          }
+        },
+        "location_filter_picker": {
+          "current_location": "Aktualna lokalizacja",
+          "switch_view": "Przełącz widok"
+        },
+        "filter_title": "Filtr",
+        "filter": {
+          "date": {
+            "today": "Dzisiaj"
+          }
+        },
+        "show_order_actions_accessibility_label": "Pokaż akcje zamówienia dla zamówienia {{name}}"
+      },
+      "order_status": {
+        "attempted_delivery_label": "Próba dostawy",
+        "attempted_delivery_description": "Próba dostawy nie powiodła się.",
+        "attempted_to_deliver_label": "Próba dostarczenia",
+        "out_for_delivery_description": "Ta przesyłka jest w drodze do dostarczenia.",
+        "preparing_for_shipping_description": "Te przedmioty są przygotowywane do wysyłki.",
+        "ready_for_pickup_description": "Te przedmioty są gotowe do odbioru. Proszę zabrać potwierdzenie zamówienia podczas odbioru.",
+        "ready_for_pickup_location": "Twoje zamówienie jest gotowe do odbioru w lokalizacji",
+        "picked_up_label": "Odebrane",
+        "picked_up_description": "Te przedmioty zostały odebrane.",
+        "canceled_description": "Twoje zamówienie zostało anulowane w dniu {{date}}.",
+        "canceled_title": "Twoje zamówienie zostało anulowane",
+        "come_back": "Wróć do tej strony, aby uzyskać aktualizacje statusu Twojej przesyłki.",
+        "company_tracking_number": "{{company}} numer śledzenia:",
+        "confirmed_label": "Potwierdzono",
+        "confirmed_title": "Twoje zamówienie zostało potwierdzone",
+        "confirmed_description_pickup": "Otrzymasz e-mail, gdy Twoje zamówienie będzie gotowe do odbioru.",
+        "confirmed_description_digital": "Otrzymasz e-mail, gdy Twoje zamówienie będzie gotowe.",
+        "complete_label": "Zakończono",
+        "delivered_label": "Dostarczone",
+        "delivered_title": "Twoja przesyłka została dostarczona",
+        "delivered_description_digital": {
+          "one": "Ten przedmiot jest kompletny.",
+          "other": "Te przedmioty są kompletne."
+        },
+        "delivered_description_gift_card": {
+          "one": "Karta podarunkowa została wysłana e-mailem.",
+          "other": "Karty podarunkowe zostały wysłane e-mailem."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "Karta podarunkowa została wysłana SMS-em.",
+          "other": "Karty podarunkowe zostały wysłane SMS-em."
+        },
+        "gift_card_label": {
+          "one": "Karta podarunkowa",
+          "other": "Karty podarunkowe"
+        },
+        "gift_card_resend_button": {
+          "one": "Wyślij ponownie kartę podarunkową",
+          "other": "Wyślij ponownie karty podarunkowe"
+        },
+        "gift_resend_success": {
+          "one": "Karta podarunkowa została wysłana ponownie",
+          "other": "Karty podarunkowe zostały ponownie wysłane"
+        },
+        "gift_resend_failure": {
+          "one": "Wystąpił problem z ponownym wysłaniem Twojej karty podarunkowej. Spróbuj ponownie lub skontaktuj się z nami.",
+          "other": "Wystąpił problem z ponownym wysłaniem Twoich kart podarunkowych. Spróbuj ponownie lub skontaktuj się z nami."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "Karta podarunkowa zostanie wysłana w osobnym e-mailu.",
+          "other": "Każda karta podarunkowa zostanie wysłana w osobnym e-mailu."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "Karta podarunkowa zostanie wysłana w osobnym tekście.",
+          "other": "Każda karta podarunkowa zostanie wysłana w osobnym tekście."
+        },
+        "status_timestamp": "Zaktualizowano {{date}}",
+        "estimated_delivery": "Oczekiwany {{date}}",
+        "delivered": "Przybyło {{date}}",
+        "buy_with_prime_logo_accessibility_label": "Logo Amazon Kup z Prime",
+        "in_review_label": "W przeglądzie",
+        "in_review_title": "Twoje zamówienie jest w trakcie przeglądu",
+        "last_updated": "Ostatnia aktualizacja {{date}}",
+        "multiple_statuses_label": "Wiele statusów zamówienia",
+        "no_tracking_number": "Nie ma numeru śledzenia dla tej przesyłki.",
+        "out_for_delivery_label": "W drodze do dostawy",
+        "out_for_delivery_title": "Twoja przesyłka jest w drodze do dostarczenia",
+        "resume_tracking": "Śledzenie CV",
+        "submitted_description": "Sprawdź szczegóły zamówienia i płatności.",
+        "request_return": "Żądanie zwrotu",
+        "view_order_for_details": "Zobacz szczegóły zamówienia",
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "Zarządzaj na Amazon"
+        },
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "Zarządzaj z Amazon"
+          }
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "external_promise_brand_label": "Dostawa przez",
+            "not_delivered_by_label": "Dostarczone po {{date}}",
+            "modal_accessibility_button_label": "Szczegóły obietnicy dostawy",
+            "download_shop_app_button_label": "Pobierz Shop, aby śledzić",
+            "track_with_shop_button_label": "Śledź z Shop"
+          }
         }
       }
     }
