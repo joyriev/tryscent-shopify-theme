@@ -1,15 +1,27 @@
-<div class="color{{ section.settings.color_scheme }} py-2">
+<style>
+  .insta-story-card:nth-child(2) h2 {
+    color: transparent;
+    background-image: linear-gradient(to right, #6e32e9, #ff19a8, #fed45d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
+
+<div class="bg-[#121212] py-2 lg:hidden">
   <div class="page-width">
-    <div class="flex gap-4 justify-between">
+    <div class="grid grid-cols-5 gap-4 justify-between">
       {%- for block in section.blocks -%}
         {%- if block.type == 'story' -%}
-          <a href="{{ block.settings.link }}" class="no-underline text-center">
-            <img
-              src="{{ block.settings.image | image_url: width: 400 }}"
-              alt="{{ block.settings.title }}"
-              height="100"
-              width="100">
-            <h2 class="text-xs">{{ block.settings.title }}</h2>
+          <a href="{{ block.settings.link }}" class="insta-story-card no-underline text-center flex flex-col">
+            <div class="[background-image:linear-gradient(to_bottom,_#6e32e9,_#ff19a8,_#fed45d)] flex p-[2px] rounded-full aspect-square relative">
+              <img
+                src="{{ block.settings.image | image_url: width: 400 }}"
+                alt="{{ block.settings.title }}"
+                height="100"
+                width="100"
+                class="absolute top-[2px] left-[2px] h-[calc(100%-4px)] w-[calc(100%-4px)] object-cover object-center rounded-full border-[#121212] border-4 border-solid">
+            </div>
+            <h2 class="text-xs text-white my-1">{{ block.settings.title }}</h2>
           </a>
         {%- endif -%}
       {%- endfor -%}
@@ -20,14 +32,7 @@
 {% schema %}
   {
     "name": "Insta Story",
-    "settings": [
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "default": "primary",
-        "label": "Color Scheme"
-      }
-    ],
+    "settings": [],
     "blocks": [
       {
         "type": "story",
