@@ -1824,7 +1824,345 @@
         "order_status_payments_app_failed_pending_payment_pick_up": "Nie obciążono Cię opłatą za Twoje zamówienie. Wróć do swojego koszyka, aby przejrzeć zamówienie i zapłacić ponownie.",
         "order_status_confirmed_order_local": "Przygotowujemy Twoje zamówienie do wysyłki.",
         "order_status_confirmed_order_local_pick_up": "Przygotowujemy Twoje zamówienie.",
-        "order_status_confirmed_order_local_payment": "Przygotowujemy Twoje zamówienie."
+        "order_status_confirmed_order_local_payment": "Przygotowujemy Twoje zamówienie.",
+        "order_status_updates_with_email": "Będziesz otrzymywać aktualizacje dotyczące wysyłki i dostawy drogą mailową.",
+        "order_status_updates_with_phone": "Możesz otrzymywać aktualizacje dotyczące wysyłki i dostawy za pomocą wiadomości tekstowych.",
+        "order_status_updates_with_email_and_phone": "Będziesz otrzymywać aktualizacje dotyczące wysyłki i dostawy drogą mailową.",
+        "order_status_updates_with_missing": "Wybierz, jak chcesz otrzymywać aktualizacje dotyczące wysyłki.",
+        "order_status_confirmed_with_installments_payment_return": "Proszę zwrócić uwagę z powrotem na sprzedawcę.",
+        "order_status_confirmed_with_installments_payment_confirm": "Wkrótce otrzymasz e-mail potwierdzający z numerem zamówienia oraz szczegółami harmonogramu rat.",
+        "confirmed_title": "Twoje zamówienie zostało potwierdzone",
+        "confirmed_description": "Przyjęliśmy Twoje zamówienie i przygotowujemy je do wysyłki. Wracaj na tę stronę, aby uzyskać aktualizacje statusu przesyłki.",
+        "ready_for_pickup_description": "Twoje zamówienie jest gotowe do odbioru. Prosimy o zabranie potwierdzenia zamówienia podczas odbioru.",
+        "ready_for_delivery_description": "Przygotowaliśmy Twoje zamówienie.",
+        "shop_phone_description": "Otrzymasz wiadomość tekstową z linkiem do aplikacji Shop, która pomoże śledzić Twoje zamówienie.",
+        "order_updates_description_html": "Aktualizacje będą wysyłane do %{customer_contact}",
+        "order_updates_current_step_prefix": "Aktualny krok:",
+        "order_updates_past_step_prefix": "Poprzedni krok:",
+        "order_updates_upcoming_step_prefix": "Nadchodzący krok:",
+        "in_transit_description": "Będziesz otrzymywać aktualizacje dotyczące jego postępów.",
+        "in_transit_description_days": "Powinieneś otrzymać swoje zamówienie w ciągu następnych %{number} dni.",
+        "in_transit_description_today": "Powinieneś otrzymać swoje zamówienie dzisiaj.",
+        "in_transit_description_tomorrow": "Powinieneś otrzymać swoje zamówienie następnego dnia.",
+        "out_for_delivery": "W drodze do dostawy",
+        "out_for_delivery_title": "Twoje zamówienie jest w trakcie dostawy",
+        "out_for_delivery_description_html": "Twoje zamówienie jest w drodze i powinno dotrzeć dzisiaj. Jeśli nie zostanie dostarczone w ciągu następnych 2 dni, %{contact_us}.",
+        "out_for_delivery_local_title": "Twoje zamówienie jest w trakcie dostawy",
+        "out_for_delivery_local_description_html": "Twoje zamówienie wkrótce dotrze.",
+        "attempted_delivery": "Próba dostawy",
+        "attempted_delivery_title": "Podjęto próbę dostarczenia Twojego zamówienia",
+        "attempted_delivery_description_html": "Podjęto próbę dostarczenia Twojego zamówienia, ale nie powiodła się. %{contact_us}, aby umówić się na kolejną próbę dostawy.",
+        "attempted_delivery_local_title": "Nieudana dostawa",
+        "attempted_delivery_local_description_html": "Nie udało nam się dostarczyć Twojego zamówienia. Aby umówić kolejną dostawę, %{contact_us}.",
+        "delivered": "Dostarczone",
+        "delivered_description_html": "Twoje zamówienie zostało dostarczone na podany przez Ciebie adres. Jeśli go nie otrzymałeś lub masz inne problemy, %{contact_us}.",
+        "delivered_local_description_html": "Nie otrzymałeś swojego zamówienia? %{let_us_know}.",
+        "choose_payment_method_later": "Wybierz metodę płatności później",
+        "picked_up_description_html": "Twoje zamówienie zostało odebrane w %{location_name} w dniu %{date}.",
+        "failed_title": "Twoje zamówienie nie mogło zostać dostarczone",
+        "failed_contact_merchant": "Skontaktuj się z %{company}, aby umówić dostawę.",
+        "failed_contact_merchant_no_company": "Skontaktuj się z nami, aby umówić dostawę.",
+        "let_us_know": "Daj nam znać",
+        "login_title": "Zaloguj się, aby zobaczyć wszystkie szczegóły zamówienia",
+        "login_description": "Numer zamówienia znajdziesz na paragonie, który otrzymałeś e-mailem.",
+        "login_description_phone": "Numer zamówienia znajdziesz na paragonie, który otrzymałeś w wiadomości tekstowej.",
+        "login_reorder_link_text": {
+          "one": "kup też ten produkt",
+          "other": "kup też te produkty"
+        },
+        "customer_information_hidden_fields_message": "Zaloguj się, aby zobaczyć wszystkie informacje o kliencie.",
+        "cancelled_title": "Twoje zamówienie zostało anulowane",
+        "cancelled_description": "Twoje zamówienie zostało anulowane w dniu %{date}. Skontaktuj się z nami, jeśli masz jakiekolwiek pytania.",
+        "order_number_label": "Numer zamówienia",
+        "customer_validation_error": "Wprowadź poprawny adres e-mail lub numer zamówienia.",
+        "customer_validation_error_phone": "Wprowadź prawidłowy numer telefonu lub zamówienia.",
+        "unfulfilled_items_description": "Obecnie przygotowujemy te przedmioty do wysyłki.",
+        "marker": {
+          "current": "Aktualna lokalizacja przesyłki"
+        },
+        "pick_up_in_store_marker": {
+          "current": "Aktualna lokalizacja przesyłki",
+          "shipping": "Miejsce odbioru"
+        },
+        "fulfillment": {
+          "fulfilled_table_title": "Przedmioty w tej przesyłce",
+          "unfulfilled_table_title": "Przedmioty przygotowywane do wysyłki"
+        },
+        "order_updates_description_missing": "Nie otrzymujesz aktualizacji dotyczących wysyłki.",
+        "order_updates_subscribe_to_email_notifications": "Otrzymuj aktualizacje wysyłki e-mailem",
+        "order_updates_subscribe_to_email_or_phone_notifications": "Otrzymuj aktualizacje wysyłki przez e-mail lub SMS",
+        "order_updates_subscribe_to_phone_notifications": "Otrzymuj aktualizacje wysyłki przez SMS",
+        "order_updates_submit_subscription": "Wyślij",
+        "gift_card_sent_confirmation": "Karty podarunkowe wysłane",
+        "qr_code": {
+          "send_link_to_phone": "Lub wyślij link na swój telefon",
+          "title": "Śledź na swoim telefonie"
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Skanuj swoim telefonem"
+          },
+          "sms": {
+            "title": "Lub wyślij link na swój telefon"
+          }
+        },
+        "breadcrumbs_submitted": "Przesłano",
+        "breadcrumbs_in_review": "W przeglądzie",
+        "breadcrumbs_confirmed": "Potwierdzono",
+        "first_payment_complete": "Pierwsza płatność zakończona",
+        "in_store_purchase": "Zakup w sklepie",
+        "thank_you_ready_for_picked_up": "Twoje zamówienie zostało odebrane pod adresem %{address}.",
+        "ready_for_delivery": "Gotowy do dostawy",
+        "order_updates_subscribe_to_email_notifications_failed": "Nie możemy zapisać tego adresu e-mail do aktualizacji. Proszę spróbować ponownie lub użyć innego adresu e-mail.",
+        "order_updates_subscribe_to_email_notifications_email_already_exists": "Adres e-mail, który wpisałeś, już istnieje.",
+        "subscriptions_management": {
+          "description": "Kontynuuj do swojego konta, aby przeglądać i zarządzać swoimi subskrypcjami."
+        },
+        "gift_card_confirmation_by_text_typ": {
+          "one": "W ciągu kilku minut otrzymasz SMS z kartą podarunkową.",
+          "other": "W ciągu kilku minut otrzymasz wiadomość tekstową z kartami podarunkowymi."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "one": "W ciągu kilku minut otrzymasz e-mail z kartą podarunkową.",
+          "other": "W ciągu kilku minut otrzymasz e-mail z kartami podarunkowymi."
+        },
+        "gift_card_email_title": {
+          "one": "Karta podarunkowa została wysłana e-mailem",
+          "other": "Karty podarunkowe zostały wysłane e-mailem"
+        },
+        "gift_card_text_title": {
+          "one": "Karta podarunkowa została wysłana wiadomością tekstową",
+          "other": "Karty podarunkowe zostały wysłane wiadomością tekstową"
+        },
+        "resend_gift_cards_by_text": "Wyślij ponownie wiadomość tekstową",
+        "gift_card_resent_confirmation": {
+          "one": "Karta podarunkowa została ponownie wysłana.",
+          "other": "Karty podarunkowe zostały ponownie wysłane."
+        },
+        "gift_card_resend_failure": {
+          "one": "Wystąpił problem z ponownym wysłaniem Twojej karty podarunkowej. Spróbuj ponownie lub skontaktuj się z nami.",
+          "other": "Wystąpił problem z ponownym wysłaniem Twoich kart podarunkowych. Spróbuj ponownie lub skontaktuj się z nami."
+        },
+        "verify_shop_account_message": "Twoje informacje zostały zapisane w Shop, zweryfikuj swoje konto, aby automatycznie korzystać z nich w milionach sklepów.",
+        "verify_shop_account_confirmation": "Szczegóły płatności zapisane"
+      },
+      "review": {
+        "title": "Recenzja",
+        "review_title": "Ukończ swoje zamówienie",
+        "review_and_confirm_title": "Przejrzyj i potwierdź",
+        "checkout_as_guest": "Zamów jako gość",
+        "checkout_a_different_way": "Sprawdź inną metodę",
+        "blocks": {
+          "billing_address_title": "Rozliczenia",
+          "shipping_address_title": "Dostawa do",
+          "change_contact_method_link_label": "Zmień informacje kontaktowe",
+          "purchase_order_number_title": "Numer zamówienia PO",
+          "no_purchase_order_number": "(Brak numeru PO)",
+          "due_after_order_reviewed_html": "Płatne po przeglądzie zamówienia",
+          "review_title_free_order": "Przejrzyj i dokończ swoje zamówienie"
+        },
+        "block_title": "Sprawdź swoje informacje"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Wyślij mi e-mailem wiadomości i oferty",
+        "post_accept_marketing_checkbox_label": "Jesteś subskrybentem otrzymywania wiadomości e-mail i ofert",
+        "pending_accept_marketing_checkbox_label": "Sprawdź swoją pocztę, aby potwierdzić subskrypcję wiadomości i ofert",
+        "accept_sms_checkbox_label": "Napisz do mnie z wiadomościami i ofertami",
+        "disclaimer": {
+          "privacy_policy": "Polityka Prywatności"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Polityka Prywatności",
+            "description_html": "Rejestrując się za pomocą wiadomości tekstowej, wyrażasz zgodę na otrzymywanie cyklicznych automatycznych wiadomości marketingowych, w tym przypomnień o koszyku, na podany numer telefonu. Zgoda nie jest warunkiem zakupu. Odpowiedz STOP, aby zrezygnować z subskrypcji. Odpowiedz HELP, aby uzyskać pomoc. Częstotliwość wiadomości może się różnić. Mogą obowiązywać opłaty za wiadomości i dane. Zobacz naszą %{privacy_policy_link} oraz %{terms_of_service_link}.",
+            "description_transactional_html": "Możesz otrzymywać wiadomości tekstowe związane z potwierdzeniem zamówienia i aktualizacjami wysyłki. Odpowiedz STOP, aby zrezygnować z subskrypcji. Odpowiedz HELP, aby uzyskać pomoc. Częstotliwość wiadomości może się różnić. Mogą obowiązywać opłaty za wiadomości i dane. Zobacz naszą %{privacy_policy_modal_link} oraz %{terms_of_service_modal_link}."
+          },
+          "get_offers_by_text": "Otrzymuj oferty przez SMS"
+        },
+        "unsubscribe": {
+          "title": "Wypisałeś się z subskrypcji",
+          "description": "Nie otrzymasz od nas więcej przypomnień o koszyku."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Zapisz mnie na wiadomości i oferty z tego sklepu"
+      },
+      "shop_policies": {
+        "refund_policy": "Polityka zwrotów",
+        "legal_notice": "Informacja prawna",
+        "contact_information": "Informacje kontaktowe"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Warunki i zasady Sprzedawcy Rejestru",
+        "privacy_policy": "Polityka prywatności sprzedawcy"
+      },
+      "order_payment_collection": {
+        "changes_summary": {
+          "removed": "Usunięto",
+          "return_line_item_removed": "Usunięto %{count} z zwrotu"
+        },
+        "additional_payment_requested": "Wymagana jest płatność w wysokości %{total_outstanding}",
+        "checkout_review_and_pay": "Twoje zamówienie %{order_name} zostało zaktualizowane. Przejrzyj te zmiany, a następnie zapłać, aby potwierdzić zamówienie.",
+        "order_review_and_pay": "Twoje zamówienie zostało zaktualizowane. Sprawdź i zapłać, aby potwierdzić zamówienie."
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "Lokalizacja firmy jest ustawiona na przesyłanie wszystkich zamówień jako szkice do przeglądu.",
+        "missing_address": "Brak dostępnego adresu wysyłki: Brak adresu lokalizacji firmy, a jednorazowe użycie adresu jest wyłączone."
+      },
+      "change_currency": {
+        "payment_total_label": "Suma płatności",
+        "card_provider_fx_charges_warning": "Twój dostawca karty może naliczać opłaty za transakcje w %{currency_code}."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Twój kraj/region został zaktualizowany. Wprowadź swój adres wysyłki, aby kontynuować realizację zamówienia."
+      },
+      "tips": {
+        "description": "Pokaż swoje wsparcie dla zespołu w %{shop_name}",
+        "presets_description": "Wybierz procent napiwku",
+        "custom_label": "Niestandardowa wskazówka",
+        "update_tip": "Wskazówka aktualizacji",
+        "no_tip_label": "None"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "one": "Kup %{product_name} i %{count} inny przedmiot",
+          "other": "Kup %{product_name} i %{count} innych przedmiotów"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "month": {
+            "other": "%{count} miesięcy"
+          },
+          "year": {
+            "other": "%{count} lat"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount": "Pierwsza płatność %{total_price_with_discount}, następnie %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "other": "Pierwsze %{count} płatności po %{total_price} każda"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", następnie %{count} płatność po %{total_price}",
+            "other": ", następnie %{count} płatności po %{total_price} każda"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "delete_customer_mandate": {
+          "generic_error": "Wystąpił problem podczas przetwarzania Twojego żądania."
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "Zbyt wiele prób",
+          "description": "Proszę spróbować ponownie za kilka minut"
+        },
+        "line_to_check_out": "Jesteś w kolejce do kasy",
+        "inventory": {
+          "partial_inventory_banner": "Część Twojego koszyka jest wyprzedana i nie będzie dostępna do zakupu przy kasie.",
+          "sold_out": {
+            "heading": "Twój koszyk jest wyprzedany",
+            "no_storefront_body": "Niestety przedmiot, który chcesz kupić, nie jest już dostępny.",
+            "link": "Powrót do sklepu"
+          }
+        },
+        "time_to_checkout_title": "Czas na wymeldowanie - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Obliczanie szacowanego czasu oczekiwania",
+          "less_than_one": "Szacowany czas oczekiwania: mniej niż minuta",
+          "other": "Szacowany czas oczekiwania: {{count}} minut"
+        },
+        "footer": {
+          "heading": "Nie odświeżaj tej strony, będzie się aktualizować automatycznie.",
+          "body": "Przedmioty w Twoim koszyku nie są zarezerwowane, dopóki nie zakończysz realizacji zamówienia."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Wystąpił problem z przetworzeniem Twojego żądania, skontaktuj się z właścicielem sklepu."
+      },
+      "no_address_location": {
+        "message": "Skontaktuj się z nami, aby dodać adres dla tej lokalizacji i zakończyć realizację zamówienia."
+      },
+      "order_errors": {
+        "creation_failure": "Wystąpił problem podczas tworzenia Twojego zamówienia. Spróbuj ponownie lub skontaktuj się z nami, aby uzyskać więcej informacji.",
+        "network_failure": "Twoje zamówienie nie mogło zostać złożone z powodu błędu sieci. Sprawdź swoje połączenie i spróbuj ponownie.",
+        "inventory_reservation_failure": "Niektóre przedmioty nie są już dostępne."
+      },
+      "session_errors": {
+        "session_not_unique": "Wystąpił problem z przetworzeniem Twojego zamówienia. Odśwież tę stronę, aby wrócić do sklepu.",
+        "session_already_finished": "To zamówienie zostało już złożone. Możesz wrócić do sklepu, aby rozpocząć nowe zamówienie."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Wystąpił problem z przetworzeniem Twojego zamówienia. Spróbuj ponownie za kilka minut."
+      },
+      "pickup_point": {
+        "search_button": "Szukaj",
+        "selector_tabs": "Wybór punktu odbioru",
+        "could_not_resolve_address": "Nie można było znaleźć Twojego adresu. Spróbuj ponownie lub użyj innego adresu",
+        "pickup_unavailable_banner_title": {
+          "one": "Brak punktów odbioru dla Twojego przedmiotu",
+          "other": "Brak punktów odbioru dla Twoich przedmiotów"
+        },
+        "paginator": {
+          "header": {
+            "one": "Wyświetlanie %{first} - %{last} z %{count} punktów"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} z %{count} punktów"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} z %{count} punktów"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "other": "%{count} punktów odbioru w pobliżu Twojej lokalizacji"
+        },
+        "waiting_on_pickup_point_location_notice": "Wyszukiwanie punktów odbioru...",
+        "geolocation": {
+          "errors": {
+            "unsuported_by_browser": "Pobieranie geolokalizacji nie jest obsługiwane przez Twoją przeglądarkę. Spróbuj ponownie lub użyj innej przeglądarki.",
+            "permission_not_allowed": "Zezwól na udostępnianie swojej lokalizacji."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "title": "Wystąpił problem z naszym procesem realizacji zamówienia",
+          "message": "Odśwież tę stronę lub spróbuj ponownie za kilka minut",
+          "request_id": "Identyfikator żądania: {{requestId}}"
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "Powrót do koszyka",
+        "company_location_changed": "Twój koszyk został zaktualizowany. Sprawdź swoje zamówienie przed jego złożeniem.",
+        "company_location_changed_product_removed": "Twój koszyk został zaktualizowany, ponieważ niektóre produkty nie są dostępne w tej lokalizacji. Sprawdź swoje zamówienie przed jego złożeniem.",
+        "violations_title": "{{violation}} jest brakujące lub nieprawidłowe",
+        "individual_violations_title": {
+          "OtherViolations": "Informacje o zamówieniu",
+          "UnhandledViolations": "Informacje o zamówieniu"
+        },
+        "all_violations_content": "Zadzwoń lub {{emailLink}} do nas, aby zaktualizować te informacje i dokończyć zamówienie:",
+        "all_violations_email_link": "e-mail",
+        "editable_shipping_address_violations_message_title": "Dodaj te informacje, aby zakończyć zamówienie:",
+        "calculating_shipping": "Koszt wysyłki jest nadal obliczany. Spróbuj ponownie za kilka sekund. Nie zostałeś obciążony.",
+        "generic_processing_error": {
+          "title": "Wystąpił problem z przetworzeniem Twojego zamówienia",
+          "body": "Nie zostałeś obciążony opłatą. Spróbuj ponownie lub użyj innej metody płatności."
+        },
+        "payment_method_not_available_with_payment_terms": "Wybrana metoda płatności nie jest już dostępna, ponieważ płatność za to zamówienie jest teraz na warunkach {{paymentTerms}}",
+        "payment_method_not_available_with_fulfillment_terms": "Wybrana metoda płatności nie jest już dostępna, ponieważ płatność za to zamówienie jest teraz wymagana przy realizacji.",
+        "payment_method_not_available_with_fixed_terms": "Wybrana metoda płatności nie jest już dostępna, ponieważ płatność za to zamówienie jest należna później",
+        "contact_information": {
+          "title": "Informacje kontaktowe są nieprawidłowe",
+          "header": "Aby zaktualizować swoje informacje, {{emailLink}}."
+        }
+      },
+      "review_address_modal": {
+        "title": "Adres recenzji",
+        "subtitle_no_match": "Ten adres nie pasuje do żadnego z Twoich zapisanych adresów.",
+        "continue": "Kontynuuj z tym adresem"
       }
     }
   }
