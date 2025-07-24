@@ -1220,7 +1220,195 @@
         "pre_order_ships_later": "Wysyłka później",
         "pre_order_ships_date": "Wysyłki %{date}",
         "split_shipping_shipment_notice": "Twoje zamówienie dotrze w %{quantity_shipments}",
-        "split_shipping_first_shipment_notice": "Twoje pierwsze zamówienie dotrze w %{quantity_shipments}"
+        "split_shipping_first_shipment_notice": "Twoje pierwsze zamówienie dotrze w %{quantity_shipments}",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} przesyłek",
+        "split_shipping_multiple_shipment_notice": "Twoje zamówienie zostanie dostarczone w kilku przesyłkach",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "Twoje zamówienie zostanie dostarczone w %{quantity} przesyłkach",
+        "split_shipping_shipment_number": "Wysyłka %{number}",
+        "split_shipping_option_fastest": "Najszybszy"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "shipping_credential_kr": "Osobisty Kod Celny",
+          "shipping_credential_cn": "Numer identyfikacyjny mieszkańca",
+          "tax_credential_it": "Kod Podatkowy (opcjonalnie)",
+          "tax_email_it": "PEC (opcjonalne)",
+          "tax_credential_type_co": "Typ dowodu osobistego",
+          "shipping_credential_type_co": "Typ dowodu osobistego",
+          "tax_credential_cr": "Numer identyfikacyjny/RUT",
+          "shipping_credential_cr": "Numer identyfikacyjny/RUT",
+          "tax_credential_gt": "NIP/VAT",
+          "shipping_credential_gt": "NIP/VAT",
+          "tax_credential_my": "Numer NIP/Rejestracyjny",
+          "shipping_credential_my": "Numer NIP/Rejestracyjny",
+          "tax_credential_type_mx": "Reżim podatkowy",
+          "tax_credential_use_mx": "Użycie CFDI",
+          "tax_credential_pt": "NIP/VAT",
+          "shipping_credential_pt": "NIP/VAT",
+          "tax_credential_es": "DNI/NIP",
+          "shipping_credential_es": "DNI/NIP",
+          "shipping_credential_tw": "Numer identyfikacyjny/NIP",
+          "tax_credential_tr": "Numer identyfikacyjny Republiki Turcji/NIP",
+          "shipping_credential_tr": "Numer identyfikacyjny Republiki Turcji/NIP"
+        }
+      },
+      "payment": {
+        "network_card_payment_options": "Wybierz sieć kart",
+        "network_card_persistence_description": "Wybrana sieć zostanie zapisana wraz z Twoją metodą płatności do przyszłych transakcji.",
+        "amazon_payments_login_hint": "Zostaniesz poproszony o zalogowanie się za pomocą Amazon.",
+        "amazon_payments_failed_mfa_challenge": "Wybrana metoda płatności nie mogła zostać użyta. Wybierz inną metodę lub skontaktuj się ze swoim bankiem lub wystawcą karty.",
+        "amazon_payments_abandoned_mfa_challenge": "Twoja płatność nie mogła zostać zrealizowana. Spróbuj innej metody płatności lub skontaktuj się ze swoim bankiem lub wystawcą karty.",
+        "amazon_payments_could_not_enqueue_authorize": "Wystąpił problem z przetworzeniem Twojej płatności. Spróbuj ponownie lub użyj innej metody płatności.",
+        "amount_left_to_pay_label": "Płatność do:",
+        "gift_card_code_label": "Kod karty podarunkowej",
+        "supported_card_brands_more_label": "i więcej…",
+        "detected_card_brand": "Wykryto markę karty: {brand}",
+        "credit_card_vaulting_sign_in_banner_info": "Zaloguj się lub utwórz konto, aby zapisać swoją kartę kredytową do przyszłych zakupów.",
+        "credit_card_vaulting_sign_in_banner_button_label": "Zaloguj się",
+        "ftd_vault_credit_card_label": "Zapisz tę kartę kredytową na moim koncie, aby przyspieszyć realizację zamówienia",
+        "card_security_notice": "Wszystkie transakcje są bezpieczne i zaszyfrowane.",
+        "card_security_vault_notice": "Potrzebujemy Twoich danych do przyszłych płatności. Wszystkie transakcje są bezpieczne i szyfrowane.",
+        "card_information_notice": "Wszystkie transakcje są bezpieczne i szyfrowane. Informacje o karcie kredytowej nigdy nie są przechowywane.",
+        "name_on_card_label": "Nazwa na karcie",
+        "name_on_card_placeholder": "Nazwa na karcie",
+        "card_expired": "Wygasło",
+        "credit_card_start_month": "Rozpocznij miesiąc",
+        "credit_card_start_year": "Rok rozpoczęcia",
+        "delete_customer_mandate_modal_title": "Usunąć tę kartę płatniczą?",
+        "delete_customer_mandate_modal_body": "Jeśli usuniesz tę kartę, będziesz musiał dodać ją ponownie przed użyciem do płatności.",
+        "delete_customer_mandate_modal_confirm": "Usuń kartę",
+        "card_verification_value_label": "Kod bezpieczeństwa",
+        "card_verification_value_placeholder": "Kod bezpieczeństwa",
+        "card_verification_confirm": "W celu weryfikacji wprowadź kod zabezpieczający swojej karty.",
+        "card_verification_value_explanation": "3-cyfrowy kod zabezpieczający zwykle znajduje się na odwrocie twojej karty. Karty American Express mają 4-cyfrowy kod umieszczony z przodu.",
+        "card_verification_value_explanation_amex": "4-cyfrowy kod bezpieczeństwa z przodu twojej karty",
+        "card_verification_value_explanation_other": "3-cyfrowy kod zabezpieczający na odwrocie twojej karty",
+        "card_issue_number_label": "Numer problemu",
+        "card_issue_number_placeholder": "Numer problemu",
+        "paypal_disconnect": "Rozłącz",
+        "ends_with_label": "kończący się na %{last_digits}",
+        "payment_method_saved": "Metoda płatności zapisana",
+        "expiry_short": "(Wygasło %{month}/%{year})",
+        "saved_by_payment_method": "Zapisane przez %{payment_method}",
+        "same_billing_address_label": "Takie samo jak adres wysyłki",
+        "billing_address_associated_with_mandate_info": "Jeśli chcesz zmienić adres rozliczeniowy, usuń i ponownie wprowadź dane swojej karty kredytowej",
+        "free_order_notice_html": "Twoje zamówienie jest <strong>bezpłatne</strong>. Nie jest wymagana żadna płatność.",
+        "express_checkout_free_order": "Nie zostaniesz obciążony za darmowe zamówienie",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Twoje zamówienie jest objęte kartą podarunkową.",
+          "other": "Twoje zamówienie jest pokryte przez Twoje karty podarunkowe."
+        },
+        "offsite_gateway_redirect_hint": "Po kliknięciu „%{button_label}” zostaniesz przekierowany do %{gateway_label}, aby bezpiecznie dokończyć zakup.",
+        "offsite_gateway_review_page_redirect_hint": "Po przejrzeniu zamówienia zostaniesz przekierowany do %{gateway_label}, aby bezpiecznie dokończyć zakup.",
+        "offsite_gateway_redirect_hint_multi_currency_html": "%{gateway_label} łącznie %{total_shop_price}",
+        "offsite_gateway_redirect_hint_no_button_label": "Po kontynuowaniu zostaniesz przekierowany do %{gateway_label}, aby bezpiecznie dokończyć zakup.",
+        "receiver_payment_experience_hint": "Po złożeniu zamówienia otrzymasz szczegóły płatności. Dokonaj płatności w Multibanco lub online w ciągu %{due_days} dni.",
+        "billing_address_description": "Wybierz adres, który odpowiada Twojej karcie lub metodzie płatności.",
+        "billing_address_description_no_shipping_address": "Wprowadź adres zgodny z Twoją kartą lub metodą płatności.",
+        "no_js_credit_card_fields_redirect_hint": "Zostaniesz przekierowany, aby dodać swoje informacje płatnicze.",
+        "card_fields_unavailable_html": {
+          "one": "Płatności kartą kredytową i debetową nie są obecnie dostępne.<br><a href=\"%{current_url}\">Odśwież tę stronę</a> lub spróbuj ponownie później.",
+          "other": "Płatności kartą kredytową i debetową nie są obecnie dostępne.<br><a href=\"%{current_url}\">Odśwież tę stronę</a> lub spróbuj innej metody płatności."
+        },
+        "card_fields_processing_error": "Wystąpił problem z przetworzeniem płatności. Spróbuj odświeżyć tę stronę lub sprawdź swoje połączenie internetowe.",
+        "technical_error": "Płatności nie mogą być przetworzone w tej chwili z powodu problemu technicznego. Spróbuj ponownie za kilka minut.",
+        "no_method_error": "Ten sklep nie może obecnie przyjmować płatności.",
+        "not_configured_error": "Ten sklep nie może obecnie przyjmować płatności.",
+        "missing_credit_card_error": "Wprowadź dane swojej karty, aby zakończyć płatność",
+        "shop_pay_ideal_unavailable_error": "iDEAL nie jest dostępny dla tego zamówienia. Wybierz inną metodę płatności.",
+        "payment_method_not_available_for_shipping_address_error": "Metoda płatności niedostępna dla wybranego adresu dostawy. Wybierz inną metodę płatności.",
+        "billing_address_not_supported_for_payment_method_error": "Ta metoda płatności nie jest dostępna dla Twojego adresu rozliczeniowego i waluty. Proszę spróbuj innej metody płatności.",
+        "generic_incorrect_card_info": "Twoje dane płatności nie mogły zostać zweryfikowane. Sprawdź dane karty i spróbuj ponownie.",
+        "sofort_label": "Natychmiastowy przelew bankowy",
+        "klarna_pay_later_label": "Zapłać później z Klarna",
+        "klarna_pay_now_label": "Zapłać teraz z Klarna",
+        "eps_label": "przelew eps",
+        "klarna_slice_it_label": "Finansuj z Klarna",
+        "cashapppay_label": "Płatność Cash App",
+        "purchase_options_card_update_agreement_label_html": "Aktualizując metodę płatności, upoważniasz do dokonywania płatności za wszelkie powtarzające się lub odroczone zakupy zgodnie z <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">polityką anulowania</a> tego sklepu.",
+        "subscription_card_update_agreement_label": "Zmiana metody płatności spowoduje aktualizację Twojej subskrypcji oraz przyszłych płatności cyklicznych.",
+        "subscription_agreement_label": "Jeden lub więcej przedmiotów w Twoim koszyku to zakup odroczony lub subskrypcyjny. Kontynuując płatność, zgadzasz się, że Twoja metoda płatności zostanie automatycznie obciążona kwotą i częstotliwością podaną na tej stronie, aż do zakończenia lub anulowania. Wszystkie anulacje podlegają %{cancelled}.",
+        "subscription_agreement_cancelled": "%{subscription_policy}",
+        "subscription_agreement_label_html": "Rozumiem, że zgadzam się na subskrypcję. Będzie ona odnawiana w podanej cenie i częstotliwości, aż do jej zakończenia lub\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">anulowano</a>.\n",
+        "purchase_options_agreement_label": "Jeden lub więcej przedmiotów w Twoim koszyku to zakup odroczony lub cykliczny. Kontynuując płatność, zgadzasz się, że Twoja metoda płatności będzie automatycznie obciążana kwotą i częstotliwością podaną na tej stronie, aż do zakończenia lub anulowania. Wszystkie anulacje podlegają %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "Rozumiem, że jeden lub więcej przedmiotów w moim koszyku to zakup odroczony lub cykliczny. Kontynuując, zgadzam się z\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">cancellation policy</a>\ni upoważniam Cię do obciążenia mojej metody płatności cenami, częstotliwością i datami wymienionymi na tej stronie aż do mojego\nzamówienie zostanie zrealizowane lub anuluję je, jeśli to dozwolone.\n",
+        "purchase_options_agreement_label_wallets": "Kontynuując płatność, zgadzasz się na przyszłe opłaty wymienione na tej stronie oraz na politykę anulowania.",
+        "apple_pay_payment_error": "Twoja płatność nie mogła zostać zrealizowana. Spróbuj ponownie lub użyj innej metody płatności.",
+        "taxes_not_included": "Podatki nie są wliczone",
+        "no_taxes_banner_content": "Podatki nie zostaną naliczone na to zamówienie. Po otrzymaniu płatności nie można już dodać podatków.",
+        "paypal": {
+          "connect": "Kliknij, aby połączyć swoje konto PayPal"
+        },
+        "apple": {
+          "connect": "Kliknij, aby połączyć swoje konto Apple Pay",
+          "not_available": "Apple Pay nie jest dostępny w tej przeglądarce. Aby połączyć swoje konto Apple Pay, musisz użyć Safari na urządzeniu Apple."
+        },
+        "google": {
+          "connect": "Kliknij, aby połączyć się ze swoim kontem Google Pay"
+        },
+        "account_connected": "Konto połączone.",
+        "mor_disclaimer_html": "Klikając poniżej i finalizując zamówienie, zgadzasz się na zakup swoich przedmiotów od Global-e jako sprzedawcy zarejestrowanego\ndla tej transakcji, zgodnie z <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Regulaminem</a>\noraz <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Polityką Prywatności</a> Global-e jest międzynarodowym\ndostawcą usług realizacji zamówień dla %{shop_name}",
+        "pending_payment": {
+          "due_notice": "Twoja płatność w wysokości %{amount_due} jest należna do %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "Twoja płatność w wysokości %{amount_due} jest należna.",
+            "instruction_html": "Dokonaj płatności w Multibanco lub online, korzystając z poniższych danych. W razie pytań lub chęci aktualizacji danych płatności, %{contact_us}.",
+            "entity": "Podmiot",
+            "reference": "Odniesienie"
+          }
+        },
+        "update_payment_method": "Aktualizuj metodę płatności",
+        "order_covered_by_store_credit_notice": "Twoje zamówienie jest objęte kredytem sklepowym.",
+        "order_covered_by_redeemables_notice": "Twoje zamówienie jest objęte ochroną.",
+        "store_credit": {
+          "label": "Kredyt sklepu",
+          "apply_label": "Zastosuj kredyt sklepu",
+          "add_label": "Dodaj kredyt sklepu",
+          "buying_gift_card": "Nie możesz użyć kredytu sklepowego do zakupu karty podarunkowej",
+          "no_fixed_selling_plans": "Nie można używać kredytu sklepowego z odroczonymi opcjami zakupu"
+        },
+        "clear": "Przezroczysty",
+        "billing_must_match_shipping_notice": "Adres rozliczeniowy metody płatności musi być zgodny z adresem dostawy.",
+        "no_working_method_error": "Ten sklep nie może obecnie przyjmować płatności. Odśwież tę stronę lub wróć później.",
+        "brand_not_available": "Ten sklep nie akceptuje {{brand}}. Proszę użyć innej karty do zapłaty.",
+        "shipping_rate_updated": "Dostępne metody wysyłki zostały zaktualizowane. Potwierdź swój wybór przed finalizacją zamówienia.",
+        "billing_address_invalid_phone": "Zaktualizuj numer telefonu w swoim adresie rozliczeniowym dla {{label}} {{last_digits}}, aby kontynuować.",
+        "billing_address_invalid_phone_no_card": "Zaktualizuj numer telefonu w swoim adresie rozliczeniowym, aby kontynuować.",
+        "preview_not_available": {
+          "content": "Nie martw się, ta ekspresowa kasa działa dla twoich klientów."
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Wprowadź prawidłową datę wydania",
+              "issue_number": "Wprowadź prawidłowy numer problemu"
+            },
+            "invalid": {
+              "verification_value": "Wprowadź prawidłowy kod CVV lub kod zabezpieczający"
+            }
+          }
+        },
+        "simulated_checkout": "Podgląd wkrótce",
+        "simulated_express_checkout": "Portfele są niedostępne w podglądzie edytora z powodu Twojego regionu lub przeglądarki",
+        "vaulting_agreement_label": "Zapisz moje informacje o płatności w %{company}, aby przyspieszyć realizację zamówienia.",
+        "business_customer_vaulting_payment_label": "Zapisz tę kartę przy kasie i upoważnij %{company} do obciążania jej za przyszłe zakupy dla tej lokalizacji. Wszyscy kontaktowi przypisani do tej lokalizacji mogą korzystać z karty.",
+        "purchase_options_and_vaulting_agreement_label": "Jeden lub więcej przedmiotów w Twoim koszyku to zakup odroczony lub subskrypcyjny. Kontynuując płatność, zgadzasz się, że Twoja metoda płatności będzie automatycznie obciążana kwotą i częstotliwością podaną na tej stronie, aż do zakończenia lub anulowania. Wszystkie anulacje podlegają %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "polityka anulowania",
+        "saved_credit_card": "Twoja zapisana karta kredytowa",
+        "saved_credit_card_cvv_verification": "Dla celów weryfikacji, proszę wprowadzić kod bezpieczeństwa swojej karty.",
+        "delete_credit_card_modal": {
+          "confirmation": "Czy na pewno chcesz usunąć {{brandName}} kończący się na {{lastDigits}}?"
+        },
+        "edit_credit_card_modal": {
+          "title": "Edytuj kartę",
+          "fields": {
+            "default": "Ustaw jako domyślne",
+            "expiry": "Data ważności",
+            "security_code": "Kod bezpieczeństwa",
+            "name": "Nazwa na karcie",
+            "billing": "Rozlicz na"
+          }
+        }
       }
     }
   }
