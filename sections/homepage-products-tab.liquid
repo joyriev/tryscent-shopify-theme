@@ -11,14 +11,13 @@
     }
   }
 {%- endstyle -%}
-
 <div
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
     <h2 class="text-center text-2xl md:text-4xl font-semibold mb-6 mt-0">{{ section.settings.heading }}</h2>
-    <div class="flex justify-center border-0 border-b border-b-gray-100 border-solid [&>.active]:[border-bottom:3px_solid_#c8202f]">
+    <div class="flex justify-center border-0 border-b border-b-gray-100 border-solid [&>.active]:[border-bottom:3px_solid_#22613A]">
       {% for block in section.blocks %}
         <button class="bg-transparent border-0 font-semibold text-sm md:text-lg px-4 py-3 cursor-pointer products-tab-btn">
           {{ block.settings.tab_title }}
@@ -26,7 +25,7 @@
       {% endfor %}
     </div>
     {% for block in section.blocks %}
-      <div class="tab-content pt-6 [display:none]">
+      <div class="tab-content pt-6 {% unless forloop.first %}[display:none]{% endunless %}">
         {% assign collection = block.settings.collection %}
         {% if collection and collection.products.size > 0 %}
           <ul
