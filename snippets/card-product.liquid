@@ -153,7 +153,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
 
           {% if badge_text != '' %}
             <div>
-              <div class="text-green-600 text-sm font-semibold bg-green-600/10 px-2 py-1 rounded inline-block">
+              <div class="text-green-600 text-xs font-semibold bg-green-600/10 px-2 py-1 rounded inline-block">
               {{ badge_text }}
             </div>
             </div>
@@ -174,11 +174,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               role="img"
               aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
             >
-              <span
-                aria-hidden="true"
-                class="rating-star"
-                style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }}; --color-rating-star: #ffa500;"
-              ></span>
+              <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="13" width="66">
             </div>
             <p class="rating-text caption">
               <span aria-hidden="true">
@@ -203,16 +199,15 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
             <a
               href="{{ card_product.url }}"
               id="CardLink-{{ section_id }}-{{ card_product.id }}"
-              class="full-unstyled-link text-base font-semibold !no-underline hover:opacity-75"
+              class="full-unstyled-link text-base md:text-lg font-semibold !no-underline hover:opacity-75 !leading-tight tracking-normal"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-              {{ card_product.title | escape }}
+              <div class="text-gray-500 text-base leading-none">
+                Smells like...
+              </div>
+              {{ card_product.title | remove: 'Smells like...' }}
             </a>
           </h3>
-
-          <div class="line-clamp-1 relative z-10">
-            <span class="italic text-sm tracking-tighter">Inspired by</span> <a href="/search?q={{ card_product.metafields.custom.forgaylawyers | url_encode }}" class="font-semibold text-base not-italic tracking-tight text-gray-900 ![text-decoration:none]">{{ card_product.metafields.custom.forgaylawyers }}</a>
-          </div>
 
           <div class="card-information">
             {%- if show_vendor -%}
@@ -220,7 +215,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
             {%- endif -%}
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
-            <div class="text-sm font-semibold tracking-tight">
+            <div class="font-bold tracking-normal">
               {% unless card_product.tags contains 'onsale' %}
                 Starts at
               {% endunless %}
@@ -231,6 +226,11 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
                 </span>
               {% endif %}
             </div>
+
+            <div class="!text-gray-500 text-sm font-semibold tracking-normal">
+              Available in 3 sizes
+            </div>
+
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid
