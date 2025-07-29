@@ -67,6 +67,17 @@
       </div>
     {% endfor %}
     {% comment %} Tabs CTA button {% endcomment %}
+
+    <div>
+      <img
+        src={{section.settings.explore_image | image_url }}
+        alt=""
+        height="{{ section.settings.explore_image.height }}"
+        width="{{ section.settings.explore_image.width }}">
+
+      <h3>{{ section.settings.explore_heading }}</h3>
+      <p>{{ section.settings.explore_subheading }}</p>
+    </div>
     <div class="text-center mt-14">
       <a
         href="{{ section.settings.button_link }}"
