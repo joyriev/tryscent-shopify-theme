@@ -929,28 +929,16 @@
     font-style: normal
 }
 
+.\!leading-tight {
+    line-height: 1.25 !important
+}
+
 .leading-none {
     line-height: 1
 }
 
 .leading-snug {
     line-height: 1.375
-}
-
-.leading-\[1\.2\] {
-    line-height: 1.2
-}
-
-.leading-tight {
-    line-height: 1.25
-}
-
-.\!leading-none {
-    line-height: 1 !important
-}
-
-.\!leading-tight {
-    line-height: 1.25 !important
 }
 
 .\!tracking-normal {
@@ -979,6 +967,11 @@
 
 .tracking-widest {
     letter-spacing: 0.1em
+}
+
+.\!text-gray-500 {
+    --tw-text-opacity: 1 !important;
+    color: rgb(107 114 128 / var(--tw-text-opacity, 1)) !important
 }
 
 .text-\[\#c8202f\] {
@@ -1029,16 +1022,6 @@
 .text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
-}
-
-.text-gray-700 {
-    --tw-text-opacity: 1;
-    color: rgb(55 65 81 / var(--tw-text-opacity, 1))
-}
-
-.\!text-gray-500 {
-    --tw-text-opacity: 1 !important;
-    color: rgb(107 114 128 / var(--tw-text-opacity, 1)) !important
 }
 
 .line-through {

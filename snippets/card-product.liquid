@@ -205,7 +205,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="text-gray-500 text-base leading-none">
                 Smells like...
               </div>
-              {{ card_product.title | remove: 'Smells like...' }}
+              {{ card_product.title | remove: 'Smells like...' |  remove: 'Smells like ...' }}
             </a>
           </h3>
 
@@ -228,7 +228,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
             </div>
 
             <div class="!text-gray-500 text-sm font-semibold tracking-normal">
-              Available in 3 sizes
+              Available in {{ card_product.variants_count }} sizes
             </div>
 
             {%- if card_product.quantity_price_breaks_configured? -%}
