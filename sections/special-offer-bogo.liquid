@@ -6,26 +6,27 @@
 {%- endstyle -%}
 
 <div
-  id={{section.id}}
+  id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
-  style="background-image: url({{ section.settings.background_image }})">
+  style="background-image: url('{{ section.settings.background_image.src }}')">
   <div>
-    <p>{{ section.settings.offer-text }}</p>
+    <p>{{ section.settings['offer-text'] }}</p>
     <h2>{{ section.settings.offer_title }}</h2>
     <p>{{ section.settings.offer_description }}</p>
     <p>{{ section.settings.offer_sub_description }}</p>
     <a href="{{ section.settings.offer_button_link }}">{{ section.settings.offer_button_text }}</a>
     <div>
-      <img src="" alt="">
-      <p>loved by 10,000+</p>
+      {% comment %} <img src="" alt=""> {% endcomment %}
+      <p>Loved by 10,000+</p>
     </div>
     <img
       src="{{ section.settings.offer_image | image_url: width: 700 }}"
       alt=""
-      width={{ section.settings.offer_image.width }}
-      height={{ section.settings.offer_image.height }}>
+      width="{{ section.settings.offer_image.width }}"
+      height="{{ section.settings.offer_image.height }}">
   </div>
 </div>
+
 
 {% schema %}
 
