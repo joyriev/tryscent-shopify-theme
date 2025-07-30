@@ -205,7 +205,10 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="text-gray-500 text-base leading-none">
                 Smells like...
               </div>
-              {{ card_product.title | remove: 'Smells like...' |  remove: 'Smells like ...' }}
+              <div class="line-clamp-1">
+                {{ card_product.title | remove: 'Smells like...' |  remove: 'Smells like ...' }}
+              </div>
+            <img class="absolute right-4 bottom-4 cursor-pointer" src="{{ 'plus-solid.svg' |  asset_url }}" alt="+" width="32" height="32">
             </a>
           </h3>
 
@@ -215,22 +218,23 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
             {%- endif -%}
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
-            <div class="font-bold tracking-normal">
-              {% unless card_product.tags contains 'onsale' %}
-                Starts at
-              {% endunless %}
-              {{ card_product.price | money }}
-              {% if card_product.tags contains 'onsale' %}
-                <span class="line-through text-[#c8202f] font-normal">
-                  {{ cart.currency.symbol }}{{ card_product.compare_at_price | money_without_currency }}
-                </span>
-              {% endif %}
-            </div>
+            <div class="pr-10">
+              <div class="font-bold tracking-normal">
+                {% unless card_product.tags contains 'onsale' %}
+                  Starts at
+                {% endunless %}
+                {{ card_product.price | money }}
+                {% if card_product.tags contains 'onsale' %}
+                  <span class="line-through text-[#c8202f] font-normal">
+                    {{ cart.currency.symbol }}{{ card_product.compare_at_price | money_without_currency }}
+                  </span>
+                {% endif %}
+              </div>
 
-            <div class="!text-gray-500 text-sm font-semibold tracking-normal">
-              Available in {{ card_product.variants_count }} sizes
+              <div class="!text-gray-500 text-sm font-semibold tracking-normal">
+                Available in {{ card_product.variants_count }} sizes
+              </div>
             </div>
-
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid

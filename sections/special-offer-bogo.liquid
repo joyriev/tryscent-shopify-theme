@@ -12,104 +12,130 @@
   <div class="page-width">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 itm">
       <div class="flex flex-col justify-center items-center text-center [&>*]:m-0 gap-6 md:px-10">
-        <div class="bg-[#2a2a2a] rounded px-3">
-          <span class="uppercase text-white text-center">{{ section.settings.offer-text }}</span>
+        <div class="bg-[#dde4dc] rounded px-3">
+          <span class="uppercase text-[#22613A] text-center">{{ section.settings.offer-text }}</span>
         </div>
         <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-snug">{{ section.settings.offer_title }}</h2>
         <p class="text-base md:text-lg font-medium text-[#121212]">{{ section.settings.offer_description }}</p>
         <p class="text-base md:text-lg font-medium text-[#121212]">{{ section.settings.offer_sub_description }}</p>
         <a href="{{ section.settings.offer_button_link }}" class="bg-[#137c44] text-white uppercase font-semibold no-underline px-6 py-3 text-lg rounded-full">{{ section.settings.offer_button_text }}</a>
         <div>
-          <div>
-            <p>this is something</p>
-          </div>
-        </div>
-      </div>
-      <div class="text-center">
-        <img
-          class="max-w-full h-auto"
-          src="{{ section.settings.offer_image | image_url: width: 700 }}"
-          alt="Hero Image"
-          width="450"
-          height="450">
-      </div>
+          <div class="flex items-center gap-2">
+            <svg
+              width="15px"
+              height="15px"
+              viewBox="-1 0 20 20"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              fill="#000000">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+              <g
+                id="Free-Icons"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"> <g transform="translate(-230.000000, -748.000000)" id="Group">
+              <g transform="translate(227.000000, 746.000000)" id="Shape">
+                <path
+                  d="M4,3 L4,4.77236651 C4,5.96625907 4.64816908,7.08665789 5.74030881,7.78059385 L18.2596912,15.735299 C19.3518309,16.429235 20,17.5496338 20,18.7435264 L20,21 L4,21 L4,18.7435264 C4,17.5496338 4.64816908,16.429235 5.74030881,15.735299 L18.2596912,7.78059385 C19.3518309,7.08665789 20,5.96625907 20,4.77236651 L20,3 L4,3 Z"
+                  stroke="#000000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path d="M11.7926812,14.8216721 L7.66910673,17.9549713 C7.49560596,18.0868059 7.44778491,18.3556079 7.56229541,18.5553573 C7.63196026,18.676879 7.74997665,18.75 7.87644635,18.75 L16.1235953,18.75 C16.3314779,18.75 16.5,18.5559824 16.5,18.3166496 C16.5,18.1710465 16.4364877,18.0351756 16.3309349,17.9549713 L12.2073604,14.8216721 C12.0815952,14.7261093 11.9184464,14.7261093 11.7926812,14.8216721 Z" fill="#000000"></path>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <p class="uppercase">Lasts 12+ Hours</p>
     </div>
+
   </div>
 </div>
+<div class="text-center">
+  <img
+    class="max-w-full h-auto"
+    src="{{ section.settings.offer_image | image_url: width: 700 }}"
+    alt="Hero Image"
+    width="450"
+    height="450">
+</div></div></div></div>{% schema %}
 
+{
+  "name": "Special Offer",
+  "class": "special-offer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "offer_image",
+      "label": "Offer Image"
+    },
+    {
+      "type": "text",
+      "id": "offer-text",
+      "label": "Offer Text",
+      "default": "Special Offer"
+    },
 
-{% schema %}
-
-  {
-    "name": "Special Offer",
-    "class": "special-offer",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "background_image",
-        "label": "Background Image"
-      },
-      {
-        "type": "image_picker",
-        "id": "offer_image",
-        "label": "Offer Image"
-      },
-      {
-        "type": "text",
-        "id": "offer-text",
-        "label": "Offer Text",
-        "default": "Special Offer"
-      },
-
-      {
-        "type": "text",
-        "id": "offer_title",
-        "label": "Offer Title",
-        "default": "Your Offer Title Goes Here"
-      }, {
-        "type": "text",
-        "id": "offer_description",
-        "label": "Offer Description",
-        "default": "Your Offer Description Goes Here"
-      }, {
-        "type": "text",
-        "id": "offer_sub_description",
-        "label": "Offer Sub Description",
-        "default": "Your Offer Sub Description Goes Here"
-      }, {
-        "type": "text",
-        "id": "offer_button_text",
-        "label": "Offer Button Text",
-        "default": "Click Here"
-      }, {
-        "type": "url",
-        "id": "offer_button_link",
-        "label": "Offer Button Link"
-      }, {
-        "type": "range",
-        "id": "padding_top",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "t:sections.all.padding.padding_top",
-        "default": 36
-      }, {
-        "type": "range",
-        "id": "padding_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "t:sections.all.padding.padding_bottom",
-        "default": 36
-      }
-    ],
-    "presets": [
-      {
-        "name": "Special Offer"
-      }
-    ]
-  }
-
-{% endschema %}
+    {
+      "type": "text",
+      "id": "offer_title",
+      "label": "Offer Title",
+      "default": "Your Offer Title Goes Here"
+    }, {
+      "type": "text",
+      "id": "offer_description",
+      "label": "Offer Description",
+      "default": "Your Offer Description Goes Here"
+    }, {
+      "type": "text",
+      "id": "offer_sub_description",
+      "label": "Offer Sub Description",
+      "default": "Your Offer Sub Description Goes Here"
+    }, {
+      "type": "text",
+      "id": "offer_button_text",
+      "label": "Offer Button Text",
+      "default": "Click Here"
+    }, {
+      "type": "url",
+      "id": "offer_button_link",
+      "label": "Offer Button Link"
+    }, {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    }, {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Special Offer"
+    }
+  ]
+}{% endschema %}
