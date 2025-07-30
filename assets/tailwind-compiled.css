@@ -367,6 +367,10 @@
     width: 100%
 }
 
+.w-52 {
+    width: 208px
+}
+
 .min-w-\[92px\] {
     min-width: 92px
 }
@@ -719,6 +723,33 @@
     background-color: rgb(255 255 255 / 0.1)
 }
 
+.bg-green-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[22613A\] {
+    background-color: 22613A
+}
+
+.bg-\[\#22613A\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(34 97 58 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#dce3db\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(220 227 219 / var(--tw-bg-opacity, 1))
+}
+
+.bg-cover {
+    background-size: cover
+}
+
+.bg-center {
+    background-position: center
+}
+
 .object-cover {
     -o-object-fit: cover;
        object-fit: cover
@@ -893,6 +924,21 @@
     line-height: 16px
 }
 
+.text-4xl {
+    font-size: 36px;
+    line-height: 40px
+}
+
+.text-6xl {
+    font-size: 60px;
+    line-height: 1
+}
+
+.text-5xl {
+    font-size: 48px;
+    line-height: 1
+}
+
 .\!font-black {
     font-weight: 900 !important
 }
@@ -947,6 +993,14 @@
 
 .leading-snug {
     line-height: 1.375
+}
+
+.leading-relaxed {
+    line-height: 1.625
+}
+
+.leading-normal {
+    line-height: 1.5
 }
 
 .\!tracking-normal {
@@ -1030,6 +1084,16 @@
 .text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+}
+
+.text-green-900 {
+    --tw-text-opacity: 1;
+    color: rgb(20 83 45 / var(--tw-text-opacity, 1))
+}
+
+.text-\[\#22613A\] {
+    --tw-text-opacity: 1;
+    color: rgb(34 97 58 / var(--tw-text-opacity, 1))
 }
 
 .line-through {
