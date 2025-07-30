@@ -7,23 +7,33 @@
 
 <div
   id="{{ section.id }}"
-  class="section-{{ section.id }}-padding text-center bg-cover bg-center"
+  class="section-{{ section.id }}-padding text-center bg-cover bg-bottom"
   style="background-image: url('{{ section.settings.background_image |  image_url }}')">
-  <div class="flex flex-col justify-center items-center">
-    <p class="uppercase text-[#22613A] font-semibold text-sm bg-[#dce3db] px-3 py-2 rounded">{{ section.settings['offer-text'] }}</p>
-    <h2 class="font-bold text-5xl leading-normal">{{ section.settings.offer_title }}</h2>
-    <p>{{ section.settings.offer_description }}</p>
-    <p>{{ section.settings.offer_sub_description }}</p>
-    <a href="{{ section.settings.offer_button_link }}">{{ section.settings.offer_button_text }}</a>
-    <div>
-      {% comment %} <img src="" alt=""> {% endcomment %}
-      <p>Loved by 10,000+</p>
+  <div class="page-width">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 itm">
+      <div class="flex flex-col justify-center items-center text-center [&>*]:m-0 gap-6 md:px-10">
+        <div class="bg-[#2a2a2a] rounded px-3">
+          <span class="uppercase text-white text-center">{{ section.settings.offer-text }}</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight leading-snug">{{ section.settings.offer_title }}</h2>
+        <p class="text-base md:text-lg font-medium text-[#121212]">{{ section.settings.offer_description }}</p>
+        <p class="text-base md:text-lg font-medium text-[#121212]">{{ section.settings.offer_sub_description }}</p>
+        <a href="{{ section.settings.offer_button_link }}" class="bg-[#137c44] text-white uppercase font-semibold no-underline px-6 py-3 text-lg rounded-full">{{ section.settings.offer_button_text }}</a>
+        <div>
+          <div>
+            <p>this is something</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <img
+          class="max-w-full h-auto"
+          src="{{ section.settings.offer_image | image_url: width: 700 }}"
+          alt="Hero Image"
+          width="450"
+          height="450">
+      </div>
     </div>
-    <img
-      src="{{ section.settings.offer_image | image_url: width: 700 }}"
-      alt=""
-      width="{{ section.settings.offer_image.width }}"
-      height="{{ section.settings.offer_image.height }}">
   </div>
 </div>
 
