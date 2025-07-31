@@ -6,9 +6,11 @@
           <a href="{{ block.settings.link }}" class="flex items-center gap-1 no-underline hover:no-underline text-black">
             {% if block.settings.icon %}
               <img
-                src="{{ block.settings.icon | img_url: '32x32' }}"
-                alt=""
+                src="{{ block.settings.icon | image_url: height: 32, width: 32 }}"
+                alt="{{ block.settings.label }}"
                 class="inline-block mr-1"
+                height="32"
+                width="32"
                 style="height: 1.2em; width: auto; max-width: 1.2em;" />
             {% endif %}
             <span class="md:text-xs text-xs uppercase font-semibold">
@@ -24,8 +26,6 @@
 {% schema %}
   {
     "name": "Marquee Labels",
-    "max_blocks": 12,
-    "class": "announcement-bar-section",
     "blocks": [
       {
         "type": "label",
