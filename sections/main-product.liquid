@@ -173,7 +173,6 @@
                     price_class: 'price--large',
                     show_compare_at_price: true
                   -%}
-                  
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
@@ -532,6 +531,7 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+                
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
