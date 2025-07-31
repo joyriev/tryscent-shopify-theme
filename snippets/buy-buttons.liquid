@@ -75,7 +75,7 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit cta_product_from_submit_btn !mb-0 text-xl !pb-3 !pt-3 rounded button bg-[#236139] hover:bg-[#01491c] transition-colors shadow-xl uppercase tracking-wider button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit cta_product_from_submit_btn !mb-0 text-xl !pb-3 !pt-3 rounded-full button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl uppercase tracking-normal button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == null %}
             disabled
             {% endif %}>
@@ -87,8 +87,12 @@
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
-              | {{ product.selected_or_first_available_variant.price | money }}
             </span>
+            <div
+              class="inline-block ml-1.5"
+              id="price-{{ section.id }}"
+              role="status"
+              {{ block.shopify_attributes }}>| {{ product.selected_or_first_available_variant.price | money }}</div>
             {%- render 'loading-spinner' -%}
           </button>
           {%- if show_dynamic_checkout -%}
