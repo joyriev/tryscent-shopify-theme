@@ -117,8 +117,9 @@
                   {% endfor %}
                 </ul>
               {%- when 'money_back' -%}
-                <div class="grid grid-cols-[64px_auto] items-center gap-3">
-                  <img src="{{ block.settings.image | img_url: '64x64' }}" height="64" width="64" alt="{{ block.settings.label }}" class="w-full h-auto" />
+                <div class="flex flex-col items-center gap-3 text-center bg-[#f0f2ec] p-6 rounded">
+                  <img src="{{ block.settings.image | img_url: '64x64' }}" height="64" width="64" alt="{{ block.settings.label }}" class="size-16" />
+                  <h3 class="text-lg font-semibold tracking-normal m-0">{{ block.settings.title }}</h3>
                   <div class="m-0 leading-snug tracking-normal [&>p]:m-0 text-gray-950">
                     {{ block.settings.text }}
                   </div>
@@ -134,7 +135,7 @@
                   </h3>
                 </div>
               {%- when 'videos' -%}
-                <div class="grid grid-cols-3 gap-3 pt-6 border-0 border-t border-gray-200 border-solid cta_videos">
+                <div class="grid grid-cols-3 gap-3 pt-6 cta_videos">
                   {% for i in (1..3) %}
                     {% assign video_setting = 'video' | append: i %}
                     {% assign video_poster_setting = 'video_poster_' | append: i %}
@@ -275,11 +276,13 @@
                     <summary>
                       <div class="summary__title">
                         {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title inline-richtext font-bold">
+                        <h2 class="h4 accordion__title inline-richtext font-bold tracking-normal text-lg">
                           {{ block.settings.heading | default: block.settings.page.title | escape }}
                         </h2>
                       </div>
-                      {{- 'icon-caret.svg' | inline_asset_content -}}
+                      <div class="svg-wrapper bg-black text-white !size-6 p-1 rounded-full !mr-0 flex items-center justify-center">
+                        {{- 'icon-plus.svg' | inline_asset_content -}}
+                      </div>
                     </summary>
                     <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                       {{ block.settings.content }}
@@ -836,6 +839,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "Money Back Guarantee Badge"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Money Back Guarantee Title",
+          "default": "Smell Before You Commit"
         },
         {
           "type": "richtext",

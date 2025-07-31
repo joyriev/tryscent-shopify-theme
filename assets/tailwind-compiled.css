@@ -287,6 +287,14 @@
     margin-top: 24px !important
 }
 
+.mr-0 {
+    margin-right: 0px
+}
+
+.\!mr-0 {
+    margin-right: 0px !important
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -363,6 +371,21 @@
     height: 44px
 }
 
+.size-16 {
+    width: 64px;
+    height: 64px
+}
+
+.\!size-10 {
+    width: 40px !important;
+    height: 40px !important
+}
+
+.\!size-6 {
+    width: 24px !important;
+    height: 24px !important
+}
+
 .\!h-8 {
     height: 32px !important
 }
@@ -433,6 +456,10 @@
 
 .\!w-5 {
     width: 20px !important
+}
+
+.w-16 {
+    width: 64px
 }
 
 .min-w-\[92px\] {
@@ -583,6 +610,10 @@
 
 .whitespace-nowrap {
     white-space: nowrap
+}
+
+.text-wrap {
+    text-wrap: wrap
 }
 
 .text-nowrap {
@@ -846,6 +877,10 @@
 
 .p-2 {
     padding: 8px
+}
+
+.p-6 {
+    padding: 24px
 }
 
 .\!px-3 {

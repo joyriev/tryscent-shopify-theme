@@ -42,8 +42,8 @@
   width: calc(var(--font-heading-scale) * 2rem);
 }
 
-.accordion details[open] > summary .icon-caret {
-  transform: rotate(180deg);
+.accordion details[open] > summary > .svg-wrapper {
+  transform: rotate(135deg);
 }
 
 .accordion__content {
