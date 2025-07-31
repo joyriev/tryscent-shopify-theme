@@ -299,7 +299,7 @@
                     | item_count_for_variant: product.selected_or_first_available_variant.id
                   -%}
                   {% # theme-check-enable %}
-                  <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                  <label class="quantity__label form__label visibility-hidden h-0 overflow-hidden m-0" for="Quantity-{{ section.id }}">
                     {{ 'products.product.quantity.label' | t }}
                     <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}">
                       {%- render 'loading-spinner' -%}
@@ -311,17 +311,17 @@
                     </span>
                   </label>
                   <div class="price-per-item__container">
-                    <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                      <button class="quantity__button" name="minus" type="button">
+                    <quantity-input class="bg-white p-1.5 rounded-full flex shadow" data-url="{{ product.url }}" data-section="{{ section.id }}">
+                      <button class="quantity__button !bg-black size-10 rounded-full" name="minus" type="button">
                         <span class="visually-hidden">
                           {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                         </span>
-                        <span class="svg-wrapper">
+                        <span class="svg-wrapper text-white !w-5">
                           {{- 'icon-minus.svg' | inline_asset_content -}}
                         </span>
                       </button>
                       <input
-                        class="quantity__input"
+                        class="quantity__input focus:outline-none focus-visible:outline-none focus:shadow-none shadow-none focus:bg-transparent text-lg font-semibold text-black"
                         type="number"
                         name="quantity"
                         id="Quantity-{{ section.id }}"
@@ -336,11 +336,11 @@
                         value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                         form="{{ product_form_id }}"
                       >
-                      <button class="quantity__button" name="plus" type="button">
+                      <button class="quantity__button !bg-black size-10 rounded-full" name="plus" type="button">
                         <span class="visually-hidden">
                           {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                         </span>
-                        <span class="svg-wrapper">
+                        <span class="svg-wrapper text-white !w-5">
                           {{- 'icon-plus.svg' | inline_asset_content -}}
                         </span>
                       </button>
