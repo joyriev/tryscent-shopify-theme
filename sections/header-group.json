@@ -11,18 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "offer_announcement_nfkc8A": {
-      "type": "offer-announcement",
-      "disabled": true,
-      "name": "Offer Announcement",
-      "settings": {
-        "background_color": "#c8202f",
-        "prepend_text": "TRYSCENT - 60 DAY RISK-FREE GUARANTEE - SHOP NOW →",
-        "link_text": "",
-        "append_text": "",
-        "link": "shopify://products/buy-2-get-1-free"
-      }
-    },
     "marquee_labels_CjAgNU": {
       "type": "marquee-labels",
       "blocks": {
@@ -74,23 +62,16 @@
       "name": "Marquee Labels",
       "settings": {}
     },
-    "header": {
-      "type": "header",
+    "offer_announcement_nfkc8A": {
+      "type": "offer-announcement",
+      "disabled": true,
+      "name": "Offer Announcement",
       "settings": {
-        "logo_position": "top-left",
-        "mobile_logo_position": "center",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "scheme-4",
-        "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "margin_bottom": 0,
-        "padding_top": 8,
-        "padding_bottom": 0
+        "background_color": "#c8202f",
+        "prepend_text": "TRYSCENT - 60 DAY RISK-FREE GUARANTEE - SHOP NOW →",
+        "link_text": "",
+        "append_text": "",
+        "link": "shopify://products/buy-2-get-1-free"
       }
     },
     "announcement_bar_krbQAj": {
@@ -116,6 +97,25 @@
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "top-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-4",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 8,
+        "padding_bottom": 0
       }
     }
   },

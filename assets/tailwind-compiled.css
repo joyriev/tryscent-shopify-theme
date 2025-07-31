@@ -387,6 +387,10 @@
     height: 100%
 }
 
+.h-0 {
+    height: 0px
+}
+
 .\!w-10 {
     width: 40px !important
 }
@@ -825,6 +829,22 @@
     padding: 2px
 }
 
+.p-1 {
+    padding: 4px
+}
+
+.p-1\.5 {
+    padding: 6px
+}
+
+.p-2 {
+    padding: 8px
+}
+
+.p-6 {
+    padding: 24px
+}
+
 .\!px-3 {
     padding-left: 12px !important;
     padding-right: 12px !important
@@ -1052,6 +1072,10 @@
     line-height: 1.375
 }
 
+.leading-\[1\.2\] {
+    line-height: 1.2
+}
+
 .\!tracking-normal {
     letter-spacing: 0em !important
 }
@@ -1197,6 +1221,12 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
+.shadow-none {
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
 .outline {
     outline-style: solid
 }
@@ -1322,6 +1352,26 @@
 
 .hover\:opacity-75:hover {
     opacity: 0.75
+}
+
+.focus\:bg-transparent:focus {
+    background-color: transparent
+}
+
+.focus\:shadow-none:focus {
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px
+}
+
+.focus-visible\:outline-none:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px
 }
 
 @media (min-width: 640px) {

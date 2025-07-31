@@ -1,6 +1,6 @@
 <product-info
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} overflow-hidden !pt-0 md:!pt-9"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
   data-update-url="true"
@@ -76,7 +76,7 @@
   <div class="page-width">
     <div style="display: flex;" class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper pb-6">
-        <div class="mb-6 bg-[#f0f2ec] p-4 rounded pb-6">
+        <div class="mb-6 bg-[#f0f2ec] p-4 rounded pb-6 -ml-[15px] -mr-[15px] md:ml-0 md:mr-0">
           <h3 class="text-center mt-0">Add 2 more, Get 1 30ml Scent <strong>FREE!</strong></h3>
           <div class="relative bg-white shadow-lg h-3">
             <div class="size-10 shadow-lg flex items-center justify-center bg-white rounded-full absolute -left-1 -top-3.5">
@@ -110,15 +110,16 @@
               {%- when 'selling_points' -%}
                 <ul class="list-none p-0">
                   {% for item in product.metafields.custom.selling_points.value %}
-                    <li class="flex gap-2 items-center text-gray-950 mb-2">
+                    <li class="flex gap-2 items-center text-gray-950 mb-4 leading-[1.2]">
                       <img src="{{ 'tryscent-bottle.svg' | asset_url }}" alt="" height="24" width="24">
                       {{ item }}
                     </li>
                   {% endfor %}
                 </ul>
               {%- when 'money_back' -%}
-                <div class="grid grid-cols-[64px_auto] items-center gap-3">
-                  <img src="{{ block.settings.image | img_url: '64x64' }}" height="64" width="64" alt="{{ block.settings.label }}" class="w-full h-auto" />
+                <div class="flex flex-col items-center gap-3 text-center bg-[#f0f2ec] p-6 rounded">
+                  <img src="{{ block.settings.image | img_url: '64x64' }}" height="64" width="64" alt="{{ block.settings.label }}" class="size-16" />
+                  <h3 class="text-lg font-semibold tracking-normal m-0">{{ block.settings.title }}</h3>
                   <div class="m-0 leading-snug tracking-normal [&>p]:m-0 text-gray-950">
                     {{ block.settings.text }}
                   </div>
@@ -134,7 +135,7 @@
                   </h3>
                 </div>
               {%- when 'videos' -%}
-                <div class="grid grid-cols-3 gap-3 pt-6 border-0 border-t border-gray-200 border-solid cta_videos">
+                <div class="grid grid-cols-3 gap-3 pt-6 cta_videos">
                   {% for i in (1..3) %}
                     {% assign video_setting = 'video' | append: i %}
                     {% assign video_poster_setting = 'video_poster_' | append: i %}
@@ -152,7 +153,7 @@
                 </div>
               {%- when 'text' -%}
                 <p
-                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  class="product__text inline-richtext !my-6 text-center{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
@@ -275,11 +276,13 @@
                     <summary>
                       <div class="summary__title">
                         {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title inline-richtext font-bold">
+                        <h2 class="h4 accordion__title inline-richtext font-bold tracking-normal text-lg">
                           {{ block.settings.heading | default: block.settings.page.title | escape }}
                         </h2>
                       </div>
-                      {{- 'icon-caret.svg' | inline_asset_content -}}
+                      <div class="svg-wrapper bg-black text-white !size-6 p-1 rounded-full !mr-0 flex items-center justify-center">
+                        {{- 'icon-plus.svg' | inline_asset_content -}}
+                      </div>
                     </summary>
                     <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                       {{ block.settings.content }}
@@ -299,7 +302,7 @@
                     | item_count_for_variant: product.selected_or_first_available_variant.id
                   -%}
                   {% # theme-check-enable %}
-                  <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                  <label class="quantity__label form__label visibility-hidden h-0 overflow-hidden m-0" for="Quantity-{{ section.id }}">
                     {{ 'products.product.quantity.label' | t }}
                     <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}">
                       {%- render 'loading-spinner' -%}
@@ -311,17 +314,17 @@
                     </span>
                   </label>
                   <div class="price-per-item__container">
-                    <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                      <button class="quantity__button" name="minus" type="button">
+                    <quantity-input class="bg-white p-1.5 rounded-full flex shadow" data-url="{{ product.url }}" data-section="{{ section.id }}">
+                      <button class="quantity__button !bg-black size-10 rounded-full" name="minus" type="button">
                         <span class="visually-hidden">
                           {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                         </span>
-                        <span class="svg-wrapper">
+                        <span class="svg-wrapper text-white !w-5">
                           {{- 'icon-minus.svg' | inline_asset_content -}}
                         </span>
                       </button>
                       <input
-                        class="quantity__input"
+                        class="quantity__input focus:outline-none focus-visible:outline-none focus:shadow-none shadow-none focus:bg-transparent text-lg font-semibold text-black"
                         type="number"
                         name="quantity"
                         id="Quantity-{{ section.id }}"
@@ -336,11 +339,11 @@
                         value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                         form="{{ product_form_id }}"
                       >
-                      <button class="quantity__button" name="plus" type="button">
+                      <button class="quantity__button !bg-black size-10 rounded-full" name="plus" type="button">
                         <span class="visually-hidden">
                           {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                         </span>
-                        <span class="svg-wrapper">
+                        <span class="svg-wrapper text-white !w-5">
                           {{- 'icon-plus.svg' | inline_asset_content -}}
                         </span>
                       </button>
@@ -836,6 +839,12 @@
           "type": "image_picker",
           "id": "image",
           "label": "Money Back Guarantee Badge"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Money Back Guarantee Title",
+          "default": "Smell Before You Commit"
         },
         {
           "type": "richtext",
