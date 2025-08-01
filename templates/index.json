@@ -299,30 +299,46 @@
         "offer_sub_description": "3 incredible scents that last all day and night.",
         "offer_button_text": "BUY 2 GET 1 FREE - ENDS SOON!",
         "offer_button_link": "",
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
-    "explore_section_fTQFTC": {
-      "type": "explore-section",
-      "name": "Explore Section",
+    "shop_by_fHtnnB": {
+      "type": "shop-by",
+      "blocks": {
+        "collection_t6NHM7": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/explore.png",
+            "heading": "Scents For Women",
+            "subheading": "100+ scents to choose from",
+            "button_text": "Explore",
+            "button_link": "shopify://collections/woman",
+            "collection": "woman"
+          }
+        },
+        "collection_zqtLKY": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/scent-for-men-explore-img.png",
+            "heading": "Scents For Men",
+            "subheading": "100+ scents to choose from",
+            "button_text": "Explore",
+            "button_link": "shopify://collections/man",
+            "collection": "man"
+          }
+        }
+      },
+      "block_order": [
+        "collection_t6NHM7",
+        "collection_zqtLKY"
+      ],
+      "name": "Shop By",
       "settings": {
-        "button_text": "Explore",
-        "button_link": "shopify://collections/all",
-        "explore_image": "shopify://shop_images/explore.png",
-        "explore_heading": "Scents For Women",
-        "explore_subheading": "100+ scents to choose from"
-      }
-    },
-    "explore_section_BdwreT": {
-      "type": "explore-section",
-      "name": "Explore Section",
-      "settings": {
-        "button_text": "Explore",
-        "button_link": "shopify://collections/all",
-        "explore_image": "shopify://shop_images/scent-for-men-explore-img.png",
-        "explore_heading": "Scents For Men",
-        "explore_subheading": "100+ scents to choose from"
+        "background_color": "#fcfbf9",
+        "heading": "Shop By",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "special_offer_bogo_NqVrAK": {
@@ -672,8 +688,7 @@
     "homepage_products_tab_RwziwE",
     "feature_highlights_wfUacV",
     "special_offer_bogo_nMzyNp",
-    "explore_section_fTQFTC",
-    "explore_section_BdwreT",
+    "shop_by_fHtnnB",
     "special_offer_bogo_NqVrAK",
     "makes_different_list_YjiDH8",
     "here_from_them_wccxKG",
