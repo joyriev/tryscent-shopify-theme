@@ -17,13 +17,55 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <div class="flex">
+    <div class="grid md:grid-cols-2 gap-8">
       <div>
         <img
+          class="w-full h-full rounded-lg object-cover"
           src="{{ product.images[1].src | image_url: width: 400 }}"
           alt="{{ product.title }}"
           height="{{ product.images[1].height }}"
           width="{{ product.images[1].width }}">
+      </div>
+      <div>
+        <div class="bg-[#f0f2ec] px-4 py-6 rounded-lg !mb-4">
+          <h2 class="m-0 mb-3 text-2xl tracking-normal font-semibold text-center">Scent Breakdown</h2>
+          <div class="[&_p]:last:mb-0 [&_p]:leading-snug [&_p]:tracking-normal text-center">
+            {{ product.metafields.custom.scent_breakdown | metafield_tag }}
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg grid grid-cols-3 gap-4 !mb-3">
+          <div>
+            <h3 class="m-0 tracking-normal font-semibold">
+              Top Notes
+            </h3>
+          </div>
+          <div class="col-span-2">
+            <h4 class="m-0 pb-2 border-0 border-b border-solid border-gray-300">{{ product.metafields.custom.top_notes.value.heading }}</h4>
+            <p class="mb-0 mt-2 tracking-normal text-[#888888] leading-snug text-sm">{{ product.metafields.custom.top_notes.value.description | metafield_text }}</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg grid grid-cols-3 gap-4 !mb-3">
+          <div>
+            <h3 class="m-0 tracking-normal font-semibold">
+              Middle Notes
+            </h3>
+          </div>
+          <div class="col-span-2">
+            <h4 class="m-0 pb-2 border-0 border-b border-solid border-gray-300">{{ product.metafields.custom.middle_notes.value.heading }}</h4>
+            <p class="mb-0 mt-2 tracking-normal text-[#888888] leading-snug text-sm">{{ product.metafields.custom.middle_notes.value.description | metafield_text }}</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg grid grid-cols-3 gap-4 !mb-0">
+          <div>
+            <h3 class="m-0 tracking-normal font-semibold">
+              Base Notes
+            </h3>
+          </div>
+          <div class="col-span-2">
+            <h4 class="m-0 pb-2 border-0 border-b border-solid border-gray-300">{{ product.metafields.custom.base_notes.value.heading }}</h4>
+            <p class="mb-0 mt-2 tracking-normal text-[#888888] leading-snug text-sm">{{ product.metafields.custom.base_notes.value.description | metafield_text }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
