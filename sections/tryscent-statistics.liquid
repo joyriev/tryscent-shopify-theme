@@ -1,0 +1,79 @@
+<div class="bg-white py-12">
+  <div class="max-w-5xl mx-auto px-4">
+    <img src="{{ section.settings.statistic_image | image_url}}" alt="statistic_image" height="500" width="500">
+
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
+      {{ section.settings.heading }}
+    </h2>
+    
+    <div class="space-y-10">
+      {% for block in section.blocks %}
+        <div class="flex flex-col md:flex-row md:items-center md:gap-6 border-b border-gray-200 pb-6 last:border-none">
+          <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-solid border-green-700 text-green-700 text-3xl font-bold flex-shrink-0">
+            {{ block.settings.percentage }}%
+          </div>
+          <p class="text-lg uppercase font-semibold text-gray-800 mt-4 md:mt-0 flex-1">
+            {{ block.settings.text }}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.disclaimer != blank %}
+      <p class="text-sm text-gray-500 text-center mt-8">
+        {{ section.settings.disclaimer }}
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+    {
+  "name": "TryScent Statistics",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "statistic_image",
+      "label": "Statistic Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "10,000+ TryScent Bottles Shipped Worldwide"
+    },
+    {
+      "type": "text",
+      "id": "disclaimer",
+      "label": "Disclaimer Text",
+      "default": "*RESULTS BASED ON 1,000+ POST-PURCHASE SURVEYS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistic Item",
+      "settings": [
+        {
+          "type": "number",
+          "id": "percentage",
+          "label": "Percentage",
+          "default": 99
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Statistic Description",
+          "default": "Said TryScent smells just like the designer fragrance, without the high designer price."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TryScent Statistics",
+      "category": "Info"
+    }
+  ]
+}
+{% endschema %}
