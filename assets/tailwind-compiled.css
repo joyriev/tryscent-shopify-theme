@@ -341,6 +341,10 @@
     margin-top: -4px
 }
 
+.mb-12 {
+    margin-bottom: 48px
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -600,6 +604,10 @@
 
 .max-w-\[400px\] {
     max-width: 400px
+}
+
+.max-w-\[450px\] {
+    max-width: 450px
 }
 
 .flex-1 {
@@ -1057,6 +1065,10 @@
 
 .bg-bottom {
     background-position: bottom
+}
+
+.bg-center {
+    background-position: center
 }
 
 .object-cover {
@@ -1709,6 +1721,11 @@
     height: 85%
 }
 
+.before\:h-\[80\%\]::before {
+    content: var(--tw-content);
+    height: 80%
+}
+
 .before\:w-1::before {
     content: var(--tw-content);
     width: 4px
@@ -1954,12 +1971,22 @@
         font-size: 36px
     }
 
+    .md\:text-5xl {
+        font-size: 48px;
+        line-height: 1
+    }
+
     .md\:tracking-wider {
         letter-spacing: 0.05em
     }
 
     .md\:\[display\:block\] {
         display: block
+    }
+
+    .md\:before\:h-\[85\%\]::before {
+        content: var(--tw-content);
+        height: 85%
     }
 }
 
