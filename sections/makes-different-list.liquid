@@ -1,9 +1,9 @@
-<div class="page-width">
+<div class="page-width px-5 py-20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
       <div class="flex flex-col justify-center items-center text-center [&>*]:m-0 gap-6 md:px-10">
-        <h2 class=" w-3/4 text-4xl font-black tracking-tight leading-snug">{{ section.settings.makes_diferent_title }}</h2>
-        <img src={{section.settings.makes-different-image |  image_url }} alt='makes different' width={{section.settings.makes-different-image.width}} height={{section.settings.makes-different-image.height}}>
-        <a href="{{ section.settings.makes_diferent_btn_link }}" class="bg-[#137c44] text-white uppercase font-semibold no-underline px-6 py-3 text-lg rounded-full">{{ section.settings.makes_diferent_btn_text }}</a>
+        <h2 class="  text-4xl font-black tracking-tight leading-snug">{{ section.settings.makes_diferent_title }}</h2>
+        <img class="md:hidden" src={{section.settings.makes-different-image | image_url}} alt="makes different" width="450" height="450">
+        <a href="{{ section.settings.makes-different-btn-link }}" class="bg-[#137c44] text-white uppercase font-semibold no-underline px-6 py-3 text-lg rounded-full">{{ section.settings.makes-different-btn-text }}</a>
         <div class="text-center">
           <div class="flex items-center gap-2 -mb-2">
             <div class="flex items-center gap-2">
@@ -37,8 +37,8 @@
       </div>
       <div class="text-center">
         <img
-          class="max-w-full h-auto"
-          src="{{ section.settings.offer_image | image_url: width: 700 }}"
+          class="max-w-full h-auto [display:none] md:[display:block]"
+          src="{{ section.settings.makes-different-image | image_url: width: 700 }}"
           alt="special offer image"
           width="450"
           height="450">
@@ -53,7 +53,7 @@
       "settings": [
         {
           "type": "text",
-          "id": "makes-different-title",
+          "id": "makes_diferent_title",
           "label": "Title",
           "default": "What Makes TryScent Different? Everything That Matters."
         },
@@ -76,15 +76,15 @@
         {
         "type": "image_picker",
         "id": "offer_icon_one",
-        "label": "Offer Icon One"
+        "label": "Icon One"
       }, {
         "type": "image_picker",
         "id": "offer_icon_two",
-        "label": "Offer Icon Two"
+        "label": "Icon Two"
       }, {
         "type": "image_picker",
         "id": "offer_icon_three",
-        "label": "Offer Icon Three"
+        "label": "Icon Three"
       }
       ],
       "blocks": [
