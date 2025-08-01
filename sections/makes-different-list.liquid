@@ -1,0 +1,67 @@
+{% schema  %}
+{
+  "name": "Makes Different List",
+  "class": "makes-different-list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "makes-different-title",
+      "label": "Title",
+      "default": "Your Title Gose Here"
+    },
+    {
+      "type": "image_picker",
+      "id": "makes-different-image",
+      "label": "Section Image"
+    },
+    {
+        "type": "text",
+        "id": "makes-different-btn-text",
+        "label": "Button Text",
+        "default": "Click Here"
+    },{
+        "type": "url",
+        "id": "makes-different-btn-link",
+        "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "List Settings"
+    },
+    {
+      "type": "text",
+      "id": "list_title",
+      "label": "List Title",
+      "default": "What Makes Us Different"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "list_item",
+      "name": "List Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "List Item Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>List item description goes here</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Makes Different"
+  }]
+}
+{% endschema %}
