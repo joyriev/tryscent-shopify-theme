@@ -15,25 +15,28 @@
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
-  <div class="page-width">
-    <h2>{{ section.settings.heading }}</h2>
+  <div class="page-width flex flex-col gap-12">
+    <h2 class="my-0 text-3xl md:text-4xl font-black tracking-tight leading-snug text-center">{{ section.settings.heading }}</h2>
     {% for block in section.blocks %}
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="grid md:grid-cols-2 gap-12 w-full">
         <div>
-          <img
-            src="{{ block.settings.image | image_url }}"
-            alt="{{ block.settings.heading }}"
-            height="{{ block.settings.image.height }}"
-            width="{{ block.settings.image.width }}">
-          <div>
+          <div class="sticky top-5">
+            <img
+              class="w-full h-auto"
+              src="{{ block.settings.image | image_url }}"
+              alt="{{ block.settings.heading }}"
+              height="{{ block.settings.image.height }}"
+              width="{{ block.settings.image.width }}">
             <div>
-              <h3>{{ block.settings.heading }}</h3>
-              <p>{{ block.settings.subheading }}</p>
+              <div>
+                <h3 class="text-2xl font-black tracking-tight my-0">{{ block.settings.heading }}</h3>
+                <p>{{ block.settings.subheading }}</p>
+              </div>
+              <a class="no-underline text-white font-semibold px-6 md:px-10 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-normal md:tracking-wider text-lg transition-colors uppercase inline-block" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
             </div>
-            <a href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
           </div>
         </div>
-        <div>
+        <div class="grid grid-cols-2 gap-4">
           {% for product in block.settings.collection.products limit: 4 %}
             <div>
               {% render 'card-product'
