@@ -19,7 +19,7 @@
   <div class="page-width">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-3xl md:text-3xl font-black tracking-tight leading-snug text-center">{{ section.settings.makes_diferent_title }}</h2>
+        <h2 class="text-3xl mt-0 md:text-3xl font-black tracking-tight leading-snug text-center">{{ section.settings.makes_diferent_title }}</h2>
         <img
           class="lg:hidden w-full h-auto rounded-xl"
           src={{section.settings.makes-different-image | image_url}}
@@ -93,6 +93,12 @@
     "class": "makes-different-list",
     "settings": [
       {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#FFFFFF"
+      },
+      {
         "type": "text",
         "id": "makes_diferent_title",
         "label": "Title",
@@ -108,8 +114,7 @@
         "id": "makes-different-btn-text",
         "label": "Button Text",
         "default": "Click Here"
-      },
-      {
+      }, {
         "type": "url",
         "id": "makes-different-btn-link",
         "label": "Button Link"

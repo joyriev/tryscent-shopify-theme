@@ -17,7 +17,8 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <div class="grid grid-cols-3">
+    <h2 class="text-3xl md:text-3xl font-black tracking-tight leading-snug text-center mt-0">{{ section.settings.makes_diferent_title }}</h2>
+    <div class="grid grid-cols-3 section_videos">
       {% for block in section.blocks %}
         <div class="aspect-w-16 aspect-h-9 relative">
           <video
@@ -35,7 +36,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const ctaVideos = document.querySelectorAll(".cta_videos video");
+    const ctaVideos = document.querySelectorAll(".section_videos video");
 
     function pauseAllVideos() {
       ctaVideos.forEach(video => {
@@ -61,14 +62,22 @@
     "name": "People Are Loving",
     "settings": [
       {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#f0f2ec"
+      },
+      {
         "type": "text",
         "id": "makes_diferent_title",
         "label": "Title",
         "default": "People Are Loving"
-      }, {
+      },
+      {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
