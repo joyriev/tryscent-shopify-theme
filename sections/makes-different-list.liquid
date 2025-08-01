@@ -11,7 +11,7 @@
           "type": "text",
           "id": "makes-different-title",
           "label": "Title",
-          "default": "Your Title Goes Here"
+          "default": "What Makes TryScent Different? Everything That Matters."
         },
         {
           "type": "image_picker",
@@ -28,16 +28,6 @@
           "type": "url",
           "id": "makes-different-btn-link",
           "label": "Button Link"
-        },
-        {
-          "type": "header",
-          "content": "List Settings"
-        },
-        {
-          "type": "text",
-          "id": "list_title",
-          "label": "List Title",
-          "default": "What Makes Us Different"
         }
       ],
       "blocks": [
@@ -48,19 +38,12 @@
             {
               "type": "text",
               "id": "title",
-              "label": "Title",
-              "default": "List Item Title"
+              "label": "Title"
             },
             {
-              "type": "richtext",
+              "type": "text",
               "id": "description",
-              "label": "Description",
-              "default": "<p>List item description goes here</p>"
-            },
-            {
-              "type": "image_picker",
-              "id": "icon",
-              "label": "Icon (Optional)"
+              "label": "Description"
             }
           ]
         }
@@ -69,7 +52,6 @@
       "presets": [
         {
           "name": "Makes Different",
-          "category": "Custom",
           "blocks": [
             {
               "type": "list_item"
