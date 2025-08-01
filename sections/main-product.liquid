@@ -143,7 +143,7 @@
                       {% continue %}
                     {% endif %}
                     {% assign video = block.settings[video_setting] %}
-                    <div class="aspect-w-16 aspect-h-9 relative relative">
+                    <div class="aspect-w-16 aspect-h-9 relative">
                       <video width="100%" class="rounded-lg shadow cursor-pointer" poster="{{ block.settings[video_poster_setting] |  image_url }}">
                         <source src="{{ video.sources[1].url }}" type="video/mp4">
                         Your browser does not support the video tag.
