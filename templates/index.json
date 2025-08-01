@@ -305,6 +305,34 @@
     },
     "shop_by_ibzct7": {
       "type": "shop-by",
+      "blocks": {
+        "collection_WnyHpR": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/explore.png",
+            "heading": "Scents For Women",
+            "subheading": "100+ scents to choose from",
+            "button_text": "Explore",
+            "button_link": "shopify://collections/woman",
+            "collection": "woman"
+          }
+        },
+        "collection_r63PnR": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/scent-for-men-explore-img.png",
+            "heading": "Scents For Men",
+            "subheading": "100+ scents to choose from",
+            "button_text": "Explore",
+            "button_link": "shopify://collections/man",
+            "collection": "man"
+          }
+        }
+      },
+      "block_order": [
+        "collection_WnyHpR",
+        "collection_r63PnR"
+      ],
       "name": "Shop By",
       "settings": {
         "background_color": "#fcfbf9",
