@@ -21,10 +21,18 @@
     <div class="grid gap-0 w-[900px] max-w-[100%] grid-cols-3 mx-auto">
       <div class="flex items-end border-0 border-b-2 border-[#226139] border-solid px-4 py-4 text-sm font-black md:text-base"></div>
       <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b-2 border-[#226139] bg-black px-4 py-4 text-sm font-black text-white md:text-base">
-        <img src="{{ 'tryscent-logo.png' | asset_url }}" alt="">
+        <img
+          src="{{ 'tryscent-bottle.png' | asset_url }}"
+          height="375"
+          width="200"
+          alt="TryScent">
       </div>
       <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b-2 border-[#226139] bg-white px-4 py-4 text-center text-sm font-black md:text-base">
-        Other brands
+        <img
+          src="{{ 'other-bottle.png' | asset_url }}"
+          height="150"
+          width="150"
+          alt="Other Brands">
       </div>
       {% for block in section.blocks %}
         {% if block.type == "product" %}
@@ -33,7 +41,7 @@
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
             <span data-base-price="{{ block.settings.our_price }}">
-              ${{ block.settings.our_price }}</span>
+              ${{ block.settings.our_stack }}</span>
           </div>
           <div class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
             <span data-base-price="{{ block.settings.other_brands }}">
@@ -74,16 +82,12 @@
         "default": "How TryScent Stacks Up"
       },
       {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Logo"
-      },
-      {
         "type": "text",
         "id": "btn_text",
         "label": "Button Text",
         "default": "View All"
-      }, {
+      },
+      {
         "type": "url",
         "id": "btn_url",
         "label": "Button URL",
