@@ -329,8 +329,8 @@
     margin-bottom: 64px
 }
 
-.-mt-1 {
-    margin-top: -4px
+.mb-12 {
+    margin-bottom: 48px
 }
 
 .line-clamp-1 {
@@ -584,6 +584,14 @@
 
 .max-w-\[400px\] {
     max-width: 400px
+}
+
+.max-w-5xl {
+    max-width: 1024px
+}
+
+.max-w-\[450px\] {
+    max-width: 450px
 }
 
 .flex-1 {
@@ -1026,10 +1034,6 @@
 
 .bg-bottom {
     background-position: bottom
-}
-
-.bg-center {
-    background-position: center
 }
 
 .object-cover {
@@ -1895,11 +1899,6 @@
 
     .md\:\[display\:block\] {
         display: block
-    }
-
-    .md\:before\:h-\[85\%\]::before {
-        content: var(--tw-content);
-        height: 85%
     }
 }
 
