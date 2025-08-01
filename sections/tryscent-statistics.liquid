@@ -8,10 +8,10 @@
     <div class="space-y-10">
       {% for block in section.blocks %}
         <div class="flex flex-col md:flex-row md:items-center md:gap-6 border-b border-gray-200 pb-6 last:border-none">
-          <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-green-700 text-green-700 text-3xl font-bold flex-shrink-0">
+          <div class="flex items-center justify-center w-24 h-24 rounded-full border-4 border-solid border-green-700 text-green-700 text-3xl font-bold flex-shrink-0">
             {{ block.settings.percentage }}%
           </div>
-          <p class="text-lg font-semibold text-gray-800 mt-4 md:mt-0 flex-1">
+          <p class="text-lg uppercase font-semibold text-gray-800 mt-4 md:mt-0 flex-1">
             {{ block.settings.text }}
           </p>
         </div>
@@ -30,6 +30,11 @@
     {
   "name": "TryScent Statistics",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "statistic_image",
+      "label": "Statistic Image"
+    },
     {
       "type": "text",
       "id": "heading",
