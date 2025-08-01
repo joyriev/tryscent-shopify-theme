@@ -7,7 +7,7 @@
 
 <div
   id="{{ section.id }}"
-  class="section-{{ section.id }}-padding text-center bg-cover bg-bottom md:bg-center"
+  class="section-{{ section.id }}-padding text-center bg-cover bg-bottom md:bg-[center_75%]"
   style="background-image: url('{{ section.settings.background_image |  image_url }}')">
   <div class="page-width">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
@@ -19,36 +19,18 @@
         <p class="text-base md:text-base font-medium text-[#121212]">{{ section.settings.offer_description }}</p>
         <p class="text-base md:text-base font-medium text-[#121212]">{{ section.settings.offer_sub_description }}</p>
         <a href="{{ section.settings.offer_button_link }}" class="bg-[#137c44] text-white uppercase font-semibold no-underline px-6 py-3 text-lg rounded-full block w-full max-w-[400px]">{{ section.settings.offer_button_text }}</a>
-        <div class="text-center">
-          <div class="flex items-center gap-2 -mb-2">
-            <div class="flex items-center gap-2">
+        <ul class="flex justify-center flex-wrap gap-x-6 gap-y-3 list-unstyled">
+          {% for block in section.blocks %}
+            <li class="flex items-center gap-1.5">
               <img
-                src={{ section.settings.offer_icon_one | image_url }}
-                alt="sand watch icon"
-                width="20"
-                height="20">
-              <p class="uppercase font-semibold text-xs md:text-base">Lasts 12+ Hours</p>
-            </div>
-            <div class="flex items-center gap-2">
-              <img
-                src={{ section.settings.offer_icon_two | image_url }}
-                alt="sand watch icon"
-                width="20"
-                height="20">
-              <p class="uppercase font-semibold text-xs md:text-base">loved by 10,000+</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-2 justify-center">
-            <img
-              src={{ section.settings.offer_icon_three | image_url }}
-              alt="sand watch icon"
-              width="20"
-              height="20">
-            <p class="uppercase font-semibold text-xs md:text-base">60 day satisfaction guarantee
-            </p>
-          </div>
-
-        </div>
+                src="{{ block.settings.icon | image_url }}"
+                height="16"
+                width="auto"
+                alt="Icon">
+              <span class="leading-none">{{ block.settings.text }}</span>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
       <div class="text-center">
         <img
