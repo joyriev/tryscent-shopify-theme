@@ -25,6 +25,10 @@
     position: sticky
 }
 
+.inset-0 {
+    inset: 0px
+}
+
 .-left-1 {
     left: -4px
 }
@@ -520,6 +524,11 @@
 
 .flex-grow {
     flex-grow: 1
+}
+
+.-rotate-90 {
+    --tw-rotate: -90deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .transform {
@@ -1087,6 +1096,14 @@
     padding-top: 0px !important
 }
 
+.pb-12 {
+    padding-bottom: 48px
+}
+
+.pt-24 {
+    padding-top: 96px
+}
+
 .text-center {
     text-align: center
 }
@@ -1137,6 +1154,10 @@
 .text-xs {
     font-size: 12px;
     line-height: 16px
+}
+
+.text-\[15px\] {
+    font-size: 15px
 }
 
 .\!font-black {
