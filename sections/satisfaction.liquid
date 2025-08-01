@@ -1,24 +1,24 @@
-<div class="bg-black pt-24 pb-12">
-  <div class="mx-auto px-4 max-w-5xl">
-    <h2 class="text-white text-3xl md:text-4xl font-bold text-center mb-16">
+<div class=" pt-24 pb-12 bg-[url('{{ section.settings.satisfaction_bg_image | image_url }}')]">
+  <div class="mx-auto px-4 max-w-5xl flex flex-col items-center">
+    <p class="text-white text-lg uppercase bg-[#ffffff2e] px-6 py-2">How guarantee works?</p>
+    <h2 class="text-white text-3xl md:text-4xl font-bold m-0 mb-8">
       {{ section.settings.satisfaction_title }}
     </h2>
-    <div class="relative pl-12">
-      <div class="before:content-[''] before:absolute before:left-[1.25rem] before:top-0 before:h-full before:w-1 before:bg-yellow-500 relative">
+    <div class="relative">
+      <div class="before:content-[''] before:absolute before:left-[1.25rem] before:top-2 before:h-[85%] before:mt-3 before:w-[3px] before:bg-yellow-500 relative">
         <div class="flex flex-col gap-12 relative">
           {% for block in section.blocks %}
             <div class="relative flex items-start">
               <div class="absolute left-0 top-1.5 flex items-center justify-center w-10 h-10">
-                <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
-                  <div class="w-4 h-4 bg-white rounded-full"></div>
+                <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center transition-colors steps-ripple-animation">
                 </div>
               </div>
               <div class="pl-16">
-                <h3 class="text-2xl font-bold mb-2 text-yellow-500">
+                <h3 class="text-3xl font-bold mt-0 mb-2 text-yellow-500">
                   {{ block.settings.step_title }}
                 </h3>
-                <p class="text-base text-gray-300">
-                  {{ block.settings.step_description }}
+                <p class="text-lg text-gray-300">
+                  {{ block.settings.step_description }} 
                 </p>
               </div>
             </div>
@@ -33,6 +33,11 @@
 {
   "name": "TryScent Steps Timeline",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "satisfaction_bg_image",
+      "label": "Satisfaction Background Image"
+    },
     {
       "type": "text",
       "id": "satisfaction_title",

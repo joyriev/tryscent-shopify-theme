@@ -2943,6 +2943,15 @@ details-disclosure > details {
   box-shadow: 0px 0px 0px 0px #137c44;
   animation: ripple infinite 1s;
 }
+.steps-ripple-animation {
+  box-shadow: 0px 0px 0px 0px #ffc002;
+  animation: steps-ripple infinite 1s;
+}
+@keyframes steps-ripple {
+  100% {
+    box-shadow: 0px 0px 0px 10px #ffc00257;
+  }
+}
 
 @keyframes ripple {
   100% {

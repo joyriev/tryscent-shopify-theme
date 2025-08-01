@@ -478,6 +478,10 @@
     height: 32px
 }
 
+.h-14 {
+    height: 56px
+}
+
 .\!w-10 {
     width: 40px !important
 }
@@ -544,6 +548,10 @@
 
 .w-8 {
     width: 32px
+}
+
+.w-14 {
+    width: 56px
 }
 
 .min-w-\[92px\] {
@@ -1032,6 +1040,15 @@
 .bg-yellow-500 {
     --tw-bg-opacity: 1;
     background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#FFFFFF\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#ffffff2e\] {
+    background-color: #ffffff2e
 }
 
 .bg-cover {
@@ -1652,14 +1669,54 @@
     left: 20px
 }
 
+.before\:top-2::before {
+    content: var(--tw-content);
+    top: 8px
+}
+
+.before\:mt-0::before {
+    content: var(--tw-content);
+    margin-top: 0px
+}
+
+.before\:mt-3::before {
+    content: var(--tw-content);
+    margin-top: 12px
+}
+
 .before\:h-full::before {
     content: var(--tw-content);
     height: 100%
 }
 
+.before\:h-\[90\%\]::before {
+    content: var(--tw-content);
+    height: 90%
+}
+
+.before\:h-\[89\%\]::before {
+    content: var(--tw-content);
+    height: 89%
+}
+
+.before\:h-\[calc\(100\%-2rem\)\]::before {
+    content: var(--tw-content);
+    height: calc(100% - 32px)
+}
+
+.before\:h-\[85\%\]::before {
+    content: var(--tw-content);
+    height: 85%
+}
+
 .before\:w-1::before {
     content: var(--tw-content);
     width: 4px
+}
+
+.before\:w-\[3px\]::before {
+    content: var(--tw-content);
+    width: 3px
 }
 
 .before\:bg-yellow-500::before {
