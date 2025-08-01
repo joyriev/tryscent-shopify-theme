@@ -1,0 +1,142 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.id }}"
+  class="section-{{ section.id }}-padding"
+  style="background-color: {{ section.settings.background_color }}">
+  <div class="page-width">
+    <h2 class="text-center text-2xl md:text-4xl font-bold">{{ section.settings.title }}</h2>
+    <div class="grid gap-0 w-[900px] max-w-[100%] grid-cols-3 mx-auto">
+      <div class="flex items-end border-0 border-b-2 border-[#226139] border-solid px-4 py-4 text-sm font-black md:text-base"></div>
+      <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b-2 border-[#226139] bg-black px-4 py-4 text-sm font-black text-white md:text-base">
+        <img src="{{ 'tryscent-logo.png' | asset_url }}" alt="">
+      </div>
+      <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b-2 border-[#226139] bg-white px-4 py-4 text-center text-sm font-black md:text-base">
+        Other brands
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == "product" %}
+          <div class="flex items-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
+            {{ block.settings.name }}
+          </div>
+          <div class="flex items-center justify-center border-0 border-solid border-b border-gray-400 bg-black px-4 py-4 text-sm font-semibold text-white md:text-base ">
+            <span data-base-price="{{ block.settings.our_price }}">
+              ${{ block.settings.our_price }}</span>
+          </div>
+          <div class="flex items-center justify-center border-0 border-solid border-b border-black/5 bg-white px-4 py-4 text-sm font-semibold text-black md:text-base">
+            <span data-base-price="{{ block.settings.other_brands }}">
+              ${{ block.settings.other_brands }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+      <div class="!block"></div>
+      <div class="rounded-b-xl bg-black px-4 py-4 !block"></div>
+      <div class="!block"></div>
+    </div>
+    <div class="text-center mt-14">
+      <a
+        href="{{ section.settings.btn_url }}"
+        class="no-underline text-white tracking-normal font-semibold px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full text-lg transition-colors tabs-cta-ripple-animation"
+        aria-label="View All">
+        {{ section.settings.btn_text }}
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Stacks Up",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fcfbf9"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "How TryScent Stacks Up"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button Text",
+        "default": "View All"
+      }, {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button URL",
+        "default": "/collections/all"
+      }, {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Name",
+            "default": "Product Name"
+          }, {
+            "type": "text",
+            "id": "our_stack",
+            "label": "Our Stack"
+          }, {
+            "type": "text",
+            "id": "other_brands",
+            "label": "Other Brands"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Stacks Up"
+      }
+    ]
+  }
+{% endschema %}
