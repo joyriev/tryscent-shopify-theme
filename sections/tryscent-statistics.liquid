@@ -17,12 +17,12 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <div class="flex flex-col md:flex-row items-center gap-6">
+    <div class="grid md:grid-cols-2 items-center gap-8">
       {% if section.settings.statistic_image != blank %}
         <img
           src="{{ section.settings.statistic_image | image_url }}"
           alt="statistic_image"
-          class="mb-8 max-w-full h-auto"
+          class="w-full h-auto"
           height="500"
           width="500">
       {% endif %}
