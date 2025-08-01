@@ -453,13 +453,6 @@
     "makes_different_list_YjiDH8": {
       "type": "makes-different-list",
       "blocks": {
-        "list_item_bhN48G": {
-          "type": "list_item",
-          "settings": {
-            "title": "Free Returns Within 60 Days",
-            "description": "just in case it’s not love at first spritz"
-          }
-        },
         "list_item_LLAAfL": {
           "type": "list_item",
           "settings": {
@@ -487,14 +480,21 @@
             "title": "Mini Sizes to Test First",
             "description": "before you commit to full bottles"
           }
+        },
+        "list_item_bhN48G": {
+          "type": "list_item",
+          "settings": {
+            "title": "Free Returns Within 60 Days",
+            "description": "just in case it’s not love at first spritz"
+          }
         }
       },
       "block_order": [
-        "list_item_bhN48G",
         "list_item_LLAAfL",
         "list_item_Y8PNCx",
         "list_item_yxDVcQ",
-        "list_item_htAiEB"
+        "list_item_htAiEB",
+        "list_item_bhN48G"
       ],
       "name": "Makes Different",
       "settings": {
@@ -502,9 +502,8 @@
         "makes-different-image": "shopify://shop_images/makes-different-img.png",
         "makes-different-btn-text": "BUY 2 GET 1 FREE - ENDS SOON!",
         "makes-different-btn-link": "",
-        "offer_icon_one": "shopify://shop_images/sandwatch.svg",
-        "offer_icon_two": "shopify://shop_images/heart.svg",
-        "offer_icon_three": "shopify://shop_images/sheild-star.svg"
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "marquee_labels_pxhCDL": {
