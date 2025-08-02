@@ -9,6 +9,59 @@
  */
 {
   "sections": {
+    "insta_story_YabPdH": {
+      "type": "insta-story",
+      "blocks": {
+        "story_cTXRmn": {
+          "type": "story",
+          "settings": {
+            "title": "New Arrivals",
+            "image": "shopify://shop_images/new-arribals.png",
+            "link": "shopify://collections/all"
+          }
+        },
+        "story_MKLFbH": {
+          "type": "story",
+          "settings": {
+            "title": "Buy 3 Get 1 FREE!",
+            "image": "shopify://shop_images/tryscent-hero-image.jpg",
+            "link": "shopify://products/buy-3-get-2-free"
+          }
+        },
+        "story_NXdaRf": {
+          "type": "story",
+          "settings": {
+            "title": "Best Sellers",
+            "image": "shopify://shop_images/best-sellers.png",
+            "link": "shopify://collections/best-sellers"
+          }
+        },
+        "story_bBBpVa": {
+          "type": "story",
+          "settings": {
+            "title": "New in Scent!",
+            "image": "shopify://shop_images/new-scent.png",
+            "link": "shopify://collections/best-scents-best-prices"
+          }
+        },
+        "story_KPH7qz": {
+          "type": "story",
+          "settings": {
+            "title": "Seasonal Scents",
+            "image": "shopify://shop_images/seasonal-scents.png",
+            "link": "shopify://collections/dior®"
+          }
+        }
+      },
+      "block_order": [
+        "story_cTXRmn",
+        "story_MKLFbH",
+        "story_NXdaRf",
+        "story_bBBpVa",
+        "story_KPH7qz"
+      ],
+      "settings": {}
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -65,6 +118,7 @@
     }
   },
   "order": [
+    "insta_story_YabPdH",
     "banner",
     "product-grid",
     "rich_text_fnCgkL"
