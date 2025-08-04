@@ -3478,7 +3478,78 @@
         "add_billing_address_button": "請求先住所の追加",
         "add_billing_address_section_accessibility_label": "請求先住所の追加",
         "add_shipping_address_button": "配送先住所の追加",
-        "add_shipping_address_section_accessibility_label": "配送先住所の追加"
+        "add_shipping_address_section_accessibility_label": "配送先住所の追加",
+        "cancel_adding_billing_address_accessibility_label": "請求先住所の追加をキャンセルする",
+        "cancel_adding_shipping_address_accessibility_label": "配送先住所の追加をキャンセルする",
+        "save_new_billing_address_accessibility_label": "請求先住所の保存",
+        "save_new_shipping_address_accessibility_label": "配送先住所の保存"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "すべて隠す",
+          "hide_all_accessibility_label": "レビュー中のすべての注文を隠す",
+          "show_all_accessibility_label": "レビュー中のすべての注文を表示する",
+          "show_all_orders_in_review": "レビュー中のすべての注文を表示する",
+          "show_less_orders_in_review": "レビュー中の注文を少なく表示する",
+          "title": "申請中",
+          "pending_tab_accessibility_label": {
+            "pending_orders": {
+              "one": "保留中の注文が{{count}}あります。",
+              "other": "保留中の注文が{{count}}あります。"
+            },
+            "more_than_pagination_length": "{{count}}以上の未決注文があります。"
+          },
+          "pagination": {
+            "nav_accessibility_label": "レビュー中の注文ナビゲーションボタン"
+          }
+        },
+        "order_list_column_headers_location": "所在地",
+        "removed_company_contact_tooltip": "退社"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "注文{{draftOrderName}} {{date}}確認。",
+        "loading": "注文内容の読み込み",
+        "loading_finished_accessibility_message": "注文の詳細が読み込まれました",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "お支払いが{{count}}日超過しています。",
+              "other": "お支払いが{{count}}日超過しています。"
+            },
+            "banner_due": {
+              "one": "お支払いの期限は{{count}}日です。",
+              "other": "お支払いの期限は{{count}}日です。"
+            },
+            "banner_due_today": "お支払期限は本日中です。",
+            "title": "支払期限",
+            "title_with_date": "支払期限 {{date}}",
+            "title_due_on_receipt": "支払期限未到来",
+            "title_due_on_fulfillment": "支払期日",
+            "description_overdue": "支払いが遅れている。",
+            "description_partially_paid": "この注文は一部支払済みです。残金があります。",
+            "description_authorized": "お支払い方法は、支払期日に請求されます。",
+            "description_waiting_for_manual_payment": "この注文は支払いが保留されています。お支払いが確認され次第、残高が更新されます。",
+            "description_due_on_receipt": "支払期日が近づきましたら、請求書をお送りいたします。",
+            "description_due_on_receipt_partially_paid": "この注文は一部支払済みです。残金があります。支払期日が近づきましたら、請求書をお送りします。",
+            "description_due_on_fulfillment": "お支払い期限は、この注文のすべての商品が満たされた時点となります。",
+            "description_due_on_fulfillment_partially_paid": "この注文は一部支払済みです。残金があります。お支払いは、この注文のすべての商品が完了してからとなります。"
+          },
+          "draft": {
+            "description": "お支払いの詳細は、ご注文確定時に決定いたします。",
+            "title": "未払い",
+            "in_review": {
+              "description": "お支払いの詳細は、ご注文確定時に決定いたします。"
+            },
+            "submitted": {
+              "description": "この注文を確定するために支払いを送信します。",
+              "title": "確認のための支払い",
+              "deposit": {
+                "title": "支払期限",
+                "due_later": "残高は{{translatedName}}条件で、{{dueDate}}日に支払います。"
+              }
+            }
+          }
+        }
       }
     }
   }
