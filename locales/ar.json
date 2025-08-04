@@ -4309,12 +4309,12 @@
         "other": "{{ count }} النتائج"
       },
       "results_with_count_and_term": {
-        "one": "تم العثور على {{ count }} نتيجة لـ \"{{ terms }}\"",
-        "other": "تم العثور على {{ count }} نتائج لـ \"{{ terms }}\""
+        "one": "{{ count }} تم العثور على نتيجة لـ \"{{ terms }}”",
+        "other": "{{ count }} النتائج الموجودة لـ \"{{ terms }}”"
       },
-      "suggestions": "اقتراحات",
+      "suggestions": "الاقتراحات",
       "title": "نتائج البحث",
-      "search_for": "ابحث عن \"{{ terms }}\"",
+      "search_for": "ابحث عن \"{{ terms }}”",
       "pages": "الصفحات"
     },
     "cart": {
@@ -4322,12 +4322,12 @@
     },
     "contact": {
       "form": {
-        "name": "اسم",
+        "name": "الاسم",
         "title": "نموذج الاتصال",
         "email": "البريد الإلكتروني",
         "phone": "رقم الهاتف",
-        "comment": "تعليق",
-        "post_success": "شكراً لتواصلك معنا. سنرد عليك في أقرب وقت ممكن.",
+        "comment": "كيفية",
+        "post_success": "شكراً لتواصلك معنا. سنعاود الاتصال بك في أقرب وقت ممكن.",
         "send": "إرسال",
         "error_heading": "يرجى تعديل ما يلي:"
       }
@@ -4340,8 +4340,8 @@
     "country_label": "البلد/المنطقة",
     "language_label": "اللغة",
     "update_language": "تحديث اللغة",
-    "country_results_count": "تم العثور على {{ count }} دولة/منطقة",
-    "popular_countries_regions": "الدول/المناطق الشعبية",
+    "country_results_count": "{{ count }} البلدان/المناطق التي تم العثور عليها",
+    "popular_countries_regions": "البلدان/المناطق المشهورة",
     "search": "بحث",
     "update_country": "تحديث البلد/المنطقة"
   },
@@ -4364,21 +4364,21 @@
     "addresses": {
       "title": "العناوين",
       "default": "افتراضي",
-      "add_new": "أضف عنوانًا جديدًا",
-      "edit_address": "تعديل العنوان",
+      "add_new": "إضافة عنوان جديد",
+      "edit_address": "تحرير العنوان",
       "first_name": "الاسم الأول",
-      "last_name": "الاسم الأخير",
-      "company": "شركة",
+      "last_name": "اسم العائلة",
+      "company": "الشركة",
       "address1": "العنوان 1",
       "address2": "العنوان 2",
-      "city": "مدينة",
+      "city": "المدينة",
       "country": "البلد/المنطقة",
-      "province": "المحافظة",
-      "zip": "الرمز البريدي",
-      "phone": "هاتف",
-      "set_default": "تعيين كعنوان افتراضي",
+      "province": "المقاطعات",
+      "zip": "الرمز البريدي/الرمز البريدي",
+      "phone": "الهاتف",
+      "set_default": "التعيين كعنوان افتراضي",
       "update": "تحديث العنوان",
-      "add": "أضف عنوان",
+      "add": "إضافة عنوان",
       "cancel": "إلغاء",
       "delete": "حذف",
       "edit": "تحرير",

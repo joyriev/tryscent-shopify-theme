@@ -2605,7 +2605,68 @@
         },
         "filter": {
           "clear_section": "Abschnitt löschen",
-          "clear_all": "Alle löschen"
+          "clear_all": "Alle löschen",
+          "apply": "Bewerbung",
+          "date": {
+            "start_date": "Datum des Beginns",
+            "end_date": "Datum des Endes",
+            "title": "Datum der Bestellung",
+            "last_7_days": "Letzte 7 Tage",
+            "last_30_days": "Letzte 30 Tage",
+            "last_90_days": "Letzte 90 Tage",
+            "last_365_days": "Letzte 12 Monate"
+          }
+        },
+        "show_order_actions_accessibility_label": "Auftragsaktionen für Auftrag anzeigen {{name}}"
+      },
+      "order_status": {
+        "attempted_delivery_description": "Der Zustellungsversuch war erfolglos.",
+        "attempted_to_deliver_label": "Versucht zu liefern",
+        "confirmed_description": "Wir haben Ihre Bestellung erhalten.",
+        "on_its_way_description": "Diese Sendung ist auf dem Weg.",
+        "out_for_delivery_description": "Diese Sendung ist unterwegs zur Auslieferung.",
+        "preparing_for_shipping_label": "Vorbereitung für den Versand",
+        "preparing_for_shipping_description": "Diese Artikel werden gerade für den Versand vorbereitet.",
+        "ready_for_pickup_label": "Bereit zur Abholung",
+        "ready_for_pickup_description": "Diese Artikel sind zur Abholung bereit. Bitte bringen Sie Ihre Auftragsbestätigung mit, wenn Sie Ihre Bestellung abholen.",
+        "ready_for_pickup_location": "Ihre Bestellung ist abholbereit am Standort",
+        "picked_up_description": "Diese Gegenstände wurden bereits abgeholt.",
+        "canceled_description": "Ihre Bestellung wurde storniert am {{date}}.",
+        "canceled_label": "Abgesagt",
+        "canceled_title": "Ihre Bestellung wurde storniert",
+        "come_back": "Besuchen Sie diese Seite regelmäßig, um sich über den Status Ihrer Sendung zu informieren.",
+        "company_tracking_number": "{{company}} Tracking-Nummer:",
+        "confirmed_title": "Ihre Bestellung ist bestätigt",
+        "confirmed_description_pickup": "Sie erhalten eine E-Mail, wenn Ihre Bestellung zur Abholung bereitsteht.",
+        "confirmed_description_digital": "Sie erhalten eine E-Mail, wenn Ihre Bestellung fertig ist.",
+        "confirmed_description_gift_card_text": "Sie erhalten eine SMS, wenn Ihre Bestellung fertig ist.",
+        "delivered_description": "Diese Sendung wurde zugestellt.",
+        "complete_label": "Vollständig",
+        "delivered_label": "Geliefert",
+        "delivered_title": "Ihre Sendung ist zugestellt worden",
+        "delivered_description_digital": {
+          "one": "Dieser Artikel ist vollständig.",
+          "other": "Diese Punkte sind vollständig."
+        },
+        "delivered_description_gift_card": {
+          "one": "Der Geschenkgutschein wurde per E-Mail verschickt.",
+          "other": "Die Geschenkkarten wurden per E-Mail verschickt."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "Geschenkkarte wurde per SMS verschickt.",
+          "other": "Die Geschenkkarten wurden per SMS verschickt."
+        },
+        "gift_card_label": {
+          "one": "Geschenkkarte",
+          "other": "Geschenkkarten"
+        },
+        "gift_card_resend_button": {
+          "one": "Geschenkkarte erneut senden",
+          "other": "Geschenkkarten erneut versenden"
+        },
+        "gift_resend_success": {
+          "one": "Geschenkkarte zurückgeschickt",
+          "other": "Zurückgeschickte Geschenkkarten"
         }
       }
     }
