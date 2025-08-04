@@ -102,34 +102,34 @@
       "name": "Navn",
       "email": "E-mail",
       "message": "Sådan gør du",
-      "post": "Skriv kommentar",
-      "back_to_blog": "Tilbage til blog",
+      "post": "Skriv en kommentar",
+      "back_to_blog": "Tilbage til bloggen",
       "share": "Del denne artikel",
-      "success": "Din kommentar er blevet offentliggjort! Tak!",
-      "success_moderated": "Din kommentar er blevet offentliggjort. Den bliver offentliggjort om lidt, da vores blog er under opsyn."
+      "success": "Din kommentar blev sendt med succes! Tak skal du have!",
+      "success_moderated": "Din kommentar blev sendt med succes. Vi vil offentliggøre den om lidt, da vores blog er modereret."
     }
   },
   "onboarding": {
     "product_title": "Eksempel på produkttitel",
-    "collection_title": "Navnet på din kollektion"
+    "collection_title": "Din samlings navn"
   },
   "products": {
     "product": {
-      "add_to_cart": "Læg i indkøbskurv",
+      "add_to_cart": "Læg i kurv",
       "description": "Beskrivelse",
-      "on_sale": "Udsalg",
+      "on_sale": "Haller",
       "quantity": {
-        "label": "Antal",
-        "input_label": "Antal for {{ product }}",
-        "increase": "Øg antallet for {{ product }}",
-        "decrease": "Reducer antallet for {{ product }}",
-        "minimum_of": "Minimum på {{ quantity }}",
-        "maximum_of": "Maksimum på {{ quantity }}",
-        "multiples_of": "Intervaller på {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i indkøbskurven",
-        "note": "Se mængderegler",
+        "label": "Mængde",
+        "input_label": "Mængde for {{ product }}",
+        "increase": "Øg mængden for {{ product }}",
+        "decrease": "Reducer mængden for {{ product }}",
+        "minimum_of": "Minimum af {{ quantity }}",
+        "maximum_of": "Maksimum af {{ quantity }}",
+        "multiples_of": "Forøgelser af {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> på vagt",
+        "note": "Se regler for antal",
         "min_of": "Min. {{ quantity }}",
-        "max_of": "Maks. {{ quantity }}"
+        "max_of": "Max {{ quantity }}"
       },
       "price": {
         "from_price_html": "Fra {{ price }}",
@@ -145,43 +145,43 @@
       "xr_button": "Se den i dit område",
       "xr_button_label": "Se den i dine omgivelser – indlæser vare i et augmented reality-vindue",
       "pickup_availability": {
-        "view_store_info": "Se butiksoplysninger",
-        "check_other_stores": "Kontrollér tilgængelighed i andre butikker",
-        "pick_up_available": "Afhentning er tilgængelig",
-        "pick_up_available_at_html": "Afhentning er tilgængelig på <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Afhentning er ikke tilgængelig på <span class=\"color-foreground\">{{ location_name }}</span> i øjeblikket",
-        "unavailable": "Tilgængelighed for afhentning kunne ikke indlæses",
-        "refresh": "Opdater"
+        "view_store_info": "Se oplysninger om butikken",
+        "check_other_stores": "Tjek tilgængelighed i andre butikker",
+        "pick_up_available": "Afhentning tilgængelig",
+        "pick_up_available_at_html": "Afhentning mulig på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Afhentning er i øjeblikket ikke tilgængelig på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Kunne ikke indlæse tilgængelighed af afhentning",
+        "refresh": "Opdatering"
       },
       "media": {
-        "open_media": "Åbn mediet {{ index }} i modus",
-        "play_model": "Afspil 3D-fremviser",
+        "open_media": "Åbn medie {{ index }} i modal",
+        "play_model": "Play 3D Viewer",
         "play_video": "Afspil video",
-        "gallery_viewer": "Fremviser til Galleri",
-        "load_image": "Indlæs billedet {{ index }} i gallerivisning",
-        "load_model": "Indlæs 3D-modellen {{ index }} i gallerivisning",
-        "load_video": "Afspil videoen {{ index }} i gallerivisning",
-        "image_available": "Billedet {{ index }} er nu tilgængeligt i gallerivisning"
+        "gallery_viewer": "Visning af galleri",
+        "load_image": "Indlæs billede {{ index }} i gallerivisning",
+        "load_model": "Indlæs 3D-model {{ index }} i gallerivisning",
+        "load_video": "Afspil video {{ index }} i gallerivisning",
+        "image_available": "Billedet {{ index }} er nu tilgængeligt i gallerivisningen"
       },
       "view_full_details": "Se komplette oplysninger",
       "shipping_policy_html": "<a href=\"{{ link }}\">Levering</a> beregnes ved betaling.",
       "choose_options": "Vælg muligheder",
-      "choose_product_options": "Vælg muligheder for {{ product_name }}",
+      "choose_product_options": "Vælg indstillinger for {{ product_name }}",
       "value_unavailable": "{{ option_value }} - Ikke tilgængelig",
       "variant_sold_out_or_unavailable": "Varianten er udsolgt eller utilgængelig",
       "inventory_in_stock": "På lager",
       "inventory_in_stock_show_count": "{{ quantity }} på lager",
-      "inventory_low_stock": "Lav lagerbeholdning",
-      "inventory_low_stock_show_count": "Lav lagerbeholdning: {{ quantity }} tilbage",
+      "inventory_low_stock": "Lavt lager",
+      "inventory_low_stock_show_count": "Lavt lagerantal: {{ quantity }} venstre",
       "inventory_out_of_stock": "Ikke på lager",
       "inventory_out_of_stock_continue_selling": "På lager",
-      "sku": "SKU",
+      "sku": "VARENUMMER",
       "volume_pricing": {
-        "title": "Mængderabat",
-        "note": "Mængderabat tilgængelig",
+        "title": "Prisfastsættelse af volumen",
+        "note": "Mængdepriser er tilgængelige",
         "minimum": "Mere end {{ quantity }}",
         "price_range": "{{ minimum }} – {{ maximum }}",
-        "price_at_each_html": "til {{ price }} pr. stk."
+        "price_at_each_html": "til {{ price }}"
       },
       "product_variants": "Produktvarianter",
       "duties_included": "Inklusive told."
