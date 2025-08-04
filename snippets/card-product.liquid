@@ -221,7 +221,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
             <div class="pr-10">
               <div class="font-bold tracking-normal">
                 {% unless card_product.tags contains 'onsale' %}
-                  Starts at
+                  <span class="price_prepend">Starts at</span>
                 {% endunless %}
                 {{ card_product.price | money }}
                 {% if card_product.tags contains 'onsale' %}
