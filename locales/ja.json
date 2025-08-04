@@ -1291,7 +1291,60 @@
         "one_time_purchase_shipping": "1回限りの発送",
         "shipping_information_required_notice": "配送情報が必要です。 {{link}}.",
         "shipping_information_redirect_link": "ここに情報を入力してください",
-        "loading_progressive_rates": "より多くの料金を検索..."
+        "loading_progressive_rates": "より多くの料金を検索...",
+        "no_other_methods_available": "他の方法はない",
+        "duties_and_taxes_options": {
+          "ddu_title": "着払い",
+          "ddu_caption": "追加料金が発生する場合があります。",
+          "ddp_caption": "配達時の追加料金なし"
+        },
+        "shipping_method_combinations": {
+          "combination": "%{rest} そして %{current}"
+        },
+        "shipping_used_as_billing_notice": "この住所は、この注文の請求先住所としても使用されます。",
+        "address_update": "更新アドレス",
+        "shipping_address_title": "発送先",
+        "add_address": "別の住所を使用する",
+        "add_delivery_instructions": "配送に関する指示を追加する",
+        "address_more": "このアドレスのその他のアクション",
+        "address_edit": "アドレスの編集",
+        "address_delete": "アドレス削除",
+        "address_confirm": "このアドレスをアカウントから削除してもよろしいですか？",
+        "address_default": "デフォルト設定",
+        "address_form": {
+          "add_address": "アドレスの追加",
+          "save": "セーブ",
+          "generic_error": "アドレスの保存に問題がありました。もう一度やり直してください。",
+          "one_time_address_subtitle": "この注文にはワンタイムアドレスを使用する"
+        },
+        "different_shipping_method_summary": "利用可能な配送方法を表示するには、別の配送先住所を入力してください。",
+        "invalid_shipping_method_summary": "有効な配送先住所を入力すると、利用可能な配送方法が表示されます。",
+        "method_summary": {
+          "incomplete_address_entered": "利用可能な配送方法を表示するには、配送先住所を入力してください。",
+          "incomplete_address_selected": "利用可能な配送方法を表示するには、完全な配送先住所を選択してください。"
+        },
+        "local_pickup": {
+          "search_address": "住所検索",
+          "rollup_title": "店舗所在地"
+        },
+        "missing_shipping_address": "配送先住所が見つからない",
+        "split_shipping_merchandise_quantity_label_standard": "%{quantity} 項目",
+        "split_shipping_merchandise_quantity_label_additional": "%{quantity}",
+        "split_shipping_merchandise_shipment_number": "出荷%{number} %{total}",
+        "pre_order_ships_now": "今すぐ出荷",
+        "pre_order_ships_later": "後日発送",
+        "pre_order_ships_date": "船舶 %{date}",
+        "split_shipping_shipped_by_shop": "発送元 %{shop_name}",
+        "split_shipping_multiple_shipment_label": "複数回の出荷",
+        "split_shipping_shipment_notice": "ご注文の商品は %{quantity_shipments}",
+        "split_shipping_first_shipment_notice": "最初のご注文は、以下の日程で届きます。 %{quantity_shipments}",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} 船舶",
+        "split_shipping_multiple_shipment_notice": "ご注文の商品は複数回に分けて発送されます。",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "ご注文は%{quantity}出荷で到着します。",
+        "split_shipping_more_shipping_options": "その他の配送オプション",
+        "split_shipping_shipment_number": "出荷 %{number}",
+        "split_shipping_merchandise_quantity_label_inline_primary": "数量： %{quantity}",
+        "split_shipping_option_free": "送料無料"
       }
     }
   },
