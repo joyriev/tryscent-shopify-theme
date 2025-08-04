@@ -554,7 +554,22 @@
         "unavailable_addresses_only_countries": "Votre commande ne peut être expédiée qu'à {{countriesList}}. Ajoutez une nouvelle adresse pour continuer."
       },
       "order_summary": {
-        "for_add_on": "Pour : %{group_title}"
+        "for_add_on": "Pour : %{group_title}",
+        "group_title_label": "Partie de \"%{group_title}\"",
+        "number_items": {
+          "one": "%{count} article",
+          "other": "%{count} articles"
+        },
+        "view_all_items": {
+          "one": "Voir l'article %{count} ",
+          "other": "Voir tous les éléments %{count} "
+        },
+        "more_items_modal": {
+          "search_item": "Recherche",
+          "clear_search": "Recherche claire",
+          "empty_results": "Aucun résultat trouvé pour%{searchText}\". Vérifiez l'orthographe ou utilisez un autre mot ou une autre phrase.",
+          "number_items_shown": "%{shownNumber} de %{totalNumber} éléments"
+        }
       },
       "address_management": {
         "confirm_address_deletion": "Êtes-vous sûr de vouloir supprimer l'adresse {{address}}?"
@@ -777,6 +792,75 @@
         "pick_up_immediately": "Prêt à être enlevé maintenant",
         "pick_up_next_day": "Prêt à être enlevé le lendemain",
         "pickup_point_method_definition": "Envoi au point d'enlèvement"
+      },
+      "stock": {
+        "unfulfillable_product": {
+          "message": {
+            "other": "%{delivery_method} n'est plus disponible pour ces articles."
+          },
+          "default_message": {
+            "one": "Le mode de livraison choisi n'est plus disponible pour cet article.",
+            "other": "Le mode de livraison choisi n'est plus disponible pour ces articles."
+          }
+        },
+        "unshippable_product": {
+          "title": "Pas de livraison disponible",
+          "header": {
+            "one": "Pas de livraison disponible pour %{count} item",
+            "other": "Pas de livraison disponible pour %{count} articles"
+          },
+          "message": {
+            "one": "Cet article sera retiré de votre panier car il n'y a pas de méthode de livraison disponible pour votre adresse.",
+            "other": "Ces articles seront retirés de votre panier car aucun mode de livraison n'est disponible pour votre adresse."
+          },
+          "status_column_header": "Pas de livraison"
+        },
+        "price_update": {
+          "title": "Mise à jour des prix",
+          "description": "Les prix de ces articles ont changé et sont mis à jour dans votre panier."
+        },
+        "price_and_quantity_update": {
+          "description": "Les prix et les quantités disponibles pour ces articles ont changé et sont mis à jour dans votre panier."
+        },
+        "out_of_stock": {
+          "items_unavailable": "Certains articles ne sont plus disponibles et ont été supprimés de votre panier."
+        }
+      },
+      "contextual_availability": {
+        "products_not_available": {
+          "one": "Ce produit sera retiré de votre panier car il n'est pas disponible dans votre pays/région.",
+          "other": "Ces produits seront retirés de votre panier car ils ne sont pas disponibles dans votre pays/région."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Ce produit n'est pas disponible dans votre pays/région."
+        },
+        "unavailable_label": "Indisponible"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Ce produit n'est pas disponible pour une livraison à %{location_name}.",
+          "some_products_other": "Ces produits ne peuvent pas être livrés à %{location_name}.",
+          "all_products_one": "Le produit dans votre panier n'est pas disponible pour une livraison à %{location_name}."
+        },
+        "change_address_only": "Modifier l'adresse de livraison pour continuer.",
+        "change_address_or_remove": "Changement d'adresse de livraison ou %{remove_action}.",
+        "remove_items_action": {
+          "one": "supprimer l'article indisponible"
+        },
+        "empty_cart_action": "vider le panier et retourner au magasin"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Pas de livraison disponible pour %{count} item",
+            "other": "Pas de livraison disponible pour %{count} articles"
+          },
+          "message": {
+            "one": "Cet article sera retiré de votre panier car il n'y a pas de méthode de livraison disponible pour votre adresse.",
+            "other": "Ces articles seront retirés de votre panier car aucun mode de livraison n'est disponible pour votre adresse."
+          },
+          "label": "Pas de livraison"
+        }
       }
     },
     "sentence": {

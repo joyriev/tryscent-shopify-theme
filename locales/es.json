@@ -2240,11 +2240,54 @@
             "description": "{{walletName}} no estaba disponible. Utiliza otro método de pago o inténtalo más tarde.",
             "instructions": "Ha habido un problema con {{walletName}}. Vuelve a la tienda para intentarlo de nuevo o realiza la compra de otra forma."
           }
+        },
+        "scrim": {
+          "and_return_to_checkout": "y volver a Caja"
         }
+      },
+      "note": {
+        "length_exceeds_maximum": "Reduzca el tamaño de la nota a 5000 caracteres o menos."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "El precio de la tarjeta regalo debe ser superior a 0.",
+            "gift_card_price_must_not_exceed_limit": "El precio de la tarjeta regalo no debe superar %{gift_card_limit}.",
+            "subtotal_limit_reached": "Se ha alcanzado el valor máximo de las partidas.",
+            "signature_mismatch": "La firma de la mercancía no coincide con la línea {{stable_id}}."
+          }
+        }
+      },
+      "units": {
+        "fluid_ounce": "fl oz.",
+        "inch": "en",
+        "foot": "ft",
+        "square_foot": "pies²."
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "La dirección no es compatible con la afiliación actual."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Ir a la tienda en línea"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "Más información %{context}"
       }
     },
     "sentence": {
       "last_word_connector": "y "
+    },
+    "links": {
+      "powered_by_shopify": "Desarrollado por Shopify",
+      "learn_more": "Más información"
+    },
+    "attributes": {
+      "password_confirmation": "La confirmación de la contraseña",
+      "first_name": "Nombre de pila",
+      "last_name": "apellido",
+      "body": "cuerpo"
     }
   },
   "customer_accounts": {
