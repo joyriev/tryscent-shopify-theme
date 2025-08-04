@@ -2240,54 +2240,54 @@
             "description": "{{walletName}} no estaba disponible. Utiliza otro método de pago o inténtalo más tarde.",
             "instructions": "Ha habido un problema con {{walletName}}. Vuelve a la tienda para intentarlo de nuevo o realiza la compra de otra forma."
           }
-        },
-        "scrim": {
-          "and_return_to_checkout": "y volver a Caja"
         }
-      },
-      "note": {
-        "length_exceeds_maximum": "Reduzca el tamaño de la nota a 5000 caracteres o menos."
-      },
-      "one": {
-        "errors": {
-          "merchandise": {
-            "gift_card_price_must_be_greater_than_zero": "El precio de la tarjeta regalo debe ser superior a 0.",
-            "gift_card_price_must_not_exceed_limit": "El precio de la tarjeta regalo no debe superar %{gift_card_limit}.",
-            "subtotal_limit_reached": "Se ha alcanzado el valor máximo de las partidas.",
-            "signature_mismatch": "La firma de la mercancía no coincide con la línea {{stable_id}}."
-          }
-        }
-      },
-      "units": {
-        "fluid_ounce": "fl oz.",
-        "inch": "en",
-        "foot": "ft",
-        "square_foot": "pies²."
-      },
-      "memberships": {
-        "delivery_promise_unfulfillable": "La dirección no es compatible con la afiliación actual."
-      },
-      "editor": {
-        "navigation": {
-          "store_logo_accessibility_label": "Ir a la tienda en línea"
-        }
-      },
-      "tooltip": {
-        "accessibility_label_context": "Más información %{context}"
       }
     },
     "sentence": {
       "last_word_connector": "y "
     },
-    "links": {
-      "powered_by_shopify": "Desarrollado por Shopify",
-      "learn_more": "Más información"
+    "addresses": {
+      "province": "Provincias",
+      "state_and_territory": "Estado/territorio",
+      "emirate": "Emiratos",
+      "governorate": "Gobernación",
+      "confirm": "¿Está seguro de que desea eliminar esta dirección?"
     },
-    "attributes": {
-      "password_confirmation": "La confirmación de la contraseña",
-      "first_name": "Nombre de pila",
-      "last_name": "apellido",
-      "body": "cuerpo"
+    "collections": {
+      "sorting": {
+        "manual": "Destacados",
+        "best_selling": "Los más vendidos",
+        "price_ascending": "Precio, de menor a mayor",
+        "price_descending": "Precio, de mayor a menor",
+        "date_ascending": "Fecha",
+        "date_descending": "Fecha"
+      }
+    },
+    "errors": {
+      "blocked_address": "Esta ubicación no es compatible",
+      "credit_card_session_expired": "La autorización de la tarjeta de crédito ha caducado, vuelva a introducir los datos de pago. No se ha realizado ningún cargo en su tarjeta.",
+      "empty": "no puede estar vacío",
+      "invalid_email": "debe ser una dirección de correo electrónico válida",
+      "discount_disabled": "Este descuento ha sido desactivado",
+      "discount_limit_reached": "Este descuento ha alcanzado su límite de uso",
+      "discount_not_found": "No se ha podido encontrar un descuento válido que coincida con el código introducido.",
+      "customer_already_used_once_per_customer_discount_notice": "Este descuento ha alcanzado su límite de uso",
+      "gift_card_already_applied": "El código ya se ha aplicado a su compra",
+      "gift_card_code_invalid": "El código no es válido",
+      "gift_card_currency_mismatch": "Su tarjeta regalo está en %{gift_card_currency}. Ponte en contacto con nosotros para volver a emitirla en %{checkout_currency}.",
+      "gift_card_depleted": "No quedan fondos en esta tarjeta regalo",
+      "gift_card_disabled": "La tarjeta regalo está desactivada",
+      "gift_card_expired": "La tarjeta regalo ha caducado",
+      "invalid": "no es válido",
+      "bad_domain": "contiene un nombre de dominio no válido",
+      "too_short": "es demasiado corto (el mínimo es %{count} caracteres)",
+      "too_long": "es demasiado largo (el máximo es %{count} caracteres)",
+      "password_mismatch": "debe coincidir con la contraseña proporcionada",
+      "email_domain_invalid": "proveedor no es compatible",
+      "less_than_or_equal_to": "debe ser menor o igual que %{count}",
+      "full_name_required": "Introduzca un nombre y un apellido",
+      "invalid_for_card_type": "no es válido",
+      "invalid_type": "lo sentimos, no aceptamos tarjetas de este tipo"
     }
   },
   "customer_accounts": {
