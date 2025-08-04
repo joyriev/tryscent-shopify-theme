@@ -3300,7 +3300,50 @@
       },
       "store_credit": {
         "label": "Crédit magasin",
-        "accesibility_label": "Crédit magasin - {{formattedBalance}}"
+        "accesibility_label": "Crédit magasin - {{formattedBalance}}",
+        "expirable_amounts_button": "Voir les montants souhaités",
+        "expirable_amounts_label": "Quantités souhaitables",
+        "details_modal": {
+          "title": "Crédit d'achat souhaitable",
+          "balance_label": "Balance",
+          "expiration_date_label": "Expiration date",
+          "events": {
+            "payment_failure": "Défaut de paiement",
+            "tax_finalization": "Finalisation de la fiscalité"
+          },
+          "expirable_balance_info": "Une partie de votre solde expirera à une date ultérieure",
+          "expirable_amount_label": "Montant total souhaitable",
+          "expirable_amounts_info": "Les montants expirant plus tôt sont appliqués en premier lors du paiement.",
+          "expirable_amounts_button": "Voir",
+          "pagination": {
+            "load_more_label": "En savoir plus",
+            "load_more_accessibility_label": "Charger plus de quantités souhaitables"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "Détails du mode de paiement",
+        "card_info_title": "Informations sur la carte",
+        "preauthorized_payments": "Paiements préautorisés",
+        "close_payment_modal_accessibility_label": "Fermer la fenêtre modale sur les détails de la méthode de paiement",
+        "payment_method_not_found_error": "Impossible de trouver un mode de paiement",
+        "payment_details_loading": "Chargement des détails de la méthode de paiement",
+        "total_amount_of_subscription_line_items_left": "et {{total}} plus",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "Total des éléments {{totalItems}}, affichage des éléments {{totalItemsToDisplay}}.",
+        "next_payment_due": "Prochain paiement dû {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button": "Editer",
+        "edit_payment_method_button_accessibility_label": "Modifier le mode de paiement se terminant par {{lastDigits}}",
+        "loading_shop_pay": "Chargement Shop Pay",
+        "invalid_payment_method": "Méthode de paiement non valide",
+        "replace_payment_method": "Remplacer le mode de paiement",
+        "checkout_card_banner": "Ce mode de paiement ne peut être utilisé que pour les paiements préautorisés. Il n'apparaîtra pas à la caisse si vous êtes connecté à ce magasin.",
+        "default_checkbox": "Défini comme valeur par défaut",
+        "default_checkbox_accessibility_label": "Définir ce mode de paiement par défaut"
+      },
+      "edit_payment_method": {
+        "title": "Modifier le mode de paiement",
+        "save_payment_method_button": "Économiser",
+        "payment_method_updated_toast": "Mise à jour du mode de paiement"
       }
     }
   }
