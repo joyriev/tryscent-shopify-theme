@@ -2693,7 +2693,40 @@
       "shop_order_tracking": {
         "download_shop_to_track": "Download Shop for at spore pakken",
         "real_time_delivery_updates": "Butikken sender dig leveringsopdateringer i realtid, når din ordre er afsendt."
-      }
+      },
+      "edit_summary": {
+        "added_with_quantity": "Tilføjet {{quantity}}",
+        "removed_with_quantity": "Fjernet {{quantity}}",
+        "removed_with_quantities": "Fjernet {{delta}} af {{total}}.",
+        "return_line_item_removed_with_quantities": "Fjernet {{delta}} fra returnering"
+      },
+      "shop_pay": {
+        "order_completed_with": "Ordre gennemført med"
+      },
+      "taxes": "Skatter og afgifter",
+      "duties_and_taxes_included": "Beløbet er inklusive told og afgifter. Ingen ekstra gebyrer ved levering.",
+      "duties": "Pligter",
+      "ok_duties_tooltip": "Denne ordre sendes fra et andet land, så der er lagt afgifter til din samlede ordre.",
+      "error_duties_tooltip": "Denne ordre sendes fra et andet land, så der kan blive opkrævet told og afgifter ved levering.",
+      "zero_duties_tooltip": "Denne ordre sendes fra et andet land. Der opkræves ikke afgifter på ordrer af denne værdi.",
+      "title": "Bestil {{name}}",
+      "unit_price": "{{price}}/ea",
+      "pagination": {
+        "load_more": "Læs mere",
+        "load_more_accessibility_label": "Læg flere varer ind",
+        "loading_accessibility_label": "Indlæsning af varer"
+      },
+      "login_to_view_all_order_details": "Log ind for at se alle ordreoplysninger.",
+      "log_in": "Log in",
+      "fees": {
+        "restocking_fee": "Genopfyldningsgebyr",
+        "return_shipping_fee": "Returforsendelse"
+      },
+      "link_sent": "Link sendt",
+      "cash_rounding": "Kontant afrunding",
+      "adjusted_total": "Justeret total",
+      "due_on_date": "På grund af {{date}}",
+      "due_on_fulfillment": "Forfalder ved opfyldelse"
     },
     "navigation_and_structure": {
       "contact_email_subject": "Kontakt fra {{shopName}} onlinebutik",
@@ -2716,6 +2749,13 @@
       "company_location": "Virksomhedens placering",
       "search": "Søg efter",
       "skip_to_content": "Spring til indhold"
+    },
+    "addresses": {
+      "back_button_accessibility_label": "Tilbage til redigeringsadressen {{address}}",
+      "add_address_banner": "Tilføj adresser til brug ved checkout",
+      "no_addresses_banner": "Ingen adresser tilføjet",
+      "address_deleted_notification": "Adresse slettet",
+      "cancel_deletion_button_accessibility_label": "Annuller sletning {{address}}"
     }
   }
 }
