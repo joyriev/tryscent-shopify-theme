@@ -2515,7 +2515,64 @@
       }
     },
     "page_titles": {
-      "blog_or_article_with_error": "Erreur - %{title}"
+      "blog_or_article_with_error": "Erreur - %{title}",
+      "search": "Recherche",
+      "search_results": {
+        "one": "Recherche : %{count} résultats trouvés pour%{terms}\"",
+        "other": "Recherche : %{count} résultats trouvés pour%{terms}\""
+      },
+      "not_found": "404 Non trouvé"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} les réductions ont été appliquées"
+    },
+    "challenge": {
+      "error": "Votre réponse n'était pas correcte, veuillez réessayer."
+    },
+    "checkpoint": {
+      "message": "Résoudre le Captcha pour continuer",
+      "error": "Échec de la validation du Captcha"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Généralement prêt en 1 heure",
+        "two_hours": "Généralement prêt en 2 heures",
+        "four_hours": "Généralement prêt en 4 heures",
+        "twenty_four_hours": "Généralement prêt dans les 24 heures",
+        "two_to_four_days": "Généralement prêt en 2-4 jours",
+        "five_or_more_days": "Généralement prêt en 5+ jours",
+        "zero_to_two_hours": "Généralement prêt en 2 heures",
+        "two_to_four_hours": "Généralement prêt en 4 heures",
+        "immediately": "Prêt à être enlevé maintenant",
+        "next_day": "Prêt à être enlevé le lendemain"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Cet article est un achat récurrent ou différé. En continuant, j'accepte la %{cancellationPolicyLink} et je vous autorise à débiter mon mode de paiement aux prix, à la fréquence et aux dates indiqués sur cette page jusqu'à ce que ma commande soit exécutée ou que je l'annule, si cela est autorisé.",
+      "buyer_consent_cart": "Un ou plusieurs articles de votre panier sont des achats récurrents ou différés. En continuant, j'accepte la %{cancellationPolicyLink} et je vous autorise à débiter mon mode de paiement aux prix, à la fréquence et aux dates indiqués sur cette page jusqu'à ce que ma commande soit exécutée ou que je l'annule, si cela est autorisé.",
+      "cancellation_policy": "politique d'annulation"
+    }
+  },
+  "customer_accounts": {
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "one": "{{count}} il y a une minute",
+          "other": "{{count}} il y a quelques minutes"
+        },
+        "lessThanOneMinuteAgo": "A l'heure actuelle",
+        "today": "Aujourd'hui à {{time}}"
+      }
+    },
+    "enable_javascript": "Pour consulter votre compte, activez JavaScript dans les paramètres de votre navigateur ou connectez-vous avec un autre navigateur.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Cacher le menu du compte",
+        "show_accessibility_label": "Afficher le menu Compte",
+        "open_menu_accessibility_label": "Navigation pour l'ouverture d'un compte",
+        "loading_message": "Chargement Navigation du compte"
+      },
+      "action_menu_accessibility_label": "Plus d'actions"
     }
   }
 }

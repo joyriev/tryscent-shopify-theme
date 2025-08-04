@@ -532,7 +532,22 @@
         }
       },
       "order_summary": {
-        "for_add_on": "対象: %{group_title}"
+        "for_add_on": "賛成だ： %{group_title}",
+        "title": "オーダー概要",
+        "group_title_label": "一部 \"%{group_title}\"",
+        "number_items": {
+          "one": "%{count} 項目",
+          "other": "%{count} 項目"
+        },
+        "view_all_items": {
+          "one": "アイテム%{count}を見る",
+          "other": "すべての%{count}アイテムを表示"
+        },
+        "more_items_modal": {
+          "clear_search": "クリア検索",
+          "empty_results": "%{searchText}\"の結果は見つかりませんでした。スペルを確認するか、別の語句を使用してください。",
+          "number_items_shown": "%{totalNumber}項目の%{shownNumber}"
+        }
       },
       "general": {
         "errors": {
@@ -899,8 +914,80 @@
         "unfulfillable_product": {
           "title": "配送不可",
           "message": {
-            "one": "%{delivery_method} は、この商品の販売を終了しました。"
+            "one": "%{delivery_method} は、この商品の販売を終了しました。",
+            "other": "%{delivery_method} は、これらのアイテムでは使用できなくなった。"
+          },
+          "default_message": {
+            "one": "選択された配送方法は、この商品では利用できなくなりました。",
+            "other": "選択された配送方法は、これらの商品では利用できなくなりました。"
           }
+        },
+        "unshippable_product": {
+          "title": "配送不可",
+          "header": {
+            "one": "%{count}アイテムは配送できません。",
+            "other": "%{count}商品は配送できません。"
+          },
+          "message": {
+            "one": "ご指定の住所への配送方法がないため、この商品はカートから削除されます。",
+            "other": "これらの商品は、ご指定の住所への配送方法がないため、カートから削除されます。"
+          },
+          "status_column_header": "配達なし"
+        },
+        "price_update": {
+          "title": "価格更新",
+          "description": "これらの商品の価格が変更され、カート内の価格が更新されました。"
+        },
+        "price_and_quantity_update": {
+          "description": "これらの商品の価格と購入可能な数量が変更され、カート内で更新されています。"
+        },
+        "out_of_stock": {
+          "items_unavailable": "一部の商品は販売を終了し、カートから削除されました。"
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "入手不可能な製品",
+          "other": "入手不可能な製品"
+        },
+        "products_not_available": {
+          "one": "この商品は、お住まいの国/地域では購入できないため、カートから削除されます。",
+          "other": "これらの商品は、お住まいの国/地域では購入できないため、カートから削除されます。"
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "この製品は、お住まいの国/地域ではご利用いただけません。",
+          "other": "これらの製品は、お住まいの国/地域ではご利用いただけません。"
+        },
+        "unavailable_label": "使用不可"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "この商品は以下の国には配送できません。 %{location_name}.",
+          "some_products_other": "これらの商品は、以下の国への配送はできません。 %{location_name}.",
+          "all_products_one": "カート内の商品は、以下の国には配送できません。 %{location_name}.",
+          "all_products_other": "カート内の商品は、以下の国には配送できません。 %{location_name}."
+        },
+        "missing_country_fallback": "あなたの国",
+        "indeterminate_location_fallback": "現在地",
+        "change_address_only": "配送先住所を変更してください。",
+        "change_address_or_remove": "配送先住所の変更 %{remove_action}.",
+        "remove_items_action": {
+          "one": "利用できない項目を削除する",
+          "other": "利用できないアイテムを削除する"
+        },
+        "empty_cart_action": "カートを空にして店に戻る"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "%{count}アイテムは配送できません。",
+            "other": "%{count}商品は配送できません。"
+          },
+          "message": {
+            "one": "ご指定の住所への配送方法がないため、この商品はカートから削除されます。",
+            "other": "これらの商品は、ご指定の住所への配送方法がないため、カートから削除されます。"
+          },
+          "label": "配達なし"
         }
       }
     }
