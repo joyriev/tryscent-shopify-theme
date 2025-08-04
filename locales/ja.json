@@ -625,7 +625,60 @@
         "afterpay_label": "アフターペイ",
         "cashapppay_label": "キャッシュ・アプリ・ペイ",
         "blik_label": "錫",
-        "twint_label": "ツイント"
+        "twint_label": "ツイント",
+        "swish_label": "スウィッシュ",
+        "vipps_label": "ヴィップス",
+        "grabpay_label": "グラブペイ",
+        "usdc_label": "米ドルセンター",
+        "purchase_options_card_update_agreement_label_html": "お支払い方法を更新することで、当ストアの<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">キャンセルポリシーに従い</a>、定期購入または後払い購入の支払いを承認したことになります。",
+        "subscription_card_update_agreement_label": "支払い方法を変更すると、購読と今後の定期的な支払いが更新されます。",
+        "subscription_agreement_label": "カート内の1つ以上の商品は、後払いまたは定期購入です。お支払いを続けることで、お客様のお支払い方法は、終了またはキャンセルされるまで、このページに記載されている価格と回数で自動的に課金されることに同意したものとみなされます。すべてのキャンセルは %{cancelled}.",
+        "subscription_agreement_label_html": "私は購読に同意していることを理解しています。この購読は、終了または終了するまで、記載されている価格と頻度で更新されます。\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">キャンセル</a>.\n",
+        "purchase_options_agreement_label": "カート内の1つ以上の商品は、後払いまたは定期購入です。お支払いを継続することで、お客様のお支払い方法は、終了またはお客様がキャンセルされるまで、このページに記載されている価格と回数で自動的に課金されることに同意したものとみなされます。すべてのキャンセルは  %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "私は、カート内の1つまたは複数の商品が後払いまたは定期購入であることを理解しています。続行することにより、私は以下の事項に同意します。\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">キャンセルポリシー</a>\nそして、私の支払方法に対して、このページに記載されている価格、頻度、および日付で、私が支払うまで請求することを承認します。\n注文が履行されるか、または許可されている場合はキャンセルする。\n",
+        "purchase_options_agreement_label_wallets": "お支払いを継続された場合、このページに記載されている今後の料金およびキャンセルポリシーに同意されたものとみなします。",
+        "change_currency_section_description": "通貨オプションの選択",
+        "no_real_orders_dev_store": "この店では実際の注文や支払いは受け付けられない。",
+        "waiting_on_payment_methods": "利用可能な支払い方法を取得...",
+        "apple_pay_payment_error": "お支払いが完了できませんでした。再度お試しいただくか、別のお支払い方法をご利用ください。",
+        "taxes_not_included": "税別",
+        "no_taxes_banner_content": "この注文には税金はかかりません。お支払いが完了すると、税金は加算されません。",
+        "paypal": {
+          "connect": "PayPalアカウントに接続する"
+        },
+        "apple": {
+          "connect": "Apple Payアカウントに接続する",
+          "not_available": "このブラウザではApple Payをご利用いただけません。Apple Payアカウントに接続するには、AppleデバイスでSafariを使用する必要があります。"
+        },
+        "google": {
+          "connect": "クリックしてGoogle Payアカウントに接続する",
+          "error_authorizing": "支払承認エラー"
+        },
+        "account_connected": "口座がつながった。",
+        "mor_disclaimer_html": "下記をクリックし、注文を完了することで、お客様はGlobal-eから商品を購入することに同意したものとみなされます。\n本取引については、Global-e's<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Terms and Conditions</a>\nおよび<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">プライバシーポリシー</a>。グローバルeは国際的な\nフルフィルメント・サービス・プロバイダー %{shop_name}\n",
+        "pending_payment": {
+          "due_notice": "支払期限は%{amount_due} %{due_date}日です。",
+          "multibanco": {
+            "buyer_action_info": "お支払いは%{amount_due}なります。",
+            "instruction_html": "マルチバンコでのお支払い、または下記の詳細を使用してオンラインでお支払いください。ご質問やお支払いの詳細を更新するには %{contact_us}.",
+            "reference": "参考"
+          }
+        },
+        "update_payment_method": "支払方法の更新",
+        "order_covered_by_store_credit_notice": "ご注文はストアクレジットの対象となります。",
+        "order_covered_by_redeemables_notice": "ご注文はカバーされています。",
+        "store_credit": {
+          "apply_label": "ストア・クレジットを申請する",
+          "add_label": "ストアクレジットを追加する",
+          "manage_label": "店舗クレジットの管理",
+          "buying_gift_card": "ストア・クレジットを使ってギフト・カードを購入することはできない。",
+          "no_fixed_selling_plans": "ストア・クレジットを購入延期オプションで使用することはできない。"
+        },
+        "clear": "クリア",
+        "billing_must_match_shipping_notice": "お支払い方法の請求先住所は、配送先住所と一致している必要があります。",
+        "same_billing_address_checkbox_label": "配送先住所を請求先住所として使用する",
+        "location_billing_address_label": "請求先住所",
+        "location_shipping_address_label": "配送先住所"
       },
       "order_summary": {
         "for_add_on": "賛成だ： %{group_title}",
