@@ -545,6 +545,9 @@
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
+      },
+      "order_summary": {
+        "for_add_on": "Para: %{group_title}"
       }
     }
   },
@@ -565,6 +568,17 @@
         "title": "Verificar correo electrónico",
         "description": "Correo electrónico actualizado con éxito. Redirigiendo al inicio de sesión."
       }
+    },
+    "orders": {
+      "order_status": {
+        "expected_by": "Esperado para {{date}}",
+        "was_expected_by": "Se esperaba para {{date}}"
+      },
+      "group_title_label": "Parte de: {{groupTitle}}",
+      "group_title_label_with_parent": "Para: {{groupTitle}}"
+    },
+    "order_details": {
+      "group_title_label_with_parent": "Para: {{groupTitle}}"
     }
   }
 }
