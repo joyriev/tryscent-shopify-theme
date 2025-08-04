@@ -2174,6 +2174,45 @@
           "decrement_fulfilled_line_item": "Restituito %{delta} di %{total}",
           "decrement_return_line_item": "Rimosso %{delta} dal ritorno"
         }
+      },
+      "order": {
+        "financial_status": {
+          "unpaid": "Non pagato"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Realizzato",
+          "complete": "Completo",
+          "partial": "Parziale",
+          "unfulfilled": "Incompiuto",
+          "restocked": "Ripristinato"
+        },
+        "transaction_status": {
+          "success": "Il successo",
+          "failure": "Fallimento"
+        },
+        "cancel_reason": {
+          "customer": "Il cliente ha modificato/annullato l'ordine",
+          "staff": "Errore del personale"
+        },
+        "cash_on_delivery": "Contrassegno (COD)"
+      },
+      "cart": {
+        "only_n_items_available": "È possibile aggiungere al carrello solo %{count} %{name}.",
+        "too_many_items_in_cart": "Non è possibile aggiungere altri %{name} al carrello.",
+        "only_n_added_to_cart": "Solo %{quantity} di articoli sono stati aggiunti al carrello a causa della disponibilità.",
+        "maximum_available_quantity_reached": "La quantità massima di questo articolo è già presente nel carrello.",
+        "not_respect_step": "È possibile aggiungere questa voce solo con incrementi di %{step}.",
+        "empty_update": "non è possibile aggiornare il carrello vuoto",
+        "missing_parameters": "nessun parametro id o linea valido",
+        "generic_error": "Errore del carrello",
+        "invalid_input": "%{parameter} non è valido.",
+        "stock_problems_html": "Uno o più articoli non sono più disponibili. Abbiamo fornito un <a href='%{link}'>carrello aggiornato</a>.",
+        "changed": "Carrello cambiato",
+        "items_changed": "Uno o più elementi sono stati modificati.",
+        "product_sold_out": "Il prodotto%{name}\" è già esaurito.",
+        "variant_not_found": "Impossibile trovare la variante",
+        "variant_requires_selling_plan": "La variante può essere acquistata solo con un piano di vendita.",
+        "selling_plan_not_available_for_company_locations": "Per gli ordini B2B è disponibile solo l'acquisto una tantum."
       }
     }
   },

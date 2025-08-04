@@ -606,9 +606,67 @@
         "total_already_paid_label": "유료",
         "unit_price": {
           "per_item": {
-            "single": "%{price} 각"
+            "single": "%{price} 각",
+            "one": "품목당 %{price} %{count} 개당",
+            "other": "품목당 %{price} %{count} "
           }
-        }
+        },
+        "gift_card_ending": "기프트 카드는 다음과 같이 끝납니다. %{last_characters}",
+        "multiple_shipping_lines_label": "배송 합계",
+        "recurring_total_label": "반복 합계",
+        "recurring_total_tooltip": "배송비, 세금, 관세 또는 적용 가능한 할인은 포함되지 않습니다.",
+        "confirmation_number_label": "확인 번호%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> 는 기존 할인과 함께 사용할 수 없습니다.",
+        "percent_off_shipping": "%{percent}배송비 % 할인",
+        "amount_off_shipping": "%{amount} 배송비 할인",
+        "deferred_payment_info": {
+          "title": "납부 기한: %{amount_due} 납부 기한은 %{due_at}.",
+          "description_html": "주문에 대한 질문이 있으신가요? %{contact_us}.",
+          "paid_today": "오늘 결제한 총액",
+          "paid_today_next": "오늘 결제",
+          "due_on_fulfillment_title": "주문 처리 시 %{amount_due} 지불해야 합니다.",
+          "due_on_receipt_title": "영수증 수령 시 %{amount_due} 지불해야 합니다."
+        },
+        "deferred_balance_info": {
+          "title": "{{amount_due}} 잔액은 {{due_at}} 납부해야 합니다.",
+          "due_on_fulfillment_title": "{{amount_due}} 잔액은 주문 처리 시 마감됩니다."
+        },
+        "payment_terms_totals": {
+          "due_today": "오늘 마감되는 총액",
+          "due_today_next": "오늘 마감",
+          "due_later": "총 기한 %{due_at}",
+          "due_on_fulfillment": "총 주문 처리 기한",
+          "due_on_fulfillment_next": "주문 처리 기한",
+          "due_on_receipt": "영수증 수령 시 납부해야 할 총액",
+          "due_later_checkout_to_draft": "나중에 지불해야 할 총액"
+        },
+        "maximum_discount_code_limit_reached": "최대 할인 코드 수에 도달했습니다. 사용할 기존 코드를 제거하세요. <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> 가 지금 작동하지 않습니다. 도움을 요청하세요.",
+        "due_on_fulfillment": "주문 처리 기한",
+        "subscriptions": "구독",
+        "duties_label": "의무",
+        "total_updated_label_with_price": "총 가격이 업데이트되었습니다: %{totalPrice}",
+        "updated_shipping_method": "배송 방법 업데이트: %{shipping_method}",
+        "recurring_payments": "정기 결제",
+        "recurring_total_multiple_label": "이 주문에는 여러 품목에 대한 정기결제 요금이 부과됩니다.",
+        "deferred_total_due_date_label": "총 기한 {{date}}",
+        "deferred_total_due_date_label_next": "기한 %{date}",
+        "custom_discount": "맞춤 할인",
+        "expand_component_information": {
+          "one": "%{count} 항목 표시",
+          "other": "%{count} 항목 표시"
+        },
+        "collapse_component_information": {
+          "one": "%{count} 항목 숨기기",
+          "other": "%{count} 항목 숨기기"
+        },
+        "discount_discovery": {
+          "merchandise_quantity_label": {
+            "one": "%{count} 항목",
+            "other": "%{count} 항목"
+          }
+        },
+        "alternative_payment_currency_total": "요금은 다음과 같이 청구됩니다. %{amount_due}"
       },
       "address_management": {
         "confirm_address_deletion": "주소를 삭제하시겠습니까? {{address}}?"

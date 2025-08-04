@@ -231,10 +231,10 @@
       "title": "検索結果",
       "page": "ページ",
       "products": "製品紹介",
-      "search_for": "「{{ terms }}」を検索",
+      "search_for": "検索 \"{{ terms }}”",
       "results_with_count_and_term": {
-        "one": "「{{ terms }}」の検索結果{{ count }}件",
-        "other": "「{{ terms }}」の検索結果{{ count }}件"
+        "one": "{{ count }} の結果が見つかりました。{{ terms }}”",
+        "other": "{{ count }} の検索結果 \"{{ terms }}”"
       },
       "results_pages_with_count": {
         "one": "{{ count }} ページ",
@@ -248,7 +248,7 @@
         "one": "{{ count }} 製品",
         "other": "{{ count }} 製品"
       },
-      "suggestions": "候補",
+      "suggestions": "提案",
       "pages": "ページ"
     },
     "cart": {
@@ -256,13 +256,13 @@
     },
     "contact": {
       "form": {
-        "name": "名前",
-        "email": "メール",
+        "name": "名称",
+        "email": "電子メール",
         "phone": "電話番号",
-        "comment": "コメント",
-        "send": "送信する",
-        "post_success": "お問い合わせいただきありがとうございます。早急に返信いたします。",
-        "error_heading": "以下を確認してください。",
+        "comment": "どのように",
+        "send": "送信",
+        "post_success": "ご連絡ありがとうございます。できるだけ早くご連絡いたします。",
+        "error_heading": "以下の調整をお願いします：",
         "title": "お問い合わせフォーム"
       }
     },
@@ -375,45 +375,45 @@
   "localization": {
     "country_label": "国/地域",
     "language_label": "言語",
-    "update_language": "言語を更新する",
-    "update_country": "国/地域を更新する",
+    "update_language": "更新言語",
+    "update_country": "国/地域の更新",
     "search": "検索",
-    "popular_countries_regions": "人気のある国/地域",
-    "country_results_count": "{{ count }}の国/地域が見つかりました"
+    "popular_countries_regions": "人気の国・地域",
+    "country_results_count": "{{ count }} 見つかった国/地域"
   },
   "customer": {
     "account": {
       "title": "アカウント",
-      "details": "アカウントの詳細",
-      "view_addresses": "住所を確認",
-      "return": "アカウントの詳細に戻る"
+      "details": "口座詳細",
+      "view_addresses": "アドレスを見る",
+      "return": "口座詳細に戻る"
     },
     "account_fallback": "アカウント",
     "activate_account": {
-      "title": "アカウントを有効にする",
-      "subtext": "パスワードを作成してアカウントを有効にしてください。",
+      "title": "アカウントの有効化",
+      "subtext": "パスワードを作成してアカウントを有効にします。",
       "password": "パスワード",
-      "password_confirm": "パスワードを確認",
-      "submit": "アカウントを有効にする",
-      "cancel": "招待を辞退する"
+      "password_confirm": "パスワードの確認",
+      "submit": "アカウントの有効化",
+      "cancel": "招待を断る"
     },
     "addresses": {
       "title": "住所",
       "default": "デフォルト",
-      "add_new": "新しい住所を追加",
-      "edit_address": "住所を編集する",
-      "first_name": "名",
+      "add_new": "新しい住所を追加する",
+      "edit_address": "アドレスの編集",
+      "first_name": "名前",
       "last_name": "姓",
-      "company": "会社",
+      "company": "会社概要",
       "address1": "住所1",
-      "address2": "建物名、部屋番号など",
-      "city": "市",
+      "address2": "住所 2",
+      "city": "都市",
       "country": "国/地域",
-      "province": "都道府県",
+      "province": "地方",
       "zip": "郵便番号",
-      "phone": "電話番号",
-      "set_default": "デフォルトの住所として設定する",
-      "add": "住所を追加する",
+      "phone": "電話",
+      "set_default": "デフォルトアドレスに設定",
+      "add": "アドレスの追加",
       "update": "住所を更新する",
       "cancel": "キャンセルする",
       "edit": "編集",
