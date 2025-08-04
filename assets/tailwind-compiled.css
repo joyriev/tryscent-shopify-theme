@@ -482,6 +482,30 @@
     width: 100%
 }
 
+.w-40 {
+    width: 160px
+}
+
+.w-\[calc\(100\%-160px\)\] {
+    width: calc(100% - 160px)
+}
+
+.w-32 {
+    width: 128px
+}
+
+.w-\[calc\(100\%-128px\)\] {
+    width: calc(100% - 128px)
+}
+
+.w-28 {
+    width: 112px
+}
+
+.w-\[calc\(100\%-112px\)\] {
+    width: calc(100% - 112px)
+}
+
 .min-w-\[92px\] {
     min-width: 92px
 }
@@ -593,6 +617,10 @@
 
 .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr))
+}
+
+.grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr))
 }
 
 .flex-col {
@@ -708,10 +736,6 @@
 
 .text-nowrap {
     text-wrap: nowrap
-}
-
-.break-all {
-    word-break: break-all
 }
 
 .rounded {
@@ -932,6 +956,11 @@
     background-color: rgb(255 255 255 / 0.1)
 }
 
+.bg-\[\#EBF4EF\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(235 244 239 / var(--tw-bg-opacity, 1))
+}
+
 .bg-cover {
     background-size: cover
 }
@@ -1112,6 +1141,18 @@
 
 .pt-6 {
     padding-top: 24px
+}
+
+.pl-4 {
+    padding-left: 16px
+}
+
+.pl-3 {
+    padding-left: 12px
+}
+
+.pl-2 {
+    padding-left: 8px
 }
 
 .text-center {
@@ -1335,6 +1376,11 @@
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
 }
 
+.text-\[\#226139\] {
+    --tw-text-opacity: 1;
+    color: rgb(34 97 57 / var(--tw-text-opacity, 1))
+}
+
 .line-through {
     text-decoration-line: line-through
 }
@@ -1438,6 +1484,10 @@
 
 .\[grid-area\:search\] {
     grid-area: search
+}
+
+.\[grid-template-columns\:1fr_150px\] {
+    grid-template-columns: 1fr 150px
 }
 
 .\!\[text-decoration\:none\] {
@@ -1637,6 +1687,14 @@
         width: auto
     }
 
+    .md\:w-\[calc\(100\%-160px\)\] {
+        width: calc(100% - 160px)
+    }
+
+    .md\:w-\[calc\(100\%-144px\)\] {
+        width: calc(100% - 144px)
+    }
+
     .md\:max-w-28 {
         max-width: 112px
     }
@@ -1798,6 +1856,14 @@
         width: 50%
     }
 
+    .lg\:w-40 {
+        width: 160px
+    }
+
+    .lg\:w-36 {
+        width: 144px
+    }
+
     .lg\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr))
     }
@@ -1819,9 +1885,24 @@
         padding-right: 80px
     }
 
+    .lg\:px-3 {
+        padding-left: 12px;
+        padding-right: 12px
+    }
+
+    .lg\:px-4 {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+
     .lg\:text-3xl {
         font-size: 30px;
         line-height: 36px
+    }
+
+    .lg\:text-sm {
+        font-size: 14px;
+        line-height: 20px
     }
 
     .lg\:\[display\:block\] {
