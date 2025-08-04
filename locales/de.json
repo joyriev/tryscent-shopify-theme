@@ -2435,14 +2435,14 @@
         "email_resend_button_accessibility_label": "Verifizierungscode erneut senden",
         "one_time_password_label": "6-stelliger Code",
         "title": "E-Mail verifizieren",
-        "verify_button_accessibility_label": "Einmalpasswort überprüfen",
+        "verify_button_accessibility_label": "Einmaliges Passwort überprüfen",
         "verify_button": "Überprüfen Sie",
         "cancel_button": "Abbrechen",
-        "cancel_button_accessibility_label": "Bearbeitung der E-Mail abbrechen"
+        "cancel_button_accessibility_label": "E-Mail-Bearbeitung abbrechen"
       },
       "email_update_success_modal": {
         "title": "E-Mail verifizieren",
-        "description": "E-Mail erfolgreich aktualisiert. Weiterleitung zur Anmeldung."
+        "description": "E-Mail erfolgreich aktualisiert. Weiterleitung zum Login."
       },
       "loading_accessibility_message": "Laden von Kontoinformationen",
       "profile_card": {
@@ -2454,7 +2454,16 @@
         "email": "E-Mail",
         "phone_number_help_text": "Die für die Anmeldung verwendete Telefonnummer kann nicht geändert werden",
         "save": "Speichern Sie"
-      }
+      },
+      "profile_update_confirmation_message": "Profil aktualisiert",
+      "people": {
+        "pagination": {
+          "load_more": "Mehr laden",
+          "load_more_accessibility_label": "Mehr Personen laden",
+          "loading_accessibility_label": "Menschen laden"
+        }
+      },
+      "add_button": "hinzufügen"
     },
     "date": {
       "humanize": {
@@ -2500,6 +2509,42 @@
       "try_new_search": "Versuchen Sie eine neue Suche",
       "company_location": "Standort des Unternehmens",
       "skip_to_content": "Zum Inhalt springen"
+    },
+    "orders": {
+      "list_title_confirmed_orders_accessibility_label": "Aufträge: bestätigt",
+      "list_title_pending_orders_accessibility_label": "Aufträge: ausstehend",
+      "switch_order_type_pending_orders_accessibility_label": "Auftragsart wechseln, derzeitige Anzeige der ausstehenden Aufträge",
+      "switch_order_type_confirmed_orders_accessibility_label": "Auftragsart wechseln, derzeit werden bestätigte Aufträge angezeigt",
+      "order_list": {
+        "column_headers": {
+          "total": "Insgesamt"
+        },
+        "delivered": "Geliefert {{date}}",
+        "empty_state_order_source_description": "Nur per {{email}} aufgegebene Bestellungen werden hier angezeigt.",
+        "empty_state_subtitle": "Gehen Sie zum Laden, um eine Bestellung aufzugeben.",
+        "empty_state_with_location_title": "Keine Aufträge für {{locationName}}",
+        "empty_state_title_for_pending_orders": "Keine ausstehenden Aufträge",
+        "no_order_banner": "Um Ihre Erweiterung auf der Seite Auftragsstatus zu testen, legen Sie einen Auftrag an.",
+        "estimated_shortform": "Est. {{date}}",
+        "estimated_delivery": "Erwartet {{date}}",
+        "one_images_accessibility_label": "Die Bestellung umfasst {{lineItemName1}}",
+        "two_images_accessibility_label": "Die Bestellung umfasst {{lineItemName1}}, {{lineItemName2}}",
+        "three_images_accessibility_label": "Die Bestellung umfasst {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "Die Bestellung umfasst {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "Bestellung umfasst {{lineItemName1}}, {{lineItemName2}} und {{numberOfAdditionalProducts}} weitere Produkte",
+        "more_than_four_products_accessibility_label": "Bestellung umfasst {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, und {{numberOfAdditionalProducts}} weitere Produkte",
+        "plus_more_products": "{{numberOfAdditionalProducts}} Produkte",
+        "carousel": {
+          "one_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}, {{lineItemName5}} Menge {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}, {{lineItemName5}} Menge {{lineItemQuantity5}}, {{lineItemName6}} Menge {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}, {{lineItemName5}} Menge {{lineItemQuantity5}}, {{lineItemName6}} Menge {{lineItemQuantity6}} und mehr",
+          "view_order_details": "Details zur Bestellung anzeigen"
+        }
+      }
     }
   }
 }
