@@ -1381,7 +1381,62 @@
         "header": "Bezahlen mit {{paymentMethod}}",
         "qr_code": {
           "instructions": "Schließen Sie Ihren Einkauf mit Ihrem {{paymentMethod}} ab"
-        }
+        },
+        "external": {
+          "instructions": "Bestätigen Sie die Zahlung in Ihrer App, um diesen Kauf abzuschließen."
+        },
+        "close": "Schließen Sie die Herausforderung"
+      },
+      "failed_payment": {
+        "page_title": "Die Zahlung konnte nicht verarbeitet werden",
+        "title": "Die Zahlung konnte nicht verarbeitet werden",
+        "payment_not_processed_title": "Ihre Zahlung konnte nicht verarbeitet werden",
+        "payment_not_processed_text": "Sie wurden noch nicht belastet. Kehren Sie zu Ihrem Warenkorb zurück, um Ihren Einkauf abzuschließen."
+      },
+      "payment_gateway": {
+        "bank_deposit_label": "Bankeinlage",
+        "cash_on_delivery_label": "Nachnahme (COD)",
+        "money_order_label": "Zahlungsanweisung",
+        "deferred_payment_label": "Zahlungsmethode später wählen",
+        "fixed_payment_label": "Ihre Zahlung wird fällig am {{dueDate}}.",
+        "generic_payment_terms": "Sie sind auf {{translatedName}} Bedingungen. Ihre Zahlung wird am {{dueDate}} fällig.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} zu einem Konto mit Zugriff auf diesen Ort, um gespeicherte Zahlungsmethoden hinzuzufügen oder zu verwenden.",
+            "link": "Einloggen"
+          }
+        },
+        "direct_payment_terms": "Sie sind auf {{translatedName}} Bedingungen. Ihre Karte wird am {{dueDate}} belastet.",
+        "fixed_direct_payment_terms": "Ihre Karte wird belastet am {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Ihre Zahlung wird fällig, sobald Ihre Bestellung erfüllt ist.",
+        "order_due_on_fulfillment_payment": "Ihre Karte wird belastet, sobald Ihre Bestellung erfüllt ist.",
+        "order_due_on_receipt_choose_later": "Ihre Zahlung wird bei Erhalt fällig.",
+        "order_deposit_due_now": "Der {{depositAmount}} ist heute fällig. Der Restbetrag ist zu {{translatedName}} Bedingungen und am {{dueDate}} fällig.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} ist heute fällig. Der Restbetrag wird fällig, sobald Ihre Bestellung erfüllt ist.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} ist heute fällig. Der Restbetrag wird später fällig.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} ist heute fällig. Der Restbetrag wird fällig am {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms": "Ihre Zahlung wird fällig, sobald Ihre Bestellung bestätigt ist.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "Ihre Karte wird belastet, sobald Ihre Bestellung bestätigt ist.",
+        "draft_order_payment_due_later_terms": "Sobald Ihre Bestellung bestätigt ist, gelten für Sie die {{translatedName}} Bedingungen.",
+        "draft_order_payment_due_on_fulfillment": "Ihre Zahlung wird fällig, sobald Ihre Bestellung bestätigt und ausgeführt wurde.",
+        "draft_order_deposit_due_later": "Der {{depositAmount}} wird fällig, wenn Ihre Bestellung bestätigt wird. Der Restbetrag wird auf {{translatedName}} Bedingungen sein.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} wird fällig, wenn Ihre Bestellung bestätigt wird. Der Restbetrag wird fällig, sobald Ihre Bestellung erfüllt ist."
+      },
+      "thank_you": {
+        "title": "Vielen Dank für Ihren Kauf!",
+        "confirmation_email_sent_text": "Eine Bestätigungs-E-Mail wurde gesendet an %{email}",
+        "return_to_store_link_label": "Weiter einkaufen",
+        "print_link_label": "Beleg drucken",
+        "payment_information_title": "Zahlungsinformationen",
+        "shipping_information_title": "Informationen zum Versand",
+        "page_title": "Ich danke Ihnen, %{display_name}!",
+        "page_title_no_name": "Ich danke Ihnen!",
+        "purchase_order_number_title": "PO-Nummer #%{purchase_order_number}",
+        "cancelled_page_title": "Auftrag storniert",
+        "failed_pending_payment_page_title": "Es gibt ein Problem mit Ihrer Zahlung",
+        "customer_information_title": "Details zur Bestellung",
+        "contact_information_title": "Kontaktinformationen",
+        "shipping_address_map_title": "Google-Karte mit Anzeige der Lieferadresse: %{address}"
       }
     }
   },
