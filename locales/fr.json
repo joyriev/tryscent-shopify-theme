@@ -2864,7 +2864,63 @@
       },
       "contact_information": "Informations sur les contacts",
       "company_and_location": "Entreprise et lieu d'implantation",
-      "group_title_label": "Partie de : {{groupTitle}}"
+      "group_title_label": "Partie de : {{groupTitle}}",
+      "group_title_label_with_parent": "Pour : {{groupTitle}}",
+      "grouped_view_components": {
+        "expand_line_items": "Afficher les éléments {{count}} ",
+        "collapse_line_items": "Masquer les éléments {{count}} ",
+        "line_item_summary_accessibility_label": "{{productTitle}}Quantité : {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "Articles de la liasse {{productTitle}} "
+      },
+      "discount": "Remise",
+      "hide_items": "Cacher les éléments",
+      "loading": "Détails de l'ordre de chargement",
+      "location": "Localisation",
+      "image_gallery": {
+        "next": "Afficher les éléments suivants",
+        "previous": "Afficher les éléments précédents",
+        "load_more_items": {
+          "one": "Charger {{count}} plus d'éléments",
+          "other": "Charger {{count}} plus d'éléments"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "closed": "Cacher le résumé de la commande"
+      },
+      "not_applicable": "N/A",
+      "paid_amount": "Payé",
+      "partially_refunded_label": "PARTIELLEMENT REMBOURSÉ",
+      "payment": {
+        "payment_type": {
+          "gift_card": "Carte cadeau",
+          "store_credit": "Crédit magasin",
+          "money_order": "Mandat postal",
+          "cash_on_delivery": "Contre remboursement (COD)",
+          "bank_deposit": "Dépôt bancaire"
+        },
+        "card_payment_details": "se terminant par {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "se terminant par {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Crédit magasin - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Payé avec des versements Shop Pay",
+          "view_schedule": "Voir le programme"
+        },
+        "manual_payment_methods": {
+          "money_order": "Mandat - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Contre remboursement (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Dépôts bancaires - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "Afficher tout",
+          "show_less": "Montrer moins",
+          "payment_details": "Modalités de paiement"
+        },
+        "emv_details": {
+          "auth": "AUTH :",
+          "aid": "AID :",
+          "source": "SOURCE :"
+        }
+      }
     }
   }
 }
