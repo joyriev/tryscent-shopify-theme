@@ -1147,6 +1147,68 @@
           },
           "label": "配達なし"
         }
+      },
+      "shipping": {
+        "title": "送料",
+        "delivery_title": "配送",
+        "shipping_method_one_time_purchase_group_title": "1回限りの購入",
+        "shipping_method_first_shipment_group_title": {
+          "one": "初荷",
+          "other": "最初の出荷"
+        },
+        "shipping_method_recurring_shipments_group_title": {
+          "one": "定期発送",
+          "other": "定期的な出荷"
+        },
+        "subscription_shipping": "定期配送",
+        "subscription_local_delivery": "定期地方配送",
+        "subscription_pickup": "サブスクリプションのピックアップ",
+        "waiting_on_rate_notice": "利用可能な送料を取得する...",
+        "waiting_on_pickup_location_notice": "利用可能なピックアップ場所を取得...",
+        "no_rates_for_cart_or_destination_notice": "カートまたは住所に利用可能な配送方法がありません。",
+        "no_pickup_location_notice": "少なくとも1つの商品が受け取れない",
+        "no_rates_for_country_notice": "この住所に該当する送料は見つかりませんでした。",
+        "no_rates_contact_notice": "お問い合わせ",
+        "please_enter_your_shipping_information_notice": "配送先情報を入力してください。",
+        "estimated_delivery_date": {
+          "one": "%{count} 営業日",
+          "other": "%{count} 営業日"
+        },
+        "estimated_delivery_date_range": "%{minimum}～%{maximum}営業日",
+        "estimated_delivery_time": "お届け予定 %{time}",
+        "estimated_delivery_time_range": "お届け予定 %{min_time}–%{max_time}",
+        "delivery_today": "当日配達 %{time}",
+        "delivery_tomorrow": "翌日配達 %{time}",
+        "two_day_delivery": "2日配達 %{time}",
+        "delivery": "配送 %{time}",
+        "arrives_time": "到着 %{time}",
+        "arrives_time_range": "到着 %{min_time}–%{max_time}",
+        "estimated_time": "推定 %{time}",
+        "estimated_time_range": "推定 %{min_time}–%{max_time}",
+        "default_description": "1営業日以内に発送",
+        "unbranded_default_description": "出荷準備完了",
+        "shipping_line_phone_label": "携帯電話番号（必須）",
+        "shipping_line_phone": "宅配業者はこの番号を使ってお客様に連絡することがあります。",
+        "shipping_line_delivery_phone_label": "携帯電話番号",
+        "shipping_line_delivery_phone": "配送に関する最新情報をご連絡する場合があります。",
+        "optional_shipping_line_delivery_instructions_label": "配送方法（オプション）",
+        "shipping_line_delivery_instructions": "ドアコードやドロップオフの指示など、必要な情報を入力します。",
+        "other_method": {
+          "zero": "他の方法はない",
+          "one": "%{count} で利用可能な他の方法",
+          "other": "%{count} から利用できる。"
+        },
+        "shipping_rate_discounted_amount": "以前:%{original_amount}.現在:%{amount}.",
+        "local_delivery": "現地配送",
+        "prime_not_available": {
+          "default": "プライム配送はご利用いただけません。配送オプションが更新されました。"
+        },
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "%{count}以上の配送で送料無料",
+            "other": "%{count}以上の配送で送料無料"
+          }
+        }
       }
     }
   },
