@@ -1478,7 +1478,64 @@
         "gift_card_expired": "Cette carte cadeau a expiré",
         "gift_card_depleted": "Cette carte cadeau n'a plus de fonds",
         "gift_card_currency_mismatch": "Seules les cartes-cadeaux en %{checkout_currency} peuvent être utilisées avec cette commande.",
-        "gift_cards_not_supported_with_deferred_purchase_options": "Les cartes-cadeaux ne sont pas prises en charge par les options d'achat différé."
+        "gift_cards_not_supported_with_deferred_purchase_options": "Les cartes-cadeaux ne sont pas prises en charge par les options d'achat différé.",
+        "gift_card_buying_gift_card": "Vous ne pouvez pas utiliser une carte-cadeau pour acheter une autre carte-cadeau.",
+        "payment_gateway_missing": "Choisissez un mode de paiement.",
+        "payment_gateway_needs_paid_plan_error": "Ce mode de paiement n'est pas disponible dans la boutique pour le moment.",
+        "payment_gateway_not_in_test_mode": "n'est pas configuré pour tester les commandes. Ce magasin ne peut pas accepter de vraies commandes ou de vrais paiements.",
+        "payment_gateway_incompatible_with_multi_currency": "Pour effectuer ce paiement dans votre monnaie locale, vous devez payer par carte de crédit.",
+        "payment_gateway_unsupported_for_subscriptions": "Ce mode de paiement n'est pas disponible pour les commandes d'abonnement.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Ce mode de paiement n'est pas disponible pour les options d'achat différé.",
+        "payment_gateway_unsupported_for_country": "Ce mode de paiement n'est pas disponible pour votre pays de livraison.",
+        "payment_gateway_unsupported_for_development_store_html": "Pour passer une commande test, vous devez utiliser une passerelle de paiement test. En savoir plus sur les <a href=\"%{docs_link}\">commandes test dans les boutiques de développement</a>.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Vous avez atteint la limite des commandes de la boutique de développement avec ce processeur de paiement. Pour passer une autre commande, vous devrez utiliser une passerelle de paiement de test. En savoir plus sur le <a href=\"%{docs_link}\">test des commandes dans les boutiques de développement</a>.",
+        "purchase_options_agreement_blank": "Pour poursuivre votre achat, acceptez les conditions d'achat différé ou récurrent.",
+        "physical_gift_card_invalid_quantity": "Les postes de cartes cadeaux physiques doivent avoir une quantité correspondant au nombre de codes de cartes cadeaux.",
+        "physical_gift_card_duplicate_code": "Le poste de carte cadeau physique contient un code en double.",
+        "physical_gift_card_invalid_code": "Le code de la carte cadeau physique n'est pas valide.",
+        "email_blank": "Saisir un courriel",
+        "gift_card_invalid": "La carte cadeau \"%{last_four_characters}\" n'est plus valable",
+        "vaulting_agreement_blank": "Votre carte doit être sauvegardée car le paiement du solde de cette commande doit être effectué plus tard.",
+        "sms_marketing_phone_invalid": "Entrez un numéro de téléphone valide",
+        "address_suggestion_did_you_mean_html": "Vouliez-vous dire %{html}?",
+        "split_cart_international_shipping_not_supported": "Tous les articles doivent être livrés selon le même mode de livraison lorsqu'ils sont expédiés à l'étranger. Mettez à jour le mode de livraison ou créez plusieurs commandes.",
+        "invalid_delivery_address_reference_handle": "Le numéro de référence de l'adresse de livraison n'a pu être associé à aucune adresse de livraison disponible."
+      },
+      "store_credit_errors": {
+        "generic_error": "Il y a eu un problème avec le crédit de votre magasin. Réessayez ou rechargez la page."
+      },
+      "redeemable_errors": {
+        "shop_cash": {
+          "currency_mismatch": "La devise a changé. Veuillez vérifier votre argent de boutique et votre offre."
+        },
+        "gift_card": {
+          "duplicate": "La carte cadeau a déjà été appliquée à votre commande",
+          "insufficient_funds": "Cette carte cadeau n'a plus de fonds",
+          "expired": "Cette carte cadeau a expiré",
+          "not_available": "Cette carte cadeau n'est plus disponible",
+          "invalid": "Saisir une carte cadeau valide",
+          "currency_mismatch": "Seules les cartes cadeaux en %{shop_currency} sont acceptées.",
+          "generic": "La carte cadeau n'a pas pu être ajoutée à la caisse.",
+          "throttle_limit_exceeded": "Vous avez dépassé le nombre maximum de tentatives. Réessayez plus tard.",
+          "no_longer_available": "Cette carte cadeau ne peut plus être utilisée avec cette caisse."
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "L'instruction de marchandise %{position} %{name} contient un identifiant stable vide.",
+        "invalid_stable_id_target": "L'instruction de marchandise %{position} %{name} fait référence à l'identifiant stable %{stable_id}, mais cet identifiant stable ne figure pas dans les groupes de marchandises.",
+        "duplicate_variant_id": "L'instruction de marchandise %{position} %{name} contient un doublon de l'ID de %{variant_id}.",
+        "invalid_variant_id_target": "L'instruction de marchandise %{name} fait référence à la variante ID %{variant_id}, mais cette variante ne figure pas dans les lignes de marchandises.",
+        "invalid_price_override_target": "L'instruction de remplacement du prix de la marchandise pour l'article %{stable_id} n'est pas valide car il s'agit d'un composant de l'offre groupée."
+      },
+      "payment_errors": {
+        "amount_too_small": "Le montant minimum du paiement doit être supérieur à 0,50 USD. Veuillez réessayer avec un montant plus élevé.",
+        "method_not_available": "Le mode de paiement demandé n'est pas disponible. Choisissez un autre mode de paiement et réessayez.",
+        "available_methods_updated": "Les méthodes de paiement disponibles ont été mises à jour.",
+        "generic_error": "Le traitement de votre paiement a posé problème. Réessayez ou utilisez une autre méthode de paiement.",
+        "rejected_transaction": "Votre paiement a été refusé. Réessayez ou utilisez un autre mode de paiement.",
+        "credit_card_processing": "Votre paiement ne peut être traité pour des raisons techniques. Réessayez dans quelques minutes ou utilisez une autre méthode de paiement.",
+        "checkout_amount_changed": "Votre paiement n'a pas pu être traité car le montant dû à la caisse a changé. Veuillez vérifier votre commande et réessayer.",
+        "deferred_amount_changed": "Votre paiement n'a pas pu être traité car le montant du paiement différé a été modifié. Veuillez vérifier votre commande et réessayer."
       }
     },
     "sentence": {

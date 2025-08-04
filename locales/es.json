@@ -2750,7 +2750,46 @@
           "aid": "AYUDA:",
           "source": "FUENTE:"
         }
-      }
+      },
+      "edit_summary": {
+        "added_with_quantity": "Añadido {{quantity}}",
+        "removed_with_quantity": "Eliminado {{quantity}}",
+        "updated_at": "Su pedido se actualizó el {{date}}",
+        "returned_with_quantities": "Devuelto {{delta}} de {{total}}",
+        "removed_with_quantities": "Eliminado {{delta}} de {{total}}",
+        "return_line_item_removed": "Eliminado de la devolución",
+        "return_line_item_removed_with_quantities": "Eliminado {{delta}} de la devolución"
+      },
+      "taxes_included": "Incluyendo {{amount}} en impuestos",
+      "duties_and_taxes_included": "El total incluye aranceles e impuestos. Sin gastos de envío adicionales.",
+      "duties": "Funciones",
+      "ok_duties_tooltip": "Este pedido se envía desde otro país, por lo que se han añadido impuestos al total del pedido.",
+      "error_duties_tooltip": "Este pedido se envía desde otro país, por lo que pueden aplicarse aranceles e impuestos en el momento de la entrega.",
+      "zero_duties_tooltip": "Este pedido se envía desde otro país. No se cobran aranceles en pedidos de este valor.",
+      "tip": "Consejo",
+      "title": "Pida {{name}}",
+      "unit_price": "{{price}}/ea",
+      "pagination": {
+        "load_more": "Más información",
+        "loading_accessibility_label": "Carga de artículos"
+      },
+      "login_to_view_all_order_details": "Inicie sesión para ver todos los detalles del pedido.",
+      "log_in": "Conectarse",
+      "logged_in_account_no_permission_to_order": "Has iniciado sesión como {{email}}. Esta cuenta no tiene permiso para gestionar este pedido.",
+      "log_in_to_a_different_account": "Acceder a otra cuenta",
+      "fees": {
+        "restocking_fee": "Tasa de reposición",
+        "return_shipping_fee": "Devolución"
+      },
+      "vat_invoices": {
+        "title": "Facturas IVA"
+      },
+      "cash_rounding": "Redondeo de efectivo",
+      "adjusted_payment": "Pago ajustado",
+      "adjusted_total": "Total ajustado",
+      "due_on_date": "Debido {{date}}",
+      "due_on_fulfillment": "Vencido en el momento del cumplimiento",
+      "due_on_receipt": "A la recepción"
     },
     "date": {
       "humanize": {
@@ -2798,6 +2837,18 @@
       "view_details": "Ver detalles",
       "search": "Buscar en",
       "skip_to_content": "Ir al contenido"
+    },
+    "addresses": {
+      "add_button": "Añadir dirección",
+      "add_button_text": "Añadir",
+      "add_button_accessibility_label": "Añadir dirección",
+      "back_button": "Volver",
+      "back_button_accessibility_label": "Volver a la dirección de edición {{address}}",
+      "add_address_banner": "Añadir direcciones para utilizar en la caja",
+      "no_addresses_banner": "No se han añadido direcciones",
+      "address_deleted_notification": "Dirección suprimida",
+      "cancel_adding_address_accessibility_label": "Cancelar la adición de una dirección",
+      "cancel_deletion_button_accessibility_label": "Cancelar el borrado {{address}}"
     }
   }
 }
