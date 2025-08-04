@@ -575,7 +575,68 @@
         "card_vaulted_company_location": "Für diesen Ort gespeicherte Karte",
         "expiry_long": "(Erlischt %{month}/%{year})",
         "expiry_short": "(Exp %{month}/%{year})",
-        "saved_by_payment_method": "Gerettet von %{payment_method}"
+        "saved_by_payment_method": "Gerettet von %{payment_method}",
+        "use_location_shipping_address_label": "Standort verwenden Lieferadresse",
+        "no_working_method_error": "Dieser Shop kann im Moment keine Zahlungen annehmen. Aktualisieren Sie diese Seite oder kommen Sie später wieder.",
+        "brand_not_available": "Dieses Geschäft akzeptiert keine {{brand}}. Bitte verwenden Sie eine andere Karte zum Bezahlen.",
+        "shipping_rate_updated": "Die verfügbaren Versandarten wurden aktualisiert. Bestätigen Sie Ihre Wahl, bevor Sie zur Kasse gehen.",
+        "billing_address_invalid_phone": "Aktualisieren Sie die Telefonnummer in Ihrer Rechnungsadresse für {{label}} {{last_digits}}, um fortzufahren.",
+        "billing_address_invalid_phone_no_card": "Aktualisieren Sie die Telefonnummer in Ihrer Rechnungsadresse, um fortzufahren.",
+        "preview_not_available": {
+          "content": "Keine Sorge, diese Express-Kasse funktioniert für Ihre Kunden."
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Geben Sie ein gültiges Ausstellungsdatum ein"
+            },
+            "invalid": {
+              "verification_value": "Geben Sie einen gültigen CVV- oder Sicherheitscode ein"
+            }
+          }
+        },
+        "simulated_checkout": "Vorschau folgt in Kürze",
+        "simulated_express_checkout": "Geldbörsen sind aufgrund Ihrer Region oder Ihres Browsers in der Editorvorschau nicht verfügbar",
+        "vaulting_agreement_label": "Speichern Sie meine Zahlungsinformationen mit %{company} für eine schnellere Kaufabwicklung.",
+        "business_customer_vaulting_payment_label": "Speichern Sie diese Karte an der Kasse und ermächtigen Sie %{company}, sie bei zukünftigen Einkäufen für diesen Standort zu belasten. Alle Kontakte, die diesem Standort zugewiesen sind, können die Karte verwenden.",
+        "purchase_options_and_vaulting_agreement_label": "Bei einem oder mehreren Artikeln in Ihrem Warenkorb handelt es sich um einen Kauf auf Zeit oder ein Abonnement. Indem Sie Ihre Zahlung fortsetzen, erklären Sie sich damit einverstanden, dass Ihre Zahlungsmethode automatisch zu dem auf dieser Seite angegebenen Preis und in der angegebenen Häufigkeit belastet wird, bis das Abonnement endet oder Sie es kündigen. Alle Stornierungen unterliegen den %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "Stornierungsbedingungen",
+        "saved_credit_card": "Ihre gespeicherte Kreditkarte",
+        "saved_credit_card_info": "Letzte vier Ziffern",
+        "saved_credit_card_cvv_verification": "Zur Überprüfung geben Sie bitte den Sicherheitscode Ihrer Karte ein.",
+        "saved_credit_card_actions": {
+          "edit": "bearbeiten"
+        },
+        "saved_credit_cards_modal": {
+          "done": "Erledigt",
+          "cancel": "Abbrechen"
+        },
+        "add_credit_card_modal": {
+          "save": "Speichern Sie",
+          "cancel": "Abbrechen"
+        },
+        "delete_credit_card_modal": {
+          "confirmation": "Sind Sie sicher, dass Sie den {{brandName}} mit der Endung {{lastDigits}} löschen möchten?",
+          "cancel": "Abbrechen"
+        },
+        "edit_credit_card_modal": {
+          "title": "Edit Card",
+          "done": "Erledigt",
+          "cancel": "Abbrechen",
+          "description": "Sie können nur die Rechnungsadresse Ihrer Karte ändern.",
+          "fields": {
+            "default": "Als Standard eingestellt",
+            "expiry": "Verfallsdatum",
+            "name": "Name auf der Karte"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Es gibt eine %{count} abgelaufene Karte, die Sie in Ihrem Konto einsehen und bearbeiten können.",
+          "other": "Es gibt %{count} abgelaufene Karten, die Sie in Ihrem Konto einsehen und bearbeiten können."
+        },
+        "local_payment_method_receiver_notice": "Nachdem Sie Ihre Bestellung aufgegeben haben, erhalten Sie die Zahlungsinformationen. Nehmen Sie die Zahlung an einem Geldautomaten oder online innerhalb von {{dueDays}} Tagen vor.",
+        "order_edit_banner_title": "Zahlung von {{amount_owed}} ist erforderlich",
+        "order_edit_banner_subtitle": "Ihre Bestellung {{order_number}} wurde aktualisiert. Überprüfen Sie die Änderungen und bezahlen Sie dann, um Ihre Bestellung zu bestätigen."
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."
