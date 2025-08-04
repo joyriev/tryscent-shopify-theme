@@ -556,7 +556,38 @@
         }
       },
       "order_summary": {
-        "for_add_on": "Per: %{group_title}"
+        "for_add_on": "Per: %{group_title}",
+        "tip_label": "Suggerimento",
+        "calculating_shipping": "Calcolo...",
+        "calculating": "Calcolo...",
+        "shipping_default_value": "Calcolato al passo successivo",
+        "order_total_label": "Totale dell'ordine",
+        "total_savings": "Risparmio totale",
+        "deposit_label": "Deposito",
+        "total_due_today_label": "Totale da pagare oggi",
+        "total_due_later_label": "Totale da pagare in seguito",
+        "free_total_label": "Gratuito",
+        "free_shipping_total_label": "Gratuito",
+        "discount_and_gift_card_savings_notice": "Dopo %{discount_amount} in sconti e %{gift_card_amount} in carte regalo",
+        "discount_savings_notice": "Dopo %{discount_amount} in sconti",
+        "gift_card_savings_notice": "Dopo %{gift_card_amount} in carte regalo",
+        "cost_table_title": "Riassunto dei costi",
+        "price_per_item": {
+          "label": "%{price}/ea"
+        },
+        "product_change_label": "Cambiamento",
+        "product_image_label": "Immagine del prodotto",
+        "scroll_order_summary": "Scorri per vedere altri articoli",
+        "collapse_order_summary_short": "Nascondere",
+        "expand_order_summary": "Mostra il riepilogo dell'ordine",
+        "collapse_order_summary": "Nascondi il riepilogo dell'ordine",
+        "sale_price": "Sale price",
+        "total_updated_label": "Prezzo totale aggiornato:",
+        "unit_price": {
+          "per_item": {
+            "single": "%{price} ciascuno"
+          }
+        }
       },
       "address_management": {
         "confirm_address_deletion": "Siete sicuri di voler eliminare l'indirizzo {{address}}?"
@@ -746,48 +777,7 @@
             "token_expired": "Il token captcha fornito è scaduto. Completare un nuovo captcha per continuare il checkout.",
             "token_invalid": "Il token captcha fornito non era valido. Completare un nuovo captcha per continuare il checkout."
           }
-        },
-        "datepicker": {
-          "show_next_month": "Mostra il mese prossimo, {{month}} {{year}}",
-          "range_start": "Inizio gamma",
-          "in_range": "In gamma",
-          "range_end": "Fine gamma"
-        },
-        "list_formatter": {
-          "and": {
-            "lastWordConnector": "{{previousWords}}, e {{lastWord}}"
-          },
-          "or": {
-            "lastWordConnector": "{{previousWords}}, o {{lastWord}}"
-          }
-        },
-        "map": {
-          "cluster_title": {
-            "one": "Cluster di marcatori di {{number}} ",
-            "other": "Cluster di marcatori {{number}} "
-          }
-        },
-        "dropzone": {
-          "dragged_over": "Rilasciare il file da caricare"
         }
-      },
-      "contact": {
-        "shipping_used_as_billing_notice": "Questo sarà utilizzato anche come indirizzo di fatturazione per l'ordine.",
-        "contact_method_title": "Contatto",
-        "email_or_phone_label": "Numero di e-mail o di cellulare",
-        "email_or_phone_placeholder": "Numero di e-mail o di cellulare",
-        "stored_addresses_label": "Indirizzi salvati",
-        "new_address_label": "Utilizzare un nuovo indirizzo",
-        "company_attention_label": "Azienda/Attenzione",
-        "optional_company_attention_label": "Azienda/Attività (facoltativo)",
-        "address2_label": "Appartamento, suite, ecc.",
-        "optional_address2_label": "Appartamento, suite, ecc. (facoltativo)",
-        "country_label": "Paese/Regione",
-        "country_code": "Codice paese/regione",
-        "province_label": "Province",
-        "province_placeholder": "Province",
-        "region_label": "Regione",
-        "region_placeholder": "Regione"
       }
     },
     "sentence": {
