@@ -2789,11 +2789,83 @@
               "title": "Pagare per confermare",
               "deposit": {
                 "title": "Il pagamento è dovuto",
-                "due_later": "Il saldo è a condizioni {{translatedName}} ed è dovuto alla {{dueDate}}."
+                "due_later": "Il saldo è a condizioni {{translatedName}} ed è dovuto alla {{dueDate}}.",
+                "due_on_fulfillment": "Il saldo è dovuto una volta che tutti gli articoli di questo ordine sono stati evasi.",
+                "due_on_receipt": "Riceverete una fattura per il saldo rimanente.",
+                "due_on_date": "Il saldo deve essere effettuato il {{dueDate}}."
               }
+            },
+            "deposit": {
+              "due_later": "{L'{{depositAmount}} dovrà essere versato al momento della conferma dell'ordine. Il saldo sarà effettuato alle condizioni di {{translatedName}}.",
+              "due_on_fulfillment": "{{depositAmount}} sarà dovuto al momento della conferma dell'ordine. Il saldo sarà dovuto al momento dell'evasione dell'ordine.",
+              "due_on_receipt": "{{depositAmount}} sarà dovuto al momento della conferma dell'ordine. Il saldo sarà dovuto successivamente.",
+              "due_on_date": "{{depositAmount}} sarà dovuto al momento della conferma dell'ordine. Il saldo sarà dovuto il {{dueDate}}."
             }
-          }
+          },
+          "paid": {
+            "title_with_date": "Pagato {{date}}",
+            "description": "Il vostro ordine è completamente pagato."
+          },
+          "refund": {
+            "title_with_date": "Rimborsato {{date}}",
+            "description_full_refund": "Avete ricevuto un rimborso completo per questo ordine.",
+            "description_single_refund": "Avete ricevuto un rimborso parziale per questo ordine.",
+            "description_multiple_refunds": "Avete ricevuto un rimborso parziale per questo ordine."
+          },
+          "canceled": {
+            "description": "Non siete stati accusati."
+          },
+          "pay_now": "Pagare ora",
+          "pay_now_accessibility_label": "Paga ora per l'ordine {{orderName}}"
+        },
+        "order_timeline": {
+          "expand_events_label": "Mostra i dettagli",
+          "expand_events_accessibility_label": "Mostra i dettagli dell'ordine di bozza",
+          "hide_events_accessibility_label": "Nascondere i dettagli dell'ordine di bozza"
+        },
+        "subtitle": "Inviati {{date}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Questo metodo di pagamento non sarà più disponibile per acquisti futuri presso questa sede.",
+          "description_with_replacement": "L'eliminazione di questo metodo di pagamento influisce sui pagamenti preautorizzati per questa sede. Sostituitelo con un metodo di pagamento alternativo per continuare a ricevere gli ordini in arrivo."
+        },
+        "payment_details": {
+          "draft_label": "Ordine della bozza {{name}}"
         }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Aggiungere il numero di PO",
+        "add_modal_title": "Aggiungere il numero di PO",
+        "cancel": "Annullamento",
+        "close_modal_accessibility_label": "Chiudere il numero di PO modale",
+        "discard": "Scartare",
+        "discard_changes_modal_title": "Scartare le modifiche?",
+        "edit_accessibility_label": "Modifica del numero di PO",
+        "edit_modal_title": "Modifica del numero di PO",
+        "empty_state": "Nessun numero PO",
+        "modal_po_number_input_label": "Numero PO",
+        "modal_po_number_input_max_length_error": "I numeri PO hanno un massimo di {{maxLength}} caratteri.",
+        "save": "Risparmiare",
+        "title": "PO #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Si è verificato un problema nell'eliminazione di questo indirizzo. Riprovare o aggiornare la pagina."
+      },
+      "addresses_loading_issue": {
+        "description": "Errore di connessione. Controllare la connessione a Internet e riprovare."
+      },
+      "banner_title": {
+        "one": "C'è un errore {{count}} ",
+        "other": "Ci sono {{count}} errori"
+      },
+      "failed_address_creation": {
+        "description": "Si è verificato un problema nella creazione dell'indirizzo. Provare ad aggiornare la pagina o controllare la connessione a Internet."
+      },
+      "failed_address_update": {
+        "description": "Si è verificato un problema nell'aggiornamento dell'indirizzo. Provi ad aggiornare la pagina o a controllare la sua connessione a Internet."
       }
     }
   }
