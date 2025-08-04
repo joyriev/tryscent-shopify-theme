@@ -616,7 +616,59 @@
             "selected_pickup_option_no_longer_available": "Die zuvor gewählte Abholoption ist nicht mehr verfügbar.",
             "local_pickup_no_delivery_strategy_available": "Es wurde keine verfügbare Strategie für die lokale Abholung gefunden.",
             "origin_location_id_required": "Eine Ursprungsort-ID ist erforderlich, wenn die Liefermethode RETAIL angefordert wird.",
-            "invalid_origin_location_id": "Es konnte kein Ort gefunden werden, der mit der Ursprungsort-ID übereinstimmt."
+            "invalid_origin_location_id": "Es konnte kein Ort gefunden werden, der mit der Ursprungsort-ID übereinstimmt.",
+            "origin_location_id_not_allowed": "Die angeforderten Zustellungsmethoden unterstützen keine Ursprungsort-ID.",
+            "auto_fulfill_not_allowed": "Diese Sitzung ist nicht berechtigt, das Erfüllungsverhalten außer Kraft zu setzen.",
+            "auto_fulfill_required": "Die automatische Erfüllung ist erforderlich, wenn die Liefermethode RETAIL gewünscht wird.",
+            "prefetch_shipping_rates_used": "Voreingestellte Versandtarife sollten niemals Rücksendekosten sein.",
+            "fulfillment_constraints_not_satisfied": "Eine oder mehrere Erfüllungsbedingungen wurden nicht erfüllt.",
+            "must_fulfill_from_constraint_not_satisfied": "Die Erfüllungsbedingungen sind nicht erfüllt, weil die Artikel nicht an den gewünschten Orten erfüllt werden können.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Die Erfüllungsbedingungen sind nicht erfüllt, da die Artikel nicht am selben Ort erfüllt werden können.",
+            "delivery_strategy_conditions_not_satisfied": "Für diesen Standort gibt es Lieferstrategien, deren Bedingungen jedoch nicht erfüllt sind.",
+            "out_of_stock_at_origin_location": "Kein Bestand am Ursprungsort.",
+            "invalid_signature": "Ungültige Rabatt-Signatur."
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "Rabatte sind in B2B-Geschäften nicht erlaubt.",
+            "custom_discount_not_honoured": "Der angegebene Kundenrabatt wurde nicht eingehalten.",
+            "unsupported_expectation": "Die gelieferte Rabattlinie enthielt eine Erwartung, die die Police nicht interpretieren konnte.",
+            "additional_requested_discount_code_discarded": "{{code}} ist gültig, aber nicht anwendbar. Prüfen Sie die Rabattbedingungen.",
+            "additional_requested_discount_discarded": "Ihr Rabatt ist gültig, aber nicht anwendbar. Prüfen Sie die Rabattbedingungen.",
+            "allocations_mismatch": "Ihr Rabattcode hat sich geändert. Überprüfen Sie Ihren Warenkorb und versuchen Sie es erneut.",
+            "discount_title_too_long": "Der Rabatttitel darf nicht länger als 255 Zeichen sein."
+          },
+          "tax": {
+            "unresolvable_tax_terms": "Die vorgeschlagenen Bedingungen sind im derzeitigen Verhandlungskontext unlösbar.",
+            "delivery_price_is_abstract": "Der zugehörige Lieferpreis ist abstrakt.",
+            "tax_inclusivity_mismatch": "Neuverhandlung mit konkretem totalTaxAndDutyAmount oder totalAmountIncludedInTarget Wert.",
+            "tax_exemption_not_supported": "Steuerbefreiungen werden in der aktuellen Verhandlungsrunde nicht unterstützt.",
+            "delivery_tax_exemption_not_supported": "Steuerbefreiungen für Lieferleitungen werden derzeit nicht unterstützt.",
+            "proposed_allocations_required": "Fehlendes Feld \"vorgeschlagene Zuweisungen\".",
+            "merchandise_terms_must_be_defined": "Warenbegriffe müssen definiert werden.",
+            "delivery_terms_must_be_defined": "Die Lieferbedingungen müssen definiert werden.",
+            "merchandise_discount_terms_must_be_defined": "Die Bedingungen für den Warenrabatt müssen definiert werden.",
+            "delivery_discount_terms_must_be_defined": "Die Bedingungen für Lieferrabatte müssen festgelegt werden.",
+            "allocated_required": "Fehlendes Feld \"zugewiesen\".",
+            "value_required": "Fehlendes Feld \"Wert\".",
+            "line_splits_not_supported": "Das Feld \"Warenzeilen\" muss so aufgeteilt werden, dass es jeweils eine einzelne Zeilenkomponente im Verkäuferangebot enthält."
+          },
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "Manuelle Zahlungen sind in B2B-Geschäften nicht erlaubt.",
+            "subscription_terms_not_accepted": "Abonnementbedingungen nicht akzeptiert.",
+            "missing_session_id": "Fehlende Informationen zur Kreditkartensitzung.",
+            "gateway_not_supported": "Das Zahlungsgateway unterstützt die Speicherung der Zahlungsmethode nicht.",
+            "credit_card_last_name_required": "Nachname' kann nicht gleich Null sein.",
+            "installments_amount_invalid": "Ungültiger Betrag für Ratenzahlungstransaktion.",
+            "installments_test_mode_not_allowed": "Testmodus nicht erlaubt.",
+            "installments_gift_card_not_allowed": "Bei Ratenzahlungen ist die Verwendung von Geschenkkarten nicht möglich.",
+            "installments_unsupported_currency": "Diese Währung wird von Ratenzahlungen nicht unterstützt.",
+            "installments_unsupported_shipping": "Der Versand an diese Adresse wird von Ratenzahlungen nicht unterstützt.",
+            "installments_unsupported_billing": "Diese Rechnungsadresse wird von Ratenzahlungen nicht unterstützt.",
+            "installments_unsupported_subscriptions": "Ratenzahlungen unterstützen keine Abonnements.",
+            "installments_ineligible_line_item": "Ratenzahlungen sind für eine Position in diesem Kauf deaktiviert.",
+            "shop_cash_not_found": "Shop Cash wurde nicht gefunden.",
+            "shop_cash_not_allowed": "Shop Cash ist ohne Shop Pay nicht erlaubt.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash erlaubt nicht den Kauf von Geschenkkarten."
           }
         }
       }
