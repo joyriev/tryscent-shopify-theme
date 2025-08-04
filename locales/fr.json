@@ -3157,11 +3157,80 @@
             "submitted": {
               "description": "Soumettre le paiement pour confirmer cette commande.",
               "deposit": {
-                "due_later": "Le solde est aux conditions de {{translatedName}} et est dû le {{dueDate}}."
+                "due_later": "Le solde est aux conditions de {{translatedName}} et est dû le {{dueDate}}.",
+                "due_on_fulfillment": "Le solde est dû une fois que tous les articles de cette commande ont été exécutés."
               }
+            },
+            "deposit": {
+              "due_later": "Le {{depositAmount}} sera dû au moment de la confirmation de votre commande. Le solde sera réglé aux conditions de {{translatedName}} ",
+              "due_on_fulfillment": "{{depositAmount}} est dû au moment de la confirmation de la commande. Le solde est dû au moment de l'exécution de la commande.",
+              "due_on_receipt": "{{depositAmount}} est dû au moment de la confirmation de la commande. Le solde est payable ultérieurement.",
+              "due_on_date": "{{depositAmount}} sera dû au moment de la confirmation de la commande. Le solde est dû le {{dueDate}}."
             }
-          }
+          },
+          "paid": {
+            "title_with_date": "Payé {{date}}",
+            "description": "Votre commande est entièrement payée."
+          },
+          "refund": {
+            "title_with_date": "Remboursé {{date}}",
+            "description_full_refund": "Vous avez reçu un remboursement complet pour cette commande.",
+            "description_single_refund": "Vous avez reçu un remboursement partiel pour cette commande."
+          },
+          "canceled": {
+            "description": "Vous n'avez pas été inculpé."
+          },
+          "pay_now_accessibility_label": "Payer maintenant pour commander {{orderName}}",
+          "title": "État des paiements"
+        },
+        "order_timeline": {
+          "expand_events_accessibility_label": "Afficher les détails du projet d'ordre",
+          "hide_events_label": "Cacher les détails",
+          "hide_events_accessibility_label": "Masquer les détails de l'ordre de repêchage"
+        },
+        "subtitle": "Soumis {{date}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Ce mode de paiement ne sera plus disponible pour les achats futurs dans ce lieu.",
+          "description_with_replacement": "La suppression de ce mode de paiement affectera les paiements préautorisés pour ce lieu. Remplacez-la par un autre mode de paiement pour continuer à recevoir les commandes à venir."
+        },
+        "payment_details": {
+          "order_label": "Commande {{name}}",
+          "draft_label": "Ordre de repêchage {{name}}"
         }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Ajouter un numéro de commande",
+        "add_modal_title": "Ajouter un numéro de commande",
+        "close_modal_accessibility_label": "Fermer la fenêtre modale du numéro de commande",
+        "discard": "Rejeter",
+        "discard_changes_modal_title": "Rejeter les modifications ?",
+        "edit_accessibility_label": "Modifier le numéro de commande",
+        "edit_modal_title": "Modifier le numéro de commande",
+        "empty_state": "Pas de numéro de PO",
+        "modal_po_number_input_label": "Numéro de commande",
+        "modal_po_number_input_max_length_error": "Les numéros de PO ont un maximum de {{maxLength}} caractères.",
+        "save": "Économiser",
+        "title": "PO #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Il y a eu un problème pour supprimer cette adresse. Réessayez ou actualisez la page."
+      },
+      "addresses_loading_issue": {
+        "description": "Erreur de connexion. Vérifiez votre connexion internet et réessayez."
+      },
+      "banner_title": {
+        "one": "Il y a une erreur {{count}} ",
+        "other": "Il y a des erreurs {{count}} "
+      },
+      "failed_address_creation": {
+        "description": "Il y a eu un problème lors de la création de votre adresse. Essayez d'actualiser cette page ou vérifiez votre connexion internet."
+      },
+      "failed_address_update": {
+        "description": "Il y a eu un problème de mise à jour de votre adresse. Essayez d'actualiser cette page ou vérifiez votre connexion internet."
       }
     }
   }
