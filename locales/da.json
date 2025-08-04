@@ -726,7 +726,44 @@
             "job_enqueue_failed": "Captcha-valideringsjobbet kunne ikke sættes i kø.",
             "job_already_queued": "Captcha-validering er allerede sat i kø for dette captcha-token.",
             "token_expired": "Det angivne captcha-token er udløbet. Udfyld en ny captcha for at fortsætte kassen.",
-            "token_invalid": "Det angivne captcha-token var ugyldigt. Udfyld en ny captcha for at fortsætte kassen."
+            "token_invalid": "Det angivne captcha-token var ugyldigt. Udfyld en ny captcha for at fortsætte kassen.",
+            "token_not_valid_for_session": "Den medfølgende captcha kan ikke bruges med denne checkout."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "Det modtagne beløb skal være i butikkens valuta."
+          },
+          "checkout_source": {
+            "revoked": "Denne checkout er ikke længere tilgængelig."
+          }
+        },
+        "title": "Kasse {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Kasse",
+        "loading": "Indlæser...",
+        "loading_title": "Kasse {{shopName}}",
+        "confirm_order_button_label": "Bekræft ordre",
+        "submit_order_button_label": "Indsend ordre",
+        "submit_for_review_button_label": "Indsend til gennemgang",
+        "submit_for_review_notice_label": "Betalingen forfalder først, når din ordre er gennemgået.",
+        "continue_to_payment_plans_button_label": "Fortsæt med betalingsplaner",
+        "back_button_label": "Vend tilbage",
+        "autocomplete_zero_item": "Ingen varer tilgængelige",
+        "submit": "Indsend",
+        "processing": "Behandling...",
+        "stepper": {
+          "increase": "Forøgelse {{type}}",
+          "decrease": "Fald {{type}}",
+          "minimum_reached": "Minimum af {{value}} nået",
+          "maximum_reached": "Maksimum af {{value}} nået"
+        },
+        "remove_item": "Fjerne %{label}",
+        "dates": {
+          "weekdays_abbreviation": {
+            "monday": "Mo",
+            "tuesday": "Tu",
+            "wednesday": "Vi",
+            "thursday": "Th",
+            "saturday": "Sa",
+            "sunday": "Su"
           }
         }
       }
