@@ -351,25 +351,25 @@
       "view_cart": "カートを見る",
       "each": "{{ money }}/について",
       "product": "製品",
-      "variant": "バリエーション",
-      "variant_total": "バリエーションの合計額",
+      "variant": "バリアント",
+      "variant_total": "バリエーション合計",
       "items_added": {
-        "one": "{{ quantity }}個のアイテムが追加されました",
-        "other": "{{ quantity }}個のアイテムが追加されました"
+        "one": "{{ quantity }} アイテム追加",
+        "other": "{{ quantity }} 追加項目"
       },
       "items_removed": {
-        "one": "{{ quantity }}個のアイテムが削除されました",
-        "other": "{{ quantity }}個のアイテムが削除されました"
+        "one": "{{ quantity }} 削除項目",
+        "other": "{{ quantity }} 削除項目"
       },
-      "product_variants": "商品バリエーション",
-      "total_items": "アイテムの総数",
-      "remove_all_items_confirmation": "カートから{{ quantity }}個のアイテムすべてを削除しますか？",
-      "remove_all": "すべてを削除",
+      "product_variants": "製品バリエーション",
+      "total_items": "全項目",
+      "remove_all_items_confirmation": "カートから{{ quantity }}商品をすべて削除しますか？",
+      "remove_all": "すべて削除",
       "cancel": "キャンセル",
-      "remove_all_single_item_confirmation": "カートからアイテムを1個削除しますか？",
-      "min_error": "このアイテムの最小値は{{ min }}です",
-      "max_error": "このアイテムの最大値は{{ max }}です",
-      "step_error": "このアイテムは、{{ step }}の増分でのみ追加できます"
+      "remove_all_single_item_confirmation": "カートから商品を1つ削除しますか？",
+      "min_error": "この商品には最低でも {{ min }}",
+      "max_error": "このアイテムは最大で {{ max }}",
+      "step_error": "この項目は、以下の単位でのみ追加できます。 {{ step }}"
     }
   },
   "localization": {
@@ -804,7 +804,47 @@
         "country_label": "国/地域",
         "country_code": "国/地域コード",
         "province_label": "地方",
-        "province_placeholder": "地方"
+        "province_placeholder": "地方",
+        "region_none": "選択なし",
+        "governorate_label": "県",
+        "governorate_placeholder": "県",
+        "emirate_label": "首長国",
+        "emirate_placeholder": "首長国",
+        "state_and_territory_label": "州／地域",
+        "state_and_territory_placeholder": "州／地域",
+        "phone_label": "電話",
+        "optional_phone_label": "電話（オプション）",
+        "phone_placeholder": "電話",
+        "phone_tooltip": "ご注文についてご連絡させていただく場合",
+        "optional_zip_code_label": "郵便番号（任意）",
+        "optional_postal_code_label": "郵便番号（任意）",
+        "optional_postcode_label": "郵便番号（任意）",
+        "optional_pincode_label": "PINコード（オプション）",
+        "civic_number_warning": "家屋番号をお持ちの場合はご記入ください。",
+        "optional_last_name_label": "姓（任意）",
+        "different_shipping_address_label": "別の住所に発送する",
+        "different_shipping_address_text": "この注文にはワンタイムアドレスを使用する",
+        "change_company_location_link_label": "会社の所在地を変更する",
+        "change_location_link_label": "場所を変更する",
+        "ship_to_company": "発送先 {{companyName}}"
+      },
+      "delivery_options": {
+        "ship": "船",
+        "ship_to_address": "発送先住所",
+        "pick_up": "ピックアップ",
+        "pick_up_from_store": "店舗での受け取り",
+        "pick_up_locations": "店舗所在地",
+        "pick_up_in_one_hour": "通常1時間以内",
+        "pick_up_in_two_hours": "通常2時間以内",
+        "pick_up_in_four_hours": "通常4時間以内",
+        "pick_up_in_twenty_four_hours": "通常24時間以内",
+        "pick_up_in_two_to_four_days": "通常2～4日",
+        "pick_up_in_five_or_more_days": "通常5日以上",
+        "pick_up_in_zero_to_two_hours": "2時間以内に受け取り可能",
+        "pick_up_in_two_to_four_hours": "4時間で受け取り可能",
+        "pick_up_immediately": "今すぐお受け取りいただけます",
+        "pick_up_next_day": "翌日受け取り可能",
+        "pickup_point_method_definition": "船からピックアップ・ポイントへ"
       }
     }
   },

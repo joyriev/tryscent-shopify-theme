@@ -2394,6 +2394,59 @@
           "decrement_fulfilled_line_item": "Retourné %{delta} de %{total}",
           "decrement_return_line_item": "Suppression de %{delta} dans le retour"
         }
+      },
+      "order": {
+        "financial_status": {
+          "authorized": "Autorisé",
+          "pending": "En attente",
+          "paid": "Payé",
+          "unpaid": "Non payé",
+          "voided": "Annulé",
+          "partially_paid": "Partiellement payé",
+          "partially_refunded": "Partiellement remboursé",
+          "refunded": "Remboursé"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Réalisé",
+          "complete": "Compléter",
+          "partial": "Partiel",
+          "unfulfilled": "Inaccomplie",
+          "restocked": "Réapprovisionnement"
+        },
+        "transaction_status": {
+          "success": "Succès",
+          "pending": "En attente"
+        },
+        "cancel_reason": {
+          "inventory": "Articles indisponibles",
+          "fraud": "Ordre frauduleux",
+          "customer": "Le client a modifié/annulé sa commande",
+          "other": "Autres"
+        },
+        "cash_on_delivery": "Contre remboursement (COD)"
+      },
+      "cart": {
+        "only_n_items_available": "Vous ne pouvez ajouter que %{count} %{name} au panier.",
+        "only_one_added_to_cart": "Seul 1 article a été ajouté à votre panier en raison de la disponibilité.",
+        "only_n_added_to_cart": "Seuls %{quantity} articles ont été ajoutés à votre panier en raison de leur disponibilité.",
+        "more_than_maximum": "Ce poste a une valeur maximale de %{max}.",
+        "not_respect_step": "Vous ne pouvez ajouter cet article que par tranches de %{step}.",
+        "all_items_in_cart": "Tous les %{count} %{name} sont dans votre panier.",
+        "empty_update": "Impossible de mettre à jour un panier vide",
+        "missing_parameters": "aucun paramètre d'identification ou de ligne valide",
+        "generic_error": "Erreur de panier",
+        "invalid_input": "%{parameter} n'est pas valide.",
+        "product_not_available": "Le produit n'est pas disponible",
+        "too_many_line_items_error": "Votre panier ne peut contenir plus de %{max} articles.",
+        "link_expired": "Lien expiré",
+        "stock_problems_html": "Un ou plusieurs articles ne sont plus disponibles. Nous avons mis <a href='%{link}'>à jour le panier</a>.",
+        "changed": "Panier modifié",
+        "items_changed": "Un ou plusieurs éléments ont été modifiés.",
+        "product_sold_out": "Le produit%{name} est déjà épuisé.",
+        "variant_not_found": "Impossible de trouver une variante",
+        "variant_requires_selling_plan": "La variante ne peut être achetée qu'avec un plan de vente.",
+        "selling_plan_not_available_for_company_locations": "Les commandes B2B ne peuvent faire l'objet que d'un achat unique.",
+        "digital_product_not_available_for_company_locations": "Cet article ne peut pas être ajouté à une commande B2B"
       }
     }
   }
