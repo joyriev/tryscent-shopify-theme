@@ -712,7 +712,42 @@
         "card_vaulted_company_location": "Kort gemt til denne placering",
         "expiry_long": "(Udløber) %{month}/%{year})",
         "expiry_short": "(Exp %{month}/%{year})",
-        "saved_by_payment_method": "Reddet af %{payment_method}"
+        "saved_by_payment_method": "Reddet af %{payment_method}",
+        "same_billing_address_label": "Samme som leveringsadresse",
+        "billing_address_associated_with_mandate": "Brug adresse tilknyttet betalingsmetode",
+        "billing_address_associated_with_mandate_info": "Hvis du ønsker at ændre din faktureringsadresse, skal du fjerne og indtaste dine kreditkortoplysninger igen.",
+        "free_order_notice_html": "Din bestilling er <strong>gratis</strong>. Der kræves ingen betaling.",
+        "express_checkout_free_order": "Du bliver ikke opkrævet betaling for en gratis ordre",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Din ordre er dækket af dit gavekort.",
+          "other": "Din ordre er dækket af dine gavekort."
+        },
+        "offsite_gateway_redirect_hint": "Når du har klikket på \"%{button_label}\", bliver du omdirigeret til %{gateway_label} for at gennemføre dit køb på en sikker måde.",
+        "offsite_gateway_review_page_redirect_hint": "Når du har gennemgået din ordre, bliver du omdirigeret til %{gateway_label} for at gennemføre dit køb på en sikker måde.",
+        "offsite_gateway_redirect_hint_no_button_label": "Når du fortsætter, vil du blive omdirigeret til %{gateway_label} for at gennemføre dit køb på en sikker måde.",
+        "receiver_payment_experience_hint": "Når du har afgivet din ordre, modtager du betalingsoplysninger. Foretag betalingen hos Multibanco eller online inden for %{due_days} dage.",
+        "billing_address_description": "Vælg den adresse, der passer til dit kort eller din betalingsmetode.",
+        "billing_address_description_no_shipping_address": "Indtast den adresse, der passer til dit kort eller din betalingsmetode.",
+        "no_js_credit_card_fields_redirect_hint": "Du vil blive omdirigeret til at tilføje dine betalingsoplysninger.",
+        "card_fields_container_prefix": "Feltcontainer til:",
+        "card_fields_unavailable_html": {
+          "one": "Betalinger med kredit- og betalingskort er ikke tilgængelige lige nu.<br><a href=\"%{current_url}\">Opdater denne side</a>, eller prøv igen senere.",
+          "other": "Betalinger med kredit- og betalingskort er ikke tilgængelige lige nu.<br><a href=\"%{current_url}\">Opdater denne side</a>, eller prøv en anden betalingsmetode."
+        },
+        "card_fields_processing_error": "Der opstod et problem med at behandle betalingen. Prøv at opdatere denne side, eller tjek din internetforbindelse.",
+        "technical_error": "Betalinger kan ikke behandles lige nu på grund af et teknisk problem. Prøv igen om et par minutter.",
+        "no_method_error": "Denne butik kan ikke tage imod betalinger lige nu.",
+        "not_configured_error": "Denne butik kan ikke tage imod betalinger lige nu.",
+        "billing_address_not_supported_for_payment_method_error": "Denne betalingsmetode er ikke tilgængelig for din faktureringsadresse og valuta. Prøv venligst en anden betalingsmetode.",
+        "generic_incorrect_card_info": "Dine betalingsoplysninger kunne ikke verificeres. Tjek dine kortoplysninger, og prøv igen.",
+        "sofort_label": "Sofort bankoverførsel",
+        "paypal_wallet_label": "PayPal tegnebog",
+        "shop_pay_installments_label": "Shop betaler afdrag",
+        "multibanco_label": "HÆVEAUTOMAT",
+        "eps_label": "eps-overførsel",
+        "klarna_slice_it_label": "Finans med Klarna",
+        "afterpay_label": "Efterbetaling",
+        "cashapppay_label": "Kontant app-betaling"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."
