@@ -613,7 +613,58 @@
             "local_pickup_delivery_line_detail_changed": "현재 지역 픽업 배송 전략을 계속 사용하려면 변경해야 합니다.",
             "local_pickup_no_delivery_strategy_available": "사용 가능한 현지 픽업 배송 전략을 찾을 수 없습니다.",
             "origin_location_id_required": "RETAIL 배송 방법을 요청할 때는 출발지 위치 ID가 필요합니다.",
-            "invalid_origin_location_id": "원본 위치 ID와 일치하는 위치를 찾을 수 없습니다."
+            "invalid_origin_location_id": "원본 위치 ID와 일치하는 위치를 찾을 수 없습니다.",
+            "origin_location_id_not_allowed": "요청된 배송 방법은 출발지 위치 ID를 지원하지 않습니다.",
+            "auto_fulfill_not_allowed": "이 세션은 주문 처리 동작을 재정의할 권한이 없습니다.",
+            "auto_fulfill_required": "자동 주문 처리는 소매 배송 방법을 요청할 때 필요합니다.",
+            "prefetch_shipping_rates_used": "미리 가져온 배송료는 절대로 요금을 반환해서는 안 됩니다.",
+            "must_fulfill_from_constraint_not_satisfied": "필수 위치에서 품목을 주문 처리할 수 없으므로 주문 처리 제약 조건이 충족되지 않습니다.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "동일한 위치에서 품목을 주문 처리할 수 없으므로 주문 처리 제약 조건이 충족되지 않습니다.",
+            "delivery_strategy_conditions_not_satisfied": "이 위치에 대한 배송 전략을 사용할 수 있지만 해당 조건이 충족되지 않습니다.",
+            "invalid_signature": "할인 서명이 잘못되었습니다."
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "B2B 스토어에서는 할인이 허용되지 않습니다.",
+            "custom_discount_not_honoured": "제공된 사용자 지정 할인이 적용되지 않았습니다.",
+            "unsupported_expectation": "제공된 할인 라인에는 정책에서 해석할 수 없는 기대치가 포함되어 있었습니다.",
+            "additional_requested_discount_code_discarded": "{{code}} 는 유효하지만 적용되지 않습니다. 할인 약관을 확인하세요.",
+            "additional_requested_discount_discarded": "할인이 유효하지만 적용되지 않습니다. 할인 약관을 확인하세요.",
+            "allocations_mismatch": "할인 코드가 변경되었습니다. 장바구니를 검토하고 다시 시도하세요.",
+            "discount_title_too_long": "할인 제목은 255자를 초과할 수 없습니다."
+          },
+          "tax": {
+            "unresolvable_tax_terms": "제안된 조건은 현재 협상 상황을 고려할 때 해결할 수 없는 수준입니다.",
+            "delivery_price_is_abstract": "관련 배송 가격은 추상적입니다.",
+            "tax_inclusivity_mismatch": "구체적인 총세액 및 관세 금액 또는 총액 포함 대상 값으로 재협상합니다.",
+            "tax_exemption_not_supported": "현재 협상 세션에서는 세금 면제가 지원되지 않습니다.",
+            "delivery_tax_exemption_not_supported": "배송 라인에 대한 세금 면제는 현재 지원되지 않습니다.",
+            "proposed_allocations_required": "'제안된 할당' 필드가 누락되었습니다.",
+            "merchandise_terms_must_be_defined": "상품 약관을 정의해야 합니다.",
+            "delivery_terms_must_be_defined": "배송 약관을 정의해야 합니다.",
+            "merchandise_discount_terms_must_be_defined": "상품 할인 조건을 정의해야 합니다.",
+            "delivery_discount_terms_must_be_defined": "배송 할인 조건을 정의해야 합니다.",
+            "allocated_required": "'할당됨' 필드가 누락되었습니다.",
+            "value_required": "'값' 필드가 누락되었습니다.",
+            "line_splits_not_supported": "'상품 라인' 필드는 판매자 제안서에서 각각 단일 라인 구성 요소를 갖도록 분할해야 합니다."
+          },
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "B2B 스토어에서는 수동 결제가 허용되지 않습니다.",
+            "total_amount_mismatch": "결제할 총액이 결제 금액의 합계와 일치하지 않습니다.",
+            "subscription_terms_not_accepted": "구독 약관이 허용되지 않습니다.",
+            "gateway_not_supported": "전자결제 대행사에서는 결제 방법 저장을 지원하지 않습니다.",
+            "credit_card_last_name_required": "'성'은 0이 될 수 없습니다.",
+            "installments_amount_invalid": "할부 거래의 금액이 잘못되었습니다.",
+            "installments_test_mode_not_allowed": "테스트 모드는 허용되지 않습니다.",
+            "installments_gift_card_not_allowed": "할부에서는 기프트 카드를 사용할 수 없습니다.",
+            "installments_unsupported_currency": "할부에서는 이 통화를 지원하지 않습니다.",
+            "installments_unsupported_shipping": "할부는 이 주소로의 배송을 지원하지 않습니다.",
+            "installments_unsupported_billing": "할부에서는 이 청구 주소가 지원되지 않습니다.",
+            "installments_unsupported_subscriptions": "할부는 구독을 지원하지 않습니다.",
+            "installments_ineligible_line_item": "이 구매의 품목에 대해 할부가 비활성화되어 있습니다.",
+            "shop_cash_not_found": "상점 캐시를 찾을 수 없습니다.",
+            "shop_cash_not_allowed": "샵 페이 없이는 샵 캐시를 사용할 수 없습니다.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash는 이 결제를 지원하지 않습니다.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash에서는 기프트 카드를 구매할 수 없습니다."
           }
         }
       }

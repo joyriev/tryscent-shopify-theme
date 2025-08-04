@@ -3706,7 +3706,56 @@
         }
       },
       "store_credit": {
-        "accesibility_label": "店舗クレジット {{formattedBalance}}"
+        "accesibility_label": "店舗クレジット {{formattedBalance}}",
+        "expirable_amounts_button": "望ましい金額を見る",
+        "expirable_amounts_label": "望ましい量",
+        "details_modal": {
+          "title": "有効なストア・クレジット",
+          "balance_label": "バランス",
+          "events": {
+            "order_payment": "注文支払い",
+            "order_refund": "注文の払い戻し",
+            "payment_failure": "支払いの失敗",
+            "payment_returned": "支払返却",
+            "order_cancellation": "注文キャンセル",
+            "tax_finalization": "税務確定"
+          },
+          "expirable_balance_info": "残高の一部は将来の日付で失効します。",
+          "expirable_amount_label": "望ましい総額",
+          "expirable_amounts_info": "チェックアウトの際、有効期限が早い金額から適用されます。",
+          "expired_amounts_button": "期限切れの金額を見る",
+          "pagination": {
+            "load_more_label": "もっと読む",
+            "load_more_accessibility_label": "より多くの望ましい量を積み込む"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "支払方法の詳細",
+        "credit_card_details_accessibility_label": "で終わる {{lastDigits}}",
+        "payment_method_expiring_on": "有効期限 {{expiryDate}}",
+        "payment_method_expired_on": "期限切れ {{expiryDate}}",
+        "preauthorized_payments": "事前承認支払い",
+        "close_payment_modal_accessibility_label": "支払い方法の詳細を閉じる",
+        "payment_method_not_found_error": "支払い方法が見つかりません",
+        "payment_details_loading": "支払い方法の詳細を読み込む",
+        "pre_authorized_payments": "事前承認支払い",
+        "total_amount_of_subscription_line_items_left": "と{{total}}もっと",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}}項目の合計、{{totalItemsToDisplay}}表示。",
+        "next_payment_due": "次回の支払い期限 {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button_accessibility_label": "で終わる支払い方法を編集する {{lastDigits}}",
+        "loading_shop_pay": "ロード・ショップ・ペイ",
+        "invalid_payment_method": "無効な支払い方法",
+        "invalid_payment_method_message": "新しいクレジットカードをご利用になり、今後のご注文をお受け取りください。",
+        "replace_payment_method": "支払い方法の変更",
+        "checkout_card_banner": "このお支払い方法は、事前承認済みのお支払いにのみご利用いただけます。このストアにログインしている場合は、チェックアウト時に表示されません。",
+        "default_checkbox": "デフォルト設定",
+        "default_checkbox_accessibility_label": "この支払い方法をデフォルトに設定する"
+      },
+      "edit_payment_method": {
+        "title": "支払い方法の編集",
+        "save_payment_method_button": "セーブ",
+        "payment_method_updated_toast": "支払方法を更新"
       }
     }
   }
