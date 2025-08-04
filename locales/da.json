@@ -1508,7 +1508,59 @@
         "address_city_contains_emojis": "Byen kan ikke indeholde emojis",
         "address_city_contains_html_tags": "City kan ikke indeholde HTML-tags.",
         "address_city_contains_mathematical_symbols": "Byen kan ikke indeholde matematiske symboler",
-        "address_country_blank": "Vælg et land/en region"
+        "address_country_blank": "Vælg et land/en region",
+        "payment_gateway_needs_paid_plan_error": "Denne betalingsmetode er ikke tilgængelig i butikken lige nu",
+        "payment_gateway_not_in_test_mode": "er ikke sat op til at teste ordrer. Denne butik kan ikke tage imod rigtige ordrer eller rigtige betalinger.",
+        "payment_gateway_incompatible_with_multi_currency": "For at gennemføre denne betaling i din lokale valuta skal du betale med kreditkort.",
+        "payment_gateway_unsupported_for_country": "Denne betalingsmetode er ikke tilgængelig i dit leveringsland.",
+        "payment_gateway_unsupported_for_development_store_html": "For at afgive en testordre skal du bruge en testbetalingsgateway. Læs mere om at <a href=\"%{docs_link}\">teste ordrer i udviklingsbutikker</a>.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Du har nået grænsen for ordrer til udviklingsbutikker med denne betalingsprocessor. Hvis du vil afgive en ny ordre, skal du bruge en testbetalingsgateway. Læs mere om at <a href=\"%{docs_link}\">teste ordrer i udviklingsbutikker</a>.",
+        "purchase_options_agreement_blank": "For at fortsætte med dit køb skal du acceptere betingelserne for udskudt eller tilbagevendende køb.",
+        "physical_gift_card_invalid_quantity": "Fysiske gavekortposter skal have et antal, der svarer til antallet af gavekortkoder.",
+        "physical_gift_card_duplicate_code": "Fysisk gavekort-linjepost indeholder duplikatkode.",
+        "physical_gift_card_invalid_code": "Den fysiske gavekortskode er ugyldig.",
+        "email_blank": "Indtast en e-mail",
+        "phone_blank": "Indtast et telefonnummer",
+        "address_country_invalid": "Vælg et land/region fra listen",
+        "address_zip_invalid": "Indtast et gyldigt postnummer",
+        "gift_card_invalid": "Gavekortet \"%{last_four_characters}\" er ikke længere gyldigt.",
+        "vaulting_agreement_blank": "Dit kort skal gemmes, fordi restbeløbet for denne ordre skal betales senere.",
+        "address_suggestion_did_you_mean_html": "Mente du, at %{html}?",
+        "split_cart_international_shipping_not_supported": "Alle varer skal bruge samme leveringsmetode, når de sendes internationalt. Opdater leveringsmetoden, eller opret flere ordrer.",
+        "invalid_delivery_address_reference_handle": "Leveringsadressens referencehåndtag kunne ikke matches med nogen tilgængelige leveringsadresser."
+      },
+      "store_credit_errors": {
+        "generic_error": "Der opstod et problem med din butikskredit. Prøv igen, eller genindlæs siden."
+      },
+      "redeemable_errors": {
+        "shop_cash": {
+          "currency_mismatch": "Valutaen er ændret. Gennemgå venligst dine Shop Cash og tilbud."
+        },
+        "gift_card": {
+          "insufficient_funds": "Dette gavekort har ingen penge tilbage",
+          "currency_mismatch": "Kun gavekort i %{shop_currency} accepteres",
+          "generic": "Gavekortet kunne ikke føjes til kassen",
+          "no_longer_available": "Dette gavekort kan ikke længere bruges med denne checkout"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "Instruktionen %{position} %{name} merchandise indeholder et tomt stald-ID.",
+        "invalid_stable_id_target": "Merchandise-instruktionen %{position} %{name} refererer til stald-ID %{stable_id}, men dette stald-ID findes ikke i merchandise-linjerne.",
+        "duplicate_variant_id": "Vareinstruktionen %{position} %{name} indeholder et duplikat af variant-ID' %{variant_id}.",
+        "invalid_variant_id_target": "Vareinstruktionen %{name} refererer til variant-ID %{variant_id}, men den variant findes ikke i varelinjer.",
+        "invalid_price_override_target": "Prisoverskridelsesinstruktionen for varelinjen %{stable_id} er ugyldig, da det er en bundtkomponent."
+      },
+      "payment_errors": {
+        "amount_too_small": "Minimumsbeløbet skal være højere end 0,50 USD. Prøv venligst igen med et højere beløb.",
+        "method_not_available": "Den ønskede betalingsmetode er ikke tilgængelig. Vælg en anden betalingsmetode, og prøv igen.",
+        "available_methods_updated": "Tilgængelige betalingsmetoder er blevet opdateret.",
+        "generic_error": "Der opstod et problem med at behandle din betaling. Prøv igen, eller brug en anden betalingsmetode.",
+        "rejected_transaction": "Din betaling blev afvist. Prøv igen, eller brug en anden betalingsmetode.",
+        "credit_card_processing": "Din betaling kan ikke behandles af tekniske årsager. Prøv igen om et par minutter, eller brug en anden betalingsmetode.",
+        "checkout_amount_changed": "Din betaling kunne ikke gennemføres, fordi det skyldige beløb ved kassen er ændret. Tjek venligst din ordre og prøv igen.",
+        "deferred_payment_not_allowed": "Udskudte betalinger er ikke tilladt. Tjek venligst din ordre og prøv igen.",
+        "deferred_payment_required": "Denne ordre kræver en udskudt betaling. Tjek venligst din ordre og prøv igen.",
+        "deferred_amount_changed": "Din betaling kunne ikke gennemføres, fordi beløbet for den udskudte betaling er ændret. Tjek venligst din ordre og prøv igen."
       }
     },
     "sentence": {
