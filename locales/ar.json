@@ -3669,33 +3669,33 @@
               "deposit": {
                 "title": "الدفع مستحق",
                 "due_later": "الرصيد على شروط {{translatedName}} ويستحق في {{dueDate}}.",
-                "due_on_fulfillment": "يستحق الرصيد بمجرد استكمال جميع العناصر في هذا الطلب.",
-                "due_on_receipt": "ستتلقى فاتورة بالمبلغ المتبقي.",
-                "due_on_date": "الرصيد مستحق في {{dueDate}}."
+                "due_on_fulfillment": "يستحق الرصيد بمجرد استيفاء جميع العناصر في هذا الطلب.",
+                "due_on_receipt": "ستتلقى فاتورة بالرصيد المتبقي.",
+                "due_on_date": "يستحق الرصيد في {{dueDate}}."
               }
             },
             "deposit": {
-              "due_later": "{{depositAmount}} سيكون مستحقًا عند تأكيد طلبك. سيكون الرصيد وفقًا لشروط {{translatedName}}.",
-              "due_on_fulfillment": "{{depositAmount}} سيكون مستحقًا عند تأكيد طلبك. وسيكون الرصيد مستحقًا عند تنفيذ الطلب.",
-              "due_on_receipt": "{{depositAmount}} سيكون مستحقًا عند تأكيد طلبك. وسيكون الرصيد مستحقًا لاحقًا.",
-              "due_on_date": "{{depositAmount}} سيكون مستحقًا عند تأكيد طلبك. وسيكون الرصيد مستحقًا في {{dueDate}}."
+              "due_later": "سيكون {{depositAmount}} مستحق الدفع عند تأكيد طلبك. سيكون الرصيد على شروط {{translatedName}}.",
+              "due_on_fulfillment": "{{depositAmount}} مستحق الدفع عند تأكيد طلبك. ويكون الرصيد مستحق الدفع عند تنفيذ الطلب.",
+              "due_on_receipt": "{{depositAmount}} مستحق الدفع عند تأكيد طلبك. وسيتم استحقاق الرصيد في وقت لاحق.",
+              "due_on_date": "{{depositAmount}} مستحق الدفع عند تأكيد طلبك. سيكون الرصيد مستحق الدفع عند {{dueDate}}."
             }
           },
           "paid": {
-            "title": "مدفوع",
-            "title_with_date": "تم الدفع {{date}}",
-            "description": "تم دفع طلبك بالكامل."
+            "title": "مدفوعة الأجر",
+            "title_with_date": "مدفوعة الأجر {{date}}",
+            "description": "طلبك مدفوع بالكامل."
           },
           "refund": {
-            "title": "تم الاسترداد",
-            "title_with_date": "تم استرداد المبلغ {{date}}",
-            "description_full_refund": "لقد تلقيت استردادًا كاملاً لهذا الطلب.",
-            "description_single_refund": "لقد تلقيت استردادًا جزئيًا لهذا الطلب.",
-            "description_multiple_refunds": "لقد تلقيت استردادات جزئية لهذا الطلب."
+            "title": "مستردة",
+            "title_with_date": "مستردة {{date}}",
+            "description_full_refund": "لقد استرددت المبلغ كاملاً مقابل هذا الطلب.",
+            "description_single_refund": "لقد تلقيت استرداداً جزئياً لهذا الطلب.",
+            "description_multiple_refunds": "لقد استرددت جزءًا من المبلغ المدفوع لهذا الطلب."
           },
           "canceled": {
             "title": "تم إلغاء الدفع",
-            "description": "لم يتم تحصيل أي رسوم منك."
+            "description": "لم يتم اتهامك."
           },
           "pay_now": "ادفع الآن",
           "pay_now_accessibility_label": "ادفع الآن للطلب {{orderName}}",
@@ -3703,58 +3703,58 @@
         },
         "order_timeline": {
           "expand_events_label": "عرض التفاصيل",
-          "expand_events_accessibility_label": "عرض تفاصيل طلب المسودة",
+          "expand_events_accessibility_label": "إظهار تفاصيل مسودة الطلب",
           "hide_events_label": "إخفاء التفاصيل",
-          "hide_events_accessibility_label": "إخفاء تفاصيل طلب المسودة"
+          "hide_events_accessibility_label": "إخفاء تفاصيل مسودة الطلب"
         },
-        "subtitle": "تم الإرسال {{date}}",
-        "title": "طلب {{name}}"
+        "subtitle": "تم التقديم {{date}}",
+        "title": "الطلب {{name}}"
       },
       "payment_methods": {
         "payment_delete": {
-          "description_without_replacement": "لن يكون هذا الأسلوب في الدفع متاحًا للشراءات المستقبلية من هذا الموقع.",
-          "description_with_replacement": "حذف طريقة الدفع هذه سيؤثر على المدفوعات المسبقة التفويض لهذا الموقع. استبدلها بطريقة دفع بديلة للاستمرار في استلام الطلبات القادمة."
+          "description_without_replacement": "لن تكون طريقة الدفع هذه متاحة بعد الآن لعمليات الشراء المستقبلية من هذا الموقع.",
+          "description_with_replacement": "سيؤثر حذف طريقة الدفع هذه على المدفوعات المفوض بها مسبقاً لهذا الموقع. استبدلها بطريقة دفع بديلة لمواصلة تلقي الطلبات القادمة."
         },
         "payment_details": {
-          "order_label": "طلب {{name}}",
+          "order_label": "الطلب {{name}}",
           "draft_label": "مسودة الطلب {{name}}"
         }
       },
       "purchase_order_number": {
-        "add_accessibility_label": "أضف رقم أمر الشراء",
-        "add_modal_title": "أضف رقم أمر الشراء",
+        "add_accessibility_label": "إضافة رقم أمر الشراء",
+        "add_modal_title": "إضافة رقم أمر الشراء",
         "discard": "تجاهل",
         "cancel": "إلغاء",
-        "close_modal_accessibility_label": "إغلاق نافذة رقم أمر الشراء",
-        "discard_changes_modal_title": "هل تريد تجاهل التغييرات؟",
-        "edit_accessibility_label": "تعديل رقم أمر الشراء",
-        "edit_modal_title": "تعديل رقم أمر الشراء",
-        "empty_state": "لا يوجد رقم طلب شراء",
+        "close_modal_accessibility_label": "إغلاق نموذج رقم أمر الشراء",
+        "discard_changes_modal_title": "تجاهل التغييرات؟",
+        "edit_accessibility_label": "تحرير رقم أمر الشراء",
+        "edit_modal_title": "تحرير رقم أمر الشراء",
+        "empty_state": "لا يوجد رقم أمر شراء",
         "modal_po_number_input_label": "رقم أمر الشراء",
-        "modal_po_number_input_max_length_error": "أرقام أوامر الشراء تحتوي على حد أقصى يبلغ {{maxLength}} حرفًا.",
-        "save": "حفظ",
-        "title": "رقم طلب الشراء #{{poNumber}}"
+        "modal_po_number_input_max_length_error": "أرقام أوامر الشراء لها حد أقصى من {{maxLength}} من الأحرف.",
+        "save": "الحفظ",
+        "title": "أمر الشراء # PO{{poNumber}}"
       }
     },
     "errors": {
       "address_deletion_error": {
-        "description": "حدثت مشكلة أثناء حذف هذا العنوان. حاول مرة أخرى أو قم بتحديث الصفحة."
+        "description": "كانت هناك مشكلة في حذف هذا العنوان. حاول مرة أخرى أو قم بتحديث الصفحة."
       },
       "addresses_loading_issue": {
-        "description": "خطأ في الاتصال. تحقق من اتصال الإنترنت الخاص بك وحاول مرة أخرى."
+        "description": "خطأ في الاتصال. تحقق من اتصالك بالإنترنت وحاول مرة أخرى."
       },
       "banner_title": {
-        "one": "هناك {{count}} خطأ",
+        "one": "يوجد {{count}} خطأ",
         "other": "هناك {{count}} أخطاء"
       },
       "failed_address_creation": {
-        "description": "حدثت مشكلة أثناء إنشاء عنوانك. حاول تحديث هذه الصفحة أو تحقق من اتصال الإنترنت الخاص بك."
+        "description": "كانت هناك مشكلة في إنشاء عنوانك. حاول تحديث هذه الصفحة أو تحقق من اتصالك بالإنترنت."
       },
       "failed_address_update": {
-        "description": "حدثت مشكلة في تحديث عنوانك. حاول تحديث هذه الصفحة أو تحقق من اتصال الإنترنت الخاص بك."
+        "description": "كانت هناك مشكلة في تحديث عنوانك. حاول تحديث هذه الصفحة أو تحقق من اتصالك بالإنترنت."
       },
       "load_orders_error": {
-        "title": "غير قادر على تحميل الطلبات",
+        "title": "تعذر تحميل الطلبات",
         "description": "أعد المحاولة أو عد لاحقًا.",
         "retry_button": "أعد المحاولة"
       },

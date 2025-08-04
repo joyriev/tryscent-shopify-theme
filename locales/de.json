@@ -2047,8 +2047,69 @@
         "errors": {
           "unavailable": {
             "description": "{{walletName}} war nicht verfügbar. Verwenden Sie eine andere Zahlungsmethode oder versuchen Sie es später erneut.",
-            "instructions": "Es gab ein Problem mit {{walletName}}. Kehren Sie zum Laden zurück, um es erneut zu versuchen, oder gehen Sie auf eine andere Weise zur Kasse."
-          }
+            "instructions": "Es gab ein Problem mit {{walletName}}. Kehren Sie zum Laden zurück, um es erneut zu versuchen, oder gehen Sie auf eine andere Weise zur Kasse.",
+            "unavailable_for_country": "{{walletName}} ist in {{countryName}} nicht verfügbar. Wählen Sie eine andere Zahlungsmethode, um Ihren Einkauf abzuschließen"
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} ist derzeit für Ihre Bestellung nicht verfügbar. Um Ihren Einkauf fortzusetzen, wählen Sie eine andere Zahlungsmethode."
+          },
+          "generic": "Es gab ein Problem mit {{walletName}}. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+          "discount_code": "Dieser Rabattcode kann nicht angewendet werden. Bitte überprüfen Sie Ihren Code und versuchen Sie es erneut.",
+          "terminal": "Es gab ein Problem mit {{walletName}}. Bitte verwenden Sie eine andere Zahlungsmethode.",
+          "detour": {
+            "stock_problems": "Einige Artikel sind nicht mehr verfügbar. Schließen Sie {{walletName}} und versuchen Sie es erneut.",
+            "price_change": "Einige Artikelpreise haben sich geändert. Schließen Sie {{walletName}}, um Ihre Bestellung zu überprüfen und versuchen Sie es erneut.",
+            "queue": "Sie befinden sich in einer Warteschlange für die Kasse. Schließen Sie {{walletName}}, um fortzufahren.",
+            "currency_change": "Sie können keine andere Adresse mit {{walletName}} verwenden. Verwenden Sie die ursprüngliche Adresse, oder versuchen Sie eine andere Zahlungsmethode."
+          },
+          "unsupported": {
+            "address": "Der Händler kann nicht an diese Adresse liefern",
+            "wallet_is_unavailable": "{{walletName}} kann nicht mit dieser Adresse verwendet werden. Wählen Sie eine andere Adresse oder schließen Sie {{walletName}}, um Ihren Kauf abzuschließen"
+          },
+          "outdated": {
+            "shipping_method": "Die Versandoptionen für Ihre Bestellung haben sich geändert. Überprüfen Sie Ihre Auswahl.",
+            "payment_terms": "Die Zahlungsbedingungen haben sich geändert. Bitte überprüfen Sie Ihre Bestellung"
+          },
+          "invalid": {
+            "shipping_address": "Geben Sie eine gültige Lieferadresse ein",
+            "billing_address": "Geben Sie eine gültige Rechnungsadresse ein",
+            "shipping_option": "Wählen Sie eine gültige Versandoption",
+            "email": "Geben Sie eine gültige E-Mail ein",
+            "zone": "Geben Sie ein gültiges Bundesland / Provinz ein",
+            "billing_zone": "Geben Sie eine gültige Rechnungsadresse ein Staat / Provinz",
+            "emirate": "Eingabe eines gültigen Emirats",
+            "postal_code": "Geben Sie eine gültige Postleitzahl ein.",
+            "phone": "Geben Sie eine gültige Rufnummer ein",
+            "billing_phone": "Geben Sie eine gültige Rechnungsadresse und Telefonnummer ein.",
+            "reduction_code": "Geben Sie einen gültigen Rabattcode oder eine Geschenkkarte ein",
+            "billing_zip": "Geben Sie eine gültige Rechnungsadresse ein (Postleitzahl)"
+          },
+          "missing": {
+            "first_name": "Eingabe eines Vornamens",
+            "billing_first_name": "Geben Sie den Vornamen der Rechnungsadresse ein",
+            "last_name": "Einen Nachnamen eingeben",
+            "address1": "Geben Sie eine Adresse ein",
+            "billing_address1": "Eingabe einer Rechnungsadresse",
+            "address2": "Betreten Sie eine Wohnung, Suite usw.",
+            "billing_address2": "Geben Sie eine Rechnungsadresse ein: Wohnung, Appartement, usw.",
+            "city": "Eine Stadt eingeben",
+            "billing_city": "Eingabe einer Rechnungsadresse Stadt",
+            "province": "Wählen Sie ein Bundesland / eine Provinz",
+            "billing_province": "Wählen Sie eine Rechnungsadresse Staat / Provinz",
+            "country": "Wählen Sie ein Land/eine Region",
+            "zip": "Geben Sie eine Postleitzahl ein",
+            "billing_zip": "Geben Sie eine Rechnungsadresse ein (Postleitzahl)",
+            "phone": "Eingabe einer Rufnummer"
+          },
+          "formatting": {
+            "name_contains_emojis": "Emoji aus Ihrem Namen löschen",
+            "postal_code_contains_emoji": "Emoji aus Ihrer Postleitzahl löschen",
+            "first_name_too_long": "Der Vorname enthält zu viele Buchstaben"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Ihre Lieferadresse ist ungültig. Wählen Sie eine andere Adresse oder verwenden Sie eine neue."
+        },
+        "scrim": {
+          "continue_purchase_in_window": "Setzen Sie Ihren Einkauf im {{walletName}} fort"
         }
       }
     }
