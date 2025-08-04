@@ -3012,7 +3012,49 @@
       },
       "store_credit": {
         "label": "Butikskredit",
-        "accesibility_label": "Butikskredit {{formattedBalance}}"
+        "accesibility_label": "Butikskredit {{formattedBalance}}",
+        "expirable_amounts_button": "Se de forventede mængder",
+        "expirable_amounts_label": "Udbytteberettigede mængder",
+        "details_modal": {
+          "title": "Udestående butikskredit",
+          "balance_label": "Balance",
+          "events": {
+            "order_payment": "Bestil betaling",
+            "order_refund": "Tilbagebetaling af ordre",
+            "payment_failure": "Manglende betaling",
+            "tax_finalization": "Færdiggørelse af skat"
+          },
+          "expirable_balance_info": "Noget af din saldo vil udløbe på en fremtidig dato",
+          "expirable_amount_label": "Samlet forventet beløb",
+          "expirable_amounts_info": "Beløb, der udløber tidligere, anvendes først ved kassen",
+          "expirable_amounts_button": "Udsigt",
+          "expired_amounts_button": "Se udløbne beløb",
+          "pagination": {
+            "load_more_label": "Læs mere",
+            "load_more_accessibility_label": "Indlæs flere ønskelige mængder"
+          }
+        }
+      },
+      "payment_details": {
+        "credit_card_details_accessibility_label": "der ender i {{lastDigits}}",
+        "payment_method_expiring_on": "Udløber den {{expiryDate}}",
+        "payment_method_expired_on": "Udløbet den {{expiryDate}}",
+        "close_payment_modal_accessibility_label": "Luk modal for detaljer om betalingsmetode",
+        "payment_method_not_found_error": "Kan ikke finde betalingsmetode",
+        "payment_details_loading": "Indlæser detaljer om betalingsmetode",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} elementer i alt, viser {{totalItemsToDisplay}} elementer.",
+        "next_payment_due": "Næste betaling forfalder {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button_accessibility_label": "Rediger betalingsmetode, der slutter på {{lastDigits}}",
+        "loading_shop_pay": "Indlæsning af Shop Pay",
+        "replace_payment_method": "Udskift betalingsmetode",
+        "checkout_card_banner": "Denne betalingsmetode kan kun bruges til forhåndsgodkendte betalinger. Den vises ikke ved kassen, hvis du er logget ind i denne butik.",
+        "default_checkbox": "Indstil som standard",
+        "default_checkbox_accessibility_label": "Indstil denne betalingsmetode som standard"
+      },
+      "edit_payment_method": {
+        "title": "Rediger betalingsmetode",
+        "save_payment_method_button": "Gemme",
+        "payment_method_updated_toast": "Betalingsmetode opdateret"
       }
     }
   }
