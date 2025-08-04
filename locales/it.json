@@ -2465,7 +2465,39 @@
             "active_delivery_guarantee_label": "Consegna da parte di {{date}}",
             "expired_badge_label": "Scaduto",
             "order_includes_guarantees_description": "Shop Promise garantisce una consegna rapida e affidabile. Richiedete Shop Cash se il vostro ordine arriva dopo {{date}}.",
-            "delivered_after_label": "Consegnato dopo {{date}}"
+            "delivered_after_label": "Consegnato dopo {{date}}",
+            "delivered_after_description": "Dato che il tuo ordine è arrivato in ritardo, hai diritto a richiedere {{amount}} Contanti del negozio.",
+            "claimed_shop_cash_description": "Poiché l'ordine è arrivato in ritardo, hai richiesto {{amount}} Contanti del negozio.",
+            "eligible_to_claim_shop_cash_description": "Dato che il tuo ordine è arrivato in ritardo, hai diritto a richiedere {{amount}} Contanti del negozio.",
+            "learn_more_button_label": "Per saperne di più",
+            "claim_shop_cash_button_label": "Richiedere contanti al negozio",
+            "view_balance_in_shop_button_label": "Visualizza l'equilibrio nel negozio",
+            "scan_to_claim_shop_cash_label": "Scansiona per richiedere {{amount}} Contanti del negozio"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "not_delivered_by_label": "Non consegnato da {{date}}",
+            "modal_accessibility_button_label": "Dettagli della promessa di consegna"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Richiedete il vostro Shop Cash",
+            "no_shop_app_label": "{{appDownloadLink}} per richiedere lo Shop Cash",
+            "download_shop_app_label": "Scarica il negozio"
+          },
+          "details_modal": {
+            "modal_accessiblity_label": "Dettagli della promessa di consegna",
+            "delivery_by_label": "Consegna da parte di {{date}}",
+            "delivery_guaranteed_by_label": "Consegna garantita da {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garantisce una consegna rapida e affidabile. Richiedete lo Shop Cash se il vostro ordine arriva in ritardo.",
+              "may_be_eligible_not_authorized_label": "Potresti avere diritto a richiedere Shop Cash perché l'ordine è arrivato in ritardo. Effettua il login per visualizzare i dettagli.",
+              "expired_label": "Questo ordine non può essere oggetto di un reclamo per consegna tardiva perché la garanzia di 30 giorni è scaduta.",
+              "no_shop_cash_label": "Questo ordine non può essere oggetto di un reclamo per consegna tardiva perché non è stato pagato con Shop Pay.",
+              "no_longer_guaranteed_label": "Questi articoli non sono più coperti da una garanzia di consegna.",
+              "claim_shop_cash_title": "Esegui la scansione per richiedere {{amount}} in denaro del negozio",
+              "claim_shop_cash_description": "È possibile utilizzare lo Shop Cash per acquisti futuri nell'app Shop."
+            }
           }
         }
       },
@@ -2567,10 +2599,22 @@
           }
         },
         "show_order_actions_accessibility_label": "Mostra le azioni dell'ordine per l'ordine {{name}}"
-      }
+      },
+      "status_mark_as_delivered": "Contrassegnare come consegnato",
+      "fulfillment_status_title": "Stato di avanzamento: {{status}}",
+      "manage": "Gestire",
+      "manage_accessiblity_label": "Gestire l'ordine {{orderId}}"
     },
     "order_details": {
-      "group_title_label_with_parent": "Per: {{groupTitle}}"
+      "group_title_label_with_parent": "Per: {{groupTitle}}",
+      "shipment_timeline": {
+        "expand_events_label": "Mostra i dettagli",
+        "expand_events_accessibility_label": "Mostra i dettagli della spedizione dell'ordine",
+        "hide_events_accessibility_label": "Nascondere i dettagli della spedizione dell'ordine"
+      },
+      "order_details_skeleton_accessibility_label": "Effettuare il login per visualizzare tutti i dettagli dell'ordine.",
+      "contact": "Contatto",
+      "contact_information": "Informazioni di contatto"
     },
     "date": {
       "humanize": {

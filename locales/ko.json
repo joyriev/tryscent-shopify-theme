@@ -611,7 +611,49 @@
           "no_fixed_selling_plans": "지연된 구매 옵션에는 스토어 크레딧을 사용할 수 없습니다."
         },
         "same_billing_address_checkbox_label": "배송지 주소를 청구지 주소로 사용",
-        "fact_billing_address_label": "청구서 수신 주소"
+        "fact_billing_address_label": "청구서 수신 주소",
+        "no_working_method_error": "이 스토어에서는 지금 결제를 받을 수 없습니다. 이 페이지를 새로 고치거나 나중에 다시 방문하세요.",
+        "brand_not_available": "이 스토어에서는 {{brand}} 사용할 수 없습니다. 다른 카드를 사용하여 결제하세요.",
+        "shipping_rate_updated": "사용 가능한 배송 방법이 업데이트되었습니다. 결제하기 전에 선택한 배송 방법을 확인하세요.",
+        "billing_address_invalid_phone": "청구 주소의 전화번호를 {{label}} 업데이트하세요. { {{last_digits}} 계속하려면 전화번호를 업데이트하세요.",
+        "billing_address_invalid_phone_no_card": "계속하려면 청구서 수신 주소의 전화번호를 업데이트하세요.",
+        "preview_not_available": {
+          "title": "미리 보기를 사용할 수 없습니다.",
+          "content": "이 빠른 결제는 고객을 위해 작동하니 걱정하지 마세요."
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_number": "유효한 발급 번호를 입력합니다."
+            },
+            "invalid": {
+              "verification_value": "유효한 CVV 또는 보안 코드를 입력하세요."
+            }
+          }
+        },
+        "simulated_checkout": "곧 미리보기 제공",
+        "simulated_express_checkout": "지역 또는 브라우저로 인해 편집기 미리 보기에서 지갑을 사용할 수 없습니다.",
+        "vaulting_agreement_label": "%{company} 로 결제 정보를 저장하면 더 빠른 결제가 가능합니다.",
+        "business_customer_vaulting_payment_label": "결제 시 이 카드를 저장하고 %{company} 이 위치의 향후 구매에 대해 이 카드를 청구하도록 승인합니다. 이 위치에 할당된 모든 연락처가 이 카드를 사용할 수 있습니다.",
+        "purchase_options_and_vaulting_agreement_label": "장바구니에 있는 하나 이상의 항목이 연기 또는 구독 구매입니다. 결제를 계속 진행하면 결제가 종료되거나 취소할 때까지 이 페이지에 명시된 가격과 빈도로 결제 수단이 자동으로 청구된다는 데 동의하는 것입니다. 모든 취소에는 %{cancellation_policy_label}.",
+        "saved_credit_card_info": "마지막 네 자리",
+        "delete_credit_card_modal": {
+          "confirmation": "{{lastDigits}} 끝나는 {{brandName}} 삭제하시겠습니까?"
+        },
+        "edit_credit_card_modal": {
+          "fields": {
+            "expiry": "만료일",
+            "name": "카드의 이름",
+            "billing": "청구 대상"
+          }
+        },
+        "expired_cards_info": {
+          "one": "만료된 카드가 %{count} 있으며, 계정에서 보고 편집할 수 있습니다.",
+          "other": "만료된 카드가 %{count} 있으며, 계정에서 보고 편집할 수 있습니다."
+        },
+        "local_payment_method_receiver_notice": "주문 후 결제 세부 정보를 받게 됩니다. {{dueDays}} 이내에 ATM 또는 온라인에서 결제하세요.",
+        "order_edit_banner_title": "{{amount_owed}} 지불해야 합니다.",
+        "order_edit_banner_subtitle": "주문 {{order_number}} 업데이트되었습니다. 변경 사항을 검토한 후 결제하여 주문을 확정하세요."
       },
       "order_summary": {
         "for_add_on": "For: %{group_title}",
