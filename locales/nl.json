@@ -604,7 +604,63 @@
         "klarna_pay_later_label": "Betaal later met Klarna",
         "multibanco_label": "PINAUTOMAAT",
         "eps_label": "eps overdracht",
-        "cashapppay_label": "Contante app Betalen"
+        "cashapppay_label": "Contante app Betalen",
+        "use_location_billing_address_label": "Gebruik factuuradres locatie",
+        "use_location_shipping_address_label": "Gebruik locatie verzendadres",
+        "no_working_method_error": "Deze winkel kan op dit moment geen betalingen accepteren. Vernieuw deze pagina of kom later terug.",
+        "brand_not_available": "Deze winkel accepteert {{brand}} niet. Gebruik een andere kaart om te betalen.",
+        "shipping_rate_updated": "De beschikbare verzendmethoden zijn bijgewerkt. Bevestig je keuze voordat je afrekent.",
+        "billing_address_invalid_phone": "Werk het telefoonnummer in je factuuradres bij voor {{label}} {{last_digits}} om verder te gaan.",
+        "billing_address_invalid_phone_no_card": "Werk het telefoonnummer in je factuuradres bij om door te gaan.",
+        "preview_not_available": {
+          "content": "Maak je geen zorgen, deze express checkout werkt voor je klanten.",
+          "button": "Ok"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Voer een geldige afgiftedatum in"
+            },
+            "invalid": {
+              "verification_value": "Voer een geldige CVV of beveiligingscode in"
+            }
+          }
+        },
+        "simulated_checkout": "Preview binnenkort",
+        "simulated_express_checkout": "Portefeuilles zijn niet beschikbaar in het voorbeeld van de editor vanwege uw regio of browser",
+        "vaulting_agreement_label": "Sla mijn betalingsgegevens op met %{company} voor sneller afrekenen.",
+        "business_customer_vaulting_payment_label": "Sla deze kaart op bij het afrekenen en machtig %{company} om deze in rekening te brengen voor toekomstige aankopen voor deze locatie. Alle contactpersonen die aan deze locatie zijn toegewezen, kunnen de kaart gebruiken.",
+        "purchase_options_and_vaulting_agreement_label": "Een of meer items in je winkelwagen zijn een aankoop op afbetaling of een abonnement. Door verder te gaan met je betaling, ga je ermee akkoord dat je betaalmethode automatisch in rekening wordt gebracht tegen de prijs en frequentie die op deze pagina worden vermeld, totdat deze eindigt of je opzegt. Alle annuleringen zijn onderworpen aan de %{cancellation_policy_label}.",
+        "use_different_credit_card_label": "Gebruik een andere kaart",
+        "saved_credit_card": "Uw opgeslagen creditcard",
+        "saved_credit_card_cvv_verification": "Voer ter verificatie de beveiligingscode van je kaart in.",
+        "saved_credit_card_actions": {
+          "edit": "Bewerk",
+          "delete": "Verwijder"
+        },
+        "saved_credit_cards_modal": {
+          "done": "Gedaan"
+        },
+        "add_credit_card_modal": {
+          "save": "Sla"
+        },
+        "delete_credit_card_modal": {
+          "confirmation": "Weet je zeker dat je de {{brandName}} die eindigt op {{lastDigits}} wilt verwijderen?",
+          "delete": "Verwijder"
+        },
+        "edit_credit_card_modal": {
+          "title": "Bewerk kaart",
+          "done": "Gedaan",
+          "fields": {
+            "billing": "Wetsvoorstel aan"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Er is %{count} verlopen kaart, die je kunt bekijken en bewerken in je account.",
+          "other": "Er zijn %{count} verlopen kaarten, die je kunt bekijken en bewerken in je account."
+        },
+        "local_payment_method_receiver_notice": "Na het plaatsen van je bestelling ontvang je de betalingsgegevens. Voer de betaling uit bij een geldautomaat of online binnen {{dueDays}} dagen.",
+        "order_edit_banner_subtitle": "Uw bestelling {{order_number}} is bijgewerkt. Controleer deze wijzigingen en betaal vervolgens om je bestelling te bevestigen."
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Uw bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan."
