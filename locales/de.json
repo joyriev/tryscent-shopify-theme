@@ -3087,7 +3087,75 @@
         "description": "Bei der Aktualisierung Ihrer Adresse ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung."
       },
       "load_orders_error": {
-        "title": "Aufträge können nicht geladen werden"
+        "title": "Aufträge können nicht geladen werden",
+        "description": "Versuchen Sie es erneut oder kommen Sie später wieder.",
+        "retry_button": "Wiederholung"
+      },
+      "load_paypal_error": {
+        "description": "Beim Laden von PayPal ist ein Problem aufgetreten. Bitte versuchen Sie es erneut."
+      },
+      "logout_everywhere": {
+        "description": "Beim Abmelden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+      },
+      "no_access_to_locations": {
+        "description": "Sie haben keinen Zugang zu irgendwelchen Orten"
+      },
+      "not_found": {
+        "description": "Überprüfen Sie die URL oder versuchen Sie es in ein paar Minuten erneut."
+      },
+      "order_not_found": {
+        "description": "Dieser Auftrag existiert nicht oder Sie haben keine Berechtigung, ihn zu sehen."
+      },
+      "profile_update_error": {
+        "description": "Beim Aktualisieren Ihres Profils ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung."
+      },
+      "retry_action_label": "Wiederholung",
+      "resend_link": {
+        "too_many_requests": "Zu viele Anfragen. Versuchen Sie es später noch einmal."
+      },
+      "load_extension_error": {
+        "description": "Aktualisieren Sie diese Seite oder versuchen Sie es in ein paar Minuten erneut.",
+        "refresh_button": "Seite aktualisieren"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "description": "Bitte versuchen Sie es in ein paar Minuten erneut"
+      }
+    },
+    "payment_methods": {
+      "title": "Zahlungsmöglichkeiten",
+      "add_payment_method_banner": "Hinzufügen einer Zahlungsmethode für eine schnellere Kaufabwicklung oder vorautorisierte Dienste",
+      "no_payment_methods_banner": "Keine zusätzlichen Zahlungsarten",
+      "edit_payment_method_button_accessibility_label": "Bearbeiten Sie {{paymentMethodName}} mit der Endung {{lastDigits}}",
+      "edit_payment_method_brand_button_accessibility_label": "bearbeiten {{paymentMethodName}}",
+      "delete_payment_method_button_accessibility_label": "Löschen {{paymentMethodName}}",
+      "expiration_warning_button_accessibility_label": "Verfallswarnung für {{paymentMethodName}} anzeigen, die auf {{lastDigits}} endet",
+      "expires_soon": "Diese Karte läuft demnächst ab",
+      "card_update_consent": "Diese Zahlungsmethode wird für zukünftige Einkäufe gespeichert.",
+      "card_update_consent_subscriptions": "Diese Zahlungsmethode wird für zukünftige Käufe gespeichert und kann für alle wiederkehrenden oder aufgeschobenen Käufe verwendet werden.",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Google Pay Zahlungsmethode hinzufügen",
+        "loading_accessibility_message": "Google Pay laden",
+        "loading": "Google Pay laden",
+        "errors": {
+          "generic": "Es gab ein Problem mit Google Pay. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+          "missing_billing_address": "Für Google Pay ist eine Rechnungsadresse erforderlich. Bitte fügen Sie eine zu Ihrem Konto hinzu."
+        }
+      },
+      "pay_pal": {
+        "loading_accessibility_message": "PayPal laden"
+      },
+      "apple_pay": {
+        "loading": "Apple Pay laden",
+        "errors": {
+          "generic": "Es gab ein Problem mit Apple Pay. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+          "missing_billing_address": "Für Apple Pay ist eine Rechnungsadresse erforderlich. Bitte fügen Sie eine zu Ihrem Konto hinzu."
+        }
+      },
+      "store_credit": {
+        "label": "Kredit im Geschäft",
+        "accesibility_label": "Ladenguthaben - {{formattedBalance}}"
       }
     }
   }

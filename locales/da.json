@@ -1657,7 +1657,55 @@
         "open_app_text": "Åbn {{paymentMethod}} app",
         "qr_code": {
           "instructions": "Gennemfør dit køb ved hjælp af din {{paymentMethod}} "
+        },
+        "external": {
+          "instructions": "Bekræft betalingen i din app for at gennemføre købet."
         }
+      },
+      "failed_payment": {
+        "page_title": "Betaling kunne ikke gennemføres",
+        "title": "Betaling kunne ikke gennemføres",
+        "payment_not_processed_text": "Du er ikke blevet debiteret. Gå tilbage til din indkøbskurv for at gennemføre dit køb.",
+        "return_to_cart_button_label": "Tilbage til indkøbskurven"
+      },
+      "payment_gateway": {
+        "bank_deposit_label": "Bankindskud",
+        "generic_payment_terms": "Du er på {{translatedName}} vilkår. Din betaling forfalder på {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} til en konto med adgang til denne placering for at tilføje eller bruge gemte betalingsmetoder.",
+            "link": "Log in"
+          }
+        },
+        "direct_payment_terms": "Du er på {{translatedName}} vilkår. Dit kort vil blive debiteret på {{dueDate}}.",
+        "fixed_direct_payment_terms": "Dit kort vil blive debiteret den {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Din betaling forfalder, når din ordre er gennemført.",
+        "order_due_on_fulfillment_payment": "Dit kort vil blive trukket, når din ordre er gennemført.",
+        "order_due_on_receipt_choose_later": "Din betaling forfalder ved modtagelsen.",
+        "order_deposit_due_now": "{{depositAmount}} forfalder i dag. Saldoen er på {{translatedName}} vilkår og forfalder på {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} skal betales i dag. Restbeløbet forfalder, når din ordre er gennemført.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} skal betales i dag. Restbeløbet forfalder senere.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} skal betales i dag. Restbeløbet forfalder den {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "Dit kort bliver trukket, når din ordre er bekræftet.",
+        "draft_order_payment_due_later_terms": "Du vil være på {{translatedName}} vilkår, når din ordre er bekræftet.",
+        "draft_order_payment_due_on_fulfillment": "Din betaling forfalder, når din ordre er bekræftet og gennemført.",
+        "draft_order_deposit_due_later": "{{{depositAmount}} forfalder, når din ordre er bekræftet. Restbeløbet betales på {{translatedName}} vilkår.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} skal betales, når din ordre er bekræftet. Restbeløbet betales, når din ordre er gennemført."
+      },
+      "thank_you": {
+        "confirmation_email_sent_text": "Der er sendt en bekræftelsesmail til %{email}",
+        "return_to_store_link_label": "Fortsæt med at shoppe",
+        "print_link_label": "Udskriv kvittering",
+        "payment_information_title": "Oplysninger om betaling",
+        "shipping_information_title": "Oplysninger om forsendelse",
+        "page_title": "Tak skal du have, %{display_name}!",
+        "page_title_no_name": "Tak skal du have!",
+        "purchase_order_number_title": "PO-nummer #.%{purchase_order_number}",
+        "failed_pending_payment_page_title": "Der er et problem med din betaling",
+        "customer_information_title": "Order details",
+        "contact_information_title": "Kontaktoplysninger",
+        "company_location_title": "Beliggenhed",
+        "shipping_address_map_title": "Google-kort med angivelse af leveringsadressen: %{address}"
       }
     },
     "sentence": {
