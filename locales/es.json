@@ -1684,7 +1684,58 @@
         "open_app_text": "Abrir la aplicación {{paymentMethod}} ",
         "qr_code": {
           "instructions": "Completa tu compra utilizando tu código {{paymentMethod}} "
+        },
+        "external": {
+          "instructions": "Confirme el pago en su aplicación para completar esta compra"
         }
+      },
+      "failed_payment": {
+        "page_title": "No se ha podido procesar el pago",
+        "title": "No se ha podido procesar el pago",
+        "payment_not_processed_title": "Su pago no ha podido ser procesado",
+        "payment_not_processed_text": "No se te ha cobrado. Vuelve al carrito para completar tu compra.",
+        "return_to_cart_button_label": "Volver a la cesta"
+      },
+      "payment_gateway": {
+        "bank_deposit_label": "Depósito bancario",
+        "cash_on_delivery_label": "Contra reembolso",
+        "money_order_label": "Giro postal",
+        "deferred_payment_label": "Elija el método de pago más tarde",
+        "fixed_payment_label": "Su pago vencerá el {{dueDate}}.",
+        "generic_payment_terms": "Estás en condiciones {{translatedName}}. Tu pago vencerá el {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} a una cuenta con acceso a esta ubicación para añadir o utilizar métodos de pago guardados.",
+            "link": "Conectarse"
+          }
+        },
+        "direct_payment_terms": "Estás en las condiciones de {{translatedName}}. El cargo en tu tarjeta se realizará el {{dueDate}}.",
+        "fixed_direct_payment_terms": "El cargo en su tarjeta se efectuará el {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "El pago se efectuará una vez que se haya realizado el pedido.",
+        "order_due_on_fulfillment_payment": "El importe se cargará en su tarjeta una vez se haya tramitado su pedido.",
+        "order_due_on_receipt_choose_later": "El pago se efectuará en el momento de la recepción.",
+        "order_deposit_due_now": "{{depositAmount}} vence hoy. El saldo está en condiciones {{translatedName}} y vence el {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} debe pagarse hoy. El resto deberá abonarse una vez se haya realizado el pedido.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} debe pagarse hoy. El resto deberá pagarse más tarde.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} vence hoy. El saldo vencerá el {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms": "El pago se efectuará una vez confirmado el pedido.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "El importe se cargará en su tarjeta una vez confirmado el pedido.",
+        "draft_order_payment_due_later_terms": "Estarás en condiciones {{translatedName}} una vez confirmado tu pedido.",
+        "draft_order_payment_due_on_fulfillment": "El pago se efectuará una vez que el pedido haya sido confirmado y realizado.",
+        "draft_order_deposit_due_later": "{{depositAmount}} será pagadero cuando se confirme su pedido. El saldo será en {{translatedName}} términos.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} será pagadero cuando se confirme su pedido. El saldo se abonará una vez que se haya completado el pedido."
+      },
+      "thank_you": {
+        "title": "Gracias por su compra.",
+        "print_link_label": "Imprimir recibo",
+        "page_title": "Gracias, señor, %{display_name}!",
+        "page_title_no_name": "Gracias.",
+        "purchase_order_number_title": "Número de pedido%{purchase_order_number}",
+        "cancelled_page_title": "Pedido anulado",
+        "failed_pending_payment_page_title": "Hay un problema con su pago",
+        "company_location_title": "Ubicación",
+        "shipping_address_map_title": "Mapa de Google que muestra el punto exacto de la dirección de envío: %{address}",
+        "payment_method_title": "Forma de pago"
       }
     },
     "sentence": {
