@@ -528,7 +528,7 @@
     "checkout": {
       "payment": {
         "payment_option": {
-          "accessibility_label": "支払い方法を選択してください"
+          "accessibility_label": "支払い方法を選択する"
         },
         "network_card_payment_options": "カードネットワークを選ぶ",
         "network_card_persistence_description": "選択したネットワークは、今後の取引のためにお支払い方法とともに保存されます。",
@@ -735,7 +735,67 @@
         },
         "local_payment_method_receiver_notice": "ご注文後、お支払いの詳細をお送りします。ATMまたはオンラインで{{dueDays}}日以内にお支払いください。",
         "order_edit_banner_title": "{{amount_owed}}支払いが必要です。",
-        "order_edit_banner_subtitle": "ご注文{{order_number}}更新されました。変更内容を確認し、お支払いを済ませてご注文を確定してください。"
+        "order_edit_banner_subtitle": "ご注文{{order_number}}更新されました。変更内容を確認し、お支払いを済ませてご注文を確定してください。",
+        "order_edit_banner_items_added": {
+          "one": "追加",
+          "other": "追加 %{count}"
+        },
+        "order_edit_banner_items_removed": {
+          "in_full": "削除",
+          "with_quantities": "{{quantity}} {{delta}}削除{{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "返品 {{quantity}}",
+          "with_quantities": "{{quantity}} {{delta}}返した。"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "返品から削除",
+          "with_quantities": "returnから{{delta}}削除{{delta}}"
+        },
+        "order_edit_banner_single_item_added": "追加",
+        "order_edit_banner_multiple_items_added": "追加 {{amount}}",
+        "order_edit_banner_single_item_removed": "削除",
+        "order_edit_banner_multiple_items_removed": "削除 {{amount}}",
+        "order_edit_banner_single_item_returned": "返品",
+        "order_edit_banner_multiple_items_returned": "返品 {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "返品から削除",
+        "order_edit_banner_multiple_items_return_line_item_removed": "returnから{{amount}}削除{{amount}}",
+        "order_edit_banner_updated_order_label": "更新順",
+        "gift_card_wrapper": {
+          "apply_gift_card_label": "ギフトカードを申し込む",
+          "apply_another_gift_card_label": "別のギフトカードを申し込む",
+          "gift_card_label": "ギフトカード %{identifier}",
+          "add_label": "ギフトカードを追加する",
+          "manage_label": "ギフトカードの管理"
+        },
+        "gift_card_store_credit": {
+          "add_label": "ギフトカードまたはストアクレジットを追加する",
+          "manage_label": "ギフトカードや店舗クレジットの管理"
+        },
+        "gift_card_checkbox_label": "ギフトカードを申し込む",
+        "custom_onsite_payment_method_modal": {
+          "title": "カスタムオンサイト入金確認"
+        },
+        "markets_pro_disclaimer_label": "下記をクリックし、注文を完了することにより、お客様はGlobal-eの%{markets_pro_terms}および%{privacy_policy}基づき、本取引のマーチャントとしてGlobal-eから商品を購入することに同意したものとみなされます。Global-eは%{shop_name}国際フルフィルメントサービスプロバイダーです。",
+        "markets_pro_disclaimer_terms_and_conditions": "ご利用条件",
+        "markets_pro_disclaimer_terms_and_conditions_title": "加盟店規約",
+        "markets_pro_disclaimer_privacy_policy_title": "プライバシーポリシー",
+        "purchase_order_number": {
+          "title": "PO番号",
+          "label": "PO番号（任意）"
+        },
+        "alternative_payment_currency_total_notice": "注意：課金されます %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "注：換算した合計 %{amount_due}.",
+        "waiting_on_taxes_message": "数秒以内に税金が計算されない場合は、ページを更新してください。",
+        "waiting_on_taxes_notice": "税金の計算",
+        "payment_method": "支払方法",
+        "expired_payment_method": "選択した支払い方法の有効期限が切れています",
+        "payment_method_update_failed": "支払方法の更新に失敗しました。",
+        "payment_method_incompatible_with_payment_terms": "支払方法と支払条件が一致しない。",
+        "proposed_gateway_unavailable": "提案された決済ゲートウェイが利用できない",
+        "pay_in_installments_split_pay_short": "4回の支払い %{amount}",
+        "gift_cards_unavailable": "ギフトカードはこの注文に適用できなくなり、削除されました。",
+        "payment_flexibility_terms_id_mismatch": "支払い柔軟性の条件 IDの不一致"
       },
       "order_summary": {
         "for_add_on": "賛成だ： %{group_title}",
@@ -1568,6 +1628,10 @@
           "tax_credential_tr": "トルコ共和国 ID番号 / VAT",
           "shipping_credential_tr": "トルコ共和国 ID番号 / VAT"
         }
+      },
+      "billing": {
+        "billing_address_title": "請求書",
+        "same_as_shipping": "発送先住所と同じ"
       }
     }
   },
