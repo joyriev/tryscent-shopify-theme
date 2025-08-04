@@ -291,14 +291,14 @@
       }
     },
     "cart": {
-      "title": "Tu carrito",
-      "caption": "Artículos en el carrito",
+      "title": "Su cesta",
+      "caption": "Artículos de la cesta",
       "remove_title": "Eliminar {{ title }}",
-      "note": "Instrucciones especiales del pedido",
-      "checkout": "Pagar pedido",
-      "empty": "Tu carrito esta vacío",
-      "cart_error": "Hubo un error al actualizar tu carrito de compra. Inténtalo de nuevo.",
-      "cart_quantity_error_html": "Solo puedes agregar {{ quantity }} de este artículo a tu carrito.",
+      "note": "Pedir instrucciones especiales",
+      "checkout": "Echa un vistazo",
+      "empty": "Su cesta está vacía",
+      "cart_error": "Se ha producido un error al actualizar su cesta. Por favor, inténtalo de nuevo.",
+      "cart_quantity_error_html": "Sólo puede añadir {{ quantity }} de este artículo a su cesta.",
       "headings": {
         "product": "Producto",
         "price": "Precio",
@@ -306,10 +306,10 @@
         "quantity": "Cantidad",
         "image": "Imagen del producto"
       },
-      "update": "Actualizar",
+      "update": "Actualización",
       "login": {
-        "title": "¿Tienes una cuenta?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Inicia sesión</a> para finalizar tus compras con mayor rapidez."
+        "title": "¿Tiene una cuenta?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Inicie</a> sesión para pagar más rápido."
       },
       "estimated_total": "Total estimado",
       "new_estimated_total": "Nuevo total estimado"
@@ -318,31 +318,31 @@
       "payment": "Formas de pago"
     },
     "featured_blog": {
-      "view_all": "Ver todo",
-      "onboarding_title": "Artículo de blog",
-      "onboarding_content": "Ofrece a tus clientes un resumen de tu artículo de blog"
+      "view_all": "Ver todos",
+      "onboarding_title": "Entrada de blog",
+      "onboarding_content": "Ofrezca a sus clientes un resumen de la entrada de su blog"
     },
     "featured_collection": {
-      "view_all": "Ver todo",
-      "view_all_label": "Ver todos los productos de la colección {{ collection_name }}"
+      "view_all": "Ver todos",
+      "view_all_label": "Ver todos los productos de la colección {{ collection_name }} "
     },
     "collection_list": {
-      "view_all": "Ver todo"
+      "view_all": "Ver todos"
     },
     "collection_template": {
       "title": "Colección",
-      "empty": "No se encontró ningún producto",
-      "use_fewer_filters_html": "Usa menos filtros o <a class=\"{{ class }}\" href=\"{{ link }}\">elimínalos todos</a>"
+      "empty": "No se han encontrado productos",
+      "use_fewer_filters_html": "Utilizar menos filtros o <a class=\"{{ class }}\" href=\"{{ link }}\">eliminarlos todos</a>"
     },
     "video": {
-      "load_video": "Cargar video: {{ description }}"
+      "load_video": "Cargar vídeo: {{ description }}"
     },
     "slideshow": {
-      "load_slide": "Cargar diapositiva",
+      "load_slide": "Corredera de carga",
       "previous_slideshow": "Diapositiva anterior",
-      "next_slideshow": "Diapositiva siguiente",
-      "pause_slideshow": "Pausar la presentación",
-      "play_slideshow": "Reproducir la presentación",
+      "next_slideshow": "Siguiente diapositiva",
+      "pause_slideshow": "Pausar presentación",
+      "play_slideshow": "Reproducir diapositivas",
       "carousel": "Carrusel",
       "slide": "Diapositiva"
     },
@@ -351,15 +351,15 @@
     },
     "announcements": {
       "previous_announcement": "Anuncio anterior",
-      "next_announcement": "Anuncio siguiente",
+      "next_announcement": "Próximo anuncio",
       "carousel": "Carrusel",
       "announcement": "Anuncio",
       "announcement_bar": "Barra de anuncios"
     },
     "quick_order_list": {
-      "product_total": "Subtotal de productos",
+      "product_total": "Subtotal del producto",
       "view_cart": "Ver carrito",
-      "each": "{{ money }}/unidad",
+      "each": "{{ money }}/ea",
       "product": "Producto",
       "variant": "Variante",
       "variant_total": "Total de variantes",
@@ -548,7 +548,54 @@
       },
       "order_summary": {
         "for_add_on": "Para: %{group_title}"
+      },
+      "address_management": {
+        "confirm_address_deletion": "¿Está seguro de que desea eliminar la dirección {{address}}?"
+      },
+      "general": {
+        "page_title": "Pedido",
+        "skip_to_content": "Ir al contenido",
+        "breadcrumb": "Migas de pan",
+        "continue_button_label": "Continúe en",
+        "complete_purchase_button_label": "Pedido completo",
+        "authenticate_purchase_button_label": "Autentificar el pago",
+        "continue_to_shipping_method": "Continuar con el envío",
+        "continue_to_review": "Orden de revisión",
+        "back_to_cart": "Volver a la cesta",
+        "back_to_contact_information": "Volver a la información",
+        "back_to_shipping_method": "Volver al envío",
+        "back_to_payment_method": "Volver al pago",
+        "choose_shipping_method": "Elija un método de envío",
+        "choose_payment_method": "Elija un método de pago",
+        "choose_billing_address": "Elija una dirección de facturación",
+        "contact_us_html": "Más información",
+        "autocomplete_single_item": "1 artículo disponible",
+        "autocomplete_multi_item": "{{number}} artículos disponibles",
+        "autocomplete_close": "Cerrar sugerencias",
+        "forwarding_indicator": {
+          "new_window": "Se abre en una nueva ventana.",
+          "external": "Abre un sitio web externo.",
+          "external_and_new_window": "Abre el sitio web externo en una ventana nueva."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Pasar por caja"
+        },
+        "errors": {
+          "only_empty_terms_accepted": "Esta política sólo acepta términos vacíos.",
+          "session_identifier_not_unique_error": "Algo ha ido mal con su pedido, por favor inténtelo de nuevo.",
+          "line_item_limit_reached": "Se ha alcanzado el número máximo de partidas.",
+          "session_is_already_finished": "Esta sesión de verificación ya ha finalizado.",
+          "merchandise": {
+            "only_value_constraint": "Sólo se permiten valores exactos en la entrada de mercancías.",
+            "merchandise_not_applicable": "La variante del producto no se puede comprar.",
+            "mixed_currencies": "La caja contiene partidas con diferentes monedas.",
+            "bundle_products_not_supported_for_b2b": "Los artículos agrupados no pueden añadirse a pedidos B2B para esta ubicación."
+          }
+        }
       }
+    },
+    "sentence": {
+      "last_word_connector": "y "
     }
   },
   "customer_accounts": {

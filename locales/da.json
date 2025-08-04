@@ -2093,8 +2093,63 @@
         "errors": {
           "unavailable": {
             "title": "{{walletName}} ikke tilgængelig",
-            "instructions": "Der opstod et problem med {{walletName}}. Vend tilbage til butikken for at prøve igen eller tjekke ud på en anden måde."
-          }
+            "instructions": "Der opstod et problem med {{walletName}}. Vend tilbage til butikken for at prøve igen eller tjekke ud på en anden måde.",
+            "unavailable_for_country": "{{walletName}} er ikke tilgængelig i {{countryName}}. Vælg en anden betalingsmetode for at gennemføre dit køb"
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} er i øjeblikket ikke tilgængelig for din ordre. Vælg en anden betalingsmetode for at fortsætte dit køb."
+          },
+          "discount_code": "Det er ikke muligt at anvende denne rabatkode. Gennemgå venligst din kode og prøv igen.",
+          "terminal": "Der opstod et problem med {{walletName}}. Brug venligst en anden betalingsmetode.",
+          "detour": {
+            "stock_problems": "Nogle varer er ikke længere tilgængelige. Luk {{walletName}} og prøv igen.",
+            "price_change": "Nogle varepriser er ændret. Luk {{walletName}} for at gennemgå din ordre og prøve igen."
+          },
+          "unsupported": {
+            "address": "Forhandleren kan ikke levere til denne adresse",
+            "wallet_is_unavailable": "{{walletName}} kan ikke bruges med denne adresse. Vælg en anden adresse, eller luk {{walletName}} for at gennemføre dit køb.",
+            "postal_code": "Denne placering understøttes ikke"
+          },
+          "outdated": {
+            "shipping_method": "Forsendelsesmulighederne er ændret for din ordre. Gennemgå dit valg.",
+            "payment_terms": "Betalingsbetingelserne er ændret. Gennemgå venligst din ordre"
+          },
+          "invalid": {
+            "shipping_option": "Vælg en gyldig forsendelsesmulighed",
+            "email": "Indtast en gyldig e-mail",
+            "zone": "Indtast en gyldig stat/provins",
+            "billing_zone": "Indtast en gyldig faktureringsadresse stat/provins",
+            "emirate": "Indtast et gyldigt emirat",
+            "postal_code": "Indtast et gyldigt postnummer",
+            "billing_phone": "Indtast en gyldig faktureringsadresse telefonnummer",
+            "reduction_code": "Indtast en gyldig rabatkode eller et gavekort",
+            "billing_zip": "Indtast en gyldig faktureringsadresse ZIP / postnummer"
+          },
+          "missing": {
+            "first_name": "Indtast et fornavn",
+            "billing_first_name": "Indtast en faktureringsadresses fornavn",
+            "last_name": "Indtast et efternavn",
+            "address1": "Indtast en adresse",
+            "billing_address1": "Indtast en faktureringsadresse",
+            "address2": "Gå ind i en lejlighed, suite osv.",
+            "billing_address2": "Indtast en faktureringsadresse lejlighed, suite osv.",
+            "city": "Indtast en by",
+            "billing_city": "Indtast en faktureringsadresse by",
+            "province": "Vælg en stat/provins",
+            "billing_province": "Vælg en faktureringsadresse stat/provins",
+            "country": "Vælg et land/en region",
+            "zip": "Indtast et postnummer",
+            "billing_zip": "Indtast en faktureringsadresses postnummer",
+            "phone": "Indtast et telefonnummer",
+            "contact_info": "Indtast kontaktoplysninger"
+          },
+          "formatting": {
+            "first_name_too_long": "Fornavn indeholder for mange bogstaver"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Din leveringsadresse er ugyldig. Vælg en anden adresse, eller brug en ny."
+        },
+        "scrim": {
+          "continue_purchase_in_window": "Fortsæt dit køb i {{walletName}} "
         }
       }
     },
