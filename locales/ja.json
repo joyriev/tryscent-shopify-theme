@@ -844,7 +844,64 @@
         "pick_up_in_two_to_four_hours": "4時間で受け取り可能",
         "pick_up_immediately": "今すぐお受け取りいただけます",
         "pick_up_next_day": "翌日受け取り可能",
-        "pickup_point_method_definition": "船からピックアップ・ポイントへ"
+        "pickup_point_method_definition": "船からピックアップ・ポイントへ",
+        "retail_method_definition": "小売出荷",
+        "company_location_no_address_banner": "住所のない場所へ発送されたご注文は審査の対象となります。",
+        "none_method_definition": "送料無料",
+        "subscription_pickup_information": "この配送方法は、今回のご注文に含まれるすべての商品、および次回以降のこの定期購入のご注文に適用されます。"
+      },
+      "customer_account": {
+        "not_user_label": "違う %{first_name}?",
+        "save_my_information_label": "次回のためにこの情報を保存しておく",
+        "invalid_address": "選択したアドレスが無効です。%{update_address_link}または別のアドレスを選択してください。",
+        "incomplete_address": "選択した住所が不完全です。%{update_address_link}または別のアドレスを選択してください。",
+        "invalid_shipping_method_summary": "有効な配送先住所を選択すると、利用可能な配送方法が表示されます。",
+        "saved_address_option_description": {
+          "one": "あなたは{{count}}アドレスを保存しています。",
+          "other": "あなたは{{count}}アドレスを保存しています。"
+        },
+        "saved_address_option_link": "保存されたアドレスを使用する",
+        "saved_address_modal_title": "保存したアドレスを使用する"
+      },
+      "stock": {
+        "items_unavailable_notice": "一部の商品は販売を終了しています。",
+        "product_column_header": "製品紹介",
+        "status_column_header": "ステータス",
+        "removed_from_cart_notice": "カートから削除",
+        "sold_out_label": "完売",
+        "reduced_label": "削減",
+        "reduced_with_quantity_label": "残り%{quantity_available}",
+        "remove_from_cart_button_label": "カートから取り出す",
+        "return_to_store_label": "店舗に戻る",
+        "continue_cta_label": "チェックアウトを続ける",
+        "item_label": {
+          "one": "{{count}} 項目",
+          "other": "{{count}} 項目"
+        },
+        "empty_cart_label": "カートは空です",
+        "quantity_update": {
+          "page_title": "数量更新",
+          "title": "数量更新",
+          "description": "これらの商品の数量が変更され、カート内の数量が更新されました。"
+        },
+        "unpurchasable_product": {
+          "title": "購入不可能な製品",
+          "header": "カートから商品が削除されました",
+          "message": "これらの商品はB2Bオーダーにはご利用いただけません。",
+          "status_column_header": "入手不可"
+        },
+        "unpurchasable_product_generic": {
+          "title": "購入不可能な製品",
+          "header": "カートから商品が削除されました",
+          "message": "これらのアイテムは利用できない。",
+          "status_column_header": "入手不可"
+        },
+        "unfulfillable_product": {
+          "title": "配送不可",
+          "message": {
+            "one": "%{delivery_method} は、この商品の販売を終了しました。"
+          }
+        }
       }
     }
   },

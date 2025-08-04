@@ -2446,8 +2446,76 @@
         "variant_not_found": "Impossible de trouver une variante",
         "variant_requires_selling_plan": "La variante ne peut être achetée qu'avec un plan de vente.",
         "selling_plan_not_available_for_company_locations": "Les commandes B2B ne peuvent faire l'objet que d'un achat unique.",
-        "digital_product_not_available_for_company_locations": "Cet article ne peut pas être ajouté à une commande B2B"
+        "digital_product_not_available_for_company_locations": "Cet article ne peut pas être ajouté à une commande B2B",
+        "buyer_cannot_purchase_for_company_locations": "Vous ne pouvez pas acheter pour ce lieu",
+        "selling_plan_not_applicable": "Impossible d'appliquer un plan de vente à une variante",
+        "shipping_address_not_required": "Ce panier ne nécessite pas d'expédition",
+        "shipping_address_invalid": "Il y a eu un problème dans le calcul des frais de port. Continuez à passer à la caisse pour choisir un tarif d'expédition avant de terminer votre commande.",
+        "bundle_requires_components": "Le produit groupé%{name}' ne peut pas être ajouté au panier.",
+        "gift_card_with_components_not_supported": "Le produit groupé%{name}' ne peut pas être ajouté au panier.",
+        "gift_card_price_must_be_greater_than_zero": "Le produit groupé%{name}' ne peut pas être ajouté au panier.",
+        "gift_card_recipient_validation_error": "Le destinataire de la carte cadeau spécifié n'est pas valide",
+        "merchandise_line_transformers": {
+          "run_error": "Une erreur s'est produite dans votre panier."
+        }
+      },
+      "storefront": {
+        "invalid_password": "Mot de passe incorrect, veuillez réessayer."
+      },
+      "tags": {
+        "add_articles": "Limiter la recherche aux articles ayant également une étiquette %{tag}",
+        "add_products": "Réduire la sélection aux produits correspondant à l'étiquette %{tag}",
+        "remove_articles": "Élargir la recherche aux articles qui ne sont pas étiquetés %{tag}",
+        "remove_products": "Supprimer l'étiquette %{tag}"
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Merci de vous inscrire à notre liste de diffusion.",
+        "disclaimer": "Vous pouvez vous désinscrire à tout moment."
+      },
+      "unsubscribed": {
+        "confirmation": "Vous vous êtes désinscrit de notre liste de diffusion.",
+        "disclaimer": "Vous ne recevrez plus de mises à jour marketing de notre part. Vous pouvez vous réinscrire à tout moment.",
+        "preview": "Vous donnez un aperçu de ce que les clients verront lorsqu'ils se désabonneront."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Vous avez opté pour le suivi des courriels ouverts.</b>",
+          "visibility": "Les taux d'ouverture des courriels seront communiqués de manière anonyme. Nous verrons seulement si vous avez ouvert un e-mail dans le cadre d'un taux d'ouverture d'e-mail agrégé.",
+          "opt_out_html": "Vous pouvez <a style='text-decoration:underline;' href='%{link}'>refuser</a> le suivi des courriels ouverts si vous ne souhaitez pas partager ces informations.",
+          "preview_bar": "Vous avez un aperçu de ce que les clients verront lorsqu'ils opteront pour le suivi des courriels ouverts."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Vous avez refusé le suivi des courriels ouverts.</b>",
+          "visibility": "Nous ne saurons pas si vous avez ouvert nos courriels.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Accepter</a> le suivi des courriels ouverts.",
+          "preview_bar": "Vous avez un aperçu de ce que les clients verront lorsqu'ils se désengageront du suivi des courriels ouverts."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Nous ne suivons plus l'ouverture des courriels.</b>",
+          "privacy_policy": "Après l'envoi de ce courriel, nous avons mis à jour notre politique de confidentialité et nous ne suivons plus les ouvertures."
+        },
+        "track": {
+          "status_html": "<b>Le suivi des courriels ouverts est signalé.</b>",
+          "visibility": "Nous ne verrons que si vous avez ouvert l'e-mail, dans le cadre du taux d'ouverture total de l'e-mail."
+        },
+        "updated_policy": {
+          "status_html": "<b>Le suivi des courriels ouverts est signalé.</b>",
+          "visibility": "Nous avons mis à jour notre politique et suivons désormais l'ouverture des courriels. Les taux d'ouverture des courriels seront communiqués de manière anonyme. Nous ne verrons que si vous avez ouvert un courriel dans le cadre du taux d'ouverture total des courriels.",
+          "opt_out_html": "Si vous ne souhaitez pas partager ces informations, vous pouvez <a style='text-decoration:underline;' href='%{link}'>vous désinscrire</a>."
+        }
+      }
+    },
+    "search": {
+      "error": "Il y a eu un problème de chargement des résultats de votre recherche. Veuillez rafraîchir la page ou réessayer plus tard.",
+      "sorting": {
+        "price_ascending": "Prix, du plus bas au plus haut",
+        "price_descending": "Prix, du plus haut au plus bas"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Erreur - %{title}"
     }
   }
 }
