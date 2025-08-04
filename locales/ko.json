@@ -2126,7 +2126,50 @@
         }
       },
       "order": {
-        "not_available": "이 주문은 사용할 수 없습니다."
+        "not_available": "이 주문은 사용할 수 없습니다.",
+        "financial_status": {
+          "authorized": "권한 부여",
+          "paid": "유료",
+          "unpaid": "미지급",
+          "voided": "무효",
+          "partially_paid": "부분 유료",
+          "partially_refunded": "부분 환불",
+          "refunded": "환불"
+        },
+        "fulfillment_status": {
+          "fulfilled": "완료됨",
+          "restocked": "재입고"
+        },
+        "cancel_reason": {
+          "declined": "결제 거부",
+          "inventory": "사용할 수 없는 항목",
+          "customer": "고객 주문 변경/취소",
+          "staff": "직원 오류"
+        },
+        "cash_on_delivery": "배송 시 현금 결제(COD)"
+      },
+      "cart": {
+        "only_n_items_available": "카트에는 %{count} %{name} 추가할 수 있습니다.",
+        "too_many_items_in_cart": "카트에 %{name} 더 추가할 수 없습니다.",
+        "only_one_added_to_cart": "재고 부족으로 인해 1개 품목만 장바구니에 추가되었습니다.",
+        "only_n_added_to_cart": "재고가 없어서 %{quantity} 품목만 장바구니에 추가되었습니다.",
+        "maximum_available_quantity_reached": "이 항목의 최대 수량이 이미 장바구니에 들어 있습니다.",
+        "less_than_minimum": "이 항목에는 최소 %{min}.",
+        "more_than_maximum": "이 항목은 최대 %{max}.",
+        "not_respect_step": "이 항목은 다음 단위로만 추가할 수 있습니다. %{step}.",
+        "all_items_in_cart": "모든 %{count} %{name} 장바구니에 담겼습니다.",
+        "empty_update": "빈 카트를 업데이트할 수 없습니다.",
+        "missing_parameters": "유효한 ID 또는 줄 매개변수가 없습니다.",
+        "invalid_input": "%{parameter} 매개 변수가 유효하지 않습니다.",
+        "product_not_available": "제품을 사용할 수 없습니다.",
+        "too_many_line_items_error": "장바구니에는 %{max} 이상의 품목을 담을 수 없습니다.",
+        "link_expired": "링크가 만료되었습니다.",
+        "stock_problems_html": "하나 이상의 품목을 더 이상 사용할 수 없습니다. <a href='%{link}'>업데이트된 카트를</a> 제공했습니다.",
+        "changed": "장바구니 변경",
+        "items_changed": "하나 이상의 항목이 변경되었습니다.",
+        "product_sold_out": "%{name}' 제품은 이미 품절되었습니다.",
+        "variant_requires_selling_plan": "이형 상품은 판매 요금제를 통해서만 구매할 수 있습니다.",
+        "selling_plan_not_available_for_company_locations": "B2B 주문에는 일회성 구매만 가능합니다."
       }
     }
   },
