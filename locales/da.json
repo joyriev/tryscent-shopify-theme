@@ -905,7 +905,11 @@
           "other": "En eller flere af de varer, du har tilføjet, sendes ikke til din adresse. Fjern dem for at tjekke ud, eller kontakt butikken."
         },
         "payment_method_not_supported": "Du kan ikke bruge denne betalingsmetode til %{country}. Brug venligst en anden betalingsmetode til at sende til dette land.",
-        "empty_state": "Indtast din leveringsadresse for at se tilgængelige leveringsmetoder."
+        "empty_state": "Indtast din leveringsadresse for at se tilgængelige leveringsmetoder.",
+        "title": "Forsendelse ikke tilgængelig",
+        "invalid_selected_address_with_update_link": "Den valgte leveringsadresse er ikke gyldig. %{update_address_link} eller vælg en anden adresse",
+        "unavailable_selected_address": "Forsendelse ikke tilgængelig for den valgte adresse",
+        "unavailable_selected_address_for_region": "Forsendelse er ikke tilgængelig for {{region}}. Vælg en anden adresse for at fortsætte"
       },
       "address_management": {
         "confirm_address_deletion": "Er du sikker på, at du vil slette adressen? {{address}}?"
@@ -1609,6 +1613,51 @@
         "risky": "Der opstod et problem med at behandle din betaling. Prøv igen, eller brug en anden betalingsmetode.",
         "expired_buyer_action": "Betalingsmetoden blev afbrudt. Prøv venligst igen.",
         "name_mismatch": "Tjek venligst dine kortoplysninger. Navnet på dit kort og faktureringsadressen stemmer ikke overens."
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Hurtig checkout",
+        "or_check_out_another_way": "Eller tjek en anden måde"
+      },
+      "post_purchase": {
+        "page_title": "Efter købet",
+        "title": "Efter købet",
+        "escape_action": "Se ordrebekræftelse '",
+        "components": {
+          "expand": "Se mere",
+          "processing": "Behandling...",
+          "submit": "Indsend"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Omdirigering...",
+        "redirecting_title": "Omdirigering...",
+        "redirecting_to_bank": "Omdirigering til {{bank}}",
+        "complete_your_purchase_title": "Gennemfør dit køb",
+        "continue_to_payment_gateway_notice_error": "Dine betalingsoplysninger kunne ikke verificeres.",
+        "continue_to_payment_gateway_button_label_error": "Opdater betalingsoplysninger",
+        "page_title": "Behandling af ordre",
+        "title": "Behandling af ordre",
+        "your_order_has_been_received_title": "Tak for din bestilling",
+        "you_will_receive_confirmation": "Vi får mange bestillinger lige nu. Du bør snart modtage en bekræftelse via e-mail eller sms. Hvis du ikke modtager den inden for den næste time, så lad os det vide.",
+        "you_will_not_be_charged": "Du vil ikke blive opkrævet endnu",
+        "wait": {
+          "short": "Din ordre er ved at blive behandlet.",
+          "medium": {
+            "one": "Din ordre er ved at blive behandlet. Anslået ventetid er %{count} minut.",
+            "other": "Din ordre er ved at blive behandlet. Anslået ventetid er %{count} minutter."
+          },
+          "long": "Du modtager en e-mail, så snart din ordre er behandlet. Der er i øjeblikket en stor mængde ordrer.",
+          "no_auto_refresh_html": "Hvis du ikke automatisk bliver omdirigeret, %{link}."
+        },
+        "action_required": "Handling påkrævet"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Gennemfør dit køb ved hjælp af din {{paymentMethod}} ",
+        "copy_text": "Kopier {{paymentMethod}} kode",
+        "open_app_text": "Åbn {{paymentMethod}} app",
+        "qr_code": {
+          "instructions": "Gennemfør dit køb ved hjælp af din {{paymentMethod}} "
+        }
       }
     },
     "sentence": {

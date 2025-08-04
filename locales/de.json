@@ -3009,11 +3009,85 @@
               "title": "Bezahlen zur Bestätigung",
               "deposit": {
                 "title": "Die Zahlung ist fällig",
-                "due_later": "Der Saldo ist zu {{translatedName}} Konditionen und ist am {{dueDate}} fällig."
+                "due_later": "Der Saldo ist zu {{translatedName}} Konditionen und ist am {{dueDate}} fällig.",
+                "due_on_fulfillment": "Der Restbetrag wird fällig, sobald alle Artikel dieses Auftrags erfüllt sind.",
+                "due_on_receipt": "Sie erhalten dann eine Rechnung über den Restbetrag.",
+                "due_on_date": "Der Restbetrag ist fällig am {{dueDate}}."
               }
+            },
+            "deposit": {
+              "due_later": "Der {{depositAmount}} wird fällig, wenn Ihre Bestellung bestätigt wird. Der Restbetrag wird auf {{translatedName}} Bedingungen sein.",
+              "due_on_fulfillment": "{{depositAmount}} wird fällig, wenn Ihre Bestellung bestätigt wird. Der Restbetrag wird fällig, wenn die Bestellung ausgeführt wird.",
+              "due_on_receipt": "{{depositAmount}} wird bei der Bestätigung Ihrer Bestellung fällig. Der Restbetrag wird später fällig.",
+              "due_on_date": "{{depositAmount}} wird bei der Bestätigung Ihrer Bestellung fällig. Der Restbetrag wird fällig am {{dueDate}}."
             }
-          }
+          },
+          "paid": {
+            "title_with_date": "Bezahlt {{date}}",
+            "description": "Ihre Bestellung ist vollständig bezahlt."
+          },
+          "refund": {
+            "title": "Erstattet",
+            "title_with_date": "Erstattet {{date}}",
+            "description_full_refund": "Sie haben eine vollständige Rückerstattung für diese Bestellung erhalten.",
+            "description_single_refund": "Sie haben eine Teilerstattung für diese Bestellung erhalten.",
+            "description_multiple_refunds": "Sie haben für diese Bestellung eine Teilrückerstattung erhalten."
+          },
+          "canceled": {
+            "description": "Sie wurden nicht angeklagt."
+          },
+          "pay_now": "Jetzt bezahlen",
+          "pay_now_accessibility_label": "Jetzt für die Bestellung bezahlen {{orderName}}"
+        },
+        "order_timeline": {
+          "expand_events_accessibility_label": "Details zum Entwurfsauftrag anzeigen",
+          "hide_events_accessibility_label": "Details zu Entwurfsaufträgen ausblenden"
+        },
+        "subtitle": "Eingereicht {{date}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Diese Zahlungsmethode wird für zukünftige Einkäufe an diesem Standort nicht mehr verfügbar sein.",
+          "description_with_replacement": "Die Löschung dieser Zahlungsmethode wirkt sich auf vorautorisierte Zahlungen für diesen Standort aus. Ersetzen Sie sie durch eine alternative Zahlungsmethode, um weiterhin anstehende Bestellungen zu erhalten."
+        },
+        "payment_details": {
+          "draft_label": "Entwurf einer Bestellung {{name}}"
         }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "PO-Nummer hinzufügen",
+        "add_modal_title": "PO-Nummer hinzufügen",
+        "cancel": "Abbrechen",
+        "close_modal_accessibility_label": "Modal \"Bestellnummer schließen",
+        "discard": "Ablegen",
+        "edit_accessibility_label": "PO-Nummer bearbeiten",
+        "edit_modal_title": "PO-Nummer bearbeiten",
+        "empty_state": "Keine PO-Nummer",
+        "modal_po_number_input_label": "PO-Nummer",
+        "modal_po_number_input_max_length_error": "PO-Nummern haben eine maximale Länge von {{maxLength}} Zeichen.",
+        "save": "Speichern Sie",
+        "title": "PO #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Beim Löschen dieser Adresse ist ein Problem aufgetreten. Versuchen Sie es erneut oder aktualisieren Sie die Seite."
+      },
+      "addresses_loading_issue": {
+        "description": "Verbindungsfehler. Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut."
+      },
+      "banner_title": {
+        "one": "Es gibt einen {{count}} Fehler",
+        "other": "Es gibt {{count}} Fehler"
+      },
+      "failed_address_creation": {
+        "description": "Bei der Erstellung Ihrer Adresse ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung."
+      },
+      "failed_address_update": {
+        "description": "Bei der Aktualisierung Ihrer Adresse ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung."
+      },
+      "load_orders_error": {
+        "title": "Aufträge können nicht geladen werden"
       }
     }
   }
