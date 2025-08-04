@@ -2420,13 +2420,13 @@
         "email_resend_button": "Send koden igen",
         "email_resend_button_accessibility_label": "Send bekræftelseskode igen",
         "verify_button": "Bekræft",
-        "verify_button_accessibility_label": "Bekræft engangskode",
+        "verify_button_accessibility_label": "Bekræft engangsadgangskode",
         "cancel_button": "Annuller",
         "cancel_button_accessibility_label": "Annuller redigering af e-mail"
       },
       "email_update_success_modal": {
         "title": "Bekræft e-mail",
-        "description": "E-mail opdateret succesfuldt. Omdirigerer til login."
+        "description": "E-mailen er blevet opdateret. Omdirigerer til login."
       },
       "loading_accessibility_message": "Indlæsning af kontooplysninger",
       "loading_finished_accessibility_message": "Kontooplysningerne er indlæst",
@@ -2435,6 +2435,13 @@
         "email": "E-mail",
         "phone_number_help_text": "Telefonnummer, der bruges til login, kan ikke ændres",
         "save": "Gemme"
+      },
+      "people": {
+        "pagination": {
+          "load_more": "Læs mere",
+          "load_more_accessibility_label": "Indlæs flere mennesker",
+          "loading_accessibility_label": "Indlæsning af mennesker"
+        }
       }
     },
     "orders": {
@@ -2443,7 +2450,44 @@
         "was_expected_by": "Var forventet inden {{date}}"
       },
       "group_title_label": "Del af: {{groupTitle}}",
-      "group_title_label_with_parent": "Til: {{groupTitle}}"
+      "group_title_label_with_parent": "Til: {{groupTitle}}",
+      "list_layout_accessibility_label": "Layout-muligheder",
+      "list_title": "Bestillinger",
+      "list_title_with_pending_orders": "Bestillinger:",
+      "list_title_confirmed_orders_accessibility_label": "Ordrer: bekræftet",
+      "list_title_pending_orders_accessibility_label": "Ordrer: afventer",
+      "order_list": {
+        "column_headers": {
+          "order": "Bestil"
+        },
+        "delivered": "Leveret {{date}}",
+        "empty_state_order_source_description": "Kun ordrer afgivet via {{email}} vil blive vist her.",
+        "empty_state_subtitle": "Gå til butikken for at bestille.",
+        "empty_state_with_location_title": "Ingen ordrer til {{locationName}}",
+        "no_order_banner": "For at teste din udvidelse på siden Ordrestatus skal du oprette en ordre.",
+        "estimated_shortform": "Østpå. {{date}}",
+        "one_images_accessibility_label": "Ordren omfatter {{lineItemName1}}",
+        "two_images_accessibility_label": "Ordren omfatter {{lineItemName1}}, {{lineItemName2}}",
+        "three_images_accessibility_label": "Ordren omfatter {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "Ordren omfatter {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "Ordren omfatter {{lineItemName1}}, {{lineItemName2}} og {{numberOfAdditionalProducts}} flere produkter",
+        "more_than_four_products_accessibility_label": "Ordren omfatter {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}} og {{numberOfAdditionalProducts}} flere produkter",
+        "plus_more_products": "{{numberOfAdditionalProducts}} produkter",
+        "carousel": {
+          "one_products_accessibility_label": "Ordren omfatter {{lineItemName1}} antal {{lineItemQuantity1}}.",
+          "two_products_accessibility_label": "Ordren omfatter {{lineItemName1}} antal {{lineItemQuantity1}}, {{lineItemName2}} antal {{lineItemQuantity2}}.",
+          "three_products_accessibility_label": "Ordren omfatter {{lineItemName1}} antal {{lineItemQuantity1}}, {{lineItemName2}} antal {{lineItemQuantity2}}, {{lineItemName3}} antal {{lineItemQuantity3}}.",
+          "four_products_accessibility_label": "Ordren omfatter {{lineItemName1}} antal {{lineItemQuantity1}}, {{lineItemName2}} antal {{lineItemQuantity2}}, {{lineItemName3}} antal {{lineItemQuantity3}}, {{lineItemName4}} antal {{lineItemQuantity4}}.",
+          "five_products_accessibility_label": "Ordren omfatter {{lineItemName1}} antal {{lineItemQuantity1}}, {{lineItemName2}} antal {{lineItemQuantity2}}, {{lineItemName3}} antal {{lineItemQuantity3}}, {{lineItemName4}} antal {{lineItemQuantity4}}, {{lineItemName5}} antal {{lineItemQuantity5}}.",
+          "six_products_accessibility_label": "Ordren omfatter {{lineItemName1}} antal {{lineItemQuantity1}}, {{lineItemName2}} antal {{lineItemQuantity2}}, {{lineItemName3}} antal {{lineItemQuantity3}}, {{lineItemName4}} antal {{lineItemQuantity4}}, {{lineItemName5}} antal {{lineItemQuantity5}}, {{lineItemName6}} antal {{lineItemQuantity6}} antal {{lineItemQuantity8}}, {{lineItemName8}} antal {{lineItemQuantity9}}.",
+          "six_and_more_products_accessibility_label": "Ordren omfatter {{lineItemName1}} antal {{lineItemQuantity1}}, {{lineItemName2}} antal {{lineItemQuantity2}}, {{lineItemName3}} antal {{lineItemQuantity3}}, {{lineItemName4}} antal {{lineItemQuantity4}}, {{lineItemName5}} antal {{lineItemQuantity5}}, {{lineItemName6}} antal {{lineItemQuantity6}} og mere",
+          "previous": "Tidligere"
+        },
+        "items": {
+          "one": "{{count}} genstand",
+          "other": "{{count}} elementer"
+        }
+      }
     },
     "order_details": {
       "group_title_label_with_parent": "Til: {{groupTitle}}"

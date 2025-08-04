@@ -547,7 +547,17 @@
         "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
       },
       "order_summary": {
-        "for_add_on": "Para: %{group_title}"
+        "for_add_on": "Para: %{group_title}",
+        "view_all_items": {
+          "one": "Ver artículo %{count} ",
+          "other": "Ver todos los artículos %{count} "
+        },
+        "more_items_modal": {
+          "search_item": "Buscar en",
+          "clear_search": "Búsqueda clara",
+          "empty_results": "No se han encontrado resultados para%{searchText}\". Comprueba la ortografía o utiliza otra palabra o frase.",
+          "number_items_shown": "%{totalNumber} de %{totalNumber} artículos"
+        }
       },
       "address_management": {
         "confirm_address_deletion": "¿Está seguro de que desea eliminar la dirección {{address}}?"
@@ -887,6 +897,64 @@
         "unpurchasable_product_generic": {
           "title": "Producto no adquirible",
           "header": "Se han eliminado algunos artículos de su cesta"
+        },
+        "unfulfillable_product": {
+          "default_message": {
+            "one": "El método de entrega elegido ya no está disponible para este artículo.",
+            "other": "El método de entrega elegido ya no está disponible para estos artículos."
+          }
+        },
+        "unshippable_product": {
+          "message": {
+            "one": "Este artículo será eliminado de su cesta porque no hay métodos de entrega disponibles para su dirección.",
+            "other": "Estos artículos se eliminarán de su cesta porque no hay métodos de entrega disponibles para su dirección."
+          }
+        },
+        "price_update": {
+          "description": "Los precios de estos artículos han cambiado y están actualizados en su cesta."
+        },
+        "price_and_quantity_update": {
+          "title": "Actualización de precios y cantidades",
+          "description": "Los precios y las cantidades disponibles para estos artículos han cambiado y se actualizan en su cesta."
+        },
+        "out_of_stock": {
+          "description": "Estos artículos ya no están disponibles y han sido eliminados de su cesta.",
+          "items_unavailable": "Algunos artículos ya no están disponibles y han sido eliminados de su cesta."
+        }
+      },
+      "contextual_availability": {
+        "products_not_available": {
+          "one": "Este producto será eliminado de su cesta porque no está disponible en su país/región.",
+          "other": "Estos productos se eliminarán de tu cesta porque no están disponibles en tu país/región."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Este producto no está disponible en su país/región.",
+          "other": "Estos productos no están disponibles en su país/región."
+        }
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Este producto no está disponible para su entrega en %{location_name}.",
+          "some_products_other": "Estos productos no están disponibles para su entrega en %{location_name}.",
+          "all_products_one": "El producto de su cesta no está disponible para su envío a %{location_name}.",
+          "all_products_other": "Los productos de su cesta no están disponibles para su envío a %{location_name}."
+        },
+        "missing_country_fallback": "su país",
+        "cart_updated": "Su cesta ha sido actualizada.",
+        "change_address_only": "Cambie la dirección de entrega para continuar.",
+        "change_address_or_remove": "Cambiar la dirección de entrega o %{remove_action}.",
+        "remove_items_action": {
+          "one": "eliminar artículo no disponible",
+          "other": "eliminar artículos no disponibles"
+        },
+        "empty_cart_action": "vaciar el carro y volver a la tienda"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "message": {
+            "one": "Este artículo será eliminado de su cesta porque no hay métodos de entrega disponibles para su dirección.",
+            "other": "Estos artículos se eliminarán de su cesta porque no hay métodos de entrega disponibles para su dirección."
+          }
         }
       }
     },
