@@ -1079,8 +1079,65 @@
           "free_shipping_cycles": {
             "one": "Envío gratuito para %{count} más de entrega",
             "other": "Envío gratuito para %{count} más entregas"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "Envío gratuito para %{count} de entrega",
+            "other": "Envío gratuito para %{count} entregas"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "Envío gratuito para %{count} más entregas, luego %{recurring_order_shipping_price}",
+            "other": "Envío gratuito para %{count} más entregas, entonces %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "Envío gratuito para %{count} entrega, luego %{recurring_order_shipping_price}",
+            "other": "Envío gratuito para %{count} entregas, luego %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} más entrega para %{shipping_price}",
+            "other": "%{count} más entregas por %{shipping_price} cada una"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{count} entrega para %{shipping_price}",
+            "other": "%{count} más entregas por %{shipping_price} cada una"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Envío gratuito para el primer %{cycle}, seguido de %{recurring_order_shipping_price}.",
+            "other": "Envío gratuito para el primer %{cycle}, seguido de %{recurring_order_shipping_price}."
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} para %{count} más entrega",
+            "other": "%{shipping_price} para %{count} más entregas%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "other": "%{shipping_price} para %{count} entregas%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{shipping_price} para %{count} más entregas, seguido de %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} para %{count} más entregas%{per_delivery_cost}), seguido de %{recurring_order_shipping_price}."
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{recurring_order_shipping_price} para %{count} entrega, seguido de %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} para %{count} entregas%{per_delivery_cost}), seguido de %{recurring_order_shipping_price}"
+          },
+          "subscription_free_with_frequency_label": "Envío gratuito %{delivery_frequency}",
+          "subscription_delivery_frequency": {
+            "day": {
+              "one": "todos los días"
+            }
+          },
+          "initial_order_discounted": "Primero el coste de envío %{discounted_shipping_cost}, luego %{frequency_description}",
+          "prepaid_initial_order_discounted": "Primer gasto de envío %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Primer gasto de envío %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Primero el coste de envío %{shipping_price} %{prepaid_delivery_frequency}, después %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Primero coste de envío %{discounted_shipping_price} %{prepaid_delivery_frequency}%{discounted_cost_per_delivery}), después %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "Incluye",
+          "first_order_shipping_price_included": "Primer orden incluido, seguido de %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Primer pedido gratuito",
+            "other": "Primeros pedidos %{count} gratis"
           }
-        }
+        },
+        "shipping_information_redirect_link": "Introduzca aquí sus datos"
       }
     },
     "sentence": {
