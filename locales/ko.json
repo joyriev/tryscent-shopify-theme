@@ -351,25 +351,25 @@
       "view_cart": "장바구니 보기",
       "each": "{{ money }}/ea",
       "product": "제품",
-      "variant": "이형 상품",
+      "variant": "변형",
       "variant_total": "이형 상품 합계",
       "items_added": {
-        "one": "{{ quantity }}개 품목 추가됨",
-        "other": "{{ quantity }}개 품목 추가됨"
+        "one": "{{ quantity }} 항목 추가",
+        "other": "{{ quantity }} 추가된 항목"
       },
       "items_removed": {
-        "one": "{{ quantity }}개 품목 제거됨",
-        "other": "{{ quantity }}개 품목 제거됨"
+        "one": "{{ quantity }} 항목 제거됨",
+        "other": "{{ quantity }} 제거된 항목"
       },
-      "product_variants": "제품 이형",
-      "total_items": "총 품목 수",
-      "remove_all_items_confirmation": "카트에서 {{ quantity }}개 품목을 모두 제거하시겠습니까?",
+      "product_variants": "제품 변형",
+      "total_items": "총 항목",
+      "remove_all_items_confirmation": "장바구니에서 {{ quantity }} 항목을 모두 제거하시겠습니까?",
       "remove_all": "모두 제거",
       "cancel": "취소",
-      "remove_all_single_item_confirmation": "카트에서 1개의 품목을 제거하시겠습니까?",
-      "min_error": "이 품목의 최소 개수는 {{ min }}개입니다.",
-      "max_error": "이 품목은 최대 개수는 {{ max }}개입니다.",
-      "step_error": "이 품목은 {{ step }}개 단위로만 추가할 수 있습니다."
+      "remove_all_single_item_confirmation": "카트에서 1개 품목을 제거하시겠습니까?",
+      "min_error": "이 항목에는 최소 {{ min }}",
+      "max_error": "이 항목은 최대 {{ max }}",
+      "step_error": "이 항목은 다음 단위로만 추가할 수 있습니다. {{ step }}"
     }
   },
   "localization": {
@@ -529,7 +529,14 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "결제 옵션을 선택하세요"
-        }
+        },
+        "network_card_persistence_description": "선택한 네트워크는 향후 거래를 위해 결제 수단과 함께 저장됩니다.",
+        "amazon_payments_logout": "Amazon Pay에서 로그아웃",
+        "amazon_payments_failed_mfa_challenge": "선택한 결제 방법을 사용할 수 없습니다. 다른 방법을 선택하거나 은행 또는 카드 발급사에 문의하세요.",
+        "amazon_payments_abandoned_mfa_challenge": "결제를 완료할 수 없습니다. 다른 결제 방법을 시도하거나 은행 또는 카드 발급사에 문의하세요.",
+        "amazon_payments_could_not_enqueue_authorize": "결제 처리 중에 문제가 발생했습니다. 다시 시도하거나 다른 결제 방법을 사용하세요.",
+        "title": "결제",
+        "amount_left_to_pay_label": "결제 기한:"
       },
       "order_summary": {
         "for_add_on": "For: %{group_title}",
@@ -1211,7 +1218,25 @@
         "split_shipping_multiple_shipment_notice": "주문이 여러 개의 배송으로 도착합니다.",
         "split_shipping_multiple_shipment_notice_one_time_purchase": "주문이 %{quantity} 배송으로 도착합니다.",
         "split_shipping_option_lowest_price": "최저 가격",
-        "split_shipping_option_fastest": "가장 빠른"
+        "split_shipping_option_fastest": "가장 빠른",
+        "split_shipping_option_recommended": "추천"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "shipping_credential_kr": "개인 관세법",
+          "tax_credential_it": "재정 코드(선택 사항)",
+          "tax_credential_co": "VAT",
+          "tax_credential_type_co": "인증서 유형",
+          "shipping_credential_co": "VAT",
+          "shipping_credential_type_co": "인증서 유형",
+          "tax_credential_cr": "식별 번호/RUT",
+          "shipping_credential_cr": "식별 번호/RUT",
+          "tax_credential_type_mx": "세금 제도",
+          "tax_credential_use_mx": "CFDI 사용",
+          "shipping_credential_tw": "주민등록번호/VAT",
+          "tax_credential_tr": "터키 공화국 식별 번호 / 부가가치세",
+          "shipping_credential_tr": "터키 공화국 식별 번호 / 부가가치세"
+        }
       }
     },
     "sentence": {

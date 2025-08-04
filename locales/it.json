@@ -2339,13 +2339,13 @@
         "email_resend_button": "Reinvio del codice",
         "email_resend_button_accessibility_label": "Reinvio del codice di verifica",
         "verify_button": "Verifica",
-        "verify_button_accessibility_label": "Verifica password monouso",
-        "cancel_button": "Annulla",
-        "cancel_button_accessibility_label": "Annulla modifica email"
+        "verify_button_accessibility_label": "Verifica della password una tantum",
+        "cancel_button": "Annullamento",
+        "cancel_button_accessibility_label": "Annullamento dell'e-mail di modifica"
       },
       "email_update_success_modal": {
-        "title": "Verifica email",
-        "description": "Email aggiornata con successo. Reindirizzamento al login."
+        "title": "Verifica dell'e-mail",
+        "description": "L'e-mail è stata aggiornata con successo. Reindirizzamento al login."
       },
       "loading_accessibility_message": "Caricamento delle informazioni sul conto",
       "loading_finished_accessibility_message": "Le informazioni sul conto sono state caricate",
@@ -2356,6 +2356,13 @@
         "phone_number_help_text": "Il numero di telefono utilizzato per il login non può essere modificato",
         "save": "Risparmiare",
         "save_accessibility_label": "Salva il profilo"
+      },
+      "people": {
+        "pagination": {
+          "load_more": "Per saperne di più",
+          "load_more_accessibility_label": "Caricare più persone",
+          "loading_accessibility_label": "Caricamento delle persone"
+        }
       }
     },
     "orders": {
@@ -2364,7 +2371,32 @@
         "was_expected_by": "Era previsto per {{date}}"
       },
       "group_title_label": "Parte di: {{groupTitle}}",
-      "group_title_label_with_parent": "Per: {{groupTitle}}"
+      "group_title_label_with_parent": "Per: {{groupTitle}}",
+      "list_layout_accessibility_label": "Opzioni di layout",
+      "switch_order_type_pending_orders_accessibility_label": "Cambiare tipo di ordine, visualizzare gli ordini in sospeso",
+      "switch_order_type_confirmed_orders_accessibility_label": "Cambiare tipo di ordine, visualizzare gli ordini confermati",
+      "order_list": {
+        "delivered": "Consegnato {{date}}",
+        "empty_state_order_source_description": "Solo gli ordini effettuati tramite {{email}} saranno visualizzati qui.",
+        "empty_state_subtitle": "Andare in negozio per effettuare un ordine.",
+        "empty_state_title": "Non ci sono ancora ordini",
+        "empty_state_title_for_pending_orders": "Nessun ordine in sospeso",
+        "no_order_banner": "Per testare l'estensione nella pagina dello stato dell'ordine, creare un ordine.",
+        "estimated_shortform": "Est. {{date}}",
+        "estimated_delivery": "Previsto {{date}}",
+        "more_than_three_products_accessibility_label": "L'ordine include {{lineItemName1}}, {{lineItemName2}} e {{numberOfAdditionalProducts}} altri prodotti",
+        "more_than_four_products_accessibility_label": "L'ordine include {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, e {{numberOfAdditionalProducts}} altri prodotti",
+        "plus_more_products": "{{numberOfAdditionalProducts}} prodotti",
+        "carousel": {
+          "one_products_accessibility_label": "L'ordine include la quantità {{lineItemName1}} {{lineItemQuantity1}}",
+          "four_products_accessibility_label": "L'ordine include {{lineItemName1}} quantità {{lineItemQuantity1}}, {{lineItemName2}} quantità {{lineItemQuantity2}}, {{lineItemName3}} quantità {{lineItemQuantity3}}, {{lineItemName4}} quantità {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "L'ordine comprende {{lineItemName1}} quantità {{lineItemQuantity1}}, {{lineItemName2}} quantità {{lineItemQuantity2}}, {{lineItemName3}} quantità {{lineItemQuantity3}}, {{lineItemName4}} quantità {{lineItemQuantity4}}, {{lineItemName5}} quantità {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "L'ordine comprende {{lineItemName1}} quantità {{lineItemQuantity1}}, {{lineItemName2}} quantità {{lineItemQuantity2}}, {{lineItemName3}} quantità {{lineItemQuantity3}}, {{lineItemName4}} quantità {{lineItemQuantity4}}, {{lineItemName5}} quantità {{lineItemQuantity5}}, {{lineItemName6}} quantità {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "L'ordine comprende {{lineItemName1}} quantità {{lineItemQuantity1}}, {{lineItemName2}} quantità {{lineItemQuantity2}}, {{lineItemName3}} quantità {{lineItemQuantity3}}, {{lineItemName4}} quantità {{lineItemQuantity4}}, {{lineItemName5}} quantità {{lineItemQuantity5}}, {{lineItemName6}} quantità {{lineItemQuantity6}} e altro ancora",
+          "view_order_details": "Visualizza i dettagli dell'ordine",
+          "previous": "Precedente"
+        }
+      }
     },
     "order_details": {
       "group_title_label_with_parent": "Per: {{groupTitle}}"
