@@ -2807,7 +2807,73 @@
         "add_billing_address_button": "청구서 수신 주소 추가",
         "add_billing_address_section_accessibility_label": "청구서 수신 주소 추가",
         "add_shipping_address_button": "배송지 주소 추가",
-        "add_shipping_address_section_accessibility_label": "배송지 주소 추가"
+        "add_shipping_address_section_accessibility_label": "배송지 주소 추가",
+        "billing_address_card_title": "청구서 수신 주소",
+        "cancel_adding_billing_address_accessibility_label": "청구서 수신 주소 추가 취소",
+        "cancel_adding_shipping_address_accessibility_label": "배송지 주소 추가 취소",
+        "save_new_billing_address_accessibility_label": "청구서 수신 주소 저장"
+      },
+      "orders": {
+        "draft_order_list": {
+          "show_all": "모두 보기",
+          "show_all_accessibility_label": "검토 중인 모든 주문 표시",
+          "show_all_orders_in_review": "검토 중인 모든 주문 표시",
+          "show_less_orders_in_review": "검토 중인 주문 수 축소 표시",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "대기 중인 주문이 없습니다.",
+            "pending_orders": {
+              "one": "대기 중인 주문이 {{count}} 개 있습니다.",
+              "other": "대기 중인 주문이 {{count}} 있습니다."
+            },
+            "more_than_pagination_length": "대기 중인 주문이 {{count}} 이상입니다."
+          },
+          "pagination": {
+            "nav_accessibility_label": "리뷰 탐색 버튼의 주문"
+          }
+        },
+        "removed_company_contact_tooltip": "회사에서 삭제됨"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "주문 {{draftOrderName}} {{date}} 확인됨",
+        "loading": "주문 세부 정보 로드",
+        "loading_finished_accessibility_message": "주문 세부 정보가 로드되었습니다.",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "결제일이 {{count}} 연체되었습니다.",
+              "other": "결제 기한이 {{count}} 경과되었습니다."
+            },
+            "banner_due": {
+              "one": "결제 기한은 {{count}} ",
+              "other": "결제 기한은 {{count}} 후입니다 {{count}} "
+            },
+            "banner_due_today": "결제 기한은 오늘입니다.",
+            "title_due_on_receipt": "아직 결제 기한이 지나지 않았습니다.",
+            "title_due_on_fulfillment": "주문 처리 시 결제 기한",
+            "description_overdue": "결제가 늦어졌습니다.",
+            "description_partially_paid": "이 주문은 부분적으로 결제되었습니다. 잔액이 남아 있습니다.",
+            "description_authorized": "결제 방법은 결제일에 청구되거나 지금 바로 결제할 수 있습니다.",
+            "description_waiting_for_manual_payment": "이 주문에는 결제 보류 중입니다. 결제가 완료되면 잔액이 업데이트됩니다.",
+            "description_due_on_receipt_partially_paid": "이 주문은 부분적으로 결제되었습니다. 잔액이 남아 있습니다. 결제 기한이 되면 인보이스를 받게 됩니다.",
+            "description_due_on_fulfillment": "이 주문의 모든 항목이 완료되면 결제가 완료됩니다.",
+            "description_due_on_fulfillment_partially_paid": "이 주문은 부분적으로 결제되었습니다. 잔액이 남아 있습니다. 이 주문의 모든 품목이 완료되면 결제가 완료됩니다."
+          },
+          "draft": {
+            "description": "결제 세부 정보는 주문이 확정되면 결정됩니다.",
+            "title": "아직 결제 기한이 지나지 않았습니다.",
+            "in_review": {
+              "description": "결제 세부 정보는 주문이 확정되면 결정됩니다.",
+              "title": "아직 결제 기한이 지나지 않았습니다."
+            },
+            "submitted": {
+              "description": "결제를 제출하여 주문을 확정합니다.",
+              "deposit": {
+                "title": "결제 기한",
+                "due_later": "잔액은 {{translatedName}} 조건이며 {{dueDate}} 납부해야 합니다."
+              }
+            }
+          }
+        }
       }
     }
   }

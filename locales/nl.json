@@ -528,7 +528,7 @@
     "checkout": {
       "payment": {
         "payment_option": {
-          "accessibility_label": "Kies een betaalmethode"
+          "accessibility_label": "Kies een betalingsoptie"
         },
         "network_card_payment_options": "Kies een kaartnetwerk",
         "network_card_persistence_description": "Het geselecteerde netwerk wordt samen met je betaalmethode opgeslagen voor toekomstige transacties.",
@@ -660,7 +660,54 @@
           "other": "Er zijn %{count} verlopen kaarten, die je kunt bekijken en bewerken in je account."
         },
         "local_payment_method_receiver_notice": "Na het plaatsen van je bestelling ontvang je de betalingsgegevens. Voer de betaling uit bij een geldautomaat of online binnen {{dueDays}} dagen.",
-        "order_edit_banner_subtitle": "Uw bestelling {{order_number}} is bijgewerkt. Controleer deze wijzigingen en betaal vervolgens om je bestelling te bevestigen."
+        "order_edit_banner_subtitle": "Uw bestelling {{order_number}} is bijgewerkt. Controleer deze wijzigingen en betaal vervolgens om je bestelling te bevestigen.",
+        "order_edit_banner_items_added": {
+          "other": "Toegevoegd %{count}"
+        },
+        "order_edit_banner_items_removed": {
+          "with_quantities": "Verwijderd {{delta}} van {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Geretourneerd {{quantity}}",
+          "with_quantities": "Teruggezonden {{delta}} van {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Verwijderd uit retourzending",
+          "with_quantities": "{{delta}} verwijderd uit terugkeer"
+        },
+        "order_edit_banner_multiple_items_added": "Toegevoegd {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Verwijderd {{amount}}",
+        "order_edit_banner_multiple_items_returned": "Geretourneerd {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Verwijderd uit retourzending",
+        "order_edit_banner_multiple_items_return_line_item_removed": "{{amount}} uit retour verwijderd",
+        "gift_card_wrapper": {
+          "apply_gift_card_label": "Een cadeaubon aanvragen"
+        },
+        "gift_card_store_credit": {
+          "add_label": "Een cadeaubon of tegoedbon toevoegen",
+          "manage_label": "Cadeaubonnen of winkelkrediet beheren"
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "Aangepaste betalingsbevestiging op locatie"
+        },
+        "markets_pro_disclaimer_label": "Door hieronder te klikken en uw bestelling te voltooien, gaat u akkoord met de aankoop van uw artikel(en) van Global-e als handelaar van record voor deze transactie, onder de %{markets_pro_terms} en %{privacy_policy} van Global-e. Global-e is een internationale fulfilment service provider voor %{shop_name}.",
+        "markets_pro_disclaimer_terms_and_conditions": "Algemene voorwaarden",
+        "markets_pro_disclaimer_privacy_policy": "Privacybeleid",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Algemene voorwaarden Merchant of Record",
+        "markets_pro_disclaimer_privacy_policy_title": "Privacybeleid Merchant of Record",
+        "purchase_order_number": {
+          "title": "PO nummer",
+          "label": "PO-nummer (optioneel)"
+        },
+        "alternative_payment_currency_total_notice": "Opmerking: er worden kosten in rekening gebracht %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Opmerking: omgerekend totaal is %{amount_due}.",
+        "waiting_on_taxes_message": "Als je belastingen niet binnen een paar seconden worden berekend, vernieuw dan de pagina.",
+        "expired_payment_method": "Geselecteerde betaalmethode is verlopen",
+        "payment_method_update_failed": "Bijwerken betaalmethode mislukt.",
+        "payment_method_incompatible_with_payment_terms": "Betalingsmethode is onverenigbaar met betalingsvoorwaarden.",
+        "pay_in_installments_split_pay_short": "4 betalingen van %{amount}",
+        "gift_cards_unavailable": "Uw cadeaubon kan niet langer worden toegepast op deze bestelling en is verwijderd.",
+        "payment_flexibility_terms_id_mismatch": "Betalingsflexibiliteit voorwaarden ID mismatch"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Uw bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan."
@@ -1381,6 +1428,10 @@
           "tax_credential_tr": "Republiek Turkije Identificatienummer / BTW",
           "shipping_credential_tr": "Republiek Turkije Identificatienummer / BTW"
         }
+      },
+      "billing": {
+        "billing_address_title": "Wetsvoorstel aan",
+        "same_as_shipping": "Zelfde als verzendadres"
       }
     },
     "sentence": {
