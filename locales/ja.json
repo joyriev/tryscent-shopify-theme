@@ -3145,10 +3145,69 @@
             "expired_delivery_guarantee_description": "この注文の30日間ショッププロミス保証は終了しました。",
             "order_includes_guarantees_label": "ご注文には{{deliveryAgreementsCount}}保証が含まれています。",
             "order_includes_guarantees_description": "ショッププロミスは迅速で確実な配送をお約束します。商品到着が {{date}}.",
-            "delivered_after_label": "納品後 {{date}}"
+            "delivered_after_label": "納品後 {{date}}",
+            "delivered_after_description": "ご注文の商品の到着が遅れたため、{{amount}}請求する資格があります。ショップキャッシュ",
+            "claimed_shop_cash_description": "この注文の到着が遅れたため、{{amount}}請求しました。ショップキャッシュを請求しました。",
+            "eligible_to_claim_shop_cash_description": "ご注文の商品の到着が遅れたため、{{amount}}請求する資格があります。ショップキャッシュ",
+            "learn_more_button_label": "さらに詳しく",
+            "claim_shop_cash_button_label": "ショップキャッシュを請求する",
+            "view_balance_in_shop_button_label": "ショップでバランスを見る",
+            "scan_to_claim_shop_cash_label": "スキャンして{{amount}}請求するショップキャッシュ"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "配達の裏付け",
+            "mixed_brands_label": "配達保証",
+            "not_delivered_by_label": "配達されない {{date}}",
+            "modal_accessibility_button_label": "配達約束の詳細"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "ショップキャッシュの請求",
+            "no_shop_app_label": "{{appDownloadLink}} ショップキャッシュを請求する",
+            "download_shop_app_label": "ダウンロードショップ"
+          },
+          "details_modal": {
+            "title": "配達の裏付け",
+            "modal_accessiblity_label": "配達約束の詳細",
+            "delivery_by_label": "配送業者 {{date}}",
+            "delivery_guaranteed_by_label": "配達保証 {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "ショッププロミスは迅速で確実な配送をお約束します。ご注文の商品の到着が遅れた場合は、ショップキャッシュをご請求ください。",
+              "may_be_eligible_not_authorized_label": "この注文が遅れて到着したため、ショップキャッシュを請求できる可能性があります。ログインして詳細をご覧ください。",
+              "redeemed_label": "この注文の到着が遅れたため、ショップキャッシュを請求済みです。",
+              "expired_label": "このご注文は、30日間の保証期間が終了しているため、配送遅延によるクレームの対象とはなりません。",
+              "no_shop_cash_label": "この注文はショップペイで支払われていないため、配送遅延の請求の対象にはなりません。",
+              "no_longer_guaranteed_label": "これらの商品にはもはや配送保証はついていない。",
+              "claim_shop_cash_title": "スキャンして{{amount}}ショップキャッシュを請求する",
+              "claim_shop_cash_description": "ショップキャッシュはショップアプリでの次回以降のお買い物にご利用いただけます。"
+            }
           }
         }
-      }
+      },
+      "fulfillment_status_title": "履行状況： {{status}}",
+      "buy_again": "また買う",
+      "buy_again_accessibility_label": "注文のために再度購入 {{orderId}}",
+      "manage_accessiblity_label": "オーダー管理 {{orderId}}",
+      "group_title_label": "の一部である： {{groupTitle}}",
+      "group_title_label_with_parent": "賛成だ： {{groupTitle}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_label": "詳細を表示",
+        "expand_events_accessibility_label": "注文の出荷の詳細を表示する",
+        "hide_events_label": "詳細を隠す",
+        "hide_events_accessibility_label": "注文の発送詳細を隠す"
+      },
+      "addresses_section_title": "請求と発送",
+      "order_details": "ご注文内容",
+      "order_details_skeleton_accessibility_label": "ログインすると、すべての注文の詳細が表示されます。",
+      "card_ending_with": "で終わる。 {{lastDigits}}",
+      "contact_information": "連絡先",
+      "company": "会社概要",
+      "company_and_location": "会社と所在地",
+      "fully_refunded_label": "払い戻し",
+      "group_title_label": "の一部である： {{groupTitle}}"
     }
   }
 }
