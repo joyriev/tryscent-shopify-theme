@@ -2345,8 +2345,8 @@
     },
     "orders": {
       "order_status": {
-        "expected_by": "{{date}}까지 예상됨",
-        "was_expected_by": "{{date}}까지 예상되었습니다",
+        "expected_by": "예상 대상 {{date}}",
+        "was_expected_by": "예상 대상 {{date}}",
         "attempted_delivery_label": "배달 시도",
         "attempted_delivery_description": "배달 시도가 실패했습니다.",
         "attempted_to_deliver_label": "배달 시도",
@@ -2376,6 +2376,55 @@
         "gift_resend_success": {
           "one": "기프트 카드 재발송",
           "other": "기프트 카드 재발송"
+        },
+        "gift_resend_failure": {
+          "one": "기프트 카드를 다시 보내는 동안 문제가 발생했습니다. 다시 시도하거나 문의해 주세요.",
+          "other": "기프트 카드를 다시 보내는 동안 문제가 발생했습니다. 다시 시도하거나 문의해 주세요."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "기프트 카드는 별도의 이메일로 발송됩니다.",
+          "other": "각 기프트 카드는 별도의 이메일로 발송됩니다."
+        },
+        "status_timestamp": "업데이트 {{date}}",
+        "estimated_delivery": "예상 {{date}}",
+        "delivered": "도착 {{date}}",
+        "buy_with_prime_logo_accessibility_label": "프라임 로고가 있는 Amazon 구매",
+        "in_review_description": "추가 정보가 필요하거나 주문이 확정되면 알려드리겠습니다.",
+        "in_review_title": "주문이 검토 중입니다.",
+        "last_updated": "마지막 업데이트 {{date}}",
+        "multiple_shipments_label": "여러 배송",
+        "no_tracking_number": "이 배송에 대한 추적 번호가 없습니다.",
+        "on_its_way_label": "출시 중",
+        "on_its_way_title": "배송이 진행 중입니다.",
+        "out_for_delivery_label": "배송 중",
+        "out_for_delivery_title": "배송이 완료되었습니다.",
+        "resume_tracking": "추적 재개",
+        "there_was_a_problem_label": "문제가 발생했습니다.",
+        "view_order_for_details": "자세한 내용은 주문 보기",
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "Amazon으로 관리",
+            "new_window_disclaimer": "(새 창에서 열기)"
+          }
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "다음에서 배송을 보장합니다.",
+            "external_promise_brand_label": "배달 방법",
+            "not_delivered_by_label": "이후 배송 {{date}}",
+            "delivery_guarantee_expired_label": "배송 보증이 만료되었습니다.",
+            "download_shop_app_button_label": "추적할 상점 다운로드",
+            "track_with_shop_button_label": "Shop으로 추적",
+            "claim_shop_cash_button_label": "상점 현금 청구"
+          },
+          "details_modal": {
+            "title": "배송 보증",
+            "active_delivery_guarantee_label": "배달 방법 {{date}}",
+            "expired_delivery_guarantee_description": "이 주문의 30일 쇼핑 약속 보장 기간이 만료되었습니다.",
+            "order_includes_guarantees_label": "주문에는 {{deliveryAgreementsCount}} 보증이 포함됩니다.",
+            "order_includes_guarantees_description": "Shop Promise는 빠르고 안정적인 배송을 보장합니다. 주문이 다음 날짜 이후에 도착하는 경우 Shop Cash를 청구하세요. {{date}}.",
+            "delivered_after_label": "이후 배송 {{date}}"
+          }
         }
       },
       "group_title_label": "부분: {{groupTitle}}",
