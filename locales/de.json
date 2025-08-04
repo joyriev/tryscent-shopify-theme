@@ -2730,10 +2730,57 @@
             "active_delivery_guarantee_label": "Lieferung durch {{date}}",
             "order_includes_guarantees_label": "Ihre Bestellung umfasst {{deliveryAgreementsCount}} Garantien",
             "order_includes_guarantees_description": "Shop Promise garantiert eine schnelle und zuverlässige Lieferung. Beanspruchen Sie Shop Cash, wenn Ihre Bestellung ankommt nach {{date}}.",
-            "delivered_after_label": "Geliefert nach {{date}}"
+            "delivered_after_label": "Geliefert nach {{date}}",
+            "delivered_after_description": "Da Ihre Bestellung verspätet eingetroffen ist, haben Sie Anspruch auf {{amount}} Shop Cash.",
+            "claimed_shop_cash_description": "Da diese Bestellung verspätet eingetroffen ist, haben Sie {{amount}} Shop Cash.",
+            "eligible_to_claim_shop_cash_description": "Da Ihre Bestellung verspätet eingetroffen ist, haben Sie Anspruch auf {{amount}} Shop Cash.",
+            "claim_shop_cash_button_label": "Anspruch auf Shop Cash",
+            "view_balance_in_shop_button_label": "Waage im Shop ansehen",
+            "scan_to_claim_shop_cash_label": "Scannen Sie, um den {{amount}} Shop Bargeld"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Die Lieferung wird unterstützt durch",
+            "mixed_brands_label": "Garantierte Lieferung",
+            "not_delivered_by_label": "Nicht geliefert von {{date}}"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Beantragen Sie Ihr Shop Cash",
+            "no_shop_app_label": "{{appDownloadLink}} um Shop Cash zu beantragen"
+          },
+          "details_modal": {
+            "title": "Die Lieferung wird unterstützt durch",
+            "delivery_guarantee_label": "Liefergarantie",
+            "delivery_by_label": "Lieferung durch {{date}}",
+            "delivery_guaranteed_by_label": "Lieferung garantiert durch {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garantiert eine schnelle und zuverlässige Lieferung. Nehmen Sie Shop Cash in Anspruch, wenn Ihre Bestellung verspätet eintrifft.",
+              "may_be_eligible_not_authorized_label": "Möglicherweise haben Sie Anspruch auf Shop Cash, weil diese Bestellung zu spät eingetroffen ist. Loggen Sie sich ein, um Details zu sehen.",
+              "redeemed_label": "Sie haben bereits Shop Cash in Anspruch genommen, weil diese Bestellung verspätet eingetroffen ist.",
+              "expired_label": "Für diese Bestellung kann kein Anspruch auf verspätete Lieferung geltend gemacht werden, da die 30-Tage-Garantie bereits abgelaufen ist.",
+              "no_shop_cash_label": "Für diese Bestellung besteht kein Anspruch auf eine verspätete Lieferung, da sie nicht mit Shop Pay bezahlt wurde.",
+              "no_longer_guaranteed_label": "Für diese Artikel gibt es keine Liefergarantie mehr.",
+              "claim_shop_cash_description": "Sie können Ihr Shop Cash für zukünftige Einkäufe in der Shop-App verwenden."
+            }
           }
         }
-      }
+      },
+      "fulfillment_status_title": "Erfüllungsstatus: {{status}}",
+      "buy_again": "Wieder kaufen",
+      "buy_again_accessibility_label": "Wieder kaufen zum Bestellen {{orderId}}",
+      "manage": "Verwalten Sie",
+      "manage_accessiblity_label": "Auftrag verwalten {{orderId}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_accessibility_label": "Details zum Versand der Bestellung anzeigen",
+        "hide_events_accessibility_label": "Details zum Bestellversand ausblenden"
+      },
+      "order_details": "Details zur Bestellung",
+      "order_details_skeleton_accessibility_label": "Loggen Sie sich ein, um alle Bestelldetails zu sehen.",
+      "card_ending_with": "endend mit {{lastDigits}}",
+      "fully_refunded_label": "ERSTATTET"
     }
   }
 }

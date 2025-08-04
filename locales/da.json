@@ -276,80 +276,80 @@
       "announcement": "Meddelelse",
       "menu": "Menu",
       "cart_count": {
-        "one": "{{ count }} vare",
-        "other": "{{ count }} varer"
+        "one": "{{ count }} genstand",
+        "other": "{{ count }} elementer"
       }
     },
     "cart": {
       "title": "Din indkøbskurv",
-      "caption": "Varer i indkøbskurv",
-      "remove_title": "Fjern {{ title }}",
-      "note": "Særlige instruktioner til ordre",
-      "checkout": "Gå til betaling",
+      "caption": "Varer i indkøbskurven",
+      "remove_title": "Fjerne {{ title }}",
+      "note": "Bestil særlige instruktioner",
+      "checkout": "Tjek det ud",
       "empty": "Din indkøbskurv er tom",
-      "cart_error": "Der opstod en fejl under opdatering af din indkøbskurv. Prøv igen.",
-      "cart_quantity_error_html": "Du kan kun lægge {{ quantity }} af denne vare i indkøbskurven.",
+      "cart_error": "Der opstod en fejl under opdateringen af din indkøbskurv. Prøv venligst igen.",
+      "cart_quantity_error_html": "Du kan kun lægge {{ quantity }} af denne vare i din indkøbskurv.",
       "headings": {
         "product": "Produkt",
         "price": "Pris",
         "total": "I alt",
-        "quantity": "Antal",
+        "quantity": "Mængde",
         "image": "Produktbillede"
       },
-      "update": "Opdater",
+      "update": "Opdatering",
       "login": {
         "title": "Har du en konto?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log ind</a> for at betale hurtigere."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log ind</a> for at tjekke ud hurtigere."
       },
-      "estimated_total": "Estimeret totalbeløb",
-      "new_estimated_total": "Ny estimeret totalbeløb"
+      "estimated_total": "Anslået total",
+      "new_estimated_total": "Ny estimeret total"
     },
     "footer": {
       "payment": "Betalingsmetoder"
     },
     "featured_blog": {
       "view_all": "Se alle",
-      "onboarding_title": "Blogopslag",
-      "onboarding_content": "Giv dine kunder en oversigt over dit blogopslag"
+      "onboarding_title": "Blogindlæg",
+      "onboarding_content": "Giv dine kunder et resumé af dit blogindlæg"
     },
     "featured_collection": {
       "view_all": "Se alle",
-      "view_all_label": "Se alle produkter i kollektionen {{ collection_name }}"
+      "view_all_label": "Se alle produkter i {{ collection_name }} ktionen"
     },
     "collection_list": {
       "view_all": "Se alle"
     },
     "collection_template": {
-      "title": "Kollektion",
-      "empty": "Der blev ikke fundet nogen produkter",
-      "use_fewer_filters_html": "Brug færre filtre, eller <a class=\"{{ class }}\" href=\"{{ link }}\">fjern alle</a>"
+      "title": "Samling",
+      "empty": "Ingen produkter fundet",
+      "use_fewer_filters_html": "Brug færre filtre eller <a class=\"{{ class }}\" href=\"{{ link }}\">fjern alle</a>"
     },
     "video": {
       "load_video": "Indlæs video: {{ description }}"
     },
     "slideshow": {
-      "load_slide": "Indlæs dias",
-      "previous_slideshow": "Forrige dias",
-      "next_slideshow": "Næste dias",
-      "pause_slideshow": "Sæt diasshow på pause",
+      "load_slide": "Indlæs slide",
+      "previous_slideshow": "Forrige slide",
+      "next_slideshow": "Næste slide",
+      "pause_slideshow": "Sæt diasshowet på pause",
       "play_slideshow": "Afspil diasshow",
       "carousel": "Karrusel",
-      "slide": "Dias"
+      "slide": "Glide"
     },
     "page": {
-      "title": "Sidetitel"
+      "title": "Sidens titel"
     },
     "announcements": {
-      "previous_announcement": "Forrige meddelelse",
+      "previous_announcement": "Tidligere meddelelse",
       "next_announcement": "Næste meddelelse",
       "carousel": "Karrusel",
       "announcement": "Meddelelse",
-      "announcement_bar": "Meddelelseslinje"
+      "announcement_bar": "Annoncering bar"
     },
     "quick_order_list": {
-      "product_total": "Subtotal for produkt",
+      "product_total": "Produktets subtotal",
       "view_cart": "Se indkøbskurv",
-      "each": "{{ money }}/stk.",
+      "each": "{{ money }}/ea",
       "product": "Produkt",
       "variant": "Variant",
       "variant_total": "Variant i alt",
@@ -747,7 +747,53 @@
         "eps_label": "eps-overførsel",
         "klarna_slice_it_label": "Finans med Klarna",
         "afterpay_label": "Efterbetaling",
-        "cashapppay_label": "Kontant app-betaling"
+        "cashapppay_label": "Kontant app-betaling",
+        "kcp_creditcard_label": "KCP-kreditkort",
+        "purchase_options_card_update_agreement_label_html": "Ved at opdatere din betalingsmetode godkender du betalinger for ethvert tilbagevendende eller udskudt køb i henhold til denne butiks <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">annulleringspolitik</a>.",
+        "subscription_card_update_agreement_label": "Hvis du ændrer betalingsmetode, opdateres dit abonnement og fremtidige tilbagevendende betalinger.",
+        "subscription_agreement_label": "En eller flere varer i din indkøbskurv er et udskudt køb eller et abonnement. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og hyppighed, der er angivet på denne side, indtil den slutter, eller du annullerer den. Alle annulleringer er underlagt %{cancelled}.",
+        "subscription_agreement_cancelled": "Afbestillingsregler",
+        "subscription_agreement_label_html": "Jeg forstår, at jeg accepterer et abonnement. Det vil blive fornyet til den anførte pris og hyppighed, indtil det ophører eller er\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">aflyst</a>.\n",
+        "purchase_options_agreement_label": "En eller flere varer i din indkøbskurv er et udskudt eller tilbagevendende køb. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og hyppighed, der er angivet på denne side, indtil den slutter, eller du annullerer den. Alle annulleringer er underlagt  %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "Jeg forstår, at en eller flere varer i min indkøbskurv er et udskudt eller tilbagevendende køb. Ved at fortsætte accepterer jeg\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">Afbestillingsregler</a>\nog giver dig tilladelse til at opkræve min betalingsmetode til de priser, hyppigheder og datoer, der er angivet på denne side, indtil min\nordren er opfyldt, eller jeg annullerer, hvis det er tilladt.\n",
+        "purchase_options_agreement_label_wallets": "Ved at fortsætte med din betaling accepterer du de fremtidige gebyrer, der er anført på denne side, og afbestillingsreglerne.",
+        "no_real_orders_dev_store": "Denne butik kan ikke acceptere rigtige ordrer eller rigtige betalinger.",
+        "waiting_on_payment_methods": "Få tilgængelige betalingsmetoder...",
+        "taxes_not_included": "Skatter er ikke inkluderet",
+        "no_taxes_banner_content": "Der vil ikke blive opkrævet moms på denne ordre. Når du har opkrævet betaling, kan der ikke længere tilføjes skatter.",
+        "paypal": {
+          "connect": "Klik for at forbinde din PayPal-konto"
+        },
+        "apple": {
+          "connect": "Klik for at forbinde din Apple Pay-konto",
+          "not_available": "Apple Pay er ikke tilgængelig i denne browser. For at forbinde din Apple Pay-konto skal du bruge Safari på en Apple-enhed."
+        },
+        "google": {
+          "error_authorizing": "Fejl ved godkendelse af betaling"
+        },
+        "account_connected": "Konto tilsluttet.",
+        "mor_disclaimer_html": "Ved at klikke nedenfor og gennemføre din bestilling accepterer du at købe din(e) vare(r) fra Global-e som registreret forhandler.\nfor denne transaktion, på Global-e's <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">vilkår og betingelser</a>\nog <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">privatlivspolitik</a>. Global-e er en international\nleverandør af opfyldelsestjenester til %{shop_name}\n",
+        "pending_payment": {
+          "due_notice": "Din betaling på %{amount_due} forfalder på %{due_date}.",
+          "multibanco": {
+            "instruction_html": "Foretag din betaling i Multibanco eller online ved hjælp af nedenstående oplysninger. For spørgsmål eller for at opdatere betalingsoplysninger, %{contact_us}.",
+            "find_nearest_atm": "Find nærmeste pengeautomat"
+          }
+        },
+        "order_covered_by_store_credit_notice": "Din ordre er dækket af din butikskredit.",
+        "order_covered_by_redeemables_notice": "Din ordre er dækket.",
+        "store_credit": {
+          "label": "Butikskredit",
+          "apply_label": "Anvend butikskredit",
+          "add_label": "Tilføj butikskredit",
+          "manage_label": "Administrer butikskredit",
+          "buying_gift_card": "Du kan ikke bruge butikskredit til at købe et gavekort",
+          "no_fixed_selling_plans": "Du kan ikke bruge butikskredit med udskudte købsmuligheder"
+        },
+        "clear": "Klar",
+        "billing_must_match_shipping_notice": "Faktureringsadressen for din betalingsmetode skal matche leveringsadressen.",
+        "location_billing_address_label": "Placering af faktureringsadresse",
+        "location_shipping_address_label": "Placering af leveringsadresse"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."
