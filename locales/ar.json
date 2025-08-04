@@ -705,72 +705,72 @@
           "accessible_separator": "لكل",
           "per_item": {
             "single": "%{price} كل",
-            "one": "%{price} لكل %{count} عنصر",
-            "other": "%{price} لكل %{count} عناصر"
+            "one": "%{price} لكل %{count} عنصر %{count} ",
+            "other": "%{price} لكل %{count} العناصر"
           }
         },
-        "gift_card_ending": "بطاقة هدية تنتهي بـ %{last_characters}",
+        "gift_card_ending": "بطاقة هدايا تنتهي بـ %{last_characters}",
         "estimated_tax_label": "الضريبة المقدرة",
         "multiple_shipping_lines_label": "إجمالي الشحن",
         "recurring_subtotal_label": "المجموع الفرعي المتكرر",
-        "recurring_total_label": "الإجمالي المتكرر",
-        "recurring_total_tooltip": "لا يشمل الشحن أو الضرائب أو الرسوم أو أي خصومات قابلة للتطبيق.",
-        "confirmation_number_label": "تأكيد #%{confirmation_number}",
-        "percent_off_shipping": "خصم %{percent}% على الشحن",
-        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يمكن استخدامه مع خصوماتك الحالية.",
-        "amount_off_shipping": "خصم %{amount} على الشحن",
+        "recurring_total_label": "المجموع المتكرر",
+        "recurring_total_tooltip": "لا يشمل الشحن أو الضرائب أو الرسوم الجمركية أو أي خصومات سارية.",
+        "confirmation_number_label": "تأكيد #التأكيد%{confirmation_number}",
+        "percent_off_shipping": "%{percent}خصم % على الشحن",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يمكن استخدامها مع خصوماتك الحالية.",
+        "amount_off_shipping": "%{amount} إيقاف الشحن",
         "deferred_payment_info": {
-          "description_html": "لأي استفسارات حول طلبك، %{contact_us}.",
-          "title": "دفع %{amount_due} مستحق في %{due_at}",
-          "paid_today": "الإجمالي المدفوع اليوم",
-          "paid_today_next": "مدفوع اليوم",
-          "due_on_fulfillment_title": "دفع %{amount_due} مستحق عند التنفيذ",
-          "due_on_receipt_title": "دفع %{amount_due} مستحق عند الاستلام"
+          "description_html": "للأسئلة حول طلبك %{contact_us}.",
+          "title": "يستحق دفع %{amount_due} في %{due_at} الدفع %{due_at}",
+          "paid_today": "إجمالي المبلغ المدفوع اليوم",
+          "paid_today_next": "مدفوعة اليوم",
+          "due_on_fulfillment_title": "يستحق دفع %{amount_due} عند الاستيفاء",
+          "due_on_receipt_title": "يستحق دفع %{amount_due} عند الاستلام"
         },
         "deferred_balance_info": {
-          "title": "الرصيد المستحق {{amount_due}} يجب دفعه في {{due_at}}",
-          "due_on_fulfillment_title": "الرصيد المستحق {{amount_due}} يجب دفعه عند التنفيذ"
+          "title": "رصيد {{amount_due}} مستحق في {{due_at}}",
+          "due_on_fulfillment_title": "رصيد {{amount_due}} حق عند الاستيفاء"
         },
         "payment_terms_totals": {
-          "due_today": "الإجمالي المستحق اليوم",
-          "due_today_next": "مستحق اليوم",
-          "due_later": "الإجمالي المستحق %{due_at}",
-          "due_on_fulfillment": "الإجمالي المستحق عند التنفيذ",
-          "due_on_fulfillment_next": "مستحق عند التنفيذ",
-          "due_on_receipt": "الإجمالي المستحق عند الاستلام",
-          "due_later_checkout_to_draft": "الإجمالي المستحق لاحقًا",
-          "total_paid": "الإجمالي المدفوع"
+          "due_today": "المجموع المستحق اليوم",
+          "due_today_next": "موعد استحقاقها اليوم",
+          "due_later": "إجمالي المستحق %{due_at}",
+          "due_on_fulfillment": "إجمالي المستحق عند الاستيفاء",
+          "due_on_fulfillment_next": "مستحق عند الاستيفاء",
+          "due_on_receipt": "المجموع المستحق عند الاستلام",
+          "due_later_checkout_to_draft": "المجموع المستحق لاحقًا",
+          "total_paid": "إجمالي المدفوعات"
         },
-        "maximum_discount_code_limit_reached": "لقد وصلت إلى الحد الأقصى لعدد رموز الخصم. قم بإزالة رمز موجود لاستخدام <strong style=\"text-transform:uppercase\">%{code}</strong>.",
-        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يعمل الآن. اتصل بنا للمساعدة.",
-        "due_on_fulfillment": "مستحق عند التنفيذ",
+        "maximum_discount_code_limit_reached": "لقد وصلت إلى الحد الأقصى لعدد رموز الخصم. إزالة رمز موجود لاستخدامه <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> لا يعمل الآن اتصل بنا للحصول على المساعدة.",
+        "due_on_fulfillment": "مستحق عند الاستيفاء",
         "subscriptions": "الاشتراكات",
-        "duties_label": "الرسوم",
-        "may_be_charged_on_delivery": "قد يتم تحصيلها عند التسليم",
-        "total_updated_label_with_price": "السعر الإجمالي المحدث: %{totalPrice}",
-        "updated_shipping_method": "طريقة الشحن المحدثة: %{shipping_method}",
+        "duties_label": "الواجبات",
+        "may_be_charged_on_delivery": "قد يتم تحصيل الرسوم عند التسليم",
+        "total_updated_label_with_price": "السعر الإجمالي المحدَّث: %{totalPrice}",
+        "updated_shipping_method": "طريقة الشحن المحدّثة: %{shipping_method}",
         "recurring_payments": "المدفوعات المتكررة",
-        "recurring_total_multiple_label": "هذا الطلب يحتوي على رسوم متكررة لعدة عناصر.",
-        "deferred_total_due_date_label": "المبلغ الإجمالي المستحق {{date}}",
-        "deferred_total_due_date_label_next": "مستحق في %{date}",
-        "full_price": "السعر الكامل: %{price}",
+        "recurring_total_multiple_label": "يحتوي هذا الطلب على رسوم متكررة لعناصر متعددة.",
+        "deferred_total_due_date_label": "إجمالي المستحق {{date}}",
+        "deferred_total_due_date_label_next": "المستحق %{date}",
+        "full_price": "السعر الكامل %{price}",
         "custom_discount": "خصم مخصص",
         "expand_component_information": {
-          "one": "عرض %{count} عنصر",
-          "other": "عرض %{count} عناصر"
+          "one": "إظهار %{count} العنصر",
+          "other": "إظهار %{count} العناصر"
         },
         "collapse_component_information": {
-          "one": "إخفاء %{count} عنصر",
-          "other": "إخفاء %{count} عناصر"
+          "one": "إخفاء %{count} العنصر",
+          "other": "إخفاء %{count} العناصر"
         },
         "discount_discovery": {
-          "add_code": "أضف خصم",
+          "add_code": "إضافة خصم",
           "merchandise_quantity_label": {
-            "one": "%{count} عنصر",
-            "other": "%{count} عناصر"
+            "one": "%{count} الصنف",
+            "other": "%{count} العناصر"
           }
         },
-        "alternative_payment_currency_total": "تم الشحن بمبلغ %{amount_due}"
+        "alternative_payment_currency_total": "مشحونة كـ %{amount_due}"
       },
       "shipping": {
         "title": "الشحن",
