@@ -2949,6 +2949,70 @@
       },
       "load_orders_error": {
         "title": "Kan ikke indlæse ordrer"
+      },
+      "load_paypal_error": {
+        "description": "Der er et problem med at indlæse PayPal. Prøv venligst igen."
+      },
+      "logout_everywhere": {
+        "description": "Noget gik galt under udlogningen. Prøv venligst igen."
+      },
+      "no_access_to_locations": {
+        "description": "Du har ikke adgang til nogen steder"
+      },
+      "not_found": {
+        "description": "Tjek URL'en, eller prøv igen om et par minutter.",
+        "title": "Der er et problem med at indlæse denne side"
+      },
+      "order_not_found": {
+        "title": "Ordre ikke fundet"
+      },
+      "profile_update_error": {
+        "description": "Der opstod et problem med at opdatere din profil. Prøv at opdatere denne side, eller tjek din internetforbindelse."
+      },
+      "resend_link": {
+        "generic": "Fejlslagen anmodning"
+      },
+      "load_extension_error": {
+        "description": "Opdater denne side, eller prøv igen om et par minutter.",
+        "refresh_button": "Opdater siden"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "description": "Prøv venligst igen om et par minutter"
+      }
+    },
+    "payment_methods": {
+      "add_payment_method_banner": "Tilføj betalingsmetode for hurtigere checkout eller forhåndsgodkendte tjenester",
+      "no_payment_methods_banner": "Ingen betalingsmetoder tilføjet",
+      "edit_payment_method_button_accessibility_label": "Rediger {{paymentMethodName}}, der slutter med {{lastDigits}}.",
+      "delete_payment_method_button": "Sletning",
+      "delete_payment_method_button_accessibility_label": "Sletning {{paymentMethodName}}",
+      "expiration_warning_button_accessibility_label": "Vis udløbsadvarsel for {{paymentMethodName}}, der slutter på {{lastDigits}}.",
+      "card_update_consent": "Denne betalingsmetode vil blive gemt til fremtidige køb.",
+      "card_update_consent_subscriptions": "Denne betalingsmetode vil blive gemt til fremtidige køb og kan bruges til ethvert tilbagevendende eller udskudt køb.",
+      "credit_or_debit_card_title": "Kredit- eller betalingskort",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Tilføj Google Pay-betalingsmetode",
+        "loading_accessibility_message": "Indlæsning af Google Pay",
+        "loading": "Indlæsning af Google Pay",
+        "errors": {
+          "missing_billing_address": "Google Pay kræver en faktureringsadresse. Tilføj venligst en til din konto."
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "Tilføj PayPal-betalingsmetode",
+        "loading_accessibility_message": "Indlæsning af PayPal"
+      },
+      "apple_pay": {
+        "loading": "Indlæsning af Apple Pay",
+        "errors": {
+          "missing_billing_address": "Apple Pay kræver en faktureringsadresse. Tilføj venligst en til din konto."
+        }
+      },
+      "store_credit": {
+        "label": "Butikskredit",
+        "accesibility_label": "Butikskredit {{formattedBalance}}"
       }
     }
   }

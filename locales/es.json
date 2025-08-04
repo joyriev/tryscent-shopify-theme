@@ -1440,7 +1440,43 @@
       },
       "billing": {
         "billing_address_title": "Factura a",
-        "same_as_shipping": "La misma que la dirección de envío"
+        "same_as_shipping": "La misma que la dirección de envío",
+        "add_address": "Utilizar una dirección diferente",
+        "delete": "Borrar",
+        "address_delete": "Borrar dirección",
+        "address_confirm": "¿Está seguro de que desea eliminar esta dirección de su cuenta?",
+        "address_form": {
+          "add_address": "Añadir dirección"
+        }
+      },
+      "payment_summary": {
+        "credit_card_expires_on_notice": "Caduca el %{month}/%{year}",
+        "express_payment_gateway_label": "Express"
+      },
+      "field_errors": {
+        "handle_phone_invalid": "Introduzca un número de teléfono válido",
+        "handle_email_invalid": "Introduzca una dirección de correo electrónico válida",
+        "email_invalid": "Introduzca una dirección de correo electrónico válida",
+        "email_or_phone_blank": "Introduzca un correo electrónico o un número de teléfono",
+        "email_or_phone_invalid": "Introduzca un correo electrónico válido o un número de teléfono móvil",
+        "address_first_name_blank": "Introduzca un nombre",
+        "address_first_name_too_long": "El nombre es demasiado largo (255 caracteres como máximo)",
+        "address_last_name_blank": "Introduzca un apellido",
+        "address_last_name_too_long": "Apellido demasiado largo (máximo 255 caracteres)",
+        "address_address1_blank": "Introduzca una dirección",
+        "address_address1_too_long": "La primera línea de dirección es demasiado larga (el máximo es 255 caracteres)",
+        "address_address1_contains_emojis": "Dirección1 no puede contener emojis",
+        "address_address1_contains_html_tags": "Dirección1 no puede contener etiquetas HTML.",
+        "address_address1_contains_mathematical_symbols": "La primera línea de dirección no puede contener símbolos matemáticos",
+        "address_address2_blank": "Entrar en un apartamento, suite, etc.",
+        "address_address2_too_long": "La segunda línea de dirección es demasiado larga (el máximo es 255 caracteres)",
+        "address_address2_contains_emojis": "Dirección2 no puede contener emojis",
+        "address_address2_contains_html_tags": "Dirección2 no puede contener etiquetas HTML.",
+        "address_address2_contains_mathematical_symbols": "La segunda línea de dirección no puede contener símbolos matemáticos",
+        "address_city_blank": "Introduzca una ciudad",
+        "address_city_too_long": "Ciudad demasiado larga (máximo 255 caracteres)",
+        "address_city_contains_html_tags": "City no puede contener etiquetas HTML.",
+        "address_country_blank": "Seleccione un país/región"
       }
     },
     "sentence": {
