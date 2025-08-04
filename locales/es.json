@@ -622,7 +622,51 @@
         "klarna_pay_now_label": "Pague ahora con Klarna",
         "multibanco_label": "ATM",
         "eps_label": "transferencia eps",
-        "blik_label": "Estaño"
+        "blik_label": "Estaño",
+        "purchase_options_card_update_agreement_label_html": "Al actualizar su método de pago, usted autoriza los pagos de cualquier compra periódica o aplazada de acuerdo con la <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">política de cancelación</a> de esta tienda.",
+        "subscription_card_update_agreement_label": "El cambio del método de pago actualizará su suscripción y los futuros pagos periódicos.",
+        "subscription_agreement_label": "Uno o más artículos de su cesta es una compra aplazada o de suscripción. Al continuar con el pago, acepta que su método de pago se cargue automáticamente al precio y con la frecuencia indicados en esta página hasta que finalice o usted lo cancele. Todas las cancelaciones están sujetas a la %{cancelled}.",
+        "subscription_agreement_label_html": "Entiendo que estoy aceptando una suscripción. Se renovará al precio y con la frecuencia indicados hasta que finalice o se\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">cancelado</a>.\n",
+        "purchase_options_agreement_label": "Uno o más artículos de su cesta es una compra aplazada o recurrente. Al continuar con el pago, acepta que su método de pago se cargue automáticamente al precio y con la frecuencia indicados en esta página hasta que finalice o usted lo cancele. Todas las cancelaciones están sujetas a las  %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "Entiendo que uno o más artículos de mi cesta es una compra aplazada o recurrente. Al continuar, acepto las\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">política de cancelación</a>\ny les autorizo a cargar en mi método de pago los precios, la frecuencia y las fechas que figuran en esta página hasta que mi\nse cumpla el pedido o lo cancele, si está permitido.\n",
+        "purchase_options_agreement_label_wallets": "Al continuar con su pago, usted acepta los cargos futuros que figuran en esta página y la política de cancelación.",
+        "change_currency_section_description": "Seleccione una opción de moneda",
+        "waiting_on_payment_methods": "Obtener los métodos de pago disponibles...",
+        "apple_pay_payment_error": "No se ha podido completar el pago. Inténtalo de nuevo o utiliza otro método de pago.",
+        "no_taxes_banner_content": "No se cobrarán impuestos en este pedido. Una vez que haya cobrado el pago, ya no se podrán añadir impuestos.",
+        "paypal": {
+          "connect": "Haga clic para conectar su cuenta PayPal"
+        },
+        "apple": {
+          "not_available": "Apple Pay no está disponible en este navegador. Para conectar tu cuenta de Apple Pay tendrás que utilizar Safari en un dispositivo Apple."
+        },
+        "mor_disclaimer_html": "Al hacer clic a continuación y completar su pedido, usted acepta comprar su(s) artículo(s) a Global-e como comerciante registrado.\npara esta transacción, en los <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Términos y Condiciones</a> de Global-e\ny <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Política de privacidad</a>. Global-e es una empresa internacional\nproveedor de servicios de %{shop_name}\n",
+        "pending_payment": {
+          "due_notice": "Su pago de %{amount_due} vence el %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "Su pago de %{amount_due} es debido.",
+            "instruction_html": "Realice su pago en Multibanco o en línea utilizando los datos que figuran a continuación. Para preguntas o para actualizar los datos de pago, %{contact_us}.",
+            "amount": "Importe",
+            "find_nearest_atm": "Buscar el cajero automático más cercano"
+          }
+        },
+        "update_payment_method": "Actualizar la forma de pago",
+        "order_covered_by_store_credit_notice": "Su pedido está cubierto por el crédito de la tienda.",
+        "order_covered_by_redeemables_notice": "Su pedido está cubierto.",
+        "store_credit": {
+          "label": "Crédito de la tienda",
+          "apply_label": "Solicitar crédito en la tienda",
+          "add_label": "Añadir crédito de la tienda",
+          "manage_label": "Gestionar el crédito de la tienda",
+          "buying_gift_card": "No puedes utilizar el crédito de la tienda para comprar una tarjeta regalo",
+          "no_fixed_selling_plans": "No puedes utilizar el crédito de la tienda con opciones de compra aplazada"
+        },
+        "clear": "Claro",
+        "billing_must_match_shipping_notice": "La dirección de facturación de su método de pago debe coincidir con la dirección de envío.",
+        "same_billing_address_checkbox_label": "Utilizar la dirección de envío como dirección de facturación",
+        "location_billing_address_label": "Localización Dirección de facturación",
+        "location_shipping_address_label": "Dirección de envío",
+        "use_order_billing_address_label": "Utilizar la dirección de facturación del pedido"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
