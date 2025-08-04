@@ -3755,7 +3755,67 @@
       "edit_payment_method": {
         "title": "支払い方法の編集",
         "save_payment_method_button": "セーブ",
-        "payment_method_updated_toast": "支払方法を更新"
+        "payment_method_updated_toast": "支払方法を更新",
+        "billing_address_add_new": "新規追加",
+        "billing_address_choose_from_list": "リストから選択",
+        "future_purchases_notice": "このお支払い方法は、今後のご購入のために保存されます。"
+      },
+      "card_fields": {
+        "name_on_card_label": "カードの名前",
+        "name_on_card_placeholder": "カードの名前",
+        "card_expiry_label": "有効期限（MM / YY）",
+        "card_expiry_placeholder": "有効期限（MM / YY）",
+        "card_start_label": "発行日（MM / YY）",
+        "card_start_placeholder": "発行日（MM / YY）",
+        "tooltip": {
+          "tooltip_accessibility_label": "詳細情報",
+          "card_verification_value_explanation_amex": "カード表面に4桁のセキュリティコード",
+          "card_verification_value_explanation_other": "カード裏面の3桁のセキュリティコード",
+          "card_verification_value_explanation": "カード裏面に記載されている3桁のセキュリティコード。アメリカン・エキスプレスのカードは表面に4桁のコードがあります。",
+          "card_security_notice": "すべての取引は安全かつ暗号化されています。"
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "カードに記載されている名前を正確に入力する。",
+          "credit_card_number_invalid": "有効なカード番号を入力してください。",
+          "credit_card_expiry_invalid": "有効なカードの有効期限を入力してください。",
+          "credit_card_verification_value_blank": "カードに記載されているCVVまたはセキュリティコードを入力する。"
+        },
+        "unavailable": {
+          "text": "クレジットカードおよびデビットカードでのお支払いは現在ご利用いただけません。",
+          "link_text": "このページを更新する",
+          "suffix": "または後で再試行する。"
+        }
+      },
+      "payment_delete": {
+        "title": "支払い方法の削除",
+        "description_without_replacement": "今後、この支払い方法はご利用いただけません。",
+        "description_with_replacement": "この支払い方法を削除すると、事前承認済みの支払いに影響します。別の支払い方法に変更することで、今後の注文の受け取りを継続することができます。",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "この支払方法を削除すると、事前承認支払いに影響します。別の支払方法を選択しない限り、この支払方法は既存の注文の未払い残高に対して課金されます。別の支払い方法を選択すると、今後の購読注文を中断することなく受け取ることができます。",
+          "with_pending_orders": "このお支払い方法を削除すると、お客様のアカウントから削除され、今後のご購入にはご利用いただけなくなります。お客様が別のお支払い方法を選択されない限り、既存のご注文の未払い残高については引き続き請求されます。",
+          "with_subscriptions": "この支払い方法を削除すると、事前承認済みの支払いに影響します。今後の注文を継続して受け取るには、別の支払い方法に変更してください。"
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "この支払方法を削除すると、事前承認済みの支払いに影響します。この支払い方法は、既存の注文の未払い残高に対して引き続き請求されますが、今後の定期購入注文を受け取ることはできません。別の支払い方法を追加して、定期購入注文の受信を継続してください。",
+          "with_pending_orders": "このお支払い方法を削除すると、お客様のアカウントから削除され、今後のご購入にはご利用いただけなくなります。既存のご注文の未払い残高については、引き続き請求されます。",
+          "with_subscriptions": "この支払方法を削除すると、事前承認済みの支払いに影響します。別の支払い方法を追加して、今後の注文の受け取りを継続してください。"
+        },
+        "payment_method_selector_placeholder": "お支払い方法の選択（オプション）",
+        "payment_method_selector_no_alternative_payment": "交換方法なし",
+        "replace_method_with_new_method_description": "{{currentPaymentMethodName}}削除され、{{newPaymentMethodName}}置き換えられます。",
+        "error_when_deleting": "申し訳ございませんが、何か問題が発生したため、この支払い方法を削除できませんでした。後ほどもう一度お試しいただくか、ページを更新してください。",
+        "delete_and_replace_button": "削除と置換",
+        "delete_and_replace_button_accessibility_label": "{{currentPaymentMethodName}}削除し、{{newPaymentMethodName}}置き換える。",
+        "deleted_successfully": "支払い方法が正常に削除されました。",
+        "loading_available_payment_methods_accessibility_label": "利用可能な支払い方法の読み込み"
+      },
+      "add_payment_method": {
+        "title": "支払い方法の追加",
+        "payment_method_added_confirmation": "支払い方法追加",
+        "billing_address": {
+          "add_billing_address_button": "新規追加",
+          "add_billing_address_button_accessibility_label": "新しい請求先住所を追加する"
+        }
       }
     }
   }

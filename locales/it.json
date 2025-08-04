@@ -1755,6 +1755,72 @@
           "change_purchase_order_number_label": "Modifica del numero di PO",
           "change_delivery_method_link_label": "Cambiare il metodo di consegna"
         }
+      },
+      "order_payment_collection": {
+        "pay_now": "Pagare ora"
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "La sede dell'azienda è impostata per inviare tutti gli ordini come bozze per la revisione.",
+        "missing_address": "Non è disponibile un indirizzo di spedizione: Manca l'indirizzo della sede dell'azienda e l'uso dell'indirizzo unico è disabilitato."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "La carta di credito verrà addebitata %{amount}",
+        "payment_total_label": "Totale del pagamento",
+        "change_currency_link": "Passare a %{currency_name}",
+        "card_provider_fx_charges_warning": "Il fornitore della carta potrebbe applicare delle commissioni sulle transazioni in %{currency_code}.",
+        "currency_not_supported_by_shop": "La valuta selezionata non è più disponibile. Tutti i prezzi sono ora in %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Il carrello è stato aggiornato in base al paese di spedizione."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Il tuo paese/regione è stato aggiornato. Inserisci il tuo indirizzo di spedizione per continuare il checkout."
+      },
+      "tips": {
+        "title": "Aggiungi un suggerimento",
+        "description": "Mostrate il vostro sostegno alla squadra su %{shop_name}",
+        "presets_description": "Selezionare una percentuale di mancia",
+        "add_tip": "Aggiungi un suggerimento",
+        "update_tip": "Suggerimento di aggiornamento",
+        "message": "Grazie, lo apprezziamo molto."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "Acquisto %{product_name}",
+          "one": "Acquistare %{product_name} e %{count} altri articoli"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals_with_initial_order_shipping_discount": "Primo pagamento %{total_price_with_discount}, poi %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Primo pagamento %{total_price}",
+            "other": "Primo %{count} pagamenti %{total_price} ciascuno"
+          },
+          "following_cycles": ", allora %{total_price} ogni %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", poi %{count} pagamento a %{total_price}",
+            "other": ", quindi %{count} pagamenti a %{total_price} ciascuno"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "update_card_button_label": "Scheda di aggiornamento",
+        "delete_customer_mandate": {
+          "generic_error": "Si è verificato un problema nell'elaborazione della richiesta.",
+          "success_message": "Il vostro metodo di pagamento è stato cancellato con successo"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "description": "Riprovare tra qualche minuto"
+        },
+        "line_to_check_out": "Siete in fila per il check out",
+        "inventory": {
+          "partial_inventory_banner": "Una parte del carrello è esaurita e non sarà disponibile per l'acquisto al momento del checkout."
+        }
       }
     },
     "sentence": {

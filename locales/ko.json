@@ -664,7 +664,68 @@
             "shop_cash_not_found": "상점 캐시를 찾을 수 없습니다.",
             "shop_cash_not_allowed": "샵 페이 없이는 샵 캐시를 사용할 수 없습니다.",
             "shop_cash_unsupported_checkout_source": "Shop Cash는 이 결제를 지원하지 않습니다.",
-            "shop_cash_gift_card_not_allowed": "Shop Cash에서는 기프트 카드를 구매할 수 없습니다."
+            "shop_cash_gift_card_not_allowed": "Shop Cash에서는 기프트 카드를 구매할 수 없습니다.",
+            "shop_cash_not_enabled": "이 상점에서는 상점 캐시를 사용할 수 없습니다.",
+            "shop_cash_unsupported_subscriptions": "Shop Cash는 구독을 지원하지 않습니다.",
+            "shop_cash_unsupported_shipping": "Shop Cash는 배송비가 없는 상품은 지원하지 않습니다.",
+            "invalid_address_type": "입력한 주소 유형이 이 결제수단에 유효하지 않습니다.",
+            "missing_retail_attributions": "수동으로 입력한 신용 카드 결제에는 리테일 어트리뷰션이 필요합니다.",
+            "unexpected_retail_attributions": "신용카드 결제 시 소매 어트리뷰션이 예기치 않게 제공되지 않습니다.",
+            "invalid_card_source": "이 세션에는 이 카드 소스를 사용할 수 있는 권한이 없습니다.",
+            "payment_instrument_not_found": "결제 방법을 찾을 수 없습니다.",
+            "unauthorized_capture_method": "결제 매입 방법 구성은 허용되지 않습니다.",
+            "saved_payment_methods_not_allowed": "저장된 결제 방법은 허용되지 않습니다.",
+            "saved_payment_methods_not_enabled": "이 상점에서는 저장된 결제 방법을 사용할 수 없습니다.",
+            "saved_payment_methods_cvv_verification_disabled": "선택한 결제 방법에는 이 스토어에서 사용하도록 설정되지 않은 CVV 인증이 필요합니다. 다른 결제 방법을 선택하십시오.",
+            "store_credit_not_enabled": "이 상점에서는 스토어 크레딧을 사용할 수 없습니다.",
+            "store_credit_account_not_found": "스토어 크레딧 계정을 찾을 수 없습니다.",
+            "store_credit_account_mismatch": "스토어 크레딧 계정이 구매자 신원과 일치하지 않습니다.",
+            "store_credit_mismatched_currency": "스토어 크레딧 계정의 통화가 결제 통화와 일치하지 않습니다.",
+            "store_credit_insufficient_funds": "스토어 크레딧 계정에 잔액이 부족합니다.",
+            "store_credit_buying_gift_card": "스토어 크레딧을 사용하여 기프트 카드를 구매할 수 없습니다.",
+            "gift_cards_not_allowed_for_b2b": "B2B 스토어에서는 기프트 카드를 사용할 수 없습니다.",
+            "method_required": "결제 방법을 제안해야 합니다.",
+            "paypal_express_address_invalid": "PayPal에서 잘못된 주소를 반환했습니다.",
+            "shop_cash_unsupported_currency": "Shop Cash는 이 통화를 지원하지 않습니다.",
+            "market_manager_blocks_wallet_payments": "마켓 매니저는 결제 수단을 지원하지 않습니다."
+          },
+          "tip": {
+            "not_accepted_by_shop": "상점에서는 팁을 받지 않습니다.",
+            "only_one_tip_line_allowed": "여러 개의 팁 라인은 지원되지 않습니다.",
+            "tips_not_allowed_for_b2b": "B2B 스토어에서는 팁이 허용되지 않습니다.",
+            "tips_not_allowed_for_deferred_purchase_options": "보류된 구매 옵션에는 아직 팁이 지원되지 않습니다."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "이 발주 주문은 현재 스토어에 존재하지 않습니다.",
+            "staff_member_not_exist": "이 직원은 현재 스토어에 존재하지 않습니다.",
+            "location_not_exist": "이 위치는 현재 스토어에 존재하지 않습니다.",
+            "point_of_sale_device_not_exist": "이 POS 장치는 현재 스토어에 존재하지 않습니다.",
+            "unresolvable_target_merchandise_lines": "제안된 판매 귀속은 현재 협상 상황을 고려할 때 해결할 수 없습니다."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "구매자의 제안서에는 협상 불가 조건이 포함되어야 합니다.",
+            "invalid_signature": "{{target_terms}} 대한 서명이 유효하지 않습니다."
+          },
+          "inventory": {
+            "missing_quantity_value": "구매자의 재고 라인에 수량 필드가 누락되었습니다.",
+            "changing_behavior_not_allowed": "이 클라이언트에는 인벤토리 동작을 변경할 수 있는 권한이 없습니다.",
+            "only_one_inventory_behavior_allowed": "현재 결제당 하나의 인벤토리 동작만 허용됩니다."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "이 결제에서는 의무 거부가 허용되지 않습니다."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "이 결제에는 리테일 어트리뷰션이 허용되지 않습니다.",
+            "retail_attribution_required": "이 결제에는 리테일 어트리뷰션이 필요합니다."
+          },
+          "captcha": {
+            "metadata_missing": "이 결제에는 보안 문자를 입력해야 합니다.",
+            "metadata_mismatch": "제공된 보안 문자 공급자 및 유형이 예상 값과 일치하지 않습니다.",
+            "token_missing": "이 결제를 완료하려면 보안 문자 토큰을 입력해야 합니다.",
+            "job_enqueue_failed": "보안 문자 유효성 검사 작업을 대기열에 추가하지 못했습니다.",
+            "job_already_queued": "이 캡차 토큰에 대한 캡차 유효성 검사가 이미 대기열에 대기 중입니다.",
+            "token_expired": "제공된 캡차 토큰이 만료되었습니다. 결제를 계속하려면 새 캡차를 입력하세요.",
+            "token_invalid": "입력한 캡차 토큰이 유효하지 않습니다. 결제를 계속하려면 새 캡차를 입력하세요."
           }
         }
       }
