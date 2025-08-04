@@ -707,7 +707,48 @@
             "job_enqueue_failed": "captcha検証ジョブのキューイングに失敗しました。",
             "job_already_queued": "このキャプチャトークンに対するキャプチャ検証はすでにキューに入っています。",
             "token_expired": "提供されたキャプチャトークンの有効期限が切れました。チェックアウトを続行するには、新しいキャプチャを完了してください。",
-            "token_invalid": "入力されたキャプチャトークンが無効です。チェックアウトを続行するには、新しいキャプチャを完了してください。"
+            "token_invalid": "入力されたキャプチャトークンが無効です。チェックアウトを続行するには、新しいキャプチャを完了してください。",
+            "token_not_valid_for_session": "このチェックアウトでは、提供されたキャプチャは使用できません。"
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "受取金額は店舗通貨でなければならない。"
+          },
+          "checkout_source": {
+            "revoked": "このチェックアウトは終了しました。"
+          }
+        },
+        "full_price": "フルプライス：",
+        "title": "チェックアウト {{shopName}}",
+        "loading": "読み込み中...",
+        "loading_title": "チェックアウト {{shopName}}",
+        "google_map_title": "グーグルマップ",
+        "confirm_order_button_label": "注文の確認",
+        "submit_for_review_button_label": "レビューに投稿する",
+        "submit_for_review_notice_label": "お支払いは、ご注文が確認されるまで発生いたしません。",
+        "continue_to_payment_plans_button_label": "支払いプランの継続",
+        "back_button_label": "戻る",
+        "choose_delivery_strategy": "配送方法の選択",
+        "autocomplete_zero_item": "商品はありません",
+        "autocomplete_powered_by_google": "搭載 {{brandName}}",
+        "submit": "投稿する",
+        "processing": "処理...",
+        "stepper": {
+          "increase": "増加 {{type}}",
+          "decrease": "減少 {{type}}",
+          "minimum_reached": "の最小値{{value}}達した{{value}}",
+          "maximum_reached": "{{value}}最大値"
+        },
+        "remove_item": "削除 %{label}",
+        "remove_tag": "タグを削除する",
+        "dates": {
+          "weekdays_abbreviation": {
+            "monday": "モ",
+            "tuesday": "トゥ",
+            "wednesday": "我々は",
+            "thursday": "Th",
+            "friday": "Fr",
+            "saturday": "サ",
+            "sunday": "ス"
           }
         }
       }

@@ -2281,7 +2281,48 @@
     },
     "addresses": {
       "zip_code": "Code postal",
-      "pincode": "Code postal"
+      "pincode": "Code postal",
+      "province": "Provinces",
+      "confirm": "Êtes-vous sûr de vouloir supprimer cette adresse ?"
+    },
+    "collections": {
+      "sorting": {
+        "az": "Par ordre alphabétique, de A à Z",
+        "za": "Par ordre alphabétique, Z-A",
+        "price_ascending": "Prix, du plus bas au plus haut",
+        "price_descending": "Prix, du plus haut au plus bas",
+        "date_ascending": "Date, de l'ancien au nouveau",
+        "date_descending": "Date, du nouveau à l'ancien"
+      }
+    },
+    "errors": {
+      "blank": "ne peut être vide",
+      "blocked_address": "Cet emplacement n'est pas pris en charge",
+      "credit_card_session_expired": "L'autorisation de la carte de crédit a expiré, veuillez saisir à nouveau vos informations de paiement. Votre carte n'a pas été débitée.",
+      "invalid_email": "doit être une adresse électronique valide",
+      "discount_disabled": "Cette réduction a été désactivée",
+      "discount_expired": "Cette réduction n'est plus valable",
+      "discount_limit_reached": "Cette réduction a atteint sa limite d'utilisation",
+      "discount_not_found": "Impossible de trouver une réduction valide correspondant au code saisi",
+      "customer_already_used_once_per_customer_discount_notice": "Cette réduction a atteint sa limite d'utilisation",
+      "gift_card_already_applied": "Le code a déjà été appliqué à votre commande",
+      "gift_card_code_invalid": "Le code n'est pas valide",
+      "gift_card_currency_mismatch": "Votre carte cadeau est libellée en %{gift_card_currency}. Contactez-nous pour qu'elle soit réémise en %{checkout_currency}.",
+      "gift_card_depleted": "Il n'y a plus de fonds sur cette carte cadeau",
+      "gift_card_disabled": "La carte cadeau est désactivée",
+      "gift_card_expired": "La carte cadeau est expirée",
+      "invalid": "n'est pas valide",
+      "taken": "a déjà été prise",
+      "too_long": "est trop long (le maximum est %{count} caractères)",
+      "email_domain_invalid": "n'est pas pris en charge",
+      "invalid_for_country": "n'est pas valable pour les %{country}",
+      "invalid_for_country_and_province": "n'est pas valable pour %{province} et %{country}",
+      "invalid_province_in_country": "n'est pas une province valide dans %{country}",
+      "invalid_state_in_country": "n'est pas un état valide dans %{country}",
+      "invalid_region_in_country": "n'est pas une région valide dans %{country}",
+      "full_name_required": "Saisir un prénom et un nom de famille",
+      "invalid_for_card_type": "n'est pas valide",
+      "invalid_type": "Désolé, nous n'acceptons pas les cartes de ce type."
     }
   }
 }
