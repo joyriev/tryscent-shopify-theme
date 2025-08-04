@@ -2287,7 +2287,82 @@
       "less_than_or_equal_to": "debe ser menor o igual que %{count}",
       "full_name_required": "Introduzca un nombre y un apellido",
       "invalid_for_card_type": "no es válido",
-      "invalid_type": "lo sentimos, no aceptamos tarjetas de este tipo"
+      "invalid_type": "lo sentimos, no aceptamos tarjetas de este tipo",
+      "invalid_format": "el formato no es válido",
+      "expired": "ha expirado",
+      "invalid_start_date_or_issue_number_for_debit": "se requiere una fecha de inicio o un número de expedición válidos",
+      "invalid_expiry_year": "no es un año de caducidad válido",
+      "reset_password_html": "Esta dirección de correo electrónico ya está asociada a una cuenta. Si esta cuenta es suya, puede <a href=\"/account/login#recover\">restablecer su contraseña</a>",
+      "verify_email": "Hemos enviado un correo electrónico a %{customer_email}, haga clic en el enlace incluido para verificar su dirección de correo electrónico.",
+      "product_not_available": "producto no está publicado para este cliente.",
+      "shop_404": {
+        "title": "¡Crear un sitio web de comercio electrónico y vender en línea! Software de comercio electrónico de Shopify",
+        "heros": {
+          "store_unavailable": "Lo sentimos, esta tienda no está disponible actualmente.",
+          "no_storefront": "Esta tienda aún no tiene página web."
+        },
+        "links": {
+          "start_free_trial": "Iniciar una prueba gratuita"
+        },
+        "owner_ctas": {
+          "header": "¿Es usted el dueño de la tienda?",
+          "fix_domain": "Cuando termines de configurar tu nueva dirección web, ve a %{domain_settings_link}. Haz clic en \"Conectar dominio\" e introduce: %{domain}.<br>Si tienes problemas para entrar en tu tienda, prueba la página %{forgot_your_store_link}.",
+          "fix_domain_link_text": "configuración de su dominio",
+          "forgot_your_store_link_text": "olvidó su tienda",
+          "add_storefront": "Puede configurar su sitio web añadiendo el canal Tienda Online en su %{admin_link}. Si tienes problemas para entrar en tu tienda, prueba la página %{forgot_your_store_link}.",
+          "admin_link_text": "admin"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Vender en persona",
+            "caption": "Obtenga las funciones que necesita para gestionar su tienda minorista, tanto si está empezando como si está creciendo.",
+            "link_text": "Iniciar prueba gratuita"
+          },
+          "open_a_store": {
+            "header": "Abrir una nueva tienda Shopify",
+            "caption": "Comienza una prueba gratuita de 3 días y continúa por 1 $/mes durante los 3 meses siguientes.",
+            "link_text": "Inscríbete ahora"
+          },
+          "editions": {
+            "header": "Echa un vistazo a las ediciones de Shopify",
+            "caption": "Con más de 100 actualizaciones de productos, podrá ser más productivo, creativo y poderoso en el comercio de lo que nunca imaginó.",
+            "link_text": "Explorar las últimas ediciones"
+          },
+          "store_owner": {
+            "header": "¿Es usted el dueño de la tienda?",
+            "caption": "¿Tienes problemas para entrar en tu tienda? Prueba la función %{forgot_your_store_link}. Si quieres reactivar tu tienda contacta con %{shopify_support_link}.",
+            "shopify_support_link_text": "Soporte Shopify"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Error de restablecimiento de contraseña",
+        "unsubscribe_error": "Error de cancelación de suscripción",
+        "no_account_found": "No se ha encontrado ninguna cuenta con ese correo electrónico.",
+        "denylisted_reset_password": "No se ha podido acceder a su cuenta porque la contraseña actual no es segura. Recibirás un correo electrónico para actualizar tu contraseña.",
+        "signup_disabled": "Se ha desactivado la creación de cuentas de cliente."
+      },
+      "address": {
+        "updated": "Dirección actualizada correctamente.",
+        "error_updating": "Error al actualizar la dirección",
+        "created": "Dirección creada correctamente",
+        "deleted": "Dirección borrada correctamente",
+        "error_deleting": "Error al borrar la dirección."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Añadido %{delta}",
+          "increment_item": "Añadido %{delta}",
+          "decrement_item": "Eliminado %{delta} de %{total}",
+          "decrement_fulfilled_line_item": "Devuelto %{delta} de %{total}",
+          "decrement_return_line_item": "Eliminado %{delta} del retorno"
+        }
+      },
+      "order": {
+        "not_available": "Este pedido no está disponible"
+      }
     }
   },
   "customer_accounts": {
