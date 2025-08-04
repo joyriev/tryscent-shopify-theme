@@ -585,9 +585,55 @@
         "total_updated_label": "Prezzo totale aggiornato:",
         "unit_price": {
           "per_item": {
-            "single": "%{price} ciascuno"
+            "single": "%{price} ciascuno",
+            "one": "%{price} per %{count} di articoli",
+            "other": "%{price} per %{count} di articoli"
           }
-        }
+        },
+        "gift_card_ending": "Carta regalo che termina con %{last_characters}",
+        "estimated_tax_label": "Imposta stimata",
+        "recurring_total_tooltip": "Non include le spese di spedizione, le tasse, i dazi o eventuali sconti applicabili.",
+        "confirmation_number_label": "Conferma #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> non può essere utilizzato con gli sconti esistenti.",
+        "percent_off_shipping": "%{percent}% di sconto sulla spedizione",
+        "amount_off_shipping": "%{amount} spedizione off",
+        "deferred_payment_info": {
+          "title": "Il pagamento dell'%{amount_due} è dovuto il %{due_at}",
+          "description_html": "Per domande sul vostro ordine, %{contact_us}.",
+          "due_on_fulfillment_title": "Il pagamento del %{amount_due} è dovuto al momento dell'adempimento.",
+          "due_on_receipt_title": "Il pagamento del %{amount_due} è dovuto al momento della ricezione"
+        },
+        "deferred_balance_info": {
+          "title": "Il saldo di {{amount_due}} è dovuto il {{due_at}}",
+          "due_on_fulfillment_title": "Il saldo di {{amount_due}} è dovuto al momento dell'adempimento"
+        },
+        "payment_terms_totals": {
+          "due_today": "Totale da pagare oggi",
+          "due_today_next": "Da consegnare oggi",
+          "due_later": "Totale dovuto %{due_at}",
+          "due_on_fulfillment": "Totale dovuto all'adempimento",
+          "due_on_fulfillment_next": "Scadenza al momento dell'adempimento",
+          "due_on_receipt": "Totale dovuto al ricevimento",
+          "due_later_checkout_to_draft": "Totale da pagare in seguito"
+        },
+        "maximum_discount_code_limit_reached": "È stato raggiunto il numero massimo di codici sconto. Rimuovete un codice esistente per utilizzarlo <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> non funziona al momento. Contattateci per ricevere aiuto.",
+        "due_on_fulfillment": "Scadenza al momento dell'adempimento",
+        "duties_label": "Doveri",
+        "may_be_charged_on_delivery": "Può essere addebitato alla consegna",
+        "updated_shipping_method": "Metodo di spedizione aggiornato: %{shipping_method}",
+        "recurring_total_multiple_label": "Questo ordine prevede un addebito ricorrente per più articoli.",
+        "deferred_total_due_date_label": "Totale dovuto {{date}}",
+        "deferred_total_due_date_label_next": "Dovuto %{date}",
+        "expand_component_information": {
+          "one": "Mostra l'elemento %{count} ",
+          "other": "Mostra %{count} elementi"
+        },
+        "collapse_component_information": {
+          "one": "Nascondi l'elemento %{count} ",
+          "other": "Nascondi %{count} elementi"
+        },
+        "alternative_payment_currency_total": "Addebitato come %{amount_due}"
       },
       "address_management": {
         "confirm_address_deletion": "Siete sicuri di voler eliminare l'indirizzo {{address}}?"
