@@ -2415,7 +2415,7 @@
     "account_information": {
       "verify_new_email_modal": {
         "title": "Bekræft e-mail",
-        "description": "Indtast koden sendt til {{email}}",
+        "description": "Indtast den kode, der er sendt til {{email}}",
         "one_time_password_label": "6-cifret kode",
         "email_resend_button": "Send koden igen",
         "email_resend_button_accessibility_label": "Send bekræftelseskode igen",
@@ -2427,6 +2427,14 @@
       "email_update_success_modal": {
         "title": "Bekræft e-mail",
         "description": "E-mail opdateret succesfuldt. Omdirigerer til login."
+      },
+      "loading_accessibility_message": "Indlæsning af kontooplysninger",
+      "loading_finished_accessibility_message": "Kontooplysningerne er indlæst",
+      "profile_card": {
+        "email_help_text": "E-mail, der bruges til login, kan ikke ændres",
+        "email": "E-mail",
+        "phone_number_help_text": "Telefonnummer, der bruges til login, kan ikke ændres",
+        "save": "Gemme"
       }
     },
     "orders": {
@@ -2439,6 +2447,28 @@
     },
     "order_details": {
       "group_title_label_with_parent": "Til: {{groupTitle}}"
+    },
+    "navigation_and_structure": {
+      "contact_email_subject": "Kontakt fra {{shopName}} onlinebutik",
+      "contact_link": "Kontaktoplysninger",
+      "delete_confirmation": {
+        "delete": "Sletning"
+      },
+      "dismiss_toast": "Afslå",
+      "document_title": "{{sectionName}} - {{shopName}} - Konto",
+      "go_to_store_link": "Gå til butikken",
+      "loading_message": "Indlæsning",
+      "log_out_link": "Log ud",
+      "logout_overlay_label": "Logger dig ud...",
+      "orders_link_label": "Bestillinger",
+      "shop_logo_accessibility_label": "{{shopName}} logo",
+      "country_switcher_toast_message": "Landet skiftede til {{countryName}}",
+      "location_switcher_toast_message": "Placering skiftet til {{locationName}}",
+      "switch_location": "Placering af kontakt",
+      "no_locations_found": "Ingen steder fundet",
+      "company_location": "Virksomhedens placering",
+      "search": "Søg efter",
+      "skip_to_content": "Spring til indhold"
     }
   }
 }
