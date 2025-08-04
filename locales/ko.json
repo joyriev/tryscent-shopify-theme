@@ -1898,6 +1898,70 @@
         "location_information": {
           "one": "%{address} 가까운 재고가 있는 %{count} 매장이 있습니다.",
           "other": "%{address} 가까운 재고가 있는 %{count} 매장이 있습니다."
+        },
+        "location_information_next": {
+          "one": "가까운 곳에 재고가 있는 %{count} 위치가 있습니다.",
+          "other": "가까운 곳에 재고가 있는 %{count} 위치가 있습니다."
+        },
+        "your_location": "내 위치",
+        "no_stores_found": "매장을 찾을 수 없습니다.",
+        "all_stores_far_away": {
+          "title": "가장 가까운 위치가 %{distance} 이상 떨어져 있습니다.",
+          "description": "위치를 선택하거나 %{ship_to_address_link}"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "이전에 선택한 위치를 더 이상 사용할 수 없습니다.",
+          "description": "새 위치를 선택하거나 %{ship_to_address_link}",
+          "ship_to_address_link": "주소로 배송"
+        },
+        "could_not_resolve_address": "주소를 찾을 수 없습니다. 다시 시도하거나 다른 주소를 사용하세요.",
+        "paginator": {
+          "accessibility_label": "로컬 픽업 페이지 매김",
+          "label": {
+            "one": "%{count} 저장소의 %{first} } - %{last} ",
+            "other": "%{first} - %{last} %{count} 저장소 중"
+          }
+        },
+        "reveal_more_label": {
+          "one": "%{count} 더 많은 위치 표시",
+          "other": "위치 %{count} 더 표시"
+        }
+      },
+      "captcha": {
+        "title": "계속하려면 캡차를 입력하세요.",
+        "errors": {
+          "not_solved": "계속하려면 캡차를 입력하세요."
+        }
+      },
+      "discount_errors": {
+        "generic_error": "할인 코드를 더 이상 사용할 수 없으므로 주문을 처리할 수 없습니다. 주문 총액을 검토하고 다시 시도하세요."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "더 이상 B2B 주문을 할 수 있는 권한이 없습니다. 대신 개인 주문을 하려면 %{logout_url} 클릭하세요.",
+        "lost_permissions_subtitle": "더 이상 B2B 주문을 할 수 있는 권한이 없으므로 개인 주문을 하려면 로그아웃하세요."
+      },
+      "shop_pay_external": {
+        "title": "쇼핑 결제",
+        "errors": {
+          "problem_loading": "Shop Pay를 로드하는 동안 문제가 발생했습니다.",
+          "try_again_later": "연결을 확인하거나 이 창을 닫고 잠시 후 다시 시도하세요.",
+          "checkout_has_expired": "결제 기간이 만료되었습니다. 이 창을 닫고 다음에서 다시 결제해 보세요. {{shopName}}."
+        },
+        "return_to_store": "돌아가기 {{shopName}}"
+      },
+      "wallets": {
+        "redirect_hint": "다음 계정으로 로그인하라는 메시지가 표시됩니다. {{walletName}}.",
+        "logged_in": "다음에 연결 {{email}}",
+        "connect_shipping_methods": "{{method1}} 그리고 {{method2}}",
+        "payment_in_progress_body": "결제가 처리 중입니다. 주문이 곧 완료됩니다.",
+        "call_to_action": "결제 수단 {{walletName}}",
+        "redirection_notice": "{{buttonLabel}}\"을 클릭하면 {{walletName}} 리디렉션되어 안전하게 구매를 완료할 수 있습니다.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} 사용 불가",
+            "description": "{{walletName}} 를 사용할 수 없습니다. 다른 결제 방법을 사용하거나 나중에 다시 시도하세요.",
+            "instructions": "{{walletName}} 문제가 발생했습니다. 스토어로 돌아가서 다시 시도하거나 다른 방법으로 결제하세요."
+          }
         }
       }
     },
