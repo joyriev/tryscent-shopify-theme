@@ -1689,7 +1689,94 @@
         "additional_payment_requested": "%{total_outstanding} 미결제 금액 %{total_outstanding} 필요합니다.",
         "checkout_review_and_pay": "주문 %{order_name} 업데이트되었습니다. 변경 사항을 검토한 후 결제하여 주문을 확정하세요.",
         "order_updated_on": "주문이 업데이트되었습니다. %{last_edited_at}.",
-        "order_review_and_pay": "주문이 업데이트되었습니다. 주문 확인을 위해 주문을 검토하고 결제합니다."
+        "order_review_and_pay": "주문이 업데이트되었습니다. 주문 확인을 위해 주문을 검토하고 결제합니다.",
+        "pay_now": "지금 결제하기"
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "회사 위치가 모든 주문을 검토를 위해 초안으로 제출하도록 설정되어 있습니다.",
+        "missing_address": "배송지 주소가 없습니다: 회사 위치 주소가 누락되어 일회용 주소 사용이 비활성화되었습니다."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "신용카드로 요금이 청구됩니다. %{amount}",
+        "payment_total_label": "결제 총액",
+        "change_currency_link": "로 변경 %{currency_name}",
+        "card_provider_fx_charges_warning": "카드 공급업체에서 %{currency_code} 거래에 대해 수수료를 부과할 수 있습니다.",
+        "currency_not_supported_by_shop": "선택한 통화를 더 이상 사용할 수 없습니다. 모든 가격은 이제 %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "배송 국가를 기준으로 장바구니가 업데이트되었습니다.",
+        "cart_and_currency_updated_based_on_country": "배송 국가를 기준으로 장바구니 및 통화가 업데이트되었습니다."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "국가/지역이 업데이트되었습니다. 결제를 계속하려면 배송지 주소를 입력하세요."
+      },
+      "tips": {
+        "description": "다음에서 팀에 대한 지지를 표시하세요. %{shop_name}",
+        "presets_description": "팁 비율 선택",
+        "custom_label": "사용자 지정 팁",
+        "update_tip": "업데이트 팁"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "구매 %{product_name}",
+          "one": "%{product_name} 및 %{count} 기타 품목 구매",
+          "other": "%{product_name} 및 %{count} 기타 품목 구매"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "other": "%{count} 일수"
+          },
+          "week": {
+            "other": "%{count} 주"
+          },
+          "month": {
+            "other": "%{count} 개월"
+          },
+          "year": {
+            "one": "년",
+            "other": "%{count} 년"
+          }
+        },
+        "recurring_totals": "%{total_price} 모든 %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "첫 결제 %{total_price_with_discount}, 그 다음 %{recurring_total} 결제 %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "첫 결제 %{total_price}",
+            "other": "첫 번째 %{count} 결제 %{total_price} "
+          },
+          "following_cycles": "를 입력한 다음 %{interval} %{total_price}."
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": "를 입력한 후 %{total_price} %{count} 결제",
+            "other": "를 입력하면 %{total_price} %{count} 결제가 이루어집니다 %{total_price} "
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "delete_customer_mandate": {
+          "generic_error": "요청을 처리하는 동안 문제가 발생했습니다.",
+          "success_message": "결제 수단이 성공적으로 삭제되었습니다."
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "너무 많은 시도",
+          "description": "몇 분 후에 다시 시도해 주세요."
+        },
+        "line_to_check_out": "결제를 위해 줄을 서고 있습니다.",
+        "cart_summary_heading": "장바구니",
+        "merchandise": {
+          "sold_out": "매진"
+        },
+        "inventory": {
+          "partial_inventory_banner": "장바구니의 일부 품목이 매진되어 결제 시 구매할 수 없습니다.",
+          "sold_out": {
+            "heading": "장바구니가 매진되었습니다."
+          }
+        }
       }
     },
     "sentence": {
