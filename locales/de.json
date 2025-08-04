@@ -102,34 +102,34 @@
       "name": "Name",
       "email": "E-Mail",
       "message": "Wie",
-      "post": "Kommentar posten",
+      "post": "Post comment",
       "back_to_blog": "Zurück zum Blog",
       "share": "Diesen Artikel teilen",
-      "success": "Dein Kommentar wurde erfolgreich gepostet! Vielen Dank!",
-      "success_moderated": "Dein Kommentar wurde erfolgreich gepostet. Da unser Blog moderiert wird, werden wir ihn erst kurze Zeit später veröffentlichen."
+      "success": "Ihr Kommentar wurde erfolgreich abgeschickt! Dankeschön!",
+      "success_moderated": "Ihr Kommentar wurde erfolgreich veröffentlicht. Wir werden ihn in Kürze veröffentlichen, da unser Blog moderiert wird."
     }
   },
   "onboarding": {
-    "product_title": "Beispiel für Produkttitel",
-    "collection_title": "Name deiner Kollektion"
+    "product_title": "Beispiel für einen Produkttitel",
+    "collection_title": "Der Name Ihrer Sammlung"
   },
   "products": {
     "product": {
       "add_to_cart": "In den Warenkorb legen",
       "description": "Beschreibung",
-      "on_sale": "Sale",
+      "on_sale": "Säle",
       "quantity": {
-        "label": "Anzahl",
-        "input_label": "Anzahl von {{ product }}",
-        "increase": "Erhöhe die Menge für {{ product }}",
-        "decrease": "Verringere die Menge für {{ product }}",
-        "minimum_of": "Mindestens {{ quantity }}",
-        "maximum_of": "Maximal {{ quantity }}",
-        "multiples_of": "In {{ quantity }}er Schritten",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> im Warenkorb",
-        "note": "Mengenregeln anzeigen",
-        "min_of": "Mindestens {{ quantity }}",
-        "max_of": "Höchstens {{ quantity }}"
+        "label": "Menge",
+        "input_label": "Menge für {{ product }}",
+        "increase": "Menge erhöhen für {{ product }}",
+        "decrease": "Verringerung der Menge für {{ product }}",
+        "minimum_of": "Minimum von {{ quantity }}",
+        "maximum_of": "Maximum von {{ quantity }}",
+        "multiples_of": "Inkremente von {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> auf der Hut",
+        "note": "Mengenregelungen anzeigen",
+        "min_of": "Min {{ quantity }}",
+        "max_of": "Max {{ quantity }}"
       },
       "price": {
         "from_price_html": "Von {{ price }}",
@@ -145,43 +145,43 @@
       "xr_button": "In deinem Bereich ansehen",
       "xr_button_label": "\"Ansicht in deinem Raum\" lädt den Artikel in ein Augmented-Reality-Fenster",
       "pickup_availability": {
-        "view_store_info": "Shop-Informationen anzeigen",
-        "check_other_stores": "Verfügbarkeit in anderen Shops überprüfen",
-        "pick_up_available": "Abholung verfügbar",
-        "pick_up_available_at_html": "Abholung bei <span class=\"color-foreground\">{{ location_name }}</span> verfügbar",
-        "pick_up_unavailable_at_html": "Abholung bei <span class=\"color-foreground\">{{ location_name }}</span> derzeit nicht verfügbar",
-        "unavailable": "Verfügbarkeit für Abholungen konnte nicht geladen werden",
-        "refresh": "Aktualisieren"
+        "view_store_info": "Informationen zum Geschäft anzeigen",
+        "check_other_stores": "Verfügbarkeit in anderen Geschäften prüfen",
+        "pick_up_available": "Abholung möglich",
+        "pick_up_available_at_html": "Abholung möglich bei <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Abholung derzeit nicht möglich bei <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Konnte die Verfügbarkeit der Abholung nicht laden",
+        "refresh": "Refresh"
       },
       "media": {
-        "open_media": "Medien {{ index }} in Modal öffnen",
+        "open_media": "Medien {{ index }} im Modal öffnen",
         "play_model": "3D-Viewer abspielen",
         "play_video": "Video abspielen",
-        "gallery_viewer": "Galerie-Viewer",
+        "gallery_viewer": "Galerie-Betrachter",
         "load_image": "Bild {{ index }} in Galerieansicht laden",
         "load_model": "3D-Modell {{ index }} in Galerieansicht laden",
-        "load_video": "Video {{ index }} in Galerieansicht abspielen",
-        "image_available": "Bild {{ index }} ist nun in der Galerieansicht verfügbar"
+        "load_video": "Video {{ index }} in der Galerieansicht abspielen",
+        "image_available": "Das Bild {{ index }} ist jetzt in der Galerieansicht verfügbar"
       },
       "view_full_details": "Vollständige Details anzeigen",
       "shipping_policy_html": "<a href=\"{{ link }}\">Versand</a> wird beim Checkout berechnet",
       "choose_options": "Optionen auswählen",
-      "choose_product_options": "Optionen für {{ product_name }} auswählen",
+      "choose_product_options": "Wählen Sie Optionen für {{ product_name }}",
       "value_unavailable": "{{ option_value }} – nicht verfügbar",
       "variant_sold_out_or_unavailable": "Variante ausverkauft oder nicht verfügbar",
-      "inventory_in_stock": "Auf Lager",
-      "inventory_in_stock_show_count": "{{ quantity }} auf Lager",
-      "inventory_low_stock": "Niedriger Lagerbestand",
-      "inventory_low_stock_show_count": "Niedriger Lagerbestand: {{ quantity }} verbleibend",
-      "inventory_out_of_stock": "Nicht vorrätig",
-      "inventory_out_of_stock_continue_selling": "Auf Lager",
+      "inventory_in_stock": "Vorrätig",
+      "inventory_in_stock_show_count": "{{ quantity }} vorrätig",
+      "inventory_low_stock": "Niedriger Bestand",
+      "inventory_low_stock_show_count": "Geringer Bestand: {{ quantity }} übrig",
+      "inventory_out_of_stock": "Nicht mehr lieferbar",
+      "inventory_out_of_stock_continue_selling": "Vorrätig",
       "sku": "SKU",
       "volume_pricing": {
-        "title": "Volumenabhängige Preisgestaltung",
-        "note": "Volumenabhängige Preisgestaltung verfügbar",
+        "title": "Volumen-Preisgestaltung",
+        "note": "Volumenpreise verfügbar",
         "minimum": "{{ quantity }}+",
         "price_range": "{{ minimum }}–{{ maximum }}",
-        "price_at_each_html": "bei {{ price }}/Stück"
+        "price_at_each_html": "zu {{ price }}"
       },
       "product_variants": "Produktvarianten",
       "duties_included": "Inkl. Zollgebühren."

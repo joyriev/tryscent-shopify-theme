@@ -1906,8 +1906,72 @@
           "change_payment_method_link_label": "Skift betalingsmetode",
           "pick_up_in_store_shipping_method_html": "Afhentning i butikken %{location_name}",
           "purchase_order_number_title": "PO-nummer",
-          "change_purchase_order_number_label": "Ændre PO-nummer"
+          "change_purchase_order_number_label": "Ændre PO-nummer",
+          "no_purchase_order_number": "(Intet PO-nummer)",
+          "due_after_order_reviewed_html": "Skal betales, når ordren er gennemgået",
+          "review_title_free_order": "Gennemgå og gennemfør din bestilling",
+          "payment_method_saved_company_location": "Gem kort til dette sted",
+          "company_location": "Virksomhedens placering"
+        },
+        "item_header": {
+          "change_value": "Ændre værdi",
+          "section": "Sektion"
         }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Send mig en e-mail med nyheder og tilbud",
+        "post_accept_marketing_checkbox_label": "Du er tilmeldt for at modtage nyheder og tilbud via e-mail",
+        "pending_accept_marketing_checkbox_label": "Tjek din e-mail for at bekræfte dit abonnement på nyheder og tilbud",
+        "accept_sms_checkbox_label": "Send mig en sms med nyheder og tilbud",
+        "disclaimer": {
+          "privacy_policy": "Politik for beskyttelse af personlige oplysninger",
+          "terms_of_service": "Vilkår for service"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Politik for beskyttelse af personlige oplysninger",
+            "terms_of_service": "Vilkår for service",
+            "description_html": "Ved at tilmelde dig via sms accepterer du at modtage tilbagevendende automatiserede marketingmeddelelser, herunder påmindelser om indkøbskurve, på det angivne telefonnummer. Samtykke er ikke en betingelse for køb. Svar STOP for at afmelde dig. Svar HELP for at få hjælp. Beskedfrekvensen varierer. Besked- og datatakster kan være gældende. Se vores %{privacy_policy_link} og %{terms_of_service_link}.",
+            "description_transactional_html": "Du kan modtage sms'er i forbindelse med ordrebekræftelse og forsendelsesopdateringer. Svar STOP for at afmelde dig. Svar HJÆLP for at få hjælp. Beskedfrekvensen varierer. Sms- og datatakster kan være gældende. Se vores %{privacy_policy_modal_link} og %{terms_of_service_modal_link}."
+          },
+          "mobile_phone_number": "Mobiltelefonnummer"
+        },
+        "unsubscribe": {
+          "title": "Du har afmeldt dig",
+          "description": "Du vil ikke modtage flere påmindelser om indkøbskurve fra os."
+        }
+      },
+      "shop_policies": {
+        "refund_policy": "Politik for tilbagebetaling",
+        "privacy_policy": "Fortrolighedspolitik",
+        "terms_of_service": "Vilkår for brug",
+        "shipping_policy": "Forsendelse",
+        "terms_of_sale": "Vilkår for salg",
+        "subscription_policy": "Aflysninger",
+        "purchase_options_policy": "Politik for købsoptioner",
+        "purchase_options_cancellation_policy": "Aflysninger",
+        "cookie_preferences": "Småkager"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Vilkår og betingelser for den registrerede forhandler",
+        "privacy_policy": "Merchant of Records privatlivspolitik"
+      },
+      "markets": {
+        "invalid_market_manager_error": "Gennemgå dine kontaktoplysninger, før du gennemfører betalingen"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Beløb at betale for ordre %{order_name}",
+        "changes_summary": {
+          "added": {
+            "other": "Tilføjet %{count}"
+          },
+          "subtracted": "Fjernet %{count}",
+          "returned": "Returneret %{count}",
+          "return_line_item_removed": "Fjernet %{count} fra returnering"
+        },
+        "additional_payment_requested": "Betaling af %{total_outstanding} er nødvendig",
+        "checkout_review_and_pay": "Din ordre %{order_name} er blevet opdateret. Gennemgå ændringerne, og betal derefter for at bekræfte din ordre.",
+        "order_review_and_pay": "Din ordre er blevet opdateret. Gennemgå og betal for at bekræfte din ordre."
       }
     },
     "sentence": {
