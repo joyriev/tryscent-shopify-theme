@@ -2171,78 +2171,75 @@
           "previous_accessibility_label": "Página anterior"
         },
         "number_of_pickup_points_near_location": {
-          "one": "%{count} punto de recogida cercano a su ubicación",
-          "other": "%{count} puntos de recogida cercanos a su ubicación"
-        },
-        "waiting_on_pickup_point_location_notice": "Buscando puntos de recogida...",
-        "geolocation": {
-          "shared_location_button": "Utilizar mi ubicación",
-          "errors": {
-            "unsuported_by_browser": "Obtener geolocalización no es compatible con su navegador. Inténtalo de nuevo o utiliza otro navegador.",
-            "permission_denied": "No se pudo obtener tu ubicación. Vuelve a intentarlo."
-          }
+          "one": "%{count} punto de recogida cercano a su ubicación"
         }
-      },
-      "error_page": {
-        "terminal": {
-          "title": "Hubo un problema con nuestra caja",
-          "message": "Actualice esta página o inténtelo de nuevo en unos minutos",
-          "action": {
-            "cta": "Actualizar página"
-          },
-          "request_id": "ID de solicitud: {{requestId}}"
-        }
-      },
-      "notice_banner": {
-        "return_to_cart_link_text": "Volver a la cesta",
-        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} para actualizar las cantidades",
-        "company_location_changed": "Su cesta ha sido actualizada. Revise su pedido antes de enviarlo.",
-        "company_location_changed_product_removed": "Su carrito ha sido actualizado porque algunos productos no están disponibles en esta ubicación. Revise su pedido antes de enviarlo.",
-        "violations_title": "{{violation}} falta o no es válido",
-        "individual_violations_title": {
-          "UnhandledViolations": "Información sobre pedidos"
-        },
-        "all_violations_content": "Llámenos o {{emailLink}} para actualizar esta información y completar su pedido:",
-        "all_violations_email_link": "correo electrónico",
-        "editable_shipping_address_violations_message_title": "Añada esta información para completar su pedido:",
-        "editable_shipping_address_violations_message_footer": "Para actualizar permanentemente la dirección de este lugar, {{emailLink}}.",
-        "editable_shipping_address_violations_email_link": "Contacto",
-        "calculating_shipping": "Todavía se está calculando el envío. Inténtelo de nuevo en unos segundos. No se te ha cobrado.",
-        "generic_processing_error": {
-          "title": "Ha habido un problema al procesar su pedido",
-          "body": "No se te ha cobrado. Inténtalo de nuevo o utiliza otro método de pago."
-        },
-        "payment_method_not_available_with_payment_terms": "El método de pago que seleccionó ya no está disponible porque el pago de este pedido ahora se realiza según las condiciones de {{paymentTerms}} ",
-        "payment_method_not_available_with_fulfillment_terms": "La forma de pago que ha seleccionado ya no está disponible porque el pago de este pedido vence en el momento de la entrega.",
-        "payment_method_not_available_with_fixed_terms": "El método de pago que ha seleccionado ya no está disponible porque el pago de este pedido vence más tarde.",
-        "contact_information": {
-          "header": "Para actualizar su información, {{emailLink}}.",
-          "email_link": "Contacto"
-        }
-      },
-      "review_address_modal": {
-        "title": "Dirección de revisión",
-        "subtitle": {
-          "one": "Este pedido se enviará a la dirección facilitada por {{merchant}}.",
-          "other": "Este pedido se enviará a una dirección proporcionada por {{merchant}}. Seleccione una dirección de envío."
-        },
-        "subtitle_must_use": "Su pedido se enviará a esta dirección.",
-        "use_saved_address": "Utilizar una dirección diferente",
-        "return_to_cart": "Volver a la cesta"
-      },
-      "marketplaces": {
-        "legal_notice": {
-          "legal_text": "Consulte",
-          "link_label": "{{partnerDisplayName}} Condiciones generales"
-        }
-      },
-      "online_store_chat": {
-        "title": "¿Tiene preguntas? Chatea con nosotros"
       },
       "local_pickup": {
-        "location_information": {
-          "one": "Hay %{count} tienda con stock cerca de %{address}",
-          "other": "Hay %{count} tiendas con existencias cerca de %{address}"
+        "location_information_next": {
+          "one": "Hay %{count} locales con existencias cerca de usted",
+          "other": "Hay %{count} lugares con existencias cerca de usted"
+        },
+        "toggle_location": "Cambiar ubicación",
+        "no_stores_found": "No se han encontrado tiendas",
+        "all_stores_far_away": {
+          "title": "Los lugares más cercanos están a más de %{distance} de distancia",
+          "description": "Seleccione una ubicación o %{ship_to_address_link}",
+          "ship_to_address_link": "dirección de envío"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "La ubicación seleccionada anteriormente ya no está disponible",
+          "description": "Seleccione una nueva ubicación o %{ship_to_address_link}",
+          "ship_to_address_link": "dirección de envío"
+        },
+        "could_not_resolve_address": "No se ha podido localizar tu dirección. Inténtelo de nuevo o utilice una dirección diferente",
+        "paginator": {
+          "accessibility_label": "Paginación de recogida local",
+          "previous": "Página anterior"
+        },
+        "reveal_more_label": {
+          "one": "Mostrar %{count} más ubicación",
+          "other": "Mostrar %{count} más ubicaciones"
+        }
+      },
+      "captcha": {
+        "title": "Complete el CAPTCHA para continuar",
+        "errors": {
+          "not_solved": "Complete el CAPTCHA para continuar"
+        }
+      },
+      "clipboard": {
+        "copied": "Copied"
+      },
+      "discount_errors": {
+        "generic_error": "Tu pedido no ha podido ser procesado porque tu código de descuento ya no está disponible. Revisa el total de tu pedido e inténtalo de nuevo."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Ya no tiene permiso para realizar pedidos B2B. %{logout_url} para realizar un pedido personal en su lugar.",
+        "log_out_link_text": "Cerrar sesión",
+        "lost_permissions_subtitle": "Ya no tiene permiso para realizar pedidos B2B, cierre la sesión para realizar un pedido personal.",
+        "lost_permissions_title": "Sin permisos de ubicación"
+      },
+      "shop_pay_external": {
+        "title": "Pago en tienda",
+        "errors": {
+          "problem_loading": "Hay un problema al cargar Shop Pay",
+          "try_again_later": "Compruebe su conexión o cierre esta ventana e inténtelo de nuevo dentro de unos instantes.",
+          "checkout_has_expired": "Tu pago ha caducado. Cierre esta ventana e intente pagar de nuevo desde {{shopName}}."
+        },
+        "return_to_store": "Volver a la página {{shopName}}",
+        "return_to_store_simple": "Volver a la tienda"
+      },
+      "wallets": {
+        "return_to_checkout": "Volver a la caja",
+        "redirect_hint": "Se le pedirá que inicie sesión con {{walletName}}.",
+        "payment_in_progress_body": "Su pago está siendo procesado. Su pedido se completará en breve.",
+        "redirection_notice": "Tras hacer clic en{{buttonLabel}}\", será redirigido a {{walletName}} para completar su compra de forma segura.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} no disponible",
+            "description": "{{walletName}} no estaba disponible. Utiliza otro método de pago o inténtalo más tarde.",
+            "instructions": "Ha habido un problema con {{walletName}}. Vuelve a la tienda para intentarlo de nuevo o realiza la compra de otra forma."
+          }
         }
       }
     },
