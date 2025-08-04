@@ -2558,14 +2558,66 @@
       "manage_accessiblity_label": "주문 관리 {{orderId}}"
     },
     "order_details": {
-      "group_title_label_with_parent": "대상: {{groupTitle}}",
+      "group_title_label_with_parent": "For: {{groupTitle}}",
       "shipment_timeline": {
         "expand_events_label": "세부 정보 보기"
       },
       "order_details_skeleton_accessibility_label": "모든 주문 세부 정보를 보려면 로그인하세요.",
       "billing_address": "청구서 수신 주소",
       "card_ending_with": "로 끝나는 {{lastDigits}}",
-      "group_title_label": "의 일부입니다: {{groupTitle}}"
+      "group_title_label": "의 일부입니다: {{groupTitle}}",
+      "grouped_view_components": {
+        "expand_line_items": "항목 {{count}} 표시",
+        "collapse_line_items": "항목 {{count}} 숨기기",
+        "line_item_summary_accessibility_label": "{{productTitle}}수량: {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "{{productTitle}} 번들의 항목"
+      },
+      "hide_items": "항목 숨기기",
+      "loading": "주문 세부 정보 로드",
+      "loading_finished_accessibility_message": "주문 세부 정보가 로드되었습니다.",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} 수량 {{quantity}}",
+        "next": "다음 항목 표시",
+        "previous": "이전 항목 표시",
+        "load_more_items": {
+          "one": "항목 {{count}} 더 로드",
+          "other": "항목 {{count}} 더 로드"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "주문 요약 보기"
+      },
+      "no_data_provided_accessibility_label": "{{fieldName}} 비어 있습니다.",
+      "not_applicable": "N/A",
+      "paid_amount": "유료",
+      "partially_refunded_label": "부분 환불",
+      "payment": {
+        "status_in_review": "검토 후 결제 기한",
+        "status_unpaid": "결제 기한 {{date}}",
+        "payment_type": {
+          "bank_deposit": "은행 입금",
+          "manual": "매뉴얼"
+        },
+        "card_payment_details": "로 끝나는 {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "로 끝나는 {{lastDigits}} - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Shop Pay 할부로 결제",
+          "view_schedule": "일정 보기"
+        },
+        "manual_payment_methods": {
+          "money_order": "머니 오더 - 우편환 {{formattedTransactionAmount}}",
+          "cash_on_delivery": "COD(대금 상환) - {{formattedTransactionAmount}}",
+          "manual": "매뉴얼 {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "모두 보기",
+          "show_less": "덜 보기"
+        },
+        "emv_details": {
+          "auth": "AUTH:",
+          "source": "출처:"
+        }
+      }
     },
     "date": {
       "humanize": {
