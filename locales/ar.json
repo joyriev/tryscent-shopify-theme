@@ -431,71 +431,71 @@
         "pick_up_next_day": "جاهز للاستلام في اليوم التالي",
         "pickup_point_method_definition": "من السفينة إلى نقطة الالتقاء",
         "retail_method_definition": "الشحن بالتجزئة",
-        "none_method_definition": "لا شحن",
-        "subscription_pickup_information": "ستُطبق طريقة التوصيل هذه على جميع العناصر في هذا الطلب وعلى جميع الطلبات المستقبلية لهذا الاشتراك.",
-        "company_location_no_address_banner": "سيتم تقديم الطلبات التي تُشحن إلى مواقع بدون عنوان للمراجعة."
+        "none_method_definition": "لا يوجد شحن",
+        "subscription_pickup_information": "سيتم تطبيق طريقة التوصيل هذه على جميع العناصر في هذا الطلب وعلى جميع الطلبات المستقبلية لهذا الاشتراك.",
+        "company_location_no_address_banner": "سيتم تقديم الطلبات التي يتم شحنها إلى مواقع لا يوجد بها عنوان للمراجعة."
       },
       "customer_account": {
         "have_an_account_label": "هل لديك حساب؟",
-        "not_user_label": "ليس %{first_name}?",
+        "not_user_label": "لا يوجد %{first_name}?",
         "sign_in_link_label": "تسجيل الدخول",
         "sign_out_link_label": "تسجيل الخروج",
         "save_my_information_label": "احفظ هذه المعلومات للمرة القادمة",
-        "incomplete_address": "العنوان المحدد غير مكتمل. %{update_address_link} أو اختر عنوانًا مختلفًا.",
-        "invalid_address": "العنوان المحدد غير صالح. %{update_address_link} أو اختر عنوانًا مختلفًا.",
+        "incomplete_address": "العنوان المحدد غير مكتمل. %{update_address_link} أو حدد عنواناً مختلفاً.",
+        "invalid_address": "العنوان المحدد غير صالح. %{update_address_link} أو حدد عنواناً مختلفاً.",
         "rollup_label": "الحساب",
         "invalid_shipping_method_summary": "اختر عنوان شحن صالح لعرض طرق الشحن المتاحة",
         "saved_address_option_description": {
           "one": "لديك {{count}} عنوان محفوظ.",
           "other": "لديك {{count}} عناوين محفوظة."
         },
-        "saved_address_option_link": "استخدم عنوانًا محفوظًا",
-        "saved_address_modal_title": "استخدم عنواني المحفوظ"
+        "saved_address_option_link": "استخدام عنوان محفوظ",
+        "saved_address_modal_title": "استخدام عنواني المحفوظ"
       },
       "stock": {
-        "page_title": "مشاكل المخزون",
-        "title": "غير متوفر في المخزون",
+        "page_title": "مشكلات المخزون",
+        "title": "غير متوفر من المخزون",
         "items_unavailable_notice": "بعض العناصر لم تعد متوفرة.",
         "product_column_header": "المنتجات",
         "quantity_column_header": "الكمية",
         "price_column_header": "السعر",
         "status_column_header": "الحالة",
-        "removed_from_cart_notice": "تمت الإزالة من السلة",
-        "sold_out_label": "نفد المخزون",
-        "reduced_label": "مخفض",
-        "reduced_with_quantity_label": "تبقى فقط %{quantity_available}",
-        "remove_from_cart_button_label": "إزالة من السلة",
-        "continue_shopping_button_label": "استمر",
-        "go_back_to_cart_button_label": "العودة إلى سلتي",
+        "removed_from_cart_notice": "تمت إزالته من سلة التسوق",
+        "sold_out_label": "بيعت جميع التذاكر",
+        "reduced_label": "مخفضة",
+        "reduced_with_quantity_label": "لم يتبق سوى %{quantity_available} فقط",
+        "remove_from_cart_button_label": "إزالة من سلة التسوق",
+        "continue_shopping_button_label": "تابع",
+        "go_back_to_cart_button_label": "العودة إلى عربة التسوق",
         "remove": "إزالة",
         "continue_cta_label": "متابعة الدفع",
         "return_to_store_label": "العودة إلى المتجر",
         "item_label": {
-          "one": "{{count}} عنصر",
-          "other": "{{count}} عناصر"
+          "one": "{{count}} الصنف",
+          "other": "{{count}} العناصر"
         },
-        "empty_cart_label": "سلتك فارغة",
+        "empty_cart_label": "عربة التسوق الخاصة بك فارغة",
         "quantity_update": {
           "page_title": "تحديث الكمية",
           "title": "تحديث الكمية",
-          "description": "الكميات المتاحة لهذه العناصر قد تغيرت وتم تحديثها في سلة التسوق الخاصة بك."
+          "description": "لقد تغيرت الكميات المتاحة لهذه العناصر وتم تحديثها في عربة التسوق الخاصة بك."
         },
         "unpurchasable_product": {
           "title": "منتج غير قابل للشراء",
-          "header": "تمت إزالة بعض العناصر من سلة التسوق الخاصة بك",
+          "header": "تمت إزالة بعض العناصر من عربة التسوق الخاصة بك",
           "status_column_header": "غير متوفر",
-          "message": "هذه العناصر غير متوفرة لطلبات الأعمال بين الشركات."
+          "message": "هذه العناصر غير متوفرة لطلبات B2B."
         },
         "unpurchasable_product_generic": {
-          "header": "تمت إزالة بعض العناصر من سلة التسوق الخاصة بك",
+          "header": "تمت إزالة بعض العناصر من عربة التسوق الخاصة بك",
           "title": "منتج غير قابل للشراء",
           "message": "هذه العناصر غير متوفرة.",
           "status_column_header": "غير متوفر"
         },
         "unfulfillable_product": {
-          "title": "التوصيل غير متوفر",
+          "title": "التوصيل غير متاح",
           "message": {
-            "one": "لم يعد %{delivery_method} متاحًا لهذا العنصر.",
+            "one": "%{delivery_method} لم يعد متاحاً لهذا العنصر.",
             "other": "لم يعد %{delivery_method} متاحًا لهذه العناصر."
           },
           "default_message": {
