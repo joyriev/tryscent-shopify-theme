@@ -710,7 +710,19 @@
         "payment_flexibility_terms_id_mismatch": "Betalingsflexibiliteit voorwaarden ID mismatch"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Uw bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan."
+        "unavailable_addresses_only_countries": "Uw bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan.",
+        "shipping_method": "De verzendopties voor uw bestelling zijn gewijzigd. Controleer uw selectie en probeer het opnieuw.",
+        "shipping_method_not_available": "Je winkelwagentje is bijgewerkt en de artikelen die je hebt toegevoegd kunnen niet naar je adres worden verzonden. Verwijder de artikelen om je bestelling af te ronden.",
+        "shipping_method_not_available_generic": {
+          "one": "Je bestelling kan niet worden verzonden naar het geselecteerde adres. Controleer of het adres correct is en probeer het opnieuw, of selecteer een ander adres.",
+          "other": "Sommige artikelen in je winkelwagen kunnen niet worden verzonden naar het adres dat je hebt opgegeven. Controleer je adres om er zeker van te zijn dat het correct is en probeer het opnieuw, of selecteer een ander adres."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Artikelen in de winkelwagen voldoen niet aan de prijs- of gewichtseisen om in aanmerking te komen voor verzending. Werk uw winkelwagentje bij en probeer het opnieuw.",
+        "shipping_method_not_available_updated": {
+          "one": "Het artikel dat je hebt toegevoegd, wordt niet verzonden naar jouw locatie. Verwijder het bij de kassa of neem contact op met de winkel.",
+          "other": "Een of meer artikelen die je hebt toegevoegd, worden niet naar jouw locatie verzonden. Verwijder ze bij het afrekenen of neem contact op met de winkel."
+        },
+        "empty_state": "Voer je verzendadres in om de beschikbare verzendmethoden te bekijken."
       },
       "order_summary": {
         "for_add_on": "Voor: %{group_title}",
@@ -1553,7 +1565,42 @@
         "checkout_amount_changed": "Je betaling kon niet worden verwerkt omdat het verschuldigde bedrag bij het afrekenen is gewijzigd. Controleer je bestelling en probeer het opnieuw.",
         "deferred_payment_not_allowed": "Uitgestelde betalingen zijn niet toegestaan. Controleer uw bestelling en probeer het opnieuw.",
         "deferred_payment_required": "Deze bestelling vereist een uitgestelde betaling. Controleer uw bestelling en probeer het opnieuw.",
-        "deferred_amount_changed": "Je betaling kon niet worden verwerkt omdat het bedrag van de uitgestelde betaling is gewijzigd. Controleer je bestelling en probeer het opnieuw."
+        "deferred_amount_changed": "Je betaling kon niet worden verwerkt omdat het bedrag van de uitgestelde betaling is gewijzigd. Controleer je bestelling en probeer het opnieuw.",
+        "deferred_date_changed": "Je betaling kon niet worden verwerkt omdat de datum van uitgestelde betaling is gewijzigd. Controleer je bestelling en probeer het opnieuw.",
+        "order_total_changed": "Het totaal van je bestelling is gewijzigd. Controleer en probeer het opnieuw.",
+        "payment_processing": "Je betaling kan om technische redenen niet worden verwerkt. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "payment_processing_no_retry": "Je betaling kan om technische redenen niet worden verwerkt. Probeer een andere betaalmethode.",
+        "paypal_zero_amount": "Je kunt PayPal niet gebruiken voor %{amount} bestellingen. Controleer of je bestelling correct is en reken af zonder PayPal.",
+        "paypal_invalid_token": "PayPal was niet beschikbaar. Probeer het opnieuw of gebruik een andere afrekenoptie.",
+        "pay_later_failed": "Er is een fout opgetreden bij het verwerken van je betaling met Later betalen. Kies een andere betaalmethode en probeer het opnieuw.",
+        "three_d_secure_failed": "Je betaling kon niet worden geverifieerd. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "three_d_secure_failed_duplicate": "De 3D Secure-authenticatie van de creditcard is mislukt omdat er al een andere aan de gang is.",
+        "three_d_secure_failed_payment_method": "Je kaart kon niet worden geverifieerd. Probeer het opnieuw of voeg een andere kaart toe.",
+        "three_d_secure_throttled": "Te veel pogingen; wacht voordat u het opnieuw probeert",
+        "subscription_agreement_blank": "Om een abonnement te kopen, moeten je betalingsgegevens worden opgeslagen. Om verder te gaan, bevestig je dat je akkoord gaat of verwijder je de items van je bestelling.",
+        "insufficient_funds": "Je betaling is geweigerd vanwege onvoldoende saldo. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "multiple_deferred_payment_not_allowed": "Per aanvraag is slechts één uitgestelde betaling toegestaan. Controleer je verzoek en probeer het opnieuw.",
+        "shipping_must_match_billing": "Het factuuradres moet overeenkomen met het verzendadres. Gebruik een andere betaalmethode.",
+        "decision_rule_block": "Er is een probleem opgetreden bij het verwerken van je betaling. Neem contact op met de winkeleigenaar.",
+        "pick_up_card": "Uw kaart is geweigerd. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "cannot_verify": "Je betalingsgegevens konden niet worden geverifieerd. Controleer je kaartgegevens en probeer het opnieuw.",
+        "card_declined": "Uw kaart is geweigerd. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "processing_error": "Er is een probleem opgetreden bij het verwerken van je betaling. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "processing_error_checkout_as_guest": "Er is een probleem opgetreden bij het verwerken van je betaling. Probeer het opnieuw met een andere betaalmethode of {{checkout_as_guest_link}}.",
+        "selected_payment_method": "Er was een probleem met de door jou geselecteerde betaalmethode en er is niets in rekening gebracht. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "payment_method_billing_address": "Er is een probleem opgetreden met het factuuradres van je geselecteerde betaalmethode en het bedrag is niet in rekening gebracht. Controleer het adres en probeer het opnieuw of gebruik een andere betaalmethode.",
+        "test_mode_live_card": "Deze winkel kan geen echte bestellingen of betalingen accepteren.",
+        "transient_error": "Er is een probleem opgetreden bij het verwerken van je betaling. Probeer deze pagina te verversen of controleer je internetverbinding.",
+        "missing_shipping_address": "Je betaling kon niet worden verwerkt omdat je afleveradres ontbreekt. Voeg een verzendadres toe en probeer het opnieuw.",
+        "invalid_shipping_address": "Je betaling kon niet worden verwerkt omdat we je verzendadres niet konden vinden. Controleer je verzendadres en probeer het opnieuw.",
+        "successful_offsite_with_gift_card_error": "Er is een probleem opgetreden bij de verwerking van je cadeaukaartbetaling. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "development_store_order_limit_reached": "Je hebt de limiet bereikt voor winkelbestellingen met deze betalingsverwerker. Als je nog een bestelling wilt plaatsen, moet je een testbetaalgateway gebruiken. Meer informatie over %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "Als je een testbestelling wilt plaatsen, moet je een betaalgateway voor testbetalingen gebruiken. Meer informatie over %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "bestellingen testen in ontwikkelingswinkels",
+        "payment_above_threshold": "Het betalingsbedrag is hoger dan de limiet voor deze regio. Verlaag het totaal en probeer het opnieuw",
+        "risky": "Er is een probleem opgetreden bij het verwerken van je betaling. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "expired_buyer_action": "De betaalmethode is verlopen. Probeer het opnieuw.",
+        "name_mismatch": "Controleer uw kaartgegevens. De naam op je kaart en het factuuradres komen niet overeen."
       }
     },
     "sentence": {

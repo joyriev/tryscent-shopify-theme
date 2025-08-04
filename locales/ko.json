@@ -3039,7 +3039,64 @@
         "checkout_card_banner": "이 결제 방법은 사전 승인된 결제에만 사용할 수 있습니다. 이 스토어에 로그인한 경우에는 결제 시 표시되지 않습니다."
       },
       "edit_payment_method": {
-        "payment_method_updated_toast": "결제 방법 업데이트"
+        "payment_method_updated_toast": "결제 방법 업데이트",
+        "billing_address": "청구서 수신 주소",
+        "billing_address_add_new": "새 항목 추가",
+        "future_purchases_notice": "이 결제 방법은 향후 구매를 위해 저장됩니다.",
+        "generic_error": "업데이트하는 동안 문제가 발생했습니다. 다시 시도해 주세요."
+      },
+      "card_fields": {
+        "name_on_card_label": "카드의 이름",
+        "name_on_card_placeholder": "카드의 이름",
+        "card_expiry_label": "만료일(월/년)",
+        "card_expiry_placeholder": "만료일(월/년)",
+        "card_start_label": "발행 날짜(월/년)",
+        "card_start_placeholder": "발행 날짜(월/년)",
+        "tooltip": {
+          "tooltip_accessibility_label": "자세한 정보",
+          "card_verification_value_explanation_amex": "카드 앞면에 있는 4자리 보안 코드",
+          "card_verification_value_explanation_other": "카드 뒷면에 있는 3자리 보안 코드",
+          "card_verification_value_explanation": "보통 카드 뒷면에 있는 3자리 보안 코드입니다. 아메리칸 익스프레스 카드는 앞면에 4자리 코드가 있습니다.",
+          "card_security_notice": "모든 거래는 안전하고 암호화되어 있습니다."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "카드에 적힌 대로 이름을 정확하게 입력하세요.",
+          "credit_card_number_invalid": "유효한 카드 번호 입력",
+          "credit_card_expiry_invalid": "유효한 카드 만료일 입력",
+          "credit_card_verification_value_blank": "카드에 있는 CVV 또는 보안 코드를 입력합니다."
+        },
+        "unavailable": {
+          "text": "현재 신용 카드 및 직불 카드 결제는 사용할 수 없습니다.",
+          "link_text": "이 페이지 새로 고침",
+          "suffix": "를 클릭하거나 나중에 다시 시도하세요."
+        }
+      },
+      "payment_delete": {
+        "description_without_replacement": "이 결제 방법은 향후 구매 시 더 이상 사용할 수 없습니다.",
+        "description_with_replacement": "이 결제 방법을 삭제하면 사전 승인된 결제에 영향을 미칩니다. 선택적으로 다른 결제 방법으로 대체하여 예정된 주문을 계속 받을 수 있습니다.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "이 결제 방법을 삭제하면 사전 승인된 결제에 영향을 미칩니다. 대체 결제 방법을 선택하지 않는 한 기존 주문의 미결제 잔액에 대해서는 이 결제 방법으로 계속 청구됩니다. 대체 결제 방법을 선택하면 예정된 구독 주문을 중단 없이 받을 수 있습니다.",
+          "with_pending_orders": "이 결제 방법을 삭제하면 계정에서 삭제되며 향후 구매에 더 이상 사용할 수 없습니다. 다른 결제 방법을 선택하지 않는 한 기존 주문의 미결제 잔액에 대해서는 계속 청구됩니다.",
+          "with_subscriptions": "이 결제 방법을 삭제하면 사전 승인된 결제에 영향을 미칩니다. 예정된 주문을 계속 받으려면 다른 결제 방법으로 교체하세요."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "이 결제 방법을 삭제하면 사전 승인된 결제에 영향을 미칩니다. 이 결제 방법은 기존 주문의 미결제 잔액에 대해 계속 청구되지만 예정된 정기구독 주문은 받지 못합니다. 정기구독 주문을 계속 받으려면 다른 결제 방법을 추가하세요.",
+          "with_pending_orders": "이 결제 방법을 삭제하면 계정에서 삭제되며 향후 구매에 더 이상 사용할 수 없습니다. 기존 주문의 미결제 잔액에 대해서는 계속 청구됩니다.",
+          "with_subscriptions": "이 결제 방법을 삭제하면 사전 승인된 결제에 영향을 미칩니다. 예정된 주문을 계속 받으려면 대체 결제 방법을 추가하세요."
+        },
+        "replace_method_with_new_method_description": "{{currentPaymentMethodName}} 삭제되고 {{newPaymentMethodName}} 대체됩니다.",
+        "error_when_deleting": "죄송하지만 문제가 발생하여 이 결제 수단을 삭제할 수 없습니다. 나중에 다시 시도하거나 페이지를 새로고침해 주세요.",
+        "delete_and_replace_button": "삭제 및 바꾸기",
+        "delete_and_replace_button_accessibility_label": "{{currentPaymentMethodName}} 삭제하고 {{newPaymentMethodName}} 바꿉니다.",
+        "deleted_successfully": "결제 수단이 성공적으로 삭제되었습니다."
+      },
+      "add_payment_method": {
+        "payment_method_added_confirmation": "결제 방법 추가",
+        "billing_address": {
+          "title": "청구서 수신 주소",
+          "add_billing_address_button": "새 항목 추가",
+          "add_billing_address_button_accessibility_label": "새 청구서 수신 주소 추가"
+        }
       }
     }
   }
