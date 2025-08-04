@@ -529,7 +529,16 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "支払い方法を選択してください"
-        }
+        },
+        "network_card_payment_options": "カードネットワークを選ぶ",
+        "network_card_persistence_description": "選択したネットワークは、今後の取引のためにお支払い方法とともに保存されます。",
+        "amazon_payments_label": "アマゾン・ペイ",
+        "amazon_payments_login_hint": "アマゾンでログインするよう求められます。",
+        "amazon_payments_failed_mfa_challenge": "選択された支払い方法が使用できませんでした。別の方法を選択するか、銀行またはカード発行会社にお問い合わせください。",
+        "amazon_payments_abandoned_mfa_challenge": "お支払いが完了しませんでした。別の支払い方法を試すか、銀行またはカード発行会社に連絡してください。",
+        "amazon_payments_could_not_enqueue_authorize": "お支払いの処理に問題が発生しました。再度お試しいただくか、別のお支払い方法をご利用ください。",
+        "title": "支払い",
+        "amount_left_to_pay_label": "支払期限"
       },
       "order_summary": {
         "for_add_on": "賛成だ： %{group_title}",
@@ -1345,6 +1354,23 @@
         "split_shipping_shipment_number": "出荷 %{number}",
         "split_shipping_merchandise_quantity_label_inline_primary": "数量： %{quantity}",
         "split_shipping_option_free": "送料無料"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "shipping_credential_kr": "個人税関コード",
+          "tax_credential_it": "財務コード（任意）",
+          "tax_email_it": "PEC（オプション）",
+          "tax_credential_co": "付加価値税",
+          "tax_credential_type_co": "証明書の種類",
+          "shipping_credential_co": "付加価値税",
+          "shipping_credential_type_co": "証明書の種類",
+          "shipping_credential_mx": "アールエフシー",
+          "tax_credential_mx": "アールエフシー",
+          "tax_credential_type_mx": "税制",
+          "tax_credential_use_mx": "CFDIの使用",
+          "tax_credential_tr": "トルコ共和国 ID番号 / VAT",
+          "shipping_credential_tr": "トルコ共和国 ID番号 / VAT"
+        }
       }
     }
   },

@@ -2814,10 +2814,57 @@
             "expired_delivery_guarantee_description": "La garantie Shop Promise de 30 jours pour cette commande a expiré.",
             "order_includes_guarantees_label": "Votre commande comprend des garanties {{deliveryAgreementsCount}} ",
             "order_includes_guarantees_description": "Shop Promise garantit une livraison rapide et fiable. Réclamez du Shop Cash si votre commande arrive après {{date}}.",
-            "delivered_after_label": "Livré après le {{date}}"
+            "delivered_after_label": "Livré après le {{date}}",
+            "delivered_after_description": "Votre commande étant arrivée en retard, vous pouvez prétendre à {{amount}} Argent de la boutique.",
+            "claimed_shop_cash_description": "Parce que cette commande est arrivée en retard, vous avez réclamé {{amount}} de l'argent de la boutique.",
+            "eligible_to_claim_shop_cash_description": "Votre commande étant arrivée en retard, vous pouvez prétendre à {{amount}} Argent de la boutique.",
+            "claim_shop_cash_button_label": "Réclamer de l'argent pour la boutique",
+            "view_balance_in_shop_button_label": "Voir la balance dans la boutique",
+            "scan_to_claim_shop_cash_label": "Scanner pour réclamer {{amount}} Argent de la boutique"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Livraison garantie par",
+            "not_delivered_by_label": "Non délivré par {{date}}"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Réclamez votre Shop Cash",
+            "no_shop_app_label": "{{appDownloadLink}} pour réclamer du Shop Cash",
+            "download_shop_app_label": "Télécharger la boutique"
+          },
+          "details_modal": {
+            "title": "Livraison garantie par",
+            "delivery_guarantee_label": "Garantie de livraison",
+            "delivery_by_label": "Livraison par {{date}}",
+            "delivery_guaranteed_by_label": "Livraison garantie par {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garantit une livraison rapide et fiable. Réclamez de l'argent si votre commande arrive en retard.",
+              "may_be_eligible_not_authorized_label": "Vous pouvez peut-être prétendre à du Shop Cash car cette commande est arrivée en retard. Connectez-vous pour voir les détails.",
+              "redeemed_label": "Vous avez déjà réclamé du Shop Cash parce que cette commande est arrivée en retard.",
+              "expired_label": "Cette commande ne peut faire l'objet d'une réclamation pour retard de livraison car la garantie de 30 jours a expiré.",
+              "no_shop_cash_label": "Cette commande ne peut pas faire l'objet d'une réclamation pour livraison tardive car elle n'a pas été payée avec Shop Pay.",
+              "no_longer_guaranteed_label": "Ces articles ne font plus l'objet d'une garantie de livraison.",
+              "claim_shop_cash_title": "Scannez pour réclamer {{amount}} en argent de la boutique",
+              "claim_shop_cash_description": "Vous pouvez utiliser votre Shop Cash pour vos futurs achats dans l'application Shop."
+            }
           }
         }
-      }
+      },
+      "status_mark_as_delivered": "Marquer comme livré",
+      "fulfillment_status_title": "État d'avancement : {{status}}",
+      "group_title_label": "Partie de : {{groupTitle}}",
+      "group_title_label_with_parent": "Pour : {{groupTitle}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_accessibility_label": "Afficher les détails de l'expédition de la commande",
+        "hide_events_label": "Cacher les détails",
+        "hide_events_accessibility_label": "Masquer les détails de l'expédition de la commande"
+      },
+      "contact_information": "Informations sur les contacts",
+      "company_and_location": "Entreprise et lieu d'implantation",
+      "group_title_label": "Partie de : {{groupTitle}}"
     }
   }
 }
