@@ -2069,7 +2069,44 @@
       "zip_code": "Codice postale",
       "postal_code": "Codice postale",
       "pincode": "Pincode",
-      "region": "Regione"
+      "region": "Regione",
+      "province": "Province",
+      "confirm": "Siete sicuri di voler cancellare questo indirizzo?"
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "I più venduti",
+        "price_ascending": "Prezzo, dal minimo al massimo",
+        "price_descending": "Prezzo, da alto a basso",
+        "date_ascending": "Data, dal vecchio al nuovo",
+        "date_descending": "Data, da nuovo a vecchio"
+      }
+    },
+    "errors": {
+      "blank": "non può essere vuoto",
+      "credit_card_session_expired": "L'autorizzazione della carta di credito è scaduta, si prega di inserire nuovamente i dati di pagamento. La carta non è stata addebitata.",
+      "empty": "non può essere vuoto",
+      "invalid_email": "deve essere un indirizzo e-mail valido",
+      "discount_disabled": "Questo sconto è stato disattivato",
+      "discount_expired": "Questo sconto non è più valido",
+      "discount_limit_reached": "Questo sconto ha raggiunto il limite di utilizzo",
+      "discount_not_found": "Impossibile trovare uno sconto valido che corrisponda al codice inserito",
+      "customer_already_used_once_per_customer_discount_notice": "Questo sconto ha raggiunto il limite di utilizzo",
+      "gift_card_already_applied": "Il codice è già stato applicato alla cassa",
+      "gift_card_code_invalid": "Il codice non è valido",
+      "gift_card_currency_mismatch": "La carta regalo è in %{gift_card_currency}. Contattateci per farvela riemettere in %{checkout_currency}.",
+      "gift_card_depleted": "Non ci sono più fondi su questa carta regalo",
+      "gift_card_disabled": "La carta regalo è disattivata",
+      "gift_card_expired": "La carta regalo è scaduta",
+      "taken": "è già stato preso",
+      "too_short": "è troppo corto (il minimo è %{count} caratteri)",
+      "too_long": "è troppo lungo (il massimo è %{count} caratteri)",
+      "invalid_for_country": "non è valido per %{country}",
+      "invalid_for_country_and_province": "non è valido per %{province} e %{country}",
+      "invalid_state_in_country": "non è uno stato valido in %{country}",
+      "invalid_region_in_country": "non è una regione valida in %{country}",
+      "full_name_required": "Inserire un nome e un cognome",
+      "invalid_type": "ci dispiace, non accettiamo carte di questo tipo"
     }
   },
   "customer_accounts": {

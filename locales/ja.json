@@ -102,38 +102,38 @@
       "name": "名称",
       "email": "電子メール",
       "message": "どのように",
-      "post": "コメントを投稿する",
+      "post": "コメント投稿",
       "back_to_blog": "ブログに戻る",
-      "share": "この記事を共有する",
-      "success": "コメントが投稿されました。ありがとうございます。",
-      "success_moderated": "コメントが投稿されました。ブログが管理されているため、しばらくしてから公開されます。"
+      "share": "この記事をシェアする",
+      "success": "コメントは正常に投稿されました！ありがとうございました！",
+      "success_moderated": "コメントは正常に投稿されました。当ブログはモデレートされているため、しばらくして公開されます。"
     }
   },
   "onboarding": {
-    "product_title": "商品名の例",
-    "collection_title": "コレクションの名前"
+    "product_title": "商品タイトル例",
+    "collection_title": "コレクション名"
   },
   "products": {
     "product": {
-      "add_to_cart": "カートに追加する",
-      "description": "商品説明",
-      "on_sale": "セール",
-      "product_variants": "商品バリエーション",
+      "add_to_cart": "カートに入れる",
+      "description": "説明",
+      "on_sale": "ホールズ",
+      "product_variants": "製品バリエーション",
       "quantity": {
         "label": "数量",
-        "input_label": "{{ product }}の数量",
-        "increase": "{{ product }}の数量を増やす",
-        "decrease": "{{ product }}の数量を減らす",
-        "minimum_of": "最小{{ quantity }}",
-        "maximum_of": "最大{{ quantity }}",
-        "multiples_of": "{{ quantity }}の増分",
-        "in_cart_html": "カートに<span class=\"quantity-cart\">{{ quantity }}</span>",
-        "note": "数量ルールを見る",
-        "min_of": "最小：{{ quantity }}",
-        "max_of": "最大： {{ quantity }}"
+        "input_label": "数量 {{ product }}",
+        "increase": "の数量を増やす。 {{ product }}",
+        "decrease": "の数量を減らす。 {{ product }}",
+        "minimum_of": "最低 {{ quantity }}",
+        "maximum_of": "最大 {{ quantity }}",
+        "multiples_of": "の増分 {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> 監視中",
+        "note": "数量規定を見る",
+        "min_of": "最小 {{ quantity }}",
+        "max_of": "マックス {{ quantity }}"
       },
       "price": {
-        "from_price_html": "{{ price }}から",
+        "from_price_html": "より {{ price }}",
         "regular_price": "通常価格",
         "sale_price": "セール価格",
         "unit_price": "単価"
@@ -146,43 +146,43 @@
       "xr_button": "スペースに表示する",
       "xr_button_label": "スペースに表示し、拡張現実ウィンドウにアイテムを読み込む",
       "pickup_availability": {
-        "view_store_info": "ストア情報を表示する",
-        "check_other_stores": "別のストアでの出品状況を確認する",
-        "pick_up_available": "受取が可能です",
-        "pick_up_available_at_html": "<span class=\"color-foreground\">{{ location_name }}</span>での受取が可能です。",
+        "view_store_info": "店舗情報を見る",
+        "check_other_stores": "他店舗の在庫状況を確認する",
+        "pick_up_available": "ピックアップ可能",
+        "pick_up_available_at_html": "ピックアップ <span class=\"color-foreground\">{{ location_name }}</span>",
         "pick_up_unavailable_at_html": "<span class=\"color-foreground\">{{ location_name }}</span>での受取は現在できません。",
-        "unavailable": "受取状況を読み込めませんでした",
-        "refresh": "更新"
+        "unavailable": "ピックアップをロードできなかった",
+        "refresh": "リフレッシュ"
       },
       "media": {
         "open_media": "モーダルでメディア ({{ index }}) を開く",
-        "play_model": "3Dビューアーの再生",
-        "play_video": "ビデオを再生",
-        "gallery_viewer": "ギャラリービュー",
-        "load_image": "ギャラリービューに画像 ({{ index }}) を読み込む",
+        "play_model": "3Dビューアーを再生する",
+        "play_video": "ビデオ再生",
+        "gallery_viewer": "ギャラリービューア",
+        "load_image": "ギャラリービューで画像{{ index }}を読み込む",
         "load_model": "ギャラリービューに3次元モデル ({{ index }}) を読み込む",
-        "load_video": "ギャラリービューでビデオ ({{ index }}) を再生する",
-        "image_available": "ギャラリービューで画像 ({{ index }}) が利用できるようになりました"
+        "load_video": "ギャラリー表示で動画{{ index }}を再生する",
+        "image_available": "画像{{ index }}がギャラリー表示で利用可能になりました。"
       },
       "view_full_details": "詳細を表示する",
       "shipping_policy_html": "<a href=\"{{ link }}\">配送料</a>はチェックアウト時に計算されます。",
       "choose_options": "オプションを選択",
-      "choose_product_options": "{{ product_name }}のオプションを選択する",
+      "choose_product_options": "のオプションを選択する。 {{ product_name }}",
       "value_unavailable": "{{ option_value }}は利用できません",
       "variant_sold_out_or_unavailable": "バリエーションは売り切れているか販売できません",
       "inventory_in_stock": "在庫あり",
-      "inventory_in_stock_show_count": "{{ quantity }}個の在庫",
-      "inventory_low_stock": "低在庫",
-      "inventory_low_stock_show_count": "低在庫：残り{{ quantity }}個",
+      "inventory_in_stock_show_count": "{{ quantity }} 在庫あり",
+      "inventory_low_stock": "在庫僅少",
+      "inventory_low_stock_show_count": "在庫が少ない：{{ quantity }}残り",
       "inventory_out_of_stock": "在庫切れ",
       "inventory_out_of_stock_continue_selling": "在庫あり",
       "sku": "SKU",
       "volume_pricing": {
-        "title": "量による価格",
-        "note": "量による価格が利用可能",
+        "title": "ボリューム・プライシング",
+        "note": "ボリューム価格あり",
         "minimum": "{{ quantity }}個以上",
         "price_range": "{{ minimum }}～{{ maximum }}",
-        "price_at_each_html": "{{ price }}/ユニットで"
+        "price_at_each_html": "{{ price }}"
       },
       "duties_included": "関税込。"
     },
