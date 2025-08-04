@@ -535,7 +535,23 @@
         "unavailable_addresses_only_countries": "Uw bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan."
       },
       "order_summary": {
-        "for_add_on": "Voor: %{group_title}"
+        "for_add_on": "Voor: %{group_title}",
+        "title": "Overzicht bestelling",
+        "group_title_label": "Deel van \"%{group_title}\"",
+        "number_items": {
+          "one": "%{count} item",
+          "other": "%{count} items"
+        },
+        "view_all_items": {
+          "one": "Bekijk %{count} item",
+          "other": "Alle %{count} items weergeven"
+        },
+        "more_items_modal": {
+          "search_item": "Zoek op",
+          "clear_search": "Duidelijk zoeken",
+          "empty_results": "Geen resultaten gevonden voor%{searchText}\". Controleer de spelling of gebruik een ander woord of een andere zin.",
+          "number_items_shown": "%{shownNumber} van %{totalNumber} items"
+        }
       },
       "address_management": {
         "confirm_address_deletion": "Weet je zeker dat je het adres wilt verwijderen {{address}}?"
@@ -898,8 +914,78 @@
         "unfulfillable_product": {
           "title": "Levering niet beschikbaar",
           "message": {
-            "one": "%{delivery_method} is niet langer beschikbaar voor dit artikel."
+            "one": "%{delivery_method} is niet langer beschikbaar voor dit artikel.",
+            "other": "%{delivery_method} is niet langer beschikbaar voor deze artikelen."
+          },
+          "default_message": {
+            "one": "De gekozen leveringsmethode is niet langer beschikbaar voor dit artikel.",
+            "other": "De gekozen leveringsmethode is niet langer beschikbaar voor deze artikelen."
           }
+        },
+        "unshippable_product": {
+          "header": {
+            "one": "Geen levering beschikbaar voor %{count} item",
+            "other": "Geen levering beschikbaar voor %{count} items"
+          },
+          "message": {
+            "one": "Dit artikel wordt uit je winkelwagentje verwijderd omdat er voor jouw adres geen bezorgmethoden beschikbaar zijn.",
+            "other": "Deze artikelen worden uit je winkelwagen verwijderd omdat er geen bezorgmethoden beschikbaar zijn voor jouw adres."
+          },
+          "status_column_header": "Geen levering"
+        },
+        "price_update": {
+          "description": "De prijzen voor deze artikelen zijn gewijzigd en worden bijgewerkt in je winkelwagen."
+        },
+        "price_and_quantity_update": {
+          "title": "Prijs- en hoeveelheidsupdate",
+          "description": "De prijzen en beschikbare hoeveelheden voor deze artikelen zijn gewijzigd en worden bijgewerkt in je winkelwagen."
+        },
+        "out_of_stock": {
+          "description": "Deze artikelen zijn niet langer beschikbaar en zijn verwijderd uit je winkelwagentje.",
+          "items_unavailable": "Sommige artikelen zijn niet langer beschikbaar en zijn uit je winkelwagentje verwijderd."
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Niet beschikbaar product"
+        },
+        "products_not_available": {
+          "one": "Dit product wordt uit je winkelwagen verwijderd omdat het niet beschikbaar is in jouw land/regio.",
+          "other": "Deze producten worden uit je winkelwagen verwijderd omdat ze niet beschikbaar zijn in jouw land/regio."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Dit product is niet beschikbaar in uw land/regio.",
+          "other": "Deze producten zijn niet verkrijgbaar in uw land/regio."
+        }
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Dit product kan niet worden geleverd aan %{location_name}.",
+          "some_products_other": "Deze producten kunnen niet worden geleverd aan %{location_name}.",
+          "all_products_one": "Het product in uw winkelwagen is niet beschikbaar voor levering aan %{location_name}.",
+          "all_products_other": "De producten in je winkelwagen zijn niet beschikbaar voor levering aan %{location_name}."
+        },
+        "indeterminate_location_fallback": "uw locatie",
+        "cart_updated": "Je winkelwagentje is bijgewerkt.",
+        "change_address_only": "Wijzig het afleveradres om verder te gaan.",
+        "change_address_or_remove": "Afleveradres wijzigen of %{remove_action}.",
+        "remove_items_action": {
+          "one": "niet beschikbaar item verwijderen",
+          "other": "niet-beschikbare artikelen verwijderen"
+        },
+        "empty_cart_action": "kar leegmaken en terugbrengen naar de winkel"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Geen levering beschikbaar voor %{count} item",
+            "other": "Geen levering beschikbaar voor %{count} items"
+          },
+          "message": {
+            "one": "Dit artikel wordt uit je winkelwagentje verwijderd omdat er voor jouw adres geen bezorgmethoden beschikbaar zijn.",
+            "other": "Deze artikelen worden uit je winkelwagen verwijderd omdat er geen bezorgmethoden beschikbaar zijn voor jouw adres."
+          },
+          "label": "Geen levering"
         }
       }
     },
