@@ -2333,11 +2333,11 @@
   "customer_accounts": {
     "account_information": {
       "verify_new_email_modal": {
-        "title": "Verifica email",
-        "description": "Inserisci il codice inviato a {{email}}",
-        "one_time_password_label": "codice a 6 cifre",
-        "email_resend_button": "Reinvia codice",
-        "email_resend_button_accessibility_label": "Reinvia codice di verifica",
+        "title": "Verifica dell'e-mail",
+        "description": "Inserire il codice inviato a {{email}}",
+        "one_time_password_label": "Codice a 6 cifre",
+        "email_resend_button": "Reinvio del codice",
+        "email_resend_button_accessibility_label": "Reinvio del codice di verifica",
         "verify_button": "Verifica",
         "verify_button_accessibility_label": "Verifica password monouso",
         "cancel_button": "Annulla",
@@ -2346,6 +2346,16 @@
       "email_update_success_modal": {
         "title": "Verifica email",
         "description": "Email aggiornata con successo. Reindirizzamento al login."
+      },
+      "loading_accessibility_message": "Caricamento delle informazioni sul conto",
+      "loading_finished_accessibility_message": "Le informazioni sul conto sono state caricate",
+      "profile_card": {
+        "cancel": "Annullamento",
+        "cancel_accessibility_label": "Annullamento della modifica del profilo",
+        "email_help_text": "L'e-mail utilizzata per il login non può essere modificata",
+        "phone_number_help_text": "Il numero di telefono utilizzato per il login non può essere modificato",
+        "save": "Risparmiare",
+        "save_accessibility_label": "Salva il profilo"
       }
     },
     "orders": {
@@ -2384,7 +2394,32 @@
         "open_menu_accessibility_label": "Navigazione per l'apertura del conto",
         "close_menu_accessibility_label": "Navigazione per la chiusura del conto",
         "loading_message": "Caricamento Navigazione del conto"
-      }
+      },
+      "close_menu_accessibility_label": "Chiudere la navigazione principale",
+      "contact_email_subject": "Contatto dal negozio online {{shopName}} ",
+      "contact_link": "Informazioni di contatto",
+      "delete_confirmation": {
+        "cancel": "Annullamento",
+        "delete": "Cancellare"
+      },
+      "dismiss_toast": "Congedo",
+      "document_title": "{{sectionName}} - {{shopName}} - Conto",
+      "loading_message": "Caricamento",
+      "log_out_link": "Disconnettersi",
+      "logout_overlay_label": "Ti disconnetto...",
+      "nav_label_accessibility_label": "Navigazione principale",
+      "navigation_accessibility_message": "Si è navigato verso {{sectionName}}",
+      "open_menu_accessibility_label": "Aprire la navigazione principale",
+      "shop_logo_accessibility_label": "{{shopName}} logo",
+      "country_switcher_toast_message": "Il paese è passato a {{countryName}}",
+      "location_switcher_toast_message": "La posizione è passata a {{locationName}}",
+      "switch_location": "Posizione dell'interruttore",
+      "no_locations_found": "Nessuna posizione trovata",
+      "try_new_search": "Provare una nuova ricerca",
+      "view_details": "Visualizza i dettagli",
+      "company_location": "Sede dell'azienda",
+      "search": "Ricerca",
+      "skip_to_content": "Vai al contenuto"
     }
   }
 }

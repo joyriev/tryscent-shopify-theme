@@ -273,36 +273,36 @@
   },
   "sections": {
     "header": {
-      "announcement": "공지",
+      "announcement": "공지 사항",
       "menu": "메뉴",
       "cart_count": {
-        "one": "{{ count }}개 품목",
-        "other": "{{ count }}개 품목"
+        "one": "{{ count }} 항목",
+        "other": "{{ count }} 항목"
       }
     },
     "cart": {
-      "title": "카트",
-      "caption": "카트 품목",
-      "remove_title": "{{ title }} 제거",
+      "title": "장바구니",
+      "caption": "장바구니 항목",
+      "remove_title": "제거 {{ title }}",
       "note": "주문 특별 지침",
-      "checkout": "결제",
-      "empty": "카트가 비어 있습니다",
-      "cart_error": "카트를 업데이트하는 중 오류가 발생했습니다. 다시 시도하십시오.",
-      "cart_quantity_error_html": "카트에는 이 품목을 {{ quantity }}개만 추가할 수 있습니다.",
+      "checkout": "확인",
+      "empty": "장바구니가 비어 있습니다.",
+      "cart_error": "장바구니를 업데이트하는 동안 오류가 발생했습니다. 다시 시도해 주세요.",
+      "cart_quantity_error_html": "이 항목의 {{ quantity }} 장바구니에 추가할 수 있습니다.",
       "headings": {
         "product": "제품",
         "price": "가격",
-        "total": "총계",
+        "total": "합계",
         "quantity": "수량",
         "image": "제품 이미지"
       },
       "update": "업데이트",
       "login": {
-        "title": "계정이 있습니까?",
-        "paragraph_html": "더 빠르게 결제하려면 <a href=\"{{ link }}\" class=\"link underlined-link\">로그인</a>하십시오."
+        "title": "계정이 있으신가요?",
+        "paragraph_html": "더 빠르게 결제하려면 <a href=\"{{ link }}\" class=\"link underlined-link\">로그인하세요</a>."
       },
-      "estimated_total": "예상 총액",
-      "new_estimated_total": "새로운 예상 총액"
+      "estimated_total": "예상 합계",
+      "new_estimated_total": "새로운 예상 합계"
     },
     "footer": {
       "payment": "결제 방법"
@@ -310,7 +310,7 @@
     "featured_blog": {
       "view_all": "모두 보기",
       "onboarding_title": "블로그 게시물",
-      "onboarding_content": "고객에게 블로그 게시물의 요약 제공"
+      "onboarding_content": "고객에게 블로그 게시물 요약 제공"
     },
     "featured_collection": {
       "view_all": "모두 보기",
@@ -321,18 +321,18 @@
     },
     "collection_template": {
       "title": "컬렉션",
-      "empty": "제품을 찾을 수 없음",
-      "use_fewer_filters_html": "더 적은 수의 필터를 사용하거나 <a class=\"{{ class }}\" href=\"{{ link }}\">모두 제거하기</a>"
+      "empty": "제품을 찾을 수 없습니다.",
+      "use_fewer_filters_html": "더 적은 수의 필터를 사용하거나 <a class=\"{{ class }}\" href=\"{{ link }}\">모두 제거</a>"
     },
     "video": {
-      "load_video": "동영상 로드: {{ description }}"
+      "load_video": "비디오를 로드합니다: {{ description }}"
     },
     "slideshow": {
       "load_slide": "슬라이드 로드",
       "previous_slideshow": "이전 슬라이드",
       "next_slideshow": "다음 슬라이드",
-      "pause_slideshow": "슬라이드 쇼 멈춤",
-      "play_slideshow": "슬라이드 쇼 재생",
+      "pause_slideshow": "슬라이드쇼 일시 중지",
+      "play_slideshow": "슬라이드쇼 재생",
       "carousel": "캐러셀",
       "slide": "슬라이드"
     },
@@ -340,16 +340,16 @@
       "title": "페이지 제목"
     },
     "announcements": {
-      "previous_announcement": "이전 공지",
-      "next_announcement": "다음 공지",
+      "previous_announcement": "이전 공지 사항",
+      "next_announcement": "다음 발표",
       "carousel": "캐러셀",
-      "announcement": "공지",
-      "announcement_bar": "공지 표시줄"
+      "announcement": "공지 사항",
+      "announcement_bar": "공지사항 표시줄"
     },
     "quick_order_list": {
       "product_total": "제품 소계",
-      "view_cart": "카트 보기",
-      "each": "개당 {{ money }}",
+      "view_cart": "장바구니 보기",
+      "each": "{{ money }}/ea",
       "product": "제품",
       "variant": "이형 상품",
       "variant_total": "이형 상품 합계",
@@ -1175,7 +1175,43 @@
         },
         "one_time_purchase_shipping": "일회성 배송",
         "shipping_information_required_notice": "배송 정보는 필수 입력 사항입니다. {{link}}.",
-        "shipping_information_redirect_link": "여기에 정보를 입력하세요."
+        "shipping_information_redirect_link": "여기에 정보를 입력하세요.",
+        "no_other_methods_available": "사용 가능한 다른 방법 없음",
+        "duties_and_taxes_options": {
+          "ddu_caption": "추가 수수료가 적용될 수 있습니다.",
+          "ddp_title": "지금 결제하기"
+        },
+        "shipping_method_combinations": {
+          "combination": "%{rest} 그리고 %{current}"
+        },
+        "shipping_used_as_billing_notice": "이 주소는 이 주문에 대한 청구 주소로도 사용됩니다.",
+        "shipping_address_title": "배송지",
+        "address_edit": "주소 수정",
+        "address_confirm": "계정에서 이 주소를 삭제하시겠습니까?",
+        "address_form": {
+          "generic_error": "주소를 저장하는 동안 문제가 발생했습니다. 다시 시도해 주세요.",
+          "one_time_address_subtitle": "이 주문에 일회용 주소 사용"
+        },
+        "different_shipping_method_summary": "사용 가능한 배송 방법을 보려면 다른 배송 주소를 입력하세요.",
+        "invalid_shipping_method_summary": "사용 가능한 배송 방법을 보려면 유효한 배송 주소를 입력하세요.",
+        "method_summary": {
+          "incomplete_address_entered": "사용 가능한 배송 방법을 보려면 전체 배송 주소를 입력하세요.",
+          "incomplete_address_selected": "사용 가능한 배송 방법을 보려면 전체 배송 주소를 선택하세요."
+        },
+        "missing_shipping_address": "배송 주소가 누락되었습니다.",
+        "split_shipping_merchandise_quantity_label_standard": "%{quantity} 항목",
+        "split_shipping_merchandise_quantity_label_additional": "%{quantity} 더보기",
+        "split_shipping_merchandise_shipment_number": "%{total} %{number} 발송물",
+        "pre_order_ships_date": "선박 %{date}",
+        "split_shipping_shipped_by_shop": "배송 업체 %{shop_name}",
+        "split_shipping_multiple_shipment_label": "여러 배송",
+        "split_shipping_shipment_notice": "주문이 다음 주소로 도착합니다. %{quantity_shipments}",
+        "split_shipping_first_shipment_notice": "첫 주문은 다음 주소로 도착합니다. %{quantity_shipments}",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} 배송",
+        "split_shipping_multiple_shipment_notice": "주문이 여러 개의 배송으로 도착합니다.",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "주문이 %{quantity} 배송으로 도착합니다.",
+        "split_shipping_option_lowest_price": "최저 가격",
+        "split_shipping_option_fastest": "가장 빠른"
       }
     },
     "sentence": {
