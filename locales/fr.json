@@ -2610,7 +2610,53 @@
       },
       "verify_new_email_modal": {
         "title": "Vérifier l'email",
-        "one_time_password_label": "Code à 6 chiffres"
+        "one_time_password_label": "Code à 6 chiffres",
+        "verify_button_accessibility_label": "Vérifier le mot de passe unique",
+        "cancel_button_accessibility_label": "Annuler l'édition d'un courriel"
+      },
+      "email_update_success_modal": {
+        "title": "Vérifier l'email",
+        "description": "Email mis à jour avec succès. Redirection vers le login."
+      },
+      "people": {
+        "pagination": {
+          "load_more": "En savoir plus"
+        }
+      }
+    },
+    "orders": {
+      "list_title_with_pending_orders": "Commandes :",
+      "list_title_confirmed_orders_accessibility_label": "Commandes : confirmées",
+      "list_title_pending_orders_accessibility_label": "Commandes : en cours",
+      "switch_order_type_pending_orders_accessibility_label": "Changement de type d'ordre, affichage des ordres en cours",
+      "switch_order_type_confirmed_orders_accessibility_label": "Changer de type de commande, afficher actuellement les commandes confirmées",
+      "order_list": {
+        "delivered": "Livré {{date}}",
+        "empty_state_order_source_description": "Seules les commandes passées par {{email}} apparaîtront ici.",
+        "empty_state_subtitle": "Se rendre en magasin pour passer une commande.",
+        "empty_state_title": "Pas encore de commandes",
+        "empty_state_with_location_title": "Pas de commande pour {{locationName}}",
+        "empty_state_title_for_pending_orders": "Aucune commande en cours",
+        "no_order_banner": "Pour tester votre extension sur la page d'état de la commande, créez une commande.",
+        "estimated_shortform": "Est. {{date}}",
+        "estimated_delivery": "Attendu {{date}}",
+        "more_than_three_products_accessibility_label": "La commande comprend {{lineItemName1}}, {{lineItemName2}}, et {{numberOfAdditionalProducts}} plus de produits.",
+        "more_than_four_products_accessibility_label": "La commande comprend {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, et {{numberOfAdditionalProducts}} plus de produits.",
+        "plus_more_products": "{{numberOfAdditionalProducts}} produits",
+        "carousel": {
+          "one_products_accessibility_label": "La commande comprend la quantité {{lineItemName1}} {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}.",
+          "four_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}, {{lineItemName4}} quantité {{lineItemQuantity4}}.",
+          "five_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}, {{lineItemName4}} quantité {{lineItemQuantity4}}, {{lineItemName5}} quantité {{lineItemQuantity5}}.",
+          "six_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}, {{lineItemName4}} quantité {{lineItemQuantity4}}, {{lineItemName5}} quantité {{lineItemQuantity5}}, {{lineItemName6}} quantité {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}, {{lineItemName4}} quantité {{lineItemQuantity4}}, {{lineItemName5}} quantité {{lineItemQuantity5}}, {{lineItemName6}} quantité {{lineItemQuantity6}} et plus encore.",
+          "view_order_details": "Voir les détails de la commande"
+        },
+        "items": {
+          "one": "{{count}} article",
+          "other": "{{count}} articles"
+        }
       }
     }
   }
