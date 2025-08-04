@@ -133,17 +133,17 @@
       },
       "price": {
         "from_price_html": "Von {{ price }}",
-        "regular_price": "Normaler Preis",
+        "regular_price": "Regulärer Preis",
         "sale_price": "Verkaufspreis",
-        "unit_price": "Grundpreis"
+        "unit_price": "Preis pro Einheit"
       },
       "share": "Dieses Produkt teilen",
       "sold_out": "Ausverkauft",
       "unavailable": "Nicht verfügbar",
       "vendor": "Anbieter",
-      "video_exit_message": "{{ title }} öffnet das Video auf derselben Seite im Vollbildmodus.",
-      "xr_button": "In deinem Bereich ansehen",
-      "xr_button_label": "\"Ansicht in deinem Raum\" lädt den Artikel in ein Augmented-Reality-Fenster",
+      "video_exit_message": "{{ title }} öffnet das Video im Vollbildmodus im selben Fenster.",
+      "xr_button": "Ansicht in Ihrem Raum",
+      "xr_button_label": "Ansicht in Ihrem Raum, lädt Artikel in Augmented-Reality-Fenster",
       "pickup_availability": {
         "view_store_info": "Informationen zum Geschäft anzeigen",
         "check_other_stores": "Verfügbarkeit in anderen Geschäften prüfen",
@@ -164,10 +164,10 @@
         "image_available": "Das Bild {{ index }} ist jetzt in der Galerieansicht verfügbar"
       },
       "view_full_details": "Vollständige Details anzeigen",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Versand</a> wird beim Checkout berechnet",
+      "shipping_policy_html": "Der <a href=\"{{ link }}\">Versand</a> wird an der Kasse berechnet.",
       "choose_options": "Optionen auswählen",
       "choose_product_options": "Wählen Sie Optionen für {{ product_name }}",
-      "value_unavailable": "{{ option_value }} – nicht verfügbar",
+      "value_unavailable": "{{ option_value }} - Nicht verfügbar",
       "variant_sold_out_or_unavailable": "Variante ausverkauft oder nicht verfügbar",
       "inventory_in_stock": "Vorrätig",
       "inventory_in_stock_show_count": "{{ quantity }} vorrätig",
@@ -184,14 +184,14 @@
         "price_at_each_html": "zu {{ price }}"
       },
       "product_variants": "Produktvarianten",
-      "duties_included": "Inkl. Zollgebühren."
+      "duties_included": "Zu den Aufgaben gehörten."
     },
     "modal": {
-      "label": "Medien-Galerie"
+      "label": "Mediengalerie"
     },
     "facets": {
-      "apply": "Anwenden",
-      "clear": "Löschen",
+      "apply": "Bewerbung",
+      "clear": "Klar",
       "clear_all": "Alle entfernen",
       "from": "Von",
       "filter_and_sort": "Filtern und sortieren",
@@ -203,27 +203,27 @@
       },
       "max_price": "Der höchste Preis ist {{ price }}",
       "product_count": {
-        "one": "{{ product_count }} von {{ count }} Produkt",
+        "one": "{{ product_count }} von {{ count }} product",
         "other": "{{ product_count }} von {{ count }} Produkten"
       },
       "product_count_simple": {
         "one": "{{ count }} Produkt",
         "other": "{{ count }} Produkte"
       },
-      "reset": "Zurücksetzen",
-      "sort_button": "Sortieren",
+      "reset": "Reset",
+      "sort_button": "Sort",
       "sort_by_label": "Sortieren nach:",
-      "to": "Bis",
+      "to": "An",
       "clear_filter": "Filter entfernen",
       "filter_selected_accessibility": "{{ type }} ({{ count }} Filter ausgewählt)",
       "show_more": "Mehr anzeigen",
       "show_less": "Weniger anzeigen",
-      "filter_and_operator_subtitle": "Allen entsprechen"
+      "filter_and_operator_subtitle": "Spiel alle"
     }
   },
   "templates": {
     "search": {
-      "no_results": "Keine Ergebnisse gefunden für \"{{ terms }}\". Überprüfe die Schreibweise oder versuche es mit einer anderen Suchanfrage.",
+      "no_results": "Keine Ergebnisse gefunden für \"{{ terms }}\". Überprüfen Sie die Rechtschreibung oder verwenden Sie ein anderes Wort oder einen anderen Satz.",
       "results_with_count": {
         "one": "{{ count }} Ergebnis",
         "other": "{{ count }} Ergebnisse"
@@ -241,7 +241,7 @@
         "other": "{{ count }} Seiten"
       },
       "results_suggestions_with_count": {
-        "one": "{{ count }} Vorschlag",
+        "one": "{{ count }} Anregung",
         "other": "{{ count }} Vorschläge"
       },
       "results_products_with_count": {

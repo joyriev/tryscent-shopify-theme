@@ -1972,6 +1972,63 @@
         "additional_payment_requested": "Betaling af %{total_outstanding} er nødvendig",
         "checkout_review_and_pay": "Din ordre %{order_name} er blevet opdateret. Gennemgå ændringerne, og betal derefter for at bekræfte din ordre.",
         "order_review_and_pay": "Din ordre er blevet opdateret. Gennemgå og betal for at bekræfte din ordre."
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "Virksomheden er indstillet til at sende alle ordrer som udkast til gennemgang.",
+        "missing_address": "Ingen leveringsadresse tilgængelig: Virksomhedens adresse mangler, og brug af engangsadresse er deaktiveret."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Dit kreditkort vil blive debiteret %{amount}",
+        "card_provider_fx_charges_warning": "Din kortudbyder kan opkræve gebyrer på %{currency_code}.",
+        "currency_not_supported_by_shop": "Den valgte valuta er ikke længere tilgængelig. Alle priser er nu i %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Din indkøbskurv er blevet opdateret baseret på dit leveringsland.",
+        "cart_and_currency_updated_based_on_country": "Din indkøbskurv og valuta er blevet opdateret baseret på dit leveringsland."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Dit land/område er blevet opdateret. Indtast din leveringsadresse for at fortsætte til kassen."
+      },
+      "tips": {
+        "title": "Tilføj tip",
+        "description": "Vis din støtte til holdet på %{shop_name}",
+        "presets_description": "Vælg en drikkepengeprocent",
+        "custom_label": "Brugerdefineret spids",
+        "add_tip": "Tilføj tip",
+        "update_tip": "Tip til opdatering",
+        "message": "Tak, det sætter vi pris på."
+      },
+      "subscriptions": {
+        "recurring_totals": "%{total_price} hver %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Første betaling %{total_price_with_discount}, derefter %{recurring_total}.",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Første betaling %{total_price}",
+            "other": "Første %{count} betalinger %{total_price} hver"
+          },
+          "following_cycles": ", så %{total_price} hver %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", så %{count} betaling til %{total_price}",
+            "other": ", derefter %{count} betalinger til %{total_price} hver"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "update_card_button_label": "Opdatering af kort",
+        "delete_customer_mandate": {
+          "generic_error": "Der opstod et problem med at behandle din anmodning."
+        }
+      },
+      "throttle": {
+        "line_to_check_out": "Du står i kø for at tjekke ud",
+        "merchandise": {
+          "available": "Tilgængelig"
+        },
+        "inventory": {
+          "partial_inventory_banner": "En del af din kurv er udsolgt og vil ikke kunne købes ved kassen."
+        }
       }
     },
     "sentence": {
