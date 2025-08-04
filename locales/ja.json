@@ -678,7 +678,64 @@
         "billing_must_match_shipping_notice": "お支払い方法の請求先住所は、配送先住所と一致している必要があります。",
         "same_billing_address_checkbox_label": "配送先住所を請求先住所として使用する",
         "location_billing_address_label": "請求先住所",
-        "location_shipping_address_label": "配送先住所"
+        "location_shipping_address_label": "配送先住所",
+        "use_location_billing_address_label": "請求書送付先住所を使用する",
+        "use_location_shipping_address_label": "配送先住所を使用する",
+        "no_working_method_error": "この店舗では現在お支払いを受け付けておりません。このページを更新するか、後でもう一度お越しください。",
+        "brand_not_available": "この店舗では{{brand}}ご利用いただけません。他のカードでお支払いください。",
+        "shipping_rate_updated": "利用可能な配送方法が更新されました。チェックアウトの前に選択内容をご確認ください。",
+        "billing_address_invalid_phone": "請求先住所の{{label}}電話番号を更新してください。{{last_digits}}電話番号を更新してください。",
+        "billing_address_invalid_phone_no_card": "請求先住所の電話番号を更新してください。",
+        "preview_not_available": {
+          "title": "プレビュー不可",
+          "content": "ご心配なく、このエクスプレス・チェックアウトはお客様のために機能します。",
+          "button": "オッケー"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "有効な発行日を入力してください。",
+              "issue_number": "有効な号数を入力してください。"
+            },
+            "invalid": {
+              "verification_value": "有効なCVVまたはセキュリティコードを入力する"
+            }
+          }
+        },
+        "simulated_checkout": "プレビュー近日公開",
+        "simulated_express_checkout": "地域またはブラウザの設定により、エディタープレビューで財布が使用できません。",
+        "vaulting_agreement_label": "支払い情報を%{company}保存すると、チェックアウトが速くなります。",
+        "business_customer_vaulting_payment_label": "チェックアウト時にこのカードを保存し、%{company}今後このロケーションで購入する際にチャージすることを承認します。このロケーションに割り当てられているすべての連絡先が、このカードを使用できます。",
+        "purchase_options_and_vaulting_agreement_label": "カート内の1つ以上の商品は、後払いまたは定期購入です。お支払いを続けることで、お客様のお支払い方法は、終了またはキャンセルされるまで、このページに記載されている価格と回数で自動的に課金されることに同意したものとみなされます。すべてのキャンセルは %{cancellation_policy_label}.",
+        "use_different_credit_card_label": "別のカードを使う",
+        "saved_credit_card": "保存したクレジットカード",
+        "saved_credit_card_cvv_verification": "確認のため、カードのセキュリティコードを入力してください。",
+        "saved_credit_cards_modal": {
+          "view_all_label": "保存されたカードをすべて表示"
+        },
+        "add_credit_card_modal": {
+          "save": "セーブ"
+        },
+        "delete_credit_card_modal": {
+          "title": "カードの削除",
+          "confirmation": "本当に{{lastDigits}} で終わる{{brandName}}削除したいのですか？"
+        },
+        "edit_credit_card_modal": {
+          "title": "編集カード",
+          "description": "変更できるのは、カードの請求先住所のみです。",
+          "fields": {
+            "default": "デフォルト設定",
+            "name": "カードの名前",
+            "billing": "請求書"
+          }
+        },
+        "expired_cards_info": {
+          "one": "%{count}期限切れのカードは、アカウントで確認・編集することができます。",
+          "other": "有効期限切れのカードが%{count}あり、アカウントで確認・編集できます。"
+        },
+        "local_payment_method_receiver_notice": "ご注文後、お支払いの詳細をお送りします。ATMまたはオンラインで{{dueDays}}日以内にお支払いください。",
+        "order_edit_banner_title": "{{amount_owed}}支払いが必要です。",
+        "order_edit_banner_subtitle": "ご注文{{order_number}}更新されました。変更内容を確認し、お支払いを済ませてご注文を確定してください。"
       },
       "order_summary": {
         "for_add_on": "賛成だ： %{group_title}",
