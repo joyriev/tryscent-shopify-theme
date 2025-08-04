@@ -3081,6 +3081,72 @@
         "gift_resend_success": {
           "one": "ギフトカード再送",
           "other": "ギフトカード再送"
+        },
+        "gift_resend_failure": {
+          "one": "ギフトカードの再送に問題が発生しました。再度お試しいただくか、弊社までご連絡ください。",
+          "other": "ギフトカードの再送に問題が発生しました。もう一度お試しいただくか、弊社までご連絡ください。"
+        },
+        "confirmed_gift_card_additional_description": {
+          "other": "各ギフトカードは別々のEメールで送信されます。"
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "ギフトカードは別便でお送りします。",
+          "other": "各ギフトカードは別々のテキストで送られます。"
+        },
+        "status_timestamp": "更新 {{date}}",
+        "estimated_delivery": "期待される {{date}}",
+        "expected_by": "期待 {{date}}",
+        "was_expected_by": "と期待されていた。 {{date}}",
+        "delivered": "到着 {{date}}",
+        "buy_with_prime_logo_accessibility_label": "プライム・ロゴ入りAmazon Buy",
+        "in_review_description": "詳しい情報が必要な場合、またはご注文が確定した時点でお知らせいたします。",
+        "in_review_label": "レビュー",
+        "in_review_title": "ご注文は審査中です。",
+        "last_updated": "最終更新日 {{date}}",
+        "multiple_shipments_label": "複数回の出荷",
+        "multiple_statuses_label": "複数の注文ステータス",
+        "no_tracking_number": "追跡番号はありません。",
+        "tracking_number": {
+          "other": "トラッキング番号"
+        },
+        "on_its_way_label": "途中経過",
+        "on_its_way_title": "お荷物が到着しました",
+        "out_for_delivery_label": "配送中",
+        "out_for_delivery_title": "お荷物の配達が開始されました",
+        "resume_tracking": "履歴書追跡",
+        "submitted_label": "提出済み",
+        "submitted_description": "ご注文とお支払いの詳細を確認します。",
+        "there_was_a_problem_label": "問題があった",
+        "track_shipment": "貨物の追跡",
+        "request_return": "返却要求",
+        "view_order_for_details": "詳細を見る",
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "アマゾンで管理"
+        },
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "アマゾンで管理する",
+            "new_window_disclaimer": "(別ウインドウが開きます）"
+          }
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "配達保証",
+            "external_promise_brand_label": "配送業者",
+            "not_delivered_by_label": "納品後 {{date}}",
+            "delivery_guarantee_expired_label": "配達保証期限切れ",
+            "modal_accessibility_button_label": "配達約束の詳細",
+            "download_shop_app_button_label": "ダウンロードショップ",
+            "track_with_shop_button_label": "ショップとトラック",
+            "claim_shop_cash_button_label": "ショップキャッシュを請求する"
+          },
+          "details_modal": {
+            "active_delivery_guarantee_label": "配送業者 {{date}}",
+            "expired_delivery_guarantee_description": "この注文の30日間ショッププロミス保証は終了しました。",
+            "order_includes_guarantees_label": "ご注文には{{deliveryAgreementsCount}}保証が含まれています。",
+            "order_includes_guarantees_description": "ショッププロミスは迅速で確実な配送をお約束します。商品到着が {{date}}.",
+            "delivered_after_label": "納品後 {{date}}"
+          }
         }
       }
     }
