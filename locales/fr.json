@@ -1879,6 +1879,90 @@
           "change_delivery_method_link_label": "Modifier la méthode de livraison",
           "no_address": "(Pas d'adresse)"
         }
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "Le site de l'entreprise est configuré pour soumettre toutes les commandes à l'examen en tant que projets.",
+        "missing_address": "Aucune adresse de livraison n'est disponible : L'adresse de l'entreprise est manquante et l'utilisation d'une adresse unique est désactivée."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Votre carte de crédit sera débitée %{amount}",
+        "payment_total_label": "Total des paiements",
+        "card_provider_fx_charges_warning": "Votre fournisseur de carte peut facturer des frais sur les transactions %{currency_code}.",
+        "currency_not_supported_by_shop": "La devise sélectionnée n'est plus disponible. Tous les prix sont maintenant en %{currency_code}."
+      },
+      "change_country": {
+        "cart_and_currency_updated_based_on_country": "Votre panier et votre devise ont été mis à jour en fonction de votre pays de livraison."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Votre pays/région a été mis à jour. Saisissez votre adresse de livraison pour poursuivre votre commande."
+      },
+      "tips": {
+        "title": "Ajouter un conseil",
+        "description": "Montrez votre soutien à l'équipe sur le site %{shop_name}",
+        "presets_description": "Sélectionner un pourcentage de pourboire",
+        "custom_label": "Conseil personnalisé",
+        "add_tip": "Ajouter un conseil",
+        "update_tip": "Conseil de mise à jour",
+        "message": "Merci, nous l'apprécions."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "Achat %{product_name}"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "other": "%{count} jours"
+          },
+          "week": {
+            "other": "%{count} semaines"
+          },
+          "month": {
+            "other": "%{count} mois"
+          },
+          "year": {
+            "one": "année",
+            "other": "%{count} années"
+          }
+        },
+        "recurring_totals": "%{total_price} tous %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Premier paiement %{total_price_with_discount}, puis %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Premier paiement %{total_price}",
+            "other": "Premiers %{count} paiements %{total_price} chaque"
+          },
+          "following_cycles": ", puis %{total_price} tous les %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": "puis %{count} paiement à %{total_price}",
+            "other": "puis %{count} paiements à %{total_price} chacun"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Modes de paiement",
+        "title": "Modes de paiement",
+        "update_card_button_label": "Carte de mise à jour",
+        "delete_customer_mandate": {
+          "generic_error": "Le traitement de votre demande a posé un problème.",
+          "success_message": "Votre méthode de paiement a été supprimée avec succès"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "Trop de tentatives"
+        },
+        "line_to_check_out": "Vous faites la queue pour passer à la caisse",
+        "cart_summary_heading": "Your cart",
+        "merchandise": {
+          "sold_out": "épuisé"
+        },
+        "inventory": {
+          "partial_inventory_banner": "Une partie de votre panier est épuisée et ne sera pas disponible à l'achat."
+        }
       }
     },
     "sentence": {
