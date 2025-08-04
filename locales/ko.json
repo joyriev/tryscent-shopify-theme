@@ -532,7 +532,20 @@
         }
       },
       "order_summary": {
-        "for_add_on": "대상: %{group_title}"
+        "for_add_on": "For: %{group_title}",
+        "group_title_label": "의 일부 \"%{group_title}\"",
+        "number_items": {
+          "one": "%{count} 항목",
+          "other": "%{count} 항목"
+        },
+        "view_all_items": {
+          "one": "%{count} 항목 보기",
+          "other": "모든 %{count} 항목 보기"
+        },
+        "more_items_modal": {
+          "empty_results": "%{searchText}\"에 대한 결과를 찾을 수 없습니다. 철자를 확인하거나 다른 단어나 구를 사용하세요.",
+          "number_items_shown": "%{totalNumber} 항목 중 %{shownNumber} 개수"
+        }
       },
       "address_management": {
         "confirm_address_deletion": "주소를 삭제하시겠습니까? {{address}}?"
@@ -832,6 +845,81 @@
         "pick_up_in_two_to_four_days": "보통 2~4일 내에 준비",
         "pick_up_in_five_or_more_days": "보통 5일 이상 준비",
         "pick_up_immediately": "지금 픽업 준비 완료"
+      },
+      "stock": {
+        "unfulfillable_product": {
+          "message": {
+            "other": "%{delivery_method} 는 더 이상 이러한 항목에 사용할 수 없습니다."
+          },
+          "default_message": {
+            "one": "선택한 배송 방법은 더 이상 이 품목에 사용할 수 없습니다.",
+            "other": "선택한 배송 방법은 더 이상 이러한 품목에 사용할 수 없습니다."
+          }
+        },
+        "unshippable_product": {
+          "title": "배송 불가",
+          "header": {
+            "one": "%{count} 품목에 대해 배송할 수 없습니다.",
+            "other": "%{count} 품목에 대해 배송할 수 없습니다."
+          },
+          "message": {
+            "one": "해당 주소에 사용할 수 있는 배송 방법이 없으므로 이 품목은 카트에서 제거됩니다.",
+            "other": "해당 주소에 사용할 수 있는 배송 방법이 없으므로 이러한 품목은 장바구니에서 제거됩니다."
+          }
+        },
+        "price_update": {
+          "description": "이러한 품목의 가격이 변경되어 장바구니에 업데이트되었습니다."
+        },
+        "price_and_quantity_update": {
+          "description": "이러한 품목의 가격 및 구매 가능 수량이 변경되었으며 장바구니에 업데이트되었습니다."
+        },
+        "out_of_stock": {
+          "description": "해당 품목은 더 이상 사용할 수 없으며 장바구니에서 삭제되었습니다.",
+          "items_unavailable": "일부 품목은 더 이상 사용할 수 없으며 장바구니에서 삭제되었습니다."
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "사용할 수 없는 제품",
+          "other": "사용할 수 없는 제품"
+        },
+        "products_not_available": {
+          "one": "이 제품은 해당 국가/지역에서 사용할 수 없으므로 장바구니에서 삭제됩니다.",
+          "other": "해당 제품은 해당 국가/지역에서 사용할 수 없으므로 장바구니에서 삭제됩니다."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "해당 국가/지역에서는 이 제품을 사용할 수 없습니다.",
+          "other": "해당 국가/지역에서는 이러한 제품을 사용할 수 없습니다."
+        }
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "이 제품은 다음 지역으로 배송할 수 없습니다. %{location_name}.",
+          "some_products_other": "이러한 제품은 다음 지역으로 배송할 수 없습니다. %{location_name}.",
+          "all_products_one": "장바구니에 있는 제품을 다음 주소로 배송할 수 없습니다. %{location_name}.",
+          "all_products_other": "장바구니에 있는 제품을 다음 주소로 배송할 수 없습니다. %{location_name}."
+        },
+        "missing_country_fallback": "귀하의 국가",
+        "indeterminate_location_fallback": "내 위치",
+        "cart_updated": "장바구니가 업데이트되었습니다.",
+        "change_address_or_remove": "배송 주소 변경 또는 %{remove_action}.",
+        "remove_items_action": {
+          "one": "사용할 수 없는 항목 제거",
+          "other": "사용할 수 없는 항목 제거"
+        },
+        "empty_cart_action": "카트 비우기 및 스토어 복귀"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "%{count} 품목에 대해 배송할 수 없습니다.",
+            "other": "%{count} 품목에 대해 배송할 수 없습니다."
+          },
+          "message": {
+            "one": "해당 주소에 사용할 수 있는 배송 방법이 없으므로 이 품목은 카트에서 제거됩니다.",
+            "other": "해당 주소에 사용할 수 있는 배송 방법이 없으므로 이러한 품목은 장바구니에서 제거됩니다."
+          }
+        }
       }
     },
     "sentence": {

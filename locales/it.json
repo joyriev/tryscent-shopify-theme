@@ -2013,11 +2013,63 @@
             "description": "{{walletName}} non era disponibile. Utilizzate un altro metodo di pagamento o riprovate più tardi.",
             "instructions": "Si è verificato un problema con {{walletName}}. Ritorni al negozio per riprovare o per effettuare il check-out in un altro modo."
           }
+        },
+        "scrim": {
+          "and_return_to_checkout": "e tornare alla Cassa",
+          "cancel": "Annullamento"
         }
+      },
+      "note": {
+        "length_exceeds_maximum": "Ridurre le dimensioni della nota a 5000 caratteri o meno."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Il prezzo della carta regalo deve essere maggiore di 0.",
+            "gift_card_price_must_not_exceed_limit": "Il prezzo della carta regalo non deve superare %{gift_card_limit}.",
+            "subtotal_limit_reached": "È stato raggiunto il valore massimo delle voci.",
+            "signature_mismatch": "Mancata corrispondenza della firma della merce per la linea {{stable_id}}."
+          }
+        }
+      },
+      "units": {
+        "pound": "a lisca di pesce",
+        "fluid_ounce": "oz."
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "L'indirizzo non è supportato per l'iscrizione attuale."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Vai al negozio online"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "Ulteriori informazioni su %{context}"
       }
     },
     "sentence": {
       "last_word_connector": ", e "
+    },
+    "pagination": {
+      "next": "Avanti"
+    },
+    "links": {
+      "powered_by_shopify": "Alimentato da Shopify",
+      "learn_more": "Per saperne di più"
+    },
+    "feed": {
+      "more": "Di più"
+    },
+    "attributes": {
+      "email": "e-mail",
+      "body": "corpo"
+    },
+    "addresses": {
+      "zip_code": "Codice postale",
+      "postal_code": "Codice postale",
+      "pincode": "Pincode",
+      "region": "Regione"
     }
   },
   "customer_accounts": {
