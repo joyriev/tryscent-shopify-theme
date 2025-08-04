@@ -616,7 +616,54 @@
             "selected_pickup_option_no_longer_available": "De eerder geselecteerde afhaaloptie is niet langer beschikbaar.",
             "local_pickup_no_delivery_strategy_available": "Geen beschikbare afhaalstrategie gevonden.",
             "origin_location_id_required": "Een origin location ID is vereist wanneer de leveringsmethode RETAIL is aangevraagd.",
-            "invalid_origin_location_id": "Kon geen Locatie vinden die overeenkomt met de ID van de oorspronkelijke locatie."
+            "invalid_origin_location_id": "Kon geen Locatie vinden die overeenkomt met de ID van de oorspronkelijke locatie.",
+            "origin_location_id_not_allowed": "De aangevraagde aflevermethoden ondersteunen geen origin location ID.",
+            "auto_fulfill_not_allowed": "Deze sessie is niet gemachtigd om fulfillment gedrag op te heffen.",
+            "auto_fulfill_required": "Auto fulfill is vereist wanneer de leveringsmethode RETAIL is aangevraagd.",
+            "prefetch_shipping_rates_used": "Vooraf vastgestelde verzendtarieven mogen nooit terugkeertarieven zijn.",
+            "fulfillment_constraints_not_satisfied": "Aan een of meer vervullingrestricties is niet voldaan.",
+            "must_fulfill_from_constraint_not_satisfied": "Er wordt niet voldaan aan afvullingsbeperkingen omdat items niet kunnen worden afgehandeld vanaf de vereiste locaties.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Er wordt niet voldaan aan afvullingsbeperkingen omdat items niet vanaf dezelfde locatie kunnen worden afgehandeld.",
+            "delivery_strategy_conditions_not_satisfied": "Er zijn leveringsstrategieën beschikbaar voor deze locatie, maar er wordt niet voldaan aan de voorwaarden.",
+            "out_of_stock_at_origin_location": "Geen voorraad op de locatie van herkomst.",
+            "invalid_signature": "Ongeldige kortingshandtekening."
+          },
+          "discount": {
+            "custom_discount_not_honoured": "De geleverde aangepaste korting werd niet gehonoreerd.",
+            "unsupported_expectation": "De bijgeleverde kortingsregel bevatte een verwachting die de polis niet kon interpreteren.",
+            "additional_requested_discount_code_discarded": "{{code}} is geldig maar niet van toepassing. Controleer de kortingsvoorwaarden.",
+            "additional_requested_discount_discarded": "Je korting is geldig maar niet van toepassing. Controleer de kortingsvoorwaarden.",
+            "allocations_mismatch": "Je kortingscode is gewijzigd. Controleer uw winkelwagentje en probeer het opnieuw.",
+            "discount_title_too_long": "De titel van een korting mag niet langer zijn dan 255 tekens."
+          },
+          "tax": {
+            "unresolvable_tax_terms": "De voorgestelde voorwaarden zijn onoplosbaar gezien de huidige onderhandelingscontext.",
+            "delivery_price_is_abstract": "De bijbehorende leveringsprijs is abstract.",
+            "tax_inclusivity_mismatch": "Heronderhandel met concrete waarde totalTaxAndDutyAmount of totalAmountInclusdedInTarget.",
+            "tax_exemption_not_supported": "Belastingvrijstellingen worden niet ondersteund voor de huidige onderhandelingssessie.",
+            "delivery_tax_exemption_not_supported": "Belastingvrijstellingen voor leveringslijnen worden momenteel niet ondersteund.",
+            "proposed_allocations_required": "Ontbrekend veld \"voorgestelde toewijzingen\".",
+            "merchandise_terms_must_be_defined": "Koopwaartermen moeten worden gedefinieerd.",
+            "delivery_terms_must_be_defined": "Leveringsvoorwaarden moeten worden gedefinieerd.",
+            "delivery_discount_terms_must_be_defined": "Kortingsvoorwaarden voor levering moeten worden gedefinieerd.",
+            "allocated_required": "Veld 'toegewezen' ontbreekt.",
+            "value_required": "Ontbrekend veld 'waarde'.",
+            "line_splits_not_supported": "Het veld 'merchandise lines' moet zo worden opgesplitst dat ze elk één regelcomponent hebben in het verkopersvoorstel."
+          },
+          "payment": {
+            "missing_session_id": "Ontbrekende sessiegegevens voor creditcard.",
+            "gateway_not_supported": "Betaalgateway ondersteunt het opslaan van de betaalmethode niet.",
+            "credit_card_last_name_required": "Achternaam' kan niet nul zijn.",
+            "credit_card_update_failed": "Bijwerken creditcard mislukt.",
+            "installments_amount_invalid": "Ongeldig bedrag voor transactie in termijnen.",
+            "installments_gift_card_not_allowed": "In termijnen kunnen geen cadeaubonnen worden gebruikt.",
+            "installments_unsupported_currency": "Termijnen ondersteunt deze valuta niet.",
+            "installments_unsupported_shipping": "Installments ondersteunt geen verzending naar dit adres.",
+            "installments_unsupported_billing": "Termijnen ondersteunt dit factuuradres niet.",
+            "installments_unsupported_subscriptions": "Installments ondersteunt geen abonnementen.",
+            "installments_ineligible_line_item": "Termijnen is uitgeschakeld voor een regel in deze aankoop.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash ondersteunt deze kassa niet.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash staat de aankoop van cadeaubonnen niet toe."
           }
         }
       }
