@@ -612,9 +612,58 @@
         "total_already_paid_label": "Betaald",
         "unit_price": {
           "per_item": {
-            "single": "%{price} elke"
+            "single": "%{price} elke",
+            "one": "%{price} per %{count} item",
+            "other": "%{price} per %{count} items"
           }
-        }
+        },
+        "gift_card_ending": "Cadeaubon eindigend op %{last_characters}",
+        "recurring_total_tooltip": "Exclusief verzendkosten, belasting, invoerrechten of eventuele kortingen.",
+        "confirmation_number_label": "Bevestiging #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> kon niet worden gebruikt met je bestaande kortingen.",
+        "amount_off_shipping": "%{amount} af verzendkosten",
+        "deferred_payment_info": {
+          "description_html": "Voor vragen over je bestelling, %{contact_us}.",
+          "due_on_fulfillment_title": "Betaling van %{amount_due} is verschuldigd bij nakoming",
+          "due_on_receipt_title": "Betaling van %{amount_due} is verschuldigd bij ontvangst"
+        },
+        "deferred_balance_info": {
+          "title": "Het saldo van {{amount_due}} is verschuldigd op {{due_at}}",
+          "due_on_fulfillment_title": "Saldo van {{amount_due}} is verschuldigd bij nakoming"
+        },
+        "payment_terms_totals": {
+          "due_today": "Totaal vandaag verschuldigd",
+          "due_today_next": "Verschuldigd vandaag",
+          "due_later": "Totaal verschuldigd %{due_at}",
+          "due_on_fulfillment": "Totaal verschuldigd bij nakoming",
+          "due_on_fulfillment_next": "Verschuldigd bij nakoming",
+          "due_on_receipt": "Totaal verschuldigd bij ontvangst",
+          "due_later_checkout_to_draft": "Totaal later verschuldigd"
+        },
+        "maximum_discount_code_limit_reached": "Je hebt het maximale aantal kortingscodes bereikt. Verwijder een bestaande code om te gebruiken <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> werkt nu niet. Neem contact met ons op voor hulp.",
+        "due_on_fulfillment": "Verschuldigd bij nakoming",
+        "duties_label": "Taken",
+        "may_be_charged_on_delivery": "Kan bij levering in rekening worden gebracht",
+        "deferred_total_due_date_label": "Totaal verschuldigd {{date}}",
+        "deferred_total_due_date_label_next": "Due %{date}",
+        "full_price": "Volledige prijs: %{price}",
+        "custom_discount": "Korting op maat",
+        "expand_component_information": {
+          "one": "Toon %{count} item",
+          "other": "Toon %{count} items"
+        },
+        "collapse_component_information": {
+          "one": "Verberg %{count} item",
+          "other": "Verberg %{count} items"
+        },
+        "discount_discovery": {
+          "merchandise_quantity_label": {
+            "one": "%{count} item",
+            "other": "%{count} items"
+          }
+        },
+        "alternative_payment_currency_total": "Opgeladen als %{amount_due}"
       },
       "address_management": {
         "confirm_address_deletion": "Weet je zeker dat je het adres wilt verwijderen {{address}}?"
