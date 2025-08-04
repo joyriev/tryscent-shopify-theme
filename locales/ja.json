@@ -2693,8 +2693,78 @@
         "variant_not_found": "バリアントが見つからない",
         "variant_requires_selling_plan": "バリアントは販売プランでのみ購入可能。",
         "selling_plan_not_available_for_company_locations": "B2Bのご注文は1回のみのご購入となります。",
-        "digital_product_not_available_for_company_locations": "この商品はB2Bオーダーに追加できません。"
+        "digital_product_not_available_for_company_locations": "この商品はB2Bオーダーに追加できません。",
+        "buyer_cannot_purchase_for_company_locations": "この場所では購入できません",
+        "selling_plan_not_applicable": "バリアントには販売プランを適用できない",
+        "shipping_address_not_required": "このカートは送料不要です。",
+        "shipping_address_invalid": "送料の計算に問題がありました。ご注文を完了する前に、送料を選択するためにチェックアウトに進みます。",
+        "bundle_requires_components": "バンドル商品%{name}' をカートに追加できません。",
+        "gift_card_with_components_not_supported": "バンドル商品%{name}' をカートに追加できません。",
+        "gift_card_price_must_be_greater_than_zero": "バンドル商品%{name}' をカートに追加できません。",
+        "gift_card_recipient_validation_error": "指定されたギフトカードの受取人が無効です。",
+        "view_lines_limit_reached": "ラインは以下の長さでなければならない。 %{limit}",
+        "cart_too_large": "カートが大きすぎる。",
+        "merchandise_line_transformers": {
+          "run_error": "カートにエラーが発生しました。"
+        }
+      },
+      "storefront": {
+        "invalid_password": "パスワードが正しくありません。"
+      },
+      "tags": {
+        "add_articles": "タグを持つ記事を絞り込む %{tag}",
+        "add_products": "タグに一致する商品を絞り込む %{tag}",
+        "remove_articles": "タグ付けされていない記事まで検索範囲を広げる %{tag}",
+        "remove_products": "タグを削除する %{tag}"
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "disclaimer": "配信停止はいつでも可能です。"
+      },
+      "unsubscribed": {
+        "confirmation": "メーリングリストの登録を解除しました。",
+        "disclaimer": "今後、弊社からのマーケティング・アップデートは配信されません。いつでも購読を再開することができます。",
+        "preview": "顧客が購読を解除するときに見るものをプレビューしているのです。"
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>メール開封トラッキングにオプトインしました。</b>",
+          "visibility": "メールの開封率は匿名で報告されます。お客様がメールを開封したかどうかは、集計されたメール開封率の一部としてのみ確認されます。",
+          "opt_out_html": "この情報を共有したくない場合は、Eメールの開封追跡を拒否<a style='text-decoration:underline;' href='%{link}'>する</a>ことができます。",
+          "preview_bar": "メール開封トラッキングをオプトインした際に顧客が見ることができるものをプレビューしています。"
+        },
+        "opt_out": {
+          "opted_out_html": "<b>メール開封トラッキングをオプトアウトしました。</b>",
+          "visibility": "私たちは、あなたが私たちの電子メールを開いたかどうかを確認することはできません。",
+          "opt_in_html": "Eメール開封トラッキングに<a style='text-decoration:underline;' href='%{link}'>オプトインする</a>。",
+          "preview_bar": "お客様がメール開封トラッキングをオプトアウトした際に表示される内容をプレビューしています。"
+        },
+        "no_longer_track": {
+          "status_html": "<b>メール開封の追跡は終了しました。</b>",
+          "privacy_policy": "このメールが送信された後、私たちはプライバシーポリシーを更新し、開封を追跡しなくなりました。"
+        },
+        "track": {
+          "status_html": "<b>Eメールの開封トラッキングが報告されます。</b>",
+          "visibility": "お客様がメールを開封したかどうかは、メール開封率の一部としてのみ表示されます。"
+        },
+        "updated_policy": {
+          "status_html": "<b>Eメールの開封トラッキングが報告されます。</b>",
+          "visibility": "私たちは、ポリシーを更新し、メールの開封を追跡するようになりました。メールの開封率は匿名で報告されます。お客様がメールを開封したかどうかは、メール開封率の一部としてのみ表示されます。",
+          "opt_out_html": "これらの情報を共有したくない場合は、<a style='text-decoration:underline;' href='%{link}'>配信を停止する</a>ことができます。"
+        }
+      }
+    },
+    "search": {
+      "error": "検索結果を読み込む際に問題が発生しました。ページを更新するか、後でもう一度お試しください。",
+      "sorting": {
+        "price_ascending": "価格、安値から高値まで",
+        "price_descending": "価格、高値から安値まで"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "エラー %{title}",
+      "products": "製品紹介"
     }
   },
   "customer_accounts": {
