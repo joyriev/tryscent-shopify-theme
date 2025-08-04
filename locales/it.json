@@ -553,7 +553,14 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "Scegli un'opzione di pagamento"
-        }
+        },
+        "network_card_payment_options": "Scegliere una rete di schede",
+        "amazon_payments_login_hint": "Verrà richiesto di effettuare il login con Amazon.",
+        "amazon_payments_logout": "Uscire da Amazon Pay",
+        "amazon_payments_failed_mfa_challenge": "Non è stato possibile utilizzare il metodo di pagamento selezionato. Selezionare un altro metodo o contattare la banca o l'emittente della carta.",
+        "amazon_payments_abandoned_mfa_challenge": "Non è stato possibile completare il pagamento. Provare un altro metodo di pagamento o contattare la banca o l'emittente della carta.",
+        "amazon_payments_could_not_enqueue_authorize": "Si è verificato un problema nell'elaborazione del pagamento. Riprovi o utilizzi un altro metodo di pagamento.",
+        "amount_left_to_pay_label": "Pagamento dovuto:"
       },
       "order_summary": {
         "for_add_on": "Per: %{group_title}",
@@ -958,7 +965,27 @@
         "split_shipping_first_shipment_notice": "Il primo ordine arriverà in %{quantity_shipments}",
         "split_shipping_multiple_shipment_notice": "Il vostro ordine arriverà in più spedizioni",
         "split_shipping_multiple_shipment_notice_one_time_purchase": "Il tuo ordine arriverà in %{quantity} di spedizioni",
-        "split_shipping_option_fastest": "Il più veloce"
+        "split_shipping_option_fastest": "Il più veloce",
+        "split_shipping_option_custom": "Personalizzato"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "shipping_credential_cn": "Numero identificativo del residente",
+          "tax_credential_it": "Codice Fiscale (optional)",
+          "tax_credential_co": "IVA",
+          "tax_credential_type_co": "Tipo di certificato",
+          "shipping_credential_co": "IVA",
+          "shipping_credential_type_co": "Tipo di certificato",
+          "tax_credential_cr": "Numero di identificazione/RUT",
+          "shipping_credential_cr": "Numero di identificazione/RUT",
+          "tax_credential_my": "TIN/numero di registrazione",
+          "shipping_credential_my": "TIN/numero di registrazione",
+          "tax_credential_type_mx": "Regime fiscale",
+          "tax_credential_use_mx": "Uso del CFDI",
+          "shipping_credential_tw": "Numero di identificazione nazionale/Partita IVA",
+          "tax_credential_tr": "Numero d'identità della Repubblica di Turchia / IVA",
+          "shipping_credential_tr": "Numero d'identità della Repubblica di Turchia / IVA"
+        }
       }
     },
     "sentence": {
