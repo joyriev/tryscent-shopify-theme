@@ -2642,7 +2642,58 @@
         }
       },
       "order": {
-        "not_available": "この注文は利用できない"
+        "not_available": "この注文は利用できない",
+        "financial_status": {
+          "authorized": "公認",
+          "pending": "申請中",
+          "paid": "有料",
+          "partially_paid": "一部支払い済み",
+          "partially_refunded": "一部払い戻し",
+          "refunded": "払い戻し"
+        },
+        "fulfillment_status": {
+          "fulfilled": "満たされた",
+          "complete": "完全",
+          "partial": "パーシャル",
+          "unfulfilled": "未達成",
+          "restocked": "再入荷"
+        },
+        "transaction_status": {
+          "pending": "申請中"
+        },
+        "cancel_reason": {
+          "declined": "支払い拒否",
+          "inventory": "入手不可の商品",
+          "fraud": "不正な注文",
+          "customer": "顧客による注文の変更/キャンセル"
+        }
+      },
+      "cart": {
+        "only_n_items_available": "カートに追加できるのは%{count} %{name}です。",
+        "too_many_items_in_cart": "%{name}カートに追加できません。",
+        "only_one_added_to_cart": "在庫状況により1点のみカートに追加されました。",
+        "only_n_added_to_cart": "在庫状況により、%{quantity}商品のみがカートに追加されました。",
+        "maximum_available_quantity_reached": "この商品の最大数量はすでにカートに入っています。",
+        "less_than_minimum": "このアイテムは最低でも %{min}.",
+        "more_than_maximum": "このアイテムは最大で %{max}.",
+        "not_respect_step": "この項目は、以下の単位でのみ追加できます。 %{step}.",
+        "all_items_in_cart": "すべての%{count} %{name}カートに入っています。",
+        "empty_update": "空のカートを更新できない",
+        "missing_parameters": "有効なidまたはlineパラメータがない",
+        "generic_error": "カートエラー",
+        "invalid_input": "%{parameter} パラメータは無効である。",
+        "product_not_available": "製品が入手できない",
+        "too_many_line_items_error": "カートに%{max}以上の商品を入れることはできません。",
+        "link_expired": "リンク切れ",
+        "link_no_longer_exists": "リンクはもう存在しない。",
+        "stock_problems_html": "1つ以上の商品が販売終了となりました。<a href='%{link}'>カートを更新</a>しました。",
+        "changed": "カート変更",
+        "items_changed": "1つ以上の項目が変更されました。",
+        "product_sold_out": "商品%{name}' はすでに売り切れです。",
+        "variant_not_found": "バリアントが見つからない",
+        "variant_requires_selling_plan": "バリアントは販売プランでのみ購入可能。",
+        "selling_plan_not_available_for_company_locations": "B2Bのご注文は1回のみのご購入となります。",
+        "digital_product_not_available_for_company_locations": "この商品はB2Bオーダーに追加できません。"
       }
     }
   },
