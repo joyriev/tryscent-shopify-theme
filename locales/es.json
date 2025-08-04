@@ -1990,8 +1990,65 @@
           "purchase_order_number_title": "Número de pedido",
           "change_purchase_order_number_label": "Cambiar número de pedido",
           "change_delivery_method_link_label": "Cambiar el método de entrega",
-          "no_address": "(Sin dirección)"
-        }
+          "no_address": "(Sin dirección)",
+          "no_purchase_order_number": "(Sin número de pedido)",
+          "due_after_order_reviewed_html": "Una vez revisado el pedido",
+          "review_title_free_order": "Revise y complete su pedido",
+          "payment_method_saved_company_location": "Guardar tarjeta para este lugar"
+        },
+        "block_title": "Revise su información"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Envíeme un correo electrónico con noticias y ofertas",
+        "post_accept_marketing_checkbox_label": "Está suscrito para recibir noticias y ofertas por correo electrónico",
+        "pending_accept_marketing_checkbox_label": "Compruebe su correo electrónico para confirmar su suscripción a noticias y ofertas",
+        "accept_sms_checkbox_label": "Envíame un SMS con noticias y ofertas",
+        "disclaimer": {
+          "terms_of_service": "Condiciones de uso"
+        },
+        "sms": {
+          "disclaimer": {
+            "terms_of_service": "Condiciones de uso",
+            "description_html": "Al suscribirse por SMS, acepta recibir mensajes de marketing automatizados recurrentes, incluidos recordatorios de compra, en el número de teléfono facilitado. El consentimiento no es una condición de compra. Responda STOP para darse de baja. Responda HELP para obtener ayuda. La frecuencia de los mensajes varía. Pueden aplicarse tarifas de mensajes y datos. Consulta nuestra %{privacy_policy_link} y %{terms_of_service_link}.",
+            "description_transactional_html": "Es posible que reciba mensajes de texto relacionados con la confirmación de pedidos y actualizaciones de envío. Responda STOP para darse de baja. Responda AYUDA para obtener ayuda. La frecuencia de los mensajes varía. Pueden aplicarse tarifas de mensajes y datos. Consulta nuestra %{privacy_policy_modal_link} y %{terms_of_service_modal_link}."
+          },
+          "get_offers_by_text": "Ofertas por SMS"
+        },
+        "unsubscribe": {
+          "title": "Te has dado de baja",
+          "description": "Ya no recibirás más recordatorios del carrito por nuestra parte."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Deseo recibir noticias y ofertas de esta tienda"
+      },
+      "shop_policies": {
+        "terms_of_service": "Condiciones de servicio",
+        "legal_notice": "Menciones legales",
+        "subscription_policy": "Anulaciones",
+        "contact_information": "Contact",
+        "purchase_options_cancellation_policy": "Anulaciones"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Condiciones generales de venta",
+        "privacy_policy": "Política de privacidad de Merchant of Record"
+      },
+      "markets": {
+        "invalid_market_manager_error": "Revise su información de contacto antes de completar el pago"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Importe a pagar por el pedido %{order_name}",
+        "changes_summary": {
+          "added": {
+            "one": "Añadido",
+            "other": "Añadido %{count}"
+          },
+          "removed": "Eliminado",
+          "subtracted": "Eliminado %{count}",
+          "return_line_item_removed": "Eliminado %{count} de retorno"
+        },
+        "additional_payment_requested": "Se necesita el pago de %{total_outstanding}.",
+        "checkout_review_and_pay": "Su pedido %{order_name} ha sido actualizado. Revise estos cambios y, a continuación, pague para confirmar su pedido.",
+        "order_updated_on": "Su pedido se actualizó el %{last_edited_at}.",
+        "order_review_and_pay": "Su pedido ha sido actualizado. Revise y pague para confirmar su pedido."
       }
     },
     "sentence": {
