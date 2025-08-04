@@ -2929,6 +2929,85 @@
         "add_billing_address_section_accessibility_label": "Añadir dirección de facturación",
         "add_shipping_address_button": "Añadir dirección de envío",
         "add_shipping_address_section_accessibility_label": "Añadir dirección de envío"
+      },
+      "draft_order_details": {
+        "payment_status": {
+          "draft": {
+            "submitted": {
+              "deposit": {
+                "due_on_fulfillment": "El saldo se abonará cuando se hayan completado todos los artículos del pedido.",
+                "due_on_receipt": "Recibirás una factura por el saldo restante.",
+                "due_on_date": "El saldo vence el {{dueDate}}."
+              }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}} será pagadero cuando se confirme su pedido. El saldo será en {{translatedName}} términos.",
+              "due_on_fulfillment": "{{depositAmount}} en el momento de la confirmación del pedido. El importe restante se abonará al finalizar el pedido.",
+              "due_on_receipt": "{{depositAmount}} en el momento de la confirmación del pedido. El resto se abonará más adelante.",
+              "due_on_date": "{{depositAmount}} en el momento de la confirmación del pedido. El saldo deberá abonarse el {{dueDate}}."
+            }
+          },
+          "paid": {
+            "title_with_date": "Pagado {{date}}",
+            "description": "Su pedido está totalmente pagado."
+          },
+          "refund": {
+            "title_with_date": "Reembolsado {{date}}",
+            "description_full_refund": "Ha recibido un reembolso completo por este pedido.",
+            "description_single_refund": "Ha recibido un reembolso parcial por este pedido.",
+            "description_multiple_refunds": "Ha recibido reembolsos parciales por este pedido."
+          },
+          "canceled": {
+            "description": "No se le acusó."
+          },
+          "title": "Estado de los pagos"
+        },
+        "order_timeline": {
+          "expand_events_accessibility_label": "Mostrar detalles de la orden de reclutamiento",
+          "hide_events_accessibility_label": "Ocultar los detalles de la orden de reclutamiento"
+        },
+        "subtitle": "Enviado {{date}}",
+        "title": "Pida {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Este método de pago ya no estará disponible para futuras compras en este establecimiento.",
+          "description_with_replacement": "La eliminación de este método de pago afectará a los pagos preautorizados para esta ubicación. Sustitúyalo por un método de pago alternativo para seguir recibiendo los próximos pedidos."
+        },
+        "payment_details": {
+          "order_label": "Pida {{name}}",
+          "draft_label": "Proyecto de orden {{name}}"
+        }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Añadir número de pedido",
+        "add_modal_title": "Añadir número de pedido",
+        "close_modal_accessibility_label": "Cerrar modal de número de pedido",
+        "discard_changes_modal_title": "¿Descartar cambios?",
+        "edit_accessibility_label": "Editar número de pedido",
+        "edit_modal_title": "Editar número de pedido",
+        "empty_state": "Sin número de pedido",
+        "modal_po_number_input_label": "Número de pedido",
+        "modal_po_number_input_max_length_error": "Los números PO tienen un máximo de {{maxLength}} caracteres.",
+        "title": "PO #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Ha habido un problema al borrar esta dirección. Inténtalo de nuevo o actualiza la página."
+      },
+      "addresses_loading_issue": {
+        "description": "Error de conexión. Compruebe su conexión a Internet e inténtelo de nuevo."
+      },
+      "banner_title": {
+        "one": "Hay un error {{count}} ",
+        "other": "Hay {{count}} errores"
+      },
+      "failed_address_creation": {
+        "description": "Ha habido un problema al crear tu dirección. Intenta actualizar esta página o comprueba tu conexión a Internet."
+      },
+      "failed_address_update": {
+        "description": "Ha habido un problema al actualizar tu dirección. Intenta actualizar esta página o comprueba tu conexión a Internet."
       }
     }
   }
