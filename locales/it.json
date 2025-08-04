@@ -2614,7 +2614,58 @@
       },
       "order_details_skeleton_accessibility_label": "Effettuare il login per visualizzare tutti i dettagli dell'ordine.",
       "contact": "Contatto",
-      "contact_information": "Informazioni di contatto"
+      "contact_information": "Informazioni di contatto",
+      "grouped_view_components": {
+        "expand_line_items": "Mostra gli elementi di {{count}} ",
+        "collapse_line_items": "Nascondi gli elementi {{count}} ",
+        "line_item_summary_list_accessibility_label": "Articoli nel bundle {{productTitle}} "
+      },
+      "hide_items": "Nascondere gli articoli",
+      "loading": "Caricamento dei dettagli dell'ordine",
+      "loading_finished_accessibility_message": "I dettagli dell'ordine sono stati caricati",
+      "location": "Posizione",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} quantità {{quantity}}",
+        "next": "Mostra gli articoli successivi",
+        "previous": "Mostra gli elementi precedenti",
+        "load_more_items": {
+          "one": "Carica {{count}} altri elementi",
+          "other": "Carica {{count}} altri elementi"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "Mostra il riepilogo dell'ordine",
+        "closed": "Nascondi il riepilogo dell'ordine"
+      },
+      "not_applicable": "N/D",
+      "payment": {
+        "status_in_review": "Pagamento dovuto dopo la revisione",
+        "status_unpaid": "Pagamento da effettuarsi il {{date}}",
+        "payment_type": {
+          "gift_card": "Carta regalo",
+          "store_credit": "Store credit",
+          "money_order": "Vaglia postale",
+          "cash_on_delivery": "Contrassegno (COD)"
+        },
+        "store_credit_payment_details": "Store credit - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Pagato con le rate di Shop Pay",
+          "view_schedule": "Visualizza il calendario"
+        },
+        "manual_payment_methods": {
+          "cash_on_delivery": "Contrassegno (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Depositi bancari - {{formattedTransactionAmount}}",
+          "manual": "Manuale - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "Mostra tutti",
+          "payment_details": "Dettagli sul pagamento"
+        },
+        "emv_details": {
+          "aid": "AIUTO:",
+          "source": "FONTE:"
+        }
+      }
     },
     "date": {
       "humanize": {
@@ -2669,55 +2720,80 @@
       "skip_to_content": "Vai al contenuto"
     },
     "B2B": {
-      "locations": {
-        "contact_permissions": "Permessi",
-        "location_picker_label": "Nome della località",
-        "location_picker_accessibility_label": "Nome della località: {{locationName}}",
-        "net_payment_terms_description": "{{name}}: pagamenti da effettuare entro {{numberOfDays}} giorni",
-        "deposit_percentage": "{{percentage}} deposito",
-        "pagination": {
-          "load_more": "Per saperne di più",
-          "load_more_accessibility_label": "Carica altre sedi"
-        },
-        "payment_details_title": "Dettagli del pagamento",
-        "permissions_label": "I vostri permessi",
-        "permissions_title": "Permessi",
-        "section_title": "Posizione",
-        "shipping_address_required": "Aggiungete un indirizzo di spedizione a questa posizione per iniziare a effettuare gli ordini.",
-        "staff_and_permissions_title": "Personale e autorizzazioni",
-        "tax_details_title": "Dettagli fiscali",
-        "multiple_tax_exemptions": "{{taxExemptionsCount}} di più",
-        "tax_exemptions_modal_close": "Chiudere",
-        "taxes_none": "Nessuno",
-        "tax_exemption_not_applicable": "N/D",
-        "tax_exemptions_modal_button_accessibility_label": "Visualizza tutte le esenzioni fiscali"
-      },
-      "location_selection": {
-        "continue_to_store": "Continuare a memorizzare",
-        "description": "Se avete già degli articoli nel carrello, il cambio di posizione potrebbe influenzare i prezzi e le quantità del carrello.",
-        "description_switch_later": "Si può sempre cambiare in un secondo momento",
-        "list_accessibility_label": "Elenco delle sedi",
-        "list_item_without_address_accessibility_label": "{{name}}: Nessun indirizzo",
-        "list_loading_accessibility_message": "Caricamento dell'elenco delle località",
-        "list_loading_address_accessibility_message": "Indirizzo di caricamento per {{locationName}}",
-        "list_loading_finished_accessibility_message": "L'elenco delle sedi è stato caricato",
-        "loading_store_accessibility_message": "Andare al negozio",
-        "no_location_description": "Non sei più autorizzato a effettuare ordini per {{company}}. Puoi comunque effettuare ordini personali.",
-        "no_locations_found": "Nessuna posizione trovata",
-        "search": "Ricerca di località",
-        "search_location_title": "Selezionare una posizione",
-        "selection_cancel_button": "Annullamento",
-        "selection_confirmation_button": "Scegliere la posizione",
-        "title": "Per quale località state acquistando?",
-        "title_choose_location": "Scegliere una località",
-        "clear_search": "Ricerca chiara",
-        "try_new_search": "Provare una nuova ricerca"
-      },
       "addresses": {
-        "add_billing_address_button": "Aggiungere l'indirizzo di fatturazione",
-        "add_billing_address_section_accessibility_label": "Aggiungere l'indirizzo di fatturazione",
-        "add_shipping_address_button": "Aggiungere l'indirizzo di spedizione",
-        "add_shipping_address_section_accessibility_label": "Aggiungere l'indirizzo di spedizione"
+        "cancel_adding_billing_address_accessibility_label": "Annullamento dell'aggiunta dell'indirizzo di fatturazione",
+        "cancel_adding_shipping_address_accessibility_label": "Annullamento dell'aggiunta dell'indirizzo di spedizione",
+        "save_new_billing_address_accessibility_label": "Salvare l'indirizzo di fatturazione",
+        "save_new_shipping_address_accessibility_label": "Salvare l'indirizzo di spedizione"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Hide all",
+          "show_all": "Mostra tutti",
+          "hide_all_accessibility_label": "Nascondere tutti gli ordini in fase di revisione",
+          "show_all_accessibility_label": "Mostra tutti gli ordini in revisione",
+          "show_all_orders_in_review": "Mostra tutti gli ordini in revisione",
+          "show_less_orders_in_review": "Mostra meno ordini in revisione",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Non avete ordini in sospeso",
+            "pending_orders": {
+              "one": "Hai un ordine pendente {{count}} ",
+              "other": "Hai {{count}} ordini in sospeso"
+            },
+            "more_than_pagination_length": "Hai più di {{count}} ordini pendenti"
+          },
+          "pagination": {
+            "nav_accessibility_label": "Pulsanti di navigazione per gli ordini in revisione"
+          }
+        },
+        "order_list_column_headers_location": "Posizione",
+        "order_list_column_headers_contact": "Contatto",
+        "removed_company_contact_tooltip": "Rimosso dall'azienda"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Confermato {{date}} dall'ordine {{draftOrderName}}",
+        "loading": "Caricamento dei dettagli dell'ordine",
+        "loading_finished_accessibility_message": "I dettagli dell'ordine sono stati caricati",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Il tuo pagamento è in ritardo di {{count}} giorni"
+            },
+            "banner_due": {
+              "one": "Il pagamento deve essere effettuato entro il giorno {{count}}.",
+              "other": "Il pagamento deve essere effettuato tra {{count}} giorni {{count}} "
+            },
+            "banner_due_today": "Il pagamento deve essere effettuato oggi",
+            "title": "Pagamento dovuto",
+            "title_with_date": "Pagamento dovuto {{date}}",
+            "title_due_on_receipt": "Pagamento non ancora scaduto",
+            "title_due_on_fulfillment": "Pagamento dovuto al momento dell'adempimento",
+            "description_overdue": "Il vostro pagamento è in ritardo.",
+            "description_partially_paid": "Questo ordine è stato parzialmente pagato. Il saldo è ancora disponibile.",
+            "description_authorized": "Il metodo di pagamento verrà addebitato alla data di scadenza, oppure è possibile pagare subito.",
+            "description_waiting_for_manual_payment": "Questo ordine ha un pagamento in sospeso. Il saldo verrà aggiornato al ricevimento del pagamento.",
+            "description_due_on_receipt": "Riceverete una fattura alla scadenza del pagamento.",
+            "description_due_on_receipt_partially_paid": "Questo ordine è stato parzialmente pagato. Il saldo è ancora disponibile. Riceverete una fattura alla scadenza del pagamento.",
+            "description_due_on_fulfillment": "Il pagamento è dovuto una volta che tutti gli articoli di questo ordine sono stati evasi.",
+            "description_due_on_fulfillment_partially_paid": "Questo ordine è stato parzialmente pagato. Il saldo è ancora disponibile. Il pagamento è dovuto una volta che tutti gli articoli di questo ordine sono stati evasi."
+          },
+          "draft": {
+            "description": "I dettagli del pagamento vengono decisi al momento della conferma dell'ordine.",
+            "title": "Pagamento non ancora scaduto",
+            "in_review": {
+              "description": "I dettagli del pagamento vengono decisi al momento della conferma dell'ordine.",
+              "title": "Pagamento non ancora scaduto"
+            },
+            "submitted": {
+              "description": "Inviare il pagamento per confermare l'ordine.",
+              "title": "Pagare per confermare",
+              "deposit": {
+                "title": "Il pagamento è dovuto",
+                "due_later": "Il saldo è a condizioni {{translatedName}} ed è dovuto alla {{dueDate}}."
+              }
+            }
+          }
+        }
       }
     }
   }
