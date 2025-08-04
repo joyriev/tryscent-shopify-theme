@@ -12,16 +12,17 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "judge_me_reviews_preview_badge_kpVGVR": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
         "title": {
           "type": "title",
           "settings": {}
         },
+        "judge_me_reviews_preview_badge_kpVGVR": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "selling_points_9tdid6": {
           "type": "selling_points",
+          "disabled": true,
           "settings": {}
         },
         "variant_picker": {
@@ -38,6 +39,7 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {}
         },
         "buy_buttons": {
@@ -49,12 +51,14 @@
         },
         "custom_liquid_eKzwKK": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<div class=\"payment-methods\" style=\"margin-top: 15px;\">\n  <!-- Payment Logos Section -->\n  <div class=\"payment-logos\" style=\"display: flex; margin-bottom: 15px; align-items: center; justify-content: space-between; width: 100%;\">\n    <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/american_express.svg\" alt=\"American Express\" style=\"height: 25px; flex: 1; max-width: 40px;\">\n    <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/apple_pay.svg\" alt=\"Apple Pay\" style=\"height: 25px; flex: 1; max-width: 40px;\">\n    <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/google_pay.svg\" alt=\"Google Pay\" style=\"height: 25px; flex: 1; max-width: 40px;\">\n    <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/klarna.svg\" alt=\"Klarna\" style=\"height: 25px; flex: 1; max-width: 40px;\">\n    <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/paypal.svg\" alt=\"PayPal\" style=\"height: 25px; flex: 1; max-width: 40px;\">\n    <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/visa.svg\" alt=\"Visa\" style=\"height: 25px; flex: 1; max-width: 40px;\">\n    <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/mastercard.svg\" alt=\"Mastercard\" style=\"height: 25px; flex: 1; max-width: 40px;\">\n  </div>\n  \n  <!-- Pay Later Section -->\n  <div class=\"pay-later-section\" style=\"padding: 15px; border-radius: 6px; background: #f8f9fa;\">\n    <div class=\"pay-later-info\" style=\"display: flex; align-items: center; justify-content: space-between;\">\n      <span style=\"font-size: 14px; color: #333;\">Pay later with Klarna / Afterpay</span>\n      <div class=\"pay-later-logos\" style=\"display: flex; gap: 8px; align-items: center;\">\n        <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/klarna.svg\" alt=\"Klarna\" style=\"height: 35px;\">\n        <img src=\"https://mds.oceanpayment.com/assets/shopifylogo/svg/afterpay.svg\" alt=\"Afterpay\" style=\"height: 35px;\">\n      </div>\n    </div>\n  </div>\n</div>"
           }
         },
         "icon_with_text_rgXMXN": {
           "type": "icon-with-text",
+          "disabled": true,
           "settings": {
             "layout": "horizontal",
             "icon_1": "stopwatch",
@@ -187,8 +191,8 @@
         }
       },
       "block_order": [
-        "judge_me_reviews_preview_badge_kpVGVR",
         "title",
+        "judge_me_reviews_preview_badge_kpVGVR",
         "selling_points_9tdid6",
         "variant_picker",
         "price",
