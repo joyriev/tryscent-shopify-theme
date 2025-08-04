@@ -2486,7 +2486,44 @@
     },
     "page_titles": {
       "blog_or_article_with_error": "Error - %{title}",
-      "shopping_cart": "Su cesta de la compra"
+      "shopping_cart": "Su cesta de la compra",
+      "create_account": "Crear una cuenta",
+      "order": "Pida %{name}",
+      "search": "Buscar en",
+      "search_results": {
+        "one": "Buscar: %{count} resultado encontrado para%{terms}\"",
+        "other": "Buscar: %{count} resultados encontrados para%{terms}\""
+      },
+      "not_found": "404 no encontrado"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} se han aplicado descuentos"
+    },
+    "challenge": {
+      "message": "Para continuar, haznos saber que no eres un robot.",
+      "error": "Su respuesta no era correcta, por favor inténtelo de nuevo."
+    },
+    "checkpoint": {
+      "message": "Resolver Captcha para continuar",
+      "error": "Fallo en la validación del captcha"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Suele estar listo en 1 hora",
+        "two_hours": "Suele estar listo en 2 horas",
+        "four_hours": "Suele estar listo en 4 horas",
+        "twenty_four_hours": "Normalmente listo en 24 horas",
+        "two_to_four_days": "Suele estar listo en 2-4 días",
+        "five_or_more_days": "Suele estar listo en más de 5 días",
+        "zero_to_two_hours": "Suele estar listo en 2 horas",
+        "two_to_four_hours": "Suele estar listo en 4 horas",
+        "immediately": "Listo para recoger",
+        "next_day": "Listo para recoger al día siguiente"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Este artículo es una compra periódica o aplazada. Al continuar, acepto la %{cancellationPolicyLink} y les autorizo a cargar en mi método de pago los precios, la frecuencia y las fechas que figuran en esta página hasta que se cumpla mi pedido o lo cancele, si está permitido.",
+      "buyer_consent_cart": "Uno o más de los artículos de su cesta es una compra recurrente o aplazada. Al continuar, acepto la %{cancellationPolicyLink} y les autorizo a cargar en mi método de pago los precios, la frecuencia y las fechas que figuran en esta página hasta que se cumpla mi pedido o lo cancele, si está permitido."
     }
   },
   "customer_accounts": {
@@ -2517,6 +2554,33 @@
     },
     "order_details": {
       "group_title_label_with_parent": "Para: {{groupTitle}}"
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneYearAgo": "{{date}} en {{time}}",
+        "lessThanOneHourAgo": {
+          "one": "{{count}} hace un minuto",
+          "other": "{{count}} hace minutos"
+        },
+        "lessThanOneMinuteAgo": "Ahora mismo",
+        "lessThanOneWeekAgo": "{{weekday}} en {{time}}",
+        "yesterday": "Ayer en {{time}}",
+        "today": "Hoy en {{time}}",
+        "tomorrow": "Mañana a las {{time}}",
+        "lessThanOneWeekAway": "{{weekday}} en {{time}}",
+        "lessThanOneYearAway": "{{date}} en {{time}}"
+      }
+    },
+    "enable_javascript": "Para ver su cuenta, active JavaScript en la configuración de su navegador o conéctese con otro navegador.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Ocultar menú Cuenta",
+        "show_accessibility_label": "Mostrar menú Cuenta",
+        "nav_accessibility_label": "Navegación por la cuenta",
+        "open_menu_accessibility_label": "Abrir una cuenta",
+        "close_menu_accessibility_label": "Navegación para cerrar la cuenta",
+        "loading_message": "Cargando Navegación por la cuenta"
+      }
     }
   }
 }
