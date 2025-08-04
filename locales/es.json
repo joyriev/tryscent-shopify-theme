@@ -633,7 +633,56 @@
             "selected_pickup_option_no_longer_available": "La opción de recogida seleccionada anteriormente ya no está disponible.",
             "local_pickup_no_delivery_strategy_available": "No se ha encontrado ninguna estrategia de entrega de recogida local disponible.",
             "origin_location_id_required": "Se requiere un ID de ubicación de origen cuando se solicita el método de entrega RETAIL.",
-            "invalid_origin_location_id": "No se ha podido encontrar una ubicación que coincida con el ID de ubicación de origen."
+            "invalid_origin_location_id": "No se ha podido encontrar una ubicación que coincida con el ID de ubicación de origen.",
+            "origin_location_id_not_allowed": "Los métodos de entrega solicitados no admiten un ID de ubicación de origen.",
+            "auto_fulfill_not_allowed": "Esta sesión no está autorizada a anular el comportamiento de cumplimiento.",
+            "auto_fulfill_required": "El autocumplimiento es necesario cuando se solicita el método de entrega RETAIL.",
+            "prefetch_shipping_rates_used": "Las tarifas de envío prefijadas nunca deben devolver las tarifas.",
+            "fulfillment_constraints_not_satisfied": "No se han satisfecho una o varias restricciones de cumplimiento.",
+            "must_fulfill_from_constraint_not_satisfied": "Las restricciones de cumplimiento no se satisfacen porque los artículos no pueden cumplirse desde las ubicaciones requeridas.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Las restricciones de cumplimiento no se satisfacen porque los artículos no pueden cumplirse desde la misma ubicación.",
+            "delivery_strategy_conditions_not_satisfied": "Existen estrategias de entrega para esta ubicación, pero no se cumplen sus condiciones.",
+            "out_of_stock_at_origin_location": "No hay existencias en el lugar de origen."
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "Los descuentos no están permitidos en las tiendas B2B.",
+            "custom_discount_not_honoured": "No se ha respetado el descuento personalizado proporcionado.",
+            "unsupported_expectation": "La línea de descuento suministrada contenía una expectativa que la póliza no podía interpretar.",
+            "additional_requested_discount_code_discarded": "{{code}} es válido pero no aplicable. Consulta las condiciones de descuento.",
+            "additional_requested_discount_discarded": "Su descuento es válido pero no aplicable. Consulta las condiciones de descuento.",
+            "allocations_mismatch": "Su código de descuento ha cambiado. Revisa tu cesta e inténtalo de nuevo."
+          },
+          "tax": {
+            "unresolvable_tax_terms": "Los términos propuestos son irresolubles dado el actual contexto de negociación.",
+            "delivery_price_is_abstract": "El precio de entrega correspondiente es abstracto.",
+            "tax_inclusivity_mismatch": "Renegociar con un valor concreto de totalTaxAndDutyAmount o totalAmountIncludedInTarget.",
+            "tax_exemption_not_supported": "No se admiten exenciones fiscales para la sesión de negociación actual.",
+            "delivery_tax_exemption_not_supported": "Actualmente no se admiten exenciones fiscales para las líneas de reparto.",
+            "merchandise_terms_must_be_defined": "Deben definirse los términos de la mercancía.",
+            "delivery_terms_must_be_defined": "Deben definirse las condiciones de entrega.",
+            "merchandise_discount_terms_must_be_defined": "Deben definirse las condiciones de descuento de la mercancía.",
+            "delivery_discount_terms_must_be_defined": "Deben definirse las condiciones de descuento en la entrega.",
+            "line_splits_not_supported": "El campo \"líneas de mercancías\" debe dividirse de forma que cada una de ellas tenga un único componente de línea en la propuesta del vendedor."
+          },
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "Los pagos manuales no están permitidos en las tiendas B2B.",
+            "positive_amount_expected": "El importe a pagar debe ser superior a 0.",
+            "total_amount_mismatch": "El total a pagar no coincide con la suma del importe de los pagos.",
+            "subscription_terms_not_accepted": "No se aceptan condiciones de suscripción.",
+            "missing_session_id": "Falta información de la sesión de la tarjeta de crédito.",
+            "gateway_not_supported": "La pasarela de pago no permite almacenar el método de pago.",
+            "credit_card_last_name_required": "apellido' no puede ser nulo.",
+            "credit_card_update_failed": "Error en la actualización de la tarjeta de crédito.",
+            "installments_amount_invalid": "Importe no válido para la transacción de plazos.",
+            "installments_gift_card_not_allowed": "Los plazos no permiten el uso de tarjetas regalo.",
+            "installments_unsupported_currency": "Los plazos no admiten esta moneda.",
+            "installments_unsupported_shipping": "Installments no admite envíos a esta dirección.",
+            "installments_unsupported_billing": "Los plazos no admiten esta dirección de facturación.",
+            "installments_unsupported_subscriptions": "Los plazos no admiten suscripciones.",
+            "installments_ineligible_line_item": "Los plazos están desactivados para una partida en esta compra.",
+            "shop_cash_not_allowed": "Shop Cash no está permitido sin Shop Pay.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash no admite esta forma de pago.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash no permite la compra de tarjetas regalo."
           }
         }
       }

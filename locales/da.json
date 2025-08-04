@@ -2206,7 +2206,46 @@
     },
     "addresses": {
       "pincode": "Pinkode",
-      "region": "Region"
+      "region": "Region",
+      "province": "Provinser",
+      "state_and_territory": "Stat/territorium",
+      "county": "Amt"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Udvalgt",
+        "best_selling": "Bedst sælgende",
+        "az": "Alfabetisk, A-Z",
+        "za": "Alfabetisk, Z-A",
+        "date_ascending": "Dato, fra gammel til ny",
+        "date_descending": "Dato, ny til gammel"
+      }
+    },
+    "errors": {
+      "blank": "kan ikke være blank",
+      "blocked_address": "Denne placering understøttes ikke",
+      "credit_card_session_expired": "Kreditkortgodkendelsen er udløbet, indtast venligst dine betalingsoplysninger igen. Dit kort er ikke blevet debiteret.",
+      "empty": "kan ikke være tom",
+      "invalid_email": "skal være en gyldig e-mailadresse",
+      "discount_expired": "Denne rabat er ikke længere gyldig",
+      "discount_limit_reached": "Denne rabat har nået sin brugsgrænse",
+      "discount_not_found": "Kunne ikke finde en gyldig rabat, der matcher den indtastede kode",
+      "customer_already_used_once_per_customer_discount_notice": "Denne rabat har nået sin brugsgrænse",
+      "gift_card_already_applied": "Koden er allerede blevet anvendt på din checkout",
+      "gift_card_currency_mismatch": "Dit gavekort er i %{gift_card_currency}. Kontakt os for at få det genudstedt i %{checkout_currency}.",
+      "gift_card_depleted": "Der er ingen penge tilbage på dette gavekort",
+      "gift_card_disabled": "Gavekortet er deaktiveret",
+      "gift_card_expired": "Gavekortet er udløbet",
+      "taken": "er allerede blevet taget",
+      "contains_html_tags": "kan ikke indeholde HTML-tags",
+      "password_mismatch": "skal matche den angivne adgangskode",
+      "contains_spaces": "starter eller slutter med mellemrum.",
+      "email_domain_invalid": "udbyder understøttes ikke",
+      "invalid_for_country_and_province": "er ikke gyldig for %{province} og %{country}.",
+      "invalid_province_in_country": "er ikke en gyldig provins i %{country}",
+      "invalid_state_in_country": "er ikke en gyldig tilstand i %{country}",
+      "invalid_for_card_type": "er ikke gyldig",
+      "invalid_type": "Vi tager desværre ikke imod kort af denne type."
     }
   },
   "customer_accounts": {
