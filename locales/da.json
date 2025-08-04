@@ -133,17 +133,17 @@
       },
       "price": {
         "from_price_html": "Fra {{ price }}",
-        "regular_price": "Normalpris",
-        "sale_price": "Udsalgspris",
-        "unit_price": "Stykpris"
+        "regular_price": "Almindelig pris",
+        "sale_price": "Salgspris",
+        "unit_price": "Enhedspris"
       },
       "share": "Del dette produkt",
       "sold_out": "Udsolgt",
       "unavailable": "Ikke tilgængelig",
-      "vendor": "Forhandler",
+      "vendor": "Leverandør",
       "video_exit_message": "{{ title }} åbner video i fuld skærm i samme vindue.",
-      "xr_button": "Se den i dit område",
-      "xr_button_label": "Se den i dine omgivelser – indlæser vare i et augmented reality-vindue",
+      "xr_button": "Udsigt i dit rum",
+      "xr_button_label": "Vis i dit rum, indlæser element i augmented reality-vindue",
       "pickup_availability": {
         "view_store_info": "Se oplysninger om butikken",
         "check_other_stores": "Tjek tilgængelighed i andre butikker",
@@ -163,12 +163,12 @@
         "load_video": "Afspil video {{ index }} i gallerivisning",
         "image_available": "Billedet {{ index }} er nu tilgængeligt i gallerivisningen"
       },
-      "view_full_details": "Se komplette oplysninger",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Levering</a> beregnes ved betaling.",
+      "view_full_details": "Se alle detaljer",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Forsendelse</a> beregnes ved kassen.",
       "choose_options": "Vælg muligheder",
       "choose_product_options": "Vælg indstillinger for {{ product_name }}",
       "value_unavailable": "{{ option_value }} - Ikke tilgængelig",
-      "variant_sold_out_or_unavailable": "Varianten er udsolgt eller utilgængelig",
+      "variant_sold_out_or_unavailable": "Variant udsolgt eller ikke tilgængelig",
       "inventory_in_stock": "På lager",
       "inventory_in_stock_show_count": "{{ quantity }} på lager",
       "inventory_low_stock": "Lavt lager",
@@ -184,22 +184,22 @@
         "price_at_each_html": "til {{ price }}"
       },
       "product_variants": "Produktvarianter",
-      "duties_included": "Inklusive told."
+      "duties_included": "Opgaverne omfattede."
     },
     "modal": {
       "label": "Mediegalleri"
     },
     "facets": {
-      "apply": "Anvend",
-      "clear": "Ryd",
+      "apply": "Ansøg",
+      "clear": "Klar",
       "clear_all": "Fjern alle",
       "from": "Fra",
-      "filter_and_sort": "Filtrer og sortér",
+      "filter_and_sort": "Filtrer og sorter",
       "filter_by_label": "Filter:",
-      "filter_button": "Filtrer",
+      "filter_button": "Filtre",
       "filters_selected": {
-        "one": "{{ count }} valgt",
-        "other": "{{ count }} valgt"
+        "one": "{{ count }} udvalgt",
+        "other": "{{ count }} udvalgt"
       },
       "max_price": "Den højeste pris er {{ price }}",
       "product_count": {
@@ -211,11 +211,11 @@
         "other": "{{ count }} produkter"
       },
       "reset": "Nulstil",
-      "sort_button": "Sortér",
-      "sort_by_label": "Sortér efter:",
+      "sort_button": "Sortere",
+      "sort_by_label": "Sorter efter:",
       "to": "Til",
       "clear_filter": "Fjern filter",
-      "filter_selected_accessibility": "{{ type }} ({{ count }} filtre er valgt)",
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filtre valgt)",
       "show_more": "Vis mere",
       "show_less": "Vis mindre",
       "filter_and_operator_subtitle": "Match alle"
@@ -223,7 +223,7 @@
   },
   "templates": {
     "search": {
-      "no_results": "Der blev ikke fundet nogen resultater for “{{ terms }}”. Kontrollér stavemåden, eller brug et andet ord eller udtryk.",
+      "no_results": "Ingen resultater fundet for \"{{ terms }}\". Tjek stavningen, eller brug et andet ord eller en anden sætning.",
       "results_with_count": {
         "one": "{{ count }} resultat",
         "other": "{{ count }} resultater"
