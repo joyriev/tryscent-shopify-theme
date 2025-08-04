@@ -551,7 +551,7 @@
         "return_to_cart": "Retourner au panier"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Votre commande ne peut être expédiée qu'à {{countriesList}}. Ajoutez une nouvelle adresse pour continuer.",
+        "unavailable_addresses_only_countries": "Votre commande ne peut être expédiée qu'à {{countriesList}} Ajoutez une nouvelle adresse pour continuer.",
         "shipping_method": "Les options de livraison ont changé pour votre commande. Vérifiez votre sélection et réessayez.",
         "shipping_method_not_available": "Votre panier a été mis à jour et les articles que vous avez ajoutés ne peuvent pas être expédiés à votre adresse. Retirez les articles pour terminer votre commande.",
         "shipping_method_not_available_generic": {
@@ -564,7 +564,12 @@
           "other": "Un ou plusieurs articles que vous avez ajoutés ne sont pas livrés dans votre région. Retirez-les pour passer à la caisse ou contactez le magasin."
         },
         "payment_method_not_supported": "Vous ne pouvez pas utiliser ce mode de paiement pour %{country}. Veuillez utiliser un autre mode de paiement pour expédier dans ce pays.",
-        "empty_state": "Saisissez votre adresse de livraison pour connaître les méthodes d'expédition disponibles."
+        "empty_state": "Saisissez votre adresse de livraison pour connaître les méthodes d'expédition disponibles.",
+        "title": "Expédition non disponible",
+        "invalid_selected_address": "L'adresse de livraison sélectionnée n'est pas valide",
+        "invalid_selected_address_with_update_link": "L'adresse de livraison sélectionnée n'est pas valide. %{update_address_link} ou sélectionner une autre adresse",
+        "unavailable_selected_address": "L'expédition n'est pas disponible pour l'adresse sélectionnée",
+        "unavailable_selected_address_for_region": "La livraison n'est pas disponible pour {{region}}. Sélectionnez une autre adresse pour continuer"
       },
       "order_summary": {
         "for_add_on": "Pour : %{group_title}",
@@ -1586,6 +1591,56 @@
         "risky": "Le traitement de votre paiement a posé problème. Réessayez ou utilisez une autre méthode de paiement.",
         "expired_buyer_action": "La méthode de paiement a expiré. Veuillez réessayer.",
         "name_mismatch": "Veuillez vérifier les détails de votre carte. Le nom figurant sur votre carte et l'adresse de facturation ne correspondent pas."
+      },
+      "alternative_payment_method_banner": {
+        "or_pay_another_way": "Ou payer d'une autre manière",
+        "or_check_out_another_way": "Ou consultez une autre méthode",
+        "or_pay_with_credit_card": "Ou payer par carte de crédit",
+        "show_more_options": "Afficher plus d'options",
+        "hide_more_options": "Cacher plus d'options"
+      },
+      "post_purchase": {
+        "page_title": "Après l'achat",
+        "title": "Après l'achat",
+        "escape_confirmation": "Vous avez payé votre commande.",
+        "escape_action": "Voir la confirmation de la commande '",
+        "components": {
+          "expand": "Voir plus",
+          "processing": "Traitement..."
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Redirection...",
+        "redirecting_title": "Redirection...",
+        "redirecting_notice": "Attendez que nous vous redirigions.",
+        "redirecting_to_bank": "Redirection vers {{bank}}",
+        "complete_your_purchase_title": "Complétez votre achat",
+        "continue_to_payment_gateway_notice": "Passez au paiement pour ajouter vos informations de paiement.",
+        "continue_to_payment_gateway_button_label": "Poursuivre le paiement",
+        "complete_your_purchase_title_error": "Corrigez vos informations de paiement",
+        "continue_to_payment_gateway_notice_error": "Vos informations de paiement n'ont pas pu être vérifiées.",
+        "continue_to_payment_gateway_button_label_error": "Mise à jour des informations de paiement",
+        "page_title": "Ordre de traitement",
+        "title": "Ordre de traitement",
+        "you_will_receive_confirmation": "Nous recevons beaucoup de commandes en ce moment. Vous devriez bientôt recevoir une confirmation par courrier électronique ou par SMS. Si vous ne la recevez pas dans l'heure qui suit, faites-le nous savoir.",
+        "you_will_not_be_charged": "Vous ne serez pas encore facturé",
+        "wait": {
+          "medium": {
+            "one": "Votre commande est en cours de traitement. Le temps d'attente estimé est de %{count} minute.",
+            "other": "Votre commande est en cours de traitement. Le temps d'attente estimé est de %{count} minutes."
+          },
+          "long": "Vous recevrez un courriel dès que votre commande sera traitée. Il y a actuellement un grand nombre de commandes.",
+          "no_auto_refresh_html": "Si vous n'êtes pas automatiquement redirigé, %{link}.",
+          "refresh_this_page": "rafraîchir cette page"
+        }
+      },
+      "payment_challenge_modal": {
+        "instructions": "Effectuez votre achat en utilisant votre code {{paymentMethod}} ",
+        "copy_text": "Copier le code {{paymentMethod}} ",
+        "open_app_text": "Ouvrir l'application {{paymentMethod}} ",
+        "qr_code": {
+          "instructions": "Effectuez votre achat en utilisant votre code {{paymentMethod}} "
+        }
       }
     },
     "sentence": {
