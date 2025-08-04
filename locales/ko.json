@@ -2169,8 +2169,87 @@
         "items_changed": "하나 이상의 항목이 변경되었습니다.",
         "product_sold_out": "%{name}' 제품은 이미 품절되었습니다.",
         "variant_requires_selling_plan": "이형 상품은 판매 요금제를 통해서만 구매할 수 있습니다.",
-        "selling_plan_not_available_for_company_locations": "B2B 주문에는 일회성 구매만 가능합니다."
+        "selling_plan_not_available_for_company_locations": "B2B 주문에는 일회성 구매만 가능합니다.",
+        "buyer_cannot_purchase_for_company_locations": "이 위치에서는 구매할 수 없습니다.",
+        "selling_plan_not_applicable": "이형 상품에 판매 플랜을 적용할 수 없습니다.",
+        "shipping_address_not_required": "이 카트는 배송이 필요하지 않습니다.",
+        "shipping_address_invalid": "배송료를 계산하는 동안 문제가 발생했습니다. 주문을 완료하기 전에 배송료를 선택하려면 결제를 계속 진행하세요.",
+        "bundle_requires_components": "번들 제품%{name}'을 카트에 추가할 수 없습니다.",
+        "gift_card_with_components_not_supported": "번들 제품%{name}'을 카트에 추가할 수 없습니다.",
+        "gift_card_price_must_be_greater_than_zero": "번들 제품%{name}'을 카트에 추가할 수 없습니다.",
+        "gift_card_recipient_validation_error": "지정한 기프트 카드 수신자가 유효하지 않습니다.",
+        "view_lines_limit_reached": "줄은 다음보다 작아야 합니다. %{limit}",
+        "cart_too_large": "장바구니가 너무 큽니다.",
+        "cart_attributes_error": "카트 속성에 잘못된 데이터가 포함되어 있습니다.",
+        "merchandise_line_transformers": {
+          "run_error": "장바구니에서 오류가 발생했습니다."
+        }
+      },
+      "storefront": {
+        "invalid_password": "비밀번호가 잘못되었습니다. 다시 시도하세요."
+      },
+      "tags": {
+        "add_articles": "태그가 있는 문서로 검색 범위 좁히기 %{tag}",
+        "add_products": "태그와 일치하는 상품으로 선택 범위 좁히기 %{tag}",
+        "remove_articles": "태그가 지정되지 않은 문서까지 검색 범위 넓히기 %{tag}",
+        "remove_products": "태그 제거 %{tag}"
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "disclaimer": "언제든지 구독을 취소할 수 있습니다.",
+        "unsubscribe": "구독 취소"
+      },
+      "unsubscribed": {
+        "confirmation": "메일링 리스트 구독을 취소하셨습니다.",
+        "disclaimer": "더 이상 마케팅 업데이트를 받지 않게 됩니다. 언제든지 다시 구독할 수 있습니다.",
+        "preview": "고객이 구독을 취소할 때 표시되는 내용을 미리 볼 수 있습니다."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>이메일 열람 추적에 동의하셨습니다.</b>",
+          "visibility": "이메일 열람률은 익명으로 보고됩니다. 이메일 열람률은 집계된 이메일 열람률의 일부로 사용자가 이메일을 열어본 경우에만 표시됩니다.",
+          "opt_out_html": "이 정보를 공유하지 않으려면 이메일 열람 추적 기능을 사용 <a style='text-decoration:underline;' href='%{link}'>중지할</a> 수 있습니다.",
+          "preview_bar": "고객이 이메일 열람 추적에 옵트인하면 고객에게 표시되는 내용을 미리 볼 수 있습니다."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>이메일 열람 추적 수신을 거부하셨습니다.</b>",
+          "visibility": "이메일을 열어보았는지 여부는 확인되지 않습니다.",
+          "opt_in_html": "이메일 열람 추적에 <a style='text-decoration:underline;' href='%{link}'>동의합니다</a>.",
+          "preview_bar": "고객이 이메일 열람 추적 수신 거부 시 표시되는 내용을 미리 볼 수 있습니다."
+        },
+        "no_longer_track": {
+          "status_html": "<b>더 이상 이메일 열람을 추적하지 않습니다.</b>",
+          "privacy_policy": "이 이메일이 발송된 후 개인정보 보호정책이 업데이트되어 더 이상 열람 현황을 추적하지 않습니다."
+        },
+        "track": {
+          "status_html": "<b>이메일 열기 추적이 보고됩니다.</b>",
+          "visibility": "전체 이메일 열람률의 일부로 사용자가 이메일을 열었는지 여부만 확인할 수 있습니다."
+        },
+        "updated_policy": {
+          "status_html": "<b>이메일 열기 추적이 보고됩니다.</b>",
+          "visibility": "정책을 업데이트하여 이제 이메일 열람률을 추적합니다. 이메일 열람률은 익명으로 보고됩니다. 이메일을 열어본 여부만 전체 이메일 열람률의 일부로 표시됩니다.",
+          "opt_out_html": "이 정보를 공유하고 싶지 않다면 <a style='text-decoration:underline;' href='%{link}'>구독을 취소할</a> 수 있습니다."
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "out_of_stock": "재고 없음"
+        }
+      }
+    },
+    "search": {
+      "error": "검색 결과를 로드하는 동안 문제가 발생했습니다. 페이지를 새로 고치거나 나중에 다시 시도하세요.",
+      "sorting": {
+        "price_ascending": "가격, 낮음에서 높음까지",
+        "price_descending": "가격, 고가부터 저가까지"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "오류 - 오류 %{title}",
+      "shopping_cart": "장바구니"
     }
   },
   "customer_accounts": {
