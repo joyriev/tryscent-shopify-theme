@@ -1383,7 +1383,51 @@
         }
       },
       "billing": {
-        "same_as_shipping": "Gleiche Adresse wie die Lieferadresse"
+        "same_as_shipping": "Gleiche Adresse wie die Lieferadresse",
+        "add_address": "Verwenden Sie eine andere Adresse",
+        "edit": "bearbeiten",
+        "address_more": "Weitere Aktionen für diese Adresse",
+        "address_confirm": "Sind Sie sicher, dass Sie diese Adresse aus Ihrem Konto löschen möchten?",
+        "address_form": {
+          "save": "Speichern Sie",
+          "cancel": "Abbrechen"
+        }
+      },
+      "company_location": {
+        "location_title": "Standort des Unternehmens"
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "Aktuelle Bilanz %{amount}",
+        "credit_card_expires_on_notice": "Läuft ab am %{month}/%{year}",
+        "manual_payment_gateway_label": "Handbuch"
+      },
+      "field_errors": {
+        "handle_phone_invalid": "Geben Sie eine gültige Rufnummer ein",
+        "handle_email_invalid": "Geben Sie eine gültige E-Mail ein",
+        "email_invalid": "Geben Sie eine gültige E-Mail ein",
+        "email_or_phone_blank": "Geben Sie eine E-Mail oder Telefonnummer ein",
+        "email_or_phone_invalid": "Geben Sie eine gültige E-Mail oder eine Mobiltelefonnummer ein",
+        "address_first_name_blank": "Eingabe eines Vornamens",
+        "address_first_name_too_long": "Der Vorname ist zu lang (maximal 255 Zeichen)",
+        "address_first_name_contains_emojis": "Vornamen dürfen keine Emojis enthalten",
+        "address_first_name_contains_html_tags": "Vornamen dürfen keine HTML-Tags enthalten.",
+        "address_first_name_contains_url": "Der Vorname darf keine URL enthalten",
+        "address_first_name_contains_mathematical_symbols": "Der Vorname darf keine mathematischen Symbole enthalten",
+        "address_last_name_blank": "Einen Nachnamen eingeben",
+        "address_last_name_too_long": "Der Nachname ist zu lang (maximal 255 Zeichen)",
+        "address_address1_blank": "Geben Sie eine Adresse ein",
+        "address_address1_too_long": "Die erste Adresszeile ist zu lang (maximal 255 Zeichen)",
+        "address_address1_contains_emojis": "Adresse1 darf keine Emojis enthalten",
+        "address_address1_contains_html_tags": "Adresse1 darf keine HTML-Tags enthalten.",
+        "address_address2_blank": "Betreten Sie eine Wohnung, Suite usw.",
+        "address_address2_too_long": "Die zweite Adresszeile ist zu lang (maximal 255 Zeichen)",
+        "address_address2_contains_emojis": "Adresse2 kann keine Emojis enthalten",
+        "address_address2_contains_html_tags": "Adresse2 darf keine HTML-Tags enthalten.",
+        "address_city_blank": "Eine Stadt eingeben",
+        "address_city_contains_emojis": "Stadt kann keine Emojis enthalten",
+        "address_city_contains_html_tags": "City kann keine HTML-Tags enthalten.",
+        "address_city_contains_mathematical_symbols": "Stadt kann keine mathematischen Symbole enthalten",
+        "address_country_blank": "Wählen Sie ein Land/eine Region"
       }
     }
   },
