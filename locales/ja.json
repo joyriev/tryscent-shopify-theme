@@ -2378,82 +2378,74 @@
           }
         }
       },
-      "local_pickup": {
-        "location_information_next": {
-          "one": "あなたの近くに在庫がある%{count}場所があります。",
-          "other": "お近くに在庫のある店舗が%{count}ございます。"
-        },
-        "toggle_location": "場所を変更する",
-        "your_location": "現在地",
-        "search_button": "店舗検索",
-        "no_stores_found": "該当店舗なし",
-        "all_stores_far_away": {
-          "title": "最も近い場所は%{distance}以上離れている",
-          "description": "場所を選択するか %{ship_to_address_link}",
-          "ship_to_address_link": "発送先住所"
-        },
-        "selected_pickup_option_no_longer_available": {
-          "title": "以前に選択されたロケーションは利用できなくなりました。",
-          "description": "新しい場所を選択するか %{ship_to_address_link}",
-          "ship_to_address_link": "発送先住所"
-        },
-        "could_not_resolve_address": "住所が見つかりません。再試行するか、別の住所を使用してください。",
-        "paginator": {
-          "accessibility_label": "ローカルピックアップページネーション",
-          "label": {
-            "one": "%{count}ストアの%{first}-%{last}",
-            "other": "店舗%{count} %{first}-%{last}"
-          }
-        },
-        "reveal_more_label": {
-          "one": "表示%{count}より多くの場所",
-          "other": "もっと%{count}場所を表示する"
-        }
-      },
-      "captcha": {
-        "title": "続行するにはCAPTCHAを完了してください。",
-        "errors": {
-          "not_solved": "続行するにはCAPTCHAを完了してください。"
-        }
-      },
-      "clipboard": {
-        "copied": "コピー",
-        "failed_to_copy": "コピーに失敗"
-      },
-      "discount_errors": {
-        "generic_error": "割引コードが使用できなくなったため、ご注文を処理できませんでした。ご注文の合計金額を見直して、もう一度やり直してください。"
-      },
-      "b2b_errors": {
-        "lost_b2b_purchasing_permissions": "B2B注文の権限がなくなりました。代わりに%{logout_url}で個人注文を行ってください。",
-        "log_out_link_text": "ログアウト",
-        "lost_permissions_subtitle": "B2B注文を行う権限がなくなりましたので、ログアウトして個人注文を行ってください。",
-        "lost_permissions_title": "ロケーション許可なし"
-      },
-      "shop_pay_external": {
-        "title": "ショップペイチェックアウト",
-        "errors": {
-          "problem_loading": "ショップペイの読み込みに問題があります",
-          "try_again_later": "接続を確認するか、このウィンドウを閉じてしばらくしてからもう一度お試しください。",
-          "checkout_has_expired": "チェックアウトの有効期限が切れました。このウィンドウを閉じて {{shopName}}."
-        },
-        "return_to_store": "戻る {{shopName}}",
-        "return_to_store_simple": "店舗に戻る"
-      },
       "wallets": {
-        "return_to_store": "店舗に戻る",
-        "redirect_hint": "でログインするよう求められます。 {{walletName}}.",
-        "logged_in": "に接続されている。 {{email}}",
-        "connect_shipping_methods": "{{method1}} そして {{method2}}",
-        "payment_in_progress_title": "支払中",
-        "payment_in_progress_body": "お支払い手続き中です。ご注文はまもなく完了します。",
-        "call_to_action": "で支払う。 {{walletName}}",
-        "redirection_notice": "{{buttonLabel}}クリックすると、{{walletName}}リダイレクトされ、購入が安全に完了します。",
         "errors": {
           "unavailable": {
-            "title": "{{walletName}} 入手不可",
-            "description": "{{walletName}} をご利用いただけませんでした。別の支払い方法を使用するか、後でもう一度お試しください。",
-            "instructions": "{{walletName}}問題が発生しました。店舗に戻ってもう一度試すか、別の方法でチェックアウトしてください。"
-          }
+            "unavailable_for_country": "{{walletName}} {{countryName}}ご利用いただけません。別の支払い方法を選択して購入を完了する"
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} は現在ご注文いただけません。購入を続けるには、別のチェックアウト方法を選択してください。"
+          },
+          "generic": "{{walletName}}問題が発生しました。再度お試しいただくか、別のお支払い方法をご利用ください。",
+          "discount_code": "この割引コードを適用できません。コードを見直して、もう一度やり直してください。",
+          "terminal": "{{walletName}}問題が発生しました。別のお支払い方法をご利用ください。",
+          "detour": {
+            "stock_problems": "一部の商品は販売終了しました。{{walletName}}再度お試しください。",
+            "price_change": "一部の商品の価格が変更されました。{{walletName}}注文内容を確認し、もう一度やり直してください。",
+            "queue": "チェックアウトの待ち行列に入りました。続行するには{{walletName}}ください。",
+            "currency_change": "{{walletName}}別の住所を使用することはできません。元の住所を使用するか、別の支払い方法をお試しください。"
+          },
+          "unsupported": {
+            "address": "この住所に配達することはできません。",
+            "wallet_is_unavailable": "{{walletName}}このアドレスでは使用できません。別のアドレスを選択するか、{{walletName}}購入を完了してください。",
+            "postal_code": "この場所はサポートされていません"
+          },
+          "outdated": {
+            "shipping_method": "ご注文の配送オプションが変更されました。選択内容をご確認ください。",
+            "payment_terms": "お支払い条件が変更になりました。ご注文内容をご確認ください。"
+          },
+          "invalid": {
+            "shipping_address": "有効な配送先住所を入力してください。",
+            "billing_address": "有効な請求先住所を入力してください。",
+            "shipping_option": "有効な配送オプションを選択する",
+            "email": "有効なEメールを入力してください。",
+            "zone": "有効な都道府県を入力してください。",
+            "billing_zone": "有効な請求先住所を入力してください。",
+            "emirate": "有効な首長国を入力してください。",
+            "postal_code": "有効な郵便番号を入力してください。",
+            "phone": "有効な電話番号を入力してください。",
+            "billing_phone": "有効な請求先住所電話番号を入力してください。",
+            "reduction_code": "有効な割引コードまたはギフトカードを入力する",
+            "billing_must_match_shipping": "発送先住所と一致すること",
+            "billing_zip": "有効な請求先住所の郵便番号を入力してください。"
+          },
+          "missing": {
+            "first_name": "名前を入力",
+            "billing_first_name": "請求先住所の姓を入力してください。",
+            "last_name": "姓を入力",
+            "address1": "住所を入力する",
+            "billing_address1": "請求先住所の入力",
+            "address2": "アパートやスイートなどに入る",
+            "billing_address2": "請求先住所のアパート、スイートなどを入力してください。",
+            "city": "都市を入力",
+            "billing_city": "請求先住所都市を入力",
+            "province": "都道府県を選択",
+            "billing_province": "請求先住所の都道府県を選択してください。",
+            "country": "国・地域を選択",
+            "zip": "郵便番号を入力してください。",
+            "billing_zip": "請求先住所の郵便番号を入力してください。",
+            "phone": "電話番号を入力",
+            "contact_info": "連絡先情報の入力"
+          },
+          "formatting": {
+            "first_name_too_long": "名前に文字が多すぎる",
+            "last_name_too_long": "姓の文字数が多すぎる",
+            "address_too_long": "住所の行が長すぎる"
+          },
+          "select_different_shipping_address_to_resolve_errors": "配送先住所が無効です。別の住所を選択するか、新しい住所を使用してください。"
+        },
+        "scrim": {
+          "continue_purchase_in_window": "{{walletName}}ウィンドウで購入を続ける"
         }
       }
     }
