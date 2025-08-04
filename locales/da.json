@@ -538,7 +538,52 @@
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."
+      },
+      "address_management": {
+        "confirm_address_deletion": "Er du sikker på, at du vil slette adressen? {{address}}?"
+      },
+      "general": {
+        "page_title": "Kasse",
+        "skip_to_content": "Spring til indhold",
+        "complete_purchase_button_label": "Komplet ordre",
+        "all_rights_reserved": "Alle rettigheder forbeholdes %{shop_name}",
+        "cart": "Vogn",
+        "expand_notice_label": "Se mere",
+        "continue_to_shipping_method": "Fortsæt til forsendelse",
+        "continue_to_review": "Gennemgå ordre",
+        "back_to_cart": "Tilbage til indkøbskurven",
+        "back_to_contact_information": "Gå tilbage til information",
+        "back_to_shipping_method": "Tilbage til forsendelse",
+        "back_to_payment_method": "Tilbage til betaling",
+        "choose_shipping_method": "Vælg en forsendelsesmetode",
+        "autocomplete_title": "Forslag",
+        "autocomplete_single_item": "1 vare til rådighed",
+        "autocomplete_multi_item": "{{number}} tilgængelige varer",
+        "autocomplete_selection": "{{number}} af {{total}}",
+        "forwarding_indicator": {
+          "external": "Åbner ekstern hjemmeside.",
+          "external_and_new_window": "Åbner ekstern hjemmeside i et nyt vindue."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Kasse"
+        },
+        "tooltip_accessibility_label": "Mere information",
+        "errors": {
+          "session_identifier_not_unique_error": "Noget gik galt med din ordre, prøv venligst at tjekke ud igen.",
+          "line_item_limit_reached": "Det maksimale antal poster er nået.",
+          "session_is_already_finished": "Denne kassesession er allerede afsluttet.",
+          "merchandise": {
+            "only_value_constraint": "Kun nøjagtige værdier er tilladt i merchandise-input.",
+            "merchandise_not_found": "Produktet blev ikke fundet.",
+            "merchandise_variant_not_found": "Produktvariant ikke fundet.",
+            "mixed_currencies": "Kassen indeholder varelinjer med forskellige valutaer.",
+            "bundle_products_not_supported_for_b2b": "Bundtede varer kan ikke føjes til B2B-ordrer for denne lokation."
+          }
+        }
       }
+    },
+    "sentence": {
+      "last_word_connector": "og "
     }
   },
   "customer_accounts": {

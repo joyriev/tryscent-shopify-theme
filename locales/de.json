@@ -1702,8 +1702,71 @@
           "pick_up_in_store_shipping_method_html": "Abholung im Geschäft - %{location_name}",
           "purchase_order_number_title": "PO-Nummer",
           "change_purchase_order_number_label": "PO-Nummer ändern",
-          "change_delivery_method_link_label": "Liefermethode ändern"
-        }
+          "change_delivery_method_link_label": "Liefermethode ändern",
+          "no_purchase_order_number": "(Keine PO-Nummer)",
+          "due_after_order_reviewed_html": "Fällig nach Prüfung der Bestellung",
+          "review_title_free_order": "Prüfen und vervollständigen Sie Ihre Bestellung",
+          "payment_method_saved_company_location": "Karte für diesen Ort speichern",
+          "company_location": "Standort des Unternehmens"
+        },
+        "block_title": "Überprüfen Sie Ihre Informationen"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "E-Mail mit Neuigkeiten und Angeboten",
+        "post_accept_marketing_checkbox_label": "Sie haben sich für den Erhalt von E-Mail-Nachrichten und Angeboten angemeldet",
+        "pending_accept_marketing_checkbox_label": "Prüfen Sie Ihre E-Mail, um Ihr Abonnement für Nachrichten und Angebote zu bestätigen",
+        "accept_sms_checkbox_label": "Senden Sie mir eine SMS mit Neuigkeiten und Angeboten",
+        "disclaimer": {
+          "privacy_policy": "Datenschutzbestimmungen",
+          "terms_of_service": "Bedingungen der Dienstleistung"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Datenschutzbestimmungen",
+            "terms_of_service": "Bedingungen der Dienstleistung",
+            "description_html": "Wenn Sie sich per SMS anmelden, erklären Sie sich damit einverstanden, dass Sie unter der angegebenen Telefonnummer wiederkehrende automatische Marketingnachrichten, einschließlich Erinnerungen an den Einkaufswagen, erhalten. Die Zustimmung ist keine Bedingung für den Kauf. Antworten Sie STOP, um sich abzumelden. Antworten Sie HELP für Hilfe. Die Häufigkeit der Nachrichten variiert. Es können Gebühren für Nachrichten und Daten anfallen. Lesen Sie unsere %{privacy_policy_link} und %{terms_of_service_link}.",
+            "description_transactional_html": "Möglicherweise erhalten Sie Textnachrichten zur Auftragsbestätigung und zu Versandaktualisierungen. Antworten Sie STOP, um sich abzumelden. Antworten Sie HELP für Hilfe. Die Häufigkeit der Nachrichten variiert. Es können Gebühren für Nachrichten und Daten anfallen. Lesen Sie unsere %{privacy_policy_modal_link} und %{terms_of_service_modal_link}."
+          },
+          "mobile_phone_number": "Nummer des Mobiltelefons",
+          "get_offers_by_text": "Angebote per SMS erhalten"
+        },
+        "unsubscribe": {
+          "title": "Sie haben sich abgemeldet",
+          "description": "Sie werden keine weiteren Mahnungen von uns erhalten."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Melden Sie mich für Neuigkeiten und Angebote aus diesem Geschäft an"
+      },
+      "shop_policies": {
+        "refund_policy": "Erstattungspolitik",
+        "privacy_policy": "Datenschutzbestimmungen",
+        "terms_of_service": "Bedingungen der Dienstleistung",
+        "legal_notice": "Rechtlicher Hinweis",
+        "subscription_policy": "Annullierungen",
+        "purchase_options_policy": "Politik der Kaufoptionen",
+        "purchase_options_cancellation_policy": "Annullierungen",
+        "cookie_preferences": "Cookies"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Allgemeine Geschäftsbedingungen des Vertragshändlers",
+        "privacy_policy": "Merchant of Record Datenschutzrichtlinie"
+      },
+      "markets": {
+        "invalid_market_manager_error": "Überprüfen Sie Ihre Kontaktinformationen, bevor Sie die Zahlung abschließen"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Für die Bestellung zu zahlender Betrag %{order_name}",
+        "changes_summary": {
+          "added": {
+            "other": "Hinzugefügt %{count}"
+          },
+          "subtracted": "Entfernt %{count}",
+          "returned": "Zurückgeschickt %{count}",
+          "return_line_item_removed": "%{count} aus Rückgabe entfernt"
+        },
+        "additional_payment_requested": "Die Zahlung von %{total_outstanding} ist erforderlich",
+        "checkout_review_and_pay": "Ihre Bestellung %{order_name} wurde aktualisiert. Überprüfen Sie die Änderungen und bezahlen Sie dann, um Ihre Bestellung zu bestätigen.",
+        "order_updated_on": "Ihre Bestellung wurde aktualisiert am %{last_edited_at}.",
+        "order_review_and_pay": "Ihre Bestellung wurde aktualisiert. Prüfen und bezahlen Sie, um Ihre Bestellung zu bestätigen."
       }
     }
   },
