@@ -551,7 +551,20 @@
         "return_to_cart": "Retourner au panier"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Votre commande ne peut être expédiée qu'à {{countriesList}}. Ajoutez une nouvelle adresse pour continuer."
+        "unavailable_addresses_only_countries": "Votre commande ne peut être expédiée qu'à {{countriesList}}. Ajoutez une nouvelle adresse pour continuer.",
+        "shipping_method": "Les options de livraison ont changé pour votre commande. Vérifiez votre sélection et réessayez.",
+        "shipping_method_not_available": "Votre panier a été mis à jour et les articles que vous avez ajoutés ne peuvent pas être expédiés à votre adresse. Retirez les articles pour terminer votre commande.",
+        "shipping_method_not_available_generic": {
+          "one": "Votre commande ne peut pas être expédiée à l'adresse sélectionnée. Vérifiez que votre adresse est correcte et réessayez, ou sélectionnez une autre adresse.",
+          "other": "Certains articles de votre panier ne peuvent pas être expédiés à l'adresse que vous avez indiquée. Vérifiez que votre adresse est correcte et réessayez, ou sélectionnez une autre adresse."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Les articles du panier ne répondent pas aux critères de prix ou de poids requis pour bénéficier de l'expédition. Mettez à jour votre panier et réessayez.",
+        "shipping_method_not_available_updated": {
+          "one": "L'article que vous avez ajouté n'est pas expédié dans votre région. Retirez-le pour passer à la caisse ou contactez le magasin.",
+          "other": "Un ou plusieurs articles que vous avez ajoutés ne sont pas livrés dans votre région. Retirez-les pour passer à la caisse ou contactez le magasin."
+        },
+        "payment_method_not_supported": "Vous ne pouvez pas utiliser ce mode de paiement pour %{country}. Veuillez utiliser un autre mode de paiement pour expédier dans ce pays.",
+        "empty_state": "Saisissez votre adresse de livraison pour connaître les méthodes d'expédition disponibles."
       },
       "order_summary": {
         "for_add_on": "Pour : %{group_title}",
@@ -1535,7 +1548,44 @@
         "rejected_transaction": "Votre paiement a été refusé. Réessayez ou utilisez un autre mode de paiement.",
         "credit_card_processing": "Votre paiement ne peut être traité pour des raisons techniques. Réessayez dans quelques minutes ou utilisez une autre méthode de paiement.",
         "checkout_amount_changed": "Votre paiement n'a pas pu être traité car le montant dû à la caisse a changé. Veuillez vérifier votre commande et réessayer.",
-        "deferred_amount_changed": "Votre paiement n'a pas pu être traité car le montant du paiement différé a été modifié. Veuillez vérifier votre commande et réessayer."
+        "deferred_amount_changed": "Votre paiement n'a pas pu être traité car le montant du paiement différé a été modifié. Veuillez vérifier votre commande et réessayer.",
+        "deferred_date_changed": "Votre paiement n'a pas pu être traité car la date de paiement différé a été modifiée. Veuillez vérifier votre commande et réessayer.",
+        "payment_processing": "Votre paiement ne peut être traité pour des raisons techniques. Réessayez ou utilisez une autre méthode de paiement.",
+        "payment_processing_no_retry": "Votre paiement ne peut être traité pour des raisons techniques. Veuillez essayer une autre méthode de paiement.",
+        "paypal_zero_amount": "Vous ne pouvez pas utiliser PayPal pour les commandes de %{amount}. Confirmez que votre commande est correcte et passez à la caisse sans PayPal.",
+        "pay_later_failed": "Une erreur s'est produite lors du traitement de votre paiement avec Pay later. Choisissez un autre mode de paiement et réessayez.",
+        "three_d_secure_failed": "Votre paiement n'a pas pu être vérifié. Réessayez ou utilisez un autre mode de paiement.",
+        "three_d_secure_failed_duplicate": "L'authentification 3D Secure de la carte de crédit a échoué parce qu'une autre est déjà en cours.",
+        "three_d_secure_failed_payment_method": "Votre carte n'a pas pu être vérifiée. Réessayez ou ajoutez une autre carte.",
+        "three_d_secure_throttled": "Trop de tentatives ; veuillez attendre avant de réessayer",
+        "subscription_agreement_blank": "Pour acheter un abonnement, vos données de paiement doivent être enregistrées. Pour continuer, confirmez que vous êtes d'accord ou supprimez les articles d'abonnement de votre commande.",
+        "insufficient_funds": "Votre paiement a été refusé en raison d'une insuffisance de fonds. Réessayez ou utilisez un autre mode de paiement.",
+        "multiple_deferred_payment_not_allowed": "Un seul paiement différé est autorisé par demande. Veuillez vérifier votre demande et réessayer.",
+        "shipping_must_match_billing": "L'adresse de facturation doit correspondre à l'adresse de livraison. Veuillez utiliser un autre mode de paiement.",
+        "decision_rule_block": "Il y a eu un problème lors du traitement de votre paiement. Veuillez contacter le propriétaire du magasin.",
+        "cannot_verify": "Vos données de paiement n'ont pas pu être vérifiées. Vérifiez les détails de votre carte et réessayez.",
+        "invalid_number": "Saisir un numéro de carte valide",
+        "invalid_expiry_date": "Saisir une date d'expiration valide",
+        "invalid_cvc": "Saisir un code de sécurité valide",
+        "expired_card": "Votre carte a expiré. Utilisez un autre moyen de paiement.",
+        "payment_method_not_applicable": "Ce mode de paiement n'est pas applicable. Utilisez un autre mode de paiement.",
+        "processing_error": "Le traitement de votre paiement a posé problème. Réessayez ou utilisez une autre méthode de paiement.",
+        "processing_error_checkout_as_guest": "Un problème est survenu lors du traitement de votre paiement. Réessayez avec un autre mode de paiement ou {{checkout_as_guest_link}}.",
+        "selected_payment_method": "Il y a eu un problème avec le mode de paiement sélectionné et vous n'avez pas été débité. Réessayez ou utilisez un autre mode de paiement.",
+        "payment_method_billing_address": "Il y a eu un problème avec l'adresse de facturation de la méthode de paiement sélectionnée et vous n'avez pas été débité. Vérifiez l'adresse et réessayez ou utilisez un autre mode de paiement.",
+        "call_issuer": "Votre carte a été refusée. Utilisez un autre moyen de paiement ou contactez votre banque pour plus d'informations.",
+        "test_mode_live_card": "Ce magasin ne peut pas accepter de commandes ou de paiements réels.",
+        "transient_error": "Il y a eu un problème dans le traitement de votre paiement. Essayez d'actualiser cette page ou vérifiez votre connexion internet.",
+        "missing_shipping_address": "Votre paiement n'a pas pu être traité car votre adresse de livraison est manquante. Ajoutez une adresse de livraison et réessayez.",
+        "invalid_shipping_address": "Votre paiement n'a pas pu être traité car nous n'avons pas trouvé votre adresse de livraison. Vérifiez votre adresse de livraison et réessayez.",
+        "successful_offsite_with_gift_card_error": "Un problème s'est produit lors du traitement de votre paiement par carte-cadeau. Réessayez ou utilisez une autre méthode de paiement.",
+        "development_store_order_limit_reached": "Vous avez atteint la limite des commandes de la boutique de développement avec ce processeur de paiement. Pour passer une autre commande, vous devrez utiliser une passerelle de paiement de test. En savoir plus sur %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "Pour passer une commande test, vous devez utiliser une passerelle de paiement test. En savoir plus %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "les commandes d'essai dans les magasins de développement",
+        "payment_above_threshold": "Le montant du paiement est supérieur à la limite monétaire pour cette région. Réduisez le montant et réessayez",
+        "risky": "Le traitement de votre paiement a posé problème. Réessayez ou utilisez une autre méthode de paiement.",
+        "expired_buyer_action": "La méthode de paiement a expiré. Veuillez réessayer.",
+        "name_mismatch": "Veuillez vérifier les détails de votre carte. Le nom figurant sur votre carte et l'adresse de facturation ne correspondent pas."
       }
     },
     "sentence": {
