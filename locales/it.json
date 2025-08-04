@@ -1439,7 +1439,67 @@
           "other": "Uno o più articoli aggiunti non vengono spediti nella vostra località. Rimuovili per effettuare il check-out o contatta il negozio."
         },
         "payment_method_not_supported": "Non è possibile utilizzare questo metodo di pagamento per %{country}. Si prega di utilizzare un metodo di pagamento diverso per la spedizione in questo paese.",
-        "empty_state": "Inserire l'indirizzo di spedizione per visualizzare i metodi di spedizione disponibili."
+        "empty_state": "Inserire l'indirizzo di spedizione per visualizzare i metodi di spedizione disponibili.",
+        "invalid_selected_address": "L'indirizzo di spedizione selezionato non è valido",
+        "invalid_selected_address_with_update_link": "L'indirizzo di spedizione selezionato non è valido. %{update_address_link} o selezionare un altro indirizzo",
+        "unavailable_addresses_only_countries": "Il tuo ordine può essere spedito solo a {{countriesList}}. Aggiungere un nuovo indirizzo per continuare.",
+        "unavailable_selected_address_for_region": "La spedizione non è disponibile per {{region}}. Selezionare un altro indirizzo per continuare"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Cassa espressa",
+        "or": "O",
+        "or_pay_another_way": "O pagare in un altro modo",
+        "or_check_out_another_way": "O controlla un altro modo",
+        "or_pay_with_credit_card": "O pagare con carta di credito",
+        "show_more_options": "Mostra più opzioni",
+        "hide_more_options": "Nascondere altre opzioni"
+      },
+      "post_purchase": {
+        "escape_confirmation": "Avete pagato il vostro ordine.",
+        "escape_action": "Visualizza la conferma d'ordine '",
+        "components": {
+          "close": "Chiudere",
+          "expand": "Vedi di più",
+          "processing": "Elaborazione..."
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Reindirizzamento...",
+        "redirecting_title": "Reindirizzamento...",
+        "redirecting_notice": "Aspetti che la reindirizziamo.",
+        "complete_your_purchase_title": "Completare l'acquisto",
+        "continue_to_payment_gateway_notice": "Continuare con il pagamento per aggiungere le informazioni di pagamento.",
+        "continue_to_payment_gateway_button_label": "Proseguire con il pagamento",
+        "complete_your_purchase_title_error": "Correggere le informazioni di pagamento",
+        "continue_to_payment_gateway_notice_error": "Non è stato possibile verificare i dati di pagamento.",
+        "continue_to_payment_gateway_button_label_error": "Aggiornare le informazioni di pagamento",
+        "page_title": "Ordine di elaborazione",
+        "title": "Ordine di elaborazione",
+        "your_order_has_been_received_title": "Grazie per l'ordine",
+        "you_will_receive_confirmation": "Stiamo ricevendo molti ordini in questo momento. Dovrebbe ricevere presto una conferma via e-mail o SMS. Se non la ricevete entro un'ora, fatecelo sapere.",
+        "you_will_not_be_charged": "Non vi sarà ancora addebitato nulla",
+        "wait": {
+          "short": "Il vostro ordine è in fase di elaborazione.",
+          "medium": {
+            "one": "L'ordine è in fase di elaborazione. Il tempo di attesa stimato è di %{count} minuti.",
+            "other": "L'ordine è in fase di elaborazione. Il tempo di attesa stimato è di %{count} minuti."
+          },
+          "long": "Riceverete un'e-mail non appena il vostro ordine sarà stato elaborato. Attualmente c'è un alto volume di ordini.",
+          "no_auto_refresh_html": "Se non si viene reindirizzati automaticamente, %{link}.",
+          "refresh_this_page": "aggiorna questa pagina"
+        },
+        "action_required": "Azione necessaria",
+        "modal_notice": "Stiamo contattando {{paymentMethod}}"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Completare l'acquisto utilizzando il codice {{paymentMethod}} ",
+        "timer_message": "Hai {{timeLeft}} per pagare",
+        "copy_text": "Copiare il codice di {{paymentMethod}} ",
+        "open_app_text": "Aprire l'applicazione {{paymentMethod}}.",
+        "header": "Pagare con {{paymentMethod}}",
+        "qr_code": {
+          "instructions": "Completare l'acquisto utilizzando il codice {{paymentMethod}} "
+        }
       }
     },
     "sentence": {
