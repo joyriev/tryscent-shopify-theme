@@ -547,6 +547,58 @@
           "clear_search": "クリア検索",
           "empty_results": "%{searchText}\"の結果は見つかりませんでした。スペルを確認するか、別の語句を使用してください。",
           "number_items_shown": "%{totalNumber}項目の%{shownNumber}"
+        },
+        "order_name_label": "オーダー %{name}",
+        "discount_title_stacking": {
+          "one": "割引",
+          "other": "割引"
+        },
+        "discount_order_stacking": {
+          "one": "オーダー割引",
+          "other": "注文割引"
+        },
+        "discount_label": "割引コード",
+        "discount_not_found": "入力されたコードに一致する有効な割引が見つかりません。",
+        "discount_placeholder": "割引コード",
+        "discount_code_applied": "割引コード適用",
+        "discount_code_allocations_mismatch": "あなたの <strong style=\"text-transform:uppercase\">%{code}</strong> 割引コードが変更されました。カートを見直して、もう一度やり直してください。",
+        "gift_card_applied": "ギフトカード適用",
+        "enter_shipping_address": "配送先住所の入力",
+        "gift_card_placeholder": "ギフトカード",
+        "gift_card_and_discount_title": "割引コードまたはギフトカード",
+        "gift_card_and_discount_label": "割引コードまたはギフトカード",
+        "gift_card_and_discount_placeholder": "割引コードまたはギフトカード",
+        "remove_gift_card_label": "クリアギフトカード",
+        "remove_discount_label": "割引の廃止",
+        "return_shipping_fee_label": "返品送料",
+        "free_shipping_discount_label": "送料無料",
+        "applied_free_shipping_discount_label": "応用",
+        "apply_discount_button_label": "応募する",
+        "applied_discount_message": "%{amount} ご注文合計金額より",
+        "discount_has_been_applied": "割引が適用されました",
+        "discount_has_been_removed": "割引は終了しました",
+        "gift_card_has_been_removed": "ギフトカードは削除されました",
+        "gift_card_subscriptions_notice": "ギフトカードは初回のお支払いにのみ適用されます。",
+        "discount_already_applied": "この注文には割引が適用されています。別の割引を追加することはできません。",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> カート内の商品に割引コードが適用されていません。",
+        "discount_requires_customer_notice": "配送先情報を入力して <strong style=\"text-transform:uppercase\">%{code}</strong> 割引コード",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> 割引コードは現在ご利用いただけません。",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> 割引コードには対象顧客が必要です。",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> 配送先住所に割引コードがありません。",
+        "customer_already_used_once_per_customer_discount_notice": "について <strong style=\"text-transform:uppercase\">%{code}</strong> 割引コードはすでに使用されています",
+        "subtotal_label_with_quantity": {
+          "one": "小計 -%{count}項目",
+          "other": "小計 -%{count}項目"
+        },
+        "pickup_label": "店舗での受け取り",
+        "no_pickup_location": "受け取り可能な場所はない。",
+        "pickup_unavailable_banner_title": {
+          "one": "ご利用いただける店舗はございません。",
+          "other": "ご利用いただける店舗はございません。"
+        },
+        "pickup_unavailable_banner_body": {
+          "ship_to_address": "発送先住所",
+          "ship_to_address_instead_html": "%{link} その代わり"
         }
       },
       "general": {
