@@ -710,7 +710,7 @@
         "payment_flexibility_terms_id_mismatch": "Betalingsflexibiliteit voorwaarden ID mismatch"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Uw bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan.",
+        "unavailable_addresses_only_countries": "Je bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan.",
         "shipping_method": "De verzendopties voor uw bestelling zijn gewijzigd. Controleer uw selectie en probeer het opnieuw.",
         "shipping_method_not_available": "Je winkelwagentje is bijgewerkt en de artikelen die je hebt toegevoegd kunnen niet naar je adres worden verzonden. Verwijder de artikelen om je bestelling af te ronden.",
         "shipping_method_not_available_generic": {
@@ -722,7 +722,10 @@
           "one": "Het artikel dat je hebt toegevoegd, wordt niet verzonden naar jouw locatie. Verwijder het bij de kassa of neem contact op met de winkel.",
           "other": "Een of meer artikelen die je hebt toegevoegd, worden niet naar jouw locatie verzonden. Verwijder ze bij het afrekenen of neem contact op met de winkel."
         },
-        "empty_state": "Voer je verzendadres in om de beschikbare verzendmethoden te bekijken."
+        "empty_state": "Voer je verzendadres in om de beschikbare verzendmethoden te bekijken.",
+        "invalid_selected_address": "Het geselecteerde verzendadres is ongeldig",
+        "invalid_selected_address_with_update_link": "Het geselecteerde verzendadres is ongeldig. %{update_address_link} of selecteer een ander adres",
+        "unavailable_selected_address": "Verzending niet beschikbaar voor geselecteerd adres"
       },
       "order_summary": {
         "for_add_on": "Voor: %{group_title}",
@@ -1601,6 +1604,49 @@
         "risky": "Er is een probleem opgetreden bij het verwerken van je betaling. Probeer het opnieuw of gebruik een andere betaalmethode.",
         "expired_buyer_action": "De betaalmethode is verlopen. Probeer het opnieuw.",
         "name_mismatch": "Controleer uw kaartgegevens. De naam op je kaart en het factuuradres komen niet overeen."
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Snel afrekenen",
+        "or_pay_another_way": "Of betaal op een andere manier",
+        "or_check_out_another_way": "Of bekijk een andere manier",
+        "or_pay_with_credit_card": "Of betaal met creditcard"
+      },
+      "post_purchase": {
+        "page_title": "Post-aankoop",
+        "title": "Post-aankoop",
+        "escape_action": "Bestelbevestiging bekijken '",
+        "components": {
+          "close": "Sluit",
+          "processing": "Verwerking...",
+          "submit": "Stuur  in"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Omleiden...",
+        "redirecting_title": "Omleiden...",
+        "redirecting_notice": "Wacht terwijl we je omleiden.",
+        "redirecting_to_bank": "Doorverwijzen naar {{bank}}",
+        "complete_your_purchase_title": "Voltooi je aankoop",
+        "continue_to_payment_gateway_notice": "Ga door naar betaling om je betalingsgegevens toe te voegen.",
+        "continue_to_payment_gateway_button_label": "Doorgaan naar betaling",
+        "complete_your_purchase_title_error": "Corrigeer je betalingsgegevens",
+        "continue_to_payment_gateway_notice_error": "Uw betalingsgegevens konden niet worden geverifieerd.",
+        "continue_to_payment_gateway_button_label_error": "Betalingsgegevens bijwerken",
+        "page_title": "Order verwerken",
+        "title": "Order verwerken",
+        "your_order_has_been_received_title": "Bedankt voor uw bestelling",
+        "you_will_receive_confirmation": "We krijgen op dit moment veel bestellingen binnen. Je zou binnenkort een bevestiging per e-mail of sms moeten ontvangen. Als je die niet binnen een uur ontvangt, laat het ons dan weten.",
+        "you_will_not_be_charged": "Je hoeft nog niets te betalen",
+        "wait": {
+          "short": "Uw bestelling wordt verwerkt.",
+          "medium": {
+            "one": "Uw bestelling wordt verwerkt. Geschatte wachttijd is %{count} minuut.",
+            "other": "Uw bestelling wordt verwerkt. De geschatte wachttijd is %{count} minuten."
+          },
+          "long": "Je ontvangt een e-mail zodra je bestelling is verwerkt. Er is momenteel een groot aantal bestellingen.",
+          "no_auto_refresh_html": "Als je niet automatisch wordt doorgestuurd, %{link}.",
+          "refresh_this_page": "deze pagina verversen"
+        }
       }
     },
     "sentence": {
