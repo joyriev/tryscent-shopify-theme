@@ -1767,6 +1767,77 @@
         "checkout_review_and_pay": "Ihre Bestellung %{order_name} wurde aktualisiert. Überprüfen Sie die Änderungen und bezahlen Sie dann, um Ihre Bestellung zu bestätigen.",
         "order_updated_on": "Ihre Bestellung wurde aktualisiert am %{last_edited_at}.",
         "order_review_and_pay": "Ihre Bestellung wurde aktualisiert. Prüfen und bezahlen Sie, um Ihre Bestellung zu bestätigen."
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "Der Unternehmensstandort ist so eingestellt, dass alle Aufträge als Entwürfe zur Überprüfung vorgelegt werden.",
+        "missing_address": "Keine Lieferadresse verfügbar: Die Adresse des Firmenstandorts fehlt und die einmalige Adressverwendung ist deaktiviert."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Ihre Kreditkarte wird belastet %{amount}",
+        "payment_total_label": "Zahlung insgesamt",
+        "change_currency_link": "Wechseln zu %{currency_name}",
+        "card_provider_fx_charges_warning": "Ihr Kartenanbieter kann Gebühren für Transaktionen %{currency_code} erheben.",
+        "currency_not_supported_by_shop": "Die von Ihnen gewählte Währung ist nicht mehr verfügbar. Alle Preise sind jetzt in %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Ihr Warenkorb wurde auf der Grundlage Ihres Versandlandes aktualisiert.",
+        "cart_and_currency_updated_based_on_country": "Ihr Einkaufswagen und Ihre Währung wurden auf der Grundlage Ihres Versandlandes aktualisiert."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Ihr Land/Ihre Region wurde aktualisiert. Geben Sie Ihre Lieferadresse ein, um mit dem Checkout fortzufahren."
+      },
+      "tips": {
+        "title": "Tipp hinzufügen",
+        "description": "Zeigen Sie Ihre Unterstützung für das Team unter %{shop_name}",
+        "presets_description": "Wählen Sie einen Prozentsatz für das Trinkgeld",
+        "custom_label": "Benutzerdefinierte Spitze",
+        "add_tip": "Tipp hinzufügen",
+        "update_tip": "Update-Tipp",
+        "message": "Vielen Dank, wir wissen das zu schätzen."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "Kaufen Sie %{product_name}",
+          "one": "Kaufen Sie %{product_name} und %{count} andere Artikel",
+          "other": "Kaufen Sie %{product_name} und %{count} andere Artikel"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals": "%{total_price} jede %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Erste Zahlung %{total_price_with_discount}, dann %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "other": "Erste %{count} Zahlungen %{total_price} jeweils"
+          },
+          "following_cycles": ", dann %{total_price} jedes %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", dann %{count} Zahlung zu %{total_price}",
+            "other": ", dann %{count} Zahlungen zu je %{total_price} "
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Zahlungsmöglichkeiten",
+        "title": "Zahlungsmöglichkeiten",
+        "delete_customer_mandate": {
+          "generic_error": "Es gab ein Problem bei der Bearbeitung Ihrer Anfrage.",
+          "success_message": "Ihre Zahlungsmethode wurde erfolgreich gelöscht"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "description": "Bitte versuchen Sie es in ein paar Minuten erneut"
+        },
+        "line_to_check_out": "Sie stehen in der Schlange zum Auschecken",
+        "cart_summary_heading": "Your cart",
+        "inventory": {
+          "partial_inventory_banner": "Ein Teil Ihres Warenkorbs ist ausverkauft und steht an der Kasse nicht mehr zum Kauf zur Verfügung.",
+          "sold_out": {
+            "heading": "Ihr Warenkorb ist ausverkauft"
+          }
+        }
       }
     }
   },
