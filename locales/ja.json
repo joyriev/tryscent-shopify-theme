@@ -2815,13 +2815,13 @@
         "email_resend_button": "コードの再送",
         "email_resend_button_accessibility_label": "認証コードの再送",
         "verify_button": "ベリファイ",
-        "verify_button_accessibility_label": "ワンタイムパスワードを確認する",
+        "verify_button_accessibility_label": "ワンタイムパスワードの確認",
         "cancel_button": "キャンセル",
-        "cancel_button_accessibility_label": "メール編集をキャンセルする"
+        "cancel_button_accessibility_label": "編集メールのキャンセル"
       },
       "email_update_success_modal": {
-        "title": "メールを確認する",
-        "description": "メールアドレスが正常に更新されました。ログイン画面にリダイレクトしています。"
+        "title": "電子メールの確認",
+        "description": "電子メールは正常に更新されました。ログインにリダイレクトします。"
       },
       "loading_accessibility_message": "アカウント情報の読み込み",
       "loading_finished_accessibility_message": "アカウント情報がロードされました",
@@ -2835,6 +2835,14 @@
         "phone_number_help_text": "ログインに使用する電話番号が変更できない",
         "save": "セーブ",
         "save_accessibility_label": "プロファイルの保存"
+      },
+      "profile_update_confirmation_message": "プロフィール更新",
+      "people": {
+        "pagination": {
+          "load_more": "もっと読む",
+          "load_more_accessibility_label": "人数を増やす",
+          "loading_accessibility_label": "ローディング"
+        }
       }
     },
     "email_capture": {
@@ -2902,6 +2910,54 @@
       "view_details": "詳細を見る",
       "company_location": "会社所在地",
       "skip_to_content": "コンテンツへスキップ"
+    },
+    "orders": {
+      "list_layout_accessibility_label": "レイアウト・オプション",
+      "list_title": "受注状況",
+      "list_title_with_pending_orders": "注文がある：",
+      "list_title_confirmed_orders_accessibility_label": "注文：確認済み",
+      "list_title_pending_orders_accessibility_label": "注文：保留中",
+      "switch_order_type_pending_orders_accessibility_label": "注文の種類を切り替える。",
+      "switch_order_type_confirmed_orders_accessibility_label": "注文の種類を切り替える。",
+      "order_list": {
+        "column_headers": {
+          "order": "オーダー",
+          "actions_accessibility_label": "行動",
+          "products_accessibility_label": "製品紹介"
+        },
+        "delivered": "配信 {{date}}",
+        "empty_state_order_source_description": "ここに表示されるのは{{email}}による注文のみです。",
+        "empty_state_subtitle": "注文は店頭で。",
+        "empty_state_title": "まだ注文はない",
+        "empty_state_with_location_title": "の注文はない。 {{locationName}}",
+        "empty_state_title_for_pending_orders": "保留中の注文はない",
+        "no_order_banner": "注文ステータスのページで拡張機能をテストするには、注文を作成します。",
+        "estimated_shortform": "東だ。 {{date}}",
+        "estimated_delivery": "期待される {{date}}",
+        "one_images_accessibility_label": "注文には以下が含まれる {{lineItemName1}}",
+        "two_images_accessibility_label": "注文には以下が含まれる {{lineItemName1}}, {{lineItemName2}}",
+        "three_images_accessibility_label": "注文には以下が含まれる {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "注文には以下が含まれる {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "注文には{{lineItemName1}} {{lineItemName2}} {{numberOfAdditionalProducts}}製品が含まれます。",
+        "more_than_four_products_accessibility_label": "注文には{{lineItemName1}} {{lineItemName2}} {{lineItemName3}} {{numberOfAdditionalProducts}}製品が含まれます。",
+        "plus_more_products": "{{numberOfAdditionalProducts}}追加製品数}}製品",
+        "carousel": {
+          "one_products_accessibility_label": "注文には{{lineItemName1}}数量{{lineItemQuantity1}}含まれます。",
+          "two_products_accessibility_label": "注文には{{lineItemName1}}数量{{lineItemQuantity1}} {{lineItemName2}}数量{{lineItemQuantity2}}含まれます。",
+          "three_products_accessibility_label": "注文には{{lineItemName1}}数量{{lineItemQuantity1}} {{lineItemName2}}数量{{lineItemQuantity2}} {{lineItemName3}}数量{{lineItemQuantity3}}含まれます。",
+          "four_products_accessibility_label": "注文には{{lineItemName1}}数量{{lineItemQuantity1}} {{lineItemName2}}数量{{lineItemQuantity2}} {{lineItemName3}}数量{{lineItemQuantity3}} {{lineItemName4}}数量{{lineItemQuantity4}}含まれます。",
+          "five_products_accessibility_label": "{{lineItemName1}}数量{{lineItemQuantity1}} {{lineItemName2}}数量{{lineItemQuantity2}} {{lineItemName3}}数量{{lineItemQuantity3}} {{lineItemName4}}数量{{lineItemQuantity4}} {{lineItemName5}}数量{{lineItemQuantity5}}含まれます。",
+          "six_products_accessibility_label": "注文には{{lineItemName1}}数量{{lineItemQuantity1}},{{lineItemName2}}数量{{lineItemQuantity2}},{{lineItemName3}}数量{{lineItemQuantity3}} が含まれます、{{{lineItemName4}}個数{{lineItemQuantity4}} {{lineItemName5}}個数{{lineItemQuantity5}} {{lineItemName6}}個数{{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "注文には{{lineItemName1}}数量{{lineItemQuantity1}},{{lineItemName2}}数量{{lineItemQuantity2}},{{lineItemName3}}数量{{lineItemQuantity3}} が含まれます、{{lineItemName4}}個数{{lineItemQuantity4}} {{lineItemName5}}個数{{lineItemQuantity5}} {{lineItemName6}}個数{{lineItemQuantity6}}。",
+          "view_order_details": "ご注文の詳細を見る",
+          "previous": "前へ",
+          "next": "次のページ"
+        },
+        "items": {
+          "one": "{{count}} 項目",
+          "other": "{{count}} 項目"
+        }
+      }
     }
   }
 }

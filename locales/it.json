@@ -691,7 +691,72 @@
         "same_billing_address_checkbox_label": "Utilizzare l'indirizzo di spedizione come indirizzo di fatturazione",
         "location_billing_address_label": "Indirizzo di fatturazione",
         "location_shipping_address_label": "Indirizzo di spedizione",
-        "use_order_billing_address_label": "Utilizzare l'indirizzo di fatturazione dell'ordine"
+        "use_order_billing_address_label": "Utilizzare l'indirizzo di fatturazione dell'ordine",
+        "use_location_billing_address_label": "Utilizzare l'indirizzo di fatturazione della località",
+        "use_location_shipping_address_label": "Utilizzare l'indirizzo di spedizione della località",
+        "no_working_method_error": "Questo negozio non può accettare pagamenti in questo momento. Aggiornare la pagina o tornare più tardi.",
+        "brand_not_available": "Questo negozio non accetta la {{brand}}. Si prega di utilizzare una carta diversa per pagare.",
+        "shipping_rate_updated": "I metodi di spedizione disponibili sono stati aggiornati. Confermare la scelta prima di effettuare il check-out.",
+        "billing_address_invalid_phone": "Aggiornare il numero di telefono nell'indirizzo di fatturazione per {{label}} {{last_digits}} per continuare.",
+        "billing_address_invalid_phone_no_card": "Aggiornare il numero di telefono nell'indirizzo di fatturazione per continuare.",
+        "preview_not_available": {
+          "content": "Non preoccupatevi, questo checkout espresso funziona per i vostri clienti."
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Inserire una data di emissione valida",
+              "issue_number": "Inserire un numero di emissione valido"
+            },
+            "invalid": {
+              "verification_value": "Inserire un CVV o un codice di sicurezza valido"
+            }
+          }
+        },
+        "simulated_checkout": "Anteprima in arrivo",
+        "simulated_express_checkout": "I portafogli non sono disponibili nell'anteprima dell'editor a causa della regione o del browser in uso.",
+        "vaulting_agreement_label": "Salva i miei dati di pagamento con %{company} per un checkout più veloce.",
+        "business_customer_vaulting_payment_label": "Salvare questa carta alla cassa e autorizzare %{company} ad addebitarla per i futuri acquisti per questa sede. Tutti i contatti assegnati a questa sede possono utilizzare la carta.",
+        "purchase_options_and_vaulting_agreement_label": "Uno o più articoli nel carrello sono un acquisto differito o in abbonamento. Proseguendo con il pagamento, l'utente accetta che il suo metodo di pagamento venga addebitato automaticamente al prezzo e alla frequenza elencati in questa pagina fino alla scadenza o alla cancellazione. Tutte le cancellazioni sono soggette alla %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "Politica di cancellazione",
+        "use_different_credit_card_label": "Utilizzare una carta diversa",
+        "saved_credit_card": "La vostra carta di credito salvata",
+        "saved_credit_card_cvv_verification": "A scopo di verifica, inserire il codice di sicurezza della carta.",
+        "saved_credit_card_actions": {
+          "delete": "Cancellare"
+        },
+        "saved_credit_cards_modal": {
+          "view_all_label": "Visualizza tutte le schede salvate",
+          "cancel": "Annullamento"
+        },
+        "add_credit_card_modal": {
+          "title": "Aggiungi scheda",
+          "save": "Risparmiare",
+          "cancel": "Annullamento"
+        },
+        "delete_credit_card_modal": {
+          "title": "Cancellare la scheda",
+          "confirmation": "Sei sicuro di voler eliminare il {{brandName}} che termina con {{lastDigits}}?",
+          "cancel": "Annullamento",
+          "delete": "Cancellare"
+        },
+        "edit_credit_card_modal": {
+          "title": "Scheda di modifica",
+          "cancel": "Annullamento",
+          "description": "È possibile modificare solo l'indirizzo di fatturazione della carta.",
+          "fields": {
+            "card_number": "Numero di carta",
+            "name": "Nome sulla scheda",
+            "billing": "Proposta di legge per"
+          }
+        },
+        "expired_cards_info": {
+          "one": "C'è un %{count} di carte scadute, che è possibile visualizzare e modificare nel proprio account.",
+          "other": "Ci sono %{count} carte scadute, che si possono visualizzare e modificare nel proprio account."
+        },
+        "local_payment_method_receiver_notice": "Dopo aver effettuato l'ordine, riceverete i dettagli per il pagamento. Effettuare il pagamento presso uno sportello bancomat o online entro {{dueDays}}.",
+        "order_edit_banner_title": "È necessario il pagamento di un importo pari a {{amount_owed}} ",
+        "order_edit_banner_subtitle": "Il vostro ordine {{order_number}} è stato aggiornato. Esaminate le modifiche, quindi pagate per confermare l'ordine."
       },
       "order_summary": {
         "for_add_on": "Per: %{group_title}",
