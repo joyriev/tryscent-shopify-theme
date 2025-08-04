@@ -2423,12 +2423,45 @@
             "expired_delivery_guarantee_description": "이 주문의 30일 쇼핑 약속 보장 기간이 만료되었습니다.",
             "order_includes_guarantees_label": "주문에는 {{deliveryAgreementsCount}} 보증이 포함됩니다.",
             "order_includes_guarantees_description": "Shop Promise는 빠르고 안정적인 배송을 보장합니다. 주문이 다음 날짜 이후에 도착하는 경우 Shop Cash를 청구하세요. {{date}}.",
-            "delivered_after_label": "이후 배송 {{date}}"
+            "delivered_after_label": "이후 배송 {{date}}",
+            "delivered_after_description": "주문이 늦게 도착했으므로 {{amount}} 청구할 수 있습니다. 쇼핑 현금을 청구할 수 있습니다.",
+            "claimed_shop_cash_description": "주문이 늦게 도착했으므로 {{amount}} 청구했습니다. 쇼핑 현금을 청구했습니다.",
+            "eligible_to_claim_shop_cash_description": "주문이 늦게 도착했으므로 {{amount}} 청구할 수 있습니다. 쇼핑 현금을 청구할 수 있습니다.",
+            "claim_shop_cash_button_label": "상점 현금 청구",
+            "view_balance_in_shop_button_label": "상점에서 잔액 보기",
+            "scan_to_claim_shop_cash_label": "스캔하여 {{amount}} 청구 현금 쇼핑"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "다음이 지원하는 배송",
+            "not_delivered_by_label": "제공되지 않음 {{date}}"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "상점 캐시 받기",
+            "no_shop_app_label": "{{appDownloadLink}} 샵 캐시를 청구하려면",
+            "download_shop_app_label": "상점 다운로드"
+          },
+          "details_modal": {
+            "title": "다음이 지원하는 배송",
+            "delivery_guarantee_label": "배송 보증",
+            "delivery_by_label": "배달 방법 {{date}}",
+            "delivery_guaranteed_by_label": "다음에서 배송을 보장합니다. {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise는 빠르고 안정적인 배송을 보장합니다. 주문이 늦게 도착하면 샵 캐시를 청구하세요.",
+              "may_be_eligible_not_authorized_label": "주문이 늦게 도착했으므로 Shop Cash를 받을 자격이 있을 수 있습니다. 자세한 내용을 보려면 로그인하세요.",
+              "redeemed_label": "주문이 늦게 도착했기 때문에 이미 Shop Cash를 청구하셨습니다.",
+              "expired_label": "이 주문은 30일 보증이 만료되었으므로 배송 지연을 청구할 수 없습니다.",
+              "no_shop_cash_label": "이 주문은 Shop Pay로 결제하지 않았으므로 배송 지연 클레임을 받을 수 없습니다.",
+              "no_longer_guaranteed_label": "이러한 품목은 더 이상 배송 보증이 적용되지 않습니다.",
+              "claim_shop_cash_title": "상점 캐시에서 {{amount}} 청구하려면 스캔하세요.",
+              "claim_shop_cash_description": "상점 앱에서 향후 구매 시 상점 캐시를 사용할 수 있습니다."
+            }
           }
         }
       },
-      "group_title_label": "부분: {{groupTitle}}",
-      "group_title_label_with_parent": "대상: {{groupTitle}}",
+      "group_title_label": "의 일부입니다: {{groupTitle}}",
+      "group_title_label_with_parent": "For: {{groupTitle}}",
       "switch_order_type_pending_orders_accessibility_label": "주문 유형 전환, 현재 대기 중인 주문 보기",
       "switch_order_type_confirmed_orders_accessibility_label": "주문 유형 전환, 현재 확인된 주문 보기",
       "order_list": {
@@ -2518,10 +2551,21 @@
           "apply": "신청하기"
         },
         "show_order_actions_accessibility_label": "주문에 대한 주문 작업 표시 {{name}}"
-      }
+      },
+      "status_mark_as_delivered": "배달됨으로 표시",
+      "buy_again": "다시 구매",
+      "buy_again_accessibility_label": "주문 다시 구매 {{orderId}}",
+      "manage_accessiblity_label": "주문 관리 {{orderId}}"
     },
     "order_details": {
-      "group_title_label_with_parent": "대상: {{groupTitle}}"
+      "group_title_label_with_parent": "대상: {{groupTitle}}",
+      "shipment_timeline": {
+        "expand_events_label": "세부 정보 보기"
+      },
+      "order_details_skeleton_accessibility_label": "모든 주문 세부 정보를 보려면 로그인하세요.",
+      "billing_address": "청구서 수신 주소",
+      "card_ending_with": "로 끝나는 {{lastDigits}}",
+      "group_title_label": "의 일부입니다: {{groupTitle}}"
     },
     "date": {
       "humanize": {

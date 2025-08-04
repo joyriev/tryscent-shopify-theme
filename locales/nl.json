@@ -1138,8 +1138,64 @@
           "free_shipping_cycles": {
             "one": "Gratis verzending voor %{count} meer levering",
             "other": "Gratis verzending voor %{count} meer leveringen"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "Gratis verzending voor %{count} levering",
+            "other": "Gratis verzending voor %{count} leveringen"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "Gratis verzending voor %{count} meer levering, dan %{recurring_order_shipping_price}",
+            "other": "Gratis verzending voor %{count} meer leveringen, dan %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "Gratis verzending voor %{count} levering, dan %{recurring_order_shipping_price}",
+            "other": "Gratis verzending voor %{count} leveringen, dan %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} meer levering voor %{shipping_price}",
+            "other": "%{count} meer leveringen voor %{shipping_price} per stuk"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{count} levering voor %{shipping_price}",
+            "other": "%{count} meer leveringen voor %{shipping_price} per stuk"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Gratis verzending voor de eerste %{cycle}, gevolgd door %{recurring_order_shipping_price}",
+            "other": "Gratis verzending voor de eerste %{cycle}, gevolgd door %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} voor %{count} meer levering",
+            "other": "%{shipping_price} voor %{count} meer leveringen%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{shipping_price} voor %{count} levering",
+            "other": "%{shipping_price} voor %{count} leveringen%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{shipping_price} voor %{count} meer levering, gevolgd door %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} voor %{count} meer leveringen%{per_delivery_cost}), gevolgd door %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{shipping_price} voor %{count} levering, gevolgd door %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} voor %{count} leveringen%{per_delivery_cost}), gevolgd door %{recurring_order_shipping_price}"
+          },
+          "prepaid_delivery_frequency": {
+            "one": "voor %{count} levering",
+            "other": "voor %{count} leveringen"
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} per levering",
+          "prepaid_shipping_price_label": "%{shipping_price} per levering x %{delivery_interval_count}",
+          "initial_order_discounted": "Eerst verzendkosten %{discounted_shipping_cost}, dan %{frequency_description}",
+          "prepaid_initial_order_discounted_with_renewal": "Eerst verzendkosten %{discounted_shipping_price} %{prepaid_delivery_frequency}, dan %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Eerst verzendkosten %{discounted_shipping_price} %{prepaid_delivery_frequency}%{discounted_cost_per_delivery}), dan %{shipping_price} %{billing_cycle}",
+          "free_for_first_n_order": {
+            "one": "Voor de eerste bestelling"
           }
-        }
+        },
+        "one_time_purchase_shipping": "Eenmalige verzending",
+        "shipping_information_required_notice": "Verzendinformatie is vereist. {{link}}.",
+        "shipping_information_redirect_link": "Voer hier uw gegevens in",
+        "loading_progressive_rates": "Op zoek naar meer tarieven..."
       }
     },
     "sentence": {
