@@ -2869,11 +2869,76 @@
               "description": "결제를 제출하여 주문을 확정합니다.",
               "deposit": {
                 "title": "결제 기한",
-                "due_later": "잔액은 {{translatedName}} 조건이며 {{dueDate}} 납부해야 합니다."
+                "due_later": "잔액은 {{translatedName}} 조건이며 {{dueDate}} 납부해야 합니다.",
+                "due_on_fulfillment": "잔금은 이 주문의 모든 항목이 완료되면 지불해야 합니다.",
+                "due_on_receipt": "남은 잔액에 대한 청구서를 받게 됩니다.",
+                "due_on_date": "잔금 납부 기한은 다음과 같습니다. {{dueDate}}."
               }
+            },
+            "deposit": {
+              "due_later": "{{{depositAmount}} 주문이 확정되면 지불해야 합니다. 잔금은 {{translatedName}} 조건으로 결제됩니다.",
+              "due_on_fulfillment": "{{depositAmount}} 는 주문이 확정되면 지불해야 합니다. 잔금은 주문이 처리될 때 지불해야 합니다.",
+              "due_on_receipt": "{{depositAmount}} 는 주문이 확정되면 지불해야 합니다. 잔액은 나중에 지불해야 합니다.",
+              "due_on_date": "{{depositAmount}} 은 주문이 확정되는 시점에 지불해야 합니다. 잔액은 다음 날짜에 지불해야 합니다. {{dueDate}}."
             }
-          }
+          },
+          "paid": {
+            "title": "유료",
+            "title_with_date": "유료 {{date}}",
+            "description": "주문이 완료되었습니다."
+          },
+          "refund": {
+            "title": "환불",
+            "title_with_date": "환불 {{date}}",
+            "description_single_refund": "이 주문에 대해 부분 환불을 받았습니다.",
+            "description_multiple_refunds": "이 주문에 대해 부분 환불을 받았습니다."
+          },
+          "canceled": {
+            "description": "요금이 부과되지 않았습니다."
+          },
+          "pay_now": "지금 결제하기",
+          "pay_now_accessibility_label": "지금 주문 결제하기 {{orderName}}"
+        },
+        "order_timeline": {
+          "expand_events_label": "세부 정보 보기"
+        },
+        "subtitle": "제출됨 {{date}}",
+        "title": "주문 {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "이 결제 방법은 향후 이 위치에서 구매할 때 더 이상 사용할 수 없습니다.",
+          "description_with_replacement": "이 결제 방법을 삭제하면 이 위치에 대한 사전 승인된 결제에 영향을 미칩니다. 예정된 주문을 계속 받으려면 다른 결제 방법으로 교체하세요."
+        },
+        "payment_details": {
+          "order_label": "주문 {{name}}"
         }
+      },
+      "purchase_order_number": {
+        "close_modal_accessibility_label": "PO 번호 닫기 모달",
+        "discard_changes_modal_title": "변경 사항을 삭제하시겠습니까?",
+        "modal_po_number_input_max_length_error": "PO 번호의 최대 {{maxLength}} 문자입니다."
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "이 주소를 삭제하는 동안 문제가 발생했습니다. 다시 시도하거나 페이지를 새로고침하세요."
+      },
+      "addresses_loading_issue": {
+        "description": "연결 오류가 발생했습니다. 인터넷 연결을 확인하고 다시 시도하세요."
+      },
+      "banner_title": {
+        "one": "{{count}} 오류가 발생했습니다.",
+        "other": "{{count}} 오류가 있습니다."
+      },
+      "failed_address_creation": {
+        "description": "주소를 만드는 동안 문제가 발생했습니다. 이 페이지를 새로 고치거나 인터넷 연결을 확인해 보세요."
+      },
+      "failed_address_update": {
+        "description": "주소를 업데이트하는 동안 문제가 발생했습니다. 이 페이지를 새로 고치거나 인터넷 연결을 확인해 보세요."
+      },
+      "load_orders_error": {
+        "title": "주문을 로드할 수 없습니다."
       }
     }
   }
