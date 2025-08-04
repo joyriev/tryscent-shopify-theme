@@ -2029,6 +2029,73 @@
         "inventory": {
           "partial_inventory_banner": "En del af din kurv er udsolgt og vil ikke kunne købes ved kassen."
         }
+      },
+      "local_pickup": {
+        "location_information_next": {
+          "one": "Der er %{count} steder med lager tæt på dig",
+          "other": "Der er %{count} steder med lager tæt på dig"
+        },
+        "toggle_location": "Skift placering",
+        "your_location": "din placering",
+        "no_stores_found": "Ingen butikker fundet",
+        "all_stores_far_away": {
+          "title": "De nærmeste steder er mere end %{distance} væk",
+          "description": "Vælg en placering eller %{ship_to_address_link}",
+          "ship_to_address_link": "Send til adresse"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "Dit tidligere valgte sted er ikke længere tilgængeligt",
+          "description": "Vælg en ny placering eller %{ship_to_address_link}",
+          "ship_to_address_link": "Send til adresse"
+        },
+        "paginator": {
+          "accessibility_label": "Paginering af lokal afhentning",
+          "label": {
+            "one": "%{first} - %{last} af %{count} butikker"
+          }
+        },
+        "reveal_more_label": {
+          "one": "Vis %{count} flere steder",
+          "other": "Vis %{count} flere steder"
+        }
+      },
+      "captcha": {
+        "title": "Udfyld CAPTCHA for at fortsætte",
+        "errors": {
+          "not_solved": "Udfyld CAPTCHA for at fortsætte"
+        }
+      },
+      "discount_errors": {
+        "generic_error": "Din ordre kunne ikke gennemføres, fordi din rabatkode ikke længere er tilgængelig. Gennemgå din samlede ordre og prøv igen."
+      },
+      "b2b_errors": {
+        "log_out_link_text": "Log ud",
+        "lost_permissions_subtitle": "Du har ikke længere tilladelse til at afgive B2B-ordrer, så log ud for at afgive en personlig ordre.",
+        "lost_permissions_title": "Ingen tilladelser til placering"
+      },
+      "shop_pay_external": {
+        "title": "Køb betaling ved kassen",
+        "errors": {
+          "problem_loading": "Der er et problem med at indlæse Shop Pay",
+          "try_again_later": "Tjek din forbindelse, eller luk dette vindue, og prøv igen om et øjeblik.",
+          "checkout_has_expired": "Din checkout er udløbet. Luk dette vindue, og prøv at tjekke ud igen fra {{shopName}}."
+        },
+        "return_to_store": "Gå tilbage til {{shopName}}"
+      },
+      "wallets": {
+        "return_to_checkout": "Gå tilbage til kassen",
+        "redirect_hint": "Du vil blive bedt om at logge ind med {{walletName}}.",
+        "logged_in": "Forbundet til {{email}}",
+        "shipping_line_label": "Forsendelse",
+        "payment_in_progress_title": "Igangværende betaling",
+        "payment_in_progress_body": "Din betaling er ved at blive behandlet. Din ordre vil snart blive gennemført.",
+        "redirection_notice": "Når du har klikket på{{buttonLabel}}\", bliver du omdirigeret til {{walletName}} for at gennemføre dit køb på en sikker måde.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} ikke tilgængelig",
+            "instructions": "Der opstod et problem med {{walletName}}. Vend tilbage til butikken for at prøve igen eller tjekke ud på en anden måde."
+          }
+        }
       }
     },
     "sentence": {
