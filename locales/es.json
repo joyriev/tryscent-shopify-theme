@@ -361,27 +361,27 @@
       "view_cart": "Ver carrito",
       "each": "{{ money }}/ea",
       "product": "Producto",
-      "variant": "Variante",
-      "variant_total": "Total de variantes",
+      "variant": "Variant",
+      "variant_total": "Variante total",
       "items_added": {
-        "one": "{{ quantity }} artículo agregado",
-        "other": "{{ quantity }} artículos agregados",
+        "one": "{{ quantity }} elemento añadido",
+        "other": "{{ quantity }} elementos añadidos",
         "many": "{{ quantity }} artículos agregados"
       },
       "items_removed": {
         "one": "{{ quantity }} artículo eliminado",
-        "other": "{{ quantity }} artículos eliminados",
+        "other": "{{ quantity }} elementos eliminados",
         "many": "{{ quantity }} artículos eliminados"
       },
-      "product_variants": "Variantes de producto",
+      "product_variants": "Variantes de productos",
       "total_items": "Total de artículos",
-      "remove_all_items_confirmation": "¿Eliminar los {{ quantity }} artículos del carrito?",
-      "remove_all": "Eliminar todos",
+      "remove_all_items_confirmation": "¿Quitar todos los artículos {{ quantity }} de tu cesta?",
+      "remove_all": "Eliminar todo",
       "cancel": "Cancelar",
-      "remove_all_single_item_confirmation": "¿Eliminar 1 artículo de tu carrito?",
-      "min_error": "Este artículo tiene un mínimo de {{ min }}.",
-      "max_error": "Este artículo tiene un máximo de {{ max }}.",
-      "step_error": "Solo puedes agregar este artículo en incrementos de {{ step }}"
+      "remove_all_single_item_confirmation": "¿Quitar 1 artículo de su cesta?",
+      "min_error": "Este artículo tiene un mínimo de {{ min }}",
+      "max_error": "Este artículo tiene un máximo de {{ max }}",
+      "step_error": "Sólo puede añadir este elemento en incrementos de {{ step }}"
     }
   },
   "localization": {
@@ -589,7 +589,51 @@
             "only_value_constraint": "Sólo se permiten valores exactos en la entrada de mercancías.",
             "merchandise_not_applicable": "La variante del producto no se puede comprar.",
             "mixed_currencies": "La caja contiene partidas con diferentes monedas.",
-            "bundle_products_not_supported_for_b2b": "Los artículos agrupados no pueden añadirse a pedidos B2B para esta ubicación."
+            "bundle_products_not_supported_for_b2b": "Los artículos agrupados no pueden añadirse a pedidos B2B para esta ubicación.",
+            "gift_card_quantity_mismatch": "Al especificar códigos de tarjetas regalo, la cantidad de artículos de línea y el número de códigos de tarjetas regalo deben coincidir.",
+            "gift_card_not_supported": "Las tarjetas regalo no se admiten en esta caja.",
+            "gift_card_not_unique": "Tarjeta regalo con código {{code}} aparece más de una vez en esta compra. Los códigos se formatean antes de la comparación.",
+            "gift_card_used": "El código de tarjeta regalo {{code}} ya está asignado a una tarjeta regalo. Los códigos se formatean antes de la comparación.",
+            "gift_card_invalid": "El código de la tarjeta regalo {{code}} no es válido.",
+            "gift_card_code_changed": "El código de la tarjeta regalo {{proposed_code}} se ha cambiado por {{formatted_code}} para ajustarse a las normas de formato.",
+            "gift_card_with_attributes_not_supported": "Las tarjetas regalo con atributos personalizados no se admiten en este proceso de pago.",
+            "gift_card_with_components_not_supported": "Las tarjetas regalo con componentes no se admiten en esta caja.",
+            "selling_plan_mismatch": "Se ha actualizado la suscripción.",
+            "selling_plan_not_supported": "No se admiten suscripciones.",
+            "selling_plan_not_supported_b2b": "Las suscripciones no son compatibles con el pago B2B.",
+            "price_mismatch": "El precio propuesto anteriormente para esta mercancía no era válido y ha sido actualizado.",
+            "inventory_not_found": "No se han encontrado existencias de esta mercancía.",
+            "product_not_published_in_buyer_location": "El producto no se publica en la ubicación del comprador.",
+            "duplicated_stable_id": "Esta línea de mercancías tiene el mismo stable-ID que otra línea.",
+            "minimum_quantity_not_met": "La cantidad de algunos artículos no alcanza el mínimo exigido.",
+            "quantity_increment_not_met": "La cantidad de algunos artículos no se ajusta a los límites del pedido.",
+            "quantity_rules_not_met": "La cantidad de algunos artículos no se ajusta a los límites del pedido.",
+            "bundle_requires_components": "Esta mercancía en paquete no tiene componentes.",
+            "title_too_long": "El título de la mercancía es demasiado largo.",
+            "title_empty": "El título de la mercancía está vacío."
+          },
+          "buyer_identity": {
+            "customer_account_required": "El cliente debe iniciar sesión para continuar.",
+            "company_location_required": "El cliente debe elegir una ubicación de la empresa para continuar.",
+            "lost_access_to_company": "El cliente perdió el acceso a cualquier empresa.",
+            "contact_info_does_not_match_customer_account": "La información del cliente especificada debe coincidir con la cuenta del cliente conectado.",
+            "email_required": "Se requiere un correo electrónico cuando la mercancía se adquiere mediante una suscripción.",
+            "email_domain_is_invalid": "Este dominio especificado no se puede resolver.",
+            "invalid_customer_profile": "Se ha proporcionado un perfil de cliente no válido.",
+            "customer_profile_access_restricted": "Checkout no tiene permiso para acceder al perfil del cliente.",
+            "buyer_identity_presentment_currency_does_not_match": "Ha habido un problema al procesar su pedido. Vuelva a intentarlo en unos minutos."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "El carro debe tener una sola línea de entrega.",
+            "wrong_number_of_delivery_lines": "Debe especificarse una línea de entrega para cada grupo de mercancías.",
+            "external_delivery_promise_error": "Un error de obtención de promesa de entrega externa.",
+            "destination_address_required": "Se necesita una dirección de destino para continuar.",
+            "pickup_points_unavailable": "Los puntos de recogida no están disponibles actualmente.",
+            "local_pickup_delivery_line_detail_changed": "La actual estrategia de recogida local debe modificarse para poder continuar.",
+            "selected_pickup_option_no_longer_available": "La opción de recogida seleccionada anteriormente ya no está disponible.",
+            "local_pickup_no_delivery_strategy_available": "No se ha encontrado ninguna estrategia de entrega de recogida local disponible.",
+            "origin_location_id_required": "Se requiere un ID de ubicación de origen cuando se solicita el método de entrega RETAIL.",
+            "invalid_origin_location_id": "No se ha podido encontrar una ubicación que coincida con el ID de ubicación de origen."
           }
         }
       }
