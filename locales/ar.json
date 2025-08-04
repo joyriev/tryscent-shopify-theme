@@ -4227,16 +4227,16 @@
         "unit_price": "سعر الوحدة"
       },
       "share": "شارك هذا المنتج",
-      "sold_out": "نفد المخزون",
+      "sold_out": "بيعت جميع التذاكر",
       "vendor": "البائع",
-      "unavailable": "غير متوفر",
-      "value_unavailable": "{{ option_value }} - غير متوفر",
-      "variant_sold_out_or_unavailable": "النسخة نفدت أو غير متوفرة",
-      "video_exit_message": "{{ title }} يفتح فيديو ملء الشاشة في نفس النافذة.",
-      "view_full_details": "عرض التفاصيل الكاملة",
+      "unavailable": "غير متاح",
+      "value_unavailable": "{{ option_value }} - غير متاح",
+      "variant_sold_out_or_unavailable": "تم بيع المتغير أو غير متوفر",
+      "video_exit_message": "{{ title }} يفتح فيديو بملء الشاشة الكاملة في نفس النافذة.",
+      "view_full_details": "عرض التفاصيل كاملة",
       "xr_button": "عرض في مساحتك",
-      "xr_button_label": "عرض في مساحتك، تحميل العنصر في نافذة الواقع المعزز",
-      "duties_included": "المهام شملت.",
+      "xr_button_label": "عرض في مساحتك، وتحميل العنصر في نافذة الواقع المعزز",
+      "duties_included": "تشمل الواجبات.",
       "shipping_policy_html": "<a href=\"{{ link }}\">الشحن</a> محسوب عند الدفع.",
       "choose_options": "اختيار الخيارات",
       "add_to_cart": "إضافة إلى سلة التسوق",
@@ -4256,57 +4256,57 @@
       "label": "معرض الوسائط"
     },
     "facets": {
-      "filter_and_operator_subtitle": "تطابق الكل",
-      "apply": "تقديم",
+      "filter_and_operator_subtitle": "طابق الكل",
+      "apply": "قدم طلبك",
       "clear_all": "إزالة الكل",
-      "clear": "مسح",
-      "filter_and_sort": "تصفية وفرز",
+      "clear": "واضح",
+      "filter_and_sort": "التصفية والفرز",
       "filters_selected": {
-        "one": "{{ count }} مختار",
-        "other": "{{ count }} مختار"
+        "one": "{{ count }} مختارة",
+        "other": "{{ count }} مختارة"
       },
       "from": "من",
-      "filter_by_label": "تصفية:",
-      "filter_button": "تصفية",
-      "show_more": "عرض المزيد",
-      "filter_selected_accessibility": "{{ type }} (تم اختيار {{ count }} من الفلاتر)",
-      "show_less": "عرض أقل",
+      "filter_by_label": "التصفية:",
+      "filter_button": "الفلاتر",
+      "show_more": "اعرض المزيد",
+      "filter_selected_accessibility": "{{ type }} ({{ count }} المرشحات المحددة)",
+      "show_less": "اعرض أقل",
       "max_price": "أعلى سعر هو {{ price }}",
       "product_count": {
-        "one": "{{ product_count }} من {{ count }} منتج",
-        "other": "{{ product_count }} من {{ count }} منتجات"
+        "one": "{{ product_count }} من {{ count }} المنتج",
+        "other": "{{ product_count }} من {{ count }} المنتجات"
       },
       "product_count_simple": {
-        "one": "{{ count }} منتج",
-        "other": "{{ count }} منتجات"
+        "one": "{{ count }} المنتج",
+        "other": "{{ count }} المنتجات"
       },
       "reset": "إعادة تعيين",
       "sort_button": "فرز",
-      "sort_by_label": "رتب حسب:",
-      "to": "لـ",
+      "sort_by_label": "فرز حسب:",
+      "to": "إلى",
       "clear_filter": "إزالة الفلتر"
     }
   },
   "templates": {
     "search": {
       "no_results": "لم يتم العثور على نتائج لـ \"{{ terms }}\". تحقق من التهجئة أو استخدم كلمة أو عبارة مختلفة.",
-      "page": "صفحة",
+      "page": "الصفحة",
       "products": "المنتجات",
       "results_pages_with_count": {
-        "one": "{{ count }} صفحة",
-        "other": "{{ count }} صفحات"
+        "one": "{{ count }} الصفحة",
+        "other": "{{ count }} الصفحات"
       },
       "results_suggestions_with_count": {
-        "one": "{{ count }} اقتراح",
-        "other": "{{ count }} اقتراحات"
+        "one": "{{ count }} الاقتراحات",
+        "other": "{{ count }} الاقتراحات"
       },
       "results_products_with_count": {
-        "one": "{{ count }} منتج",
-        "other": "{{ count }} منتجات"
+        "one": "{{ count }} المنتج",
+        "other": "{{ count }} المنتجات"
       },
       "results_with_count": {
-        "one": "{{ count }} نتيجة",
-        "other": "{{ count }} نتائج"
+        "one": "{{ count }} النتيجة",
+        "other": "{{ count }} النتائج"
       },
       "results_with_count_and_term": {
         "one": "تم العثور على {{ count }} نتيجة لـ \"{{ terms }}\"",

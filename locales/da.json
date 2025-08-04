@@ -672,7 +672,13 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "Vælg en betalingsmulighed"
-        }
+        },
+        "network_card_payment_options": "Vælg et kortnetværk",
+        "network_card_persistence_description": "Det valgte netværk gemmes sammen med din betalingsmetode til fremtidige transaktioner.",
+        "amazon_payments_label": "Amazon betaler",
+        "amazon_payments_login_hint": "Du bliver bedt om at logge ind med Amazon.",
+        "amazon_payments_could_not_enqueue_authorize": "Der opstod et problem med at behandle din betaling. Prøv igen, eller brug en anden betalingsmetode.",
+        "amount_left_to_pay_label": "Betaling skal ske:"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."
@@ -1223,7 +1229,28 @@
         "split_shipping_multiple_shipment_notice_one_time_purchase": "Din ordre vil ankomme i %{quantity} forsendelser",
         "split_shipping_more_shipping_options": "Flere forsendelsesmuligheder",
         "split_shipping_merchandise_quantity_label_inline_primary": "Mængde: %{quantity}",
-        "split_shipping_option_free": "Gratis forsendelse"
+        "split_shipping_option_free": "Gratis forsendelse",
+        "split_shipping_option_recommended": "Anbefalet",
+        "split_shipping_option_custom": "Brugerdefineret"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "title": "Yderligere information",
+          "shipping_credential_cn": "Beboerens ID-nummer",
+          "tax_credential_it": "Skattekode (valgfrit)",
+          "tax_email_it": "PEC (valgfrit)",
+          "tax_credential_co": "MOMS",
+          "tax_credential_type_co": "Type af certifikat",
+          "shipping_credential_co": "MOMS",
+          "shipping_credential_type_co": "Type af certifikat",
+          "tax_credential_my": "TIN/Registreringsnummer",
+          "shipping_credential_my": "TIN/Registreringsnummer",
+          "tax_credential_type_mx": "Skatteregime",
+          "tax_credential_use_mx": "Brug af CFDI",
+          "shipping_credential_tw": "Nationalt ID-nummer/moms",
+          "tax_credential_tr": "Republikken Tyrkiets identitetsnummer / moms",
+          "shipping_credential_tr": "Republikken Tyrkiets identitetsnummer / moms"
+        }
       }
     },
     "sentence": {

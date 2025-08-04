@@ -2543,6 +2543,69 @@
           "six_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}, {{lineItemName5}} Menge {{lineItemQuantity5}}, {{lineItemName6}} Menge {{lineItemQuantity6}}",
           "six_and_more_products_accessibility_label": "Bestellung umfasst {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}, {{lineItemName5}} Menge {{lineItemQuantity5}}, {{lineItemName6}} Menge {{lineItemQuantity6}} und mehr",
           "view_order_details": "Details zur Bestellung anzeigen"
+        },
+        "no_filtered_results_description": "Filter entfernen oder anpassen, um Ihre Bestellungen zu sehen",
+        "no_filtered_results_title": "Keine gefilterten Ergebnisse",
+        "order_link": "Bestellung ansehen {{name}}",
+        "pagination": {
+          "nav_accessibility_label": "Navigationsschaltflächen für Bestellungen",
+          "next_accessibility_label": "Nächste Aufträge",
+          "previous": "Prev",
+          "previous_accessibility_label": "Frühere Aufträge",
+          "load_more": "Mehr laden",
+          "load_more_accessibility_label": "Mehr Aufträge laden"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Siehe Bestellung für Details",
+            "estimated_delivery": "Erwartet {{date}}",
+            "last_updated": "Zuletzt aktualisiert {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Voraussichtliche Lieferung {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "overdue": "Überfällige Zahlung",
+            "due": "Fällige Zahlung {{date}}",
+            "due_today": "Heute fällige Zahlung",
+            "due_without_date": "Fällige Zahlung",
+            "due_on_fulfillment": "Fälligkeit der Zahlung bei Erfüllung",
+            "pay_to_confirm": "Bezahlen zur Bestätigung",
+            "payment_not_due": "Noch nicht fällige Zahlung"
+          },
+          "list_view": {
+            "due": ". {{date}}",
+            "due_without_date": ".",
+            "due_on_fulfillment": "Fällig bei Erfüllung",
+            "pay_to_confirm": "Bezahlen zur Bestätigung"
+          }
+        },
+        "sort_hide_options_accessibility_label": "Sortieroptionen für bestätigte Aufträge ausblenden.",
+        "sort_show_options_accessibility_label": "Sortieroptionen für bestätigte Aufträge anzeigen.",
+        "sort_currently_sorted_by_accessibility_label": "Derzeit sortiert nach: {{option}}",
+        "sort_title": "Sort",
+        "sort": {
+          "date": {
+            "newest": "Jüngste bis älteste",
+            "oldest": "Älteste bis neueste"
+          },
+          "location": {
+            "ascending": "Standort (A-Z)",
+            "descending": "Standort (Z-A)"
+          },
+          "order_number": {
+            "descending": "Bestellnummer (von oben nach unten)"
+          },
+          "order_total": {
+            "ascending": "Auftragssumme (niedrig bis hoch)",
+            "descending": "Auftragssumme (hoch zu niedrig)"
+          }
+        },
+        "filter": {
+          "clear_section": "Abschnitt löschen",
+          "clear_all": "Alle löschen"
         }
       }
     }
