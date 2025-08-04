@@ -2659,7 +2659,45 @@
         "download_shop_to_track": "패키지 추적을 위한 스토어 다운로드",
         "track_order_with_shop": "Shop으로 주문 추적",
         "real_time_delivery_updates": "주문이 배송되면 Shop에서 실시간 배송 업데이트를 보내드립니다."
-      }
+      },
+      "edit_summary": {
+        "added_with_quantity": "추가됨 {{quantity}}",
+        "removed_with_quantity": "제거됨 {{quantity}}",
+        "updated_at": "주문이 업데이트되었습니다. {{date}}",
+        "returned": "반환됨",
+        "returned_with_quantities": "{{total}} {{delta}} 반환했습니다.",
+        "removed_with_quantities": "{{total}} {{delta}} 제거",
+        "return_line_item_removed": "반환에서 제거됨",
+        "return_line_item_removed_with_quantities": "반환에서 {{delta}} 제거"
+      },
+      "shop_pay": {
+        "order_completed_with": "주문 완료"
+      },
+      "taxes_included": "세금에 {{amount}} 포함",
+      "duties_and_taxes_included": "총액에는 관세 및 세금이 포함되어 있습니다. 배송 시 추가 요금이 부과되지 않습니다.",
+      "duties": "의무",
+      "ok_duties_tooltip": "이 주문은 다른 국가에서 배송되고 있으므로 주문 총액에 관세가 추가되었습니다.",
+      "error_duties_tooltip": "이 주문은 다른 국가에서 배송되므로 배송 시 관세 및 세금이 부과될 수 있습니다.",
+      "zero_duties_tooltip": "이 주문은 다른 국가에서 배송되고 있습니다. 이 금액의 주문에는 관세가 부과되지 않습니다.",
+      "title": "주문 {{name}}",
+      "total": "합계",
+      "unit_price": "{{price}}/ea",
+      "pagination": {
+        "load_more": "더 보기",
+        "load_more_accessibility_label": "더 많은 항목 로드",
+        "loading_accessibility_label": "항목 로드 중"
+      },
+      "login_to_view_all_order_details": "모든 주문 세부 정보를 보려면 로그인하세요.",
+      "logged_in_account_no_permission_to_order": "{{email}} 로그인하셨습니다. 이 계정에는 이 주문을 관리할 수 있는 권한이 없습니다.",
+      "log_in_to_a_different_account": "다른 계정으로 로그인",
+      "vat_invoices": {
+        "title": "부가가치세 송장"
+      },
+      "link_sent": "링크 전송",
+      "adjusted_total": "조정된 합계",
+      "due_on_date": "기한 {{date}}",
+      "due_on_fulfillment": "주문 처리 기한",
+      "due_on_receipt": "영수증 수령 시 마감"
     },
     "date": {
       "humanize": {
@@ -2693,6 +2731,11 @@
       "location_switcher_toast_message": "위치가 다음과 같이 전환되었습니다. {{locationName}}",
       "no_locations_found": "찾을 수 없는 위치",
       "try_new_search": "새 검색 시도하기"
+    },
+    "addresses": {
+      "back_button_accessibility_label": "주소 편집으로 돌아가기 {{address}}",
+      "add_address_banner": "결제 시 사용할 주소 추가",
+      "cancel_deletion_button_accessibility_label": "삭제 취소 {{address}}"
     }
   }
 }
