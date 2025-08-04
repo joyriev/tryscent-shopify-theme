@@ -695,7 +695,56 @@
             "shop_cash_not_found": "Shop Cash non è stato trovato.",
             "shop_cash_not_allowed": "Shop Cash non è consentito senza Shop Pay.",
             "shop_cash_unsupported_checkout_source": "Shop Cash non supporta questo tipo di pagamento.",
-            "shop_cash_gift_card_not_allowed": "Shop Cash non consente l'acquisto di carte regalo."
+            "shop_cash_gift_card_not_allowed": "Shop Cash non consente l'acquisto di carte regalo.",
+            "shop_cash_not_available": "Shop Cash non è supportato in questa cassa.",
+            "missing_retail_attributions": "Le attribuzioni al dettaglio sono necessarie per i pagamenti con carta di credito inseriti manualmente.",
+            "unexpected_retail_attributions": "Attribuzioni al dettaglio inaspettatamente fornite per il pagamento con carta di credito.",
+            "invalid_card_source": "Questa sessione non ha il permesso di utilizzare questa fonte di carte.",
+            "wallet_content_missing": "Manca il contenuto del portafoglio.",
+            "unauthorized_capture_method": "La configurazione del metodo di acquisizione del pagamento non è consentita.",
+            "saved_payment_methods_cvv_verification_disabled": "Il metodo di pagamento selezionato richiede la verifica del CVV che non è abilitata per questo negozio. Selezionare un altro metodo di pagamento.",
+            "store_credit_not_enabled": "Il credito del negozio non è abilitato per questo negozio.",
+            "store_credit_account_not_found": "Conto di credito del negozio non trovato.",
+            "store_credit_account_mismatch": "Il conto del credito del negozio non corrisponde all'identità dell'acquirente.",
+            "store_credit_mismatched_currency": "La valuta del conto del credito del negozio non corrisponde alla valuta del checkout.",
+            "store_credit_insufficient_funds": "I fondi del conto di credito del negozio sono insufficienti.",
+            "store_credit_buying_gift_card": "Non è possibile utilizzare il credito del negozio per acquistare una carta regalo.",
+            "gift_cards_not_allowed_for_b2b": "Le carte regalo non sono ammesse nei negozi B2B."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Il negozio non accetta mance.",
+            "only_one_tip_line_allowed": "Non sono supportate linee di suggerimenti multipli.",
+            "tips_not_allowed_for_b2b": "Le mance non sono ammesse nei negozi B2B.",
+            "currency_change_reset": "La mancia è stata azzerata a causa del cambio di valuta.",
+            "tips_not_allowed_for_deferred_purchase_options": "I suggerimenti non sono ancora supportati per le opzioni di acquisto a consumo."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Questo ordine di bozza non esiste nel negozio attuale.",
+            "staff_member_not_exist": "Questo personale non esiste nel negozio attuale.",
+            "location_not_exist": "Questa posizione non esiste nel negozio attuale.",
+            "point_of_sale_device_not_exist": "Questo dispositivo per il punto vendita non esiste nel negozio attuale.",
+            "unresolvable_target_merchandise_lines": "Le attribuzioni di vendita proposte sono irrisolvibili dato l'attuale contesto negoziale."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "La proposta dell'acquirente deve contenere termini non negoziabili."
+          },
+          "inventory": {
+            "missing_quantity_value": "Manca il campo quantità nelle righe dell'inventario dell'acquirente.",
+            "changing_behavior_not_allowed": "Questo cliente non ha il permesso di modificare il comportamento dell'inventario.",
+            "only_one_inventory_behavior_allowed": "Attualmente è consentito un solo comportamento d'inventario per ogni cassa."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Il rifiuto dei dazi non è consentito per questa cassa."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "L'attribuzione al dettaglio non è consentita per questa cassa.",
+            "retail_attribution_required": "Per questa cassa è richiesta l'attribuzione al dettaglio."
+          },
+          "captcha": {
+            "metadata_missing": "Per questo checkout è necessario completare un captcha.",
+            "job_enqueue_failed": "Il lavoro di convalida captcha non è stato avviato.",
+            "token_expired": "Il token captcha fornito è scaduto. Completare un nuovo captcha per continuare il checkout.",
+            "token_invalid": "Il token captcha fornito non era valido. Completare un nuovo captcha per continuare il checkout."
           }
         }
       }

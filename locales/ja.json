@@ -2222,8 +2222,68 @@
           "purchase_order_number_title": "PO番号",
           "change_purchase_order_number_label": "PO番号の変更",
           "change_delivery_method_link_label": "配送方法の変更",
-          "no_address": "(住所不定）"
+          "no_address": "(住所不定）",
+          "no_purchase_order_number": "(PO番号なし）",
+          "due_after_order_reviewed_html": "注文内容の確認後",
+          "review_title_free_order": "ご注文の確認と完了",
+          "payment_method_saved_company_location": "この場所のセーブカード",
+          "company_location": "会社所在地"
+        },
+        "block_title": "お客様の情報を確認する",
+        "item_header": {
+          "change_value": "変更値",
+          "value": "価値"
         }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "ニュースやオファーをメールで受け取る",
+        "post_accept_marketing_checkbox_label": "ニュースやオファーのEメールの受信を登録しました。",
+        "pending_accept_marketing_checkbox_label": "ニュースやオファーの購読を確認するためにEメールをチェックしてください。",
+        "accept_sms_checkbox_label": "ニュースやオファーをメールする",
+        "sms": {
+          "disclaimer": {
+            "description_html": "テキストでサインアップすることにより、カートのリマインダーを含む自動化されたマーケティングメッセージを、提供された電話番号で定期的に受信することに同意するものとします。同意は購入の条件ではありません。登録を解除するにはSTOPと返信してください。ヘルプが必要な場合はHELPと返信してください。メッセージの頻度は異なります。メッセージとデータ料金が適用される場合があります。当社の%{privacy_policy_link} %{terms_of_service_link}ご覧ください。",
+            "description_transactional_html": "ご注文の確認や発送の最新情報に関するテキストメッセージを受け取ることがあります。配信を停止するにはSTOPと返信してください。ヘルプが必要な場合はHELPと返信してください。メッセージの頻度は異なります。メッセージとデータ料金が適用される場合があります。当社の%{privacy_policy_modal_link} %{terms_of_service_modal_link}ご覧ください。"
+          }
+        },
+        "unsubscribe": {
+          "title": "配信停止",
+          "description": "カートのリマインダーはもう届きません。"
+        },
+        "accept_shop_pay_marketing_checkbox_label": "このストアからのニュースやオファーを受け取ります。"
+      },
+      "shop_policies": {
+        "legal_notice": "法的通知",
+        "shipping_policy": "送料",
+        "terms_of_sale": "販売条件",
+        "purchase_options_policy": "購入オプションポリシー"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "加盟店規約",
+        "privacy_policy": "プライバシーポリシー"
+      },
+      "markets": {
+        "invalid_market_manager_error": "お支払いを完了する前に、お客様の連絡先情報をご確認ください。"
+      },
+      "notifications": {
+        "title": "お知らせ"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "お支払い金額 %{order_name}",
+        "changes_summary": {
+          "added": {
+            "one": "追加",
+            "other": "追加 %{count}"
+          },
+          "removed": "削除",
+          "subtracted": "削除 %{count}",
+          "returned": "返品 %{count}",
+          "return_line_item_removed": "戻り値から%{count}削除"
+        },
+        "additional_payment_requested": "%{total_outstanding}金の支払いが必要です。",
+        "checkout_review_and_pay": "ご注文%{order_name}が更新されました。変更内容を確認し、お支払いを済ませてご注文を確定してください。",
+        "order_updated_on": "ご注文が更新されました %{last_edited_at}.",
+        "order_review_and_pay": "ご注文が更新されました。ご注文を確認し、お支払いください。"
       }
     }
   },
