@@ -2299,12 +2299,12 @@
         "verify_button": "확인",
         "verify_button_accessibility_label": "일회용 비밀번호 확인",
         "cancel_button": "취소",
-        "cancel_button_accessibility_label": "이메일 편집 취소",
+        "cancel_button_accessibility_label": "이메일 수정 취소",
         "description": "다음 주소로 전송된 코드를 입력합니다. {{email}}"
       },
       "email_update_success_modal": {
         "title": "이메일 확인",
-        "description": "이메일이 성공적으로 업데이트되었습니다. 로그인으로 이동 중입니다."
+        "description": "이메일이 성공적으로 업데이트되었습니다. 로그인으로 리디렉션됩니다."
       },
       "loading_finished_accessibility_message": "계정 정보가 로드되었습니다.",
       "profile_card": {
@@ -2314,6 +2314,14 @@
         "no_name_provided_accessibility_label": "이름이 추가되지 않았습니다.",
         "phone_number_help_text": "로그인에 사용된 전화번호는 변경할 수 없습니다.",
         "save_accessibility_label": "프로필 저장"
+      },
+      "profile_update_confirmation_message": "프로필 업데이트",
+      "people": {
+        "pagination": {
+          "load_more": "더 보기",
+          "load_more_accessibility_label": "더 많은 사람 불러오기",
+          "loading_accessibility_label": "사람 로드"
+        }
       }
     },
     "email_capture": {
@@ -2341,7 +2349,44 @@
         "was_expected_by": "{{date}}까지 예상되었습니다"
       },
       "group_title_label": "부분: {{groupTitle}}",
-      "group_title_label_with_parent": "대상: {{groupTitle}}"
+      "group_title_label_with_parent": "대상: {{groupTitle}}",
+      "switch_order_type_pending_orders_accessibility_label": "주문 유형 전환, 현재 대기 중인 주문 보기",
+      "switch_order_type_confirmed_orders_accessibility_label": "주문 유형 전환, 현재 확인된 주문 보기",
+      "order_list": {
+        "column_headers": {
+          "total": "합계"
+        },
+        "delivered": "배달됨 {{date}}",
+        "empty_state_order_source_description": "{{email}} 접수된 주문만 여기에 표시됩니다.",
+        "empty_state_subtitle": "스토어로 이동하여 주문합니다.",
+        "empty_state_title": "아직 주문이 없습니다.",
+        "empty_state_with_location_title": "다음에 대한 주문이 없습니다. {{locationName}}",
+        "empty_state_title_for_pending_orders": "대기 중인 주문 없음",
+        "no_order_banner": "주문 상태 페이지에서 확장 기능을 테스트하려면 주문을 생성합니다.",
+        "estimated_shortform": "동쪽. {{date}}",
+        "estimated_delivery": "예상 {{date}}",
+        "one_images_accessibility_label": "주문에는 다음이 포함됩니다. {{lineItemName1}}",
+        "two_images_accessibility_label": "주문에는 다음이 포함됩니다. {{lineItemName1}}, {{lineItemName2}}",
+        "three_images_accessibility_label": "주문에는 다음이 포함됩니다. {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "주문에는 다음이 포함됩니다. {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "주문에 {{lineItemName1}}, {{lineItemName2}}, {{numberOfAdditionalProducts}} 더 많은 상품이 포함됩니다.",
+        "more_than_four_products_accessibility_label": "주문에 {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{numberOfAdditionalProducts}} 더 많은 제품 포함",
+        "plus_more_products": "{{numberOfAdditionalProducts}} 제품",
+        "carousel": {
+          "one_products_accessibility_label": "주문에 {{lineItemName1}} 수량 {{lineItemQuantity1}} 포함됩니다 {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "주문에는 {{lineItemName1}} 수량 {{lineItemQuantity1}}, {{lineItemName2}} 수량 {{lineItemQuantity2}} 포함됩니다 {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "주문에는 {{lineItemName1}} 수량 {{lineItemQuantity1}}, {{lineItemName2}} 수량 {{lineItemQuantity2}}, {{lineItemName3}} 수량 {{lineItemQuantity3}} 포함됩니다.",
+          "four_products_accessibility_label": "주문에는 {{lineItemName1}} 수량 {{lineItemQuantity1}}, {{lineItemName2}} 수량 {{lineItemQuantity2}}, {{lineItemName3}} 수량 {{lineItemQuantity3}}, {{lineItemName4}} 수량 {{lineItemQuantity4}} 포함됩니다 {{lineItemName3}} ",
+          "five_products_accessibility_label": "주문에는 {{lineItemName1}} 수량 {{lineItemQuantity1}}, {{lineItemName2}} 수량 {{lineItemQuantity2}}, {{lineItemName3}} 수량 {{lineItemQuantity3}}, {{lineItemName4}} 수량 {{lineItemQuantity4}}, {{lineItemName5}} 수량 {{lineItemQuantity5}} 포함되어 있습니다 {{lineItemName3}} ",
+          "six_products_accessibility_label": "주문에는 {{lineItemName1}} 수량 {{lineItemQuantity1}}, {{lineItemName2}} 수량 {{lineItemQuantity2}}, {{lineItemName3}} 수량 {{lineItemQuantity3}} 포함됩니다, {{lineItemName4}} 수량 {{lineItemQuantity4}}, {{lineItemName5}} 수량 {{lineItemQuantity5}}, {{lineItemName6}} 수량 {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "주문에는 {{lineItemName1}} 수량 {{lineItemQuantity1}}, {{lineItemName2}} 수량 {{lineItemQuantity2}}, {{lineItemName3}} 수량 {{lineItemQuantity3}} 포함됩니다, {{lineItemName4}} 수량 {{lineItemQuantity4}}, {{lineItemName5}} 수량 {{lineItemQuantity5}}, {{lineItemName6}} 수량 {{lineItemQuantity6}} 등",
+          "previous": "이전 게시물"
+        },
+        "items": {
+          "one": "{{count}} 항목",
+          "other": "{{count}} 항목"
+        }
+      }
     },
     "order_details": {
       "group_title_label_with_parent": "대상: {{groupTitle}}"
