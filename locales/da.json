@@ -2245,7 +2245,69 @@
       "invalid_province_in_country": "er ikke en gyldig provins i %{country}",
       "invalid_state_in_country": "er ikke en gyldig tilstand i %{country}",
       "invalid_for_card_type": "er ikke gyldig",
-      "invalid_type": "Vi tager desværre ikke imod kort af denne type."
+      "invalid_type": "Vi tager desværre ikke imod kort af denne type.",
+      "invalid_start_date_or_issue_number_for_debit": "en gyldig startdato eller et gyldigt udstedelsesnummer er påkrævet",
+      "reset_password_html": "Denne e-mailadresse er allerede knyttet til en konto. Hvis denne konto er din, kan du <a href=\"/account/login#recover\">nulstille din adgangskode</a>",
+      "verify_email": "Vi har sendt en e-mail til %{customer_email}, klik venligst på det medfølgende link for at bekræfte din e-mailadresse.",
+      "product_not_available": "Produktet er ikke offentliggjort for denne kunde.",
+      "shop_404": {
+        "title": "Opret et e-handelswebsted og sælg online! Software til e-handel fra Shopify",
+        "heros": {
+          "store_not_exist": "Denne butik findes ikke.",
+          "no_storefront": "Denne butik har endnu ikke en hjemmeside."
+        },
+        "owner_ctas": {
+          "header": "Er du butiksejer?",
+          "fix_domain": "Når du er færdig med at konfigurere din nye webadresse, skal du gå til %{domain_settings_link}. Klik på \"Forbind domæne\", og indtast: %{domain}.<br>Hvis du har problemer med at komme ind i din butik, kan du prøve siden %{forgot_your_store_link}.",
+          "forgot_your_store_link_text": "glemte din butik",
+          "add_storefront": "Du kan opsætte din hjemmeside ved at tilføje kanalen Online Store i dit %{admin_link}. Hvis du har problemer med at komme ind i din butik, kan du prøve siden %{forgot_your_store_link}.",
+          "admin_link_text": "Administrator"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Sælg personligt",
+            "caption": "Få de funktioner, du har brug for til at drive din detailbutik, uanset om du starter op eller skalerer op."
+          },
+          "open_a_store": {
+            "header": "Åbn en ny Shopify-butik",
+            "caption": "Start en 3-dages gratis prøveperiode, og fortsæt derefter for 1 $/måned i de næste 3 måneder."
+          },
+          "editions": {
+            "header": "Tjek Shopify-udgaverne ud",
+            "caption": "Med mere end 100 produktopdateringer kan du være mere produktiv, kreativ og handlekraftig, end du nogensinde havde forestillet dig.",
+            "link_text": "Udforsk de seneste udgaver"
+          },
+          "store_owner": {
+            "header": "Er du butiksejer?",
+            "caption": "Har du problemer med at komme ind i din butik? Prøv funktionen %{forgot_your_store_link}. Hvis du gerne vil genaktivere din butik, skal du kontakte %{shopify_support_link}.",
+            "shopify_support_link_text": "Support til Shopify"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Fejl ved nulstilling af adgangskode",
+        "subscribe_error": "Abonnementsfejl",
+        "unsubscribe_error": "Afmeldingsfejl",
+        "no_account_found": "Ingen konto fundet med den e-mail.",
+        "invalid_credentials": "Forkert e-mail eller adgangskode.",
+        "denylisted_reset_password": "Du kunne ikke få adgang til din konto, fordi den nuværende adgangskode ikke er sikker. Du vil modtage en e-mail for at opdatere din adgangskode."
+      },
+      "address": {
+        "updated": "Opdateret adresse med succes.",
+        "error_updating": "Fejl ved opdatering af adresse",
+        "created": "Vellykket oprettet adresse",
+        "error_creating": "Fejl ved oprettelse af adresse.",
+        "deleted": "Vellykket slettet adresse",
+        "error_deleting": "Fejl ved sletning af adresse."
+      },
+      "line_item": {
+        "item_status": {
+          "decrement_fulfilled_line_item": "Returnerede %{delta} af %{total}",
+          "decrement_return_line_item": "Fjernet %{delta} fra returnering"
+        }
+      }
     }
   },
   "customer_accounts": {
