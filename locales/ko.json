@@ -530,6 +530,9 @@
         "payment_option": {
           "accessibility_label": "결제 옵션을 선택하세요"
         }
+      },
+      "order_summary": {
+        "for_add_on": "대상: %{group_title}"
       }
     }
   },
@@ -569,6 +572,17 @@
           "invalid_code": "올바른 6자리 코드를 입력하세요"
         }
       }
+    },
+    "orders": {
+      "order_status": {
+        "expected_by": "{{date}}까지 예상됨",
+        "was_expected_by": "{{date}}까지 예상되었습니다"
+      },
+      "group_title_label": "부분: {{groupTitle}}",
+      "group_title_label_with_parent": "대상: {{groupTitle}}"
+    },
+    "order_details": {
+      "group_title_label_with_parent": "대상: {{groupTitle}}"
     }
   }
 }
