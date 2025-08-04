@@ -1519,7 +1519,69 @@
         "gift_card_expired": "Esta tarjeta regalo ha caducado",
         "gift_card_depleted": "Esta tarjeta regalo no tiene fondos",
         "gift_card_currency_mismatch": "Con este pedido sólo se pueden utilizar tarjetas regalo en %{checkout_currency}.",
-        "gift_cards_not_supported_with_deferred_purchase_options": "Las tarjetas regalo no son compatibles con las opciones de compra aplazada."
+        "gift_cards_not_supported_with_deferred_purchase_options": "Las tarjetas regalo no son compatibles con las opciones de compra aplazada.",
+        "gift_card_buying_gift_card": "No se puede utilizar una tarjeta regalo para comprar otra tarjeta regalo",
+        "payment_gateway_missing": "Elija un método de pago.",
+        "payment_gateway_needs_paid_plan_error": "Este método de pago no está disponible en la tienda en este momento",
+        "payment_gateway_not_in_test_mode": "no está configurado para probar pedidos. Esta tienda no puede aceptar pedidos reales ni pagos reales.",
+        "payment_gateway_incompatible_with_multi_currency": "Para realizar el pago en su moneda local, debe pagar con tarjeta de crédito.",
+        "payment_gateway_unsupported_for_subscriptions": "Este método de pago no está disponible para los pedidos de suscripción.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Esta forma de pago no está disponible para las opciones de compra aplazada.",
+        "payment_gateway_unsupported_for_country": "Este método de pago no está disponible para su país de envío.",
+        "payment_gateway_unsupported_for_development_store_html": "Para realizar un pedido de prueba, deberá utilizar una pasarela de pago de prueba. Más información sobre <a href=\"%{docs_link}\">pedidos de prueba en tiendas de desarrollo</a>.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Has alcanzado el límite de pedidos de tiendas en desarrollo con este procesador de pagos. Para realizar otro pedido, deberá utilizar una pasarela de pago de prueba. Más información sobre cómo <a href=\"%{docs_link}\">probar pedidos en tiendas en desarrollo</a>.",
+        "purchase_options_agreement_blank": "Para continuar con su compra, acepte las condiciones de compra aplazada o periódica.",
+        "physical_gift_card_invalid_quantity": "Las partidas de tarjetas regalo físicas deben tener una cantidad que coincida con el número de códigos de tarjetas regalo.",
+        "physical_gift_card_duplicate_code": "La partida de tarjeta regalo física contiene un código duplicado.",
+        "physical_gift_card_invalid_code": "El código de la tarjeta regalo física no es válido.",
+        "email_blank": "Introduzca un correo electrónico",
+        "phone_blank": "Introduzca un número de teléfono",
+        "address_country_invalid": "Seleccione un país/región de la lista",
+        "address_zip_invalid": "Introduzca un código postal válido",
+        "gift_card_invalid": "La tarjeta regalo \"%{last_four_characters}\" ya no es válida.",
+        "vaulting_agreement_blank": "Debe guardar su tarjeta porque el pago del saldo de este pedido se efectuará más adelante.",
+        "sms_marketing_phone_invalid": "Introduzca un número de teléfono válido",
+        "address_suggestion_did_you_mean_html": "¿Querías decir %{html}?",
+        "split_cart_international_shipping_not_supported": "Todos los artículos deben utilizar el mismo método de entrega cuando se envían internacionalmente. Actualiza el método de entrega o crea varios pedidos.",
+        "invalid_delivery_address_reference_handle": "No se ha podido encontrar ninguna dirección de entrega disponible."
+      },
+      "store_credit_errors": {
+        "generic_error": "Ha habido un problema con el crédito de tu tienda. Inténtalo de nuevo o recarga la página."
+      },
+      "redeemable_errors": {
+        "shop_cash": {
+          "currency_mismatch": "La moneda ha cambiado. Por favor, revise su Shop Cash y oferta."
+        },
+        "gift_card": {
+          "duplicate": "La tarjeta regalo ya se ha aplicado a su pedido",
+          "insufficient_funds": "Esta tarjeta regalo no tiene fondos",
+          "expired": "Esta tarjeta regalo ha caducado",
+          "not_available": "Esta tarjeta regalo ya no está disponible",
+          "invalid": "Introduzca una tarjeta regalo válida",
+          "currency_mismatch": "Sólo se aceptan tarjetas regalo en %{shop_currency}.",
+          "generic": "No se ha podido añadir la tarjeta regalo al pasar por caja",
+          "throttle_limit_exceeded": "Ha superado el número máximo de intentos. Vuelva a intentarlo más tarde.",
+          "no_longer_available": "Esta tarjeta regalo ya no se puede utilizar con este pago"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "La instrucción de mercancía %{position} %{name} contiene un ID estable vacío.",
+        "invalid_stable_id_target": "La instrucción de mercancía %{position} %{name} hace referencia al ID de establo %{stable_id}, pero ese ID de establo no se encuentra en las líneas de mercancía.",
+        "duplicate_variant_id": "La instrucción de mercancía %{position} %{name} contiene un ID de variante %{variant_id} duplicado.",
+        "invalid_variant_id_target": "La instrucción de mercancía %{name} hace referencia al ID de variante %{variant_id}, pero esa variante no se encuentra en las líneas de mercancía.",
+        "invalid_price_override_target": "La instrucción de mercancía de anulación de precio para el artículo de línea %{stable_id} no es válida, ya que es un componente de paquete."
+      },
+      "payment_errors": {
+        "amount_too_small": "El importe mínimo de pago debe ser superior a 0,50 USD. Vuelva a intentarlo con un importe superior.",
+        "method_not_available": "El método de pago solicitado no está disponible. Elija otro método de pago e inténtelo de nuevo.",
+        "available_methods_updated": "Se han actualizado los métodos de pago disponibles.",
+        "generic_error": "Se ha producido un problema al procesar su pago. Inténtalo de nuevo o utiliza otro método de pago.",
+        "rejected_transaction": "Su pago ha sido rechazado. Inténtalo de nuevo o utiliza otro método de pago.",
+        "credit_card_processing": "Su pago no puede ser procesado por razones técnicas. Inténtalo de nuevo en unos minutos o utiliza otro método de pago.",
+        "checkout_amount_changed": "Tu pago no ha podido ser procesado porque el importe a pagar ha cambiado. Por favor, compruebe su pedido e inténtelo de nuevo.",
+        "deferred_payment_not_allowed": "No se admiten pagos aplazados. Por favor, compruebe su pedido e inténtelo de nuevo.",
+        "deferred_payment_required": "Este pedido requiere un pago aplazado. Por favor, compruebe su pedido e inténtelo de nuevo.",
+        "deferred_amount_changed": "Su pago no ha podido ser procesado porque el importe del pago aplazado ha cambiado. Por favor, compruebe su pedido e inténtelo de nuevo."
       }
     },
     "sentence": {
