@@ -2486,6 +2486,70 @@
         "items": {
           "one": "{{count}} genstand",
           "other": "{{count}} elementer"
+        },
+        "order_number": "Bestil {{name}}",
+        "pagination": {
+          "previous": "Prev",
+          "previous_accessibility_label": "Tidligere ordrer",
+          "load_more": "Læs mere"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Se ordre for detaljer",
+            "last_updated": "Sidst opdateret {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Est. delivery {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "overdue": "Forfalden betaling",
+            "due": "Forfalden betaling {{date}}",
+            "due_today": "Betaling skal ske i dag",
+            "due_without_date": "Forfalden betaling",
+            "due_on_fulfillment": "Betaling ved opfyldelse",
+            "payment_not_due": "Betaling endnu ikke forfalden"
+          },
+          "list_view": {
+            "overdue": "Forsinket",
+            "due": "På grund af {{date}}",
+            "due_today": "Skal afleveres i dag",
+            "due_without_date": "På grund af",
+            "due_on_fulfillment": "Forfalder ved opfyldelse"
+          }
+        },
+        "sort_by": "Sorter efter: {{option}}",
+        "sort_hide_options_accessibility_label": "Skjul sorteringsmuligheder for bekræftede ordrer.",
+        "sort_show_options_accessibility_label": "Vis sorteringsmuligheder for bekræftede ordrer.",
+        "sort_title": "Sortere",
+        "sort": {
+          "date": {
+            "newest": "Nyeste til ældste",
+            "oldest": "Ældste til nyeste"
+          },
+          "location": {
+            "ascending": "Placering (A-Z)",
+            "descending": "Placering (Z-A)"
+          },
+          "order_number": {
+            "ascending": "Ordrenummer (lavt til højt)",
+            "descending": "Ordrenummer (højt til lavt)"
+          },
+          "order_total": {
+            "ascending": "Ordre i alt (lav til høj)",
+            "descending": "Ordre i alt (høj til lav)"
+          }
+        },
+        "location_filter_picker": {
+          "all_location": "Alle steder",
+          "current_location": "Nuværende placering",
+          "switch_view": "Visning af kontakt"
+        },
+        "filter_title": "Filtre",
+        "filter": {
+          "clear_section": "Klar sektion",
+          "clear_all": "Ryd alle"
         }
       }
     },
