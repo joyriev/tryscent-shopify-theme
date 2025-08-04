@@ -2828,7 +2828,52 @@
         "emv_details": {
           "source": "QUELLE:"
         }
-      }
+      },
+      "edit_summary": {
+        "added_with_quantity": "Hinzugefügt {{quantity}}",
+        "removed_with_quantity": "Entfernt {{quantity}}",
+        "updated_at": "Ihre Bestellung wurde aktualisiert am {{date}}",
+        "returned": "Zurückgeschickt",
+        "returned_with_quantities": "Zurückgegebene {{delta}} von {{total}}",
+        "removed_with_quantities": "Entfernte {{delta}} von {{total}}",
+        "return_line_item_removed": "Aus der Rückgabe entfernt",
+        "return_line_item_removed_with_quantities": "{{delta}} aus Rückgabe entfernt"
+      },
+      "taxes_included": "Einschließlich {{amount}} an Steuern",
+      "duties_and_taxes_included": "Der Gesamtbetrag enthält Zölle und Steuern. Keine zusätzlichen Kosten für die Lieferung.",
+      "duties": "Zuständigkeiten",
+      "ok_duties_tooltip": "Diese Bestellung wird aus einem anderen Land versandt, daher wurden Zölle zu Ihrem Gesamtbetrag hinzugerechnet.",
+      "error_duties_tooltip": "Diese Bestellung wird aus einem anderen Land verschickt, daher können bei der Lieferung Zölle und Steuern anfallen.",
+      "zero_duties_tooltip": "Diese Bestellung wird aus einem anderen Land verschickt. Auf Bestellungen dieses Wertes werden keine Zölle erhoben.",
+      "tip": "Tipp",
+      "total": "Insgesamt",
+      "unit_price": "{{price}}/ea",
+      "pagination": {
+        "load_more": "Mehr laden",
+        "loading_accessibility_label": "Laden von Artikeln"
+      },
+      "login_to_view_all_order_details": "Loggen Sie sich ein, um alle Bestelldetails zu sehen.",
+      "log_in": "Einloggen",
+      "logged_in_account_no_permission_to_order": "Sie sind als {{email}} eingeloggt. Dieses Konto hat nicht die Berechtigung, diese Bestellung zu verwalten.",
+      "log_in_to_a_different_account": "Bei einem anderen Konto anmelden",
+      "fees": {
+        "return_shipping_fee": "Rücksendung"
+      },
+      "vat_invoices": {
+        "title": "Mehrwertsteuerrechnungen"
+      },
+      "cash_rounding": "Rundung des Bargelds",
+      "adjusted_total": "Angepasste Summe",
+      "due_on_date": ". {{date}}",
+      "due_on_fulfillment": "Fällig bei Erfüllung"
+    },
+    "addresses": {
+      "add_button_text": "hinzufügen",
+      "back_button_accessibility_label": "Zurück zur Bearbeitungsadresse {{address}}",
+      "add_address_banner": "Adressen zur Verwendung an der Kasse hinzufügen",
+      "address_deleted_notification": "Adresse gelöscht",
+      "cancel_deletion_button": "Abbrechen",
+      "cancel_deletion_button_accessibility_label": "Abbrechen des Löschens {{address}}"
     }
   }
 }
