@@ -2307,6 +2307,43 @@
           "decrement_fulfilled_line_item": "Returnerede %{delta} af %{total}",
           "decrement_return_line_item": "Fjernet %{delta} fra returnering"
         }
+      },
+      "order": {
+        "financial_status": {
+          "unpaid": "Ubetalt",
+          "partially_refunded": "Delvist tilbagebetalt"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Opfyldt",
+          "complete": "Komplet",
+          "unfulfilled": "Uopfyldt"
+        },
+        "transaction_status": {
+          "failure": "Fiasko"
+        },
+        "cancel_reason": {
+          "inventory": "Varen er ikke tilgængelig",
+          "customer": "Kunde ændrede/annullerede ordre",
+          "staff": "Fejl i personalet"
+        }
+      },
+      "cart": {
+        "only_n_items_available": "Du kan kun lægge %{count} %{name} i indkøbskurven.",
+        "too_many_items_in_cart": "Du kan ikke lægge flere %{name} i kurven.",
+        "only_one_added_to_cart": "Der blev kun lagt 1 vare i din kurv på grund af tilgængelighed.",
+        "only_n_added_to_cart": "Der blev kun lagt %{quantity} varer i din kurv på grund af tilgængelighed.",
+        "maximum_available_quantity_reached": "Det maksimale antal af denne vare er allerede i din kurv.",
+        "less_than_minimum": "Denne vare har et minimum af %{min}.",
+        "more_than_maximum": "Denne vare har et maksimum på %{max}.",
+        "empty_update": "Kan ikke opdatere tom kurv",
+        "missing_parameters": "ingen gyldig id- eller linjeparameter",
+        "invalid_input": "%{parameter} parameter er ugyldig.",
+        "too_many_line_items_error": "Din indkøbskurv kan ikke indeholde mere end %{max} varer.",
+        "link_expired": "Link udløbet",
+        "stock_problems_html": "En eller flere varer er ikke længere tilgængelige. Vi har lavet en <a href='%{link}'>opdateret indkøbskurv</a>.",
+        "items_changed": "Et eller flere elementer er ændret.",
+        "product_sold_out": "Produktet%{name}' er allerede udsolgt.",
+        "selling_plan_not_available_for_company_locations": "Kun engangskøb er muligt for B2B-ordrer"
       }
     }
   },

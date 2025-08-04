@@ -742,7 +742,60 @@
             "job_enqueue_failed": "No se ha podido poner en cola el trabajo de validación de captcha.",
             "job_already_queued": "La validación de captcha ya se ha puesto en cola para este token de captcha.",
             "token_expired": "El código captcha proporcionado ha caducado. Complete un nuevo captcha para continuar con el pago.",
-            "token_invalid": "El captcha proporcionado no es válido. Rellena un nuevo captcha para continuar con el pago."
+            "token_invalid": "El captcha proporcionado no es válido. Rellena un nuevo captcha para continuar con el pago.",
+            "token_not_valid_for_session": "El captcha proporcionado no se puede utilizar con esta comprobación."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "El importe recibido debe estar en la moneda de la tienda."
+          },
+          "checkout_source": {
+            "revoked": "Esta comprobación ya no está disponible."
+          }
+        },
+        "full_price": "Precio completo:",
+        "title": "Pago - {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Pasar por caja",
+        "loading": "Cargando...",
+        "loading_title": "Pago - {{shopName}}",
+        "submit_for_review_notice_label": "El pago no se efectuará hasta que se revise su pedido",
+        "continue_to_payment_plans_button_label": "Continuar con los planes de pago",
+        "choose_delivery_strategy": "Elija un método de entrega",
+        "autocomplete_zero_item": "No hay artículos disponibles",
+        "autocomplete_powered_by_google": "Desarrollado por {{brandName}}",
+        "processing": "Procesando...",
+        "stepper": {
+          "decrease": "Disminuir {{type}}"
+        },
+        "dates": {
+          "weekdays": {
+            "monday": "Lunes",
+            "tuesday": "Martes",
+            "wednesday": "Miércoles",
+            "thursday": "Jueves",
+            "friday": "Viernes",
+            "saturday": "Sábado",
+            "sunday": "Domingo"
+          },
+          "weekdays_abbreviation": {
+            "monday": "Mo",
+            "tuesday": "Tu",
+            "wednesday": "Nosotros",
+            "thursday": "Th",
+            "friday": "P.",
+            "saturday": "Sa",
+            "sunday": "Su"
+          },
+          "months": {
+            "january": "Enero",
+            "february": "Febrero",
+            "march": "Marzo",
+            "april": "Abril",
+            "may": "Mayo",
+            "june": "Junio",
+            "july": "Julio",
+            "august": "Agosto",
+            "september": "Septiembre",
+            "october": "Octubre"
           }
         }
       }
