@@ -458,21 +458,21 @@
       "none": "Vous n'avez encore passé aucune commande."
     },
     "recover_password": {
-      "title": "Réinitialiser son mot de passe",
-      "subtext": "Nous vous ferons parvenir un e-mail pour réinitialiser votre mot de passe",
-      "success": "Nous vous avons envoyé un e-mail contenant un lien pour mettre à jour votre mot de passe."
+      "title": "Réinitialiser votre mot de passe",
+      "subtext": "Nous vous enverrons un e-mail pour réinitialiser votre mot de passe.",
+      "success": "Nous vous avons envoyé un e-mail avec un lien pour mettre à jour votre mot de passe."
     },
     "register": {
       "title": "Créer un compte",
       "first_name": "Prénom",
       "last_name": "Nom de famille",
-      "email": "E-mail",
+      "email": "Courriel",
       "password": "Mot de passe",
       "submit": "Créer"
     },
     "reset_password": {
       "title": "Réinitialiser le mot de passe du compte",
-      "subtext": "Saisissez un nouveau mot de passe",
+      "subtext": "Saisir un nouveau mot de passe",
       "password": "Mot de passe",
       "password_confirm": "Confirmer le mot de passe",
       "submit": "Réinitialiser le mot de passe"
@@ -506,34 +506,34 @@
   },
   "gift_cards": {
     "issued": {
-      "title": "Voici le solde de votre carte‑cadeau {{ shop }} d'une valeur de {{ value }} !",
-      "subtext": "Votre carte-cadeau",
-      "gift_card_code": "Code de la carte-cadeau",
+      "title": "Voici le solde de votre carte cadeau {{ value }} pour {{ shop }}!",
+      "subtext": "Votre carte cadeau",
+      "gift_card_code": "Code de la carte cadeau",
       "shop_link": "Visiter la boutique en ligne",
       "add_to_apple_wallet": "Ajouter à Apple Wallet",
-      "qr_image_alt": "Code QR : scannez-le pour utiliser votre carte-cadeau",
-      "copy_code": "Copier le code de la carte‑cadeau",
+      "qr_image_alt": "Code QR - à scanner pour échanger la carte cadeau",
+      "copy_code": "Copier le code de la carte cadeau",
       "expired": "Expiré",
-      "copy_code_success": "Le code a bien été copié",
-      "how_to_use_gift_card": "Utiliser le code de la carte‑cadeau en ligne ou le code QR en boutique",
-      "expiration_date": "Expire le {{ expires_on }}"
+      "copy_code_success": "Code copié avec succès",
+      "how_to_use_gift_card": "Utilisez le code de la carte cadeau en ligne ou le code QR en magasin",
+      "expiration_date": "Expiration {{ expires_on }}"
     }
   },
   "recipient": {
     "form": {
-      "checkbox": "Je veux envoyer ce produit comme cadeau",
-      "email_label": "E‑mail du destinataire",
-      "email": "E‑mail",
+      "checkbox": "Je veux l'envoyer comme cadeau",
+      "email_label": "Courriel du destinataire",
+      "email": "Courriel",
       "name_label": "Nom du destinataire (facultatif)",
       "name": "Nom",
-      "message_label": "Message (facultatif)",
+      "message_label": "Message (optional)",
       "message": "Message",
-      "max_characters": "{{ max_chars }} caractères au maximum",
-      "email_label_optional_for_no_js_behavior": "E‑mail du destinataire (facultatif)",
-      "send_on": "AAAA-MM-JJ",
-      "send_on_label": "Envoyer le (facultatif)",
-      "expanded": "Formulaire de destinataire de carte-cadeau agrandi",
-      "collapsed": "Formulaire de destinataire de carte-cadeau réduit"
+      "max_characters": "{{ max_chars }} caractères max",
+      "email_label_optional_for_no_js_behavior": "Courriel du destinataire (facultatif)",
+      "send_on": "YYYY-MM-DD",
+      "send_on_label": "Envoyer (facultatif)",
+      "expanded": "Extension du formulaire pour le bénéficiaire de la carte-cadeau",
+      "collapsed": "Formulaire pour le destinataire de la carte-cadeau effondré"
     }
   },
   "shopify": {

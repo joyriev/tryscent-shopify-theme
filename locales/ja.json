@@ -2284,6 +2284,99 @@
         "checkout_review_and_pay": "ご注文%{order_name}が更新されました。変更内容を確認し、お支払いを済ませてご注文を確定してください。",
         "order_updated_on": "ご注文が更新されました %{last_edited_at}.",
         "order_review_and_pay": "ご注文が更新されました。ご注文を確認し、お支払いください。"
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "会社所在地は、すべての注文をレビューのためにドラフトとして提出するように設定されている。",
+        "missing_address": "配送先住所がありません：会社の所在地住所がなく、1回限りの住所の使用が無効になっています。"
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "クレジットカードに請求されます %{amount}",
+        "payment_total_label": "支払総額",
+        "change_currency_link": "に変更する。 %{currency_name}",
+        "card_provider_fx_charges_warning": "お客様のカード会社は、%{currency_code}取引に対して手数料を請求する場合があります。",
+        "currency_not_supported_by_shop": "選択した通貨は使用できなくなりました。すべての価格は %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "カートの中身が配送国に基づいて更新されました。",
+        "cart_and_currency_updated_based_on_country": "カートの中身と通貨が、配送先の国に合わせて更新されました。"
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "国/地域が更新されました。チェックアウトを続行するには、配送先住所を入力してください。"
+      },
+      "tips": {
+        "title": "チップの追加",
+        "description": "チームへの応援は %{shop_name}",
+        "presets_description": "チップのパーセンテージを選択する",
+        "custom_label": "カスタムチップ",
+        "add_tip": "チップの追加",
+        "update_tip": "更新のヒント",
+        "message": "ありがとう。"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "購入 %{product_name}",
+          "one": "%{product_name} %{count}商品を購入する",
+          "other": "%{product_name} %{count}商品を購入する"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "other": "%{count} 日"
+          },
+          "week": {
+            "one": "週間",
+            "other": "%{count} 週間"
+          },
+          "month": {
+            "other": "%{count} 月"
+          },
+          "year": {
+            "other": "%{count} 年"
+          }
+        },
+        "recurring_totals": "%{total_price} すべて %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "最初に%{total_price_with_discount}支払い、次に%{recurring_total}支払う%{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "最初の支払い %{total_price}",
+            "other": "最初の%{count}支払い%{total_price}それぞれ"
+          },
+          "following_cycles": "次に、%{total_price} %{interval}ごとに更新される。"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": "その場合、%{count} %{total_price} %{count}支払いとなる。",
+            "other": "その後、それぞれ%{count} %{total_price} %{count}支払う。"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "支払い方法",
+        "title": "支払い方法",
+        "update_card_button_label": "更新カード",
+        "delete_customer_mandate": {
+          "generic_error": "リクエストの処理に問題が発生しました。",
+          "success_message": "お支払い方法が正常に削除されました"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "試行回数が多すぎる",
+          "description": "数分後にもう一度お試しください。"
+        },
+        "line_to_check_out": "チェックアウトの列に並ぶ",
+        "cart_summary_heading": "カート",
+        "merchandise": {
+          "available": "利用可能",
+          "sold_out": "完売"
+        },
+        "inventory": {
+          "partial_inventory_banner": "カートの一部が売り切れとなり、チェックアウト時に購入できなくなりました。",
+          "sold_out": {
+            "heading": "カートが売り切れました"
+          }
+        }
       }
     }
   },
