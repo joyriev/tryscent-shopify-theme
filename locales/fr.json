@@ -1332,7 +1332,68 @@
           "other": "Il y a %{count} cartes expirées, que vous pouvez consulter et modifier dans votre compte."
         },
         "local_payment_method_receiver_notice": "Après avoir passé votre commande, vous recevrez les détails du paiement. Effectuez le paiement à un guichet automatique ou en ligne dans les {{dueDays}}.",
-        "order_edit_banner_title": "Le paiement de {{amount_owed}} est nécessaire"
+        "order_edit_banner_title": "Le paiement de {{amount_owed}} est nécessaire",
+        "order_edit_banner_items_added": {
+          "other": "Ajouté %{count}"
+        },
+        "order_edit_banner_items_removed": {
+          "in_full": "Supprimé",
+          "with_quantities": "Suppression de {{delta}} de {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Renvoyé {{quantity}}",
+          "with_quantities": "Retourné {{delta}} de {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Supprimé du retour"
+        },
+        "order_edit_banner_multiple_items_added": "Ajouté {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Supprimé {{amount}}",
+        "order_edit_banner_single_item_returned": "Renvoyé",
+        "order_edit_banner_multiple_items_returned": "Renvoyé {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Supprimé du retour",
+        "gift_card_wrapper": {
+          "heading": "Carte cadeau",
+          "apply_gift_card_label": "Appliquer une carte cadeau",
+          "apply_another_gift_card_label": "Appliquer une autre carte cadeau",
+          "gift_card_label": "Carte cadeau %{identifier}",
+          "payment_tag": "Carte cadeau",
+          "add_label": "Ajouter une carte cadeau",
+          "manage_label": "Gérer les cartes-cadeaux"
+        },
+        "gift_card_store_credit": {
+          "add_label": "Ajouter une carte cadeau ou un crédit magasin",
+          "manage_label": "Gérer les cartes-cadeaux ou les crédits de magasin"
+        },
+        "gift_card_checkbox_label": "Appliquer la carte cadeau",
+        "custom_onsite_payment_method_modal": {
+          "title": "Confirmation de paiement sur site personnalisée"
+        },
+        "markets_pro_disclaimer_label": "En cliquant ci-dessous et en complétant votre commande, vous acceptez d'acheter votre/vos article(s) à Global-e en tant que marchand enregistré pour cette transaction, selon les %{markets_pro_terms} et %{privacy_policy} de Global-e. Global-e est un fournisseur international de services d'exécution pour %{shop_name}.",
+        "markets_pro_disclaimer_terms_and_conditions": "Conditions générales d'utilisation",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Conditions générales du commerçant enregistré",
+        "markets_pro_disclaimer_privacy_policy_title": "Politique de confidentialité de Merchant of Record",
+        "purchase_order_number": {
+          "title": "Numéro de commande",
+          "label": "Numéro de commande (facultatif)"
+        },
+        "alternative_payment_currency_total_notice": "Remarque : des frais vous seront facturés %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Note : le total converti est de %{amount_due}.",
+        "payment_method": "Mode de paiement",
+        "expired_payment_method": "Le mode de paiement sélectionné a expiré",
+        "payment_method_update_failed": "La mise à jour du mode de paiement a échoué.",
+        "payment_method_incompatible_with_payment_terms": "Le mode de paiement est incompatible avec les conditions de paiement.",
+        "proposed_gateway_unavailable": "La passerelle de paiement proposée n'est pas disponible",
+        "pay_in_installments_split_pay_short": "4 paiements de %{amount}",
+        "gift_cards_unavailable": "Votre carte cadeau ne peut plus être appliquée à cette commande et a été supprimée.",
+        "payment_flexibility_terms_id_mismatch": "Flexibilité des modalités de paiement Inadéquation des identifiants",
+        "payment_option": {
+          "accessibility_label": "Choisir une option de paiement"
+        }
+      },
+      "billing": {
+        "billing_address_title": "Projet de loi",
+        "same_as_shipping": "Identique à l'adresse de livraison"
       }
     },
     "sentence": {
