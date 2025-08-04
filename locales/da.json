@@ -528,7 +528,8 @@
     "checkout": {
       "order_summary": {
         "total_price_label": "Samlet pris",
-        "total_due_label": "Samlet skyldig beløb"
+        "total_due_label": "Samlet skyldig beløb",
+        "for_add_on": "Til: %{group_title}"
       },
       "payment": {
         "payment_option": {
@@ -557,6 +558,17 @@
         "title": "Bekræft e-mail",
         "description": "E-mail opdateret succesfuldt. Omdirigerer til login."
       }
+    },
+    "orders": {
+      "order_status": {
+        "expected_by": "Forventet inden {{date}}",
+        "was_expected_by": "Var forventet inden {{date}}"
+      },
+      "group_title_label": "Del af: {{groupTitle}}",
+      "group_title_label_with_parent": "Til: {{groupTitle}}"
+    },
+    "order_details": {
+      "group_title_label_with_parent": "Til: {{groupTitle}}"
     }
   }
 }
