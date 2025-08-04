@@ -2703,7 +2703,54 @@
       }
     },
     "order_details": {
-      "group_title_label_with_parent": "Para: {{groupTitle}}"
+      "group_title_label_with_parent": "Para: {{groupTitle}}",
+      "grouped_view_components": {
+        "collapse_line_items": "Ocultar {{count}} elementos",
+        "line_item_summary_accessibility_label": "{{productTitle}}Cantidad: {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "Artículos del paquete {{productTitle}} "
+      },
+      "loading": "Carga de los datos del pedido",
+      "loading_finished_accessibility_message": "Se han cargado los datos del pedido",
+      "location": "Ubicación",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} cantidad {{quantity}}",
+        "next": "Mostrar siguientes elementos",
+        "previous": "Mostrar elementos anteriores",
+        "load_more_items": {
+          "one": "Cargar {{count}} más elementos",
+          "other": "Cargar {{count}} más elementos"
+        }
+      },
+      "not_applicable": "N/A",
+      "partially_refunded_label": "REEMBOLSADO PARCIALMENTE",
+      "payment": {
+        "status_in_review": "Pago tras la revisión",
+        "status_unpaid": "Fecha de pago {{date}}",
+        "payment_type": {
+          "gift_card": "Tarjeta regalo",
+          "store_credit": "Crédito de la tienda",
+          "cash_on_delivery": "Contra reembolso"
+        },
+        "card_payment_details": "que termina con {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "que termina con {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Crédito de la tienda - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Pagado a plazos con Shop Pay",
+          "view_schedule": "Ver calendario"
+        },
+        "manual_payment_methods": {
+          "money_order": "Giro postal - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Contra reembolso - {{formattedTransactionAmount}}",
+          "bank_deposit": "Depósitos bancarios - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "payment_details": "Datos de pago"
+        },
+        "emv_details": {
+          "aid": "AYUDA:",
+          "source": "FUENTE:"
+        }
+      }
     },
     "date": {
       "humanize": {
