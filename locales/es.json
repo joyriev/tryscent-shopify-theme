@@ -584,7 +584,45 @@
         "card_vaulted_company_location": "Tarjeta guardada para esta ubicación",
         "expiry_long": "(Expira %{month}/%{year})",
         "expiry_short": "(Exp %{month}/%{year})",
-        "saved_by_payment_method": "Salvado por %{payment_method}"
+        "saved_by_payment_method": "Salvado por %{payment_method}",
+        "different_credit_card_label": "Utilizar otra tarjeta de crédito",
+        "same_billing_address_label": "La misma que la dirección de envío",
+        "different_billing_address_label": "Utilizar una dirección de facturación diferente",
+        "billing_address_associated_with_mandate": "Utilizar la dirección asociada al método de pago",
+        "billing_address_associated_with_mandate_info": "Si desea cambiar su dirección de facturación, elimine y vuelva a introducir los datos de su tarjeta de crédito",
+        "free_order_notice_html": "Su pedido es <strong>gratuito</strong>. No se requiere ningún pago.",
+        "express_checkout_free_order": "No se le cobrará por un pedido gratuito",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Su pedido está cubierto por su tarjeta regalo.",
+          "other": "Su pedido está cubierto por sus tarjetas regalo."
+        },
+        "offsite_gateway_redirect_hint": "Tras hacer clic en \"%{button_label}\", será redirigido a %{gateway_label} para completar su compra de forma segura.",
+        "offsite_gateway_review_page_redirect_hint": "Después de revisar su pedido, será redirigido a %{gateway_label} para completar su compra de forma segura.",
+        "offsite_gateway_redirect_hint_no_button_label": "Después de continuar, será redirigido a %{gateway_label} para completar su compra de forma segura.",
+        "receiver_payment_experience_hint": "Tras realizar su pedido, recibirá los datos de pago. Realice el pago en Multibanco o en línea en un plazo de %{due_days} días.",
+        "billing_address_description": "Seleccione la dirección que coincida con su tarjeta o método de pago.",
+        "billing_address_description_no_shipping_address": "Introduzca la dirección que corresponda a su tarjeta o método de pago.",
+        "no_js_credit_card_fields_redirect_hint": "Se le redirigirá para que añada su información de pago.",
+        "card_fields_container_prefix": "Contenedor de campo para:",
+        "card_fields_unavailable_html": {
+          "one": "Los pagos con tarjeta de crédito y débito no están disponibles en este momento.<br><a href=\"%{current_url}\">Actualice esta página</a> o inténtelo más tarde.",
+          "other": "Los pagos con tarjeta de crédito y débito no están disponibles en este momento.<br><a href=\"%{current_url}\">Actualice esta página</a> o pruebe con otro método de pago."
+        },
+        "card_fields_processing_error": "Se ha producido un problema al procesar el pago. Intenta actualizar esta página o comprueba tu conexión a Internet.",
+        "technical_error": "Los pagos no pueden procesarse en este momento debido a un problema técnico. Vuelva a intentarlo en unos minutos.",
+        "missing_credit_card_error": "Introduzca los datos de su tarjeta para completar el pago",
+        "shop_pay_ideal_unavailable_error": "iDEAL no está disponible para este pedido. Elija otro método de pago.",
+        "payment_method_not_available_for_shipping_address_error": "El método de pago no está disponible para la dirección de envío seleccionada. Elija otro método de pago.",
+        "billing_address_not_supported_for_payment_method_error": "Este método de pago no está disponible para su dirección de facturación y moneda. Prueba con otro método de pago.",
+        "generic_incorrect_card_info": "No se han podido verificar tus datos de pago. Comprueba los datos de tu tarjeta e inténtalo de nuevo.",
+        "sofort_label": "Transferencia bancaria",
+        "paypal_wallet_label": "Cartera PayPal",
+        "shop_pay_installments_label": "Tienda Pago a plazos",
+        "klarna_pay_later_label": "Pague más tarde con Klarna",
+        "klarna_pay_now_label": "Pague ahora con Klarna",
+        "multibanco_label": "ATM",
+        "eps_label": "transferencia eps",
+        "blik_label": "Estaño"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
