@@ -2261,6 +2261,51 @@
           "decrement_fulfilled_line_item": "Zurückgegebene %{delta} von %{total}",
           "decrement_return_line_item": "%{delta} aus Rückgabe entfernt"
         }
+      },
+      "order": {
+        "financial_status": {
+          "pending": "Anhängig",
+          "voided": "Ungültig",
+          "refunded": "Erstattet"
+        },
+        "fulfillment_status": {
+          "unfulfilled": "Unerfüllte",
+          "restocked": "Wiederaufgefüllt"
+        },
+        "transaction_status": {
+          "pending": "Anhängig",
+          "failure": "Versagen"
+        },
+        "cancel_reason": {
+          "declined": "Zahlung abgelehnt",
+          "inventory": "Nicht verfügbare Artikel",
+          "fraud": "Betrügerische Bestellung",
+          "customer": "Kunde hat Auftrag geändert/storniert",
+          "staff": "Fehler des Personals",
+          "other": "Andere"
+        }
+      },
+      "cart": {
+        "only_n_items_available": "Sie können nur %{count} %{name} in den Warenkorb legen.",
+        "too_many_items_in_cart": "Sie können nicht mehr %{name} in den Warenkorb legen.",
+        "only_one_added_to_cart": "Aufgrund der Verfügbarkeit wurde nur 1 Artikel in Ihren Warenkorb gelegt.",
+        "only_n_added_to_cart": "Nur %{quantity} Artikel wurden aufgrund der Verfügbarkeit in Ihren Warenkorb gelegt.",
+        "maximum_available_quantity_reached": "Die maximale Menge dieses Artikels befindet sich bereits in Ihrem Warenkorb.",
+        "more_than_maximum": "Dieser Posten hat einen Höchstwert von %{max}.",
+        "not_respect_step": "Sie können diese Position nur in Schritten von %{step}.",
+        "all_items_in_cart": "Alle %{count} %{name} befinden sich in Ihrem Warenkorb.",
+        "missing_parameters": "keine gültige ID oder Zeilenparameter",
+        "generic_error": "Warenkorb Fehler",
+        "invalid_input": "%{parameter} Parameter ungültig ist.",
+        "too_many_line_items_error": "Ihr Warenkorb kann nicht mehr als %{max} Artikel enthalten.",
+        "link_no_longer_exists": "Der Link existiert nicht mehr.",
+        "stock_problems_html": "Ein oder mehrere Artikel sind nicht mehr verfügbar. Wir haben einen <a href='%{link}'>aktualisierten Warenkorb</a> bereitgestellt.",
+        "items_changed": "Ein oder mehrere Elemente haben sich geändert.",
+        "product_sold_out": "Das Produkt%{name}' ist bereits ausverkauft.",
+        "variant_not_found": "Kann keine Variante finden",
+        "variant_requires_selling_plan": "Die Variante kann nur mit einem Verkaufsplan erworben werden.",
+        "selling_plan_not_available_for_company_locations": "Für B2B-Bestellungen ist nur ein einmaliger Kauf möglich.",
+        "digital_product_not_available_for_company_locations": "Dieser Artikel kann nicht zu einer B2B-Bestellung hinzugefügt werden"
       }
     }
   },
