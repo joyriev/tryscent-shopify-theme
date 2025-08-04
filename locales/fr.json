@@ -555,7 +555,58 @@
       },
       "order_summary": {
         "for_add_on": "Pour : %{group_title}"
+      },
+      "address_management": {
+        "confirm_address_deletion": "Êtes-vous sûr de vouloir supprimer l'adresse {{address}}?"
+      },
+      "general": {
+        "page_title": "Sortie de caisse",
+        "skip_to_content": "Skip to content",
+        "breadcrumb": "Fil d'Ariane",
+        "complete_purchase_button_label": "Commande complète",
+        "edit_link_label": "Editer",
+        "cart": "Chariot",
+        "continue_to_shipping_method": "Poursuivre l'expédition",
+        "continue_to_payment_method": "Poursuivre le paiement",
+        "continue_to_review": "Ordre de révision",
+        "back_to_cart": "Retourner au panier",
+        "back_to_contact_information": "Retour à l'information",
+        "back_to_shipping_method": "Retour à l'expédition",
+        "choose_shipping_method": "Choisir un mode d'expédition",
+        "choose_payment_method": "Choisir un mode de paiement",
+        "choose_billing_address": "Choisir une adresse de facturation",
+        "contact_us_html": "Contactez-nous pour plus d'informations",
+        "autocomplete_single_item": "1 article disponible",
+        "autocomplete_multi_item": "{{number}} articles disponibles",
+        "autocomplete_selection": "{{number}} de {{total}}",
+        "forwarding_indicator": {
+          "new_window": "S'ouvre dans une nouvelle fenêtre.",
+          "external": "Ouvre un site web externe.",
+          "external_and_new_window": "Ouvre le site web externe dans une nouvelle fenêtre."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Sortie de caisse"
+        },
+        "tooltip_accessibility_label": "Plus d'informations",
+        "qr_code": "QR code",
+        "errors": {
+          "only_empty_terms_accepted": "Cette politique n'accepte que les termes vides.",
+          "session_identifier_not_unique_error": "Quelque chose n'a pas fonctionné avec votre commande, veuillez réessayer de passer à la caisse.",
+          "line_item_limit_reached": "Le nombre maximum de lignes a été atteint.",
+          "session_is_already_finished": "Cette session de vérification a déjà été finalisée.",
+          "merchandise": {
+            "only_value_constraint": "Seules les valeurs exactes sont autorisées dans la saisie des marchandises.",
+            "merchandise_not_found": "Produit non trouvé.",
+            "merchandise_variant_not_found": "Variante de produit non trouvée.",
+            "merchandise_not_applicable": "La variante du produit ne peut pas être achetée.",
+            "mixed_currencies": "La caisse contient des postes avec des devises différentes.",
+            "bundle_products_not_supported_for_b2b": "Les articles groupés ne peuvent pas être ajoutés aux commandes B2B pour ce site."
+          }
+        }
       }
+    },
+    "sentence": {
+      "last_word_connector": "et "
     }
   }
 }

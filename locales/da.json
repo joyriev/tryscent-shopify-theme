@@ -231,10 +231,10 @@
       "title": "Søgeresultater",
       "page": "Side",
       "products": "Produkter",
-      "search_for": "Søg efter “{{ terms }}”",
+      "search_for": "Søg efter \"{{ terms }}”",
       "results_with_count_and_term": {
-        "one": "Der blev fundet {{ count }} resultat for “{{ terms }}”",
-        "other": "Der blev fundet {{ count }} resultater for “{{ terms }}”"
+        "one": "{{ count }} resultat fundet for \"{{ terms }}”",
+        "other": "{{ count }} resultater fundet for \"{{ terms }}”"
       },
       "results_pages_with_count": {
         "one": "{{ count }} side",
@@ -252,17 +252,17 @@
       }
     },
     "cart": {
-      "cart": "Indkøbskurv"
+      "cart": "Vogn"
     },
     "contact": {
       "form": {
         "name": "Navn",
-        "email": "Mailadresse",
+        "email": "E-mail",
         "phone": "Telefonnummer",
-        "comment": "Kommentar",
+        "comment": "Sådan gør du",
         "send": "Send",
-        "post_success": "Tak for din henvendelse. Vi kontakter dig hurtigst muligt.",
-        "error_heading": "Juster følgende:",
+        "post_success": "Tak, fordi du kontaktede os. Vi vender tilbage til dig så hurtigt som muligt.",
+        "error_heading": "Juster venligst følgende:",
         "title": "Kontaktformular"
       }
     },
@@ -373,29 +373,29 @@
     }
   },
   "localization": {
-    "country_label": "Land/område",
+    "country_label": "Land/region",
     "language_label": "Sprog",
-    "update_language": "Opdater sprog",
-    "update_country": "Opdater land/område",
-    "search": "Søg",
-    "popular_countries_regions": "Populære lande/områder",
-    "country_results_count": "{{ count }} lande/områder er fundet"
+    "update_language": "Opdatering af sprog",
+    "update_country": "Opdater land/region",
+    "search": "Søg efter",
+    "popular_countries_regions": "Populære lande/regioner",
+    "country_results_count": "{{ count }} lande/regioner fundet"
   },
   "customer": {
     "account": {
       "title": "Konto",
       "details": "Kontooplysninger",
       "view_addresses": "Se adresser",
-      "return": "Tilbage til kontooplysninger"
+      "return": "Gå tilbage til kontooplysninger"
     },
     "account_fallback": "Konto",
     "activate_account": {
-      "title": "Aktivér konto",
-      "subtext": "Opret en adgangskode, så du kan aktivere din konto.",
+      "title": "Aktiver konto",
+      "subtext": "Opret din adgangskode for at aktivere din konto.",
       "password": "Adgangskode",
       "password_confirm": "Bekræft adgangskode",
-      "submit": "Aktivér konto",
-      "cancel": "Afslå invitation"
+      "submit": "Aktiver konto",
+      "cancel": "Afvis invitation"
     },
     "addresses": {
       "title": "Adresser",
@@ -404,13 +404,13 @@
       "edit_address": "Rediger adresse",
       "first_name": "Fornavn",
       "last_name": "Efternavn",
-      "company": "Firma",
+      "company": "Virksomhed",
       "address1": "Adresse 1",
       "address2": "Adresse 2",
       "city": "By",
-      "country": "Land/område",
-      "province": "Provins",
-      "zip": "Postnummer",
+      "country": "Land/region",
+      "province": "Provinser",
+      "zip": "Postnummer/ZIP-kode",
       "phone": "Telefon",
       "set_default": "Indstil som standardadresse",
       "add": "Tilføj adresse",
