@@ -2385,6 +2385,55 @@
         "items": {
           "one": "{{count}} 항목",
           "other": "{{count}} 항목"
+        },
+        "order_link": "주문 보기 {{name}}",
+        "order_number": "주문 {{name}}",
+        "pagination": {
+          "load_more": "더 보기",
+          "load_more_accessibility_label": "더 많은 주문 로드"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "자세한 내용은 주문 보기",
+            "estimated_delivery": "예상 {{date}}",
+            "last_updated": "마지막 업데이트 {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "예상 배송 {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "overdue": "결제 연체",
+            "due": "결제 기한 {{date}}",
+            "due_today": "오늘 결제 기한",
+            "payment_not_due": "아직 결제 기한이 지나지 않았습니다."
+          },
+          "list_view": {
+            "overdue": "기한 초과",
+            "due": "기한 {{date}}",
+            "due_today": "오늘 마감",
+            "paid": "유료",
+            "due_on_fulfillment": "주문 처리 기한",
+            "payment_not_due": "아직 기한이 없습니다."
+          }
+        },
+        "sort_hide_options_accessibility_label": "확정 주문에 대한 정렬 옵션을 숨깁니다.",
+        "sort_show_options_accessibility_label": "확정 주문에 대한 정렬 옵션을 표시합니다.",
+        "sort_currently_sorted_by_accessibility_label": "현재 정렬 기준입니다: {{option}}",
+        "sort": {
+          "date": {
+            "newest": "최신 정보부터 오래된 정보까지",
+            "oldest": "가장 오래된 것부터 최신 것까지"
+          },
+          "order_number": {
+            "ascending": "주문 번호(낮음~높음)",
+            "descending": "주문 번호(높음~낮음)"
+          },
+          "order_total": {
+            "ascending": "주문 합계(낮은 주문부터 높은 주문까지)",
+            "descending": "주문 합계(고가부터 저가까지)"
+          }
         }
       }
     },
