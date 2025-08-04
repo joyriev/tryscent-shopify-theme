@@ -3007,13 +3007,13 @@
           "one": "{{count}} عنصر",
           "other": "{{count}} عناصر"
         },
-        "no_filtered_results_description": "قم بإزالة أو تعديل الفلاتر لرؤية طلباتك",
-        "no_filtered_results_title": "لا توجد نتائج مفلترة",
+        "no_filtered_results_description": "قم بإزالة الفلاتر أو ضبطها لرؤية طلباتك",
+        "no_filtered_results_title": "لا توجد نتائج تمت تصفيتها",
         "order_link": "عرض الطلب {{name}}",
-        "order_number": "طلب {{name}}",
+        "order_number": "الطلب {{name}}",
         "orders_title": "تم التأكيد",
         "pagination": {
-          "nav_accessibility_label": "أزرار التنقل في الطلبات",
+          "nav_accessibility_label": "أزرار تصفح الطلبات",
           "next": "التالي",
           "next_accessibility_label": "الطلبات التالية",
           "previous": "السابق",
@@ -3023,56 +3023,56 @@
         },
         "order_status_message": {
           "list_view": {
-            "view_order_for_details": "عرض الطلب للتفاصيل",
-            "estimated_delivery": "متوقع {{date}}",
+            "view_order_for_details": "عرض الطلب للحصول على التفاصيل",
+            "estimated_delivery": "المتوقع {{date}}",
             "last_updated": "آخر تحديث {{date}}"
           },
           "table_view": {
-            "estimated_delivery": "التسليم المتوقع {{date}}"
+            "estimated_delivery": "تقدير التسليم {{date}}"
           }
         },
         "payment_status": {
           "gallery_view": {
-            "overdue": "الدفع متأخر",
-            "due": "المبلغ المستحق {{date}}",
-            "due_today": "الدفع مستحق اليوم",
-            "due_without_date": "المبلغ المستحق",
-            "pay_to_confirm": "ادفع للتأكيد",
-            "due_on_fulfillment": "الدفع مستحق عند التنفيذ",
-            "payment_not_due": "الدفع لم يحين بعد"
+            "overdue": "المدفوعات المتأخرة",
+            "due": "الدفع المستحق {{date}}",
+            "due_today": "الدفع المستحق اليوم",
+            "due_without_date": "الدفع المستحق",
+            "pay_to_confirm": "الدفع للتأكيد",
+            "due_on_fulfillment": "الدفع المستحق عند الاستيفاء",
+            "payment_not_due": "الدفع لم يحن موعده بعد"
           },
           "list_view": {
-            "overdue": "متأخر",
-            "due": "مستحق في {{date}}",
-            "paid": "مدفوع",
-            "due_today": "مستحق اليوم",
-            "pay_to_confirm": "ادفع للتأكيد",
-            "payment_not_due": "لم يحين موعده بعد",
-            "due_without_date": "مستحق",
-            "due_on_fulfillment": "مستحق عند التنفيذ"
+            "overdue": "متأخر عن موعده",
+            "due": "المستحق {{date}}",
+            "paid": "مدفوعة الأجر",
+            "due_today": "موعد استحقاقها اليوم",
+            "pay_to_confirm": "الدفع للتأكيد",
+            "payment_not_due": "لم يحن موعده بعد",
+            "due_without_date": "المستحق",
+            "due_on_fulfillment": "مستحق عند الاستيفاء"
           }
         },
-        "sort_by": "الترتيب حسب: {{option}}",
+        "sort_by": "فرز حسب: {{option}}",
         "sort_hide_options_accessibility_label": "إخفاء خيارات الفرز للطلبات المؤكدة.",
-        "sort_show_options_accessibility_label": "عرض خيارات الفرز للطلبات المؤكدة.",
+        "sort_show_options_accessibility_label": "إظهار خيارات الفرز للطلبات المؤكدة.",
         "sort_currently_sorted_by_accessibility_label": "مرتبة حالياً حسب: {{option}}",
         "sort_title": "فرز",
         "sort": {
           "date": {
-            "oldest": "الأقدم إلى الأحدث",
-            "newest": "الأحدث إلى الأقدم"
+            "oldest": "من الأقدم إلى الأحدث",
+            "newest": "من الأحدث إلى الأقدم"
           },
           "location": {
-            "ascending": "الموقع (أ-ي)",
-            "descending": "الموقع (ز-أ)"
+            "ascending": "الموقع (من ألف إلى ياء)",
+            "descending": "الموقع (Z-A)"
           },
           "order_number": {
             "ascending": "رقم الطلب (من الأقل إلى الأعلى)",
-            "descending": "رقم الطلب (من الأعلى إلى الأدنى)"
+            "descending": "رقم الطلب (من الأعلى إلى الأقل)"
           },
           "order_total": {
-            "descending": "إجمالي الطلب (من الأعلى إلى الأدنى)",
-            "ascending": "إجمالي الطلب (من الأقل إلى الأعلى)"
+            "descending": "إجمالي الطلبات (من الأعلى إلى الأقل)",
+            "ascending": "إجمالي الطلبات (من الأقل إلى الأعلى)"
           }
         },
         "location_filter_picker": {
@@ -3081,7 +3081,7 @@
           "switch_view": "تبديل العرض"
         },
         "filter": {
-          "clear_section": "مسح القسم",
+          "clear_section": "قسم واضح",
           "clear_all": "مسح الكل",
           "apply": "تقديم",
           "date": {
@@ -3096,7 +3096,7 @@
             "last_365_days": "آخر 12 شهراً"
           }
         },
-        "filter_title": "تصفية",
+        "filter_title": "الفلاتر",
         "show_order_actions_accessibility_label": "عرض إجراءات الطلب للطلب {{name}}"
       },
       "order_status": {
