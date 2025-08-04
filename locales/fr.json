@@ -650,7 +650,61 @@
             "selected_pickup_option_no_longer_available": "L'option d'enlèvement précédemment sélectionnée n'est plus disponible.",
             "local_pickup_no_delivery_strategy_available": "Aucune stratégie de livraison locale n'a été trouvée.",
             "origin_location_id_required": "Un identifiant du lieu d'origine est requis lorsque la méthode de livraison RETAIL est demandée.",
-            "invalid_origin_location_id": "Impossible de trouver un lieu correspondant à l'ID du lieu d'origine."
+            "invalid_origin_location_id": "Impossible de trouver un lieu correspondant à l'ID du lieu d'origine.",
+            "origin_location_id_not_allowed": "Les méthodes de livraison demandées ne prennent pas en charge l'identification de l'emplacement d'origine.",
+            "auto_fulfill_not_allowed": "Cette session n'est pas autorisée à modifier le comportement d'exécution.",
+            "auto_fulfill_required": "Le remplissage automatique est requis lorsque la méthode de livraison RETAIL est demandée.",
+            "prefetch_shipping_rates_used": "Les tarifs d'expédition préfabriqués ne devraient jamais être des tarifs de retour.",
+            "fulfillment_constraints_not_satisfied": "Une ou plusieurs contraintes d'exécution n'ont pas été satisfaites.",
+            "must_fulfill_from_constraint_not_satisfied": "Les contraintes d'exécution ne sont pas satisfaites parce que les articles ne peuvent pas être exécutés à partir des emplacements requis.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Les contraintes d'exécution ne sont pas satisfaites parce que les articles ne peuvent pas être exécutés au même endroit.",
+            "delivery_strategy_conditions_not_satisfied": "Des stratégies de livraison sont disponibles pour ce lieu, mais leurs conditions ne sont pas remplies.",
+            "out_of_stock_at_origin_location": "Pas de stock au lieu d'origine.",
+            "invalid_signature": "Signature de remise non valide."
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "Les remises ne sont pas autorisées dans les magasins B2B.",
+            "custom_discount_not_honoured": "La remise personnalisée fournie n'a pas été honorée.",
+            "unsupported_expectation": "La ligne d'escompte fournie contenait une attente que la police ne pouvait pas interpréter.",
+            "additional_requested_discount_code_discarded": "{{code}} est valable mais non applicable. Vérifier les conditions de réduction.",
+            "additional_requested_discount_discarded": "Votre réduction est valable mais non applicable. Vérifiez les conditions de remise.",
+            "allocations_mismatch": "Votre code de réduction a changé. Vérifiez votre panier et réessayez.",
+            "discount_title_too_long": "Le titre de la remise ne doit pas dépasser 255 caractères."
+          },
+          "tax": {
+            "unresolvable_tax_terms": "Les conditions proposées ne peuvent être résolues dans le contexte actuel des négociations.",
+            "delivery_price_is_abstract": "Le prix de livraison correspondant est abstrait.",
+            "tax_inclusivity_mismatch": "Renégocier avec une valeur concrète de totalTaxAndDutyAmount ou de totalAmountIncludedInTarget.",
+            "tax_exemption_not_supported": "Les exonérations fiscales ne sont pas prises en charge pour la session de négociation en cours.",
+            "delivery_tax_exemption_not_supported": "Les exonérations fiscales pour les lignes de livraison ne sont pas prises en charge actuellement.",
+            "proposed_allocations_required": "Le champ \"allocations proposées\" est manquant.",
+            "merchandise_terms_must_be_defined": "Les termes de la marchandise doivent être définis.",
+            "delivery_terms_must_be_defined": "Les conditions de livraison doivent être définies.",
+            "merchandise_discount_terms_must_be_defined": "Les conditions de remise de marchandises doivent être définies.",
+            "delivery_discount_terms_must_be_defined": "Les conditions de remise de livraison doivent être définies.",
+            "allocated_required": "Champ \"alloué\" manquant.",
+            "value_required": "Champ \"valeur\" manquant.",
+            "line_splits_not_supported": "Le champ \"lignes de marchandises\" doit être divisé de manière à ce que chacune d'entre elles ait une seule ligne dans la proposition du vendeur."
+          },
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "Les paiements manuels ne sont pas autorisés dans les magasins B2B.",
+            "total_amount_mismatch": "Le total à payer ne correspond pas à la somme des paiements.",
+            "subscription_terms_not_accepted": "Conditions d'abonnement non acceptées.",
+            "missing_session_id": "Informations manquantes sur la session de la carte de crédit.",
+            "gateway_not_supported": "La passerelle de paiement ne permet pas de stocker la méthode de paiement.",
+            "credit_card_last_name_required": "'nom de famille' ne peut pas être nul.",
+            "installments_amount_invalid": "Montant non valide pour la transaction de paiements échelonnés.",
+            "installments_test_mode_not_allowed": "Le mode test n'est pas autorisé.",
+            "installments_gift_card_not_allowed": "Les paiements échelonnés ne permettent pas l'utilisation de cartes-cadeaux.",
+            "installments_unsupported_currency": "Les paiements échelonnés ne prennent pas en charge cette devise.",
+            "installments_unsupported_shipping": "La livraison à cette adresse n'est pas prise en charge par Installments.",
+            "installments_unsupported_billing": "Les paiements échelonnés ne prennent pas en charge cette adresse de facturation.",
+            "installments_unsupported_subscriptions": "Les paiements échelonnés ne prennent pas en charge les abonnements.",
+            "installments_ineligible_line_item": "Le mode de paiement échelonné est désactivé pour un poste de cet achat.",
+            "shop_cash_not_found": "Shop Cash n'a pas été trouvé.",
+            "shop_cash_not_allowed": "Le Shop Cash n'est pas autorisé sans le Shop Pay.",
+            "shop_cash_unsupported_checkout_source": "Shop Cash ne prend pas en charge ce mode de paiement.",
+            "shop_cash_gift_card_not_allowed": "Shop Cash ne permet pas l'achat de cartes-cadeaux."
           }
         }
       }
