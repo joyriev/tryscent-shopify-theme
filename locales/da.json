@@ -2601,7 +2601,52 @@
       }
     },
     "order_details": {
-      "group_title_label_with_parent": "Til: {{groupTitle}}"
+      "group_title_label_with_parent": "For: {{groupTitle}}",
+      "grouped_view_components": {
+        "expand_line_items": "Vis {{count}} elementer",
+        "collapse_line_items": "Skjul {{count}} elementer",
+        "line_item_summary_accessibility_label": "{{productTitle}}, Antal: {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "Varer i {{productTitle}} bundt"
+      },
+      "hide_items": "Skjul genstande",
+      "loading": "Indlæsning af ordredetaljer",
+      "loading_finished_accessibility_message": "Ordreoplysninger er blevet indlæst",
+      "location": "Beliggenhed",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} mængde {{quantity}}",
+        "next": "Vis de næste emner",
+        "previous": "Vis tidligere emner",
+        "load_more_items": {
+          "one": "Indlæs {{count}} flere elementer",
+          "other": "Indlæs {{count}} flere elementer"
+        }
+      },
+      "no_data_provided_accessibility_label": "{{fieldName}} er tom",
+      "not_applicable": "N/A",
+      "payment": {
+        "status_in_review": "Betaling skal ske efter gennemgang",
+        "status_unpaid": "Betaling skal ske den {{date}}",
+        "payment_type": {
+          "store_credit": "Butikskredit",
+          "cash_on_delivery": "Kontant ved levering (COD)",
+          "bank_deposit": "Bankindskud",
+          "manual": "Manuel"
+        },
+        "card_payment_details": "der slutter med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "der slutter med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Butikskredit {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Betalt med Shop Pay-afdrag"
+        },
+        "manual_payment_methods": {
+          "cash_on_delivery": "Kontant ved levering (COD) {{formattedTransactionAmount}}",
+          "bank_deposit": "Bankindskud {{formattedTransactionAmount}}",
+          "manual": "Håndbog {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_less": "Vis mindre"
+        }
+      }
     },
     "navigation_and_structure": {
       "contact_email_subject": "Kontakt fra {{shopName}} onlinebutik",
