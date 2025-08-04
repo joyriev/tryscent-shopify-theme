@@ -2152,7 +2152,45 @@
       "body": "Körper"
     },
     "addresses": {
-      "pincode": "Pincode"
+      "pincode": "Pincode",
+      "province": "Provinzen",
+      "state": "Staat",
+      "county": "Landkreis",
+      "emirate": "Emirat",
+      "governorate": "Gouvernement",
+      "confirm": "Sind Sie sicher, dass Sie diese Adresse löschen möchten?"
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "Meistverkaufte",
+        "price_ascending": "Preis, niedrig bis hoch",
+        "price_descending": "Preis, hoch bis niedrig"
+      }
+    },
+    "errors": {
+      "blank": "kann nicht leer sein",
+      "credit_card_session_expired": "Die Autorisierung Ihrer Kreditkarte ist abgelaufen, bitte geben Sie Ihre Zahlungsinformationen erneut ein. Ihre Karte wurde noch nicht belastet.",
+      "empty": "kann nicht leer sein",
+      "invalid_email": "muss eine gültige E-Mail Adresse sein",
+      "discount_limit_reached": "Dieser Rabatt hat sein Nutzungslimit erreicht",
+      "discount_not_found": "Es konnte kein gültiger Rabatt für den eingegebenen Code gefunden werden",
+      "customer_already_used_once_per_customer_discount_notice": "Dieser Rabatt hat sein Nutzungslimit erreicht",
+      "gift_card_already_applied": "Der Code wurde bereits auf Ihre Kasse angewendet",
+      "gift_card_code_invalid": "Code ist ungültig",
+      "gift_card_currency_mismatch": "Ihre Geschenkkarte ist in %{gift_card_currency}. Kontaktieren Sie uns, um ihn in %{checkout_currency} neu ausstellen zu lassen.",
+      "gift_card_depleted": "Auf dieser Geschenkkarte ist kein Guthaben mehr vorhanden",
+      "gift_card_disabled": "Geschenkkarte ist deaktiviert",
+      "gift_card_expired": "Die Geschenkkarte ist abgelaufen",
+      "bad_domain": "enthält einen ungültigen Domänennamen",
+      "taken": "wurde bereits eingenommen",
+      "too_short": "zu kurz ist (Minimum ist %{count} Zeichen)",
+      "too_long": "zu lang ist (Maximum ist %{count} Zeichen)",
+      "contains_spaces": "mit Leerzeichen beginnt oder endet.",
+      "invalid_state_in_country": "ist kein gültiger Zustand in %{country}",
+      "less_than_or_equal_to": "muss kleiner oder gleich sein als %{count}",
+      "full_name_required": "Geben Sie einen Vornamen und einen Nachnamen ein",
+      "invalid_for_card_type": "ist nicht gültig",
+      "invalid_type": "Wir akzeptieren leider keine Karten dieser Art"
     }
   },
   "customer_accounts": {

@@ -3755,17 +3755,17 @@
       },
       "load_orders_error": {
         "title": "تعذر تحميل الطلبات",
-        "description": "أعد المحاولة أو عد لاحقًا.",
-        "retry_button": "أعد المحاولة"
+        "description": "أعد المحاولة أو عد لاحقاً.",
+        "retry_button": "إعادة المحاولة"
       },
       "load_paypal_error": {
         "description": "هناك مشكلة في تحميل PayPal. يرجى المحاولة مرة أخرى."
       },
       "logout_everywhere": {
-        "description": "حدث خطأ أثناء تسجيل الخروج. يرجى المحاولة مرة أخرى."
+        "description": "حدث خطأ ما أثناء تسجيل الخروج. يرجى المحاولة مرة أخرى."
       },
       "no_access_to_locations": {
-        "description": "ليس لديك حق الوصول إلى أي مواقع"
+        "description": "لا يمكنك الوصول إلى أي مواقع"
       },
       "not_found": {
         "description": "تحقق من عنوان URL أو حاول مرة أخرى بعد بضع دقائق.",
@@ -3773,15 +3773,15 @@
       },
       "order_not_found": {
         "description": "هذا الطلب غير موجود أو ليس لديك إذن لعرضه.",
-        "title": "الطلب غير موجود"
+        "title": "لم يتم العثور على الطلب"
       },
       "profile_update_error": {
-        "description": "حدثت مشكلة أثناء تحديث ملفك الشخصي. حاول تحديث هذه الصفحة أو تحقق من اتصال الإنترنت الخاص بك."
+        "description": "كانت هناك مشكلة في تحديث ملفك الشخصي. حاول تحديث هذه الصفحة أو تحقق من اتصالك بالإنترنت."
       },
-      "retry_action_label": "أعد المحاولة",
+      "retry_action_label": "إعادة المحاولة",
       "resend_link": {
-        "too_many_requests": "طلبات كثيرة جدًا. حاول مرة أخرى لاحقًا.",
-        "generic": "فشل الطلب"
+        "too_many_requests": "طلبات كثيرة جداً. حاول مرة أخرى في وقت لاحق.",
+        "generic": "طلب فاشل"
       },
       "load_extension_error": {
         "title": "خطأ",
@@ -3792,53 +3792,53 @@
     "throttle": {
       "too_many_attempts": {
         "description": "يرجى المحاولة مرة أخرى بعد بضع دقائق",
-        "message": "محاولات كثيرة جدًا"
+        "message": "محاولات كثيرة جداً"
       }
     },
     "payment_methods": {
       "title": "طرق الدفع",
-      "add_payment_method_button": "أضف طريقة الدفع",
-      "add_payment_method_banner": "أضف طريقة دفع لتسريع عملية الدفع أو الخدمات المصرح بها مسبقًا",
-      "no_payment_methods_banner": "لم تتم إضافة طرق دفع",
-      "edit_payment_method_button_accessibility_label": "تحرير {{paymentMethodName}} المنتهي بـ {{lastDigits}}",
+      "add_payment_method_button": "إضافة طريقة الدفع",
+      "add_payment_method_banner": "إضافة طريقة دفع لسرعة السداد أو الخدمات المعتمدة مسبقاً",
+      "no_payment_methods_banner": "لم تتم إضافة أي طرق دفع",
+      "edit_payment_method_button_accessibility_label": "تحرير {{paymentMethodName}} المنتهية بـ {{lastDigits}}",
       "delete_payment_method_button": "حذف",
-      "edit_payment_method_brand_button_accessibility_label": "تعديل {{paymentMethodName}}",
+      "edit_payment_method_brand_button_accessibility_label": "تحرير {{paymentMethodName}}",
       "delete_payment_method_button_accessibility_label": "حذف {{paymentMethodName}}",
-      "back_button": "عودة",
+      "back_button": "رجوع",
       "back_button_accessibility_label": "العودة إلى {{paymentMethodStepTitle}}",
       "default": "افتراضي",
-      "generic_card": "بطاقة",
-      "expiration_warning_button_accessibility_label": "عرض تحذير انتهاء الصلاحية لـ {{paymentMethodName}} التي تنتهي بـ {{lastDigits}}",
+      "generic_card": "البطاقة",
+      "expiration_warning_button_accessibility_label": "إظهار تحذير انتهاء الصلاحية لـ {{paymentMethodName}} المنتهية بـ {{lastDigits}}",
       "expired": "هذه البطاقة منتهية الصلاحية",
-      "expires_soon": "ستنتهي صلاحية هذه البطاقة قريبًا",
-      "card_update_consent": "سيتم حفظ طريقة الدفع هذه للمشتريات المستقبلية.",
-      "card_update_consent_subscriptions": "سيتم حفظ طريقة الدفع هذه للمشتريات المستقبلية وقد تُستخدم لأي عملية شراء متكررة أو مؤجلة.",
+      "expires_soon": "ستنتهي صلاحية هذه البطاقة قريباً",
+      "card_update_consent": "سيتم حفظ طريقة الدفع هذه لعمليات الشراء المستقبلية.",
+      "card_update_consent_subscriptions": "سيتم حفظ طريقة الدفع هذه لعمليات الشراء المستقبلية ويمكن استخدامها لأي عملية شراء متكررة أو مؤجلة.",
       "digital_wallet_title": "المحفظة الرقمية",
-      "credit_or_debit_card_title": "بطاقة ائتمان أو خصم",
+      "credit_or_debit_card_title": "بطاقة الائتمان أو بطاقة السحب الآلي",
       "google_pay": {
-        "iframe_title_accessibility_label": "أضف طريقة دفع Google Pay",
-        "loading_accessibility_message": "جارٍ تحميل Google Pay",
-        "loading": "جارٍ تحميل Google Pay",
+        "iframe_title_accessibility_label": "إضافة طريقة الدفع عبر Google Pay",
+        "loading_accessibility_message": "تحميل Google Pay",
+        "loading": "تحميل Google Pay",
         "errors": {
-          "generic": "حدثت مشكلة في Google Pay. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
-          "missing_billing_address": "يتطلب Google Pay عنوانًا للفوترة. يرجى إضافة واحد إلى حسابك."
+          "generic": "كانت هناك مشكلة في Google Pay. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
+          "missing_billing_address": "يتطلب Google Pay عنوان إرسال الفواتير. يُرجى إضافة عنوان إلى حسابك."
         }
       },
       "pay_pal": {
-        "iframe_title_accessibility_label": "أضف طريقة دفع PayPal",
-        "loading_accessibility_message": "جارٍ تحميل PayPal"
+        "iframe_title_accessibility_label": "إضافة طريقة الدفع PayPal",
+        "loading_accessibility_message": "تحميل PayPal"
       },
       "apple_pay": {
-        "loading": "جارٍ تحميل Apple Pay",
+        "loading": "تحميل Apple Pay",
         "errors": {
           "not_available": "Apple Pay غير متوفر على هذا الجهاز.",
-          "generic": "حدثت مشكلة في Apple Pay. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
-          "missing_billing_address": "يتطلب Apple Pay عنوانًا للفوترة. يرجى إضافة واحد إلى حسابك."
+          "generic": "كانت هناك مشكلة في Apple Pay. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
+          "missing_billing_address": "يتطلب Apple Pay عنوان إرسال الفواتير. يُرجى إضافة عنوان إلى حسابك."
         }
       },
       "store_credit": {
-        "label": "رصيد المتجر",
-        "accesibility_label": "رصيد المتجر - {{formattedBalance}}",
+        "label": "ائتمان المتجر",
+        "accesibility_label": "ائتمان المتجر - {{formattedBalance}}",
         "expirable_amounts_button": "عرض المبالغ القابلة للانتهاء",
         "details_modal": {
           "balance_label": "الرصيد",
