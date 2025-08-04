@@ -571,7 +571,40 @@
         "payment_method_saved": "Betalingsmethode opgeslagen",
         "expiry_long": "(Verlopen %{month}/%{year})",
         "expiry_short": "(Exp %{month}/%{year})",
-        "saved_by_payment_method": "Gered door %{payment_method}"
+        "saved_by_payment_method": "Gered door %{payment_method}",
+        "same_billing_address_label": "Zelfde als verzendadres",
+        "different_billing_address_label": "Gebruik een ander factuuradres",
+        "billing_address_associated_with_mandate": "Gebruik adres gekoppeld aan betaalmethode",
+        "billing_address_associated_with_mandate_info": "Als u uw factuuradres wilt wijzigen, verwijder dan uw creditcardgegevens en voer deze opnieuw in.",
+        "free_order_notice_html": "Je bestelling is <strong>gratis</strong>. Betaling is niet nodig.",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Je bestelling wordt gedekt door je cadeaubon.",
+          "other": "Je bestelling wordt gedekt door je cadeaubonnen."
+        },
+        "offsite_gateway_redirect_hint": "Nadat je op \"%{button_label}\" hebt geklikt, word je doorgestuurd naar %{gateway_label} om je aankoop veilig af te ronden.",
+        "offsite_gateway_review_page_redirect_hint": "Nadat je je bestelling hebt bekeken, word je doorgestuurd naar %{gateway_label} om je aankoop veilig af te ronden.",
+        "offsite_gateway_redirect_hint_no_button_label": "Nadat u verder bent gegaan, wordt u doorgestuurd naar %{gateway_label} om uw aankoop veilig af te ronden.",
+        "receiver_payment_experience_hint": "Na het plaatsen van je bestelling ontvang je de betalingsgegevens. Voer de betaling uit bij Multibanco of online binnen %{due_days} dagen.",
+        "no_js_credit_card_fields_redirect_hint": "Je wordt doorgestuurd om je betalingsgegevens toe te voegen.",
+        "card_fields_container_prefix": "Veldcontainer voor:",
+        "card_fields_unavailable_html": {
+          "one": "Betalingen met creditcard en bankpas zijn momenteel niet beschikbaar.<br><a href=\"%{current_url}\">Vernieuw deze pagina</a> of probeer het later opnieuw.",
+          "other": "Betalingen met creditcard en bankpas zijn momenteel niet beschikbaar.<br><a href=\"%{current_url}\">Vernieuw deze pagina</a> of probeer een andere betaalmethode."
+        },
+        "card_fields_processing_error": "Er is een probleem opgetreden bij het verwerken van de betaling. Probeer deze pagina te verversen of controleer je internetverbinding.",
+        "technical_error": "Betalingen kunnen nu niet worden verwerkt vanwege een technisch probleem. Probeer het over een paar minuten opnieuw.",
+        "no_method_error": "Deze winkel kan op dit moment geen betalingen accepteren.",
+        "not_configured_error": "Deze winkel kan op dit moment geen betalingen accepteren.",
+        "payment_method_not_available_for_shipping_address_error": "Betalingsmethode niet beschikbaar voor het geselecteerde verzendadres. Kies een andere betaalmethode.",
+        "billing_address_not_supported_for_payment_method_error": "Deze betaalmethode is niet beschikbaar voor je factuuradres en valuta. Probeer een andere betaalmethode.",
+        "generic_incorrect_card_info": "Je betalingsgegevens konden niet worden geverifieerd. Controleer je kaartgegevens en probeer het opnieuw.",
+        "sofort_label": "Sofort overschrijving",
+        "paypal_wallet_label": "PayPal Portemonnee",
+        "shop_pay_installments_label": "Winkel betalen in termijnen",
+        "klarna_pay_later_label": "Betaal later met Klarna",
+        "multibanco_label": "PINAUTOMAAT",
+        "eps_label": "eps overdracht",
+        "cashapppay_label": "Contante app Betalen"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Uw bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan."
