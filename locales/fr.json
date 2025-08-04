@@ -650,9 +650,61 @@
         "order_total_updated_label": "Total actualisé",
         "unit_price": {
           "per_item": {
-            "single": "%{price} chacun"
+            "single": "%{price} chacun",
+            "one": "%{price} par %{count} article",
+            "other": "%{price} pour %{count} articles"
           }
-        }
+        },
+        "gift_card_ending": "Carte cadeau se terminant par %{last_characters}",
+        "estimated_tax_label": "Estimation de l'impôt",
+        "multiple_shipping_lines_label": "Total des frais d'expédition",
+        "recurring_total_tooltip": "Ne comprend pas les frais d'expédition, les taxes, les droits de douane ou toute autre réduction applicable.",
+        "confirmation_number_label": "Confirmation #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> ne peut pas être utilisé avec vos réductions existantes.",
+        "percent_off_shipping": "%{percent}% de réduction sur les frais de port",
+        "amount_off_shipping": "%{amount} réduction des frais de port",
+        "deferred_payment_info": {
+          "description_html": "Pour toute question concernant votre commande, %{contact_us}.",
+          "paid_today": "Total payé aujourd'hui",
+          "paid_today_next": "Payé aujourd'hui",
+          "due_on_fulfillment_title": "Le paiement de %{amount_due} est dû à l'exécution.",
+          "due_on_receipt_title": "Le paiement de %{amount_due} est dû à réception"
+        },
+        "deferred_balance_info": {
+          "due_on_fulfillment_title": "Le solde de {{amount_due}} est dû au moment de l'exécution."
+        },
+        "payment_terms_totals": {
+          "due_today": "Total à payer aujourd'hui",
+          "due_today_next": "A remettre aujourd'hui",
+          "due_on_fulfillment": "Total dû à l'exécution",
+          "due_on_fulfillment_next": "Échéance de l'exécution",
+          "due_later_checkout_to_draft": "Total à payer plus tard"
+        },
+        "maximum_discount_code_limit_reached": "Vous avez atteint le nombre maximum de codes de réduction. Supprimer un code existant pour l'utiliser <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> ne fonctionne pas en ce moment. Contactez-nous pour obtenir de l'aide.",
+        "due_on_fulfillment": "Échéance de l'exécution",
+        "duties_label": "Fonctions",
+        "may_be_charged_on_delivery": "Peut être facturé à la livraison",
+        "total_updated_label_with_price": "Prix total actualisé : %{totalPrice}",
+        "updated_shipping_method": "Méthode d'expédition mise à jour : %{shipping_method}",
+        "deferred_total_due_date_label_next": "Due %{date}",
+        "full_price": "Plein tarif : %{price}",
+        "custom_discount": "Remise personnalisée",
+        "expand_component_information": {
+          "one": "Afficher l'élément %{count} ",
+          "other": "Afficher %{count} éléments"
+        },
+        "collapse_component_information": {
+          "one": "Masquer l'élément %{count} ",
+          "other": "Masquer %{count} éléments"
+        },
+        "discount_discovery": {
+          "merchandise_quantity_label": {
+            "one": "%{count} article",
+            "other": "%{count} articles"
+          }
+        },
+        "alternative_payment_currency_total": "Accusé d'être %{amount_due}"
       },
       "address_management": {
         "confirm_address_deletion": "Êtes-vous sûr de vouloir supprimer l'adresse {{address}}?"

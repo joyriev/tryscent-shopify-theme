@@ -2361,7 +2361,53 @@
         }
       },
       "order": {
-        "not_available": "Este pedido no está disponible"
+        "not_available": "Este pedido no está disponible",
+        "financial_status": {
+          "authorized": "Autorizado",
+          "paid": "Pagado",
+          "unpaid": "Sin pagar",
+          "voided": "Anulado",
+          "partially_paid": "Pagado parcialmente",
+          "partially_refunded": "Reembolsado parcialmente",
+          "refunded": "Reembolsado",
+          "expired": "Caducado"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Cumplido",
+          "complete": "Complete",
+          "unfulfilled": "Sin cumplir",
+          "restocked": "Reabastecido"
+        },
+        "cancel_reason": {
+          "fraud": "Orden fraudulenta",
+          "customer": "El cliente ha cambiado/cancelado el pedido",
+          "staff": "Error del personal",
+          "other": "Otros"
+        },
+        "cash_on_delivery": "Contra reembolso"
+      },
+      "cart": {
+        "only_n_items_available": "Sólo puedes añadir %{count} %{name} al carrito.",
+        "too_many_items_in_cart": "No puedes añadir más %{name} al carrito.",
+        "only_one_added_to_cart": "Sólo se ha añadido 1 artículo a su cesta debido a la disponibilidad.",
+        "only_n_added_to_cart": "Sólo se han añadido %{quantity} artículos a su cesta debido a la disponibilidad.",
+        "maximum_available_quantity_reached": "La cantidad máxima de este artículo ya está en su cesta.",
+        "not_respect_step": "Sólo puede añadir este elemento en incrementos de %{step}.",
+        "all_items_in_cart": "Todos los %{count} %{name} están en su cesta.",
+        "empty_update": "no se puede actualizar la cesta vacía",
+        "missing_parameters": "ningún parámetro de línea o id válido",
+        "generic_error": "Error de carro",
+        "invalid_input": "%{parameter} no es válido.",
+        "too_many_line_items_error": "Su cesta no puede contener más de %{max} artículos.",
+        "link_expired": "Enlace caducado",
+        "stock_problems_html": "Uno o más artículos ya no están disponibles. Hemos proporcionado un <a href='%{link}'>carrito actualizado</a>.",
+        "changed": "Carrito cambiado",
+        "items_changed": "Uno o más elementos han cambiado.",
+        "product_sold_out": "El producto%{name}' ya está agotado.",
+        "variant_not_found": "No se encuentra la variante",
+        "variant_requires_selling_plan": "La variante sólo puede adquirirse con un plan de venta.",
+        "selling_plan_not_available_for_company_locations": "Los pedidos B2B sólo pueden comprarse una vez",
+        "digital_product_not_available_for_company_locations": "Este artículo no puede añadirse a un pedido B2B"
       }
     }
   },
