@@ -2162,101 +2162,101 @@
           "partial_inventory_banner": "جزء من سلة التسوق الخاصة بك نفد من المخزون ولن يكون متاحًا للشراء عند إتمام الدفع.",
           "sold_out": {
             "heading": "عربة التسوق الخاصة بك نفدت",
-            "storefront_body": "العودة إلى المتجر لمتابعة التسوق",
-            "no_storefront_body": "لسوء الحظ، العنصر الذي ترغب في شرائه لم يعد متوفراً.",
+            "storefront_body": "ارجع إلى المتجر لمواصلة التسوق",
+            "no_storefront_body": "للأسف لم تعد السلعة التي تريد شراءها متوفرة.",
             "link": "العودة إلى المتجر"
           }
         },
-        "time_to_checkout_title": "حان وقت تسجيل الخروج - {{shopName}}",
-        "title": "الطابور",
+        "time_to_checkout_title": "حان وقت المغادرة - {{shopName}}",
+        "title": "الذيل",
         "estimated_wait_time": {
-          "calculating": "حساب الوقت المتوقع للانتظار",
-          "less_than_one": "الوقت المتوقع للانتظار: أقل من دقيقة",
-          "one": "الوقت المتوقع للانتظار: {{count}} دقيقة",
-          "other": "الوقت المتوقع للانتظار: {{count}} دقيقة"
+          "calculating": "حساب وقت الانتظار المقدر",
+          "less_than_one": "وقت الانتظار المقدر أقل من دقيقة",
+          "one": "وقت الانتظار المقدر: {{count}} دقيقة",
+          "other": "وقت الانتظار المقدر: {{count}} دقيقة"
         },
-        "last_checked": "(تم التحقق آخر مرة: {{time}})",
+        "last_checked": "(تم التحقق من آخر مرة: {{time}})",
         "footer": {
-          "heading": "لا تقم بتحديث هذه الصفحة، ستتحدث تلقائيًا.",
-          "body": "العناصر في سلة التسوق الخاصة بك غير محجوزة حتى تكمل عملية الدفع."
+          "heading": "لا تقم بتحديث هذه الصفحة، سيتم تحديثها تلقائياً.",
+          "body": "لا يتم حجز العناصر الموجودة في سلة التسوق الخاصة بك حتى تكمل عملية الدفع."
         }
       },
       "cart_checkout_validation": {
-        "runtime_error": "حدثت مشكلة أثناء معالجة طلبك، يرجى الاتصال بصاحب المتجر."
+        "runtime_error": "كانت هناك مشكلة في معالجة طلبك، يُرجى الاتصال بمالك المتجر."
       },
       "no_address_location": {
-        "title": "موقع بدون عنوان",
-        "header": "ليس لديك عنوان شحن لهذا الموقع",
-        "alt_header": "عنوان الشحن مفقود",
+        "title": "الموقع بدون عنوان",
+        "header": "لا يوجد لديك عنوان شحن لهذا الموقع",
+        "alt_header": "عنوان الشحن المفقود",
         "message": "اتصل بنا لإضافة عنوان لهذا الموقع لإكمال عملية الدفع.",
-        "email_us_button_label": "أرسل لنا بريدًا إلكترونيًا"
+        "email_us_button_label": "أرسل لنا بريداً إلكترونياً"
       },
       "order_errors": {
-        "creation_failure": "حدثت مشكلة أثناء إنشاء طلبك. حاول مرة أخرى، أو اتصل بنا لمزيد من التفاصيل.",
-        "network_failure": "لم يتمكن من تقديم طلبك بسبب خطأ في الشبكة. تحقق من اتصالك وحاول مرة أخرى.",
+        "creation_failure": "حدثت مشكلة في إنشاء طلبك. حاول مرة أخرى، أو اتصل بنا لمزيد من التفاصيل.",
+        "network_failure": "تعذر إرسال طلبك بسبب خطأ في الشبكة. تحقق من اتصالك وحاول مرة أخرى.",
         "inventory_reservation_failure": "بعض العناصر لم تعد متوفرة."
       },
       "session_errors": {
-        "session_not_unique": "حدثت مشكلة أثناء معالجة طلبك. قم بتحديث هذه الصفحة للعودة إلى المتجر.",
+        "session_not_unique": "كانت هناك مشكلة في معالجة طلبك. قم بتحديث هذه الصفحة للعودة إلى المتجر.",
         "session_already_finished": "تم تقديم هذا الطلب بالفعل. يمكنك العودة إلى المتجر لبدء طلب جديد."
       },
       "artifact_errors": {
-        "artifact_dissatisfaction_without_violation": "حدثت مشكلة أثناء معالجة طلبك. حاول مرة أخرى بعد بضع دقائق."
+        "artifact_dissatisfaction_without_violation": "كانت هناك مشكلة في معالجة طلبك. حاول مرة أخرى بعد بضع دقائق."
       },
       "pickup_point": {
         "business_hours": "ساعات العمل",
         "location_is_currently_closed": "مغلق",
         "no_business_hours": "لا توجد ساعات عمل متاحة",
         "open_twenty_four_hours": "مفتوح 24/7",
-        "title": "نقطة الاستلام",
+        "title": "نقطة الالتقاء",
         "search_button": "بحث",
         "or": "أو",
         "address_label": "العنوان",
-        "selector_tab_map": "خريطة",
-        "selector_tabs": "محدد نقطة الاستلام",
-        "selector_tab_list": "قائمة",
-        "could_not_resolve_address": "لم نتمكن من تحديد موقع عنوانك. حاول مرة أخرى أو استخدم عنوانًا مختلفًا",
-        "no_pickup_points_near_you": "لم يتم العثور على نقاط استلام بالقرب من العنوان المحدد",
-        "no_pickup_points_near_location": "لم يتم العثور على نقاط استلام بالقرب من موقعك",
+        "selector_tab_map": "الخريطة",
+        "selector_tabs": "محدد نقطة الالتقاط",
+        "selector_tab_list": "القائمة",
+        "could_not_resolve_address": "تعذر تحديد موقع عنوانك. حاول مرة أخرى أو استخدم عنواناً آخر",
+        "no_pickup_points_near_you": "لم يتم العثور على نقاط التقاط بالقرب من العنوان المحدد",
+        "no_pickup_points_near_location": "لم يتم العثور على نقاط التقاء بالقرب من موقعك",
         "pickup_unavailable_banner_title": {
-          "one": "لا توجد نقاط استلام متاحة لعنصرك",
-          "other": "لا توجد نقاط استلام متاحة لعناصر الشحن الخاصة بك"
+          "one": "لا توجد نقاط استلام متوفرة للعنصر الخاص بك",
+          "other": "لا توجد نقاط استلام متوفرة لأغراضك"
         },
-        "no_pickup_points_found": "لم يتم العثور على نقاط استلام",
+        "no_pickup_points_found": "لم يتم العثور على نقاط التقاء",
         "paginator": {
           "next_accessibility_label": "الصفحة التالية",
           "previous_accessibility_label": "الصفحة السابقة",
           "header": {
-            "one": "عرض %{first} - %{last} من %{count} نقطة",
-            "other": "عرض %{first} - %{last} من %{count} نقاط"
+            "one": "إظهار %{first} - %{last} من %{count} نقطة",
+            "other": "عرض %{first} - %{last} من %{count} من نقاط %{count} "
           },
           "selected_pickup_point_label": {
             "one": "%{pickup_point_index} من %{count} نقطة",
-            "other": "%{pickup_point_index} من %{count} نقاط"
+            "other": "%{pickup_point_index} من %{count} النقاط"
           },
           "selected_page": {
             "one": "%{first} - %{last} من %{count} نقطة",
-            "other": "%{first} - %{last} من %{count} نقاط"
+            "other": "%{first} - %{last} من %{count} من %{count} من النقاط"
           }
         },
         "number_of_pickup_points_near_location": {
-          "one": "%{count} نقطة استلام بالقرب من موقعك",
-          "other": "%{count} نقاط استلام بالقرب من موقعك"
+          "one": "%{count} نقطة الالتقاء بالقرب من موقعك",
+          "other": "%{count} نقاط الالتقاء القريبة من موقعك"
         },
         "change": "تغيير الموقع",
-        "waiting_on_pickup_point_location_notice": "جارٍ البحث عن نقاط الاستلام...",
+        "waiting_on_pickup_point_location_notice": "البحث عن نقاط الالتقاء...",
         "geolocation": {
-          "shared_location_button": "استخدم موقعي",
+          "shared_location_button": "استخدام موقعي",
           "errors": {
-            "unsuported_by_browser": "الحصول على الموقع الجغرافي غير مدعوم من متصفحك. حاول مرة أخرى أو استخدم متصفحًا مختلفًا.",
-            "permission_not_allowed": "السماح بمشاركة موقعك.",
-            "permission_denied": "تعذر الحصول على موقعك. حاول مرة أخرى."
+            "unsuported_by_browser": "الحصول على الموقع الجغرافي غير مدعوم من قبل متصفحك. حاول مرة أخرى أو استخدم متصفحاً آخر.",
+            "permission_not_allowed": "السماح بمشاركة موقعك الجغرافي.",
+            "permission_denied": "تعذر الحصول على موقعك. حاول مرة أخرى"
           }
         }
       },
       "error_page": {
         "terminal": {
-          "title": "حدثت مشكلة في عملية الدفع الخاصة بنا",
+          "title": "كانت هناك مشكلة في عملية الدفع",
           "message": "قم بتحديث هذه الصفحة أو حاول مرة أخرى بعد بضع دقائق",
           "action": {
             "cta": "تحديث الصفحة"
@@ -2265,60 +2265,60 @@
         }
       },
       "notice_banner": {
-        "return_to_cart_link_text": "العودة إلى السلة",
+        "return_to_cart_link_text": "العودة إلى عربة التسوق",
         "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} لتحديث الكميات",
-        "subscription_changed": "تم تغيير إحدى اشتراكاتك.",
-        "company_location_changed": "تم تحديث سلة التسوق الخاصة بك. راجع طلبك قبل إرساله.",
-        "company_location_changed_product_removed": "تم تحديث سلة التسوق الخاصة بك لأن بعض المنتجات غير متوفرة في هذا الموقع. راجع طلبك قبل تقديمه.",
+        "subscription_changed": "تم تغيير أحد اشتراكاتك.",
+        "company_location_changed": "تم تحديث عربة التسوق الخاصة بك. راجع طلبك قبل إرساله.",
+        "company_location_changed_product_removed": "تم تحديث عربة التسوق الخاصة بك لأن بعض المنتجات غير متوفرة في هذا الموقع. راجع طلبك قبل إرساله.",
         "individual_violations_title": {
-          "PaymentViolations": "عنوان الفواتير",
+          "PaymentViolations": "عنوان إرسال الفواتير",
           "DeliveryViolations": "عنوان الشحن",
           "UnhandledViolations": "معلومات الطلب",
           "OtherViolations": "معلومات الطلب"
         },
-        "violations_title": "{{violation}} مفقود أو غير صالح",
+        "violations_title": "{{violation}} مفقودة أو غير صالحة",
         "all_violations_content": "اتصل بنا أو {{emailLink}} لتحديث هذه المعلومات وإكمال طلبك:",
         "all_violations_email_link": "البريد الإلكتروني",
         "editable_shipping_address_violations_message_title": "أضف هذه المعلومات لإكمال طلبك:",
-        "editable_shipping_address_violations_message_footer": "لتحديث العنوان لهذا الموقع بشكل دائم، {{emailLink}}.",
+        "editable_shipping_address_violations_message_footer": "لتحديث عنوان هذا الموقع بشكل دائم, {{emailLink}}.",
         "editable_shipping_address_violations_email_link": "اتصل بنا",
         "shipping_address_incomplete_title": "عنوان الشحن غير مكتمل",
-        "calculating_shipping": "لا يزال يتم حساب الشحن. حاول مرة أخرى بعد بضع ثوانٍ. لم يتم تحصيل أي رسوم منك.",
+        "calculating_shipping": "لا يزال الشحن قيد الحساب. حاول مرة أخرى بعد بضع ثوانٍ. لم يتم محاسبتك.",
         "generic_processing_error": {
-          "title": "حدثت مشكلة أثناء معالجة طلبك",
-          "body": "لم يتم تحصيل أي مبلغ منك. حاول مرة أخرى أو استخدم طريقة دفع مختلفة."
+          "title": "كانت هناك مشكلة في معالجة طلبك",
+          "body": "لم تتم محاسبتك. حاول مرة أخرى أو استخدم طريقة دفع مختلفة."
         },
-        "payment_method_not_available_with_fulfillment_terms": "طريقة الدفع التي اخترتها لم تعد متاحة لأن الدفع لهذا الطلب مستحق الآن عند التنفيذ",
-        "payment_method_not_available_with_payment_terms": "طريقة الدفع التي اخترتها لم تعد متاحة لأن الدفع لهذا الطلب يتم الآن بشروط {{paymentTerms}}",
-        "payment_method_not_available_with_fixed_terms": "طريقة الدفع التي اخترتها لم تعد متاحة لأن الدفع لهذا الطلب مستحق في وقت لاحق",
+        "payment_method_not_available_with_fulfillment_terms": "لم تعد طريقة الدفع التي حددتها متاحة لأن الدفع لهذا الطلب أصبح مستحقًا الآن عند الاستيفاء",
+        "payment_method_not_available_with_payment_terms": "لم تعد طريقة الدفع التي حددتها متوفرة لأن الدفع لهذا الطلب أصبح الآن بشروط {{paymentTerms}} ",
+        "payment_method_not_available_with_fixed_terms": "لم تعد طريقة الدفع التي حددتها متوفرة لأن الدفع لهذا الطلب مستحق في وقت لاحق",
         "contact_information": {
           "title": "معلومات الاتصال غير صالحة",
-          "header": "لتحديث معلوماتك، {{emailLink}}.",
+          "header": "لتحديث معلوماتك, {{emailLink}}.",
           "email_link": "اتصل بنا"
         }
       },
       "review_address_modal": {
-        "title": "مراجعة العنوان",
+        "title": "عنوان المراجعة",
         "subtitle": {
-          "other": "سيتم شحن هذا الطلب إلى العنوان الذي قدمه {{merchant}}. اختر عنوان الشحن.",
-          "one": "سيتم شحن هذا الطلب إلى العنوان الذي قدمه {{merchant}}."
+          "other": "سيتم شحن هذا الطلب إلى عنوان مقدم من {{merchant}}. حدد عنوان الشحن.",
+          "one": "سيتم شحن هذا الطلب إلى العنوان المقدم من قبل {{merchant}}."
         },
         "subtitle_no_match": "هذا العنوان لا يتطابق مع أي من عناوينك المحفوظة.",
         "subtitle_must_use": "سيتم شحن طلبك إلى هذا العنوان.",
-        "use_saved_address": "استخدم عنوانًا مختلفًا",
+        "use_saved_address": "استخدم عنواناً مختلفاً",
         "continue": "تابع مع هذا العنوان",
-        "return_to_cart": "العودة إلى السلة"
+        "return_to_cart": "العودة إلى عربة التسوق"
       },
       "marketplaces": {
         "legal_notice": {
-          "legal_text": "مراجعة",
-          "link_label": "شروط وأحكام {{partnerDisplayName}}"
+          "legal_text": "المراجعة",
+          "link_label": "{{partnerDisplayName}} الشروط والأحكام"
         }
       },
       "local_pickup": {
         "location_address_search_label": "العنوان",
         "location_information": {
-          "one": "هناك %{count} متجرًا يحتوي على مخزون قريب من %{address}",
+          "one": "يوجد %{count} متجر به مخزون قريب من %{address}",
           "other": "هناك %{count} متاجر بها مخزون قريب من %{address}"
         },
         "toggle_location": "تغيير الموقع",
@@ -2348,7 +2348,7 @@
         }
       },
       "online_store_chat": {
-        "title": "أسئلة؟ تحدث معنا"
+        "title": "هل لديك أسئلة؟ دردش معنا"
       },
       "captcha": {
         "title": "أكمل اختبار CAPTCHA للمتابعة",
