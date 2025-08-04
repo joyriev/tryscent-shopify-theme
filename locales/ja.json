@@ -3207,7 +3207,67 @@
       "company": "会社概要",
       "company_and_location": "会社と所在地",
       "fully_refunded_label": "払い戻し",
-      "group_title_label": "の一部である： {{groupTitle}}"
+      "group_title_label": "の一部である： {{groupTitle}}",
+      "group_title_label_with_parent": "賛成だ： {{groupTitle}}",
+      "grouped_view_components": {
+        "expand_line_items": "アイテム{{count}}を表示",
+        "collapse_line_items": "非表示{{count}}項目",
+        "line_item_summary_accessibility_label": "{{productTitle}}数量 {{refundableQuantity}}"
+      },
+      "discount": "割引",
+      "hide_items": "アイテムを隠す",
+      "loading": "注文内容の読み込み",
+      "loading_finished_accessibility_message": "注文の詳細が読み込まれました",
+      "location": "所在地",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} 数量 {{quantity}}",
+        "next": "次の項目を表示する",
+        "previous": "前の項目を表示する",
+        "load_more_items": {
+          "one": "ロード{{count}}より多くのアイテム",
+          "other": "ロード{{count}}より多くのアイテム"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "オーダー概要を表示",
+        "closed": "注文概要を隠す"
+      },
+      "no_data_provided_accessibility_label": "{{fieldName}} は空です",
+      "paid_amount": "有料",
+      "partially_refunded_label": "一部返金",
+      "payment": {
+        "status_in_review": "支払い期限は審査後",
+        "status_unpaid": "支払期日 {{date}}",
+        "title": "支払い",
+        "payment_type": {
+          "money_order": "マネーオーダー",
+          "cash_on_delivery": "代金引換",
+          "bank_deposit": "銀行預金",
+          "manual": "マニュアル"
+        },
+        "card_payment_details": "で終わる。 {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "で終わる。 {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "店舗クレジット {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "ショップペイ分割払い",
+          "view_schedule": "スケジュールを見る"
+        },
+        "manual_payment_methods": {
+          "money_order": "マネーオーダー {{formattedTransactionAmount}}",
+          "cash_on_delivery": "代金引換 {{formattedTransactionAmount}}",
+          "bank_deposit": "銀行預金 {{formattedTransactionAmount}}",
+          "manual": "マニュアル {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_less": "もっと見る",
+          "payment_details": "支払詳細"
+        },
+        "emv_details": {
+          "auth": "AUTH：",
+          "aid": "AID：",
+          "source": "ソース"
+        }
+      }
     }
   }
 }
