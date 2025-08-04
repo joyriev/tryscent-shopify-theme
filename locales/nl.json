@@ -352,24 +352,24 @@
       "each": "{{ money }}/st",
       "product": "Product",
       "variant": "Variant",
-      "variant_total": "Totaal variant",
+      "variant_total": "Variant totaal",
       "items_added": {
-        "one": "{{ quantity }} artikel toegevoegd",
-        "other": "{{ quantity }} artikelen toegevoegd"
+        "one": "{{ quantity }} item toegevoegd",
+        "other": "{{ quantity }} items toegevoegd"
       },
       "items_removed": {
-        "one": "{{ quantity }} artikel verwijderd",
-        "other": "{{ quantity }} artikelen verwijderd"
+        "one": "{{ quantity }} item verwijderd",
+        "other": "{{ quantity }} verwijderde items"
       },
       "product_variants": "Productvarianten",
-      "total_items": "Totaal aantal artikelen",
-      "remove_all_items_confirmation": "Alle {{ quantity }} artikelen uit je winkelwagen verwijderen?",
+      "total_items": "Totaal aantal items",
+      "remove_all_items_confirmation": "Alle {{ quantity }} items uit uw winkelwagentje verwijderen?",
       "remove_all": "Alles verwijderen",
       "cancel": "Annuleren",
-      "remove_all_single_item_confirmation": "1 artikel uit je winkelwagen verwijderen?",
-      "min_error": "Voor dit artikel geldt een minimum van {{ min }}.",
-      "max_error": "Voor dit artikel geldt een maximum van {{ max }}.",
-      "step_error": "Je kunt dit artikel alleen toevoegen in stappen van {{ step }}"
+      "remove_all_single_item_confirmation": "1 item uit je winkelwagentje verwijderen?",
+      "min_error": "Dit item heeft een minimum van {{ min }}",
+      "max_error": "Dit item heeft een maximum van {{ max }}",
+      "step_error": "U kunt dit item alleen toevoegen in stappen van {{ step }}"
     }
   },
   "localization": {
@@ -721,7 +721,62 @@
             "job_enqueue_failed": "De captcha-validatietaak is niet in een wachtrij geplaatst.",
             "job_already_queued": "Captcha validatie is al in de wachtrij geplaatst voor dit captcha token.",
             "token_expired": "Het verstrekte captcha token is verlopen. Vul een nieuwe captcha in om verder te gaan met afrekenen.",
-            "token_invalid": "De opgegeven captcha token was ongeldig. Vul een nieuwe captcha in om verder te gaan met afrekenen."
+            "token_invalid": "De opgegeven captcha token was ongeldig. Vul een nieuwe captcha in om verder te gaan met afrekenen.",
+            "token_not_valid_for_session": "De meegeleverde captcha kan niet worden gebruikt bij deze kassa."
+          },
+          "checkout_source": {
+            "revoked": "Deze kassa is niet langer beschikbaar."
+          }
+        },
+        "full_price": "Volledige prijs:",
+        "title": "Kassa - {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Afrekenen",
+        "loading": "Aan het laden...",
+        "loading_title": "Kassa - {{shopName}}",
+        "google_map_title": "Google Kaart",
+        "submit_for_review_button_label": "Ter beoordeling indienen",
+        "submit_for_review_notice_label": "Betaling is pas verschuldigd nadat je bestelling is beoordeeld",
+        "back_button_label": "Stuur  terug.",
+        "choose_delivery_strategy": "Kies een leveringsmethode",
+        "autocomplete_zero_item": "Geen items beschikbaar",
+        "autocomplete_powered_by_google": "Aangedreven door {{brandName}}",
+        "submit": "Stuur  in",
+        "processing": "Verwerking...",
+        "stepper": {
+          "increase": "Verhogen {{type}}",
+          "decrease": "Afname {{type}}"
+        },
+        "remove_item": "Verwijder %{label}",
+        "dates": {
+          "weekdays": {
+            "monday": "Maandag",
+            "tuesday": "Dinsdag",
+            "wednesday": "Woensdag",
+            "thursday": "Donderdag",
+            "friday": "Vrijdag",
+            "saturday": "Zaterdag",
+            "sunday": "Zondag"
+          },
+          "weekdays_abbreviation": {
+            "monday": "Mo",
+            "tuesday": "Tu",
+            "wednesday": "We",
+            "thursday": "Het",
+            "friday": "Vr",
+            "saturday": "Sa",
+            "sunday": "Su"
+          },
+          "months": {
+            "january": "Januari",
+            "february": "Februari",
+            "march": "Maart",
+            "april": "April",
+            "may": "Mei",
+            "june": "Juni",
+            "july": "Juli",
+            "august": "Augustus",
+            "september": "September",
+            "october": "Oktober"
           }
         }
       }
