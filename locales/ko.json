@@ -570,7 +570,48 @@
         "card_vaulted_company_location": "이 위치에 저장된 카드",
         "expiry_long": "(만료 %{month}/%{year})",
         "expiry_short": "(경험치 %{month}/%{year})",
-        "saved_by_payment_method": "저장한 사람 %{payment_method}"
+        "saved_by_payment_method": "저장한 사람 %{payment_method}",
+        "purchase_options_card_update_agreement_label_html": "결제 방법을 업데이트하면 이 스토어의 <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">취소 정책에</a> 따라 반복 또는 지연된 구매에 대한 결제를 승인하는 것입니다.",
+        "subscription_card_update_agreement_label": "결제 방법을 변경하면 구독 및 향후 정기 결제가 업데이트됩니다.",
+        "subscription_agreement_label": "장바구니에 있는 하나 이상의 항목이 연기 또는 구독 구매입니다. 결제를 계속 진행하면 결제가 종료되거나 취소할 때까지 이 페이지에 명시된 가격과 빈도로 결제 수단이 자동으로 청구된다는 데 동의하는 것입니다. 모든 취소에는 %{cancelled}.",
+        "subscription_heading": "구독 계약",
+        "subscription_agreement_label_html": "구독에 동의한다는 것을 이해합니다. 구독이 종료될 때까지 나열된 가격 및 주기로 갱신됩니다.\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">취소됨</a>.\n",
+        "purchase_options_agreement_label": "장바구니에 있는 하나 이상의 품목이 지연 또는 반복 구매입니다. 결제를 계속 진행하면 결제가 종료되거나 취소할 때까지 이 페이지에 명시된 가격과 빈도로 결제 수단이 자동으로 청구된다는 데 동의하는 것입니다. 모든 취소에는  %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "장바구니에 있는 하나 이상의 품목이 이연 또는 반복 구매임을 이해합니다. 계속 진행하면 다음 약관에 동의합니다.\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">취소 정책</a>\n이 페이지에 나열된 가격, 빈도 및 날짜에 따라 내 결제 수단을 청구할 수 있도록 승인합니다.\n주문이 처리되거나 허용되는 경우 취소합니다.\n",
+        "purchase_options_agreement_label_wallets": "결제를 계속 진행하면 이 페이지에 명시된 향후 요금 및 취소 정책에 동의하는 것입니다.",
+        "no_real_orders_dev_store": "이 스토어는 실제 주문이나 실제 결제를 받을 수 없습니다.",
+        "waiting_on_payment_methods": "사용 가능한 결제 방법 찾기...",
+        "apple_pay_payment_error": "결제를 완료하지 못했습니다. 다시 시도하거나 다른 결제 방법을 사용하세요.",
+        "taxes_not_included": "세금 별도",
+        "no_taxes_banner_content": "이 주문에는 세금이 부과되지 않습니다. 결제가 수금되면 세금은 더 이상 추가할 수 없습니다.",
+        "paypal": {
+          "connect": "PayPal 계정을 연결하려면 클릭하세요."
+        },
+        "apple": {
+          "connect": "Apple Pay 계정을 연결하려면 클릭하세요.",
+          "not_available": "이 브라우저에서는 Apple Pay를 사용할 수 없습니다. Apple Pay 계정을 연결하려면 Apple 장치에서 Safari를 사용해야 합니다."
+        },
+        "google": {
+          "connect": "Google Pay 계정과 연결하려면 클릭하세요."
+        },
+        "mor_disclaimer_html": "아래를 클릭하고 주문을 완료하면 Global-e를 기록 판매자로 하여 상품을 구매하는 데 동의하는 것입니다.\n이 거래의 경우, Global-e의 <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">이용 약관에</a> 따라\n및 <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">개인정보 보호정책</a>. Global-e는 국제적인\n주문 처리 서비스 제공업체에 %{shop_name}\n",
+        "pending_payment": {
+          "due_notice": "납부 기한이 %{due_date} %{amount_due} 결제 기한이 %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "납부 기한이 %{amount_due}.",
+            "instruction_html": "아래 세부 정보를 사용하여 멀티방코 또는 온라인에서 결제하세요. 문의 사항이 있거나 결제 세부 정보를 업데이트하려면 여기를 클릭하세요, %{contact_us}.",
+            "entity": "엔티티",
+            "find_nearest_atm": "가장 가까운 ATM 찾기"
+          }
+        },
+        "order_covered_by_store_credit_notice": "주문은 스토어 크레딧으로 처리됩니다.",
+        "order_covered_by_redeemables_notice": "주문이 보장됩니다.",
+        "store_credit": {
+          "buying_gift_card": "스토어 크레딧을 사용하여 기프트 카드를 구매할 수 없습니다.",
+          "no_fixed_selling_plans": "지연된 구매 옵션에는 스토어 크레딧을 사용할 수 없습니다."
+        },
+        "same_billing_address_checkbox_label": "배송지 주소를 청구지 주소로 사용",
+        "fact_billing_address_label": "청구서 수신 주소"
       },
       "order_summary": {
         "for_add_on": "For: %{group_title}",

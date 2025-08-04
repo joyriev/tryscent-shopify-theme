@@ -2367,8 +2367,8 @@
     },
     "orders": {
       "order_status": {
-        "expected_by": "Previsto per {{date}}",
-        "was_expected_by": "Era previsto per {{date}}",
+        "expected_by": "Previsto da {{date}}",
+        "was_expected_by": "Era previsto da {{date}}",
         "attempted_delivery_description": "Il tentativo di consegna non è andato a buon fine.",
         "attempted_to_deliver_label": "Tentativo di consegna",
         "confirmed_description": "Abbiamo ricevuto il suo ordine.",
@@ -2411,6 +2411,62 @@
         "gift_resend_success": {
           "one": "Reinvio della carta regalo",
           "other": "Carte regalo rispedite"
+        },
+        "gift_resend_failure": {
+          "one": "Si è verificato un problema nel reinvio della carta regalo. Riprovi o ci contatti.",
+          "other": "Si è verificato un problema nel reinvio delle carte regalo. Riprovi o ci contatti."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "La carta regalo verrà inviata in un'e-mail separata.",
+          "other": "Ogni carta regalo verrà inviata in un messaggio di posta elettronica separato."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "La carta regalo verrà inviata in un testo separato.",
+          "other": "Ogni carta regalo sarà inviata in un testo separato."
+        },
+        "status_timestamp": "Aggiornato {{date}}",
+        "estimated_delivery": "Previsto {{date}}",
+        "delivered": "Arrivato {{date}}",
+        "buy_with_prime_logo_accessibility_label": "Amazon Buy con logo Prime",
+        "in_review_description": "Vi faremo sapere se abbiamo bisogno di ulteriori informazioni o quando il vostro ordine sarà confermato.",
+        "in_review_label": "In rassegna",
+        "in_review_title": "Il vostro ordine è in fase di revisione",
+        "last_updated": "Ultimo aggiornamento {{date}}",
+        "no_tracking_number": "Non esiste un numero di tracciamento per questa spedizione.",
+        "on_its_way_title": "La vostra spedizione è in arrivo",
+        "out_for_delivery_title": "La vostra spedizione è in consegna",
+        "resume_tracking": "Tracciabilità del curriculum",
+        "submitted_label": "Inviati",
+        "submitted_description": "Rivedere i dettagli dell'ordine e del pagamento.",
+        "there_was_a_problem_label": "C'era un problema",
+        "track_shipment": "Tracciamento della spedizione",
+        "request_return": "Richiesta di restituzione",
+        "view_order_for_details": "Visualizza l'ordine per i dettagli",
+        "external_promise_manage_button_label": {
+          "buy_with_prime": "Gestire su Amazon"
+        },
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "text": "Gestire con Amazon"
+          }
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "Consegna garantita da",
+            "external_promise_brand_label": "Consegna da parte di",
+            "not_delivered_by_label": "Consegnato dopo {{date}}",
+            "delivery_guarantee_expired_label": "Garanzia di consegna scaduta",
+            "modal_accessibility_button_label": "Dettagli della promessa di consegna",
+            "download_shop_app_button_label": "Scarica il negozio per tracciare",
+            "track_with_shop_button_label": "Traccia con Negozio",
+            "claim_shop_cash_button_label": "Richiedere contanti al negozio"
+          },
+          "details_modal": {
+            "active_delivery_guarantee_label": "Consegna da parte di {{date}}",
+            "expired_badge_label": "Scaduto",
+            "order_includes_guarantees_description": "Shop Promise garantisce una consegna rapida e affidabile. Richiedete Shop Cash se il vostro ordine arriva dopo {{date}}.",
+            "delivered_after_label": "Consegnato dopo {{date}}"
+          }
         }
       },
       "group_title_label": "Parte di: {{groupTitle}}",
