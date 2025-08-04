@@ -1961,7 +1961,79 @@
           "sold_out": "épuisé"
         },
         "inventory": {
-          "partial_inventory_banner": "Une partie de votre panier est épuisée et ne sera pas disponible à l'achat."
+          "partial_inventory_banner": "Une partie de votre panier est épuisée et ne sera pas disponible à l'achat.",
+          "sold_out": {
+            "storefront_body": "Retourner au magasin pour continuer les achats",
+            "no_storefront_body": "Malheureusement, l'article que vous souhaitez acheter n'est plus disponible.",
+            "link": "Retour au magasin"
+          }
+        },
+        "title": "Queue",
+        "time_to_checkout_title": "Il est temps de partir - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Calcul du temps d'attente estimé",
+          "less_than_one": "Temps d'attente estimé : Moins d'une minute",
+          "one": "Temps d'attente estimé : {{count}} minute",
+          "other": "Temps d'attente estimé : {{count}} minutes"
+        },
+        "last_checked": "(Dernière vérification : {{time}})",
+        "footer": {
+          "heading": "N'actualisez pas cette page, elle sera mise à jour automatiquement.",
+          "body": "Les articles de votre panier ne sont pas réservés tant que vous n'avez pas terminé votre commande."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Le traitement de votre demande a posé problème, veuillez contacter le propriétaire du magasin."
+      },
+      "no_address_location": {
+        "title": "Lieu sans adresse",
+        "header": "Vous n'avez pas d'adresse de livraison pour ce lieu",
+        "alt_header": "Adresse de livraison manquante",
+        "message": "Contactez-nous pour ajouter une adresse pour ce lieu afin de compléter la commande.",
+        "email_us_button_label": "Envoyez-nous un courriel"
+      },
+      "order_errors": {
+        "creation_failure": "Un problème est survenu lors de la création de votre commande. Réessayez ou contactez-nous pour plus de détails.",
+        "network_failure": "Votre commande n'a pas pu être envoyée en raison d'une erreur de réseau. Vérifiez votre connexion et réessayez."
+      },
+      "session_errors": {
+        "session_not_unique": "Il y a eu un problème dans le traitement de votre commande. Actualisez cette page pour revenir au magasin.",
+        "session_already_finished": "Cette commande a déjà été soumise. Vous pouvez retourner au magasin pour commencer une nouvelle commande."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Il y a eu un problème dans le traitement de votre commande. Réessayez dans quelques minutes."
+      },
+      "pickup_point": {
+        "business_hours": "Heures d'ouverture",
+        "no_business_hours": "Pas d'heures d'ouverture disponibles",
+        "title": "Point de ramassage",
+        "search_button": "Recherche",
+        "selector_tabs": "Sélecteur de point de prise",
+        "could_not_resolve_address": "Votre adresse n'a pas pu être localisée. Réessayez ou utilisez une autre adresse",
+        "no_pickup_points_near_you": "Aucun point de ramassage n'a été trouvé à proximité de l'adresse sélectionnée",
+        "no_pickup_points_near_location": "Aucun point de ramassage n'a été trouvé à proximité de votre lieu de résidence",
+        "pickup_unavailable_banner_title": {
+          "one": "Aucun point d'enlèvement n'est disponible pour votre article",
+          "other": "Aucun point d'enlèvement n'est disponible pour vos articles"
+        },
+        "no_pickup_points_found": "Aucun point de ramassage n'a été trouvé",
+        "paginator": {
+          "next_accessibility_label": "Next page",
+          "header": {
+            "one": "Affichage de %{first} - %{last} de %{count} point",
+            "other": "Affichage de %{first} - %{last} de %{count} points"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} de %{count} point",
+            "other": "%{pickup_point_index} de %{count} points"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} de %{count} point",
+            "other": "%{first} - %{last} de %{count} points"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} point de ramassage près de chez vous"
         }
       }
     },
