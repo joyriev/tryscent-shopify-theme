@@ -3094,7 +3094,74 @@
       },
       "addresses": {
         "add_shipping_address_button": "Ajouter une adresse de livraison",
-        "add_shipping_address_section_accessibility_label": "Ajouter une adresse de livraison"
+        "add_shipping_address_section_accessibility_label": "Ajouter une adresse de livraison",
+        "cancel_adding_billing_address_accessibility_label": "Annuler l'ajout d'une adresse de facturation",
+        "cancel_adding_shipping_address_accessibility_label": "Annuler l'ajout d'une adresse de livraison",
+        "save_new_shipping_address_accessibility_label": "Enregistrer l'adresse de livraison",
+        "shipping_address_card_title": "Adresse de livraison"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Cacher tout",
+          "show_all": "Afficher tout",
+          "hide_all_accessibility_label": "Cacher toutes les commandes en cours d'examen",
+          "show_all_orders_in_review": "Afficher toutes les commandes en cours d'examen",
+          "show_less_orders_in_review": "Afficher moins de commandes en cours d'examen",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Vous n'avez pas de commande en cours",
+            "pending_orders": {
+              "one": "Vous avez {{count}} ordre en attente",
+              "other": "Vous avez {{count}} commandes en attente"
+            },
+            "more_than_pagination_length": "Vous avez plus de {{count}} commandes en attente"
+          },
+          "pagination": {
+            "nav_accessibility_label": "Boutons de navigation pour les commandes en cours d'examen"
+          }
+        },
+        "order_list_column_headers_location": "Localisation",
+        "removed_company_contact_tooltip": "Retiré de l'entreprise"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Confirmé {{date}} de la commande {{draftOrderName}}",
+        "loading": "Détails de l'ordre de chargement",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Votre paiement est en retard de {{count}} jours",
+              "other": "Votre paiement est en retard de {{count}} jours"
+            },
+            "banner_due": {
+              "one": "Votre paiement est dû dans {{count}} jour",
+              "other": "Votre paiement est dû dans {{count}} jours"
+            },
+            "title_with_date": "Paiement dû {{date}}",
+            "title_due_on_receipt": "Le paiement n'est pas encore dû",
+            "title_due_on_fulfillment": "Paiement dû à l'exécution",
+            "description_overdue": "Votre paiement est en retard.",
+            "description_partially_paid": "Cette commande a été partiellement payée. Il vous reste un solde à payer.",
+            "description_authorized": "Votre mode de paiement sera débité à la date d'échéance, ou vous pouvez payer maintenant.",
+            "description_waiting_for_manual_payment": "Cette commande est en attente de paiement. Le solde sera mis à jour lorsque le paiement sera reçu.",
+            "description_due_on_receipt": "Vous recevrez une facture à l'échéance du paiement.",
+            "description_due_on_receipt_partially_paid": "Cette commande a été partiellement payée. Il vous reste un solde à payer. Vous recevrez une facture à l'échéance du paiement.",
+            "description_due_on_fulfillment": "Le paiement est dû une fois que tous les articles de cette commande ont été livrés.",
+            "description_due_on_fulfillment_partially_paid": "Cette commande a été partiellement payée. Il vous reste un solde à payer. Le paiement est dû une fois que tous les articles de cette commande ont été livrés."
+          },
+          "draft": {
+            "description": "Les modalités de paiement sont fixées lors de la confirmation de la commande.",
+            "title": "Paiement non échu",
+            "in_review": {
+              "description": "Les modalités de paiement sont fixées lors de la confirmation de la commande.",
+              "title": "Paiement non échu"
+            },
+            "submitted": {
+              "description": "Soumettre le paiement pour confirmer cette commande.",
+              "deposit": {
+                "due_later": "Le solde est aux conditions de {{translatedName}} et est dû le {{dueDate}}."
+              }
+            }
+          }
+        }
       }
     }
   }

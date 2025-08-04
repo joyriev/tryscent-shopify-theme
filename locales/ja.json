@@ -1631,7 +1631,58 @@
       },
       "billing": {
         "billing_address_title": "請求書",
-        "same_as_shipping": "発送先住所と同じ"
+        "same_as_shipping": "発送先住所と同じ",
+        "add_address": "別の住所を使用する",
+        "address_more": "このアドレスのその他のアクション",
+        "address_edit": "アドレスの編集",
+        "address_delete": "アドレス削除",
+        "address_confirm": "このアドレスをアカウントから削除してもよろしいですか？",
+        "address_form": {
+          "add_address": "アドレスの追加",
+          "save": "セーブ"
+        }
+      },
+      "company_location": {
+        "location_title": "会社所在地"
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "現在の残高 %{amount}",
+        "credit_card_expires_on_notice": "有効期限 %{month}/%{year}",
+        "manual_payment_gateway_label": "マニュアル"
+      },
+      "field_errors": {
+        "handle_phone_invalid": "有効な電話番号を入力してください。",
+        "handle_email_invalid": "有効なEメールを入力してください。",
+        "email_invalid": "有効なEメールを入力してください。",
+        "email_or_phone_blank": "Eメールまたは電話番号を入力",
+        "email_or_phone_invalid": "有効なEメールまたは携帯電話番号を入力してください。",
+        "address_first_name_blank": "名前を入力",
+        "address_first_name_too_long": "ファーストネームが長すぎる（最大255文字）",
+        "address_first_name_contains_emojis": "名前に絵文字を含めることはできません",
+        "address_first_name_contains_html_tags": "名前にHTMLタグを含めることはできません。",
+        "address_first_name_contains_url": "ファーストネームにURLを含めることはできません。",
+        "address_first_name_contains_mathematical_symbols": "ファーストネームに数学記号を含めることはできない",
+        "address_last_name_blank": "姓を入力",
+        "address_last_name_too_long": "姓が長すぎる（最大255文字）",
+        "address_last_name_contains_emojis": "姓に絵文字を含めることはできない",
+        "address_last_name_contains_url": "姓にURLを含むことはできない",
+        "address_last_name_contains_mathematical_symbols": "姓に数学記号を含むことはできない",
+        "address_address1_blank": "住所を入力する",
+        "address_address1_too_long": "最初のアドレス行が長すぎる（最大255文字）",
+        "address_address1_contains_emojis": "Address1 に絵文字を含めることはできません。",
+        "address_address1_contains_html_tags": "Address1 に HTML タグを含めることはできません。",
+        "address_address1_contains_mathematical_symbols": "最初のアドレス行に数学記号を含めることはできません。",
+        "address_address2_blank": "アパートやスイートなどに入る",
+        "address_address2_too_long": "2行目のアドレスが長すぎる（最大255文字）",
+        "address_address2_contains_emojis": "アドレス2に絵文字を含めることはできません。",
+        "address_address2_contains_html_tags": "アドレス2にHTMLタグを含めることはできません。",
+        "address_address2_contains_mathematical_symbols": "番目のアドレス行に数学記号を含めることはできません。",
+        "address_city_blank": "都市を入力",
+        "address_city_too_long": "都市名が長すぎる（最大255文字）",
+        "address_city_contains_emojis": "都市に絵文字を含めることはできない",
+        "address_city_contains_html_tags": "CityにHTMLタグを含めることはできません。",
+        "address_city_contains_mathematical_symbols": "市は数学記号を含むことができない",
+        "address_country_blank": "国・地域を選択"
       }
     }
   },
