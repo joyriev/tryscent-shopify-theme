@@ -2343,8 +2343,72 @@
         "stock_problems_html": "En eller flere varer er ikke længere tilgængelige. Vi har lavet en <a href='%{link}'>opdateret indkøbskurv</a>.",
         "items_changed": "Et eller flere elementer er ændret.",
         "product_sold_out": "Produktet%{name}' er allerede udsolgt.",
-        "selling_plan_not_available_for_company_locations": "Kun engangskøb er muligt for B2B-ordrer"
+        "selling_plan_not_available_for_company_locations": "Kun engangskøb er muligt for B2B-ordrer",
+        "buyer_cannot_purchase_for_company_locations": "Du kan ikke købe til denne placering",
+        "selling_plan_not_applicable": "Kan ikke anvende salgsplan på variant",
+        "shipping_address_not_required": "Denne vogn kræver ikke forsendelse",
+        "shipping_address_invalid": "Der opstod et problem med at beregne dine forsendelsespriser. Fortsæt til kassen for at vælge en fragtpris, før du gennemfører din ordre.",
+        "bundle_requires_components": "Bundle-produktet%{name}' kan ikke lægges i indkøbskurven.",
+        "gift_card_with_components_not_supported": "Bundle-produktet%{name}' kan ikke lægges i indkøbskurven.",
+        "gift_card_price_must_be_greater_than_zero": "Bundle-produktet%{name}' kan ikke lægges i indkøbskurven.",
+        "gift_card_recipient_validation_error": "Den angivne gavekortmodtager er ugyldig",
+        "cart_too_large": "Vognen er for stor.",
+        "cart_attributes_error": "Indkøbskurvens attributter indeholder ugyldige data.",
+        "merchandise_line_transformers": {
+          "run_error": "Der opstod en fejl i din indkøbskurv."
+        }
+      },
+      "tags": {
+        "add_articles": "Begræns søgningen til artikler, der også har tag %{tag}",
+        "add_products": "Begræns udvalget til produkter, der matcher tagget %{tag}",
+        "remove_articles": "Udvid søgningen til artikler, der ikke er tagget %{tag}",
+        "remove_products": "Fjern tag %{tag}"
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Tak, fordi du har tilmeldt dig vores mailingliste.",
+        "disclaimer": "Du kan til enhver tid afmelde dig.",
+        "unsubscribe": "Afmeld dit abonnement"
+      },
+      "unsubscribed": {
+        "confirmation": "Du har afmeldt dig fra vores mailingliste.",
+        "disclaimer": "Du vil ikke modtage flere marketingopdateringer fra os. Du kan til enhver tid tilmelde dig igen.",
+        "preview": "Du giver en forsmag på, hvad kunderne vil se, når de afmelder sig."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Du har tilmeldt dig sporing af åbne e-mails.</b>",
+          "visibility": "Åbningsrater for e-mails vil blive rapporteret anonymt. Vi vil kun se, om du har åbnet en e-mail som en del af en samlet e-mail-åbningsrate.",
+          "opt_out_html": "Du kan <a style='text-decoration:underline;' href='%{link}'>fravælge</a> sporing af åbne e-mails, hvis du ikke ønsker at dele disse oplysninger.",
+          "preview_bar": "Du får en forsmag på, hvad kunderne vil se, når de tilmelder sig sporing af åbne e-mails."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Du har fravalgt sporing af åbne e-mails.</b>",
+          "visibility": "Vi kan ikke se, om du har åbnet vores e-mails.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Tilmeld</a> dig sporing af åbne e-mails.",
+          "preview_bar": "Du får en forsmag på, hvad kunderne vil se, når de fravælger sporing af åbne e-mails."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Vi sporer ikke længere åbninger af e-mails.</b>",
+          "privacy_policy": "Efter at denne e-mail blev sendt, har vi opdateret vores privatlivspolitik, og vi sporer ikke længere åbninger."
+        },
+        "track": {
+          "status_html": "<b>Sporing af åbne e-mails rapporteres.</b>",
+          "visibility": "Vi ser kun, om du har åbnet e-mailen, som en del af den samlede åbningsrate for e-mailen."
+        },
+        "updated_policy": {
+          "status_html": "<b>Sporing af åbne e-mails rapporteres.</b>",
+          "visibility": "Vi har opdateret vores politik og sporer nu åbnede e-mails. Åbningsrater for e-mails vil blive rapporteret anonymt. Vi kan kun se, om du har åbnet en e-mail som en del af den samlede åbningsrate for e-mails.",
+          "opt_out_html": "Hvis du ikke ønsker at dele disse oplysninger, kan du <a style='text-decoration:underline;' href='%{link}'>afmelde</a> dig."
+        }
+      }
+    },
+    "search": {
+      "error": "Der var et problem med at indlæse dine søgeresultater. Opdater venligst siden, eller prøv igen senere."
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Fejl. %{title}"
     }
   },
   "customer_accounts": {
