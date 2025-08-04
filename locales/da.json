@@ -354,21 +354,21 @@
       "variant": "Variant",
       "variant_total": "Variant i alt",
       "items_added": {
-        "one": "{{ quantity }} vare tilføjet",
+        "one": "{{ quantity }} element tilføjet",
         "other": "{{ quantity }} varer tilføjet"
       },
       "items_removed": {
-        "one": "{{ quantity }} vare fjernet",
-        "other": "{{ quantity }} varer fjernet"
+        "one": "{{ quantity }} genstand fjernet",
+        "other": "{{ quantity }} elementer fjernet"
       },
       "product_variants": "Produktvarianter",
-      "total_items": "Varer i alt",
-      "remove_all_items_confirmation": "Vil du fjerne alle {{ quantity }} varer fra din indkøbskurv?",
+      "total_items": "I alt varer",
+      "remove_all_items_confirmation": "Fjern alle {{ quantity }} varer fra din kurv?",
       "remove_all": "Fjern alle",
       "cancel": "Annuller",
-      "remove_all_single_item_confirmation": "Vil du fjerne 1 vare fra din indkøbskurv?",
-      "min_error": "Denne vare har en minimumsgrænse på {{ min }}",
-      "max_error": "Denne vare har en maksimumgrænse på {{ max }}",
+      "remove_all_single_item_confirmation": "Fjern 1 vare fra din kurv?",
+      "min_error": "Denne vare har et minimum af {{ min }}",
+      "max_error": "Denne vare har et maksimum på {{ max }}",
       "step_error": "Du kan kun tilføje denne vare i intervaller på {{ step }}"
     }
   },
@@ -793,7 +793,63 @@
         "clear": "Klar",
         "billing_must_match_shipping_notice": "Faktureringsadressen for din betalingsmetode skal matche leveringsadressen.",
         "location_billing_address_label": "Placering af faktureringsadresse",
-        "location_shipping_address_label": "Placering af leveringsadresse"
+        "location_shipping_address_label": "Placering af leveringsadresse",
+        "use_location_billing_address_label": "Brug stedets faktureringsadresse",
+        "use_location_shipping_address_label": "Brug stedets leveringsadresse",
+        "no_working_method_error": "Denne butik kan ikke tage imod betalinger lige nu. Opdater denne side, eller kom tilbage senere.",
+        "brand_not_available": "Denne butik accepterer ikke {{brand}}. Brug venligst et andet kort til at betale med.",
+        "shipping_rate_updated": "Tilgængelige forsendelsesmetoder er blevet opdateret. Bekræft dit valg, før du tjekker ud.",
+        "preview_not_available": {
+          "title": "Forhåndsvisning ikke tilgængelig",
+          "content": "Bare rolig, denne ekspres-checkout fungerer for dine kunder.",
+          "button": "Ok"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Indtast en gyldig udstedelsesdato",
+              "issue_number": "Indtast et gyldigt udstedelsesnummer"
+            },
+            "invalid": {
+              "verification_value": "Indtast en gyldig CVV- eller sikkerhedskode"
+            }
+          }
+        },
+        "simulated_express_checkout": "Tegnebøger er ikke tilgængelige i editorens forhåndsvisning på grund af din region eller browser",
+        "vaulting_agreement_label": "Gem mine betalingsoplysninger med %{company} for en hurtigere checkout.",
+        "business_customer_vaulting_payment_label": "Gem dette kort ved kassen, og giv %{company} tilladelse til at bruge det ved fremtidige køb på dette sted. Alle kontakter, der er tilknyttet dette sted, kan bruge kortet.",
+        "purchase_options_and_vaulting_agreement_label": "En eller flere varer i din indkøbskurv er et udskudt køb eller et abonnement. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og hyppighed, der er angivet på denne side, indtil den slutter, eller du annullerer den. Alle annulleringer er underlagt %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "Afbestillingsregler",
+        "saved_credit_card_info": "De sidste fire cifre",
+        "saved_credit_card_cvv_verification": "Indtast venligst dit korts sikkerhedskode for at bekræfte det.",
+        "saved_credit_card_actions": {
+          "delete": "Sletning"
+        },
+        "saved_credit_cards_modal": {
+          "done": "Færdig"
+        },
+        "add_credit_card_modal": {
+          "save": "Gemme"
+        },
+        "delete_credit_card_modal": {
+          "confirmation": "Er du sikker på, at du vil slette det {{brandName}}, der slutter med {{lastDigits}}?",
+          "delete": "Sletning"
+        },
+        "edit_credit_card_modal": {
+          "done": "Færdig",
+          "description": "Du kan kun ændre faktureringsadressen på dit kort.",
+          "fields": {
+            "default": "Indstil som standard",
+            "name": "Navn på kort",
+            "billing": "Regning til"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Der er %{count} udløbne kort, som du kan se og redigere på din konto."
+        },
+        "local_payment_method_receiver_notice": "Når du har afgivet din ordre, modtager du betalingsoplysninger. Foretag betalingen i en pengeautomat eller online inden for {{dueDays}} dage.",
+        "order_edit_banner_title": "Betaling af {{amount_owed}} er nødvendig",
+        "order_edit_banner_subtitle": "Din ordre {{order_number}} er blevet opdateret. Gennemgå ændringerne, og betal derefter for at bekræfte din ordre."
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."

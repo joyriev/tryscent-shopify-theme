@@ -2780,7 +2780,55 @@
       "order_details": "Details zur Bestellung",
       "order_details_skeleton_accessibility_label": "Loggen Sie sich ein, um alle Bestelldetails zu sehen.",
       "card_ending_with": "endend mit {{lastDigits}}",
-      "fully_refunded_label": "ERSTATTET"
+      "fully_refunded_label": "ERSTATTET",
+      "grouped_view_components": {
+        "expand_line_items": "Zeige {{count}} Artikel",
+        "collapse_line_items": "Ausblenden von {{count}} Artikeln",
+        "line_item_summary_accessibility_label": "{{productTitle}}, Anzahl: {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "Artikel im Bündel {{productTitle}} "
+      },
+      "loading": "Auftragsdetails laden",
+      "loading_finished_accessibility_message": "Die Bestelldaten wurden geladen",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} Menge {{quantity}}",
+        "load_more_items": {
+          "one": "Laden Sie {{count}} weitere Artikel",
+          "other": "Laden Sie {{count}} weitere Artikel"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "closed": "Zusammenfassung der Bestellung ausblenden"
+      },
+      "not_applicable": "K.A.",
+      "payment": {
+        "status_in_review": "Zahlung fällig nach Überprüfung",
+        "payment_type": {
+          "gift_card": "Geschenkkarte",
+          "store_credit": "Kredit im Geschäft",
+          "money_order": "Zahlungsanweisung",
+          "manual": "Handbuch"
+        },
+        "card_payment_details": "endend mit {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "endend mit {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Ladenguthaben - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Bezahlt mit Shop Pay Raten",
+          "view_schedule": "Zeitplan ansehen"
+        },
+        "manual_payment_methods": {
+          "money_order": "Zahlungsanweisung - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Nachnahme (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Bankguthaben - {{formattedTransactionAmount}}",
+          "manual": "Handbuch - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "details": "Einzelheiten",
+          "payment_details": "Details zur Bezahlung"
+        },
+        "emv_details": {
+          "source": "QUELLE:"
+        }
+      }
     }
   }
 }
