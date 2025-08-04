@@ -668,7 +668,60 @@
             "installments_ineligible_line_item": "Ratenzahlungen sind für eine Position in diesem Kauf deaktiviert.",
             "shop_cash_not_found": "Shop Cash wurde nicht gefunden.",
             "shop_cash_not_allowed": "Shop Cash ist ohne Shop Pay nicht erlaubt.",
-            "shop_cash_gift_card_not_allowed": "Shop Cash erlaubt nicht den Kauf von Geschenkkarten."
+            "shop_cash_gift_card_not_allowed": "Shop Cash erlaubt nicht den Kauf von Geschenkkarten.",
+            "shop_cash_unsupported_shipping": "Shop Cash unterstützt keine versandkostenfreien Waren.",
+            "missing_retail_attributions": "Für manuell eingegebene Kreditkartenzahlungen sind Zuordnungen für den Einzelhandel erforderlich.",
+            "unexpected_retail_attributions": "Einzelhandelszuschläge werden unerwartet für die Zahlung per Kreditkarte bereitgestellt.",
+            "invalid_card_source": "Diese Sitzung hat nicht die Erlaubnis, diese Kartenquelle zu verwenden.",
+            "wallet_content_missing": "Es fehlt der Inhalt der Brieftasche.",
+            "payment_instrument_not_found": "Konnte keine Zahlungsmethode finden",
+            "saved_payment_methods_not_allowed": "Gespeicherte Zahlungsarten sind nicht erlaubt.",
+            "saved_payment_methods_not_enabled": "Gespeicherte Zahlungsarten sind für diesen Shop nicht aktiviert.",
+            "saved_payment_methods_cvv_verification_disabled": "Die ausgewählte Zahlungsmethode erfordert eine CVV-Prüfung, die für diesen Shop nicht aktiviert ist. Wählen Sie eine andere Zahlungsmethode.",
+            "store_credit_not_enabled": "Gutschriften sind für diesen Shop nicht möglich.",
+            "store_credit_account_not_found": "Ladenguthaben-Konto nicht gefunden.",
+            "store_credit_account_mismatch": "Das Guthabenkonto stimmt nicht mit der Identität des Käufers überein.",
+            "store_credit_mismatched_currency": "Die Währung des Guthabenkontos stimmt nicht mit der Kassenwährung überein.",
+            "store_credit_insufficient_funds": "Das Guthaben auf dem Geschäftskonto ist nicht ausreichend.",
+            "store_credit_buying_gift_card": "Sie können kein Guthaben verwenden, um eine Geschenkkarte zu kaufen.",
+            "gift_cards_not_allowed_for_b2b": "Geschenkkarten sind in B2B-Geschäften nicht erlaubt."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Das Geschäft nimmt kein Trinkgeld an.",
+            "only_one_tip_line_allowed": "Mehrere Tippzeilen werden nicht unterstützt.",
+            "tips_not_allowed_for_b2b": "Trinkgelder sind in B2B-Geschäften nicht erlaubt.",
+            "tips_not_allowed_for_deferred_purchase_options": "Trinkgelder werden für deffered purchase options noch nicht unterstützt."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Dieser Entwurfsauftrag existiert im aktuellen Shop nicht.",
+            "staff_member_not_exist": "Dieses Personal gibt es im aktuellen Shop nicht.",
+            "location_not_exist": "Dieser Ort existiert im aktuellen Shop nicht.",
+            "point_of_sale_device_not_exist": "Dieses Verkaufsgerät gibt es in dem aktuellen Geschäft nicht.",
+            "unresolvable_target_merchandise_lines": "Die vorgeschlagenen Verkaufszuweisungen sind angesichts des aktuellen Verhandlungskontextes unlösbar."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Das Angebot Ihres Einkäufers sollte nicht verhandelbare Bedingungen enthalten."
+          },
+          "inventory": {
+            "missing_quantity_value": "In den Bestandszeilen des Käufers fehlt das Feld Menge.",
+            "changing_behavior_not_allowed": "Dieser Kunde hat nicht die Erlaubnis, das Bestandsverhalten zu ändern.",
+            "only_one_inventory_behavior_allowed": "Derzeit ist nur ein Bestandsverhalten pro Kasse zulässig."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Die Ablehnung von Zöllen ist bei dieser Kasse nicht zulässig."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Die Zuordnung zum Einzelhandel ist für diese Kasse nicht zulässig.",
+            "retail_attribution_required": "Für diese Kasse ist eine Zuordnung zum Einzelhandel erforderlich."
+          },
+          "captcha": {
+            "metadata_missing": "Für diese Kaufabwicklung ist das Abschließen eines Captcha erforderlich.",
+            "metadata_mismatch": "Der angegebene Captcha-Anbieter und -Typ stimmt nicht mit den erwarteten Werten überein.",
+            "token_missing": "Ein Captcha-Token muss eingegeben werden, um den Checkout abzuschließen.",
+            "job_enqueue_failed": "Der Captcha-Validierungsauftrag konnte nicht in die Warteschlange aufgenommen werden.",
+            "job_already_queued": "Die Captcha-Validierung wurde bereits für dieses Captcha-Token in die Warteschlange gestellt.",
+            "token_expired": "Das angegebene Captcha-Token ist abgelaufen. Füllen Sie ein neues Captcha aus, um den Checkout fortzusetzen.",
+            "token_invalid": "Das angegebene Captcha-Token war ungültig. Füllen Sie ein neues Captcha aus, um den Checkout fortzusetzen."
           }
         }
       }
