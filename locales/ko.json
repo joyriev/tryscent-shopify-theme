@@ -533,7 +533,48 @@
       },
       "order_summary": {
         "for_add_on": "대상: %{group_title}"
+      },
+      "address_management": {
+        "confirm_address_deletion": "주소를 삭제하시겠습니까? {{address}}?"
+      },
+      "general": {
+        "continue_button_label": "계속하기",
+        "pay_now_button_label": "지금 결제하기",
+        "authenticate_purchase_button_label": "결제 인증",
+        "all_rights_reserved": "모든 권리 보유 %{shop_name}",
+        "cart": "장바구니",
+        "continue_to_payment_method": "결제 계속하기",
+        "back_to_payment_method": "결제하기",
+        "choose_shipping_method": "배송 방법 선택",
+        "choose_payment_method": "결제 방법 선택",
+        "choose_billing_address": "청구 주소 선택",
+        "contact_us_html": "자세한 내용은 문의하세요",
+        "autocomplete_single_item": "사용 가능한 항목 1개",
+        "autocomplete_multi_item": "{{number}} 사용 가능한 항목",
+        "autocomplete_selection": "{{number}} 의 {{total}}",
+        "autocomplete_close": "제안 닫기",
+        "forwarding_indicator": {
+          "new_window": "새 창에서 열립니다.",
+          "external": "외부 웹사이트를 엽니다.",
+          "external_and_new_window": "외부 웹 사이트가 새 창에서 열립니다."
+        },
+        "tooltip_accessibility_label": "자세한 정보",
+        "errors": {
+          "only_empty_terms_accepted": "이 정책은 빈 용어만 허용합니다.",
+          "session_identifier_not_unique_error": "주문에 문제가 발생했습니다. 다시 결제해 주세요.",
+          "line_item_limit_reached": "최대 항목 수에 도달했습니다.",
+          "merchandise": {
+            "only_value_constraint": "상품 입력에는 정확한 값만 허용됩니다.",
+            "merchandise_variant_not_found": "제품 변형을 찾을 수 없습니다.",
+            "merchandise_not_applicable": "이형 상품은 구매할 수 없습니다.",
+            "mixed_currencies": "결제에 다른 통화를 사용하는 품목이 포함되어 있습니다."
+          }
+        }
       }
+    },
+    "sentence": {
+      "two_words_connector": " 그리고 ",
+      "last_word_connector": "및 "
     }
   },
   "customer_accounts": {

@@ -3545,11 +3545,90 @@
               "title": "確認のための支払い",
               "deposit": {
                 "title": "支払期限",
-                "due_later": "残高は{{translatedName}}条件で、{{dueDate}}日に支払います。"
+                "due_later": "残高は{{translatedName}}条件で、{{dueDate}}日に支払います。",
+                "due_on_fulfillment": "残金は、この注文に含まれるすべての商品が満たされた時点で支払われる。",
+                "due_on_receipt": "残金の請求書が届きます。",
+                "due_on_date": "残金は以下の日に支払われる。 {{dueDate}}."
               }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}}ご注文が確定した時点でお支払いいただきます。残金は{{translatedName}}条件となります。",
+              "due_on_fulfillment": "{{depositAmount}} はご注文確定時にお支払いいただきます。残金はご注文が完了した時点でお支払いいただきます。",
+              "due_on_receipt": "{{depositAmount}} はご注文確定時にお支払いいただきます。残金は後日お支払いいただきます。",
+              "due_on_date": "{{depositAmount}} ご注文確定時にお支払いいただきます。残金のお支払いは {{dueDate}}."
             }
-          }
+          },
+          "paid": {
+            "title": "有料",
+            "title_with_date": "有料 {{date}}",
+            "description": "ご注文は全額お支払い済みです。"
+          },
+          "refund": {
+            "title": "払い戻し",
+            "title_with_date": "払い戻し {{date}}",
+            "description_single_refund": "この注文の一部返金を受け取りました。",
+            "description_multiple_refunds": "この注文の一部払い戻しを受けました。"
+          },
+          "canceled": {
+            "title": "支払いキャンセル",
+            "description": "あなたは起訴されなかった。"
+          },
+          "pay_now_accessibility_label": "今すぐ支払う {{orderName}}",
+          "title": "支払状況"
+        },
+        "order_timeline": {
+          "expand_events_label": "詳細を表示",
+          "expand_events_accessibility_label": "ドラフト注文の詳細を表示",
+          "hide_events_label": "詳細を隠す",
+          "hide_events_accessibility_label": "ドラフト注文の詳細を隠す"
+        },
+        "subtitle": "提出済み {{date}}",
+        "title": "オーダー {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "このお支払い方法は、今後この場所でのご購入にはご利用いただけません。",
+          "description_with_replacement": "この支払方法を削除すると、この場所の事前承認支払いに影響します。今後の注文を継続して受け取るには、別の支払い方法に変更してください。"
+        },
+        "payment_details": {
+          "order_label": "オーダー {{name}}",
+          "draft_label": "ドラフト順位 {{name}}"
         }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "PO番号の追加",
+        "add_modal_title": "PO番号の追加",
+        "close_modal_accessibility_label": "PO番号のモーダルを閉じる",
+        "discard": "廃棄",
+        "discard_changes_modal_title": "変更は破棄するのか？",
+        "edit_accessibility_label": "PO番号の編集",
+        "edit_modal_title": "PO番号の編集",
+        "empty_state": "PO番号なし",
+        "modal_po_number_input_label": "PO番号",
+        "modal_po_number_input_max_length_error": "PO番号は最大{{maxLength}}文字です。",
+        "save": "セーブ",
+        "title": "PO #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "このアドレスの削除に問題が発生しました。再度お試しいただくか、ページを更新してください。"
+      },
+      "addresses_loading_issue": {
+        "description": "接続エラーです。インターネット接続を確認して再試行してください。"
+      },
+      "banner_title": {
+        "one": "{{count}}エラーがあります。",
+        "other": "{{count}}エラーがある"
+      },
+      "failed_address_creation": {
+        "description": "アドレスの作成に問題が発生しました。このページを更新するか、インターネット接続を確認してください。"
+      },
+      "failed_address_update": {
+        "description": "アドレスの更新に問題が発生しました。このページを更新するか、インターネット接続を確認してください。"
+      },
+      "load_orders_error": {
+        "title": "注文をロードできない"
       }
     }
   }
