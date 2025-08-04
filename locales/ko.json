@@ -1634,8 +1634,62 @@
           "change_billing_address_link_label": "청구서 수신 주소 변경",
           "change_shipping_address_link_label": "배송 주소 변경",
           "change_payment_method_link_label": "결제 방법 변경",
-          "pick_up_in_store_shipping_method_html": "매장 내 픽업 - %{location_name}"
+          "pick_up_in_store_shipping_method_html": "매장 내 픽업 - %{location_name}",
+          "due_after_order_reviewed_html": "주문 검토 후 마감",
+          "payment_method_saved_company_location": "이 위치의 카드 저장"
+        },
+        "block_title": "정보 검토",
+        "item_header": {
+          "value": "가치"
         }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "뉴스와 혜택이 담긴 이메일 보내기",
+        "post_accept_marketing_checkbox_label": "이메일 뉴스 및 혜택을 받기 위해 구독 중입니다.",
+        "pending_accept_marketing_checkbox_label": "이메일을 확인하여 뉴스 및 혜택 구독을 확인하세요.",
+        "accept_sms_checkbox_label": "새로운 소식과 혜택이 담긴 문자 메시지",
+        "disclaimer": {
+          "privacy_policy": "개인정보 보호정책"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "개인정보 보호정책",
+            "description_html": "문자를 통해 가입하면 제공한 전화번호로 장바구니 알림을 포함한 자동 마케팅 메시지를 반복적으로 수신하는 데 동의하는 것입니다. 동의는 구매 조건이 아닙니다. 구독을 취소하려면 STOP이라고 답장하세요. 도움이 필요하면 HELP로 답장하세요. 메시지 빈도는 다양합니다. 메시지 및 데이터 요금이 적용될 수 있습니다. %{privacy_policy_link} 및 %{terms_of_service_link} 확인하세요.",
+            "description_transactional_html": "주문 확인 및 배송 업데이트와 관련된 문자 메시지를 받을 수 있습니다. 구독을 취소하려면 STOP이라고 답장하세요. 도움이 필요하면 HELP로 답장합니다. 메시지 빈도는 다양합니다. 메시지 및 데이터 요금이 적용될 수 있습니다. %{privacy_policy_modal_link} 및 %{terms_of_service_modal_link} 확인하세요."
+          },
+          "get_offers_by_text": "문자로 오퍼 받기"
+        },
+        "unsubscribe": {
+          "title": "구독을 취소했습니다.",
+          "description": "더 이상 장바구니 알림을 받지 않게 됩니다."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "이 스토어에서 제공하는 소식과 혜택을 받아보세요."
+      },
+      "shop_policies": {
+        "privacy_policy": "개인정보 보호정책",
+        "legal_notice": "법적 고지"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "기록 판매자 이용 약관",
+        "privacy_policy": "판매자 개인정보 처리방침"
+      },
+      "markets": {
+        "invalid_market_manager_error": "결제를 완료하기 전에 연락처 정보를 검토하세요."
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "주문 결제 금액 %{order_name}",
+        "changes_summary": {
+          "added": {
+            "other": "추가됨 %{count}"
+          },
+          "subtracted": "제거됨 %{count}",
+          "returned": "반환됨 %{count}",
+          "return_line_item_removed": "반환에서 %{count} 제거"
+        },
+        "additional_payment_requested": "%{total_outstanding} 미결제 금액 %{total_outstanding} 필요합니다.",
+        "checkout_review_and_pay": "주문 %{order_name} 업데이트되었습니다. 변경 사항을 검토한 후 결제하여 주문을 확정하세요.",
+        "order_updated_on": "주문이 업데이트되었습니다. %{last_edited_at}.",
+        "order_review_and_pay": "주문이 업데이트되었습니다. 주문 확인을 위해 주문을 검토하고 결제합니다."
       }
     },
     "sentence": {

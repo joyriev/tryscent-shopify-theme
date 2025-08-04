@@ -10,20 +10,20 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Accedi al negozio utilizzando la password:",
-      "login_password_button": "Accedi utilizzando la password",
+      "login_form_heading": "Inserire il negozio con la password:",
+      "login_password_button": "Inserire la password",
       "login_form_password_label": "Password",
-      "login_form_password_placeholder": "La tua password",
-      "login_form_error": "Password errata!",
-      "login_form_submit": "Accedi",
+      "login_form_password_placeholder": "La vostra password",
+      "login_form_error": "Password sbagliata!",
+      "login_form_submit": "Entrare",
       "admin_link_html": "Sei il proprietario del negozio? <a href=\"/admin\" class=\"link underlined-link\">Accedi qui</a>",
-      "powered_by_shopify_html": "Questo negozio sarà ospitato su {{ shopify }}"
+      "powered_by_shopify_html": "Questo negozio sarà alimentato da {{ shopify }}"
     },
     "social": {
       "alt_text": {
         "share_on_facebook": "Condividi su Facebook",
         "share_on_twitter": "Condividi su X",
-        "share_on_pinterest": "Aggiungi un pin su Pinterest"
+        "share_on_pinterest": "Appuntate su Pinterest"
       },
       "links": {
         "twitter": "X (Twitter)",
@@ -3070,7 +3070,97 @@
       "closeModal": "Chiudere",
       "processing": "Elaborazione...",
       "increase": "Aumento {{type}}",
-      "decrease": "Diminuzione {{type}}"
+      "decrease": "Diminuzione {{type}}",
+      "monday": "Monday",
+      "tuesday": "Martedì",
+      "wednesday": "Mercoledì",
+      "thursday": "Giovedì",
+      "friday": "Venerdì",
+      "saturday": "Sabato",
+      "sunday": "Domenica",
+      "mondayAbbreviation": "Mo",
+      "tuesdayAbbreviation": "Tu",
+      "wednesdayAbbreviation": "Noi",
+      "thursdayAbbreviation": "Th",
+      "fridayAbbreviation": "Fr",
+      "saturdayAbbreviation": "Sa",
+      "sundayAbbreviation": "Su",
+      "showNextMonth": "Mostra il mese prossimo, {{month}} {{year}}",
+      "rangeStart": "Inizio gamma",
+      "inRange": "In gamma",
+      "rangeEnd": "Fine gamma",
+      "removeItem": "Rimuovere {{label}}",
+      "removeTag": "Rimuovere il tag",
+      "mapClusterTitle": {
+        "one": "Cluster di marcatori di {{number}} ",
+        "other": "Cluster di marcatori {{number}} "
+      },
+      "qrCode": "Codice QR",
+      "dropzoneDraggedOver": "Rilasciare il file da caricare"
+    },
+    "profile_preview_bar": {
+      "customize_button": "Personalizzazione",
+      "hide_bar": "Nascondere la barra",
+      "navigate_to_admin": "Passare all'amministrazione",
+      "close_preview": "Anteprima di chiusura",
+      "previewing": "Stai visualizzando l'anteprima:",
+      "saved_at": "Salvato {{date}} a {{time}}",
+      "not_available": "Dati sul profilo non disponibili"
+    },
+    "active_inspector": {
+      "extension": {
+        "select": "Selezionare l'estensione denominata {{extensionName}}",
+        "unselect": "Deselezionare l'estensione denominata {{extensionName}}",
+        "move_down": "Spostare l'estensione nella posizione successiva",
+        "move_up": "Spostare l'estensione nella posizione precedente",
+        "remove": "Rimuovere l'estensione",
+        "move_down_tooltip": "Passare alla posizione successiva",
+        "move_up_tooltip": "Spostamento alla posizione precedente",
+        "remove_tooltip": "Rimuovere"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Questo link non può essere aperto all'interno dell'editor. Verrà aperto in una nuova finestra{{resolved_to_link}}). Fare clic su OK per continuare."
+    },
+    "settings": {
+      "loading_accessibility_message": "Caricamento della pagina delle impostazioni",
+      "log_out_everywhere": {
+        "title": "Disconnettersi dappertutto",
+        "description": "Se avete perso un dispositivo o avete problemi di sicurezza, fate il logout ovunque per garantire la sicurezza del vostro account.",
+        "button": "Disconnettersi dappertutto",
+        "warning_message": "L'utente verrà disconnesso anche su questo dispositivo."
+      }
+    },
+    "shop_ads": {
+      "subtitle": "Disponibile per un periodo limitato",
+      "button": "Esplora su Negozio",
+      "previous_button": "Precedente"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "disabled": "I clienti devono contattare il commerciante per richiedere un reso."
+      }
+    },
+    "sign_in": {
+      "brand_logo_alt_text": "%{shop_name} Logo",
+      "processing": "Elaborazione...",
+      "step_one": {
+        "subheading": "Inserite il vostro indirizzo e-mail e vi invieremo un codice di verifica.",
+        "subheading_with_sign_in_options": "Scegliere la modalità di accesso",
+        "or": "o"
+      },
+      "step_two": {
+        "page_title": "Inserire il codice - %{shop_name}",
+        "heading": "Inserire il codice",
+        "restart_link": "Accedere con un altro indirizzo e-mail",
+        "input_field_label": "Codice a 6 cifre"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "Inserire un indirizzo e-mail valido",
+          "invalid_code": "Inserire il codice a 6 cifre corretto"
+        }
+      }
     }
   }
 }
