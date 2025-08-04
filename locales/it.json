@@ -1944,6 +1944,75 @@
         "location_information": {
           "one": "C'è un negozio %{count} con magazzino vicino a %{address}",
           "other": "Ci sono %{count} negozi con stock vicino a %{address}"
+        },
+        "location_information_next": {
+          "one": "C'è un %{count} di sedi con magazzino vicino a te",
+          "other": "Ci sono %{count} sedi con magazzino vicino a te"
+        },
+        "toggle_location": "Cambia posizione",
+        "or": "O",
+        "cancel": "Annullamento",
+        "your_location": "la tua posizione",
+        "search_button": "Trova i negozi",
+        "all_stores_far_away": {
+          "title": "I luoghi più vicini sono a più di %{distance} di distanza",
+          "description": "Selezionare una posizione o %{ship_to_address_link}"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "La località precedentemente selezionata non è più disponibile",
+          "description": "Selezionare una nuova posizione o %{ship_to_address_link}",
+          "ship_to_address_link": "indirizzo di spedizione"
+        },
+        "could_not_resolve_address": "Non è stato possibile trovare il vostro indirizzo. Riprovare o utilizzare un altro indirizzo",
+        "paginator": {
+          "accessibility_label": "Impaginazione del prelievo locale"
+        },
+        "reveal_more_label": {
+          "one": "Mostra %{count} altre posizioni",
+          "other": "Mostra %{count} altre località"
+        }
+      },
+      "captcha": {
+        "title": "Completare il CAPTCHA per continuare",
+        "errors": {
+          "not_solved": "Completare il CAPTCHA per continuare"
+        }
+      },
+      "clipboard": {
+        "failed_to_copy": "Copia non riuscita"
+      },
+      "discount_errors": {
+        "generic_error": "Non è stato possibile elaborare l'ordine perché il codice sconto non è più disponibile. Rivedere il totale dell'ordine e riprovare."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Non sei più autorizzato a effettuare ordini B2B. Per effettuare invece un ordine personale, %{logout_url}.",
+        "log_out_link_text": "Disconnettersi",
+        "lost_permissions_subtitle": "Non sei più autorizzato a effettuare ordini B2B, esci per effettuare un ordine personale.",
+        "lost_permissions_title": "Nessun permesso di localizzazione"
+      },
+      "shop_pay_external": {
+        "title": "Pagamenti alla cassa del negozio",
+        "errors": {
+          "problem_loading": "C'è un problema nel caricamento di Shop Pay",
+          "try_again_later": "Controllare la connessione o chiudere questa finestra e riprovare tra qualche istante.",
+          "checkout_has_expired": "Il tuo checkout è scaduto. Chiudere questa finestra e riprovare a effettuare il checkout da {{shopName}}."
+        },
+        "return_to_store": "Ritorno a {{shopName}}",
+        "return_to_store_simple": "Ritorno al negozio"
+      },
+      "wallets": {
+        "return_to_store": "Ritorno al negozio",
+        "return_to_checkout": "Torna alla cassa",
+        "redirect_hint": "Verrà richiesto di effettuare il login con {{walletName}}.",
+        "logged_in": "Collegato a {{email}}",
+        "payment_in_progress_body": "Il pagamento è in corso di elaborazione. Il vostro ordine sarà completato a breve.",
+        "call_to_action": "Pagare con {{walletName}}",
+        "redirection_notice": "Dopo aver fatto clic su{{buttonLabel}}, si verrà reindirizzati a {{walletName}} per completare l'acquisto in modo sicuro.",
+        "errors": {
+          "unavailable": {
+            "description": "{{walletName}} non era disponibile. Utilizzate un altro metodo di pagamento o riprovate più tardi.",
+            "instructions": "Si è verificato un problema con {{walletName}}. Ritorni al negozio per riprovare o per effettuare il check-out in un altro modo."
+          }
         }
       }
     },
