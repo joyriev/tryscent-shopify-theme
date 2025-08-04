@@ -3343,7 +3343,65 @@
       "edit_payment_method": {
         "title": "Modifier le mode de paiement",
         "save_payment_method_button": "Économiser",
-        "payment_method_updated_toast": "Mise à jour du mode de paiement"
+        "payment_method_updated_toast": "Mise à jour du mode de paiement",
+        "billing_address_add_new": "Ajouter un nouveau",
+        "billing_address_choose_from_list": "Choisir dans la liste",
+        "future_purchases_notice": "Ce mode de paiement sera sauvegardé pour les achats futurs.",
+        "generic_error": "Il y a eu un problème de mise à jour. Veuillez réessayer."
+      },
+      "card_fields": {
+        "card_number_label": "Numéro de la carte",
+        "card_number_placeholder": "Numéro de la carte",
+        "card_expiry_label": "Expiration date (MM / YY)",
+        "card_expiry_placeholder": "Expiration date (MM / YY)",
+        "card_start_label": "Issue date (MM / YY)",
+        "card_start_placeholder": "Issue date (MM / YY)",
+        "tooltip": {
+          "tooltip_accessibility_label": "Plus d'informations",
+          "card_verification_value_explanation_amex": "Code de sécurité à 4 chiffres au recto de votre carte",
+          "card_verification_value_explanation_other": "Code de sécurité à 3 chiffres au dos de votre carte",
+          "card_verification_value_explanation": "Code de sécurité à 3 chiffres qui se trouve généralement au dos de votre carte. Les cartes American Express ont un code à 4 chiffres situé au recto.",
+          "card_security_notice": "Toutes les transactions sont sécurisées et cryptées."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Inscrivez votre nom exactement comme il est écrit sur votre carte",
+          "credit_card_number_invalid": "Saisir un numéro de carte valide",
+          "credit_card_expiry_invalid": "Saisissez une date d'expiration de carte valide",
+          "credit_card_verification_value_blank": "Saisissez le CVV ou le code de sécurité de votre carte"
+        },
+        "unavailable": {
+          "link_text": "Actualiser cette page",
+          "suffix": "ou réessayer plus tard."
+        }
+      },
+      "payment_delete": {
+        "title": "Supprimer un mode de paiement",
+        "description_without_replacement": "Ce mode de paiement ne sera plus disponible pour les achats futurs.",
+        "description_with_replacement": "La suppression de ce mode de paiement affectera les paiements préautorisés. Vous pouvez éventuellement le remplacer par un autre mode de paiement pour continuer à recevoir les commandes à venir.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "La suppression de ce mode de paiement affectera les paiements préautorisés. À moins que vous ne choisissiez un autre mode de paiement, ce mode de paiement sera toujours débité pour tout solde impayé sur les commandes existantes. La sélection d'un autre mode de paiement vous permettra de recevoir les commandes d'abonnement à venir sans interruption.",
+          "with_pending_orders": "En supprimant ce mode de paiement, vous le retirez de votre compte et il ne sera plus disponible pour de futurs achats. À moins que vous ne choisissiez un autre mode de paiement, il sera toujours débité pour tout solde restant dû sur des commandes existantes.",
+          "with_subscriptions": "La suppression de ce mode de paiement affectera les paiements préautorisés. Remplacez-la par un autre mode de paiement pour continuer à recevoir les commandes à venir."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "La suppression de ce mode de paiement affectera les paiements préautorisés. Ce mode de paiement sera toujours débité pour les soldes impayés des commandes existantes, mais vous ne recevrez pas les commandes d'abonnement à venir. Ajoutez un autre mode de paiement pour continuer à recevoir les commandes d'abonnement.",
+          "with_pending_orders": "En supprimant ce mode de paiement, vous le retirez de votre compte et il ne sera plus disponible pour les achats futurs. Il sera toujours facturé pour les soldes impayés des commandes existantes.",
+          "with_subscriptions": "La suppression de ce mode de paiement affectera les paiements préautorisés. Ajoutez un autre mode de paiement pour continuer à recevoir les commandes à venir."
+        },
+        "payment_method_selector_placeholder": "Sélectionnez un mode de paiement de remplacement (facultatif)",
+        "error_when_deleting": "Nous sommes désolés, mais un problème est survenu et nous n'avons pas pu supprimer ce mode de paiement. Veuillez réessayer plus tard ou actualiser la page.",
+        "delete_and_replace_button_accessibility_label": "Supprimer {{currentPaymentMethodName}} et remplacer par {{newPaymentMethodName}}.",
+        "deleted_successfully": "Méthode de paiement supprimée avec succès.",
+        "loading_available_payment_methods_accessibility_label": "Chargement des modes de paiement disponibles"
+      },
+      "add_payment_method": {
+        "title": "Ajouter un mode de paiement",
+        "payment_method_added_confirmation": "Ajout d'un mode de paiement",
+        "billing_address": {
+          "add_billing_address_button": "Ajouter un nouveau",
+          "add_billing_address_button_accessibility_label": "Ajouter une nouvelle adresse de facturation",
+          "choose_billing_address_from_list_button": "Choisir dans la liste"
+        }
       }
     }
   }

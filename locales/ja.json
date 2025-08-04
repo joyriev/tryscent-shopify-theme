@@ -1848,7 +1848,65 @@
           "other": "あなたが追加した1つまたは複数の商品は、あなたの場所に出荷されません。それらを削除してチェックアウトするか、店舗にお問い合わせください。"
         },
         "payment_method_not_supported": "この支払い方法は%{country}使用できません。この国への発送には別のお支払い方法をご利用ください。",
-        "empty_state": "配送先住所を入力すると、利用可能な配送方法が表示されます。"
+        "empty_state": "配送先住所を入力すると、利用可能な配送方法が表示されます。",
+        "title": "発送不可",
+        "invalid_selected_address_with_update_link": "選択した配送先住所が無効です。%{update_address_link}または別の住所を選択してください。",
+        "unavailable_addresses_only_countries": "ご注文は{{countriesList}}発送できます。新しい住所を追加してください。",
+        "unavailable_selected_address": "選択した住所に配送できません",
+        "unavailable_selected_address_for_region": "{{region}}配送できません。別の住所を選択してください。"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "エクスプレス・チェックアウト",
+        "or_check_out_another_way": "あるいは、別の方法もある。",
+        "or_pay_with_credit_card": "クレジットカードでのお支払い",
+        "hide_more_options": "その他のオプションを隠す"
+      },
+      "post_purchase": {
+        "escape_confirmation": "ご注文の代金はお支払い済みです。",
+        "escape_action": "注文確認を見る",
+        "components": {
+          "expand": "もっと見る",
+          "processing": "処理...",
+          "submit": "投稿する"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "リダイレクト...",
+        "redirecting_title": "リダイレクト...",
+        "redirecting_notice": "リダイレクトするから待ってくれ。",
+        "redirecting_to_bank": "へのリダイレクト {{bank}}",
+        "complete_your_purchase_title": "購入を完了する",
+        "continue_to_payment_gateway_notice": "支払いに進み、支払情報を追加してください。",
+        "continue_to_payment_gateway_button_label": "支払いに進む",
+        "complete_your_purchase_title_error": "お支払い情報の修正",
+        "continue_to_payment_gateway_notice_error": "お支払い情報が確認できませんでした。",
+        "continue_to_payment_gateway_button_label_error": "支払情報の更新",
+        "page_title": "注文処理",
+        "title": "注文処理",
+        "your_order_has_been_received_title": "ご注文ありがとうございました。",
+        "you_will_receive_confirmation": "今、たくさんのご注文をいただいています。すぐにEメールかテキストで確認が届くはずです。1時間以内に届かない場合は、ご連絡ください。",
+        "you_will_not_be_charged": "まだ請求されません",
+        "wait": {
+          "short": "ご注文は処理中です。",
+          "medium": {
+            "one": "ご注文は処理中です。予想待ち時間は%{count}分です。",
+            "other": "ご注文は処理中です。予想待ち時間は%{count}分です。"
+          },
+          "long": "ご注文が処理され次第、Eメールをお送りします。現在、注文が集中しています。",
+          "no_auto_refresh_html": "自動的にリダイレクトされない場合、 %{link}.",
+          "refresh_this_page": "このページをリフレッシュする"
+        },
+        "action_required": "必要な措置",
+        "modal_notice": "私たちは次のように連絡を取っている。 {{paymentMethod}}"
+      },
+      "payment_challenge_modal": {
+        "instructions": "{{paymentMethod}}コードを使用して購入を完了します。",
+        "timer_message": "{{timeLeft}}あります。",
+        "copy_text": "{{paymentMethod}}コードをコピーする。",
+        "header": "で支払う。 {{paymentMethod}}",
+        "qr_code": {
+          "instructions": "{{paymentMethod}}コードを使用して購入を完了します。"
+        }
       }
     }
   },
