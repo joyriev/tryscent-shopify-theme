@@ -94,6 +94,9 @@
                 id="price-{{ section.id }}"
                 role="status"
                 {{ block.shopify_attributes }}>
+                <span class="line-through text-white/50 text-base">
+                  {{ product.selected_or_first_available_variant.compare_at_price | money }}
+                </span>
                 {{ product.selected_or_first_available_variant.price | money }}
               </div>
             </div>
