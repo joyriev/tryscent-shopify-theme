@@ -2368,7 +2368,50 @@
     "orders": {
       "order_status": {
         "expected_by": "Previsto per {{date}}",
-        "was_expected_by": "Era previsto per {{date}}"
+        "was_expected_by": "Era previsto per {{date}}",
+        "attempted_delivery_description": "Il tentativo di consegna non è andato a buon fine.",
+        "attempted_to_deliver_label": "Tentativo di consegna",
+        "confirmed_description": "Abbiamo ricevuto il suo ordine.",
+        "on_its_way_description": "Questa spedizione è in arrivo.",
+        "out_for_delivery_description": "Questa spedizione è pronta per la consegna.",
+        "preparing_for_shipping_label": "Preparazione per la spedizione",
+        "preparing_for_shipping_description": "Questi articoli vengono preparati per la spedizione.",
+        "ready_for_pickup_description": "Questi articoli sono pronti per il ritiro. Si prega di portare la conferma dell'ordine al momento del ritiro.",
+        "ready_for_pickup_location": "L'ordine è pronto per il ritiro presso la sede",
+        "picked_up_label": "Raccolta",
+        "canceled_description": "L'ordine è stato annullato il {{date}}.",
+        "canceled_title": "L'ordine è stato annullato",
+        "come_back": "Tornate a visitare questa pagina per essere aggiornati sullo stato della vostra spedizione.",
+        "company_tracking_number": "{{company}} numero di tracciamento:",
+        "confirmed_title": "L'ordine è confermato",
+        "confirmed_description_pickup": "Riceverete un'e-mail quando il vostro ordine sarà pronto per il ritiro.",
+        "confirmed_description_digital": "Riceverete un'e-mail quando il vostro ordine sarà pronto.",
+        "confirmed_description_gift_card_text": "Riceverete un messaggio quando il vostro ordine sarà pronto.",
+        "delivered_title": "La vostra spedizione è stata consegnata",
+        "delivered_description_digital": {
+          "one": "Questo articolo è completo.",
+          "other": "Questi elementi sono completi."
+        },
+        "delivered_description_gift_card": {
+          "one": "La carta regalo è stata inviata per e-mail.",
+          "other": "Le carte regalo sono state inviate per e-mail."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "La carta regalo è stata inviata via SMS.",
+          "other": "Le carte regalo sono state inviate via SMS."
+        },
+        "gift_card_label": {
+          "one": "Carta regalo",
+          "other": "Carte regalo"
+        },
+        "gift_card_resend_button": {
+          "one": "Reinvio della carta regalo",
+          "other": "Reinvio di carte regalo"
+        },
+        "gift_resend_success": {
+          "one": "Reinvio della carta regalo",
+          "other": "Carte regalo rispedite"
+        }
       },
       "group_title_label": "Parte di: {{groupTitle}}",
       "group_title_label_with_parent": "Per: {{groupTitle}}",
@@ -2460,8 +2503,14 @@
         },
         "filter_title": "Filtri",
         "filter": {
-          "clear_section": "Sezione libera"
-        }
+          "clear_section": "Sezione libera",
+          "apply": "Applicare",
+          "date": {
+            "title": "Data dell'ordine",
+            "last_7_days": "Ultimi 7 giorni"
+          }
+        },
+        "show_order_actions_accessibility_label": "Mostra le azioni dell'ordine per l'ordine {{name}}"
       }
     },
     "order_details": {
