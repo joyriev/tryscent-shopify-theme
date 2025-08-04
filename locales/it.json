@@ -554,6 +554,9 @@
         "payment_option": {
           "accessibility_label": "Scegli un'opzione di pagamento"
         }
+      },
+      "order_summary": {
+        "for_add_on": "Per: %{group_title}"
       }
     }
   },
@@ -574,6 +577,17 @@
         "title": "Verifica email",
         "description": "Email aggiornata con successo. Reindirizzamento al login."
       }
+    },
+    "orders": {
+      "order_status": {
+        "expected_by": "Previsto per {{date}}",
+        "was_expected_by": "Era previsto per {{date}}"
+      },
+      "group_title_label": "Parte di: {{groupTitle}}",
+      "group_title_label_with_parent": "Per: {{groupTitle}}"
+    },
+    "order_details": {
+      "group_title_label_with_parent": "Per: {{groupTitle}}"
     }
   }
 }
