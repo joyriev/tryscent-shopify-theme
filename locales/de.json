@@ -2430,19 +2430,30 @@
   "customer_accounts": {
     "account_information": {
       "verify_new_email_modal": {
-        "description": "Geben Sie den an {{email}} gesendeten Code ein",
+        "description": "Geben Sie den Code ein, der an {{email}}",
         "email_resend_button": "Code erneut senden",
         "email_resend_button_accessibility_label": "Verifizierungscode erneut senden",
         "one_time_password_label": "6-stelliger Code",
         "title": "E-Mail verifizieren",
         "verify_button_accessibility_label": "Einmalpasswort überprüfen",
-        "verify_button": "Überprüfen",
+        "verify_button": "Überprüfen Sie",
         "cancel_button": "Abbrechen",
         "cancel_button_accessibility_label": "Bearbeitung der E-Mail abbrechen"
       },
       "email_update_success_modal": {
         "title": "E-Mail verifizieren",
         "description": "E-Mail erfolgreich aktualisiert. Weiterleitung zur Anmeldung."
+      },
+      "loading_accessibility_message": "Laden von Kontoinformationen",
+      "profile_card": {
+        "cancel": "Abbrechen",
+        "cancel_accessibility_label": "Profil bearbeiten abbrechen",
+        "edit": "bearbeiten",
+        "email_help_text": "Die für die Anmeldung verwendete E-Mail kann nicht geändert werden",
+        "first_name": "Vornamen",
+        "email": "E-Mail",
+        "phone_number_help_text": "Die für die Anmeldung verwendete Telefonnummer kann nicht geändert werden",
+        "save": "Speichern Sie"
       }
     },
     "date": {
@@ -2469,7 +2480,26 @@
         "open_menu_accessibility_label": "Navigation zur Kontoeröffnung",
         "close_menu_accessibility_label": "Konto schließen Navigation",
         "loading_message": "Laden Kontonavigation"
-      }
+      },
+      "close_menu_accessibility_label": "Hauptnavigation schließen",
+      "contact_email_subject": "Kontakt von {{shopName}} online store",
+      "delete_confirmation": {
+        "cancel": "Abbrechen"
+      },
+      "dismiss_toast": "Ablehnen",
+      "document_title": "{{sectionName}} - {{shopName}} - Konto",
+      "go_to_store_link": "Zum Laden gehen",
+      "loading_message": "Laden",
+      "logout_overlay_label": "Ich logge dich aus...",
+      "nav_label_accessibility_label": "Hauptnavigation",
+      "navigation_accessibility_message": "Sie navigieren zu {{sectionName}}",
+      "open_menu_accessibility_label": "Hauptnavigation öffnen",
+      "shop_logo_accessibility_label": "{{shopName}} Logo",
+      "country_switcher_toast_message": "Land umgestellt auf {{countryName}}",
+      "switch_location": "Standort des Schalters",
+      "try_new_search": "Versuchen Sie eine neue Suche",
+      "company_location": "Standort des Unternehmens",
+      "skip_to_content": "Zum Inhalt springen"
     }
   }
 }
