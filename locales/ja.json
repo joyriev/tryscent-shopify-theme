@@ -644,7 +644,70 @@
             "shop_cash_not_found": "ショップキャッシュが見つかりませんでした。",
             "shop_cash_not_allowed": "ショップ・キャッシュは、ショップ・ペイなしではご利用いただけません。",
             "shop_cash_unsupported_checkout_source": "ショップキャッシュはこのチェックアウトに対応していません。",
-            "shop_cash_gift_card_not_allowed": "ショップキャッシュではギフトカードの購入はできません。"
+            "shop_cash_gift_card_not_allowed": "ショップキャッシュではギフトカードの購入はできません。",
+            "shop_cash_not_enabled": "このショップではショップキャッシュはご利用いただけません。",
+            "shop_cash_not_available": "ショップキャッシュはこのチェックアウトではサポートされていません。",
+            "shop_cash_unsupported_subscriptions": "ショップキャッシュは定期購入をサポートしていません。",
+            "shop_cash_unsupported_shipping": "ショップキャッシュは送料無料の商品には対応しておりません。",
+            "invalid_address_type": "入力された住所のタイプは、この支払い方法では無効です。",
+            "missing_retail_attributions": "小売属性は、手入力によるクレジットカード支払いに必要です。",
+            "unexpected_retail_attributions": "クレジットカードでの支払いには、予想外のリテール属性が提供される。",
+            "invalid_card_source": "このセッションはこのカードソースの使用許可を得ていない。",
+            "wallet_content_missing": "財布の中身がない。",
+            "payment_instrument_not_found": "支払い方法が見つかりません",
+            "unauthorized_capture_method": "支払いキャプチャ方法を設定することはできません。",
+            "saved_payment_methods_not_allowed": "支払い方法を保存することはできません。",
+            "saved_payment_methods_not_enabled": "このショップでは、保存された支払い方法が有効になっていません。",
+            "saved_payment_methods_cvv_verification_disabled": "選択された支払い方法にはCVV認証が必要ですが、このショップでは有効になっていません。別のお支払い方法を選択してください。",
+            "store_credit_not_enabled": "このショップではストアクレジットはご利用いただけません。",
+            "store_credit_account_mismatch": "ストアクレジットアカウントが購入者のIDと一致しない。",
+            "store_credit_mismatched_currency": "ストアクレジットアカウントの通貨がチェックアウトの通貨と一致しない。",
+            "store_credit_insufficient_funds": "ストアクレジットアカウントの残高が不足しています。",
+            "store_credit_buying_gift_card": "ストア・クレジットを使ってギフト・カードを購入することはできない。",
+            "gift_cards_not_allowed_for_b2b": "B2B店舗ではギフトカードは使用できない。",
+            "method_required": "支払い方法を提案しなければならない。",
+            "paypal_express_address_invalid": "PayPalは無効なアドレスを返しました。",
+            "shop_cash_unsupported_currency": "ショップキャッシュはこの通貨をサポートしていません。",
+            "market_manager_blocks_wallet_payments": "支払い方法がマーケットマネージャーによってサポートされていません。"
+          },
+          "tip": {
+            "not_accepted_by_shop": "チップは受け取らない。",
+            "only_one_tip_line_allowed": "複数のチップラインはサポートされていない。",
+            "tips_not_allowed_for_b2b": "B2B店舗ではチップは禁止されている。",
+            "currency_change_reset": "為替変動によりチップはリセットされました。",
+            "tips_not_allowed_for_deferred_purchase_options": "チップは購入オプションにはまだ対応していません。"
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "このドラフト順位は現在のショップには存在しない。",
+            "staff_member_not_exist": "このスタッフは今の店にはいない。",
+            "location_not_exist": "この場所は現在のショップには存在しない。",
+            "point_of_sale_device_not_exist": "このPOS機器は現在の店には存在しない。",
+            "unresolvable_target_merchandise_lines": "提案されている売却の帰属は、現在の交渉状況からして解決不可能である。"
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "バイヤーの提案書には、譲れない条件が含まれているはずだ。",
+            "invalid_signature": "{{target_terms}}シグネチャが無効です。"
+          },
+          "inventory": {
+            "missing_quantity_value": "バイヤーの在庫行に数量フィールドがありません。",
+            "changing_behavior_not_allowed": "このクライアントには、インベントリの動作を変更する権限がありません。",
+            "only_one_inventory_behavior_allowed": "現在、1つのチェックアウトにつき1つのインベントリ動作のみが許可されています。"
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "このチェックアウトでは、職務を拒否することはできない。"
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "このチェックアウトでは、小売店のアトリビューションは認められていません。",
+            "retail_attribution_required": "このチェックアウトには、小売店のアトリビューションが必要です。"
+          },
+          "captcha": {
+            "metadata_missing": "このチェックアウトにはキャプチャーの入力が必要です。",
+            "metadata_mismatch": "提供されたcaptchaプロバイダとタイプが期待された値と一致しません。",
+            "token_missing": "このチェックアウトを完了するには、キャプチャトークンを提供する必要があります。",
+            "job_enqueue_failed": "captcha検証ジョブのキューイングに失敗しました。",
+            "job_already_queued": "このキャプチャトークンに対するキャプチャ検証はすでにキューに入っています。",
+            "token_expired": "提供されたキャプチャトークンの有効期限が切れました。チェックアウトを続行するには、新しいキャプチャを完了してください。",
+            "token_invalid": "入力されたキャプチャトークンが無効です。チェックアウトを続行するには、新しいキャプチャを完了してください。"
           }
         }
       }
