@@ -3077,7 +3077,47 @@
       },
       "store_credit": {
         "label": "Crédito de la tienda",
-        "accesibility_label": "Crédito de la tienda - {{formattedBalance}}"
+        "accesibility_label": "Crédito de la tienda - {{formattedBalance}}",
+        "expirable_amounts_button": "Ver importes expirables",
+        "expirable_amounts_label": "Cantidades caducadas",
+        "details_modal": {
+          "title": "Crédito de la tienda caducado",
+          "expiration_date_label": "Fecha de expiración",
+          "amount_label": "Importe",
+          "events": {
+            "order_payment": "Orden de pago",
+            "payment_failure": "Falta de pago",
+            "order_cancellation": "Anulación del pedido",
+            "tax_finalization": "Finalización fiscal"
+          },
+          "expirable_balance_info": "Parte de su saldo caducará en el futuro",
+          "expirable_amount_label": "Importe total expirable",
+          "expirable_amounts_info": "Los importes que vencen antes se aplican primero en la caja",
+          "expired_amounts_button": "Ver importes caducados",
+          "pagination": {
+            "load_more_label": "Más información",
+            "load_more_accessibility_label": "Cargar más cantidades deseables"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "Detalles del método de pago",
+        "credit_card_details_accessibility_label": "terminando en {{lastDigits}}",
+        "card_info_title": "Información sobre la tarjeta",
+        "payment_method_expiring_on": "Expira el {{expiryDate}}",
+        "payment_method_expired_on": "Caducado el {{expiryDate}}",
+        "close_payment_modal_accessibility_label": "Cerrar el modal de detalles del método de pago",
+        "payment_details_loading": "Cargar los datos del método de pago",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} total de elementos, mostrando {{totalItemsToDisplay}} elementos.",
+        "next_payment_due": "Fecha de vencimiento del próximo pago {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button_accessibility_label": "Editar método de pago que termina en {{lastDigits}}",
+        "loading_shop_pay": "Carga de la tienda Pago",
+        "invalid_payment_method": "Método de pago no válido",
+        "invalid_payment_method_message": "Utilice una nueva tarjeta de crédito para seguir recibiendo los próximos pedidos.",
+        "replace_payment_method": "Sustituir forma de pago",
+        "checkout_card_banner": "Este método de pago sólo puede utilizarse para pagos preautorizados. No aparecerá en la caja si ha iniciado sesión en esta tienda.",
+        "default_checkbox": "Fijar por defecto",
+        "default_checkbox_accessibility_label": "Establecer este método de pago como predeterminado"
       }
     }
   }
