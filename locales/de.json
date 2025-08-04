@@ -636,7 +636,62 @@
         },
         "local_payment_method_receiver_notice": "Nachdem Sie Ihre Bestellung aufgegeben haben, erhalten Sie die Zahlungsinformationen. Nehmen Sie die Zahlung an einem Geldautomaten oder online innerhalb von {{dueDays}} Tagen vor.",
         "order_edit_banner_title": "Zahlung von {{amount_owed}} ist erforderlich",
-        "order_edit_banner_subtitle": "Ihre Bestellung {{order_number}} wurde aktualisiert. Überprüfen Sie die Änderungen und bezahlen Sie dann, um Ihre Bestellung zu bestätigen."
+        "order_edit_banner_subtitle": "Ihre Bestellung {{order_number}} wurde aktualisiert. Überprüfen Sie die Änderungen und bezahlen Sie dann, um Ihre Bestellung zu bestätigen.",
+        "order_edit_banner_items_added": {
+          "other": "Hinzugefügt %{count}"
+        },
+        "order_edit_banner_items_removed": {
+          "with_quantities": "Entfernte {{delta}} von {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Zurückgeschickt {{quantity}}",
+          "with_quantities": "Zurückgegebene {{delta}} von {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Aus der Rückgabe entfernt",
+          "with_quantities": "{{delta}} aus Rückgabe entfernt"
+        },
+        "order_edit_banner_multiple_items_added": "Hinzugefügt {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Entfernt {{amount}}",
+        "order_edit_banner_single_item_returned": "Zurückgeschickt",
+        "order_edit_banner_multiple_items_returned": "Zurückgeschickt {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Aus der Rückgabe entfernt",
+        "order_edit_banner_multiple_items_return_line_item_removed": "{{amount}} aus Rückgabe entfernt",
+        "gift_card_wrapper": {
+          "heading": "Geschenkkarte",
+          "apply_gift_card_label": "Eine Geschenkkarte anwenden",
+          "apply_another_gift_card_label": "Eine weitere Geschenkkarte anwenden",
+          "gift_card_label": "Geschenkkarte %{identifier}",
+          "payment_tag": "Geschenkkarte",
+          "add_label": "Eine Geschenkkarte hinzufügen",
+          "manage_label": "Verwalten von Geschenkkarten"
+        },
+        "gift_card_store_credit": {
+          "add_label": "Einen Geschenkgutschein oder ein Guthaben hinzufügen",
+          "manage_label": "Verwalten von Geschenkkarten oder Ladenguthaben"
+        },
+        "gift_card_checkbox_label": "Geschenkkarte anwenden",
+        "custom_onsite_payment_method_modal": {
+          "title": "Individuelle Zahlungsbestätigung vor Ort"
+        },
+        "markets_pro_disclaimer_label": "Indem Sie unten klicken und Ihre Bestellung abschließen, erklären Sie sich damit einverstanden, Ihre(n) Artikel von Global-e als dem für diese Transaktion verantwortlichen Händler zu kaufen, gemäß den %{markets_pro_terms} und der %{privacy_policy} von Global-e. Global-e ist ein internationaler Fulfillment-Dienstleister für %{shop_name}.",
+        "markets_pro_disclaimer_terms_and_conditions": "Bedingungen und Konditionen",
+        "markets_pro_disclaimer_privacy_policy": "Datenschutzbestimmungen",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Allgemeine Geschäftsbedingungen des Vertragshändlers",
+        "markets_pro_disclaimer_privacy_policy_title": "Merchant of Record Datenschutzrichtlinie",
+        "purchase_order_number": {
+          "title": "PO-Nummer",
+          "label": "PO-Nummer (fakultativ)"
+        },
+        "alternative_payment_currency_total_notice": "Hinweis: Es werden Ihnen folgende Kosten berechnet %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Anmerkung: Der umgerechnete Gesamtbetrag ist %{amount_due}.",
+        "waiting_on_taxes_message": "Wenn Ihre Steuern nicht innerhalb der nächsten Sekunden berechnet werden, aktualisieren Sie die Seite.",
+        "expired_payment_method": "Die gewählte Zahlungsmethode ist abgelaufen",
+        "payment_method_incompatible_with_payment_terms": "Die Zahlungsmethode ist mit den Zahlungsbedingungen nicht vereinbar.",
+        "proposed_gateway_unavailable": "Das vorgeschlagene Zahlungsgateway ist nicht verfügbar",
+        "pay_in_installments_split_pay_short": "4 Zahlungen von %{amount}",
+        "gift_cards_unavailable": "Ihr Geschenkgutschein kann nicht mehr für diese Bestellung verwendet werden und wurde entfernt.",
+        "payment_flexibility_terms_id_mismatch": "Zahlungsflexibilität Bedingungen ID-Kongruenz"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."
@@ -1326,6 +1381,9 @@
           "tax_credential_tr": "Republik Türkei Identitätsnummer / Mehrwertsteuer",
           "shipping_credential_tr": "Republik Türkei Identitätsnummer / Mehrwertsteuer"
         }
+      },
+      "billing": {
+        "same_as_shipping": "Gleiche Adresse wie die Lieferadresse"
       }
     }
   },
