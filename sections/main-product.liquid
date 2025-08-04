@@ -117,11 +117,13 @@
                   {% endfor %}
                 </ul>
               {%- when 'money_back' -%}
-                <div class="flex flex-col items-center gap-3 text-center bg-[#f0f2ec] p-6 rounded">
+                <div class="flex items-center gap-3 bg-[#f0f2ec] p-6 rounded">
                   <img src="{{ block.settings.image | img_url: '64x64' }}" height="64" width="64" alt="{{ block.settings.label }}" class="size-16" />
-                  <h3 class="text-lg font-semibold tracking-normal m-0">{{ block.settings.title }}</h3>
-                  <div class="m-0 leading-snug tracking-normal [&>p]:m-0 text-gray-950">
-                    {{ block.settings.text }}
+                  <div>
+                    <h3 class="text-lg font-semibold tracking-normal m-0">{{ block.settings.title }}</h3>
+                    <div class="m-0 leading-snug tracking-normal [&>p]:m-0 text-gray-950">
+                      {{ block.settings.text }}
+                    </div>
                   </div>
                 </div>
               {%- when 'cta_review' -%}
@@ -160,9 +162,11 @@
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1 class="!font-sans text-[1.5rem] font-[700]  capitalize !tracking-normal">
-                    <span class="text-gray-500 mr-1 text-lg">Smells like...</span>
-                    {{ product.title | remove: 'Smells like...' |  remove: 'Smells like ...' }}
+                  <h1 class="!font-sans font-[700]  capitalize !tracking-normal flex flex-col">
+                    <div class="text-gray-500 mr-1 leading-snug text-lg">Smells like...</div>
+                    <span class="uppercase text-3xl !tracking-wider">
+                      {{ product.title | remove: 'Smells like...' |  remove: 'Smells like ...' }}
+                    </span>
                   </h1>
                 </div>
               {%- when 'price' -%}

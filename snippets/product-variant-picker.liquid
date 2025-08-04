@@ -46,7 +46,9 @@
         <fieldset class="js product-form__input product-form__input--pill">
           <legend class="form__label mb-2 font-semibold flex items-center justify-between w-full text-black">
             <span>SELECT YOUR SIZE:</span>
-            <span>EDP/{{ product.selected_or_first_available_variant.title }}/{{ product.selected_or_first_available_variant.title | remove: 'ML' | remove: 'ml' | times: 0.033814 | round: 2 }}oz</span>
+            <span class="italic text-gray-500 font-normal">
+              80% of customers buy 30ml or more
+            </span>
           </legend>
           {% render 'product-variant-options'
             , product: product

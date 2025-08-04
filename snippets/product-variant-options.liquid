@@ -18,7 +18,7 @@
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
 -%}
-<div class="grid grid-cols-2 gap-2">
+<div class="grid grid-cols-4 gap-2">
   {%- for value in option.values -%}
     {%- liquid
       assign swatch_focal_point = null
@@ -76,7 +76,7 @@
           class="disabled"
           {% endif %}
           {{ input_dataset }}>
-        <label for="{{ input_id }}" class="flex items-center gap-2 rounded-lg p-2 bg-white border border-solid border-gray-200 cursor-pointer">
+        <label for="{{ input_id }}" class="flex flex-col items-center gap-2 rounded-lg p-2 bg-white border border-solid border-gray-200 cursor-pointer">
           {% if value.variant and value.variant.image %}
             <img
               src="{{ value.variant.image | image_url: width: 80 }}"
@@ -89,10 +89,6 @@
           <div class="text-sm font-semibold">
             {{ value -}}
             {{ label_unavailable }}
-            <div>
-              <span class="inline-block mr-1 line-through text-gray-400">{{ value.variant.compare_at_price | money }}</span>
-              {{ value.variant.price | money }}
-            </div>
           </div>
         </label>
       </div>
