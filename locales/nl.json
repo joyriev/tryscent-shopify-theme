@@ -570,7 +570,53 @@
           "merchandise": {
             "only_value_constraint": "Alleen exacte waarden zijn toegestaan in de goedereninvoer.",
             "mixed_currencies": "Checkout bevat regelitems met verschillende valuta.",
-            "bundle_products_not_supported_for_b2b": "Gebundelde artikelen kunnen niet worden toegevoegd aan B2B-bestellingen voor deze locatie."
+            "bundle_products_not_supported_for_b2b": "Gebundelde artikelen kunnen niet worden toegevoegd aan B2B-bestellingen voor deze locatie.",
+            "gift_card_quantity_mismatch": "Als je cadeauboncodes opgeeft, moeten het aantal artikelen en het aantal cadeauboncodes overeenkomen.",
+            "gift_card_not_supported": "Cadeaubonnen worden niet ondersteund bij deze kassa.",
+            "gift_card_not_unique": "Cadeaubon met code {{code}} komt meer dan eens voor in deze kassa. Codes worden geformatteerd voor vergelijking.",
+            "gift_card_used": "Cadeaukaartcode {{code}} is al toegewezen aan een cadeaukaart. Codes worden geformatteerd voor vergelijking.",
+            "gift_card_invalid": "Cadeaukaartcode {{code}} is ongeldig.",
+            "gift_card_code_changed": "Cadeaukaartcode {{proposed_code}} werd gewijzigd in {{formatted_code}} om te voldoen aan de opmaakregels.",
+            "gift_card_with_attributes_not_supported": "Cadeaubonnen met aangepaste attributen worden niet ondersteund bij deze kassa.",
+            "gift_card_with_components_not_supported": "Cadeaubonnen met componenten worden niet ondersteund bij deze kassa.",
+            "selling_plan_not_supported_b2b": "Abonnementen worden niet ondersteund voor B2B-checkout.",
+            "product_not_published": "Product wordt niet gepubliceerd.",
+            "product_not_published_in_buyer_location": "Product wordt niet gepubliceerd in koperslocatie.",
+            "duplicated_stable_id": "Deze productlijn heeft dezelfde stable-ID als een andere lijn.",
+            "minimum_quantity_not_met": "De hoeveelheid van sommige items voldoet niet aan het vereiste minimum.",
+            "maximum_quantity_exceeded": "De hoeveelheid van sommige items overschrijdt het toegestane maximum.",
+            "quantity_increment_not_met": "De hoeveelheid van sommige artikelen voldoet niet aan de bestellingslimieten.",
+            "quantity_rules_not_met": "De hoeveelheid van sommige artikelen voldoet niet aan de bestellingslimieten.",
+            "bundle_requires_components": "Deze bundel heeft geen onderdelen.",
+            "title_too_long": "De titel van de koopwaar is te lang.",
+            "title_empty": "De titel van de koopwaar is leeg."
+          },
+          "buyer_identity": {
+            "business_customer_does_not_match_company": "Bedrijfscontact heeft geen toegang tot het bedrijf.",
+            "customer_account_required": "De klant moet inloggen om verder te gaan.",
+            "company_location_required": "De klant moet een bedrijfslocatie kiezen om verder te gaan.",
+            "company_purchase_permission_required": "De klant heeft geen toestemming om bedrijfsorders te plaatsen.",
+            "lost_access_to_company": "De klant verloor de toegang tot elk bedrijf.",
+            "contact_info_does_not_match_customer_account": "De opgegeven klantgegevens moeten overeenkomen met de aangemelde klantaccount.",
+            "phone_number_does_not_match_expected_pattern": "Het opgegeven telefoonnummer komt niet overeen met het verwachte patroon.",
+            "email_required": "Een e-mail is vereist als de goederen worden gekocht met behulp van een abonnement.",
+            "missing_contact_method": "Een geldige contactmethode ontbreekt.",
+            "checkout_completion_target_is_missing": "Afrekeningsdoel ontbreekt.",
+            "customer_profile_access_restricted": "Checkout heeft geen toegang tot het klantprofiel.",
+            "checkout_completion_target_is_invalid_proc": "Ongeldig doel voor voltooiing van afrekenen.",
+            "buyer_identity_presentment_currency_does_not_match": "Er is een probleem opgetreden bij het verwerken van uw bestelling. Probeer het opnieuw over een paar minuten."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "De kar mag maar één leveringslijn hebben.",
+            "wrong_number_of_delivery_lines": "Voor elke goederengroep moet een leveringslijn worden opgegeven.",
+            "external_delivery_promise_error": "Fout bij het ophalen van een externe leveringsbelofte.",
+            "options_instructions_invalid": "De opgegeven instructies komen niet overeen met het verwachte patroon.",
+            "destination_address_required": "Een bestemmingsadres is vereist om verder te gaan.",
+            "local_pickup_delivery_line_detail_changed": "De huidige strategie voor lokale afhaaldiensten moet worden gewijzigd om te kunnen worden voortgezet.",
+            "selected_pickup_option_no_longer_available": "De eerder geselecteerde afhaaloptie is niet langer beschikbaar.",
+            "local_pickup_no_delivery_strategy_available": "Geen beschikbare afhaalstrategie gevonden.",
+            "origin_location_id_required": "Een origin location ID is vereist wanneer de leveringsmethode RETAIL is aangevraagd.",
+            "invalid_origin_location_id": "Kon geen Locatie vinden die overeenkomt met de ID van de oorspronkelijke locatie."
           }
         }
       }
