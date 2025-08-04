@@ -529,7 +529,22 @@
       "order_summary": {
         "total_price_label": "Samlet pris",
         "total_due_label": "Samlet skyldig beløb",
-        "for_add_on": "Til: %{group_title}"
+        "for_add_on": "For: %{group_title}",
+        "title": "Oversigt over ordrer",
+        "group_title_label": "En del af \"%{group_title}\"",
+        "number_items": {
+          "one": "%{count} genstand",
+          "other": "%{count} elementer"
+        },
+        "view_all_items": {
+          "one": "Vis %{count} element",
+          "other": "Se alle %{count} elementer"
+        },
+        "more_items_modal": {
+          "search_item": "Søg efter",
+          "empty_results": "Ingen resultater fundet for%{searchText}\". Tjek stavningen, eller brug et andet ord eller en anden sætning.",
+          "number_items_shown": "%{shownNumber} af %{totalNumber} } varer"
+        }
       },
       "payment": {
         "payment_option": {
@@ -879,6 +894,63 @@
         },
         "unfulfillable_product": {
           "title": "Levering ikke tilgængelig"
+        },
+        "unshippable_product": {
+          "header": {
+            "one": "Ingen levering tilgængelig for %{count} varer"
+          },
+          "message": {
+            "one": "Denne vare vil blive fjernet fra din kurv, fordi der ikke er nogen tilgængelige leveringsmetoder til din adresse.",
+            "other": "Disse varer vil blive fjernet fra din kurv, fordi der ikke er nogen tilgængelige leveringsmetoder til din adresse."
+          }
+        },
+        "price_update": {
+          "title": "Opdatering af priser",
+          "description": "Priserne på disse varer har ændret sig og er opdateret i din indkøbskurv."
+        },
+        "price_and_quantity_update": {
+          "title": "Opdatering af pris og mængde",
+          "description": "Priser og tilgængelige mængder for disse varer har ændret sig og er opdateret i din indkøbskurv."
+        },
+        "out_of_stock": {
+          "description": "Disse varer er ikke længere tilgængelige og er blevet fjernet fra din kurv.",
+          "items_unavailable": "Nogle varer er ikke længere tilgængelige og er blevet fjernet fra din kurv."
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Ikke tilgængeligt produkt",
+          "other": "Ikke tilgængelige produkter"
+        },
+        "products_not_available": {
+          "one": "Dette produkt vil blive fjernet fra din kurv, fordi det ikke er tilgængeligt i dit land/område."
+        }
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_other": "Disse produkter kan ikke leveres til %{location_name}.",
+          "all_products_one": "Produktet i din kurv er ikke tilgængeligt for levering til %{location_name}.",
+          "all_products_other": "Produkterne i din kurv er ikke tilgængelige for levering til %{location_name}."
+        },
+        "indeterminate_location_fallback": "din placering",
+        "change_address_only": "Skift leveringsadresse for at fortsætte.",
+        "change_address_or_remove": "Ændre leveringsadresse eller %{remove_action}.",
+        "remove_items_action": {
+          "one": "Fjern utilgængelig vare",
+          "other": "Fjern utilgængelige varer"
+        },
+        "empty_cart_action": "tøm vognen og gå tilbage til butikken"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Ingen levering tilgængelig for %{count} varer",
+            "other": "Ingen levering tilgængelig for %{count} varer"
+          },
+          "message": {
+            "one": "Denne vare vil blive fjernet fra din kurv, fordi der ikke er nogen tilgængelige leveringsmetoder til din adresse.",
+            "other": "Disse varer vil blive fjernet fra din kurv, fordi der ikke er nogen tilgængelige leveringsmetoder til din adresse."
+          }
         }
       }
     },

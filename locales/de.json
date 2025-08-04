@@ -2190,7 +2190,78 @@
       "less_than_or_equal_to": "muss kleiner oder gleich sein als %{count}",
       "full_name_required": "Geben Sie einen Vornamen und einen Nachnamen ein",
       "invalid_for_card_type": "ist nicht gültig",
-      "invalid_type": "Wir akzeptieren leider keine Karten dieser Art"
+      "invalid_type": "Wir akzeptieren leider keine Karten dieser Art",
+      "invalid_format": "Format ist nicht gültig",
+      "expired": "ist ausgelaufen",
+      "invalid_start_date_or_issue_number_for_debit": "ein gültiges Startdatum oder eine gültige Ausstellungsnummer ist erforderlich",
+      "invalid_expiry_year": "kein gültiges Verfallsjahr ist",
+      "reset_password_html": "Diese E-Mail-Adresse ist bereits mit einem Konto verbunden. Wenn dies Ihr Konto ist, können Sie <a href=\"/account/login#recover\">Ihr Passwort zurücksetzen</a>",
+      "verify_email": "Wir haben eine E-Mail an %{customer_email} gesendet. Bitte klicken Sie auf den darin enthaltenen Link, um Ihre E-Mail-Adresse zu bestätigen.",
+      "product_not_available": "Produkt ist für diesen Kunden nicht veröffentlicht.",
+      "shop_404": {
+        "title": "Erstellen Sie eine E-Commerce-Website und verkaufen Sie online! Software für den elektronischen Handel von Shopify",
+        "heros": {
+          "store_unavailable": "Es tut uns leid, dieser Shop ist derzeit nicht verfügbar.",
+          "store_not_exist": "Dieses Geschäft gibt es nicht.",
+          "no_storefront": "Dieses Geschäft hat noch keine Website."
+        },
+        "links": {
+          "explore_other_stores": "Andere Geschäfte erkunden",
+          "start_free_trial": "Kostenlose Testversion starten"
+        },
+        "owner_ctas": {
+          "header": "Sind Sie der Geschäftsinhaber?",
+          "fix_domain": "Wenn Sie die Einrichtung Ihrer neuen Webadresse abgeschlossen haben, gehen Sie zu %{domain_settings_link}. Klicken Sie auf \"Domain verbinden\" und geben Sie ein: %{domain}.<br>Wenn Sie Probleme haben, in Ihren Shop zu gelangen, versuchen Sie die Seite %{forgot_your_store_link}.",
+          "fix_domain_link_text": "Ihre Domain-Einstellungen",
+          "forgot_your_store_link_text": "Ihr Geschäft vergessen",
+          "add_storefront": "Sie können Ihre Website einrichten, indem Sie den Online-Store-Kanal in Ihrem %{admin_link} hinzufügen. Wenn Sie Probleme haben, in Ihren Shop zu gelangen, versuchen Sie die Seite %{forgot_your_store_link}.",
+          "admin_link_text": "admin"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "caption": "Holen Sie sich die Funktionen, die Sie für den Betrieb Ihres Einzelhandelsgeschäfts benötigen, egal ob Sie neu anfangen oder Ihr Angebot erweitern.",
+            "link_text": "Kostenlose Testversion starten"
+          },
+          "open_a_store": {
+            "header": "Eröffnen Sie einen neuen Shopify-Shop",
+            "caption": "Starten Sie eine 3-tägige kostenlose Testphase und fahren Sie dann für $1/Monat für die nächsten 3 Monate fort.",
+            "link_text": "Jetzt anmelden"
+          },
+          "editions": {
+            "header": "Die Shopify-Editionen ansehen",
+            "caption": "Mit mehr als 100 Produktaktualisierungen können Sie produktiver und kreativer sein und im Handel mehr erreichen, als Sie es sich je vorstellen konnten.",
+            "link_text": "Neueste Ausgaben erkunden"
+          },
+          "store_owner": {
+            "header": "Sind Sie der Geschäftsinhaber?",
+            "caption": "Haben Sie Probleme, in Ihr Geschäft zu gelangen? Versuchen Sie die Funktion %{forgot_your_store_link}. Wenn Sie Ihren Shop reaktivieren möchten, kontaktieren Sie %{shopify_support_link}.",
+            "shopify_support_link_text": "Shopify-Unterstützung"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "subscribe_error": "Fehler abonnieren",
+        "unsubscribe_error": "Fehler beim Abbestellen",
+        "invalid_credentials": "Falsche E-Mail oder falsches Passwort.",
+        "denylisted_reset_password": "Auf Ihr Konto konnte nicht zugegriffen werden, weil das aktuelle Passwort nicht sicher ist. Sie werden eine E-Mail erhalten, um Ihr Passwort zu aktualisieren.",
+        "signup_disabled": "Die Erstellung von Kundenkonten wurde deaktiviert."
+      },
+      "address": {
+        "updated": "Die Adresse wurde erfolgreich aktualisiert.",
+        "created": "Erfolgreich erstellte Adresse",
+        "deleted": "Erfolgreich gelöschte Adresse"
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Hinzugefügt %{delta}",
+          "increment_item": "Hinzugefügt %{delta}",
+          "decrement_item": "Entfernt %{delta} von %{total}",
+          "decrement_fulfilled_line_item": "Zurückgegebene %{delta} von %{total}",
+          "decrement_return_line_item": "%{delta} aus Rückgabe entfernt"
+        }
+      }
     }
   },
   "customer_accounts": {
