@@ -285,64 +285,64 @@
       "announcement": "Annonce",
       "menu": "Menu",
       "cart_count": {
-        "one": "{{ count }} article",
-        "other": "{{ count }} articles",
+        "one": "{{ count }} article",
+        "other": "{{ count }} articles",
         "many": "{{ count }} articles"
       }
     },
     "cart": {
-      "title": "Your cart",
+      "title": "Votre panier",
       "caption": "Articles du panier",
-      "remove_title": "Retirer {{ title }}",
-      "note": "Commande d'instructions spéciales",
-      "checkout": "Vérifier",
+      "remove_title": "Supprimer {{ title }}",
+      "note": "Instructions spéciales concernant la commande",
+      "checkout": "Procéder au paiement",
       "empty": "Votre panier est vide",
-      "cart_error": "Une erreur s'est produite lors de la mise à jour de votre panier. Veuillez réessayer.",
-      "cart_quantity_error_html": "Vous ne pouvez ajouter que {{ quantity }} de cet article à votre panier.",
+      "cart_error": "Une erreur est survenue lors de l’actualisation de votre panier. Veuillez réessayer.",
+      "cart_quantity_error_html": "Vous ne pouvez pas ajouter plus de {{ quantity }} de ce produit à votre panier.",
       "headings": {
         "product": "Produit",
         "price": "Prix",
         "total": "Total",
         "quantity": "Quantité",
-        "image": "Image du produit"
+        "image": "Image de produit"
       },
       "update": "Mise à jour",
       "login": {
-        "title": "Vous avez un compte ?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Connectez-vous</a> pour vérifier plus rapidement."
+        "title": "Vous possédez un compte ?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Connectez-vous</a> pour payer plus vite."
       },
       "estimated_total": "Total estimé",
-      "new_estimated_total": "Nouvelle estimation du total"
+      "new_estimated_total": "Nouveau total estimé"
     },
     "footer": {
-      "payment": "Modes de paiement"
+      "payment": "Moyens de paiement"
     },
     "featured_blog": {
-      "view_all": "Voir tous",
+      "view_all": "Tout afficher",
       "onboarding_title": "Article de blog",
       "onboarding_content": "Donnez à vos clients un résumé de votre article de blog"
     },
     "featured_collection": {
-      "view_all": "Voir tous",
-      "view_all_label": "Voir tous les produits de la collection {{ collection_name }} "
+      "view_all": "Tout afficher",
+      "view_all_label": "Afficher tous les produits de la collection {{ collection_name }}"
     },
     "collection_list": {
-      "view_all": "Voir tous"
+      "view_all": "Tout afficher"
     },
     "collection_template": {
       "title": "Collection",
       "empty": "Aucun produit trouvé",
-      "use_fewer_filters_html": "Utiliser moins de filtres ou <a class=\"{{ class }}\" href=\"{{ link }}\">les supprimer tous</a>"
+      "use_fewer_filters_html": "Utiliser moins de filtres ou <a class=\"{{ class }}\" href=\"{{ link }}\">tout supprimer</a>"
     },
     "video": {
-      "load_video": "Charger la vidéo : {{ description }}"
+      "load_video": "Charger la vidéo : {{ description }}"
     },
     "slideshow": {
-      "load_slide": "Chargement de la glissière",
+      "load_slide": "Charger la diapositive",
       "previous_slideshow": "Diapositive précédente",
       "next_slideshow": "Diapositive suivante",
-      "pause_slideshow": "Pause du diaporama",
-      "play_slideshow": "Jouer le diaporama",
+      "pause_slideshow": "Interrompre le diaporama",
+      "play_slideshow": "Lire le diaporama",
       "carousel": "Carrousel",
       "slide": "Diapositive"
     },
@@ -351,15 +351,15 @@
     },
     "announcements": {
       "previous_announcement": "Annonce précédente",
-      "next_announcement": "Prochaine annonce",
+      "next_announcement": "Annonce suivante",
       "carousel": "Carrousel",
       "announcement": "Annonce",
-      "announcement_bar": "Barre d'annonces"
+      "announcement_bar": "Barre d’annonces"
     },
     "quick_order_list": {
-      "product_total": "Sous-total du produit",
+      "product_total": "Sous-total des produits",
       "view_cart": "Voir le panier",
-      "each": "{{ money }}/ea",
+      "each": "{{ money }}/pièce",
       "product": "Produit",
       "variant": "Variante",
       "variant_total": "Total des variantes",
@@ -704,70 +704,43 @@
             "shop_cash_not_found": "Shop Cash n'a pas été trouvé.",
             "shop_cash_not_allowed": "Le Shop Cash n'est pas autorisé sans le Shop Pay.",
             "shop_cash_unsupported_checkout_source": "Shop Cash ne prend pas en charge ce mode de paiement.",
-            "shop_cash_gift_card_not_allowed": "Shop Cash ne permet pas l'achat de cartes-cadeaux.",
-            "shop_cash_not_enabled": "L'option Shop Cash n'est pas activée pour cette boutique.",
-            "shop_cash_not_available": "Shop Cash n'est pas pris en charge dans cette caisse.",
-            "shop_cash_unsupported_subscriptions": "Shop Cash ne prend pas en charge les abonnements.",
-            "shop_cash_unsupported_shipping": "Shop Cash ne prend pas en charge les marchandises sans frais de port.",
-            "invalid_address_type": "Le type d'adresse fourni n'est pas valide pour ce mode de paiement.",
-            "missing_retail_attributions": "Les attributions au détail sont requises pour les paiements par carte de crédit saisis manuellement.",
-            "unexpected_retail_attributions": "Les attributions de détail sont fournies de manière inattendue pour les paiements par carte de crédit.",
-            "invalid_card_source": "Cette session n'a pas l'autorisation d'utiliser cette carte.",
-            "payment_instrument_not_found": "Impossible de trouver un mode de paiement",
-            "unauthorized_capture_method": "La configuration de la méthode de capture des paiements n'est pas autorisée.",
-            "saved_payment_methods_not_allowed": "Les méthodes de paiement sauvegardées ne sont pas autorisées.",
-            "saved_payment_methods_not_enabled": "L'enregistrement des méthodes de paiement n'est pas activé pour cette boutique.",
-            "saved_payment_methods_cvv_verification_disabled": "La méthode de paiement sélectionnée nécessite une vérification CVV qui n'est pas activée pour cette boutique. Sélectionnez une autre méthode de paiement.",
-            "store_credit_not_enabled": "Le crédit magasin n'est pas activé pour cette boutique.",
-            "store_credit_account_not_found": "Le compte de crédit du magasin n'a pas été trouvé.",
-            "store_credit_account_mismatch": "Le compte de crédit du magasin ne correspond pas à l'identité de l'acheteur.",
-            "store_credit_mismatched_currency": "La devise du compte de crédit magasin ne correspond pas à la devise de la caisse.",
-            "store_credit_insufficient_funds": "Le compte de crédit magasin n'est pas suffisamment approvisionné.",
-            "store_credit_buying_gift_card": "Vous ne pouvez pas utiliser le crédit du magasin pour acheter une carte-cadeau.",
-            "gift_cards_not_allowed_for_b2b": "Les cartes-cadeaux ne sont pas autorisées dans les magasins B2B.",
-            "method_required": "Un mode de paiement doit être proposé.",
-            "paypal_express_address_invalid": "PayPal a renvoyé une adresse invalide.",
-            "shop_cash_unsupported_currency": "Shop Cash ne prend pas en charge cette devise.",
-            "market_manager_blocks_wallet_payments": "Le mode de paiement n'est pas pris en charge par le gestionnaire de marché."
-          },
-          "tip": {
-            "not_accepted_by_shop": "Le magasin n'accepte pas les pourboires.",
-            "only_one_tip_line_allowed": "Les lignes de conseils multiples ne sont pas prises en charge.",
-            "tips_not_allowed_for_b2b": "Les pourboires ne sont pas autorisés dans les magasins B2B.",
-            "currency_change_reset": "Le conseil a été réinitialisé en raison d'un changement de devise.",
-            "tips_not_allowed_for_deferred_purchase_options": "Les conseils ne sont pas encore pris en charge pour les options d'achat différé."
-          },
-          "sale_attribution": {
-            "draft_order_not_exist": "Cet ordre de repêchage n'existe pas dans le magasin actuel.",
-            "staff_member_not_exist": "Ce personnel n'existe pas dans le magasin actuel.",
-            "location_not_exist": "Cet emplacement n'existe pas dans la boutique actuelle.",
-            "point_of_sale_device_not_exist": "Ce dispositif de point de vente n'existe pas dans le magasin actuel.",
-            "unresolvable_target_merchandise_lines": "Les attributions de vente proposées sont impossibles à résoudre dans le contexte actuel des négociations."
-          },
-          "non_negotiable": {
-            "missing_non_negotiable_terms": "La proposition de l'acheteur doit contenir des conditions non négociables.",
-            "invalid_signature": "La signature de {{target_terms}} n'est pas valide."
-          },
-          "inventory": {
-            "missing_quantity_value": "Le champ Quantité est manquant dans les lignes d'inventaire de l'acheteur.",
-            "changing_behavior_not_allowed": "Ce client n'a pas la permission de modifier le comportement de l'inventaire.",
-            "only_one_inventory_behavior_allowed": "Actuellement, un seul comportement d'inventaire est autorisé par caisse."
-          },
-          "optional_duties": {
-            "optional_duties_not_permitted": "Le refus des droits n'est pas autorisé pour cette caisse."
-          },
-          "attribution": {
-            "retail_attribution_not_allowed": "L'attribution au détail n'est pas autorisée pour cette caisse.",
-            "retail_attribution_required": "L'attribution au commerce de détail est requise pour cette caisse."
+            "shop_cash_gift_card_not_allowed": "Shop Cash ne permet pas l'achat de cartes-cadeaux."
           },
           "captcha": {
-            "metadata_missing": "Un captcha est requis pour ce paiement.",
-            "metadata_mismatch": "Le fournisseur et le type de captcha fournis ne correspondent pas aux valeurs attendues.",
-            "token_missing": "Un jeton captcha doit être fourni pour compléter ce paiement.",
-            "job_enqueue_failed": "Le travail de validation captcha n'a pas pu être mis en file d'attente.",
-            "job_already_queued": "La validation du captcha a déjà été mise en attente pour ce jeton captcha.",
-            "token_expired": "Le jeton captcha fourni a expiré. Remplissez un nouveau captcha pour poursuivre le paiement.",
-            "token_invalid": "Le jeton captcha fourni n'était pas valide. Remplissez un nouveau captcha pour poursuivre le paiement."
+            "token_not_valid_for_session": "Le captcha fourni ne peut pas être utilisé avec cette caisse."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "Le montant reçu doit être dans la devise du magasin."
+          },
+          "checkout_source": {
+            "revoked": "Cette caisse n'est plus disponible."
+          }
+        },
+        "full_price": "Plein tarif :",
+        "title": "Sortie de caisse - {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Sortie de caisse",
+        "loading_title": "Sortie de caisse - {{shopName}}",
+        "submit_order_button_label": "Soumettre une commande",
+        "submit_for_review_notice_label": "Le paiement n'est dû qu'une fois la commande examinée.",
+        "continue_to_payment_plans_button_label": "Poursuivre les plans de paiement",
+        "autocomplete_powered_by_google": "Propulsé par {{brandName}}",
+        "submit": "Soumettre",
+        "processing": "Traitement...",
+        "stepper": {
+          "increase": "Augmentation {{type}}",
+          "decrease": "Diminution {{type}}"
+        },
+        "remove_item": "Retirer %{label}",
+        "remove_tag": "Supprimer l'étiquette",
+        "dates": {
+          "weekdays_abbreviation": {
+            "monday": "Mo",
+            "tuesday": "Tu",
+            "wednesday": "Nous",
+            "thursday": "Th",
+            "friday": "Fr",
+            "saturday": "Sa",
+            "sunday": "Su"
           }
         }
       }

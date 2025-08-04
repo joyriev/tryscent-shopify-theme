@@ -2113,8 +2113,65 @@
         "inventory": {
           "partial_inventory_banner": "Parte de tu cesta está agotada y no estará disponible para comprar en el momento de la compra.",
           "sold_out": {
-            "heading": "Tu carrito está agotado"
+            "heading": "Tu carrito está agotado",
+            "storefront_body": "Volver a la tienda para seguir comprando",
+            "no_storefront_body": "Lamentablemente, el artículo que desea comprar ya no está disponible."
           }
+        },
+        "title": "Cola",
+        "time_to_checkout_title": "Hora de irse - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Calcular el tiempo de espera estimado",
+          "less_than_one": "Tiempo de espera estimado: Menos de un minuto",
+          "one": "Tiempo estimado de espera: {{count}} minuto",
+          "other": "Tiempo estimado de espera: {{count}} minutos"
+        },
+        "last_checked": "(Última comprobación: {{time}})",
+        "footer": {
+          "heading": "No actualice esta página, se actualizará automáticamente.",
+          "body": "Los artículos de su cesta no están reservados hasta que complete el pago."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Se ha producido un problema al procesar su solicitud, póngase en contacto con el propietario de la tienda."
+      },
+      "no_address_location": {
+        "title": "Ubicación sin dirección",
+        "header": "No tiene una dirección de envío para esta ubicación",
+        "message": "Póngase en contacto con nosotros para añadir una dirección para esta ubicación para completar el pago.",
+        "email_us_button_label": "Envíenos un correo electrónico"
+      },
+      "order_errors": {
+        "creation_failure": "Se ha producido un problema al crear su pedido. Inténtelo de nuevo o póngase en contacto con nosotros para obtener más información.",
+        "network_failure": "Su pedido no ha podido ser enviado debido a un error de red. Compruebe su conexión e inténtelo de nuevo."
+      },
+      "session_errors": {
+        "session_not_unique": "Ha habido un problema al procesar su pedido. Actualice esta página para volver a la tienda.",
+        "session_already_finished": "Este pedido ya ha sido enviado. Puede volver a la tienda para iniciar un nuevo pedido."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Ha habido un problema al procesar su pedido. Vuelva a intentarlo en unos minutos."
+      },
+      "pickup_point": {
+        "business_hours": "Horarios de apertura",
+        "no_business_hours": "No hay horarios disponibles",
+        "open_twenty_four_hours": "Abierto 24 horas al día, 7 días a la semana",
+        "title": "Punto de recogida",
+        "search_button": "Buscar en",
+        "selector_tabs": "Selector de punto de recogida",
+        "could_not_resolve_address": "No se ha podido localizar tu dirección. Inténtelo de nuevo o utilice una dirección diferente",
+        "no_pickup_points_near_you": "No se han encontrado puntos de recogida cerca de la dirección seleccionada",
+        "no_pickup_points_near_location": "No se han encontrado puntos de recogida cerca de tu ubicación",
+        "pickup_unavailable_banner_title": {
+          "one": "No hay puntos de recogida disponibles para su artículo",
+          "other": "No hay puntos de recogida disponibles para sus artículos"
+        },
+        "no_pickup_points_found": "No se han encontrado puntos de recogida",
+        "paginator": {
+          "previous_accessibility_label": "Página anterior"
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} punto de recogida cercano a su ubicación"
         }
       }
     },
