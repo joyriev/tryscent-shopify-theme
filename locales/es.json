@@ -10,20 +10,20 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Entra en la tienda usando la contraseña:",
-      "login_password_button": "Entrar con contraseña",
+      "login_form_heading": "Entrar a la tienda usando contraseña:",
+      "login_password_button": "Entrar usando contraseña",
       "login_form_password_label": "Contraseña",
       "login_form_password_placeholder": "Tu contraseña",
-      "login_form_error": "Contraseña incorrecta.",
-      "login_form_submit": "Entre en",
-      "admin_link_html": "¿Es usted el propietario de la tienda? <a href=\"/admin\" class=\"link underlined-link\">Entra aquí</a>",
-      "powered_by_shopify_html": "Esta tienda funcionará con {{ shopify }}"
+      "login_form_error": "Contraseña incorrecta",
+      "login_form_submit": "Ingresar",
+      "admin_link_html": "¿Eres el propietario de la tienda? <a href=\"/admin\" class=\"link underlined-link\">Inicia sesión aquí</a>",
+      "powered_by_shopify_html": "Esta tienda contará con tecnología Shopify {{ shopify }}"
     },
     "social": {
       "alt_text": {
         "share_on_facebook": "Compartir en Facebook",
         "share_on_twitter": "Compartir en X",
-        "share_on_pinterest": "Pinchar en Pinterest"
+        "share_on_pinterest": "Guardar en Pinterest"
       },
       "links": {
         "twitter": "X (Twitter)",
@@ -42,51 +42,51 @@
       "label": "Paginación",
       "page": "Página {{ number }}",
       "next": "Página siguiente",
-      "previous": "Página anterior"
+      "previous": "Pagina anterior"
     },
     "search": {
-      "search": "Buscar en",
-      "reset": "Término de búsqueda claro"
+      "search": "Búsqueda",
+      "reset": "Borrar término de búsqueda"
     },
     "cart": {
-      "view": "Ver cesta ({{ count }})",
-      "item_added": "Artículo añadido a su cesta",
+      "view": "Ver carrito ({{ count }})",
+      "item_added": "Artículo agregado a tu carrito",
       "view_empty_cart": "Ver carrito"
     },
     "share": {
       "copy_to_clipboard": "Copiar enlace",
       "share_url": "Enlace",
-      "success_message": "Enlace copiado en el portapapeles",
-      "close": "Cerrar cuota"
+      "success_message": "Enlace copiado al portapapeles",
+      "close": "Cerrar compartición"
     },
     "slider": {
       "of": "de",
-      "next_slide": "Deslizar a la derecha",
-      "previous_slide": "Deslizar a la izquierda",
-      "name": "Deslizador"
+      "next_slide": "Diapositiva a la derecha",
+      "previous_slide": "Diapositiva a la izquierda",
+      "name": "Carrusel"
     }
   },
   "newsletter": {
     "label": "Correo electrónico",
-    "success": "Gracias por suscribirse",
-    "button_label": "Suscríbase a"
+    "success": "Gracias por suscribirte",
+    "button_label": "Suscribirse"
   },
   "accessibility": {
-    "skip_to_text": "Ir al contenido",
+    "skip_to_text": "Ir directamente al contenido",
     "close": "Cerrar",
     "unit_price_separator": "por",
-    "vendor": "Vendedor:",
+    "vendor": "Proveedor:",
     "error": "Error",
     "refresh_page": "Al seleccionar una opción, se actualiza toda la página.",
     "link_messages": {
       "new_window": "Se abre en una nueva ventana.",
-      "external": "Abre un sitio web externo."
+      "external": "Se abre el sitio web externo."
     },
     "loading": "Cargando...",
-    "skip_to_product_info": "Ir a la información sobre el producto",
-    "total_reviews": "revisiones totales",
+    "skip_to_product_info": "Ir directamente a la información del producto",
+    "total_reviews": "reseñas totales",
     "star_reviews_info": "{{ rating_value }} de {{ rating_max }} estrellas",
-    "collapsible_content_title": "Contenido plegable",
+    "collapsible_content_title": "Contenido desplegable",
     "complementary_products": "Productos complementarios"
   },
   "blogs": {
@@ -94,15 +94,15 @@
       "blog": "Blog",
       "read_more_title": "Más información: {{ title }}",
       "comments": {
-        "one": "{{ count }} cómo",
+        "one": "{{ count }} comentario",
         "other": "{{ count }} comentarios",
         "many": "{{ count }} comentarios"
       },
-      "moderated": "Tenga en cuenta que los comentarios deben ser aprobados antes de su publicación.",
+      "moderated": "Ten en cuenta que los comentarios deben aprobarse antes de que se publiquen.",
       "comment_form_title": "Deja un comentario",
       "name": "Nombre",
       "email": "Correo electrónico",
-      "message": "Cómo",
+      "message": "Comentario",
       "post": "Publicar comentario",
       "back_to_blog": "Regresar al blog",
       "share": "Compartir este artículo",
@@ -3203,56 +3203,6 @@
       "clear": "Claro",
       "clipboardCopied": "Copied",
       "decrease": "Disminuir {{type}}"
-    },
-    "active_inspector": {
-      "extension": {
-        "move_up": "Mover la extensión a la posición anterior",
-        "remove": "Eliminar extensión",
-        "move_down_tooltip": "Pasar a la siguiente posición",
-        "move_up_tooltip": "Volver a la posición anterior"
-      }
-    },
-    "editor": {
-      "link_new_tab_confirmation": "Este enlace no se puede abrir dentro del editor. Se abrirá en una nueva ventana{{resolved_to_link}}). Haga clic en Aceptar para continuar."
-    },
-    "settings": {
-      "title": "Ajustes",
-      "loading_accessibility_message": "Carga de la página de configuración",
-      "log_out_everywhere": {
-        "title": "Cerrar sesión en todas partes",
-        "description": "Si has perdido un dispositivo o tienes problemas de seguridad, cierra la sesión en todas partes para garantizar la seguridad de tu cuenta.",
-        "button": "Cerrar sesión en todas partes",
-        "warning_message": "También se cerrará la sesión en este dispositivo."
-      }
-    },
-    "shop_ads": {
-      "button": "Explorar en la tienda"
-    },
-    "knowledge_base": {
-      "self_serve_returns": {
-        "enabled": "Los clientes pueden solicitar y gestionar ellos mismos las devoluciones."
-      }
-    },
-    "sign_in": {
-      "brand_logo_alt_text": "%{shop_name} Logotipo",
-      "processing": "Procesando...",
-      "step_one": {
-        "page_title": "Acceder - %{shop_name}",
-        "subheading_with_sign_in_options": "Elige cómo quieres iniciar sesión",
-        "button": "Continúe en"
-      },
-      "step_two": {
-        "page_title": "Introduce el código - %{shop_name}",
-        "heading": "Introduzca el código",
-        "restart_link": "Iniciar sesión con otra dirección de correo electrónico",
-        "input_field_label": "Código de 6 cifras"
-      },
-      "error": {
-        "invalid": {
-          "invalid_email": "Introduzca una dirección de correo electrónico válida",
-          "invalid_code": "Introduzca el código correcto de 6 dígitos"
-        }
-      }
     }
   }
 }
