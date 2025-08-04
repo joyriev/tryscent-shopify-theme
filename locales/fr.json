@@ -2656,6 +2656,116 @@
         "items": {
           "one": "{{count}} article",
           "other": "{{count}} articles"
+        },
+        "no_filtered_results_title": "Pas de résultats filtrés",
+        "order_link": "Voir la commande {{name}}",
+        "orders_title": "Confirmé",
+        "pagination": {
+          "previous": "Prévenir",
+          "previous_accessibility_label": "Ordres précédents",
+          "load_more": "En savoir plus",
+          "load_more_accessibility_label": "Charger d'autres commandes"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Voir la commande pour plus de détails",
+            "estimated_delivery": "Attendu {{date}}",
+            "last_updated": "Dernière mise à jour {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Livraison estimée {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "due": "Paiement dû {{date}}",
+            "due_today": "Paiement dû aujourd'hui",
+            "due_on_fulfillment": "Paiement dû à l'exécution",
+            "payment_not_due": "Paiement non échu"
+          },
+          "list_view": {
+            "due": "Due {{date}}",
+            "due_today": "A remettre aujourd'hui",
+            "due_without_date": "Due",
+            "due_on_fulfillment": "Échéance de l'exécution",
+            "payment_not_due": "Pas encore échu"
+          }
+        },
+        "sort_by": "Trier par : {{option}}",
+        "sort_hide_options_accessibility_label": "Masquer les options de tri pour les commandes confirmées.",
+        "sort_show_options_accessibility_label": "Afficher les options de tri pour les commandes confirmées.",
+        "sort_currently_sorted_by_accessibility_label": "Actuellement classé par : {{option}}",
+        "sort": {
+          "location": {
+            "ascending": "Lieu (A-Z)",
+            "descending": "Lieu (Z-A)"
+          },
+          "order_number": {
+            "ascending": "Numéro d'ordre (du plus petit au plus grand)",
+            "descending": "Numéro d'ordre (du plus élevé au plus bas)"
+          },
+          "order_total": {
+            "ascending": "Total des commandes (du plus bas au plus haut)",
+            "descending": "Total des commandes (du plus élevé au plus bas)"
+          }
+        },
+        "location_filter_picker": {
+          "all_location": "Tous les sites",
+          "current_location": "Situation actuelle",
+          "switch_view": "Vue de l'interrupteur"
+        },
+        "filter_title": "Filtre",
+        "filter": {
+          "clear_section": "Section claire",
+          "date": {
+            "today": "Aujourd'hui",
+            "last_7_days": "7 derniers jours",
+            "last_30_days": "30 derniers jours",
+            "last_90_days": "90 derniers jours",
+            "last_365_days": "12 derniers mois",
+            "custom": "Sur mesure"
+          }
+        }
+      },
+      "order_status": {
+        "on_its_way_description": "Cet envoi est en cours d'acheminement.",
+        "preparing_for_shipping_label": "Préparation de l'expédition",
+        "preparing_for_shipping_description": "Ces articles sont en cours de préparation pour l'expédition.",
+        "ready_for_pickup_label": "Prêt pour l'enlèvement",
+        "ready_for_pickup_description": "Ces articles sont prêts à être enlevés. Veuillez vous munir de votre confirmation de commande lors de l'enlèvement.",
+        "ready_for_pickup_location": "Votre commande est prête à être enlevée sur place",
+        "picked_up_label": "Ramassé",
+        "picked_up_description": "Ces articles ont été ramassés.",
+        "canceled_label": "Annulé",
+        "come_back": "Revenez sur cette page pour connaître l'état de votre envoi.",
+        "company_tracking_number": "{{company}} numéro de suivi :",
+        "confirmed_label": "Confirmé",
+        "confirmed_description_pickup": "Vous recevrez un courriel lorsque votre commande sera prête à être enlevée.",
+        "confirmed_description_digital": "Vous recevrez un courriel lorsque votre commande sera prête.",
+        "confirmed_description_gift_card_text": "Vous recevrez un message lorsque votre commande sera prête.",
+        "complete_label": "Compléter",
+        "delivered_label": "Livré",
+        "delivered_description_digital": {
+          "one": "Cet article est complet.",
+          "other": "Ces éléments sont complets."
+        },
+        "delivered_description_gift_card": {
+          "one": "La carte cadeau a été envoyée par email.",
+          "other": "Les cartes-cadeaux ont été envoyées par courrier électronique."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "La carte cadeau a été envoyée par SMS."
+        },
+        "gift_card_label": {
+          "one": "Carte cadeau"
+        },
+        "gift_card_resend_button": {
+          "one": "Renvoyer la carte cadeau",
+          "other": "Renvoyer les cartes-cadeaux"
+        },
+        "gift_resend_success": {
+          "one": "Envoi de la carte cadeau",
+          "other": "Envoi de cartes-cadeaux"
         }
       }
     }

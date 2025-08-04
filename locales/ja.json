@@ -1207,8 +1207,91 @@
           "free_shipping_cycles": {
             "one": "%{count}以上の配送で送料無料",
             "other": "%{count}以上の配送で送料無料"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "送料%{count}",
+            "other": "%{count}配送は送料無料です。"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "%{count}以上の配送で送料無料、その後は%{recurring_order_shipping_price}なります。",
+            "other": "%{count}以上の配送で送料無料、その後%{recurring_order_shipping_price}なります。"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "%{count}配送は送料無料、その後は%{recurring_order_shipping_price}なります。",
+            "other": "配送%{count}場合は送料無料、その後は%{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} より多くの配達 %{shipping_price}",
+            "other": "配送%{count}増やすと、それぞれ%{shipping_price}配送できます%{count}"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{count} 配送 %{shipping_price}",
+            "other": "配送%{count}増やすと、それぞれ%{shipping_price}配送できます%{count}"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "最初の%{cycle}送料無料、その後は%{recurring_order_shipping_price}なります。",
+            "other": "最初の%{cycle}送料無料、その後は%{recurring_order_shipping_price}なります。"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} %{count}多い場合、%{shipping_price}かかります。",
+            "other": "%{shipping_price} %{count}増えた場合の%{shipping_price}%{per_delivery_cost}"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "配送料%{shipping_price} %{count} %{shipping_price}",
+            "other": "配送%{count} %{shipping_price}%{per_delivery_cost})。"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "配送%{count}多い場合は%{shipping_price}その後に%{recurring_order_shipping_price}続きます。",
+            "other": "配送%{count}多い場合は%{shipping_price}%{per_delivery_cost}その後に%{recurring_order_shipping_price}続きます。"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{count}配送に対する%{shipping_price}後に、%{recurring_order_shipping_price}続く。",
+            "other": "配送%{count} %{shipping_price}%{per_delivery_cost}、%{recurring_order_shipping_price}表示されます。"
+          },
+          "subscription_free_with_frequency_label": "送料無料 %{delivery_frequency}",
+          "prepaid_delivery_frequency": {
+            "one": "配送%{count}",
+            "other": "配送%{count}"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "日%{count}"
+            },
+            "week": {
+              "other": "%{count}週間ごと"
+            },
+            "month": {
+              "other": "ヶ月%{count}"
+            },
+            "year": {
+              "one": "毎年",
+              "other": "%{count}ごと"
+            }
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} 配送あたり",
+          "prepaid_shipping_price_label": "%{shipping_price} 配送あたり x %{delivery_interval_count}",
+          "initial_order_discounted": "最初に送料%{discounted_shipping_cost} がかかり、次に%{frequency_description}",
+          "prepaid_initial_order_discounted": "初回送料 %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "初回送料 %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "最初に送料%{discounted_shipping_price} %{prepaid_delivery_frequency} がかかり、次に%{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "最初に送料%{discounted_shipping_price} %{prepaid_delivery_frequency}%{discounted_cost_per_delivery}) がかかり、次に%{shipping_price} %{billing_cycle}がかかります。",
+          "shipping_price_included": "含まれる",
+          "recurring_order_shipping_price": "続いて %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "ファーストオーダーを含む %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} 配送あたり）、次いで %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "初回注文無料",
+            "other": "最初の%{count}注文は無料"
+          },
+          "free_for_first_n_order": {
+            "one": "ファーストオーダー",
+            "other": "最初の%{count}注文に対して"
           }
-        }
+        },
+        "one_time_purchase_shipping": "1回限りの発送",
+        "shipping_information_required_notice": "配送情報が必要です。 {{link}}.",
+        "shipping_information_redirect_link": "ここに情報を入力してください",
+        "loading_progressive_rates": "より多くの料金を検索..."
       }
     }
   },
