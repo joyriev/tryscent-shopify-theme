@@ -2290,7 +2290,44 @@
     "page_titles": {
       "blog_or_article_with_error": "Errore - %{title}",
       "shopping_cart": "Il vostro carrello della spesa",
-      "account": "Conto"
+      "account": "Conto",
+      "create_account": "Creare un account",
+      "reset_account": "Azzeramento dell'account",
+      "search_results": {
+        "one": "Ricerca: %{count} risultati trovati per%{terms}\".",
+        "other": "Ricerca: %{count} risultati trovati per%{terms}\"."
+      },
+      "not_found": "404 Non trovato",
+      "checkpoint": "Punto di controllo"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} sono stati applicati sconti"
+    },
+    "challenge": {
+      "message": "Per continuare, fateci sapere che non siete un robot.",
+      "error": "La risposta non era corretta, riprovare."
+    },
+    "checkpoint": {
+      "message": "Risolvere il Captcha per continuare",
+      "error": "Convalida Captcha fallita"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Di solito è pronto in 1 ora",
+        "two_hours": "Di solito è pronto in 2 ore",
+        "four_hours": "Di solito è pronto in 4 ore",
+        "twenty_four_hours": "Solitamente pronto in 24 ore",
+        "two_to_four_days": "Solitamente pronto in 2-4 giorni",
+        "five_or_more_days": "Di solito è pronto in più di 5 giorni",
+        "zero_to_two_hours": "Di solito è pronto in 2 ore",
+        "two_to_four_hours": "Di solito è pronto in 4 ore",
+        "immediately": "Pronto per il ritiro"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Questo articolo è un acquisto ricorrente o differito. Continuando, accetto la %{cancellationPolicyLink} e vi autorizzo ad addebitare il mio metodo di pagamento ai prezzi, alla frequenza e alle date elencate in questa pagina fino all'evasione dell'ordine o alla mia cancellazione, se consentita.",
+      "buyer_consent_cart": "Uno o più articoli presenti nel carrello sono un acquisto ricorrente o differito. Continuando, accetto la %{cancellationPolicyLink} e vi autorizzo ad addebitare il mio metodo di pagamento ai prezzi, alla frequenza e alle date elencate in questa pagina fino all'evasione dell'ordine o alla mia cancellazione, se consentita.",
+      "cancellation_policy": "Politica di cancellazione"
     }
   },
   "customer_accounts": {
@@ -2321,6 +2358,33 @@
     },
     "order_details": {
       "group_title_label_with_parent": "Per: {{groupTitle}}"
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneYearAgo": "{{date}} a {{time}}",
+        "lessThanOneHourAgo": {
+          "one": "{{count}} minute ago"
+        },
+        "lessThanOneMinuteAgo": "Solo ora",
+        "lessThanOneWeekAgo": "{{weekday}} a {{time}}",
+        "yesterday": "Ieri a {{time}}",
+        "today": "Oggi a {{time}}",
+        "tomorrow": "Domani alle {{time}}",
+        "lessThanOneWeekAway": "{{weekday}} a {{time}}",
+        "lessThanOneYearAway": "{{date}} a {{time}}"
+      }
+    },
+    "enable_javascript": "Per visualizzare il proprio account, attivare JavaScript nelle impostazioni del browser o accedere con un altro browser.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Nascondi il menu Account",
+        "label": "Conto",
+        "show_accessibility_label": "Mostra il menu Account",
+        "nav_accessibility_label": "Navigazione del conto",
+        "open_menu_accessibility_label": "Navigazione per l'apertura del conto",
+        "close_menu_accessibility_label": "Navigazione per la chiusura del conto",
+        "loading_message": "Caricamento Navigazione del conto"
+      }
     }
   }
 }

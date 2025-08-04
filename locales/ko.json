@@ -1093,8 +1093,89 @@
           "free_shipping_cycles": {
             "one": "%{count} 이상 배송 시 무료 배송",
             "other": "%{count} 더 많은 배송에 대한 무료 배송"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "%{count} 배송 시 무료 배송",
+            "other": "%{count} 배송에 대한 무료 배송"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "배송 %{count} 이상 무료 배송, 이후 %{recurring_order_shipping_price}",
+            "other": "배송 %{count} 이상 무료 배송, 이후 %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "%{count} 배송 시 무료 배송, 이후 %{recurring_order_shipping_price}",
+            "other": "%{count} 배송에 대한 무료 배송, 그 다음 %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} 더 많은 배달 대상 %{shipping_price}",
+            "other": "%{shipping_price} %{count} 더 많은 배송"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "one": "%{count} 배달 대상 %{shipping_price}",
+            "other": "%{shipping_price} %{count} 더 많은 배송"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "첫 %{cycle} 동안 무료 배송, 이후 %{recurring_order_shipping_price} 추가됩니다 %{recurring_order_shipping_price}",
+            "other": "첫 %{cycle} 동안 무료 배송, 이후 %{recurring_order_shipping_price} 추가됩니다 %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "배송 %{count} %{개} 추가 배송에 대한 %{shipping_price} ",
+            "other": "배송 %{count} {개} 추가 배송에 대한 %{shipping_price}%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{count} 배송에 대한 %{shipping_price} ",
+            "other": "배송 %{count} 배송에 대한 %{배송 %{shipping_price}%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "배송 %{count} {개} 추가 배송에 대한 %{shipping_price} }에 이어 %{recurring_order_shipping_price} 추가됩니다 %{recurring_order_shipping_price}",
+            "other": "배송 %{count} {개}%{per_delivery_cost} %{recurring_order_shipping_price})에 대한 %{shipping_price} 이어 %{recurring_order_shipping_price} 추가됩니다."
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "배송 %{count} 대한 %{shipping_price}, 그 뒤에 %{recurring_order_shipping_price} 뒤따릅니다 %{recurring_order_shipping_price}",
+            "other": "배송 %{count}%{per_delivery_cost} %{recurring_order_shipping_price}%{per_delivery_cost}에 대한 %{shipping_price}, 그 뒤에 %{recurring_order_shipping_price} 뒤따릅니다."
+          },
+          "prepaid_delivery_frequency": {
+            "one": "%{count} 배달에 대해",
+            "other": "%{count} 배달에 대해"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "일마다 %{count} "
+            },
+            "week": {
+              "other": "주마다 %{count} "
+            },
+            "month": {
+              "one": "매월",
+              "other": "개월마다 %{count} "
+            },
+            "year": {
+              "other": "년마다 %{count} "
+            }
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} 배달 건당",
+          "prepaid_shipping_price_label": "%{shipping_price} 배달 당 x %{delivery_interval_count}",
+          "initial_order_discounted": "첫 번째 배송비는 %{discounted_shipping_cost}, 그 다음 %{frequency_description}",
+          "prepaid_initial_order_discounted": "첫 배송 비용 %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "첫 배송 비용 %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "첫 번째 배송비 %{discounted_shipping_price} %{prepaid_delivery_frequency}, 그 다음 %{shipping_price} %{billing_cycle}.",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "첫 번째 배송비 %{discounted_shipping_price} %{prepaid_delivery_frequency}%{discounted_cost_per_delivery}), 그 다음 %{shipping_price} %{billing_cycle}.",
+          "shipping_price_included": "포함",
+          "recurring_order_shipping_price": "다음에 %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "첫 번째 순서는 다음과 같습니다. %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} 배달 당), 그 다음 %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "첫 주문 무료",
+            "other": "첫 %{count} 주문 무료"
+          },
+          "free_for_first_n_order": {
+            "one": "첫 주문의 경우",
+            "other": "첫 %{count} 주문의 경우"
           }
-        }
+        },
+        "one_time_purchase_shipping": "일회성 배송",
+        "shipping_information_required_notice": "배송 정보는 필수 입력 사항입니다. {{link}}.",
+        "shipping_information_redirect_link": "여기에 정보를 입력하세요."
       }
     },
     "sentence": {
