@@ -2445,9 +2445,129 @@
           "select_different_shipping_address_to_resolve_errors": "配送先住所が無効です。別の住所を選択するか、新しい住所を使用してください。"
         },
         "scrim": {
-          "continue_purchase_in_window": "{{walletName}}ウィンドウで購入を続ける"
+          "continue_purchase_in_window": "{{walletName}}ウィンドウで購入を続ける",
+          "and_return_to_checkout": "チェックアウトに戻る"
         }
+      },
+      "note": {
+        "length_exceeds_maximum": "メモのサイズを5000文字以下にする。"
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "ギフトカードの価格は0より大きくなければなりません。",
+            "gift_card_price_must_not_exceed_limit": "ギフトカードの価格が以下の金額を超えないこと %{gift_card_limit}.",
+            "subtotal_limit_reached": "行項目の最大値に達した。",
+            "signature_mismatch": "ラインの商品署名の不一致 {{stable_id}}."
+          }
+        }
+      },
+      "units": {
+        "milligram": "mg",
+        "gram": "g",
+        "kilogram": "kg",
+        "milliliter": "ml",
+        "centiliter": "cl",
+        "cubic_meter": "m³",
+        "millimeter": "mm",
+        "centimeter": "cm",
+        "meter": "m",
+        "square_meter": "m²",
+        "ounce": "オズ",
+        "pound": "lb",
+        "fluid_ounce": "fl oz",
+        "pint": "pt",
+        "quart": "qt",
+        "gallon": "ギャル",
+        "inch": "で",
+        "yard": "yd",
+        "square_foot": "フィート",
+        "item": "項目"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "そのアドレスは現在のメンバーには対応していません。"
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "オンラインストアに移動する"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "詳細情報 %{context}",
+        "additional_payment_methods": "その他の支払い方法"
       }
+    },
+    "pagination": {
+      "previous": "前へ",
+      "next": "次のページ"
+    },
+    "links": {
+      "powered_by_shopify": "Shopify搭載"
+    },
+    "feed": {
+      "more": "もっと見る"
+    },
+    "attributes": {
+      "email": "電子メール",
+      "password_confirmation": "パスワードの確認",
+      "first_name": "ファーストネーム",
+      "last_name": "ラストネーム"
+    },
+    "addresses": {
+      "pincode": "ピンコード",
+      "province": "地方",
+      "state_and_territory": "州／地域",
+      "emirate": "首長国",
+      "governorate": "県",
+      "confirm": "このアドレスを削除してもよろしいですか？"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "特集",
+        "az": "アルファベット順、A-Z",
+        "za": "アルファベット順、Z-A",
+        "price_ascending": "価格、安値から高値まで",
+        "price_descending": "価格、高値から安値まで",
+        "date_ascending": "日付、古いものから新しいものへ",
+        "date_descending": "日付、新旧"
+      }
+    },
+    "errors": {
+      "blank": "空白は許されない",
+      "blocked_address": "この場所はサポートされていません",
+      "credit_card_session_expired": "クレジットカードの承認が失効しました。もう一度お支払い情報を入力してください。カードに請求はされていません。",
+      "empty": "空っぽにはできない",
+      "invalid_email": "有効なEメールアドレスであること",
+      "discount_disabled": "この割引は無効になっています",
+      "discount_expired": "この割引はもう無効です。",
+      "discount_limit_reached": "この割引は利用限度額に達しました",
+      "discount_not_found": "入力されたコードに一致する有効な割引が見つかりません。",
+      "customer_already_used_once_per_customer_discount_notice": "この割引は利用限度額に達しました",
+      "gift_card_already_applied": "コードはすでにチェックアウトに適用されています",
+      "gift_card_code_invalid": "コードが無効",
+      "gift_card_currency_mismatch": "ギフトカードの通貨が%{gift_card_currency}います。%{checkout_currency}再発行する場合はご連絡ください。",
+      "gift_card_depleted": "このギフトカードの残金はありません",
+      "gift_card_disabled": "ギフトカードが使えない",
+      "gift_card_expired": "ギフトカードの有効期限が切れている",
+      "invalid": "無効",
+      "bad_domain": "無効なドメイン名が含まれている",
+      "taken": "はすでに取られた",
+      "contains_html_tags": "HTMLタグを含むことはできない",
+      "too_short": "が短すぎます (最小値は%{count}文字です)。",
+      "too_long": "が長すぎます (最大は%{count}文字です)。",
+      "password_mismatch": "提供されたパスワードと一致しなければならない",
+      "contains_spaces": "はスペースで始まるか終わる。",
+      "email_domain_invalid": "プロバイダはサポートされていません",
+      "invalid_for_country": "には無効である。 %{country}",
+      "invalid_for_country_and_province": "は%{province}と%{country}では無効です。",
+      "invalid_province_in_country": "では有効な県ではない。 %{country}",
+      "invalid_state_in_country": "では有効な状態ではない。 %{country}",
+      "invalid_region_in_country": "の有効な領域ではない。 %{country}",
+      "less_than_or_equal_to": "以下でなければならない。 %{count}",
+      "not_supported": "がサポートされていない",
+      "full_name_required": "姓と名を入力",
+      "invalid_for_card_type": "は無効である",
+      "invalid_type": "申し訳ございませんが、このタイプのカードはご利用いただけません。"
     }
   },
   "customer_accounts": {
