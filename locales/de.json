@@ -3155,7 +3155,58 @@
       },
       "store_credit": {
         "label": "Kredit im Geschäft",
-        "accesibility_label": "Ladenguthaben - {{formattedBalance}}"
+        "accesibility_label": "Ladenguthaben - {{formattedBalance}}",
+        "expirable_amounts_button": "Sichtbare Beträge",
+        "expirable_amounts_label": "Erstreckbare Beträge",
+        "details_modal": {
+          "title": "Verfallbares Ladenguthaben",
+          "balance_label": "Waage",
+          "expiration_date_label": "Verfallsdatum",
+          "amount_label": "Betrag",
+          "date_label": "Date",
+          "event_label": "Veranstaltung",
+          "events": {
+            "adjustment": "Einstellung",
+            "order_payment": "Bezahlung bestellen",
+            "order_refund": "Erstattung der Bestellung",
+            "payment_failure": "Zahlungsausfall",
+            "payment_returned": "Rückzahlung",
+            "order_cancellation": "Stornierung der Bestellung",
+            "tax_finalization": "Fertigstellung der Steuererklärung"
+          },
+          "expirable_balance_info": "Ein Teil Ihres Guthabens wird zu einem späteren Zeitpunkt verfallen",
+          "expirable_amount_label": "Verwendbarer Gesamtbetrag",
+          "expirable_amounts_info": "Beträge, die früher ablaufen, werden an der Kasse zuerst angewendet.",
+          "expirable_amounts_button": "Siehe",
+          "expired_amounts_button": "Abgelaufene Beträge anzeigen",
+          "pagination": {
+            "load_more_label": "Mehr laden",
+            "load_more_accessibility_label": "Laden Sie mehr wünschenswerte Mengen"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "Angaben zur Zahlungsmethode",
+        "credit_card_details_accessibility_label": "endend mit {{lastDigits}}",
+        "card_info_title": "Informationen zur Karte",
+        "payment_method_expiring_on": "Verfall am {{expiryDate}}",
+        "close_payment_modal": "Schließen Sie",
+        "close_payment_modal_accessibility_label": "Modal für Details zur Zahlungsmethode schließen",
+        "payment_details_loading": "Details zur Zahlungsmethode laden",
+        "total_amount_of_subscription_line_items_left": "und {{total}} mehr",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} Elemente insgesamt, Anzeige von {{totalItemsToDisplay}} Elementen.",
+        "next_payment_due": "Nächste fällige Zahlung {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button": "bearbeiten",
+        "edit_payment_method_button_accessibility_label": "Zahlungsmethode bearbeiten, die auf {{lastDigits}}",
+        "loading_shop_pay": "Laden Shop Pay",
+        "invalid_payment_method_message": "Verwenden Sie eine neue Kreditkarte, um die nächsten Bestellungen zu erhalten.",
+        "replace_payment_method": "Ersetzen Sie die Zahlungsmethode",
+        "checkout_card_banner": "Diese Zahlungsmethode kann nur für vorautorisierte Zahlungen verwendet werden. Sie wird an der Kasse nicht angezeigt, wenn Sie in diesem Geschäft angemeldet sind.",
+        "default_checkbox": "Als Standard eingestellt"
+      },
+      "edit_payment_method": {
+        "save_payment_method_button": "Speichern Sie",
+        "cancel_edit_payment_method_button": "Abbrechen"
       }
     }
   }
