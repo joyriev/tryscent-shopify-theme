@@ -787,7 +787,7 @@
         "payment_flexibility_terms_id_mismatch": "Flexibilidad de pago Condiciones de identificación no coincidentes"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar.",
+        "unavailable_addresses_only_countries": "Su pedido sólo puede enviarse a {{countriesList}}. Añade una nueva dirección para continuar.",
         "shipping_method": "Las opciones de envío han cambiado para su pedido. Revise su selección e inténtelo de nuevo.",
         "shipping_method_not_available": "Tu cesta se ha actualizado y los artículos que has añadido no se pueden enviar a tu dirección. Elimina los artículos para completar tu pedido.",
         "shipping_method_not_available_generic": {
@@ -800,7 +800,11 @@
           "other": "Uno o más artículos que has añadido no se envían a tu localidad. Elimínalos para pasar por caja o ponte en contacto con la tienda."
         },
         "payment_method_not_supported": "No puede utilizar este método de pago para %{country}. Utilice otro método de pago para realizar envíos a este país.",
-        "empty_state": "Introduzca su dirección de envío para ver los métodos de envío disponibles."
+        "empty_state": "Introduzca su dirección de envío para ver los métodos de envío disponibles.",
+        "title": "Envío no disponible",
+        "invalid_selected_address_with_update_link": "La dirección de envío seleccionada no es válida. %{update_address_link} o selecciona una dirección diferente.",
+        "unavailable_selected_address": "Envío no disponible para la dirección seleccionada",
+        "unavailable_selected_address_for_region": "El envío no está disponible para {{region}}. Seleccione una dirección diferente para continuar"
       },
       "order_summary": {
         "for_add_on": "Para: %{group_title}",
@@ -1635,6 +1639,52 @@
         "risky": "Se ha producido un problema al procesar su pago. Inténtalo de nuevo o utiliza otro método de pago.",
         "expired_buyer_action": "El método de pago ha expirado. Por favor, inténtelo de nuevo.",
         "name_mismatch": "Comprueba los datos de tu tarjeta. El nombre de la tarjeta y la dirección de facturación no coinciden."
+      },
+      "alternative_payment_method_banner": {
+        "or_pay_another_way": "O pagar de otra manera",
+        "or_check_out_another_way": "O consulte otra forma",
+        "or_pay_with_credit_card": "O pagar con tarjeta de crédito"
+      },
+      "post_purchase": {
+        "escape_confirmation": "Ha pagado su pedido.",
+        "escape_action": "Ver confirmación de pedido '",
+        "components": {
+          "processing": "Procesando..."
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Redirigiendo...",
+        "redirecting_title": "Redirigiendo...",
+        "complete_your_purchase_title": "Completa tu compra",
+        "continue_to_payment_gateway_notice": "Continúe con el pago para añadir su información de pago.",
+        "complete_your_purchase_title_error": "Corrija sus datos de pago",
+        "continue_to_payment_gateway_notice_error": "No se ha podido verificar su información de pago.",
+        "continue_to_payment_gateway_button_label_error": "Actualizar la información de pago",
+        "page_title": "Orden de procesamiento",
+        "title": "Orden de procesamiento",
+        "your_order_has_been_received_title": "Gracias por su pedido",
+        "you_will_receive_confirmation": "Estamos recibiendo muchos pedidos ahora mismo. Pronto deberías recibir la confirmación por correo electrónico o SMS. Si no la recibes en la próxima hora, avísanos.",
+        "you_will_not_be_charged": "Aún no se te cobrará",
+        "wait": {
+          "short": "Su pedido está siendo procesado.",
+          "medium": {
+            "one": "Su pedido está siendo procesado. El tiempo de espera estimado es de %{count} minutos.",
+            "other": "Su pedido está siendo procesado. El tiempo de espera estimado es de %{count} minutos."
+          },
+          "long": "Recibirás un correo electrónico en cuanto se procese tu pedido. Actualmente hay un gran volumen de pedidos.",
+          "no_auto_refresh_html": "Si no se le redirige automáticamente, %{link}.",
+          "refresh_this_page": "Actualizar esta página"
+        },
+        "action_required": "Medidas necesarias",
+        "modal_notice": "Nos ponemos en contacto con {{paymentMethod}}"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Completa tu compra utilizando tu código {{paymentMethod}} ",
+        "copy_text": "Copiar código {{paymentMethod}} ",
+        "open_app_text": "Abrir la aplicación {{paymentMethod}} ",
+        "qr_code": {
+          "instructions": "Completa tu compra utilizando tu código {{paymentMethod}} "
+        }
       }
     },
     "sentence": {
