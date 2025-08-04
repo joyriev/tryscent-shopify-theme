@@ -541,7 +541,14 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "Elija una opción de pago"
-        }
+        },
+        "network_card_payment_options": "Elija una red de tarjetas",
+        "network_card_persistence_description": "La red seleccionada se guardará con su método de pago para futuras transacciones.",
+        "amazon_payments_login_hint": "Se te pedirá que inicies sesión con Amazon.",
+        "amazon_payments_logout": "Cerrar sesión en Amazon Pay",
+        "amazon_payments_failed_mfa_challenge": "No se ha podido utilizar el método de pago seleccionado. Selecciona otro método o ponte en contacto con tu banco o emisor de tarjeta.",
+        "amazon_payments_abandoned_mfa_challenge": "No se ha podido completar el pago. Prueba con otro método de pago o ponte en contacto con tu banco o con el emisor de tu tarjeta.",
+        "amazon_payments_could_not_enqueue_authorize": "Se ha producido un problema al procesar su pago. Inténtalo de nuevo o utiliza otro método de pago."
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
@@ -1178,7 +1185,22 @@
         "split_shipping_multiple_shipment_notice": "Su pedido llegará en varios envíos",
         "split_shipping_multiple_shipment_notice_one_time_purchase": "Su pedido llegará en %{quantity} envíos",
         "split_shipping_option_free": "Envío gratuito",
-        "split_shipping_option_fastest": "Más rápido"
+        "split_shipping_option_fastest": "Más rápido",
+        "split_shipping_option_custom": "A medida"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "title": "Información complementaria",
+          "shipping_credential_kr": "Código aduanero personal",
+          "tax_credential_it": "Código fiscal (opcional)",
+          "tax_email_it": "PEC (opcional)",
+          "tax_credential_my": "NIF/Número de registro",
+          "shipping_credential_my": "NIF/Número de registro",
+          "tax_credential_type_mx": "Régimen fiscal",
+          "tax_credential_use_mx": "Utilización del CFDI",
+          "tax_credential_tr": "República de Turquía Número de identificación / IVA",
+          "shipping_credential_tr": "República de Turquía Número de identificación / IVA"
+        }
       }
     },
     "sentence": {
