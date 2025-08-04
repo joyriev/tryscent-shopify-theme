@@ -1906,7 +1906,60 @@
         "header": "で支払う。 {{paymentMethod}}",
         "qr_code": {
           "instructions": "{{paymentMethod}}コードを使用して購入を完了します。"
-        }
+        },
+        "external": {
+          "instructions": "アプリで支払いを確認し、購入を完了する"
+        },
+        "close": "課題を解決する"
+      },
+      "failed_payment": {
+        "page_title": "支払いが処理できなかった",
+        "title": "支払いが処理できなかった",
+        "payment_not_processed_title": "お支払いが処理されませんでした",
+        "payment_not_processed_text": "課金されていません。カートに戻って購入を完了してください。"
+      },
+      "payment_gateway": {
+        "bank_deposit_label": "銀行預金",
+        "money_order_label": "マネーオーダー",
+        "deferred_payment_label": "後で支払い方法を選択する",
+        "fixed_payment_label": "支払期限は以下の通りです。 {{dueDate}}.",
+        "generic_payment_terms": "あなたは{{translatedName}}条件を満たしています。支払期限は{{dueDate}}です。",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} 保存された支払い方法を追加または使用するには、この場所にアクセスできるアカウントにログインしてください。"
+          }
+        },
+        "direct_payment_terms": "あなたは{{translatedName}}条件を満たしています。あなたのカードは{{dueDate}}日に請求されます。",
+        "fixed_direct_payment_terms": "カードへの請求は以下の日に行われます。 {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "お支払いは、ご注文が完了してからとなります。",
+        "order_due_on_fulfillment_payment": "ご注文が完了した時点でカードに請求されます。",
+        "order_due_on_receipt_choose_later": "お支払いは受領時になります。",
+        "order_deposit_due_now": "{{depositAmount}}支払期限は本日です。残高は{{translatedName}}条件で{{dueDate}}日に支払います。",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} を本日お支払いください。残金はご注文が完了した時点でお支払いいただきます。",
+        "order_deposit_due_on_receipt": "{{depositAmount}} は今日が期限。残金は後日支払う。",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} は今日が期限である。残金は {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms": "お支払いは、ご注文が確定してからとなります。",
+        "draft_order_payment_due_later_no_terms_payment_selected": "ご注文が確認され次第、カードに請求されます。",
+        "draft_order_payment_due_later_terms": "ご注文が確定した時点で、{{translatedName}}条件となります。",
+        "draft_order_payment_due_on_fulfillment": "お支払い期限は、ご注文が確定され、履行された後となります。",
+        "draft_order_deposit_due_later": "{{depositAmount}}ご注文が確定した時点でお支払いいただきます。残金は{{translatedName}}条件となります。",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} はご注文確定時にお支払いいただきます。残金はご注文が完了した時点でお支払いいただきます。"
+      },
+      "thank_you": {
+        "title": "お買い上げありがとうございました！",
+        "confirmation_email_sent_text": "確認Eメールが以下に送信されました。 %{email}",
+        "print_link_label": "領収書の印刷",
+        "payment_information_title": "お支払いについて",
+        "page_title": "ありがとう、 %{display_name}!",
+        "page_title_no_name": "ありがとう！",
+        "purchase_order_number_title": "PO番号%{purchase_order_number}",
+        "cancelled_page_title": "注文キャンセル",
+        "failed_pending_payment_page_title": "お支払いに問題があります",
+        "customer_information_title": "ご注文内容",
+        "contact_information_title": "連絡先",
+        "company_location_title": "所在地",
+        "shipping_address_map_title": "Googleマップに配送先住所のピンポイントが表示されます： %{address}",
+        "payment_method_title": "支払方法"
       }
     }
   },
