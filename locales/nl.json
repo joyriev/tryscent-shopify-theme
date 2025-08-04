@@ -663,7 +663,65 @@
             "installments_unsupported_subscriptions": "Installments ondersteunt geen abonnementen.",
             "installments_ineligible_line_item": "Termijnen is uitgeschakeld voor een regel in deze aankoop.",
             "shop_cash_unsupported_checkout_source": "Shop Cash ondersteunt deze kassa niet.",
-            "shop_cash_gift_card_not_allowed": "Shop Cash staat de aankoop van cadeaubonnen niet toe."
+            "shop_cash_gift_card_not_allowed": "Shop Cash staat de aankoop van cadeaubonnen niet toe.",
+            "shop_cash_not_available": "Shop Cash wordt niet ondersteund in deze kassa.",
+            "shop_cash_unsupported_subscriptions": "Shop Cash ondersteunt geen abonnementen.",
+            "shop_cash_unsupported_shipping": "Shop Cash biedt geen ondersteuning voor koopwaar zonder verzendkosten.",
+            "invalid_address_type": "Het opgegeven adrestype is ongeldig voor deze betaalmethode.",
+            "missing_retail_attributions": "Voor handmatig ingevoerde creditcardbetalingen zijn detailhandelattributies vereist.",
+            "unexpected_retail_attributions": "Winkelattributies worden onverwacht verstrekt voor creditcardbetaling.",
+            "invalid_card_source": "Deze sessie heeft geen toestemming om deze kaartbron te gebruiken.",
+            "wallet_content_missing": "Portemonnee-inhoud ontbreekt.",
+            "payment_instrument_not_found": "Betalingsmethode niet gevonden",
+            "unauthorized_capture_method": "De betalingsmethode configureren is niet toegestaan.",
+            "saved_payment_methods_not_allowed": "Opgeslagen betalingsmethoden zijn niet toegestaan.",
+            "saved_payment_methods_not_enabled": "Opgeslagen betalingsmethoden zijn niet ingeschakeld voor deze winkel.",
+            "saved_payment_methods_cvv_verification_disabled": "De geselecteerde betaalmethode vereist CVV-verificatie die niet is ingeschakeld voor deze winkel. Selecteer een andere betaalmethode.",
+            "store_credit_not_enabled": "Store credit is niet ingeschakeld voor deze winkel.",
+            "store_credit_account_not_found": "Store credit account niet gevonden.",
+            "store_credit_account_mismatch": "De account van het winkelkrediet komt niet overeen met de identiteit van de koper.",
+            "store_credit_mismatched_currency": "De valuta van de winkelkredietrekening komt niet overeen met de valuta van de kassa.",
+            "store_credit_insufficient_funds": "Er staat onvoldoende saldo op de winkelkredietrekening.",
+            "store_credit_buying_gift_card": "Je kunt geen winkeltegoed gebruiken om een cadeaubon te kopen.",
+            "method_required": "Er moet een betalingsmethode worden voorgesteld.",
+            "paypal_express_address_invalid": "PayPal heeft een ongeldig adres teruggestuurd.",
+            "market_manager_blocks_wallet_payments": "Betalingsmethode wordt niet ondersteund door de marktmanager."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Winkel accepteert geen fooien.",
+            "only_one_tip_line_allowed": "Meerdere tips worden niet ondersteund.",
+            "currency_change_reset": "Tip is opnieuw ingesteld vanwege valutawijziging.",
+            "tips_not_allowed_for_deferred_purchase_options": "Tips worden nog niet ondersteund voor uitgestelde aankoopopties."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Deze ontwerpvolgorde bestaat niet in de huidige winkel.",
+            "staff_member_not_exist": "Dit personeel bestaat niet in de huidige winkel.",
+            "point_of_sale_device_not_exist": "Dit apparaat voor verkooppunten bestaat niet in de huidige winkel.",
+            "unresolvable_target_merchandise_lines": "De voorgestelde verkooptoewijzingen zijn onoplosbaar gezien de huidige onderhandelingscontext."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Het voorstel van je koper moet niet-onderhandelbare_voorwaarden bevatten."
+          },
+          "inventory": {
+            "missing_quantity_value": "Het veld Hoeveelheid ontbreekt in de inventarisregels van de koper.",
+            "changing_behavior_not_allowed": "Deze klant heeft geen toestemming om inventarisgedrag te wijzigen.",
+            "only_one_inventory_behavior_allowed": "Momenteel is slechts één inventarisgedrag toegestaan per kassa."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Het weigeren van rechten is niet toegestaan voor deze kassa."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Winkelattributie is niet toegestaan voor deze kassa.",
+            "retail_attribution_required": "Winkelattributie is vereist voor deze kassa."
+          },
+          "captcha": {
+            "metadata_missing": "Het voltooien van een captcha is vereist voor deze kassa.",
+            "metadata_mismatch": "Provided captcha provider en type komen niet overeen met de verwachte waarden.",
+            "token_missing": "Er moet een captcha-token worden ingevoerd om deze checkout te voltooien.",
+            "job_enqueue_failed": "De captcha-validatietaak is niet in een wachtrij geplaatst.",
+            "job_already_queued": "Captcha validatie is al in de wachtrij geplaatst voor dit captcha token.",
+            "token_expired": "Het verstrekte captcha token is verlopen. Vul een nieuwe captcha in om verder te gaan met afrekenen.",
+            "token_invalid": "De opgegeven captcha token was ongeldig. Vul een nieuwe captcha in om verder te gaan met afrekenen."
           }
         }
       }

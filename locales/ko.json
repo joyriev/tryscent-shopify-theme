@@ -1962,12 +1962,102 @@
             "description": "{{walletName}} 를 사용할 수 없습니다. 다른 결제 방법을 사용하거나 나중에 다시 시도하세요.",
             "instructions": "{{walletName}} 문제가 발생했습니다. 스토어로 돌아가서 다시 시도하거나 다른 방법으로 결제하세요."
           }
+        },
+        "scrim": {
+          "and_return_to_checkout": "를 클릭하고 결제로 돌아갑니다."
         }
+      },
+      "note": {
+        "length_exceeds_maximum": "노트의 크기를 5000자 이하로 줄입니다."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_not_exceed_limit": "기프트 카드 가격은 다음을 초과해서는 안 됩니다. %{gift_card_limit}.",
+            "subtotal_limit_reached": "항목의 최대 값에 도달했습니다.",
+            "signature_mismatch": "라인에 대한 상품 서명 불일치 {{stable_id}}."
+          }
+        }
+      },
+      "units": {
+        "ounce": "온스",
+        "foot": "피트",
+        "item": "항목"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "현재 멤버십에서는 이 주소가 지원되지 않습니다."
+      },
+      "tooltip": {
+        "accessibility_label_context": "다음에 대한 자세한 정보 %{context}"
       }
     },
     "sentence": {
       "two_words_connector": " 그리고 ",
       "last_word_connector": "및 "
+    },
+    "pagination": {
+      "previous": "이전 게시물"
+    },
+    "links": {
+      "powered_by_shopify": "Shopify 제공"
+    },
+    "feed": {
+      "more": "자세히 보기"
+    },
+    "attributes": {
+      "body": "body"
+    },
+    "addresses": {
+      "postcode": "우편번호",
+      "pincode": "핀코드",
+      "province": "주",
+      "state": "상태",
+      "state_and_territory": "주/지역",
+      "county": "카운티",
+      "emirate": "에미레이트",
+      "governorate": "주정부"
+    },
+    "collections": {
+      "sorting": {
+        "price_ascending": "가격, 낮음에서 높음까지",
+        "price_descending": "가격, 고가부터 저가까지",
+        "date_ascending": "날짜, 이전부터 새 날짜까지",
+        "date_descending": "날짜, 신규에서 이전까지"
+      }
+    },
+    "errors": {
+      "blank": "비어있을 수 없습니다.",
+      "blocked_address": "이 위치는 지원되지 않습니다.",
+      "credit_card_session_expired": "신용카드 승인이 만료되었습니다. 결제 정보를 다시 입력해 주세요. 카드에 요금이 청구되지 않았습니다.",
+      "empty": "비어있을 수 없습니다.",
+      "invalid_email": "유효한 이메일 주소여야 합니다.",
+      "discount_disabled": "이 할인이 비활성화되었습니다.",
+      "discount_expired": "이 할인은 더 이상 유효하지 않습니다.",
+      "discount_limit_reached": "이 할인은 사용 한도에 도달했습니다.",
+      "discount_not_found": "입력한 코드와 일치하는 유효한 할인을 찾을 수 없습니다.",
+      "customer_already_used_once_per_customer_discount_notice": "이 할인은 사용 한도에 도달했습니다.",
+      "gift_card_already_applied": "코드가 이미 결제에 적용되었습니다.",
+      "gift_card_currency_mismatch": "%{gift_card_currency} 되어 있습니다. 기프트 카드를 %{checkout_currency} 재발급받으려면 저희에게 문의하세요.",
+      "gift_card_depleted": "이 기프트 카드에 남은 금액이 없습니다.",
+      "gift_card_disabled": "기프트 카드가 비활성화됨",
+      "invalid": "가 유효하지 않습니다.",
+      "bad_domain": "에 잘못된 도메인 이름이 포함되어 있습니다.",
+      "taken": "이미 사용 중입니다.",
+      "contains_html_tags": "HTML 태그를 포함할 수 없습니다.",
+      "too_short": "가 너무 짧습니다(최소값은 %{count} 문자입니다).",
+      "too_long": "가 너무 깁니다(최대값은 %{count} 문자입니다).",
+      "contains_spaces": "는 공백으로 시작하거나 공백으로 끝납니다.",
+      "email_domain_invalid": "공급자는 지원되지 않습니다.",
+      "invalid_for_country": "는 다음에는 유효하지 않습니다. %{country}",
+      "invalid_for_country_and_province": "%{province} 및 %{country} 유효하지 않습니다.",
+      "invalid_province_in_country": "에서 유효한 영토가 아닙니다. %{country}",
+      "invalid_state_in_country": "에서 유효한 상태가 아닙니다. %{country}",
+      "invalid_region_in_country": "에서 유효한 지역이 아닙니다. %{country}",
+      "less_than_or_equal_to": "는 다음 값보다 작거나 같아야 합니다. %{count}",
+      "not_supported": "는 지원되지 않습니다.",
+      "full_name_required": "이름과 성을 입력합니다.",
+      "invalid_for_card_type": "가 유효하지 않습니다.",
+      "invalid_type": "죄송합니다, 이 유형의 카드는 사용할 수 없습니다."
     }
   },
   "customer_accounts": {
