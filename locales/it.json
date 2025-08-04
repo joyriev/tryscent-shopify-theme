@@ -557,7 +557,56 @@
       },
       "order_summary": {
         "for_add_on": "Per: %{group_title}"
+      },
+      "address_management": {
+        "confirm_address_deletion": "Siete sicuri di voler eliminare l'indirizzo {{address}}?"
+      },
+      "general": {
+        "page_title": "Cassa",
+        "skip_to_content": "Vai al contenuto",
+        "breadcrumb": "Briciola di pane",
+        "complete_purchase_button_label": "Ordine completo",
+        "authenticate_purchase_button_label": "Autenticare il pagamento",
+        "close_modal_label": "Chiudere",
+        "close_notice_label": "Chiudere",
+        "expand_notice_label": "Vedi di più",
+        "continue_to_shipping_method": "Continua a spedire",
+        "continue_to_payment_method": "Proseguire con il pagamento",
+        "continue_to_review": "Ordine di revisione",
+        "back_to_contact_information": "Ritorno alle informazioni",
+        "back_to_shipping_method": "Ritorno alla spedizione",
+        "back_to_payment_method": "Ritorno al pagamento",
+        "choose_shipping_method": "Scegliere un metodo di spedizione",
+        "choose_payment_method": "Scegliere un metodo di pagamento",
+        "choose_billing_address": "Scegliere un indirizzo di fatturazione",
+        "contact_us_html": "Contattateci per maggiori informazioni",
+        "autocomplete_close": "Suggerimenti per la chiusura",
+        "forwarding_indicator": {
+          "new_window": "Si apre in una nuova finestra.",
+          "external": "Apre un sito web esterno.",
+          "external_and_new_window": "Apre un sito web esterno in una nuova finestra."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Cassa"
+        },
+        "tooltip_accessibility_label": "Ulteriori informazioni",
+        "qr_code": "Codice QR",
+        "errors": {
+          "only_empty_terms_accepted": "Questa politica accetta solo termini vuoti.",
+          "session_identifier_not_unique_error": "Qualcosa è andato storto con il suo ordine, provi ad effettuare nuovamente il check-out.",
+          "line_item_limit_reached": "È stato raggiunto il numero massimo di voci.",
+          "session_is_already_finished": "Questa sessione di cassa è già stata finalizzata.",
+          "merchandise": {
+            "only_value_constraint": "Nell'input della merce sono ammessi solo valori esatti.",
+            "merchandise_not_applicable": "La variante del prodotto non può essere acquistata.",
+            "mixed_currencies": "La cassa contiene voci con valute diverse.",
+            "bundle_products_not_supported_for_b2b": "Gli articoli in bundle non possono essere aggiunti agli ordini B2B per questa sede."
+          }
+        }
       }
+    },
+    "sentence": {
+      "last_word_connector": ", e "
     }
   },
   "customer_accounts": {

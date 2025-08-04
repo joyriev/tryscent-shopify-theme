@@ -10,14 +10,14 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Accéder à la boutique à l'aide d'un mot de passe :",
-      "login_password_button": "Saisir avec un mot de passe",
+      "login_form_heading": "Entrez dans le magasin en utilisant le mot de passe :",
+      "login_password_button": "Entrer le mot de passe",
       "login_form_password_label": "Mot de passe",
       "login_form_password_placeholder": "Votre mot de passe",
-      "login_form_error": "Mot de passe incorrect !",
-      "login_form_submit": "Saisir",
-      "admin_link_html": "La boutique vous appartient-elle ? <a href=\"/admin\" class=\"link underlined-link\">Se connecter ici</a>",
-      "powered_by_shopify_html": "Cette boutique sera propulsée par {{ shopify }}"
+      "login_form_error": "Mauvais mot de passe !",
+      "login_form_submit": "Entrer",
+      "admin_link_html": "Êtes-vous le propriétaire du magasin ? <a href=\"/admin\" class=\"link underlined-link\">Connectez-vous ici</a>",
+      "powered_by_shopify_html": "Ce magasin sera alimenté par {{ shopify }}"
     },
     "social": {
       "alt_text": {
@@ -37,16 +37,16 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "Continuer les achats",
+    "continue_shopping": "Poursuivre les achats",
     "pagination": {
       "label": "Pagination",
       "page": "Page {{ number }}",
-      "next": "Page suivante",
+      "next": "Next page",
       "previous": "Page précédente"
     },
     "search": {
       "search": "Recherche",
-      "reset": "Effacer le terme de recherche"
+      "reset": "Terme de recherche clair"
     },
     "cart": {
       "view": "Voir le panier ({{ count }})",
@@ -55,54 +55,54 @@
     },
     "share": {
       "copy_to_clipboard": "Copier le lien",
-      "share_url": "Lien",
+      "share_url": "Lien vers",
       "success_message": "Lien copié dans le presse-papiers",
-      "close": "Fermer le partage"
+      "close": "Fermer l'action"
     },
     "slider": {
       "of": "de",
-      "next_slide": "Faire glisser vers la droite",
-      "previous_slide": "Faire glisser vers la gauche",
-      "name": "Carrousel"
+      "next_slide": "Glisser à droite",
+      "previous_slide": "Diapositive gauche",
+      "name": "Curseur"
     }
   },
   "newsletter": {
-    "label": "E-mail",
-    "success": "Merci de votre inscription",
-    "button_label": "S'inscrire"
+    "label": "Courriel",
+    "success": "Merci de vous inscrire",
+    "button_label": "S'abonner"
   },
   "accessibility": {
-    "skip_to_text": "Ignorer et passer au contenu",
+    "skip_to_text": "Skip to content",
     "close": "Fermer",
     "unit_price_separator": "par",
-    "vendor": "Fournisseur :",
+    "vendor": "Vendeur :",
     "error": "Erreur",
-    "refresh_page": "Le choix d'une sélection entraîne l'actualisation de la page entière.",
+    "refresh_page": "Le choix d'une sélection entraîne un rafraîchissement complet de la page.",
     "link_messages": {
       "new_window": "S'ouvre dans une nouvelle fenêtre.",
       "external": "Ouvre un site web externe."
     },
-    "loading": "Chargement en cours...",
-    "skip_to_product_info": "Passer aux informations produits",
-    "total_reviews": "total des critiques",
+    "loading": "Chargement...",
+    "skip_to_product_info": "Passer à l'information sur le produit",
+    "total_reviews": "Nombre total d'examens",
     "star_reviews_info": "{{ rating_value }} sur {{ rating_max }} étoiles",
-    "collapsible_content_title": "Contenu réductible",
+    "collapsible_content_title": "Contenu rétractable",
     "complementary_products": "Produits complémentaires"
   },
   "blogs": {
     "article": {
       "blog": "Blog",
-      "read_more_title": "Lire la suite : {{ title }}",
+      "read_more_title": "Lire la suite : {{ title }}",
       "comments": {
-        "one": "{{ count }} commentaire",
-        "other": "{{ count }} commentaires",
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments",
         "many": "{{ count }} commentaires"
       },
       "moderated": "Veuillez noter que les commentaires doivent être approuvés avant d'être publiés.",
       "comment_form_title": "Laisser un commentaire",
       "name": "Nom",
-      "email": "E-mail",
-      "message": "Commentaire",
+      "email": "Courriel",
+      "message": "Comment",
       "post": "Publier le commentaire",
       "back_to_blog": "Retour au blog",
       "share": "Partager cet article",
@@ -3475,7 +3475,50 @@
       "extension": {
         "select": "Sélectionnez l'extension nommée {{extensionName}}",
         "unselect": "Désélectionner l'extension nommée {{extensionName}}",
-        "move_down": "Déplacer l'extension vers la position suivante"
+        "move_down": "Déplacer l'extension vers la position suivante",
+        "move_up": "Déplacer l'extension vers la position précédente",
+        "remove": "Supprimer l'extension",
+        "move_down_tooltip": "Passer à la position suivante",
+        "move_up_tooltip": "Revenir à la position précédente",
+        "remove_tooltip": "Retirer"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Ce lien ne peut pas être ouvert dans l'éditeur. Il sera ouvert dans une nouvelle fenêtre{{resolved_to_link}}. Cliquez sur OK pour continuer."
+    },
+    "settings": {
+      "loading_accessibility_message": "Chargement de la page des paramètres",
+      "log_out_everywhere": {
+        "description": "Si vous avez perdu un appareil ou si vous avez des inquiétudes concernant la sécurité, déconnectez-vous partout pour garantir la sécurité de votre compte.",
+        "warning_message": "Vous serez également déconnecté sur cet appareil."
+      }
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "disabled": "Les clients doivent contacter le commerçant pour demander un retour."
+      }
+    },
+    "sign_in": {
+      "brand_logo_alt_text": "%{shop_name} Logo",
+      "processing": "Traitement...",
+      "step_one": {
+        "page_title": "S'inscrire - %{shop_name}",
+        "heading": "S'inscrire",
+        "subheading": "Saisissez votre adresse électronique et nous vous enverrons un code de vérification.",
+        "subheading_with_sign_in_options": "Choisissez votre mode de connexion",
+        "input_field_label": "Courriel"
+      },
+      "step_two": {
+        "page_title": "Saisir le code - %{shop_name}",
+        "heading": "Saisir le code",
+        "restart_link": "Se connecter avec un autre email",
+        "input_field_label": "Code à 6 chiffres"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "Saisir une adresse électronique valide",
+          "invalid_code": "Saisir le code correct à 6 chiffres"
+        }
       }
     }
   }
