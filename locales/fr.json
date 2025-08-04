@@ -2322,7 +2322,79 @@
       "invalid_region_in_country": "n'est pas une région valide dans %{country}",
       "full_name_required": "Saisir un prénom et un nom de famille",
       "invalid_for_card_type": "n'est pas valide",
-      "invalid_type": "Désolé, nous n'acceptons pas les cartes de ce type."
+      "invalid_type": "Désolé, nous n'acceptons pas les cartes de ce type.",
+      "invalid_format": "le format n'est pas valide",
+      "expired": "a expiré",
+      "invalid_start_date_or_issue_number_for_debit": "une date de début ou un numéro d'émission valide est requis",
+      "reset_password_html": "Cette adresse électronique est déjà associée à un compte. Si ce compte est le vôtre, vous pouvez <a href=\"/account/login#recover\">réinitialiser votre mot de passe</a>.",
+      "verify_email": "Nous avons envoyé un e-mail à %{customer_email}, veuillez cliquer sur le lien inclus pour vérifier votre adresse e-mail.",
+      "product_not_available": "n'est pas publié pour ce client.",
+      "shop_404": {
+        "title": "Créez un site de commerce électronique et vendez en ligne ! Logiciel de commerce électronique de Shopify",
+        "heros": {
+          "store_unavailable": "Désolé, ce magasin est actuellement indisponible.",
+          "store_not_exist": "Ce magasin n'existe pas.",
+          "no_storefront": "Ce magasin n'a pas encore de site web."
+        },
+        "links": {
+          "explore_other_stores": "Explorer d'autres magasins"
+        },
+        "owner_ctas": {
+          "header": "Êtes-vous le propriétaire du magasin ?",
+          "fix_domain": "Une fois la configuration de votre nouvelle adresse Web terminée, allez sur %{domain_settings_link}. Cliquez sur \"Connecter le domaine\" et entrez : %{domain}.<br>Si vous ne parvenez pas à accéder à votre magasin, essayez la page %{forgot_your_store_link}.",
+          "forgot_your_store_link_text": "a oublié votre magasin",
+          "add_storefront": "Vous pouvez configurer votre site web en ajoutant le canal Boutique en ligne dans votre %{admin_link}. Si vous ne parvenez pas à accéder à votre boutique, essayez la page %{forgot_your_store_link}.",
+          "admin_link_text": "l'administration"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "caption": "Obtenez les fonctionnalités dont vous avez besoin pour gérer votre magasin de détail, que vous commenciez ou que vous vous développiez.",
+            "link_text": "Démarrer l'essai gratuit"
+          },
+          "open_a_store": {
+            "header": "Ouvrir une nouvelle boutique Shopify",
+            "caption": "Commencez par un essai gratuit de 3 jours, puis continuez pour 1 $/mois pendant les 3 mois suivants.",
+            "link_text": "S'inscrire maintenant"
+          },
+          "editions": {
+            "header": "Découvrez les éditions de Shopify",
+            "caption": "Avec plus de 100 mises à jour de produits, vous pouvez être plus productif, plus créatif et plus puissant dans le commerce que vous ne l'avez jamais imaginé.",
+            "link_text": "Découvrez les dernières éditions"
+          },
+          "store_owner": {
+            "header": "Êtes-vous le propriétaire du magasin ?",
+            "caption": "Vous avez des difficultés à accéder à votre magasin ? Essayez la fonction %{forgot_your_store_link}. Si vous souhaitez réactiver votre boutique, contactez %{shopify_support_link}.",
+            "shopify_support_link_text": "Support Shopify"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Erreur de réinitialisation du mot de passe",
+        "subscribe_error": "Erreur d'abonnement",
+        "unsubscribe_error": "Erreur de désinscription",
+        "no_account_found": "Aucun compte n'a été trouvé avec cet email.",
+        "invalid_credentials": "Courriel ou mot de passe incorrect.",
+        "denylisted_reset_password": "Votre compte n'est pas accessible car le mot de passe actuel n'est pas sécurisé. Vous recevrez un courriel pour mettre à jour votre mot de passe.",
+        "signup_disabled": "La création de comptes clients a été désactivée."
+      },
+      "address": {
+        "updated": "La mise à jour de l'adresse a été effectuée avec succès.",
+        "error_updating": "Erreur de mise à jour de l'adresse",
+        "created": "Adresse créée avec succès",
+        "deleted": "Suppression réussie de l'adresse",
+        "error_deleting": "Erreur de suppression d'adresse."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Ajouté %{delta}",
+          "increment_item": "Ajouté %{delta}",
+          "decrement_item": "Supprimé %{delta} de %{total}",
+          "decrement_fulfilled_line_item": "Retourné %{delta} de %{total}",
+          "decrement_return_line_item": "Suppression de %{delta} dans le retour"
+        }
+      }
     }
   }
 }

@@ -273,66 +273,66 @@
   },
   "sections": {
     "header": {
-      "announcement": "告知",
+      "announcement": "発表",
       "menu": "メニュー",
       "cart_count": {
-        "one": "{{ count }}個のアイテム",
-        "other": "{{ count }}個のアイテム"
+        "one": "{{ count }} 項目",
+        "other": "{{ count }} 項目"
       }
     },
     "cart": {
-      "title": "あなたのカート",
+      "title": "カート",
       "caption": "カートアイテム",
-      "remove_title": "{{ title }}を削除する",
-      "note": "注文に関する特別な指示・備考",
-      "checkout": "購入手続きに進む",
-      "empty": "カートの中身が空です",
-      "cart_error": "カートをアップデートするときにエラーが発生しました。もう一度お試しください。",
-      "cart_quantity_error_html": "このアイテムは{{ quantity }}個しかカートに追加することができません。",
+      "remove_title": "削除 {{ title }}",
+      "note": "ご注文に関する特記事項",
+      "checkout": "チェックアウト",
+      "empty": "カートは空です",
+      "cart_error": "カートの更新中にエラーが発生しました。もう一度やり直してください。",
+      "cart_quantity_error_html": "この商品をカートに追加できるのは{{ quantity }}です。",
       "headings": {
-        "product": "商品",
+        "product": "製品",
         "price": "価格",
         "total": "合計",
         "quantity": "数量",
         "image": "商品画像"
       },
-      "update": "アップデート",
+      "update": "更新",
       "login": {
-        "title": "アカウントをお持ちですか?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">ログイン</a>することで、チェックアウトがスピーディーに行えます。"
+        "title": "アカウントをお持ちですか？",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">ログイン</a>すると、より早くチェックアウトできます。"
       },
-      "estimated_total": "見積もり合計",
+      "estimated_total": "推定合計",
       "new_estimated_total": "新たな推定総額"
     },
     "footer": {
-      "payment": "決済方法"
+      "payment": "支払い方法"
     },
     "featured_blog": {
-      "view_all": "すべてを表示する",
+      "view_all": "すべてを見る",
       "onboarding_title": "ブログ記事",
-      "onboarding_content": "お客様にブログ記事のサマリーを提供する"
+      "onboarding_content": "顧客にブログ記事の概要を伝える"
     },
     "featured_collection": {
-      "view_all": "すべてを表示する",
-      "view_all_label": "{{ collection_name }}コレクションの商品をすべて表示する"
+      "view_all": "すべてを見る",
+      "view_all_label": "{{ collection_name }}コレクションの全商品を見る"
     },
     "collection_list": {
-      "view_all": "すべてを表示する"
+      "view_all": "すべてを見る"
     },
     "collection_template": {
       "title": "コレクション",
-      "empty": "商品が見つかりません",
-      "use_fewer_filters_html": "絞り込みの数を減らす、または<a class=\"{{ class }}\" href=\"{{ link }}\">すべて削除する</a>"
+      "empty": "商品は見つかりませんでした",
+      "use_fewer_filters_html": "フィルターの数を減らすか、<a class=\"{{ class }}\" href=\"{{ link }}\">すべて取り除く</a>"
     },
     "video": {
-      "load_video": "動画を読み込む: {{ description }}"
+      "load_video": "ビデオを読み込む： {{ description }}"
     },
     "slideshow": {
       "load_slide": "スライドを読み込む",
       "previous_slideshow": "前のスライド",
       "next_slideshow": "次のスライド",
-      "pause_slideshow": "スライドショーを一時停止する",
-      "play_slideshow": "スライドショーを再生する",
+      "pause_slideshow": "スライドショーの一時停止",
+      "play_slideshow": "スライドショー再生",
       "carousel": "カルーセル",
       "slide": "スライド"
     },
@@ -340,17 +340,17 @@
       "title": "ページタイトル"
     },
     "announcements": {
-      "previous_announcement": "前回のお知らせ",
-      "next_announcement": "次回のお知らせ",
+      "previous_announcement": "前回の発表",
+      "next_announcement": "次の発表",
       "carousel": "カルーセル",
-      "announcement": "お知らせ",
-      "announcement_bar": "お知らせバー"
+      "announcement": "発表",
+      "announcement_bar": "アナウンスメント・バー"
     },
     "quick_order_list": {
-      "product_total": "商品の小計",
+      "product_total": "製品小計",
       "view_cart": "カートを見る",
-      "each": "{{ money }}/ユニット",
-      "product": "商品",
+      "each": "{{ money }}/について",
+      "product": "製品",
       "variant": "バリエーション",
       "variant_total": "バリエーションの合計額",
       "items_added": {
@@ -750,7 +750,61 @@
             "saturday": "サ",
             "sunday": "ス"
           }
+        },
+        "datepicker": {
+          "show_previous_month": "前月を表示 {{month}} {{year}}",
+          "show_next_month": "来月のショー {{month}} {{year}}",
+          "range_start": "レンジスタート",
+          "range_end": "レンジエンド"
+        },
+        "list_formatter": {
+          "and": {
+            "lastWordConnector": "{{previousWords}}そして {{lastWord}}",
+            "twoWordConnector": "{{firstWord}} そして {{secondWord}}"
+          },
+          "or": {
+            "lastWordConnector": "{{previousWords}}あるいは {{lastWord}}",
+            "twoWordConnector": "{{firstWord}} または {{secondWord}}"
+          }
+        },
+        "map": {
+          "cluster_title": {
+            "one": "{{number}}マーカーのクラスター",
+            "other": "{{number}}マーカーのクラスター"
+          }
+        },
+        "sheet": {
+          "expand": "拡大する"
+        },
+        "dropzone": {
+          "add_file": "ファイルを追加する",
+          "invalid_file_type": "サポートされていないファイルタイプ",
+          "dragged_over": "ファイルをドロップしてアップロードする"
         }
+      },
+      "contact": {
+        "title": "インフォメーション",
+        "shipping_used_as_billing_notice": "この住所は、この注文の請求先住所としても使用されます。",
+        "delivery_option_title": "配送方法",
+        "email_label": "電子メール",
+        "email_placeholder": "電子メール",
+        "email_or_phone_label": "Eメールまたは携帯電話番号",
+        "email_or_phone_placeholder": "Eメールまたは携帯電話番号",
+        "stored_addresses_label": "保存されたアドレス",
+        "available_addresses_label": "利用可能なアドレス",
+        "first_name_label": "名前",
+        "optional_first_name_label": "名（任意）",
+        "company_label": "会社概要",
+        "company_attention_label": "会社/注目",
+        "optional_company_attention_label": "会社/所属（任意）",
+        "optional_company_label": "会社（任意）",
+        "address2_label": "アパート、スイートなど",
+        "optional_address2_label": "アパート、スイートなど（任意）",
+        "city_label": "都市",
+        "country_label": "国/地域",
+        "country_code": "国/地域コード",
+        "province_label": "地方",
+        "province_placeholder": "地方"
       }
     }
   },
