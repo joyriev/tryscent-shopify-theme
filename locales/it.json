@@ -540,14 +540,14 @@
     "checkout": {
       "review_address_modal": {
         "subtitle": {
-          "other": "Questo ordine sarà spedito a un indirizzo fornito da {{merchant}}. Seleziona un indirizzo di spedizione.",
-          "one": "Questo ordine sarà spedito all'indirizzo fornito da {{merchant}}."
+          "other": "Questo ordine sarà spedito a un indirizzo fornito dal {{merchant}}. Selezionare un indirizzo di spedizione.",
+          "one": "L'ordine sarà spedito all'indirizzo fornito da {{merchant}}."
         },
-        "subtitle_no_match": "Questo indirizzo non corrisponde a nessuno dei tuoi indirizzi salvati.",
+        "subtitle_no_match": "Questo indirizzo non corrisponde a nessuno degli indirizzi salvati.",
         "title": "Indirizzo di revisione",
-        "subtitle_must_use": "Il tuo ordine sarà spedito a questo indirizzo.",
-        "continue": "Continua con questo indirizzo",
-        "use_saved_address": "Usa un indirizzo diverso",
+        "subtitle_must_use": "L'ordine verrà spedito a questo indirizzo.",
+        "continue": "Continuare con questo indirizzo",
+        "use_saved_address": "Utilizzare un indirizzo diverso",
         "return_to_cart": "Torna al carrello"
       },
       "payment": {
@@ -1881,7 +1881,69 @@
           }
         },
         "number_of_pickup_points_near_location": {
-          "one": "%{count} punto di raccolta vicino alla vostra posizione"
+          "one": "%{count} punto di raccolta vicino alla vostra posizione",
+          "other": "%{count} punti di prelievo vicini alla vostra posizione"
+        },
+        "change": "Cambia posizione",
+        "waiting_on_pickup_point_location_notice": "Ricerca di punti di raccolta...",
+        "geolocation": {
+          "errors": {
+            "unsuported_by_browser": "La geolocalizzazione non è supportata dal browser. Riprovare o utilizzare un altro browser.",
+            "permission_not_allowed": "Consentire la condivisione della propria posizione.",
+            "permission_denied": "Non è stato possibile ottenere la vostra posizione. Riprova."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "title": "C'è stato un problema con il nostro checkout",
+          "message": "Aggiornate la pagina o riprovate tra qualche minuto.",
+          "action": {
+            "cta": "Aggiorna la pagina"
+          }
+        }
+      },
+      "notice_banner": {
+        "subscription_changed": "Uno dei vostri abbonamenti è cambiato.",
+        "company_location_changed": "Il carrello è stato aggiornato. Rivedere l'ordine prima di inviarlo.",
+        "company_location_changed_product_removed": "Il carrello è stato aggiornato perché alcuni prodotti non sono disponibili in questa sede. Rivedere l'ordine prima di inviarlo.",
+        "violations_title": "{{violation}} è mancante o non valido",
+        "individual_violations_title": {
+          "OtherViolations": "Informazioni sull'ordine",
+          "UnhandledViolations": "Informazioni sull'ordine"
+        },
+        "all_violations_content": "Chiamateci o inviateci {{emailLink}} per aggiornare queste informazioni e completare l'ordine:",
+        "all_violations_email_link": "e-mail",
+        "editable_shipping_address_violations_message_title": "Aggiungete queste informazioni per completare l'ordine:",
+        "editable_shipping_address_violations_message_footer": "Per aggiornare in modo permanente l'indirizzo di questa località, {{emailLink}}.",
+        "editable_shipping_address_violations_email_link": "contattateci",
+        "calculating_shipping": "La spedizione è ancora in fase di calcolo. Riprovare tra qualche secondo. Non è stato effettuato alcun addebito.",
+        "generic_processing_error": {
+          "title": "Si è verificato un problema nell'elaborazione dell'ordine",
+          "body": "L'addebito non è stato effettuato. Riprovare o utilizzare un altro metodo di pagamento."
+        },
+        "payment_method_not_available_with_payment_terms": "Il metodo di pagamento selezionato non è più disponibile perché il pagamento per questo ordine è ora in base a {{paymentTerms}} ",
+        "payment_method_not_available_with_fulfillment_terms": "Il metodo di pagamento selezionato non è più disponibile perché il pagamento di questo ordine deve essere effettuato al momento dell'evasione.",
+        "payment_method_not_available_with_fixed_terms": "Il metodo di pagamento selezionato non è più disponibile perché il pagamento di questo ordine deve essere effettuato più tardi.",
+        "contact_information": {
+          "title": "Le informazioni di contatto non sono valide",
+          "header": "Per aggiornare le informazioni, {{emailLink}}.",
+          "email_link": "contattateci"
+        }
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Recensione",
+          "link_label": "{{partnerDisplayName}} Termini e condizioni"
+        }
+      },
+      "online_store_chat": {
+        "title": "Domande? Chatta con noi"
+      },
+      "local_pickup": {
+        "location_information": {
+          "one": "C'è un negozio %{count} con magazzino vicino a %{address}",
+          "other": "Ci sono %{count} negozi con stock vicino a %{address}"
         }
       }
     },
