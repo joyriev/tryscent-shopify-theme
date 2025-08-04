@@ -624,7 +624,53 @@
             "local_pickup_delivery_line_detail_changed": "Den nuværende strategi for levering af lokal afhentning skal ændres for at kunne fortsætte.",
             "local_pickup_no_delivery_strategy_available": "Ingen tilgængelig lokal afhentningsstrategi fundet.",
             "origin_location_id_required": "Der kræves et ID for oprindelsesstedet, når der anmodes om RETAIL-leveringsmetoden.",
-            "invalid_origin_location_id": "Kunne ikke finde en lokation, der matcher det oprindelige lokations-ID."
+            "invalid_origin_location_id": "Kunne ikke finde en lokation, der matcher det oprindelige lokations-ID.",
+            "origin_location_id_not_allowed": "De ønskede leveringsmetoder understøtter ikke et oprindelsesplacerings-ID.",
+            "auto_fulfill_not_allowed": "Denne session er ikke autoriseret til at tilsidesætte opfyldelsesadfærd.",
+            "auto_fulfill_required": "Automatisk opfyldelse er påkrævet, når der anmodes om RETAIL-leveringsmetoden.",
+            "prefetch_shipping_rates_used": "Forudbestemte fragtpriser bør aldrig være returpriser.",
+            "fulfillment_constraints_not_satisfied": "En eller flere opfyldelsesbegrænsninger blev ikke opfyldt.",
+            "must_fulfill_from_constraint_not_satisfied": "Opfyldelsesbegrænsninger er ikke opfyldt, fordi varer ikke kan opfyldes fra de nødvendige steder.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Opfyldelsesbegrænsninger er ikke opfyldt, fordi varer ikke kan opfyldes fra samme sted.",
+            "delivery_strategy_conditions_not_satisfied": "Der findes leveringsstrategier for denne placering, men deres betingelser er ikke opfyldt.",
+            "out_of_stock_at_origin_location": "Intet lager på oprindelsesstedet.",
+            "invalid_signature": "Ugyldig rabatsignatur."
+          },
+          "discount": {
+            "custom_discount_not_honoured": "Den medfølgende brugerdefinerede rabat blev ikke indfriet.",
+            "unsupported_expectation": "Den leverede rabatlinje indeholdt en forventning, som policen ikke kunne fortolke.",
+            "additional_requested_discount_code_discarded": "{{code}} er gyldig, men ikke anvendelig. Tjek rabatbetingelserne.",
+            "additional_requested_discount_discarded": "Din rabat er gyldig, men kan ikke anvendes. Tjek rabatbetingelserne.",
+            "allocations_mismatch": "Din rabatkode er blevet ændret. Gennemgå din indkøbskurv og prøv igen."
+          },
+          "tax": {
+            "unresolvable_tax_terms": "De foreslåede vilkår er uløselige i den nuværende forhandlingssituation.",
+            "delivery_price_is_abstract": "Den tilhørende leveringspris er abstrakt.",
+            "tax_inclusivity_mismatch": "Genforhandl med en konkret totalTaxAndDutyAmount- eller totalAmountIncludedInTarget-værdi.",
+            "tax_exemption_not_supported": "Skattefritagelser understøttes ikke i den aktuelle forhandlingssession.",
+            "proposed_allocations_required": "Der mangler et felt med \"foreslåede tildelinger\".",
+            "merchandise_terms_must_be_defined": "Varebetingelser skal defineres.",
+            "delivery_terms_must_be_defined": "Leveringsbetingelserne skal defineres.",
+            "merchandise_discount_terms_must_be_defined": "Vilkår for varerabat skal defineres.",
+            "allocated_required": "Der mangler et felt med 'tildelt'.",
+            "value_required": "Manglende 'værdi'-felt.",
+            "line_splits_not_supported": "Feltet \"merchandise lines\" skal opdeles, så de hver især har en enkelt linjekomponent i sælgerens forslag."
+          },
+          "payment": {
+            "positive_amount_expected": "Beløbet, der skal betales, skal være større end 0.",
+            "total_amount_mismatch": "Det samlede beløb, der skal betales, stemmer ikke overens med summen af betalingerne.",
+            "subscription_terms_not_accepted": "Abonnementsbetingelser ikke accepteret.",
+            "missing_session_id": "Manglende oplysninger om kreditkortsession.",
+            "gateway_not_supported": "Betalingsgatewayen understøtter ikke lagring af betalingsmetoden.",
+            "credit_card_last_name_required": "'efternavn' kan ikke være nul.",
+            "credit_card_update_failed": "Kreditkortopdatering mislykkedes.",
+            "installments_amount_invalid": "Ugyldigt beløb for afbetalingstransaktion.",
+            "installments_gift_card_not_allowed": "Afdrag tillader ikke brug af gavekort.",
+            "installments_unsupported_currency": "Afdrag understøtter ikke denne valuta.",
+            "installments_unsupported_shipping": "Afdrag understøtter ikke levering til denne adresse.",
+            "installments_unsupported_billing": "Afdrag understøtter ikke denne faktureringsadresse.",
+            "installments_unsupported_subscriptions": "Afdrag understøtter ikke abonnementer.",
+            "installments_ineligible_line_item": "Afdrag er deaktiveret for en varelinje i dette køb."
           }
         }
       }

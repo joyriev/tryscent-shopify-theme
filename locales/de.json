@@ -1835,8 +1835,74 @@
         "inventory": {
           "partial_inventory_banner": "Ein Teil Ihres Warenkorbs ist ausverkauft und steht an der Kasse nicht mehr zum Kauf zur Verfügung.",
           "sold_out": {
-            "heading": "Ihr Warenkorb ist ausverkauft"
+            "heading": "Ihr Warenkorb ist ausverkauft",
+            "storefront_body": "Zurück in den Laden gehen, um weiter einzukaufen",
+            "no_storefront_body": "Leider ist der Artikel, den Sie kaufen möchten, nicht mehr verfügbar."
           }
+        },
+        "title": "Schwanz",
+        "time_to_checkout_title": "Zeit zum Auschecken - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Berechnung der voraussichtlichen Wartezeit",
+          "one": "Geschätzte Wartezeit: {{count}} Minute",
+          "other": "Geschätzte Wartezeit: {{count}} Minuten"
+        },
+        "last_checked": "(Zuletzt geprüft: {{time}})",
+        "footer": {
+          "heading": "Aktualisieren Sie diese Seite nicht, sie wird automatisch aktualisiert.",
+          "body": "Die Artikel in Ihrem Einkaufswagen sind nicht reserviert, bis Sie die Kasse abgeschlossen haben."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Es gab ein Problem bei der Bearbeitung Ihrer Anfrage. Bitte wenden Sie sich an den Shop-Betreiber."
+      },
+      "no_address_location": {
+        "title": "Ort ohne Adresse",
+        "header": "Sie haben keine Lieferadresse für diesen Ort",
+        "message": "Setzen Sie sich mit uns in Verbindung, um eine Adresse für diesen Standort hinzuzufügen, um den Checkout abzuschließen.",
+        "email_us_button_label": "Schicken Sie uns eine E-Mail"
+      },
+      "order_errors": {
+        "creation_failure": "Bei der Erstellung Ihrer Bestellung ist ein Problem aufgetreten. Versuchen Sie es erneut, oder kontaktieren Sie uns für weitere Details.",
+        "network_failure": "Ihre Bestellung konnte aufgrund eines Netzwerkfehlers nicht abgeschickt werden. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+        "inventory_reservation_failure": "Einige Artikel sind nicht mehr verfügbar."
+      },
+      "session_errors": {
+        "session_not_unique": "Es gab ein Problem bei der Bearbeitung Ihrer Bestellung. Aktualisieren Sie diese Seite, um zum Shop zurückzukehren.",
+        "session_already_finished": "Diese Bestellung wurde bereits abgeschickt. Sie können in den Shop zurückkehren, um eine neue Bestellung aufzugeben."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Bei der Bearbeitung Ihrer Bestellung ist ein Problem aufgetreten. Versuchen Sie es in ein paar Minuten erneut."
+      },
+      "pickup_point": {
+        "business_hours": "Die Öffnungszeiten",
+        "open_twenty_four_hours": "24/7 geöffnet",
+        "title": "Abholstelle",
+        "selector_tabs": "Wahl des Abholpunkts",
+        "could_not_resolve_address": "Ihre Adresse konnte nicht gefunden werden. Versuchen Sie es erneut oder verwenden Sie eine andere Adresse",
+        "no_pickup_points_near_you": "Keine Abholstellen in der Nähe der ausgewählten Adresse gefunden",
+        "no_pickup_points_near_location": "Keine Abholstellen in der Nähe Ihres Standorts gefunden",
+        "pickup_unavailable_banner_title": {
+          "one": "Keine Abholstellen für Ihren Artikel verfügbar",
+          "other": "Keine Abholstellen für Ihre Sendungen verfügbar"
+        },
+        "no_pickup_points_found": "Keine Abholpunkte gefunden",
+        "paginator": {
+          "header": {
+            "one": "Zeigt %{first} - %{last} von %{count} Punkt",
+            "other": "Zeigt %{first} - %{last} von %{count} Punkten"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} von %{count} Punkt",
+            "other": "%{pickup_point_index} von %{count} Punkten"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} von %{count} Punkt",
+            "other": "%{first} - %{last} der %{count} Punkte"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} Abholstelle in der Nähe Ihres Standorts"
         }
       }
     }
