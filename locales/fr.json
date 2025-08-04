@@ -2097,6 +2097,76 @@
         "location_information": {
           "one": "Il y a %{count} magasin avec un stock proche de %{address}",
           "other": "Il y a %{count} magasins avec un stock proche de %{address}"
+        },
+        "location_information_next": {
+          "one": "Il y a %{count} magasin avec stock près de chez vous",
+          "other": "Il y a %{count} de points de vente avec des stocks près de chez vous"
+        },
+        "toggle_location": "Changer de lieu",
+        "search_button": "Trouver des magasins",
+        "no_stores_found": "Aucun magasin trouvé",
+        "all_stores_far_away": {
+          "title": "Les sites les plus proches sont à plus de %{distance}.",
+          "description": "Sélectionnez un lieu ou %{ship_to_address_link}",
+          "ship_to_address_link": "adresse d'expédition"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "Le lieu que vous avez sélectionné précédemment n'est plus disponible",
+          "description": "Sélectionnez un nouvel emplacement ou %{ship_to_address_link}",
+          "ship_to_address_link": "adresse d'expédition"
+        },
+        "could_not_resolve_address": "Votre adresse n'a pas pu être localisée. Réessayez ou utilisez une autre adresse",
+        "paginator": {
+          "accessibility_label": "Pagination des ramassages locaux",
+          "next": "Next page",
+          "label": {
+            "one": "%{first} - %{last} du magasin %{count} ",
+            "other": "%{first} - %{last} de %{count} magasins"
+          }
+        },
+        "reveal_more_label": {
+          "one": "Afficher %{count} plus d'emplacements",
+          "other": "Afficher %{count} autres lieux"
+        }
+      },
+      "captcha": {
+        "title": "Complétez le CAPTCHA pour continuer",
+        "errors": {
+          "not_solved": "Complétez le CAPTCHA pour continuer"
+        }
+      },
+      "clipboard": {
+        "failed_to_copy": "Échec de la copie"
+      },
+      "discount_errors": {
+        "generic_error": "Votre commande n'a pas pu être traitée car votre code de réduction n'est plus disponible. Vérifiez le total de votre commande et réessayez."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Vous n'êtes plus autorisé à passer des commandes B2B. %{logout_url} pour passer une commande personnelle.",
+        "log_out_link_text": "Déconnexion",
+        "lost_permissions_subtitle": "Vous n'êtes plus autorisé à passer des commandes B2B, déconnectez-vous pour passer une commande personnelle.",
+        "lost_permissions_title": "Pas d'autorisation de localisation"
+      },
+      "shop_pay_external": {
+        "title": "Shop Pay Checkout",
+        "errors": {
+          "problem_loading": "Il y a un problème de chargement de Shop Pay",
+          "checkout_has_expired": "Votre commande a expiré. Fermez cette fenêtre et essayez à nouveau de passer à la caisse à partir de {{shopName}}."
+        },
+        "return_to_store": "Retourner à {{shopName}}",
+        "return_to_store_simple": "Retourner au magasin"
+      },
+      "wallets": {
+        "return_to_store": "Retourner au magasin",
+        "return_to_checkout": "Retourner à la caisse",
+        "redirect_hint": "Il vous sera demandé de vous connecter avec {{walletName}}.",
+        "redirection_notice": "Après avoir cliqué sur{{buttonLabel}}\", vous serez redirigé vers {{walletName}} pour effectuer votre achat en toute sécurité.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} non disponible",
+            "description": "{{walletName}} n'était pas disponible. Utilisez un autre mode de paiement ou réessayez plus tard.",
+            "instructions": "Il y a eu un problème avec {{walletName}}. Retournez au magasin pour réessayer ou pour vérifier d'une autre manière."
+          }
         }
       }
     },

@@ -134,17 +134,17 @@
       },
       "price": {
         "from_price_html": "A partir de {{ price }}",
-        "regular_price": "Precio habitual",
-        "sale_price": "Precio de oferta",
+        "regular_price": "Precio normal",
+        "sale_price": "Precio de venta",
         "unit_price": "Precio unitario"
       },
       "share": "Compartir este producto",
       "sold_out": "Agotado",
       "unavailable": "No disponible",
-      "vendor": "Proveedor",
-      "video_exit_message": "{{ title }} abre el video en pantalla completa en la misma ventana.",
-      "xr_button": "Ver en tu espacio",
-      "xr_button_label": "Ver en tu espacio, carga el artículo en la ventana de realidad aumentada",
+      "vendor": "Vendedor",
+      "video_exit_message": "{{ title }} abre el vídeo a pantalla completa en la misma ventana.",
+      "xr_button": "Vista en su espacio",
+      "xr_button_label": "Vista en su espacio, carga el artículo en una ventana de realidad aumentada",
       "pickup_availability": {
         "view_store_info": "Ver información de la tienda",
         "check_other_stores": "Verificar disponibilidad en otras tiendas",
@@ -165,10 +165,10 @@
         "image_available": "La imagen {{ index }} ya está disponible en la vista de la galería"
       },
       "view_full_details": "Ver todos los detalles",
-      "shipping_policy_html": "Los <a href=\"{{ link }}\">gastos de envío</a> se calculan en la pantalla de pago.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Gastos de envío</a> calculados en el momento de pagar.",
       "choose_options": "Seleccionar opciones",
       "choose_product_options": "Elegir opciones para {{ product_name }}",
-      "value_unavailable": "{{ option_value }}: no disponible",
+      "value_unavailable": "{{ option_value }} - No disponible",
       "variant_sold_out_or_unavailable": "Variante agotada o no disponible",
       "inventory_in_stock": "En existencias",
       "inventory_in_stock_show_count": "{{ quantity }} en existencias",
@@ -185,28 +185,28 @@
         "price_at_each_html": "a {{ price }} por unidad"
       },
       "product_variants": "Variantes de producto",
-      "duties_included": "Aranceles incluidos."
+      "duties_included": "Las tareas incluían."
     },
     "modal": {
       "label": "Galería multimedia"
     },
     "facets": {
-      "apply": "Aplicar",
-      "clear": "Borrar",
-      "clear_all": "Eliminar todos",
-      "from": "De",
-      "filter_and_sort": "Filtrar y ordenar",
+      "apply": "Solicitar",
+      "clear": "Claro",
+      "clear_all": "Eliminar todo",
+      "from": "En",
+      "filter_and_sort": "Filtrar y clasificar",
       "filter_by_label": "Filtrar:",
-      "filter_button": "Filtrar",
+      "filter_button": "Filtros",
       "filters_selected": {
         "one": "{{ count }} seleccionado",
-        "other": "{{ count }} seleccionados",
+        "other": "{{ count }} seleccionado",
         "many": "{{ count }} seleccionados"
       },
       "max_price": "El precio más alto es {{ price }}",
       "product_count": {
-        "one": "{{ product_count }} producto de un total de {{ count }}",
-        "other": "{{ product_count }} productos de un total de {{ count }}",
+        "one": "{{ product_count }} de {{ count }} producto",
+        "other": "{{ product_count }} de {{ count }} productos",
         "many": "{{ product_count }} productos de un total de {{ count }}"
       },
       "product_count_simple": {
@@ -217,17 +217,17 @@
       "reset": "Restablecer",
       "sort_button": "Ordenar",
       "sort_by_label": "Ordenar por:",
-      "to": "Para",
-      "clear_filter": "Eliminar filtro",
+      "to": "A",
+      "clear_filter": "Quitar filtro",
       "filter_selected_accessibility": "{{ type }} ({{ count }} filtros seleccionados)",
-      "show_more": "Mostrar más",
+      "show_more": "Ver más",
       "show_less": "Mostrar menos",
-      "filter_and_operator_subtitle": "Seleccionar todos"
+      "filter_and_operator_subtitle": "Emparejar todo"
     }
   },
   "templates": {
     "search": {
-      "no_results": "No se encontraron resultados para “{{ terms }}” Revisa la ortografía o usa una palabra o frase diferente.",
+      "no_results": "No se han encontrado resultados para \"{{ terms }}\". Comprueba la ortografía o utiliza otra palabra o frase.",
       "results_with_count": {
         "one": "{{ count }} resultado",
         "other": "{{ count }} resultados",

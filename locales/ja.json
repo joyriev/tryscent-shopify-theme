@@ -589,7 +589,62 @@
             "selected_pickup_option_no_longer_available": "以前選択したピックアップオプションは利用できなくなりました。",
             "local_pickup_no_delivery_strategy_available": "利用可能なローカルピックアップデリバリー戦略は見つかりませんでした。",
             "origin_location_id_required": "発送元ロケーションIDは、RETAIL配送方法をリクエストする際に必要となります。",
-            "invalid_origin_location_id": "オリジンのロケーションIDに一致するロケーションが見つかりませんでした。"
+            "invalid_origin_location_id": "オリジンのロケーションIDに一致するロケーションが見つかりませんでした。",
+            "origin_location_id_not_allowed": "要求された配信方法は、オリジンロケーションIDをサポートしていません。",
+            "auto_fulfill_not_allowed": "このセッションはフルフィルメントの動作を上書きする権限はない。",
+            "auto_fulfill_required": "オートフルフィル（自動配達）は、RETAIL（小売）配送をご指定の場合に限ります。",
+            "prefetch_shipping_rates_used": "あらかじめ設定された送料は、決して返品されるべきではありません。",
+            "fulfillment_constraints_not_satisfied": "1つ以上の履行制約が満たされなかった。",
+            "must_fulfill_from_constraint_not_satisfied": "必要な場所から品目を満たすことができないため、充足制約が満たされない。",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "フルフィルメント制約が満たされないのは、アイテムが同じ場所からフルフィルメントされないからである。",
+            "delivery_strategy_conditions_not_satisfied": "この場所にはデリバリー戦略が用意されているが、その条件は満たされていない。",
+            "out_of_stock_at_origin_location": "原産地に在庫なし。",
+            "invalid_signature": "無効な割引署名。"
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "B2B店舗では値引きはできない。",
+            "custom_discount_not_honoured": "提供されたカスタム割引が適用されなかった。",
+            "unsupported_expectation": "提供された割引ラインには、保険が解釈できない期待が含まれていた。",
+            "additional_requested_discount_code_discarded": "{{code}} は有効ですが、適用されません。割引条件をご確認ください。",
+            "additional_requested_discount_discarded": "割引は有効ですが、適用されません。割引条件をご確認ください。",
+            "allocations_mismatch": "割引コードが変更されました。カートを見直して、もう一度やり直してください。",
+            "discount_title_too_long": "ディスカウントのタイトルは255文字を超えることはできません。"
+          },
+          "tax": {
+            "unresolvable_tax_terms": "提案されている条件は、現在の交渉状況を考えると解決不可能なものだ。",
+            "delivery_price_is_abstract": "関連する配信価格は抽象的である。",
+            "tax_inclusivity_mismatch": "具体的な totalTaxAndDutyAmount または totalAmountIncludedInTarget 値で再交渉する。",
+            "tax_exemption_not_supported": "現在の交渉セッションでは、免税はサポートされていない。",
+            "delivery_tax_exemption_not_supported": "デリバリー・ラインに対する免税措置は現在サポートされていない。",
+            "proposed_allocations_required": "アロケーション案」の欄がない。",
+            "merchandise_terms_must_be_defined": "商品用語を定義しなければならない。",
+            "delivery_terms_must_be_defined": "納入条件を明確にしなければならない。",
+            "merchandise_discount_terms_must_be_defined": "商品の割引条件を定義しなければならない。",
+            "delivery_discount_terms_must_be_defined": "配達割引の条件を明確にしなければならない。",
+            "allocated_required": "allocated'フィールドがない。",
+            "value_required": "value'フィールドがない。",
+            "line_splits_not_supported": "商品行」フィールドは、売り手提案の中でそれぞれが1行の構成要素になるように分割されなければならない。"
+          },
+          "payment": {
+            "manual_payments_not_allowed_for_b2b": "B2B店舗では、手動による支払いは認められていない。",
+            "positive_amount_expected": "支払額は0より大きくなければならない。",
+            "total_amount_mismatch": "支払総額が支払額の合計と一致しない。",
+            "subscription_terms_not_accepted": "加入条件は受け入れられない。",
+            "missing_session_id": "クレジットカードのセッション情報が見つからない。",
+            "gateway_not_supported": "ペイメントゲートウェイは支払い方法の保存をサポートしていません。",
+            "credit_card_last_name_required": "'last name' をゼロにすることはできない。",
+            "installments_amount_invalid": "分割払いトランザクションの金額が無効です。",
+            "installments_test_mode_not_allowed": "テストモードは不可。",
+            "installments_gift_card_not_allowed": "分割払いではギフトカードはご利用いただけません。",
+            "installments_unsupported_currency": "分割払いはこの通貨に対応していません。",
+            "installments_unsupported_shipping": "分割払いはこの住所への発送をサポートしていません。",
+            "installments_unsupported_billing": "分割払いはこの請求先住所に対応していません。",
+            "installments_unsupported_subscriptions": "分割払いは定期購入に対応していません。",
+            "installments_ineligible_line_item": "分割払いは、この購入のラインアイテムでは無効です。",
+            "shop_cash_not_found": "ショップキャッシュが見つかりませんでした。",
+            "shop_cash_not_allowed": "ショップ・キャッシュは、ショップ・ペイなしではご利用いただけません。",
+            "shop_cash_unsupported_checkout_source": "ショップキャッシュはこのチェックアウトに対応していません。",
+            "shop_cash_gift_card_not_allowed": "ショップキャッシュではギフトカードの購入はできません。"
           }
         }
       }
