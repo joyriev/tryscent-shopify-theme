@@ -725,7 +725,42 @@
             "job_enqueue_failed": "보안 문자 유효성 검사 작업을 대기열에 추가하지 못했습니다.",
             "job_already_queued": "이 캡차 토큰에 대한 캡차 유효성 검사가 이미 대기열에 대기 중입니다.",
             "token_expired": "제공된 캡차 토큰이 만료되었습니다. 결제를 계속하려면 새 캡차를 입력하세요.",
-            "token_invalid": "입력한 캡차 토큰이 유효하지 않습니다. 결제를 계속하려면 새 캡차를 입력하세요."
+            "token_invalid": "입력한 캡차 토큰이 유효하지 않습니다. 결제를 계속하려면 새 캡차를 입력하세요.",
+            "token_not_valid_for_session": "제공된 보안 문자는 이 결제에 사용할 수 없습니다."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "수령 금액은 스토어 통화로 결제해야 합니다."
+          },
+          "checkout_source": {
+            "revoked": "이 결제는 더 이상 사용할 수 없습니다."
+          }
+        },
+        "title": "결제 - 결제 {{shopName}}",
+        "loading": "로드 중...",
+        "loading_title": "결제 - 결제 {{shopName}}",
+        "submit_for_review_notice_label": "주문이 검토될 때까지 결제가 완료되지 않습니다.",
+        "continue_to_payment_plans_button_label": "결제 요금제 계속하기",
+        "back_button_label": "반환",
+        "autocomplete_zero_item": "사용 가능한 항목이 없습니다.",
+        "autocomplete_powered_by_google": "제공 {{brandName}}",
+        "submit": "제출하기",
+        "processing": "처리 중...",
+        "stepper": {
+          "increase": "증가 {{type}}",
+          "decrease": "감소 {{type}}",
+          "minimum_reached": "최소 {{value}} 도달",
+          "maximum_reached": "최대 {{value}} 도달"
+        },
+        "remove_item": "제거 %{label}",
+        "dates": {
+          "weekdays_abbreviation": {
+            "monday": "Mo",
+            "tuesday": "Tu",
+            "wednesday": "우리",
+            "thursday": "Th",
+            "friday": "Fr",
+            "saturday": "Sa",
+            "sunday": "Su"
           }
         }
       }

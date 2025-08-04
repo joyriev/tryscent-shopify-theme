@@ -1819,7 +1819,69 @@
         },
         "line_to_check_out": "Siete in fila per il check out",
         "inventory": {
-          "partial_inventory_banner": "Una parte del carrello è esaurita e non sarà disponibile per l'acquisto al momento del checkout."
+          "partial_inventory_banner": "Una parte del carrello è esaurita e non sarà disponibile per l'acquisto al momento del checkout.",
+          "sold_out": {
+            "storefront_body": "Tornare al negozio per continuare gli acquisti",
+            "no_storefront_body": "Purtroppo l'articolo che si desidera acquistare non è più disponibile."
+          }
+        },
+        "time_to_checkout_title": "E' ora di uscire. {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Calcolo del tempo di attesa stimato",
+          "less_than_one": "Tempo di attesa stimato: Meno di un minuto"
+        },
+        "last_checked": "(Ultimo controllo: {{time}})",
+        "footer": {
+          "heading": "Non aggiornare la pagina, si aggiornerà automaticamente.",
+          "body": "Gli articoli nel carrello non sono riservati fino a quando non si completa l'acquisto."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Si è verificato un problema nell'elaborazione della richiesta, si prega di contattare il proprietario del negozio."
+      },
+      "no_address_location": {
+        "title": "Posizione senza indirizzo",
+        "header": "Non si dispone di un indirizzo di spedizione per questa località",
+        "message": "Contattateci per aggiungere un indirizzo per questa posizione e completare il checkout.",
+        "email_us_button_label": "Inviaci un'e-mail"
+      },
+      "order_errors": {
+        "creation_failure": "Si è verificato un problema nella creazione dell'ordine. Riprova o contattaci per maggiori dettagli.",
+        "network_failure": "Non è stato possibile inviare l'ordine a causa di un errore di rete. Controllare la connessione e riprovare."
+      },
+      "session_errors": {
+        "session_not_unique": "Si è verificato un problema nell'elaborazione dell'ordine. Aggiornare questa pagina per tornare al negozio.",
+        "session_already_finished": "Questo ordine è già stato inviato. È possibile tornare in negozio per avviare un nuovo ordine."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Si è verificato un problema nell'elaborazione dell'ordine. Riprovare tra qualche minuto."
+      },
+      "pickup_point": {
+        "business_hours": "Orari di apertura",
+        "no_business_hours": "Non sono disponibili orari di apertura",
+        "open_twenty_four_hours": "Aperto 24 ore su 24, 7 giorni su 7",
+        "title": "Punto di prelievo",
+        "or": "o",
+        "selector_tabs": "Selettore del punto di prelievo",
+        "could_not_resolve_address": "Non è stato possibile trovare il vostro indirizzo. Riprovare o utilizzare un altro indirizzo",
+        "no_pickup_points_near_you": "Non sono stati trovati punti di prelievo vicino all'indirizzo selezionato",
+        "no_pickup_points_near_location": "Non sono stati trovati punti di prelievo vicino alla vostra posizione",
+        "pickup_unavailable_banner_title": {
+          "one": "Non ci sono punti di ritiro disponibili per il vostro articolo",
+          "other": "Non ci sono punti di ritiro disponibili per i vostri articoli"
+        },
+        "no_pickup_points_found": "Nessun punto di prelievo trovato",
+        "paginator": {
+          "header": {
+            "one": "Mostra %{first} - %{last} di %{count} punto",
+            "other": "Mostra %{first} - %{last} di %{count} di punti"
+          },
+          "selected_page": {
+            "other": "%{first} - %{last} di %{count} dei punti"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} punto di raccolta vicino alla vostra posizione"
         }
       }
     },
