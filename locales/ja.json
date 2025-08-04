@@ -2956,6 +2956,76 @@
         "items": {
           "one": "{{count}} 項目",
           "other": "{{count}} 項目"
+        },
+        "no_filtered_results_description": "フィルターを削除または調整して注文を表示する",
+        "no_filtered_results_title": "フィルタリングされた結果なし",
+        "order_link": "注文を見る {{name}}",
+        "order_number": "オーダー {{name}}",
+        "pagination": {
+          "nav_accessibility_label": "注文ナビゲーションボタン",
+          "next": "次のページ",
+          "previous": "Prev",
+          "previous_accessibility_label": "以前の注文",
+          "load_more": "もっと読む",
+          "load_more_accessibility_label": "注文を増やす"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "詳細を見る",
+            "estimated_delivery": "期待される {{date}}",
+            "last_updated": "最終更新日 {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "お届け予定 {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "overdue": "支払期限切れ",
+            "due": "支払期限 {{date}}",
+            "due_today": "支払期限",
+            "due_without_date": "支払期限",
+            "due_on_fulfillment": "支払期日",
+            "pay_to_confirm": "確認のための支払い"
+          },
+          "list_view": {
+            "overdue": "期限切れ",
+            "due": "期限付き {{date}}",
+            "due_today": "本日締切",
+            "paid": "有料",
+            "due_without_date": "期限付き",
+            "due_on_fulfillment": "履行期限",
+            "pay_to_confirm": "確認のための支払い",
+            "payment_not_due": "期限未定"
+          }
+        },
+        "sort_by": "並べ替え {{option}}",
+        "sort_hide_options_accessibility_label": "確定注文のソートオプションを非表示にする。",
+        "sort_show_options_accessibility_label": "確定注文の並べ替えオプションを表示します。",
+        "sort_currently_sorted_by_accessibility_label": "現在の並び順 {{option}}",
+        "sort_title": "ソート",
+        "sort": {
+          "location": {
+            "ascending": "ロケーション（A-Z）",
+            "descending": "場所（Z-A）"
+          },
+          "order_number": {
+            "ascending": "注文番号（低い順）",
+            "descending": "注文番号（高い順）"
+          },
+          "order_total": {
+            "ascending": "注文合計（低い方から高い方へ）",
+            "descending": "注文合計（高い順）"
+          }
+        },
+        "location_filter_picker": {
+          "all_location": "全拠点",
+          "current_location": "現在地",
+          "switch_view": "スイッチビュー"
+        },
+        "filter_title": "フィルター",
+        "filter": {
+          "clear_section": "クリアセクション"
         }
       }
     }

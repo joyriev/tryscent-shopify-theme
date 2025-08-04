@@ -552,7 +552,7 @@
       },
       "payment": {
         "payment_option": {
-          "accessibility_label": "Scegli un'opzione di pagamento"
+          "accessibility_label": "Scegliere un'opzione di pagamento"
         },
         "network_card_payment_options": "Scegliere una rete di schede",
         "amazon_payments_login_hint": "Verrà richiesto di effettuare il login con Amazon.",
@@ -756,7 +756,60 @@
         },
         "local_payment_method_receiver_notice": "Dopo aver effettuato l'ordine, riceverete i dettagli per il pagamento. Effettuare il pagamento presso uno sportello bancomat o online entro {{dueDays}}.",
         "order_edit_banner_title": "È necessario il pagamento di un importo pari a {{amount_owed}} ",
-        "order_edit_banner_subtitle": "Il vostro ordine {{order_number}} è stato aggiornato. Esaminate le modifiche, quindi pagate per confermare l'ordine."
+        "order_edit_banner_subtitle": "Il vostro ordine {{order_number}} è stato aggiornato. Esaminate le modifiche, quindi pagate per confermare l'ordine.",
+        "order_edit_banner_items_added": {
+          "other": "Aggiunto %{count}"
+        },
+        "order_edit_banner_items_removed": {
+          "with_quantities": "Rimosso il {{delta}} di {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Restituito {{quantity}}",
+          "with_quantities": "Restituito {{delta}} di {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Rimosso dalla restituzione",
+          "with_quantities": "Rimosso {{delta}} dal ritorno"
+        },
+        "order_edit_banner_multiple_items_added": "Aggiunto {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Rimosso {{amount}}",
+        "order_edit_banner_single_item_returned": "Restituito",
+        "order_edit_banner_multiple_items_returned": "Restituito {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Rimosso dalla restituzione",
+        "order_edit_banner_multiple_items_return_line_item_removed": "Rimosso {{amount}} dal ritorno",
+        "gift_card_wrapper": {
+          "heading": "Carta regalo",
+          "apply_gift_card_label": "Applicare una carta regalo",
+          "apply_another_gift_card_label": "Applicare un'altra carta regalo",
+          "gift_card_label": "Carta regalo %{identifier}",
+          "payment_tag": "Carta regalo",
+          "add_label": "Aggiungere una carta regalo",
+          "manage_label": "Gestire le carte regalo"
+        },
+        "gift_card_store_credit": {
+          "add_label": "Aggiungete una carta regalo o un credito di negozio",
+          "manage_label": "Gestire carte regalo o crediti del negozio"
+        },
+        "gift_card_checkbox_label": "Applicare la carta regalo",
+        "custom_onsite_payment_method_modal": {
+          "title": "Conferma di pagamento personalizzata in loco"
+        },
+        "markets_pro_disclaimer_label": "Facendo clic qui sotto e completando l'ordine, l'utente accetta di acquistare gli articoli da Global-e in qualità di commerciante registrato per questa transazione, in base ai %{markets_pro_terms} e alla %{privacy_policy} di Global-e. Global-e è un fornitore internazionale di servizi di adempimento per %{shop_name}.",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Termini e condizioni dell'esercente registrato",
+        "markets_pro_disclaimer_privacy_policy_title": "Informativa sulla privacy del Merchant of Record",
+        "purchase_order_number": {
+          "title": "Numero PO",
+          "label": "Numero di PO (facoltativo)"
+        },
+        "alternative_payment_currency_total_notice": "Nota: vi verrà addebitato %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Nota: il totale convertito è %{amount_due}.",
+        "waiting_on_taxes_message": "Se le tasse non vengono calcolate entro i prossimi secondi, aggiornare la pagina.",
+        "waiting_on_taxes_notice": "Calcolo delle imposte",
+        "payment_method_incompatible_with_payment_terms": "Il metodo di pagamento è incompatibile con i termini di pagamento.",
+        "proposed_gateway_unavailable": "Il gateway di pagamento proposto non è disponibile",
+        "pay_in_installments_split_pay_short": "4 pagamenti di %{amount}",
+        "gift_cards_unavailable": "La carta regalo non può più essere applicata a questo ordine ed è stata rimossa.",
+        "payment_flexibility_terms_id_mismatch": "Flessibilità di pagamento termini ID non corrispondenti"
       },
       "order_summary": {
         "for_add_on": "Per: %{group_title}",
@@ -1182,6 +1235,10 @@
           "tax_credential_tr": "Numero d'identità della Repubblica di Turchia / IVA",
           "shipping_credential_tr": "Numero d'identità della Repubblica di Turchia / IVA"
         }
+      },
+      "billing": {
+        "billing_address_title": "Proposta di legge per",
+        "same_as_shipping": "Stesso indirizzo di spedizione"
       }
     },
     "sentence": {
