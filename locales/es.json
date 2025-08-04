@@ -787,7 +787,20 @@
         "payment_flexibility_terms_id_mismatch": "Flexibilidad de pago Condiciones de identificación no coincidentes"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
+        "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar.",
+        "shipping_method": "Las opciones de envío han cambiado para su pedido. Revise su selección e inténtelo de nuevo.",
+        "shipping_method_not_available": "Tu cesta se ha actualizado y los artículos que has añadido no se pueden enviar a tu dirección. Elimina los artículos para completar tu pedido.",
+        "shipping_method_not_available_generic": {
+          "one": "Su pedido no puede ser enviado a la dirección seleccionada. Revise su dirección para asegurarse de que es correcta e inténtelo de nuevo, o seleccione una dirección diferente.",
+          "other": "Algunos artículos de tu cesta no se pueden enviar a la dirección que has introducido. Revise su dirección para asegurarse de que es correcta e inténtelo de nuevo, o seleccione una dirección diferente."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Los artículos de la cesta no cumplen los requisitos de precio o peso para poder ser enviados. Actualiza tu cesta e inténtalo de nuevo.",
+        "shipping_method_not_available_updated": {
+          "one": "El artículo que has añadido no se envía a tu localidad. Elimínalo para pasar por caja o ponte en contacto con la tienda.",
+          "other": "Uno o más artículos que has añadido no se envían a tu localidad. Elimínalos para pasar por caja o ponte en contacto con la tienda."
+        },
+        "payment_method_not_supported": "No puede utilizar este método de pago para %{country}. Utilice otro método de pago para realizar envíos a este país.",
+        "empty_state": "Introduzca su dirección de envío para ver los métodos de envío disponibles."
       },
       "order_summary": {
         "for_add_on": "Para: %{group_title}",
@@ -1581,7 +1594,47 @@
         "checkout_amount_changed": "Tu pago no ha podido ser procesado porque el importe a pagar ha cambiado. Por favor, compruebe su pedido e inténtelo de nuevo.",
         "deferred_payment_not_allowed": "No se admiten pagos aplazados. Por favor, compruebe su pedido e inténtelo de nuevo.",
         "deferred_payment_required": "Este pedido requiere un pago aplazado. Por favor, compruebe su pedido e inténtelo de nuevo.",
-        "deferred_amount_changed": "Su pago no ha podido ser procesado porque el importe del pago aplazado ha cambiado. Por favor, compruebe su pedido e inténtelo de nuevo."
+        "deferred_amount_changed": "Su pago no ha podido ser procesado porque el importe del pago aplazado ha cambiado. Por favor, compruebe su pedido e inténtelo de nuevo.",
+        "deferred_date_changed": "Su pago no ha podido ser procesado porque la fecha de pago aplazado ha cambiado. Por favor, compruebe su pedido e inténtelo de nuevo.",
+        "order_total_changed": "El total de su pedido ha cambiado. Revise e inténtelo de nuevo.",
+        "payment_processing": "Su pago no puede ser procesado por razones técnicas. Inténtalo de nuevo o utiliza otro método de pago.",
+        "payment_processing_no_retry": "Su pago no puede ser procesado por razones técnicas. Pruebe con otro método de pago.",
+        "paypal_zero_amount": "No puede utilizar PayPal para pedidos %{amount}. Confirma que tu pedido es correcto y realiza el pago sin PayPal.",
+        "paypal_invalid_token": "PayPal no estaba disponible. Inténtalo de nuevo o utiliza otra opción de pago.",
+        "pay_later_failed": "Se ha producido un error al procesar tu pago con Paga más tarde. Elige otro método de pago e inténtalo de nuevo.",
+        "three_d_secure_failed": "No se ha podido verificar tu pago. Inténtalo de nuevo o utiliza otro método de pago.",
+        "three_d_secure_failed_duplicate": "La autenticación 3D Secure de la tarjeta de crédito ha fallado porque ya hay otra en curso.",
+        "three_d_secure_failed_payment_method": "No se ha podido verificar tu tarjeta. Inténtalo de nuevo o añade otra tarjeta.",
+        "three_d_secure_throttled": "Demasiados intentos; espere antes de volver a intentarlo",
+        "subscription_agreement_blank": "Para comprar una suscripción es necesario guardar sus datos de pago. Para continuar, confirme que está de acuerdo o elimine los elementos de suscripción de su pedido.",
+        "insufficient_funds": "Su pago ha sido rechazado por falta de fondos. Inténtelo de nuevo o utilice otro método de pago.",
+        "multiple_deferred_payment_not_allowed": "Sólo se permite un pago aplazado por solicitud. Compruebe su solicitud e inténtelo de nuevo.",
+        "shipping_must_match_billing": "La dirección de facturación debe coincidir con la dirección de envío. Por favor, utilice un método de pago diferente.",
+        "decision_rule_block": "Se ha producido un problema al procesar su pago. Póngase en contacto con el propietario de la tienda.",
+        "pick_up_card": "Su tarjeta ha sido rechazada. Inténtalo de nuevo o utiliza otro método de pago.",
+        "cannot_verify": "No se han podido verificar tus datos de pago. Comprueba los datos de tu tarjeta e inténtalo de nuevo.",
+        "invalid_number": "Introduzca un número de tarjeta válido",
+        "invalid_expiry_date": "Introduzca una fecha de caducidad válida",
+        "invalid_cvc": "Introduzca un código de seguridad válido",
+        "expired_card": "Su tarjeta ha caducado. Utilice otro método de pago.",
+        "payment_method_not_applicable": "Este método de pago no es aplicable. Utilice otro método de pago.",
+        "card_declined": "Su tarjeta ha sido rechazada. Inténtalo de nuevo o utiliza otro método de pago.",
+        "processing_error": "Se ha producido un problema al procesar su pago. Inténtalo de nuevo o utiliza otro método de pago.",
+        "processing_error_checkout_as_guest": "Se ha producido un problema al procesar su pago. Inténtelo de nuevo con otro método de pago o {{checkout_as_guest_link}}.",
+        "selected_payment_method": "Ha habido un problema con el método de pago seleccionado y no se te ha cobrado. Inténtalo de nuevo o utiliza otro método de pago.",
+        "payment_method_billing_address": "Ha habido un problema con la dirección de facturación del método de pago seleccionado y no se te ha cobrado. Comprueba la dirección e inténtalo de nuevo o utiliza otro método de pago.",
+        "call_issuer": "Su tarjeta ha sido rechazada. Utilice otro método de pago o póngase en contacto con su banco para obtener más información.",
+        "transient_error": "Se ha producido un problema al procesar su pago. Intenta actualizar esta página o comprueba tu conexión a Internet.",
+        "missing_shipping_address": "Su pago no ha podido ser procesado porque falta su dirección de envío. Añade una dirección de envío e inténtalo de nuevo.",
+        "invalid_shipping_address": "Su pago no ha podido ser procesado porque no hemos podido encontrar su dirección de envío. Comprueba tu dirección de envío e inténtalo de nuevo.",
+        "successful_offsite_with_gift_card_error": "Se ha producido un problema al procesar el pago con tu tarjeta regalo. Inténtalo de nuevo o utiliza otro método de pago.",
+        "development_store_order_limit_reached": "Has alcanzado el límite de pedidos de tiendas en desarrollo con este procesador de pagos. Para realizar otro pedido, deberá utilizar una pasarela de pago de prueba. Más información %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "Para realizar un pedido de prueba, deberá utilizar una pasarela de pago de prueba. Más información %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "pruebas de pedidos en tiendas de desarrollo",
+        "payment_above_threshold": "El importe del pago supera el límite monetario para esta región. Reduzca el total e inténtelo de nuevo",
+        "risky": "Se ha producido un problema al procesar su pago. Inténtalo de nuevo o utiliza otro método de pago.",
+        "expired_buyer_action": "El método de pago ha expirado. Por favor, inténtelo de nuevo.",
+        "name_mismatch": "Comprueba los datos de tu tarjeta. El nombre de la tarjeta y la dirección de facturación no coinciden."
       }
     },
     "sentence": {
