@@ -103,38 +103,38 @@
       "name": "Nom",
       "email": "Courriel",
       "message": "Comment",
-      "post": "Publier le commentaire",
+      "post": "Post comment",
       "back_to_blog": "Retour au blog",
       "share": "Partager cet article",
-      "success": "Votre commentaire a bien été publié ! Merci !",
-      "success_moderated": "Votre commentaire a bien été publié. Nous le publierons sous peu, conformément au processus de modération de notre blog."
+      "success": "Votre commentaire a été posté avec succès ! Nous vous remercions de votre attention.",
+      "success_moderated": "Votre commentaire a été publié avec succès. Nous le publierons dans quelques temps, car notre blog est modéré."
     }
   },
   "onboarding": {
-    "product_title": "Titre du produit",
-    "collection_title": "Le nom de votre collection"
+    "product_title": "Exemple de titre de produit",
+    "collection_title": "Nom de votre collection"
   },
   "products": {
     "product": {
       "add_to_cart": "Ajouter au panier",
       "description": "Description",
-      "on_sale": "Promotion",
+      "on_sale": "Salles",
       "product_variants": "Variantes de produits",
       "quantity": {
         "label": "Quantité",
         "input_label": "Quantité pour {{ product }}",
-        "increase": "Augmenter la quantité de {{ product }}",
-        "decrease": "Réduire la quantité de {{ product }}",
+        "increase": "Augmenter la quantité pour {{ product }}",
+        "decrease": "Diminuer la quantité pour {{ product }}",
         "minimum_of": "Minimum de {{ quantity }}",
         "maximum_of": "Maximum de {{ quantity }}",
         "multiples_of": "Incréments de {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> dans le panier",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> en veille",
         "note": "Voir les règles de quantité",
-        "min_of": "Min. {{ quantity }}",
-        "max_of": "Max. {{ quantity }}"
+        "min_of": "Min {{ quantity }}",
+        "max_of": "Max {{ quantity }}"
       },
       "price": {
-        "from_price_html": "À partir de {{ price }}",
+        "from_price_html": "De {{ price }}",
         "regular_price": "Prix habituel",
         "sale_price": "Prix promotionnel",
         "unit_price": "Prix unitaire"
@@ -147,43 +147,43 @@
       "xr_button": "Afficher dans son espace",
       "xr_button_label": "Affichage dans votre espace, charge l'article dans une fenêtre de réalité augmentée",
       "pickup_availability": {
-        "view_store_info": "Afficher les informations de la boutique",
-        "check_other_stores": "Vérifier la disponibilité dans d'autres boutiques",
-        "pick_up_available": "Service de retrait disponible",
-        "pick_up_available_at_html": "Service de retrait disponible à <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Service de retrait non disponible actuellement à <span class=\"color-foreground\">{{ location_name }}</span>",
-        "unavailable": "Impossible de charger la disponibilité du service de retrait",
-        "refresh": "Actualiser"
+        "view_store_info": "Voir les informations sur le magasin",
+        "check_other_stores": "Vérifier la disponibilité dans d'autres magasins",
+        "pick_up_available": "Enlèvement possible",
+        "pick_up_available_at_html": "Enlèvement possible à l'adresse suivante <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Pickup actuellement indisponible à l'adresse suivante <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Impossible de charger la disponibilité de l'enlèvement",
+        "refresh": "Rafraîchir"
       },
       "media": {
         "open_media": "Ouvrir le média {{ index }} dans une fenêtre modale",
-        "play_model": "Lire la visionneuse 3D",
+        "play_model": "Play 3D Viewer",
         "play_video": "Lire la vidéo",
-        "gallery_viewer": "Visionneuse de la galerie",
-        "load_image": "Charger l'image {{ index }} dans la galerie",
-        "load_model": "Charger le modèle 3D {{ index }} dans la galerie",
+        "gallery_viewer": "Visionneuse de galerie",
+        "load_image": "Charger l'image {{ index }} dans l'affichage de la galerie",
+        "load_model": "Charger le modèle 3D {{ index }} dans la galerie d'images",
         "load_video": "Lire la vidéo {{ index }} dans la galerie",
         "image_available": "L'image {{ index }} est maintenant disponible dans la galerie"
       },
       "view_full_details": "Afficher tous les détails",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition</a> calculés à l'étape de paiement.",
-      "choose_options": "Choisir des options",
+      "choose_options": "Choisir les options",
       "choose_product_options": "Choisir des options pour {{ product_name }}",
       "value_unavailable": "{{ option_value }} – indisponible",
       "variant_sold_out_or_unavailable": "Variante épuisée ou indisponible",
       "inventory_in_stock": "En stock",
-      "inventory_in_stock_show_count": "{{ quantity }} en stock",
-      "inventory_low_stock": "Stock bas",
-      "inventory_low_stock_show_count": "Stock bas : {{ quantity }} restant(s)",
+      "inventory_in_stock_show_count": "{{ quantity }} en stock",
+      "inventory_low_stock": "Faible stock",
+      "inventory_low_stock_show_count": "Stock réduit : {{ quantity }} à gauche",
       "sku": "SKU",
       "inventory_out_of_stock": "En rupture de stock",
       "inventory_out_of_stock_continue_selling": "En stock",
       "volume_pricing": {
-        "title": "Tarification basée sur le volume",
-        "note": "La tarification basée sur le volume est disponible",
+        "title": "Tarification au volume",
+        "note": "Tarification au volume disponible",
         "minimum": "{{ quantity }} ou plus",
         "price_range": "{{ minimum }} - {{ maximum }}",
-        "price_at_each_html": "à {{ price }}/pièce"
+        "price_at_each_html": "à {{ price }}"
       },
       "duties_included": "Frais de douane inclus."
     },
