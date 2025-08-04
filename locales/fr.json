@@ -1235,7 +1235,45 @@
         "payment_method_saved": "Mode de paiement enregistré",
         "card_vaulted_company_location": "Carte enregistrée pour ce lieu",
         "expiry_long": "(Expire %{month}/%{year})",
-        "saved_by_payment_method": "Sauvé par %{payment_method}"
+        "saved_by_payment_method": "Sauvé par %{payment_method}",
+        "different_credit_card_label": "Utiliser une autre carte de crédit",
+        "same_billing_address_label": "Identique à l'adresse de livraison",
+        "different_billing_address_label": "Utiliser une autre adresse de facturation",
+        "billing_address_associated_with_mandate": "Utiliser l'adresse associée au mode de paiement",
+        "billing_address_associated_with_mandate_info": "Si vous souhaitez modifier votre adresse de facturation, veuillez supprimer et réintroduire les données de votre carte de crédit.",
+        "free_order_notice_html": "Votre commande est <strong>gratuite</strong>. Aucun paiement n'est requis.",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Votre commande est couverte par votre carte cadeau.",
+          "other": "Votre commande est couverte par vos cartes cadeaux."
+        },
+        "offsite_gateway_redirect_hint": "Après avoir cliqué sur \"%{button_label}\", vous serez redirigé vers %{gateway_label} pour effectuer votre achat en toute sécurité.",
+        "offsite_gateway_review_page_redirect_hint": "Après avoir vérifié votre commande, vous serez redirigé vers %{gateway_label} pour finaliser votre achat en toute sécurité.",
+        "offsite_gateway_redirect_hint_no_button_label": "Après avoir continué, vous serez redirigé vers %{gateway_label} pour terminer votre achat en toute sécurité.",
+        "receiver_payment_experience_hint": "Après avoir passé votre commande, vous recevrez les détails du paiement. Effectuez le paiement auprès de Multibanco ou en ligne dans un délai de %{due_days}.",
+        "billing_address_description": "Sélectionnez l'adresse qui correspond à votre carte ou à votre mode de paiement.",
+        "billing_address_description_no_shipping_address": "Saisissez l'adresse correspondant à votre carte ou à votre mode de paiement.",
+        "no_js_credit_card_fields_redirect_hint": "Vous serez redirigé pour ajouter vos informations de paiement.",
+        "card_fields_container_prefix": "Conteneur de terrain pour :",
+        "card_fields_unavailable_html": {
+          "other": "Les paiements par carte de crédit et de débit ne sont pas disponibles pour le moment.<br><a href=\"%{current_url}\">Actualisez cette page</a> ou essayez un autre mode de paiement."
+        },
+        "card_fields_processing_error": "Il y a eu un problème dans le traitement du paiement. Essayez d'actualiser cette page ou vérifiez votre connexion internet.",
+        "no_method_error": "Ce magasin ne peut pas accepter de paiements pour le moment.",
+        "not_configured_error": "Ce magasin ne peut pas accepter de paiements pour le moment.",
+        "missing_credit_card_error": "Saisissez les détails de votre carte pour effectuer le paiement",
+        "shop_pay_ideal_unavailable_error": "iDEAL n'est pas disponible pour cette commande. Choisissez un autre mode de paiement.",
+        "payment_method_not_available_for_shipping_address_error": "Le mode de paiement n'est pas disponible pour l'adresse de livraison sélectionnée. Choisissez un autre mode de paiement.",
+        "billing_address_not_supported_for_payment_method_error": "Ce mode de paiement n'est pas disponible pour votre adresse de facturation et votre devise. Veuillez essayer un autre mode de paiement.",
+        "generic_incorrect_card_info": "Vos données de paiement n'ont pas pu être vérifiées. Vérifiez les détails de votre carte et réessayez.",
+        "sofort_label": "Virement bancaire sécurisé",
+        "paypal_wallet_label": "Portefeuille PayPal",
+        "shop_pay_installments_label": "Shop Pay Installments",
+        "klarna_pay_now_label": "Payer maintenant avec Klarna",
+        "multibanco_label": "ATM",
+        "eps_label": "Virement eps",
+        "klarna_slice_it_label": "La finance avec Klarna",
+        "cashapppay_label": "Cash App Pay",
+        "blik_label": "Etain"
       }
     },
     "sentence": {
