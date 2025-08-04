@@ -626,9 +626,57 @@
         "unit_price": {
           "accessible_separator": "per",
           "per_item": {
-            "single": "%{price} jede"
+            "single": "%{price} jede",
+            "one": "%{price} pro %{count} Artikel",
+            "other": "%{price} pro %{count} Artikel"
           }
-        }
+        },
+        "gift_card_ending": "Geschenkkarte mit der Endung %{last_characters}",
+        "multiple_shipping_lines_label": "Versand insgesamt",
+        "recurring_total_label": "Wiederkehrende Summe",
+        "recurring_total_tooltip": "Beinhaltet keine Versandkosten, Steuern, Abgaben oder eventuelle Rabatte.",
+        "confirmation_number_label": "Konfirmation #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> nicht mit Ihren bestehenden Rabatten genutzt werden können.",
+        "percent_off_shipping": "%{percent}% Rabatt auf den Versand",
+        "amount_off_shipping": "%{amount} ohne Versand",
+        "deferred_payment_info": {
+          "title": "Die Zahlung von %{amount_due} ist fällig am %{due_at}",
+          "description_html": "Für Fragen zu Ihrer Bestellung, %{contact_us}.",
+          "paid_today": "Heute gezahlter Gesamtbetrag",
+          "paid_today_next": "Heute gezahlt",
+          "due_on_fulfillment_title": "Die Zahlung von %{amount_due} ist fällig bei Erfüllung",
+          "due_on_receipt_title": "Die Zahlung von %{amount_due} ist bei Erhalt fällig"
+        },
+        "deferred_balance_info": {
+          "title": "Der Restbetrag von {{amount_due}} ist fällig am {{due_at}}",
+          "due_on_fulfillment_title": "Der Restbetrag von {{amount_due}} ist bei Erfüllung fällig"
+        },
+        "payment_terms_totals": {
+          "due_today": "Heute fälliger Gesamtbetrag",
+          "due_later": "Insgesamt fällig %{due_at}",
+          "due_on_fulfillment": "Insgesamt fällig bei Erfüllung",
+          "due_on_fulfillment_next": "Fällig bei Erfüllung",
+          "due_on_receipt": "Gesamtbetrag fällig bei Erhalt",
+          "total_paid": "Insgesamt bezahlt"
+        },
+        "maximum_discount_code_limit_reached": "Sie haben die maximale Anzahl von Rabattcodes erreicht. Entfernen Sie einen bestehenden Code zu verwenden <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> funktioniert im Moment nicht. Kontaktieren Sie uns für Hilfe.",
+        "due_on_fulfillment": "Fällig bei Erfüllung",
+        "duties_label": "Zuständigkeiten",
+        "may_be_charged_on_delivery": "Kann bei Lieferung in Rechnung gestellt werden",
+        "total_updated_label_with_price": "Aktualisierter Gesamtpreis: %{totalPrice}",
+        "recurring_total_multiple_label": "Diese Bestellung hat eine wiederkehrende Gebühr für mehrere Artikel.",
+        "deferred_total_due_date_label": "Insgesamt fällig {{date}}",
+        "deferred_total_due_date_label_next": ". %{date}",
+        "expand_component_information": {
+          "one": "Zeige %{count} item",
+          "other": "Zeige %{count} Artikel"
+        },
+        "collapse_component_information": {
+          "one": "Element %{count} ausblenden",
+          "other": "%{count} Elemente ausblenden"
+        },
+        "alternative_payment_currency_total": "Geladen als %{amount_due}"
       },
       "general": {
         "complete_purchase_button_label": "Vollständige Bestellung",
