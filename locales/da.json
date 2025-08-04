@@ -2878,11 +2878,77 @@
               "description": "Send betaling for at bekræfte denne ordre.",
               "deposit": {
                 "title": "Betaling er forfalden",
-                "due_later": "Saldoen er på {{translatedName}} vilkår og forfalder på {{dueDate}}."
+                "due_later": "Saldoen er på {{translatedName}} vilkår og forfalder på {{dueDate}}.",
+                "due_on_fulfillment": "Restbeløbet forfalder, når alle varer i denne ordre er opfyldt.",
+                "due_on_receipt": "Du vil modtage en faktura på det resterende beløb.",
+                "due_on_date": "Restbeløbet skal betales den {{dueDate}}."
               }
+            },
+            "deposit": {
+              "due_later": "{{{depositAmount}} forfalder, når din ordre er bekræftet. Restbeløbet betales på {{translatedName}} vilkår.",
+              "due_on_fulfillment": "{{depositAmount}} skal betales, når din ordre er bekræftet. Restbeløbet forfalder, når ordren er gennemført.",
+              "due_on_receipt": "{{depositAmount}} skal betales, når din ordre bekræftes. Restbeløbet forfalder senere.",
+              "due_on_date": "{{depositAmount}} skal betales, når din ordre bekræftes. Restbeløbet forfalder den {{dueDate}}."
             }
-          }
+          },
+          "paid": {
+            "title_with_date": "Betalt {{date}}"
+          },
+          "refund": {
+            "title_with_date": "Refunderet {{date}}",
+            "description_full_refund": "Du har modtaget fuld refusion for denne ordre.",
+            "description_single_refund": "Du har modtaget en delvis tilbagebetaling for denne ordre.",
+            "description_multiple_refunds": "Du har modtaget delvis refusion for denne ordre."
+          },
+          "canceled": {
+            "description": "Du blev ikke sigtet."
+          },
+          "pay_now_accessibility_label": "Betal nu for at bestille {{orderName}}"
+        },
+        "order_timeline": {
+          "expand_events_accessibility_label": "Vis detaljer om kladdeordre",
+          "hide_events_accessibility_label": "Skjul detaljer om udkast til ordre"
+        },
+        "subtitle": "Indsendt {{date}}",
+        "title": "Bestil {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Denne betalingsmetode vil ikke længere være tilgængelig for fremtidige køb fra dette sted.",
+          "description_with_replacement": "Hvis du sletter denne betalingsmetode, vil det påvirke forhåndsgodkendte betalinger for dette sted. Erstat den med en alternativ betalingsmetode for at fortsætte med at modtage kommende ordrer."
+        },
+        "payment_details": {
+          "order_label": "Bestil {{name}}",
+          "draft_label": "Udkast til rækkefølge {{name}}"
         }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Tilføj PO-nummer",
+        "add_modal_title": "Tilføj PO-nummer",
+        "close_modal_accessibility_label": "Luk modal for PO-nummer",
+        "discard": "Kassér",
+        "discard_changes_modal_title": "Kassere ændringer?",
+        "edit_accessibility_label": "Rediger PO-nummer",
+        "edit_modal_title": "Rediger PO-nummer",
+        "empty_state": "Intet PO-nummer",
+        "modal_po_number_input_label": "PO-nummer",
+        "modal_po_number_input_max_length_error": "PO-numre har et maksimum på {{maxLength}} tegn.",
+        "save": "Gemme",
+        "title": "PO #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "addresses_loading_issue": {
+        "description": "Fejl i forbindelsen. Tjek din internetforbindelse, og prøv igen."
+      },
+      "failed_address_creation": {
+        "description": "Der opstod et problem med at oprette din adresse. Prøv at opdatere denne side, eller tjek din internetforbindelse."
+      },
+      "failed_address_update": {
+        "description": "Der opstod et problem med at opdatere din adresse. Prøv at opdatere denne side, eller tjek din internetforbindelse."
+      },
+      "load_orders_error": {
+        "title": "Kan ikke indlæse ordrer"
       }
     }
   }

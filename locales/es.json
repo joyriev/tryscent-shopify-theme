@@ -727,7 +727,64 @@
         },
         "local_payment_method_receiver_notice": "Tras realizar el pedido, recibirá los datos de pago. Realiza el pago en un cajero automático o en línea en un plazo de {{dueDays}} días.",
         "order_edit_banner_title": "Se necesita el pago de {{amount_owed}} ",
-        "order_edit_banner_subtitle": "Su pedido {{order_number}} ha sido actualizado. Revise estos cambios y, a continuación, pague para confirmar su pedido."
+        "order_edit_banner_subtitle": "Su pedido {{order_number}} ha sido actualizado. Revise estos cambios y, a continuación, pague para confirmar su pedido.",
+        "order_edit_banner_items_added": {
+          "one": "Añadido",
+          "other": "Añadido %{count}"
+        },
+        "order_edit_banner_items_removed": {
+          "with_quantities": "Eliminado {{delta}} de {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Devuelto {{quantity}}",
+          "with_quantities": "Devuelto {{delta}} de {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Eliminado de la devolución",
+          "with_quantities": "Eliminado {{delta}} de la devolución"
+        },
+        "order_edit_banner_single_item_added": "Añadido",
+        "order_edit_banner_multiple_items_added": "Añadido {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Eliminado {{amount}}",
+        "order_edit_banner_multiple_items_returned": "Devuelto {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Eliminado de la devolución",
+        "order_edit_banner_multiple_items_return_line_item_removed": "Eliminado {{amount}} de la devolución",
+        "gift_card_wrapper": {
+          "heading": "Tarjeta regalo",
+          "apply_gift_card_label": "Solicitar una tarjeta regalo",
+          "apply_another_gift_card_label": "Aplicar otra tarjeta regalo",
+          "gift_card_label": "Tarjeta regalo %{identifier}",
+          "payment_tag": "Tarjeta regalo",
+          "add_label": "Añadir una tarjeta regalo",
+          "manage_label": "Gestionar tarjetas regalo"
+        },
+        "gift_card_store_credit": {
+          "add_label": "Añada una tarjeta regalo o crédito de la tienda",
+          "manage_label": "Gestionar tarjetas regalo o crédito de la tienda"
+        },
+        "gift_card_checkbox_label": "Solicitar tarjeta regalo",
+        "custom_onsite_payment_method_modal": {
+          "title": "Confirmación de pago personalizada in situ"
+        },
+        "markets_pro_disclaimer_label": "Al hacer clic a continuación y completar su pedido, usted acepta comprar su artículo (s) de Global-e como comerciante de registro para esta transacción, en %{privacy_policy} y %{privacy_policy} de Global-e. Global-e es un proveedor internacional de servicios de cumplimiento para %{shop_name}.",
+        "markets_pro_disclaimer_terms_and_conditions": "Condiciones generales",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Condiciones generales de venta",
+        "markets_pro_disclaimer_privacy_policy_title": "Política de privacidad de Merchant of Record",
+        "purchase_order_number": {
+          "title": "Número de pedido",
+          "label": "Número de pedido (opcional)"
+        },
+        "alternative_payment_currency_total_notice": "Nota: se le cobrará %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Nota: el total convertido es %{amount_due}.",
+        "waiting_on_taxes_message": "Si sus impuestos no se calculan en los próximos segundos, actualice la página.",
+        "waiting_on_taxes_notice": "Cálculo de impuestos",
+        "expired_payment_method": "El método de pago seleccionado ha caducado",
+        "payment_method_update_failed": "Error en la actualización del método de pago.",
+        "payment_method_incompatible_with_payment_terms": "La forma de pago es incompatible con las condiciones de pago.",
+        "proposed_gateway_unavailable": "La pasarela de pago propuesta no está disponible",
+        "pay_in_installments_split_pay_short": "4 pagos de %{amount}",
+        "gift_cards_unavailable": "Su tarjeta regalo ya no puede aplicarse a este pedido y ha sido eliminada.",
+        "payment_flexibility_terms_id_mismatch": "Flexibilidad de pago Condiciones de identificación no coincidentes"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
@@ -1380,6 +1437,10 @@
           "tax_credential_tr": "República de Turquía Número de identificación / IVA",
           "shipping_credential_tr": "República de Turquía Número de identificación / IVA"
         }
+      },
+      "billing": {
+        "billing_address_title": "Factura a",
+        "same_as_shipping": "La misma que la dirección de envío"
       }
     },
     "sentence": {
