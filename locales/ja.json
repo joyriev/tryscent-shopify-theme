@@ -3322,8 +3322,61 @@
         "real_time_delivery_updates": "ご注文の商品が発送されると、ショップからリアルタイムで配送状況をお知らせします。"
       },
       "edit_summary": {
-        "added": "追加"
-      }
+        "added": "追加",
+        "added_with_quantity": "追加 {{quantity}}",
+        "removed": "削除",
+        "removed_with_quantity": "削除 {{quantity}}",
+        "updated_at": "ご注文が更新されました {{date}}",
+        "returned": "返品",
+        "returned_with_quantities": "{{total}} {{delta}}返した。",
+        "removed_with_quantities": "{{total}} {{delta}}削除{{total}}",
+        "return_line_item_removed": "返品から削除",
+        "return_line_item_removed_with_quantities": "returnから{{delta}}削除{{delta}}"
+      },
+      "shop_pay": {
+        "order_completed_with": "注文完了"
+      },
+      "taxes": "税金",
+      "taxes_included": "{{amount}}税金を含む",
+      "duties_and_taxes_included": "合計金額には関税と消費税が含まれています。配送に追加料金はかかりません。",
+      "duties": "職務",
+      "ok_duties_tooltip": "この注文は別の国から発送されるため、注文合計に関税が加算されています。",
+      "error_duties_tooltip": "この注文は他国から発送されるため、配送時に関税や税金が課される場合があります。",
+      "zero_duties_tooltip": "この注文は他国から発送されます。この金額のご注文には関税はかかりません。",
+      "tip": "チップ",
+      "title": "オーダー {{name}}",
+      "unit_price": "{{price}}/について",
+      "pagination": {
+        "load_more": "もっと読む",
+        "load_more_accessibility_label": "商品をもっと読み込む",
+        "loading_accessibility_label": "ロードアイテム"
+      },
+      "login_to_view_all_order_details": "ログインすると、すべての注文の詳細が表示されます。",
+      "logged_in_account_no_permission_to_order": "あなたは{{email}} としてログインしています。このアカウントにはこの注文を管理する権限がありません。",
+      "log_in_to_a_different_account": "別のアカウントにログインする",
+      "fees": {
+        "return_shipping_fee": "返品送料"
+      },
+      "vat_invoices": {
+        "title": "付加価値税インボイス"
+      },
+      "link_sent": "リンク送信",
+      "cash_rounding": "現金丸め",
+      "adjusted_payment": "調整後の支払い額",
+      "adjusted_total": "調整後合計",
+      "due_on_date": "期限付き {{date}}",
+      "due_on_fulfillment": "履行期限",
+      "due_on_receipt": "受領時"
+    },
+    "addresses": {
+      "add_button": "アドレスの追加",
+      "add_button_accessibility_label": "アドレスの追加",
+      "back_button": "バック",
+      "back_button_accessibility_label": "編集アドレスに戻る {{address}}",
+      "no_addresses_banner": "アドレスの追加なし",
+      "address_deleted_notification": "アドレス削除",
+      "cancel_adding_address_accessibility_label": "アドレス追加のキャンセル",
+      "cancel_deletion_button_accessibility_label": "削除のキャンセル {{address}}"
     }
   }
 }

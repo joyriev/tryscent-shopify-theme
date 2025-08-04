@@ -1499,7 +1499,58 @@
         "header": "Pagare con {{paymentMethod}}",
         "qr_code": {
           "instructions": "Completare l'acquisto utilizzando il codice {{paymentMethod}} "
-        }
+        },
+        "external": {
+          "instructions": "Confermate il pagamento sulla vostra app per completare l'acquisto"
+        },
+        "close": "Chiudere la sfida"
+      },
+      "failed_payment": {
+        "page_title": "Non è stato possibile elaborare il pagamento",
+        "title": "Non è stato possibile elaborare il pagamento",
+        "payment_not_processed_title": "Non è stato possibile elaborare il pagamento",
+        "payment_not_processed_text": "Non è stato effettuato alcun addebito. Tornate al carrello per completare l'acquisto."
+      },
+      "payment_gateway": {
+        "cash_on_delivery_label": "Contrassegno (COD)",
+        "money_order_label": "Vaglia postale",
+        "debit_card_label": "Carta di debito",
+        "deferred_payment_label": "Scegliere il metodo di pagamento in seguito",
+        "fixed_payment_label": "Il pagamento dovrà essere effettuato il {{dueDate}}.",
+        "generic_payment_terms": "Le condizioni di pagamento sono {{translatedName}}. Il pagamento dovrà essere effettuato alla {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} a un account con accesso a questa posizione per aggiungere o utilizzare i metodi di pagamento salvati."
+          }
+        },
+        "direct_payment_terms": "Hai accettato le condizioni di {{translatedName}}. L'addebito sulla carta avverrà alla {{dueDate}}.",
+        "fixed_direct_payment_terms": "La carta verrà addebitata il giorno {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Il pagamento sarà dovuto una volta evaso l'ordine.",
+        "order_due_on_fulfillment_payment": "L'addebito sulla carta verrà effettuato una volta evaso l'ordine.",
+        "order_due_on_receipt_choose_later": "Il pagamento sarà dovuto al momento della ricezione.",
+        "order_deposit_due_now": "{L'{{depositAmount}} deve essere versato oggi. Il saldo è a condizioni {{translatedName}} ed è dovuto alla {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} è dovuto oggi. Il saldo sarà dovuto una volta evaso l'ordine.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} è dovuto oggi. Il saldo sarà dovuto in seguito.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} è dovuto oggi. Il saldo sarà dovuto il {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms": "Il pagamento sarà dovuto una volta confermato l'ordine.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "L'addebito sulla carta avverrà dopo la conferma dell'ordine.",
+        "draft_order_payment_due_later_terms": "Una volta confermato l'ordine, sarete alle condizioni di {{translatedName}}.",
+        "draft_order_payment_due_on_fulfillment": "Il pagamento sarà dovuto una volta che l'ordine sarà stato confermato ed evaso.",
+        "draft_order_deposit_due_later": "{L'{{depositAmount}} dovrà essere versato al momento della conferma dell'ordine. Il saldo sarà effettuato alle condizioni di {{translatedName}}.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} sarà dovuto al momento della conferma dell'ordine. Il saldo avverrà una volta evaso l'ordine."
+      },
+      "thank_you": {
+        "title": "Grazie per l'acquisto!",
+        "confirmation_email_sent_text": "Un'e-mail di conferma è stata inviata a %{email}",
+        "return_to_store_link_label": "Continua gli acquisti",
+        "print_link_label": "Stampa della ricevuta",
+        "payment_information_title": "Informazioni sul pagamento",
+        "shipping_information_title": "Informazioni sulla spedizione",
+        "purchase_order_number_title": "Numero PO #%{purchase_order_number}",
+        "failed_pending_payment_page_title": "C'è un problema con il pagamento",
+        "contact_information_title": "Informazioni di contatto",
+        "company_location_title": "Posizione",
+        "shipping_address_map_title": "Mappa di Google che visualizza il punto di partenza dell'indirizzo di spedizione: %{address}"
       }
     },
     "sentence": {
