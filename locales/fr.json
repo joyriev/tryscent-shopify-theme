@@ -996,6 +996,51 @@
           },
           "label": "Pas de livraison"
         }
+      },
+      "shipping": {
+        "shipping_method_title": "Mode d'expédition",
+        "subscription_shipping": "Expédition d'abonnements",
+        "subscription_local_delivery": "Abonnement livraison locale",
+        "subscription_pickup": "Prise en charge de l'abonnement",
+        "waiting_on_rate_notice": "Obtenir les tarifs d'expédition disponibles...",
+        "waiting_on_pickup_location_notice": "Obtenir les lieux d'enlèvement disponibles...",
+        "no_rates_for_cart_or_destination_notice": "Il n'y a pas de méthode d'expédition disponible pour votre panier ou votre adresse.",
+        "no_pickup_location_notice": "Au moins un de vos produits n'est pas disponible pour l'enlèvement",
+        "no_rates_for_country_notice": "Aucun tarif d'expédition n'a été trouvé pour cette adresse.",
+        "no_rates_contact_notice": "Contactez-nous pour plus d'informations",
+        "please_enter_your_shipping_information_notice": "Veuillez saisir vos informations de livraison.",
+        "estimated_delivery_date": {
+          "one": "%{count} jour ouvrable"
+        },
+        "estimated_delivery_date_range": "De %{minimum} à %{maximum} jours ouvrables",
+        "estimated_delivery_time": "Estimation de la livraison %{time}",
+        "estimated_delivery_time_range": "Estimation de la livraison %{min_time}–%{max_time}",
+        "two_day_delivery": "Livraison en 2 jours %{time}",
+        "arrives_time": "Arrivée %{time}",
+        "arrives_time_range": "Arrivée %{min_time}–%{max_time}",
+        "estimated_time": "Estimation %{time}",
+        "estimated_time_range": "Estimation %{min_time}–%{max_time}",
+        "default_description": "Expédition en 1 jour ouvrable",
+        "unbranded_default_description": "Prêt à être expédié",
+        "shipping_line_phone": "Votre coursier peut utiliser ce numéro pour vous contacter.",
+        "shipping_line_delivery_phone_label": "Numéro de téléphone mobile",
+        "shipping_line_delivery_phone": "Il se peut que vous soyez contacté pour vous informer de l'évolution de votre livraison.",
+        "optional_shipping_line_delivery_instructions_label": "Instructions de livraison (facultatif)",
+        "shipping_line_delivery_instructions": "Saisissez les informations nécessaires telles que les codes de porte ou les instructions de dépôt.",
+        "other_method": {
+          "zero": "Aucune autre méthode disponible",
+          "one": "%{count} autre méthode disponible à l'adresse"
+        },
+        "shipping_rate_discounted_amount": "Était : %{original_amount}. Maintenant : %{amount}",
+        "prime_not_available": {
+          "default": "La livraison prioritaire n'est pas disponible pour votre commande. Vos options de livraison ont été mises à jour."
+        },
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "Livraison gratuite à partir de %{count} de livraison",
+            "other": "Livraison gratuite pour %{count} de livraisons supplémentaires"
+          }
+        }
       }
     },
     "sentence": {

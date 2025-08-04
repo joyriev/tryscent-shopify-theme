@@ -2407,8 +2407,86 @@
         "variant_not_found": "No se encuentra la variante",
         "variant_requires_selling_plan": "La variante sólo puede adquirirse con un plan de venta.",
         "selling_plan_not_available_for_company_locations": "Los pedidos B2B sólo pueden comprarse una vez",
-        "digital_product_not_available_for_company_locations": "Este artículo no puede añadirse a un pedido B2B"
+        "digital_product_not_available_for_company_locations": "Este artículo no puede añadirse a un pedido B2B",
+        "buyer_cannot_purchase_for_company_locations": "No se puede comprar para esta ubicación",
+        "shipping_address_not_required": "Este carro no requiere envío",
+        "shipping_address_invalid": "Se ha producido un problema al calcular las tarifas de envío. Continúa en la caja para elegir una tarifa de envío antes de completar tu pedido.",
+        "bundle_requires_components": "El producto del paquete%{name}' no se puede añadir al carrito.",
+        "gift_card_with_components_not_supported": "El producto del paquete%{name}' no se puede añadir al carrito.",
+        "gift_card_price_must_be_greater_than_zero": "El producto del paquete%{name}' no se puede añadir al carrito.",
+        "gift_card_recipient_validation_error": "El destinatario de la tarjeta regalo especificado no es válido",
+        "view_lines_limit_reached": "Las líneas deben ser inferiores a %{limit}",
+        "cart_too_large": "El carro es demasiado grande.",
+        "cart_attributes_error": "Los atributos del carro contienen datos no válidos.",
+        "merchandise_line_transformers": {
+          "run_error": "Se ha producido un error en su cesta."
+        }
+      },
+      "storefront": {
+        "invalid_password": "Contraseña incorrecta, inténtelo de nuevo."
+      },
+      "tags": {
+        "add_articles": "Limitar la búsqueda a los artículos que también tienen la etiqueta %{tag}",
+        "add_products": "Limitar la selección a los productos que coinciden con la etiqueta %{tag}",
+        "remove_articles": "Ampliar la búsqueda a artículos no etiquetados %{tag}"
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Gracias por suscribirse a nuestra lista de correo.",
+        "disclaimer": "Puede darse de baja en cualquier momento.",
+        "unsubscribe": "Cancelar suscripción"
+      },
+      "unsubscribed": {
+        "confirmation": "Te has dado de baja de nuestra lista de correo.",
+        "disclaimer": "No recibirás más actualizaciones de marketing de nuestra parte. Puede volver a suscribirse en cualquier momento.",
+        "preview": "Está previsualizando lo que verán los clientes cuando se den de baja."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Ha optado por el seguimiento de apertura de correo electrónico.</b>",
+          "visibility": "Las tasas de apertura de correo electrónico se comunicarán de forma anónima. Solo veremos si has abierto un correo electrónico como parte de una tasa de apertura de correo electrónico agregada.",
+          "opt_out_html": "Puede <a style='text-decoration:underline;' href='%{link}'>optar por no</a> participar en el seguimiento de apertura de correo electrónico si no desea compartir esta información.",
+          "preview_bar": "Está previsualizando lo que verán los clientes cuando opten por el seguimiento de apertura de correo electrónico."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Has optado por no participar en el seguimiento de apertura de correo electrónico.</b>",
+          "visibility": "No veremos si ha abierto nuestros correos electrónicos.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Acepte</a> el seguimiento de apertura de correo electrónico.",
+          "preview_bar": "Está previsualizando lo que verán los clientes cuando se den de baja del seguimiento de apertura de correo electrónico."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Ya no rastreamos las aperturas de correos electrónicos.</b>",
+          "privacy_policy": "Después de enviar este correo electrónico, actualizamos nuestra política de privacidad y ya no rastreamos las aperturas."
+        },
+        "track": {
+          "status_html": "<b>Se informa del seguimiento de apertura de correo electrónico.</b>",
+          "visibility": "Sólo veremos si ha abierto el correo electrónico, como parte de la tasa total de apertura de correos electrónicos."
+        },
+        "updated_policy": {
+          "status_html": "<b>Se informa del seguimiento de apertura de correo electrónico.</b>",
+          "visibility": "Hemos actualizado nuestra política y ahora hacemos un seguimiento de las aperturas de los correos electrónicos. Las tasas de apertura de correos electrónicos se notificarán de forma anónima. Solo veremos si has abierto un correo electrónico como parte de la tasa total de apertura de correos electrónicos.",
+          "opt_out_html": "Si no desea compartir esta información, puede <a style='text-decoration:underline;' href='%{link}'>darse de baja.</a>"
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "En stock"
+        }
+      }
+    },
+    "search": {
+      "error": "Se ha producido un problema al cargar los resultados de la búsqueda. Actualiza la página o inténtalo más tarde.",
+      "sorting": {
+        "price_ascending": "Precio, de menor a mayor",
+        "price_descending": "Precio, de mayor a menor"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Error - %{title}",
+      "shopping_cart": "Su cesta de la compra"
     }
   },
   "customer_accounts": {
