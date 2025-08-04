@@ -3231,6 +3231,76 @@
       },
       "failed_address_update": {
         "description": "Il y a eu un problème de mise à jour de votre adresse. Essayez d'actualiser cette page ou vérifiez votre connexion internet."
+      },
+      "load_orders_error": {
+        "description": "Réessayez ou revenez plus tard."
+      },
+      "load_paypal_error": {
+        "description": "Il y a un problème de chargement de PayPal. Veuillez réessayer."
+      },
+      "logout_everywhere": {
+        "description": "Un problème s'est produit lors de la déconnexion. Veuillez réessayer."
+      },
+      "no_access_to_locations": {
+        "description": "Vous n'avez accès à aucun lieu"
+      },
+      "not_found": {
+        "title": "Il y a un problème de chargement de cette page"
+      },
+      "order_not_found": {
+        "description": "Cette commande n'existe pas ou vous n'avez pas la permission de la visualiser.",
+        "title": "Ordre non trouvé"
+      },
+      "profile_update_error": {
+        "description": "Il y a eu un problème lors de la mise à jour de votre profil. Essayez d'actualiser cette page ou vérifiez votre connexion internet."
+      },
+      "resend_link": {
+        "too_many_requests": "Trop de demandes. Réessayez plus tard.",
+        "generic": "Échec de la demande"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "message": "Trop de tentatives"
+      }
+    },
+    "payment_methods": {
+      "title": "Modes de paiement",
+      "add_payment_method_button": "Ajouter un mode de paiement",
+      "add_payment_method_banner": "Ajouter une méthode de paiement pour accélérer le passage à la caisse ou pour les services préautorisés",
+      "no_payment_methods_banner": "Aucune méthode de paiement n'a été ajoutée",
+      "edit_payment_method_brand_button_accessibility_label": "Editer {{paymentMethodName}}",
+      "default": "Défaut",
+      "expiration_warning_button_accessibility_label": "Afficher l'avertissement d'expiration pour {{paymentMethodName}} se terminant par {{lastDigits}}",
+      "expired": "Cette carte est expirée",
+      "card_update_consent": "Ce mode de paiement sera sauvegardé pour les achats futurs.",
+      "card_update_consent_subscriptions": "Ce mode de paiement sera conservé pour les achats futurs et peut être utilisé pour tout achat récurrent ou différé.",
+      "digital_wallet_title": "Portefeuille numérique",
+      "credit_or_debit_card_title": "Carte de crédit ou de débit",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Ajouter la méthode de paiement Google Pay",
+        "loading_accessibility_message": "Chargement de Google Pay",
+        "loading": "Chargement de Google Pay",
+        "errors": {
+          "generic": "Il y a eu un problème avec Google Pay. Réessayez ou utilisez un autre moyen de paiement.",
+          "missing_billing_address": "Google Pay nécessite une adresse de facturation. Veuillez en ajouter une à votre compte."
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "Ajouter un mode de paiement PayPal",
+        "loading_accessibility_message": "Chargement de PayPal"
+      },
+      "apple_pay": {
+        "loading": "Chargement d'Apple Pay",
+        "errors": {
+          "generic": "Il y a eu un problème avec Apple Pay. Réessayez ou utilisez un autre moyen de paiement.",
+          "not_available": "Apple Pay n'est pas disponible sur cet appareil.",
+          "missing_billing_address": "Apple Pay nécessite une adresse de facturation. Veuillez en ajouter une à votre compte."
+        }
+      },
+      "store_credit": {
+        "label": "Crédit magasin",
+        "accesibility_label": "Crédit magasin - {{formattedBalance}}"
       }
     }
   }

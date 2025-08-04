@@ -1730,7 +1730,69 @@
         "gift_card_expired": "このギフトカードの有効期限は切れています。",
         "gift_card_depleted": "このギフトカードの残額はありません",
         "gift_card_currency_mismatch": "この注文で使用できるのは、%{checkout_currency}ギフトカードのみです。",
-        "gift_cards_not_supported_with_deferred_purchase_options": "ギフトカードは繰延購入オプションではサポートされていません。"
+        "gift_cards_not_supported_with_deferred_purchase_options": "ギフトカードは繰延購入オプションではサポートされていません。",
+        "gift_card_buying_gift_card": "ギフトカードを使って別のギフトカードを購入することはできない。",
+        "payment_gateway_missing": "お支払い方法をお選びください。",
+        "payment_gateway_needs_paid_plan_error": "このお支払い方法は、現在ストアではご利用いただけません。",
+        "payment_gateway_not_in_test_mode": "は、注文をテストするように設定されていません。この店舗は実際の注文や実際の支払いを受け付けることができません。",
+        "payment_gateway_incompatible_with_multi_currency": "現地通貨でチェックアウトを完了するには、クレジットカードで支払う必要があります。",
+        "payment_gateway_unsupported_for_subscriptions": "このお支払い方法は定期購入のご注文にはご利用いただけません。",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "この支払い方法は、後払いオプションではご利用いただけません。",
+        "payment_gateway_unsupported_for_country": "このお支払い方法は、お住まいの国ではご利用いただけません。",
+        "payment_gateway_unsupported_for_development_store_html": "テスト注文をするには、テスト支払いゲートウェイを使用する必要があります。<a href=\"%{docs_link}\">開発店舗でのテスト注文については</a>こちらをご覧ください。",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "このペイメントプロセッサーを使用した開発ストアの注文は上限に達しました。次の注文を行うには、テスト用の決済ゲートウェイを使用する必要があります。<a href=\"%{docs_link}\">開発ストアのテスト注文について</a>、詳しくはこちらをご覧ください。",
+        "purchase_options_agreement_blank": "購入を続けるには、延期または定期購入の条件に同意してください。",
+        "physical_gift_card_invalid_quantity": "物理的なギフトカードの品目は、ギフトカードのコード数と同じ数量でなければなりません。",
+        "physical_gift_card_duplicate_code": "物理的なギフトカードの行項目に重複したコードが含まれています。",
+        "physical_gift_card_invalid_code": "物理的なギフトカードのコードは無効です。",
+        "email_blank": "電子メールを入力する",
+        "phone_blank": "電話番号を入力",
+        "address_country_invalid": "リストから国/地域を選択",
+        "address_zip_invalid": "有効な郵便番号を入力してください。",
+        "gift_card_invalid": "ギフトカード\"%{last_four_characters}last_four_characters}\"は無効です。",
+        "vaulting_agreement_blank": "この注文の残金の支払いは後日となるため、カードは保存しておく必要があります。",
+        "sms_marketing_phone_invalid": "有効な電話番号を入力してください。",
+        "address_suggestion_did_you_mean_html": "という意味か？ %{html}?",
+        "split_cart_international_shipping_not_supported": "国際配送の場合、すべての商品は同じ配送方法を使用する必要があります。配送方法を更新するか、複数の注文を作成してください。",
+        "invalid_delivery_address_reference_handle": "配送先住所参照ハンドルが、利用可能な配送先住所に一致しませんでした。"
+      },
+      "store_credit_errors": {
+        "generic_error": "ストアクレジットに問題が発生しました。再度お試しいただくか、ページを再読み込みしてください。"
+      },
+      "redeemable_errors": {
+        "shop_cash": {
+          "currency_mismatch": "通貨が変更されました。ショップキャッシュとオファーをご確認ください。"
+        },
+        "gift_card": {
+          "duplicate": "ギフトカードはすでにご注文に適用されています。",
+          "insufficient_funds": "このギフトカードの残額はありません",
+          "expired": "このギフトカードの有効期限は切れています。",
+          "not_available": "このギフトカードの販売は終了しました。",
+          "invalid": "有効なギフトカードを入力してください。",
+          "currency_mismatch": "%{shop_currency}ギフトカードのみご利用いただけます。",
+          "generic": "ギフトカードはチェックアウト時に追加できませんでした。",
+          "throttle_limit_exceeded": "試行回数の上限を超えました。後で再試行してください。",
+          "no_longer_available": "このギフトカードはこのチェックアウトでは使用できません。"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "%{position} %{name}商品命令には空の安定 ID が含まれています。",
+        "invalid_stable_id_target": "商品命令%{position} %{name}は厩舎ID%{stable_id} を参照していますが、その厩舎IDは商品行にはありません。",
+        "duplicate_variant_id": "商品命令%{position} %{name}に重複したバリアント ID%{variant_id} が含まれています。",
+        "invalid_variant_id_target": "商品指示%{name}はバリアント ID%{variant_id} を参照していますが、そのバリアントは商品ラインにありません。",
+        "invalid_price_override_target": "行項目%{stable_id}の価格オーバーライド商品指示は、バンドル・コンポーネントなので無効です。"
+      },
+      "payment_errors": {
+        "amount_too_small": "最低支払額は0.50米ドル以上でなければなりません。高い金額でもう一度お試しください。",
+        "method_not_available": "ご指定のお支払い方法はご利用いただけません。別の支払い方法を選択して、もう一度やり直してください。",
+        "available_methods_updated": "利用可能な支払い方法が更新されました。",
+        "generic_error": "お支払いの処理に問題が発生しました。再度お試しいただくか、別のお支払い方法をご利用ください。",
+        "rejected_transaction": "お支払いが拒否されました。再度お試しいただくか、別のお支払い方法をご利用ください。",
+        "credit_card_processing": "お支払いは技術的な理由で処理できません。数分後にもう一度お試しいただくか、別のお支払い方法をご利用ください。",
+        "checkout_amount_changed": "チェックアウト時の支払額が変更されたため、お支払いを処理できませんでした。ご注文内容をご確認の上、もう一度やり直してください。",
+        "deferred_payment_not_allowed": "後払いはできません。ご注文内容をご確認の上、再度ご注文ください。",
+        "deferred_payment_required": "この注文には後払いが必要です。ご注文内容をご確認の上、再度ご注文ください。",
+        "deferred_amount_changed": "後払い金額が変更されたため、お支払いが処理されませんでした。ご注文内容をご確認の上、再度お試しください。"
       }
     }
   },
