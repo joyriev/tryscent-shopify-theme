@@ -3008,6 +3008,76 @@
       },
       "failed_address_update": {
         "description": "Ha habido un problema al actualizar tu dirección. Intenta actualizar esta página o comprueba tu conexión a Internet."
+      },
+      "load_orders_error": {
+        "description": "Vuelva a intentarlo o vuelva más tarde."
+      },
+      "load_paypal_error": {
+        "description": "Hay un problema al cargar PayPal. Por favor, inténtelo de nuevo."
+      },
+      "logout_everywhere": {
+        "description": "Algo ha ido mal al cerrar la sesión. Por favor, inténtelo de nuevo."
+      },
+      "no_access_to_locations": {
+        "description": "No tiene acceso a ninguna ubicación"
+      },
+      "not_found": {
+        "description": "Comprueba la URL o inténtalo de nuevo en unos minutos.",
+        "title": "Hay un problema al cargar esta página"
+      },
+      "order_not_found": {
+        "description": "Este pedido no existe o no tienes permiso para verlo.",
+        "title": "Pedido no encontrado"
+      },
+      "profile_update_error": {
+        "description": "Ha habido un problema al actualizar tu perfil. Intenta actualizar esta página o comprueba tu conexión a Internet."
+      },
+      "resend_link": {
+        "too_many_requests": "Demasiadas solicitudes. Vuelva a intentarlo más tarde."
+      },
+      "load_extension_error": {
+        "description": "Actualice esta página o inténtelo de nuevo en unos minutos."
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "description": "Por favor, inténtelo de nuevo en unos minutos"
+      }
+    },
+    "payment_methods": {
+      "add_payment_method_button": "Añadir método de pago",
+      "add_payment_method_banner": "Añada un método de pago para agilizar el pago o los servicios preautorizados",
+      "no_payment_methods_banner": "No se han añadido métodos de pago",
+      "edit_payment_method_button_accessibility_label": "Editar {{paymentMethodName}} terminando en {{lastDigits}}",
+      "delete_payment_method_button": "Borrar",
+      "delete_payment_method_button_accessibility_label": "Borrar {{paymentMethodName}}",
+      "back_button": "Volver",
+      "back_button_accessibility_label": "Volver {{paymentMethodStepTitle}}",
+      "default": "Por defecto",
+      "expiration_warning_button_accessibility_label": "Mostrar aviso de caducidad para {{paymentMethodName}} que termine en {{lastDigits}}",
+      "expires_soon": "Esta tarjeta caduca pronto",
+      "expired": "Esta tarjeta ha caducado",
+      "card_update_consent": "Este método de pago se guardará para futuras compras.",
+      "card_update_consent_subscriptions": "Esta forma de pago se guardará para futuras compras y podrá utilizarse para cualquier compra periódica o aplazada.",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Añadir método de pago Google Pay",
+        "errors": {
+          "generic": "Se ha producido un problema con Google Pay. Inténtalo de nuevo o utiliza otro método de pago.",
+          "missing_billing_address": "Google Pay requiere una dirección de facturación. Por favor, añada una a su cuenta."
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "Añadir forma de pago PayPal"
+      },
+      "apple_pay": {
+        "errors": {
+          "generic": "Ha habido un problema con Apple Pay. Inténtalo de nuevo o utiliza otro método de pago.",
+          "missing_billing_address": "Apple Pay requiere una dirección de facturación. Por favor, añada una a su cuenta."
+        }
+      },
+      "store_credit": {
+        "label": "Crédito de la tienda",
+        "accesibility_label": "Crédito de la tienda - {{formattedBalance}}"
       }
     }
   }
