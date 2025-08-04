@@ -610,7 +610,62 @@
         "unit_price": {
           "accessible_separator": "per",
           "per_item": {
-            "single": "%{price} hver"
+            "single": "%{price} hver",
+            "one": "%{price} pr. %{count} varer",
+            "other": "%{price} pr. %{count} varer"
+          }
+        },
+        "gift_card_ending": "Gavekort, der slutter med %{last_characters}",
+        "estimated_tax_label": "Anslået skat",
+        "multiple_shipping_lines_label": "Forsendelse i alt",
+        "recurring_subtotal_label": "Tilbagevendende subtotal",
+        "recurring_total_label": "Tilbagevendende total",
+        "recurring_total_tooltip": "Omfatter ikke forsendelse, skat, afgifter eller eventuelle rabatter.",
+        "confirmation_number_label": "Konfirmation%{confirmation_number}",
+        "percent_off_shipping": "%{percent}% rabat på forsendelse",
+        "amount_off_shipping": "%{amount} af forsendelse",
+        "deferred_payment_info": {
+          "title": "Betaling af %{amount_due} forfalder den %{due_at}",
+          "description_html": "For spørgsmål om din bestilling, %{contact_us}.",
+          "paid_today": "I alt betalt i dag",
+          "due_on_fulfillment_title": "Betaling af %{amount_due} forfalder ved opfyldelse",
+          "due_on_receipt_title": "Betaling af %{amount_due} forfalder ved modtagelse"
+        },
+        "deferred_balance_info": {
+          "title": "Saldoen på {{amount_due}} forfalder på {{due_at}}.",
+          "due_on_fulfillment_title": "Saldo på {{amount_due}} skal betales ved opfyldelse"
+        },
+        "payment_terms_totals": {
+          "due_today": "Samlet beløb, der skal betales i dag",
+          "due_today_next": "Skal afleveres i dag",
+          "due_later": "Forfaldne beløb i alt %{due_at}",
+          "due_on_fulfillment": "Forfalder i alt ved opfyldelse",
+          "due_on_fulfillment_next": "Forfalder ved opfyldelse",
+          "due_on_receipt": "Forfalder i alt ved modtagelse",
+          "due_later_checkout_to_draft": "I alt forfalder senere",
+          "total_paid": "I alt betalt"
+        },
+        "maximum_discount_code_limit_reached": "Du har nået det maksimale antal rabatkoder. Fjern en eksisterende kode for at bruge den <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> virker ikke lige nu. Kontakt os for at få hjælp.",
+        "due_on_fulfillment": "Forfalder ved opfyldelse",
+        "duties_label": "Pligter",
+        "may_be_charged_on_delivery": "Kan opkræves ved levering",
+        "updated_shipping_method": "Opdateret forsendelsesmetode: %{shipping_method}",
+        "recurring_total_multiple_label": "Denne ordre har en tilbagevendende opkrævning for flere varer.",
+        "deferred_total_due_date_label": "Forfaldne beløb i alt {{date}}",
+        "deferred_total_due_date_label_next": "På grund af %{date}",
+        "expand_component_information": {
+          "one": "Vis %{count} element",
+          "other": "Vis %{count} elementer"
+        },
+        "collapse_component_information": {
+          "one": "Skjul %{count} elementer",
+          "other": "Skjul %{count} elementer"
+        },
+        "discount_discovery": {
+          "merchandise_quantity_label": {
+            "one": "%{count} genstand",
+            "other": "%{count} elementer"
           }
         }
       },

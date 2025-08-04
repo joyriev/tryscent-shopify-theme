@@ -2305,8 +2305,88 @@
         "variant_not_found": "Kann keine Variante finden",
         "variant_requires_selling_plan": "Die Variante kann nur mit einem Verkaufsplan erworben werden.",
         "selling_plan_not_available_for_company_locations": "Für B2B-Bestellungen ist nur ein einmaliger Kauf möglich.",
-        "digital_product_not_available_for_company_locations": "Dieser Artikel kann nicht zu einer B2B-Bestellung hinzugefügt werden"
+        "digital_product_not_available_for_company_locations": "Dieser Artikel kann nicht zu einer B2B-Bestellung hinzugefügt werden",
+        "buyer_cannot_purchase_for_company_locations": "Sie können für diesen Ort nicht kaufen",
+        "selling_plan_not_applicable": "Verkaufsplan kann nicht auf Variante angewendet werden",
+        "shipping_address_not_required": "Für diesen Wagen ist kein Versand erforderlich",
+        "shipping_address_invalid": "Bei der Berechnung Ihrer Versandkosten ist ein Problem aufgetreten. Fahren Sie mit der Kasse fort, um einen Versandtarif auszuwählen, bevor Sie Ihre Bestellung abschließen.",
+        "bundle_requires_components": "Das Bundle-Produkt%{name}' kann nicht in den Warenkorb gelegt werden.",
+        "gift_card_with_components_not_supported": "Das Bundle-Produkt%{name}' kann nicht in den Warenkorb gelegt werden.",
+        "gift_card_price_must_be_greater_than_zero": "Das Bundle-Produkt%{name}' kann nicht in den Warenkorb gelegt werden.",
+        "gift_card_recipient_validation_error": "Der angegebene Geschenkkartenempfänger ist ungültig",
+        "view_lines_limit_reached": "Die Zeilen müssen kleiner sein als %{limit}",
+        "cart_too_large": "Der Wagen ist zu groß.",
+        "merchandise_line_transformers": {
+          "run_error": "In Ihrem Warenkorb ist ein Fehler aufgetreten."
+        }
+      },
+      "storefront": {
+        "invalid_password": "Passwort falsch, bitte versuchen Sie es erneut."
+      },
+      "tags": {
+        "add_articles": "Suche auf Artikel einschränken, die auch den Tag %{tag}",
+        "add_products": "Auswahl auf Produkte einschränken, die dem Tag entsprechen %{tag}",
+        "remove_articles": "Erweitern Sie die Suche auf Artikel, die nicht getaggt sind %{tag}",
+        "remove_products": "Tag entfernen %{tag}"
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Vielen Dank, dass Sie sich in unsere Mailingliste eingetragen haben.",
+        "disclaimer": "Sie können sich jederzeit wieder abmelden.",
+        "unsubscribe": "Abbestellen"
+      },
+      "unsubscribed": {
+        "confirmation": "Sie haben sich von unserer Mailingliste abgemeldet.",
+        "disclaimer": "Sie werden keine weiteren Marketing-Updates von uns erhalten. Sie können sich jederzeit wieder anmelden.",
+        "preview": "Sie geben eine Vorschau darauf, was die Kunden sehen werden, wenn sie sich abmelden."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Sie haben sich für die Nachverfolgung der geöffneten E-Mails entschieden.</b>",
+          "visibility": "Die Öffnungsrate von E-Mails wird anonym gemeldet. Wir werden nur sehen, ob Sie eine E-Mail als Teil einer aggregierten E-Mail-Öffnungsrate geöffnet haben.",
+          "opt_out_html": "Wenn Sie diese Informationen nicht weitergeben möchten, können Sie die Verfolgung der geöffneten E-Mails <a style='text-decoration:underline;' href='%{link}'>deaktivieren</a>.",
+          "preview_bar": "Sie geben eine Vorschau darauf, was Ihre Kunden sehen werden, wenn sie sich für die Nachverfolgung der geöffneten E-Mails entscheiden."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Sie haben die Nachverfolgung der geöffneten E-Mails abgewählt.</b>",
+          "visibility": "Wir werden nicht sehen, ob Sie unsere E-Mails geöffnet haben.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Melden Sie sich</a> für die Nachverfolgung geöffneter E-Mails an.",
+          "preview_bar": "Sie geben eine Vorschau darauf, was Ihre Kunden sehen werden, wenn sie sich von der Verfolgung der geöffneten E-Mails abmelden."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Wir verfolgen nicht mehr, wie eine E-Mail geöffnet wird.</b>",
+          "privacy_policy": "Nachdem diese E-Mail verschickt wurde, haben wir unsere Datenschutzrichtlinien aktualisiert und verfolgen nun nicht mehr, wie eine E-Mail geöffnet wird."
+        },
+        "track": {
+          "status_html": "<b>E-Mail-Öffnungsnachweis wird gemeldet.</b>",
+          "visibility": "Wir sehen nur, ob Sie die E-Mail geöffnet haben, und zwar als Teil der gesamten Öffnungsrate der E-Mail."
+        },
+        "updated_policy": {
+          "status_html": "<b>E-Mail-Öffnungstracking wird gemeldet.</b>",
+          "visibility": "Wir haben unsere Richtlinie aktualisiert und verfolgen nun die Öffnungsraten von E-Mails. Die Öffnungsrate von E-Mails wird anonym gemeldet. Wir werden nur sehen, ob Sie eine E-Mail als Teil der gesamten Öffnungsrate geöffnet haben.",
+          "opt_out_html": "Wenn Sie diese Informationen nicht weitergeben möchten, können Sie <a style='text-decoration:underline;' href='%{link}'>sich abmelden.</a>"
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "Vorrätig",
+          "out_of_stock": "Nicht mehr lieferbar"
+        }
+      }
+    },
+    "search": {
+      "error": "Beim Laden Ihrer Suchergebnisse ist ein Problem aufgetreten. Bitte aktualisieren Sie die Seite oder versuchen Sie es später noch einmal.",
+      "sorting": {
+        "price_ascending": "Preis, niedrig bis hoch",
+        "price_descending": "Preis, hoch bis niedrig"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Fehler - %{title}",
+      "shopping_cart": "Ihr Einkaufswagen"
     }
   },
   "customer_accounts": {
