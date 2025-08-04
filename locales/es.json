@@ -2561,8 +2561,57 @@
     },
     "orders": {
       "order_status": {
-        "expected_by": "Esperado para {{date}}",
-        "was_expected_by": "Se esperaba para {{date}}"
+        "expected_by": "Esperado por {{date}}",
+        "was_expected_by": "Esperado por {{date}}",
+        "gift_resend_failure": {
+          "one": "Ha habido un problema al reenviar tu tarjeta regalo. Inténtalo de nuevo o ponte en contacto con nosotros.",
+          "other": "Ha habido un problema al reenviar tus tarjetas regalo. Inténtalo de nuevo o ponte en contacto con nosotros."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "La tarjeta regalo se enviará por correo electrónico aparte.",
+          "other": "Cada tarjeta regalo se enviará en un correo electrónico independiente."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "La tarjeta regalo se enviará en un texto aparte.",
+          "other": "Cada tarjeta regalo se enviará en un texto independiente."
+        },
+        "status_timestamp": "Actualizado {{date}}",
+        "estimated_delivery": "Previsto {{date}}",
+        "delivered": "Llegada {{date}}",
+        "buy_with_prime_logo_accessibility_label": "Amazon Comprar con logotipo Prime",
+        "in_review_description": "Le avisaremos si necesitamos más información o cuando se confirme su pedido.",
+        "in_review_title": "Su pedido está siendo revisado",
+        "last_updated": "Última actualización {{date}}",
+        "multiple_shipments_label": "Envíos múltiples",
+        "multiple_statuses_label": "Múltiples estados de pedido",
+        "no_tracking_number": "No hay número de seguimiento para este envío.",
+        "on_its_way_title": "Su envío está en camino",
+        "out_for_delivery_label": "Fuera de servicio",
+        "out_for_delivery_title": "Su envío está listo para la entrega",
+        "resume_tracking": "Seguimiento de currículos",
+        "submitted_description": "Revise los detalles del pedido y del pago.",
+        "there_was_a_problem_label": "Hubo un problema",
+        "track_shipment": "Seguimiento del envío",
+        "request_return": "Solicitud de devolución",
+        "view_order_for_details": "Ver pedido para más detalles",
+        "delivery_promise_v2": {
+          "promise_line": {
+            "external_promise_brand_label": "Entrega por",
+            "not_delivered_by_label": "Entregado después de {{date}}",
+            "delivery_guarantee_expired_label": "Garantía de entrega expirada",
+            "modal_accessibility_button_label": "Detalles de la promesa de entrega",
+            "download_shop_app_button_label": "Descargar Shop to track",
+            "track_with_shop_button_label": "Pista con tienda"
+          },
+          "details_modal": {
+            "active_delivery_guarantee_label": "Entrega por {{date}}",
+            "expired_delivery_guarantee_description": "La garantía de 30 días de Shop Promise de este pedido ha expirado.",
+            "expired_badge_label": "Caducado",
+            "order_includes_guarantees_label": "Su pedido incluye {{deliveryAgreementsCount}} garantías",
+            "order_includes_guarantees_description": "Shop Promise garantiza una entrega rápida y fiable. Reclame Shop Cash si su pedido llega después de {{date}}.",
+            "delivered_after_label": "Entregado después de {{date}}"
+          }
+        }
       },
       "group_title_label": "Parte de: {{groupTitle}}",
       "group_title_label_with_parent": "Para: {{groupTitle}}",

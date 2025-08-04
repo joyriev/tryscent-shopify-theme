@@ -1273,7 +1273,66 @@
         "eps_label": "Virement eps",
         "klarna_slice_it_label": "La finance avec Klarna",
         "cashapppay_label": "Cash App Pay",
-        "blik_label": "Etain"
+        "blik_label": "Etain",
+        "use_location_billing_address_label": "Utiliser la localisation de l'adresse de facturation",
+        "use_location_shipping_address_label": "Utiliser l'adresse de livraison",
+        "no_working_method_error": "Ce magasin ne peut pas accepter de paiements pour le moment. Actualisez cette page ou revenez plus tard.",
+        "brand_not_available": "Ce magasin n'accepte pas la {{brand}}. Veuillez utiliser une autre carte pour payer.",
+        "shipping_rate_updated": "Les méthodes d'expédition disponibles ont été mises à jour. Confirmez votre choix avant de passer à la caisse.",
+        "preview_not_available": {
+          "title": "L'aperçu n'est pas disponible",
+          "content": "Ne vous inquiétez pas, cette caisse express fonctionne pour vos clients.",
+          "button": "Ok"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Saisir une date d'émission valide",
+              "issue_number": "Saisir un numéro de délivrance valide"
+            },
+            "invalid": {
+              "verification_value": "Saisir un CVV ou un code de sécurité valide"
+            }
+          }
+        },
+        "simulated_checkout": "Avant-première bientôt disponible",
+        "simulated_express_checkout": "Les portefeuilles ne sont pas disponibles dans l'aperçu de l'éditeur en raison de votre région ou de votre navigateur.",
+        "vaulting_agreement_label": "Enregistrez mes informations de paiement avec %{company} pour un paiement plus rapide.",
+        "business_customer_vaulting_payment_label": "Enregistrez cette carte à la caisse et autorisez %{company} à la débiter pour les futurs achats effectués dans ce lieu. Tous les contacts affectés à cet établissement peuvent utiliser la carte.",
+        "purchase_options_and_vaulting_agreement_label": "Un ou plusieurs articles de votre panier font l'objet d'un achat différé ou d'un abonnement. En poursuivant votre paiement, vous acceptez que votre méthode de paiement soit automatiquement débitée au prix et à la fréquence indiqués sur cette page jusqu'à ce qu'elle prenne fin ou que vous l'annuliez. Toutes les annulations sont soumises à la %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "politique d'annulation",
+        "saved_credit_card_cvv_verification": "À des fins de vérification, veuillez saisir le code de sécurité de votre carte.",
+        "saved_credit_card_actions": {
+          "edit": "Editer"
+        },
+        "saved_credit_cards_modal": {
+          "view_all_label": "Voir toutes les cartes sauvegardées",
+          "done": "Terminé"
+        },
+        "add_credit_card_modal": {
+          "title": "Ajouter une carte",
+          "save": "Économiser"
+        },
+        "delete_credit_card_modal": {
+          "confirmation": "Êtes-vous sûr de vouloir supprimer le {{brandName}} se terminant par {{lastDigits}}?"
+        },
+        "edit_credit_card_modal": {
+          "title": "Edit card",
+          "done": "Terminé",
+          "description": "Vous ne pouvez modifier que l'adresse de facturation de votre carte.",
+          "fields": {
+            "default": "Défini comme valeur par défaut",
+            "card_number": "Numéro de la carte",
+            "expiry": "Expiration date",
+            "billing": "Projet de loi"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Il y a %{count} carte expirée, que vous pouvez consulter et modifier dans votre compte.",
+          "other": "Il y a %{count} cartes expirées, que vous pouvez consulter et modifier dans votre compte."
+        },
+        "local_payment_method_receiver_notice": "Après avoir passé votre commande, vous recevrez les détails du paiement. Effectuez le paiement à un guichet automatique ou en ligne dans les {{dueDays}}.",
+        "order_edit_banner_title": "Le paiement de {{amount_owed}} est nécessaire"
       }
     },
     "sentence": {
