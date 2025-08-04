@@ -578,7 +578,7 @@
         "saved_by_payment_method": "Gerettet von %{payment_method}"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren.",
+        "unavailable_addresses_only_countries": "Ihre Bestellung kann nur nach {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren.",
         "shipping_method": "Die Versandoptionen für Ihre Bestellung haben sich geändert. Überprüfen Sie Ihre Auswahl und versuchen Sie es erneut.",
         "shipping_method_not_available": "Ihr Warenkorb wurde aktualisiert und die hinzugefügten Artikel können nicht an Ihre Adresse geliefert werden. Entfernen Sie die Artikel, um Ihre Bestellung abzuschließen.",
         "shipping_method_not_available_generic": {
@@ -591,7 +591,12 @@
           "other": "Ein oder mehrere Artikel, die Sie hinzugefügt haben, werden nicht an Ihren Standort geliefert. Entfernen Sie sie, um zur Kasse zu gehen, oder kontaktieren Sie den Shop."
         },
         "payment_method_not_supported": "Sie können diese Zahlungsmethode nicht für %{country} verwenden. Bitte verwenden Sie eine andere Zahlungsmethode für den Versand in dieses Land.",
-        "empty_state": "Geben Sie Ihre Versandadresse ein, um die verfügbaren Versandmethoden anzuzeigen."
+        "empty_state": "Geben Sie Ihre Versandadresse ein, um die verfügbaren Versandmethoden anzuzeigen.",
+        "title": "Versand nicht möglich",
+        "invalid_selected_address": "Ausgewählte Lieferadresse ist nicht gültig",
+        "invalid_selected_address_with_update_link": "Die ausgewählte Lieferadresse ist nicht gültig. %{update_address_link} oder wählen Sie eine andere Adresse",
+        "unavailable_selected_address": "Versand für ausgewählte Adresse nicht verfügbar",
+        "unavailable_selected_address_for_region": "Der Versand ist für {{region}} nicht verfügbar. Wählen Sie eine andere Adresse, um fortzufahren"
       },
       "order_summary": {
         "for_add_on": "Für: %{group_title}",
@@ -1321,6 +1326,62 @@
         "risky": "Es gab ein Problem bei der Bearbeitung Ihrer Zahlung. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
         "expired_buyer_action": "Die Zahlungsmethode wurde abgebrochen. Bitte versuchen Sie es erneut.",
         "name_mismatch": "Bitte überprüfen Sie Ihre Kartendaten. Der Name auf Ihrer Karte und die Rechnungsadresse stimmen nicht überein."
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Express-Kasse",
+        "or": "OR",
+        "or_pay_another_way": "Oder auf andere Weise bezahlen",
+        "or_check_out_another_way": "Oder sehen Sie sich eine andere Möglichkeit an",
+        "or_pay_with_credit_card": "Oder mit Kreditkarte bezahlen"
+      },
+      "post_purchase": {
+        "page_title": "Post-Kauf",
+        "title": "Post-Kauf",
+        "escape_confirmation": "Sie haben Ihre Bestellung bezahlt.",
+        "escape_action": "Auftragsbestätigung ansehen '",
+        "components": {
+          "close": "Schließen Sie",
+          "expand": "Mehr sehen",
+          "processing": "Verarbeitung...",
+          "submit": "Einreichen"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Umleitung...",
+        "redirecting_title": "Umleitung...",
+        "redirecting_notice": "Warten Sie, wir leiten Sie um.",
+        "redirecting_to_bank": "Umleitung zu {{bank}}",
+        "complete_your_purchase_title": "Schließen Sie Ihren Kauf ab",
+        "continue_to_payment_gateway_notice": "Fahren Sie mit der Zahlung fort, um Ihre Zahlungsinformationen hinzuzufügen.",
+        "complete_your_purchase_title_error": "Korrigieren Sie Ihre Zahlungsinformationen",
+        "continue_to_payment_gateway_notice_error": "Ihre Zahlungsinformationen konnten nicht verifiziert werden.",
+        "page_title": "Auftragsbearbeitung",
+        "title": "Auftragsbearbeitung",
+        "your_order_has_been_received_title": "Danke für Ihre Bestellung",
+        "you_will_receive_confirmation": "Wir erhalten im Moment viele Bestellungen. Sie sollten bald eine Bestätigung per E-Mail oder SMS erhalten. Wenn Sie sie nicht innerhalb der nächsten Stunde erhalten, lassen Sie es uns wissen.",
+        "you_will_not_be_charged": "Sie werden noch nicht belastet",
+        "wait": {
+          "short": "Ihre Bestellung wird gerade bearbeitet.",
+          "medium": {
+            "one": "Ihre Bestellung wird gerade bearbeitet. Die geschätzte Wartezeit beträgt %{count} Minute.",
+            "other": "Ihre Bestellung wird gerade bearbeitet. Die geschätzte Wartezeit beträgt %{count} Minuten."
+          },
+          "long": "Sie erhalten eine E-Mail, sobald Ihre Bestellung bearbeitet wurde. Derzeit gibt es ein hohes Auftragsvolumen.",
+          "no_auto_refresh_html": "Wenn Sie nicht automatisch weitergeleitet werden, %{link}.",
+          "refresh_this_page": "diese Seite aktualisieren"
+        },
+        "action_required": "Erforderliche Maßnahmen",
+        "modal_notice": "Wir wenden uns an {{paymentMethod}}"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Schließen Sie Ihren Einkauf mit Ihrem {{paymentMethod}} ab",
+        "timer_message": "Sie haben {{timeLeft}} zu zahlen",
+        "copy_text": "Kopieren Sie den Code {{paymentMethod}} ",
+        "open_app_text": "Öffnen Sie die Anwendung {{paymentMethod}} ",
+        "header": "Bezahlen mit {{paymentMethod}}",
+        "qr_code": {
+          "instructions": "Schließen Sie Ihren Einkauf mit Ihrem {{paymentMethod}} ab"
+        }
       }
     }
   },
