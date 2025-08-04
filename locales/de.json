@@ -529,7 +529,15 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "Wählen Sie eine Zahlungsoption"
-        }
+        },
+        "network_card_payment_options": "Wählen Sie ein Kartennetz",
+        "network_card_persistence_description": "Das ausgewählte Netzwerk wird zusammen mit Ihrer Zahlungsmethode für zukünftige Transaktionen gespeichert.",
+        "amazon_payments_login_hint": "Sie werden aufgefordert, sich mit Amazon anzumelden.",
+        "amazon_payments_logout": "Bei Amazon Pay abmelden",
+        "amazon_payments_failed_mfa_challenge": "Die ausgewählte Zahlungsmethode konnte nicht verwendet werden. Wählen Sie eine andere Methode oder wenden Sie sich an Ihre Bank oder Ihren Kartenaussteller.",
+        "amazon_payments_abandoned_mfa_challenge": "Ihre Zahlung konnte nicht abgeschlossen werden. Versuchen Sie eine andere Zahlungsmethode oder kontaktieren Sie Ihre Bank oder Ihren Kartenaussteller.",
+        "amazon_payments_could_not_enqueue_authorize": "Es gab ein Problem bei der Bearbeitung Ihrer Zahlung. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "amount_left_to_pay_label": "Fällige Zahlung:"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."
@@ -1203,6 +1211,22 @@
         },
         "shipping_information_redirect_link": "Geben Sie hier Ihre Informationen ein",
         "loading_progressive_rates": "Auf der Suche nach weiteren Tarifen..."
+      },
+      "localized_fields": {
+        "additional_information": {
+          "shipping_credential_cn": "ID-Nummer des Einwohners",
+          "tax_credential_it": "Steuernummer (fakultativ)",
+          "tax_email_it": "PEC (fakultativ)",
+          "tax_credential_co": "MEHRWERTSTEUER",
+          "tax_credential_type_co": "Art der Bescheinigung",
+          "shipping_credential_co": "MEHRWERTSTEUER",
+          "shipping_credential_type_co": "Art der Bescheinigung",
+          "tax_credential_type_mx": "Steuerliches Regime",
+          "tax_credential_use_mx": "Verwendung von CFDI",
+          "shipping_credential_tw": "Nationale ID-Nummer/VAT",
+          "tax_credential_tr": "Republik Türkei Identitätsnummer / Mehrwertsteuer",
+          "shipping_credential_tr": "Republik Türkei Identitätsnummer / Mehrwertsteuer"
+        }
       }
     }
   },
