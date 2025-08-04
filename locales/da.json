@@ -2825,6 +2825,64 @@
         "selection_confirmation_button": "Vælg placering",
         "title": "Hvilket sted køber du til?",
         "title_choose_location": "Vælg et sted"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all_accessibility_label": "Skjul alle ordrer i gennemgang",
+          "show_all_accessibility_label": "Vis alle ordrer i gennemgang",
+          "show_all_orders_in_review": "Vis alle ordrer i gennemgang",
+          "show_less_orders_in_review": "Vis færre ordrer i gennemgang",
+          "pending_tab_accessibility_label": {
+            "pending_orders": {
+              "one": "Du har {{count}} ventende ordre"
+            }
+          },
+          "pagination": {
+            "nav_accessibility_label": "Navigationsknapper til gennemgang af ordrer"
+          }
+        },
+        "order_list_column_headers_location": "Beliggenhed",
+        "removed_company_contact_tooltip": "Fjernet fra virksomheden"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Bekræftet {{date}} fra ordre {{draftOrderName}}.",
+        "loading": "Indlæsning af ordredetaljer",
+        "loading_finished_accessibility_message": "Ordreoplysninger er blevet indlæst",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Din betaling er {{count}} dage forsinket",
+              "other": "Din betaling er {{count}} dage forsinket"
+            },
+            "banner_due_today": "Din betaling skal ske i dag",
+            "title": "Forfalden betaling",
+            "title_with_date": "Forfalden betaling {{date}}",
+            "title_due_on_receipt": "Betaling ikke forfalden endnu",
+            "title_due_on_fulfillment": "Betaling ved opfyldelse",
+            "description_overdue": "Din betaling er forsinket.",
+            "description_partially_paid": "Denne ordre blev delvist betalt. Du har en resterende saldo.",
+            "description_authorized": "Din betalingsmetode vil blive trukket på forfaldsdatoen, eller du kan betale nu.",
+            "description_waiting_for_manual_payment": "Denne ordre har en afventende betaling. Saldoen vil blive opdateret, når betalingen er modtaget.",
+            "description_due_on_receipt_partially_paid": "Denne ordre blev delvist betalt. Du har en resterende saldo. Du vil modtage en faktura, når betalingen skal ske.",
+            "description_due_on_fulfillment": "Betaling skal ske, når alle varer i denne ordre er opfyldt.",
+            "description_due_on_fulfillment_partially_paid": "Denne ordre blev delvist betalt. Du har en resterende saldo. Betalingen forfalder, når alle varer i denne ordre er leveret."
+          },
+          "draft": {
+            "description": "Betalingsoplysningerne fastlægges, når ordren bekræftes.",
+            "title": "Betaling endnu ikke forfalden",
+            "in_review": {
+              "description": "Betalingsoplysningerne fastlægges, når ordren bekræftes.",
+              "title": "Betaling endnu ikke forfalden"
+            },
+            "submitted": {
+              "description": "Send betaling for at bekræfte denne ordre.",
+              "deposit": {
+                "title": "Betaling er forfalden",
+                "due_later": "Saldoen er på {{translatedName}} vilkår og forfalder på {{dueDate}}."
+              }
+            }
+          }
+        }
       }
     }
   }

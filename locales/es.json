@@ -666,7 +666,68 @@
         "same_billing_address_checkbox_label": "Utilizar la dirección de envío como dirección de facturación",
         "location_billing_address_label": "Localización Dirección de facturación",
         "location_shipping_address_label": "Dirección de envío",
-        "use_order_billing_address_label": "Utilizar la dirección de facturación del pedido"
+        "use_order_billing_address_label": "Utilizar la dirección de facturación del pedido",
+        "use_location_billing_address_label": "Utilizar la dirección de facturación",
+        "use_location_shipping_address_label": "Utilizar la dirección de envío",
+        "no_working_method_error": "Esta tienda no puede aceptar pagos en este momento. Actualiza esta página o vuelve más tarde.",
+        "brand_not_available": "Esta tienda no acepta {{brand}}. Por favor, utiliza otra tarjeta para pagar.",
+        "shipping_rate_updated": "Se han actualizado los métodos de envío disponibles. Confirme su elección antes de realizar el pago.",
+        "billing_address_invalid_phone_no_card": "Actualice el número de teléfono en su dirección de facturación para continuar.",
+        "preview_not_available": {
+          "content": "No se preocupe, este pago exprés funciona para sus clientes.",
+          "button": "Ok"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Introduzca una fecha de expedición válida",
+              "issue_number": "Introduzca un número de expedición válido"
+            },
+            "invalid": {
+              "verification_value": "Introduzca un CVV o código de seguridad válido"
+            }
+          }
+        },
+        "simulated_checkout": "Vista previa próximamente",
+        "simulated_express_checkout": "Los monederos no están disponibles en la vista previa del editor debido a su región o navegador",
+        "vaulting_agreement_label": "Guardar mi información de pago con %{company} para un pago más rápido.",
+        "business_customer_vaulting_payment_label": "Guarde esta tarjeta en la caja y autorice a %{company} a cargarla en futuras compras para esta ubicación. Todos los contactos asignados a esta ubicación pueden utilizar la tarjeta.",
+        "purchase_options_and_vaulting_agreement_label": "Uno o más artículos de su cesta es una compra aplazada o de suscripción. Al continuar con el pago, acepta que su método de pago se cargue automáticamente al precio y con la frecuencia indicados en esta página hasta que finalice o usted lo cancele. Todas las cancelaciones están sujetas a la %{cancellation_policy_label}.",
+        "use_different_credit_card_label": "Utilizar otra tarjeta",
+        "saved_credit_card": "Su tarjeta de crédito guardada",
+        "saved_credit_card_info": "Cuatro últimas cifras",
+        "saved_credit_card_cvv_verification": "A efectos de verificación, introduzca el código de seguridad de su tarjeta.",
+        "saved_credit_card_actions": {
+          "delete": "Borrar"
+        },
+        "saved_credit_cards_modal": {
+          "done": "Hecho"
+        },
+        "add_credit_card_modal": {
+          "title": "Añadir tarjeta"
+        },
+        "delete_credit_card_modal": {
+          "title": "Borrar tarjeta",
+          "confirmation": "¿Estás seguro de que quieres eliminar el {{brandName}} que termina en {{lastDigits}}?",
+          "delete": "Borrar"
+        },
+        "edit_credit_card_modal": {
+          "done": "Hecho",
+          "description": "Sólo puede modificar la dirección de facturación de su tarjeta.",
+          "fields": {
+            "default": "Fijar por defecto",
+            "expiry": "Fecha de expiración",
+            "name": "Nombre en la tarjeta",
+            "billing": "Factura a"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Hay %{count} tarjeta caducada, que puede ver y editar en su cuenta.",
+          "other": "Hay %{count} tarjetas caducadas, que puede ver y editar en su cuenta."
+        },
+        "local_payment_method_receiver_notice": "Tras realizar el pedido, recibirá los datos de pago. Realiza el pago en un cajero automático o en línea en un plazo de {{dueDays}} días.",
+        "order_edit_banner_title": "Se necesita el pago de {{amount_owed}} ",
+        "order_edit_banner_subtitle": "Su pedido {{order_number}} ha sido actualizado. Revise estos cambios y, a continuación, pague para confirmar su pedido."
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
