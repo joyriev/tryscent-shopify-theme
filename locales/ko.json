@@ -1774,8 +1774,68 @@
         "inventory": {
           "partial_inventory_banner": "장바구니의 일부 품목이 매진되어 결제 시 구매할 수 없습니다.",
           "sold_out": {
-            "heading": "장바구니가 매진되었습니다."
+            "heading": "장바구니가 매진되었습니다.",
+            "storefront_body": "쇼핑을 계속하려면 스토어로 돌아가세요.",
+            "no_storefront_body": "안타깝게도 구매하려는 품목이 더 이상 판매되지 않습니다."
           }
+        },
+        "title": "Tail",
+        "time_to_checkout_title": "체크아웃 시간 - 체크아웃 시간 {{shopName}}",
+        "estimated_wait_time": {
+          "one": "예상 대기 시간입니다: { {{count}} ",
+          "other": "예상 대기 시간입니다: { {{count}} 분"
+        },
+        "last_checked": "(최종 확인: {{time}})",
+        "footer": {
+          "heading": "이 페이지는 새로고침하지 않아도 자동으로 업데이트됩니다.",
+          "body": "장바구니의 품목은 결제를 완료할 때까지 예약되지 않습니다."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "요청을 처리하는 동안 문제가 발생했습니다. 스토어 소유자에게 문의하세요."
+      },
+      "no_address_location": {
+        "header": "이 위치에 대한 배송지 주소가 없습니다.",
+        "alt_header": "누락된 배송지 주소",
+        "message": "결제를 완료하기 위해 이 위치의 주소를 추가하려면 문의해 주세요."
+      },
+      "order_errors": {
+        "creation_failure": "주문을 생성하는 동안 문제가 발생했습니다. 다시 시도하거나 자세한 내용은 문의해 주세요.",
+        "network_failure": "네트워크 오류로 인해 주문을 제출할 수 없습니다. 연결을 확인한 후 다시 시도하세요.",
+        "inventory_reservation_failure": "일부 항목은 더 이상 사용할 수 없습니다."
+      },
+      "session_errors": {
+        "session_not_unique": "주문을 처리하는 동안 문제가 발생했습니다. 스토어로 돌아가려면 이 페이지를 새로 고치세요."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "주문을 처리하는 동안 문제가 발생했습니다. 몇 분 후에 다시 시도해 보세요."
+      },
+      "pickup_point": {
+        "open_twenty_four_hours": "연중무휴 24시간 영업",
+        "selector_tabs": "픽업 지점 선택기",
+        "could_not_resolve_address": "주소를 찾을 수 없습니다. 다시 시도하거나 다른 주소를 사용하세요.",
+        "no_pickup_points_near_you": "선택한 주소 근처에 픽업 지점을 찾을 수 없습니다.",
+        "no_pickup_points_near_location": "현재 위치 근처에 픽업 지점을 찾을 수 없습니다.",
+        "pickup_unavailable_banner_title": {
+          "one": "아이템에 사용할 수 있는 픽업 지점이 없습니다.",
+          "other": "아이템에 사용할 수 있는 픽업 지점이 없습니다."
+        },
+        "paginator": {
+          "header": {
+            "one": "%{count} 포인트의 %{count} %{first} } - %{last} 표시",
+            "other": "포인트의 %{first} - %{last} %{count} 표시"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{count} 포인트의 %{pickup_point_index} ",
+            "other": "%{pickup_point_index} 의 %{pickup_point_index} %{count} 포인트"
+          },
+          "selected_page": {
+            "one": "%{count} 포인트의 %{first} } - %{last} 포인트",
+            "other": "%{first} - %{last} %{count} 포인트"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} 현재 위치 근처의 픽업 지점"
         }
       }
     },
