@@ -1041,6 +1041,60 @@
             "other": "해당 주소에 사용할 수 있는 배송 방법이 없으므로 이러한 품목은 장바구니에서 제거됩니다."
           }
         }
+      },
+      "shipping": {
+        "delivery_title": "배달",
+        "shipping_method_one_time_purchase_group_title": "일회성 구매",
+        "shipping_method_first_shipment_group_title": {
+          "one": "첫 배송",
+          "other": "첫 배송"
+        },
+        "shipping_method_subscription_group_title": "구독",
+        "subscription_shipping": "정기구독 배송",
+        "waiting_on_rate_notice": "사용 가능한 배송비 확인하기...",
+        "waiting_on_pickup_location_notice": "이용 가능한 픽업 장소 찾기...",
+        "no_rates_for_cart_or_destination_notice": "장바구니 또는 주소에 사용할 수 있는 배송 방법이 없습니다.",
+        "no_pickup_location_notice": "제품 중 하나 이상을 픽업할 수 없습니다.",
+        "no_rates_for_country_notice": "이 주소에 대한 배송료를 찾을 수 없습니다.",
+        "no_rates_contact_notice": "자세한 내용은 문의하세요",
+        "cheapest_rate_label": "가장 저렴한",
+        "please_enter_your_shipping_information_notice": "배송 정보를 입력하세요.",
+        "estimated_delivery_date": {
+          "one": "%{count} 영업일",
+          "other": "%{count} 영업일"
+        },
+        "estimated_delivery_date_range": "%{minimum} ~ %{maximum} 영업일",
+        "estimated_delivery_time": "예상 배송 %{time}",
+        "estimated_delivery_time_range": "예상 배송 %{min_time}–%{max_time}",
+        "delivery_today": "당일 배송 %{time}",
+        "delivery_tomorrow": "익일 배송 %{time}",
+        "two_day_delivery": "2일 배송 %{time}",
+        "delivery": "배달 %{time}",
+        "arrives_time": "도착 %{time}",
+        "arrives_time_range": "도착 %{min_time}–%{max_time}",
+        "estimated_time": "예상 %{time}",
+        "estimated_time_range": "예상 %{min_time}–%{max_time}",
+        "default_description": "영업일 기준 1일 이내 배송",
+        "shipping_line_phone_label": "휴대폰 번호(필수)",
+        "shipping_line_phone": "배송업체에서 이 번호를 사용하여 연락할 수 있습니다.",
+        "shipping_line_delivery_phone_label": "휴대폰 번호",
+        "shipping_line_delivery_phone": "배송 관련 업데이트가 있을 때 연락을 받을 수 있습니다.",
+        "shipping_line_delivery_instructions": "도어 코드나 하차 안내 등 필요한 정보를 입력하세요.",
+        "other_method": {
+          "zero": "사용 가능한 다른 방법 없음",
+          "one": "%{count} 에서 다른 방법을 사용할 수 있습니다.",
+          "other": "%{count} 에서 다른 방법을 사용할 수 있습니다."
+        },
+        "shipping_rate_discounted_amount": "이전: %{original_amount}. Now: %{amount}",
+        "prime_not_available": {
+          "default": "주문에 프라임 배송을 사용할 수 없습니다. 배송 옵션이 업데이트되었습니다."
+        },
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "%{count} 이상 배송 시 무료 배송",
+            "other": "%{count} 더 많은 배송에 대한 무료 배송"
+          }
+        }
       }
     },
     "sentence": {
