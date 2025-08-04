@@ -2529,11 +2529,11 @@
   "customer_accounts": {
     "account_information": {
       "verify_new_email_modal": {
-        "one_time_password_label": "código de 6 dígitos",
+        "one_time_password_label": "Código de 6 cifras",
         "email_resend_button": "Reenviar código",
         "title": "Verificar correo electrónico",
         "description": "Introduzca el código enviado a {{email}}",
-        "verify_button": "Verificar",
+        "verify_button": "Verifique",
         "verify_button_accessibility_label": "Verificar contraseña de un solo uso",
         "cancel_button": "Cancelar",
         "cancel_button_accessibility_label": "Cancelar edición de correo electrónico",
@@ -2542,6 +2542,14 @@
       "email_update_success_modal": {
         "title": "Verificar correo electrónico",
         "description": "Correo electrónico actualizado con éxito. Redirigiendo al inicio de sesión."
+      },
+      "loading_accessibility_message": "Carga de la información de la cuenta",
+      "loading_finished_accessibility_message": "La información de la cuenta se ha cargado",
+      "profile_card": {
+        "cancel_accessibility_label": "Cancelar la edición del perfil",
+        "email_help_text": "El correo electrónico utilizado para iniciar sesión no se puede cambiar",
+        "no_name_provided_accessibility_label": "Sin nombre añadido",
+        "phone_number_help_text": "El número de teléfono utilizado para el inicio de sesión no se puede cambiar"
       }
     },
     "orders": {
@@ -2580,7 +2588,27 @@
         "open_menu_accessibility_label": "Abrir una cuenta",
         "close_menu_accessibility_label": "Navegación para cerrar la cuenta",
         "loading_message": "Cargando Navegación por la cuenta"
-      }
+      },
+      "contact_email_subject": "Contacto de la tienda online {{shopName}} ",
+      "delete_confirmation": {
+        "delete": "Borrar"
+      },
+      "dismiss_toast": "Desestimar",
+      "document_title": "{{sectionName}} - {{shopName}} - Cuentas",
+      "navigation_accessibility_message": "Ha navegado hasta {{sectionName}}",
+      "open_menu_accessibility_label": "Abrir la navegación principal",
+      "shop_logo_accessibility_label": "{{shopName}} logo",
+      "settings_link": "Ajustes",
+      "country_switcher_toast_message": "País cambiado a {{countryName}}",
+      "switch_country": "Cambiar de país",
+      "no_countries_found": "No se han encontrado países",
+      "location_switcher_toast_message": "Ubicación cambiada a {{locationName}}",
+      "switch_location": "Ubicación del interruptor",
+      "no_locations_found": "No se ha encontrado ninguna ubicación",
+      "try_new_search": "Probar una nueva búsqueda",
+      "view_details": "Ver detalles",
+      "search": "Buscar en",
+      "skip_to_content": "Ir al contenido"
     }
   }
 }
