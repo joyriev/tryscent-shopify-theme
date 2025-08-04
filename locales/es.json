@@ -2049,6 +2049,73 @@
         "checkout_review_and_pay": "Su pedido %{order_name} ha sido actualizado. Revise estos cambios y, a continuación, pague para confirmar su pedido.",
         "order_updated_on": "Su pedido se actualizó el %{last_edited_at}.",
         "order_review_and_pay": "Su pedido ha sido actualizado. Revise y pague para confirmar su pedido."
+      },
+      "order_review_requirement": {
+        "checkout_to_draft": "La ubicación de la empresa está configurada para enviar todos los pedidos como borradores para su revisión.",
+        "missing_address": "No hay dirección de envío disponible: Falta la dirección de ubicación de la empresa y el uso de dirección única está desactivado."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Se efectuará un cargo en su tarjeta de crédito %{amount}",
+        "payment_total_label": "Pago total",
+        "change_currency_link": "Cambiar a %{currency_name}",
+        "card_provider_fx_charges_warning": "El proveedor de su tarjeta puede cobrar comisiones por las transacciones en %{currency_code}.",
+        "currency_not_supported_by_shop": "La moneda seleccionada ya no está disponible. Todos los precios están ahora en %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Su cesta se ha actualizado en función de su país de envío.",
+        "cart_and_currency_updated_based_on_country": "Su cesta y la moneda se ha actualizado en función de su país de envío."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Su país/región ha sido actualizado. Introduce tu dirección de envío para continuar con la compra."
+      },
+      "tips": {
+        "title": "Añadir consejo",
+        "description": "Muestra tu apoyo al equipo en %{shop_name}",
+        "presets_description": "Seleccione un porcentaje de propina",
+        "custom_label": "Punta personalizada",
+        "add_tip": "Añadir consejo",
+        "update_tip": "Consejo de actualización",
+        "message": "Gracias, se lo agradecemos."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "one": "Comprar %{product_name} y %{count} otro artículo",
+          "other": "Compra %{product_name} y %{count} otros artículos"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "other": "Primeros pagos %{count} %{total_price} cada uno"
+          },
+          "following_cycles": "entonces %{total_price} cada %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": "entonces %{count} pago a %{total_price}",
+            "other": "entonces %{count} pagos a %{total_price} cada uno"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "delete_customer_mandate": {
+          "generic_error": "Se ha producido un problema al procesar su solicitud.",
+          "success_message": "Su método de pago se ha eliminado correctamente"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "Demasiados intentos",
+          "description": "Por favor, inténtelo de nuevo en unos minutos"
+        },
+        "line_to_check_out": "Estás en la cola para pagar",
+        "cart_summary_heading": "Su cesta",
+        "inventory": {
+          "partial_inventory_banner": "Parte de tu cesta está agotada y no estará disponible para comprar en el momento de la compra.",
+          "sold_out": {
+            "heading": "Tu carrito está agotado"
+          }
+        }
       }
     },
     "sentence": {
