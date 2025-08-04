@@ -93,14 +93,14 @@
             "title_too_long": "عنوان البضاعة طويل جدًا."
           },
           "captcha": {
-            "token_expired": "انتهت صلاحية رمز التحقق المقدم. أكمل رمز تحقق جديد للمتابعة في إتمام الشراء.",
-            "token_invalid": "رمز التحقق المقدم غير صالح. أكمل رمز تحقق جديد للمتابعة في إتمام الشراء.",
+            "token_expired": "انتهت صلاحية الرمز الرمز المميز المتوفر. أكمل رمز التحقق الجديد لمتابعة عملية الدفع.",
+            "token_invalid": "رمز الكابتشا المتوفر غير صالح. أكمل رمز التحقق الجديد لمتابعة عملية الدفع.",
             "token_not_valid_for_session": "لا يمكن استخدام رمز التحقق المقدم مع هذه الخروج.",
-            "metadata_missing": "إكمال اختبار التحقق مطلوب لإتمام هذه العملية.",
-            "metadata_mismatch": "مزود الكابتشا والنوع المقدم لا يتطابقان مع القيم المتوقعة.",
-            "token_missing": "يجب تقديم رمز التحقق لإكمال هذه العملية.",
-            "job_already_queued": "تم بالفعل وضع التحقق من الكابتشا في قائمة الانتظار لهذا الرمز الكابتشا.",
-            "job_enqueue_failed": "فشل مهمة التحقق من الكابتشا في الدخول إلى قائمة الانتظار."
+            "metadata_missing": "يلزم إكمال كلمة التحقق (captcha) لإتمام عملية الدفع هذه.",
+            "metadata_mismatch": "موفر كلمة التحقق ونوعها المقدمان لا يتطابقان مع القيم المتوقعة.",
+            "token_missing": "يجب توفير رمز التحقق (captcha) لإكمال عملية الدفع هذه.",
+            "job_already_queued": "تم بالفعل وضع التحقق من صحة كلمة التحقق في قائمة الانتظار لهذا الرمز المميز.",
+            "job_enqueue_failed": "فشلت مهمة التحقق من صحة كلمة التحقق من التحقق من صحة كلمة التحقق."
           },
           "checkout_source": {
             "revoked": "لم يعد هذا الخروج متاحًا."
@@ -192,62 +192,62 @@
             "shop_cash_not_found": "لم يتم العثور على المتجر النقدي.",
             "shop_cash_not_allowed": "لا يُسمح بـ \"تسوق نقداً\" بدون \"تسوق نقداً\".",
             "shop_cash_unsupported_checkout_source": "لا تدعم خدمة الدفع النقدي من المتجر النقدي هذا الدفع.",
-            "shop_cash_not_enabled": "ميزة Shop Cash غير مفعلة لهذا المتجر.",
-            "shop_cash_not_available": "لا يتم دعم Shop Cash في هذه الخروج.",
-            "shop_cash_unsupported_subscriptions": "Shop Cash لا يدعم الاشتراكات.",
-            "shop_cash_unsupported_shipping": "Shop Cash لا يدعم البضائع التي لا تتطلب شحنًا.",
+            "shop_cash_not_enabled": "لم يتم تمكين خدمة الدفع النقدي في هذا المتجر.",
+            "shop_cash_not_available": "المتجر النقدي غير مدعوم في عملية الدفع هذه.",
+            "shop_cash_unsupported_subscriptions": "لا يدعم المتجر النقدي الاشتراكات.",
+            "shop_cash_unsupported_shipping": "لا يدعم المتجر النقدي البضائع بدون شحن.",
             "invalid_address_type": "نوع العنوان المقدم غير صالح لطريقة الدفع هذه.",
-            "missing_retail_attributions": "تتطلب نسب البيع بالتجزئة لمدفوعات بطاقات الائتمان التي يتم إدخالها يدويًا.",
-            "unexpected_retail_attributions": "تم توفير نسب البيع بالتجزئة بشكل غير متوقع لدفعة بطاقة الائتمان.",
+            "missing_retail_attributions": "تُعدّ عمليات البيع بالتجزئة مطلوبة لمدفوعات بطاقات الائتمان المدخلة يدوياً.",
+            "unexpected_retail_attributions": "تم توفير سمات التجزئة بشكل غير متوقع للدفع ببطاقة الائتمان.",
             "shop_cash_gift_card_not_allowed": "لا يسمح شوب كاش بشراء بطاقات الهدايا.",
-            "invalid_card_source": "هذه الجلسة لا تملك إذنًا لاستخدام مصدر البطاقة هذا.",
+            "invalid_card_source": "هذه الجلسة ليس لديها إذن لاستخدام مصدر البطاقة هذا.",
             "wallet_content_missing": "محتوى المحفظة مفقود.",
             "payment_instrument_not_found": "تعذر العثور على طريقة الدفع",
             "saved_payment_methods_not_allowed": "طرق الدفع المحفوظة غير مسموح بها.",
-            "saved_payment_methods_not_enabled": "طرق الدفع المحفوظة غير مفعلة لهذا المتجر.",
+            "saved_payment_methods_not_enabled": "لم يتم تمكين طرق الدفع المحفوظة لهذا المتجر.",
             "unauthorized_capture_method": "لا يُسمح بتكوين طريقة التقاط الدفع.",
-            "saved_payment_methods_cvv_verification_disabled": "طريقة الدفع المختارة تتطلب التحقق من CVV والذي لم يتم تفعيله لهذا المتجر. يرجى اختيار طريقة دفع مختلفة.",
-            "store_credit_not_enabled": "رصيد المتجر غير مفعل لهذا المتجر.",
-            "store_credit_account_not_found": "لم يتم العثور على حساب رصيد المتجر.",
-            "store_credit_account_mismatch": "حساب رصيد المتجر لا يتطابق مع هوية المشتري.",
-            "store_credit_mismatched_currency": "عملة حساب رصيد المتجر لا تتطابق مع عملة الدفع.",
-            "store_credit_insufficient_funds": "لا توجد أموال كافية في حساب رصيد المتجر.",
-            "store_credit_buying_gift_card": "لا يمكنك استخدام رصيد المتجر لشراء بطاقة هدية.",
-            "gift_cards_not_allowed_for_b2b": "بطاقات الهدايا غير مسموح بها في متاجر B2B.",
-            "method_required": "يجب اقتراح طريقة دفع.",
-            "paypal_express_address_invalid": "أعاد PayPal عنوانًا غير صالح.",
-            "shop_cash_unsupported_currency": "Shop Cash لا يدعم هذه العملة.",
+            "saved_payment_methods_cvv_verification_disabled": "تتطلب طريقة الدفع المختارة التحقق من CVV وهي غير ممكّنة لهذا المتجر. اختر طريقة دفع مختلفة.",
+            "store_credit_not_enabled": "لم يتم تفعيل رصيد المتجر في هذا المتجر.",
+            "store_credit_account_not_found": "حساب ائتمان المتجر غير موجود",
+            "store_credit_account_mismatch": "حساب ائتمان المتجر لا يتطابق مع هوية المشتري.",
+            "store_credit_mismatched_currency": "عملة حساب ائتمان المتجر لا تتطابق مع عملة الدفع.",
+            "store_credit_insufficient_funds": "لا توجد أموال كافية في حساب ائتمان المتجر.",
+            "store_credit_buying_gift_card": "لا يمكنك استخدام رصيد المتجر لشراء بطاقة هدايا.",
+            "gift_cards_not_allowed_for_b2b": "لا يُسمح باستخدام بطاقات الهدايا في متاجر B2B.",
+            "method_required": "يجب اقتراح طريقة الدفع.",
+            "paypal_express_address_invalid": "قام PayPal بإرجاع عنوان غير صالح.",
+            "shop_cash_unsupported_currency": "لا يدعم المتجر كاش هذه العملة.",
             "market_manager_blocks_wallet_payments": "طريقة الدفع غير مدعومة من قبل مدير السوق."
           },
           "tip": {
-            "not_accepted_by_shop": "Shop لا يقبل البقشيش.",
+            "not_accepted_by_shop": "المتجر لا يقبل الإكراميات.",
             "only_one_tip_line_allowed": "خطوط النصائح المتعددة غير مدعومة.",
-            "currency_change_reset": "تم إعادة تعيين البقشيش بسبب تغيير العملة.",
-            "tips_not_allowed_for_deferred_purchase_options": "الإكراميات غير مدعومة بعد لخيارات الشراء المؤجل.",
+            "currency_change_reset": "تمت إعادة تعيين الإكرامية بسبب تغيير العملة.",
+            "tips_not_allowed_for_deferred_purchase_options": "لم يتم دعم الإكراميات حتى الآن لخيارات الشراء المحذوفة.",
             "tips_not_allowed_for_b2b": "الإكراميات غير مسموح بها في متاجر B2B."
           },
           "sale_attribution": {
-            "draft_order_not_exist": "هذا الطلب المسودة غير موجود في المتجر الحالي.",
-            "staff_member_not_exist": "هذا الموظف غير موجود في المتجر الحالي.",
+            "draft_order_not_exist": "مشروع الأمر هذا غير موجود في المتجر الحالي.",
+            "staff_member_not_exist": "هؤلاء الموظفين غير موجودين في المتجر الحالي.",
             "location_not_exist": "هذا الموقع غير موجود في المتجر الحالي.",
             "point_of_sale_device_not_exist": "جهاز نقطة البيع هذا غير موجود في المتجر الحالي.",
-            "unresolvable_target_merchandise_lines": "لا يمكن حل نسب البيع المقترحة بالنظر إلى سياق التفاوض الحالي."
+            "unresolvable_target_merchandise_lines": "لا يمكن حل توصيفات البيع المقترحة بالنظر إلى سياق التفاوض الحالي."
           },
           "non_negotiable": {
-            "missing_non_negotiable_terms": "يجب أن يحتوي عرض المشتري الخاص بك على شروط غير قابلة للتفاوض.",
-            "invalid_signature": "التوقيع لـ {{target_terms}} غير صالح."
+            "missing_non_negotiable_terms": "يجب أن يحتوي عرض المشتري على_شروط_غير_قابلة_للتفاوض.",
+            "invalid_signature": "توقيع {{target_terms}} غير صالح."
           },
           "inventory": {
-            "missing_quantity_value": "حقل الكمية مفقود في خطوط جرد المشتري.",
-            "changing_behavior_not_allowed": "هذا العميل لا يملك إذنًا لتغيير سلوك المخزون.",
-            "only_one_inventory_behavior_allowed": "حالياً يُسمح بسلوك جرد واحد فقط لكل عملية دفع."
+            "missing_quantity_value": "حقل الكمية مفقود في سطور مخزون المشتري.",
+            "changing_behavior_not_allowed": "هذا العميل ليس لديه إذن لتغيير سلوك المخزون.",
+            "only_one_inventory_behavior_allowed": "يُسمح حالياً بسلوك واحد فقط في المخزون لكل عملية سحب."
           },
           "optional_duties": {
-            "optional_duties_not_permitted": "رفض الرسوم غير مسموح به في هذه الخروج."
+            "optional_duties_not_permitted": "لا يُسمح برفض الواجبات لهذا الخروج."
           },
           "attribution": {
-            "retail_attribution_not_allowed": "لا يُسمح بالنسبة الترويجية للبيع بالتجزئة لهذا السداد.",
-            "retail_attribution_required": "تتطلب هذه العملية في نقطة البيع تحديد المصدر."
+            "retail_attribution_not_allowed": "لا يُسمح بإسناد البيع بالتجزئة لهذا السداد.",
+            "retail_attribution_required": "مطلوب إسناد التجزئة لهذا الخروج."
           }
         },
         "full_price": "السعر الكامل:",
