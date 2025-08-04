@@ -2567,7 +2567,83 @@
       "not_supported": "がサポートされていない",
       "full_name_required": "姓と名を入力",
       "invalid_for_card_type": "は無効である",
-      "invalid_type": "申し訳ございませんが、このタイプのカードはご利用いただけません。"
+      "invalid_type": "申し訳ございませんが、このタイプのカードはご利用いただけません。",
+      "invalid_format": "フォーマットが無効",
+      "invalid_start_date_or_issue_number_for_debit": "有効な開始日または発行番号が必要",
+      "invalid_expiry_year": "は有効期限ではありません。",
+      "reset_password_html": "このメールアドレスはすでにアカウントに関連付けられています。このアカウントがあなたのものであれば、<a href=\"/account/login#recover\">パスワードをリセットする</a>ことができます。",
+      "verify_email": "%{customer_email}宛にEメールを送信しましたので、記載されているリンクをクリックしてEメールアドレスを確認してください。",
+      "product_not_available": "このお客様向けの商品は掲載されておりません。",
+      "shop_404": {
+        "title": "Eコマースサイトの作成とオンライン販売！ShopifyのEコマースソフトウェア",
+        "heros": {
+          "store_unavailable": "申し訳ございません。",
+          "store_not_exist": "この店は存在しない。",
+          "no_storefront": "この店にはまだウェブサイトがない。"
+        },
+        "links": {
+          "explore_other_stores": "他の店舗を探す",
+          "start_free_trial": "無料トライアルを開始する"
+        },
+        "owner_ctas": {
+          "header": "あなたが店主ですか？",
+          "fix_domain": "新しいウェブアドレスの設定が完了したら、%{domain_settings_link}アクセスします。Connect domain \"をクリックし、%{domain}入力します。<br>ストアに入れない場合は、%{forgot_your_store_link}ページをお試しください。",
+          "forgot_your_store_link_text": "店を忘れた",
+          "add_storefront": "%{admin_link}オンラインストアチャンネルを追加することで、ウェブサイトを設定することができます。ストアに入れない場合は、%{forgot_your_store_link}ページをお試しください。",
+          "admin_link_text": "管理者"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "直接販売",
+            "caption": "これから小売店を始める方も、規模を拡大する方も、小売店の運営に必要な機能をご利用ください。",
+            "link_text": "無料トライアル開始"
+          },
+          "open_a_store": {
+            "header": "Shopifyストアを新規オープンする",
+            "caption": "3日間の無料トライアルを開始し、その後3ヶ月間は月額1ドルで継続できる。",
+            "link_text": "今すぐ登録"
+          },
+          "editions": {
+            "header": "Shopifyエディションをチェックする",
+            "caption": "100以上の製品アップデートにより、想像以上に生産的でクリエイティブ、そしてパワフルな商取引が可能になります。",
+            "link_text": "最新エディション"
+          },
+          "store_owner": {
+            "header": "あなたが店主ですか？",
+            "caption": "ストアへのリンクに問題がありますか？%{forgot_your_store_link}機能をお試しください。ストアを再アクティブ化したい場合は、%{shopify_support_link}ご連絡ください。"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "subscribe_error": "購読エラー",
+        "unsubscribe_error": "配信停止エラー",
+        "no_account_found": "そのEメールのアカウントは見つかりませんでした。",
+        "invalid_credentials": "電子メールまたはパスワードが正しくありません。",
+        "denylisted_reset_password": "現在のパスワードが安全でないため、アカウントにアクセスできませんでした。パスワードを更新するためのEメールが送信されます。",
+        "signup_disabled": "顧客アカウントの作成が無効になりました。"
+      },
+      "address": {
+        "updated": "アドレスの更新に成功しました。",
+        "error_updating": "アドレス更新エラー",
+        "created": "アドレスの作成に成功",
+        "error_creating": "アドレス作成エラー。",
+        "deleted": "アドレスの削除に成功",
+        "error_deleting": "アドレス削除エラー。"
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "追加 %{delta}",
+          "increment_item": "追加 %{delta}",
+          "decrement_item": "%{total} %{delta}削除した。",
+          "decrement_fulfilled_line_item": "%{total} %{delta}返した。",
+          "decrement_return_line_item": "returnから%{delta}削除"
+        }
+      },
+      "order": {
+        "not_available": "この注文は利用できない"
+      }
     }
   },
   "customer_accounts": {
