@@ -849,7 +849,48 @@
         },
         "local_payment_method_receiver_notice": "Når du har afgivet din ordre, modtager du betalingsoplysninger. Foretag betalingen i en pengeautomat eller online inden for {{dueDays}} dage.",
         "order_edit_banner_title": "Betaling af {{amount_owed}} er nødvendig",
-        "order_edit_banner_subtitle": "Din ordre {{order_number}} er blevet opdateret. Gennemgå ændringerne, og betal derefter for at bekræfte din ordre."
+        "order_edit_banner_subtitle": "Din ordre {{order_number}} er blevet opdateret. Gennemgå ændringerne, og betal derefter for at bekræfte din ordre.",
+        "order_edit_banner_items_added": {
+          "other": "Tilføjet %{count}"
+        },
+        "order_edit_banner_items_removed": {
+          "with_quantities": "Fjernet {{delta}} af {{quantity}}."
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Returneret {{quantity}}",
+          "with_quantities": "Returnerede {{delta}} af {{quantity}}."
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "with_quantities": "Fjernet {{delta}} fra returnering"
+        },
+        "order_edit_banner_multiple_items_added": "Tilføjet {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Fjernet {{amount}}",
+        "order_edit_banner_multiple_items_returned": "Returneret {{amount}}",
+        "order_edit_banner_multiple_items_return_line_item_removed": "Fjernet {{amount}} fra returnering",
+        "gift_card_store_credit": {
+          "add_label": "Tilføj et gavekort eller en butikskredit",
+          "manage_label": "Administrer gavekort eller butikskredit"
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "Brugerdefineret betalingsbekræftelse på stedet"
+        },
+        "markets_pro_disclaimer_label": "Ved at klikke nedenfor og gennemføre din bestilling accepterer du at købe din(e) vare(r) fra Global-e som registreret forhandler for denne transaktion, på Global-e's %{markets_pro_terms} og %{privacy_policy}. Global-e er en international leverandør af opfyldelsestjenester til %{shop_name}.",
+        "markets_pro_disclaimer_privacy_policy": "Politik for beskyttelse af personlige oplysninger",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Vilkår og betingelser for den registrerede forhandler",
+        "markets_pro_disclaimer_privacy_policy_title": "Merchant of Records privatlivspolitik",
+        "purchase_order_number": {
+          "title": "PO-nummer",
+          "label": "PO-nummer (valgfrit)"
+        },
+        "alternative_payment_currency_total_notice": "Bemærk: du vil blive opkrævet %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Bemærk: Omregnet total er %{amount_due}.",
+        "waiting_on_taxes_message": "Hvis din skat ikke beregnes inden for de næste par sekunder, skal du opdatere siden.",
+        "waiting_on_taxes_notice": "Beregning af skatter",
+        "payment_method_update_failed": "Opdatering af betalingsmetode mislykkedes.",
+        "payment_method_incompatible_with_payment_terms": "Betalingsmetoden er uforenelig med betalingsbetingelserne.",
+        "pay_in_installments_split_pay_short": "4 betalinger af %{amount}",
+        "gift_cards_unavailable": "Dit gavekort kan ikke længere bruges til denne ordre og er blevet fjernet.",
+        "payment_flexibility_terms_id_mismatch": "Fleksible betalingsbetingelser ID-mismatch"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."
@@ -1422,6 +1463,10 @@
           "tax_credential_tr": "Republikken Tyrkiets identitetsnummer / moms",
           "shipping_credential_tr": "Republikken Tyrkiets identitetsnummer / moms"
         }
+      },
+      "billing": {
+        "billing_address_title": "Regning til",
+        "same_as_shipping": "Samme som leveringsadresse"
       }
     },
     "sentence": {
