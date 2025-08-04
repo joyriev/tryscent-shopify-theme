@@ -3628,7 +3628,85 @@
         "description": "アドレスの更新に問題が発生しました。このページを更新するか、インターネット接続を確認してください。"
       },
       "load_orders_error": {
-        "title": "注文をロードできない"
+        "title": "注文をロードできない",
+        "description": "再試行するか、後でもう一度来てください。",
+        "retry_button": "リトライ"
+      },
+      "load_paypal_error": {
+        "description": "PayPalの読み込みに問題があります。もう一度やり直してください。"
+      },
+      "logout_everywhere": {
+        "description": "ログアウト中に何か問題が発生しました。もう一度お試しください。"
+      },
+      "no_access_to_locations": {
+        "description": "どの場所にもアクセスできない"
+      },
+      "not_found": {
+        "description": "URLを確認するか、数分後にもう一度お試しください。",
+        "title": "このページを読み込むのに問題があります"
+      },
+      "order_not_found": {
+        "description": "この注文は存在しないか、表示する権限がありません。"
+      },
+      "profile_update_error": {
+        "description": "プロフィールの更新に問題が発生しました。このページを更新するか、インターネット接続を確認してください。"
+      },
+      "retry_action_label": "リトライ",
+      "resend_link": {
+        "too_many_requests": "リクエストが多すぎます。後で再試行してください。",
+        "generic": "リクエスト失敗"
+      },
+      "load_extension_error": {
+        "description": "このページを更新するか、数分後にもう一度お試しください。",
+        "refresh_button": "ページの更新"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "message": "試行回数が多すぎる",
+        "description": "数分後にもう一度お試しください。"
+      }
+    },
+    "payment_methods": {
+      "title": "支払い方法",
+      "add_payment_method_button": "支払い方法の追加",
+      "add_payment_method_banner": "より迅速なチェックアウトや事前承認サービスのための支払い方法の追加",
+      "no_payment_methods_banner": "支払い方法の追加なし",
+      "edit_payment_method_button_accessibility_label": "{{paymentMethodName}} {{lastDigits}}終わるように編集する{{paymentMethodName}}",
+      "edit_payment_method_brand_button_accessibility_label": "編集 {{paymentMethodName}}",
+      "delete_payment_method_button_accessibility_label": "削除 {{paymentMethodName}}",
+      "back_button": "バック",
+      "back_button_accessibility_label": "戻る {{paymentMethodStepTitle}}",
+      "expiration_warning_button_accessibility_label": "{{paymentMethodName}} {{lastDigits}}終わる場合、期限切れの警告を表示する。",
+      "expires_soon": "このカードの有効期限はもうすぐ切れる",
+      "expired": "このカードの有効期限は切れています",
+      "card_update_consent": "このお支払い方法は、今後のご購入のために保存されます。",
+      "card_update_consent_subscriptions": "この支払い方法は将来の購入のために保存され、定期購入または後払い購入に使用することができます。",
+      "digital_wallet_title": "デジタル財布",
+      "credit_or_debit_card_title": "クレジットカードまたはデビットカード",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Google Payの支払い方法を追加する",
+        "loading_accessibility_message": "グーグルペイの読み込み",
+        "loading": "グーグルペイの読み込み",
+        "errors": {
+          "generic": "Google Payで問題が発生しました。再度お試しいただくか、別のお支払い方法をご利用ください。",
+          "missing_billing_address": "Google Payには請求先住所が必要です。アカウントに追加してください。"
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "ペイパルの支払い方法を追加する",
+        "loading_accessibility_message": "ペイパルの読み込み"
+      },
+      "apple_pay": {
+        "loading": "アップルペイの読み込み",
+        "errors": {
+          "generic": "Apple Payで問題が発生しました。もう一度お試しいただくか、別のお支払い方法をご利用ください。",
+          "not_available": "Apple Payはこのデバイスでは利用できません。",
+          "missing_billing_address": "Apple Payには請求先住所が必要です。アカウントに追加してください。"
+        }
+      },
+      "store_credit": {
+        "accesibility_label": "店舗クレジット {{formattedBalance}}"
       }
     }
   }
