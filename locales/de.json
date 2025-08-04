@@ -10,19 +10,19 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Shop mit Passwort betreten:",
-      "login_password_button": "Mit Passwort betreten",
+      "login_form_heading": "Filiale mit Passwort eingeben:",
+      "login_password_button": "Eingabe mit Passwort",
       "login_form_password_label": "Passwort",
-      "login_form_password_placeholder": "Dein Passwort",
+      "login_form_password_placeholder": "Ihr Passwort",
       "login_form_error": "Falsches Passwort!",
-      "login_form_submit": "Eingeben",
-      "admin_link_html": "Bist du der Shop-Inhaber? <a href=\"/admin\" class=\"link underlined-link\">Hier einloggen</a>",
-      "powered_by_shopify_html": "Dieser Shop wird unterstützt von {{ shopify }}"
+      "login_form_submit": "Eingabe",
+      "admin_link_html": "Sind Sie der Ladenbesitzer? <a href=\"/admin\" class=\"link underlined-link\">Loggen Sie sich hier ein</a>",
+      "powered_by_shopify_html": "Dieser Shop wird betrieben von {{ shopify }}"
     },
     "social": {
       "alt_text": {
         "share_on_facebook": "Auf Facebook teilen",
-        "share_on_twitter": "Auf X teilen",
+        "share_on_twitter": "Teilen auf X",
         "share_on_pinterest": "Auf Pinterest pinnen"
       },
       "links": {
@@ -3300,6 +3300,57 @@
       "decrease": "Verringern Sie {{type}}",
       "minimumReached": "Minimum von {{value}} erreicht",
       "maximumReached": "Maximum von {{value}} erreicht"
+    },
+    "active_inspector": {
+      "extension": {
+        "move_up": "Erweiterung auf die vorherige Position verschieben",
+        "move_down_tooltip": "Zur nächsten Position gehen",
+        "move_up_tooltip": "Zur vorherigen Position gehen",
+        "remove_tooltip": "entfernen"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Dieser Link kann nicht innerhalb des Editors geöffnet werden. Er wird in einem neuen Fenster geöffnet{{resolved_to_link}}). Klicken Sie auf OK, um fortzufahren."
+    },
+    "settings": {
+      "loading_accessibility_message": "Laden der Einstellungsseite",
+      "log_out_everywhere": {
+        "description": "Wenn Sie ein Gerät verloren haben oder Sicherheitsbedenken haben, melden Sie sich überall ab, um die Sicherheit Ihres Kontos zu gewährleisten.",
+        "warning_message": "Sie werden dann auch auf diesem Gerät abgemeldet."
+      }
+    },
+    "shop_ads": {
+      "subtitle": "Nur für eine begrenzte Zeit verfügbar",
+      "button": "Erkunden Sie den Shop",
+      "previous_button": "Vorherige"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "enabled": "Die Kunden können Rücksendungen selbst anfordern und verwalten.",
+        "disabled": "Die Kunden müssen sich an den Händler wenden, um eine Rückgabe zu beantragen."
+      }
+    },
+    "sign_in": {
+      "brand_logo_alt_text": "%{shop_name} Logo",
+      "processing": "Verarbeitung...",
+      "step_one": {
+        "page_title": "Eintragen - %{shop_name}",
+        "heading": "Eintragen",
+        "subheading": "Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Verifizierungscode zu.",
+        "subheading_with_sign_in_options": "Wählen Sie, wie Sie sich anmelden möchten",
+        "input_field_label": "E-Mail"
+      },
+      "step_two": {
+        "page_title": "Code eingeben - %{shop_name}",
+        "restart_link": "Mit einer anderen E-Mail anmelden",
+        "button": "Einreichen"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "Geben Sie eine gültige E-Mail Adresse ein",
+          "invalid_code": "Geben Sie den richtigen 6-stelligen Code ein"
+        }
+      }
     }
   }
 }
