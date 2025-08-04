@@ -2764,7 +2764,46 @@
     },
     "page_titles": {
       "blog_or_article_with_error": "エラー %{title}",
-      "products": "製品紹介"
+      "products": "製品紹介",
+      "create_account": "アカウント作成",
+      "reset_account": "アカウントのリセット",
+      "order": "オーダー %{name}",
+      "search_results": {
+        "one": "検索します：%{terms}\"に%{count}結果が見つかりました。",
+        "other": "検索します：%{terms}\"に%{count}結果が見つかりました。"
+      },
+      "not_found": "404 見つかりません"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} 割引が適用されている"
+    },
+    "challenge": {
+      "message": "続けて、あなたがロボットではないことを知らせてください。",
+      "error": "あなたの答えは正しくありません。",
+      "submit_button_text": "投稿する"
+    },
+    "checkpoint": {
+      "message": "続行するにはCaptchaを解く",
+      "error": "Captcha バリデーションに失敗しました。",
+      "submit_button_text": "投稿する"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "通常1時間以内",
+        "two_hours": "通常2時間以内",
+        "four_hours": "通常4時間以内",
+        "twenty_four_hours": "通常24時間以内",
+        "two_to_four_days": "通常2～4日",
+        "five_or_more_days": "通常5日以上",
+        "zero_to_two_hours": "通常2時間以内",
+        "two_to_four_hours": "通常4時間",
+        "immediately": "今すぐお受け取りいただけます",
+        "next_day": "翌日受け取り可能"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "この商品は定期購入または後払い購入です。続行することにより、私は%{cancellationPolicyLink}同意し、私の注文が完了するか、許可されている場合はキャンセルするまで、このページに記載されている価格、頻度、および日付で私の支払方法に請求することを許可します。",
+      "buyer_consent_cart": "カート内の1つ以上の商品は、定期購入または後払い購入です。続行することで、私は%{cancellationPolicyLink}同意し、私の注文が完了するまで、または許可されている場合はキャンセルするまで、このページに記載されている価格、頻度、および日付で私の支払方法に請求することを許可します。"
     }
   },
   "customer_accounts": {
@@ -2803,6 +2842,33 @@
           "invalid_code": "正しい6桁のコードを入力してください"
         }
       }
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneYearAgo": "{{date}} で {{time}}",
+        "lessThanOneHourAgo": {
+          "one": "{{count}} 分前",
+          "other": "{{count}} 分前"
+        },
+        "lessThanOneWeekAgo": "{{weekday}} で {{time}}",
+        "yesterday": "昨日 {{time}}",
+        "today": "本日 {{time}}",
+        "tomorrow": "明日 {{time}}",
+        "lessThanOneWeekAway": "{{weekday}} で {{time}}",
+        "lessThanOneYearAway": "{{date}} で {{time}}"
+      }
+    },
+    "enable_javascript": "アカウントを表示するには、ブラウザの設定でJavaScriptを有効にするか、別のブラウザでログインしてください。",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "アカウントメニューを隠す",
+        "show_accessibility_label": "アカウントメニューを表示",
+        "nav_accessibility_label": "アカウントナビゲーション",
+        "open_menu_accessibility_label": "口座開設ナビゲーション",
+        "close_menu_accessibility_label": "アカウントを閉じる",
+        "loading_message": "読み込み中 アカウントナビゲーション"
+      },
+      "action_menu_accessibility_label": "より多くの行動"
     }
   }
 }
