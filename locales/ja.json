@@ -3025,7 +3025,62 @@
         },
         "filter_title": "フィルター",
         "filter": {
-          "clear_section": "クリアセクション"
+          "clear_section": "クリアセクション",
+          "apply": "応募する",
+          "date": {
+            "title": "注文日",
+            "last_7_days": "直近7日間",
+            "last_365_days": "過去12ヶ月"
+          }
+        },
+        "show_order_actions_accessibility_label": "注文のアクションを表示する {{name}}"
+      },
+      "order_status": {
+        "attempted_delivery_label": "配達の試み",
+        "attempted_delivery_description": "配達は失敗した。",
+        "attempted_to_deliver_label": "配達を試みた",
+        "confirmed_description": "ご注文を承りました。",
+        "on_its_way_description": "この積荷は向かっている。",
+        "out_for_delivery_description": "この貨物は配送中です。",
+        "preparing_for_shipping_label": "出荷準備",
+        "preparing_for_shipping_description": "これらの商品は出荷準備中である。",
+        "ready_for_pickup_label": "ピックアップ準備完了",
+        "ready_for_pickup_description": "こちらの商品はお受け取り可能です。お受け取りの際は、ご注文確認書をご持参ください。",
+        "ready_for_pickup_location": "ご注文の商品を現地でお受け取りいただけます。",
+        "picked_up_label": "ピックアップ",
+        "picked_up_description": "これらの商品は引き取られた。",
+        "canceled_description": "ご注文は以下の日にキャンセルされました。 {{date}}.",
+        "canceled_label": "キャンセル",
+        "canceled_title": "ご注文はキャンセルされました",
+        "come_back": "出荷状況の最新情報については、このページをご覧ください。",
+        "company_tracking_number": "{{company}} 追跡番号",
+        "confirmed_title": "ご注文の確定",
+        "confirmed_description_pickup": "ご注文の商品の準備ができ次第、Eメールをお送りします。",
+        "confirmed_description_digital": "ご注文の準備ができ次第、Eメールをお送りします。",
+        "confirmed_description_gift_card_text": "ご注文の準備ができ次第、メールをお送りします。",
+        "delivered_description": "この貨物は配達されました。",
+        "complete_label": "完全",
+        "delivered_label": "配信",
+        "delivered_title": "お荷物が配達されました",
+        "delivered_description_digital": {
+          "one": "この商品は完成品です。",
+          "other": "これらの項目は完了した。"
+        },
+        "delivered_description_gift_card": {
+          "one": "ギフトカードはEメールで送られました。",
+          "other": "ギフトカードはEメールで送られた。"
+        },
+        "delivered_description_gift_card_text": {
+          "one": "ギフトカードはテキストで送られた。",
+          "other": "ギフトカードはテキストで送られた。"
+        },
+        "gift_card_resend_button": {
+          "one": "ギフトカードの再送",
+          "other": "ギフトカードの再送"
+        },
+        "gift_resend_success": {
+          "one": "ギフトカード再送",
+          "other": "ギフトカード再送"
         }
       }
     }
