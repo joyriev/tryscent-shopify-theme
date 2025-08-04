@@ -3206,7 +3206,61 @@
       },
       "edit_payment_method": {
         "save_payment_method_button": "Speichern Sie",
-        "cancel_edit_payment_method_button": "Abbrechen"
+        "cancel_edit_payment_method_button": "Abbrechen",
+        "billing_address_add_new": "Neu hinzufügen",
+        "billing_address_choose_from_list": "Wählen Sie aus der Liste",
+        "future_purchases_notice": "Diese Zahlungsmethode wird für zukünftige Einkäufe gespeichert.",
+        "generic_error": "Bei der Aktualisierung ist ein Problem aufgetreten. Bitte versuchen Sie es erneut."
+      },
+      "card_fields": {
+        "name_on_card_label": "Name auf der Karte",
+        "name_on_card_placeholder": "Name auf der Karte",
+        "card_expiry_label": "Ablaufdatum (MM / YY)",
+        "card_expiry_placeholder": "Ablaufdatum (MM / YY)",
+        "card_start_label": "Issue date (MM / YY)",
+        "card_start_placeholder": "Issue date (MM / YY)",
+        "tooltip": {
+          "tooltip_accessibility_label": "Weitere Informationen",
+          "card_verification_value_explanation_amex": "4-stelliger Sicherheitscode auf der Vorderseite Ihrer Karte",
+          "card_verification_value_explanation_other": "3-stelliger Sicherheitscode auf der Rückseite Ihrer Karte",
+          "card_verification_value_explanation": "3-stelliger Sicherheitscode, der sich normalerweise auf der Rückseite Ihrer Karte befindet. American Express-Karten haben einen 4-stelligen Code auf der Vorderseite."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Geben Sie Ihren Namen genau so ein, wie er auf Ihrer Karte steht.",
+          "credit_card_number_invalid": "Geben Sie eine gültige Kartennummer ein",
+          "credit_card_expiry_invalid": "Geben Sie ein gültiges Gültigkeitsdatum der Karte ein",
+          "credit_card_verification_value_blank": "Geben Sie den CVV- oder Sicherheitscode auf Ihrer Karte ein."
+        },
+        "unavailable": {
+          "text": "Kredit- und Debitkartenzahlungen sind derzeit nicht möglich.",
+          "link_text": "Diese Seite aktualisieren",
+          "suffix": "oder versuchen Sie es später noch einmal."
+        }
+      },
+      "payment_delete": {
+        "description_without_replacement": "Diese Zahlungsmethode wird für zukünftige Einkäufe nicht mehr zur Verfügung stehen.",
+        "description_with_replacement": "Die Löschung dieser Zahlungsmethode wirkt sich auf vorab autorisierte Zahlungen aus. Sie können sie optional durch eine andere Zahlungsmethode ersetzen, um kommende Bestellungen weiterhin zu erhalten.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "Die Löschung dieser Zahlungsmethode wirkt sich auf vorab autorisierte Zahlungen aus. Sofern Sie keine alternative Zahlungsmethode wählen, wird diese Zahlungsmethode weiterhin für alle ausstehenden Beträge für bestehende Bestellungen belastet. Wenn Sie eine alternative Zahlungsmethode wählen, können Sie kommende Abonnementbestellungen ohne Unterbrechung erhalten.",
+          "with_pending_orders": "Wenn Sie diese Zahlungsmethode löschen, wird sie von Ihrem Konto entfernt und steht für zukünftige Einkäufe nicht mehr zur Verfügung. Sofern Sie keine andere Zahlungsmethode wählen, wird sie weiterhin für alle ausstehenden Beträge für bestehende Bestellungen belastet.",
+          "with_subscriptions": "Die Löschung dieser Zahlungsmethode wirkt sich auf vorab autorisierte Zahlungen aus. Ersetzen Sie sie durch eine alternative Zahlungsmethode, um weiterhin anstehende Bestellungen zu erhalten."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Die Löschung dieser Zahlungsmethode wirkt sich auf vorautorisierte Zahlungen aus. Diese Zahlungsmethode wird weiterhin für alle ausstehenden Beträge für bestehende Bestellungen belastet, aber Sie erhalten keine neuen Abonnementbestellungen. Fügen Sie eine alternative Zahlungsmethode hinzu, um weiterhin Abonnementbestellungen zu erhalten.",
+          "with_pending_orders": "Wenn Sie diese Zahlungsmethode löschen, wird sie von Ihrem Konto entfernt und steht für zukünftige Einkäufe nicht mehr zur Verfügung. Ausstehende Beträge für bereits getätigte Bestellungen werden weiterhin damit bezahlt.",
+          "with_subscriptions": "Die Löschung dieser Zahlungsmethode wirkt sich auf vorab autorisierte Zahlungen aus. Fügen Sie eine alternative Zahlungsmethode hinzu, um anstehende Bestellungen weiterhin zu erhalten."
+        },
+        "payment_method_selector_placeholder": "Wählen Sie eine Ersatzzahlungsmethode (optional)",
+        "replace_method_with_new_method_description": "Ihr {{currentPaymentMethodName}} wird gelöscht und durch Ihren {{newPaymentMethodName}} ersetzt.",
+        "error_when_deleting": "Es tut uns leid, aber es ist etwas schief gelaufen und wir konnten diese Zahlungsmethode nicht löschen. Bitte versuchen Sie es später noch einmal oder aktualisieren Sie die Seite.",
+        "delete_and_replace_button_accessibility_label": "Löschen Sie {{currentPaymentMethodName}} und ersetzen Sie durch {{newPaymentMethodName}}.",
+        "loading_available_payment_methods_accessibility_label": "Laden verfügbarer Zahlungsarten"
+      },
+      "add_payment_method": {
+        "billing_address": {
+          "add_billing_address_button": "Neu hinzufügen",
+          "choose_billing_address_from_list_button": "Wählen Sie aus der Liste"
+        }
       }
     }
   }
