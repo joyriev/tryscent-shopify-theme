@@ -670,7 +670,63 @@
             "installments_unsupported_shipping": "Afdrag understøtter ikke levering til denne adresse.",
             "installments_unsupported_billing": "Afdrag understøtter ikke denne faktureringsadresse.",
             "installments_unsupported_subscriptions": "Afdrag understøtter ikke abonnementer.",
-            "installments_ineligible_line_item": "Afdrag er deaktiveret for en varelinje i dette køb."
+            "installments_ineligible_line_item": "Afdrag er deaktiveret for en varelinje i dette køb.",
+            "shop_cash_not_enabled": "Shop Cash er ikke aktiveret for denne butik.",
+            "shop_cash_not_available": "Shop Cash understøttes ikke i denne kasse.",
+            "shop_cash_unsupported_shipping": "Shop Cash støtter ikke varer uden forsendelse.",
+            "missing_retail_attributions": "Detailtilskrivning er påkrævet for manuelt indtastede kreditkortbetalinger.",
+            "unexpected_retail_attributions": "Detailtilskrivning er uventet ved betaling med kreditkort.",
+            "wallet_content_missing": "Der mangler indhold i tegnebogen.",
+            "payment_instrument_not_found": "Kunne ikke finde betalingsmetode",
+            "unauthorized_capture_method": "Det er ikke tilladt at konfigurere betalingsmetoden.",
+            "saved_payment_methods_not_enabled": "Gemte betalingsmetoder er ikke aktiveret for denne butik.",
+            "saved_payment_methods_cvv_verification_disabled": "Den valgte betalingsmetode kræver CVV-verifikation, som ikke er aktiveret for denne butik. Vælg en anden betalingsmetode.",
+            "store_credit_not_enabled": "Butikskredit er ikke aktiveret for denne butik.",
+            "store_credit_account_not_found": "Butikskreditkonto ikke fundet.",
+            "store_credit_account_mismatch": "Butikskreditkontoen stemmer ikke overens med køberens identitet.",
+            "store_credit_mismatched_currency": "Butikskreditkontoens valuta stemmer ikke overens med kassens valuta.",
+            "store_credit_insufficient_funds": "Der er ikke tilstrækkelige midler på butikskreditkontoen.",
+            "store_credit_buying_gift_card": "Du kan ikke bruge butikskredit til at købe et gavekort.",
+            "method_required": "Der skal foreslås en betalingsmetode.",
+            "paypal_express_address_invalid": "PayPal returnerede en ugyldig adresse."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Butikken tager ikke imod drikkepenge.",
+            "only_one_tip_line_allowed": "Flere tips-linjer understøttes ikke.",
+            "currency_change_reset": "Tip er blevet nulstillet på grund af valutaændring.",
+            "tips_not_allowed_for_deferred_purchase_options": "Tips er endnu ikke understøttet for deffered purchase options."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Denne trækrækkefølge findes ikke i den nuværende butik.",
+            "staff_member_not_exist": "Dette personale findes ikke i den nuværende butik.",
+            "location_not_exist": "Denne placering findes ikke i den nuværende butik.",
+            "point_of_sale_device_not_exist": "Denne salgsanordning findes ikke i den nuværende butik.",
+            "unresolvable_target_merchandise_lines": "De foreslåede salgstildelinger er uløselige i den nuværende forhandlingssituation."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Din købers tilbud bør indeholde ikke-forhandlingsbare_vilkår.",
+            "invalid_signature": "Signaturen for {{target_terms}} er ugyldig."
+          },
+          "inventory": {
+            "missing_quantity_value": "Mængdefeltet mangler i købers lagerlinjer.",
+            "changing_behavior_not_allowed": "Denne klient har ikke tilladelse til at ændre lagerets adfærd.",
+            "only_one_inventory_behavior_allowed": "I øjeblikket er kun én lageradfærd tilladt pr. kasse."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Det er ikke tilladt at nægte at betale afgifter ved denne kasse."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Detailtilskrivning er ikke tilladt for denne kasse.",
+            "retail_attribution_required": "Detailtildeling er påkrævet for denne kasse."
+          },
+          "captcha": {
+            "metadata_missing": "Det er nødvendigt at udfylde en captcha for at kunne betale.",
+            "metadata_mismatch": "Den angivne captcha-udbyder og -type stemmer ikke overens med de forventede værdier.",
+            "token_missing": "Der skal indtastes et captcha-token for at gennemføre denne betaling.",
+            "job_enqueue_failed": "Captcha-valideringsjobbet kunne ikke sættes i kø.",
+            "job_already_queued": "Captcha-validering er allerede sat i kø for dette captcha-token.",
+            "token_expired": "Det angivne captcha-token er udløbet. Udfyld en ny captcha for at fortsætte kassen.",
+            "token_invalid": "Det angivne captcha-token var ugyldigt. Udfyld en ny captcha for at fortsætte kassen."
           }
         }
       }
