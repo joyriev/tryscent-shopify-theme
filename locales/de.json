@@ -281,63 +281,63 @@
       }
     },
     "cart": {
-      "title": "Dein Warenkorb",
+      "title": "Your cart",
       "caption": "Artikel im Warenkorb",
-      "remove_title": "{{ title }} entfernen",
-      "note": "Spezielle Bestellanweisungen",
+      "remove_title": "entfernen {{ title }}",
+      "note": "Spezielle Anweisungen bestellen",
       "checkout": "Auschecken",
-      "empty": "Dein Warenkorb ist leer",
-      "cart_error": "Beim Aktualisieren deines Warenkorbs ist ein Fehler aufgetreten. Bitte versuche es erneut.",
-      "cart_quantity_error_html": "Du kannst deinem Warenkorb nur {{ quantity }} Stück dieses Artikels hinzufügen.",
+      "empty": "Ihr Warenkorb ist leer",
+      "cart_error": "Beim Aktualisieren Ihres Warenkorbs ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "cart_quantity_error_html": "Sie können nur {{ quantity }} dieses Artikels in Ihren Warenkorb legen.",
       "headings": {
         "product": "Produkt",
         "price": "Preis",
-        "total": "Gesamtsumme",
-        "quantity": "Anzahl",
+        "total": "Insgesamt",
+        "quantity": "Menge",
         "image": "Produktbild"
       },
-      "update": "Aktualisieren",
+      "update": "Update",
       "login": {
-        "title": "Hast du ein Konto?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logge dich ein</a>, damit es beim Checkout schneller geht."
+        "title": "Haben Sie ein Konto?",
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Loggen Sie sich ein</a>, um schneller auszuchecken."
       },
-      "estimated_total": "Geschätzte Gesamtkosten",
-      "new_estimated_total": "Neuer geschätzter Gesamtbetrag"
+      "estimated_total": "Geschätzter Gesamtbetrag",
+      "new_estimated_total": "Neue geschätzte Gesamtzahl"
     },
     "footer": {
-      "payment": "Zahlungsmethoden"
+      "payment": "Zahlungsmöglichkeiten"
     },
     "featured_blog": {
       "view_all": "Alle anzeigen",
       "onboarding_title": "Blog-Beitrag",
-      "onboarding_content": "Verschaffe deinen Kunden eine Übersicht über deinen Blog-Beitrag"
+      "onboarding_content": "Geben Sie Ihren Kunden eine Zusammenfassung Ihres Blogbeitrags"
     },
     "featured_collection": {
       "view_all": "Alle anzeigen",
-      "view_all_label": "Alle Produkte in der Kollektion {{ collection_name }} anzeigen"
+      "view_all_label": "Alle Produkte der Kollektion {{ collection_name }} anzeigen"
     },
     "collection_list": {
       "view_all": "Alle anzeigen"
     },
     "collection_template": {
-      "title": "Kategorie",
+      "title": "Sammlung",
       "empty": "Keine Produkte gefunden",
-      "use_fewer_filters_html": "Verwende weniger Filter oder <a class=\"{{ class }}\" href=\"{{ link }}\">entferne alle</a>"
+      "use_fewer_filters_html": "Weniger Filter verwenden oder <a class=\"{{ class }}\" href=\"{{ link }}\">alle entfernen</a>"
     },
     "video": {
       "load_video": "Video laden: {{ description }}"
     },
     "slideshow": {
-      "load_slide": "Folie laden",
-      "previous_slideshow": "Vorherige Folie",
+      "load_slide": "Schlitten laden",
+      "previous_slideshow": "Vorheriges Dia",
       "next_slideshow": "Nächste Folie",
-      "pause_slideshow": "Slideshow pausieren",
-      "play_slideshow": "Slideshow abspielen",
+      "pause_slideshow": "Diashow anhalten",
+      "play_slideshow": "Diashow abspielen",
       "carousel": "Karussell",
-      "slide": "Folie"
+      "slide": "Dia"
     },
     "page": {
-      "title": "Seitentitel"
+      "title": "Titel der Seite"
     },
     "announcements": {
       "previous_announcement": "Vorherige Ankündigung",
@@ -347,9 +347,9 @@
       "announcement_bar": "Ankündigungsleiste"
     },
     "quick_order_list": {
-      "product_total": "Produktzwischensumme",
+      "product_total": "Zwischensumme Produkt",
       "view_cart": "Warenkorb ansehen",
-      "each": "{{ money }}/Stück",
+      "each": "{{ money }}/ea",
       "product": "Produkt",
       "variant": "Variante",
       "variant_total": "Varianten insgesamt",
@@ -721,7 +721,40 @@
             "job_enqueue_failed": "Der Captcha-Validierungsauftrag konnte nicht in die Warteschlange aufgenommen werden.",
             "job_already_queued": "Die Captcha-Validierung wurde bereits für dieses Captcha-Token in die Warteschlange gestellt.",
             "token_expired": "Das angegebene Captcha-Token ist abgelaufen. Füllen Sie ein neues Captcha aus, um den Checkout fortzusetzen.",
-            "token_invalid": "Das angegebene Captcha-Token war ungültig. Füllen Sie ein neues Captcha aus, um den Checkout fortzusetzen."
+            "token_invalid": "Das angegebene Captcha-Token war ungültig. Füllen Sie ein neues Captcha aus, um den Checkout fortzusetzen.",
+            "token_not_valid_for_session": "Das mitgelieferte Captcha kann bei diesem Checkout nicht verwendet werden."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "Der erhaltene Betrag muss auf die Währung des Geschäfts lauten."
+          }
+        },
+        "title": "Zur Kasse - {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Zur Kasse gehen",
+        "loading": "Laden...",
+        "loading_title": "Zur Kasse - {{shopName}}",
+        "google_map_title": "Google Map",
+        "submit_order_button_label": "Bestellung abschicken",
+        "submit_for_review_button_label": "Zur Überprüfung einreichen",
+        "submit_for_review_notice_label": "Die Zahlung wird erst fällig, wenn Ihre Bestellung geprüft wurde.",
+        "back_button_label": "Rückkehr",
+        "choose_delivery_strategy": "Wählen Sie eine Liefermethode",
+        "autocomplete_powered_by_google": "Angetrieben durch {{brandName}}",
+        "submit": "Einreichen",
+        "processing": "Verarbeitung...",
+        "stepper": {
+          "increase": "Erhöhung {{type}}",
+          "decrease": "Verringern Sie {{type}}",
+          "minimum_reached": "Minimum von {{value}} erreicht",
+          "maximum_reached": "Maximum von {{value}} erreicht"
+        },
+        "remove_item": "entfernen %{label}",
+        "dates": {
+          "weekdays_abbreviation": {
+            "tuesday": "Tu",
+            "wednesday": "Wir",
+            "thursday": "Th",
+            "friday": "P.",
+            "sunday": "Su"
           }
         }
       }
