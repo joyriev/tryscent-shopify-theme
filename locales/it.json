@@ -2106,7 +2106,75 @@
       "invalid_state_in_country": "non è uno stato valido in %{country}",
       "invalid_region_in_country": "non è una regione valida in %{country}",
       "full_name_required": "Inserire un nome e un cognome",
-      "invalid_type": "ci dispiace, non accettiamo carte di questo tipo"
+      "invalid_type": "ci dispiace, non accettiamo carte di questo tipo",
+      "invalid_start_date_or_issue_number_for_debit": "è richiesta una data di inizio o un numero di emissione valido",
+      "invalid_expiry_year": "non è un anno di scadenza valido",
+      "reset_password_html": "Questo indirizzo e-mail è già associato a un account. Se questo account è vostro, potete <a href=\"/account/login#recover\">reimpostare la password</a>.",
+      "verify_email": "Abbiamo inviato un'e-mail a %{customer_email}, fare clic sul link incluso per verificare l'indirizzo e-mail.",
+      "product_not_available": "non è stato pubblicato per questo cliente.",
+      "shop_404": {
+        "title": "Crea un sito web Ecommerce e vendi online! Software Ecommerce di Shopify",
+        "heros": {
+          "store_unavailable": "Siamo spiacenti, questo negozio non è attualmente disponibile."
+        },
+        "links": {
+          "start_free_trial": "Iniziare una prova gratuita"
+        },
+        "owner_ctas": {
+          "header": "Lei è il proprietario del negozio?",
+          "fix_domain": "Terminata l'impostazione del nuovo indirizzo web, andare su %{domain_settings_link}. Fare clic su \"Connetti dominio\" e inserire: %{domain}.<br>Se avete problemi a entrare nel vostro negozio, provate a consultare la pagina %{forgot_your_store_link}.",
+          "fix_domain_link_text": "le impostazioni del dominio",
+          "forgot_your_store_link_text": "ha dimenticato il suo negozio",
+          "add_storefront": "È possibile configurare il proprio sito web aggiungendo il canale Negozio online nel proprio %{admin_link}. Se avete problemi a entrare nel vostro negozio, provate a consultare la pagina %{forgot_your_store_link}.",
+          "admin_link_text": "amministratore"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Vendere di persona",
+            "caption": "Ottenete le funzioni necessarie per gestire il vostro negozio al dettaglio, sia che siate agli inizi che in fase di espansione.",
+            "link_text": "Iniziare la prova gratuita"
+          },
+          "open_a_store": {
+            "header": "Aprire un nuovo negozio Shopify",
+            "caption": "Iniziate una prova gratuita di 3 giorni, poi continuate per 1$/mese per i 3 mesi successivi."
+          },
+          "editions": {
+            "header": "Scopri le edizioni di Shopify",
+            "caption": "Con oltre 100 aggiornamenti di prodotto, potrete essere più produttivi, creativi e potenti nel commercio di quanto abbiate mai immaginato.",
+            "link_text": "Esplora le ultime edizioni"
+          },
+          "store_owner": {
+            "header": "Lei è il proprietario del negozio?",
+            "caption": "Avete problemi a entrare nel vostro negozio? Provate la funzione %{forgot_your_store_link}. Se desiderate riattivare il vostro negozio, contattate %{shopify_support_link}.",
+            "shopify_support_link_text": "Supporto Shopify"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Errore di reimpostazione della password",
+        "subscribe_error": "Errore di sottoscrizione",
+        "unsubscribe_error": "Errore di annullamento dell'iscrizione",
+        "no_account_found": "Non è stato trovato alcun account con quell'e-mail.",
+        "invalid_credentials": "Email o password errata.",
+        "denylisted_reset_password": "Non è stato possibile accedere al vostro account perché la password attuale non è sicura. Riceverete un'e-mail per aggiornare la password.",
+        "signup_disabled": "La creazione di un account cliente è stata disabilitata."
+      },
+      "address": {
+        "updated": "L'indirizzo è stato aggiornato con successo.",
+        "error_updating": "Errore nell'aggiornamento dell'indirizzo",
+        "error_creating": "Errore nella creazione dell'indirizzo.",
+        "deleted": "Indirizzo cancellato con successo",
+        "error_deleting": "Errore nell'eliminazione dell'indirizzo."
+      },
+      "line_item": {
+        "item_status": {
+          "decrement_item": "Rimosso %{delta} di %{total}",
+          "decrement_fulfilled_line_item": "Restituito %{delta} di %{total}",
+          "decrement_return_line_item": "Rimosso %{delta} dal ritorno"
+        }
+      }
     }
   },
   "customer_accounts": {
