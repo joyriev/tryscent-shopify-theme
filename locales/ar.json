@@ -2677,63 +2677,63 @@
       "order": {
         "not_available": "هذا الطلب غير متوفر",
         "financial_status": {
-          "authorized": "مُخوَّل",
+          "authorized": "معتمد",
           "pending": "قيد الانتظار",
-          "paid": "مدفوع",
-          "unpaid": "غير مدفوع",
-          "voided": "ملغى",
-          "partially_paid": "مدفوع جزئياً",
-          "partially_refunded": "تم استرداد جزء من المبلغ",
-          "expired": "منتهي الصلاحية",
-          "refunded": "تم استرداده"
+          "paid": "مدفوعة الأجر",
+          "unpaid": "غير مدفوعة",
+          "voided": "ملغاة",
+          "partially_paid": "مدفوعة جزئياً",
+          "partially_refunded": "مستردة جزئيًا",
+          "expired": "منتهية الصلاحية",
+          "refunded": "مستردة"
         },
         "fulfillment_status": {
-          "fulfilled": "تم التنفيذ",
+          "fulfilled": "تم الإنجاز",
           "complete": "مكتمل",
           "partial": "جزئي",
-          "unfulfilled": "غير مُلبّى",
-          "restocked": "تم إعادة التخزين"
+          "unfulfilled": "غير محقق",
+          "restocked": "أعيد تخزينها"
         },
         "transaction_status": {
-          "success": "نجاح",
+          "success": "النجاح",
           "pending": "قيد الانتظار",
-          "failure": "فشل",
+          "failure": "الفشل",
           "error": "خطأ"
         },
         "cancel_reason": {
           "declined": "تم رفض الدفع",
-          "staff": "خطأ الموظف",
-          "fraud": "طلب احتيالي",
-          "customer": "قام العميل بتغيير/إلغاء الطلب",
+          "staff": "خطأ الموظفين",
+          "fraud": "أمر احتيالي",
+          "customer": "تم تغيير/إلغاء طلب العميل",
           "other": "أخرى",
           "inventory": "العناصر غير متوفرة"
         },
         "cash_on_delivery": "الدفع عند الاستلام (COD)"
       },
       "cart": {
-        "only_n_items_available": "يمكنك إضافة %{count} %{name} فقط إلى السلة.",
-        "too_many_items_in_cart": "لا يمكنك إضافة المزيد من %{name} إلى السلة.",
+        "only_n_items_available": "يمكنك فقط إضافة %{count} %{name} إلى سلة التسوق.",
+        "too_many_items_in_cart": "لا يمكنك إضافة المزيد من %{name} إلى سلة التسوق.",
         "only_one_added_to_cart": "تمت إضافة عنصر واحد فقط إلى سلة التسوق الخاصة بك بسبب التوفر.",
-        "only_n_added_to_cart": "تمت إضافة %{quantity} عناصر فقط إلى سلة التسوق الخاصة بك بسبب التوفر.",
-        "maximum_available_quantity_reached": "الكمية القصوى من هذا العنصر موجودة بالفعل في سلة التسوق الخاصة بك.",
-        "less_than_minimum": "هذا العنصر له حد أدنى %{min}.",
-        "more_than_maximum": "هذا العنصر له حد أقصى %{max}.",
+        "only_n_added_to_cart": "تمت إضافة %{quantity} فقط من المنتجات إلى سلة التسوق الخاصة بك بسبب توفرها.",
+        "maximum_available_quantity_reached": "الكمية القصوى لهذا المنتج موجودة بالفعل في سلة التسوق الخاصة بك.",
+        "less_than_minimum": "يحتوي هذا العنصر على الحد الأدنى من %{min}.",
+        "more_than_maximum": "يبلغ الحد الأقصى لهذا العنصر %{max}.",
         "all_items_in_cart": "جميع %{count} %{name} في سلة التسوق الخاصة بك.",
-        "empty_update": "لا يمكن تحديث عربة التسوق الفارغة",
-        "missing_parameters": "لا يوجد معرف صالح أو معلمة السطر",
-        "not_respect_step": "يمكنك إضافة هذا العنصر فقط بزيادات قدرها %{step}.",
-        "generic_error": "خطأ في السلة",
-        "invalid_input": "معامل %{parameter} غير صالح.",
+        "empty_update": "لا يمكن تحديث سلة التسوق الفارغة",
+        "missing_parameters": "لا يوجد معرف صالح أو معلمة خط صالح",
+        "not_respect_step": "يمكنك فقط إضافة هذا العنصر بزيادات قدرها %{step}.",
+        "generic_error": "خطأ في عربة التسوق",
+        "invalid_input": "%{parameter} غير صالحة.",
         "link_expired": "انتهت صلاحية الرابط",
         "product_not_available": "المنتج غير متوفر",
-        "too_many_line_items_error": "عربة التسوق الخاصة بك لا يمكن أن تحتوي على أكثر من %{max} عناصر.",
+        "too_many_line_items_error": "لا يمكن أن تحتوي عربة التسوق الخاصة بك على أكثر من %{max} من العناصر.",
         "changed": "تم تغيير العربة",
-        "link_no_longer_exists": "الرابط لم يعد موجودًا.",
+        "link_no_longer_exists": "الرابط لم يعد موجوداً",
         "items_changed": "تم تغيير عنصر واحد أو أكثر.",
-        "product_sold_out": "المنتج '%{name}' نفد من المخزون بالفعل.",
+        "product_sold_out": "تم بيع المنتج%{name}\" بالفعل.",
         "variant_not_found": "لا يمكن العثور على المتغير",
-        "selling_plan_not_available_for_company_locations": "الشراء لمرة واحدة فقط متاح لطلبات B2B",
-        "variant_requires_selling_plan": "يمكن شراء المتغير فقط مع خطة بيع.",
+        "selling_plan_not_available_for_company_locations": "الشراء لمرة واحدة فقط متاح فقط لطلبات B2B",
+        "variant_requires_selling_plan": "لا يمكن شراء البديل إلا بخطة بيع.",
         "digital_product_not_available_for_company_locations": "لا يمكن إضافة هذا العنصر إلى طلب B2B",
         "selling_plan_not_applicable": "لا يمكن تطبيق خطة البيع على المتغير",
         "buyer_cannot_purchase_for_company_locations": "لا يمكنك الشراء لهذا الموقع",
@@ -2749,7 +2749,7 @@
         "merchandise_line_transformers": {
           "run_error": "حدث خطأ في سلة التسوق الخاصة بك."
         },
-        "stock_problems_html": "عنصر واحد أو أكثر لم يعد متاحًا. لقد قدمنا <a href='%{link}'>عربة محدثة</a>."
+        "stock_problems_html": "عنصر واحد أو أكثر لم يعد متوفراً. لقد قمنا بتوفير <a href='%{link}'>عربة محدثة</a>."
       },
       "storefront": {
         "invalid_password": "كلمة المرور غير صحيحة، يرجى المحاولة مرة أخرى."
