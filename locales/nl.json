@@ -1499,7 +1499,61 @@
         "tips_invalid_tip_amount": "Voer een fooi in van minder dan %{amount}",
         "gift_card_depleted": "Deze cadeaubon heeft geen saldo meer",
         "gift_card_currency_mismatch": "Alleen cadeaubonnen in %{checkout_currency} kunnen worden gebruikt bij deze bestelling.",
-        "gift_cards_not_supported_with_deferred_purchase_options": "Cadeaubonnen worden niet ondersteund met opties voor uitgestelde aankoop."
+        "gift_cards_not_supported_with_deferred_purchase_options": "Cadeaubonnen worden niet ondersteund met opties voor uitgestelde aankoop.",
+        "gift_card_buying_gift_card": "Je kunt een cadeaubon niet gebruiken om een andere cadeaubon te kopen",
+        "payment_gateway_needs_paid_plan_error": "Deze betaalmethode is momenteel niet beschikbaar in de winkel",
+        "payment_gateway_not_in_test_mode": "is niet ingesteld om bestellingen te testen. Deze winkel kan geen echte bestellingen of betalingen accepteren.",
+        "payment_gateway_incompatible_with_multi_currency": "Om af te rekenen in je eigen valuta, moet je met een creditcard betalen.",
+        "payment_gateway_unsupported_for_subscriptions": "Deze betaalmethode is niet beschikbaar voor bestellingen met een abonnement.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Deze betalingsmethode is niet beschikbaar voor opties met uitgestelde aankoop.",
+        "payment_gateway_unsupported_for_country": "Deze betaalmethode is niet beschikbaar voor jouw verzendland.",
+        "payment_gateway_unsupported_for_development_store_html": "Om een testbestelling te plaatsen, moet je een gateway voor testbetalingen gebruiken. Meer informatie over <a href=\"%{docs_link}\">het testen van bestellingen in ontwikkelingswinkels</a>.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Je hebt de limiet bereikt voor winkelbestellingen met deze betalingsverwerker. Als je nog een bestelling wilt plaatsen, moet je een testbetaalgateway gebruiken. Meer informatie over <a href=\"%{docs_link}\">het testen van bestellingen in development stores</a>.",
+        "purchase_options_agreement_blank": "Ga akkoord met de voorwaarden voor uitgestelde of terugkerende aankopen om door te gaan met je aankoop.",
+        "physical_gift_card_invalid_quantity": "Fysieke cadeaubonregels moeten een hoeveelheid hebben die overeenkomt met het aantal cadeauboncodes.",
+        "physical_gift_card_duplicate_code": "Fysieke cadeaubonregel bevat dubbele code.",
+        "physical_gift_card_invalid_code": "De fysieke cadeauboncode is ongeldig.",
+        "email_blank": "Voer een e-mail in",
+        "phone_blank": "Voer een telefoonnummer in",
+        "address_country_invalid": "Selecteer een land/regio uit de lijst",
+        "address_zip_invalid": "Voer een geldige postcode in",
+        "gift_card_invalid": "Cadeaubon \"%{last_four_characters}\" is niet langer geldig",
+        "vaulting_agreement_blank": "Je kaart moet worden bewaard omdat de betaling van het restbedrag van deze bestelling later moet plaatsvinden.",
+        "split_cart_international_shipping_not_supported": "Alle artikelen moeten op dezelfde manier worden bezorgd als ze internationaal worden verzonden. Werk de bezorgmethode bij of maak meerdere bestellingen.",
+        "invalid_delivery_address_reference_handle": "De referentiehandgreep van het afleveradres kon niet worden gekoppeld aan beschikbare afleveradressen."
+      },
+      "store_credit_errors": {
+        "generic_error": "Er is een probleem opgetreden met je winkelkrediet. Probeer het opnieuw of laad de pagina opnieuw."
+      },
+      "redeemable_errors": {
+        "shop_cash": {
+          "currency_mismatch": "De valuta is veranderd. Controleer je Shop Cash en aanbieding."
+        },
+        "gift_card": {
+          "insufficient_funds": "Deze cadeaubon heeft geen saldo meer",
+          "generic": "De cadeaubon kon niet worden toegevoegd bij het afrekenen",
+          "throttle_limit_exceeded": "U hebt het maximale aantal pogingen overschreden. Probeer het later nog eens.",
+          "no_longer_available": "Deze cadeaubon kan niet langer worden gebruikt met deze kassa"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "De %{position} %{name} merchandise-instructie bevat een lege stabiele ID.",
+        "invalid_stable_id_target": "De %{position} %{name} merchandise-instructie verwijst naar stable ID %{stable_id}, maar die stable ID staat niet in merchandise-regels.",
+        "duplicate_variant_id": "De %{position} %{name} merchandise-instructie bevat een dubbele variant-ID %{variant_id}.",
+        "invalid_variant_id_target": "De %{name} merchandise-instructie verwijst naar variant-ID %{variant_id}, maar die variant staat niet in merchandise-regels.",
+        "invalid_price_override_target": "De prijswijziging merchandise instructie voor regelitem %{stable_id} is ongeldig omdat het een bundelcomponent is."
+      },
+      "payment_errors": {
+        "amount_too_small": "Het minimumbetalingsbedrag moet hoger zijn dan $0,50 USD. Probeer het opnieuw met een hoger bedrag.",
+        "method_not_available": "De gevraagde betaalmethode is niet beschikbaar. Kies een andere betaalmethode en probeer het opnieuw.",
+        "available_methods_updated": "Beschikbare betalingsmethoden zijn bijgewerkt.",
+        "generic_error": "Er is een probleem opgetreden bij het verwerken van je betaling. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "rejected_transaction": "Uw betaling is geweigerd. Probeer het opnieuw of gebruik een andere betaalmethode.",
+        "credit_card_processing": "Je betaling kan om technische redenen niet worden verwerkt. Probeer het over een paar minuten opnieuw of gebruik een andere betaalmethode.",
+        "checkout_amount_changed": "Je betaling kon niet worden verwerkt omdat het verschuldigde bedrag bij het afrekenen is gewijzigd. Controleer je bestelling en probeer het opnieuw.",
+        "deferred_payment_not_allowed": "Uitgestelde betalingen zijn niet toegestaan. Controleer uw bestelling en probeer het opnieuw.",
+        "deferred_payment_required": "Deze bestelling vereist een uitgestelde betaling. Controleer uw bestelling en probeer het opnieuw.",
+        "deferred_amount_changed": "Je betaling kon niet worden verwerkt omdat het bedrag van de uitgestelde betaling is gewijzigd. Controleer je bestelling en probeer het opnieuw."
       }
     },
     "sentence": {
