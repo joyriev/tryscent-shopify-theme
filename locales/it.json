@@ -2866,6 +2866,75 @@
       },
       "failed_address_update": {
         "description": "Si è verificato un problema nell'aggiornamento dell'indirizzo. Provi ad aggiornare la pagina o a controllare la sua connessione a Internet."
+      },
+      "load_orders_error": {
+        "description": "Riprovate o tornate più tardi."
+      },
+      "load_paypal_error": {
+        "description": "C'è un problema nel caricamento di PayPal. Si prega di riprovare."
+      },
+      "logout_everywhere": {
+        "description": "Qualcosa è andato storto durante il logout. Riprovare."
+      },
+      "no_access_to_locations": {
+        "description": "Non si ha accesso a nessuna sede"
+      },
+      "not_found": {
+        "description": "Controllare l'URL o riprovare tra qualche minuto.",
+        "title": "C'è un problema nel caricamento di questa pagina"
+      },
+      "order_not_found": {
+        "description": "Questo ordine non esiste o non si ha il permesso di visualizzarlo."
+      },
+      "profile_update_error": {
+        "description": "Si è verificato un problema nell'aggiornamento del profilo. Provi ad aggiornare la pagina o a controllare la sua connessione a Internet."
+      },
+      "resend_link": {
+        "too_many_requests": "Troppe richieste. Riprovare più tardi.",
+        "generic": "Richiesta fallita"
+      },
+      "load_extension_error": {
+        "description": "Aggiornare la pagina o riprovare tra qualche minuto.",
+        "refresh_button": "Aggiorna la pagina"
+      }
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "description": "Riprovare tra qualche minuto"
+      }
+    },
+    "payment_methods": {
+      "add_payment_method_banner": "Aggiungere un metodo di pagamento per un checkout più rapido o per servizi pre-autorizzati",
+      "edit_payment_method_button_accessibility_label": "Modificare il {{paymentMethodName}} che termina con {{lastDigits}}",
+      "delete_payment_method_button": "Cancellare",
+      "delete_payment_method_button_accessibility_label": "Cancellare {{paymentMethodName}}",
+      "generic_card": "Scheda",
+      "expiration_warning_button_accessibility_label": "Mostra l'avviso di scadenza per {{paymentMethodName}} che termina con {{lastDigits}}",
+      "expires_soon": "Questa carta scade presto",
+      "card_update_consent_subscriptions": "Questo metodo di pagamento verrà salvato per gli acquisti futuri e potrà essere utilizzato per qualsiasi acquisto ricorrente o differito.",
+      "credit_or_debit_card_title": "Carta di credito o di debito",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Aggiungere il metodo di pagamento Google Pay",
+        "loading_accessibility_message": "Caricamento di Google Pay",
+        "loading": "Caricamento di Google Pay",
+        "errors": {
+          "generic": "Si è verificato un problema con Google Pay. Riprovare o utilizzare un altro metodo di pagamento.",
+          "missing_billing_address": "Google Pay richiede un indirizzo di fatturazione. Si prega di aggiungerne uno al proprio account."
+        }
+      },
+      "pay_pal": {
+        "iframe_title_accessibility_label": "Aggiungere il metodo di pagamento PayPal",
+        "loading_accessibility_message": "Caricamento di PayPal"
+      },
+      "apple_pay": {
+        "loading": "Caricamento di Apple Pay",
+        "errors": {
+          "missing_billing_address": "Apple Pay richiede un indirizzo di fatturazione. Si prega di aggiungerne uno al proprio account."
+        }
+      },
+      "store_credit": {
+        "label": "Store credit",
+        "accesibility_label": "Store credit - {{formattedBalance}}"
       }
     }
   }
