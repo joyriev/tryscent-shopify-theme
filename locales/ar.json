@@ -2828,47 +2828,47 @@
       "create_account": "إنشاء حساب",
       "reset_account": "إعادة تعيين الحساب",
       "addresses": "العناوين",
-      "order": "طلب %{name}",
+      "order": "الطلب %{name}",
       "search": "بحث",
       "search_results": {
-        "one": "بحث: %{count} نتيجة وجدت لـ \"%{terms}\"",
-        "other": "بحث: تم العثور على %{count} نتائج لـ \"%{terms}\""
+        "one": "بحث: %{count} النتائج التي تم العثور عليها لـ%{terms}\"",
+        "other": "بحث: %{count} النتائج التي تم العثور عليها لـ%{terms}\""
       },
       "collections": "المجموعات",
-      "not_found": "٤٠٤ غير موجود",
-      "challenge": "تحدي",
-      "checkpoint": "نقطة التفتيش"
+      "not_found": "404 لم يتم العثور على 404",
+      "challenge": "التحدي",
+      "checkpoint": "نقطة تفتيش"
     },
     "challenge": {
-      "message": "للمتابعة، أخبرنا أنك لست روبوتًا.",
+      "message": "للمتابعة، دعنا نعرف أنك لست روبوتاً.",
       "error": "إجابتك لم تكن صحيحة، يرجى المحاولة مرة أخرى.",
       "submit_button_text": "إرسال"
     },
     "cart": {
-      "discounts_with_count": "تم تطبيق %{count} خصومات"
+      "discounts_with_count": "%{count} تم تطبيق خصومات"
     },
     "checkpoint": {
-      "message": "حل كابتشا للمتابعة",
-      "error": "فشل التحقق من كابتشا",
+      "message": "حل كلمة التحقق (Captcha) للمتابعة",
+      "error": "فشل التحقق من صحة كلمة التحقق (Captcha)",
       "submit_button_text": "إرسال"
     },
     "store_availability": {
       "pick_up_time": {
-        "one_hour": "عادةً جاهز في غضون ساعة",
-        "twenty_four_hours": "عادةً جاهز خلال 24 ساعة",
-        "two_hours": "عادةً جاهز في غضون ساعتين",
-        "two_to_four_days": "عادةً جاهز في 2-4 أيام",
-        "five_or_more_days": "عادةً جاهز في غضون 5 أيام أو أكثر",
-        "four_hours": "عادةً جاهز في 4 ساعات",
-        "zero_to_two_hours": "عادةً جاهز في غضون ساعتين",
-        "two_to_four_hours": "عادةً جاهز في 4 ساعات",
+        "one_hour": "عادة ما تكون جاهزة في 1 ساعة",
+        "twenty_four_hours": "عادةً ما تكون جاهزة خلال 24 ساعة",
+        "two_hours": "عادةً ما تكون جاهزة خلال ساعتين",
+        "two_to_four_days": "عادةً ما تكون جاهزة خلال 2-4 أيام",
+        "five_or_more_days": "عادة ما تكون جاهزة خلال 5 أيام فأكثر",
+        "four_hours": "عادةً ما تكون جاهزة خلال 4 ساعات",
+        "zero_to_two_hours": "عادةً ما تكون جاهزة خلال ساعتين",
+        "two_to_four_hours": "عادةً ما تكون جاهزة خلال 4 ساعات",
         "immediately": "جاهز للاستلام الآن",
         "next_day": "جاهز للاستلام في اليوم التالي"
       }
     },
     "subscriptions": {
-      "buyer_consent_product": "هذا العنصر هو عملية شراء متكررة أو مؤجلة. من خلال المتابعة، أوافق على %{cancellationPolicyLink} وأفوضكم بخصم طريقة الدفع الخاصة بي بالأسعار والتكرار والتواريخ المدرجة في هذه الصفحة حتى يتم تنفيذ طلبي أو ألغيها، إذا كان ذلك مسموحًا.",
-      "buyer_consent_cart": "واحد أو أكثر من العناصر في سلة التسوق الخاصة بك هو عملية شراء متكررة أو مؤجلة. من خلال المتابعة، أوافق على %{cancellationPolicyLink} وأفوضك بخصم طريقة الدفع الخاصة بي بالأسعار والتكرار والتواريخ المدرجة في هذه الصفحة حتى يتم تنفيذ طلبي أو ألغيها، إذا كان ذلك مسموحًا.",
+      "buyer_consent_product": "هذا العنصر هو عملية شراء متكررة أو مؤجلة. من خلال المتابعة، أوافق على %{cancellationPolicyLink} وأصرح لك بخصم رسوم طريقة الدفع الخاصة بي بالأسعار والتكرار والتواريخ المدرجة في هذه الصفحة حتى يتم تنفيذ طلبي أو ألغيه، إذا كان مسموحًا بذلك.",
+      "buyer_consent_cart": "واحد أو أكثر من العناصر الموجودة في عربة التسوق الخاصة بك هو شراء متكرر أو مؤجل. من خلال المتابعة، أوافق على %{cancellationPolicyLink} وأصرح لك بخصم رسوم طريقة الدفع الخاصة بي بالأسعار والتكرار والتواريخ المدرجة في هذه الصفحة حتى يتم تنفيذ طلبي أو ألغيه، إذا كان مسموحًا بذلك.",
       "cancellation_policy": "سياسة الإلغاء"
     }
   },
@@ -2877,8 +2877,8 @@
       "humanize": {
         "lessThanOneYearAgo": "{{date}} في {{time}}",
         "lessThanOneHourAgo": {
-          "one": "منذ {{count}} دقيقة",
-          "other": "منذ {{count}} دقيقة"
+          "one": "{{count}} منذ دقيقة",
+          "other": "{{count}} منذ دقائق"
         },
         "lessThanOneMinuteAgo": "الآن فقط",
         "lessThanOneWeekAgo": "{{weekday}} في {{time}}",
@@ -2889,16 +2889,16 @@
         "lessThanOneYearAway": "{{date}} في {{time}}"
       }
     },
-    "enable_javascript": "لعرض حسابك، قم بتمكين JavaScript في إعدادات المتصفح الخاص بك أو قم بتسجيل الدخول باستخدام متصفح آخر.",
+    "enable_javascript": "لعرض حسابك، قم بتمكين JavaScript في إعدادات المتصفح أو قم بتسجيل الدخول باستخدام متصفح آخر.",
     "navigation_and_structure": {
       "account_menu": {
         "hide_accessibility_label": "إخفاء قائمة الحساب",
         "label": "الحساب",
-        "show_accessibility_label": "عرض قائمة الحساب",
+        "show_accessibility_label": "إظهار قائمة الحساب",
         "nav_accessibility_label": "تصفح الحساب",
-        "open_menu_accessibility_label": "فتح تنقل الحساب",
-        "close_menu_accessibility_label": "إغلاق تنقل الحساب",
-        "loading_message": "جارٍ تحميل تنقل الحساب"
+        "open_menu_accessibility_label": "تصفح الحساب المفتوح",
+        "close_menu_accessibility_label": "تصفح حساب الإغلاق",
+        "loading_message": "تحميل تصفح الحساب"
       },
       "action_menu_accessibility_label": "المزيد من الإجراءات",
       "close_menu_accessibility_label": "إغلاق التنقل الرئيسي",

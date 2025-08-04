@@ -578,7 +578,20 @@
         "saved_by_payment_method": "Gerettet von %{payment_method}"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."
+        "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren.",
+        "shipping_method": "Die Versandoptionen für Ihre Bestellung haben sich geändert. Überprüfen Sie Ihre Auswahl und versuchen Sie es erneut.",
+        "shipping_method_not_available": "Ihr Warenkorb wurde aktualisiert und die hinzugefügten Artikel können nicht an Ihre Adresse geliefert werden. Entfernen Sie die Artikel, um Ihre Bestellung abzuschließen.",
+        "shipping_method_not_available_generic": {
+          "one": "Ihre Bestellung kann nicht an die ausgewählte Adresse versandt werden. Überprüfen Sie Ihre Adresse, um sicherzustellen, dass sie korrekt ist und versuchen Sie es erneut, oder wählen Sie eine andere Adresse.",
+          "other": "Einige Artikel in Ihrem Warenkorb können nicht an die von Ihnen angegebene Adresse versandt werden. Überprüfen Sie Ihre Adresse, um sicherzustellen, dass sie korrekt ist, und versuchen Sie es erneut, oder wählen Sie eine andere Adresse."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Die Artikel im Warenkorb entsprechen nicht den Preis- oder Gewichtsanforderungen, um für den Versand zu qualifizieren. Aktualisieren Sie Ihren Warenkorb und versuchen Sie es erneut.",
+        "shipping_method_not_available_updated": {
+          "one": "Der Artikel, den Sie hinzugefügt haben, wird nicht an Ihren Standort geliefert. Entfernen Sie ihn, um zur Kasse zu gehen, oder kontaktieren Sie das Geschäft.",
+          "other": "Ein oder mehrere Artikel, die Sie hinzugefügt haben, werden nicht an Ihren Standort geliefert. Entfernen Sie sie, um zur Kasse zu gehen, oder kontaktieren Sie den Shop."
+        },
+        "payment_method_not_supported": "Sie können diese Zahlungsmethode nicht für %{country} verwenden. Bitte verwenden Sie eine andere Zahlungsmethode für den Versand in dieses Land.",
+        "empty_state": "Geben Sie Ihre Versandadresse ein, um die verfügbaren Versandmethoden anzuzeigen."
       },
       "order_summary": {
         "for_add_on": "Für: %{group_title}",
@@ -1265,6 +1278,49 @@
           "tax_credential_tr": "Republik Türkei Identitätsnummer / Mehrwertsteuer",
           "shipping_credential_tr": "Republik Türkei Identitätsnummer / Mehrwertsteuer"
         }
+      },
+      "payment_errors": {
+        "deferred_date_changed": "Ihre Zahlung konnte nicht bearbeitet werden, weil sich das Datum der aufgeschobenen Zahlung geändert hat. Bitte überprüfen Sie Ihre Bestellung und versuchen Sie es erneut.",
+        "order_total_changed": "Der Gesamtbetrag Ihrer Bestellung hat sich geändert. Überprüfen Sie und versuchen Sie es erneut.",
+        "payment_processing": "Ihre Zahlung kann aus technischen Gründen nicht bearbeitet werden. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "payment_processing_no_retry": "Ihre Zahlung kann aus technischen Gründen nicht bearbeitet werden. Bitte versuchen Sie eine andere Zahlungsmethode.",
+        "paypal_zero_amount": "Sie können PayPal nicht für Bestellungen %{amount} verwenden. Bestätigen Sie, dass Ihre Bestellung korrekt ist, und gehen Sie ohne PayPal zur Kasse.",
+        "paypal_invalid_token": "PayPal war nicht verfügbar. Versuchen Sie es erneut oder verwenden Sie eine andere Bezahloption.",
+        "pay_later_failed": "Es ist ein Fehler bei der Verarbeitung Ihrer Zahlung mit Pay later aufgetreten. Wählen Sie eine andere Zahlungsmethode und versuchen Sie es erneut.",
+        "three_d_secure_failed": "Ihre Zahlung konnte nicht verifiziert werden. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "three_d_secure_failed_duplicate": "Die 3D-Secure-Authentifizierung der Kreditkarte ist fehlgeschlagen, weil bereits eine weitere Authentifizierung im Gange ist.",
+        "three_d_secure_failed_payment_method": "Ihre Karte konnte nicht verifiziert werden. Versuchen Sie es erneut oder fügen Sie eine andere Karte hinzu.",
+        "three_d_secure_throttled": "Zu viele Versuche; bitte warten Sie, bevor Sie es erneut versuchen",
+        "subscription_agreement_blank": "Um ein Abonnement zu kaufen, müssen Ihre Zahlungsdaten gespeichert werden. Um fortzufahren, bestätigen Sie, dass Sie einverstanden sind, oder entfernen Sie Abonnementartikel aus Ihrer Bestellung.",
+        "insufficient_funds": "Ihre Zahlung wurde wegen unzureichender Deckung abgelehnt. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "multiple_deferred_payment_not_allowed": "Pro Antrag ist nur ein Zahlungsaufschub zulässig. Bitte überprüfen Sie Ihren Antrag und versuchen Sie es erneut.",
+        "shipping_must_match_billing": "Die Rechnungsadresse muss mit der Lieferadresse übereinstimmen. Bitte verwenden Sie eine andere Zahlungsmethode.",
+        "decision_rule_block": "Es gab ein Problem bei der Bearbeitung Ihrer Zahlung. Bitte kontaktieren Sie den Shop-Betreiber.",
+        "pick_up_card": "Ihre Karte wurde abgelehnt. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "cannot_verify": "Ihre Zahlungsdaten konnten nicht verifiziert werden. Überprüfen Sie Ihre Kartendaten und versuchen Sie es erneut.",
+        "invalid_number": "Geben Sie eine gültige Kartennummer ein",
+        "invalid_expiry_date": "Geben Sie ein gültiges Verfallsdatum ein",
+        "invalid_cvc": "Geben Sie einen gültigen Sicherheitscode ein",
+        "expired_card": "Ihre Karte ist abgelaufen. Verwenden Sie eine andere Zahlungsmethode.",
+        "payment_method_not_applicable": "Diese Zahlungsmethode ist nicht anwendbar. Verwenden Sie eine andere Zahlungsmethode.",
+        "card_declined": "Ihre Karte wurde abgelehnt. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "processing_error": "Es gab ein Problem bei der Bearbeitung Ihrer Zahlung. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "processing_error_checkout_as_guest": "Es gab ein Problem bei der Bearbeitung Ihrer Zahlung. Versuchen Sie es erneut mit einer anderen Zahlungsmethode oder {{checkout_as_guest_link}}.",
+        "selected_payment_method": "Es gab ein Problem mit der von Ihnen gewählten Zahlungsmethode und Sie wurden nicht belastet. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "payment_method_billing_address": "Es gab ein Problem mit der Rechnungsadresse der von Ihnen gewählten Zahlungsmethode und Sie wurden nicht belastet. Überprüfen Sie die Adresse und versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "call_issuer": "Ihre Karte wurde abgelehnt. Verwenden Sie eine andere Zahlungsmethode oder kontaktieren Sie Ihre Bank für weitere Informationen.",
+        "test_mode_live_card": "Dieser Laden kann weder echte Bestellungen noch echte Zahlungen annehmen.",
+        "transient_error": "Es gab ein Problem bei der Bearbeitung Ihrer Zahlung. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung.",
+        "missing_shipping_address": "Ihre Zahlung konnte nicht bearbeitet werden, weil Ihre Lieferadresse fehlt. Fügen Sie eine Lieferadresse hinzu und versuchen Sie es erneut.",
+        "invalid_shipping_address": "Ihre Zahlung konnte nicht bearbeitet werden, weil wir Ihre Lieferadresse nicht finden konnten. Überprüfen Sie Ihre Lieferadresse und versuchen Sie es erneut.",
+        "successful_offsite_with_gift_card_error": "Es gab ein Problem bei der Verarbeitung Ihrer Geschenkkartenzahlung. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "development_store_order_limit_reached": "Sie haben das Limit für Bestellungen im Entwicklungsshop mit diesem Zahlungsanbieter erreicht. Um eine weitere Bestellung aufzugeben, müssen Sie ein Test-Zahlungsgateway verwenden. Erfahren Sie mehr über %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "Um eine Testbestellung aufzugeben, müssen Sie ein Test-Zahlungsgateway verwenden. Erfahren Sie mehr über %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "Testaufträge in Entwicklungsläden",
+        "payment_above_threshold": "Der Zahlungsbetrag liegt über dem Höchstbetrag für diese Region. Reduzieren Sie den Betrag und versuchen Sie es erneut",
+        "risky": "Es gab ein Problem bei der Bearbeitung Ihrer Zahlung. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "expired_buyer_action": "Die Zahlungsmethode wurde abgebrochen. Bitte versuchen Sie es erneut.",
+        "name_mismatch": "Bitte überprüfen Sie Ihre Kartendaten. Der Name auf Ihrer Karte und die Rechnungsadresse stimmen nicht überein."
       }
     }
   },
