@@ -2809,12 +2809,12 @@
   "customer_accounts": {
     "account_information": {
       "verify_new_email_modal": {
-        "title": "メールを確認する",
-        "one_time_password_label": "6桁のコード",
-        "description": "{{email}} に送信されたコードを入力してください",
-        "email_resend_button": "コードを再送信する",
-        "email_resend_button_accessibility_label": "確認コードを再送信する",
-        "verify_button": "確認する",
+        "title": "電子メールの確認",
+        "one_time_password_label": "6桁コード",
+        "description": "に送られたコードを入力する。 {{email}}",
+        "email_resend_button": "コードの再送",
+        "email_resend_button_accessibility_label": "認証コードの再送",
+        "verify_button": "ベリファイ",
         "verify_button_accessibility_label": "ワンタイムパスワードを確認する",
         "cancel_button": "キャンセル",
         "cancel_button_accessibility_label": "メール編集をキャンセルする"
@@ -2822,6 +2822,19 @@
       "email_update_success_modal": {
         "title": "メールを確認する",
         "description": "メールアドレスが正常に更新されました。ログイン画面にリダイレクトしています。"
+      },
+      "loading_accessibility_message": "アカウント情報の読み込み",
+      "loading_finished_accessibility_message": "アカウント情報がロードされました",
+      "profile_card": {
+        "cancel_accessibility_label": "プロフィール編集のキャンセル",
+        "edit_accessibility_label": "プロフィール編集",
+        "email_help_text": "ログインに使用する電子メールが変更できない",
+        "first_name": "名前",
+        "email": "電子メール",
+        "no_name_provided_accessibility_label": "無記名",
+        "phone_number_help_text": "ログインに使用する電話番号が変更できない",
+        "save": "セーブ",
+        "save_accessibility_label": "プロファイルの保存"
       }
     },
     "email_capture": {
@@ -2868,7 +2881,27 @@
         "close_menu_accessibility_label": "アカウントを閉じる",
         "loading_message": "読み込み中 アカウントナビゲーション"
       },
-      "action_menu_accessibility_label": "より多くの行動"
+      "action_menu_accessibility_label": "より多くの行動",
+      "close_menu_accessibility_label": "メインナビゲーションを閉じる",
+      "contact_email_subject": "{{shopName}}オンラインストアからのお問い合わせ",
+      "dismiss_toast": "解散",
+      "go_to_store_link": "店舗へ",
+      "loading_message": "ローディング",
+      "logout_overlay_label": "ログアウト...",
+      "nav_label_accessibility_label": "メインナビゲーション",
+      "navigation_accessibility_message": "に移動した。 {{sectionName}}",
+      "open_menu_accessibility_label": "メインナビゲーションを開く",
+      "orders_link_label": "受注状況",
+      "shop_logo_accessibility_label": "{{shopName}} ロゴ",
+      "country_switcher_toast_message": "国が切り替わった {{countryName}}",
+      "switch_country": "国替え",
+      "no_countries_found": "該当国なし",
+      "location_switcher_toast_message": "場所は次の通り。 {{locationName}}",
+      "switch_location": "スイッチ位置",
+      "no_locations_found": "場所は見つかりませんでした",
+      "view_details": "詳細を見る",
+      "company_location": "会社所在地",
+      "skip_to_content": "コンテンツへスキップ"
     }
   }
 }

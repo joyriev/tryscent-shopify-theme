@@ -640,7 +640,58 @@
         "eps_label": "trasferimento eps",
         "klarna_slice_it_label": "Finanza con Klarna",
         "cashapppay_label": "Contanti App Pay",
-        "blik_label": "Stagno"
+        "blik_label": "Stagno",
+        "purchase_options_card_update_agreement_label_html": "Aggiornando il metodo di pagamento, si autorizza il pagamento di qualsiasi acquisto ricorrente o differito in base alla <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">politica di cancellazione</a> di questo negozio.",
+        "subscription_card_update_agreement_label": "La modifica del metodo di pagamento aggiornerà l'abbonamento e i futuri pagamenti ricorrenti.",
+        "subscription_agreement_label": "Uno o più articoli nel carrello sono un acquisto differito o in abbonamento. Proseguendo con il pagamento, l'utente accetta che il suo metodo di pagamento venga addebitato automaticamente al prezzo e alla frequenza elencati in questa pagina fino alla scadenza o alla cancellazione. Tutte le cancellazioni sono soggette alla %{cancelled}.",
+        "subscription_agreement_cancelled": "Politica di cancellazione",
+        "subscription_heading": "Accordo di sottoscrizione",
+        "subscription_agreement_label_html": "Sono consapevole di aver sottoscritto un abbonamento. L'abbonamento si rinnoverà al prezzo e con la frequenza indicati fino alla sua scadenza o fino a che non sarà\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">annullato</a>.\n",
+        "purchase_options_agreement_label": "Uno o più articoli nel carrello sono un acquisto differito o ricorrente. Proseguendo con il pagamento, l'utente accetta che il suo metodo di pagamento venga addebitato automaticamente al prezzo e alla frequenza elencati in questa pagina fino alla scadenza o alla cancellazione. Tutte le cancellazioni sono soggette alla  %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "Sono consapevole che uno o più articoli presenti nel mio carrello sono un acquisto differito o ricorrente. Proseguendo, accetto il\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">Politica di cancellazione</a>\ne vi autorizzo ad addebitare il mio metodo di pagamento ai prezzi, alla frequenza e alle date indicati in questa pagina fino a quando il mio\nl'ordine viene evaso o lo annullo, se consentito.\n",
+        "purchase_options_agreement_label_wallets": "Proseguendo con il pagamento, l'utente accetta le spese future elencate in questa pagina e la politica di cancellazione.",
+        "change_currency_section_description": "Selezionare un'opzione di valuta",
+        "no_real_orders_dev_store": "Questo negozio non può accettare ordini o pagamenti reali.",
+        "waiting_on_payment_methods": "Ottenere i metodi di pagamento disponibili...",
+        "apple_pay_payment_error": "Non è stato possibile completare il pagamento. Riprovare o utilizzare un altro metodo di pagamento.",
+        "taxes_not_included": "Tasse non incluse",
+        "no_taxes_banner_content": "Le tasse non saranno addebitate su questo ordine. Una volta incassato il pagamento, le tasse non possono più essere aggiunte.",
+        "paypal": {
+          "connect": "Fare clic per collegare il conto PayPal"
+        },
+        "apple": {
+          "connect": "Fare clic per collegare il proprio account Apple Pay",
+          "not_available": "Apple Pay non è disponibile in questo browser. Per collegare il vostro account Apple Pay dovrete utilizzare Safari su un dispositivo Apple."
+        },
+        "google": {
+          "connect": "Fare clic per connettersi con il proprio account Google Pay",
+          "error_authorizing": "Errore nell'autorizzare il pagamento"
+        },
+        "mor_disclaimer_html": "Facendo clic qui sotto e completando il vostro ordine, accettate di acquistare i vostri articoli da Global-e come commerciante di riferimento.\nper questa transazione, sui <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Termini e Condizioni</a> di Global-e.\ne la <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">politica sulla privacy</a>. Global-e è una società internazionale\nfornitore di servizi di adempimento per %{shop_name}\n",
+        "pending_payment": {
+          "due_notice": "Il pagamento dell'importo %{amount_due} è dovuto il giorno %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "Il pagamento del %{amount_due} è dovuto.",
+            "instruction_html": "Effettuate il pagamento presso Multibanco o online utilizzando i dati riportati di seguito. Per domande o per aggiornare i dati di pagamento, %{contact_us}.",
+            "find_nearest_atm": "Trova il bancomat più vicino"
+          }
+        },
+        "update_payment_method": "Aggiornare il metodo di pagamento",
+        "order_covered_by_store_credit_notice": "L'ordine è coperto dal credito del negozio.",
+        "order_covered_by_redeemables_notice": "Il vostro ordine è coperto.",
+        "store_credit": {
+          "label": "Store credit",
+          "apply_label": "Applicare il credito del negozio",
+          "add_label": "Aggiungi credito al negozio",
+          "manage_label": "Gestire il credito del negozio",
+          "buying_gift_card": "Non è possibile utilizzare il credito del negozio per acquistare una carta regalo.",
+          "no_fixed_selling_plans": "Non è possibile utilizzare il credito del negozio con le opzioni di acquisto differito."
+        },
+        "clear": "Libero",
+        "same_billing_address_checkbox_label": "Utilizzare l'indirizzo di spedizione come indirizzo di fatturazione",
+        "location_billing_address_label": "Indirizzo di fatturazione",
+        "location_shipping_address_label": "Indirizzo di spedizione",
+        "use_order_billing_address_label": "Utilizzare l'indirizzo di fatturazione dell'ordine"
       },
       "order_summary": {
         "for_add_on": "Per: %{group_title}",
