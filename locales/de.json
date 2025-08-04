@@ -2948,6 +2948,72 @@
         "title_choose_location": "Wählen Sie einen Standort",
         "clear_search": "Suche löschen",
         "try_new_search": "Versuchen Sie eine neue Suche"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all_accessibility_label": "Alle Aufträge in der Überprüfung ausblenden",
+          "show_all_accessibility_label": "Alle Aufträge in der Überprüfung anzeigen",
+          "show_all_orders_in_review": "Alle Aufträge in der Überprüfung anzeigen",
+          "show_less_orders_in_review": "Weniger Aufträge in der Übersicht anzeigen",
+          "title": "Anhängig",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Sie haben keine ausstehenden Aufträge",
+            "pending_orders": {
+              "one": "Sie haben {{count}} ausstehende Aufträge",
+              "other": "Sie haben {{count}} ausstehende Aufträge"
+            },
+            "more_than_pagination_length": "Sie haben mehr als {{count}} ausstehende Aufträge"
+          },
+          "pagination": {
+            "nav_accessibility_label": "Navigationsschaltflächen für Aufträge im Rückblick"
+          }
+        },
+        "removed_company_contact_tooltip": "Aus dem Unternehmen ausgeschieden"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Bestätigt {{date}} von Bestellung {{draftOrderName}}",
+        "loading": "Auftragsdetails laden",
+        "loading_finished_accessibility_message": "Die Bestelldaten wurden geladen",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Ihre Zahlung ist {{count}} Tage überfällig",
+              "other": "Ihre Zahlung ist {{count}} Tage überfällig"
+            },
+            "banner_due": {
+              "one": "Ihre Zahlung ist fällig in {{count}} Tag",
+              "other": "Ihre Zahlung ist fällig in {{count}} Tagen"
+            },
+            "banner_due_today": "Ihre Zahlung ist heute fällig",
+            "title": "Fällige Zahlung",
+            "title_with_date": "Fällige Zahlung {{date}}",
+            "title_due_on_fulfillment": "Fälligkeit der Zahlung bei Erfüllung",
+            "description_overdue": "Ihre Zahlung ist verspätet.",
+            "description_partially_paid": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restsaldo.",
+            "description_authorized": "Ihre Zahlungsmethode wird am Fälligkeitstag belastet, oder Sie können jetzt bezahlen.",
+            "description_waiting_for_manual_payment": "Diese Bestellung hat eine ausstehende Zahlung. Der Saldo wird aktualisiert, sobald die Zahlung eingegangen ist.",
+            "description_due_on_receipt": "Sie erhalten eine Rechnung, wenn die Zahlung fällig ist.",
+            "description_due_on_receipt_partially_paid": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restsaldo. Sie erhalten eine Rechnung, wenn die Zahlung fällig ist.",
+            "description_due_on_fulfillment": "Die Zahlung ist fällig, sobald alle Artikel in diesem Auftrag erfüllt sind.",
+            "description_due_on_fulfillment_partially_paid": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restsaldo. Die Zahlung ist fällig, sobald alle Artikel in dieser Bestellung erfüllt sind."
+          },
+          "draft": {
+            "description": "Die Zahlungsmodalitäten werden bei der Bestätigung der Bestellung festgelegt.",
+            "title": "Noch nicht fällige Zahlung",
+            "in_review": {
+              "description": "Die Zahlungsmodalitäten werden bei der Bestätigung der Bestellung festgelegt.",
+              "title": "Noch nicht fällige Zahlung"
+            },
+            "submitted": {
+              "description": "Senden Sie die Zahlung, um diese Bestellung zu bestätigen.",
+              "title": "Bezahlen zur Bestätigung",
+              "deposit": {
+                "title": "Die Zahlung ist fällig",
+                "due_later": "Der Saldo ist zu {{translatedName}} Konditionen und ist am {{dueDate}} fällig."
+              }
+            }
+          }
+        }
       }
     }
   }
