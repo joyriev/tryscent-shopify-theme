@@ -2249,7 +2249,44 @@
     },
     "page_titles": {
       "blog_or_article_with_error": "오류 - 오류 %{title}",
-      "shopping_cart": "장바구니"
+      "shopping_cart": "장바구니",
+      "create_account": "계정 만들기",
+      "reset_account": "계정 초기화",
+      "order": "주문 %{name}",
+      "search_results": {
+        "one": "검색:%{terms}\"에 대한 %{count} 결과를 찾았습니다.",
+        "other": "검색:%{terms}\"에 대한 %{count} 결과를 찾았습니다."
+      },
+      "not_found": "404 찾을 수 없음",
+      "challenge": "도전 과제",
+      "checkpoint": "체크포인트"
+    },
+    "challenge": {
+      "message": "계속하려면 로봇이 아니라는 사실을 알려주세요.",
+      "error": "답변이 올바르지 않습니다. 다시 시도해 주세요.",
+      "submit_button_text": "제출하기"
+    },
+    "checkpoint": {
+      "message": "계속하려면 캡차 해결",
+      "error": "캡차 유효성 검사 실패",
+      "submit_button_text": "제출하기"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "보통 1시간 안에 준비",
+        "two_hours": "보통 2시간 안에 준비",
+        "four_hours": "보통 4시간 안에 준비",
+        "twenty_four_hours": "보통 24시간 내 준비",
+        "two_to_four_days": "보통 2~4일 내에 준비",
+        "five_or_more_days": "보통 5일 이상 준비",
+        "zero_to_two_hours": "보통 2시간 안에 준비",
+        "two_to_four_hours": "보통 4시간 안에 준비",
+        "immediately": "지금 픽업 준비 완료"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "이 항목은 반복 또는 지연 구매입니다. 계속 진행함으로써 본인은 %{cancellationPolicyLink} 동의하며, 허용되는 경우 주문이 완료되거나 취소할 때까지 이 페이지에 나열된 가격, 빈도 및 날짜에 따라 결제 방법으로 청구하는 것을 승인합니다.",
+      "buyer_consent_cart": "장바구니에 있는 품목 중 하나 이상이 반복 또는 지연 구매입니다. 계속 진행함으로써 본인은 %{cancellationPolicyLink} 동의하며, 허용되는 경우 주문이 완료되거나 취소할 때까지 이 페이지에 나열된 가격, 빈도 및 날짜에 따라 결제 방법으로 청구할 수 있는 권한을 부여합니다."
     }
   },
   "customer_accounts": {
@@ -2299,6 +2336,29 @@
     },
     "order_details": {
       "group_title_label_with_parent": "대상: {{groupTitle}}"
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneYearAgo": "{{date}} 에서 {{time}}",
+        "lessThanOneHourAgo": {
+          "one": "{{count}} 1 분 전",
+          "other": "{{count}} 몇 분 전"
+        },
+        "lessThanOneMinuteAgo": "지금 바로",
+        "lessThanOneWeekAgo": "{{weekday}} 에서 {{time}}",
+        "lessThanOneWeekAway": "{{weekday}} 에서 {{time}}",
+        "lessThanOneYearAway": "{{date}} 에서 {{time}}"
+      }
+    },
+    "enable_javascript": "계정을 보려면 브라우저 설정에서 JavaScript를 활성화하거나 다른 브라우저로 로그인하세요.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "계정 숨기기 메뉴",
+        "show_accessibility_label": "계정 표시 메뉴",
+        "open_menu_accessibility_label": "계정 열기 탐색",
+        "loading_message": "로딩 중 계정 탐색"
+      },
+      "action_menu_accessibility_label": "더 많은 작업"
     }
   }
 }
