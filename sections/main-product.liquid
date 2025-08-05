@@ -120,6 +120,16 @@
                   <span class="cheaper_than_text">cheaper than</span>
                   <span>{{ product.metafields.custom.nuta | remove: 'Inspired By:' }}</span>
                 </div>
+
+              {%- when 'shipping_text' -%}
+                <div class="line-clamp-1 relative !-my-2">
+                  <p>
+                    5-8 Days delivery to <span class="shipping_location">Worldwide</span>
+                  </p>
+                  <p>
+                    *Shipping Fee Calculated At Checkout
+                  </p>
+                </div>
               {%- when 'selling_points' -%}
                 <ul class="list-none p-0">
                   {% for item in product.metafields.custom.selling_points.value %}
@@ -875,6 +885,11 @@
           "default": 250
         }
       ]
+    },
+    {
+      "type": "shipping_text",
+      "name": "Shipping Text",
+      "limit": 1
     },
     {
       "type": "selling_points",
