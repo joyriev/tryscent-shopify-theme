@@ -973,6 +973,19 @@ function addBundleToCart() {
       // Success - close modal and refresh cart
       closeBundlerModal();
       
+      // Add builder tag to cart attributes
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          attributes: {
+            'builder': 'true'
+          }
+        })
+      });
+      
       // Optional: Show success message or update cart count
       if (typeof updateCartCount === 'function') {
         updateCartCount();
