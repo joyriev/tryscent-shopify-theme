@@ -76,20 +76,6 @@
   <div class="page-width">
     <div style="display: flex;" class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper pb-6">
-        {% comment %} <div class="mb-6 bg-[#f0f2ec] p-4 rounded pb-6 -ml-[15px] -mr-[15px] md:ml-0 md:mr-0">
-          <h3 class="text-center mt-0">Add 2 more, Get 1 30ml Scent <strong>FREE!</strong></h3>
-          <div class="relative bg-white shadow-lg h-3">
-            <div class="size-10 shadow-lg flex items-center justify-center bg-white rounded-full absolute -left-1 -top-3.5">
-              <img src="{{ "tryscent-bottle.svg" | asset_url }}" alt="O" height="24" width="24">
-            </div>
-            <div class="size-10 shadow-lg flex items-center justify-center bg-white rounded-full absolute left-1/2 -top-3.5 [transform:translateX(-50%)]">
-              <img src="{{ 'tryscent-bottle.svg' | asset_url }}" alt="O" height="24" width="24">
-            </div>
-            <div class="size-10 shadow-lg flex items-center justify-center bg-white rounded-full absolute -right-1 -top-3.5">
-              <img src="{{ 'tryscent-bottle.svg' | asset_url }}" alt="O" height="24" width="24">
-            </div>
-          </div>
-        </div> {% endcomment %}
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -120,13 +106,16 @@
                   <span class="cheaper_than_text">cheaper than</span>
                   <span>{{ product.metafields.custom.nuta | remove: 'Inspired By:' }}</span>
                 </div>
-
+              {%- when 'mobile_gallery' -%}
+                <div>
+                  {% render 'product-media-gallery', variant_images: variant_images %}
+                </div>
               {%- when 'shipping_text' -%}
-                <div class="line-clamp-1 relative !-my-2">
-                  <p>
+                <div class="!my-6">
+                  <p class="my-0 text-center font-semibold tracking-normal">
                     5-8 Days delivery to <span class="shipping_location">Worldwide</span>
                   </p>
-                  <p>
+                  <p class="my-0 text-center tracking-normal">
                     *Shipping Fee Calculated At Checkout
                   </p>
                 </div>
@@ -838,8 +827,18 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const ctaVideos = document.querySelectorAll(".cta_videos video");
+    // update shipping country text
+    const shippingLocation = document.querySelector(".shipping_location");
+    fetch("https://ipapi.co/country_name")
+      .then(response => response.text())
+      .then(countryName => {
+        shippingLocation.textContent = countryName;
+      })
+      .catch(error => {
+        console.error("Error fetching country code:", error);
+      });
 
+    const ctaVideos = document.querySelectorAll(".cta_videos video");
     function pauseAllVideos() {
       ctaVideos.forEach(video => {
         video.pause();
@@ -885,6 +884,11 @@
           "default": 250
         }
       ]
+    },
+    {
+      "type": "mobile_gallery",
+      "name": "Mobile Gallery",
+      "limit": 1
     },
     {
       "type": "shipping_text",
