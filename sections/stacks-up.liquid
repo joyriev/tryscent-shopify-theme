@@ -36,6 +36,16 @@
           class="max-w-24 h-auto"
           alt="Other Brands">
       </div>
+      <div class="flex items-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 text-sm font-semibold text-black md:text-base">
+        Price
+      </div>
+      <div class="flex items-center justify-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-[#f0f2ec] px-4 py-4 text-sm tracking-normal md:text-base ">
+        From
+        <span class="price_to_modify inline-block ml-1">$7.99</span>
+      </div>
+      <div class="flex items-center justify-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4 text-sm tracking-normal md:text-base">
+        <span class="price_to_modify">$325</span>+
+      </div>
       {% for block in section.blocks %}
         {% if block.type == "product" %}
           <div class="flex items-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 text-sm font-semibold text-black md:text-base">
