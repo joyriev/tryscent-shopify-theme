@@ -1989,6 +1989,10 @@
       },
       "tooltip": {
         "accessibility_label_context": "다음에 대한 자세한 정보 %{context}"
+      },
+      "field_errors": {
+        "must_use_available_delivery_address": "배송 주소는 사용 가능한 배송 주소 중에서 선택해야 합니다.",
+        "must_use_available_shipping_rate": "배송료는 사용 가능한 배송료 중에서 선택해야 합니다."
       }
     },
     "sentence": {
@@ -3095,9 +3099,32 @@
         "billing_address": {
           "title": "청구서 수신 주소",
           "add_billing_address_button": "새 항목 추가",
-          "add_billing_address_button_accessibility_label": "새 청구서 수신 주소 추가"
+          "add_billing_address_button_accessibility_label": "새 청구서 수신 주소 추가",
+          "missing_billing_address_error_message": "청구서 수신 주소를 지정해 주세요.",
+          "default_checkbox": "기본 결제 수단으로 설정"
         }
+      },
+      "three_d_secure": {
+        "title": "3D 보안"
       }
+    },
+    "payment_method_brands": {
+      "visa": "비자",
+      "mastercard": "마스터카드",
+      "americanexpress": "아메리칸 익스프레스",
+      "discover": "발견하기",
+      "dinersclub": "다이너스 클럽",
+      "visaelectron": "Visa 전자",
+      "maestro": "마스터",
+      "forbrugsforeningen": "소비자 협회",
+      "dankort": "감사 카드",
+      "unionpay": "유니온페이",
+      "laser": "레이저",
+      "shoppay": "쇼핑 결제"
+    },
+    "shop_policies": {
+      "legal_notice": "법적 고지",
+      "privacy_policy": "개인정보 보호정책"
     }
   }
 }
