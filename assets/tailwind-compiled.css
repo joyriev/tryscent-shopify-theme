@@ -305,6 +305,10 @@
     margin-top: 44px
 }
 
+.-ml-1 {
+    margin-left: -4px
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -954,6 +958,16 @@
     background-color: rgb(255 255 255 / 0.1)
 }
 
+.bg-red-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#22613A\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(34 97 58 / var(--tw-bg-opacity, 1))
+}
+
 .bg-cover {
     background-size: cover
 }
@@ -1477,6 +1491,14 @@
 
 .\[grid-area\:search\] {
     grid-area: search
+}
+
+.\[margin-left\:-4px\] {
+    margin-left: -4px
+}
+
+.\[margin-left\:4px\] {
+    margin-left: 4px
 }
 
 .\!\[text-decoration\:none\] {
