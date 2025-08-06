@@ -26,13 +26,13 @@
               >
                 <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="40" width="200">
         </div>
-              <span class="rating-text">{{ shop.metafields.reviews.rating.value }} / {{ shop.metafields.reviews.rating.value.scale_max }}</span>
+              <span class="rating-text">({{ shop.metafields.reviews.rating.value }} / {{ shop.metafields.reviews.rating.value.scale_max }})</span>
               <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
             {%- else -%}
               <div class="rating">
                 <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="40" width="200">
               </div>
-              <span class="rating-text">5 / 5</span>
+              <span class="rating-text">(5 / 5)</span>
               <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
             {%- endif -%}
       </div>
@@ -375,7 +375,7 @@
 }
 
 .bundler-reviews .rating-text {
-  font-size: 0.45rem;
+  font-size: 1.35rem;
   color: #000;
   font-weight: 700;
   margin: 0;
@@ -1846,7 +1846,7 @@ color: white;
   }
 
   .bundler-reviews .rating-text {
-    font-size: 0.3rem !important;
+    font-size: 0.675rem !important;
     color: #000 !important;
     font-weight: 700 !important;
     line-height: 20px !important;
