@@ -1476,7 +1476,7 @@ color: white;
   }
 
   .bundler-reviews .rating-count {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   /* Variant Selection Mobile */
@@ -1535,7 +1535,7 @@ color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 16px;
-    row-gap: 40px;
+    row-gap: 50px;
     flex-wrap: wrap;
   }
 
@@ -1657,10 +1657,9 @@ color: white;
     margin: 0 0 12px 0;
   }
 
-  /* Cart Progress Mobile */
+  /* Cart Progress Mobile - Hidden in sticky footer */
   .cart-progress {
-    margin-bottom: 8px;
-    padding: 8px;
+    display: none;
   }
 
   .progress-text {
@@ -1805,6 +1804,12 @@ color: white;
     color: #222;
   }
 
+  .bundler-sidebar.fullscreen .cart-progress {
+    display: block !important;
+    margin-bottom: 16px;
+    padding: 12px;
+  }
+
   .bundler-sidebar.fullscreen .selected-items {
     flex: 1;
     max-height: none !important;
@@ -1935,16 +1940,18 @@ color: white;
     padding-top: 8px;
     border-top: 1px solid #eee;
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
   }
 
   .mobile-benefit-item {
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #666;
+    flex: 1;
   }
 
   .mobile-benefit-item::before {
@@ -2900,6 +2907,7 @@ function openFullscreenSidebar() {
   const saveInfo = document.getElementById('saveInfo');
   const benefitsSection = document.getElementById('benefitsSection');
   const selectedItems = document.getElementById('selectedItems');
+  const cartProgress = document.querySelector('.cart-progress');
   
   sidebar.classList.add('fullscreen');
   backdrop.classList.add('active');
@@ -2907,6 +2915,9 @@ function openFullscreenSidebar() {
   desktopHeader.style.display = 'none';
   saveInfo.style.display = 'block';
   benefitsSection.style.display = 'block';
+  
+  // Show progress bar in fullscreen
+  cartProgress.style.display = 'block';
   
   // Show selected items in fullscreen
   selectedItems.style.maxHeight = 'none';
@@ -2928,6 +2939,7 @@ function closeFullscreenSidebar() {
   const saveInfo = document.getElementById('saveInfo');
   const benefitsSection = document.getElementById('benefitsSection');
   const selectedItems = document.getElementById('selectedItems');
+  const cartProgress = document.querySelector('.cart-progress');
   
   sidebar.classList.remove('fullscreen');
   backdrop.classList.remove('active');
@@ -2935,6 +2947,9 @@ function closeFullscreenSidebar() {
   desktopHeader.style.display = 'block';
   saveInfo.style.display = 'none';
   benefitsSection.style.display = 'none';
+  
+  // Hide progress bar in sticky footer
+  cartProgress.style.display = 'none';
   
   // Hide selected items in sticky footer
   selectedItems.style.maxHeight = '0';
