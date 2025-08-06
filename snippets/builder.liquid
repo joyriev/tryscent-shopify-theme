@@ -1663,3 +1663,682 @@ function setupSearchBarAnimation() {
     }
   });
 }
+
+
+
+// Clean HTML from data attributes
+function cleanDataAttributes() {
+  document.querySelectorAll('.product-price').forEach(priceElement => {
+    const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+    const rawPrice = priceElement.dataset[variantKey];
+    if (rawPrice) {
+      // Remove any HTML tags and get clean text
+      const cleanPrice = rawPrice.replace(/<[^>]*>/g, '');
+      priceElement.textContent = cleanPrice;
+    }
+  });
+  
+  // Update bundle selector prices
+  updateBundlePrices();
+}
+
+// Update bundle selector prices
+function updateBundlePrices() {
+  // Get current price from first product
+  const firstProduct = document.querySelector('.product-price');
+  if (!firstProduct) return;
+  
+  const currentPrice = firstProduct.textContent;
+  console.log('Current price from product grid:', currentPrice);
+  
+  // Extract numeric value from price
+  const priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
+  if (!priceMatch) return;
+  
+  // Handle European number format (comma as decimal separator)
+  let priceString = priceMatch[0];
+  if (priceString.includes(',')) {
+    // If there's a comma, check if it's a decimal separator or thousands separator
+    const parts = priceString.split(',');
+    if (parts.length === 2 && parts[1].length <= 2) {
+      // Comma is decimal separator (European format)
+      priceString = parts[0] + '.' + parts[1];
+    } else {
+      // Comma is thousands separator, remove it
+      priceString = priceString.replace(/,/g, '');
+    }
+  }
+  
+  const basePrice = parseFloat(priceString);
+  console.log('Base price:', basePrice);
+  
+  // Update bundle prices
+  const bundleConfig = {
+    '2+1': { buy: 2, free: 1, total: 3 },
+    '3+2': { buy: 3, free: 2, total: 5 },
+    '4+3': { buy: 4, free: 3, total: 7 },
+    '5+4': { buy: 5, free: 4, total: 9 }
+  };
+  
+  Object.keys(bundleConfig).forEach(bundleType => {
+    const config = bundleConfig[bundleType];
+    
+    // Update total price
+    const totalPriceElement = document.querySelector(`[data-bundle-type="${bundleType}"] .bundle-total-price`);
+    if (totalPriceElement) {
+      const totalPrice = config.buy * basePrice;
+      const totalPriceText = currentPrice.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
+      totalPriceElement.textContent = totalPriceText;
+    }
+    
+    // Update per bottle price
+    const perBottleElement = document.getElementById(`price-${bundleType}`);
+    if (perBottleElement) {
+      const perBottlePrice = (config.buy * basePrice) / config.total;
+      const perBottleText = currentPrice.replace(/[\d,]+\.?\d*/, perBottlePrice.toFixed(2));
+      perBottleElement.textContent = perBottleText + ' per bottle';
+    }
+    
+    // Update savings
+    const savingsElement = document.getElementById(`savings-${bundleType}`);
+    if (savingsElement) {
+      const savings = config.free * basePrice;
+      const savingsText = currentPrice.replace(/[\d,]+\.?\d*/, savings.toFixed(2));
+      savingsElement.textContent = `SAVE ${savingsText}`;
+    }
+  });
+}
+
+// Product selection
+function selectProduct(productId, variantId) {
+  console.log('selectProduct called with:', productId, 'variant:', variantId);
+  
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  console.log('productCard found:', productCard);
+  
+  if (!productCard) {
+    console.error('Product card not found for ID:', productId);
+    return;
+  }
+  
+  // Use current selected variant instead of passed variantId
+  const priceElement = productCard.querySelector('.product-price');
+  const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+  const currentVariantPrice = priceElement ? priceElement.dataset[variantKey] || priceElement.textContent : '';
+  console.log('Current variant:', currentVariant, 'Price:', currentVariantPrice);
+  
+  // Update product card variant ID to current variant
+  productCard.dataset.variantId = currentVariant;
+  
+  const config = bundleConfig[currentBundleType];
+  
+  // Check if already selected by looking for the selected class
+  const isSelected = productCard.classList.contains('selected') || productCard.style.borderColor === 'rgb(40, 167, 69)';
+  console.log('isSelected:', isSelected);
+  
+  if (isSelected) {
+    // Deselect product
+    console.log('Deselecting product');
+    productCard.classList.remove('selected');
+    
+    // Reset button text
+    const button = productCard.querySelector('.add-to-bundle-btn');
+    if (button) {
+      button.textContent = 'ADD TO BUNDLE';
+      button.classList.remove('selected');
+    }
+    
+    // Hide selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'none';
+    }
+    
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    
+    // Update progress text and indicators
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+    
+  } else {
+    // Select product (check max based on bundle type)
+    console.log('Current selected products:', selectedProducts.length);
+    if (selectedProducts.length >= config.total) {
+      alert(`You can only select ${config.total} scents for this bundle`);
+      return;
+    }
+    
+    // Get product title
+    const productTitle = productCard.querySelector('.product-title');
+    const title = productTitle ? productTitle.textContent : 'Unknown Product';
+    
+    // Get price
+    const priceElement = productCard.querySelector('.product-price');
+    const price = priceElement ? priceElement.textContent : '';
+    
+    console.log('Adding product to selection:', { id: productId, variantId, title, price });
+    
+    // Add selected class
+    productCard.classList.add('selected');
+    
+    // Change button to quantity selector
+    const button = productCard.querySelector('.add-to-bundle-btn');
+    
+    if (button) {
+      // Create quantity selector
+      const quantitySelector = document.createElement('div');
+      quantitySelector.className = 'quantity-selector';
+      quantitySelector.innerHTML = `
+        <button class="quantity-btn minus" onclick="changeProductQuantity(${productId}, -1)">-</button>
+        <span class="quantity-display">1</span>
+        <button class="quantity-btn plus" onclick="changeProductQuantity(${productId}, 1)">+</button>
+      `;
+      
+      // Replace button with selector
+      button.parentNode.replaceChild(quantitySelector, button);
+      
+      console.log('Button changed to quantity selector');
+    }
+    
+    // Show selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'flex';
+    }
+    
+    // Get product image
+    const productImage = productCard.querySelector('.product-image img');
+    const image = productImage ? productImage.src : '';
+    
+    // Use current variant
+    const variant = currentVariant;
+    
+    selectedProducts.push({
+      id: productId,
+      variantId: currentVariant, // Use current variant instead of passed variantId
+      title: title,
+      price: currentVariantPrice, // Use price from data attribute
+      image: image,
+      variant: variant
+    });
+    
+    console.log('Product added to selection. Total:', selectedProducts.length);
+    console.log('Selected products:', selectedProducts);
+    
+    // Update progress text and indicators
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+  }
+  
+  updateAddButton();
+}
+
+// Change product quantity function
+function changeProductQuantity(productId, change) {
+  console.log('changeProductQuantity called:', productId, change);
+  
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (!productCard) return;
+  
+  const quantityDisplay = productCard.querySelector('.quantity-display');
+  if (!quantityDisplay) return;
+  
+  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
+  let newQuantity = currentQuantity + change;
+  
+  // If quantity goes to 0 or below, remove product completely
+  if (newQuantity <= 0) {
+    // Remove product from selection
+    productCard.classList.remove('selected');
+    
+    // Remove quantity selector and restore button
+    const quantitySelector = productCard.querySelector('.quantity-selector');
+    if (quantitySelector) {
+      const button = document.createElement('button');
+      button.className = 'add-to-bundle-btn';
+      button.textContent = 'ADD TO BUNDLE';
+      button.onclick = () => selectProduct(productId, currentVariant);
+      quantitySelector.parentNode.replaceChild(button, quantitySelector);
+    }
+    
+    // Hide selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'none';
+    }
+    
+    // Remove from selected products
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    delete productQuantities[productId];
+    
+    // Update progress
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+    updateAddButton();
+    
+    console.log('Product removed from selection');
+    return;
+  }
+  
+  // Limit quantity to 10
+  if (newQuantity > 10) newQuantity = 10;
+  
+  // Update quantity display in product card
+  quantityDisplay.textContent = newQuantity;
+  
+  // Update quantity display in side cart
+  const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
+  if (selectedItem) {
+    const sideCartQuantityDisplay = selectedItem.querySelector('.quantity-display');
+    if (sideCartQuantityDisplay) {
+      sideCartQuantityDisplay.textContent = newQuantity;
+    }
+  }
+  
+  // Update product quantities
+  productQuantities[productId] = newQuantity;
+  
+  // Update selected product
+  const selectedProduct = selectedProducts.find(p => p.id === productId);
+  if (selectedProduct) {
+    selectedProduct.quantity = newQuantity;
+  }
+  
+  // Update progress
+  updateProgressText();
+  updateCartProgress();
+  updateProgressBarFill();
+  updateSelectedItems();
+  updateAddButton();
+  
+  console.log(`Quantity changed for product ${productId}: ${currentQuantity} -> ${newQuantity}`);
+}
+
+// Update variant when select changes
+function updateVariant(productId, variantId) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (productCard) {
+    productCard.dataset.variantId = variantId;
+    
+    // Update price
+    const variantSelect = productCard.querySelector('.variant-select');
+    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+    const priceElement = productCard.querySelector('.product-price');
+    if (priceElement && selectedOption) {
+      priceElement.textContent = selectedOption.dataset.price;
+    }
+    
+    // Update selected product if it's in the selection
+    const selectedProduct = selectedProducts.find(p => p.id === productId);
+    if (selectedProduct) {
+      selectedProduct.variantId = parseInt(variantId);
+      selectedProduct.price = selectedOption ? selectedOption.dataset.price : '';
+    }
+  }
+}
+
+
+
+// Update add button
+function updateAddButton() {
+  console.log('updateAddButton called');
+  
+  const addButton = document.getElementById('addBundleBtn');
+  const btnText = document.getElementById('btnText');
+  const btnStatus = document.getElementById('btnStatus');
+  
+  console.log('Elements found:', { addButton, btnText, btnStatus });
+  
+  if (addButton && btnText && btnStatus) {
+    const config = bundleConfig[currentBundleType];
+    const minRequired = config.buy;
+    const totalSelected = selectedProducts.length;
+    
+    console.log('Config:', config, 'totalSelected:', totalSelected, 'minRequired:', minRequired);
+    console.log('Selected products:', selectedProducts);
+    
+    addButton.disabled = totalSelected < config.total;
+    
+    // Update button text and status
+    if (totalSelected >= config.total) {
+      btnText.textContent = 'Your Bundle Is Ready!';
+      btnStatus.textContent = `${totalSelected}/${config.total}`;
+    } else {
+      btnText.textContent = `Please Select ${config.total - totalSelected} More Scents`;
+      btnStatus.textContent = `${totalSelected}/${config.total}`;
+    }
+    
+    console.log('Button updated:', {
+      disabled: addButton.disabled,
+      text: btnText.textContent,
+      status: btnStatus.textContent
+    });
+  } else {
+    console.error('Some elements not found for button update');
+  }
+}
+
+// Filter functions
+function filterProducts() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  currentSearch = searchTerm;
+  applyFilters();
+}
+
+function filterByCategory(category) {
+  currentFilter = category;
+  console.log('Filtering by category:', category);
+  
+  // Update filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+  
+  applyFilters();
+}
+
+function applyFilters() {
+  const products = document.querySelectorAll('.product-card');
+  
+  products.forEach(product => {
+    const title = product.querySelector('.product-title').textContent.toLowerCase();
+    const tags = product.dataset.category; // tags are stored in data-category
+    const matchesSearch = title.includes(currentSearch) || tags.includes(currentSearch);
+    
+    let matchesFilter = true;
+    if (currentFilter !== 'all') {
+      // Check if the product has the specific tag
+      const tagArray = tags.split(' ');
+      matchesFilter = tagArray.includes(currentFilter);
+      console.log('Product:', title, 'Tags:', tags, 'Tag array:', tagArray, 'Looking for:', currentFilter, 'Matches:', matchesFilter);
+    }
+    
+    if (matchesSearch && matchesFilter) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+
+// Select variant function
+function selectVariant(variant) {
+  console.log('Variant selected:', variant);
+  console.log('Previous currentVariant:', currentVariant);
+  
+  currentVariant = variant;
+  console.log('New currentVariant:', currentVariant);
+  
+  // Update variant button states
+  document.querySelectorAll('.variant-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.closest('.variant-btn').classList.add('active');
+  
+  // Clean and update prices
+  cleanDataAttributes();
+  
+  // Scroll to bundle selection with offset
+  const bundleSelection = document.querySelector('.bundle-type-selection');
+  if (bundleSelection) {
+    const offset = bundleSelection.offsetTop - 200;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
+  
+  console.log('Variant selection completed');
+}
+
+
+
+
+
+// Change quantity function for side cart
+function changeQuantity(productId, change) {
+  console.log('changeQuantity called:', productId, change);
+  
+  // Find quantity display in selected items
+  const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
+  const quantityDisplay = selectedItem ? selectedItem.querySelector('.quantity-display') : null;
+  
+  console.log('quantityDisplay found:', quantityDisplay);
+  
+  if (!quantityDisplay) {
+    console.error('Quantity display not found for product:', productId);
+    return;
+  }
+  
+  const minusBtn = quantityDisplay.previousElementSibling;
+  const plusBtn = quantityDisplay.nextElementSibling;
+  
+  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
+  let newQuantity = currentQuantity + change;
+  
+  // If quantity goes to 0 or below, remove product completely
+  if (newQuantity <= 0) {
+    // Remove product from selection
+    const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+    if (productCard) {
+      productCard.classList.remove('selected');
+      
+      // Remove quantity selector and restore button
+      const quantitySelector = productCard.querySelector('.quantity-selector');
+      if (quantitySelector) {
+        const button = document.createElement('button');
+        button.className = 'add-to-bundle-btn';
+        button.textContent = 'ADD TO BUNDLE';
+        button.onclick = () => selectProduct(productId, currentVariant);
+        quantitySelector.parentNode.replaceChild(button, quantitySelector);
+      }
+      
+      // Hide selection indicator
+      const indicator = productCard.querySelector('.selection-indicator');
+      if (indicator) {
+        indicator.style.display = 'none';
+      }
+    }
+    
+    // Remove from selected products
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    delete productQuantities[productId];
+    
+    // Update progress
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+    updateAddButton();
+    
+    console.log('Product removed from selection');
+    return;
+  }
+  
+  // Limit quantity to 10
+  if (newQuantity > 10) newQuantity = 10;
+  
+  // Update quantity display in side cart
+  quantityDisplay.textContent = newQuantity;
+  
+  // Update quantity display in product card
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (productCard) {
+    const cardQuantityDisplay = productCard.querySelector('.quantity-display');
+    if (cardQuantityDisplay) {
+      cardQuantityDisplay.textContent = newQuantity;
+    }
+  }
+  
+  productQuantities[productId] = newQuantity;
+  
+  // Update selected product
+  const selectedProduct = selectedProducts.find(p => p.id === productId);
+  if (selectedProduct) {
+    selectedProduct.quantity = newQuantity;
+  }
+  
+  // Update button states
+  minusBtn.disabled = newQuantity <= 1;
+  plusBtn.disabled = newQuantity >= 10;
+  
+  // Update progress
+  updateProgressText();
+  updateCartProgress();
+  updateProgressBarFill();
+  updateSelectedItems();
+  updateAddButton();
+  
+  console.log(`Quantity changed for product ${productId}: ${currentQuantity} -> ${newQuantity}`);
+}
+
+// Variant change handler
+document.addEventListener('change', function(e) {
+  if (e.target.classList.contains('variant-select')) {
+    e.stopPropagation(); // Prevent triggering card click
+    
+    const productId = parseInt(e.target.dataset.productId);
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    const productCard = e.target.closest('.product-card');
+    const priceElement = productCard.querySelector('.product-price');
+    
+    // Update price display
+    priceElement.textContent = selectedOption.dataset.price;
+    
+    // Update selected product if it's in the selection
+    const selectedProduct = selectedProducts.find(p => p.id === productId);
+    if (selectedProduct) {
+      selectedProduct.variantId = parseInt(selectedOption.value);
+      selectedProduct.price = selectedOption.dataset.price;
+    }
+  }
+});
+
+// Add single product to cart (for individual products)
+function addSingleToCart(productId) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  const variantSelect = productCard.querySelector('.variant-select');
+  const selectedVariant = variantSelect.options[variantSelect.selectedIndex];
+  
+  const item = {
+    id: parseInt(selectedVariant.value),
+    quantity: 1
+  };
+  
+  // Add visual feedback
+  productCard.classList.add('adding');
+  const indicator = productCard.querySelector('.add-to-cart-indicator');
+  const originalText = indicator.textContent;
+  indicator.textContent = 'ADDING...';
+  
+  // Add to cart using Shopify AJAX API
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ items: [item] })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status) {
+      alert('Error adding product to cart: ' + data.description);
+      // Reset visual feedback on error
+      productCard.classList.remove('adding');
+      indicator.textContent = originalText;
+    } else {
+      // Success - show feedback
+      indicator.textContent = 'ADDED!';
+      indicator.style.backgroundColor = '#218838';
+      
+      setTimeout(() => {
+        productCard.classList.remove('adding');
+        indicator.textContent = originalText;
+        indicator.style.backgroundColor = '#222';
+      }, 2000);
+      
+      // Optional: Update cart count
+      if (typeof updateCartCount === 'function') {
+        updateCartCount();
+      }
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error adding product to cart. Please try again.');
+    // Reset visual feedback on error
+    productCard.classList.remove('adding');
+    indicator.textContent = originalText;
+  });
+}
+
+// Add bundle to cart
+function addBundleToCart() {
+  const config = bundleConfig[currentBundleType];
+  const minRequired = config.buy;
+  
+  if (selectedProducts.length < minRequired) {
+    alert(`Please select at least ${minRequired} scents for this bundle`);
+    return;
+  }
+  
+  const items = selectedProducts.map(product => ({
+    id: product.variantId,
+    quantity: 1,
+    properties: {
+      '_bundle_type': currentBundleType,
+      '_bundle_total': selectedProducts.length.toString()
+    }
+  }));
+  
+  // Add to cart using Shopify AJAX API
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ items: items })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status) {
+      alert('Error adding bundle to cart: ' + data.description);
+    } else {
+      // Success - show success message
+      alert(`Bundle added to cart successfully! You selected ${selectedProducts.length} scents.`);
+      
+      // Add builder tag to cart attributes
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          attributes: {
+            '_bundle_type': currentBundleType,
+            '_bundle_total': selectedProducts.length.toString()
+          }
+        })
+      });
+      
+      // Optional: Show success message or update cart count
+      if (typeof updateCartCount === 'function') {
+        updateCartCount();
+      }
+      
+      // Optional: Redirect to cart
+      // window.location.href = '/cart';
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error adding bundle to cart. Please try again.');
+  });
+}
+
+
+</script> 
