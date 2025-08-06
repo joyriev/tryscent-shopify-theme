@@ -1,6 +1,6 @@
 {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-<div class="flex justify-between items-center mb-3">
+<div class="flex justify-between items-center mb-3 !mt-6">
   <h2 class="m-0 text-base font-semibold">
     Select Size:
   </h2>
@@ -22,13 +22,13 @@
       style="border-color: #22613a;"
       {% endif %}>
       {% if variant.image %}
-        <div class="w-16 h-16 mx-auto mb-2">
+        <div class="size-12 mx-auto">
           <img
             src="{{ variant.image | image_url: width: 100, height: 100, crop: 'center' }}"
             alt="{{ variant.title }}"
             width="100"
             height="100"
-            class="w-full h-full object-cover"
+            class="size-12 object-cover"
             loading="lazy">
         </div>
       {% endif %}
