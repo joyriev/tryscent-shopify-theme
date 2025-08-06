@@ -25,7 +25,7 @@
                 aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: shop.metafields.reviews.rating.value, rating_max: shop.metafields.reviews.rating.value.scale_max }}"
               >
                 <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="40" width="200">
-              </div>
+        </div>
               <span class="rating-text">{{ shop.metafields.reviews.rating.value }} / {{ shop.metafields.reviews.rating.value.scale_max }}</span>
               <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
             {%- else -%}
@@ -119,14 +119,14 @@
 
       <!-- Main Content with Sidebar -->
       <div class="bundler-main-content">
-        <!-- Products Grid -->
-        <div class="bundler-products" id="productsGrid">
-          {% for product in bundle_collection.products %}
-            {% assign default_variant = product.variants | where: "title", "100ML" | first %}
-            {% unless default_variant %}
-              {% assign default_variant = product.variants.first %}
-            {% endunless %}
-            
+      <!-- Products Grid -->
+      <div class="bundler-products" id="productsGrid">
+        {% for product in bundle_collection.products %}
+          {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+          {% unless default_variant %}
+            {% assign default_variant = product.variants.first %}
+          {% endunless %}
+          
               <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
                 <!-- Product Badge -->
                 {% if product.tags contains 'new' %}
@@ -136,13 +136,13 @@
                 {% endif %}
                 
                 <!-- Product Image -->
-              <div class="product-image">
+            <div class="product-image">
                   <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
-              </div>
+            </div>
                 
                 <!-- Product Info -->
-              <div class="product-info">
-                <h3 class="product-title">{{ product.title }}</h3>
+            <div class="product-info">
+              <h3 class="product-title">{{ product.title }}</h3>
                   
                   <!-- Reviews -->
                   <div class="product-reviews">
@@ -153,13 +153,13 @@
                         aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
                       >
                         <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="13" width="66">
-                      </div>
+              </div>
                       <span class="rating-text">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
                       <span class="rating-count">({{ product.metafields.reviews.rating_count }})</span>
                     {%- else -%}
                       <div class="rating">
                         <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="13" width="66">
-                      </div>
+              </div>
                       <span class="rating-text">5 / 5</span>
                       <span class="rating-count">({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
                     {%- endif -%}
@@ -180,21 +180,21 @@
                           data-variant-30ml="{% if variant_30ml %}{{ variant_30ml.id }}{% else %}{{ default_variant.id }}{% endif %}"
                           data-variant-50ml="{% if variant_50ml %}{{ variant_50ml.id }}{% else %}{{ default_variant.id }}{% endif %}"
                           data-variant-100ml="{% if variant_100ml %}{{ variant_100ml.id }}{% else %}{{ default_variant.id }}{% endif %}">{{ default_variant.price | money }}</span>
-                </div>
+              </div>
                   
                   <!-- Add to Bundle Button -->
                   <button class="add-to-bundle-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
                     ADD TO BUNDLE
                   </button>
-                </div>
+              </div>
                 
                 <!-- Selection Indicator -->
                 <div class="selection-indicator" style="display: none;">
-                  <div class="check-icon">✓</div>
-                </div>
-              </div>
-                    {% endfor %}
-                </div>
+              <div class="check-icon">✓</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
 
                 <!-- Shopping Cart Sidebar -->
       <div class="bundler-sidebar">
@@ -248,16 +248,16 @@
 
           <!-- Add Bundle Button -->
           <div class="sidebar-footer">
-    <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+        <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
             <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
             <span class="btn-status" id="btnStatus">0/3</span>
-    </button>
+        </button>
     
     <!-- Mobile Benefits Footer -->
     <div class="mobile-benefits" style="display: none;">
       <div class="mobile-benefit-item">5-8 Days Shipping Worldwide</div>
       <div class="mobile-benefit-item">60-days Money Back Guarantee</div>
-    </div>
+      </div>
   </div>
 </div>
       </div>
@@ -1587,7 +1587,7 @@ color: white;
   }
 
   .filter-btn {
-    padding: 8px 16px;
+  padding: 8px 16px;
     font-size: 0.8rem;
   }
 
@@ -1664,11 +1664,11 @@ color: white;
   }
 
   .progress-text {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
   }
 
   .bundler-progress-container {
-    margin-top: 8px;
+  margin-top: 8px;
   }
 
   .bundler-progress-bar {
@@ -1722,7 +1722,7 @@ color: white;
 
   .selected-item-quantity .quantity-btn {
     width: 20px;
-    height: 24px;
+  height: 24px;
     font-size: 0.8rem;
   }
 
@@ -1771,14 +1771,14 @@ color: white;
   .bundler-sidebar.fullscreen .sidebar-content {
     padding: 20px;
     height: 100%;
-    display: flex;
+  display: flex;
     flex-direction: column;
   }
 
   .bundler-sidebar.fullscreen .sidebar-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+  align-items: center;
     margin-bottom: 20px;
     padding-bottom: 16px;
     border-bottom: 1px solid #eee;
@@ -1824,7 +1824,7 @@ color: white;
     margin-bottom: 8px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    background: white;
+  background: white;
   }
 
   .bundler-sidebar.fullscreen .selected-item-image {
@@ -1869,12 +1869,12 @@ color: white;
     margin-top: 20px;
     padding: 16px;
     background: #f8f9fa;
-    border-radius: 8px;
+  border-radius: 8px;
   }
 
   .bundler-sidebar.fullscreen .benefits-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 600;
     margin-bottom: 12px;
     color: #222;
   }
@@ -1902,13 +1902,13 @@ color: white;
   /* Save Info Mobile */
   .bundler-sidebar.fullscreen .save-info {
     background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    color: white;
+  color: white;
     padding: 12px 16px;
-    border-radius: 8px;
+  border-radius: 8px;
     margin-bottom: 16px;
     text-align: center;
     font-size: 1rem;
-    font-weight: 600;
+  font-weight: 600;
   }
 
   /* Add Bundle Button Fullscreen Mobile */
@@ -1961,12 +1961,8 @@ color: white;
     font-weight: bold;
   }
 
-  /* Show sidebar on mobile only when products are selected */
+  /* Show sidebar on mobile always */
   .bundler-sidebar {
-    display: none !important;
-  }
-  
-  .bundler-sidebar.has-products {
     display: block !important;
   }
 }
@@ -2097,9 +2093,6 @@ window.selectProduct = function(productId, passedVariantId) {
     updateProgressBarFill();
     updateSelectedItems();
     
-    // Update mobile sidebar visibility
-    updateMobileSidebarVisibility();
-    
   } else {
     // Select product (check max based on bundle type)
     if (selectedProducts.length >= config.total) {
@@ -2163,9 +2156,6 @@ window.selectProduct = function(productId, passedVariantId) {
     updateCartProgress();
     updateProgressBarFill();
     updateSelectedItems();
-    
-    // Update mobile sidebar visibility
-    updateMobileSidebarVisibility();
   }
   
   updateAddButton();
@@ -2189,8 +2179,7 @@ window.selectBundleType = function(bundleType) {
   // Generate progress markers
   generateProgressMarkers();
   
-  // Update mobile sidebar visibility
-  updateMobileSidebarVisibility();
+
   
   // Update cart progress
   updateCartProgress();
@@ -2288,7 +2277,7 @@ window.changeProductQuantity = function(productId, change) {
     updateCartProgress();
     updateProgressBarFill();
     updateSelectedItems();
-    updateAddButton();
+  updateAddButton();
     
     return;
   }
@@ -2312,8 +2301,8 @@ window.changeProductQuantity = function(productId, change) {
   productQuantities[productId] = newQuantity;
   
   // Update selected product
-  const selectedProduct = selectedProducts.find(p => p.id === productId);
-  if (selectedProduct) {
+    const selectedProduct = selectedProducts.find(p => p.id === productId);
+    if (selectedProduct) {
     selectedProduct.quantity = newQuantity;
   }
   
@@ -2517,7 +2506,7 @@ function updateProgressText() {
   } else if (selectedProducts.length < config.total) {
     text = `Please select ${config.total - selectedProducts.length} more scents`;
     title = `Please Select ${config.total - selectedProducts.length} More Scents`;
-  } else {
+    } else {
     text = 'Perfect! Your bundle is ready';
     title = 'Your Bundle Is Ready!';
   }
@@ -3012,6 +3001,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth <= 768) {
     mobileBenefits.style.display = 'flex';
     
+    // Always allow clicking on sidebar to open fullscreen
     sidebar.addEventListener('click', function(e) {
       // Don't open if clicking on buttons or links
       if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) {
@@ -3044,12 +3034,17 @@ function addBundleToCart() {
   });
   
   if (totalItems < config.total) {
+    // If bundle is not complete, open fullscreen sidebar to show current selection
+    if (window.innerWidth <= 768) {
+      openFullscreenSidebar();
+    }
     return;
   }
   
+  // If bundle is complete, add to cart and redirect to checkout
   const items = selectedProducts.map(product => {
     return {
-      id: product.variantId,
+    id: product.variantId,
       quantity: productQuantities[product.id] || 1,
       properties: {
         '_bundle_type': currentBundleType,
@@ -3114,7 +3109,7 @@ function updateAddButton() {
     
     // Update button text and status
     if (totalItems >= config.total) {
-      btnText.textContent = 'Your Bundle Is Ready!';
+      btnText.textContent = 'REVIEW BUNDLE';
       btnStatus.textContent = `${totalItems}/${config.total}`;
     } else {
       btnText.textContent = `Please Select ${config.total - totalItems} More Scents`;
@@ -3128,17 +3123,7 @@ function updateAddButton() {
   }
 }
 
-function updateMobileSidebarVisibility() {
-  const sidebar = document.querySelector('.bundler-sidebar');
-  
-  if (window.innerWidth <= 768) {
-    if (selectedProducts.length > 0) {
-      sidebar.classList.add('has-products');
-    } else {
-      sidebar.classList.remove('has-products');
-    }
-  }
-}
+
 
 function applyFilters() {
   const products = document.querySelectorAll('.product-card');
