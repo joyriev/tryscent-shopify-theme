@@ -2576,8 +2576,7 @@ window.selectProduct = function(productId, passedVariantId) {
 // Bundle type selection
 window.selectBundleType = function(bundleType) {
   currentBundleType = bundleType;
-  selectedProducts = []; // Reset selections when changing bundle type
-  productQuantities = {}; // Reset quantities
+  // DON'T reset selections when changing bundle type - preserve cart
   
   // Update button states
   document.querySelectorAll('.bundle-type-btn').forEach(btn => {
@@ -2591,8 +2590,6 @@ window.selectBundleType = function(bundleType) {
   // Generate progress markers
   generateProgressMarkers();
   
-
-  
   // Update cart progress
   updateCartProgress();
   
@@ -2602,7 +2599,26 @@ window.selectBundleType = function(bundleType) {
   // Update add button
   updateAddButton();
   
-  // Reset product selections
+  // Update fullscreen button text
+  updateFullscreenButtonText();
+  
+  // Update bundle prices
+  updateBundlePrices();
+  
+  // Scroll to product grid and search with offset
+  const productGrid = document.querySelector('.bundler-products');
+  if (productGrid) {
+    const offset = productGrid.offsetTop - 200;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
+};
+
+// Function to clear all cart selections
+function clearAllSelections() {
+  selectedProducts = [];
+  productQuantities = {};
+  
+  // Reset product card states
   document.querySelectorAll('.product-card').forEach(card => {
     card.classList.remove('selected');
     const button = card.querySelector('.add-to-bundle-btn');
@@ -2616,16 +2632,14 @@ window.selectBundleType = function(bundleType) {
     }
   });
   
-  // Update bundle prices
-  updateBundlePrices();
-  
-  // Scroll to product grid and search with offset
-  const productGrid = document.querySelector('.bundler-products');
-  if (productGrid) {
-    const offset = productGrid.offsetTop - 200;
-    window.scrollTo({ top: offset, behavior: 'smooth' });
-  }
-};
+  // Update all UI elements
+  updateProgressText();
+  updateCartProgress();
+  updateSelectedItems();
+  updateAddButton();
+  updateFullscreenButtonText();
+  generateProgressMarkers();
+}
 
 // Add all other functions to window immediately
 window.selectVariant = function(variant) {
@@ -2636,6 +2650,9 @@ window.selectVariant = function(variant) {
     btn.classList.remove('active');
   });
   event.target.closest('.variant-btn').classList.add('active');
+  
+  // Clear all selections when variant changes
+  clearAllSelections();
   
   // Clean and update prices
   cleanDataAttributes();
