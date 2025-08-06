@@ -107,10 +107,17 @@
                   </select>
                 </div>
                 
-                <!-- Add to Box Button -->
-                <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
-                  Add to Box
-                </button>
+                <!-- Quantity and Add to Box Button -->
+                <div class="product-actions">
+                  <div class="quantity-selector">
+                    <button class="quantity-btn minus" onclick="changeQuantity({{ product.id }}, -1)">-</button>
+                    <span class="quantity-display" id="quantity-{{ product.id }}">1</span>
+                    <button class="quantity-btn plus" onclick="changeQuantity({{ product.id }}, 1)">+</button>
+                  </div>
+                  <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
+                    Add to Box
+                  </button>
+                </div>
               </div>
               
               <!-- Selection Indicator -->
@@ -124,7 +131,7 @@
         <!-- Shopping Cart Sidebar -->
         <div class="bundler-sidebar">
           <div class="sidebar-content">
-            <h3 class="sidebar-title">Shopping Cart</h3>
+            <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
             
             <!-- Progress Section -->
             <div class="cart-progress">
@@ -149,7 +156,8 @@
             <!-- Add Bundle Button -->
             <div class="sidebar-footer">
               <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
-                ADD BUNDLE TO CART
+                <span class="btn-text">SELECT PRODUCTS</span>
+                <span class="btn-status" id="btnStatus">0/2</span>
               </button>
             </div>
           </div>
@@ -502,9 +510,65 @@
   box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
 }
 
+/* Product Actions */
+.product-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  overflow: hidden;
+}
+
+.quantity-btn {
+  width: 32px;
+  height: 40px;
+  border: none;
+  background: #f8f9fa;
+  color: #666;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn:hover {
+  background: #e9ecef;
+  color: #222;
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-display {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+  background: white;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
 /* Add to Box Button */
 .add-to-box-btn {
-  width: 100%;
+  flex: 1;
   padding: 12px 16px;
   border: 2px solid #28a745;
   border-radius: 8px;
@@ -516,8 +580,6 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-top: auto;
-  align-self: flex-end;
 }
 
 .add-to-box-btn:hover {
@@ -790,6 +852,22 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-text {
+  flex: 1;
+  text-align: left;
+}
+
+.btn-status {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .add-bundle-btn:hover:not(:disabled) {
@@ -917,6 +995,7 @@ let selectedProducts = [];
 let currentFilter = 'all';
 let currentSearch = '';
 let currentBundleType = '2+1'; // Default bundle type
+let productQuantities = {}; // Store quantities for each product
 let bundleConfig = {
   '2+1': { buy: 2, free: 1, total: 3 },
   '3+2': { buy: 3, free: 2, total: 5 },
@@ -983,23 +1062,31 @@ function getOrdinalSuffix(num) {
   }
 }
 
-// Update progress text
+// Update progress text and sidebar title
 function updateProgressText() {
   const cartProgressText = document.getElementById('cartProgressText');
+  const sidebarTitle = document.getElementById('sidebarTitle');
   const config = bundleConfig[currentBundleType];
   
   let text = '';
+  let title = '';
+  
   if (selectedProducts.length === 0) {
     text = `Please select at least ${config.buy} scents`;
+    title = `Please Select At Least ${config.buy} Scents`;
   } else if (selectedProducts.length < config.buy) {
     text = `Please select ${config.buy - selectedProducts.length} more scents`;
+    title = `Please Select ${config.buy - selectedProducts.length} More Scents`;
   } else if (selectedProducts.length < config.total) {
     text = `Great! You can add ${config.total - selectedProducts.length} more scents for free`;
+    title = `Add ${config.total - selectedProducts.length} More For Free`;
   } else {
     text = 'Perfect! Your bundle is ready';
+    title = 'Your Bundle Is Ready!';
   }
   
   if (cartProgressText) cartProgressText.textContent = text;
+  if (sidebarTitle) sidebarTitle.textContent = title;
 }
 
 // Generate progress markers
@@ -1298,22 +1385,29 @@ function updateVariant(productId, variantId) {
 // Update add button
 function updateAddButton() {
   const addButton = document.getElementById('addBundleBtn');
-  if (addButton) {
+  const btnText = document.getElementById('btnText');
+  const btnStatus = document.getElementById('btnStatus');
+  
+  if (addButton && btnText && btnStatus) {
     const config = bundleConfig[currentBundleType];
-    const minRequired = config.buy; // Minimum required to enable button
+    const minRequired = config.buy;
+    const totalSelected = selectedProducts.length;
     
-    addButton.disabled = selectedProducts.length < minRequired;
+    addButton.disabled = totalSelected < minRequired;
     
-    // Update button text based on selection
-    if (selectedProducts.length >= config.total) {
-      addButton.textContent = `ADD ${config.total} SCENTS TO CART`;
-    } else if (selectedProducts.length >= minRequired) {
-      addButton.textContent = `ADD ${selectedProducts.length} SCENTS TO CART`;
+    // Update button text and status
+    if (totalSelected >= config.total) {
+      btnText.textContent = 'ADD BUNDLE TO CART';
+      btnStatus.textContent = `${totalSelected}/${config.total}`;
+    } else if (totalSelected >= minRequired) {
+      btnText.textContent = 'ADD TO CART';
+      btnStatus.textContent = `${totalSelected}/${config.total}`;
     } else {
-      addButton.textContent = `SELECT ${minRequired - selectedProducts.length} MORE SCENTS`;
+      btnText.textContent = 'SELECT PRODUCTS';
+      btnStatus.textContent = `${totalSelected}/${minRequired}`;
     }
     
-    console.log('Add button disabled:', addButton.disabled, 'selectedProducts:', selectedProducts.length, 'minRequired:', minRequired);
+    console.log('Add button disabled:', addButton.disabled, 'selectedProducts:', totalSelected, 'minRequired:', minRequired);
   }
 }
 
@@ -1359,6 +1453,29 @@ function applyFilters() {
       product.style.display = 'none';
     }
   });
+}
+
+// Change quantity function
+function changeQuantity(productId, change) {
+  const quantityDisplay = document.getElementById(`quantity-${productId}`);
+  const minusBtn = quantityDisplay.previousElementSibling;
+  const plusBtn = quantityDisplay.nextElementSibling;
+  
+  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
+  let newQuantity = currentQuantity + change;
+  
+  // Limit quantity between 1 and 10
+  if (newQuantity < 1) newQuantity = 1;
+  if (newQuantity > 10) newQuantity = 10;
+  
+  quantityDisplay.textContent = newQuantity;
+  productQuantities[productId] = newQuantity;
+  
+  // Update button states
+  minusBtn.disabled = newQuantity <= 1;
+  plusBtn.disabled = newQuantity >= 10;
+  
+  console.log(`Quantity changed for product ${productId}: ${currentQuantity} -> ${newQuantity}`);
 }
 
 // Variant change handler
