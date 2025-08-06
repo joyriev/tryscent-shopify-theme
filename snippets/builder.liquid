@@ -1476,7 +1476,7 @@ color: white;
   }
 
   .bundler-reviews .rating-count {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   /* Variant Selection Mobile */
@@ -3033,15 +3033,14 @@ function addBundleToCart() {
     totalItems += quantity;
   });
   
-  if (totalItems < config.total) {
-    // If bundle is not complete, open fullscreen sidebar to show current selection
-    if (window.innerWidth <= 768) {
-      openFullscreenSidebar();
-    }
+  // Always open fullscreen sidebar first on mobile (like in the example)
+  if (window.innerWidth <= 768) {
+    openFullscreenSidebar();
     return;
   }
   
-  // If bundle is complete, add to cart and redirect to checkout
+  // Desktop: if bundle is complete, add to cart and redirect to checkout
+  if (totalItems >= config.total) {
   const items = selectedProducts.map(product => {
     return {
     id: product.variantId,
