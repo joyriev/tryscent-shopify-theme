@@ -486,7 +486,7 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  z-index: 1000;
+  z-index: 1;
   white-space: nowrap;
   min-width: fit-content;
 }
@@ -1649,9 +1649,9 @@ function setupSearchBarAnimation() {
     // Check if search bar should start moving (when it hits the top)
     if (searchBarRect.top <= 200) {
       // Calculate how much to move based on scroll position
-      const scrollProgress = Math.min((200 - searchBarRect.top) / 200, 1);
-      const translateX = scrollProgress * (sidebarWidth + 20); // 20px gap
-      const newWidth = containerWidth - (scrollProgress * (sidebarWidth + containerPadding));
+      const scrollProgress = Math.min((200 - searchBarRect.top) / 100, 1);
+      const translateX = scrollProgress * (containerWidth - sidebarWidth - 40); // Move to right edge of sidebar
+      const newWidth = sidebarWidth - 40; // Small width over sidebar
       
       searchBar.style.transform = `translateX(${translateX}px)`;
       searchBar.style.width = `${newWidth}px`;
