@@ -1,0 +1,149 @@
+{%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+<div class="flex justify-between items-center mb-3 !mt-6">
+  <h2 class="m-0 text-base font-semibold">
+    Select Size:
+  </h2>
+  <div class="text-sm italic text-gray-500">
+    80% of customers buy 50ml or more
+  </div>
+</div>
+
+<div class="grid grid-cols-4 gap-3" id="variant-selector">
+  {% for variant in product.variants %}
+    <button
+      type="button"
+      class="variant-button flex flex-col items-center gap-2 rounded-lg p-2 pt-3 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
+      data-variant-id="{{ variant.id }}"
+      data-price="{{ variant.price }}"
+      data-compare-at-price="{{ variant.compare_at_price }}"
+      {% if variant == product.selected_or_first_available_variant %}
+      aria-selected="true"
+      style="border-color: #22613a;"
+      {% endif %}>
+      {% if variant.image %}
+        <div class="size-12 mx-auto">
+          <img
+            src="{{ variant.image | image_url: width: 100, height: 100, crop: 'center' }}"
+            alt="{{ variant.title }}"
+            width="100"
+            height="100"
+            class="size-12 object-cover"
+            loading="lazy">
+        </div>
+      {% endif %}
+      <span class="text-sm font-semibold">{{ variant.title }}</span>
+      {% if variant.title == '50ML' %}
+        <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Popular</span>
+      {% endif %}
+      {% if variant.title == '100ML' %}
+        <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#22613a] px-2 py-0.5">Bestseller</span>
+      {% endif %}
+    </button>
+  {% endfor %}
+</div>
+
+<product-form
+  class="product-form !m-0"
+  data-hide-errors="{{ gift_card_recipient_feature_active }}"
+  data-section-id="{{ section.id }}">
+  {%- form 'product'
+    , product
+    , id: product_form_id
+    , class: 'form'
+    , novalidate: 'novalidate'
+    , data-type: 'add-to-cart-form'
+  -%}
+    <input
+      type="hidden"
+      name="id"
+      value="{{ product.selected_or_first_available_variant.id }}"
+      class="product-variant-id">
+    <button
+      type="submit"
+      name="add"
+      value="1"
+      class="atc-button flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
+      aria-label="Add to cart"
+      data-price="{{ product.selected_or_first_available_variant.price }}"
+      data-compare-at-price="{{ product.selected_or_first_available_variant.compare_at_price }}">
+      <span>Add to cart</span>
+      <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
+        <div
+          class="inline-block text-lg bg-[#1E5834] px-3 rounded"
+          id="product-price"
+          role="status"
+          {{ block.shopify_attributes }}>
+          {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+            <span class="compare-price line-through text-white/50 text-base" style="display: inline;">
+              {{ product.selected_or_first_available_variant.compare_at_price | money }}
+            </span>
+          {% else %}
+            <span class="compare-price line-through text-white/50 text-base" style="display: none;"></span>
+          {% endif %}
+          <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+        </div>
+      </div>
+      {%- render 'loading-spinner' -%}
+    </button>
+  {%- endform -%}
+</product-form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const variantButtons = document.querySelectorAll('.variant-button');
+  const atcButton = document.querySelector('.atc-button');
+  const variantIdInput = document.querySelector('.product-variant-id');
+  const currentPriceEl = document.querySelector('.current-price');
+  const comparePriceEl = document.querySelector('.compare-price');
+
+  // Format price from cents to currency with symbol
+  function formatPrice(price) {
+    // Get the currency symbol from the shop's currency
+    const currencySymbol = '{{ cart.currency.symbol }}';
+    // Format the number with 2 decimal places
+    const formattedNumber = new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(price / 100);
+    
+    return `${currencySymbol}${formattedNumber}`;
+  }
+
+  // Handle variant selection
+  variantButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Update selected state
+      variantButtons.forEach(btn => {
+        btn.style.borderColor = '';
+        btn.setAttribute('aria-selected', 'false');
+      });
+      this.style.borderColor = '#22613a';
+      this.setAttribute('aria-selected', 'true');
+
+      // Get variant data
+      const variantId = this.getAttribute('data-variant-id');
+      const price = this.getAttribute('data-price');
+      const compareAtPrice = this.getAttribute('data-compare-at-price');
+
+      // Update form input
+      variantIdInput.value = variantId;
+
+      // Update ATC button data attributes
+      atcButton.setAttribute('data-price', price);
+      atcButton.setAttribute('data-compare-at-price', compareAtPrice);
+
+      // Update price display
+      currentPriceEl.textContent = formatPrice(price);
+      
+      // Update compare at price display
+      if (compareAtPrice && compareAtPrice > price) {
+        comparePriceEl.textContent = formatPrice(compareAtPrice);
+        comparePriceEl.style.display = 'inline';
+      } else {
+        comparePriceEl.style.display = 'none';
+      }
+    });
+  });
+  });
+</script>
