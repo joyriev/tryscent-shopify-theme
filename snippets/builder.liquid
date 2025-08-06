@@ -613,6 +613,7 @@
   border-radius: 4px;
   transition: width 0.3s ease;
   width: 0%;
+  min-width: 0%;
 }
 
 .progress-markers {
@@ -959,9 +960,17 @@ function updateCartProgress() {
   const progressFill = document.getElementById('cartProgressFill');
   const config = bundleConfig[currentBundleType];
   
+  console.log('updateCartProgress called');
+  console.log('progressFill element:', progressFill);
+  console.log('selectedProducts.length:', selectedProducts.length);
+  console.log('config.total:', config.total);
+  
   if (progressFill) {
     const progressPercent = (selectedProducts.length / config.total) * 100;
+    console.log('Setting progress width to:', progressPercent + '%');
     progressFill.style.width = progressPercent + '%';
+  } else {
+    console.error('progressFill element not found!');
   }
   
   // Update markers
@@ -1028,9 +1037,11 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('selectProduct function exists:', typeof selectProduct);
   console.log('applyFilters function exists:', typeof applyFilters);
   
+  console.log('Initializing bundler...');
   updateProgressText();
   updateCartProgress();
   updateSelectedItems();
+  console.log('Bundler initialized!');
   
   // updateProgress will be called after function is defined
   if (typeof applyFilters === 'function') {
@@ -1082,6 +1093,8 @@ function selectProduct(productId, variantId) {
     
     // Update progress text and indicators
     updateProgressText();
+    updateCartProgress();
+    updateSelectedItems();
     
   } else {
     // Select product (check max based on bundle type)
