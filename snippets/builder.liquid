@@ -1923,25 +1923,25 @@ color: white;
   }
 
   .bundle-type-desc {
-    font-size: 0.9rem;
+    font-size: 1.35rem;
     line-height: 1.2;
   }
 
   .bundle-total-price {
-    font-size: 1.4rem;
+    font-size: 2.1rem;
   }
 
   .bundle-price {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 
   .bundle-savings {
-    font-size: 0.7rem;
+    font-size: 1.05rem;
     padding: 4px 8px;
   }
 
   .bundle-badge {
-    font-size: 0.6rem;
+    font-size: 0.9rem;
     padding: 2px 6px;
     top: -6px;
   }
@@ -2391,11 +2391,11 @@ color: white;
   }
 
   .bundle-type-desc {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 
   .bundle-total-price {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   .bundler-products {
@@ -2450,9 +2450,11 @@ window.selectProduct = function(productId, passedVariantId) {
   const productCard = document.querySelector(`[data-product-id="${productId}"]`);
   
   if (!productCard) {
-    console.log('Product card not found for ID:', productId);
     return;
   }
+  
+  // Convert productId to number for consistent comparison
+  productId = parseInt(productId);
   
   // Use current selected variant instead of passed variantId
   const priceElement = productCard.querySelector('.product-price');
@@ -2465,9 +2467,7 @@ window.selectProduct = function(productId, passedVariantId) {
   const config = bundleConfig[currentBundleType];
   
   // Check if already selected by looking for the selected class AND if product is in selectedProducts array
-  const isSelected = productCard.classList.contains('selected') || selectedProducts.some(p => p.id == productId);
-  
-  console.log('Product', productId, 'isSelected:', isSelected, 'hasClass:', productCard.classList.contains('selected'), 'inArray:', selectedProducts.some(p => p.id == productId));
+  const isSelected = productCard.classList.contains('selected') || selectedProducts.some(p => parseInt(p.id) === productId);
   
   if (isSelected) {
     // Deselect product
@@ -2486,7 +2486,7 @@ window.selectProduct = function(productId, passedVariantId) {
       indicator.style.display = 'none';
     }
     
-    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    selectedProducts = selectedProducts.filter(p => parseInt(p.id) !== productId);
     
     // Update progress text and indicators
     updateProgressText();
@@ -2519,12 +2519,9 @@ window.selectProduct = function(productId, passedVariantId) {
     
     // Get variant ID for current variant
     const variantKey = `variant-${currentVariant.toLowerCase()}`;
-    const variantId = productCard.querySelector('.product-price').dataset[variantKey];
-    
-    console.log('Adding product:', productId, 'variantKey:', variantKey, 'variantId:', variantId);
+    let variantId = productCard.querySelector('.product-price').dataset[variantKey];
     
     if (!variantId) {
-      console.error('No variant ID found for', variantKey, 'using fallback');
       // Use the passedVariantId as fallback
       variantId = passedVariantId || productCard.dataset.variantId;
     }
@@ -2559,18 +2556,14 @@ window.selectProduct = function(productId, passedVariantId) {
     const productImage = productCard.querySelector('.product-image img');
     const image = productImage ? productImage.src : '';
     
-    const newProduct = {
+    selectedProducts.push({
       id: productId,
       variantId: parseInt(variantId), // Use actual variant ID
       title: title,
       price: currentVariantPrice, // Use price from data attribute
       image: image,
       variant: currentVariant
-    };
-    
-    selectedProducts.push(newProduct);
-    console.log('Product added to selectedProducts:', newProduct);
-    console.log('selectedProducts now contains:', selectedProducts.length, 'products');
+    });
     
     // Update progress text and indicators
     updateProgressText();
@@ -2757,7 +2750,7 @@ window.changeProductQuantity = function(productId, change) {
     }
     
     // Remove from selected products
-    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    selectedProducts = selectedProducts.filter(p => parseInt(p.id) !== productId);
     delete productQuantities[productId];
     
     // Update progress
@@ -2844,7 +2837,7 @@ window.changeQuantity = function(productId, change) {
     }
     
     // Remove from selected products
-    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    selectedProducts = selectedProducts.filter(p => parseInt(p.id) !== productId);
     delete productQuantities[productId];
     
     // Update progress
@@ -3296,7 +3289,7 @@ function changeProductQuantity(productId, change) {
     }
     
     // Remove from selected products
-    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    selectedProducts = selectedProducts.filter(p => parseInt(p.id) !== productId);
     delete productQuantities[productId];
     
     // Update progress
