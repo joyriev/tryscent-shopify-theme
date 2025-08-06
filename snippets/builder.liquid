@@ -271,9 +271,10 @@
 /* Variant Selection */
 .variant-selection {
   padding: 32px;
-  background-color: white;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-bottom: 1px solid #eee;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .variant-title {
@@ -370,8 +371,9 @@
 /* Bundle Type Selection */
 .bundle-type-selection {
   padding: 32px;
-  background-color: white;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .bundle-type-buttons {
@@ -534,8 +536,9 @@
 /* Search and Filter */
 .bundler-search-filter {
   padding: 24px 32px;
-  background-color: white;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .search-container {
@@ -567,33 +570,31 @@
 
 .filter-btn {
   padding: 10px 20px;
-  border: 2px solid #000000;
+  border: 2px solid #666666;
   border-radius: 25px;
-  background: linear-gradient(135deg, #000000 0%, #333333 50%, #ffffff 100%);
-  background-size: 200% 200%;
-  animation: shiny-gradient 2s ease-in-out infinite;
-  color: white;
+  background: #f8f9fa;
+  color: #666666;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .filter-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #000000 0%, #333333 50%, #ffffff 100%);
   background-size: 200% 200%;
   animation: shiny-gradient 2s ease-in-out infinite;
   color: white;
-  border-color: #28a745;
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Main Content Layout */
@@ -810,10 +811,10 @@
 /* Add to Bundle Button */
 .add-to-bundle-btn {
   flex: 1;
-  padding: 12px 16px;
-  border: 2px solid #000000;
+  padding: 16px 20px;
+  border: 3px solid #666666;
   border-radius: 8px;
-  background: linear-gradient(135deg, #000000 0%, #333333 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #666666 0%, #888888 50%, #ffffff 100%);
   background-size: 200% 200%;
   animation: shiny-gradient 2s ease-in-out infinite;
   color: white;
@@ -868,7 +869,7 @@
 /* Shopping Cart Sidebar */
 .bundler-sidebar {
   width: 320px;
-  background: white;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -1178,9 +1179,9 @@
   gap: 8px;
   width: 100%;
   padding: 8px;
-  border: 2px solid #000000;
+  border: 3px solid #666666;
   border-radius: 8px;
-  background: linear-gradient(135deg, #000000 0%, #333333 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #666666 0%, #888888 50%, #ffffff 100%);
   background-size: 200% 200%;
   animation: shiny-gradient 2s ease-in-out infinite;
 }
@@ -1863,8 +1864,17 @@ function changeProductQuantity(productId, change) {
   // Limit quantity to 10
   if (newQuantity > 10) newQuantity = 10;
   
-  // Update quantity display
+  // Update quantity display in product card
   quantityDisplay.textContent = newQuantity;
+  
+  // Update quantity display in side cart
+  const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
+  if (selectedItem) {
+    const sideCartQuantityDisplay = selectedItem.querySelector('.quantity-display');
+    if (sideCartQuantityDisplay) {
+      sideCartQuantityDisplay.textContent = newQuantity;
+    }
+  }
   
   // Update product quantities
   productQuantities[productId] = newQuantity;
@@ -2087,7 +2097,18 @@ function changeQuantity(productId, change) {
   // Limit quantity to 10
   if (newQuantity > 10) newQuantity = 10;
   
+  // Update quantity display in side cart
   quantityDisplay.textContent = newQuantity;
+  
+  // Update quantity display in product card
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (productCard) {
+    const cardQuantityDisplay = productCard.querySelector('.quantity-display');
+    if (cardQuantityDisplay) {
+      cardQuantityDisplay.textContent = newQuantity;
+    }
+  }
+  
   productQuantities[productId] = newQuantity;
   
   // Update selected product
@@ -2100,7 +2121,11 @@ function changeQuantity(productId, change) {
   minusBtn.disabled = newQuantity <= 1;
   plusBtn.disabled = newQuantity >= 10;
   
-  // Update add button
+  // Update progress
+  updateProgressText();
+  updateCartProgress();
+  updateProgressBarFill();
+  updateSelectedItems();
   updateAddButton();
   
   console.log(`Quantity changed for product ${productId}: ${currentQuantity} -> ${newQuantity}`);
