@@ -139,7 +139,7 @@
                   {% assign variant_30ml = product.variants | where: 'title', '30ML' | first %}
                   {% assign variant_50ml = product.variants | where: 'title', '50ML' | first %}
                   {% assign variant_100ml = product.variants | where: 'title', '100ML' | first %}
-                  <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price }}{% else %}{{ default_variant.price }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price }}{% else %}{{ default_variant.price }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price }}{% else %}{{ default_variant.price }}{% endif %}">{{ default_variant.price | money }}</span>
+                  <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}">{{ default_variant.price | money }}</span>
               </div>
                 
                 <!-- Add to Box Button -->
@@ -1519,23 +1519,19 @@ function cleanDataAttributes() {
 
 // Update bundle selector prices
 function updateBundlePrices() {
-  // Get current price from first product's data attribute
+  // Get current price from first product
   const firstProduct = document.querySelector('.product-price');
   if (!firstProduct) return;
   
-  const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
-  const basePriceCents = parseInt(firstProduct.dataset[variantKey]) || 0;
-  console.log('Base price cents:', basePriceCents);
+  const currentPrice = firstProduct.textContent;
+  console.log('Current price from product grid:', currentPrice);
   
-  // Format money function using Shopify's currency system
-  const formatMoney = (cents) => {
-    if (window.Shopify && window.Shopify.currency) {
-      return window.Shopify.currency.formatMoney(cents);
-    }
-    // Fallback formatting
-    const amount = cents / 100;
-    return `$${amount.toFixed(2)}`;
-  };
+  // Extract numeric value from price
+  const priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
+  if (!priceMatch) return;
+  
+  const basePrice = parseFloat(priceMatch[0].replace(',', ''));
+  console.log('Base price:', basePrice);
   
   // Update bundle prices
   const bundleConfig = {
@@ -1551,22 +1547,25 @@ function updateBundlePrices() {
     // Update total price
     const totalPriceElement = document.querySelector(`[data-bundle-type="${bundleType}"] .bundle-total-price`);
     if (totalPriceElement) {
-      const totalPrice = config.buy * basePriceCents;
-      totalPriceElement.textContent = formatMoney(totalPrice);
+      const totalPrice = config.buy * basePrice;
+      const totalPriceText = currentPrice.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
+      totalPriceElement.textContent = totalPriceText;
     }
     
     // Update per bottle price
     const perBottleElement = document.getElementById(`price-${bundleType}`);
     if (perBottleElement) {
-      const perBottlePrice = (config.buy * basePriceCents) / config.total;
-      perBottleElement.textContent = formatMoney(perBottlePrice) + ' per bottle';
+      const perBottlePrice = (config.buy * basePrice) / config.total;
+      const perBottleText = currentPrice.replace(/[\d,]+\.?\d*/, perBottlePrice.toFixed(2));
+      perBottleElement.textContent = perBottleText + ' per bottle';
     }
     
     // Update savings
     const savingsElement = document.getElementById(`savings-${bundleType}`);
     if (savingsElement) {
-      const savings = config.free * basePriceCents;
-      savingsElement.textContent = `SAVE ${formatMoney(savings)}`;
+      const savings = config.free * basePrice;
+      const savingsText = currentPrice.replace(/[\d,]+\.?\d*/, savings.toFixed(2));
+      savingsElement.textContent = `SAVE ${savingsText}`;
     }
   });
 }
