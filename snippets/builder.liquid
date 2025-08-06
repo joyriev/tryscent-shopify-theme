@@ -106,7 +106,7 @@
             {% assign default_variant = product.variants.first %}
           {% endunless %}
           
-            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}" data-variants='[{% for variant in product.variants %}{"id": {{ variant.id }}, "title": "{{ variant.title }}", "price": {{ variant.price }}}{% unless forloop.last %},{% endunless %}{% endfor %}]'>
+            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
               <!-- Product Badge -->
               {% if product.tags contains 'new' %}
                 <div class="product-badge new">New</div>
@@ -131,7 +131,7 @@
                 
                 <!-- Price Display -->
                 <div class="product-price-display">
-                  <span class="product-price" id="price-{{ product.id }}">{{ default_variant.price | money }}</span>
+                  <span class="product-price" id="price-{{ product.id }}" data-30ml="{{ product.variants | where: 'title', '30ML' | first | map: 'price' | money }}" data-50ml="{{ product.variants | where: 'title', '50ML' | first | map: 'price' | money }}" data-100ml="{{ product.variants | where: 'title', '100ML' | first | map: 'price' | money }}">{{ default_variant.price | money }}</span>
               </div>
                 
                 <!-- Add to Box Button -->
@@ -1179,21 +1179,7 @@ let bundleConfig = {
   '5+4': { buy: 5, free: 4, total: 9 }
 };
 
-// Function to get real variant price from product
-function getVariantPrice(productId, variantTitle) {
-  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
-  if (!productCard) return variantPrices[currentVariant];
-  
-  // Get all variants for this product
-  const variants = JSON.parse(productCard.dataset.variants || '[]');
-  const variant = variants.find(v => v.title === variantTitle);
-  
-  if (variant) {
-    return variant.price;
-  }
-  
-  return variantPrices[currentVariant];
-}
+
 
 // Bundle type selection
 function selectBundleType(bundleType) {
@@ -1245,21 +1231,7 @@ function selectBundleType(bundleType) {
   console.log('Bundle type selection completed');
 }
 
-// Listen for currency changes
-document.addEventListener('DOMContentLoaded', function() {
-  // Update prices when currency changes
-  if (window.Shopify && window.Shopify.currency) {
-    window.Shopify.currency.on('currency:changed', function() {
-      // Wait a bit for Shopify to update its currency system
-      setTimeout(() => {
-        updateBundlePrices();
-        updateProductGridPrices();
-      }, 100);
-    });
-  }
-  
 
-});
 
 
 
@@ -1456,13 +1428,9 @@ document.addEventListener('DOMContentLoaded', function() {
   updateSelectedItems();
   
   // Wait for Shopify currency system to load, then initialize prices
-  setTimeout(() => {
-    updateBundlePrices();
-    updateProductGridPrices();
-    console.log('Prices initialized with currency system');
-    
-
-  }, 200);
+  updateBundlePrices();
+  updateProductGridPrices();
+  console.log('Prices initialized');
   
   // updateProgress will be called after function is defined
   if (typeof applyFilters === 'function') {
@@ -1487,30 +1455,13 @@ function selectProduct(productId, variantId) {
   }
   
   // Use current selected variant instead of passed variantId
-  const currentVariantPrice = getVariantPrice(productId, currentVariant);
+  const priceElement = productCard.querySelector('.product-price');
+  const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+  const currentVariantPrice = priceElement ? priceElement.dataset[variantKey] || priceElement.textContent : '';
   console.log('Current variant:', currentVariant, 'Price:', currentVariantPrice);
   
   // Update product card variant ID to current variant
   productCard.dataset.variantId = currentVariant;
-  
-  // Format money function
-  const formatMoney = (cents) => {
-    const currency = window.Shopify?.currency?.active || 'USD';
-    const rate = window.Shopify?.currency?.rate || 1;
-    const amount = (cents * rate) / 100;
-    
-    if (currency === 'USD') {
-      return `$${amount.toFixed(2)}`;
-    } else if (currency === 'EUR') {
-      return `€${amount.toFixed(2)}`;
-    } else if (currency === 'GBP') {
-      return `£${amount.toFixed(2)}`;
-    } else {
-      // Round to nearest 0.95 for other currencies
-      const roundedAmount = Math.floor(amount) + 0.95;
-      return `${roundedAmount.toFixed(2)} ${currency}`;
-    }
-  };
   
   const config = bundleConfig[currentBundleType];
   
@@ -1591,7 +1542,7 @@ function selectProduct(productId, variantId) {
       id: productId,
       variantId: currentVariant, // Use current variant instead of passed variantId
       title: title,
-      price: formatMoney(currentVariantPrice), // Use formatted price
+      price: currentVariantPrice, // Use price from data attribute
       image: image,
       variant: variant
     });
@@ -1732,76 +1683,39 @@ function selectVariant(variant) {
   event.target.closest('.variant-btn').classList.add('active');
   
   // Update bundle prices
-  setTimeout(() => {
-    updateBundlePrices();
-    updateProductGridPrices();
-  }, 100);
+  updateBundlePrices();
+  updateProductGridPrices();
   
   console.log('Variant selection completed');
 }
 
 // Update product grid prices
 function updateProductGridPrices() {
-  // Format prices using Shopify's money format
-  const formatMoney = (cents) => {
-    const currency = window.Shopify?.currency?.active || 'USD';
-    const rate = window.Shopify?.currency?.rate || 1;
-    const amount = (cents * rate) / 100;
+  // Update all product prices using data attributes
+  document.querySelectorAll('.product-price').forEach(priceElement => {
+    const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+    const newPrice = priceElement.dataset[variantKey];
     
-    if (currency === 'USD') {
-      return `$${amount.toFixed(2)}`;
-    } else if (currency === 'EUR') {
-      return `€${amount.toFixed(2)}`;
-    } else if (currency === 'GBP') {
-      return `£${amount.toFixed(2)}`;
-    } else {
-      // Round to nearest 0.95 for other currencies
-      const roundedAmount = Math.floor(amount) + 0.95;
-      return `${roundedAmount.toFixed(2)} ${currency}`;
-    }
-  };
-  
-  // Update all product prices using real variant prices
-  document.querySelectorAll('.product-card').forEach(productCard => {
-    const productId = productCard.dataset.productId;
-    const priceElement = productCard.querySelector('.product-price');
-    
-    if (priceElement) {
-      const realPrice = getVariantPrice(productId, currentVariant);
-      priceElement.textContent = formatMoney(realPrice);
+    if (newPrice) {
+      priceElement.textContent = newPrice;
     }
   });
 }
 
 // Update bundle prices based on selected variants
 function updateBundlePrices() {
-  // Get real price from first product as base price
-  const firstProductCard = document.querySelector('.product-card');
-  let basePrice = variantPrices[currentVariant]; // fallback
+  // Get price from first product for current variant
+  const firstPriceElement = document.querySelector('.product-price');
+  let basePriceText = '';
   
-  if (firstProductCard) {
-    basePrice = getVariantPrice(firstProductCard.dataset.productId, currentVariant);
+  if (firstPriceElement) {
+    const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+    basePriceText = firstPriceElement.dataset[variantKey] || firstPriceElement.textContent;
   }
   
-  // Format prices using Shopify's money format with our rounding
-  const formatMoney = (cents) => {
-    const currency = window.Shopify?.currency?.active || 'USD';
-    const rate = window.Shopify?.currency?.rate || 1;
-    const amount = (cents * rate) / 100;
-    
-    // Basic formatting - you might want to use Shopify's money filter format
-    if (currency === 'USD') {
-      return `$${amount.toFixed(2)}`;
-    } else if (currency === 'EUR') {
-      return `€${amount.toFixed(2)}`;
-    } else if (currency === 'GBP') {
-      return `£${amount.toFixed(2)}`;
-    } else {
-      // Round to nearest 0.95 for other currencies
-      const roundedAmount = Math.floor(amount) + 0.95;
-      return `${roundedAmount.toFixed(2)} ${currency}`;
-    }
-  };
+  // Extract numeric value from price text (remove currency symbols)
+  const basePriceMatch = basePriceText.match(/[\d,]+\.?\d*/);
+  const basePrice = basePriceMatch ? parseFloat(basePriceMatch[0].replace(',', '')) : 0;
   
   // Update ALL bundle prices
   Object.keys(bundleConfig).forEach(bundleType => {
@@ -1812,13 +1726,13 @@ function updateBundlePrices() {
     // Update price display
     const priceElement = document.getElementById(`price-${bundleType}`);
     if (priceElement) {
-      priceElement.textContent = formatMoney(totalPrice);
+      priceElement.textContent = basePriceText.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
     }
     
     // Update savings display
     const savingsElement = document.getElementById(`savings-${bundleType}`);
     if (savingsElement) {
-      savingsElement.textContent = `SAVE ${formatMoney(savings)}`;
+      savingsElement.textContent = `SAVE ${basePriceText.replace(/[\d,]+\.?\d*/, savings.toFixed(2))}`;
     }
   });
 }
