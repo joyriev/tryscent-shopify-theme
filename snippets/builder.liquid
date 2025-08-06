@@ -293,12 +293,8 @@
             
             <!-- Mobile Benefits Footer -->
             <div class="mobile-benefits" style="display: none;">
-              <div class="mobile-benefit-item">Scent lasts 12 hours</div>
-              <div class="mobile-benefit-item">Pay 1/10 of original prices</div>
-              <div class="mobile-benefit-item">Return up to 60 days</div>
-              <div class="mobile-benefit-item">Worldwide shipping</div>
-              <div class="mobile-benefit-item">Discount on future purchases</div>
-              <div class="mobile-benefit-item">Scent guarantee</div>
+              <div class="mobile-benefit-item">5-8 Days Shipping Worldwide</div>
+              <div class="mobile-benefit-item">60-days Money Back Guarantee</div>
             </div>
           </div>
         </div>
@@ -2014,12 +2010,13 @@ color: white;
 
   /* Mobile Benefits Footer */
   .mobile-benefits {
-    margin-top: 16px;
-    padding-top: 12px;
+    margin-top: 6px;
+    padding-top: 6px;
     border-top: 1px solid #eee;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
   }
 
   .mobile-benefit-item {
@@ -2098,7 +2095,13 @@ color: white;
   }
 
   .bundler-sidebar.fullscreen .benefits-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .bundler-sidebar.fullscreen .benefit-item {
+    font-size: 0.9rem;
+    padding: 8px 0;
   }
 }
 </style>
