@@ -1530,7 +1530,21 @@ function updateBundlePrices() {
   const priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
   if (!priceMatch) return;
   
-  const basePrice = parseFloat(priceMatch[0].replace(',', ''));
+  // Handle European number format (comma as decimal separator)
+  let priceString = priceMatch[0];
+  if (priceString.includes(',')) {
+    // If there's a comma, check if it's a decimal separator or thousands separator
+    const parts = priceString.split(',');
+    if (parts.length === 2 && parts[1].length <= 2) {
+      // Comma is decimal separator (European format)
+      priceString = parts[0] + '.' + parts[1];
+    } else {
+      // Comma is thousands separator, remove it
+      priceString = priceString.replace(/,/g, '');
+    }
+  }
+  
+  const basePrice = parseFloat(priceString);
   console.log('Base price:', basePrice);
   
   // Update bundle prices
