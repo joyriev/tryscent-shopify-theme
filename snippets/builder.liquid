@@ -1234,7 +1234,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update prices when currency changes
   if (window.Shopify && window.Shopify.currency) {
     window.Shopify.currency.on('currency:changed', function() {
-      updateBundlePrices();
+      // Wait a bit for Shopify to update its currency system
+      setTimeout(() => {
+        updateBundlePrices();
+        updateProductGridPrices();
+      }, 100);
     });
   }
 });
@@ -1432,8 +1436,13 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCartProgress();
   updateProgressBarFill();
   updateSelectedItems();
-  updateBundlePrices();
-  updateProductGridPrices();
+  
+  // Wait for Shopify currency system to load, then initialize prices
+  setTimeout(() => {
+    updateBundlePrices();
+    updateProductGridPrices();
+    console.log('Prices initialized with currency system');
+  }, 200);
   
   // updateProgress will be called after function is defined
   if (typeof applyFilters === 'function') {
@@ -1703,10 +1712,10 @@ function selectVariant(variant) {
   event.target.closest('.variant-btn').classList.add('active');
   
   // Update bundle prices
-  updateBundlePrices();
-  
-  // Update product grid prices
-  updateProductGridPrices();
+  setTimeout(() => {
+    updateBundlePrices();
+    updateProductGridPrices();
+  }, 100);
   
   console.log('Variant selection completed');
 }
@@ -1744,25 +1753,25 @@ function updateProductGridPrices() {
 function updateBundlePrices() {
   const basePrice = variantPrices[currentVariant];
   
-             // Format prices using Shopify's money format
-           const formatMoney = (cents) => {
-             const currency = window.Shopify?.currency?.active || 'USD';
-             const rate = window.Shopify?.currency?.rate || 1;
-             const amount = (cents * rate) / 100;
-             
-             // Basic formatting - you might want to use Shopify's money filter format
-             if (currency === 'USD') {
-               return `$${amount.toFixed(2)}`;
-             } else if (currency === 'EUR') {
-               return `€${amount.toFixed(2)}`;
-             } else if (currency === 'GBP') {
-               return `£${amount.toFixed(2)}`;
-             } else {
-               // Round to nearest 0.95 for other currencies
-               const roundedAmount = Math.floor(amount) + 0.95;
-               return `${roundedAmount.toFixed(2)} ${currency}`;
-             }
-           };
+  // Format prices using Shopify's money format with our rounding
+  const formatMoney = (cents) => {
+    const currency = window.Shopify?.currency?.active || 'USD';
+    const rate = window.Shopify?.currency?.rate || 1;
+    const amount = (cents * rate) / 100;
+    
+    // Basic formatting - you might want to use Shopify's money filter format
+    if (currency === 'USD') {
+      return `$${amount.toFixed(2)}`;
+    } else if (currency === 'EUR') {
+      return `€${amount.toFixed(2)}`;
+    } else if (currency === 'GBP') {
+      return `£${amount.toFixed(2)}`;
+    } else {
+      // Round to nearest 0.95 for other currencies
+      const roundedAmount = Math.floor(amount) + 0.95;
+      return `${roundedAmount.toFixed(2)} ${currency}`;
+    }
+  };
   
   // Update ALL bundle prices
   Object.keys(bundleConfig).forEach(bundleType => {
