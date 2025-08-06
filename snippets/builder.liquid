@@ -1081,6 +1081,12 @@ color: white;
   cursor: pointer;
 }
 
+/* Sticky footer content - minimal height */
+.mobile-sidebar:not(.fullscreen) .sidebar-content {
+  padding: 8px 16px;
+  min-height: auto;
+}
+
 .mobile-sidebar.show {
   display: block !important;
 }
@@ -1779,15 +1785,19 @@ color: white;
   }
 
   /* Sticky Footer Content */
-  .mobile-sidebar .sidebar-content {
+  .mobile-sidebar:not(.fullscreen) .sidebar-content {
     padding: 8px 16px;
   }
 
-  .mobile-sidebar .sidebar-title {
+  .mobile-sidebar:not(.fullscreen) .sidebar-title {
     display: none !important;
   }
 
-  .mobile-sidebar .cart-progress {
+  .mobile-sidebar:not(.fullscreen) .cart-progress {
+    display: none !important;
+  }
+
+  .mobile-sidebar:not(.fullscreen) .selected-items {
     display: none !important;
   }
 
