@@ -139,12 +139,15 @@
                   {% assign variant_30ml = product.variants | where: 'title', '30ML' | first %}
                   {% assign variant_50ml = product.variants | where: 'title', '50ML' | first %}
                   {% assign variant_100ml = product.variants | where: 'title', '100ML' | first %}
+                  {% if default_variant.compare_at_price > default_variant.price %}
+                    <span class="product-compare-price">{{ default_variant.compare_at_price | money }}</span>
+                  {% endif %}
                   <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}">{{ default_variant.price | money }}</span>
               </div>
                 
-                <!-- Add to Box Button -->
-                <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
-                  Add to Box
+                <!-- Add to Bundle Button -->
+                <button class="add-to-bundle-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
+                  ADD TO BUNDLE
                 </button>
               </div>
               
@@ -700,7 +703,7 @@
 
 .product-title {
   margin: 0 0 8px 0;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #222;
   line-height: 1.3;
@@ -734,9 +737,17 @@
 }
 
 .product-price {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #28a745;
+}
+
+.product-compare-price {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #999;
+  text-decoration: line-through;
+  margin-right: 8px;
 }
 
 /* Selected Item Quantity */
@@ -789,13 +800,15 @@
   border-right: 1px solid #e0e0e0;
 }
 
-/* Add to Box Button */
-.add-to-box-btn {
+/* Add to Bundle Button */
+.add-to-bundle-btn {
   flex: 1;
   padding: 12px 16px;
-  border: 2px solid #28a745;
+  border: 2px solid #000000;
   border-radius: 8px;
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  background: linear-gradient(135deg, #000000 0%, #333333 50%, #ffffff 100%);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
   color: white;
   font-size: 0.9rem;
   font-weight: 700;
@@ -803,17 +816,19 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
-.add-to-box-btn:hover {
+.add-to-bundle-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.add-to-box-btn.selected {
-  background: #666;
-  border-color: #666;
-  cursor: default;
+.add-to-bundle-btn.selected {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #ffffff 100%);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
+  border-color: #28a745;
 }
 
 /* Selection Indicator */
@@ -1082,7 +1097,9 @@
   padding: 16px;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #ffffff 100%);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
   color: white;
   font-size: 1rem;
   font-weight: 700;
@@ -1145,6 +1162,27 @@
   border-radius: 4px;
   font-size: 0.9rem;
   background: white;
+}
+
+.variant-selector {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: white;
+  color: #28a745;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.variant-selector:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
 }
 
 .category-tag {
@@ -1282,9 +1320,9 @@ function selectBundleType(bundleType) {
   // Reset product selections
   document.querySelectorAll('.product-card').forEach(card => {
     card.classList.remove('selected');
-    const button = card.querySelector('.add-to-box-btn');
+    const button = card.querySelector('.add-to-bundle-btn');
     if (button) {
-      button.textContent = 'Add to Box';
+      button.textContent = 'ADD TO BUNDLE';
       button.classList.remove('selected');
     }
     const indicator = card.querySelector('.selection-indicator');
@@ -1633,9 +1671,9 @@ function selectProduct(productId, variantId) {
     productCard.classList.remove('selected');
     
     // Reset button text
-    const button = productCard.querySelector('.add-to-box-btn');
+    const button = productCard.querySelector('.add-to-bundle-btn');
     if (button) {
-      button.textContent = 'Add to Box';
+      button.textContent = 'ADD TO BUNDLE';
       button.classList.remove('selected');
     }
     
@@ -1653,7 +1691,7 @@ function selectProduct(productId, variantId) {
     updateProgressBarFill();
     updateSelectedItems();
     
-        } else {
+  } else {
     // Select product (check max based on bundle type)
     console.log('Current selected products:', selectedProducts.length);
     if (selectedProducts.length >= config.total) {
@@ -1674,13 +1712,29 @@ function selectProduct(productId, variantId) {
     // Add selected class
     productCard.classList.add('selected');
     
-    // Find and update the button
-    const button = productCard.querySelector('.add-to-box-btn');
+    // Change button to variant selector
+    const button = productCard.querySelector('.add-to-bundle-btn');
     
     if (button) {
-      button.textContent = 'Selected';
-      button.classList.add('selected');
-      console.log('Button changed to Selected');
+      // Create variant selector
+      const variantSelector = document.createElement('select');
+      variantSelector.className = 'variant-selector';
+      variantSelector.innerHTML = `
+        <option value="30ML">30ML</option>
+        <option value="50ML">50ML</option>
+        <option value="100ML" selected>100ML</option>
+      `;
+      
+      // Replace button with selector
+      button.parentNode.replaceChild(variantSelector, button);
+      
+      // Add event listener to selector
+      variantSelector.addEventListener('change', function() {
+        const selectedVariant = this.value;
+        addToCart(productId, selectedVariant);
+      });
+      
+      console.log('Button changed to variant selector');
     }
     
     // Show selection indicator
@@ -1718,7 +1772,36 @@ function selectProduct(productId, variantId) {
   updateAddButton();
 }
 
-
+// Add to cart function
+function addToCart(productId, variant) {
+  console.log('Adding to cart:', productId, variant);
+  
+  // Add to cart using Shopify AJAX API
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      items: [{
+        id: productId,
+        quantity: 1,
+        properties: {
+          'Bundle Type': currentBundleType,
+          'Variant': variant
+        }
+      }]
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Added to cart:', data);
+    // Show success message or update cart count
+  })
+  .catch(error => {
+    console.error('Error adding to cart:', error);
+  });
+}
 
 // Update variant when select changes
 function updateVariant(productId, variantId) {
