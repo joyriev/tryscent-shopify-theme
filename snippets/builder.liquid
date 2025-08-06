@@ -567,23 +567,30 @@
 
 .filter-btn {
   padding: 10px 20px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #000000;
   border-radius: 25px;
-  background: white;
-  color: #222;
+  background: linear-gradient(135deg, #000000 0%, #333333 50%, #ffffff 100%);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
+  color: white;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .filter-btn:hover {
-  border-color: #28a745;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #ffffff 100%);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
   color: white;
   border-color: #28a745;
   box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
@@ -1171,17 +1178,19 @@
   gap: 8px;
   width: 100%;
   padding: 8px;
-  border: 2px solid #28a745;
+  border: 2px solid #000000;
   border-radius: 8px;
-  background: white;
+  background: linear-gradient(135deg, #000000 0%, #333333 50%, #ffffff 100%);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
 }
 
 .quantity-selector .quantity-btn {
   width: 32px;
   height: 32px;
   border: none;
-  background: #28a745;
-  color: white;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
   font-size: 1.2rem;
   font-weight: 700;
   cursor: pointer;
@@ -1193,7 +1202,7 @@
 }
 
 .quantity-selector .quantity-btn:hover {
-  background: #218838;
+  background: rgba(255, 255, 255, 1);
   transform: scale(1.1);
 }
 
@@ -1202,7 +1211,8 @@
   text-align: center;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #222;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .category-tag {
@@ -1434,9 +1444,16 @@ function generateProgressMarkers() {
       console.log('progressFill element:', progressFill);
       console.log('progressFill width before:', progressFill ? progressFill.style.width : 'N/A');
       
+      // Calculate total items including quantities
+      let totalItems = 0;
+      selectedProducts.forEach(product => {
+        const quantity = productQuantities[product.id] || 1;
+        totalItems += quantity;
+      });
+      
       if (progressFill) {
         // Calculate progress from 0 to total (not from buy to total)
-        const progressPercent = (selectedProducts.length / config.total) * 100;
+        const progressPercent = (totalItems / config.total) * 100;
         console.log('Setting width to:', progressPercent + '%');
         progressFill.style.width = progressPercent + '%';
         console.log('progressFill width after:', progressFill.style.width);
@@ -1445,7 +1462,7 @@ function generateProgressMarkers() {
       // Update markers
       document.querySelectorAll('.marker').forEach(marker => {
         const value = parseInt(marker.dataset.value);
-        if (selectedProducts.length >= value) {
+        if (totalItems >= value) {
           marker.classList.add('active');
         } else {
           marker.classList.remove('active');
@@ -1462,11 +1479,19 @@ function generateProgressMarkers() {
       console.log('progressFill element:', progressFill);
       console.log('progressFill classList:', progressFill ? progressFill.classList : 'N/A');
       console.log('progressFill HTML:', progressFill ? progressFill.outerHTML : 'N/A');
-      console.log('selectedProducts.length:', selectedProducts.length);
+      
+      // Calculate total items including quantities
+      let totalItems = 0;
+      selectedProducts.forEach(product => {
+        const quantity = productQuantities[product.id] || 1;
+        totalItems += quantity;
+      });
+      
+      console.log('totalItems:', totalItems);
       console.log('config.total:', config.total);
       
       if (progressFill) {
-        const progressPercent = (selectedProducts.length / config.total) * 100;
+        const progressPercent = (totalItems / config.total) * 100;
         console.log('Calculated progressPercent:', progressPercent);
         progressFill.style.width = progressPercent + '%';
         progressFill.style.backgroundColor = '#28a745';
