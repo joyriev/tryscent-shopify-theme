@@ -1436,8 +1436,8 @@ color: white;
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .product-bundler {
-    padding: 10px;
-    padding-bottom: 80px; /* Space for sticky footer */
+    padding: 10px !important;
+    padding-bottom: 60px !important; /* Space for sticky footer */
   }
 
   .bundler-container {
@@ -1531,11 +1531,11 @@ color: white;
   }
 
   .bundle-type-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 16px;
-    row-gap: 120px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 16px !important;
+    row-gap: 150px !important;
     flex-wrap: wrap;
   }
 
@@ -1643,13 +1643,13 @@ color: white;
     height: auto;
     max-height: none;
     z-index: 1000;
-    border-radius: 16px 16px 0 0;
+    border-radius: 0;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
     cursor: pointer;
   }
 
   .sidebar-content {
-    padding: 12px 16px;
+    padding: 8px 16px;
   }
 
   .sidebar-title {
@@ -1659,7 +1659,7 @@ color: white;
 
   /* Cart Progress Mobile - Hidden in sticky footer */
   .cart-progress {
-    display: none;
+    display: none !important;
   }
 
   .progress-text {
@@ -1738,8 +1738,8 @@ color: white;
 
   /* Add Bundle Button Mobile */
   .add-bundle-btn {
-    padding: 12px 16px;
-    font-size: 1rem;
+    padding: 16px;
+    font-size: 1.1rem;
   }
 
   /* Empty Cart Mobile */
@@ -1936,8 +1936,8 @@ color: white;
 
   /* Mobile Benefits Footer */
   .mobile-benefits {
-    margin-top: 8px;
-    padding-top: 8px;
+    margin-top: 6px;
+    padding-top: 6px;
     border-top: 1px solid #eee;
     display: flex;
     flex-direction: row;
