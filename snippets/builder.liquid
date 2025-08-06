@@ -3609,7 +3609,26 @@ function addBundleToCartAndCheckout() {
     };
   });
   
-  // Add to cart using Shopify AJAX API
+  // Fire ATC event immediately for tracking
+  if (typeof window.dataLayer !== 'undefined') {
+    window.dataLayer.push({
+      'event': 'add_to_cart',
+      'ecommerce': {
+        'items': items.map(item => ({
+          'item_id': item.id,
+          'quantity': item.quantity
+        }))
+      }
+    });
+  }
+  
+  // Dispatch custom ATC event
+  const atcEvent = new CustomEvent('bundle:add_to_cart', {
+    detail: { items: items, bundleType: currentBundleType }
+  });
+  document.dispatchEvent(atcEvent);
+  
+  // Add to cart using Shopify AJAX API (non-blocking)
   fetch('/cart/add.js', {
     method: 'POST',
     headers: {
@@ -3620,7 +3639,7 @@ function addBundleToCartAndCheckout() {
   .then(response => response.json())
   .then(data => {
     if (!data.status) {
-      // Add builder tag to cart attributes
+      // Add builder tag to cart attributes (non-blocking)
       fetch('/cart/update.js', {
         method: 'POST',
         headers: {
@@ -3633,14 +3652,16 @@ function addBundleToCartAndCheckout() {
           }
         })
       });
-      
-      // Redirect to checkout
-      window.location.href = '/checkout';
     }
   })
   .catch(error => {
     // Silent error handling
   });
+  
+  // Redirect to checkout immediately (don't wait for API calls)
+  setTimeout(() => {
+    window.location.href = '/checkout';
+  }, 100); // Small delay to ensure events fire
 }
 
 
