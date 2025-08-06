@@ -1102,17 +1102,7 @@ color: white;
 }
 
 .bundler-progress-fill {
-  height: 100% !important;
-  background: #28a745 !important;
-  border-radius: 14px;
-  transition: width 0.5s ease;
-  width: 0%;
-  position: relative !important;
-  display: block !important;
-  box-sizing: border-box;
-  min-height: 28px !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+  display: none !important;
 }
 
 .progress-markers {
@@ -2169,7 +2159,6 @@ window.selectProduct = function(productId, passedVariantId) {
     // Update progress text and indicators
     updateProgressText();
     updateCartProgress();
-    updateProgressBarFill();
     updateSelectedItems();
     updateAddButton();
     
@@ -2242,7 +2231,6 @@ window.selectProduct = function(productId, passedVariantId) {
     // Update progress text and indicators
     updateProgressText();
     updateCartProgress();
-    updateProgressBarFill();
     updateSelectedItems();
     updateAddButton();
     
@@ -2278,7 +2266,6 @@ window.selectBundleType = function(bundleType) {
   
   // Update cart progress
   updateCartProgress();
-  updateProgressBarFill();
   
   // Update selected items
   updateSelectedItems();
@@ -2370,7 +2357,6 @@ window.changeProductQuantity = function(productId, change) {
     // Update progress
     updateProgressText();
     updateCartProgress();
-    updateProgressBarFill();
     updateSelectedItems();
   updateAddButton();
     
@@ -2678,43 +2664,7 @@ function updateCartProgress() {
   });
 }
 
-    // Update progress bar fill separately
-function updateProgressBarFill() {
-  const progressFill = document.getElementById('cartProgressFill');
-  const progressFillMobile = document.getElementById('cartProgressFillMobile');
-  const config = bundleConfig[currentBundleType];
-  
-  // Calculate total items including quantities
-  let totalItems = 0;
-  selectedProducts.forEach(product => {
-    const quantity = productQuantities[product.id] || 1;
-    totalItems += quantity;
-  });
-  
-  // Update desktop progress
-  if (progressFill) {
-    const progressPercent = (totalItems / config.total) * 100;
-    progressFill.style.width = progressPercent + '%';
-    progressFill.style.backgroundColor = '#28a745';
-    progressFill.style.display = 'block';
-    progressFill.style.height = '100%';
-    progressFill.style.minHeight = '20px';
-    progressFill.style.opacity = '1';
-    progressFill.style.visibility = 'visible';
-  }
-  
-  // Update mobile progress
-  if (progressFillMobile) {
-    const progressPercent = (totalItems / config.total) * 100;
-    progressFillMobile.style.width = progressPercent + '%';
-    progressFillMobile.style.backgroundColor = '#28a745';
-    progressFillMobile.style.display = 'block';
-    progressFillMobile.style.height = '100%';
-    progressFillMobile.style.minHeight = '20px';
-    progressFillMobile.style.opacity = '1';
-    progressFillMobile.style.visibility = 'visible';
-  }
-}
+
 
 // Update selected items in sidebar
 function updateSelectedItems() {
