@@ -553,10 +553,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   margin-bottom: 10px;
-  position: sticky;
-  top: 200px;
-  z-index: 50;
-  transition: all 0.3s ease;
 }
 
 .search-container {
@@ -1623,6 +1619,7 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCartProgress();
   updateProgressBarFill();
   updateSelectedItems();
+  updateAddButton();
   
   // Clean HTML from data attributes on load
   cleanDataAttributes();
@@ -1726,12 +1723,6 @@ function updateBundlePrices() {
   console.log('Base price:', basePrice);
   
   // Update bundle prices
-  const bundleConfig = {
-    '2+1': { buy: 2, free: 1, total: 3 },
-    '3+2': { buy: 3, free: 2, total: 5 },
-    '4+3': { buy: 4, free: 3, total: 7 },
-    '5+4': { buy: 5, free: 4, total: 9 }
-  };
   
   Object.keys(bundleConfig).forEach(bundleType => {
     const config = bundleConfig[bundleType];
@@ -2301,17 +2292,24 @@ function addBundleToCart() {
   const config = bundleConfig[currentBundleType];
   const minRequired = config.buy;
   
-  if (selectedProducts.length < minRequired) {
-    alert(`Please select at least ${minRequired} scents for this bundle`);
+  // Calculate total items including quantities
+  let totalItems = 0;
+  selectedProducts.forEach(product => {
+    const quantity = productQuantities[product.id] || 1;
+    totalItems += quantity;
+  });
+  
+  if (totalItems < config.total) {
+    alert(`Please select at least ${config.total} scents for this bundle (you have ${totalItems})`);
     return;
   }
   
   const items = selectedProducts.map(product => ({
     id: product.variantId,
-    quantity: 1,
+    quantity: productQuantities[product.id] || 1,
     properties: {
       '_bundle_type': currentBundleType,
-      '_bundle_total': selectedProducts.length.toString()
+      '_bundle_total': totalItems.toString()
     }
   }));
   
