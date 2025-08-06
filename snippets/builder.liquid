@@ -377,7 +377,7 @@
   gap: 32px;
   width: 100%;
   margin: 0 auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   overflow: visible;
 }
 
@@ -501,8 +501,11 @@
   letter-spacing: 1px;
   position: absolute;
   bottom: -24px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  transform: none;
+  width: 100%;
+  text-align: center;
 }
 
 @keyframes shiny-gradient {
