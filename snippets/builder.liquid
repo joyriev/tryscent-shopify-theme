@@ -106,7 +106,7 @@
             {% assign default_variant = product.variants.first %}
           {% endunless %}
           
-            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
+            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}" data-variants='[{% for variant in product.variants %}{"id": {{ variant.id }}, "title": "{{ variant.title }}", "price": {{ variant.price }}}{% unless forloop.last %},{% endunless %}{% endfor %}]'>
               <!-- Product Badge -->
               {% if product.tags contains 'new' %}
                 <div class="product-badge new">New</div>
@@ -1179,6 +1179,22 @@ let bundleConfig = {
   '5+4': { buy: 5, free: 4, total: 9 }
 };
 
+// Function to get real variant price from product
+function getVariantPrice(productId, variantTitle) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (!productCard) return variantPrices[currentVariant];
+  
+  // Get all variants for this product
+  const variants = JSON.parse(productCard.dataset.variants || '[]');
+  const variant = variants.find(v => v.title === variantTitle);
+  
+  if (variant) {
+    return variant.price;
+  }
+  
+  return variantPrices[currentVariant];
+}
+
 // Bundle type selection
 function selectBundleType(bundleType) {
   console.log('Bundle type changed to:', bundleType);
@@ -1238,49 +1254,11 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         updateBundlePrices();
         updateProductGridPrices();
-        
-        // Also enforce prices after a longer delay to catch any Shopify overrides
-        setTimeout(() => {
-          updateBundlePrices();
-          updateProductGridPrices();
-        }, 500);
-        
-        // And one more time after 1 second
-        setTimeout(() => {
-          updateBundlePrices();
-          updateProductGridPrices();
-        }, 1000);
       }, 100);
     });
   }
   
-  // Monitor for price changes and reapply our formatting
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList' || mutation.type === 'characterData') {
-        // Check if any price elements were modified
-        const priceElements = document.querySelectorAll('.product-price, .bundle-price, .bundle-savings');
-        priceElements.forEach(element => {
-          const text = element.textContent;
-          // If price doesn't end with .95 and is not USD/EUR/GBP, reapply our formatting
-          if (text && !text.includes('$') && !text.includes('€') && !text.includes('£') && !text.endsWith('.95')) {
-            // Reapply our formatting
-            setTimeout(() => {
-              updateBundlePrices();
-              updateProductGridPrices();
-            }, 50);
-          }
-        });
-      }
-    });
-  });
-  
-  // Start observing
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-    characterData: true
-  });
+
 });
 
 
@@ -1483,11 +1461,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateProductGridPrices();
     console.log('Prices initialized with currency system');
     
-    // Set up periodic price enforcement
-    setInterval(() => {
-      updateBundlePrices();
-      updateProductGridPrices();
-    }, 2000); // Check every 2 seconds
+
   }, 200);
   
   // updateProgress will be called after function is defined
@@ -1513,7 +1487,7 @@ function selectProduct(productId, variantId) {
   }
   
   // Use current selected variant instead of passed variantId
-  const currentVariantPrice = variantPrices[currentVariant];
+  const currentVariantPrice = getVariantPrice(productId, currentVariant);
   console.log('Current variant:', currentVariant, 'Price:', currentVariantPrice);
   
   // Update product card variant ID to current variant
@@ -1761,12 +1735,6 @@ function selectVariant(variant) {
   setTimeout(() => {
     updateBundlePrices();
     updateProductGridPrices();
-    
-    // Also enforce prices after a longer delay to catch any Shopify overrides
-    setTimeout(() => {
-      updateBundlePrices();
-      updateProductGridPrices();
-    }, 500);
   }, 100);
   
   console.log('Variant selection completed');
@@ -1774,8 +1742,6 @@ function selectVariant(variant) {
 
 // Update product grid prices
 function updateProductGridPrices() {
-  const basePrice = variantPrices[currentVariant];
-  
   // Format prices using Shopify's money format
   const formatMoney = (cents) => {
     const currency = window.Shopify?.currency?.active || 'USD';
@@ -1795,15 +1761,27 @@ function updateProductGridPrices() {
     }
   };
   
-  // Update all product prices
-  document.querySelectorAll('.product-price').forEach(priceElement => {
-    priceElement.textContent = formatMoney(basePrice);
+  // Update all product prices using real variant prices
+  document.querySelectorAll('.product-card').forEach(productCard => {
+    const productId = productCard.dataset.productId;
+    const priceElement = productCard.querySelector('.product-price');
+    
+    if (priceElement) {
+      const realPrice = getVariantPrice(productId, currentVariant);
+      priceElement.textContent = formatMoney(realPrice);
+    }
   });
 }
 
 // Update bundle prices based on selected variants
 function updateBundlePrices() {
-  const basePrice = variantPrices[currentVariant];
+  // Get real price from first product as base price
+  const firstProductCard = document.querySelector('.product-card');
+  let basePrice = variantPrices[currentVariant]; // fallback
+  
+  if (firstProductCard) {
+    basePrice = getVariantPrice(firstProductCard.dataset.productId, currentVariant);
+  }
   
   // Format prices using Shopify's money format with our rounding
   const formatMoney = (cents) => {
