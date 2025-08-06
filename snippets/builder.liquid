@@ -486,7 +486,7 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  z-index: 10;
+  z-index: 1000;
   white-space: nowrap;
   min-width: fit-content;
 }
@@ -551,7 +551,10 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 200px;
-  z-index: 100;
+  z-index: 50;
+  transition: all 0.3s ease;
+  width: 100%;
+  left: 0;
 }
 
 .search-container {
@@ -895,6 +898,7 @@
   top: 280px;
   height: fit-content;
   max-height: calc(100vh - 300px);
+  z-index: 100;
 }
 
 .sidebar-content {
@@ -1620,7 +1624,45 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.error('applyFilters function not found!');
   }
+  
+  // Set up scroll listener for search bar animation
+  setupSearchBarAnimation();
 });
+
+// Search bar animation function
+function setupSearchBarAnimation() {
+  const searchBar = document.querySelector('.bundler-search-filter');
+  const sidebar = document.querySelector('.bundler-sidebar');
+  const bundlerContainer = document.querySelector('.bundler-container');
+  
+  if (!searchBar || !sidebar || !bundlerContainer) return;
+  
+  const sidebarWidth = 320; // Width of sidebar
+  const containerPadding = 40; // Total padding of container (20px on each side)
+  const containerWidth = bundlerContainer.offsetWidth;
+  
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const searchBarRect = searchBar.getBoundingClientRect();
+    const sidebarRect = sidebar.getBoundingClientRect();
+    
+    // Check if search bar should start moving (when it hits the top)
+    if (searchBarRect.top <= 200) {
+      // Calculate how much to move based on scroll position
+      const scrollProgress = Math.min((200 - searchBarRect.top) / 200, 1);
+      const translateX = scrollProgress * (sidebarWidth + 20); // 20px gap
+      const newWidth = containerWidth - (scrollProgress * (sidebarWidth + containerPadding));
+      
+      searchBar.style.transform = `translateX(${translateX}px)`;
+      searchBar.style.width = `${newWidth}px`;
+      searchBar.style.zIndex = '100';
+    } else {
+      searchBar.style.transform = 'translateX(0)';
+      searchBar.style.width = '100%';
+      searchBar.style.zIndex = '50';
+    }
+  });
+}
 
 
 
