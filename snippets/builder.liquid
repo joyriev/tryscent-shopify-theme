@@ -1141,18 +1141,18 @@ color: white;
   font-weight: 700;
   color: #666;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   pointer-events: auto;
   z-index: 11;
   position: relative;
-  top: -2px;
+  top: 0px;
 }
 
 .marker.active {
   border-color: #28a745;
   background: #28a745;
   color: white;
-  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.3);
+  box-shadow: 0 8px 24px rgba(40, 167, 69, 0.4);
   transform: scale(1.1);
 }
 
@@ -2103,12 +2103,13 @@ color: white;
 
   .bundler-sidebar.fullscreen .benefits-list {
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 6px;
   }
   
   .bundler-sidebar.fullscreen .benefit-item {
-    font-size: 0.9rem;
-    padding: 8px 0;
+    font-size: 0.8rem;
+    padding: 4px 0;
+    line-height: 1.2;
   }
 }
 </style>
@@ -3345,8 +3346,8 @@ function updateAddButton() {
   
   // Update mobile button
   if (addButtonMobile && btnTextMobile && btnStatusMobile) {
-    // Mobile button is never disabled - always clickable
-    addButtonMobile.disabled = false;
+    // Mobile button is disabled when bundle not complete, but always shows "REVIEW BUNDLE"
+    addButtonMobile.disabled = totalItems < config.total;
     
     // Show/hide mobile sidebar based on selection
     if (window.innerWidth <= 768 && mobileSidebar) {
