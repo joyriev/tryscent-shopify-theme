@@ -932,6 +932,7 @@ function selectBundleType(bundleType) {
   
   // Update cart progress
   updateCartProgress();
+  updateProgressBarFill();
   
   // Update selected items
   updateSelectedItems();
@@ -1008,33 +1009,45 @@ function generateProgressMarkers() {
   }
 }
 
-// Update cart progress bar
-function updateCartProgress() {
-  const progressFill = document.getElementById('cartProgressFill');
-  const config = bundleConfig[currentBundleType];
-  
-  console.log('=== PROGRESS DEBUG ===');
-  console.log('progressFill element:', progressFill);
-  console.log('progressFill width before:', progressFill ? progressFill.style.width : 'N/A');
-  
-  if (progressFill) {
-    // Calculate progress from 0 to total (not from buy to total)
-    const progressPercent = (selectedProducts.length / config.total) * 100;
-    console.log('Setting width to:', progressPercent + '%');
-    progressFill.style.width = progressPercent + '%';
-    console.log('progressFill width after:', progressFill.style.width);
-  }
-  
-  // Update markers
-  document.querySelectorAll('.marker').forEach(marker => {
-    const value = parseInt(marker.dataset.value);
-    if (selectedProducts.length >= value) {
-      marker.classList.add('active');
-    } else {
-      marker.classList.remove('active');
+    // Update cart progress bar
+    function updateCartProgress() {
+      const progressFill = document.getElementById('cartProgressFill');
+      const config = bundleConfig[currentBundleType];
+      
+      console.log('=== PROGRESS DEBUG ===');
+      console.log('progressFill element:', progressFill);
+      console.log('progressFill width before:', progressFill ? progressFill.style.width : 'N/A');
+      
+      if (progressFill) {
+        // Calculate progress from 0 to total (not from buy to total)
+        const progressPercent = (selectedProducts.length / config.total) * 100;
+        console.log('Setting width to:', progressPercent + '%');
+        progressFill.style.width = progressPercent + '%';
+        console.log('progressFill width after:', progressFill.style.width);
+      }
+      
+      // Update markers
+      document.querySelectorAll('.marker').forEach(marker => {
+        const value = parseInt(marker.dataset.value);
+        if (selectedProducts.length >= value) {
+          marker.classList.add('active');
+        } else {
+          marker.classList.remove('active');
+        }
+      });
     }
-  });
-}
+
+    // Update progress bar fill separately
+    function updateProgressBarFill() {
+      const progressFill = document.getElementById('cartProgressFill');
+      const config = bundleConfig[currentBundleType];
+      
+      if (progressFill) {
+        const progressPercent = (selectedProducts.length / config.total) * 100;
+        progressFill.style.width = progressPercent + '%';
+        console.log('PROGRESS BAR FILL UPDATED:', progressPercent + '%');
+      }
+    }
 
 // Update selected items in sidebar
 function updateSelectedItems() {
@@ -1092,6 +1105,7 @@ document.addEventListener('DOMContentLoaded', function() {
   updateProgressText();
   generateProgressMarkers();
   updateCartProgress();
+  updateProgressBarFill();
   updateSelectedItems();
   
   // updateProgress will be called after function is defined
@@ -1145,6 +1159,7 @@ function selectProduct(productId, variantId) {
     // Update progress text and indicators
     updateProgressText();
     updateCartProgress();
+    updateProgressBarFill();
     updateSelectedItems();
     
   } else {
@@ -1206,6 +1221,7 @@ function selectProduct(productId, variantId) {
     // Update progress text and indicators
     updateProgressText();
     updateCartProgress();
+    updateProgressBarFill();
     updateSelectedItems();
   }
   
