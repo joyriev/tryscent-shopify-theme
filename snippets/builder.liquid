@@ -1546,6 +1546,9 @@ color: white;
     gap: 8px !important;
     margin-bottom: 20px !important;
     font-size: 0.6rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .bundler-reviews .rating img {
@@ -1555,10 +1558,12 @@ color: white;
 
   .bundler-reviews .rating-text {
     font-size: 0.6rem !important;
+    line-height: 1 !important;
   }
 
   .bundler-reviews .rating-count {
     font-size: 0.6rem !important;
+    line-height: 1 !important;
   }
 
   /* Variant Selection Mobile */
@@ -3242,6 +3247,9 @@ document.addEventListener('DOMContentLoaded', function() {
       mobileBenefits.style.display = 'flex';
     }
   });
+  
+  // Initialize mobile sidebar state
+  updateAddButton();
 });
 
 
