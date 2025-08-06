@@ -1437,7 +1437,7 @@ color: white;
 @media (max-width: 768px) {
   .product-bundler {
     padding: 10px !important;
-    padding-bottom: 60px !important; /* Space for sticky footer */
+    padding-bottom: 0 !important;
   }
 
   .bundler-container {
@@ -2092,8 +2092,17 @@ window.selectProduct = function(productId, passedVariantId) {
     updateCartProgress();
     updateProgressBarFill();
     updateSelectedItems();
+    updateAddButton();
     
-  } else {
+    // Update fullscreen button text if in fullscreen
+    if (window.innerWidth <= 768) {
+      const sidebar = document.querySelector('.bundler-sidebar');
+      if (sidebar && sidebar.classList.contains('fullscreen')) {
+        updateFullscreenButtonText();
+      }
+    }
+    
+        } else {
     // Select product (check max based on bundle type)
     if (selectedProducts.length >= config.total) {
       alert(`You can only select ${config.total} scents for this bundle`);
@@ -2156,9 +2165,16 @@ window.selectProduct = function(productId, passedVariantId) {
     updateCartProgress();
     updateProgressBarFill();
     updateSelectedItems();
+    updateAddButton();
+    
+    // Update fullscreen button text if in fullscreen
+    if (window.innerWidth <= 768) {
+      const sidebar = document.querySelector('.bundler-sidebar');
+      if (sidebar && sidebar.classList.contains('fullscreen')) {
+        updateFullscreenButtonText();
+      }
+    }
   }
-  
-  updateAddButton();
 };
 
 // Bundle type selection
@@ -2332,8 +2348,8 @@ window.changeQuantity = function(productId, change) {
   // If quantity goes to 0 or below, remove product completely
   if (newQuantity <= 0) {
     // Remove product from selection
-    const productCard = document.querySelector(`[data-product-id="${productId}"]`);
-    if (productCard) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (productCard) {
       productCard.classList.remove('selected');
       
       // Remove quantity selector and restore button
@@ -2933,10 +2949,26 @@ function openFullscreenSidebar() {
   // Update save info
   updateSaveInfo();
   
+  // Update button text for fullscreen
+  updateFullscreenButtonText();
+  
   // Change button onclick for fullscreen
   if (addButton) {
     addButton.onclick = function() {
-      addBundleToCartAndCheckout();
+      const config = bundleConfig[currentBundleType];
+      let totalItems = 0;
+      selectedProducts.forEach(product => {
+        const quantity = productQuantities[product.id] || 1;
+        totalItems += quantity;
+      });
+      
+      if (totalItems >= config.total) {
+        // Bundle is complete - go to checkout
+        addBundleToCartAndCheckout();
+      } else {
+        // Bundle not complete - close fullscreen and continue shopping
+        closeFullscreenSidebar();
+      }
     };
   }
   
@@ -3124,6 +3156,7 @@ function updateAddButton() {
   const addButton = document.getElementById('addBundleBtn');
   const btnText = document.getElementById('btnText');
   const btnStatus = document.getElementById('btnStatus');
+  const sidebar = document.querySelector('.bundler-sidebar');
   
   if (addButton && btnText && btnStatus) {
     const config = bundleConfig[currentBundleType];
@@ -3135,6 +3168,15 @@ function updateAddButton() {
       totalItems += quantity;
     });
     
+    // Show/hide sticky cart on mobile based on selection
+    if (window.innerWidth <= 768 && sidebar) {
+      if (totalItems > 0) {
+        sidebar.style.display = 'block';
+      } else {
+        sidebar.style.display = 'none';
+      }
+    }
+    
     addButton.disabled = totalItems < config.total;
     
     // Update button text and status
@@ -3142,13 +3184,37 @@ function updateAddButton() {
       btnText.textContent = 'REVIEW BUNDLE';
       btnStatus.textContent = `${totalItems}/${config.total}`;
     } else {
-      btnText.textContent = `Please Select ${config.total - totalItems} More Scents`;
+      btnText.textContent = 'REVIEW BUNDLE';
       btnStatus.textContent = `${totalItems}/${config.total}`;
     }
     
     // Update mobile save info if on mobile
     if (window.innerWidth <= 768) {
       updateSaveInfo();
+    }
+  }
+}
+
+// Update button text for fullscreen cart
+function updateFullscreenButtonText() {
+  const addButton = document.getElementById('addBundleBtn');
+  const btnText = document.getElementById('btnText');
+  
+  if (addButton && btnText) {
+    const config = bundleConfig[currentBundleType];
+    
+    // Calculate total items including quantities
+    let totalItems = 0;
+    selectedProducts.forEach(product => {
+      const quantity = productQuantities[product.id] || 1;
+      totalItems += quantity;
+    });
+    
+    // Update button text for fullscreen
+    if (totalItems >= config.total) {
+      btnText.textContent = 'GO TO CHECKOUT';
+    } else {
+      btnText.textContent = 'CONTINUE SHOPPING';
     }
   }
 }
