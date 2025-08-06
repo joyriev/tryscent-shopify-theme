@@ -1535,7 +1535,7 @@ color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 16px;
-    row-gap: 24px;
+    row-gap: 40px;
     flex-wrap: wrap;
   }
 
@@ -1645,10 +1645,11 @@ color: white;
     z-index: 1000;
     border-radius: 16px 16px 0 0;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
   }
 
   .sidebar-content {
-    padding: 16px;
+    padding: 12px 16px;
   }
 
   .sidebar-title {
@@ -1658,8 +1659,8 @@ color: white;
 
   /* Cart Progress Mobile */
   .cart-progress {
-    margin-bottom: 16px;
-    padding: 12px;
+    margin-bottom: 8px;
+    padding: 8px;
   }
 
   .progress-text {
@@ -1686,8 +1687,11 @@ color: white;
 
   /* Selected Items Mobile */
   .selected-items {
-    max-height: 200px;
-    margin-bottom: 16px;
+    max-height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
   }
 
   .selected-item {
@@ -1735,8 +1739,8 @@ color: white;
 
   /* Add Bundle Button Mobile */
   .add-bundle-btn {
-    padding: 16px;
-    font-size: 1.1rem;
+    padding: 12px 16px;
+    font-size: 1rem;
   }
 
   /* Empty Cart Mobile */
@@ -1803,8 +1807,10 @@ color: white;
 
   .bundler-sidebar.fullscreen .selected-items {
     flex: 1;
-    max-height: none;
+    max-height: none !important;
     overflow-y: auto;
+    opacity: 1 !important;
+    margin-bottom: 16px !important;
   }
 
   .bundler-sidebar.fullscreen .selected-item {
@@ -1925,19 +1931,19 @@ color: white;
 
   /* Mobile Benefits Footer */
   .mobile-benefits {
-    margin-top: 12px;
-    padding-top: 12px;
+    margin-top: 8px;
+    padding-top: 8px;
     border-top: 1px solid #eee;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
   }
 
   .mobile-benefit-item {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
+    gap: 4px;
+    font-size: 0.7rem;
     color: #666;
   }
 
@@ -2893,6 +2899,7 @@ function openFullscreenSidebar() {
   const desktopHeader = document.getElementById('sidebarTitle');
   const saveInfo = document.getElementById('saveInfo');
   const benefitsSection = document.getElementById('benefitsSection');
+  const selectedItems = document.getElementById('selectedItems');
   
   sidebar.classList.add('fullscreen');
   backdrop.classList.add('active');
@@ -2900,6 +2907,11 @@ function openFullscreenSidebar() {
   desktopHeader.style.display = 'none';
   saveInfo.style.display = 'block';
   benefitsSection.style.display = 'block';
+  
+  // Show selected items in fullscreen
+  selectedItems.style.maxHeight = 'none';
+  selectedItems.style.opacity = '1';
+  selectedItems.style.marginBottom = '16px';
   
   // Update save info
   updateSaveInfo();
@@ -2915,6 +2927,7 @@ function closeFullscreenSidebar() {
   const desktopHeader = document.getElementById('sidebarTitle');
   const saveInfo = document.getElementById('saveInfo');
   const benefitsSection = document.getElementById('benefitsSection');
+  const selectedItems = document.getElementById('selectedItems');
   
   sidebar.classList.remove('fullscreen');
   backdrop.classList.remove('active');
@@ -2922,6 +2935,11 @@ function closeFullscreenSidebar() {
   desktopHeader.style.display = 'block';
   saveInfo.style.display = 'none';
   benefitsSection.style.display = 'none';
+  
+  // Hide selected items in sticky footer
+  selectedItems.style.maxHeight = '0';
+  selectedItems.style.opacity = '0';
+  selectedItems.style.marginBottom = '0';
   
   // Restore body scroll
   document.body.style.overflow = '';
