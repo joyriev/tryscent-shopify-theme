@@ -112,8 +112,8 @@
         </div>
         <div class="filter-container">
         <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
-        <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
-        <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
+        <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Men</button>
+        <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Women</button>
         </div>
       </div>
 
@@ -2618,9 +2618,22 @@ function clearAllSelections() {
   selectedProducts = [];
   productQuantities = {};
   
-  // Reset product card states
+  // Reset filter to "All" 
+  currentFilter = 'all';
+  currentSearch = '';
+  
+  // Reset filter button states
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.filter === 'all') {
+      btn.classList.add('active');
+    }
+  });
+  
+  // Reset product card states and show all products
   document.querySelectorAll('.product-card').forEach(card => {
     card.classList.remove('selected');
+    card.style.display = 'block'; // Show all products
     const button = card.querySelector('.add-to-bundle-btn');
     if (button) {
       button.textContent = 'ADD TO BUNDLE';
@@ -2631,6 +2644,12 @@ function clearAllSelections() {
       indicator.style.display = 'none';
     }
   });
+  
+  // Clear search input if exists
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.value = '';
+  }
   
   // Update all UI elements
   updateProgressText();
