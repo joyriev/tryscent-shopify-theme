@@ -68,66 +68,103 @@
         </div>
       </div>
 
-      <!-- Products Grid -->
-      <div class="bundler-products" id="productsGrid">
-        {% for product in bundle_collection.products %}
-          {% assign default_variant = product.variants | where: "title", "100ML" | first %}
-          {% unless default_variant %}
-            {% assign default_variant = product.variants.first %}
-          {% endunless %}
-          
-          <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}">
-            <!-- Product Badge -->
-            {% if product.tags contains 'new' %}
-              <div class="product-badge new">New</div>
-            {% elsif product.tags contains 'popular' %}
-              <div class="product-badge popular">Most Popular</div>
-            {% endif %}
+      <!-- Main Content with Sidebar -->
+      <div class="bundler-main-content">
+        <!-- Products Grid -->
+        <div class="bundler-products" id="productsGrid">
+          {% for product in bundle_collection.products %}
+            {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+            {% unless default_variant %}
+              {% assign default_variant = product.variants.first %}
+            {% endunless %}
             
-            <!-- Product Image -->
-            <div class="product-image">
-              <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
+            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}">
+              <!-- Product Badge -->
+              {% if product.tags contains 'new' %}
+                <div class="product-badge new">New</div>
+              {% elsif product.tags contains 'popular' %}
+                <div class="product-badge popular">Most Popular</div>
+              {% endif %}
+              
+              <!-- Product Image -->
+              <div class="product-image">
+                <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
+              </div>
+              
+              <!-- Product Info -->
+              <div class="product-info">
+                <h3 class="product-title">{{ product.title }}</h3>
+                
+                <!-- Reviews -->
+                <div class="product-reviews">
+                  <div class="stars">★★★★★</div>
+                  <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
+                </div>
+                
+                <!-- Variant and Price -->
+                <div class="product-variant-price">
+                  <select class="variant-select" data-product-id="{{ product.id }}" onchange="updateVariant({{ product.id }}, this.value);">
+                    {% for variant in product.variants %}
+                      {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
+                        <option value="{{ variant.id }}" 
+                                data-price="{{ variant.price | money }}"
+                                {% if variant.title contains '100ML' %}selected{% endif %}>
+                          {{ variant.title }} - {{ variant.price | money }}
+                        </option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+                
+                <!-- Add to Box Button -->
+                <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
+                  Add to Box
+                </button>
+              </div>
+              
+              <!-- Selection Indicator -->
+              <div class="selection-indicator" style="display: none;">
+                <div class="check-icon">✓</div>
+              </div>
             </div>
+          {% endfor %}
+        </div>
+
+        <!-- Shopping Cart Sidebar -->
+        <div class="bundler-sidebar">
+          <div class="sidebar-content">
+            <h3 class="sidebar-title">Shopping Cart</h3>
             
-            <!-- Product Info -->
-            <div class="product-info">
-              <h3 class="product-title">{{ product.title }}</h3>
-              
-              <!-- Reviews -->
-              <div class="product-reviews">
-                <div class="stars">★★★★★</div>
-                <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
+            <!-- Progress Section -->
+            <div class="cart-progress">
+              <div class="progress-text" id="cartProgressText">Please select at least 2 scents</div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="cartProgressFill"></div>
               </div>
-              
-              <!-- Variant and Price -->
-              <div class="product-variant-price">
-                <select class="variant-select" data-product-id="{{ product.id }}" onchange="updateVariant({{ product.id }}, this.value);">
-                  {% for variant in product.variants %}
-                    {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
-                      <option value="{{ variant.id }}" 
-                              data-price="{{ variant.price | money }}"
-                              {% if variant.title contains '100ML' %}selected{% endif %}>
-                        {{ variant.title }} - {{ variant.price | money }}
-                      </option>
-                    {% endif %}
-                  {% endfor %}
-                </select>
+              <div class="progress-markers">
+                <span class="marker" data-value="2">2</span>
+                <span class="marker" data-value="3">3</span>
+                <span class="marker" data-value="4">4</span>
+                <span class="marker" data-value="5">5</span>
               </div>
-              
-              <!-- Add to Box Button -->
-              <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
-                Add to Box
+            </div>
+
+            <!-- Selected Items -->
+            <div class="selected-items" id="selectedItems">
+              <div class="empty-cart">
+                <p>Your cart is empty.</p>
+              </div>
+            </div>
+
+            <!-- Add Bundle Button -->
+            <div class="sidebar-footer">
+              <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+                ADD BUNDLE TO CART
               </button>
             </div>
-            
-            <!-- Selection Indicator -->
-            <div class="selection-indicator" style="display: none;">
-              <div class="check-icon">✓</div>
-            </div>
           </div>
-        {% endfor %}
+        </div>
       </div>
-
 
     </div>
 </div>
@@ -859,36 +896,7 @@
 
 
 
-/* Footer */
-.bundler-footer {
-  padding: 20px 32px 32px 32px;
-  text-align: center;
-  border-top: 1px solid #eee;
-}
 
-.add-bundle-btn {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  min-width: 200px;
-}
-
-.add-bundle-btn:hover:not(:disabled) {
-  background-color: #218838;
-  transform: translateY(-1px);
-}
-
-.add-bundle-btn:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
-  transform: none;
-}
 
 
 
