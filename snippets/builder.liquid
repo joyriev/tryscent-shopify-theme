@@ -129,13 +129,11 @@
             <!-- Progress Section -->
             <div class="cart-progress">
               <div class="progress-text" id="cartProgressText">Please select at least 2 scents</div>
-              <div class="progress-container">
-                <div class="progress-markers" id="progressMarkers">
-                  <!-- Markers will be generated dynamically -->
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" id="cartProgressFill"></div>
-                </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="cartProgressFill"></div>
+              </div>
+              <div class="progress-markers" id="progressMarkers">
+                <!-- Markers will be generated dynamically -->
               </div>
             </div>
 
@@ -598,25 +596,20 @@
   font-weight: 500;
 }
 
-.progress-container {
+.progress-bar {
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
   position: relative;
   margin-bottom: 8px;
-}
-
-.progress-bar {
-  height: 8px;
-  background: #e0e0e0;
-  border-radius: 4px;
-  position: relative;
   overflow: hidden;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
 }
 
 .progress-fill {
   height: 100%;
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-  border-radius: 4px;
+  border-radius: 6px;
   transition: width 0.5s ease;
   width: 0%;
   box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
@@ -626,33 +619,23 @@
 }
 
 .progress-markers {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: space-between;
-  pointer-events: none;
-  z-index: 10;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 700;
+  margin-top: 8px;
+  gap: 4px;
 }
 
 .marker {
   position: relative;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #666;
+  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  pointer-events: auto;
-  z-index: 11;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #f0f0f0;
+  flex: 1;
 }
 
 .buy-marker {
@@ -1022,10 +1005,20 @@ function updateCartProgress() {
   const progressFill = document.getElementById('cartProgressFill');
   const config = bundleConfig[currentBundleType];
   
+  console.log('=== PROGRESS DEBUG ===');
+  console.log('progressFill element:', progressFill);
+  console.log('selectedProducts.length:', selectedProducts.length);
+  console.log('config.total:', config.total);
+  
   if (progressFill) {
     // Calculate progress from 0 to total (not from buy to total)
     const progressPercent = (selectedProducts.length / config.total) * 100;
+    console.log('Setting progress width to:', progressPercent + '%');
     progressFill.style.width = progressPercent + '%';
+    console.log('Progress fill width after setting:', progressFill.style.width);
+    console.log('Progress fill computed style:', window.getComputedStyle(progressFill).width);
+  } else {
+    console.error('progressFill element not found!');
   }
   
   // Update markers
