@@ -1360,7 +1360,6 @@ let bundleConfig = {
 
 // Bundle type selection
 function selectBundleType(bundleType) {
-  console.log('Bundle type changed to:', bundleType);
   
   currentBundleType = bundleType;
   selectedProducts = []; // Reset selections when changing bundle type
@@ -1411,8 +1410,6 @@ function selectBundleType(bundleType) {
     const offset = productGrid.offsetTop - 200;
     window.scrollTo({ top: offset, behavior: 'smooth' });
   }
-  
-  console.log('Bundle type selection completed');
 }
 
 
@@ -1612,13 +1609,6 @@ function removeFromCart(productId) {
 
 // Initialize bundler
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('Bundle page script loaded!');
-  console.log('Products grid found:', document.getElementById('productsGrid'));
-  console.log('Product cards found:', document.querySelectorAll('.product-card').length);
-  
-  // Check if functions are defined
-  console.log('selectProduct function exists:', typeof selectProduct);
-  console.log('applyFilters function exists:', typeof applyFilters);
   
   updateProgressText();
   generateProgressMarkers();
@@ -1630,57 +1620,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Clean HTML from data attributes on load
   cleanDataAttributes();
   
-  console.log('Bundle builder initialized');
-  
   // updateProgress will be called after function is defined
   if (typeof applyFilters === 'function') {
     applyFilters(); // Apply initial filters
-  } else {
-    console.error('applyFilters function not found!');
   }
-  
-  // Set up scroll listener for search bar animation
-  setupSearchBarAnimation();
 });
-
-// Search bar animation function
-function setupSearchBarAnimation() {
-  const searchBar = document.querySelector('.bundler-search-filter');
-  const sidebar = document.querySelector('.bundler-sidebar');
-  const bundlerContainer = document.querySelector('.bundler-container');
-  
-  if (!searchBar || !sidebar || !bundlerContainer) return;
-  
-  const sidebarWidth = 320; // Width of sidebar
-  const containerPadding = 40; // Total padding of container (20px on each side)
-  const containerWidth = bundlerContainer.offsetWidth;
-  
-  window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const searchBarRect = searchBar.getBoundingClientRect();
-    const sidebarRect = sidebar.getBoundingClientRect();
-    
-    // Check if search bar should start moving (when it hits the top)
-    if (searchBarRect.top <= 200) {
-      // Calculate how much to move based on scroll position
-      const scrollProgress = Math.min((200 - searchBarRect.top) / 100, 1);
-      const translateX = scrollProgress * (containerWidth - sidebarWidth - 40);
-      const newWidth = sidebarWidth - 40; // Small width over sidebar
-      
-      searchBar.style.transform = `translateX(${translateX}px)`;
-      searchBar.style.width = `${newWidth}px`;
-      searchBar.style.zIndex = '100';
-      searchBar.style.borderRadius = '16px';
-    } else {
-      searchBar.style.transform = 'translateX(0)';
-      searchBar.style.width = '100%';
-      searchBar.style.zIndex = '50';
-      searchBar.style.borderRadius = '16px';
-    }
-  });
-}
-
-
 
 // Clean HTML from data attributes
 function cleanDataAttributes() {
@@ -1705,7 +1649,6 @@ function updateBundlePrices() {
   if (!firstProduct) return;
   
   const currentPrice = firstProduct.textContent;
-  console.log('Current price from product grid:', currentPrice);
   
   // Extract numeric value from price
   const priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
@@ -1726,7 +1669,6 @@ function updateBundlePrices() {
   }
   
   const basePrice = parseFloat(priceString);
-  console.log('Base price:', basePrice);
   
   // Update bundle prices
   
@@ -1761,13 +1703,9 @@ function updateBundlePrices() {
 
 // Product selection
 function selectProduct(productId, passedVariantId) {
-  console.log('selectProduct called with:', productId, 'variant:', passedVariantId);
-  
   const productCard = document.querySelector(`[data-product-id="${productId}"]`);
-  console.log('productCard found:', productCard);
   
   if (!productCard) {
-    console.error('Product card not found for ID:', productId);
     return;
   }
   
@@ -1775,7 +1713,6 @@ function selectProduct(productId, passedVariantId) {
   const priceElement = productCard.querySelector('.product-price');
   const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
   const currentVariantPrice = priceElement ? priceElement.dataset[variantKey] || priceElement.textContent : '';
-  console.log('Current variant:', currentVariant, 'Price:', currentVariantPrice);
   
   // Update product card variant ID to current variant
   productCard.dataset.variantId = currentVariant;
@@ -1784,11 +1721,9 @@ function selectProduct(productId, passedVariantId) {
   
   // Check if already selected by looking for the selected class
   const isSelected = productCard.classList.contains('selected') || productCard.style.borderColor === 'rgb(40, 167, 69)';
-  console.log('isSelected:', isSelected);
   
   if (isSelected) {
     // Deselect product
-    console.log('Deselecting product');
     productCard.classList.remove('selected');
     
     // Reset button text
@@ -1814,7 +1749,6 @@ function selectProduct(productId, passedVariantId) {
     
   } else {
     // Select product (check max based on bundle type)
-    console.log('Current selected products:', selectedProducts.length);
     if (selectedProducts.length >= config.total) {
       alert(`You can only select ${config.total} scents for this bundle`);
       return;
@@ -1831,8 +1765,6 @@ function selectProduct(productId, passedVariantId) {
     // Get variant ID for current variant
     const variantKey = `variant-${currentVariant.toLowerCase()}`;
     const variantId = productCard.querySelector('.product-price').dataset[variantKey];
-    console.log('Variant key:', variantKey, 'Variant ID:', variantId);
-    console.log('Adding product to selection:', { id: productId, variantId, title, price });
     
     // Add selected class
     productCard.classList.add('selected');
@@ -1852,8 +1784,6 @@ function selectProduct(productId, passedVariantId) {
       
       // Replace button with selector
       button.parentNode.replaceChild(quantitySelector, button);
-      
-      console.log('Button changed to quantity selector');
     }
     
     // Show selection indicator
@@ -1875,9 +1805,6 @@ function selectProduct(productId, passedVariantId) {
       variant: currentVariant
     });
     
-    console.log('Product added to selection. Total:', selectedProducts.length);
-    console.log('Selected products:', selectedProducts);
-    
     // Update progress text and indicators
     updateProgressText();
     updateCartProgress();
@@ -1890,7 +1817,6 @@ function selectProduct(productId, passedVariantId) {
 
 // Change product quantity function
 function changeProductQuantity(productId, change) {
-  console.log('changeProductQuantity called:', productId, change);
   
   const productCard = document.querySelector(`[data-product-id="${productId}"]`);
   if (!productCard) return;
@@ -1998,13 +1924,9 @@ function updateVariant(productId, variantId) {
 
 // Update add button
 function updateAddButton() {
-  console.log('updateAddButton called');
-  
   const addButton = document.getElementById('addBundleBtn');
   const btnText = document.getElementById('btnText');
   const btnStatus = document.getElementById('btnStatus');
-  
-  console.log('Elements found:', { addButton, btnText, btnStatus });
   
   if (addButton && btnText && btnStatus) {
     const config = bundleConfig[currentBundleType];
@@ -2017,9 +1939,7 @@ function updateAddButton() {
       totalItems += quantity;
     });
     
-    console.log('Config:', config, 'totalItems:', totalItems, 'minRequired:', minRequired);
-    console.log('Selected products:', selectedProducts);
-    console.log('Product quantities:', productQuantities);
+
     
     addButton.disabled = totalItems < config.total;
     
@@ -2032,14 +1952,9 @@ function updateAddButton() {
       btnStatus.textContent = `${totalItems}/${config.total}`;
     }
     
-    console.log('Button updated:', {
-      disabled: addButton.disabled,
-      text: btnText.textContent,
-      status: btnStatus.textContent
-    });
-  } else {
-    console.error('Some elements not found for button update');
+
   }
+}
 }
 
 // Filter functions
@@ -2051,7 +1966,6 @@ function filterProducts() {
 
 function filterByCategory(category) {
   currentFilter = category;
-  console.log('Filtering by category:', category);
   
   // Update filter buttons
   document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -2075,7 +1989,7 @@ function applyFilters() {
       // Check if the product has the specific tag
       const tagArray = tags.split(' ');
       matchesFilter = tagArray.includes(currentFilter);
-      console.log('Product:', title, 'Tags:', tags, 'Tag array:', tagArray, 'Looking for:', currentFilter, 'Matches:', matchesFilter);
+
     }
     
     if (matchesSearch && matchesFilter) {
@@ -2088,11 +2002,7 @@ function applyFilters() {
 
 // Select variant function
 function selectVariant(variant) {
-  console.log('Variant selected:', variant);
-  console.log('Previous currentVariant:', currentVariant);
-  
   currentVariant = variant;
-  console.log('New currentVariant:', currentVariant);
   
   // Update variant button states
   document.querySelectorAll('.variant-btn').forEach(btn => {
@@ -2119,16 +2029,12 @@ function selectVariant(variant) {
 
 // Change quantity function for side cart
 function changeQuantity(productId, change) {
-  console.log('changeQuantity called:', productId, change);
   
   // Find quantity display in selected items
   const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
   const quantityDisplay = selectedItem ? selectedItem.querySelector('.quantity-display') : null;
   
-  console.log('quantityDisplay found:', quantityDisplay);
-  
   if (!quantityDisplay) {
-    console.error('Quantity display not found for product:', productId);
     return;
   }
   
@@ -2297,7 +2203,6 @@ function addSingleToCart(productId) {
 // Add bundle to cart
 function addBundleToCart() {
   const config = bundleConfig[currentBundleType];
-  const minRequired = config.buy;
   
   // Calculate total items including quantities
   let totalItems = 0;
@@ -2307,13 +2212,10 @@ function addBundleToCart() {
   });
   
   if (totalItems < config.total) {
-    alert(`Please select at least ${config.total} scents for this bundle (you have ${totalItems})`);
     return;
   }
   
   const items = selectedProducts.map(product => {
-    console.log('Product for cart:', product);
-    console.log('Variant ID:', product.variantId, 'Type:', typeof product.variantId);
     return {
       id: product.variantId,
       quantity: productQuantities[product.id] || 1,
@@ -2323,8 +2225,6 @@ function addBundleToCart() {
       }
     };
   });
-  
-  console.log('Items to add to cart:', items);
   
   // Add to cart using Shopify AJAX API
   fetch('/cart/add.js', {
@@ -2336,12 +2236,7 @@ function addBundleToCart() {
   })
   .then(response => response.json())
   .then(data => {
-    if (data.status) {
-      alert('Error adding bundle to cart: ' + data.description);
-    } else {
-      // Success - show success message
-      alert(`Bundle added to cart successfully! You selected ${selectedProducts.length} scents.`);
-      
+    if (!data.status) {
       // Add builder tag to cart attributes
       fetch('/cart/update.js', {
         method: 'POST',
@@ -2351,23 +2246,17 @@ function addBundleToCart() {
         body: JSON.stringify({
           attributes: {
             '_bundle_type': currentBundleType,
-            '_bundle_total': selectedProducts.length.toString()
+            '_bundle_total': totalItems.toString()
           }
         })
       });
       
-      // Optional: Show success message or update cart count
-      if (typeof updateCartCount === 'function') {
-        updateCartCount();
-      }
-      
-      // Optional: Redirect to cart
-      // window.location.href = '/cart';
+      // Redirect to cart
+      window.location.href = '/cart';
     }
   })
   .catch(error => {
-    console.error('Error:', error);
-    alert('Error adding bundle to cart. Please try again.');
+    // Silent error handling
   });
 }
 
