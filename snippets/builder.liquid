@@ -2641,6 +2641,9 @@ window.selectBundleType = function(bundleType) {
     const offset = productGrid.offsetTop - 200;
     window.scrollTo({ top: offset, behavior: 'smooth' });
   }
+  
+  // Save state to localStorage
+  saveBundlerState();
 };
 
 // Function to clear all cart selections
@@ -2738,6 +2741,9 @@ window.selectVariant = function(variant) {
     const offset = bundleSelection.offsetTop - 200;
     window.scrollTo({ top: offset, behavior: 'smooth' });
   }
+  
+  // Save state to localStorage
+  saveBundlerState();
 };
 
 window.changeProductQuantity = function(productId, change) {
@@ -2813,6 +2819,9 @@ window.changeProductQuantity = function(productId, change) {
   updateCartProgress();
   updateSelectedItems();
   updateAddButton();
+  
+  // Save state to localStorage
+  saveBundlerState();
 };
 
 window.changeQuantity = function(productId, change) {
@@ -2920,6 +2929,9 @@ window.filterProducts = function() {
   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
   currentSearch = searchTerm;
   applyFilters();
+  
+  // Save state to localStorage
+  saveBundlerState();
 };
 
 window.filterByCategory = function(category) {
@@ -2932,6 +2944,9 @@ window.filterByCategory = function(category) {
   event.target.classList.add('active');
   
   applyFilters();
+  
+  // Save state to localStorage
+  saveBundlerState();
 };
 
 window.addBundleToCart = function() {
@@ -3522,8 +3537,117 @@ function updateSaveInfo() {
   }
 }
 
+// Save state to localStorage
+function saveBundlerState() {
+  const state = {
+    selectedProducts: selectedProducts,
+    productQuantities: productQuantities,
+    currentBundleType: currentBundleType,
+    currentVariant: currentVariant,
+    currentFilter: currentFilter,
+    currentSearch: currentSearch
+  };
+  localStorage.setItem('bundlerState', JSON.stringify(state));
+}
+
+// Load state from localStorage
+function loadBundlerState() {
+  try {
+    const savedState = localStorage.getItem('bundlerState');
+    if (savedState) {
+      const state = JSON.parse(savedState);
+      
+      // Restore variables
+      if (state.selectedProducts) selectedProducts = state.selectedProducts;
+      if (state.productQuantities) productQuantities = state.productQuantities;
+      if (state.currentBundleType) currentBundleType = state.currentBundleType;
+      if (state.currentVariant) currentVariant = state.currentVariant;
+      if (state.currentFilter) currentFilter = state.currentFilter;
+      if (state.currentSearch) currentSearch = state.currentSearch;
+      
+      // Restore UI state
+      restoreUIState();
+    }
+  } catch (error) {
+    console.log('Error loading bundler state:', error);
+  }
+}
+
+// Restore UI based on saved state
+function restoreUIState() {
+  // Restore variant selection
+  const variantButtons = document.querySelectorAll('.variant-btn');
+  variantButtons.forEach(btn => {
+    if (btn.dataset.variant === currentVariant) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // Restore bundle type selection
+  const bundleButtons = document.querySelectorAll('.bundle-type-btn');
+  bundleButtons.forEach(btn => {
+    if (btn.dataset.bundleType === currentBundleType) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // Restore filter selection
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  filterButtons.forEach(btn => {
+    if (btn.dataset.filter === currentFilter) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  // Restore search input
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput && currentSearch) {
+    searchInput.value = currentSearch;
+  }
+  
+  // Update variant prices first
+  updateVariantPrices(currentVariant);
+  
+  // Restore selected products
+  selectedProducts.forEach(product => {
+    const productCard = document.querySelector(`[data-product-id="${product.id}"]`);
+    if (productCard) {
+      productCard.classList.add('selected');
+      productCard.style.borderColor = '#28a745';
+      
+      // Replace add button with quantity selector
+      const addButton = productCard.querySelector('.add-to-bundle-btn');
+      if (addButton) {
+        const quantity = productQuantities[product.id] || 1;
+        addButton.outerHTML = `
+          <div class="quantity-selector">
+            <button class="quantity-btn minus" onclick="changeProductQuantity(${product.id}, -1)">-</button>
+            <span class="quantity-display">${quantity}</span>
+            <button class="quantity-btn plus" onclick="changeProductQuantity(${product.id}, 1)">+</button>
+          </div>
+        `;
+      }
+    }
+  });
+  
+  // Update all UI elements
+  updateSelectedItems();
+  updateCartProgress();
+  updateAddButton();
+  generateProgressMarkers();
+  applyFilters();
+}
+
 // Add click handler to sidebar for mobile
 document.addEventListener('DOMContentLoaded', function() {
+  // Load saved state first
+  loadBundlerState();
   const sidebar = document.querySelector('.bundler-sidebar');
   const mobileBenefits = document.querySelector('.mobile-benefits');
   const addButtonDesktop = document.getElementById('addBundleBtnDesktop');
@@ -3658,6 +3782,9 @@ function addBundleToCartAndCheckout() {
   .catch(error => {
     // Silent error handling
   });
+  
+  // Clear saved state after successful add to cart
+  localStorage.removeItem('bundlerState');
   
   // Redirect to checkout immediately (don't wait for API calls)
   setTimeout(() => {
