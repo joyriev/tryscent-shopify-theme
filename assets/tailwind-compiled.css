@@ -285,6 +285,10 @@
     margin-top: 44px
 }
 
+.mt-1 {
+    margin-top: 4px
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -414,6 +418,10 @@
     height: 100%
 }
 
+.h-16 {
+    height: 64px
+}
+
 .\!w-10 {
     width: 40px !important
 }
@@ -464,6 +472,10 @@
 
 .w-full {
     width: 100%
+}
+
+.w-16 {
+    width: 64px
 }
 
 .min-w-\[92px\] {
@@ -824,6 +836,11 @@
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
+.border-black {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -942,6 +959,11 @@
 
 .bg-white\/10 {
     background-color: rgb(255 255 255 / 0.1)
+}
+
+.bg-gray-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
 }
 
 .bg-cover {
@@ -1136,6 +1158,10 @@
 
 .\!font-sans {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important
+}
+
+.font-\[\'Figtree\'\] {
+    font-family: 'Figtree'
 }
 
 .text-2xl {
@@ -1569,6 +1595,11 @@
 
 .last\:pb-0:last-child {
     padding-bottom: 0px
+}
+
+.hover\:border-gray-400:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity, 1))
 }
 
 .hover\:bg-\[\#02491c\]:hover {
