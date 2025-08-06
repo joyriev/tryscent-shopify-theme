@@ -1477,7 +1477,9 @@ function selectProduct(productId, variantId) {
     } else if (currency === 'GBP') {
       return `£${amount.toFixed(2)}`;
     } else {
-      return `${amount.toFixed(2)} ${currency}`;
+      // Round to nearest 0.95 for other currencies
+      const roundedAmount = Math.floor(amount) + 0.95;
+      return `${roundedAmount.toFixed(2)} ${currency}`;
     }
   };
   
@@ -1726,7 +1728,9 @@ function updateProductGridPrices() {
     } else if (currency === 'GBP') {
       return `£${amount.toFixed(2)}`;
     } else {
-      return `${amount.toFixed(2)} ${currency}`;
+      // Round to nearest 0.95 for other currencies
+      const roundedAmount = Math.floor(amount) + 0.95;
+      return `${roundedAmount.toFixed(2)} ${currency}`;
     }
   };
   
@@ -1740,23 +1744,25 @@ function updateProductGridPrices() {
 function updateBundlePrices() {
   const basePrice = variantPrices[currentVariant];
   
-  // Format prices using Shopify's money format
-  const formatMoney = (cents) => {
-    const currency = window.Shopify?.currency?.active || 'USD';
-    const rate = window.Shopify?.currency?.rate || 1;
-    const amount = (cents * rate) / 100;
-    
-    // Basic formatting - you might want to use Shopify's money filter format
-    if (currency === 'USD') {
-      return `$${amount.toFixed(2)}`;
-    } else if (currency === 'EUR') {
-      return `€${amount.toFixed(2)}`;
-    } else if (currency === 'GBP') {
-      return `£${amount.toFixed(2)}`;
-    } else {
-      return `${amount.toFixed(2)} ${currency}`;
-    }
-  };
+             // Format prices using Shopify's money format
+           const formatMoney = (cents) => {
+             const currency = window.Shopify?.currency?.active || 'USD';
+             const rate = window.Shopify?.currency?.rate || 1;
+             const amount = (cents * rate) / 100;
+             
+             // Basic formatting - you might want to use Shopify's money filter format
+             if (currency === 'USD') {
+               return `$${amount.toFixed(2)}`;
+             } else if (currency === 'EUR') {
+               return `€${amount.toFixed(2)}`;
+             } else if (currency === 'GBP') {
+               return `£${amount.toFixed(2)}`;
+             } else {
+               // Round to nearest 0.95 for other currencies
+               const roundedAmount = Math.floor(amount) + 0.95;
+               return `${roundedAmount.toFixed(2)} ${currency}`;
+             }
+           };
   
   // Update ALL bundle prices
   Object.keys(bundleConfig).forEach(bundleType => {
