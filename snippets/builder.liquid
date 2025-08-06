@@ -3661,7 +3661,7 @@ function addBundleToCartAndCheckout() {
   // Redirect to checkout immediately (don't wait for API calls)
   setTimeout(() => {
     window.location.href = '/checkout';
-  }, 100); // Small delay to ensure events fire
+  }, 1); // Minimal delay to ensure events fire
 }
 
 
