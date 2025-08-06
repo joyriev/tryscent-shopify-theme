@@ -13,7 +13,7 @@
   {% for variant in product.variants %}
     <button
       type="button"
-      class="variant-button flex flex-col items-center gap-2 rounded-lg p-2 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree']"
+      class="variant-button flex flex-col items-center gap-2 rounded-lg p-2 pt-3 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
       data-variant-id="{{ variant.id }}"
       data-price="{{ variant.price }}"
       data-compare-at-price="{{ variant.compare_at_price }}"
@@ -33,6 +33,12 @@
         </div>
       {% endif %}
       <span class="text-sm font-semibold">{{ variant.title }}</span>
+      {% if variant.title == '50ML' %}
+        <span class="text-xs italic text-white rounded-tr-[5px] absolute top-0 right-0 bg-[#c8202f] px-2 py-0.5">Popular</span>
+      {% endif %}
+      {% if variant.title == '100ML' %}
+        <span class="text-xs italic text-white rounded-tr-[5px] absolute top-0 right-0 bg-[#22613a] px-2 py-0.5">Bestseller</span>
+      {% endif %}
     </button>
   {% endfor %}
 </div>

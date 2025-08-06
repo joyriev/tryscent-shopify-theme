@@ -749,6 +749,18 @@
     border-top-right-radius: 12px
 }
 
+.rounded-tr {
+    border-top-right-radius: 4px
+}
+
+.rounded-tr-lg {
+    border-top-right-radius: 8px
+}
+
+.rounded-tr-\[5px\] {
+    border-top-right-radius: 5px
+}
+
 .border {
     border-width: 1px
 }
@@ -975,6 +987,11 @@
     background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
 }
 
+.bg-\[\#c8202f\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(200 32 47 / var(--tw-bg-opacity, 1))
+}
+
 .bg-cover {
     background-size: cover
 }
@@ -1109,6 +1126,11 @@
     padding-bottom: 24px
 }
 
+.px-1 {
+    padding-left: 4px;
+    padding-right: 4px
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -1159,6 +1181,10 @@
 
 .pt-6 {
     padding-top: 24px
+}
+
+.pt-3 {
+    padding-top: 12px
 }
 
 .text-center {
