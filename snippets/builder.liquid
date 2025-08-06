@@ -173,7 +173,7 @@
               
               <!-- Progress Section -->
               <div class="cart-progress">
-                <div class="progress-text" id="cartProgressText">Please select at least 2 scents</div>
+                <div class="progress-text" id="cartProgressText">Please select at least 3 scents</div>
                 <div class="bundler-progress-container">
                   <div class="bundler-progress-bar">
                     <div class="bundler-progress-fill" id="cartProgressFill"></div>
@@ -1478,10 +1478,6 @@ function generateProgressMarkers() {
       const progressFill = document.getElementById('cartProgressFill');
       const config = bundleConfig[currentBundleType];
       
-      console.log('=== PROGRESS DEBUG ===');
-      console.log('progressFill element:', progressFill);
-      console.log('progressFill width before:', progressFill ? progressFill.style.width : 'N/A');
-      
       // Calculate total items including quantities
       let totalItems = 0;
       selectedProducts.forEach(product => {
@@ -1492,9 +1488,7 @@ function generateProgressMarkers() {
       if (progressFill) {
         // Calculate progress from 0 to total (not from buy to total)
         const progressPercent = (totalItems / config.total) * 100;
-        console.log('Setting width to:', progressPercent + '%');
         progressFill.style.width = progressPercent + '%';
-        console.log('progressFill width after:', progressFill.style.width);
       }
       
       // Update markers
@@ -1513,11 +1507,6 @@ function generateProgressMarkers() {
       const progressFill = document.getElementById('cartProgressFill');
       const config = bundleConfig[currentBundleType];
       
-      console.log('=== BUNDLER PROGRESS BAR FILL DEBUG ===');
-      console.log('progressFill element:', progressFill);
-      console.log('progressFill classList:', progressFill ? progressFill.classList : 'N/A');
-      console.log('progressFill HTML:', progressFill ? progressFill.outerHTML : 'N/A');
-      
       // Calculate total items including quantities
       let totalItems = 0;
       selectedProducts.forEach(product => {
@@ -1525,12 +1514,8 @@ function generateProgressMarkers() {
         totalItems += quantity;
       });
       
-      console.log('totalItems:', totalItems);
-      console.log('config.total:', config.total);
-      
       if (progressFill) {
         const progressPercent = (totalItems / config.total) * 100;
-        console.log('Calculated progressPercent:', progressPercent);
         progressFill.style.width = progressPercent + '%';
         progressFill.style.backgroundColor = '#28a745';
         progressFill.style.display = 'block';
@@ -1538,18 +1523,6 @@ function generateProgressMarkers() {
         progressFill.style.minHeight = '20px';
         progressFill.style.opacity = '1';
         progressFill.style.visibility = 'visible';
-        console.log('Set width to:', progressPercent + '%');
-        console.log('Set background to green');
-        console.log('Actual width after setting:', progressFill.style.width);
-        console.log('Actual background after setting:', progressFill.style.backgroundColor);
-        console.log('Computed width:', window.getComputedStyle(progressFill).width);
-        console.log('Computed height:', window.getComputedStyle(progressFill).height);
-        console.log('Computed background:', window.getComputedStyle(progressFill).background);
-        console.log('Computed display:', window.getComputedStyle(progressFill).display);
-        console.log('Computed opacity:', window.getComputedStyle(progressFill).opacity);
-        console.log('Computed visibility:', window.getComputedStyle(progressFill).visibility);
-      } else {
-        console.error('BUNDLER PROGRESS FILL ELEMENT NOT FOUND!');
       }
     }
 
@@ -2020,7 +1993,6 @@ function selectVariant(variant) {
     window.scrollTo({ top: offset, behavior: 'smooth' });
   }
   
-  console.log('Variant selection completed');
 }
 
 
@@ -2251,8 +2223,8 @@ function addBundleToCart() {
         })
       });
       
-      // Redirect to cart
-      window.location.href = '/cart';
+      // Redirect to checkout
+      window.location.href = '/checkout';
     }
   })
   .catch(error => {
@@ -2260,5 +2232,14 @@ function addBundleToCart() {
   });
 }
 
+// Make functions globally available
+window.selectProduct = selectProduct;
+window.changeProductQuantity = changeProductQuantity;
+window.changeQuantity = changeQuantity;
+window.selectVariant = selectVariant;
+window.selectBundleType = selectBundleType;
+window.filterProducts = filterProducts;
+window.filterByCategory = filterByCategory;
+window.addBundleToCart = addBundleToCart;
 
 </script> 
