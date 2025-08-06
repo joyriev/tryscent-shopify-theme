@@ -143,7 +143,13 @@
                     {% if default_variant.compare_at_price > default_variant.price %}
                       <span class="product-compare-price">{{ default_variant.compare_at_price | money }}</span>
                     {% endif %}
-                    <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}">{{ default_variant.price | money }}</span>
+                    <span class="product-price" id="price-{{ product.id }}" 
+                          data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" 
+                          data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" 
+                          data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}"
+                          data-variant-30ml="{% if variant_30ml %}{{ variant_30ml.id }}{% else %}{{ default_variant.id }}{% endif %}"
+                          data-variant-50ml="{% if variant_50ml %}{{ variant_50ml.id }}{% else %}{{ default_variant.id }}{% endif %}"
+                          data-variant-100ml="{% if variant_100ml %}{{ variant_100ml.id }}{% else %}{{ default_variant.id }}{% endif %}">{{ default_variant.price | money }}</span>
                 </div>
                   
                   <!-- Add to Bundle Button -->
@@ -1856,16 +1862,18 @@ function selectProduct(productId, variantId) {
     const productImage = productCard.querySelector('.product-image img');
     const image = productImage ? productImage.src : '';
     
-    // Use current variant
-    const variant = currentVariant;
+    // Get variant ID for current variant
+    const variantKey = `variant-${currentVariant.toLowerCase()}`;
+    const variantId = productCard.querySelector('.product-price').dataset[variantKey];
+    console.log('Variant key:', variantKey, 'Variant ID:', variantId);
     
     selectedProducts.push({
       id: productId,
-      variantId: currentVariant, // Use current variant instead of passed variantId
+      variantId: parseInt(variantId), // Use actual variant ID
       title: title,
       price: currentVariantPrice, // Use price from data attribute
       image: image,
-      variant: variant
+      variant: currentVariant
     });
     
     console.log('Product added to selection. Total:', selectedProducts.length);
@@ -2304,14 +2312,20 @@ function addBundleToCart() {
     return;
   }
   
-  const items = selectedProducts.map(product => ({
-    id: product.variantId,
-    quantity: productQuantities[product.id] || 1,
-    properties: {
-      '_bundle_type': currentBundleType,
-      '_bundle_total': totalItems.toString()
-    }
-  }));
+  const items = selectedProducts.map(product => {
+    console.log('Product for cart:', product);
+    console.log('Variant ID:', product.variantId, 'Type:', typeof product.variantId);
+    return {
+      id: product.variantId,
+      quantity: productQuantities[product.id] || 1,
+      properties: {
+        '_bundle_type': currentBundleType,
+        '_bundle_total': totalItems.toString()
+      }
+    };
+  });
+  
+  console.log('Items to add to cart:', items);
   
   // Add to cart using Shopify AJAX API
   fetch('/cart/add.js', {
