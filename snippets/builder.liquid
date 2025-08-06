@@ -1190,11 +1190,13 @@ function updateSelectedItems() {
           <h4 class="selected-item-title">${product.title}</h4>
           <p class="selected-item-variant">${product.variant || '100ML'}</p>
         </div>
-        <div class="selected-item-quantity">
-          <button class="quantity-btn minus" onclick="changeQuantity(${product.id}, -1)">-</button>
-          <span class="quantity-display">${quantity}</span>
-          <button class="quantity-btn plus" onclick="changeQuantity(${product.id}, 1)">+</button>
-        </div>
+        ${isFree ? '' : `
+          <div class="selected-item-quantity">
+            <button class="quantity-btn minus" onclick="changeQuantity(${product.id}, -1)">-</button>
+            <span class="quantity-display">${quantity}</span>
+            <button class="quantity-btn plus" onclick="changeQuantity(${product.id}, 1)">+</button>
+          </div>
+        `}
         ${freeBadge}
         <button class="selected-item-remove" onclick="removeFromCart(${product.id})">×</button>
       </div>
@@ -1202,6 +1204,9 @@ function updateSelectedItems() {
   });
   
   selectedItemsContainer.innerHTML = itemsHTML;
+  
+  // Update add button after updating selected items
+  updateAddButton();
 }
 
 // Remove item from cart
@@ -1391,6 +1396,7 @@ function updateAddButton() {
     const totalSelected = selectedProducts.length;
     
     console.log('Config:', config, 'totalSelected:', totalSelected, 'minRequired:', minRequired);
+    console.log('Selected products:', selectedProducts);
     
     addButton.disabled = totalSelected < minRequired;
     
