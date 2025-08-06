@@ -107,17 +107,10 @@
                   </select>
                 </div>
                 
-                <!-- Quantity and Add to Box Button -->
-                <div class="product-actions">
-                  <div class="quantity-selector">
-                    <button class="quantity-btn minus" onclick="changeQuantity({{ product.id }}, -1)">-</button>
-                    <span class="quantity-display" id="quantity-{{ product.id }}">1</span>
-                    <button class="quantity-btn plus" onclick="changeQuantity({{ product.id }}, 1)">+</button>
-                  </div>
-                  <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
-                    Add to Box
-                  </button>
-                </div>
+                <!-- Add to Box Button -->
+                <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
+                  Add to Box
+                </button>
               </div>
               
               <!-- Selection Indicator -->
@@ -510,30 +503,24 @@
   box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
 }
 
-/* Product Actions */
-.product-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: auto;
-  align-self: flex-end;
-}
-
-.quantity-selector {
+/* Selected Item Quantity */
+.selected-item-quantity {
   display: flex;
   align-items: center;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
   background: white;
   overflow: hidden;
+  margin-right: 8px;
 }
 
-.quantity-btn {
-  width: 32px;
-  height: 40px;
+.selected-item-quantity .quantity-btn {
+  width: 24px;
+  height: 28px;
   border: none;
   background: #f8f9fa;
   color: #666;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -542,23 +529,23 @@
   justify-content: center;
 }
 
-.quantity-btn:hover {
+.selected-item-quantity .quantity-btn:hover {
   background: #e9ecef;
   color: #222;
 }
 
-.quantity-btn:disabled {
+.selected-item-quantity .quantity-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.quantity-display {
-  width: 40px;
-  height: 40px;
+.selected-item-quantity .quantity-display {
+  width: 32px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #222;
   background: white;
@@ -1195,12 +1182,18 @@ function updateSelectedItems() {
     const isFree = index >= config.buy;
     const freeBadge = isFree ? '<span class="free-badge">FREE</span>' : '';
     
+    const quantity = productQuantities[product.id] || 1;
     itemsHTML += `
       <div class="selected-item ${isFree ? 'free-item' : ''}" data-product-id="${product.id}">
         <img src="${product.image || ''}" alt="${product.title}" class="selected-item-image">
         <div class="selected-item-info">
           <h4 class="selected-item-title">${product.title}</h4>
           <p class="selected-item-variant">${product.variant || '100ML'}</p>
+        </div>
+        <div class="selected-item-quantity">
+          <button class="quantity-btn minus" onclick="changeQuantity(${product.id}, -1)">-</button>
+          <span class="quantity-display">${quantity}</span>
+          <button class="quantity-btn plus" onclick="changeQuantity(${product.id}, 1)">+</button>
         </div>
         ${freeBadge}
         <button class="selected-item-remove" onclick="removeFromCart(${product.id})">×</button>
@@ -1471,7 +1464,10 @@ function applyFilters() {
 function changeQuantity(productId, change) {
   console.log('changeQuantity called:', productId, change);
   
-  const quantityDisplay = document.getElementById(`quantity-${productId}`);
+  // Find quantity display in selected items
+  const selectedItem = document.querySelector(`[data-product-id="${productId}"]`);
+  const quantityDisplay = selectedItem ? selectedItem.querySelector('.quantity-display') : null;
+  
   console.log('quantityDisplay found:', quantityDisplay);
   
   if (!quantityDisplay) {
@@ -1495,6 +1491,9 @@ function changeQuantity(productId, change) {
   // Update button states
   minusBtn.disabled = newQuantity <= 1;
   plusBtn.disabled = newQuantity >= 10;
+  
+  // Update add button
+  updateAddButton();
   
   console.log(`Quantity changed for product ${productId}: ${currentQuantity} -> ${newQuantity}`);
 }
