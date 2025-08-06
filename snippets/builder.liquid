@@ -1093,9 +1093,9 @@ color: white;
 }
 
 .bundler-progress-bar {
-  height: 24px;
+  height: 28px;
   background: #e0e0e0;
-  border-radius: 12px;
+  border-radius: 14px;
   position: relative;
   overflow: visible;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -1104,13 +1104,13 @@ color: white;
 .bundler-progress-fill {
   height: 100% !important;
   background: #28a745 !important;
-  border-radius: 12px;
+  border-radius: 14px;
   transition: width 0.5s ease;
   width: 0%;
   position: relative;
   display: block !important;
   box-sizing: border-box;
-  min-height: 24px !important;
+  min-height: 28px !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
@@ -1164,13 +1164,7 @@ color: white;
   color: #28a745;
 }
 
-.marker.active {
-  background: #28a745;
-  border-color: #28a745;
-  color: white;
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
-}
+
 
 /* Selected Items */
 .selected-items {
@@ -3358,8 +3352,8 @@ function updateAddButton() {
   
   // Update mobile button
   if (addButtonMobile && btnTextMobile && btnStatusMobile) {
-    // Mobile button is disabled when bundle not complete, but always shows "REVIEW BUNDLE"
-    addButtonMobile.disabled = totalItems < config.total;
+    // Mobile button is always clickable, even when bundle not complete
+    addButtonMobile.disabled = false;
     
     // Show/hide mobile sidebar based on selection
     if (window.innerWidth <= 768 && mobileSidebar) {
