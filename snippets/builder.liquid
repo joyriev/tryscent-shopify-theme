@@ -11,12 +11,13 @@
 <!-- Debug info -->
 <div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">
   <strong>Debug Info:</strong><br>
-  Collection 'smells-like' exists: {{ bundle_collection != blank }}<br>
   {% if bundle_collection != blank %}
+    Collection 'smells-like' exists: YES<br>
     Collection products count: {{ bundle_collection.products.size }}<br>
     Collection handle: {{ bundle_collection.handle }}<br>
     Collection title: {{ bundle_collection.title }}
   {% else %}
+    Collection 'smells-like' exists: NO<br>
     Collection not found
   {% endif %}
 </div>
@@ -46,7 +47,6 @@
           <h2>Search Selector</h2>
           <p>Choose 3 scents to try</p>
         </div>
-        <button class="bundler-close" onclick="closeBundlerModal()">&times;</button>
       </div>
 
       <!-- Progress Bar -->
@@ -139,33 +139,17 @@
         </button>
       </div>
     </div>
-  </div>
 </div>
 
 <style>
-/* Modal Styles */
-.bundler-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-}
-
-.bundler-modal-content {
+/* Bundler Styles - bez modala */
+.product-bundler {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
   background-color: white;
-  margin: 2% auto;
-  padding: 0;
   border-radius: 12px;
-  width: 90%;
-  max-width: 800px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
@@ -188,24 +172,6 @@
   margin: 0;
   font-size: 1rem;
   color: #666;
-}
-
-.bundler-close {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #666;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bundler-close:hover {
-  color: #222;
 }
 
 /* Progress Bar */
@@ -653,18 +619,7 @@ document.addEventListener('DOMContentLoaded', function() {
   applyFilters(); // Apply initial filters
 });
 
-// Modal functions
-function openBundlerModal() {
-  document.getElementById('bundlerModal').style.display = 'block';
-  document.body.style.overflow = 'hidden';
-}
 
-// Modal functions - removed duplicate function
-
-function closeBundlerModal() {
-  document.getElementById('bundlerModal').style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
 
 // Product selection
 function selectProduct(productId, variantId) {
@@ -996,8 +951,8 @@ function addBundleToCart() {
     if (data.status) {
       alert('Error adding bundle to cart: ' + data.description);
     } else {
-      // Success - close modal and refresh cart
-      closeBundlerModal();
+      // Success - show success message
+      alert('Bundle added to cart successfully!');
       
       // Add builder tag to cart attributes
       fetch('/cart/update.js', {
@@ -1027,11 +982,5 @@ function addBundleToCart() {
   });
 }
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-  const modal = document.getElementById('bundlerModal');
-  if (event.target === modal) {
-    closeBundlerModal();
-  }
-}
+
 </script> 
