@@ -11,6 +11,7 @@
 
 
 <div class="product-bundler" data-bundler>
+  <div class="bundler-container">
       <!-- Header -->
       <div class="bundler-header">
         <div class="bundler-title">
@@ -103,99 +104,101 @@
 
       <!-- Main Content with Sidebar -->
       <div class="bundler-main-content">
-      <!-- Products Grid -->
-      <div class="bundler-products" id="productsGrid">
-        {% for product in bundle_collection.products %}
-          {% assign default_variant = product.variants | where: "title", "100ML" | first %}
-          {% unless default_variant %}
-            {% assign default_variant = product.variants.first %}
-          {% endunless %}
-          
-            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
-              <!-- Product Badge -->
-              {% if product.tags contains 'new' %}
-                <div class="product-badge new">New</div>
-              {% elsif product.tags contains 'popular' %}
-                <div class="product-badge popular">Most Popular</div>
-              {% endif %}
-              
-              <!-- Product Image -->
-            <div class="product-image">
-                <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
-            </div>
-              
-              <!-- Product Info -->
-            <div class="product-info">
-              <h3 class="product-title">{{ product.title }}</h3>
-                
-                <!-- Reviews -->
-                <div class="product-reviews">
-                  <div class="stars">★★★★★</div>
-                  <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
-              </div>
-                
-                <!-- Price Display -->
-                <div class="product-price-display">
-                  {% assign variant_30ml = product.variants | where: 'title', '30ML' | first %}
-                  {% assign variant_50ml = product.variants | where: 'title', '50ML' | first %}
-                  {% assign variant_100ml = product.variants | where: 'title', '100ML' | first %}
-                  {% if default_variant.compare_at_price > default_variant.price %}
-                    <span class="product-compare-price">{{ default_variant.compare_at_price | money }}</span>
-                  {% endif %}
-                  <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}">{{ default_variant.price | money }}</span>
-              </div>
-                
-                <!-- Add to Bundle Button -->
-                <button class="add-to-bundle-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
-                  ADD TO BUNDLE
-                </button>
-              </div>
-              
-              <!-- Selection Indicator -->
-              <div class="selection-indicator" style="display: none;">
-                <div class="check-icon">✓</div>
-              </div>
-            </div>
-                  {% endfor %}
-              </div>
-
-        <!-- Shopping Cart Sidebar -->
-        <div class="bundler-sidebar">
-          <div class="sidebar-content">
-            <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
+        <!-- Products Grid -->
+        <div class="bundler-products" id="productsGrid">
+          {% for product in bundle_collection.products %}
+            {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+            {% unless default_variant %}
+              {% assign default_variant = product.variants.first %}
+            {% endunless %}
             
-            <!-- Progress Section -->
-            <div class="cart-progress">
-              <div class="progress-text" id="cartProgressText">Please select at least 2 scents</div>
-              <div class="bundler-progress-container">
-                <div class="bundler-progress-bar">
-                  <div class="bundler-progress-fill" id="cartProgressFill"></div>
-                  <div class="progress-markers" id="progressMarkers">
-                    <!-- Markers will be generated dynamically -->
+              <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
+                <!-- Product Badge -->
+                {% if product.tags contains 'new' %}
+                  <div class="product-badge new">New</div>
+                {% elsif product.tags contains 'popular' %}
+                  <div class="product-badge popular">Most Popular</div>
+                {% endif %}
+                
+                <!-- Product Image -->
+              <div class="product-image">
+                  <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
+              </div>
+                
+                <!-- Product Info -->
+              <div class="product-info">
+                <h3 class="product-title">{{ product.title }}</h3>
+                  
+                  <!-- Reviews -->
+                  <div class="product-reviews">
+                    <div class="stars">★★★★★</div>
+                    <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
+                </div>
+                  
+                  <!-- Price Display -->
+                  <div class="product-price-display">
+                    {% assign variant_30ml = product.variants | where: 'title', '30ML' | first %}
+                    {% assign variant_50ml = product.variants | where: 'title', '50ML' | first %}
+                    {% assign variant_100ml = product.variants | where: 'title', '100ML' | first %}
+                    {% if default_variant.compare_at_price > default_variant.price %}
+                      <span class="product-compare-price">{{ default_variant.compare_at_price | money }}</span>
+                    {% endif %}
+                    <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}">{{ default_variant.price | money }}</span>
+                </div>
+                  
+                  <!-- Add to Bundle Button -->
+                  <button class="add-to-bundle-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
+                    ADD TO BUNDLE
+                  </button>
+                </div>
+                
+                <!-- Selection Indicator -->
+                <div class="selection-indicator" style="display: none;">
+                  <div class="check-icon">✓</div>
+                </div>
+              </div>
+                    {% endfor %}
+                </div>
+
+          <!-- Shopping Cart Sidebar -->
+          <div class="bundler-sidebar">
+            <div class="sidebar-content">
+              <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
+              
+              <!-- Progress Section -->
+              <div class="cart-progress">
+                <div class="progress-text" id="cartProgressText">Please select at least 2 scents</div>
+                <div class="bundler-progress-container">
+                  <div class="bundler-progress-bar">
+                    <div class="bundler-progress-fill" id="cartProgressFill"></div>
+                    <div class="progress-markers" id="progressMarkers">
+                      <!-- Markers will be generated dynamically -->
+                </div>
+              </div>
               </div>
             </div>
-            </div>
-          </div>
 
-            <!-- Selected Items -->
-            <div class="selected-items" id="selectedItems">
-              <div class="empty-cart">
-                <p>Your cart is empty.</p>
-              </div>
-      </div>
+              <!-- Selected Items -->
+              <div class="selected-items" id="selectedItems">
+                <div class="empty-cart">
+                  <p>Your cart is empty.</p>
+                </div>
+        </div>
 
-            <!-- Add Bundle Button -->
-            <div class="sidebar-footer">
-        <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
-                <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
-                <span class="btn-status" id="btnStatus">0/3</span>
-        </button>
+              <!-- Add Bundle Button -->
+              <div class="sidebar-footer">
+          <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+                  <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
+                  <span class="btn-status" id="btnStatus">0/3</span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+      </div>
 </div>
 
     </div>
+  </div>
 </div>
 
 <style>
@@ -204,9 +207,16 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
-  border-radius: 12px;
+}
+
+.bundler-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 /* Header */
@@ -539,6 +549,9 @@
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-bottom: 1px solid #eee;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .search-container {
@@ -602,6 +615,7 @@
   display: flex;
   gap: 32px;
   min-height: 600px;
+  flex: 1;
 }
 
 /* Products Grid */
@@ -611,8 +625,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Mobile - 2 columns */
@@ -637,7 +652,7 @@
   border-radius: 16px;
   padding: 20px;
   position: relative;
-  background: white;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -654,7 +669,7 @@
 
 .product-card.selected {
   border-color: #28a745;
-  background: linear-gradient(135deg, #f8fff9 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #e8f5e8 0%, #f8fff9 100%);
   box-shadow: 0 8px 25px rgba(40, 167, 69, 0.2);
   transform: translateY(-4px);
 }
