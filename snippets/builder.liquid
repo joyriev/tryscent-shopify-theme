@@ -370,28 +370,30 @@
 }
 
 .bundler-reviews .rating img {
-  height: 24px;
-  width: 120px;
+  height: 30px;
+  width: 150px;
 }
 
 .bundler-reviews .rating-text {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: 0.45rem;
+  color: #000;
+  font-weight: 700;
   margin: 0;
-  line-height: 24px;
+  line-height: 30px;
 }
 
 .bundler-reviews .rating-count {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: 0.45rem;
+  color: #000;
+  font-weight: 700;
   margin: 0;
-  line-height: 24px;
+  line-height: 30px;
 }
 
 .review-count {
-  font-size: 2.7rem;
-  color: #666;
-  font-weight: 500;
+  font-size: 1.35rem;
+  color: #000;
+  font-weight: 700;
 }
 
 .bundler-savings-info {
@@ -1839,20 +1841,24 @@ color: white;
   }
 
   .bundler-reviews .rating img {
-    height: 16px !important;
-    width: 80px !important;
+    height: 20px !important;
+    width: 100px !important;
   }
 
   .bundler-reviews .rating-text {
-    font-size: 0.6rem !important;
-    line-height: 16px !important;
-    height: 16px !important;
+    font-size: 0.3rem !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    height: 20px !important;
   }
 
   .bundler-reviews .rating-count {
-    font-size: 0.6rem !important;
-    line-height: 16px !important;
-    height: 16px !important;
+    font-size: 0.3rem !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    height: 20px !important;
   }
 
   /* Variant Selection Mobile */
@@ -2466,12 +2472,12 @@ window.selectProduct = function(productId, passedVariantId) {
   
   const config = bundleConfig[currentBundleType];
   
-  // Simple and reliable check: if product has quantity selector, it's selected
+  // NEW APPROACH: Only consider product selected if it has quantity selector AND is in array
   const hasQuantitySelector = productCard.querySelector('.quantity-selector') !== null;
-  const hasSelectedClass = productCard.classList.contains('selected');
   const isInArray = selectedProducts.some(p => parseInt(p.id) === productId);
   
-  const isSelected = hasQuantitySelector || hasSelectedClass || isInArray;
+  // Product is only selected if BOTH conditions are true
+  const isSelected = hasQuantitySelector && isInArray;
   
   if (isSelected) {
     // Deselect product
@@ -2491,6 +2497,7 @@ window.selectProduct = function(productId, passedVariantId) {
     }
     
     selectedProducts = selectedProducts.filter(p => parseInt(p.id) !== productId);
+    delete productQuantities[productId];
     
     // Update progress text and indicators
     updateProgressText();
@@ -2507,6 +2514,13 @@ window.selectProduct = function(productId, passedVariantId) {
     }
     
   } else {
+    // FORCE CLEAN STATE before adding
+    const existingIndex = selectedProducts.findIndex(p => parseInt(p.id) === productId);
+    if (existingIndex !== -1) {
+      selectedProducts.splice(existingIndex, 1);
+    }
+    delete productQuantities[productId];
+    
     // Select product (check max based on bundle type)
     if (selectedProducts.length >= config.total) {
       alert(`You can only select ${config.total} scents for this bundle`);
@@ -2559,13 +2573,6 @@ window.selectProduct = function(productId, passedVariantId) {
     // Get product image
     const productImage = productCard.querySelector('.product-image img');
     const image = productImage ? productImage.src : '';
-    
-    // Double-check: make sure product is not already in selectedProducts
-    const existingProductIndex = selectedProducts.findIndex(p => parseInt(p.id) === productId);
-    if (existingProductIndex !== -1) {
-      console.warn('Product already exists in selectedProducts, removing old entry');
-      selectedProducts.splice(existingProductIndex, 1);
-    }
     
     selectedProducts.push({
       id: productId,
