@@ -132,11 +132,8 @@
               <div class="progress-bar">
                 <div class="progress-fill" id="cartProgressFill"></div>
               </div>
-              <div class="progress-markers">
-                <span class="marker" data-value="2">2</span>
-                <span class="marker" data-value="3">3</span>
-                <span class="marker" data-value="4">4</span>
-                <span class="marker" data-value="5">5</span>
+              <div class="progress-markers" id="progressMarkers">
+                <!-- Markers will be generated dynamically -->
               </div>
             </div>
 
@@ -600,38 +597,45 @@
 }
 
 .progress-bar {
-  height: 8px;
+  height: 12px;
   background: #e0e0e0;
-  border-radius: 4px;
+  border-radius: 6px;
   position: relative;
   margin-bottom: 8px;
+  overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-  border-radius: 4px;
+  border-radius: 6px;
   transition: width 0.3s ease;
   width: 0%;
   min-width: 0%;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
 }
 
 .progress-markers {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #666;
-  font-weight: 600;
+  font-weight: 700;
+  margin-top: 8px;
 }
 
 .marker {
   position: relative;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #f0f0f0;
 }
 
 .marker.active {
-  color: #28a745;
+  color: white;
+  background: #28a745;
 }
 
 /* Selected Items */
@@ -897,6 +901,9 @@ function selectBundleType(bundleType) {
   // Update progress text
   updateProgressText();
   
+  // Generate progress markers
+  generateProgressMarkers();
+  
   // Update cart progress
   updateCartProgress();
   
@@ -936,7 +943,6 @@ function getOrdinalSuffix(num) {
 
 // Update progress text
 function updateProgressText() {
-  const progressText = document.getElementById('progressText');
   const cartProgressText = document.getElementById('cartProgressText');
   const config = bundleConfig[currentBundleType];
   
@@ -951,8 +957,21 @@ function updateProgressText() {
     text = 'Perfect! Your bundle is ready';
   }
   
-  if (progressText) progressText.textContent = text;
   if (cartProgressText) cartProgressText.textContent = text;
+}
+
+// Generate progress markers
+function generateProgressMarkers() {
+  const markersContainer = document.getElementById('progressMarkers');
+  const config = bundleConfig[currentBundleType];
+  
+  if (markersContainer) {
+    let markersHTML = '';
+    for (let i = config.buy; i <= config.total; i++) {
+      markersHTML += `<span class="marker" data-value="${i}">${i}</span>`;
+    }
+    markersContainer.innerHTML = markersHTML;
+  }
 }
 
 // Update cart progress bar
@@ -960,17 +979,9 @@ function updateCartProgress() {
   const progressFill = document.getElementById('cartProgressFill');
   const config = bundleConfig[currentBundleType];
   
-  console.log('updateCartProgress called');
-  console.log('progressFill element:', progressFill);
-  console.log('selectedProducts.length:', selectedProducts.length);
-  console.log('config.total:', config.total);
-  
   if (progressFill) {
     const progressPercent = (selectedProducts.length / config.total) * 100;
-    console.log('Setting progress width to:', progressPercent + '%');
     progressFill.style.width = progressPercent + '%';
-  } else {
-    console.error('progressFill element not found!');
   }
   
   // Update markers
@@ -1037,11 +1048,10 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('selectProduct function exists:', typeof selectProduct);
   console.log('applyFilters function exists:', typeof applyFilters);
   
-  console.log('Initializing bundler...');
   updateProgressText();
+  generateProgressMarkers();
   updateCartProgress();
   updateSelectedItems();
-  console.log('Bundler initialized!');
   
   // updateProgress will be called after function is defined
   if (typeof applyFilters === 'function') {
