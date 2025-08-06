@@ -107,6 +107,10 @@
                 <div class="md:hidden">
                   {% render 'product-mobile-media-gallery', variant_images: variant_images %}
                 </div>
+              {%- when 'reactive_variant_selector' -%}
+                <div class="reactive-variant-selector">
+                  {% render 'reactive-variant-selector', product: product %}
+                </div>
               {%- when 'shipping_text' -%}
                 <div class="!my-6">
                   <p class="my-0 text-center font-semibold tracking-normal">
@@ -885,6 +889,11 @@
     {
       "type": "mobile_gallery",
       "name": "Mobile Gallery",
+      "limit": 1
+    },
+    {
+      "type": "reactive_variant_selector",
+      "name": "Reactive Variant Selector",
       "limit": 1
     },
     {

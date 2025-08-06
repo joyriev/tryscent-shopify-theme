@@ -29,20 +29,8 @@
     inset: 0px
 }
 
-.-left-1 {
-    left: -4px
-}
-
 .-left-\[99999px\] {
     left: -99999px
-}
-
-.-right-1 {
-    right: -4px
-}
-
-.-top-3\.5 {
-    top: -14px
 }
 
 .-top-\[99999px\] {
@@ -59,10 +47,6 @@
 
 .left-0 {
     left: 0px
-}
-
-.left-1\/2 {
-    left: 50%
 }
 
 .left-\[2px\] {
@@ -177,16 +161,6 @@
     margin-bottom: 8px
 }
 
-.my-8 {
-    margin-top: 32px;
-    margin-bottom: 32px
-}
-
-.\!my-8 {
-    margin-top: 32px !important;
-    margin-bottom: 32px !important
-}
-
 .\!mb-0 {
     margin-bottom: 0px !important
 }
@@ -207,16 +181,8 @@
     margin-top: 24px !important
 }
 
-.-ml-\[15px\] {
-    margin-left: -15px
-}
-
 .-mr-3 {
     margin-right: -12px
-}
-
-.-mr-\[15px\] {
-    margin-right: -15px
 }
 
 .mb-0 {
@@ -257,6 +223,10 @@
 
 .mb-\[-44px\] {
     margin-bottom: -44px
+}
+
+.ml-1 {
+    margin-left: 4px
 }
 
 .ml-2 {
@@ -313,14 +283,6 @@
 
 .mt-\[44px\] {
     margin-top: 44px
-}
-
-.-ml-1 {
-    margin-left: -4px
-}
-
-.ml-1 {
-    margin-left: 4px
 }
 
 .line-clamp-1 {
@@ -897,6 +859,11 @@
     background-color: rgb(34 97 57 / var(--tw-bg-opacity, 1))
 }
 
+.bg-\[\#22613A\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(34 97 58 / var(--tw-bg-opacity, 1))
+}
+
 .bg-\[\#22613a\] {
     --tw-bg-opacity: 1;
     background-color: rgb(34 97 58 / var(--tw-bg-opacity, 1))
@@ -959,6 +926,11 @@
     background-color: rgb(21 128 61 / 0.85)
 }
 
+.bg-red-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
+}
+
 .bg-transparent {
     background-color: transparent
 }
@@ -970,16 +942,6 @@
 
 .bg-white\/10 {
     background-color: rgb(255 255 255 / 0.1)
-}
-
-.bg-red-600 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
-}
-
-.bg-\[\#22613A\] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(34 97 58 / var(--tw-bg-opacity, 1))
 }
 
 .bg-cover {
@@ -1430,12 +1392,6 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
-.shadow-lg {
-    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-}
-
 .shadow-md {
     --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -1458,6 +1414,11 @@
     outline-style: solid
 }
 
+.blur {
+    --tw-blur: blur(8px);
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+}
+
 .invert {
     --tw-invert: invert(100%);
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
@@ -1465,6 +1426,11 @@
 
 .filter {
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+}
+
+.backdrop-filter {
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
 }
 
 .transition {
@@ -1505,14 +1471,6 @@
 
 .\[grid-area\:search\] {
     grid-area: search
-}
-
-.\[margin-left\:-4px\] {
-    margin-left: -4px
-}
-
-.\[margin-left\:4px\] {
-    margin-left: 4px
 }
 
 .\!\[text-decoration\:none\] {
@@ -1678,14 +1636,6 @@
 }
 
 @media (min-width: 768px) {
-
-    .md\:ml-0 {
-        margin-left: 0px
-    }
-
-    .md\:mr-0 {
-        margin-right: 0px
-    }
 
     .md\:mt-14 {
         margin-top: 56px
