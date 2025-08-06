@@ -271,22 +271,9 @@
             </div>
           </div>
 
-          <!-- Benefits Section (mobile only) -->
-          <div class="benefits-section" style="display: none;" id="benefitsSection">
-            <div class="benefits-title">Why Choose TryScent?</div>
-            <div class="benefits-list">
-              <div class="benefit-item">Scent lasts 12 hours</div>
-              <div class="benefit-item">You pay 1/10 of original prices</div>
-              <div class="benefit-item">You can return up to 60 days</div>
-              <div class="benefit-item">Worldwide shipping</div>
-              <div class="benefit-item">Discount on future purchases</div>
-              <div class="benefit-item">Scent guarantee</div>
-            </div>
-          </div>
-
           <!-- Add Bundle Button -->
           <div class="sidebar-footer">
-            <button id="addBundleBtnMobile" class="add-bundle-btn" disabled>
+            <button id="addBundleBtnMobile" class="add-bundle-btn">
               <span class="btn-text" id="btnTextMobile">REVIEW BUNDLE</span>
               <span class="btn-status" id="btnStatusMobile">0/3</span>
             </button>
@@ -295,6 +282,18 @@
             <div class="mobile-benefits" style="display: none;">
               <div class="mobile-benefit-item">5-8 Days Shipping Worldwide</div>
               <div class="mobile-benefit-item">60-days Money Back Guarantee</div>
+            </div>
+          </div>
+
+          <!-- Benefits Section (mobile only) -->
+          <div class="benefits-section" style="display: none;" id="benefitsSection">
+            <div class="benefits-list">
+              <div class="benefit-item">Scent lasts 12 hours</div>
+              <div class="benefit-item">You pay 1/10 of original prices</div>
+              <div class="benefit-item">You can return up to 60 days</div>
+              <div class="benefit-item">Worldwide shipping</div>
+              <div class="benefit-item">Discount on future purchases</div>
+              <div class="benefit-item">Scent guarantee</div>
             </div>
           </div>
         </div>
@@ -1947,10 +1946,10 @@ color: white;
 
   /* Benefits Section Mobile */
   .bundler-sidebar.fullscreen .benefits-section {
-    margin-top: 20px;
-    padding: 16px;
+    margin-top: 16px;
+    padding: 12px;
     background: #f8f9fa;
-  border-radius: 8px;
+    border-radius: 8px;
   }
 
   .bundler-sidebar.fullscreen .benefits-title {
@@ -3346,7 +3345,8 @@ function updateAddButton() {
   
   // Update mobile button
   if (addButtonMobile && btnTextMobile && btnStatusMobile) {
-    addButtonMobile.disabled = totalItems < config.total;
+    // Mobile button is never disabled - always clickable
+    addButtonMobile.disabled = false;
     
     // Show/hide mobile sidebar based on selection
     if (window.innerWidth <= 768 && mobileSidebar) {
