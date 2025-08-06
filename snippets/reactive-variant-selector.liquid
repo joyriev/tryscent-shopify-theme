@@ -1,19 +1,18 @@
 {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
 <div class="flex justify-between items-center mb-3 !mt-6">
-  <h2 class="m-0 text-base font-semibold">
-    Select Size:
+  <h2 class="m-0 font-semibold text-sm">
+    SELECT YOUR SIZE:
   </h2>
-  <div class="text-sm italic text-gray-500">
-    80% of customers buy 50ml or more
+  <div class="text-sm font-semibold text-black">
+    EDP/{{ product.selected_or_first_available_variant.title }}/{{ product.selected_or_first_available_variant.title | remove: 'ML' | remove: 'ml' | times: 0.033814 | round: 2 }}oz
   </div>
 </div>
-
-<div class="grid grid-cols-4 gap-3" id="variant-selector">
+<div class="grid grid-cols-2 gap-3" id="variant-selector">
   {% for variant in product.variants %}
     <button
       type="button"
-      class="variant-button flex flex-col items-center gap-2 rounded-lg p-2 pt-3 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
+      class="variant-button flex items-center gap-2 rounded-lg p-2 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
       data-variant-id="{{ variant.id }}"
       data-price="{{ variant.price }}"
       data-compare-at-price="{{ variant.compare_at_price }}"
@@ -22,22 +21,26 @@
       style="border-color: #22613a;"
       {% endif %}>
       {% if variant.image %}
-        <div class="size-12 mx-auto">
-          <img
-            src="{{ variant.image | image_url: width: 100, height: 100, crop: 'center' }}"
-            alt="{{ variant.title }}"
-            width="100"
-            height="100"
-            class="size-12 object-cover"
-            loading="lazy">
-        </div>
+        <img
+          src="{{ variant.image | image_url: width: 100, height: 100, crop: 'center' }}"
+          alt="{{ variant.title }}"
+          width="100"
+          height="100"
+          class="size-12 object-cover"
+          loading="lazy">
       {% endif %}
-      <span class="text-sm font-semibold">{{ variant.title }}</span>
+      <div class="text-left">
+        <span class="text-sm font-semibold">{{ variant.title }}</span>
+        <div class="font-semibold">
+          <span class="inline-block mr-1 line-through text-gray-400">{{ variant.compare_at_price | money }}</span>
+          {{ variant.price | money }}
+        </div>
+      </div>
       {% if variant.title == '50ML' %}
-        <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Popular</span>
+        <span class="text-xs italic text-white rounded-tr-[5px] absolute top-0 right-0 bg-[#c8202f] px-2 py-0.5">Popular</span>
       {% endif %}
       {% if variant.title == '100ML' %}
-        <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#22613a] px-2 py-0.5">Bestseller</span>
+        <span class="text-xs italic text-white rounded-tr-[5px] absolute top-0 right-0 bg-[#22613a] px-2 py-0.5">Bestseller</span>
       {% endif %}
     </button>
   {% endfor %}
@@ -54,6 +57,66 @@
     , novalidate: 'novalidate'
     , data-type: 'add-to-cart-form'
   -%}
+  <div class="bg-white p-1.5 rounded-full flex shadow items-center">
+    <button 
+      id="decrement-quantity"
+      class="quantity__button !bg-black size-10 rounded-full disabled:opacity-50 disabled:cursor-not-allowed" 
+      type="button"
+      disabled
+      aria-label="Decrease quantity"
+    >
+      <span class="svg-wrapper text-white flex items-center justify-center w-5 h-5">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 10 2"
+          class="w-full h-full"
+        >
+          <path 
+            fill="currentColor" 
+            fill-rule="evenodd" 
+            d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 1 1 0 1H1A.5.5 0 0 1 .5 1" 
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </span>
+    </button>
+    
+    <input 
+      id="quantity"
+      class="quantity__input w-12 text-center focus:outline-none focus:ring-0 border-0 bg-transparent text-lg font-semibold text-black" 
+      type="number" 
+      name="quantity" 
+      value="1"
+      min="1" 
+      max="999"
+      aria-label="Quantity"
+      form="{{ product_form_id }}"
+    >
+    
+    <button 
+      id="increment-quantity"
+      class="quantity__button !bg-black size-10 rounded-full" 
+      type="button"
+      aria-label="Increase quantity"
+    >
+      <span class="svg-wrapper text-white flex items-center justify-center w-5 h-5">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 10 10"
+          class="w-full h-full"
+        >
+          <path 
+            fill="currentColor" 
+            fill-rule="evenodd" 
+            d="M1 4.51a.5.5 0 0 0 0 1h3.5l.01 3.5a.5.5 0 0 0 1-.01V5.5l3.5-.01a.5.5 0 0 0-.01-1H5.5L5.49.99a.5.5 0 0 0-1 .01v3.5l-3.5.01z" 
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </span>
+    </button>
+  </div>
     <input
       type="hidden"
       name="id"
@@ -63,26 +126,13 @@
       type="submit"
       name="add"
       value="1"
-      class="atc-button flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
+      class="atc-button flex flex-wrap items-center !mb-0 my-4 text-2xl !pb-3 !pt-3 rounded-full button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
       aria-label="Add to cart"
       data-price="{{ product.selected_or_first_available_variant.price }}"
       data-compare-at-price="{{ product.selected_or_first_available_variant.compare_at_price }}">
       <span>Add to cart</span>
-      <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
-        <div
-          class="inline-block text-lg bg-[#1E5834] px-3 rounded"
-          id="product-price"
-          role="status"
-          {{ block.shopify_attributes }}>
-          {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
-            <span class="compare-price line-through text-white/50 text-base" style="display: inline;">
-              {{ product.selected_or_first_available_variant.compare_at_price | money }}
-            </span>
-          {% else %}
-            <span class="compare-price line-through text-white/50 text-base" style="display: none;"></span>
-          {% endif %}
-          <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
-        </div>
+      <div class="ml-2 pl-2 border-0 border-l-2 flex items-center border-solid border-gray-200/20">
+        <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
       </div>
       {%- render 'loading-spinner' -%}
     </button>
@@ -90,13 +140,20 @@
 </product-form>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  // Quantity controls
+  const quantityInput = document.getElementById('quantity');
+  const decrementButton = document.getElementById('decrement-quantity');
+  const incrementButton = document.getElementById('increment-quantity');
+  
+  // Product and price elements
   const variantButtons = document.querySelectorAll('.variant-button');
-  const atcButton = document.querySelector('.atc-button');
   const variantIdInput = document.querySelector('.product-variant-id');
   const currentPriceEl = document.querySelector('.current-price');
-  const comparePriceEl = document.querySelector('.compare-price');
-
+  
+  // Initialize current variant price
+  let currentVariantPrice = {{ product.selected_or_first_available_variant.price }};
+  
   // Format price from cents to currency with symbol
   function formatPrice(price) {
     // Get the currency symbol from the shop's currency
@@ -109,6 +166,70 @@
     
     return `${currencySymbol}${formattedNumber}`;
   }
+
+  // Update price display based on quantity and update buy button
+  function updatePriceDisplay(price, quantity = 1) {
+    const totalPrice = price * quantity;
+    const formattedPrice = formatPrice(totalPrice);
+    
+    // Update the price display
+    currentPriceEl.textContent = formattedPrice;
+  }
+
+  // Handle quantity changes
+  function handleQuantityChange() {
+    let quantity = parseInt(quantityInput.value) || 1;
+    
+    // Ensure quantity is within bounds
+    if (quantity < 1) {
+      quantity = 1;
+      quantityInput.value = 1;
+    } else if (quantity > 999) {
+      quantity = 999;
+      quantityInput.value = 999;
+    }
+    
+    // Update minus button state
+    decrementButton.disabled = quantity <= 1;
+    
+    // Update price display
+    updatePriceDisplay(currentVariantPrice, quantity);
+  }
+
+  // Quantity button event listeners
+  decrementButton.addEventListener('click', () => {
+    let quantity = parseInt(quantityInput.value) || 1;
+    if (quantity > 1) {
+      quantityInput.value = quantity - 1;
+      handleQuantityChange();
+      // Force update price display with new quantity
+      updatePriceDisplay(currentVariantPrice, quantity - 1);
+    }
+  });
+
+  incrementButton.addEventListener('click', () => {
+    let quantity = parseInt(quantityInput.value) || 1;
+    if (quantity < 999) {
+      quantityInput.value = quantity + 1;
+      handleQuantityChange();
+      // Force update price display with new quantity
+      updatePriceDisplay(currentVariantPrice, quantity + 1);
+    }
+  });
+
+  // Handle manual quantity input
+  const handleManualQuantityChange = () => {
+    handleQuantityChange();
+    const quantity = parseInt(quantityInput.value) || 1;
+    updatePriceDisplay(currentVariantPrice, quantity);
+  };
+
+  quantityInput.addEventListener('change', handleManualQuantityChange);
+  quantityInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+      handleManualQuantityChange();
+    }
+  });
 
   // Handle variant selection
   variantButtons.forEach(button => {
@@ -123,26 +244,17 @@
 
       // Get variant data
       const variantId = this.getAttribute('data-variant-id');
-      const price = this.getAttribute('data-price');
-      const compareAtPrice = this.getAttribute('data-compare-at-price');
+      const price = parseInt(this.getAttribute('data-price'));
+      
+      // Update current variant price
+      currentVariantPrice = price;
 
       // Update form input
       variantIdInput.value = variantId;
 
-      // Update ATC button data attributes
-      atcButton.setAttribute('data-price', price);
-      atcButton.setAttribute('data-compare-at-price', compareAtPrice);
-
-      // Update price display
-      currentPriceEl.textContent = formatPrice(price);
-      
-      // Update compare at price display
-      if (compareAtPrice && compareAtPrice > price) {
-        comparePriceEl.textContent = formatPrice(compareAtPrice);
-        comparePriceEl.style.display = 'inline';
-      } else {
-        comparePriceEl.style.display = 'none';
-      }
+      // Update price display with current quantity
+      const quantity = parseInt(quantityInput.value) || 1;
+      updatePriceDisplay(price, quantity);
     });
   });
   });
