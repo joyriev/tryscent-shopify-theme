@@ -248,7 +248,7 @@
 
           <!-- Add Bundle Button -->
           <div class="sidebar-footer">
-        <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+        <button id="addBundleBtn" class="add-bundle-btn" disabled>
             <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
             <span class="btn-status" id="btnStatus">0/3</span>
         </button>
@@ -2954,7 +2954,12 @@ function openFullscreenSidebar() {
   
   // Change button onclick for fullscreen
   if (addButton) {
-    addButton.onclick = function() {
+    // Remove existing event listeners
+    const newButton = addButton.cloneNode(true);
+    addButton.parentNode.replaceChild(newButton, addButton);
+    
+    // Add new event listener for fullscreen
+    newButton.addEventListener('click', function() {
       const config = bundleConfig[currentBundleType];
       let totalItems = 0;
       selectedProducts.forEach(product => {
@@ -2969,7 +2974,7 @@ function openFullscreenSidebar() {
         // Bundle not complete - close fullscreen and continue shopping
         closeFullscreenSidebar();
       }
-    };
+    });
   }
   
   // Prevent body scroll
@@ -3004,9 +3009,14 @@ function closeFullscreenSidebar() {
   
   // Restore button onclick for sticky footer
   if (addButton) {
-    addButton.onclick = function() {
+    // Remove existing event listeners
+    const newButton = addButton.cloneNode(true);
+    addButton.parentNode.replaceChild(newButton, addButton);
+    
+    // Add new event listener for sticky footer
+    newButton.addEventListener('click', function() {
       addBundleToCart();
-    };
+    });
   }
   
   // Restore body scroll
@@ -3044,6 +3054,14 @@ function updateSaveInfo() {
 document.addEventListener('DOMContentLoaded', function() {
   const sidebar = document.querySelector('.bundler-sidebar');
   const mobileBenefits = document.querySelector('.mobile-benefits');
+  const addButton = document.getElementById('addBundleBtn');
+  
+  // Add event listener to button
+  if (addButton) {
+    addButton.addEventListener('click', function() {
+      addBundleToCart();
+    });
+  }
   
   // Show mobile benefits on mobile
   if (window.innerWidth <= 768) {
