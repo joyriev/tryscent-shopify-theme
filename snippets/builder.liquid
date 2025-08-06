@@ -1760,8 +1760,8 @@ function updateBundlePrices() {
 }
 
 // Product selection
-function selectProduct(productId, variantId) {
-  console.log('selectProduct called with:', productId, 'variant:', variantId);
+function selectProduct(productId, passedVariantId) {
+  console.log('selectProduct called with:', productId, 'variant:', passedVariantId);
   
   const productCard = document.querySelector(`[data-product-id="${productId}"]`);
   console.log('productCard found:', productCard);
@@ -1828,6 +1828,10 @@ function selectProduct(productId, variantId) {
     const priceElement = productCard.querySelector('.product-price');
     const price = priceElement ? priceElement.textContent : '';
     
+    // Get variant ID for current variant
+    const variantKey = `variant-${currentVariant.toLowerCase()}`;
+    const variantId = productCard.querySelector('.product-price').dataset[variantKey];
+    console.log('Variant key:', variantKey, 'Variant ID:', variantId);
     console.log('Adding product to selection:', { id: productId, variantId, title, price });
     
     // Add selected class
@@ -1861,11 +1865,6 @@ function selectProduct(productId, variantId) {
     // Get product image
     const productImage = productCard.querySelector('.product-image img');
     const image = productImage ? productImage.src : '';
-    
-    // Get variant ID for current variant
-    const variantKey = `variant-${currentVariant.toLowerCase()}`;
-    const variantId = productCard.querySelector('.product-price').dataset[variantKey];
-    console.log('Variant key:', variantKey, 'Variant ID:', variantId);
     
     selectedProducts.push({
       id: productId,
