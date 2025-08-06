@@ -62,25 +62,27 @@
             <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
             <span class="bundle-type-title">2+1 FREE</span>
             <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
-            <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | money }}</span>
+            <span class="bundle-price" id="price-2+1">{{ base_price | money }} per bottle</span>
           </button>
           <button class="bundle-type-btn" data-bundle-type="3+2" onclick="selectBundleType('3+2')">
             <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
             <span class="bundle-type-title">3+2 FREE</span>
             <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
-            <span class="bundle-price" id="price-3+2">{{ base_price | times: 3 | money }}</span>
+            <span class="bundle-price" id="price-3+2">{{ base_price | money }} per bottle</span>
           </button>
           <button class="bundle-type-btn" data-bundle-type="4+3" onclick="selectBundleType('4+3')">
+            <div class="bundle-badge bestseller">Bestseller</div>
             <div class="bundle-savings" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
             <span class="bundle-type-title">4+3 FREE</span>
             <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
-            <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | money }}</span>
+            <span class="bundle-price" id="price-4+3">{{ base_price | money }} per bottle</span>
           </button>
           <button class="bundle-type-btn" data-bundle-type="5+4" onclick="selectBundleType('5+4')">
+            <div class="bundle-badge best-value">Best Value</div>
             <div class="bundle-savings" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
             <span class="bundle-type-title">5+4 FREE</span>
             <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
-            <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | money }}</span>
+            <span class="bundle-price" id="price-5+4">{{ base_price | money }} per bottle</span>
           </button>
         </div>
       </div>
@@ -457,6 +459,29 @@
 
 .bundle-type-btn.active .bundle-type-title,
 .bundle-type-btn.active .bundle-type-desc {
+  color: white;
+}
+
+.bundle-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+.bundle-badge.bestseller {
+  background: #ff6b35;
+  color: white;
+}
+
+.bundle-badge.best-value {
+  background: #28a745;
   color: white;
 }
 
@@ -1729,10 +1754,10 @@ function updateBundlePrices() {
     const totalPrice = config.buy * basePrice;
     const savings = config.free * basePrice;
     
-    // Update price display
+    // Update price display (show price per bottle)
     const priceElement = document.getElementById(`price-${bundleType}`);
     if (priceElement) {
-      priceElement.textContent = basePriceText.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
+      priceElement.textContent = basePriceText + ' per bottle';
     }
     
     // Update savings display
