@@ -604,7 +604,6 @@
   margin-bottom: 8px;
   overflow: hidden;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 0 12px;
 }
 
 .progress-fill {
@@ -616,11 +615,12 @@
   box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
   position: absolute;
   top: 0;
-  left: 12px;
+  left: 0;
   z-index: 1;
   display: block;
   box-sizing: border-box;
   min-width: 0;
+  border: 1px solid #28a745;
 }
 
 .progress-fill::after {
@@ -642,13 +642,14 @@
 .progress-markers {
   position: absolute;
   top: 50%;
-  left: 12px;
-  right: 12px;
+  left: 0;
+  right: 0;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   pointer-events: none;
   z-index: 10;
+  padding: 0 12px;
 }
 
 .marker {
@@ -668,6 +669,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   pointer-events: auto;
   z-index: 11;
+  margin-top: -2px;
 }
 
 .buy-marker {
@@ -1037,10 +1039,16 @@ function updateCartProgress() {
   const progressFill = document.getElementById('cartProgressFill');
   const config = bundleConfig[currentBundleType];
   
+  console.log('updateCartProgress - selectedProducts:', selectedProducts.length, 'config.total:', config.total);
+  
   if (progressFill) {
     // Calculate progress from 0 to total (not from buy to total)
     const progressPercent = (selectedProducts.length / config.total) * 100;
+    console.log('Setting progress width to:', progressPercent + '%');
     progressFill.style.width = progressPercent + '%';
+    console.log('Progress fill width after setting:', progressFill.style.width);
+  } else {
+    console.error('progressFill element not found!');
   }
   
   // Update markers
