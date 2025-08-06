@@ -1998,20 +1998,27 @@ function updateAddButton() {
   if (addButton && btnText && btnStatus) {
     const config = bundleConfig[currentBundleType];
     const minRequired = config.buy;
-    const totalSelected = selectedProducts.length;
     
-    console.log('Config:', config, 'totalSelected:', totalSelected, 'minRequired:', minRequired);
+    // Calculate total items including quantities
+    let totalItems = 0;
+    selectedProducts.forEach(product => {
+      const quantity = productQuantities[product.id] || 1;
+      totalItems += quantity;
+    });
+    
+    console.log('Config:', config, 'totalItems:', totalItems, 'minRequired:', minRequired);
     console.log('Selected products:', selectedProducts);
+    console.log('Product quantities:', productQuantities);
     
-    addButton.disabled = totalSelected < config.total;
+    addButton.disabled = totalItems < config.total;
     
     // Update button text and status
-    if (totalSelected >= config.total) {
+    if (totalItems >= config.total) {
       btnText.textContent = 'Your Bundle Is Ready!';
-      btnStatus.textContent = `${totalSelected}/${config.total}`;
+      btnStatus.textContent = `${totalItems}/${config.total}`;
     } else {
-      btnText.textContent = `Please Select ${config.total - totalSelected} More Scents`;
-      btnStatus.textContent = `${totalSelected}/${config.total}`;
+      btnText.textContent = `Please Select ${config.total - totalItems} More Scents`;
+      btnStatus.textContent = `${totalItems}/${config.total}`;
     }
     
     console.log('Button updated:', {
