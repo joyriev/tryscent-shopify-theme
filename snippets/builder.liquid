@@ -1233,21 +1233,21 @@ color: white;
 }
 
 .mobile-fullscreen-cart .marker {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: white;
-  border: 4px solid #e0e0e0;
+  border: 4px solid #333;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #666;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #333;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 3px white, 0 0 0 6px #333, 0 8px 25px rgba(0, 0, 0, 0.5);
   pointer-events: auto;
-  z-index: 15;
+  z-index: 20;
   position: relative;
 }
 
@@ -1255,8 +1255,8 @@ color: white;
   border-color: #28a745;
   background: #28a745;
   color: white;
-  box-shadow: 0 10px 30px rgba(40, 167, 69, 0.6);
-  transform: scale(1.2);
+  box-shadow: 0 0 0 3px white, 0 0 0 6px #28a745, 0 10px 30px rgba(40, 167, 69, 0.7);
+  transform: scale(1.3);
 }
 
 /* Fullscreen Cart Save Info */
@@ -2731,18 +2731,22 @@ window.changeProductQuantity = function(productId, change) {
 };
 
 window.changeQuantity = function(productId, change) {
-  // Find quantity display in selected items
-  const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
-  const quantityDisplay = selectedItem ? selectedItem.querySelector('.quantity-display') : null;
+  // Find all quantity displays for this product (desktop and fullscreen)
+  const selectedItems = document.querySelectorAll(`.selected-item[data-product-id="${productId}"]`);
   
-  if (!quantityDisplay) {
+  if (selectedItems.length === 0) {
     return;
   }
   
-  const minusBtn = quantityDisplay.previousElementSibling;
-  const plusBtn = quantityDisplay.nextElementSibling;
+  // Get current quantity from the first item
+  const firstItem = selectedItems[0];
+  const firstQuantityDisplay = firstItem.querySelector('.quantity-display');
   
-  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
+  if (!firstQuantityDisplay) {
+    return;
+  }
+  
+  let currentQuantity = parseInt(firstQuantityDisplay.textContent) || 1;
   let newQuantity = currentQuantity + change;
   
   // If quantity goes to 0 or below, remove product completely
@@ -2786,8 +2790,20 @@ window.changeQuantity = function(productId, change) {
   // Limit quantity to 10
   if (newQuantity > 10) newQuantity = 10;
   
-  // Update quantity display in side cart
-  quantityDisplay.textContent = newQuantity;
+  // Update quantity display in all carts (desktop and fullscreen)
+  selectedItems.forEach(item => {
+    const quantityDisplay = item.querySelector('.quantity-display');
+    if (quantityDisplay) {
+      quantityDisplay.textContent = newQuantity;
+    }
+    
+    // Update button states
+    const minusBtn = quantityDisplay ? quantityDisplay.previousElementSibling : null;
+    const plusBtn = quantityDisplay ? quantityDisplay.nextElementSibling : null;
+    
+    if (minusBtn) minusBtn.disabled = newQuantity <= 1;
+    if (plusBtn) plusBtn.disabled = newQuantity >= 10;
+  });
   
   // Update quantity display in product card
   const productCard = document.querySelector(`[data-product-id="${productId}"]`);
@@ -2806,9 +2822,7 @@ window.changeQuantity = function(productId, change) {
     selectedProduct.quantity = newQuantity;
   }
   
-  // Update button states
-  minusBtn.disabled = newQuantity <= 1;
-  plusBtn.disabled = newQuantity >= 10;
+  // Button states are now updated in the forEach loop above
   
   // Update progress
   updateProgressText();
