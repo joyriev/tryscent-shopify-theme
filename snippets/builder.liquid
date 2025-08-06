@@ -20,9 +20,7 @@
             <div class="stars">★★★★★</div>
             <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
           </div>
-          <div class="bundler-savings-info">
-            <span class="savings-badge">How much you save if you buy 100ml bottles?</span>
-          </div>
+
         </div>
       </div>
 
@@ -54,8 +52,8 @@
         </div>
       </div>
 
-      <!-- Bundle Type Selection (hidden initially) -->
-      <div class="bundle-type-selection" id="bundleSelection" style="display: none;">
+      <!-- Bundle Type Selection -->
+      <div class="bundle-type-selection" id="bundleSelection">
         <div class="bundle-type-buttons">
           <button class="bundle-type-btn active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
             <div class="bundle-savings" id="savings-2+1">SAVE {{ 2699 | money }}</div>
@@ -131,19 +129,9 @@
                   <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
                 </div>
                 
-                <!-- Variant and Price -->
-                <div class="product-variant-price">
-                  <select class="variant-select" data-product-id="{{ product.id }}" onchange="updateVariant({{ product.id }}, this.value);">
-                    {% for variant in product.variants %}
-                      {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
-                        <option value="{{ variant.id }}" 
-                                data-price="{{ variant.price | money }}"
-                                {% if variant.title contains '100ML' %}selected{% endif %}>
-                          {{ variant.title }} - {{ variant.price | money }}
-                        </option>
-                      {% endif %}
-                    {% endfor %}
-                  </select>
+                <!-- Price Display -->
+                <div class="product-price-display">
+                  <span class="product-price">{{ default_variant.price | money }}</span>
                 </div>
                 
                 <!-- Add to Box Button -->
@@ -661,27 +649,16 @@
   font-weight: 500;
 }
 
-/* Variant and Price */
-.product-variant-price {
+/* Price Display */
+.product-price-display {
   margin-bottom: 16px;
+  text-align: center;
 }
 
-.variant-select {
-  width: 100%;
-  padding: 10px 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  background: white;
-  color: #222;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.variant-select:focus {
-  outline: none;
-  border-color: #28a745;
-  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #28a745;
 }
 
 /* Selected Item Quantity */
@@ -1691,12 +1668,6 @@ function selectVariant(variant) {
     btn.classList.remove('active');
   });
   event.target.closest('.variant-btn').classList.add('active');
-  
-  // Show bundle selection
-  const bundleSelection = document.getElementById('bundleSelection');
-  if (bundleSelection) {
-    bundleSelection.style.display = 'block';
-  }
   
   // Update bundle prices
   updateBundlePrices();
