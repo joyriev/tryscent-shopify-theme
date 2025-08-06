@@ -285,6 +285,7 @@
   border-bottom: 1px solid #eee;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
 }
 
 .variant-title {
@@ -384,6 +385,7 @@
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-bottom: 1px solid #eee;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
 }
 
 .bundle-type-buttons {
@@ -550,6 +552,7 @@
   border-bottom: 1px solid #eee;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  margin-bottom: 10px;
 }
 
 .search-container {
@@ -1416,12 +1419,7 @@ function getOrdinalSuffix(num) {
 function updateProgressText() {
   const cartProgressText = document.getElementById('cartProgressText');
   const sidebarTitle = document.getElementById('sidebarTitle');
-  const config = {
-    '2+1': { buy: 2, free: 1, total: 3 },
-    '3+2': { buy: 3, free: 2, total: 5 },
-    '4+3': { buy: 4, free: 3, total: 7 },
-    '5+4': { buy: 5, free: 4, total: 9 }
-  }[currentBundleType];
+  const config = bundleConfig[currentBundleType];
   
   let text = '';
   let title = '';
