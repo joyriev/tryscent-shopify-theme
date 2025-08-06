@@ -3108,7 +3108,7 @@ function closeFullscreenSidebar() {
     
     // Add new event listener for sticky footer
     newButton.addEventListener('click', function() {
-      addBundleToCart();
+      openFullscreenSidebar();
     });
   }
   
@@ -3153,14 +3153,25 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add event listener to desktop button
   if (addButtonDesktop) {
     addButtonDesktop.addEventListener('click', function() {
-      addBundleToCart();
+      // Desktop button - check if bundle complete and go to checkout
+      const config = bundleConfig[currentBundleType];
+      let totalItems = 0;
+      selectedProducts.forEach(product => {
+        const quantity = productQuantities[product.id] || 1;
+        totalItems += quantity;
+      });
+      
+      if (totalItems >= config.total) {
+        addBundleToCartAndCheckout();
+      }
     });
   }
   
   // Add event listener to mobile button
   if (addButtonMobile) {
     addButtonMobile.addEventListener('click', function() {
-      addBundleToCart();
+      // Mobile button - always open fullscreen first
+      openFullscreenSidebar();
     });
   }
   
@@ -3192,31 +3203,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Add bundle to cart
-function addBundleToCart() {
-  const config = bundleConfig[currentBundleType];
-  
-  // Calculate total items including quantities
-  let totalItems = 0;
-  selectedProducts.forEach(product => {
-    const quantity = productQuantities[product.id] || 1;
-    totalItems += quantity;
-  });
-  
-  // Check if we're on mobile or desktop based on which button was clicked
-  const isMobile = window.innerWidth <= 768;
-  
-  if (isMobile) {
-    // Mobile: always open fullscreen sidebar first
-    openFullscreenSidebar();
-    return;
-  } else {
-    // Desktop: if bundle is complete, add to cart and redirect to checkout
-    if (totalItems >= config.total) {
-      addBundleToCartAndCheckout();
-    }
-  }
-}
+
 
 // Function to add bundle to cart and go to checkout (for mobile fullscreen)
 function addBundleToCartAndCheckout() {
