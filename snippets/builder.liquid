@@ -1177,6 +1177,96 @@ color: white;
   display: block;
   margin-bottom: 16px;
   padding: 12px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.mobile-fullscreen-cart .progress-text {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.mobile-fullscreen-cart .bundler-progress-container {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.mobile-fullscreen-cart .bundler-progress-bar {
+  height: 28px;
+  background: #e0e0e0;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-fullscreen-cart .bundler-progress-fill {
+  height: 100%;
+  background: #28a745;
+  border-radius: 0;
+  transition: width 0.5s ease;
+  width: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+.mobile-fullscreen-cart .progress-markers {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  padding: 0 12px;
+  pointer-events: none;
+}
+
+.mobile-fullscreen-cart .marker {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #666;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+  z-index: 11;
+}
+
+.mobile-fullscreen-cart .marker.active {
+  border-color: #28a745;
+  background: #28a745;
+  color: white;
+  box-shadow: 0 8px 24px rgba(40, 167, 69, 0.4);
+  transform: scale(1.1);
+}
+
+/* Fullscreen Cart Save Info */
+.mobile-fullscreen-cart .save-info {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: block;
+  text-align: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.3);
 }
 
 /* Fullscreen Cart Selected Items */
@@ -1230,6 +1320,16 @@ color: white;
   font-size: 0.8rem;
   color: #666;
   line-height: 1.2;
+  position: relative;
+  padding-left: 16px;
+}
+
+.mobile-fullscreen-cart .benefit-item:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
 }
 
 .sidebar-content {
@@ -2805,9 +2905,8 @@ function getOrdinalSuffix(num) {
 // Update progress text and sidebar title
 function updateProgressText() {
   const cartProgressText = document.getElementById('cartProgressText');
-  const cartProgressTextMobile = document.getElementById('cartProgressTextMobile');
+  const cartProgressTextFullscreen = document.getElementById('cartProgressTextFullscreen');
   const sidebarTitle = document.getElementById('sidebarTitle');
-  const sidebarTitleMobile = document.getElementById('sidebarTitleMobile');
   const config = bundleConfig[currentBundleType];
   
   let text = '';
@@ -2825,9 +2924,8 @@ function updateProgressText() {
   }
   
   if (cartProgressText) cartProgressText.textContent = text;
-  if (cartProgressTextMobile) cartProgressTextMobile.textContent = text;
+  if (cartProgressTextFullscreen) cartProgressTextFullscreen.textContent = text;
   if (sidebarTitle) sidebarTitle.textContent = title;
-  if (sidebarTitleMobile) sidebarTitleMobile.textContent = title;
 }
 
 // Generate progress markers
