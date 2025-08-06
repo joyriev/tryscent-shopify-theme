@@ -831,10 +831,10 @@
   padding: 16px 20px;
   border: 2px solid #e0e0e0;
   border-radius: 16px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  background-size: 200% 200%;
-  animation: shiny-gradient 2s ease-in-out infinite;
-  color: #222;
+  background: linear-gradient(45deg, #28a745, #20c997, #28a745);
+background-size: 200% 200%;
+animation: shiny-gradient 2s ease-in-out infinite;
+color: white;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
@@ -1651,8 +1651,7 @@ function setupSearchBarAnimation() {
     if (searchBarRect.top <= 200) {
       // Calculate how much to move based on scroll position
       const scrollProgress = Math.min((200 - searchBarRect.top) / 100, 1);
-      const translateX = scrollProgress * (containerWidth - sidebarWidth - 40); // Move to right edge of sidebar
-      const newWidth = sidebarWidth - 40; // Small width over sidebar
+const translateX = scrollProgress * (containerWidth - sidebarWidth - 40);      const newWidth = sidebarWidth - 40; // Small width over sidebar
       
       searchBar.style.transform = `translateX(${translateX}px)`;
       searchBar.style.width = `${newWidth}px`;
