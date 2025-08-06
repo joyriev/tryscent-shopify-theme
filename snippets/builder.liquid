@@ -131,9 +131,9 @@
               <div class="progress-text" id="cartProgressText">Please select at least 2 scents</div>
               <div class="progress-bar">
                 <div class="progress-fill" id="cartProgressFill"></div>
-                <div class="progress-markers" id="progressMarkers">
-                  <!-- Markers will be generated dynamically -->
-                </div>
+              </div>
+              <div class="progress-markers" id="progressMarkers">
+                <!-- Markers will be generated dynamically -->
               </div>
             </div>
 
@@ -597,39 +597,34 @@
 }
 
 .progress-bar {
-  height: 20px;
+  height: 12px;
   background: #e0e0e0;
-  border-radius: 10px;
+  border-radius: 6px;
   position: relative;
   margin-bottom: 8px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .progress-fill {
   height: 100%;
   background: #28a745;
-  border-radius: 10px;
+  border-radius: 6px;
   transition: width 0.5s ease;
   width: 0%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  position: relative;
   display: block;
   box-sizing: border-box;
 }
 
 .progress-markers {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  pointer-events: none;
-  z-index: 10;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 700;
+  margin-top: 8px;
+  gap: 4px;
 }
 
 .marker {
