@@ -1,0 +1,1016 @@
+{% comment %}
+  Product Bundler Snippet
+  Snippet do wywołania przez Custom Liquid w sekcji main-product
+{% endcomment %}
+
+{% assign bundle_collection = collections['smells-like'] %}
+
+<div class="product-bundler" data-bundler>
+  <!-- Przycisk przenoszący do strony bundlera -->
+  <a href="/pages/bundle-builder" class="bundler-trigger">
+    BUILD YOUR 2 + 1 FREE BUNDLE
+  </a>
+
+  <!-- Modal -->
+  <div id="bundlerModal" class="bundler-modal">
+    <div class="bundler-modal-content">
+      <!-- Header -->
+      <div class="bundler-header">
+        <div class="bundler-title">
+          <h2>Search Selector</h2>
+          <p>Choose 3 scents to try</p>
+        </div>
+        <button class="bundler-close" onclick="closeBundlerModal()">&times;</button>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="bundler-progress">
+        <div class="bundler-progress-text">
+          <span id="progressText">Choose your scents (0 of 3 selected)</span>
+          <span id="bundleReadyText" class="bundle-ready-text" style="display: none;">Perfect! Your bundle is ready</span>
+        </div>
+        <div class="bundler-progress-bar">
+          <div class="progress-step" data-step="1">
+            <div class="progress-indicator" id="step1"></div>
+            <span>1st Bottle</span>
+          </div>
+          <div class="progress-step" data-step="2">
+            <div class="progress-indicator" id="step2"></div>
+            <span>2nd Bottle</span>
+          </div>
+          <div class="progress-step" data-step="3">
+            <div class="progress-indicator" id="step3"></div>
+            <span>3rd FREE BOTTLE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="bundler-search">
+        <input type="text" id="searchInput" placeholder="Search scents..." onkeyup="filterProducts()">
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="bundler-filters">
+        <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
+        <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
+        <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="bundler-products" id="productsGrid">
+        {% for product in bundle_collection.products %}
+          {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+          {% unless default_variant %}
+            {% assign default_variant = product.variants.first %}
+          {% endunless %}
+          
+          <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" style="cursor: pointer; border: 2px solid #eee; border-radius: 8px; padding: 16px; position: relative; transition: all 0.2s; background: white;" onclick="console.log('Card clicked!'); selectProduct({{ product.id }}, {{ default_variant.id }});">
+            <div class="product-image">
+              <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title }}" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">{{ product.title }}</h3>
+              <div class="product-category">
+                {% if product.tags contains 'man' %}
+                  <span class="category-tag man">MAN</span>
+                {% elsif product.tags contains 'woman' %}
+                  <span class="category-tag woman">WOMAN</span>
+                {% endif %}
+              </div>
+              <div class="product-price" data-product-id="{{ product.id }}">
+                {{ default_variant.price | money }}
+              </div>
+              <div class="product-variant">
+                <label>Size</label>
+                <select class="variant-select" data-product-id="{{ product.id }}" onclick="event.stopPropagation();" onchange="updateVariant({{ product.id }}, this.value);">
+                  {% for variant in product.variants %}
+                    {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
+                      <option value="{{ variant.id }}" 
+                              data-price="{{ variant.price | money }}"
+                              {% if variant.title contains '100ML' %}selected{% endif %}>
+                        {{ variant.title }}
+                      </option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="add-to-cart-indicator" style="background-color: #222; color: white; padding: 8px 16px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-align: center; margin-top: 8px; cursor: pointer;">
+                SELECT FOR BUNDLE
+              </div>
+            </div>
+            <div class="product-selector" onclick="event.stopPropagation(); selectProduct({{ product.id }}, {{ default_variant.id }});">
+              <div class="check-icon">✓</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Footer Button -->
+      <div class="bundler-footer">
+        <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+          ADD BUNDLE TO CART
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Modal Styles */
+.bundler-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.bundler-modal-content {
+  background-color: white;
+  margin: 2% auto;
+  padding: 0;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Header */
+.bundler-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 32px 16px 32px;
+  border-bottom: 1px solid #eee;
+}
+
+.bundler-title h2 {
+  margin: 0 0 4px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.bundler-title p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.bundler-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bundler-close:hover {
+  color: #222;
+}
+
+/* Progress Bar */
+.bundler-progress {
+  padding: 20px 32px;
+  background-color: #f8f9fa;
+}
+
+.bundler-progress-text {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.bundler-progress-text span {
+  font-size: 1rem;
+  color: #222;
+}
+
+.bundle-ready-text {
+  color: #28a745 !important;
+  font-weight: 600;
+}
+
+.bundler-progress-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.bundler-progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+/* Green progress line */
+.bundler-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 2px;
+  background-color: #28a745;
+  z-index: 1;
+  transition: width 0.3s ease;
+  width: var(--progress-width, 0%);
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-indicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: 3px solid white;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.progress-indicator.completed {
+  background-color: #28a745;
+}
+
+.progress-indicator.current {
+  background-color: #28a745;
+}
+
+.progress-step span {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+}
+
+/* Search */
+.bundler-search {
+  padding: 20px 32px 16px 32px;
+}
+
+.bundler-search input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.bundler-search input:focus {
+  border-color: #28a745;
+}
+
+/* Filters */
+.bundler-filters {
+  padding: 0 32px 20px 32px;
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  color: #222;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  background-color: #222;
+  color: white;
+  border-color: #222;
+}
+
+/* Products Grid */
+.bundler-products {
+  padding: 0 32px 20px 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Mobile - 2 columns */
+@media (max-width: 600px) {
+  .bundler-products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 20px 20px 20px;
+  }
+}
+
+.product-card {
+  border: 2px solid #eee;
+  border-radius: 8px;
+  padding: 16px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+}
+
+.product-card:hover:not(.selected) {
+  border-color: #28a745;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
+}
+
+.product-card.selected:hover {
+  border-color: #28a745 !important;
+  background-color: #f8fff9 !important;
+  box-shadow: 0 0 0 2px #28a745 !important;
+  transform: scale(1.02) !important;
+}
+
+.product-card.selected {
+  border-color: #28a745 !important;
+  background-color: #f8fff9 !important;
+  box-shadow: 0 0 0 2px #28a745 !important;
+  transform: scale(1.02) !important;
+}
+
+.product-card.selected .add-to-cart-indicator {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+/* Override any existing styles that might interfere */
+.product-card.selected {
+  border-color: #28a745 !important;
+  background-color: #f8fff9 !important;
+  box-shadow: 0 0 0 2px #28a745 !important;
+  transform: scale(1.02) !important;
+  z-index: 10 !important;
+}
+
+.product-card.selected * {
+  pointer-events: auto !important;
+}
+
+.product-card.adding {
+  border-color: #28a745;
+  background-color: #f8fff9;
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.product-image {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.product-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-title {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.product-variant {
+  margin-bottom: 12px;
+}
+
+.product-variant label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.variant-select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.category-tag.man {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.category-tag.woman {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.add-to-cart-indicator {
+  background-color: #222;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+.product-card:hover .add-to-cart-indicator {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+.product-card.selected .add-to-cart-indicator {
+  background-color: #28a745;
+}
+
+.product-selector {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.product-card.selected .product-selector {
+  opacity: 1;
+  border-color: #28a745;
+  background-color: #28a745;
+}
+
+.check-icon {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Footer */
+.bundler-footer {
+  padding: 20px 32px 32px 32px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.add-bundle-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 200px;
+}
+
+.add-bundle-btn:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.add-bundle-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Trigger Button with Animated Gradient */
+.bundler-trigger {
+  background: linear-gradient(-45deg, #28a745, #20c997, #17a2b8, #28a745);
+  background-size: 400% 400%;
+  color: white;
+  border: none;
+  padding: 20px 32px;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 20px;
+  animation: gradientShift 3s ease infinite;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4), 0 4px 10px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bundler-trigger:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(40, 167, 69, 0.5), 0 6px 15px rgba(0,0,0,0.15);
+  animation: gradientShift 1.5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bundler-modal-content {
+    width: 95%;
+    margin: 5% auto;
+    max-height: 95vh;
+  }
+  
+  .bundler-header {
+    padding: 16px 20px 12px 20px;
+  }
+  
+  .bundler-progress {
+    padding: 16px 20px;
+  }
+  
+  .bundler-search {
+    padding: 16px 20px 12px 20px;
+  }
+  
+  .bundler-filters {
+    padding: 0 20px 16px 20px;
+  }
+  
+  .bundler-products {
+    padding: 0 20px 16px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .bundler-footer {
+    padding: 16px 20px 24px 20px;
+  }
+}
+</style>
+
+<script>
+// Global variables
+let selectedProducts = [];
+let currentFilter = 'all';
+let currentSearch = '';
+
+// Initialize bundler
+document.addEventListener('DOMContentLoaded', function() {
+  // updateProgress will be called after function is defined
+  applyFilters(); // Apply initial filters
+});
+
+// Modal functions
+function openBundlerModal() {
+  document.getElementById('bundlerModal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+// Modal functions - removed duplicate function
+
+function closeBundlerModal() {
+  document.getElementById('bundlerModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+// Product selection
+function selectProduct(productId, variantId) {
+  console.log('selectProduct called with:', productId, 'variant:', variantId);
+  
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  console.log('productCard found:', productCard);
+  
+  if (!productCard) {
+    console.error('Product card not found for ID:', productId);
+    return;
+  }
+  
+  // Check if already selected by looking for the selected class
+  const isSelected = productCard.classList.contains('selected') || productCard.style.borderColor === 'rgb(40, 167, 69)';
+  console.log('isSelected:', isSelected);
+  
+  if (isSelected) {
+    // Deselect product
+    console.log('Deselecting product');
+    productCard.classList.remove('selected');
+    
+    // Reset to default styles
+    productCard.classList.remove('selected');
+    
+    // Remove selected class
+    productCard.classList.remove('selected');
+    
+    // Reset button text
+    const button = productCard.querySelector('.add-to-cart-indicator');
+    if (button) {
+      button.textContent = 'SELECT FOR BUNDLE';
+      button.style.backgroundColor = '#222';
+      button.style.color = 'white';
+      button.style.fontWeight = 'normal';
+    }
+    
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    
+    // Update progress bar when deselecting
+    const progressText = document.querySelector('#progressText');
+    if (progressText) {
+      progressText.textContent = `Choose your scents (${selectedProducts.length} of 3 selected)`;
+    }
+    
+    // Update step indicators when deselecting
+    for (let i = 1; i <= 3; i++) {
+      const stepIndicator = document.querySelector(`#step${i}`);
+      if (stepIndicator) {
+        if (i <= selectedProducts.length) {
+          stepIndicator.style.backgroundColor = '#28a745';
+          stepIndicator.style.color = 'white';
+        } else {
+          stepIndicator.style.backgroundColor = '#e0e0e0';
+          stepIndicator.style.color = '#666';
+        }
+      }
+    }
+    
+    // Update green progress line when deselecting
+    const progressBar = document.querySelector('.bundler-progress-bar');
+    if (progressBar) {
+      const progressPercent = (selectedProducts.length / 3) * 100;
+      progressBar.style.setProperty('--progress-width', progressPercent + '%');
+    }
+  } else {
+    // Select product (max 3)
+    console.log('Current selected products:', selectedProducts.length);
+    if (selectedProducts.length >= 3) {
+      alert('You can only select 3 scents');
+      return;
+    }
+    
+    // Get product title
+    const productTitle = productCard.querySelector('.product-title');
+    const title = productTitle ? productTitle.textContent : 'Unknown Product';
+    
+    // Get price
+    const priceElement = productCard.querySelector('.product-price');
+    const price = priceElement ? priceElement.textContent : '';
+    
+    console.log('Adding product to selection:', { id: productId, variantId, title, price });
+    
+    // Add selected class
+    productCard.classList.add('selected');
+    
+    // Force visual update with JavaScript
+    productCard.classList.add('selected');
+    
+    // Add selected class
+    productCard.classList.add('selected');
+    
+    // Find and update the button
+    const button = productCard.querySelector('.add-to-cart-indicator');
+    
+    if (button) {
+      button.textContent = 'SELECTED';
+      button.style.backgroundColor = '#28a745';
+      button.style.color = 'white';
+      button.style.fontWeight = 'bold';
+      console.log('Button changed to SELECTED');
+    }
+    
+    console.log('Selected class added:', productCard.classList.contains('selected'));
+    console.log('Card classes:', productCard.className);
+    console.log('Card styles applied');
+    console.log('Card selection completed');
+    
+    selectedProducts.push({
+      id: productId,
+      variantId: parseInt(variantId),
+      title: title,
+      price: price
+    });
+    
+    console.log('Product added to selection. Total:', selectedProducts.length);
+    
+    // Update progress bar directly - just like the button highlighting
+    const progressText = document.querySelector('#progressText');
+    if (progressText) {
+      progressText.textContent = `Choose your scents (${selectedProducts.length} of 3 selected)`;
+    }
+    
+    // Update step indicators directly
+    for (let i = 1; i <= 3; i++) {
+      const stepIndicator = document.querySelector(`#step${i}`);
+      if (stepIndicator) {
+        if (i <= selectedProducts.length) {
+          stepIndicator.style.backgroundColor = '#28a745';
+          stepIndicator.style.color = 'white';
+        } else {
+          stepIndicator.style.backgroundColor = '#e0e0e0';
+          stepIndicator.style.color = '#666';
+        }
+      }
+    }
+    
+    // Update green progress line
+    const progressBar = document.querySelector('.bundler-progress-bar');
+    if (progressBar) {
+      const progressPercent = (selectedProducts.length / 3) * 100;
+      progressBar.style.setProperty('--progress-width', progressPercent + '%');
+    }
+  }
+  
+  updateAddButton();
+}
+
+// Update variant when select changes
+function updateVariant(productId, variantId) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (productCard) {
+    productCard.dataset.variantId = variantId;
+    
+    // Update price
+    const variantSelect = productCard.querySelector('.variant-select');
+    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+    const priceElement = productCard.querySelector('.product-price');
+    if (priceElement && selectedOption) {
+      priceElement.textContent = selectedOption.dataset.price;
+    }
+    
+    // Update selected product if it's in the selection
+    const selectedProduct = selectedProducts.find(p => p.id === productId);
+    if (selectedProduct) {
+      selectedProduct.variantId = parseInt(variantId);
+      selectedProduct.price = selectedOption ? selectedOption.dataset.price : '';
+    }
+  }
+}
+
+
+
+// Update add button
+function updateAddButton() {
+  const addButton = document.getElementById('addBundleBtn');
+  if (addButton) {
+    addButton.disabled = selectedProducts.length !== 3;
+    console.log('Add button disabled:', addButton.disabled, 'selectedProducts:', selectedProducts.length);
+  }
+}
+
+// Filter functions
+function filterProducts() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  currentSearch = searchTerm;
+  applyFilters();
+}
+
+function filterByCategory(category) {
+  currentFilter = category;
+  console.log('Filtering by category:', category);
+  
+  // Update filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+  
+  applyFilters();
+}
+
+function applyFilters() {
+  const products = document.querySelectorAll('.product-card');
+  
+  products.forEach(product => {
+    const title = product.querySelector('.product-title').textContent.toLowerCase();
+    const tags = product.dataset.category; // tags are stored in data-category
+    const matchesSearch = title.includes(currentSearch) || tags.includes(currentSearch);
+    
+    let matchesFilter = true;
+    if (currentFilter !== 'all') {
+      // Check if the product has the specific tag
+      const tagArray = tags.split(' ');
+      matchesFilter = tagArray.includes(currentFilter);
+      console.log('Product:', title, 'Tags:', tags, 'Tag array:', tagArray, 'Looking for:', currentFilter, 'Matches:', matchesFilter);
+    }
+    
+    if (matchesSearch && matchesFilter) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+
+// Variant change handler
+document.addEventListener('change', function(e) {
+  if (e.target.classList.contains('variant-select')) {
+    e.stopPropagation(); // Prevent triggering card click
+    
+    const productId = parseInt(e.target.dataset.productId);
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    const productCard = e.target.closest('.product-card');
+    const priceElement = productCard.querySelector('.product-price');
+    
+    // Update price display
+    priceElement.textContent = selectedOption.dataset.price;
+    
+    // Update selected product if it's in the selection
+    const selectedProduct = selectedProducts.find(p => p.id === productId);
+    if (selectedProduct) {
+      selectedProduct.variantId = parseInt(selectedOption.value);
+      selectedProduct.price = selectedOption.dataset.price;
+    }
+  }
+});
+
+// Add single product to cart (for individual products)
+function addSingleToCart(productId) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  const variantSelect = productCard.querySelector('.variant-select');
+  const selectedVariant = variantSelect.options[variantSelect.selectedIndex];
+  
+  const item = {
+    id: parseInt(selectedVariant.value),
+    quantity: 1
+  };
+  
+  // Add visual feedback
+  productCard.classList.add('adding');
+  const indicator = productCard.querySelector('.add-to-cart-indicator');
+  const originalText = indicator.textContent;
+  indicator.textContent = 'ADDING...';
+  
+  // Add to cart using Shopify AJAX API
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ items: [item] })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status) {
+      alert('Error adding product to cart: ' + data.description);
+      // Reset visual feedback on error
+      productCard.classList.remove('adding');
+      indicator.textContent = originalText;
+    } else {
+      // Success - show feedback
+      indicator.textContent = 'ADDED!';
+      indicator.style.backgroundColor = '#218838';
+      
+      setTimeout(() => {
+        productCard.classList.remove('adding');
+        indicator.textContent = originalText;
+        indicator.style.backgroundColor = '#222';
+      }, 2000);
+      
+      // Optional: Update cart count
+      if (typeof updateCartCount === 'function') {
+        updateCartCount();
+      }
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error adding product to cart. Please try again.');
+    // Reset visual feedback on error
+    productCard.classList.remove('adding');
+    indicator.textContent = originalText;
+  });
+}
+
+// Add bundle to cart
+function addBundleToCart() {
+  if (selectedProducts.length !== 3) {
+    alert('Please select exactly 3 scents');
+    return;
+  }
+  
+  const items = selectedProducts.map(product => ({
+    id: product.variantId,
+    quantity: 1,
+    properties: {
+      '_builder': 'true'
+    }
+  }));
+  
+  // Add to cart using Shopify AJAX API
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ items: items })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status) {
+      alert('Error adding bundle to cart: ' + data.description);
+    } else {
+      // Success - close modal and refresh cart
+      closeBundlerModal();
+      
+      // Add builder property to order (this will show in order tags)
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          attributes: {
+            '_builder_order': 'true'
+          }
+        })
+      });
+      
+      // Optional: Show success message or update cart count
+      if (typeof updateCartCount === 'function') {
+        updateCartCount();
+      }
+      
+      // Optional: Redirect to cart
+      // window.location.href = '/cart';
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error adding bundle to cart. Please try again.');
+  });
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('bundlerModal');
+  if (event.target === modal) {
+    closeBundlerModal();
+  }
+}
+</script> 
