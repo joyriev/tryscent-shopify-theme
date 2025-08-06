@@ -19,10 +19,10 @@
           <div class="bundler-reviews">
             <div class="stars">★★★★★</div>
             <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
-          </div>
+      </div>
 
         </div>
-      </div>
+          </div>
 
       <!-- Variant Selection -->
       <div class="variant-selection">
@@ -32,14 +32,14 @@
           <button class="variant-btn" data-variant="30ML" onclick="selectVariant('30ML')">
             <div class="variant-image">
               <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
-            </div>
+          </div>
             <span class="variant-size">30ML</span>
           </button>
           <button class="variant-btn" data-variant="50ML" onclick="selectVariant('50ML')">
             <div class="variant-badge popular">Popular</div>
             <div class="variant-image">
               <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="50ML">
-            </div>
+          </div>
             <span class="variant-size">50ML</span>
           </button>
           <button class="variant-btn active" data-variant="100ML" onclick="selectVariant('100ML')">
@@ -90,22 +90,22 @@
           <input type="text" id="searchInput" placeholder="Search for scents..." onkeyup="filterProducts()">
         </div>
         <div class="filter-container">
-          <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
-          <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
-          <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
+        <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
+        <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
+        <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
         </div>
       </div>
 
       <!-- Main Content with Sidebar -->
       <div class="bundler-main-content">
-        <!-- Products Grid -->
-        <div class="bundler-products" id="productsGrid">
-          {% for product in bundle_collection.products %}
-            {% assign default_variant = product.variants | where: "title", "100ML" | first %}
-            {% unless default_variant %}
-              {% assign default_variant = product.variants.first %}
-            {% endunless %}
-            
+      <!-- Products Grid -->
+      <div class="bundler-products" id="productsGrid">
+        {% for product in bundle_collection.products %}
+          {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+          {% unless default_variant %}
+            {% assign default_variant = product.variants.first %}
+          {% endunless %}
+          
             <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}">
               <!-- Product Badge -->
               {% if product.tags contains 'new' %}
@@ -115,24 +115,24 @@
               {% endif %}
               
               <!-- Product Image -->
-              <div class="product-image">
+            <div class="product-image">
                 <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
-              </div>
+            </div>
               
               <!-- Product Info -->
-              <div class="product-info">
-                <h3 class="product-title">{{ product.title }}</h3>
+            <div class="product-info">
+              <h3 class="product-title">{{ product.title }}</h3>
                 
                 <!-- Reviews -->
                 <div class="product-reviews">
                   <div class="stars">★★★★★</div>
                   <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
-                </div>
+              </div>
                 
                 <!-- Price Display -->
                 <div class="product-price-display">
                   <span class="product-price" id="price-{{ product.id }}">{{ default_variant.price | money }}</span>
-                </div>
+              </div>
                 
                 <!-- Add to Box Button -->
                 <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
@@ -145,8 +145,8 @@
                 <div class="check-icon">✓</div>
               </div>
             </div>
-          {% endfor %}
-        </div>
+                  {% endfor %}
+              </div>
 
         <!-- Shopping Cart Sidebar -->
         <div class="bundler-sidebar">
@@ -161,28 +161,28 @@
                   <div class="bundler-progress-fill" id="cartProgressFill"></div>
                   <div class="progress-markers" id="progressMarkers">
                     <!-- Markers will be generated dynamically -->
-                  </div>
-                </div>
               </div>
             </div>
+            </div>
+          </div>
 
             <!-- Selected Items -->
             <div class="selected-items" id="selectedItems">
               <div class="empty-cart">
                 <p>Your cart is empty.</p>
               </div>
-            </div>
+      </div>
 
             <!-- Add Bundle Button -->
             <div class="sidebar-footer">
-              <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+        <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
                 <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
                 <span class="btn-status" id="btnStatus">0/3</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        </button>
       </div>
+    </div>
+  </div>
+</div>
 
     </div>
 </div>
@@ -403,6 +403,11 @@
 
 .bundle-type-btn.active .bundle-type-title,
 .bundle-type-btn.active .bundle-type-desc {
+  color: #222 !important;
+}
+
+.bundle-type-btn .bundle-type-title,
+.bundle-type-btn .bundle-type-desc {
   color: #222;
 }
 
@@ -544,7 +549,7 @@
   .bundler-products {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 16px;
+  padding: 16px;
   }
 }
 
@@ -1488,7 +1493,7 @@ function selectProduct(productId, variantId) {
     updateProgressBarFill();
     updateSelectedItems();
     
-  } else {
+        } else {
     // Select product (check max based on bundle type)
     console.log('Current selected products:', selectedProducts.length);
     if (selectedProducts.length >= config.total) {
@@ -1543,6 +1548,7 @@ function selectProduct(productId, variantId) {
     });
     
     console.log('Product added to selection. Total:', selectedProducts.length);
+    console.log('Selected products:', selectedProducts);
     
     // Update progress text and indicators
     updateProgressText();
@@ -1714,10 +1720,7 @@ function updateProductGridPrices() {
 
 // Update bundle prices based on selected variants
 function updateBundlePrices() {
-  const config = bundleConfig[currentBundleType];
   const basePrice = variantPrices[currentVariant];
-  const totalPrice = config.buy * basePrice;
-  const savings = config.free * basePrice;
   
   // Format prices using Shopify's money format
   const formatMoney = (cents) => {
@@ -1737,17 +1740,24 @@ function updateBundlePrices() {
     }
   };
   
-  // Update price display
-  const priceElement = document.getElementById(`price-${currentBundleType}`);
-  if (priceElement) {
-    priceElement.textContent = formatMoney(totalPrice);
-  }
-  
-  // Update savings display
-  const savingsElement = document.getElementById(`savings-${currentBundleType}`);
-  if (savingsElement) {
-    savingsElement.textContent = `SAVE ${formatMoney(savings)}`;
-  }
+  // Update ALL bundle prices
+  Object.keys(bundleConfig).forEach(bundleType => {
+    const config = bundleConfig[bundleType];
+    const totalPrice = config.buy * basePrice;
+    const savings = config.free * basePrice;
+    
+    // Update price display
+    const priceElement = document.getElementById(`price-${bundleType}`);
+    if (priceElement) {
+      priceElement.textContent = formatMoney(totalPrice);
+    }
+    
+    // Update savings display
+    const savingsElement = document.getElementById(`savings-${bundleType}`);
+    if (savingsElement) {
+      savingsElement.textContent = `SAVE ${formatMoney(savings)}`;
+    }
+  });
 }
 
 // Change quantity function
