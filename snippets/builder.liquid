@@ -8,66 +8,48 @@
   {% assign bundle_collection = collections.first %}
 {% endunless %}
 
-<!-- Debug info -->
-<div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">
-  <strong>Debug Info:</strong><br>
-  {% if bundle_collection != blank %}
-    Collection 'smells-like' exists: YES<br>
-    Collection products count: {{ bundle_collection.products.size }}<br>
-    Collection handle: {{ bundle_collection.handle }}<br>
-    Collection title: {{ bundle_collection.title }}
-  {% else %}
-    Collection 'smells-like' exists: NO<br>
-    Collection not found
-  {% endif %}
-</div>
 
-{% if bundle_collection == blank %}
-  <div style="background: #ffe6e6; padding: 20px; margin: 20px 0; border: 1px solid #ff9999; border-radius: 8px;">
-    <h3>⚠️ Collection Not Found</h3>
-    <p>The collection 'smells-like' was not found. Please check if:</p>
-    <ul>
-      <li>The collection exists in your Shopify admin</li>
-      <li>The collection handle is exactly 'smells-like'</li>
-      <li>The collection is published and visible</li>
-    </ul>
-    <p><strong>Available collections:</strong></p>
-    <ul>
-      {% for collection in collections %}
-        <li>{{ collection.handle }} - {{ collection.title }} ({{ collection.products.size }} products)</li>
-      {% endfor %}
-    </ul>
-  </div>
-{% endif %}
 
 <div class="product-bundler" data-bundler>
       <!-- Header -->
       <div class="bundler-header">
         <div class="bundler-title">
-          <h2>Search Selector</h2>
-          <p>Choose 3 scents to try</p>
+          <h2>Build your own bundle!</h2>
+          <p>Choose your bundle type and select your scents</p>
+        </div>
+      </div>
+
+      <!-- Bundle Type Selection -->
+      <div class="bundle-type-selection">
+        <h3>Select Bundle Type:</h3>
+        <div class="bundle-type-buttons">
+          <button class="bundle-type-btn active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
+            <span class="bundle-type-title">2+1 FREE</span>
+            <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
+          </button>
+          <button class="bundle-type-btn" data-bundle-type="3+2" onclick="selectBundleType('3+2')">
+            <span class="bundle-type-title">3+2 FREE</span>
+            <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
+          </button>
+          <button class="bundle-type-btn" data-bundle-type="4+3" onclick="selectBundleType('4+3')">
+            <span class="bundle-type-title">4+3 FREE</span>
+            <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
+          </button>
+          <button class="bundle-type-btn" data-bundle-type="5+4" onclick="selectBundleType('5+4')">
+            <span class="bundle-type-title">5+4 FREE</span>
+            <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
+          </button>
         </div>
       </div>
 
       <!-- Progress Bar -->
       <div class="bundler-progress">
         <div class="bundler-progress-text">
-          <span id="progressText">Choose your scents (0 of 3 selected)</span>
+          <span id="progressText">Choose your bundle type first</span>
           <span id="bundleReadyText" class="bundle-ready-text" style="display: none;">Perfect! Your bundle is ready</span>
         </div>
-        <div class="bundler-progress-bar">
-          <div class="progress-step" data-step="1">
-            <div class="progress-indicator" id="step1"></div>
-            <span>1st Bottle</span>
-          </div>
-          <div class="progress-step" data-step="2">
-            <div class="progress-indicator" id="step2"></div>
-            <span>2nd Bottle</span>
-          </div>
-          <div class="progress-step" data-step="3">
-            <div class="progress-indicator" id="step3"></div>
-            <span>3rd FREE BOTTLE</span>
-          </div>
+        <div class="bundler-progress-bar" id="progressBar">
+          <!-- Progress steps will be generated dynamically -->
         </div>
       </div>
 
@@ -174,6 +156,70 @@
   color: #666;
 }
 
+/* Bundle Type Selection */
+.bundle-type-selection {
+  padding: 20px 32px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.bundle-type-selection h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+}
+
+.bundle-type-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bundle-type-btn {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.bundle-type-btn:hover {
+  border-color: #28a745;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
+}
+
+.bundle-type-btn.active {
+  border-color: #28a745;
+  background-color: #f8fff9;
+  box-shadow: 0 0 0 2px #28a745;
+}
+
+.bundle-type-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.bundle-type-desc {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.bundle-type-btn.active .bundle-type-title {
+  color: #28a745;
+}
+
 /* Progress Bar */
 .bundler-progress {
   padding: 20px 32px;
@@ -263,6 +309,20 @@
   font-size: 0.8rem;
   color: #666;
   text-align: center;
+}
+
+.progress-step.buy-step span {
+  color: #222;
+  font-weight: 600;
+}
+
+.progress-step.free-step span {
+  color: #28a745;
+  font-weight: 700;
+}
+
+.progress-step.free-step .progress-indicator {
+  border-color: #28a745;
 }
 
 /* Search */
@@ -612,11 +672,117 @@
 let selectedProducts = [];
 let currentFilter = 'all';
 let currentSearch = '';
+let currentBundleType = '2+1'; // Default bundle type
+let bundleConfig = {
+  '2+1': { buy: 2, free: 1, total: 3 },
+  '3+2': { buy: 3, free: 2, total: 5 },
+  '4+3': { buy: 4, free: 3, total: 7 },
+  '5+4': { buy: 5, free: 4, total: 9 }
+};
+
+// Bundle type selection
+function selectBundleType(bundleType) {
+  currentBundleType = bundleType;
+  selectedProducts = []; // Reset selections when changing bundle type
+  
+  // Update button states
+  document.querySelectorAll('.bundle-type-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.closest('.bundle-type-btn').classList.add('active');
+  
+  // Generate progress bar
+  generateProgressBar();
+  
+  // Update progress text
+  updateProgressText();
+  
+  // Update add button
+  updateAddButton();
+  
+  // Reset product selections
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.classList.remove('selected');
+    const button = card.querySelector('.add-to-cart-indicator');
+    if (button) {
+      button.textContent = 'SELECT FOR BUNDLE';
+      button.style.backgroundColor = '#222';
+      button.style.color = 'white';
+      button.style.fontWeight = 'normal';
+    }
+  });
+}
+
+// Generate progress bar based on bundle type
+function generateProgressBar() {
+  const progressBar = document.getElementById('progressBar');
+  const config = bundleConfig[currentBundleType];
+  
+  let progressHTML = '';
+  
+  for (let i = 1; i <= config.total; i++) {
+    const isFree = i > config.buy;
+    const stepClass = isFree ? 'free-step' : 'buy-step';
+    const stepText = isFree ? `${i}${getOrdinalSuffix(i)} FREE` : `${i}${getOrdinalSuffix(i)} Bottle`;
+    
+    progressHTML += `
+      <div class="progress-step ${stepClass}" data-step="${i}">
+        <div class="progress-indicator" id="step${i}"></div>
+        <span>${stepText}</span>
+      </div>
+    `;
+  }
+  
+  progressBar.innerHTML = progressHTML;
+}
+
+// Get ordinal suffix (1st, 2nd, 3rd, etc.)
+function getOrdinalSuffix(num) {
+  if (num >= 11 && num <= 13) return 'th';
+  switch (num % 10) {
+    case 1: return 'st';
+    case 2: return 'nd';
+    case 3: return 'rd';
+    default: return 'th';
+  }
+}
+
+// Update progress text
+function updateProgressText() {
+  const progressText = document.getElementById('progressText');
+  const config = bundleConfig[currentBundleType];
+  
+  if (selectedProducts.length === 0) {
+    progressText.textContent = `Choose ${config.buy} scents to get ${config.free} free`;
+  } else if (selectedProducts.length < config.buy) {
+    progressText.textContent = `Choose ${config.buy - selectedProducts.length} more scents to get ${config.free} free`;
+  } else if (selectedProducts.length < config.total) {
+    progressText.textContent = `Great! You can add ${config.total - selectedProducts.length} more scents for free`;
+  } else {
+    progressText.textContent = 'Perfect! Your bundle is ready';
+  }
+}
 
 // Initialize bundler
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('Bundle page script loaded!');
+  console.log('Products grid found:', document.getElementById('productsGrid'));
+  console.log('Product cards found:', document.querySelectorAll('.product-card').length);
+  
+  // Check if functions are defined
+  console.log('selectProduct function exists:', typeof selectProduct);
+  console.log('applyFilters function exists:', typeof applyFilters);
+  
+  // Generate initial progress bar
+  generateProgressBar();
+  updateProgressText();
+  
   // updateProgress will be called after function is defined
-  applyFilters(); // Apply initial filters
+  if (typeof applyFilters === 'function') {
+    applyFilters(); // Apply initial filters
+  } else {
+    console.error('applyFilters function not found!');
+  }
 });
 
 
@@ -633,6 +799,8 @@ function selectProduct(productId, variantId) {
     return;
   }
   
+  const config = bundleConfig[currentBundleType];
+  
   // Check if already selected by looking for the selected class
   const isSelected = productCard.classList.contains('selected') || productCard.style.borderColor === 'rgb(40, 167, 69)';
   console.log('isSelected:', isSelected);
@@ -640,12 +808,6 @@ function selectProduct(productId, variantId) {
   if (isSelected) {
     // Deselect product
     console.log('Deselecting product');
-    productCard.classList.remove('selected');
-    
-    // Reset to default styles
-    productCard.classList.remove('selected');
-    
-    // Remove selected class
     productCard.classList.remove('selected');
     
     // Reset button text
@@ -659,37 +821,15 @@ function selectProduct(productId, variantId) {
     
     selectedProducts = selectedProducts.filter(p => p.id !== productId);
     
-    // Update progress bar when deselecting
-    const progressText = document.querySelector('#progressText');
-    if (progressText) {
-      progressText.textContent = `Choose your scents (${selectedProducts.length} of 3 selected)`;
-    }
+    // Update progress text and indicators
+    updateProgressText();
+    updateProgressIndicators();
     
-    // Update step indicators when deselecting
-    for (let i = 1; i <= 3; i++) {
-      const stepIndicator = document.querySelector(`#step${i}`);
-      if (stepIndicator) {
-        if (i <= selectedProducts.length) {
-          stepIndicator.style.backgroundColor = '#28a745';
-          stepIndicator.style.color = 'white';
-        } else {
-          stepIndicator.style.backgroundColor = '#e0e0e0';
-          stepIndicator.style.color = '#666';
-        }
-      }
-    }
-    
-    // Update green progress line when deselecting
-    const progressBar = document.querySelector('.bundler-progress-bar');
-    if (progressBar) {
-      const progressPercent = (selectedProducts.length / 3) * 100;
-      progressBar.style.setProperty('--progress-width', progressPercent + '%');
-    }
   } else {
-    // Select product (max 3)
+    // Select product (check max based on bundle type)
     console.log('Current selected products:', selectedProducts.length);
-    if (selectedProducts.length >= 3) {
-      alert('You can only select 3 scents');
+    if (selectedProducts.length >= config.total) {
+      alert(`You can only select ${config.total} scents for this bundle`);
       return;
     }
     
@@ -706,12 +846,6 @@ function selectProduct(productId, variantId) {
     // Add selected class
     productCard.classList.add('selected');
     
-    // Force visual update with JavaScript
-    productCard.classList.add('selected');
-    
-    // Add selected class
-    productCard.classList.add('selected');
-    
     // Find and update the button
     const button = productCard.querySelector('.add-to-cart-indicator');
     
@@ -723,11 +857,6 @@ function selectProduct(productId, variantId) {
       console.log('Button changed to SELECTED');
     }
     
-    console.log('Selected class added:', productCard.classList.contains('selected'));
-    console.log('Card classes:', productCard.className);
-    console.log('Card styles applied');
-    console.log('Card selection completed');
-    
     selectedProducts.push({
       id: productId,
       variantId: parseInt(variantId),
@@ -737,35 +866,37 @@ function selectProduct(productId, variantId) {
     
     console.log('Product added to selection. Total:', selectedProducts.length);
     
-    // Update progress bar directly - just like the button highlighting
-    const progressText = document.querySelector('#progressText');
-    if (progressText) {
-      progressText.textContent = `Choose your scents (${selectedProducts.length} of 3 selected)`;
-    }
-    
-    // Update step indicators directly
-    for (let i = 1; i <= 3; i++) {
-      const stepIndicator = document.querySelector(`#step${i}`);
-      if (stepIndicator) {
-        if (i <= selectedProducts.length) {
-          stepIndicator.style.backgroundColor = '#28a745';
-          stepIndicator.style.color = 'white';
-        } else {
-          stepIndicator.style.backgroundColor = '#e0e0e0';
-          stepIndicator.style.color = '#666';
-        }
-      }
-    }
-    
-    // Update green progress line
-    const progressBar = document.querySelector('.bundler-progress-bar');
-    if (progressBar) {
-      const progressPercent = (selectedProducts.length / 3) * 100;
-      progressBar.style.setProperty('--progress-width', progressPercent + '%');
-    }
+    // Update progress text and indicators
+    updateProgressText();
+    updateProgressIndicators();
   }
   
   updateAddButton();
+}
+
+// Update progress indicators
+function updateProgressIndicators() {
+  const config = bundleConfig[currentBundleType];
+  
+  for (let i = 1; i <= config.total; i++) {
+    const stepIndicator = document.querySelector(`#step${i}`);
+    if (stepIndicator) {
+      if (i <= selectedProducts.length) {
+        stepIndicator.style.backgroundColor = '#28a745';
+        stepIndicator.style.color = 'white';
+      } else {
+        stepIndicator.style.backgroundColor = '#e0e0e0';
+        stepIndicator.style.color = '#666';
+      }
+    }
+  }
+  
+  // Update green progress line
+  const progressBar = document.querySelector('.bundler-progress-bar');
+  if (progressBar) {
+    const progressPercent = (selectedProducts.length / config.total) * 100;
+    progressBar.style.setProperty('--progress-width', progressPercent + '%');
+  }
 }
 
 // Update variant when select changes
@@ -797,8 +928,21 @@ function updateVariant(productId, variantId) {
 function updateAddButton() {
   const addButton = document.getElementById('addBundleBtn');
   if (addButton) {
-    addButton.disabled = selectedProducts.length !== 3;
-    console.log('Add button disabled:', addButton.disabled, 'selectedProducts:', selectedProducts.length);
+    const config = bundleConfig[currentBundleType];
+    const minRequired = config.buy; // Minimum required to enable button
+    
+    addButton.disabled = selectedProducts.length < minRequired;
+    
+    // Update button text based on selection
+    if (selectedProducts.length >= config.total) {
+      addButton.textContent = `ADD ${config.total} SCENTS TO CART`;
+    } else if (selectedProducts.length >= minRequired) {
+      addButton.textContent = `ADD ${selectedProducts.length} SCENTS TO CART`;
+    } else {
+      addButton.textContent = `SELECT ${minRequired - selectedProducts.length} MORE SCENTS`;
+    }
+    
+    console.log('Add button disabled:', addButton.disabled, 'selectedProducts:', selectedProducts.length, 'minRequired:', minRequired);
   }
 }
 
@@ -928,14 +1072,21 @@ function addSingleToCart(productId) {
 
 // Add bundle to cart
 function addBundleToCart() {
-  if (selectedProducts.length !== 3) {
-    alert('Please select exactly 3 scents');
+  const config = bundleConfig[currentBundleType];
+  const minRequired = config.buy;
+  
+  if (selectedProducts.length < minRequired) {
+    alert(`Please select at least ${minRequired} scents for this bundle`);
     return;
   }
   
   const items = selectedProducts.map(product => ({
     id: product.variantId,
-    quantity: 1
+    quantity: 1,
+    properties: {
+      '_bundle_type': currentBundleType,
+      '_bundle_total': selectedProducts.length.toString()
+    }
   }));
   
   // Add to cart using Shopify AJAX API
@@ -952,7 +1103,7 @@ function addBundleToCart() {
       alert('Error adding bundle to cart: ' + data.description);
     } else {
       // Success - show success message
-      alert('Bundle added to cart successfully!');
+      alert(`Bundle added to cart successfully! You selected ${selectedProducts.length} scents.`);
       
       // Add builder tag to cart attributes
       fetch('/cart/update.js', {
@@ -962,7 +1113,8 @@ function addBundleToCart() {
         },
         body: JSON.stringify({
           attributes: {
-            'builder': 'true'
+            '_bundle_type': currentBundleType,
+            '_bundle_total': selectedProducts.length.toString()
           }
         })
       });
