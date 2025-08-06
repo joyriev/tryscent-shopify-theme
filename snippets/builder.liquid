@@ -196,40 +196,74 @@
                     {% endfor %}
                 </div>
 
-          <!-- Shopping Cart Sidebar -->
-          <div class="bundler-sidebar">
-            <div class="sidebar-content">
-              <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
-              
-              <!-- Progress Section -->
-              <div class="cart-progress">
-                <div class="progress-text" id="cartProgressText">Please select at least 3 scents</div>
-                <div class="bundler-progress-container">
-                  <div class="bundler-progress-bar">
-                    <div class="bundler-progress-fill" id="cartProgressFill"></div>
-                    <div class="progress-markers" id="progressMarkers">
-                      <!-- Markers will be generated dynamically -->
-                </div>
-              </div>
-              </div>
+                <!-- Shopping Cart Sidebar -->
+      <div class="bundler-sidebar">
+        <div class="sidebar-content">
+          <!-- Mobile Header (hidden on desktop) -->
+          <div class="sidebar-header" style="display: none;">
+            <h3 class="sidebar-title" id="sidebarTitleMobile">Shopping Cart</h3>
+            <button class="keep-shopping-btn" onclick="closeFullscreenSidebar()">Keep Shopping</button>
+          </div>
+          
+          <!-- Desktop Header (hidden on mobile) -->
+          <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
+          
+          <!-- Progress Section -->
+          <div class="cart-progress">
+            <div class="progress-text" id="cartProgressText">Please select at least 3 scents</div>
+            <div class="bundler-progress-container">
+              <div class="bundler-progress-bar">
+                <div class="bundler-progress-fill" id="cartProgressFill"></div>
+                <div class="progress-markers" id="progressMarkers">
+                  <!-- Markers will be generated dynamically -->
             </div>
-
-              <!-- Selected Items -->
-              <div class="selected-items" id="selectedItems">
-                <div class="empty-cart">
-                  <p>Your cart is empty.</p>
-                </div>
+          </div>
+          </div>
         </div>
 
-              <!-- Add Bundle Button -->
-              <div class="sidebar-footer">
-          <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
-                  <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
-                  <span class="btn-status" id="btnStatus">0/3</span>
-          </button>
-        </div>
-      </div>
+          <!-- Save Info (mobile only) -->
+          <div class="save-info" style="display: none;" id="saveInfo">
+            Save $45 with 2+1 Bundle
+          </div>
+
+          <!-- Selected Items -->
+          <div class="selected-items" id="selectedItems">
+            <div class="empty-cart">
+              <p>Your cart is empty.</p>
+            </div>
     </div>
+
+          <!-- Benefits Section (mobile only) -->
+          <div class="benefits-section" style="display: none;" id="benefitsSection">
+            <div class="benefits-title">Why Choose TryScent?</div>
+            <div class="benefits-list">
+              <div class="benefit-item">Scent lasts 12 hours</div>
+              <div class="benefit-item">You pay 1/10 of original prices</div>
+              <div class="benefit-item">You can return up to 60 days</div>
+              <div class="benefit-item">Worldwide shipping</div>
+              <div class="benefit-item">Discount on future purchases</div>
+              <div class="benefit-item">Scent guarantee</div>
+            </div>
+          </div>
+
+          <!-- Add Bundle Button -->
+          <div class="sidebar-footer">
+    <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+            <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
+            <span class="btn-status" id="btnStatus">0/3</span>
+    </button>
+    
+    <!-- Mobile Benefits Footer -->
+    <div class="mobile-benefits" style="display: none;">
+      <div class="mobile-benefit-item">5-8 Days Shipping Worldwide</div>
+      <div class="mobile-benefit-item">60-days Money Back Guarantee</div>
+    </div>
+  </div>
+</div>
+      </div>
+
+      <!-- Backdrop for mobile fullscreen -->
+      <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeFullscreenSidebar()"></div>
       </div>
 </div>
 
@@ -1398,6 +1432,583 @@ color: white;
     height: 200px;
   }
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .product-bundler {
+    padding: 10px;
+    padding-bottom: 200px; /* Space for sticky footer */
+  }
+
+  .bundler-container {
+    padding: 10px;
+    gap: 0;
+  }
+
+  /* Header Mobile */
+  .bundler-header {
+    padding: 20px 16px 20px 16px;
+  }
+
+  .bundler-title h1 {
+    font-size: 3.5rem;
+    margin: 0 0 8px 0;
+  }
+
+  .bundler-subtitle {
+    font-size: 1.6rem;
+    margin: 0 0 16px 0;
+  }
+
+  .bundler-reviews {
+    gap: 12px;
+    margin-bottom: 32px;
+    font-size: 1.4rem;
+  }
+
+  .bundler-reviews .rating img {
+    height: 20px;
+    width: 100px;
+  }
+
+  .bundler-reviews .rating-text {
+    font-size: 1rem;
+  }
+
+  .bundler-reviews .rating-count {
+    font-size: 1.4rem;
+  }
+
+  /* Variant Selection Mobile */
+  .variant-selection {
+    padding: 20px 16px;
+    margin-bottom: 8px;
+  }
+
+  .variant-title {
+    font-size: 2rem;
+    margin: 0 0 12px 0;
+  }
+
+  .variant-subtitle {
+    font-size: 1.2rem;
+    margin: 0 0 24px 0;
+  }
+
+  .variant-buttons {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .variant-btn {
+    padding: 20px;
+    gap: 12px;
+    min-width: 120px;
+    flex: 1;
+    max-width: 150px;
+  }
+
+  .variant-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .variant-size {
+    font-size: 1.4rem;
+  }
+
+  .variant-badge {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    top: -8px;
+  }
+
+  /* Bundle Type Selection Mobile - 2x2 Grid */
+  .bundle-type-selection {
+    padding: 20px 16px;
+    margin-bottom: 8px;
+  }
+
+  .bundle-type-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .bundle-type-btn {
+    padding: 16px 8px;
+    gap: 6px;
+    min-width: auto;
+    flex: none;
+  }
+
+  .bundle-type-desc {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .bundle-total-price {
+    font-size: 1.4rem;
+  }
+
+  .bundle-price {
+    font-size: 0.8rem;
+  }
+
+  .bundle-savings {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .bundle-badge {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    top: -6px;
+  }
+
+  /* Search and Filter Mobile */
+  .bundler-search-filter {
+    padding: 16px;
+    margin-bottom: 8px;
+  }
+
+  .search-container input {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .filter-container {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  /* Main Content Layout Mobile */
+  .bundler-main-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Products Grid Mobile - 2 Columns */
+  .bundler-products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .product-card {
+    padding: 12px;
+    min-height: 350px;
+  }
+
+  .product-title {
+    font-size: 1.2rem;
+    margin: 0 0 6px 0;
+  }
+
+  .product-image img {
+    height: 180px;
+  }
+
+  .product-price {
+    font-size: 1.4rem;
+  }
+
+  .product-compare-price {
+    font-size: 1rem;
+  }
+
+  .add-to-bundle-btn {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  /* Sidebar Mobile - Sticky Footer */
+  .bundler-sidebar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    height: auto;
+    max-height: none;
+    z-index: 1000;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .sidebar-content {
+    padding: 16px;
+  }
+
+  .sidebar-title {
+    font-size: 1.1rem;
+    margin: 0 0 12px 0;
+  }
+
+  /* Cart Progress Mobile */
+  .cart-progress {
+    margin-bottom: 16px;
+    padding: 12px;
+  }
+
+  .progress-text {
+    font-size: 0.9rem;
+  }
+
+  .bundler-progress-container {
+    margin-top: 8px;
+  }
+
+  .bundler-progress-bar {
+    height: 8px;
+  }
+
+  .progress-markers {
+    top: -4px;
+  }
+
+  .progress-marker {
+    width: 16px;
+    height: 16px;
+    font-size: 0.7rem;
+  }
+
+  /* Selected Items Mobile */
+  .selected-items {
+    max-height: 200px;
+    margin-bottom: 16px;
+  }
+
+  .selected-item {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .selected-item-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .selected-item-info {
+    flex: 1;
+  }
+
+  .selected-item-title {
+    font-size: 0.9rem;
+  }
+
+  .selected-item-price {
+    font-size: 0.8rem;
+  }
+
+  .selected-item-quantity {
+    margin-right: 4px;
+  }
+
+  .selected-item-quantity .quantity-btn {
+    width: 20px;
+    height: 24px;
+    font-size: 0.8rem;
+  }
+
+  .selected-item-quantity .quantity-display {
+    width: 28px;
+    height: 24px;
+    font-size: 0.8rem;
+  }
+
+  .remove-item-btn {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  /* Add Bundle Button Mobile */
+  .add-bundle-btn {
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+
+  /* Empty Cart Mobile */
+  .empty-cart {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .empty-cart p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  /* Full Screen Sidebar Mobile */
+  .bundler-sidebar.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2000;
+    border-radius: 0;
+    overflow-y: auto;
+  }
+
+  .bundler-sidebar.fullscreen .sidebar-content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bundler-sidebar.fullscreen .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .bundler-sidebar.fullscreen .sidebar-title {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .bundler-sidebar.fullscreen .keep-shopping-btn {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .bundler-sidebar.fullscreen .keep-shopping-btn:hover {
+    background: #e9ecef;
+    color: #222;
+  }
+
+  .bundler-sidebar.fullscreen .selected-items {
+    flex: 1;
+    max-height: none;
+    overflow-y: auto;
+  }
+
+  .bundler-sidebar.fullscreen .selected-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+  }
+
+  .bundler-sidebar.fullscreen .selected-item-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bundler-sidebar.fullscreen .selected-item-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .bundler-sidebar.fullscreen .selected-item-price {
+    font-size: 0.9rem;
+    color: #28a745;
+    font-weight: 600;
+  }
+
+  .bundler-sidebar.fullscreen .selected-item-quantity {
+    margin-right: 8px;
+  }
+
+  .bundler-sidebar.fullscreen .selected-item-quantity .quantity-btn {
+    width: 28px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .bundler-sidebar.fullscreen .selected-item-quantity .quantity-display {
+    width: 36px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .bundler-sidebar.fullscreen .remove-item-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Benefits Section Mobile */
+  .bundler-sidebar.fullscreen .benefits-section {
+    margin-top: 20px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .bundler-sidebar.fullscreen .benefits-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #222;
+  }
+
+  .bundler-sidebar.fullscreen .benefits-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .bundler-sidebar.fullscreen .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .bundler-sidebar.fullscreen .benefit-item::before {
+    content: "✔";
+    color: #28a745;
+    font-weight: bold;
+  }
+
+  /* Save Info Mobile */
+  .bundler-sidebar.fullscreen .save-info {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  /* Add Bundle Button Fullscreen Mobile */
+  .bundler-sidebar.fullscreen .add-bundle-btn {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  /* Backdrop for fullscreen */
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+  }
+
+  .sidebar-backdrop.active {
+    display: block;
+  }
+
+  /* Mobile Benefits Footer */
+  .mobile-benefits {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mobile-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .mobile-benefit-item::before {
+    content: "✔";
+    color: #28a745;
+    font-weight: bold;
+  }
+
+  /* Hide desktop sidebar on mobile */
+  .bundler-sidebar:not(.fullscreen) {
+    display: none;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .bundler-title h1 {
+    font-size: 3rem;
+  }
+
+  .bundler-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .variant-buttons {
+    gap: 12px;
+  }
+
+  .variant-btn {
+    min-width: 100px;
+    padding: 16px;
+  }
+
+  .variant-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bundle-type-buttons {
+    gap: 8px;
+  }
+
+  .bundle-type-btn {
+    padding: 12px 6px;
+  }
+
+  .bundle-type-desc {
+    font-size: 0.8rem;
+  }
+
+  .bundle-total-price {
+    font-size: 1.2rem;
+  }
+
+  .bundler-products {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .product-card {
+    min-height: 320px;
+  }
+
+  .product-image img {
+    height: 160px;
+  }
+
+  .bundler-sidebar.fullscreen .benefits-list {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 
 <script>
@@ -2272,6 +2883,104 @@ function addSingleToCart(productId) {
   });
 }
 
+// Mobile sidebar functions
+function openFullscreenSidebar() {
+  const sidebar = document.querySelector('.bundler-sidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  const mobileHeader = document.querySelector('.sidebar-header');
+  const desktopHeader = document.getElementById('sidebarTitle');
+  const saveInfo = document.getElementById('saveInfo');
+  const benefitsSection = document.getElementById('benefitsSection');
+  
+  sidebar.classList.add('fullscreen');
+  backdrop.classList.add('active');
+  mobileHeader.style.display = 'flex';
+  desktopHeader.style.display = 'none';
+  saveInfo.style.display = 'block';
+  benefitsSection.style.display = 'block';
+  
+  // Update save info
+  updateSaveInfo();
+  
+  // Prevent body scroll
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFullscreenSidebar() {
+  const sidebar = document.querySelector('.bundler-sidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  const mobileHeader = document.querySelector('.sidebar-header');
+  const desktopHeader = document.getElementById('sidebarTitle');
+  const saveInfo = document.getElementById('saveInfo');
+  const benefitsSection = document.getElementById('benefitsSection');
+  
+  sidebar.classList.remove('fullscreen');
+  backdrop.classList.remove('active');
+  mobileHeader.style.display = 'none';
+  desktopHeader.style.display = 'block';
+  saveInfo.style.display = 'none';
+  benefitsSection.style.display = 'none';
+  
+  // Restore body scroll
+  document.body.style.overflow = '';
+}
+
+function updateSaveInfo() {
+  const saveInfo = document.getElementById('saveInfo');
+  const config = bundleConfig[currentBundleType];
+  
+  // Calculate savings based on bundle type
+  let savings = 0;
+  const basePrice = 2699; // Base price in cents
+  
+  switch(currentBundleType) {
+    case '2+1':
+      savings = basePrice; // Save 1 bottle
+      break;
+    case '3+2':
+      savings = basePrice * 2; // Save 2 bottles
+      break;
+    case '4+3':
+      savings = basePrice * 3; // Save 3 bottles
+      break;
+    case '5+4':
+      savings = basePrice * 4; // Save 4 bottles
+      break;
+  }
+  
+  const savingsFormatted = (savings / 100).toFixed(0);
+  saveInfo.textContent = `Save $${savingsFormatted} with ${currentBundleType} Bundle`;
+}
+
+// Add click handler to sidebar for mobile
+document.addEventListener('DOMContentLoaded', function() {
+  const sidebar = document.querySelector('.bundler-sidebar');
+  const mobileBenefits = document.querySelector('.mobile-benefits');
+  
+  // Show mobile benefits on mobile
+  if (window.innerWidth <= 768) {
+    mobileBenefits.style.display = 'flex';
+    
+    sidebar.addEventListener('click', function(e) {
+      // Don't open if clicking on buttons or links
+      if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) {
+        return;
+      }
+      openFullscreenSidebar();
+    });
+  }
+  
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      closeFullscreenSidebar();
+      mobileBenefits.style.display = 'none';
+    } else {
+      mobileBenefits.style.display = 'flex';
+    }
+  });
+});
+
 // Add bundle to cart
 function addBundleToCart() {
   const config = bundleConfig[currentBundleType];
@@ -2359,6 +3068,11 @@ function updateAddButton() {
     } else {
       btnText.textContent = `Please Select ${config.total - totalItems} More Scents`;
       btnStatus.textContent = `${totalItems}/${config.total}`;
+    }
+    
+    // Update mobile save info if on mobile
+    if (window.innerWidth <= 768) {
+      updateSaveInfo();
     }
   }
 }
