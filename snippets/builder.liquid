@@ -1164,25 +1164,45 @@
   background: white;
 }
 
-.variant-selector {
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
-  padding: 12px 16px;
+  padding: 8px;
   border: 2px solid #28a745;
   border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 700;
   background: white;
-  color: #28a745;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-.variant-selector:hover {
-  background: #f8f9fa;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+.quantity-selector .quantity-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #28a745;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-selector .quantity-btn:hover {
+  background: #218838;
+  transform: scale(1.1);
+}
+
+.quantity-selector .quantity-display {
+  min-width: 40px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
 }
 
 .category-tag {
@@ -1712,29 +1732,23 @@ function selectProduct(productId, variantId) {
     // Add selected class
     productCard.classList.add('selected');
     
-    // Change button to variant selector
+    // Change button to quantity selector
     const button = productCard.querySelector('.add-to-bundle-btn');
     
     if (button) {
-      // Create variant selector
-      const variantSelector = document.createElement('select');
-      variantSelector.className = 'variant-selector';
-      variantSelector.innerHTML = `
-        <option value="30ML">30ML</option>
-        <option value="50ML">50ML</option>
-        <option value="100ML" selected>100ML</option>
+      // Create quantity selector
+      const quantitySelector = document.createElement('div');
+      quantitySelector.className = 'quantity-selector';
+      quantitySelector.innerHTML = `
+        <button class="quantity-btn minus" onclick="changeProductQuantity(${productId}, -1)">-</button>
+        <span class="quantity-display">1</span>
+        <button class="quantity-btn plus" onclick="changeProductQuantity(${productId}, 1)">+</button>
       `;
       
       // Replace button with selector
-      button.parentNode.replaceChild(variantSelector, button);
+      button.parentNode.replaceChild(quantitySelector, button);
       
-      // Add event listener to selector
-      variantSelector.addEventListener('change', function() {
-        const selectedVariant = this.value;
-        addToCart(productId, selectedVariant);
-      });
-      
-      console.log('Button changed to variant selector');
+      console.log('Button changed to quantity selector');
     }
     
     // Show selection indicator
@@ -1772,35 +1786,78 @@ function selectProduct(productId, variantId) {
   updateAddButton();
 }
 
-// Add to cart function
-function addToCart(productId, variant) {
-  console.log('Adding to cart:', productId, variant);
+// Change product quantity function
+function changeProductQuantity(productId, change) {
+  console.log('changeProductQuantity called:', productId, change);
   
-  // Add to cart using Shopify AJAX API
-  fetch('/cart/add.js', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      items: [{
-        id: productId,
-        quantity: 1,
-        properties: {
-          'Bundle Type': currentBundleType,
-          'Variant': variant
-        }
-      }]
-    })
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Added to cart:', data);
-    // Show success message or update cart count
-  })
-  .catch(error => {
-    console.error('Error adding to cart:', error);
-  });
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (!productCard) return;
+  
+  const quantityDisplay = productCard.querySelector('.quantity-display');
+  if (!quantityDisplay) return;
+  
+  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
+  let newQuantity = currentQuantity + change;
+  
+  // If quantity goes to 0 or below, remove product completely
+  if (newQuantity <= 0) {
+    // Remove product from selection
+    productCard.classList.remove('selected');
+    
+    // Remove quantity selector and restore button
+    const quantitySelector = productCard.querySelector('.quantity-selector');
+    if (quantitySelector) {
+      const button = document.createElement('button');
+      button.className = 'add-to-bundle-btn';
+      button.textContent = 'ADD TO BUNDLE';
+      button.onclick = () => selectProduct(productId, currentVariant);
+      quantitySelector.parentNode.replaceChild(button, quantitySelector);
+    }
+    
+    // Hide selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'none';
+    }
+    
+    // Remove from selected products
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    delete productQuantities[productId];
+    
+    // Update progress
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+    updateAddButton();
+    
+    console.log('Product removed from selection');
+    return;
+  }
+  
+  // Limit quantity to 10
+  if (newQuantity > 10) newQuantity = 10;
+  
+  // Update quantity display
+  quantityDisplay.textContent = newQuantity;
+  
+  // Update product quantities
+  productQuantities[productId] = newQuantity;
+  
+  // Update selected product
+  const selectedProduct = selectedProducts.find(p => p.id === productId);
+  if (selectedProduct) {
+    selectedProduct.quantity = newQuantity;
+  }
+  
+  // Update progress
+  updateProgressText();
+  updateCartProgress();
+  updateProgressBarFill();
+  updateSelectedItems();
+  updateAddButton();
+  
+  console.log(`Quantity changed for product ${productId}: ${currentQuantity} -> ${newQuantity}`);
 }
 
 // Update variant when select changes
@@ -1942,12 +1999,12 @@ function selectVariant(variant) {
 
 
 
-// Change quantity function
+// Change quantity function for side cart
 function changeQuantity(productId, change) {
   console.log('changeQuantity called:', productId, change);
   
   // Find quantity display in selected items
-  const selectedItem = document.querySelector(`[data-product-id="${productId}"]`);
+  const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
   const quantityDisplay = selectedItem ? selectedItem.querySelector('.quantity-display') : null;
   
   console.log('quantityDisplay found:', quantityDisplay);
@@ -1963,12 +2020,56 @@ function changeQuantity(productId, change) {
   let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
   let newQuantity = currentQuantity + change;
   
-  // Limit quantity between 1 and 10
-  if (newQuantity < 1) newQuantity = 1;
+  // If quantity goes to 0 or below, remove product completely
+  if (newQuantity <= 0) {
+    // Remove product from selection
+    const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+    if (productCard) {
+      productCard.classList.remove('selected');
+      
+      // Remove quantity selector and restore button
+      const quantitySelector = productCard.querySelector('.quantity-selector');
+      if (quantitySelector) {
+        const button = document.createElement('button');
+        button.className = 'add-to-bundle-btn';
+        button.textContent = 'ADD TO BUNDLE';
+        button.onclick = () => selectProduct(productId, currentVariant);
+        quantitySelector.parentNode.replaceChild(button, quantitySelector);
+      }
+      
+      // Hide selection indicator
+      const indicator = productCard.querySelector('.selection-indicator');
+      if (indicator) {
+        indicator.style.display = 'none';
+      }
+    }
+    
+    // Remove from selected products
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    delete productQuantities[productId];
+    
+    // Update progress
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+    updateAddButton();
+    
+    console.log('Product removed from selection');
+    return;
+  }
+  
+  // Limit quantity to 10
   if (newQuantity > 10) newQuantity = 10;
   
   quantityDisplay.textContent = newQuantity;
   productQuantities[productId] = newQuantity;
+  
+  // Update selected product
+  const selectedProduct = selectedProducts.find(p => p.id === productId);
+  if (selectedProduct) {
+    selectedProduct.quantity = newQuantity;
+  }
   
   // Update button states
   minusBtn.disabled = newQuantity <= 1;
