@@ -2913,6 +2913,7 @@ function openFullscreenSidebar() {
   const benefitsSection = document.getElementById('benefitsSection');
   const selectedItems = document.getElementById('selectedItems');
   const cartProgress = document.querySelector('.cart-progress');
+  const addButton = document.getElementById('addBundleBtn');
   
   sidebar.classList.add('fullscreen');
   backdrop.classList.add('active');
@@ -2932,6 +2933,13 @@ function openFullscreenSidebar() {
   // Update save info
   updateSaveInfo();
   
+  // Change button onclick for fullscreen
+  if (addButton) {
+    addButton.onclick = function() {
+      addBundleToCartAndCheckout();
+    };
+  }
+  
   // Prevent body scroll
   document.body.style.overflow = 'hidden';
 }
@@ -2945,6 +2953,7 @@ function closeFullscreenSidebar() {
   const benefitsSection = document.getElementById('benefitsSection');
   const selectedItems = document.getElementById('selectedItems');
   const cartProgress = document.querySelector('.cart-progress');
+  const addButton = document.getElementById('addBundleBtn');
   
   sidebar.classList.remove('fullscreen');
   backdrop.classList.remove('active');
@@ -2960,6 +2969,13 @@ function closeFullscreenSidebar() {
   selectedItems.style.maxHeight = '0';
   selectedItems.style.opacity = '0';
   selectedItems.style.marginBottom = '0';
+  
+  // Restore button onclick for sticky footer
+  if (addButton) {
+    addButton.onclick = function() {
+      addBundleToCart();
+    };
+  }
   
   // Restore body scroll
   document.body.style.overflow = '';
@@ -3041,6 +3057,21 @@ function addBundleToCart() {
   
   // Desktop: if bundle is complete, add to cart and redirect to checkout
   if (totalItems >= config.total) {
+    addBundleToCartAndCheckout();
+  }
+}
+
+// Function to add bundle to cart and go to checkout (for mobile fullscreen)
+function addBundleToCartAndCheckout() {
+  const config = bundleConfig[currentBundleType];
+  
+  // Calculate total items including quantities
+  let totalItems = 0;
+  selectedProducts.forEach(product => {
+    const quantity = productQuantities[product.id] || 1;
+    totalItems += quantity;
+  });
+  
   const items = selectedProducts.map(product => {
     return {
     id: product.variantId,
@@ -3084,8 +3115,8 @@ function addBundleToCart() {
   .catch(error => {
     // Silent error handling
   });
-  }
 }
+
 
 
 // Add missing helper functions
