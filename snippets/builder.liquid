@@ -128,12 +128,7 @@
         {% endfor %}
       </div>
 
-      <!-- Footer Button -->
-      <div class="bundler-footer">
-        <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
-          ADD BUNDLE TO CART
-        </button>
-      </div>
+
     </div>
 </div>
 
@@ -415,8 +410,16 @@
   box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
 }
 
+/* Main Content Layout */
+.bundler-main-content {
+  display: flex;
+  gap: 32px;
+  min-height: 600px;
+}
+
 /* Products Grid */
 .bundler-products {
+  flex: 1;
   padding: 32px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -424,6 +427,7 @@
   max-height: 600px;
   overflow-y: auto;
   background-color: #f8f9fa;
+  border-radius: 16px;
 }
 
 /* Mobile - 2 columns */
@@ -621,6 +625,192 @@
   font-weight: bold;
 }
 
+/* Shopping Cart Sidebar */
+.bundler-sidebar {
+  width: 320px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.sidebar-content {
+  padding: 24px;
+}
+
+.sidebar-title {
+  margin: 0 0 20px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+}
+
+/* Cart Progress */
+.cart-progress {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+.progress-markers {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.marker {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.marker.active {
+  color: #28a745;
+}
+
+/* Selected Items */
+.selected-items {
+  margin-bottom: 24px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.empty-cart p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.selected-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.selected-item:hover {
+  border-color: #28a745;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.1);
+}
+
+.selected-item-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.selected-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.selected-item-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selected-item-variant {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+
+.selected-item-remove {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.selected-item-remove:hover {
+  background: #ff6b6b;
+  color: white;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+.add-bundle-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.add-bundle-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+}
+
+.add-bundle-btn:disabled {
+  background: #e0e0e0;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .product-price {
   font-size: 1.1rem;
   font-weight: 700;
@@ -703,6 +893,19 @@
 
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .bundler-main-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .bundler-sidebar {
+    width: 100%;
+    position: static;
+    max-height: none;
+  }
+}
+
 @media (max-width: 768px) {
   .bundler-header {
     padding: 24px 20px;
@@ -729,8 +932,9 @@
     flex-wrap: wrap;
   }
   
-  .bundler-footer {
+  .bundler-products {
     padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 </style>
@@ -764,6 +968,12 @@ function selectBundleType(bundleType) {
   
   // Update progress text
   updateProgressText();
+  
+  // Update cart progress
+  updateCartProgress();
+  
+  // Update selected items
+  updateSelectedItems();
   
   // Update add button
   updateAddButton();
@@ -820,16 +1030,80 @@ function getOrdinalSuffix(num) {
 // Update progress text
 function updateProgressText() {
   const progressText = document.getElementById('progressText');
+  const cartProgressText = document.getElementById('cartProgressText');
   const config = bundleConfig[currentBundleType];
   
+  let text = '';
   if (selectedProducts.length === 0) {
-    progressText.textContent = `Choose ${config.buy} scents to get ${config.free} free`;
+    text = `Please select at least ${config.buy} scents`;
   } else if (selectedProducts.length < config.buy) {
-    progressText.textContent = `Choose ${config.buy - selectedProducts.length} more scents to get ${config.free} free`;
+    text = `Please select ${config.buy - selectedProducts.length} more scents`;
   } else if (selectedProducts.length < config.total) {
-    progressText.textContent = `Great! You can add ${config.total - selectedProducts.length} more scents for free`;
+    text = `Great! You can add ${config.total - selectedProducts.length} more scents for free`;
   } else {
-    progressText.textContent = 'Perfect! Your bundle is ready';
+    text = 'Perfect! Your bundle is ready';
+  }
+  
+  if (progressText) progressText.textContent = text;
+  if (cartProgressText) cartProgressText.textContent = text;
+}
+
+// Update cart progress bar
+function updateCartProgress() {
+  const progressFill = document.getElementById('cartProgressFill');
+  const config = bundleConfig[currentBundleType];
+  
+  if (progressFill) {
+    const progressPercent = (selectedProducts.length / config.total) * 100;
+    progressFill.style.width = progressPercent + '%';
+  }
+  
+  // Update markers
+  document.querySelectorAll('.marker').forEach(marker => {
+    const value = parseInt(marker.dataset.value);
+    if (selectedProducts.length >= value) {
+      marker.classList.add('active');
+    } else {
+      marker.classList.remove('active');
+    }
+  });
+}
+
+// Update selected items in sidebar
+function updateSelectedItems() {
+  const selectedItemsContainer = document.getElementById('selectedItems');
+  
+  if (selectedProducts.length === 0) {
+    selectedItemsContainer.innerHTML = `
+      <div class="empty-cart">
+        <p>Your cart is empty.</p>
+      </div>
+    `;
+    return;
+  }
+  
+  let itemsHTML = '';
+  selectedProducts.forEach(product => {
+    itemsHTML += `
+      <div class="selected-item" data-product-id="${product.id}">
+        <img src="${product.image || ''}" alt="${product.title}" class="selected-item-image">
+        <div class="selected-item-info">
+          <h4 class="selected-item-title">${product.title}</h4>
+          <p class="selected-item-variant">${product.variant || '100ML'}</p>
+        </div>
+        <button class="selected-item-remove" onclick="removeFromCart(${product.id})">×</button>
+      </div>
+    `;
+  });
+  
+  selectedItemsContainer.innerHTML = itemsHTML;
+}
+
+// Remove item from cart
+function removeFromCart(productId) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (productCard) {
+    selectProduct(productId, productCard.dataset.variantId);
   }
 }
 
@@ -846,6 +1120,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Generate initial progress bar
   generateProgressBar();
   updateProgressText();
+  updateCartProgress();
+  updateSelectedItems();
   
   // updateProgress will be called after function is defined
   if (typeof applyFilters === 'function') {
@@ -935,11 +1211,22 @@ function selectProduct(productId, variantId) {
       indicator.style.display = 'flex';
     }
     
+    // Get product image
+    const productImage = productCard.querySelector('.product-image img');
+    const image = productImage ? productImage.src : '';
+    
+    // Get selected variant
+    const variantSelect = productCard.querySelector('.variant-select');
+    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+    const variant = selectedOption ? selectedOption.textContent.split(' - ')[0] : '100ML';
+    
     selectedProducts.push({
       id: productId,
       variantId: parseInt(variantId),
       title: title,
-      price: price
+      price: price,
+      image: image,
+      variant: variant
     });
     
     console.log('Product added to selection. Total:', selectedProducts.length);
@@ -947,6 +1234,8 @@ function selectProduct(productId, variantId) {
     // Update progress text and indicators
     updateProgressText();
     updateProgressIndicators();
+    updateCartProgress();
+    updateSelectedItems();
   }
   
   updateAddButton();
