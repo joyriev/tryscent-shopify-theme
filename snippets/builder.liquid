@@ -4,16 +4,42 @@
 {% endcomment %}
 
 {% assign bundle_collection = collections['smells-like'] %}
+{% unless bundle_collection %}
+  {% assign bundle_collection = collections.first %}
+{% endunless %}
+
+<!-- Debug info -->
+<div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">
+  <strong>Debug Info:</strong><br>
+  Collection 'smells-like' exists: {{ bundle_collection != blank }}<br>
+  {% if bundle_collection != blank %}
+    Collection products count: {{ bundle_collection.products.size }}<br>
+    Collection handle: {{ bundle_collection.handle }}<br>
+    Collection title: {{ bundle_collection.title }}
+  {% else %}
+    Collection not found
+  {% endif %}
+</div>
+
+{% if bundle_collection == blank %}
+  <div style="background: #ffe6e6; padding: 20px; margin: 20px 0; border: 1px solid #ff9999; border-radius: 8px;">
+    <h3>⚠️ Collection Not Found</h3>
+    <p>The collection 'smells-like' was not found. Please check if:</p>
+    <ul>
+      <li>The collection exists in your Shopify admin</li>
+      <li>The collection handle is exactly 'smells-like'</li>
+      <li>The collection is published and visible</li>
+    </ul>
+    <p><strong>Available collections:</strong></p>
+    <ul>
+      {% for collection in collections %}
+        <li>{{ collection.handle }} - {{ collection.title }} ({{ collection.products.size }} products)</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
 
 <div class="product-bundler" data-bundler>
-  <!-- Przycisk otwierający modal -->
-  <button class="bundler-trigger" onclick="openBundlerModal()">
-    BUILD YOUR 2 + 1 FREE BUNDLE
-  </button>
-
-  <!-- Modal -->
-  <div id="bundlerModal" class="bundler-modal">
-    <div class="bundler-modal-content">
       <!-- Header -->
       <div class="bundler-header">
         <div class="bundler-title">
