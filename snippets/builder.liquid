@@ -131,7 +131,7 @@
                 
                 <!-- Price Display -->
                 <div class="product-price-display">
-                  <span class="product-price">{{ default_variant.price | money }}</span>
+                  <span class="product-price" id="price-{{ product.id }}">{{ default_variant.price | money }}</span>
                 </div>
                 
                 <!-- Add to Box Button -->
@@ -399,6 +399,11 @@
   background: white;
   color: #222;
   box-shadow: 0 4px 16px rgba(40, 167, 69, 0.15);
+}
+
+.bundle-type-btn.active .bundle-type-title,
+.bundle-type-btn.active .bundle-type-desc {
+  color: #222;
 }
 
 .bundle-savings {
@@ -1158,8 +1163,8 @@ let currentBundleType = '2+1'; // Default bundle type
 let productQuantities = {}; // Store quantities for each product
 let currentVariant = '100ML'; // Default variant
 let variantPrices = {
-  '30ML': 1999, // $19.99 in cents
-  '50ML': 2299, // $22.99 in cents
+  '30ML': 1399, // $13.99 in cents
+  '50ML': 1999, // $19.99 in cents
   '100ML': 2699  // $26.99 in cents
 };
 let bundleConfig = {
@@ -1252,14 +1257,11 @@ function updateProgressText() {
   let title = '';
   
   if (selectedProducts.length === 0) {
-    text = `Please select at least ${config.buy} scents`;
-    title = `Please Select At Least ${config.buy} Scents`;
-  } else if (selectedProducts.length < config.buy) {
-    text = `Please select ${config.buy - selectedProducts.length} more scents`;
-    title = `Please Select ${config.buy - selectedProducts.length} More Scents`;
+    text = `Please select at least ${config.total} scents`;
+    title = `Please Select At Least ${config.total} Scents`;
   } else if (selectedProducts.length < config.total) {
-    text = `Great! You can add ${config.total - selectedProducts.length} more scents for free`;
-    title = `Add ${config.total - selectedProducts.length} More For Free`;
+    text = `Please select ${config.total - selectedProducts.length} more scents`;
+    title = `Please Select ${config.total - selectedProducts.length} More Scents`;
   } else {
     text = 'Perfect! Your bundle is ready';
     title = 'Your Bundle Is Ready!';
@@ -1426,6 +1428,7 @@ document.addEventListener('DOMContentLoaded', function() {
   updateProgressBarFill();
   updateSelectedItems();
   updateBundlePrices();
+  updateProductGridPrices();
   
   // updateProgress will be called after function is defined
   if (typeof applyFilters === 'function') {
@@ -1448,6 +1451,10 @@ function selectProduct(productId, variantId) {
     console.error('Product card not found for ID:', productId);
     return;
   }
+  
+  // Update variant ID to current selected variant
+  const currentVariantPrice = variantPrices[currentVariant];
+  console.log('Current variant:', currentVariant, 'Price:', currentVariantPrice);
   
   const config = bundleConfig[currentBundleType];
   
@@ -1672,7 +1679,37 @@ function selectVariant(variant) {
   // Update bundle prices
   updateBundlePrices();
   
+  // Update product grid prices
+  updateProductGridPrices();
+  
   console.log('Variant selection completed');
+}
+
+// Update product grid prices
+function updateProductGridPrices() {
+  const basePrice = variantPrices[currentVariant];
+  
+  // Format prices using Shopify's money format
+  const formatMoney = (cents) => {
+    const currency = window.Shopify?.currency?.active || 'USD';
+    const rate = window.Shopify?.currency?.rate || 1;
+    const amount = (cents * rate) / 100;
+    
+    if (currency === 'USD') {
+      return `$${amount.toFixed(2)}`;
+    } else if (currency === 'EUR') {
+      return `€${amount.toFixed(2)}`;
+    } else if (currency === 'GBP') {
+      return `£${amount.toFixed(2)}`;
+    } else {
+      return `${amount.toFixed(2)} ${currency}`;
+    }
+  };
+  
+  // Update all product prices
+  document.querySelectorAll('.product-price').forEach(priceElement => {
+    priceElement.textContent = formatMoney(basePrice);
+  });
 }
 
 // Update bundle prices based on selected variants
