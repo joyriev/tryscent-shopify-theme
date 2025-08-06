@@ -472,6 +472,8 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   z-index: 10;
+  white-space: nowrap;
+  min-width: fit-content;
 }
 
 .bundle-badge.bestseller {
@@ -1294,10 +1296,11 @@ function selectBundleType(bundleType) {
   // Update bundle prices
   updateBundlePrices();
   
-  // Scroll to product grid and search
+  // Scroll to product grid and search with offset
   const productGrid = document.querySelector('.bundler-products');
   if (productGrid) {
-    productGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const offset = productGrid.offsetTop - 200;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
   }
   
   console.log('Bundle type selection completed');
@@ -1842,10 +1845,11 @@ function selectVariant(variant) {
   // Clean and update prices
   cleanDataAttributes();
   
-  // Scroll to bundle selection
+  // Scroll to bundle selection with offset
   const bundleSelection = document.querySelector('.bundle-type-selection');
   if (bundleSelection) {
-    bundleSelection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const offset = bundleSelection.offsetTop - 200;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
   }
   
   console.log('Variant selection completed');
