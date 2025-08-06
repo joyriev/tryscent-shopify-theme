@@ -548,13 +548,14 @@
   padding: 24px 32px;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 200px;
   z-index: 50;
   transition: all 0.3s ease;
   width: 100%;
   left: 0;
+  border-radius: 16px;
 }
 
 .search-container {
@@ -1656,10 +1657,12 @@ function setupSearchBarAnimation() {
       searchBar.style.transform = `translateX(${translateX}px)`;
       searchBar.style.width = `${newWidth}px`;
       searchBar.style.zIndex = '100';
+      searchBar.style.borderRadius = '16px';
     } else {
       searchBar.style.transform = 'translateX(0)';
       searchBar.style.width = '100%';
       searchBar.style.zIndex = '50';
+      searchBar.style.borderRadius = '16px';
     }
   });
 }
