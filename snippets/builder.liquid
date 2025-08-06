@@ -1414,18 +1414,15 @@ function updateAddButton() {
     console.log('Config:', config, 'totalSelected:', totalSelected, 'minRequired:', minRequired);
     console.log('Selected products:', selectedProducts);
     
-    addButton.disabled = totalSelected < minRequired;
+    addButton.disabled = totalSelected < config.total;
     
     // Update button text and status
     if (totalSelected >= config.total) {
       btnText.textContent = 'Your Bundle Is Ready!';
       btnStatus.textContent = `${totalSelected}/${config.total}`;
-    } else if (totalSelected >= minRequired) {
-      btnText.textContent = `Add ${config.total - totalSelected} More For Free`;
-      btnStatus.textContent = `${totalSelected}/${config.total}`;
     } else {
-      btnText.textContent = `Please Select ${minRequired - totalSelected} More Scents`;
-      btnStatus.textContent = `${totalSelected}/${minRequired}`;
+      btnText.textContent = `Please Select ${config.total - totalSelected} More Scents`;
+      btnStatus.textContent = `${totalSelected}/${config.total}`;
     }
     
     console.log('Button updated:', {
