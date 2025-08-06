@@ -14,14 +14,17 @@
       <!-- Header -->
       <div class="bundler-header">
         <div class="bundler-title">
-          <h2>Build your own bundle!</h2>
-          <p>Choose your bundle type and select your scents</p>
+          <h1>Create Your Box</h1>
+          <p class="bundler-subtitle">Best scents you've ever smelled or your money back.</p>
+          <div class="bundler-reviews">
+            <div class="stars">★★★★★</div>
+            <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
+          </div>
         </div>
       </div>
 
       <!-- Bundle Type Selection -->
       <div class="bundle-type-selection">
-        <h3>Select Bundle Type:</h3>
         <div class="bundle-type-buttons">
           <button class="bundle-type-btn active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
             <span class="bundle-type-title">2+1 FREE</span>
@@ -53,16 +56,16 @@
         </div>
       </div>
 
-      <!-- Search Bar -->
-      <div class="bundler-search">
-        <input type="text" id="searchInput" placeholder="Search scents..." onkeyup="filterProducts()">
-      </div>
-
-      <!-- Filter Buttons -->
-      <div class="bundler-filters">
-        <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
-        <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
-        <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
+      <!-- Search and Filter Section -->
+      <div class="bundler-search-filter">
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search for scents..." onkeyup="filterProducts()">
+        </div>
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
+          <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
+          <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
+        </div>
       </div>
 
       <!-- Products Grid -->
@@ -73,41 +76,52 @@
             {% assign default_variant = product.variants.first %}
           {% endunless %}
           
-          <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" style="cursor: pointer; border: 2px solid #eee; border-radius: 8px; padding: 16px; position: relative; transition: all 0.2s; background: white;" onclick="console.log('Card clicked!'); selectProduct({{ product.id }}, {{ default_variant.id }});">
+          <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}">
+            <!-- Product Badge -->
+            {% if product.tags contains 'new' %}
+              <div class="product-badge new">New</div>
+            {% elsif product.tags contains 'popular' %}
+              <div class="product-badge popular">Most Popular</div>
+            {% endif %}
+            
+            <!-- Product Image -->
             <div class="product-image">
-              <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title }}" loading="lazy">
+              <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
             </div>
+            
+            <!-- Product Info -->
             <div class="product-info">
               <h3 class="product-title">{{ product.title }}</h3>
-              <div class="product-category">
-                {% if product.tags contains 'man' %}
-                  <span class="category-tag man">MAN</span>
-                {% elsif product.tags contains 'woman' %}
-                  <span class="category-tag woman">WOMAN</span>
-                {% endif %}
+              
+              <!-- Reviews -->
+              <div class="product-reviews">
+                <div class="stars">★★★★★</div>
+                <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
               </div>
-              <div class="product-price" data-product-id="{{ product.id }}">
-                {{ default_variant.price | money }}
-              </div>
-              <div class="product-variant">
-                <label>Size</label>
-                <select class="variant-select" data-product-id="{{ product.id }}" onclick="event.stopPropagation();" onchange="updateVariant({{ product.id }}, this.value);">
+              
+              <!-- Variant and Price -->
+              <div class="product-variant-price">
+                <select class="variant-select" data-product-id="{{ product.id }}" onchange="updateVariant({{ product.id }}, this.value);">
                   {% for variant in product.variants %}
                     {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
                       <option value="{{ variant.id }}" 
                               data-price="{{ variant.price | money }}"
                               {% if variant.title contains '100ML' %}selected{% endif %}>
-                        {{ variant.title }}
+                        {{ variant.title }} - {{ variant.price | money }}
                       </option>
                     {% endif %}
                   {% endfor %}
                 </select>
               </div>
-              <div class="add-to-cart-indicator" style="background-color: #222; color: white; padding: 8px 16px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-align: center; margin-top: 8px; cursor: pointer;">
-                SELECT FOR BUNDLE
-              </div>
+              
+              <!-- Add to Box Button -->
+              <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
+                Add to Box
+              </button>
             </div>
-            <div class="product-selector" onclick="event.stopPropagation(); selectProduct({{ product.id }}, {{ default_variant.id }});">
+            
+            <!-- Selection Indicator -->
+            <div class="selection-indicator" style="display: none;">
               <div class="check-icon">✓</div>
             </div>
           </div>
@@ -136,88 +150,106 @@
 
 /* Header */
 .bundler-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 24px 32px 16px 32px;
+  text-align: center;
+  padding: 40px 32px 32px 32px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   border-bottom: 1px solid #eee;
 }
 
-.bundler-title h2 {
-  margin: 0 0 4px 0;
-  font-size: 1.8rem;
-  font-weight: 700;
+.bundler-title h1 {
+  margin: 0 0 8px 0;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: #222;
+  letter-spacing: -0.5px;
 }
 
-.bundler-title p {
-  margin: 0;
-  font-size: 1rem;
+.bundler-subtitle {
+  margin: 0 0 16px 0;
+  font-size: 1.1rem;
   color: #666;
+  font-weight: 500;
+}
+
+.bundler-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.review-count {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
 }
 
 /* Bundle Type Selection */
 .bundle-type-selection {
-  padding: 20px 32px;
-  background-color: #f8f9fa;
+  padding: 32px;
+  background-color: white;
   border-bottom: 1px solid #eee;
 }
 
-.bundle-type-selection h3 {
-  margin: 0 0 16px 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #222;
-  text-align: center;
-}
-
 .bundle-type-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
   max-width: 800px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .bundle-type-btn {
   background: white;
   border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 16px;
+  padding: 20px 24px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  min-width: 140px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .bundle-type-btn:hover {
   border-color: #28a745;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.15);
 }
 
 .bundle-type-btn.active {
   border-color: #28a745;
-  background-color: #f8fff9;
-  box-shadow: 0 0 0 2px #28a745;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.3);
 }
 
 .bundle-type-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #222;
 }
 
 .bundle-type-desc {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #666;
+  font-weight: 500;
 }
 
-.bundle-type-btn.active .bundle-type-title {
-  color: #28a745;
+.bundle-type-btn.active .bundle-type-title,
+.bundle-type-btn.active .bundle-type-desc {
+  color: white;
 }
 
 /* Progress Bar */
@@ -325,148 +357,268 @@
   border-color: #28a745;
 }
 
-/* Search */
-.bundler-search {
-  padding: 20px 32px 16px 32px;
+/* Search and Filter */
+.bundler-search-filter {
+  padding: 24px 32px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
 }
 
-.bundler-search input {
+.search-container {
+  margin-bottom: 16px;
+}
+
+.search-container input {
   width: 100%;
-  padding: 12px 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  padding: 14px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
   font-size: 1rem;
   outline: none;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
 }
 
-.bundler-search input:focus {
+.search-container input:focus {
   border-color: #28a745;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
 }
 
-/* Filters */
-.bundler-filters {
-  padding: 0 32px 20px 32px;
+.filter-container {
   display: flex;
-  gap: 8px;
+  gap: 12px;
+  justify-content: center;
 }
 
 .filter-btn {
-  padding: 8px 16px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
+  padding: 10px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
   background: white;
   color: #222;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: all 0.2s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: #28a745;
+  transform: translateY(-1px);
 }
 
 .filter-btn.active {
-  background-color: #222;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
   color: white;
-  border-color: #222;
+  border-color: #28a745;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
 }
 
 /* Products Grid */
 .bundler-products {
-  padding: 0 32px 20px 32px;
+  padding: 32px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  max-height: 400px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  max-height: 600px;
   overflow-y: auto;
+  background-color: #f8f9fa;
 }
 
 /* Mobile - 2 columns */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .bundler-products {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 0 20px 20px 20px;
+    gap: 16px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bundler-products {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
   }
 }
 
 .product-card {
-  border: 2px solid #eee;
-  border-radius: 8px;
-  padding: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 20px;
   position: relative;
-  cursor: pointer;
-  transition: all 0.2s;
   background: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-.product-card:hover:not(.selected) {
+.product-card:hover {
   border-color: #28a745;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
-}
-
-.product-card.selected:hover {
-  border-color: #28a745 !important;
-  background-color: #f8fff9 !important;
-  box-shadow: 0 0 0 2px #28a745 !important;
-  transform: scale(1.02) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.15);
 }
 
 .product-card.selected {
-  border-color: #28a745 !important;
-  background-color: #f8fff9 !important;
-  box-shadow: 0 0 0 2px #28a745 !important;
-  transform: scale(1.02) !important;
-}
-
-.product-card.selected .add-to-cart-indicator {
-  background-color: #28a745 !important;
-  color: white !important;
-}
-
-/* Override any existing styles that might interfere */
-.product-card.selected {
-  border-color: #28a745 !important;
-  background-color: #f8fff9 !important;
-  box-shadow: 0 0 0 2px #28a745 !important;
-  transform: scale(1.02) !important;
-  z-index: 10 !important;
-}
-
-.product-card.selected * {
-  pointer-events: auto !important;
-}
-
-.product-card.adding {
   border-color: #28a745;
-  background-color: #f8fff9;
-  animation: pulse 0.6s ease-in-out;
+  background: linear-gradient(135deg, #f8fff9 0%, #ffffff 100%);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.2);
+  transform: translateY(-4px);
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
+/* Product Badge */
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
+.product-badge.new {
+  background-color: #ffd700;
+  color: #222;
+}
+
+.product-badge.popular {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* Product Image */
 .product-image {
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  position: relative;
 }
 
 .product-image img {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+/* Product Info */
 .product-info {
   text-align: center;
 }
 
 .product-title {
   margin: 0 0 8px 0;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #222;
+  line-height: 1.3;
+}
+
+/* Product Reviews */
+.product-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.product-reviews .stars {
+  color: #ffd700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.product-reviews .review-count {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Variant and Price */
+.product-variant-price {
+  margin-bottom: 16px;
+}
+
+.variant-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  color: #222;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.variant-select:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+/* Add to Box Button */
+.add-to-box-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.add-to-box-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+}
+
+.add-to-box-btn.selected {
+  background: #666;
+  border-color: #666;
+  cursor: default;
+}
+
+/* Selection Indicator */
+.selection-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #28a745;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.product-card.selected .selection-indicator {
+  opacity: 1;
+}
+
+.check-icon {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .product-price {
@@ -515,54 +667,7 @@
   color: #c2185b;
 }
 
-.add-to-cart-indicator {
-  background-color: #222;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 8px;
-  transition: all 0.2s;
-}
 
-.product-card:hover .add-to-cart-indicator {
-  background-color: #333;
-  transform: translateY(-1px);
-}
-
-.product-card.selected .add-to-cart-indicator {
-  background-color: #28a745;
-}
-
-.product-selector {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #ddd;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  opacity: 0;
-  transition: all 0.2s;
-}
-
-.product-card.selected .product-selector {
-  opacity: 1;
-  border-color: #28a745;
-  background-color: #28a745;
-}
-
-.check-icon {
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-}
 
 /* Footer */
 .bundler-footer {
@@ -595,74 +700,37 @@
   transform: none;
 }
 
-/* Trigger Button with Animated Gradient */
-.bundler-trigger {
-  background: linear-gradient(-45deg, #28a745, #20c997, #17a2b8, #28a745);
-  background-size: 400% 400%;
-  color: white;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  width: 100%;
-  margin-bottom: 20px;
-  animation: gradientShift 3s ease infinite;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-}
 
-.bundler-trigger:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-  animation: gradientShift 1.5s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 /* Responsive */
 @media (max-width: 768px) {
-  .bundler-modal-content {
-    width: 95%;
-    margin: 5% auto;
-    max-height: 95vh;
-  }
-  
   .bundler-header {
-    padding: 16px 20px 12px 20px;
+    padding: 24px 20px;
   }
   
-  .bundler-progress {
-    padding: 16px 20px;
+  .bundler-title h1 {
+    font-size: 2rem;
   }
   
-  .bundler-search {
-    padding: 16px 20px 12px 20px;
+  .bundle-type-buttons {
+    flex-direction: column;
+    align-items: center;
   }
   
-  .bundler-filters {
-    padding: 0 20px 16px 20px;
+  .bundle-type-btn {
+    min-width: 200px;
   }
   
-  .bundler-products {
-    padding: 0 20px 16px 20px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  .bundler-search-filter {
+    padding: 20px;
+  }
+  
+  .filter-container {
+    flex-wrap: wrap;
   }
   
   .bundler-footer {
-    padding: 16px 20px 24px 20px;
+    padding: 20px;
   }
 }
 </style>
@@ -703,12 +771,14 @@ function selectBundleType(bundleType) {
   // Reset product selections
   document.querySelectorAll('.product-card').forEach(card => {
     card.classList.remove('selected');
-    const button = card.querySelector('.add-to-cart-indicator');
+    const button = card.querySelector('.add-to-box-btn');
     if (button) {
-      button.textContent = 'SELECT FOR BUNDLE';
-      button.style.backgroundColor = '#222';
-      button.style.color = 'white';
-      button.style.fontWeight = 'normal';
+      button.textContent = 'Add to Box';
+      button.classList.remove('selected');
+    }
+    const indicator = card.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'none';
     }
   });
 }
@@ -811,12 +881,16 @@ function selectProduct(productId, variantId) {
     productCard.classList.remove('selected');
     
     // Reset button text
-    const button = productCard.querySelector('.add-to-cart-indicator');
+    const button = productCard.querySelector('.add-to-box-btn');
     if (button) {
-      button.textContent = 'SELECT FOR BUNDLE';
-      button.style.backgroundColor = '#222';
-      button.style.color = 'white';
-      button.style.fontWeight = 'normal';
+      button.textContent = 'Add to Box';
+      button.classList.remove('selected');
+    }
+    
+    // Hide selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'none';
     }
     
     selectedProducts = selectedProducts.filter(p => p.id !== productId);
@@ -847,14 +921,18 @@ function selectProduct(productId, variantId) {
     productCard.classList.add('selected');
     
     // Find and update the button
-    const button = productCard.querySelector('.add-to-cart-indicator');
+    const button = productCard.querySelector('.add-to-box-btn');
     
     if (button) {
-      button.textContent = 'SELECTED';
-      button.style.backgroundColor = '#28a745';
-      button.style.color = 'white';
-      button.style.fontWeight = 'bold';
-      console.log('Button changed to SELECTED');
+      button.textContent = 'Selected';
+      button.classList.add('selected');
+      console.log('Button changed to Selected');
+    }
+    
+    // Show selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'flex';
     }
     
     selectedProducts.push({
