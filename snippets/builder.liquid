@@ -21,7 +21,7 @@
             <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
           </div>
           <div class="bundler-savings-info">
-            <span class="savings-badge">💚 Save 30% with 100ML bottles</span>
+            <span class="savings-badge">How much you save if you buy 100ml bottles?</span>
           </div>
         </div>
       </div>
@@ -231,9 +231,9 @@
 .savings-badge {
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 20px;
   display: inline-block;
 }
@@ -249,9 +249,10 @@
   display: flex;
   justify-content: center;
   gap: 16px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   flex-wrap: wrap;
+  overflow: visible;
 }
 
 .bundle-type-btn {
@@ -266,9 +267,10 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  min-width: 160px;
+  min-width: 180px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: relative;
+  overflow: visible;
 }
 
 .bundle-type-btn:hover {
@@ -287,9 +289,9 @@
 .bundle-savings {
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
   color: white;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border-radius: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
