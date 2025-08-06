@@ -18,7 +18,13 @@
           <h1>Create Your Bundle!</h1>
           <p class="bundler-subtitle">Best scents you've ever smelled or your money back.</p>
           <div class="bundler-reviews">
-            <div class="stars">★★★★★</div>
+            <span class="jdgm-prev-badge__stars" data-score="5.00" tabindex="0" aria-label="5.00 stars" role="button">
+              <span class="jdgm-star jdgm--on"></span>
+              <span class="jdgm-star jdgm--on"></span>
+              <span class="jdgm-star jdgm--on"></span>
+              <span class="jdgm-star jdgm--on"></span>
+              <span class="jdgm-star jdgm--on"></span>
+            </span>
             <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
       </div>
 
@@ -131,7 +137,13 @@
                   
                   <!-- Reviews -->
                   <div class="product-reviews">
-                    <div class="stars">★★★★★</div>
+                    <span class="jdgm-prev-badge__stars" data-score="5.00" tabindex="0" aria-label="5.00 stars" role="button">
+                      <span class="jdgm-star jdgm--on"></span>
+                      <span class="jdgm-star jdgm--on"></span>
+                      <span class="jdgm-star jdgm--on"></span>
+                      <span class="jdgm-star jdgm--on"></span>
+                      <span class="jdgm-star jdgm--on"></span>
+                    </span>
                     <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
                 </div>
                   
@@ -258,7 +270,13 @@
   color: #666;
 }
 
-.stars {
+.bundler-reviews .jdgm-prev-badge__stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bundler-reviews .jdgm-star {
   color: #ffd700;
   font-size: 3.3rem;
   letter-spacing: 6px;
@@ -755,7 +773,13 @@
   margin-bottom: 12px;
 }
 
-.product-reviews .stars {
+.product-reviews .jdgm-prev-badge__stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.product-reviews .jdgm-star {
   color: #ffd700;
   font-size: 0.9rem;
   letter-spacing: 1px;
