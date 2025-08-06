@@ -2450,6 +2450,7 @@ window.selectProduct = function(productId, passedVariantId) {
   const productCard = document.querySelector(`[data-product-id="${productId}"]`);
   
   if (!productCard) {
+    console.log('Product card not found for ID:', productId);
     return;
   }
   
@@ -2463,8 +2464,10 @@ window.selectProduct = function(productId, passedVariantId) {
   
   const config = bundleConfig[currentBundleType];
   
-  // Check if already selected by looking for the selected class
-  const isSelected = productCard.classList.contains('selected') || productCard.style.borderColor === 'rgb(40, 167, 69)';
+  // Check if already selected by looking for the selected class AND if product is in selectedProducts array
+  const isSelected = productCard.classList.contains('selected') || selectedProducts.some(p => p.id == productId);
+  
+  console.log('Product', productId, 'isSelected:', isSelected, 'hasClass:', productCard.classList.contains('selected'), 'inArray:', selectedProducts.some(p => p.id == productId));
   
   if (isSelected) {
     // Deselect product
@@ -2518,6 +2521,14 @@ window.selectProduct = function(productId, passedVariantId) {
     const variantKey = `variant-${currentVariant.toLowerCase()}`;
     const variantId = productCard.querySelector('.product-price').dataset[variantKey];
     
+    console.log('Adding product:', productId, 'variantKey:', variantKey, 'variantId:', variantId);
+    
+    if (!variantId) {
+      console.error('No variant ID found for', variantKey, 'using fallback');
+      // Use the passedVariantId as fallback
+      variantId = passedVariantId || productCard.dataset.variantId;
+    }
+    
     // Add selected class
     productCard.classList.add('selected');
     
@@ -2548,14 +2559,18 @@ window.selectProduct = function(productId, passedVariantId) {
     const productImage = productCard.querySelector('.product-image img');
     const image = productImage ? productImage.src : '';
     
-    selectedProducts.push({
+    const newProduct = {
       id: productId,
       variantId: parseInt(variantId), // Use actual variant ID
       title: title,
       price: currentVariantPrice, // Use price from data attribute
       image: image,
       variant: currentVariant
-    });
+    };
+    
+    selectedProducts.push(newProduct);
+    console.log('Product added to selectedProducts:', newProduct);
+    console.log('selectedProducts now contains:', selectedProducts.length, 'products');
     
     // Update progress text and indicators
     updateProgressText();
