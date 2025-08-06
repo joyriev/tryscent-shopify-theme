@@ -6,140 +6,114 @@
 {% assign bundle_collection = collections['smells-like'] %}
 
 <div class="product-bundler" data-bundler>
-  <!-- Przycisk przenoszący do strony bundlera -->
-  <a href="/pages/bundle-builder" class="bundler-trigger">
-    BUILD YOUR 2 + 1 FREE BUNDLE
-  </a>
+  <!-- Header -->
+  <div class="bundler-header">
+    <div class="bundler-title">
+      <h2>Search Selector</h2>
+      <p>Choose 3 scents to try</p>
+    </div>
+  </div>
 
-  <!-- Modal -->
-  <div id="bundlerModal" class="bundler-modal">
-    <div class="bundler-modal-content">
-      <!-- Header -->
-      <div class="bundler-header">
-        <div class="bundler-title">
-          <h2>Search Selector</h2>
-          <p>Choose 3 scents to try</p>
-        </div>
-        <button class="bundler-close" onclick="closeBundlerModal()">&times;</button>
+  <!-- Progress Bar -->
+  <div class="bundler-progress">
+    <div class="bundler-progress-text">
+      <span id="progressText">Choose your scents (0 of 3 selected)</span>
+      <span id="bundleReadyText" class="bundle-ready-text" style="display: none;">Perfect! Your bundle is ready</span>
+    </div>
+    <div class="bundler-progress-bar">
+      <div class="progress-step" data-step="1">
+        <div class="progress-indicator" id="step1"></div>
+        <span>1st Bottle</span>
       </div>
-
-      <!-- Progress Bar -->
-      <div class="bundler-progress">
-        <div class="bundler-progress-text">
-          <span id="progressText">Choose your scents (0 of 3 selected)</span>
-          <span id="bundleReadyText" class="bundle-ready-text" style="display: none;">Perfect! Your bundle is ready</span>
-        </div>
-        <div class="bundler-progress-bar">
-          <div class="progress-step" data-step="1">
-            <div class="progress-indicator" id="step1"></div>
-            <span>1st Bottle</span>
-          </div>
-          <div class="progress-step" data-step="2">
-            <div class="progress-indicator" id="step2"></div>
-            <span>2nd Bottle</span>
-          </div>
-          <div class="progress-step" data-step="3">
-            <div class="progress-indicator" id="step3"></div>
-            <span>3rd FREE BOTTLE</span>
-          </div>
-        </div>
+      <div class="progress-step" data-step="2">
+        <div class="progress-indicator" id="step2"></div>
+        <span>2nd Bottle</span>
       </div>
-
-      <!-- Search Bar -->
-      <div class="bundler-search">
-        <input type="text" id="searchInput" placeholder="Search scents..." onkeyup="filterProducts()">
-      </div>
-
-      <!-- Filter Buttons -->
-      <div class="bundler-filters">
-        <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
-        <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
-        <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
-      </div>
-
-      <!-- Products Grid -->
-      <div class="bundler-products" id="productsGrid">
-        {% for product in bundle_collection.products %}
-          {% assign default_variant = product.variants | where: "title", "100ML" | first %}
-          {% unless default_variant %}
-            {% assign default_variant = product.variants.first %}
-          {% endunless %}
-          
-          <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" style="cursor: pointer; border: 2px solid #eee; border-radius: 8px; padding: 16px; position: relative; transition: all 0.2s; background: white;" onclick="console.log('Card clicked!'); selectProduct({{ product.id }}, {{ default_variant.id }});">
-            <div class="product-image">
-              <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title }}" loading="lazy">
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">{{ product.title }}</h3>
-              <div class="product-category">
-                {% if product.tags contains 'man' %}
-                  <span class="category-tag man">MAN</span>
-                {% elsif product.tags contains 'woman' %}
-                  <span class="category-tag woman">WOMAN</span>
-                {% endif %}
-              </div>
-              <div class="product-price" data-product-id="{{ product.id }}">
-                {{ default_variant.price | money }}
-              </div>
-              <div class="product-variant">
-                <label>Size</label>
-                <select class="variant-select" data-product-id="{{ product.id }}" onclick="event.stopPropagation();" onchange="updateVariant({{ product.id }}, this.value);">
-                  {% for variant in product.variants %}
-                    {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
-                      <option value="{{ variant.id }}" 
-                              data-price="{{ variant.price | money }}"
-                              {% if variant.title contains '100ML' %}selected{% endif %}>
-                        {{ variant.title }}
-                      </option>
-                    {% endif %}
-                  {% endfor %}
-                </select>
-              </div>
-              <div class="add-to-cart-indicator" style="background-color: #222; color: white; padding: 8px 16px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-align: center; margin-top: 8px; cursor: pointer;">
-                SELECT FOR BUNDLE
-              </div>
-            </div>
-            <div class="product-selector" onclick="event.stopPropagation(); selectProduct({{ product.id }}, {{ default_variant.id }});">
-              <div class="check-icon">✓</div>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-
-      <!-- Footer Button -->
-      <div class="bundler-footer">
-        <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
-          ADD BUNDLE TO CART
-        </button>
+      <div class="progress-step" data-step="3">
+        <div class="progress-indicator" id="step3"></div>
+        <span>3rd FREE BOTTLE</span>
       </div>
     </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="bundler-search">
+    <input type="text" id="searchInput" placeholder="Search scents..." onkeyup="filterProducts()">
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="bundler-filters">
+    <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
+    <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
+    <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="bundler-products" id="productsGrid">
+    {% for product in bundle_collection.products %}
+      {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+      {% unless default_variant %}
+        {% assign default_variant = product.variants.first %}
+      {% endunless %}
+      
+      <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" style="cursor: pointer; border: 2px solid #eee; border-radius: 8px; padding: 16px; position: relative; transition: all 0.2s; background: white;" onclick="console.log('Card clicked!'); selectProduct({{ product.id }}, {{ default_variant.id }});">
+        <div class="product-image">
+          <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title }}" loading="lazy">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">{{ product.title }}</h3>
+          <div class="product-category">
+            {% if product.tags contains 'man' %}
+              <span class="category-tag man">MAN</span>
+            {% elsif product.tags contains 'woman' %}
+              <span class="category-tag woman">WOMAN</span>
+            {% endif %}
+          </div>
+          <div class="product-price" data-product-id="{{ product.id }}">
+            {{ default_variant.price | money }}
+          </div>
+          <div class="product-variant">
+            <label>Size</label>
+            <select class="variant-select" data-product-id="{{ product.id }}" onclick="event.stopPropagation();" onchange="updateVariant({{ product.id }}, this.value);">
+              {% for variant in product.variants %}
+                {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
+                  <option value="{{ variant.id }}" 
+                          data-price="{{ variant.price | money }}"
+                          {% if variant.title contains '100ML' %}selected{% endif %}>
+                    {{ variant.title }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+          <div class="add-to-cart-indicator" style="background-color: #222; color: white; padding: 8px 16px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-align: center; margin-top: 8px; cursor: pointer;">
+            SELECT FOR BUNDLE
+          </div>
+        </div>
+        <div class="product-selector" onclick="event.stopPropagation(); selectProduct({{ product.id }}, {{ default_variant.id }});">
+          <div class="check-icon">✓</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Footer Button -->
+  <div class="bundler-footer">
+    <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+      ADD BUNDLE TO CART
+    </button>
   </div>
 </div>
 
 <style>
-/* Modal Styles */
-.bundler-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-}
-
-.bundler-modal-content {
+/* Bundler Styles - bez modala */
+.product-bundler {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
   background-color: white;
-  margin: 2% auto;
-  padding: 0;
   border-radius: 12px;
-  width: 90%;
-  max-width: 800px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
@@ -162,24 +136,6 @@
   margin: 0;
   font-size: 1rem;
   color: #666;
-}
-
-.bundler-close {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #666;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bundler-close:hover {
-  color: #222;
 }
 
 /* Progress Bar */
@@ -321,7 +277,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
-  max-height: 400px;
+  max-height: 600px;
   overflow-y: auto;
 }
 
@@ -543,51 +499,10 @@
   transform: none;
 }
 
-/* Trigger Button with Animated Gradient */
-.bundler-trigger {
-  background: linear-gradient(-45deg, #28a745, #20c997, #17a2b8, #28a745);
-  background-size: 400% 400%;
-  color: white;
-  border: none;
-  padding: 20px 32px;
-  border-radius: 12px;
-  font-size: 1.6rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  margin-bottom: 20px;
-  animation: gradientShift 3s ease infinite;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4), 0 4px 10px rgba(0,0,0,0.1);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.bundler-trigger:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(40, 167, 69, 0.5), 0 6px 15px rgba(0,0,0,0.15);
-  animation: gradientShift 1.5s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 /* Responsive */
 @media (max-width: 768px) {
-  .bundler-modal-content {
-    width: 95%;
-    margin: 5% auto;
-    max-height: 95vh;
+  .product-bundler {
+    padding: 10px;
   }
   
   .bundler-header {
@@ -628,19 +543,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // updateProgress will be called after function is defined
   applyFilters(); // Apply initial filters
 });
-
-// Modal functions
-function openBundlerModal() {
-  document.getElementById('bundlerModal').style.display = 'block';
-  document.body.style.overflow = 'hidden';
-}
-
-// Modal functions - removed duplicate function
-
-function closeBundlerModal() {
-  document.getElementById('bundlerModal').style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
 
 // Product selection
 function selectProduct(productId, variantId) {
@@ -812,8 +714,6 @@ function updateVariant(productId, variantId) {
   }
 }
 
-
-
 // Update add button
 function updateAddButton() {
   const addButton = document.getElementById('addBundleBtn');
@@ -975,8 +875,8 @@ function addBundleToCart() {
     if (data.status) {
       alert('Error adding bundle to cart: ' + data.description);
     } else {
-      // Success - close modal and refresh cart
-      closeBundlerModal();
+      // Success - show success message
+      alert('Bundle added to cart successfully!');
       
       // Add builder property to order (this will show in order tags)
       fetch('/cart/update.js', {
@@ -1004,13 +904,5 @@ function addBundleToCart() {
     console.error('Error:', error);
     alert('Error adding bundle to cart. Please try again.');
   });
-}
-
-// Close modal when clicking outside
-window.onclick = function(event) {
-  const modal = document.getElementById('bundlerModal');
-  if (event.target === modal) {
-    closeBundlerModal();
-  }
 }
 </script> 
