@@ -26,8 +26,36 @@
         </div>
       </div>
 
-      <!-- Bundle Type Selection -->
-      <div class="bundle-type-selection">
+      <!-- Variant Selection -->
+      <div class="variant-selection">
+        <h3 class="variant-title">Select Size!</h3>
+        <p class="variant-subtitle">80% of customers buy 100ML</p>
+        <div class="variant-buttons">
+          <button class="variant-btn" data-variant="30ML" onclick="selectVariant('30ML')">
+            <div class="variant-image">
+              <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
+            </div>
+            <span class="variant-size">30ML</span>
+          </button>
+          <button class="variant-btn" data-variant="50ML" onclick="selectVariant('50ML')">
+            <div class="variant-badge popular">Popular</div>
+            <div class="variant-image">
+              <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="50ML">
+            </div>
+            <span class="variant-size">50ML</span>
+          </button>
+          <button class="variant-btn active" data-variant="100ML" onclick="selectVariant('100ML')">
+            <div class="variant-badge bestseller">Bestseller</div>
+            <div class="variant-image">
+              <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="100ML">
+            </div>
+            <span class="variant-size">100ML</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bundle Type Selection (hidden initially) -->
+      <div class="bundle-type-selection" id="bundleSelection" style="display: none;">
         <div class="bundle-type-buttons">
           <button class="bundle-type-btn active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
             <div class="bundle-savings" id="savings-2+1">SAVE {{ 2699 | money }}</div>
@@ -236,6 +264,105 @@
   padding: 8px 16px;
   border-radius: 20px;
   display: inline-block;
+}
+
+/* Variant Selection */
+.variant-selection {
+  padding: 32px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.variant-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px 0;
+}
+
+.variant-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+.variant-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.variant-btn {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.variant-btn:hover {
+  border-color: #28a745;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.15);
+}
+
+.variant-btn.active {
+  border-color: #28a745;
+  background: linear-gradient(135deg, #f8fff9 0%, #ffffff 100%);
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.2);
+}
+
+.variant-image {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.variant-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.variant-size {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.variant-badge {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+}
+
+.variant-badge.popular {
+  background: #ff6b6b;
+}
+
+.variant-badge.bestseller {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
 }
 
 /* Bundle Type Selection */
@@ -1052,7 +1179,12 @@ let currentFilter = 'all';
 let currentSearch = '';
 let currentBundleType = '2+1'; // Default bundle type
 let productQuantities = {}; // Store quantities for each product
-let basePrice = 2699; // Base price in cents for 100ML variant
+let currentVariant = '100ML'; // Default variant
+let variantPrices = {
+  '30ML': 1999, // $19.99 in cents
+  '50ML': 2299, // $22.99 in cents
+  '100ML': 2699  // $26.99 in cents
+};
 let bundleConfig = {
   '2+1': { buy: 2, free: 1, total: 3 },
   '3+2': { buy: 3, free: 2, total: 5 },
@@ -1548,9 +1680,34 @@ function applyFilters() {
   });
 }
 
+// Select variant function
+function selectVariant(variant) {
+  console.log('Variant selected:', variant);
+  
+  currentVariant = variant;
+  
+  // Update variant button states
+  document.querySelectorAll('.variant-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.closest('.variant-btn').classList.add('active');
+  
+  // Show bundle selection
+  const bundleSelection = document.getElementById('bundleSelection');
+  if (bundleSelection) {
+    bundleSelection.style.display = 'block';
+  }
+  
+  // Update bundle prices
+  updateBundlePrices();
+  
+  console.log('Variant selection completed');
+}
+
 // Update bundle prices based on selected variants
 function updateBundlePrices() {
   const config = bundleConfig[currentBundleType];
+  const basePrice = variantPrices[currentVariant];
   const totalPrice = config.buy * basePrice;
   const savings = config.free * basePrice;
   
