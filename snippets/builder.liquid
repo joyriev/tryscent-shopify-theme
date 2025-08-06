@@ -2466,8 +2466,12 @@ window.selectProduct = function(productId, passedVariantId) {
   
   const config = bundleConfig[currentBundleType];
   
-  // Check if already selected by looking for the selected class AND if product is in selectedProducts array
-  const isSelected = productCard.classList.contains('selected') || selectedProducts.some(p => parseInt(p.id) === productId);
+  // Simple and reliable check: if product has quantity selector, it's selected
+  const hasQuantitySelector = productCard.querySelector('.quantity-selector') !== null;
+  const hasSelectedClass = productCard.classList.contains('selected');
+  const isInArray = selectedProducts.some(p => parseInt(p.id) === productId);
+  
+  const isSelected = hasQuantitySelector || hasSelectedClass || isInArray;
   
   if (isSelected) {
     // Deselect product
@@ -2633,8 +2637,9 @@ window.selectBundleType = function(bundleType) {
 
 // Function to clear all cart selections
 function clearAllSelections() {
-  selectedProducts = [];
-  productQuantities = {};
+  // Complete reset of all data
+  selectedProducts.length = 0; // Clear array completely
+  Object.keys(productQuantities).forEach(key => delete productQuantities[key]); // Clear object completely
   
   // Reset filter to "All" 
   currentFilter = 'all';
@@ -2650,44 +2655,33 @@ function clearAllSelections() {
   
   // Reset product card states and show all products
   document.querySelectorAll('.product-card').forEach(card => {
+    // Remove all selection-related classes and styles
     card.classList.remove('selected');
-    card.style.display = 'block'; // Show all products
+    card.style.display = 'block';
+    card.style.borderColor = '';
     
-    // Check if product has quantity selector and restore button
+    // Force replace any quantity selector with fresh button
     const quantitySelector = card.querySelector('.quantity-selector');
     if (quantitySelector) {
-      // Create new ADD TO BUNDLE button
-      const newButton = document.createElement('button');
-      newButton.className = 'add-to-bundle-btn';
-      newButton.textContent = 'ADD TO BUNDLE';
       const productId = parseInt(card.dataset.productId);
       const variantId = parseInt(card.dataset.variantId);
       
-      // Set onclick attribute (same as original)
+      // Create completely fresh button
+      const newButton = document.createElement('button');
+      newButton.className = 'add-to-bundle-btn';
+      newButton.textContent = 'ADD TO BUNDLE';
       newButton.setAttribute('onclick', `selectProduct(${productId}, ${variantId});`);
       
-      // Add event listener as backup
-      newButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.selectProduct(productId, variantId);
-      });
-      
-      // Replace quantity selector with button
+      // Replace immediately
       quantitySelector.parentNode.replaceChild(newButton, quantitySelector);
     }
     
-    // Force remove any lingering product quantities
-    const productId = parseInt(card.dataset.productId);
-    if (productQuantities[productId]) {
-      delete productQuantities[productId];
-    }
-    
-    // Reset button state if it exists
+    // Reset any existing button
     const button = card.querySelector('.add-to-bundle-btn');
     if (button) {
       button.textContent = 'ADD TO BUNDLE';
       button.classList.remove('selected');
+      button.disabled = false;
     }
     
     // Hide selection indicator
@@ -2703,17 +2697,15 @@ function clearAllSelections() {
     searchInput.value = '';
   }
   
-  // Update all UI elements
-  updateProgressText();
-  generateProgressMarkers();
-  updateCartProgress();
-  updateSelectedItems();
-  updateAddButton();
-  updateFullscreenButtonText();
-  
-  // Force UI refresh
-  const event = new Event('bundleReset');
-  document.dispatchEvent(event);
+  // Force complete UI update
+  setTimeout(() => {
+    updateProgressText();
+    generateProgressMarkers();
+    updateCartProgress();
+    updateSelectedItems();
+    updateAddButton();
+    updateFullscreenButtonText();
+  }, 10);
 }
 
 // Add all other functions to window immediately
