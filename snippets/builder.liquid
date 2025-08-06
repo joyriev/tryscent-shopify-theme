@@ -1384,14 +1384,20 @@ function updateVariant(productId, variantId) {
 
 // Update add button
 function updateAddButton() {
+  console.log('updateAddButton called');
+  
   const addButton = document.getElementById('addBundleBtn');
   const btnText = document.getElementById('btnText');
   const btnStatus = document.getElementById('btnStatus');
+  
+  console.log('Elements found:', { addButton, btnText, btnStatus });
   
   if (addButton && btnText && btnStatus) {
     const config = bundleConfig[currentBundleType];
     const minRequired = config.buy;
     const totalSelected = selectedProducts.length;
+    
+    console.log('Config:', config, 'totalSelected:', totalSelected, 'minRequired:', minRequired);
     
     addButton.disabled = totalSelected < minRequired;
     
@@ -1407,7 +1413,13 @@ function updateAddButton() {
       btnStatus.textContent = `${totalSelected}/${minRequired}`;
     }
     
-    console.log('Add button disabled:', addButton.disabled, 'selectedProducts:', totalSelected, 'minRequired:', minRequired);
+    console.log('Button updated:', {
+      disabled: addButton.disabled,
+      text: btnText.textContent,
+      status: btnStatus.textContent
+    });
+  } else {
+    console.error('Some elements not found for button update');
   }
 }
 
@@ -1457,7 +1469,16 @@ function applyFilters() {
 
 // Change quantity function
 function changeQuantity(productId, change) {
+  console.log('changeQuantity called:', productId, change);
+  
   const quantityDisplay = document.getElementById(`quantity-${productId}`);
+  console.log('quantityDisplay found:', quantityDisplay);
+  
+  if (!quantityDisplay) {
+    console.error('Quantity display not found for product:', productId);
+    return;
+  }
+  
   const minusBtn = quantityDisplay.previousElementSibling;
   const plusBtn = quantityDisplay.nextElementSibling;
   
