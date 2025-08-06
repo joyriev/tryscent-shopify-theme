@@ -1061,10 +1061,10 @@ color: white;
 .desktop-sidebar {
   display: block;
   position: sticky;
-  top: 20px;
+  top: 220px;
   width: 400px;
   height: auto;
-  max-height: calc(100vh - 40px);
+  max-height: calc(100vh - 240px);
   overflow-y: auto;
   background: white;
   border-radius: 16px;
@@ -2643,7 +2643,7 @@ window.selectBundleType = function(bundleType) {
   }
   
   // Save state to localStorage
-  saveBundlerState();
+  window.saveBundlerState();
 };
 
 // Function to clear all cart selections
@@ -2743,7 +2743,7 @@ window.selectVariant = function(variant) {
   }
   
   // Save state to localStorage
-  saveBundlerState();
+  window.saveBundlerState();
 };
 
 window.changeProductQuantity = function(productId, change) {
@@ -2821,7 +2821,7 @@ window.changeProductQuantity = function(productId, change) {
   updateAddButton();
   
   // Save state to localStorage
-  saveBundlerState();
+  window.saveBundlerState();
 };
 
 window.changeQuantity = function(productId, change) {
@@ -2931,7 +2931,7 @@ window.filterProducts = function() {
   applyFilters();
   
   // Save state to localStorage
-  saveBundlerState();
+  window.saveBundlerState();
 };
 
 window.filterByCategory = function(category) {
@@ -2946,7 +2946,7 @@ window.filterByCategory = function(category) {
   applyFilters();
   
   // Save state to localStorage
-  saveBundlerState();
+  window.saveBundlerState();
 };
 
 window.addBundleToCart = function() {
@@ -3538,35 +3538,65 @@ function updateSaveInfo() {
 }
 
 // Save state to localStorage
-function saveBundlerState() {
-  const state = {
-    selectedProducts: selectedProducts,
-    productQuantities: productQuantities,
-    currentBundleType: currentBundleType,
-    currentVariant: currentVariant,
-    currentFilter: currentFilter,
-    currentSearch: currentSearch
-  };
-  localStorage.setItem('bundlerState', JSON.stringify(state));
+window.saveBundlerState = function() {
+  try {
+    const state = {
+      selectedProducts: selectedProducts,
+      productQuantities: productQuantities,
+      currentBundleType: currentBundleType,
+      currentVariant: currentVariant,
+      currentFilter: currentFilter,
+      currentSearch: currentSearch
+    };
+    console.log('Saving bundler state:', state);
+    localStorage.setItem('bundlerState', JSON.stringify(state));
+    console.log('State saved successfully');
+  } catch (error) {
+    console.log('Error saving bundler state:', error);
+  }
 }
 
 // Load state from localStorage
 function loadBundlerState() {
   try {
     const savedState = localStorage.getItem('bundlerState');
+    console.log('Loading bundler state:', savedState);
+    
     if (savedState) {
       const state = JSON.parse(savedState);
+      console.log('Parsed state:', state);
       
       // Restore variables
-      if (state.selectedProducts) selectedProducts = state.selectedProducts;
-      if (state.productQuantities) productQuantities = state.productQuantities;
-      if (state.currentBundleType) currentBundleType = state.currentBundleType;
-      if (state.currentVariant) currentVariant = state.currentVariant;
-      if (state.currentFilter) currentFilter = state.currentFilter;
-      if (state.currentSearch) currentSearch = state.currentSearch;
+      if (state.selectedProducts) {
+        selectedProducts = state.selectedProducts;
+        console.log('Restored selectedProducts:', selectedProducts);
+      }
+      if (state.productQuantities) {
+        productQuantities = state.productQuantities;
+        console.log('Restored productQuantities:', productQuantities);
+      }
+      if (state.currentBundleType) {
+        currentBundleType = state.currentBundleType;
+        console.log('Restored currentBundleType:', currentBundleType);
+      }
+      if (state.currentVariant) {
+        currentVariant = state.currentVariant;
+        console.log('Restored currentVariant:', currentVariant);
+      }
+      if (state.currentFilter) {
+        currentFilter = state.currentFilter;
+        console.log('Restored currentFilter:', currentFilter);
+      }
+      if (state.currentSearch) {
+        currentSearch = state.currentSearch;
+        console.log('Restored currentSearch:', currentSearch);
+      }
       
       // Restore UI state
+      console.log('About to restore UI state...');
       restoreUIState();
+    } else {
+      console.log('No saved state found');
     }
   } catch (error) {
     console.log('Error loading bundler state:', error);
@@ -3575,15 +3605,17 @@ function loadBundlerState() {
 
 // Restore UI based on saved state
 function restoreUIState() {
-  // Restore variant selection
-  const variantButtons = document.querySelectorAll('.variant-btn');
-  variantButtons.forEach(btn => {
-    if (btn.dataset.variant === currentVariant) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-  });
+  // Use setTimeout to ensure DOM is fully loaded
+  setTimeout(() => {
+    // Restore variant selection
+    const variantButtons = document.querySelectorAll('.variant-btn');
+    variantButtons.forEach(btn => {
+      if (btn.dataset.variant === currentVariant) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
   
   // Restore bundle type selection
   const bundleButtons = document.querySelectorAll('.bundle-type-btn');
@@ -3611,8 +3643,8 @@ function restoreUIState() {
     searchInput.value = currentSearch;
   }
   
-  // Update variant prices first
-  updateVariantPrices(currentVariant);
+  // Update bundle prices first
+  updateBundlePrices();
   
   // Restore selected products
   selectedProducts.forEach(product => {
@@ -3636,12 +3668,13 @@ function restoreUIState() {
     }
   });
   
-  // Update all UI elements
-  updateSelectedItems();
-  updateCartProgress();
-  updateAddButton();
-  generateProgressMarkers();
-  applyFilters();
+    // Update all UI elements
+    updateSelectedItems();
+    updateCartProgress();
+    updateAddButton();
+    generateProgressMarkers();
+    applyFilters();
+  }, 100); // Small delay to ensure DOM is ready
 }
 
 // Add click handler to sidebar for mobile
