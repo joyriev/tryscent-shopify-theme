@@ -607,14 +607,17 @@
 }
 
 .bundler-progress-fill {
-  height: 100%;
-  background: #28a745;
+  height: 100% !important;
+  background: #28a745 !important;
   border-radius: 6px;
   transition: width 0.5s ease;
   width: 0%;
   position: relative;
-  display: block;
+  display: block !important;
   box-sizing: border-box;
+  min-height: 12px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .progress-markers {
@@ -1059,12 +1062,20 @@ function generateProgressMarkers() {
         progressFill.style.width = progressPercent + '%';
         progressFill.style.backgroundColor = '#28a745';
         progressFill.style.display = 'block';
+        progressFill.style.height = '100%';
+        progressFill.style.minHeight = '12px';
+        progressFill.style.opacity = '1';
+        progressFill.style.visibility = 'visible';
         console.log('Set width to:', progressPercent + '%');
         console.log('Set background to green');
         console.log('Actual width after setting:', progressFill.style.width);
         console.log('Actual background after setting:', progressFill.style.backgroundColor);
         console.log('Computed width:', window.getComputedStyle(progressFill).width);
+        console.log('Computed height:', window.getComputedStyle(progressFill).height);
         console.log('Computed background:', window.getComputedStyle(progressFill).background);
+        console.log('Computed display:', window.getComputedStyle(progressFill).display);
+        console.log('Computed opacity:', window.getComputedStyle(progressFill).opacity);
+        console.log('Computed visibility:', window.getComputedStyle(progressFill).visibility);
       } else {
         console.error('BUNDLER PROGRESS FILL ELEMENT NOT FOUND!');
       }
