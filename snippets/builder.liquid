@@ -1049,6 +1049,7 @@ function generateProgressMarkers() {
       console.log('=== BUNDLER PROGRESS BAR FILL DEBUG ===');
       console.log('progressFill element:', progressFill);
       console.log('progressFill classList:', progressFill ? progressFill.classList : 'N/A');
+      console.log('progressFill HTML:', progressFill ? progressFill.outerHTML : 'N/A');
       console.log('selectedProducts.length:', selectedProducts.length);
       console.log('config.total:', config.total);
       
@@ -1056,8 +1057,12 @@ function generateProgressMarkers() {
         const progressPercent = (selectedProducts.length / config.total) * 100;
         console.log('Calculated progressPercent:', progressPercent);
         progressFill.style.width = progressPercent + '%';
+        progressFill.style.backgroundColor = '#28a745';
+        progressFill.style.display = 'block';
         console.log('Set width to:', progressPercent + '%');
+        console.log('Set background to green');
         console.log('Actual width after setting:', progressFill.style.width);
+        console.log('Actual background after setting:', progressFill.style.backgroundColor);
         console.log('Computed width:', window.getComputedStyle(progressFill).width);
         console.log('Computed background:', window.getComputedStyle(progressFill).background);
       } else {
