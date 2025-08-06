@@ -1512,6 +1512,62 @@ function cleanDataAttributes() {
       priceElement.textContent = cleanPrice;
     }
   });
+  
+  // Update bundle selector prices
+  updateBundlePrices();
+}
+
+// Update bundle selector prices
+function updateBundlePrices() {
+  // Get current price from first product
+  const firstProduct = document.querySelector('.product-price');
+  if (!firstProduct) return;
+  
+  const currentPrice = firstProduct.textContent;
+  console.log('Current price from product grid:', currentPrice);
+  
+  // Extract numeric value from price
+  const priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
+  if (!priceMatch) return;
+  
+  const basePrice = parseFloat(priceMatch[0].replace(',', ''));
+  console.log('Base price:', basePrice);
+  
+  // Update bundle prices
+  const bundleConfig = {
+    '2+1': { buy: 2, free: 1, total: 3 },
+    '3+2': { buy: 3, free: 2, total: 5 },
+    '4+3': { buy: 4, free: 3, total: 7 },
+    '5+4': { buy: 5, free: 4, total: 9 }
+  };
+  
+  Object.keys(bundleConfig).forEach(bundleType => {
+    const config = bundleConfig[bundleType];
+    
+    // Update total price
+    const totalPriceElement = document.querySelector(`[data-bundle-type="${bundleType}"] .bundle-total-price`);
+    if (totalPriceElement) {
+      const totalPrice = config.buy * basePrice;
+      const totalPriceText = currentPrice.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
+      totalPriceElement.textContent = totalPriceText;
+    }
+    
+    // Update per bottle price
+    const perBottleElement = document.getElementById(`price-${bundleType}`);
+    if (perBottleElement) {
+      const perBottlePrice = (config.buy * basePrice) / config.total;
+      const perBottleText = currentPrice.replace(/[\d,]+\.?\d*/, perBottlePrice.toFixed(2));
+      perBottleElement.textContent = perBottleText + ' per bottle';
+    }
+    
+    // Update savings
+    const savingsElement = document.getElementById(`savings-${bundleType}`);
+    if (savingsElement) {
+      const savings = config.free * basePrice;
+      const savingsText = currentPrice.replace(/[\d,]+\.?\d*/, savings.toFixed(2));
+      savingsElement.textContent = `SAVE ${savingsText}`;
+    }
+  });
 }
 
 // Product selection
