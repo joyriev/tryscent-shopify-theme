@@ -132,9 +132,9 @@
               <div class="bundler-progress-container">
                 <div class="bundler-progress-bar">
                   <div class="bundler-progress-fill" id="cartProgressFill"></div>
-                </div>
-                <div class="progress-markers" id="progressMarkers">
-                  <!-- Markers will be generated dynamically -->
+                  <div class="progress-markers" id="progressMarkers">
+                    <!-- Markers will be generated dynamically -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -627,30 +627,32 @@
 }
 
 .progress-markers {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
-  color: #666;
-  font-weight: 700;
-  margin-top: 8px;
-  gap: 4px;
+  pointer-events: none;
+  z-index: 10;
+  padding: 0 12px;
 }
 
 .marker {
-  position: relative;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: white;
   border: 3px solid #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #666;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   pointer-events: auto;
   z-index: 11;
 }
@@ -1069,7 +1071,7 @@ function generateProgressMarkers() {
         progressFill.style.backgroundColor = '#28a745';
         progressFill.style.display = 'block';
         progressFill.style.height = '100%';
-        progressFill.style.minHeight = '12px';
+        progressFill.style.minHeight = '20px';
         progressFill.style.opacity = '1';
         progressFill.style.visibility = 'visible';
         console.log('Set width to:', progressPercent + '%');
