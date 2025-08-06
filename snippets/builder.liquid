@@ -2556,6 +2556,13 @@ window.selectProduct = function(productId, passedVariantId) {
     const productImage = productCard.querySelector('.product-image img');
     const image = productImage ? productImage.src : '';
     
+    // Double-check: make sure product is not already in selectedProducts
+    const existingProductIndex = selectedProducts.findIndex(p => parseInt(p.id) === productId);
+    if (existingProductIndex !== -1) {
+      console.warn('Product already exists in selectedProducts, removing old entry');
+      selectedProducts.splice(existingProductIndex, 1);
+    }
+    
     selectedProducts.push({
       id: productId,
       variantId: parseInt(variantId), // Use actual variant ID
@@ -2564,6 +2571,9 @@ window.selectProduct = function(productId, passedVariantId) {
       image: image,
       variant: currentVariant
     });
+    
+    // Initialize quantity for this product
+    productQuantities[productId] = 1;
     
     // Update progress text and indicators
     updateProgressText();
@@ -2657,12 +2667,20 @@ function clearAllSelections() {
       newButton.setAttribute('onclick', `selectProduct(${productId}, ${variantId});`);
       
       // Add event listener as backup
-      newButton.addEventListener('click', function() {
+      newButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         window.selectProduct(productId, variantId);
       });
       
       // Replace quantity selector with button
       quantitySelector.parentNode.replaceChild(newButton, quantitySelector);
+    }
+    
+    // Force remove any lingering product quantities
+    const productId = parseInt(card.dataset.productId);
+    if (productQuantities[productId]) {
+      delete productQuantities[productId];
     }
     
     // Reset button state if it exists
@@ -2687,11 +2705,15 @@ function clearAllSelections() {
   
   // Update all UI elements
   updateProgressText();
+  generateProgressMarkers();
   updateCartProgress();
   updateSelectedItems();
   updateAddButton();
   updateFullscreenButtonText();
-  generateProgressMarkers();
+  
+  // Force UI refresh
+  const event = new Event('bundleReset');
+  document.dispatchEvent(event);
 }
 
 // Add all other functions to window immediately
