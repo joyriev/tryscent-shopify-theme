@@ -1523,6 +1523,269 @@ window.selectBundleType = function(bundleType) {
   }
 };
 
+// Add all other functions to window immediately
+window.selectVariant = function(variant) {
+  currentVariant = variant;
+  
+  // Update variant button states
+  document.querySelectorAll('.variant-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.closest('.variant-btn').classList.add('active');
+  
+  // Clean and update prices
+  cleanDataAttributes();
+  
+  // Scroll to bundle selection with offset
+  const bundleSelection = document.querySelector('.bundle-type-selection');
+  if (bundleSelection) {
+    const offset = bundleSelection.offsetTop - 200;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
+};
+
+window.changeProductQuantity = function(productId, change) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (!productCard) return;
+  
+  const quantityDisplay = productCard.querySelector('.quantity-display');
+  if (!quantityDisplay) return;
+  
+  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
+  let newQuantity = currentQuantity + change;
+  
+  // If quantity goes to 0 or below, remove product completely
+  if (newQuantity <= 0) {
+    // Remove product from selection
+    productCard.classList.remove('selected');
+    
+    // Remove quantity selector and restore button
+    const quantitySelector = productCard.querySelector('.quantity-selector');
+    if (quantitySelector) {
+      const button = document.createElement('button');
+      button.className = 'add-to-bundle-btn';
+      button.textContent = 'ADD TO BUNDLE';
+      button.onclick = () => selectProduct(productId, currentVariant);
+      quantitySelector.parentNode.replaceChild(button, quantitySelector);
+    }
+    
+    // Hide selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'none';
+    }
+    
+    // Remove from selected products
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    delete productQuantities[productId];
+    
+    // Update progress
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+    updateAddButton();
+    
+    return;
+  }
+  
+  // Limit quantity to 10
+  if (newQuantity > 10) newQuantity = 10;
+  
+  // Update quantity display in product card
+  quantityDisplay.textContent = newQuantity;
+  
+  // Update quantity display in side cart
+  const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
+  if (selectedItem) {
+    const sideCartQuantityDisplay = selectedItem.querySelector('.quantity-display');
+    if (sideCartQuantityDisplay) {
+      sideCartQuantityDisplay.textContent = newQuantity;
+    }
+  }
+  
+  // Update product quantities
+  productQuantities[productId] = newQuantity;
+  
+  // Update selected product
+  const selectedProduct = selectedProducts.find(p => p.id === productId);
+  if (selectedProduct) {
+    selectedProduct.quantity = newQuantity;
+  }
+  
+  // Update progress
+  updateProgressText();
+  updateCartProgress();
+  updateProgressBarFill();
+  updateSelectedItems();
+  updateAddButton();
+};
+
+window.changeQuantity = function(productId, change) {
+  // Find quantity display in selected items
+  const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
+  const quantityDisplay = selectedItem ? selectedItem.querySelector('.quantity-display') : null;
+  
+  if (!quantityDisplay) {
+    return;
+  }
+  
+  const minusBtn = quantityDisplay.previousElementSibling;
+  const plusBtn = quantityDisplay.nextElementSibling;
+  
+  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
+  let newQuantity = currentQuantity + change;
+  
+  // If quantity goes to 0 or below, remove product completely
+  if (newQuantity <= 0) {
+    // Remove product from selection
+    const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+    if (productCard) {
+      productCard.classList.remove('selected');
+      
+      // Remove quantity selector and restore button
+      const quantitySelector = productCard.querySelector('.quantity-selector');
+      if (quantitySelector) {
+        const button = document.createElement('button');
+        button.className = 'add-to-bundle-btn';
+        button.textContent = 'ADD TO BUNDLE';
+        button.onclick = () => selectProduct(productId, currentVariant);
+        quantitySelector.parentNode.replaceChild(button, quantitySelector);
+      }
+      
+      // Hide selection indicator
+      const indicator = productCard.querySelector('.selection-indicator');
+      if (indicator) {
+        indicator.style.display = 'none';
+      }
+    }
+    
+    // Remove from selected products
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    delete productQuantities[productId];
+    
+    // Update progress
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+    updateAddButton();
+    
+    return;
+  }
+  
+  // Limit quantity to 10
+  if (newQuantity > 10) newQuantity = 10;
+  
+  // Update quantity display in side cart
+  quantityDisplay.textContent = newQuantity;
+  
+  // Update quantity display in product card
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  if (productCard) {
+    const cardQuantityDisplay = productCard.querySelector('.quantity-display');
+    if (cardQuantityDisplay) {
+      cardQuantityDisplay.textContent = newQuantity;
+    }
+  }
+  
+  productQuantities[productId] = newQuantity;
+  
+  // Update selected product
+  const selectedProduct = selectedProducts.find(p => p.id === productId);
+  if (selectedProduct) {
+    selectedProduct.quantity = newQuantity;
+  }
+  
+  // Update button states
+  minusBtn.disabled = newQuantity <= 1;
+  plusBtn.disabled = newQuantity >= 10;
+  
+  // Update progress
+  updateProgressText();
+  updateCartProgress();
+  updateProgressBarFill();
+  updateSelectedItems();
+  updateAddButton();
+};
+
+window.filterProducts = function() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  currentSearch = searchTerm;
+  applyFilters();
+};
+
+window.filterByCategory = function(category) {
+  currentFilter = category;
+  
+  // Update filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+  
+  applyFilters();
+};
+
+window.addBundleToCart = function() {
+  const config = bundleConfig[currentBundleType];
+  
+  // Calculate total items including quantities
+  let totalItems = 0;
+  selectedProducts.forEach(product => {
+    const quantity = productQuantities[product.id] || 1;
+    totalItems += quantity;
+  });
+  
+  if (totalItems < config.total) {
+    return;
+  }
+  
+  const items = selectedProducts.map(product => {
+    return {
+      id: product.variantId,
+      quantity: productQuantities[product.id] || 1,
+      properties: {
+        '_bundle_type': currentBundleType,
+        '_bundle_total': totalItems.toString()
+      }
+    };
+  });
+  
+  // Add to cart using Shopify AJAX API
+  fetch('/cart/add.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ items: items })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (!data.status) {
+      // Add builder tag to cart attributes
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          attributes: {
+            '_bundle_type': currentBundleType,
+            '_bundle_total': totalItems.toString()
+          }
+        })
+      });
+      
+      // Redirect to checkout
+      window.location.href = '/checkout';
+    }
+  })
+  .catch(error => {
+    // Silent error handling
+  });
+};
+
 // Get ordinal suffix (1st, 2nd, 3rd, etc.)
 function getOrdinalSuffix(num) {
   if (num >= 11 && num <= 13) return 'th';
@@ -1866,228 +2129,6 @@ function changeProductQuantity(productId, change) {
 }
 
 // Update variant when select changes
-function updateVariant(productId, variantId) {
-  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
-  if (productCard) {
-    productCard.dataset.variantId = variantId;
-    
-    // Update price
-    const variantSelect = productCard.querySelector('.variant-select');
-    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
-    const priceElement = productCard.querySelector('.product-price');
-    if (priceElement && selectedOption) {
-      priceElement.textContent = selectedOption.dataset.price;
-    }
-    
-    // Update selected product if it's in the selection
-    const selectedProduct = selectedProducts.find(p => p.id === productId);
-    if (selectedProduct) {
-      selectedProduct.variantId = parseInt(variantId);
-      selectedProduct.price = selectedOption ? selectedOption.dataset.price : '';
-    }
-  }
-}
-
-
-
-// Update add button
-function updateAddButton() {
-  const addButton = document.getElementById('addBundleBtn');
-  const btnText = document.getElementById('btnText');
-  const btnStatus = document.getElementById('btnStatus');
-  
-  if (addButton && btnText && btnStatus) {
-    const config = bundleConfig[currentBundleType];
-    const minRequired = config.buy;
-    
-    // Calculate total items including quantities
-    let totalItems = 0;
-    selectedProducts.forEach(product => {
-      const quantity = productQuantities[product.id] || 1;
-      totalItems += quantity;
-    });
-    
-
-    
-    addButton.disabled = totalItems < config.total;
-    
-    // Update button text and status
-    if (totalItems >= config.total) {
-      btnText.textContent = 'Your Bundle Is Ready!';
-      btnStatus.textContent = `${totalItems}/${config.total}`;
-    } else {
-      btnText.textContent = `Please Select ${config.total - totalItems} More Scents`;
-      btnStatus.textContent = `${totalItems}/${config.total}`;
-    }
-    
-
-  }
-}
-}
-
-// Filter functions
-function filterProducts() {
-  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-  currentSearch = searchTerm;
-  applyFilters();
-}
-
-function filterByCategory(category) {
-  currentFilter = category;
-  
-  // Update filter buttons
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  event.target.classList.add('active');
-  
-  applyFilters();
-}
-
-function applyFilters() {
-  const products = document.querySelectorAll('.product-card');
-  
-  products.forEach(product => {
-    const title = product.querySelector('.product-title').textContent.toLowerCase();
-    const tags = product.dataset.category; // tags are stored in data-category
-    const matchesSearch = title.includes(currentSearch) || tags.includes(currentSearch);
-    
-    let matchesFilter = true;
-    if (currentFilter !== 'all') {
-      // Check if the product has the specific tag
-      const tagArray = tags.split(' ');
-      matchesFilter = tagArray.includes(currentFilter);
-
-    }
-    
-    if (matchesSearch && matchesFilter) {
-      product.style.display = 'block';
-    } else {
-      product.style.display = 'none';
-    }
-  });
-}
-
-// Select variant function
-function selectVariant(variant) {
-  currentVariant = variant;
-  
-  // Update variant button states
-  document.querySelectorAll('.variant-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  event.target.closest('.variant-btn').classList.add('active');
-  
-  // Clean and update prices
-  cleanDataAttributes();
-  
-  // Scroll to bundle selection with offset
-  const bundleSelection = document.querySelector('.bundle-type-selection');
-  if (bundleSelection) {
-    const offset = bundleSelection.offsetTop - 200;
-    window.scrollTo({ top: offset, behavior: 'smooth' });
-  }
-  
-}
-
-
-
-
-
-// Change quantity function for side cart
-function changeQuantity(productId, change) {
-  
-  // Find quantity display in selected items
-  const selectedItem = document.querySelector(`.selected-item[data-product-id="${productId}"]`);
-  const quantityDisplay = selectedItem ? selectedItem.querySelector('.quantity-display') : null;
-  
-  if (!quantityDisplay) {
-    return;
-  }
-  
-  const minusBtn = quantityDisplay.previousElementSibling;
-  const plusBtn = quantityDisplay.nextElementSibling;
-  
-  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
-  let newQuantity = currentQuantity + change;
-  
-  // If quantity goes to 0 or below, remove product completely
-  if (newQuantity <= 0) {
-    // Remove product from selection
-    const productCard = document.querySelector(`[data-product-id="${productId}"]`);
-    if (productCard) {
-      productCard.classList.remove('selected');
-      
-      // Remove quantity selector and restore button
-      const quantitySelector = productCard.querySelector('.quantity-selector');
-      if (quantitySelector) {
-        const button = document.createElement('button');
-        button.className = 'add-to-bundle-btn';
-        button.textContent = 'ADD TO BUNDLE';
-        button.onclick = () => selectProduct(productId, currentVariant);
-        quantitySelector.parentNode.replaceChild(button, quantitySelector);
-      }
-      
-      // Hide selection indicator
-      const indicator = productCard.querySelector('.selection-indicator');
-      if (indicator) {
-        indicator.style.display = 'none';
-      }
-    }
-    
-    // Remove from selected products
-    selectedProducts = selectedProducts.filter(p => p.id !== productId);
-    delete productQuantities[productId];
-    
-    // Update progress
-    updateProgressText();
-    updateCartProgress();
-    updateProgressBarFill();
-    updateSelectedItems();
-    updateAddButton();
-    
-    console.log('Product removed from selection');
-    return;
-  }
-  
-  // Limit quantity to 10
-  if (newQuantity > 10) newQuantity = 10;
-  
-  // Update quantity display in side cart
-  quantityDisplay.textContent = newQuantity;
-  
-  // Update quantity display in product card
-  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
-  if (productCard) {
-    const cardQuantityDisplay = productCard.querySelector('.quantity-display');
-    if (cardQuantityDisplay) {
-      cardQuantityDisplay.textContent = newQuantity;
-    }
-  }
-  
-  productQuantities[productId] = newQuantity;
-  
-  // Update selected product
-  const selectedProduct = selectedProducts.find(p => p.id === productId);
-  if (selectedProduct) {
-    selectedProduct.quantity = newQuantity;
-  }
-  
-  // Update button states
-  minusBtn.disabled = newQuantity <= 1;
-  plusBtn.disabled = newQuantity >= 10;
-  
-  // Update progress
-  updateProgressText();
-  updateCartProgress();
-  updateProgressBarFill();
-  updateSelectedItems();
-  updateAddButton();
-  
-  console.log(`Quantity changed for product ${productId}: ${currentQuantity} -> ${newQuantity}`);
-}
-
-// Variant change handler
 document.addEventListener('change', function(e) {
   if (e.target.classList.contains('variant-select')) {
     e.stopPropagation(); // Prevent triggering card click
@@ -2227,12 +2268,57 @@ function addBundleToCart() {
   });
 }
 
-// Make remaining functions globally available
-window.changeProductQuantity = changeProductQuantity;
-window.changeQuantity = changeQuantity;
-window.selectVariant = selectVariant;
-window.filterProducts = filterProducts;
-window.filterByCategory = filterByCategory;
-window.addBundleToCart = addBundleToCart;
 
+
+// Add missing helper functions
+function updateAddButton() {
+  const addButton = document.getElementById('addBundleBtn');
+  const btnText = document.getElementById('btnText');
+  const btnStatus = document.getElementById('btnStatus');
+  
+  if (addButton && btnText && btnStatus) {
+    const config = bundleConfig[currentBundleType];
+    
+    // Calculate total items including quantities
+    let totalItems = 0;
+    selectedProducts.forEach(product => {
+      const quantity = productQuantities[product.id] || 1;
+      totalItems += quantity;
+    });
+    
+    addButton.disabled = totalItems < config.total;
+    
+    // Update button text and status
+    if (totalItems >= config.total) {
+      btnText.textContent = 'Your Bundle Is Ready!';
+      btnStatus.textContent = `${totalItems}/${config.total}`;
+    } else {
+      btnText.textContent = `Please Select ${config.total - totalItems} More Scents`;
+      btnStatus.textContent = `${totalItems}/${config.total}`;
+    }
+  }
+}
+
+function applyFilters() {
+  const products = document.querySelectorAll('.product-card');
+  
+  products.forEach(product => {
+    const title = product.querySelector('.product-title').textContent.toLowerCase();
+    const tags = product.dataset.category; // tags are stored in data-category
+    const matchesSearch = title.includes(currentSearch) || tags.includes(currentSearch);
+    
+    let matchesFilter = true;
+    if (currentFilter !== 'all') {
+      // Check if the product has the specific tag
+      const tagArray = tags.split(' ');
+      matchesFilter = tagArray.includes(currentFilter);
+    }
+    
+    if (matchesSearch && matchesFilter) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
 </script> 
