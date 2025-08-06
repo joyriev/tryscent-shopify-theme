@@ -18,14 +18,23 @@
           <h1>Create Your Bundle!</h1>
           <p class="bundler-subtitle">Best scents you've ever smelled or your money back.</p>
           <div class="bundler-reviews">
-            <span class="jdgm-prev-badge__stars" data-score="5.00" tabindex="0" aria-label="5.00 stars" role="button">
-              <span class="jdgm-star jdgm--on"></span>
-              <span class="jdgm-star jdgm--on"></span>
-              <span class="jdgm-star jdgm--on"></span>
-              <span class="jdgm-star jdgm--on"></span>
-              <span class="jdgm-star jdgm--on"></span>
-            </span>
-            <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
+            {%- if shop.metafields.reviews.rating.value != blank -%}
+              <div
+                class="rating"
+                role="img"
+                aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: shop.metafields.reviews.rating.value, rating_max: shop.metafields.reviews.rating.value.scale_max }}"
+              >
+                <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="40" width="200">
+              </div>
+              <span class="rating-text">{{ shop.metafields.reviews.rating.value }} / {{ shop.metafields.reviews.rating.value.scale_max }}</span>
+              <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
+            {%- else -%}
+              <div class="rating">
+                <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="40" width="200">
+              </div>
+              <span class="rating-text">5 / 5</span>
+              <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
+            {%- endif -%}
       </div>
 
         </div>
@@ -137,14 +146,23 @@
                   
                   <!-- Reviews -->
                   <div class="product-reviews">
-                    <span class="jdgm-prev-badge__stars" data-score="5.00" tabindex="0" aria-label="5.00 stars" role="button">
-                      <span class="jdgm-star jdgm--on"></span>
-                      <span class="jdgm-star jdgm--on"></span>
-                      <span class="jdgm-star jdgm--on"></span>
-                      <span class="jdgm-star jdgm--on"></span>
-                      <span class="jdgm-star jdgm--on"></span>
-                    </span>
-                    <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
+                    {%- if product.metafields.reviews.rating.value != blank -%}
+                      <div
+                        class="rating"
+                        role="img"
+                        aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
+                      >
+                        <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="13" width="66">
+                      </div>
+                      <span class="rating-text">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
+                      <span class="rating-count">({{ product.metafields.reviews.rating_count }})</span>
+                    {%- else -%}
+                      <div class="rating">
+                        <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="13" width="66">
+                      </div>
+                      <span class="rating-text">5 / 5</span>
+                      <span class="rating-count">({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
+                    {%- endif -%}
                 </div>
                   
                   <!-- Price Display -->
@@ -270,16 +288,27 @@
   color: #666;
 }
 
-.bundler-reviews .jdgm-prev-badge__stars {
+.bundler-reviews .rating {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.bundler-reviews .jdgm-star {
-  color: #ffd700;
-  font-size: 3.3rem;
-  letter-spacing: 6px;
+.bundler-reviews .rating img {
+  height: 40px;
+  width: 200px;
+}
+
+.bundler-reviews .rating-text {
+  font-size: 2rem;
+  color: #666;
+  margin: 0;
+}
+
+.bundler-reviews .rating-count {
+  font-size: 2.7rem;
+  color: #666;
+  margin: 0;
 }
 
 .review-count {
@@ -773,16 +802,27 @@
   margin-bottom: 12px;
 }
 
-.product-reviews .jdgm-prev-badge__stars {
+.product-reviews .rating {
   display: flex;
   align-items: center;
   gap: 2px;
 }
 
-.product-reviews .jdgm-star {
-  color: #ffd700;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+.product-reviews .rating img {
+  height: 13px;
+  width: 66px;
+}
+
+.product-reviews .rating-text {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+
+.product-reviews .rating-count {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
 }
 
 .product-reviews .review-count {
