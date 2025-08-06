@@ -1500,6 +1500,11 @@ color: white;
   .mobile-sidebar {
     display: block !important;
   }
+  
+  /* Hide desktop progress bar on mobile */
+  .desktop-sidebar .bundler-progress-fill {
+    display: none !important;
+  }
 
   .bundler-container {
     padding: 10px;
@@ -2654,16 +2659,21 @@ function updateCartProgress() {
     totalItems += quantity;
   });
   
-  // Update desktop progress
-  if (progressFill) {
-    const progressPercent = (totalItems / config.total) * 100;
-    progressFill.style.width = progressPercent + '%';
-  }
+  // Update progress based on device
+  const isMobile = window.innerWidth <= 768;
   
-  // Update mobile progress
-  if (progressFillMobile) {
-    const progressPercent = (totalItems / config.total) * 100;
-    progressFillMobile.style.width = progressPercent + '%';
+  if (isMobile) {
+    // On mobile, only update mobile progress
+    if (progressFillMobile) {
+      const progressPercent = (totalItems / config.total) * 100;
+      progressFillMobile.style.width = progressPercent + '%';
+    }
+  } else {
+    // On desktop, only update desktop progress
+    if (progressFill) {
+      const progressPercent = (totalItems / config.total) * 100;
+      progressFill.style.width = progressPercent + '%';
+    }
   }
   
   // Update markers (both desktop and mobile)
