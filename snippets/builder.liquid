@@ -14,33 +14,75 @@
       <!-- Header -->
       <div class="bundler-header">
         <div class="bundler-title">
-          <h1>Create Your Box</h1>
+          <h1>Create Your Bundle!</h1>
           <p class="bundler-subtitle">Best scents you've ever smelled or your money back.</p>
           <div class="bundler-reviews">
             <div class="stars">★★★★★</div>
             <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
+      </div>
+
+        </div>
           </div>
+
+      <!-- Variant Selection -->
+      <div class="variant-selection">
+        <h3 class="variant-title">Select Size!</h3>
+        <p class="variant-subtitle">80% of customers buy 100ML</p>
+        <div class="variant-buttons">
+          <button class="variant-btn" data-variant="30ML" onclick="selectVariant('30ML')">
+            <div class="variant-image">
+              <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
+          </div>
+            <span class="variant-size">30ML</span>
+          </button>
+          <button class="variant-btn" data-variant="50ML" onclick="selectVariant('50ML')">
+            <div class="variant-badge popular">Popular</div>
+            <div class="variant-image">
+              <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="50ML">
+          </div>
+            <span class="variant-size">50ML</span>
+          </button>
+          <button class="variant-btn active" data-variant="100ML" onclick="selectVariant('100ML')">
+            <div class="variant-badge bestseller">Bestseller</div>
+            <div class="variant-image">
+              <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="100ML">
+            </div>
+            <span class="variant-size">100ML</span>
+          </button>
         </div>
       </div>
 
       <!-- Bundle Type Selection -->
-      <div class="bundle-type-selection">
+      <div class="bundle-type-selection" id="bundleSelection">
+        {% assign first_product = bundle_collection.products.first %}
+        {% assign first_variant_100ml = first_product.variants | where: 'title', '100ML' | first %}
+        {% assign base_price = first_variant_100ml.price | default: 2699 %}
         <div class="bundle-type-buttons">
           <button class="bundle-type-btn active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
-            <span class="bundle-type-title">2+1 FREE</span>
             <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
+            <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
+            <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
+            <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
           </button>
           <button class="bundle-type-btn" data-bundle-type="3+2" onclick="selectBundleType('3+2')">
-            <span class="bundle-type-title">3+2 FREE</span>
             <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
+            <span class="bundle-total-price">{{ base_price | times: 3 | money }}</span>
+            <span class="bundle-price" id="price-3+2">{{ base_price | times: 3 | divided_by: 5 | money }} per bottle</span>
+            <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
           </button>
           <button class="bundle-type-btn" data-bundle-type="4+3" onclick="selectBundleType('4+3')">
-            <span class="bundle-type-title">4+3 FREE</span>
+            <div class="bundle-badge bestseller">Bestseller</div>
             <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
+            <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
+            <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | divided_by: 7 | money }} per bottle</span>
+            <div class="bundle-savings" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
           </button>
           <button class="bundle-type-btn" data-bundle-type="5+4" onclick="selectBundleType('5+4')">
-            <span class="bundle-type-title">5+4 FREE</span>
+            <div class="bundle-badge best-value">Best Value</div>
             <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
+            <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
+            <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | divided_by: 9 | money }} per bottle</span>
+            <div class="bundle-savings" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
           </button>
         </div>
       </div>
@@ -53,23 +95,23 @@
           <input type="text" id="searchInput" placeholder="Search for scents..." onkeyup="filterProducts()">
         </div>
         <div class="filter-container">
-          <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
-          <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
-          <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
+        <button class="filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
+        <button class="filter-btn" data-filter="man" onclick="filterByCategory('man')">Man</button>
+        <button class="filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Woman</button>
         </div>
       </div>
 
       <!-- Main Content with Sidebar -->
       <div class="bundler-main-content">
-        <!-- Products Grid -->
-        <div class="bundler-products" id="productsGrid">
-          {% for product in bundle_collection.products %}
-            {% assign default_variant = product.variants | where: "title", "100ML" | first %}
-            {% unless default_variant %}
-              {% assign default_variant = product.variants.first %}
-            {% endunless %}
-            
-            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}">
+      <!-- Products Grid -->
+      <div class="bundler-products" id="productsGrid">
+        {% for product in bundle_collection.products %}
+          {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+          {% unless default_variant %}
+            {% assign default_variant = product.variants.first %}
+          {% endunless %}
+          
+            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
               <!-- Product Badge -->
               {% if product.tags contains 'new' %}
                 <div class="product-badge new">New</div>
@@ -78,34 +120,27 @@
               {% endif %}
               
               <!-- Product Image -->
-              <div class="product-image">
+            <div class="product-image">
                 <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
-              </div>
+            </div>
               
               <!-- Product Info -->
-              <div class="product-info">
-                <h3 class="product-title">{{ product.title }}</h3>
+            <div class="product-info">
+              <h3 class="product-title">{{ product.title }}</h3>
                 
                 <!-- Reviews -->
                 <div class="product-reviews">
                   <div class="stars">★★★★★</div>
                   <span class="review-count">5 ({{ product.metafields.judgeme.reviews_count | default: '150' }})</span>
-                </div>
+              </div>
                 
-                <!-- Variant and Price -->
-                <div class="product-variant-price">
-                  <select class="variant-select" data-product-id="{{ product.id }}" onchange="updateVariant({{ product.id }}, this.value);">
-                    {% for variant in product.variants %}
-                      {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
-                        <option value="{{ variant.id }}" 
-                                data-price="{{ variant.price | money }}"
-                                {% if variant.title contains '100ML' %}selected{% endif %}>
-                          {{ variant.title }} - {{ variant.price | money }}
-                        </option>
-                      {% endif %}
-                    {% endfor %}
-                  </select>
-                </div>
+                <!-- Price Display -->
+                <div class="product-price-display">
+                  {% assign variant_30ml = product.variants | where: 'title', '30ML' | first %}
+                  {% assign variant_50ml = product.variants | where: 'title', '50ML' | first %}
+                  {% assign variant_100ml = product.variants | where: 'title', '100ML' | first %}
+                  <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}">{{ default_variant.price | money }}</span>
+              </div>
                 
                 <!-- Add to Box Button -->
                 <button class="add-to-box-btn" onclick="selectProduct({{ product.id }}, {{ default_variant.id }});">
@@ -118,41 +153,44 @@
                 <div class="check-icon">✓</div>
               </div>
             </div>
-          {% endfor %}
-        </div>
+                  {% endfor %}
+              </div>
 
         <!-- Shopping Cart Sidebar -->
         <div class="bundler-sidebar">
           <div class="sidebar-content">
-            <h3 class="sidebar-title">Shopping Cart</h3>
+            <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
             
             <!-- Progress Section -->
             <div class="cart-progress">
               <div class="progress-text" id="cartProgressText">Please select at least 2 scents</div>
-              <div class="progress-bar">
-                <div class="progress-fill" id="cartProgressFill"></div>
-                <div class="progress-markers" id="progressMarkers">
-                  <!-- Markers will be generated dynamically -->
-                </div>
+              <div class="bundler-progress-container">
+                <div class="bundler-progress-bar">
+                  <div class="bundler-progress-fill" id="cartProgressFill"></div>
+                  <div class="progress-markers" id="progressMarkers">
+                    <!-- Markers will be generated dynamically -->
               </div>
             </div>
+            </div>
+          </div>
 
             <!-- Selected Items -->
             <div class="selected-items" id="selectedItems">
               <div class="empty-cart">
                 <p>Your cart is empty.</p>
               </div>
-            </div>
+      </div>
 
             <!-- Add Bundle Button -->
             <div class="sidebar-footer">
-              <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
-                ADD BUNDLE TO CART
-              </button>
-            </div>
-          </div>
-        </div>
+        <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
+                <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
+                <span class="btn-status" id="btnStatus">0/3</span>
+        </button>
       </div>
+    </div>
+  </div>
+</div>
 
     </div>
 </div>
@@ -210,6 +248,119 @@
   font-weight: 500;
 }
 
+.bundler-savings-info {
+  margin-top: 12px;
+}
+
+.savings-badge {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* Variant Selection */
+.variant-selection {
+  padding: 32px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.variant-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px 0;
+}
+
+.variant-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+.variant-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.variant-btn {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.variant-btn:hover {
+  border-color: #28a745;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.15);
+}
+
+.variant-btn.active {
+  border-color: #28a745;
+  background: linear-gradient(135deg, #f8fff9 0%, #ffffff 100%);
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.2);
+}
+
+.variant-image {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.variant-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.variant-size {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.variant-badge {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+}
+
+.variant-badge.popular {
+  background: #ff6b6b;
+}
+
+.variant-badge.bestseller {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
 /* Bundle Type Selection */
 .bundle-type-selection {
   padding: 32px;
@@ -221,25 +372,28 @@
   display: flex;
   justify-content: center;
   gap: 16px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   flex-wrap: wrap;
+  overflow: visible;
 }
 
 .bundle-type-btn {
   background: white;
   border: 2px solid #e0e0e0;
   border-radius: 16px;
-  padding: 20px 24px;
+  padding: 24px 20px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  min-width: 140px;
+  gap: 8px;
+  min-width: 180px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: visible;
 }
 
 .bundle-type-btn:hover {
@@ -250,9 +404,39 @@
 
 .bundle-type-btn.active {
   border-color: #28a745;
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-  color: white;
-  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.3);
+  background: white;
+  color: #222;
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.15);
+}
+
+.bundle-type-btn.active .bundle-type-title,
+.bundle-type-btn.active .bundle-type-desc {
+  color: #222 !important;
+}
+
+.bundle-type-btn .bundle-type-title,
+.bundle-type-btn .bundle-type-desc {
+  color: #222;
+}
+
+
+
+.bundle-total-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #28a745;
+  margin-top: 4px;
+}
+
+.bundle-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #dc3545;
+  margin-top: 2px;
+}
+
+.bundle-type-btn.active .bundle-price {
+  color: #dc3545;
 }
 
 .bundle-type-title {
@@ -262,14 +446,71 @@
 }
 
 .bundle-type-desc {
-  font-size: 0.85rem;
-  color: #666;
-  font-weight: 500;
+  font-size: 1.2rem;
+  color: #222;
+  font-weight: 700;
 }
 
 .bundle-type-btn.active .bundle-type-title,
 .bundle-type-btn.active .bundle-type-desc {
   color: white;
+}
+
+.bundle-badge {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+.bundle-badge.bestseller {
+  background: linear-gradient(45deg, #ff6b35, #ff8c42, #ff6b35);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
+  color: white;
+}
+
+.bundle-badge.best-value {
+  background: linear-gradient(45deg, #28a745, #20c997, #28a745);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
+  color: white;
+}
+
+.bundle-savings {
+  background: linear-gradient(45deg, #28a745, #20c997, #28a745);
+  background-size: 200% 200%;
+  animation: shiny-gradient 2s ease-in-out infinite;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes shiny-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 
@@ -367,7 +608,7 @@
   .bundler-products {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 16px;
+  padding: 16px;
   }
 }
 
@@ -477,32 +718,71 @@
   font-weight: 500;
 }
 
-/* Variant and Price */
-.product-variant-price {
+/* Price Display */
+.product-price-display {
   margin-bottom: 16px;
+  text-align: center;
 }
 
-.variant-select {
-  width: 100%;
-  padding: 10px 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 0.9rem;
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+/* Selected Item Quantity */
+.selected-item-quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
   background: white;
-  color: #222;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-right: 8px;
 }
 
-.variant-select:focus {
-  outline: none;
-  border-color: #28a745;
-  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+.selected-item-quantity .quantity-btn {
+  width: 24px;
+  height: 28px;
+  border: none;
+  background: #f8f9fa;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-item-quantity .quantity-btn:hover {
+  background: #e9ecef;
+  color: #222;
+}
+
+.selected-item-quantity .quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.selected-item-quantity .quantity-display {
+  width: 32px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #222;
+  background: white;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
 }
 
 /* Add to Box Button */
 .add-to-box-btn {
-  width: 100%;
+  flex: 1;
   padding: 12px 16px;
   border: 2px solid #28a745;
   border-radius: 8px;
@@ -514,8 +794,6 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-top: auto;
-  align-self: flex-end;
 }
 
 .add-to-box-btn:hover {
@@ -596,74 +874,63 @@
   font-weight: 500;
 }
 
-.progress-bar {
+.bundler-progress-container {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.bundler-progress-bar {
   height: 20px;
   background: #e0e0e0;
   border-radius: 10px;
   position: relative;
-  margin-bottom: 8px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 0 12px;
 }
 
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+.bundler-progress-fill {
+  height: 100% !important;
+  background: #28a745 !important;
   border-radius: 10px;
   transition: width 0.5s ease;
   width: 0%;
-  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
   position: relative;
-  z-index: 1;
-  display: block;
+  display: block !important;
   box-sizing: border-box;
-}
-
-.progress-fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  min-height: 20px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .progress-markers {
   position: absolute;
   top: 50%;
-  left: 12px;
-  right: 12px;
+  left: 0;
+  right: 0;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   pointer-events: none;
-  z-index: 2;
+  z-index: 10;
+  padding: 0 12px;
 }
 
 .marker {
-  position: relative;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: white;
   border: 3px solid #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #666;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   pointer-events: auto;
+  z-index: 11;
 }
 
 .buy-marker {
@@ -710,6 +977,7 @@
   margin-bottom: 8px;
   background: white;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .selected-item:hover {
@@ -762,17 +1030,31 @@
   color: white;
 }
 
+/* Selected Item Actions */
+.selected-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* Free Badge */
 .free-badge {
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 12px;
+  padding: 6px 4px;
+  border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-right: 8px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  z-index: 10;
 }
 
 .free-item {
@@ -799,6 +1081,22 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-text {
+  flex: 1;
+  text-align: left;
+}
+
+.btn-status {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .add-bundle-btn:hover:not(:disabled) {
@@ -926,6 +1224,13 @@ let selectedProducts = [];
 let currentFilter = 'all';
 let currentSearch = '';
 let currentBundleType = '2+1'; // Default bundle type
+let productQuantities = {}; // Store quantities for each product
+let currentVariant = '100ML'; // Default variant
+let variantPrices = {
+  '30ML': 1399, // $13.99 in cents
+  '50ML': 1999, // $19.99 in cents
+  '100ML': 2699  // $26.99 in cents
+};
 let bundleConfig = {
   '2+1': { buy: 2, free: 1, total: 3 },
   '3+2': { buy: 3, free: 2, total: 5 },
@@ -933,10 +1238,15 @@ let bundleConfig = {
   '5+4': { buy: 5, free: 4, total: 9 }
 };
 
+
+
 // Bundle type selection
 function selectBundleType(bundleType) {
+  console.log('Bundle type changed to:', bundleType);
+  
   currentBundleType = bundleType;
   selectedProducts = []; // Reset selections when changing bundle type
+  productQuantities = {}; // Reset quantities
   
   // Update button states
   document.querySelectorAll('.bundle-type-btn').forEach(btn => {
@@ -952,6 +1262,7 @@ function selectBundleType(bundleType) {
   
   // Update cart progress
   updateCartProgress();
+  updateProgressBarFill();
   
   // Update selected items
   updateSelectedItems();
@@ -972,7 +1283,14 @@ function selectBundleType(bundleType) {
       indicator.style.display = 'none';
     }
   });
+  
+  // Update bundle prices
+  updateBundlePrices();
+  
+  console.log('Bundle type selection completed');
 }
+
+
 
 
 
@@ -987,23 +1305,28 @@ function getOrdinalSuffix(num) {
   }
 }
 
-// Update progress text
+// Update progress text and sidebar title
 function updateProgressText() {
   const cartProgressText = document.getElementById('cartProgressText');
+  const sidebarTitle = document.getElementById('sidebarTitle');
   const config = bundleConfig[currentBundleType];
   
   let text = '';
+  let title = '';
+  
   if (selectedProducts.length === 0) {
-    text = `Please select at least ${config.buy} scents`;
-  } else if (selectedProducts.length < config.buy) {
-    text = `Please select ${config.buy - selectedProducts.length} more scents`;
+    text = `Please select at least ${config.total} scents`;
+    title = `Please Select At Least ${config.total} Scents`;
   } else if (selectedProducts.length < config.total) {
-    text = `Great! You can add ${config.total - selectedProducts.length} more scents for free`;
+    text = `Please select ${config.total - selectedProducts.length} more scents`;
+    title = `Please Select ${config.total - selectedProducts.length} More Scents`;
   } else {
     text = 'Perfect! Your bundle is ready';
+    title = 'Your Bundle Is Ready!';
   }
   
   if (cartProgressText) cartProgressText.textContent = text;
+  if (sidebarTitle) sidebarTitle.textContent = title;
 }
 
 // Generate progress markers
@@ -1028,34 +1351,70 @@ function generateProgressMarkers() {
   }
 }
 
-// Update cart progress bar
-function updateCartProgress() {
-  const progressFill = document.getElementById('cartProgressFill');
-  const config = bundleConfig[currentBundleType];
-  
-  console.log('updateCartProgress - selectedProducts:', selectedProducts.length, 'config.total:', config.total);
-  
-  if (progressFill) {
-    // Calculate progress from 0 to total (not from buy to total)
-    const progressPercent = (selectedProducts.length / config.total) * 100;
-    console.log('Setting progress width to:', progressPercent + '%');
-    progressFill.style.width = progressPercent + '%';
-    console.log('Progress fill element:', progressFill);
-    console.log('Progress fill width:', progressFill.style.width);
-  } else {
-    console.error('progressFill element not found!');
-  }
-  
-  // Update markers
-  document.querySelectorAll('.marker').forEach(marker => {
-    const value = parseInt(marker.dataset.value);
-    if (selectedProducts.length >= value) {
-      marker.classList.add('active');
-    } else {
-      marker.classList.remove('active');
+    // Update cart progress bar
+    function updateCartProgress() {
+      const progressFill = document.getElementById('cartProgressFill');
+      const config = bundleConfig[currentBundleType];
+      
+      console.log('=== PROGRESS DEBUG ===');
+      console.log('progressFill element:', progressFill);
+      console.log('progressFill width before:', progressFill ? progressFill.style.width : 'N/A');
+      
+      if (progressFill) {
+        // Calculate progress from 0 to total (not from buy to total)
+        const progressPercent = (selectedProducts.length / config.total) * 100;
+        console.log('Setting width to:', progressPercent + '%');
+        progressFill.style.width = progressPercent + '%';
+        console.log('progressFill width after:', progressFill.style.width);
+      }
+      
+      // Update markers
+      document.querySelectorAll('.marker').forEach(marker => {
+        const value = parseInt(marker.dataset.value);
+        if (selectedProducts.length >= value) {
+          marker.classList.add('active');
+        } else {
+          marker.classList.remove('active');
+        }
+      });
     }
-  });
-}
+
+    // Update progress bar fill separately
+    function updateProgressBarFill() {
+      const progressFill = document.getElementById('cartProgressFill');
+      const config = bundleConfig[currentBundleType];
+      
+      console.log('=== BUNDLER PROGRESS BAR FILL DEBUG ===');
+      console.log('progressFill element:', progressFill);
+      console.log('progressFill classList:', progressFill ? progressFill.classList : 'N/A');
+      console.log('progressFill HTML:', progressFill ? progressFill.outerHTML : 'N/A');
+      console.log('selectedProducts.length:', selectedProducts.length);
+      console.log('config.total:', config.total);
+      
+      if (progressFill) {
+        const progressPercent = (selectedProducts.length / config.total) * 100;
+        console.log('Calculated progressPercent:', progressPercent);
+        progressFill.style.width = progressPercent + '%';
+        progressFill.style.backgroundColor = '#28a745';
+        progressFill.style.display = 'block';
+        progressFill.style.height = '100%';
+        progressFill.style.minHeight = '20px';
+        progressFill.style.opacity = '1';
+        progressFill.style.visibility = 'visible';
+        console.log('Set width to:', progressPercent + '%');
+        console.log('Set background to green');
+        console.log('Actual width after setting:', progressFill.style.width);
+        console.log('Actual background after setting:', progressFill.style.backgroundColor);
+        console.log('Computed width:', window.getComputedStyle(progressFill).width);
+        console.log('Computed height:', window.getComputedStyle(progressFill).height);
+        console.log('Computed background:', window.getComputedStyle(progressFill).background);
+        console.log('Computed display:', window.getComputedStyle(progressFill).display);
+        console.log('Computed opacity:', window.getComputedStyle(progressFill).opacity);
+        console.log('Computed visibility:', window.getComputedStyle(progressFill).visibility);
+      } else {
+        console.error('BUNDLER PROGRESS FILL ELEMENT NOT FOUND!');
+      }
+    }
 
 // Update selected items in sidebar
 function updateSelectedItems() {
@@ -1076,6 +1435,7 @@ function updateSelectedItems() {
     const isFree = index >= config.buy;
     const freeBadge = isFree ? '<span class="free-badge">FREE</span>' : '';
     
+    const quantity = productQuantities[product.id] || 1;
     itemsHTML += `
       <div class="selected-item ${isFree ? 'free-item' : ''}" data-product-id="${product.id}">
         <img src="${product.image || ''}" alt="${product.title}" class="selected-item-image">
@@ -1083,13 +1443,23 @@ function updateSelectedItems() {
           <h4 class="selected-item-title">${product.title}</h4>
           <p class="selected-item-variant">${product.variant || '100ML'}</p>
         </div>
-        ${freeBadge}
-        <button class="selected-item-remove" onclick="removeFromCart(${product.id})">×</button>
+        <div class="selected-item-quantity">
+          <button class="quantity-btn minus" onclick="changeQuantity(${product.id}, -1)">-</button>
+          <span class="quantity-display">${quantity}</span>
+          <button class="quantity-btn plus" onclick="changeQuantity(${product.id}, 1)">+</button>
+        </div>
+        <div class="selected-item-actions">
+          ${freeBadge}
+          <button class="selected-item-remove" onclick="removeFromCart(${product.id})">×</button>
+        </div>
       </div>
     `;
   });
   
   selectedItemsContainer.innerHTML = itemsHTML;
+  
+  // Update add button after updating selected items
+  updateAddButton();
 }
 
 // Remove item from cart
@@ -1113,7 +1483,13 @@ document.addEventListener('DOMContentLoaded', function() {
   updateProgressText();
   generateProgressMarkers();
   updateCartProgress();
+  updateProgressBarFill();
   updateSelectedItems();
+  
+  // Wait for Shopify currency system to load, then initialize prices
+  updateProductGridPrices();
+  updateBundleSelectorPrices();
+  console.log('Prices initialized');
   
   // updateProgress will be called after function is defined
   if (typeof applyFilters === 'function') {
@@ -1136,6 +1512,15 @@ function selectProduct(productId, variantId) {
     console.error('Product card not found for ID:', productId);
     return;
   }
+  
+  // Use current selected variant instead of passed variantId
+  const priceElement = productCard.querySelector('.product-price');
+  const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+  const currentVariantPrice = priceElement ? priceElement.dataset[variantKey] || priceElement.textContent : '';
+  console.log('Current variant:', currentVariant, 'Price:', currentVariantPrice);
+  
+  // Update product card variant ID to current variant
+  productCard.dataset.variantId = currentVariant;
   
   const config = bundleConfig[currentBundleType];
   
@@ -1166,9 +1551,10 @@ function selectProduct(productId, variantId) {
     // Update progress text and indicators
     updateProgressText();
     updateCartProgress();
+    updateProgressBarFill();
     updateSelectedItems();
     
-  } else {
+        } else {
     // Select product (check max based on bundle type)
     console.log('Current selected products:', selectedProducts.length);
     if (selectedProducts.length >= config.total) {
@@ -1208,25 +1594,25 @@ function selectProduct(productId, variantId) {
     const productImage = productCard.querySelector('.product-image img');
     const image = productImage ? productImage.src : '';
     
-    // Get selected variant
-    const variantSelect = productCard.querySelector('.variant-select');
-    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
-    const variant = selectedOption ? selectedOption.textContent.split(' - ')[0] : '100ML';
+    // Use current variant
+    const variant = currentVariant;
     
     selectedProducts.push({
       id: productId,
-      variantId: parseInt(variantId),
+      variantId: currentVariant, // Use current variant instead of passed variantId
       title: title,
-      price: price,
+      price: currentVariantPrice, // Use price from data attribute
       image: image,
       variant: variant
     });
     
     console.log('Product added to selection. Total:', selectedProducts.length);
+    console.log('Selected products:', selectedProducts);
     
     // Update progress text and indicators
     updateProgressText();
     updateCartProgress();
+    updateProgressBarFill();
     updateSelectedItems();
   }
   
@@ -1262,23 +1648,40 @@ function updateVariant(productId, variantId) {
 
 // Update add button
 function updateAddButton() {
+  console.log('updateAddButton called');
+  
   const addButton = document.getElementById('addBundleBtn');
-  if (addButton) {
+  const btnText = document.getElementById('btnText');
+  const btnStatus = document.getElementById('btnStatus');
+  
+  console.log('Elements found:', { addButton, btnText, btnStatus });
+  
+  if (addButton && btnText && btnStatus) {
     const config = bundleConfig[currentBundleType];
-    const minRequired = config.buy; // Minimum required to enable button
+    const minRequired = config.buy;
+    const totalSelected = selectedProducts.length;
     
-    addButton.disabled = selectedProducts.length < minRequired;
+    console.log('Config:', config, 'totalSelected:', totalSelected, 'minRequired:', minRequired);
+    console.log('Selected products:', selectedProducts);
     
-    // Update button text based on selection
-    if (selectedProducts.length >= config.total) {
-      addButton.textContent = `ADD ${config.total} SCENTS TO CART`;
-    } else if (selectedProducts.length >= minRequired) {
-      addButton.textContent = `ADD ${selectedProducts.length} SCENTS TO CART`;
+    addButton.disabled = totalSelected < config.total;
+    
+    // Update button text and status
+    if (totalSelected >= config.total) {
+      btnText.textContent = 'Your Bundle Is Ready!';
+      btnStatus.textContent = `${totalSelected}/${config.total}`;
     } else {
-      addButton.textContent = `SELECT ${minRequired - selectedProducts.length} MORE SCENTS`;
+      btnText.textContent = `Please Select ${config.total - totalSelected} More Scents`;
+      btnStatus.textContent = `${totalSelected}/${config.total}`;
     }
     
-    console.log('Add button disabled:', addButton.disabled, 'selectedProducts:', selectedProducts.length, 'minRequired:', minRequired);
+    console.log('Button updated:', {
+      disabled: addButton.disabled,
+      text: btnText.textContent,
+      status: btnStatus.textContent
+    });
+  } else {
+    console.error('Some elements not found for button update');
   }
 }
 
@@ -1324,6 +1727,138 @@ function applyFilters() {
       product.style.display = 'none';
     }
   });
+}
+
+// Select variant function
+function selectVariant(variant) {
+  console.log('Variant selected:', variant);
+  console.log('Previous currentVariant:', currentVariant);
+  
+  currentVariant = variant;
+  console.log('New currentVariant:', currentVariant);
+  
+  // Update variant button states
+  document.querySelectorAll('.variant-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.closest('.variant-btn').classList.add('active');
+  
+  // Update product grid prices and bundle selector
+  updateProductGridPrices();
+  updateBundleSelectorPrices();
+  
+  console.log('Variant selection completed');
+}
+
+// Update product grid prices
+function updateProductGridPrices() {
+  console.log('updateProductGridPrices called, currentVariant:', currentVariant);
+  
+  // Update all product prices using data attributes
+  document.querySelectorAll('.product-price').forEach(priceElement => {
+    const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+    console.log('Looking for variant key:', variantKey);
+    console.log('Available data attributes:', priceElement.dataset);
+    const newPrice = priceElement.dataset[variantKey];
+    console.log('Price for', variantKey, ':', newPrice);
+    
+    if (newPrice) {
+      console.log('Setting price to:', newPrice);
+      priceElement.textContent = newPrice;
+    }
+  });
+}
+
+// Update bundle selector prices
+function updateBundleSelectorPrices() {
+  // Get current variant price from first product
+  const firstPriceElement = document.querySelector('.product-price');
+  if (!firstPriceElement) return;
+  
+  const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+  const basePriceText = firstPriceElement.dataset[variantKey] || firstPriceElement.textContent;
+  
+  // Extract numeric value from price text
+  const priceMatch = basePriceText.match(/[\d,]+\.?\d*/);
+  if (!priceMatch) return;
+  
+  const basePrice = parseFloat(priceMatch[0].replace(',', ''));
+  
+  // Update bundle prices
+  const bundleConfig = {
+    '2+1': { buy: 2, free: 1, total: 3 },
+    '3+2': { buy: 3, free: 2, total: 5 },
+    '4+3': { buy: 4, free: 3, total: 7 },
+    '5+4': { buy: 5, free: 4, total: 9 }
+  };
+  
+  Object.keys(bundleConfig).forEach(bundleType => {
+    const config = bundleConfig[bundleType];
+    
+    // Update total price
+    const totalPriceElement = document.querySelector(`[data-bundle-type="${bundleType}"] .bundle-total-price`);
+    if (totalPriceElement) {
+      const totalPrice = config.buy * basePrice;
+      const totalPriceText = basePriceText.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
+      totalPriceElement.textContent = totalPriceText;
+    }
+    
+    // Update per bottle price
+    const perBottleElement = document.getElementById(`price-${bundleType}`);
+    if (perBottleElement) {
+      const perBottlePrice = (config.buy * basePrice) / config.total;
+      const perBottleText = basePriceText.replace(/[\d,]+\.?\d*/, perBottlePrice.toFixed(2));
+      perBottleElement.textContent = perBottleText + ' per bottle';
+    }
+    
+    // Update savings
+    const savingsElement = document.getElementById(`savings-${bundleType}`);
+    if (savingsElement) {
+      const savings = config.free * basePrice;
+      const savingsText = basePriceText.replace(/[\d,]+\.?\d*/, savings.toFixed(2));
+      savingsElement.textContent = `SAVE ${savingsText}`;
+    }
+  });
+}
+
+
+
+// Change quantity function
+function changeQuantity(productId, change) {
+  console.log('changeQuantity called:', productId, change);
+  
+  // Find quantity display in selected items
+  const selectedItem = document.querySelector(`[data-product-id="${productId}"]`);
+  const quantityDisplay = selectedItem ? selectedItem.querySelector('.quantity-display') : null;
+  
+  console.log('quantityDisplay found:', quantityDisplay);
+  
+  if (!quantityDisplay) {
+    console.error('Quantity display not found for product:', productId);
+    return;
+  }
+  
+  const minusBtn = quantityDisplay.previousElementSibling;
+  const plusBtn = quantityDisplay.nextElementSibling;
+  
+  let currentQuantity = parseInt(quantityDisplay.textContent) || 1;
+  let newQuantity = currentQuantity + change;
+  
+  // Limit quantity between 1 and 10
+  if (newQuantity < 1) newQuantity = 1;
+  if (newQuantity > 10) newQuantity = 10;
+  
+  quantityDisplay.textContent = newQuantity;
+  productQuantities[productId] = newQuantity;
+  
+  // Update button states
+  minusBtn.disabled = newQuantity <= 1;
+  plusBtn.disabled = newQuantity >= 10;
+  
+  // Update add button
+  updateAddButton();
+  
+  console.log(`Quantity changed for product ${productId}: ${currentQuantity} -> ${newQuantity}`);
 }
 
 // Variant change handler
