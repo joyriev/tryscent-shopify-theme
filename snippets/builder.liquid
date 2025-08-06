@@ -615,7 +615,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   z-index: 1;
   display: block;
   box-sizing: border-box;
@@ -1019,10 +1018,16 @@ function updateCartProgress() {
   const progressFill = document.getElementById('cartProgressFill');
   const config = bundleConfig[currentBundleType];
   
+  console.log('=== PROGRESS DEBUG ===');
+  console.log('progressFill element:', progressFill);
+  console.log('progressFill width before:', progressFill ? progressFill.style.width : 'N/A');
+  
   if (progressFill) {
     // Calculate progress from 0 to total (not from buy to total)
     const progressPercent = (selectedProducts.length / config.total) * 100;
+    console.log('Setting width to:', progressPercent + '%');
     progressFill.style.width = progressPercent + '%';
+    console.log('progressFill width after:', progressFill.style.width);
   }
   
   // Update markers
