@@ -1056,7 +1056,7 @@ color: white;
 
 /* Mobile Sidebar */
 .mobile-sidebar {
-  display: none;
+  display: none !important;
 }
 
 .sidebar-content {
@@ -1097,7 +1097,7 @@ color: white;
   background: #e0e0e0;
   border-radius: 14px;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -1495,6 +1495,14 @@ color: white;
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+  .mobile-sidebar {
+    display: none !important;
+  }
+  
+  .mobile-sidebar.show {
+    display: block !important;
+  }
+  
   .product-bundler {
     padding: 10px !important;
     padding-bottom: 0 !important;
@@ -3333,15 +3341,15 @@ function updateAddButton() {
   
   // Update mobile button
   if (addButtonMobile && btnTextMobile && btnStatusMobile) {
-    // Mobile button is always clickable, even when bundle not complete
-    addButtonMobile.disabled = false;
+    // Mobile button is visually disabled when bundle not complete, but always clickable
+    addButtonMobile.disabled = totalItems < config.total;
     
     // Show/hide mobile sidebar based on selection
     if (window.innerWidth <= 768 && mobileSidebar) {
       if (totalItems > 0) {
-        mobileSidebar.style.display = 'block';
+        mobileSidebar.classList.add('show');
       } else {
-        mobileSidebar.style.display = 'none';
+        mobileSidebar.classList.remove('show');
       }
     }
     
