@@ -71,7 +71,7 @@
             <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
           </button>
           <button class="bundle-type-btn" data-bundle-type="4+3" onclick="selectBundleType('4+3')">
-            <div class="bundle-badge bestseller">Bestseller</div>
+                              <div class="bundle-badge bestseller">FREE SHIPPING</div>
             <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
             <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
             <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | divided_by: 7 | money }} per bottle</span>
@@ -216,7 +216,7 @@
 
 .bundler-title h1 {
   margin: 0 0 8px 0;
-  font-size: 2.5rem;
+  font-size: 7.5rem;
   font-weight: 800;
   color: #222;
   letter-spacing: -0.5px;
@@ -224,7 +224,7 @@
 
 .bundler-subtitle {
   margin: 0 0 16px 0;
-  font-size: 1.1rem;
+  font-size: 3.3rem;
   color: #666;
   font-weight: 500;
 }
@@ -233,17 +233,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 24px;
+  margin-bottom: 72px;
+  font-size: 2.7rem;
+  color: #666;
 }
 
 .stars {
   color: #ffd700;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
+  font-size: 3.3rem;
+  letter-spacing: 6px;
 }
 
 .review-count {
-  font-size: 0.9rem;
+  font-size: 2.7rem;
   color: #666;
   font-weight: 500;
 }
@@ -271,40 +274,40 @@
 }
 
 .variant-title {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #222;
-  margin: 0 0 8px 0;
+  margin: 0 0 16px 0;
 }
 
 .variant-subtitle {
-  font-size: 1rem;
+  font-size: 2rem;
   color: #666;
-  margin: 0 0 24px 0;
+  margin: 0 0 48px 0;
 }
 
 .variant-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  max-width: 600px;
+  gap: 40px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .variant-btn {
   background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 16px;
-  padding: 20px;
+  border: 4px solid #e0e0e0;
+  border-radius: 32px;
+  padding: 40px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  min-width: 120px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  gap: 24px;
+  min-width: 240px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   position: relative;
 }
 
@@ -321,8 +324,8 @@
 }
 
 .variant-image {
-  width: 80px;
-  height: 80px;
+  width: 160px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -335,19 +338,19 @@
 }
 
 .variant-size {
-  font-size: 1.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #222;
 }
 
 .variant-badge {
   position: absolute;
-  top: -8px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
   color: white;
@@ -370,9 +373,9 @@
 
 .bundle-type-buttons {
   display: flex;
-  justify-content: center;
-  gap: 16px;
-  max-width: 1000px;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
   overflow: visible;
@@ -380,20 +383,21 @@
 
 .bundle-type-btn {
   background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 16px;
-  padding: 24px 20px;
+  border: 4px solid #e0e0e0;
+  border-radius: 32px;
+  padding: 48px 40px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  min-width: 180px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  gap: 16px;
+  min-width: 360px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: visible;
+  flex: 1;
 }
 
 .bundle-type-btn:hover {
@@ -422,17 +426,17 @@
 
 
 .bundle-total-price {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 800;
   color: #28a745;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 .bundle-price {
-  font-size: 1.1rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: #dc3545;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .bundle-type-btn.active .bundle-price {
@@ -446,7 +450,7 @@
 }
 
 .bundle-type-desc {
-  font-size: 1.2rem;
+  font-size: 2.4rem;
   color: #222;
   font-weight: 700;
 }
@@ -458,15 +462,15 @@
 
 .bundle-badge {
   position: absolute;
-  top: -8px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 10px;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   z-index: 10;
 }
 
@@ -489,14 +493,14 @@
   background-size: 200% 200%;
   animation: shiny-gradient 2s ease-in-out infinite;
   color: white;
-  font-size: 0.9rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 12px;
+  padding: 12px 20px;
+  border-radius: 24px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   position: absolute;
-  bottom: -12px;
+  bottom: -24px;
   left: 50%;
   transform: translateX(-50%);
 }
