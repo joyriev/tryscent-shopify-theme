@@ -1437,7 +1437,7 @@ color: white;
 @media (max-width: 768px) {
   .product-bundler {
     padding: 10px;
-    padding-bottom: 200px; /* Space for sticky footer */
+    padding-bottom: 120px; /* Space for sticky footer */
   }
 
   .bundler-container {
@@ -1535,7 +1535,7 @@ color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 16px;
-    row-gap: 50px;
+    row-gap: 80px;
     flex-wrap: wrap;
   }
 
@@ -2491,17 +2491,18 @@ function getOrdinalSuffix(num) {
 function updateProgressText() {
   const cartProgressText = document.getElementById('cartProgressText');
   const sidebarTitle = document.getElementById('sidebarTitle');
+  const sidebarTitleMobile = document.getElementById('sidebarTitleMobile');
   const config = bundleConfig[currentBundleType];
   
   let text = '';
   let title = '';
   
   if (selectedProducts.length === 0) {
-    text = `Please select at least ${config.buy} scents`;
-    title = `Please Select At Least ${config.buy} Scents`;
-  } else if (selectedProducts.length < config.buy) {
-    text = `Please select ${config.buy - selectedProducts.length} more scents`;
-    title = `Please Select ${config.buy - selectedProducts.length} More Scents`;
+    text = `Please select at least ${config.total} scents`;
+    title = `Please Select At Least ${config.total} Scents`;
+  } else if (selectedProducts.length < config.total) {
+    text = `Please select ${config.total - selectedProducts.length} more scents`;
+    title = `Please Select ${config.total - selectedProducts.length} More Scents`;
   } else {
     text = 'Perfect! Your bundle is ready';
     title = 'Your Bundle Is Ready!';
@@ -2509,6 +2510,7 @@ function updateProgressText() {
   
   if (cartProgressText) cartProgressText.textContent = text;
   if (sidebarTitle) sidebarTitle.textContent = title;
+  if (sidebarTitleMobile) sidebarTitleMobile.textContent = title;
 }
 
 // Generate progress markers
