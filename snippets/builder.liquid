@@ -197,15 +197,10 @@
       </div>
 
                 <!-- Shopping Cart Sidebar -->
-      <div class="bundler-sidebar">
+      <!-- DESKTOP SIDEBAR -->
+      <div class="bundler-sidebar desktop-sidebar">
         <div class="sidebar-content">
-          <!-- Mobile Header (hidden on desktop) -->
-          <div class="sidebar-header" style="display: none;">
-            <h3 class="sidebar-title" id="sidebarTitleMobile">Shopping Cart</h3>
-            <button class="keep-shopping-btn" onclick="closeFullscreenSidebar()">Keep Shopping</button>
-          </div>
-          
-          <!-- Desktop Header (hidden on mobile) -->
+          <!-- Desktop Header -->
           <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
           
           <!-- Progress Section -->
@@ -216,14 +211,9 @@
                 <div class="bundler-progress-fill" id="cartProgressFill"></div>
                 <div class="progress-markers" id="progressMarkers">
                   <!-- Markers will be generated dynamically -->
+                </div>
+              </div>
             </div>
-          </div>
-          </div>
-        </div>
-
-          <!-- Save Info (mobile only) -->
-          <div class="save-info" style="display: none;" id="saveInfo">
-            Save $45 with 2+1 Bundle
           </div>
 
           <!-- Selected Items -->
@@ -231,7 +221,51 @@
             <div class="empty-cart">
               <p>Your cart is empty.</p>
             </div>
-    </div>
+          </div>
+
+          <!-- Add Bundle Button -->
+          <div class="sidebar-footer">
+            <button id="addBundleBtnDesktop" class="add-bundle-btn" disabled>
+              <span class="btn-text" id="btnTextDesktop">Please Select 3 More Scents</span>
+              <span class="btn-status" id="btnStatusDesktop">0/3</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE SIDEBAR -->
+      <div class="bundler-sidebar mobile-sidebar">
+        <div class="sidebar-content">
+          <!-- Mobile Header (hidden on desktop) -->
+          <div class="sidebar-header" style="display: none;">
+            <h3 class="sidebar-title" id="sidebarTitleMobile">Shopping Cart</h3>
+            <button class="keep-shopping-btn" onclick="closeFullscreenSidebar()">Keep Shopping</button>
+          </div>
+          
+          <!-- Progress Section -->
+          <div class="cart-progress">
+            <div class="progress-text" id="cartProgressTextMobile">Please select at least 3 scents</div>
+            <div class="bundler-progress-container">
+              <div class="bundler-progress-bar">
+                <div class="bundler-progress-fill" id="cartProgressFillMobile"></div>
+                <div class="progress-markers" id="progressMarkersMobile">
+                  <!-- Markers will be generated dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Save Info (mobile only) -->
+          <div class="save-info" style="display: none;" id="saveInfo">
+            Save $45 with 2+1 Bundle
+          </div>
+
+          <!-- Selected Items -->
+          <div class="selected-items" id="selectedItemsMobile">
+            <div class="empty-cart">
+              <p>Your cart is empty.</p>
+            </div>
+          </div>
 
           <!-- Benefits Section (mobile only) -->
           <div class="benefits-section" style="display: none;" id="benefitsSection">
@@ -248,18 +282,18 @@
 
           <!-- Add Bundle Button -->
           <div class="sidebar-footer">
-        <button id="addBundleBtn" class="add-bundle-btn" disabled>
-            <span class="btn-text" id="btnText">Please Select 3 More Scents</span>
-            <span class="btn-status" id="btnStatus">0/3</span>
-        </button>
-    
-    <!-- Mobile Benefits Footer -->
-    <div class="mobile-benefits" style="display: none;">
-      <div class="mobile-benefit-item">5-8 Days Shipping Worldwide</div>
-      <div class="mobile-benefit-item">60-days Money Back Guarantee</div>
-      </div>
-  </div>
-</div>
+            <button id="addBundleBtnMobile" class="add-bundle-btn" disabled>
+              <span class="btn-text" id="btnTextMobile">REVIEW BUNDLE</span>
+              <span class="btn-status" id="btnStatusMobile">0/3</span>
+            </button>
+            
+            <!-- Mobile Benefits Footer -->
+            <div class="mobile-benefits" style="display: none;">
+              <div class="mobile-benefit-item">5-8 Days Shipping Worldwide</div>
+              <div class="mobile-benefit-item">60-days Money Back Guarantee</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Backdrop for mobile fullscreen -->
@@ -1012,6 +1046,16 @@ color: white;
   z-index: 100;
 }
 
+/* Desktop Sidebar */
+.desktop-sidebar {
+  display: block;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+  display: none;
+}
+
 .sidebar-content {
   padding: 24px;
 }
@@ -1438,6 +1482,15 @@ color: white;
   .product-bundler {
     padding: 10px !important;
     padding-bottom: 0 !important;
+  }
+
+  /* Show mobile sidebar, hide desktop sidebar */
+  .desktop-sidebar {
+    display: none !important;
+  }
+  
+  .mobile-sidebar {
+    display: block !important;
   }
 
   .bundler-container {
@@ -2509,6 +2562,7 @@ function getOrdinalSuffix(num) {
 // Update progress text and sidebar title
 function updateProgressText() {
   const cartProgressText = document.getElementById('cartProgressText');
+  const cartProgressTextMobile = document.getElementById('cartProgressTextMobile');
   const sidebarTitle = document.getElementById('sidebarTitle');
   const sidebarTitleMobile = document.getElementById('sidebarTitleMobile');
   const config = bundleConfig[currentBundleType];
@@ -2528,6 +2582,7 @@ function updateProgressText() {
   }
   
   if (cartProgressText) cartProgressText.textContent = text;
+  if (cartProgressTextMobile) cartProgressTextMobile.textContent = text;
   if (sidebarTitle) sidebarTitle.textContent = title;
   if (sidebarTitleMobile) sidebarTitleMobile.textContent = title;
 }
@@ -2535,89 +2590,125 @@ function updateProgressText() {
 // Generate progress markers
 function generateProgressMarkers() {
   const markersContainer = document.getElementById('progressMarkers');
+  const markersContainerMobile = document.getElementById('progressMarkersMobile');
   const config = bundleConfig[currentBundleType];
   
+  let markersHTML = '';
+  
+  // Add buy markers
+  for (let i = 1; i <= config.buy; i++) {
+    markersHTML += `<span class="marker buy-marker" data-value="${i}">${i}</span>`;
+  }
+  
+  // Add free markers
+  for (let i = config.buy + 1; i <= config.total; i++) {
+    markersHTML += `<span class="marker free-marker" data-value="${i}">${i}</span>`;
+  }
+  
+  // Update desktop markers
   if (markersContainer) {
-    let markersHTML = '';
-    
-    // Add buy markers
-    for (let i = 1; i <= config.buy; i++) {
-      markersHTML += `<span class="marker buy-marker" data-value="${i}">${i}</span>`;
-    }
-    
-    // Add free markers
-    for (let i = config.buy + 1; i <= config.total; i++) {
-      markersHTML += `<span class="marker free-marker" data-value="${i}">${i}</span>`;
-    }
-    
     markersContainer.innerHTML = markersHTML;
+  }
+  
+  // Update mobile markers
+  if (markersContainerMobile) {
+    markersContainerMobile.innerHTML = markersHTML;
   }
 }
 
     // Update cart progress bar
-    function updateCartProgress() {
-      const progressFill = document.getElementById('cartProgressFill');
-      const config = bundleConfig[currentBundleType];
-      
-      // Calculate total items including quantities
-      let totalItems = 0;
-      selectedProducts.forEach(product => {
-        const quantity = productQuantities[product.id] || 1;
-        totalItems += quantity;
-      });
-      
-      if (progressFill) {
-        // Calculate progress from 0 to total (not from buy to total)
-        const progressPercent = (totalItems / config.total) * 100;
-        progressFill.style.width = progressPercent + '%';
-      }
-      
-      // Update markers
-      document.querySelectorAll('.marker').forEach(marker => {
-        const value = parseInt(marker.dataset.value);
-        if (totalItems >= value) {
-          marker.classList.add('active');
-        } else {
-          marker.classList.remove('active');
-        }
-      });
+function updateCartProgress() {
+  const progressFill = document.getElementById('cartProgressFill');
+  const progressFillMobile = document.getElementById('cartProgressFillMobile');
+  const config = bundleConfig[currentBundleType];
+  
+  // Calculate total items including quantities
+  let totalItems = 0;
+  selectedProducts.forEach(product => {
+    const quantity = productQuantities[product.id] || 1;
+    totalItems += quantity;
+  });
+  
+  // Update desktop progress
+  if (progressFill) {
+    const progressPercent = (totalItems / config.total) * 100;
+    progressFill.style.width = progressPercent + '%';
+  }
+  
+  // Update mobile progress
+  if (progressFillMobile) {
+    const progressPercent = (totalItems / config.total) * 100;
+    progressFillMobile.style.width = progressPercent + '%';
+  }
+  
+  // Update markers (both desktop and mobile)
+  document.querySelectorAll('.marker').forEach(marker => {
+    const value = parseInt(marker.dataset.value);
+    if (totalItems >= value) {
+      marker.classList.add('active');
+    } else {
+      marker.classList.remove('active');
     }
+  });
+}
 
     // Update progress bar fill separately
-    function updateProgressBarFill() {
-      const progressFill = document.getElementById('cartProgressFill');
-      const config = bundleConfig[currentBundleType];
-      
-      // Calculate total items including quantities
-      let totalItems = 0;
-      selectedProducts.forEach(product => {
-        const quantity = productQuantities[product.id] || 1;
-        totalItems += quantity;
-      });
-      
-      if (progressFill) {
-        const progressPercent = (totalItems / config.total) * 100;
-        progressFill.style.width = progressPercent + '%';
-        progressFill.style.backgroundColor = '#28a745';
-        progressFill.style.display = 'block';
-        progressFill.style.height = '100%';
-        progressFill.style.minHeight = '20px';
-        progressFill.style.opacity = '1';
-        progressFill.style.visibility = 'visible';
-      }
-    }
+function updateProgressBarFill() {
+  const progressFill = document.getElementById('cartProgressFill');
+  const progressFillMobile = document.getElementById('cartProgressFillMobile');
+  const config = bundleConfig[currentBundleType];
+  
+  // Calculate total items including quantities
+  let totalItems = 0;
+  selectedProducts.forEach(product => {
+    const quantity = productQuantities[product.id] || 1;
+    totalItems += quantity;
+  });
+  
+  // Update desktop progress
+  if (progressFill) {
+    const progressPercent = (totalItems / config.total) * 100;
+    progressFill.style.width = progressPercent + '%';
+    progressFill.style.backgroundColor = '#28a745';
+    progressFill.style.display = 'block';
+    progressFill.style.height = '100%';
+    progressFill.style.minHeight = '20px';
+    progressFill.style.opacity = '1';
+    progressFill.style.visibility = 'visible';
+  }
+  
+  // Update mobile progress
+  if (progressFillMobile) {
+    const progressPercent = (totalItems / config.total) * 100;
+    progressFillMobile.style.width = progressPercent + '%';
+    progressFillMobile.style.backgroundColor = '#28a745';
+    progressFillMobile.style.display = 'block';
+    progressFillMobile.style.height = '100%';
+    progressFillMobile.style.minHeight = '20px';
+    progressFillMobile.style.opacity = '1';
+    progressFillMobile.style.visibility = 'visible';
+  }
+}
 
 // Update selected items in sidebar
 function updateSelectedItems() {
   const selectedItemsContainer = document.getElementById('selectedItems');
+  const selectedItemsContainerMobile = document.getElementById('selectedItemsMobile');
   const config = bundleConfig[currentBundleType];
   
+  const emptyCartHTML = `
+    <div class="empty-cart">
+      <p>Your cart is empty.</p>
+    </div>
+  `;
+  
   if (selectedProducts.length === 0) {
-    selectedItemsContainer.innerHTML = `
-      <div class="empty-cart">
-        <p>Your cart is empty.</p>
-      </div>
-    `;
+    if (selectedItemsContainer) {
+      selectedItemsContainer.innerHTML = emptyCartHTML;
+    }
+    if (selectedItemsContainerMobile) {
+      selectedItemsContainerMobile.innerHTML = emptyCartHTML;
+    }
     return;
   }
   
@@ -2647,7 +2738,13 @@ function updateSelectedItems() {
     `;
   });
   
-  selectedItemsContainer.innerHTML = itemsHTML;
+  // Update both desktop and mobile containers
+  if (selectedItemsContainer) {
+    selectedItemsContainer.innerHTML = itemsHTML;
+  }
+  if (selectedItemsContainerMobile) {
+    selectedItemsContainerMobile.innerHTML = itemsHTML;
+  }
   
   // Update add button after updating selected items
   updateAddButton();
@@ -2921,20 +3018,18 @@ function addSingleToCart(productId) {
 
 // Mobile sidebar functions
 function openFullscreenSidebar() {
-  const sidebar = document.querySelector('.bundler-sidebar');
+  const sidebar = document.querySelector('.mobile-sidebar');
   const backdrop = document.getElementById('sidebarBackdrop');
   const mobileHeader = document.querySelector('.sidebar-header');
-  const desktopHeader = document.getElementById('sidebarTitle');
   const saveInfo = document.getElementById('saveInfo');
   const benefitsSection = document.getElementById('benefitsSection');
-  const selectedItems = document.getElementById('selectedItems');
-  const cartProgress = document.querySelector('.cart-progress');
-  const addButton = document.getElementById('addBundleBtn');
+  const selectedItems = document.getElementById('selectedItemsMobile');
+  const cartProgress = document.querySelector('.mobile-sidebar .cart-progress');
+  const addButton = document.getElementById('addBundleBtnMobile');
   
   sidebar.classList.add('fullscreen');
   backdrop.classList.add('active');
   mobileHeader.style.display = 'flex';
-  desktopHeader.style.display = 'none';
   saveInfo.style.display = 'block';
   benefitsSection.style.display = 'block';
   
@@ -2982,20 +3077,18 @@ function openFullscreenSidebar() {
 }
 
 function closeFullscreenSidebar() {
-  const sidebar = document.querySelector('.bundler-sidebar');
+  const sidebar = document.querySelector('.mobile-sidebar');
   const backdrop = document.getElementById('sidebarBackdrop');
   const mobileHeader = document.querySelector('.sidebar-header');
-  const desktopHeader = document.getElementById('sidebarTitle');
   const saveInfo = document.getElementById('saveInfo');
   const benefitsSection = document.getElementById('benefitsSection');
-  const selectedItems = document.getElementById('selectedItems');
-  const cartProgress = document.querySelector('.cart-progress');
-  const addButton = document.getElementById('addBundleBtn');
+  const selectedItems = document.getElementById('selectedItemsMobile');
+  const cartProgress = document.querySelector('.mobile-sidebar .cart-progress');
+  const addButton = document.getElementById('addBundleBtnMobile');
   
   sidebar.classList.remove('fullscreen');
   backdrop.classList.remove('active');
   mobileHeader.style.display = 'none';
-  desktopHeader.style.display = 'block';
   saveInfo.style.display = 'none';
   benefitsSection.style.display = 'none';
   
@@ -3054,11 +3147,19 @@ function updateSaveInfo() {
 document.addEventListener('DOMContentLoaded', function() {
   const sidebar = document.querySelector('.bundler-sidebar');
   const mobileBenefits = document.querySelector('.mobile-benefits');
-  const addButton = document.getElementById('addBundleBtn');
+  const addButtonDesktop = document.getElementById('addBundleBtnDesktop');
+  const addButtonMobile = document.getElementById('addBundleBtnMobile');
   
-  // Add event listener to button
-  if (addButton) {
-    addButton.addEventListener('click', function() {
+  // Add event listener to desktop button
+  if (addButtonDesktop) {
+    addButtonDesktop.addEventListener('click', function() {
+      addBundleToCart();
+    });
+  }
+  
+  // Add event listener to mobile button
+  if (addButtonMobile) {
+    addButtonMobile.addEventListener('click', function() {
       addBundleToCart();
     });
   }
@@ -3067,14 +3168,17 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth <= 768) {
     mobileBenefits.style.display = 'flex';
     
-    // Always allow clicking on sidebar to open fullscreen
-    sidebar.addEventListener('click', function(e) {
-      // Don't open if clicking on buttons or links
-      if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) {
-        return;
-      }
-      openFullscreenSidebar();
-    });
+    // Always allow clicking on mobile sidebar to open fullscreen
+    const mobileSidebar = document.querySelector('.mobile-sidebar');
+    if (mobileSidebar) {
+      mobileSidebar.addEventListener('click', function(e) {
+        // Don't open if clicking on buttons or links
+        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) {
+          return;
+        }
+        openFullscreenSidebar();
+      });
+    }
   }
   
   // Handle window resize
@@ -3099,15 +3203,18 @@ function addBundleToCart() {
     totalItems += quantity;
   });
   
-  // Always open fullscreen sidebar first on mobile (like in the example)
-  if (window.innerWidth <= 768) {
+  // Check if we're on mobile or desktop based on which button was clicked
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // Mobile: always open fullscreen sidebar first
     openFullscreenSidebar();
     return;
-  }
-  
-  // Desktop: if bundle is complete, add to cart and redirect to checkout
-  if (totalItems >= config.total) {
-    addBundleToCartAndCheckout();
+  } else {
+    // Desktop: if bundle is complete, add to cart and redirect to checkout
+    if (totalItems >= config.total) {
+      addBundleToCartAndCheckout();
+    }
   }
 }
 
@@ -3171,52 +3278,66 @@ function addBundleToCartAndCheckout() {
 
 // Add missing helper functions
 function updateAddButton() {
-  const addButton = document.getElementById('addBundleBtn');
-  const btnText = document.getElementById('btnText');
-  const btnStatus = document.getElementById('btnStatus');
-  const sidebar = document.querySelector('.bundler-sidebar');
+  // Desktop elements
+  const addButtonDesktop = document.getElementById('addBundleBtnDesktop');
+  const btnTextDesktop = document.getElementById('btnTextDesktop');
+  const btnStatusDesktop = document.getElementById('btnStatusDesktop');
   
-  if (addButton && btnText && btnStatus) {
-    const config = bundleConfig[currentBundleType];
+  // Mobile elements
+  const addButtonMobile = document.getElementById('addBundleBtnMobile');
+  const btnTextMobile = document.getElementById('btnTextMobile');
+  const btnStatusMobile = document.getElementById('btnStatusMobile');
+  const mobileSidebar = document.querySelector('.mobile-sidebar');
+  
+  const config = bundleConfig[currentBundleType];
+  
+  // Calculate total items including quantities
+  let totalItems = 0;
+  selectedProducts.forEach(product => {
+    const quantity = productQuantities[product.id] || 1;
+    totalItems += quantity;
+  });
+  
+  // Update desktop button
+  if (addButtonDesktop && btnTextDesktop && btnStatusDesktop) {
+    addButtonDesktop.disabled = totalItems < config.total;
     
-    // Calculate total items including quantities
-    let totalItems = 0;
-    selectedProducts.forEach(product => {
-      const quantity = productQuantities[product.id] || 1;
-      totalItems += quantity;
-    });
+    if (totalItems >= config.total) {
+      btnTextDesktop.textContent = 'ADD TO CART';
+      btnStatusDesktop.textContent = `${totalItems}/${config.total}`;
+    } else {
+      btnTextDesktop.textContent = `Please Select ${config.total - totalItems} More Scents`;
+      btnStatusDesktop.textContent = `${totalItems}/${config.total}`;
+    }
+  }
+  
+  // Update mobile button
+  if (addButtonMobile && btnTextMobile && btnStatusMobile) {
+    addButtonMobile.disabled = totalItems < config.total;
     
-    // Show/hide sticky cart on mobile based on selection
-    if (window.innerWidth <= 768 && sidebar) {
+    // Show/hide mobile sidebar based on selection
+    if (window.innerWidth <= 768 && mobileSidebar) {
       if (totalItems > 0) {
-        sidebar.style.display = 'block';
+        mobileSidebar.style.display = 'block';
       } else {
-        sidebar.style.display = 'none';
+        mobileSidebar.style.display = 'none';
       }
     }
     
-    addButton.disabled = totalItems < config.total;
-    
-    // Update button text and status
-    if (totalItems >= config.total) {
-      btnText.textContent = 'REVIEW BUNDLE';
-      btnStatus.textContent = `${totalItems}/${config.total}`;
-    } else {
-      btnText.textContent = 'REVIEW BUNDLE';
-      btnStatus.textContent = `${totalItems}/${config.total}`;
-    }
-    
-    // Update mobile save info if on mobile
-    if (window.innerWidth <= 768) {
-      updateSaveInfo();
-    }
+    btnTextMobile.textContent = 'REVIEW BUNDLE';
+    btnStatusMobile.textContent = `${totalItems}/${config.total}`;
+  }
+  
+  // Update mobile save info if on mobile
+  if (window.innerWidth <= 768) {
+    updateSaveInfo();
   }
 }
 
 // Update button text for fullscreen cart
 function updateFullscreenButtonText() {
-  const addButton = document.getElementById('addBundleBtn');
-  const btnText = document.getElementById('btnText');
+  const addButton = document.getElementById('addBundleBtnMobile');
+  const btnText = document.getElementById('btnTextMobile');
   
   if (addButton && btnText) {
     const config = bundleConfig[currentBundleType];
