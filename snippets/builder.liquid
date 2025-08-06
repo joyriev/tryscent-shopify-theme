@@ -2717,7 +2717,7 @@ function updateProgressText() {
 // Generate progress markers
 function generateProgressMarkers() {
   const markersContainer = document.getElementById('progressMarkers');
-  const markersContainerMobile = document.getElementById('progressMarkersMobile');
+  const markersContainerFullscreen = document.getElementById('progressMarkersFullscreen');
   const config = bundleConfig[currentBundleType];
   
   let markersHTML = '';
@@ -2737,16 +2737,16 @@ function generateProgressMarkers() {
     markersContainer.innerHTML = markersHTML;
   }
   
-  // Update mobile markers
-  if (markersContainerMobile) {
-    markersContainerMobile.innerHTML = markersHTML;
+  // Update fullscreen markers
+  if (markersContainerFullscreen) {
+    markersContainerFullscreen.innerHTML = markersHTML;
   }
 }
 
     // Update cart progress bar
 function updateCartProgress() {
   const progressFill = document.getElementById('cartProgressFill');
-  const progressFillMobile = document.getElementById('cartProgressFillMobile');
+  const progressFillFullscreen = document.getElementById('cartProgressFillFullscreen');
   const config = bundleConfig[currentBundleType];
   
   // Calculate total items including quantities
@@ -2759,18 +2759,16 @@ function updateCartProgress() {
   // Update progress based on device
   const isMobile = window.innerWidth <= 768;
   
-  if (isMobile) {
-    // On mobile, only update mobile progress
-    if (progressFillMobile) {
-      const progressPercent = (totalItems / config.total) * 100;
-      progressFillMobile.style.width = progressPercent + '%';
-    }
-  } else {
-    // On desktop, only update desktop progress
-    if (progressFill) {
-      const progressPercent = (totalItems / config.total) * 100;
-      progressFill.style.width = progressPercent + '%';
-    }
+  // Update desktop progress
+  if (progressFill) {
+    const progressPercent = (totalItems / config.total) * 100;
+    progressFill.style.width = progressPercent + '%';
+  }
+  
+  // Update fullscreen progress
+  if (progressFillFullscreen) {
+    const progressPercent = (totalItems / config.total) * 100;
+    progressFillFullscreen.style.width = progressPercent + '%';
   }
   
   // Update markers (both desktop and mobile)
@@ -2789,7 +2787,7 @@ function updateCartProgress() {
 // Update selected items in sidebar
 function updateSelectedItems() {
   const selectedItemsContainer = document.getElementById('selectedItems');
-  const selectedItemsContainerMobile = document.getElementById('selectedItemsMobile');
+  const selectedItemsContainerFullscreen = document.getElementById('selectedItemsFullscreen');
   const config = bundleConfig[currentBundleType];
   
   const emptyCartHTML = `
@@ -2802,8 +2800,8 @@ function updateSelectedItems() {
     if (selectedItemsContainer) {
       selectedItemsContainer.innerHTML = emptyCartHTML;
     }
-    if (selectedItemsContainerMobile) {
-      selectedItemsContainerMobile.innerHTML = emptyCartHTML;
+    if (selectedItemsContainerFullscreen) {
+      selectedItemsContainerFullscreen.innerHTML = emptyCartHTML;
     }
     return;
   }
@@ -2848,12 +2846,12 @@ function updateSelectedItems() {
     `;
   });
   
-  // Update both desktop and mobile containers
+  // Update both desktop and fullscreen containers
   if (selectedItemsContainer) {
     selectedItemsContainer.innerHTML = itemsHTML;
   }
-  if (selectedItemsContainerMobile) {
-    selectedItemsContainerMobile.innerHTML = itemsHTML;
+  if (selectedItemsContainerFullscreen) {
+    selectedItemsContainerFullscreen.innerHTML = itemsHTML;
   }
   
   // Update add button after updating selected items
@@ -3174,7 +3172,7 @@ function closeFullscreenSidebar() {
 }
 
 function updateSaveInfo() {
-  const saveInfo = document.getElementById('saveInfo');
+  const saveInfoFullscreen = document.getElementById('saveInfoFullscreen');
   const config = bundleConfig[currentBundleType];
   
   // Calculate savings based on bundle type
@@ -3197,7 +3195,9 @@ function updateSaveInfo() {
   }
   
   const savingsFormatted = (savings / 100).toFixed(0);
-  saveInfo.textContent = `Save $${savingsFormatted} with ${currentBundleType} Bundle`;
+  if (saveInfoFullscreen) {
+    saveInfoFullscreen.textContent = `Save $${savingsFormatted} with ${currentBundleType} Bundle`;
+  }
 }
 
 // Add click handler to sidebar for mobile
@@ -3394,9 +3394,9 @@ function updateAddButton() {
 
 // Update button text for fullscreen cart
 function updateFullscreenButtonText() {
-  const addButton = document.getElementById('addBundleBtnMobile');
-  const btnText = document.getElementById('btnTextMobile');
-  const scentsCount = document.getElementById('scentsCountMobile');
+  const addButton = document.getElementById('addBundleBtnFullscreen');
+  const btnText = document.getElementById('btnTextFullscreen');
+  const scentsCount = document.getElementById('scentsCountFullscreen');
   
   if (addButton && btnText) {
     const config = bundleConfig[currentBundleType];
