@@ -233,13 +233,29 @@
         </div>
       </div>
 
-      <!-- MOBILE SIDEBAR -->
-      <div class="bundler-sidebar mobile-sidebar">
-        <div class="sidebar-content">
-          <!-- Mobile Header (hidden on desktop) -->
-          <div class="sidebar-header" style="display: none;">
+      <!-- MOBILE STICKY FOOTER -->
+      <div class="mobile-sticky-footer" id="mobileStickyFooter" style="display: none;">
+        <div class="sticky-content">
+          <button id="addBundleBtnSticky" class="add-bundle-btn">
+            <span class="btn-text" id="btnTextSticky">REVIEW BUNDLE</span>
+            <span class="btn-status" id="btnStatusSticky">0/3</span>
+          </button>
+          
+          <!-- Mobile Benefits Footer -->
+          <div class="mobile-benefits">
+            <div class="mobile-benefit-item">5-8 Days Shipping Worldwide</div>
+            <div class="mobile-benefit-item">60-days Money Back Guarantee</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE FULLSCREEN CART -->
+      <div class="mobile-fullscreen-cart" id="mobileFullscreenCart" style="display: none;">
+        <div class="fullscreen-content">
+          <!-- Mobile Header -->
+          <div class="sidebar-header">
             <div class="header-left">
-              <span class="scents-count" id="scentsCountMobile">0 scents in box</span>
+              <span class="scents-count" id="scentsCountFullscreen">0 scents in box</span>
             </div>
             <div class="header-right">
               <button class="keep-shopping-btn" onclick="closeFullscreenSidebar()">Keep Shopping</button>
@@ -248,24 +264,24 @@
           
           <!-- Progress Section -->
           <div class="cart-progress">
-            <div class="progress-text" id="cartProgressTextMobile">Please select at least 3 scents</div>
+            <div class="progress-text" id="cartProgressTextFullscreen">Please select at least 3 scents</div>
             <div class="bundler-progress-container">
               <div class="bundler-progress-bar">
-                <div class="bundler-progress-fill" id="cartProgressFillMobile"></div>
-                <div class="progress-markers" id="progressMarkersMobile">
+                <div class="bundler-progress-fill" id="cartProgressFillFullscreen"></div>
+                <div class="progress-markers" id="progressMarkersFullscreen">
                   <!-- Markers will be generated dynamically -->
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Save Info (mobile only) -->
-          <div class="save-info" style="display: none;" id="saveInfo">
+          <!-- Save Info -->
+          <div class="save-info" id="saveInfoFullscreen">
             Save $45 with 2+1 Bundle
           </div>
 
           <!-- Selected Items -->
-          <div class="selected-items" id="selectedItemsMobile">
+          <div class="selected-items" id="selectedItemsFullscreen">
             <div class="empty-cart">
               <p>Your cart is empty.</p>
             </div>
@@ -273,20 +289,14 @@
 
           <!-- Add Bundle Button -->
           <div class="sidebar-footer">
-            <button id="addBundleBtnMobile" class="add-bundle-btn">
-              <span class="btn-text" id="btnTextMobile">REVIEW BUNDLE</span>
-              <span class="btn-status" id="btnStatusMobile">0/3</span>
+            <button id="addBundleBtnFullscreen" class="add-bundle-btn">
+              <span class="btn-text" id="btnTextFullscreen">REVIEW BUNDLE</span>
+              <span class="btn-status" id="btnStatusFullscreen">0/3</span>
             </button>
-            
-            <!-- Mobile Benefits Footer -->
-            <div class="mobile-benefits" style="display: none;">
-              <div class="mobile-benefit-item">5-8 Days Shipping Worldwide</div>
-              <div class="mobile-benefit-item">60-days Money Back Guarantee</div>
-            </div>
           </div>
 
-          <!-- Benefits Section (mobile only) -->
-          <div class="benefits-section" style="display: none;" id="benefitsSection">
+          <!-- Benefits Section -->
+          <div class="benefits-section" id="benefitsSectionFullscreen">
             <div class="benefits-list">
               <div class="benefit-item">Scent lasts 12 hours</div>
               <div class="benefit-item">You pay 1/10 of original prices</div>
@@ -1065,45 +1075,45 @@ color: white;
   border: 1px solid #e0e0e0;
 }
 
-/* Mobile Sidebar - Sticky Footer */
-.mobile-sidebar {
+/* Mobile Sticky Footer */
+.mobile-sticky-footer {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: auto;
   z-index: 1000;
-  border-radius: 0;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
   background: white;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
 
-/* Sticky footer content - minimal height */
-.mobile-sidebar:not(.fullscreen) .sidebar-content {
+.sticky-content {
   padding: 8px 16px;
-  min-height: auto;
 }
 
-.mobile-sidebar.show {
-  display: block !important;
+/* Mobile Fullscreen Cart */
+.mobile-fullscreen-cart {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2000;
+  background: white;
+  overflow-y: auto;
+  cursor: default;
 }
 
-/* Mobile Sidebar - Fullscreen */
-.mobile-sidebar.fullscreen {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  height: 100vh !important;
-  z-index: 2000 !important;
-  border-radius: 0 !important;
-  overflow-y: auto !important;
-  cursor: default !important;
+.fullscreen-content {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-content {
@@ -3118,114 +3128,49 @@ function addSingleToCart(productId) {
 
 // Mobile sidebar functions
 function openFullscreenSidebar() {
-  const sidebar = document.querySelector('.mobile-sidebar');
-  const backdrop = document.getElementById('sidebarBackdrop');
-  const mobileHeader = document.querySelector('.sidebar-header');
-  const saveInfo = document.getElementById('saveInfo');
-  const benefitsSection = document.getElementById('benefitsSection');
-  const selectedItems = document.getElementById('selectedItemsMobile');
-  const cartProgress = document.querySelector('.mobile-sidebar .cart-progress');
-  const addButton = document.getElementById('addBundleBtnMobile');
+  const fullscreenCart = document.getElementById('mobileFullscreenCart');
+  const addButtonFullscreen = document.getElementById('addBundleBtnFullscreen');
   
-  sidebar.classList.add('fullscreen');
-  backdrop.classList.add('active');
-  mobileHeader.style.display = 'flex';
-  saveInfo.style.display = 'block';
-  benefitsSection.style.display = 'block';
-  
-  // Show progress bar in fullscreen
-  cartProgress.style.display = 'block';
-  
-  // Show selected items in fullscreen
-  selectedItems.style.maxHeight = 'none';
-  selectedItems.style.opacity = '1';
-  selectedItems.style.marginBottom = '16px';
-  
-  // Hide sticky bullet points in fullscreen
-  const mobileBenefits = document.querySelector('.mobile-benefits');
-  if (mobileBenefits) {
-    mobileBenefits.style.display = 'none';
-  }
-  
-  // Update save info
-  updateSaveInfo();
-  
-  // Update button text for fullscreen
-  updateFullscreenButtonText();
-  
-  // Change button onclick for fullscreen
-  if (addButton) {
-    // Remove existing event listeners
-    const newButton = addButton.cloneNode(true);
-    addButton.parentNode.replaceChild(newButton, addButton);
+  if (fullscreenCart) {
+    fullscreenCart.style.display = 'block';
     
-    // Add new event listener for fullscreen
-    newButton.addEventListener('click', function() {
-      const config = bundleConfig[currentBundleType];
-      let totalItems = 0;
-      selectedProducts.forEach(product => {
-        const quantity = productQuantities[product.id] || 1;
-        totalItems += quantity;
+    // Update button text for fullscreen
+    updateFullscreenButtonText();
+    
+    // Add event listener for fullscreen button
+    if (addButtonFullscreen) {
+      addButtonFullscreen.addEventListener('click', function() {
+        const config = bundleConfig[currentBundleType];
+        let totalItems = 0;
+        selectedProducts.forEach(product => {
+          const quantity = productQuantities[product.id] || 1;
+          totalItems += quantity;
+        });
+        
+        if (totalItems >= config.total) {
+          // Bundle is complete - go to checkout
+          addBundleToCartAndCheckout();
+        } else {
+          // Bundle not complete - close fullscreen and continue shopping
+          closeFullscreenSidebar();
+        }
       });
-      
-      if (totalItems >= config.total) {
-        // Bundle is complete - go to checkout
-        addBundleToCartAndCheckout();
-      } else {
-        // Bundle not complete - close fullscreen and continue shopping
-        closeFullscreenSidebar();
-      }
-    });
+    }
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
   }
-  
-  // Prevent body scroll
-  document.body.style.overflow = 'hidden';
 }
 
 function closeFullscreenSidebar() {
-  const sidebar = document.querySelector('.mobile-sidebar');
-  const backdrop = document.getElementById('sidebarBackdrop');
-  const mobileHeader = document.querySelector('.sidebar-header');
-  const saveInfo = document.getElementById('saveInfo');
-  const benefitsSection = document.getElementById('benefitsSection');
-  const selectedItems = document.getElementById('selectedItemsMobile');
-  const cartProgress = document.querySelector('.mobile-sidebar .cart-progress');
-  const addButton = document.getElementById('addBundleBtnMobile');
+  const fullscreenCart = document.getElementById('mobileFullscreenCart');
   
-  sidebar.classList.remove('fullscreen');
-  backdrop.classList.remove('active');
-  mobileHeader.style.display = 'none';
-  saveInfo.style.display = 'none';
-  benefitsSection.style.display = 'none';
-  
-  // Hide progress bar in sticky footer
-  cartProgress.style.display = 'none';
-  
-  // Hide selected items in sticky footer
-  selectedItems.style.maxHeight = '0';
-  selectedItems.style.opacity = '0';
-  selectedItems.style.marginBottom = '0';
-  
-  // Show sticky bullet points again
-  const mobileBenefits = document.querySelector('.mobile-benefits');
-  if (mobileBenefits) {
-    mobileBenefits.style.display = 'flex';
-  }
-  
-  // Restore button onclick for sticky footer
-  if (addButton) {
-    // Remove existing event listeners
-    const newButton = addButton.cloneNode(true);
-    addButton.parentNode.replaceChild(newButton, addButton);
+  if (fullscreenCart) {
+    fullscreenCart.style.display = 'none';
     
-    // Add new event listener for sticky footer
-    newButton.addEventListener('click', function() {
-      openFullscreenSidebar();
-    });
+    // Restore body scroll
+    document.body.style.overflow = '';
   }
-  
-  // Restore body scroll
-  document.body.style.overflow = '';
 }
 
 function updateSaveInfo() {
@@ -3279,10 +3224,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Add event listener to mobile button
-  if (addButtonMobile) {
-    addButtonMobile.addEventListener('click', function() {
-      // Mobile button - always open fullscreen first
+  // Add event listener to sticky footer button
+  const addButtonSticky = document.getElementById('addBundleBtnSticky');
+  if (addButtonSticky) {
+    addButtonSticky.addEventListener('click', function() {
+      // Sticky button - always open fullscreen first
       openFullscreenSidebar();
     });
   }
@@ -3413,29 +3359,31 @@ function updateAddButton() {
     }
   }
   
-  // Update mobile button
-  if (addButtonMobile && btnTextMobile && btnStatusMobile) {
-    // Mobile button is always clickable, but visually disabled when not complete
-    addButtonMobile.disabled = false;
-    
-    // Add visual disabled class for styling
-    if (totalItems < config.total) {
-      addButtonMobile.classList.add('disabled');
-    } else {
-      addButtonMobile.classList.remove('disabled');
-    }
-    
-    // Show/hide mobile sidebar based on selection
-    if (window.innerWidth <= 768 && mobileSidebar) {
+  // Update sticky footer
+  const stickyFooter = document.getElementById('mobileStickyFooter');
+  const addButtonSticky = document.getElementById('addBundleBtnSticky');
+  const btnTextSticky = document.getElementById('btnTextSticky');
+  const btnStatusSticky = document.getElementById('btnStatusSticky');
+  
+  if (stickyFooter && addButtonSticky && btnTextSticky && btnStatusSticky) {
+    // Show/hide sticky footer based on selection
+    if (window.innerWidth <= 768) {
       if (totalItems > 0) {
-        mobileSidebar.classList.add('show');
+        stickyFooter.style.display = 'block';
       } else {
-        mobileSidebar.classList.remove('show');
+        stickyFooter.style.display = 'none';
       }
     }
     
-    btnTextMobile.textContent = 'REVIEW BUNDLE';
-    btnStatusMobile.textContent = `${totalItems}/${config.total}`;
+    // Button styling
+    if (totalItems < config.total) {
+      addButtonSticky.classList.add('disabled');
+    } else {
+      addButtonSticky.classList.remove('disabled');
+    }
+    
+    btnTextSticky.textContent = 'REVIEW BUNDLE';
+    btnStatusSticky.textContent = `${totalItems}/${config.total}`;
   }
   
   // Update mobile save info if on mobile
