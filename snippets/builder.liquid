@@ -1144,8 +1144,6 @@ color: white;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   pointer-events: auto;
   z-index: 11;
-  position: relative;
-  top: 0px;
 }
 
 .marker.active {
@@ -1946,8 +1944,8 @@ color: white;
 
   /* Benefits Section Mobile */
   .bundler-sidebar.fullscreen .benefits-section {
-    margin-top: 16px;
-    padding: 12px;
+    margin-top: 8px;
+    padding: 8px;
     background: #f8f9fa;
     border-radius: 8px;
   }
@@ -2103,13 +2101,13 @@ color: white;
 
   .bundler-sidebar.fullscreen .benefits-list {
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    gap: 4px;
   }
   
   .bundler-sidebar.fullscreen .benefit-item {
-    font-size: 0.8rem;
-    padding: 4px 0;
-    line-height: 1.2;
+    font-size: 0.75rem;
+    padding: 2px 0;
+    line-height: 1.1;
   }
 }
 </style>
@@ -2747,8 +2745,22 @@ function updateSelectedItems() {
   }
   
   let itemsHTML = '';
-  selectedProducts.forEach((product, index) => {
-    const isFree = index >= config.buy;
+  
+  // Sort products: FREE items first, then paid items
+  const sortedProducts = [...selectedProducts].sort((a, b) => {
+    const aIndex = selectedProducts.indexOf(a);
+    const bIndex = selectedProducts.indexOf(b);
+    const aIsFree = aIndex >= config.buy;
+    const bIsFree = bIndex >= config.buy;
+    
+    if (aIsFree && !bIsFree) return -1; // FREE first
+    if (!aIsFree && bIsFree) return 1;  // Paid second
+    return aIndex - bIndex; // Keep original order within each group
+  });
+  
+  sortedProducts.forEach((product) => {
+    const originalIndex = selectedProducts.indexOf(product);
+    const isFree = originalIndex >= config.buy;
     const freeBadge = isFree ? '<span class="free-badge">FREE</span>' : '';
     
     const quantity = productQuantities[product.id] || 1;
