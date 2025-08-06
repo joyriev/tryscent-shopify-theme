@@ -1054,11 +1054,46 @@ color: white;
 /* Desktop Sidebar */
 .desktop-sidebar {
   display: block;
+  position: static;
+  width: 400px;
+  height: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
 }
 
-/* Mobile Sidebar */
+/* Mobile Sidebar - Sticky Footer */
 .mobile-sidebar {
-  display: none !important;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1000;
+  border-radius: 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  background: white;
+  cursor: pointer;
+}
+
+/* Mobile Sidebar - Fullscreen */
+.mobile-sidebar.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2000;
+  border-radius: 0;
+  overflow-y: auto;
+  cursor: default;
 }
 
 .sidebar-content {
@@ -1341,6 +1376,19 @@ color: white;
   transform: none;
 }
 
+/* Mobile button disabled state */
+.add-bundle-btn.disabled {
+  background: #e0e0e0 !important;
+  color: #999 !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+
+.add-bundle-btn.disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 .product-price {
   font-size: 1.1rem;
   font-weight: 700;
@@ -1497,7 +1545,8 @@ color: white;
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-  .mobile-sidebar {
+  /* Hide desktop, show mobile */
+  .desktop-sidebar {
     display: none !important;
   }
   
@@ -1508,11 +1557,6 @@ color: white;
   .product-bundler {
     padding: 10px !important;
     padding-bottom: 0 !important;
-  }
-
-  /* Show mobile sidebar, hide desktop sidebar */
-  .desktop-sidebar {
-    display: none !important;
   }
   
   /* Hide desktop progress bar on mobile */
@@ -1556,12 +1600,14 @@ color: white;
 
   .bundler-reviews .rating-text {
     font-size: 0.6rem !important;
-    line-height: 1 !important;
+    line-height: 16px !important;
+    height: 16px !important;
   }
 
   .bundler-reviews .rating-count {
     font-size: 0.6rem !important;
-    line-height: 1 !important;
+    line-height: 16px !important;
+    height: 16px !important;
   }
 
   /* Variant Selection Mobile */
@@ -1717,20 +1763,17 @@ color: white;
     font-size: 1rem;
   }
 
-  /* Sidebar Mobile - Sticky Footer */
-  .bundler-sidebar:not(.fullscreen) {
-    width: 100% !important;
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    height: auto !important;
-    max-height: none !important;
-    z-index: 1000 !important;
-    border-radius: 0 !important;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15) !important;
-    cursor: pointer !important;
+  /* Sticky Footer Content */
+  .mobile-sidebar .sidebar-content {
+    padding: 8px 16px;
+  }
+
+  .mobile-sidebar .sidebar-title {
+    display: none !important;
+  }
+
+  .mobile-sidebar .cart-progress {
+    display: none !important;
   }
 
   .sidebar-content {
@@ -3347,8 +3390,15 @@ function updateAddButton() {
   
   // Update mobile button
   if (addButtonMobile && btnTextMobile && btnStatusMobile) {
-    // Mobile button is always clickable, even when bundle not complete
+    // Mobile button is always clickable, but visually disabled when not complete
     addButtonMobile.disabled = false;
+    
+    // Add visual disabled class for styling
+    if (totalItems < config.total) {
+      addButtonMobile.classList.add('disabled');
+    } else {
+      addButtonMobile.classList.remove('disabled');
+    }
     
     // Show/hide mobile sidebar based on selection
     if (window.innerWidth <= 768 && mobileSidebar) {
