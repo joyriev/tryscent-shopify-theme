@@ -750,6 +750,7 @@
   margin-bottom: 8px;
   background: white;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .selected-item:hover {
@@ -815,10 +816,18 @@
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
-  padding: 4px 8px;
-  border-radius: 12px;
+  padding: 6px 4px;
+  border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  z-index: 10;
 }
 
 .free-item {
@@ -998,12 +1007,11 @@ let bundleConfig = {
 
 // Bundle type selection
 function selectBundleType(bundleType) {
+  console.log('Bundle type changed to:', bundleType);
+  
   currentBundleType = bundleType;
   selectedProducts = []; // Reset selections when changing bundle type
-  
-  console.log('=== BUNDLE TYPE CHANGED ===');
-  console.log('New bundle type:', bundleType);
-  console.log('Selected products reset to:', selectedProducts.length);
+  productQuantities = {}; // Reset quantities
   
   // Update button states
   document.querySelectorAll('.bundle-type-btn').forEach(btn => {
@@ -1040,6 +1048,8 @@ function selectBundleType(bundleType) {
       indicator.style.display = 'none';
     }
   });
+  
+  console.log('Bundle type selection completed');
 }
 
 
