@@ -1356,11 +1356,122 @@ let bundleConfig = {
   '5+4': { buy: 5, free: 4, total: 9 }
 };
 
-
+// Make functions globally available immediately
+window.selectProduct = function(productId, passedVariantId) {
+  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+  
+  if (!productCard) {
+    return;
+  }
+  
+  // Use current selected variant instead of passed variantId
+  const priceElement = productCard.querySelector('.product-price');
+  const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
+  const currentVariantPrice = priceElement ? priceElement.dataset[variantKey] || priceElement.textContent : '';
+  
+  // Update product card variant ID to current variant
+  productCard.dataset.variantId = currentVariant;
+  
+  const config = bundleConfig[currentBundleType];
+  
+  // Check if already selected by looking for the selected class
+  const isSelected = productCard.classList.contains('selected') || productCard.style.borderColor === 'rgb(40, 167, 69)';
+  
+  if (isSelected) {
+    // Deselect product
+    productCard.classList.remove('selected');
+    
+    // Reset button text
+    const button = productCard.querySelector('.add-to-bundle-btn');
+    if (button) {
+      button.textContent = 'ADD TO BUNDLE';
+      button.classList.remove('selected');
+    }
+    
+    // Hide selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'none';
+    }
+    
+    selectedProducts = selectedProducts.filter(p => p.id !== productId);
+    
+    // Update progress text and indicators
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+    
+  } else {
+    // Select product (check max based on bundle type)
+    if (selectedProducts.length >= config.total) {
+      alert(`You can only select ${config.total} scents for this bundle`);
+      return;
+    }
+    
+    // Get product title
+    const productTitle = productCard.querySelector('.product-title');
+    const title = productTitle ? productTitle.textContent : 'Unknown Product';
+    
+    // Get price
+    const priceElement = productCard.querySelector('.product-price');
+    const price = priceElement ? priceElement.textContent : '';
+    
+    // Get variant ID for current variant
+    const variantKey = `variant-${currentVariant.toLowerCase()}`;
+    const variantId = productCard.querySelector('.product-price').dataset[variantKey];
+    
+    // Add selected class
+    productCard.classList.add('selected');
+    
+    // Change button to quantity selector
+    const button = productCard.querySelector('.add-to-bundle-btn');
+    
+    if (button) {
+      // Create quantity selector
+      const quantitySelector = document.createElement('div');
+      quantitySelector.className = 'quantity-selector';
+      quantitySelector.innerHTML = `
+        <button class="quantity-btn minus" onclick="changeProductQuantity(${productId}, -1)">-</button>
+        <span class="quantity-display">1</span>
+        <button class="quantity-btn plus" onclick="changeProductQuantity(${productId}, 1)">+</button>
+      `;
+      
+      // Replace button with selector
+      button.parentNode.replaceChild(quantitySelector, button);
+    }
+    
+    // Show selection indicator
+    const indicator = productCard.querySelector('.selection-indicator');
+    if (indicator) {
+      indicator.style.display = 'flex';
+    }
+    
+    // Get product image
+    const productImage = productCard.querySelector('.product-image img');
+    const image = productImage ? productImage.src : '';
+    
+    selectedProducts.push({
+      id: productId,
+      variantId: parseInt(variantId), // Use actual variant ID
+      title: title,
+      price: currentVariantPrice, // Use price from data attribute
+      image: image,
+      variant: currentVariant
+    });
+    
+    // Update progress text and indicators
+    updateProgressText();
+    updateCartProgress();
+    updateProgressBarFill();
+    updateSelectedItems();
+  }
+  
+  updateAddButton();
+};
 
 // Bundle type selection
-function selectBundleType(bundleType) {
-  
+window.selectBundleType = function(bundleType) {
   currentBundleType = bundleType;
   selectedProducts = []; // Reset selections when changing bundle type
   productQuantities = {}; // Reset quantities
@@ -1410,11 +1521,7 @@ function selectBundleType(bundleType) {
     const offset = productGrid.offsetTop - 200;
     window.scrollTo({ top: offset, behavior: 'smooth' });
   }
-}
-
-
-
-
+};
 
 // Get ordinal suffix (1st, 2nd, 3rd, etc.)
 function getOrdinalSuffix(num) {
@@ -1674,119 +1781,7 @@ function updateBundlePrices() {
   });
 }
 
-// Product selection
-function selectProduct(productId, passedVariantId) {
-  const productCard = document.querySelector(`[data-product-id="${productId}"]`);
-  
-  if (!productCard) {
-    return;
-  }
-  
-  // Use current selected variant instead of passed variantId
-  const priceElement = productCard.querySelector('.product-price');
-  const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
-  const currentVariantPrice = priceElement ? priceElement.dataset[variantKey] || priceElement.textContent : '';
-  
-  // Update product card variant ID to current variant
-  productCard.dataset.variantId = currentVariant;
-  
-  const config = bundleConfig[currentBundleType];
-  
-  // Check if already selected by looking for the selected class
-  const isSelected = productCard.classList.contains('selected') || productCard.style.borderColor === 'rgb(40, 167, 69)';
-  
-  if (isSelected) {
-    // Deselect product
-    productCard.classList.remove('selected');
-    
-    // Reset button text
-    const button = productCard.querySelector('.add-to-bundle-btn');
-    if (button) {
-      button.textContent = 'ADD TO BUNDLE';
-      button.classList.remove('selected');
-    }
-    
-    // Hide selection indicator
-    const indicator = productCard.querySelector('.selection-indicator');
-    if (indicator) {
-      indicator.style.display = 'none';
-    }
-    
-    selectedProducts = selectedProducts.filter(p => p.id !== productId);
-    
-    // Update progress text and indicators
-    updateProgressText();
-    updateCartProgress();
-    updateProgressBarFill();
-    updateSelectedItems();
-    
-  } else {
-    // Select product (check max based on bundle type)
-    if (selectedProducts.length >= config.total) {
-      alert(`You can only select ${config.total} scents for this bundle`);
-      return;
-    }
-    
-    // Get product title
-    const productTitle = productCard.querySelector('.product-title');
-    const title = productTitle ? productTitle.textContent : 'Unknown Product';
-    
-    // Get price
-    const priceElement = productCard.querySelector('.product-price');
-    const price = priceElement ? priceElement.textContent : '';
-    
-    // Get variant ID for current variant
-    const variantKey = `variant-${currentVariant.toLowerCase()}`;
-    const variantId = productCard.querySelector('.product-price').dataset[variantKey];
-    
-    // Add selected class
-    productCard.classList.add('selected');
-    
-    // Change button to quantity selector
-    const button = productCard.querySelector('.add-to-bundle-btn');
-    
-    if (button) {
-      // Create quantity selector
-      const quantitySelector = document.createElement('div');
-      quantitySelector.className = 'quantity-selector';
-      quantitySelector.innerHTML = `
-        <button class="quantity-btn minus" onclick="changeProductQuantity(${productId}, -1)">-</button>
-        <span class="quantity-display">1</span>
-        <button class="quantity-btn plus" onclick="changeProductQuantity(${productId}, 1)">+</button>
-      `;
-      
-      // Replace button with selector
-      button.parentNode.replaceChild(quantitySelector, button);
-    }
-    
-    // Show selection indicator
-    const indicator = productCard.querySelector('.selection-indicator');
-    if (indicator) {
-      indicator.style.display = 'flex';
-    }
-    
-    // Get product image
-    const productImage = productCard.querySelector('.product-image img');
-    const image = productImage ? productImage.src : '';
-    
-    selectedProducts.push({
-      id: productId,
-      variantId: parseInt(variantId), // Use actual variant ID
-      title: title,
-      price: currentVariantPrice, // Use price from data attribute
-      image: image,
-      variant: currentVariant
-    });
-    
-    // Update progress text and indicators
-    updateProgressText();
-    updateCartProgress();
-    updateProgressBarFill();
-    updateSelectedItems();
-  }
-  
-  updateAddButton();
-}
+
 
 // Change product quantity function
 function changeProductQuantity(productId, change) {
@@ -2232,12 +2227,10 @@ function addBundleToCart() {
   });
 }
 
-// Make functions globally available
-window.selectProduct = selectProduct;
+// Make remaining functions globally available
 window.changeProductQuantity = changeProductQuantity;
 window.changeQuantity = changeQuantity;
 window.selectVariant = selectVariant;
-window.selectBundleType = selectBundleType;
 window.filterProducts = filterProducts;
 window.filterByCategory = filterByCategory;
 window.addBundleToCart = addBundleToCart;
