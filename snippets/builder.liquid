@@ -106,7 +106,7 @@
             {% assign default_variant = product.variants.first %}
           {% endunless %}
           
-            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}">
+            <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
               <!-- Product Badge -->
               {% if product.tags contains 'new' %}
                 <div class="product-badge new">New</div>
@@ -1457,9 +1457,29 @@ function selectProduct(productId, variantId) {
     return;
   }
   
-  // Update variant ID to current selected variant
+  // Use current selected variant instead of passed variantId
   const currentVariantPrice = variantPrices[currentVariant];
   console.log('Current variant:', currentVariant, 'Price:', currentVariantPrice);
+  
+  // Update product card variant ID to current variant
+  productCard.dataset.variantId = currentVariant;
+  
+  // Format money function
+  const formatMoney = (cents) => {
+    const currency = window.Shopify?.currency?.active || 'USD';
+    const rate = window.Shopify?.currency?.rate || 1;
+    const amount = (cents * rate) / 100;
+    
+    if (currency === 'USD') {
+      return `$${amount.toFixed(2)}`;
+    } else if (currency === 'EUR') {
+      return `€${amount.toFixed(2)}`;
+    } else if (currency === 'GBP') {
+      return `£${amount.toFixed(2)}`;
+    } else {
+      return `${amount.toFixed(2)} ${currency}`;
+    }
+  };
   
   const config = bundleConfig[currentBundleType];
   
@@ -1533,16 +1553,14 @@ function selectProduct(productId, variantId) {
     const productImage = productCard.querySelector('.product-image img');
     const image = productImage ? productImage.src : '';
     
-    // Get selected variant
-    const variantSelect = productCard.querySelector('.variant-select');
-    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
-    const variant = selectedOption ? selectedOption.textContent.split(' - ')[0] : '100ML';
+    // Use current variant
+    const variant = currentVariant;
     
     selectedProducts.push({
       id: productId,
-      variantId: parseInt(variantId),
+      variantId: currentVariant, // Use current variant instead of passed variantId
       title: title,
-      price: price,
+      price: formatMoney(currentVariantPrice), // Use formatted price
       image: image,
       variant: variant
     });
