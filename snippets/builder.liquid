@@ -129,8 +129,8 @@
             <!-- Progress Section -->
             <div class="cart-progress">
               <div class="progress-text" id="cartProgressText">Please select at least 2 scents</div>
-              <div class="progress-bar">
-                <div class="progress-fill" id="cartProgressFill"></div>
+              <div class="bundler-progress-bar">
+                <div class="bundler-progress-fill" id="cartProgressFill"></div>
               </div>
               <div class="progress-markers" id="progressMarkers">
                 <!-- Markers will be generated dynamically -->
@@ -596,7 +596,7 @@
   font-weight: 500;
 }
 
-.progress-bar {
+.bundler-progress-bar {
   height: 12px;
   background: #e0e0e0;
   border-radius: 6px;
@@ -606,7 +606,7 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.progress-fill {
+.bundler-progress-fill {
   height: 100%;
   background: #28a745;
   border-radius: 6px;
@@ -918,6 +918,10 @@ function selectBundleType(bundleType) {
   currentBundleType = bundleType;
   selectedProducts = []; // Reset selections when changing bundle type
   
+  console.log('=== BUNDLE TYPE CHANGED ===');
+  console.log('New bundle type:', bundleType);
+  console.log('Selected products reset to:', selectedProducts.length);
+  
   // Update button states
   document.querySelectorAll('.bundle-type-btn').forEach(btn => {
     btn.classList.remove('active');
@@ -1042,8 +1046,9 @@ function generateProgressMarkers() {
       const progressFill = document.getElementById('cartProgressFill');
       const config = bundleConfig[currentBundleType];
       
-      console.log('=== PROGRESS BAR FILL DEBUG ===');
+      console.log('=== BUNDLER PROGRESS BAR FILL DEBUG ===');
       console.log('progressFill element:', progressFill);
+      console.log('progressFill classList:', progressFill ? progressFill.classList : 'N/A');
       console.log('selectedProducts.length:', selectedProducts.length);
       console.log('config.total:', config.total);
       
@@ -1054,8 +1059,9 @@ function generateProgressMarkers() {
         console.log('Set width to:', progressPercent + '%');
         console.log('Actual width after setting:', progressFill.style.width);
         console.log('Computed width:', window.getComputedStyle(progressFill).width);
+        console.log('Computed background:', window.getComputedStyle(progressFill).background);
       } else {
-        console.error('PROGRESS FILL ELEMENT NOT FOUND!');
+        console.error('BUNDLER PROGRESS FILL ELEMENT NOT FOUND!');
       }
     }
 
