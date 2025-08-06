@@ -2812,6 +2812,7 @@ window.changeQuantity = function(productId, change) {
   updateProgressBarFill();
   updateSelectedItems();
   updateAddButton();
+  updateFullscreenButtonText();
 };
 
 window.filterProducts = function() {
@@ -3346,12 +3347,20 @@ function openFullscreenSidebar() {
   if (fullscreenCart) {
     fullscreenCart.style.display = 'block';
     
-    // Update button text for fullscreen
+    // Update all fullscreen cart elements
     updateFullscreenButtonText();
+    updateProgressText();
+    generateProgressMarkers();
+    updateCartProgress();
+    updateSelectedItems();
+    updateSaveInfo();
     
-    // Add event listener for fullscreen button
+    // Remove existing event listeners and add new one
     if (addButtonFullscreen) {
-      addButtonFullscreen.addEventListener('click', function() {
+      const newButton = addButtonFullscreen.cloneNode(true);
+      addButtonFullscreen.parentNode.replaceChild(newButton, addButtonFullscreen);
+      
+      newButton.addEventListener('click', function() {
         const config = bundleConfig[currentBundleType];
         let totalItems = 0;
         selectedProducts.forEach(product => {
