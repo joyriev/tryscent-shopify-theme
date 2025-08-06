@@ -45,16 +45,7 @@
         </div>
       </div>
 
-      <!-- Progress Bar -->
-      <div class="bundler-progress">
-        <div class="bundler-progress-text">
-          <span id="progressText">Choose your bundle type first</span>
-          <span id="bundleReadyText" class="bundle-ready-text" style="display: none;">Perfect! Your bundle is ready</span>
-        </div>
-        <div class="bundler-progress-bar" id="progressBar">
-          <!-- Progress steps will be generated dynamically -->
-        </div>
-      </div>
+
 
       <!-- Search and Filter Section -->
       <div class="bundler-search-filter">
@@ -284,106 +275,7 @@
   color: white;
 }
 
-/* Progress Bar */
-.bundler-progress {
-  padding: 20px 32px;
-  background-color: #f8f9fa;
-}
 
-.bundler-progress-text {
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.bundler-progress-text span {
-  font-size: 1rem;
-  color: #222;
-}
-
-.bundle-ready-text {
-  color: #28a745 !important;
-  font-weight: 600;
-}
-
-.bundler-progress-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.bundler-progress-bar::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #e0e0e0;
-  z-index: 1;
-}
-
-/* Green progress line */
-.bundler-progress-bar::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 0;
-  height: 2px;
-  background-color: #28a745;
-  z-index: 1;
-  transition: width 0.3s ease;
-  width: var(--progress-width, 0%);
-}
-
-.progress-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.progress-indicator {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-  border: 3px solid white;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.progress-indicator.completed {
-  background-color: #28a745;
-}
-
-.progress-indicator.current {
-  background-color: #28a745;
-}
-
-.progress-step span {
-  font-size: 0.8rem;
-  color: #666;
-  text-align: center;
-}
-
-.progress-step.buy-step span {
-  color: #222;
-  font-weight: 600;
-}
-
-.progress-step.free-step span {
-  color: #28a745;
-  font-weight: 700;
-}
 
 .progress-step.free-step .progress-indicator {
   border-color: #28a745;
@@ -819,6 +711,24 @@
   color: white;
 }
 
+/* Free Badge */
+.free-badge {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+
+.free-item {
+  border-color: #28a745 !important;
+  background: linear-gradient(135deg, #f8fff9 0%, #ffffff 100%) !important;
+}
+
 /* Sidebar Footer */
 .sidebar-footer {
   border-top: 1px solid #e0e0e0;
@@ -983,9 +893,6 @@ function selectBundleType(bundleType) {
   });
   event.target.closest('.bundle-type-btn').classList.add('active');
   
-  // Generate progress bar
-  generateProgressBar();
-  
   // Update progress text
   updateProgressText();
   
@@ -1013,28 +920,7 @@ function selectBundleType(bundleType) {
   });
 }
 
-// Generate progress bar based on bundle type
-function generateProgressBar() {
-  const progressBar = document.getElementById('progressBar');
-  const config = bundleConfig[currentBundleType];
-  
-  let progressHTML = '';
-  
-  for (let i = 1; i <= config.total; i++) {
-    const isFree = i > config.buy;
-    const stepClass = isFree ? 'free-step' : 'buy-step';
-    const stepText = isFree ? `${i}${getOrdinalSuffix(i)} FREE` : `${i}${getOrdinalSuffix(i)} Bottle`;
-    
-    progressHTML += `
-      <div class="progress-step ${stepClass}" data-step="${i}">
-        <div class="progress-indicator" id="step${i}"></div>
-        <span>${stepText}</span>
-      </div>
-    `;
-  }
-  
-  progressBar.innerHTML = progressHTML;
-}
+
 
 // Get ordinal suffix (1st, 2nd, 3rd, etc.)
 function getOrdinalSuffix(num) {
@@ -1092,6 +978,7 @@ function updateCartProgress() {
 // Update selected items in sidebar
 function updateSelectedItems() {
   const selectedItemsContainer = document.getElementById('selectedItems');
+  const config = bundleConfig[currentBundleType];
   
   if (selectedProducts.length === 0) {
     selectedItemsContainer.innerHTML = `
@@ -1103,14 +990,18 @@ function updateSelectedItems() {
   }
   
   let itemsHTML = '';
-  selectedProducts.forEach(product => {
+  selectedProducts.forEach((product, index) => {
+    const isFree = index >= config.buy;
+    const freeBadge = isFree ? '<span class="free-badge">FREE</span>' : '';
+    
     itemsHTML += `
-      <div class="selected-item" data-product-id="${product.id}">
+      <div class="selected-item ${isFree ? 'free-item' : ''}" data-product-id="${product.id}">
         <img src="${product.image || ''}" alt="${product.title}" class="selected-item-image">
         <div class="selected-item-info">
           <h4 class="selected-item-title">${product.title}</h4>
           <p class="selected-item-variant">${product.variant || '100ML'}</p>
         </div>
+        ${freeBadge}
         <button class="selected-item-remove" onclick="removeFromCart(${product.id})">×</button>
       </div>
     `;
@@ -1137,8 +1028,6 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('selectProduct function exists:', typeof selectProduct);
   console.log('applyFilters function exists:', typeof applyFilters);
   
-  // Generate initial progress bar
-  generateProgressBar();
   updateProgressText();
   updateCartProgress();
   updateSelectedItems();
@@ -1193,7 +1082,6 @@ function selectProduct(productId, variantId) {
     
     // Update progress text and indicators
     updateProgressText();
-    updateProgressIndicators();
     
   } else {
     // Select product (check max based on bundle type)
@@ -1253,7 +1141,6 @@ function selectProduct(productId, variantId) {
     
     // Update progress text and indicators
     updateProgressText();
-    updateProgressIndicators();
     updateCartProgress();
     updateSelectedItems();
   }
@@ -1261,30 +1148,7 @@ function selectProduct(productId, variantId) {
   updateAddButton();
 }
 
-// Update progress indicators
-function updateProgressIndicators() {
-  const config = bundleConfig[currentBundleType];
-  
-  for (let i = 1; i <= config.total; i++) {
-    const stepIndicator = document.querySelector(`#step${i}`);
-    if (stepIndicator) {
-      if (i <= selectedProducts.length) {
-        stepIndicator.style.backgroundColor = '#28a745';
-        stepIndicator.style.color = 'white';
-      } else {
-        stepIndicator.style.backgroundColor = '#e0e0e0';
-        stepIndicator.style.color = '#666';
-      }
-    }
-  }
-  
-  // Update green progress line
-  const progressBar = document.querySelector('.bundler-progress-bar');
-  if (progressBar) {
-    const progressPercent = (selectedProducts.length / config.total) * 100;
-    progressBar.style.setProperty('--progress-width', progressPercent + '%');
-  }
-}
+
 
 // Update variant when select changes
 function updateVariant(productId, variantId) {
