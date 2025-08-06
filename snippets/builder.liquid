@@ -1042,10 +1042,20 @@ function generateProgressMarkers() {
       const progressFill = document.getElementById('cartProgressFill');
       const config = bundleConfig[currentBundleType];
       
+      console.log('=== PROGRESS BAR FILL DEBUG ===');
+      console.log('progressFill element:', progressFill);
+      console.log('selectedProducts.length:', selectedProducts.length);
+      console.log('config.total:', config.total);
+      
       if (progressFill) {
         const progressPercent = (selectedProducts.length / config.total) * 100;
+        console.log('Calculated progressPercent:', progressPercent);
         progressFill.style.width = progressPercent + '%';
-        console.log('PROGRESS BAR FILL UPDATED:', progressPercent + '%');
+        console.log('Set width to:', progressPercent + '%');
+        console.log('Actual width after setting:', progressFill.style.width);
+        console.log('Computed width:', window.getComputedStyle(progressFill).width);
+      } else {
+        console.error('PROGRESS FILL ELEMENT NOT FOUND!');
       }
     }
 
