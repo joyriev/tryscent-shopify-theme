@@ -149,7 +149,7 @@
             <!-- Add Bundle Button -->
             <div class="sidebar-footer">
               <button id="addBundleBtn" class="add-bundle-btn" onclick="addBundleToCart()" disabled>
-                <span class="btn-text">SELECT PRODUCTS</span>
+                <span class="btn-text" id="btnText">Please Select At Least 2 Scents</span>
                 <span class="btn-status" id="btnStatus">0/2</span>
               </button>
             </div>
@@ -802,6 +802,13 @@
   color: white;
 }
 
+/* Selected Item Actions */
+.selected-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* Free Badge */
 .free-badge {
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
@@ -812,7 +819,6 @@
   border-radius: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-right: 8px;
 }
 
 .free-item {
@@ -1190,15 +1196,15 @@ function updateSelectedItems() {
           <h4 class="selected-item-title">${product.title}</h4>
           <p class="selected-item-variant">${product.variant || '100ML'}</p>
         </div>
-        ${isFree ? '' : `
-          <div class="selected-item-quantity">
-            <button class="quantity-btn minus" onclick="changeQuantity(${product.id}, -1)">-</button>
-            <span class="quantity-display">${quantity}</span>
-            <button class="quantity-btn plus" onclick="changeQuantity(${product.id}, 1)">+</button>
-          </div>
-        `}
-        ${freeBadge}
-        <button class="selected-item-remove" onclick="removeFromCart(${product.id})">×</button>
+        <div class="selected-item-quantity">
+          <button class="quantity-btn minus" onclick="changeQuantity(${product.id}, -1)">-</button>
+          <span class="quantity-display">${quantity}</span>
+          <button class="quantity-btn plus" onclick="changeQuantity(${product.id}, 1)">+</button>
+        </div>
+        <div class="selected-item-actions">
+          ${freeBadge}
+          <button class="selected-item-remove" onclick="removeFromCart(${product.id})">×</button>
+        </div>
       </div>
     `;
   });
@@ -1402,13 +1408,13 @@ function updateAddButton() {
     
     // Update button text and status
     if (totalSelected >= config.total) {
-      btnText.textContent = 'ADD BUNDLE TO CART';
+      btnText.textContent = 'Your Bundle Is Ready!';
       btnStatus.textContent = `${totalSelected}/${config.total}`;
     } else if (totalSelected >= minRequired) {
-      btnText.textContent = 'ADD TO CART';
+      btnText.textContent = `Add ${config.total - totalSelected} More For Free`;
       btnStatus.textContent = `${totalSelected}/${config.total}`;
     } else {
-      btnText.textContent = 'SELECT PRODUCTS';
+      btnText.textContent = `Please Select ${minRequired - totalSelected} More Scents`;
       btnStatus.textContent = `${totalSelected}/${minRequired}`;
     }
     
