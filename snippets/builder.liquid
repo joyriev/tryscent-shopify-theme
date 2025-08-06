@@ -1535,7 +1535,7 @@ color: white;
     grid-template-columns: 1fr 1fr !important;
     grid-template-rows: 1fr 1fr !important;
     gap: 16px !important;
-    row-gap: 150px !important;
+    row-gap: 30px !important;
     flex-wrap: wrap;
   }
 
@@ -1655,6 +1655,7 @@ color: white;
   .sidebar-title {
     font-size: 1.1rem;
     margin: 0 0 12px 0;
+    display: none !important;
   }
 
   /* Cart Progress Mobile - Hidden in sticky footer */
@@ -1960,8 +1961,12 @@ color: white;
     font-weight: bold;
   }
 
-  /* Show sidebar on mobile */
+  /* Show sidebar on mobile only when products are selected */
   .bundler-sidebar {
+    display: none !important;
+  }
+  
+  .bundler-sidebar.has-products {
     display: block !important;
   }
 }
@@ -2092,6 +2097,9 @@ window.selectProduct = function(productId, passedVariantId) {
     updateProgressBarFill();
     updateSelectedItems();
     
+    // Update mobile sidebar visibility
+    updateMobileSidebarVisibility();
+    
   } else {
     // Select product (check max based on bundle type)
     if (selectedProducts.length >= config.total) {
@@ -2155,6 +2163,9 @@ window.selectProduct = function(productId, passedVariantId) {
     updateCartProgress();
     updateProgressBarFill();
     updateSelectedItems();
+    
+    // Update mobile sidebar visibility
+    updateMobileSidebarVisibility();
   }
   
   updateAddButton();
@@ -2177,6 +2188,9 @@ window.selectBundleType = function(bundleType) {
   
   // Generate progress markers
   generateProgressMarkers();
+  
+  // Update mobile sidebar visibility
+  updateMobileSidebarVisibility();
   
   // Update cart progress
   updateCartProgress();
@@ -3110,6 +3124,18 @@ function updateAddButton() {
     // Update mobile save info if on mobile
     if (window.innerWidth <= 768) {
       updateSaveInfo();
+    }
+  }
+}
+
+function updateMobileSidebarVisibility() {
+  const sidebar = document.querySelector('.bundler-sidebar');
+  
+  if (window.innerWidth <= 768) {
+    if (selectedProducts.length > 0) {
+      sidebar.classList.add('has-products');
+    } else {
+      sidebar.classList.remove('has-products');
     }
   }
 }
