@@ -228,8 +228,8 @@
             <button id="addBundleBtnDesktop" class="add-bundle-btn" disabled>
               <span class="btn-text" id="btnTextDesktop">Please Select 3 More Scents</span>
               <span class="btn-status" id="btnStatusDesktop">0/3</span>
-            </button>
-          </div>
+        </button>
+      </div>
         </div>
       </div>
 
@@ -264,7 +264,6 @@
           
           <!-- Progress Section -->
           <div class="cart-progress">
-            <div class="progress-text" id="cartProgressTextFullscreen">Please select at least 3 scents</div>
             <div class="bundler-progress-container">
               <div class="bundler-progress-bar">
                 <div class="bundler-progress-fill" id="cartProgressFillFullscreen"></div>
@@ -273,11 +272,6 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <!-- Save Info -->
-          <div class="save-info" id="saveInfoFullscreen">
-            Save $45 with 2+1 Bundle
           </div>
 
           <!-- Selected Items -->
@@ -1199,7 +1193,7 @@ color: white;
 .mobile-fullscreen-cart .bundler-progress-bar {
   height: 28px;
   background: #e0e0e0;
-  border-radius: 14px;
+  border-radius: 20px;
   position: relative;
   overflow: visible;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -1209,7 +1203,7 @@ color: white;
 .mobile-fullscreen-cart .bundler-progress-fill {
   height: 100% !important;
   background: #28a745 !important;
-  border-radius: 0;
+  border-radius: 20px;
   transition: width 0.5s ease;
   width: 0%;
   position: absolute !important;
@@ -2161,7 +2155,7 @@ color: white;
   .bundler-sidebar.fullscreen .sidebar-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+  align-items: center;
     margin-bottom: 20px;
     padding-bottom: 16px;
     border-bottom: 1px solid #eee;
@@ -2266,7 +2260,7 @@ color: white;
     margin-top: 8px;
     padding: 8px;
     background: #f8f9fa;
-    border-radius: 8px;
+  border-radius: 8px;
   }
 
   .bundler-sidebar.fullscreen .benefits-title {
@@ -2505,7 +2499,7 @@ window.selectProduct = function(productId, passedVariantId) {
       }
     }
     
-        } else {
+  } else {
     // Select product (check max based on bundle type)
     if (selectedProducts.length >= config.total) {
       alert(`You can only select ${config.total} scents for this bundle`);
@@ -3479,7 +3473,7 @@ document.addEventListener('DOMContentLoaded', function() {
       mobileSidebar.addEventListener('click', function(e) {
         // Don't open if clicking on buttons or links
         if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) {
-          return;
+    return;
         }
         openFullscreenSidebar();
       });
