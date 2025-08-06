@@ -2642,9 +2642,16 @@ function clearAllSelections() {
       const newButton = document.createElement('button');
       newButton.className = 'add-to-bundle-btn';
       newButton.textContent = 'ADD TO BUNDLE';
-      const productId = card.dataset.productId;
-      const variantId = card.dataset.variantId;
-      newButton.onclick = function() { selectProduct(productId, variantId); };
+      const productId = parseInt(card.dataset.productId);
+      const variantId = parseInt(card.dataset.variantId);
+      
+      // Set onclick attribute (same as original)
+      newButton.setAttribute('onclick', `selectProduct(${productId}, ${variantId});`);
+      
+      // Add event listener as backup
+      newButton.addEventListener('click', function() {
+        window.selectProduct(productId, variantId);
+      });
       
       // Replace quantity selector with button
       quantitySelector.parentNode.replaceChild(newButton, quantitySelector);
