@@ -4,6 +4,40 @@
 {% endcomment %}
 
 {% assign bundle_collection = collections['smells-like'] %}
+{% unless bundle_collection %}
+  {% assign bundle_collection = collections.first %}
+{% endunless %}
+
+<!-- Debug info -->
+<div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">
+  <strong>Debug Info:</strong><br>
+  Collection 'smells-like' exists: {{ bundle_collection != blank }}<br>
+  {% if bundle_collection != blank %}
+    Collection products count: {{ bundle_collection.products.size }}<br>
+    Collection handle: {{ bundle_collection.handle }}<br>
+    Collection title: {{ bundle_collection.title }}
+  {% else %}
+    Collection not found
+  {% endif %}
+</div>
+
+{% if bundle_collection == blank %}
+  <div style="background: #ffe6e6; padding: 20px; margin: 20px 0; border: 1px solid #ff9999; border-radius: 8px;">
+    <h3>⚠️ Collection Not Found</h3>
+    <p>The collection 'smells-like' was not found. Please check if:</p>
+    <ul>
+      <li>The collection exists in your Shopify admin</li>
+      <li>The collection handle is exactly 'smells-like'</li>
+      <li>The collection is published and visible</li>
+    </ul>
+    <p><strong>Available collections:</strong></p>
+    <ul>
+      {% for collection in collections %}
+        <li>{{ collection.handle }} - {{ collection.title }} ({{ collection.products.size }} products)</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
 
 <div class="product-bundler" data-bundler>
   <!-- Header -->
@@ -50,51 +84,58 @@
 
   <!-- Products Grid -->
   <div class="bundler-products" id="productsGrid">
-    {% for product in bundle_collection.products %}
-      {% assign default_variant = product.variants | where: "title", "100ML" | first %}
-      {% unless default_variant %}
-        {% assign default_variant = product.variants.first %}
-      {% endunless %}
-      
-      <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" style="cursor: pointer; border: 2px solid #eee; border-radius: 8px; padding: 16px; position: relative; transition: all 0.2s; background: white;" onclick="console.log('Card clicked!'); selectProduct({{ product.id }}, {{ default_variant.id }});">
-        <div class="product-image">
-          <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title }}" loading="lazy">
+    {% if bundle_collection and bundle_collection.products.size > 0 %}
+      {% for product in bundle_collection.products %}
+        {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+        {% unless default_variant %}
+          {% assign default_variant = product.variants.first %}
+        {% endunless %}
+        
+        <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" style="cursor: pointer; border: 2px solid #eee; border-radius: 8px; padding: 16px; position: relative; transition: all 0.2s; background: white;" onclick="console.log('Card clicked!'); selectProduct({{ product.id }}, {{ default_variant.id }});">
+          <div class="product-image">
+            <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title }}" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">{{ product.title }}</h3>
+            <div class="product-category">
+              {% if product.tags contains 'man' %}
+                <span class="category-tag man">MAN</span>
+              {% elsif product.tags contains 'woman' %}
+                <span class="category-tag woman">WOMAN</span>
+              {% endif %}
+            </div>
+            <div class="product-price" data-product-id="{{ product.id }}">
+              {{ default_variant.price | money }}
+            </div>
+            <div class="product-variant">
+              <label>Size</label>
+              <select class="variant-select" data-product-id="{{ product.id }}" onclick="event.stopPropagation();" onchange="updateVariant({{ product.id }}, this.value);">
+                {% for variant in product.variants %}
+                  {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
+                    <option value="{{ variant.id }}" 
+                            data-price="{{ variant.price | money }}"
+                            {% if variant.title contains '100ML' %}selected{% endif %}>
+                      {{ variant.title }}
+                    </option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+            <div class="add-to-cart-indicator" style="background-color: #222; color: white; padding: 8px 16px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-align: center; margin-top: 8px; cursor: pointer;">
+              SELECT FOR BUNDLE
+            </div>
+          </div>
+          <div class="product-selector" onclick="event.stopPropagation(); selectProduct({{ product.id }}, {{ default_variant.id }});">
+            <div class="check-icon">✓</div>
+          </div>
         </div>
-        <div class="product-info">
-          <h3 class="product-title">{{ product.title }}</h3>
-          <div class="product-category">
-            {% if product.tags contains 'man' %}
-              <span class="category-tag man">MAN</span>
-            {% elsif product.tags contains 'woman' %}
-              <span class="category-tag woman">WOMAN</span>
-            {% endif %}
-          </div>
-          <div class="product-price" data-product-id="{{ product.id }}">
-            {{ default_variant.price | money }}
-          </div>
-          <div class="product-variant">
-            <label>Size</label>
-            <select class="variant-select" data-product-id="{{ product.id }}" onclick="event.stopPropagation();" onchange="updateVariant({{ product.id }}, this.value);">
-              {% for variant in product.variants %}
-                {% if variant.title contains '30ML' or variant.title contains '50ML' or variant.title contains '100ML' %}
-                  <option value="{{ variant.id }}" 
-                          data-price="{{ variant.price | money }}"
-                          {% if variant.title contains '100ML' %}selected{% endif %}>
-                    {{ variant.title }}
-                  </option>
-                {% endif %}
-              {% endfor %}
-            </select>
-          </div>
-          <div class="add-to-cart-indicator" style="background-color: #222; color: white; padding: 8px 16px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-align: center; margin-top: 8px; cursor: pointer;">
-            SELECT FOR BUNDLE
-          </div>
-        </div>
-        <div class="product-selector" onclick="event.stopPropagation(); selectProduct({{ product.id }}, {{ default_variant.id }});">
-          <div class="check-icon">✓</div>
-        </div>
+      {% endfor %}
+    {% else %}
+      <div style="grid-column: 1 / -1; text-align: center; padding: 40px; background: #f9f9f9; border-radius: 8px;">
+        <h3>No Products Found</h3>
+        <p>No products found in the collection. Please check the collection settings.</p>
       </div>
-    {% endfor %}
+    {% endif %}
   </div>
 
   <!-- Footer Button -->
@@ -538,10 +579,66 @@ let selectedProducts = [];
 let currentFilter = 'all';
 let currentSearch = '';
 
+// Filter functions
+function filterProducts() {
+  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+  currentSearch = searchTerm;
+  applyFilters();
+}
+
+function filterByCategory(category) {
+  currentFilter = category;
+  console.log('Filtering by category:', category);
+  
+  // Update filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+  
+  applyFilters();
+}
+
+function applyFilters() {
+  const products = document.querySelectorAll('.product-card');
+  
+  products.forEach(product => {
+    const title = product.querySelector('.product-title').textContent.toLowerCase();
+    const tags = product.dataset.category; // tags are stored in data-category
+    const matchesSearch = title.includes(currentSearch) || tags.includes(currentSearch);
+    
+    let matchesFilter = true;
+    if (currentFilter !== 'all') {
+      // Check if the product has the specific tag
+      const tagArray = tags.split(' ');
+      matchesFilter = tagArray.includes(currentFilter);
+      console.log('Product:', title, 'Tags:', tags, 'Tag array:', tagArray, 'Looking for:', currentFilter, 'Matches:', matchesFilter);
+    }
+    
+    if (matchesSearch && matchesFilter) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+
 // Initialize bundler
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('Bundle page script loaded!');
+  console.log('Products grid found:', document.getElementById('productsGrid'));
+  console.log('Product cards found:', document.querySelectorAll('.product-card').length);
+  
+  // Check if functions are defined
+  console.log('selectProduct function exists:', typeof selectProduct);
+  console.log('applyFilters function exists:', typeof applyFilters);
+  
   // updateProgress will be called after function is defined
-  applyFilters(); // Apply initial filters
+  if (typeof applyFilters === 'function') {
+    applyFilters(); // Apply initial filters
+  } else {
+    console.error('applyFilters function not found!');
+  }
 });
 
 // Product selection
@@ -721,50 +818,6 @@ function updateAddButton() {
     addButton.disabled = selectedProducts.length !== 3;
     console.log('Add button disabled:', addButton.disabled, 'selectedProducts:', selectedProducts.length);
   }
-}
-
-// Filter functions
-function filterProducts() {
-  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-  currentSearch = searchTerm;
-  applyFilters();
-}
-
-function filterByCategory(category) {
-  currentFilter = category;
-  console.log('Filtering by category:', category);
-  
-  // Update filter buttons
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  event.target.classList.add('active');
-  
-  applyFilters();
-}
-
-function applyFilters() {
-  const products = document.querySelectorAll('.product-card');
-  
-  products.forEach(product => {
-    const title = product.querySelector('.product-title').textContent.toLowerCase();
-    const tags = product.dataset.category; // tags are stored in data-category
-    const matchesSearch = title.includes(currentSearch) || tags.includes(currentSearch);
-    
-    let matchesFilter = true;
-    if (currentFilter !== 'all') {
-      // Check if the product has the specific tag
-      const tagArray = tags.split(' ');
-      matchesFilter = tagArray.includes(currentFilter);
-      console.log('Product:', title, 'Tags:', tags, 'Tag array:', tagArray, 'Looking for:', currentFilter, 'Matches:', matchesFilter);
-    }
-    
-    if (matchesSearch && matchesFilter) {
-      product.style.display = 'block';
-    } else {
-      product.style.display = 'none';
-    }
-  });
 }
 
 // Variant change handler
