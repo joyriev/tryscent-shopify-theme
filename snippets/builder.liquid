@@ -139,7 +139,7 @@
                   {% assign variant_30ml = product.variants | where: 'title', '30ML' | first %}
                   {% assign variant_50ml = product.variants | where: 'title', '50ML' | first %}
                   {% assign variant_100ml = product.variants | where: 'title', '100ML' | first %}
-                  <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}">{{ default_variant.price | money }}</span>
+                  <span class="product-price" id="price-{{ product.id }}" data-30ml="{% if variant_30ml %}{{ variant_30ml.price }}{% else %}{{ default_variant.price }}{% endif %}" data-50ml="{% if variant_50ml %}{{ variant_50ml.price }}{% else %}{{ default_variant.price }}{% endif %}" data-100ml="{% if variant_100ml %}{{ variant_100ml.price }}{% else %}{{ default_variant.price }}{% endif %}">{{ default_variant.price | money }}</span>
               </div>
                 
                 <!-- Add to Box Button -->
@@ -1750,13 +1750,23 @@ function selectVariant(variant) {
 
 // Update product grid prices
 function updateProductGridPrices() {
+  // Format money function using Shopify's currency system
+  const formatMoney = (cents) => {
+    if (window.Shopify && window.Shopify.currency) {
+      return window.Shopify.currency.formatMoney(cents);
+    }
+    // Fallback formatting
+    const amount = cents / 100;
+    return `$${amount.toFixed(2)}`;
+  };
+  
   // Update all product prices using data attributes
   document.querySelectorAll('.product-price').forEach(priceElement => {
     const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
-    const newPrice = priceElement.dataset[variantKey];
+    const priceCents = parseInt(priceElement.dataset[variantKey]) || 0;
     
-    if (newPrice) {
-      priceElement.textContent = newPrice;
+    if (priceCents > 0) {
+      priceElement.textContent = formatMoney(priceCents);
     }
   });
 }
@@ -1768,13 +1778,17 @@ function updateBundleSelectorPrices() {
   if (!firstPriceElement) return;
   
   const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
-  const currentPriceText = firstPriceElement.dataset[variantKey] || firstPriceElement.textContent;
+  const basePriceCents = parseInt(firstPriceElement.dataset[variantKey]) || 0;
   
-  // Extract numeric value from price text
-  const priceMatch = currentPriceText.match(/[\d,]+\.?\d*/);
-  if (!priceMatch) return;
-  
-  const basePrice = parseFloat(priceMatch[0].replace(',', ''));
+  // Format money function using Shopify's currency system
+  const formatMoney = (cents) => {
+    if (window.Shopify && window.Shopify.currency) {
+      return window.Shopify.currency.formatMoney(cents);
+    }
+    // Fallback formatting
+    const amount = cents / 100;
+    return `$${amount.toFixed(2)}`;
+  };
   
   // Update bundle prices
   const bundleConfig = {
@@ -1790,25 +1804,22 @@ function updateBundleSelectorPrices() {
     // Update total price
     const totalPriceElement = document.querySelector(`[data-bundle-type="${bundleType}"] .bundle-total-price`);
     if (totalPriceElement) {
-      const totalPrice = config.buy * basePrice;
-      const totalPriceText = currentPriceText.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
-      totalPriceElement.textContent = totalPriceText;
+      const totalPrice = config.buy * basePriceCents;
+      totalPriceElement.textContent = formatMoney(totalPrice);
     }
     
     // Update per bottle price
     const perBottleElement = document.getElementById(`price-${bundleType}`);
     if (perBottleElement) {
-      const perBottlePrice = (config.buy * basePrice) / config.total;
-      const perBottleText = currentPriceText.replace(/[\d,]+\.?\d*/, perBottlePrice.toFixed(2));
-      perBottleElement.textContent = perBottleText + ' per bottle';
+      const perBottlePrice = (config.buy * basePriceCents) / config.total;
+      perBottleElement.textContent = formatMoney(perBottlePrice) + ' per bottle';
     }
     
     // Update savings
     const savingsElement = document.getElementById(`savings-${bundleType}`);
     if (savingsElement) {
-      const savings = config.free * basePrice;
-      const savingsText = currentPriceText.replace(/[\d,]+\.?\d*/, savings.toFixed(2));
-      savingsElement.textContent = `SAVE ${savingsText}`;
+      const savings = config.free * basePriceCents;
+      savingsElement.textContent = `SAVE ${formatMoney(savings)}`;
     }
   });
 }
