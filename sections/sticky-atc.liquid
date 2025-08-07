@@ -12,45 +12,21 @@
       }
       
       console.log('Sticky ATC found, forcing show for testing');
-      // Temporary: force show for testing
-      stickyATC.classList.add('show');
+      // Force it to be visible with white background
+      stickyATC.style.visibility = 'visible';
+      stickyATC.style.opacity = '1';
+      stickyATC.style.transform = 'translateY(0)';
+      stickyATC.style.position = 'fixed';
+      stickyATC.style.bottom = '0';
+      stickyATC.style.left = '0';
+      stickyATC.style.right = '0';
+      stickyATC.style.zIndex = '9999';
+      stickyATC.style.background = 'white';
+      stickyATC.style.height = '80px';
+      stickyATC.style.display = 'block';
+      stickyATC.style.boxShadow = '0 -4px 20px rgba(0, 0, 0, 0.1)';
       
-      // Show/hide sticky ATC using Intersection Observer
-      const atcBtn = document.querySelector('.cta_product_from_submit_btn') || 
-                     document.querySelector('button[name="add"]') ||
-                     document.querySelector('.product-form__submit');
-      
-      console.log('Main ATC button found:', atcBtn);
-      
-      if (atcBtn) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              console.log('Intersection:', entry.isIntersecting, entry.boundingClientRect.bottom);
-              
-              if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
-                // scrolled past (above viewport)
-                console.log('Showing sticky ATC');
-                stickyATC.classList.add('show');
-                document.documentElement.style.paddingBottom = `${stickyATC.offsetHeight}px`;
-              } else {
-                // partially or fully visible in viewport
-                console.log('Hiding sticky ATC');
-                stickyATC.classList.remove('show');
-                document.documentElement.style.paddingBottom = '0';
-              }
-            });
-          },
-          {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0
-          }
-        );
-        observer.observe(atcBtn);
-      } else {
-        console.error('Main ATC button not found!');
-      }
+      console.log('Sticky ATC forced to be visible with WHITE background');
     });
   </script>
   {% liquid
