@@ -2404,7 +2404,7 @@ color: white;
   .bundle-total-price {
     font-size: 1.8rem;
   }
-
+  
   .bundler-products {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -2714,7 +2714,7 @@ function clearAllSelections() {
     generateProgressMarkers();
     updateCartProgress();
     updateSelectedItems();
-    updateAddButton();
+  updateAddButton();
     updateFullscreenButtonText();
   }, 10);
 }
@@ -2734,6 +2734,12 @@ window.selectVariant = function(variant) {
   
   // Clean and update prices
   cleanDataAttributes();
+  
+  // Update product prices for new variant
+  updateProductPrices(variant);
+  
+  // Update bundle prices
+  updateBundlePrices();
   
   // Scroll to bundle selection with offset
   const bundleSelection = document.querySelector('.bundle-type-selection');
@@ -3231,6 +3237,27 @@ function cleanDataAttributes() {
   updateBundlePrices();
 }
 
+// Update product prices based on selected variant
+function updateProductPrices(variant) {
+  const productCards = document.querySelectorAll('.product-card');
+  
+  productCards.forEach(card => {
+    const priceElement = card.querySelector('.product-price');
+    if (!priceElement) return;
+    
+    // Get the price data for the selected variant
+    const variantData = variant.toLowerCase();
+    const priceData = priceElement.getAttribute(`data-${variantData}`);
+    const variantId = priceElement.getAttribute(`data-variant-${variantData}`);
+    
+    if (priceData) {
+      priceElement.textContent = priceData;
+      // Update variant ID in card
+      card.setAttribute('data-variant-id', variantId);
+    }
+  });
+}
+
 // Update bundle selector prices
 function updateBundlePrices() {
   // Get current price from first product
@@ -3643,7 +3670,10 @@ function restoreUIState() {
     searchInput.value = currentSearch;
   }
   
-  // Update bundle prices first
+  // Update product prices for current variant first
+  updateProductPrices(currentVariant);
+  
+  // Then update bundle prices
   updateBundlePrices();
   
   // Restore selected products
