@@ -1,11 +1,6 @@
 {% if section.settings.enable_section and request.page_type == 'product' and product.available %}
   <script>
     console.log('Sticky ATC: Section is being rendered!');
-    console.log('Original conditions:', {
-      enable_section: {{ section.settings.enable_section | json }},
-      page_type: {{ request.page_type | json }},
-      product_available: {{ product.available | json }}
-    });
   </script>
   {% liquid
     assign current_variant = product.selected_or_first_available_variant
@@ -96,14 +91,7 @@
       }
     }
     
-    /* Debug styles - force visibility when debugging */
-    body[data-sticky-debug] #md-sticky-atc {
-      visibility: visible !important;
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-      background: rgba(255, 0, 0, 0.1) !important;
-      border: 2px solid red !important;
-    }
+
   </style>
 
   <script>
@@ -231,46 +219,7 @@
       console.error('Sticky ATC: Main ATC button not found!');
     }
     
-    // Debug: Manual test button (remove in production)
-    if (window.location.search.includes('sticky_debug=1')) {
-      document.body.setAttribute('data-sticky-debug', 'true');
-      const debugBtn = document.createElement('button');
-      debugBtn.textContent = 'Test Sticky ATC';
-      debugBtn.style.position = 'fixed';
-      debugBtn.style.top = '10px';
-      debugBtn.style.right = '10px';
-      debugBtn.style.zIndex = '9999';
-      debugBtn.style.background = 'red';
-      debugBtn.style.color = 'white';
-      debugBtn.style.padding = '10px';
-      debugBtn.onclick = () => {
-        stickyATC.classList.toggle('show');
-        console.log('Sticky ATC: Manual toggle, show class:', stickyATC.classList.contains('show'));
-        console.log('Sticky ATC: Computed styles:', window.getComputedStyle(stickyATC));
-      };
-      document.body.appendChild(debugBtn);
-      
-      // Force show for immediate testing
-      const forceShowBtn = document.createElement('button');
-      forceShowBtn.textContent = 'Force Show';
-      forceShowBtn.style.position = 'fixed';
-      forceShowBtn.style.top = '50px';
-      forceShowBtn.style.right = '10px';
-      forceShowBtn.style.zIndex = '9999';
-      forceShowBtn.style.background = 'blue';
-      forceShowBtn.style.color = 'white';
-      forceShowBtn.style.padding = '10px';
-      forceShowBtn.onclick = () => {
-        // Force all styles to show
-        stickyATC.style.visibility = 'visible !important';
-        stickyATC.style.opacity = '1 !important';
-        stickyATC.style.transform = 'translateY(0) !important';
-        stickyATC.style.display = 'block !important';
-        stickyATC.classList.add('show');
-        console.log('Sticky ATC: Force shown with inline styles');
-      };
-      document.body.appendChild(forceShowBtn);
-    }
+
 
     // Handle variant change
     if (selectField) {
