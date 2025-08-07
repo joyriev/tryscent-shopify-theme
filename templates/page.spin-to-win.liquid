@@ -15,7 +15,7 @@
   body,
   .slot-game-container,
   .slot-offer-container {
-    background: #274385 !important;
+    background: #000000 !important;
   }
 
   .slot-wrapper a,
@@ -333,32 +333,26 @@
   .slot-offer-cta-container img {
     width: 25px;
   }
-
-  #slot-submit-button {
-    paddin: 0;
-    border: 0;
-    background-color: transparent;
-  }
 </style>
 
 {% liquid
-  assign offer_url = "https://tryscent.co/pages/build-your-bundle"
+  assign offer_url = "https://tryscent.co/pages/bundle-builder"
 %}
 
 <div id="spin-to-win" class="shopify-section">
   <div class="slot-wrapper">
     <div class="slot-game-container active" id="game">
       <div class="slot-title-container">
-        <h1 style="font-weight: 600; color: #fff;">🎉 SPIN TO WIN 🎉</h1>
-        <h2 style="margin-top: 0; margin-bottom: 8px; color: #e5e7eb;">Try Your Luck — Amazing Rewards Await!</h2>
+        <h1 class="font-semibold text-white">SPIN TO WIN</h1>
+        <h2 class="mt-0 mb-2 text-gray-200">WIN FROM ONE FREE BOTTLE UP TO FOUR</h2>
         <p class="banner">
-          <a href="{{ offer_url }}">✨ LIMITED-TIME GIVEAWAY ✨</a>
+          <a href="{{ offer_url }}">💰 JULY 4TH SUPER GIVEAWAY 💰</a>
         </p>
       </div>
       <div class="slot-timer-container">
-        <div class="slot-timer-title">Unlock exclusive offers, surprises, and more!</div>
+        <div class="slot-timer-title">LIMITED TIME OFFER</div>
         <div class="slot-timer-text">
-          ⏳ Hurry! Offer ends in:
+          ENDS IN:
           <span class="slot-timer-counter" id="slot-timer-counter-game">05:17</span>
         </div>
       </div>
@@ -366,9 +360,9 @@
         <button id="slot-video-button"></button>
         <video
           id="slot-video"
-          poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/videoframe_0.png?v=1753535935"
+          poster="https://cdn.shopify.com/s/files/1/0335/1622/4645/files/4th_July_Slot_Machine_with_Sound_600px_sRGB_frame1.jpg?v=1751297819"
           playsinline="">
-          <source src="https://cdn.shopify.com/videos/c/o/v/ee0d595edcb64a6fa4547d44bbaa07b0.mp4" type="video/mp4">
+          <source src="https://cdn.shopify.com/videos/c/o/v/c9637c26bb1947d88e7e347d48160e39.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -386,42 +380,38 @@
     <div class="slot-offer-container" id="offer">
       <div class="slot-offer-title">
         <h1>
-          <span class="slot-offer-title-sm text-white" style="color: #fff;">YOU WON OUR</span>
-          <span class="slot-offer-title-big text-white" style="color: #fff;">TOP PRIZE!</span>
+          <span class="slot-offer-title-sm text-white">BUY 2 GET 1 FREE</span>
+          <span class="slot-offer-title-big text-white">GET UP TO 4 FREE BOTTLES!</span>
         </h1>
       </div>
       <div class="slot-offer-ribbon">
         <img
-          src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/tryscent-coin.png?v=1754490065"
+          src="https://cdn.shopify.com/s/files/1/0335/1622/4645/files/Carpe_Gold.png?v=1751037407"
           alt="ribbon with text 'Top Prize'"
           width="100"
           height="100">
         <img
-          src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/tryscent-coin.png?v=1754490065"
+          src="https://cdn.shopify.com/s/files/1/0335/1622/4645/files/Carpe_Gold.png?v=1751037407"
           alt="ribbon with text 'Top Prize'"
           width="100"
           height="100">
         <img
-          src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/tryscent-coin.png?v=1754490065"
+          src="https://cdn.shopify.com/s/files/1/0335/1622/4645/files/Carpe_Gold.png?v=1751037407"
           alt="ribbon with text 'Top Prize'"
           width="100"
           height="100">
       </div>
-      <a
-        class="slot-offer-coupon-container"
-        style="text-decoration: none;"
-        href="{{ offer_url }}">
-        <span class="slot-offer-coupon-1">Buy 2</span>
-        <span class="slot-offer-coupon-2">Get 1</span>
+      <a class="slot-offer-coupon-container no-underline" href="{{ offer_url }}">
+        <span class="slot-offer-coupon-1">UP</span>
+        <span class="slot-offer-coupon-2">TO</span>
         <span class="slot-offer-coupon-3">
-          <span class="heavy">FREE</span>
+          <span class="heavy">67%</span>
+          <span class="light">OFF</span>
         </span>
+        <span class="slot-offer-coupon-4">WITH 4 FREE GIFTS</span>
       </a>
 
-      <a
-        class="slot-offer-cta-container"
-        style="text-decoration: none;"
-        href="{{ offer_url }}">
+      <a class="slot-offer-cta-container no-underline" href="{{ offer_url }}">
         <div>CLAIM DISCOUNT</div>
         <img
           src="https://cdn.shopify.com/s/files/1/0335/1622/4645/files/arrow.png?v=1713279846"
