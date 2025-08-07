@@ -114,9 +114,9 @@
               {%- when 'shipping_text' -%}
                 <div class="!my-6">
                   <p class="my-0 text-center font-semibold tracking-normal">
-                    5-8 Days delivery to <span class="shipping_location">Worldwide</span>
+                    5-8 Days Delivery to <span class="shipping_location">Worldwide</span>
                   </p>
-                  <p class="my-0 text-center tracking-normal">
+                  <p class="my-0 text-center tracking-normal shipping_text_canada">
                     *Shipping Fee Calculated At Checkout
                   </p>
                 </div>
@@ -830,10 +830,14 @@
   document.addEventListener("DOMContentLoaded", function () {
     // update shipping country text
     const shippingLocation = document.querySelector(".shipping_location");
+    const shippingTextCanada = document.querySelector(".shipping_text_canada");
     fetch("https://ipapi.co/country_name")
       .then(response => response.text())
       .then(countryName => {
         shippingLocation.textContent = countryName;
+        if (countryName === "Canada") {
+          shippingTextCanada.textContent = "*Duties included at Checkout";
+        }
       })
       .catch(error => {
         console.error("Error fetching country code:", error);
