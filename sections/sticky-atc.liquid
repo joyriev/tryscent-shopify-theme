@@ -4,29 +4,41 @@
     
 // Initialize sticky ATC functionality
     document.addEventListener('DOMContentLoaded', function() {
-      const stickyATC = document.getElementById('md-sticky-atc');
+      const desktopStickyATC = document.getElementById('md-sticky-atc');
+      const mobileStickyATC = document.getElementById('mobile-sticky-atc');
       
-      if (!stickyATC) {
-        console.error('Sticky ATC element not found');
+      if (!desktopStickyATC || !mobileStickyATC) {
+        console.error('Sticky ATC elements not found');
         return;
       }
       
-      console.log('Sticky ATC found, forcing show for testing');
-      // Force it to be visible with white background
-      stickyATC.style.visibility = 'visible';
-      stickyATC.style.opacity = '1';
-      stickyATC.style.transform = 'translateY(0)';
-      stickyATC.style.position = 'fixed';
-      stickyATC.style.bottom = '0';
-      stickyATC.style.left = '0';
-      stickyATC.style.right = '0';
-      stickyATC.style.zIndex = '9999';
-      stickyATC.style.background = 'white';
-      stickyATC.style.height = '80px';
-      stickyATC.style.display = 'block';
-      stickyATC.style.boxShadow = '0 -4px 20px rgba(0, 0, 0, 0.1)';
+      // Force show both for testing
+      desktopStickyATC.style.visibility = 'visible';
+      desktopStickyATC.style.opacity = '1';
+      desktopStickyATC.style.transform = 'translateY(0)';
+      desktopStickyATC.style.position = 'fixed';
+      desktopStickyATC.style.bottom = '0';
+      desktopStickyATC.style.left = '0';
+      desktopStickyATC.style.right = '0';
+      desktopStickyATC.style.zIndex = '9999';
+      desktopStickyATC.style.background = 'white';
+      desktopStickyATC.style.height = '80px';
+      desktopStickyATC.style.display = 'block';
+      desktopStickyATC.style.boxShadow = '0 -4px 20px rgba(0, 0, 0, 0.1)';
       
-      console.log('Sticky ATC forced to be visible with WHITE background');
+      mobileStickyATC.style.visibility = 'visible';
+      mobileStickyATC.style.opacity = '1';
+      mobileStickyATC.style.transform = 'translateY(0)';
+      mobileStickyATC.style.position = 'fixed';
+      mobileStickyATC.style.bottom = '0';
+      mobileStickyATC.style.left = '0';
+      mobileStickyATC.style.right = '0';
+      mobileStickyATC.style.zIndex = '9999';
+      mobileStickyATC.style.background = 'white';
+      mobileStickyATC.style.display = 'block';
+      mobileStickyATC.style.boxShadow = '0 -4px 20px rgba(0, 0, 0, 0.1)';
+      
+      console.log('Both Desktop and Mobile Sticky ATC forced to be visible');
     });
   </script>
   {% liquid
@@ -37,6 +49,7 @@
   %}
 
   <style>
+    /* Desktop Sticky ATC */
     #md-sticky-atc {
       position: fixed;
       bottom: 0;
@@ -97,22 +110,24 @@
     }
     .satc-variant-select {
       min-width: 120px;
-      padding: 8px 12px;
+      padding: 16px 12px;
       border: 1px solid #ddd;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 14px;
       background: white;
+      height: 52px;
     }
     .satc-quantity-wrapper {
       display: flex;
       align-items: center;
       border: 1px solid #ddd;
-      border-radius: 6px;
+      border-radius: 8px;
       background: white;
+      height: 52px;
     }
     .satc-quantity-btn {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 50px;
       border: none;
       background: none;
       cursor: pointer;
@@ -122,7 +137,7 @@
     }
     .satc-quantity-input {
       width: 50px;
-      height: 32px;
+      height: 50px;
       border: none;
       text-align: center;
       font-size: 14px;
@@ -141,6 +156,7 @@
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
       min-width: 200px;
+      height: 52px;
     }
     .satc-add-btn:hover {
       background: #1c522f;
@@ -148,57 +164,93 @@
       box-shadow: 0 4px 12px rgba(34, 97, 57, 0.3);
     }
     
-    /* Mobile responsive */
-    @media (max-width: 768px) {
-      .satc-container {
-        padding: 16px 20px;
-      }
-      .satc-content {
-        flex-direction: column;
-        gap: 16px;
-      }
-      .satc-product-info {
-        width: 100%;
-        justify-content: center;
-      }
-      .satc-form-wrapper {
-        width: 100%;
-        justify-content: center;
-      }
-      /* Hide variant and quantity selectors on mobile */
-      .satc-variant-select,
-      .satc-quantity-wrapper {
-        display: none;
-      }
-      /* Mobile ATC button - shiny effect */
-      .satc-add-btn {
-        width: 100%;
-        padding: 14px 24px;
-        font-size: 15px;
-        background: linear-gradient(45deg, #226139, #2a7a44, #32934f, #2a7a44, #226139);
-        background-size: 300% 300%;
-        animation: shine-gradient 3s ease-in-out infinite;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(34, 97, 57, 0.4);
-      }
-      .satc-add-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.5s;
-      }
-      .satc-add-btn:hover::before {
-        left: 100%;
-      }
-      .satc-add-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(34, 97, 57, 0.5);
-      }
+    /* Mobile Sticky ATC - Separate Structure */
+    #mobile-sticky-atc {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.15s ease-out;
+      background: white;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+    #mobile-sticky-atc.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .mobile-satc-container {
+      padding: 16px 20px;
+    }
+    .mobile-satc-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    .mobile-satc-product-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      width: 100%;
+    }
+    .mobile-satc-product-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .mobile-satc-product-details h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+    }
+    .mobile-satc-product-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+    }
+    .mobile-satc-add-btn {
+      width: 100%;
+      padding: 14px 24px;
+      font-size: 15px;
+      background: linear-gradient(45deg, #226139, #2a7a44, #32934f, #2a7a44, #226139);
+      background-size: 300% 300%;
+      animation: shine-gradient 3s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(34, 97, 57, 0.4);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .mobile-satc-add-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+    .mobile-satc-add-btn:hover::before {
+      left: 100%;
+    }
+    .mobile-satc-add-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(34, 97, 57, 0.5);
     }
     
     @keyframes shine-gradient {
@@ -210,6 +262,21 @@
       }
       100% {
         background-position: 0% 50%;
+      }
+    }
+    
+    /* Show/Hide based on screen size */
+    @media (max-width: 768px) {
+      #md-sticky-atc {
+        display: none !important;
+      }
+      #mobile-sticky-atc {
+        display: block;
+      }
+    }
+    @media (min-width: 769px) {
+      #mobile-sticky-atc {
+        display: none !important;
       }
     }
   </style>
@@ -437,6 +504,41 @@
           </button>
           
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="mobile-sticky-atc"
+    class="atc-sticky-btn shadow-[0_0_20px_5px_rgba(0,0,0,0.1)] color-{{ section.settings.color_scheme }}"
+    data-offset="{{ section.settings.offset }}">
+    
+    <div class="mobile-satc-container">
+      <div class="mobile-satc-content">
+        
+        <!-- Product Info -->
+        <div class="mobile-satc-product-info">
+          {% if section.settings.show_img %}
+            <img
+              src="{{ image | img_url: img_size, crop: 'center' }}"
+              class="mobile-satc-product-image"
+              width="{{ section.settings.img_width }}"
+              height="{{ section.settings.img_height }}"
+              loading="lazy">
+          {% endif %}
+          <div class="mobile-satc-product-details">
+            <h3>{{ product.title }}</h3>
+            <div class="mobile-satc-product-price">
+              <span id="mobile-stick-price">{{ product.price | money_with_currency }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button class="mobile-satc-add-btn" type="submit" name="add">
+          <span>{{ 'products.product.add_to_cart' | t }}</span>
+        </button>
+        
       </div>
     </div>
   </div>
