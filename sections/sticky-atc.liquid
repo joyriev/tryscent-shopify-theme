@@ -128,14 +128,24 @@
       font-size: 14px;
     }
     .satc-add-btn {
-      background: #333;
+      background: #226139;
       color: white;
       border: none;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
       cursor: pointer;
       white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      min-width: 200px;
+    }
+    .satc-add-btn:hover {
+      background: #1c522f;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(34, 97, 57, 0.3);
     }
     
     /* Mobile responsive */
@@ -145,7 +155,7 @@
       }
       .satc-content {
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
       }
       .satc-product-info {
         width: 100%;
@@ -155,8 +165,51 @@
         width: 100%;
         justify-content: center;
       }
-      .satc-variant-select {
-        min-width: 100px;
+      /* Hide variant and quantity selectors on mobile */
+      .satc-variant-select,
+      .satc-quantity-wrapper {
+        display: none;
+      }
+      /* Mobile ATC button - shiny effect */
+      .satc-add-btn {
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 15px;
+        background: linear-gradient(45deg, #226139, #2a7a44, #32934f, #2a7a44, #226139);
+        background-size: 300% 300%;
+        animation: shine-gradient 3s ease-in-out infinite;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(34, 97, 57, 0.4);
+      }
+      .satc-add-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s;
+      }
+      .satc-add-btn:hover::before {
+        left: 100%;
+      }
+      .satc-add-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(34, 97, 57, 0.5);
+      }
+    }
+    
+    @keyframes shine-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
       }
     }
   </style>
