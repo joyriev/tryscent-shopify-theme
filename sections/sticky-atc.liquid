@@ -1,3 +1,9 @@
+<!-- Sticky ATC Debug: 
+  enable_section: {{ section.settings.enable_section }}
+  page_type: {{ request.page_type }}
+  product.available: {{ product.available }}
+  product.id: {{ product.id }}
+-->
 {% if section.settings.enable_section and request.page_type == 'product' and product.available %}
   {% liquid
     assign current_variant = product.selected_or_first_available_variant
@@ -86,6 +92,15 @@
       #md-sticky-atc {
         display: block;
       }
+    }
+    
+    /* Debug styles - force visibility when debugging */
+    body[data-sticky-debug] #md-sticky-atc {
+      visibility: visible !important;
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      background: rgba(255, 0, 0, 0.1) !important;
+      border: 2px solid red !important;
     }
   </style>
 
@@ -216,6 +231,7 @@
     
     // Debug: Manual test button (remove in production)
     if (window.location.search.includes('sticky_debug=1')) {
+      document.body.setAttribute('data-sticky-debug', 'true');
       const debugBtn = document.createElement('button');
       debugBtn.textContent = 'Test Sticky ATC';
       debugBtn.style.position = 'fixed';
@@ -228,8 +244,30 @@
       debugBtn.onclick = () => {
         stickyATC.classList.toggle('show');
         console.log('Sticky ATC: Manual toggle, show class:', stickyATC.classList.contains('show'));
+        console.log('Sticky ATC: Computed styles:', window.getComputedStyle(stickyATC));
       };
       document.body.appendChild(debugBtn);
+      
+      // Force show for immediate testing
+      const forceShowBtn = document.createElement('button');
+      forceShowBtn.textContent = 'Force Show';
+      forceShowBtn.style.position = 'fixed';
+      forceShowBtn.style.top = '50px';
+      forceShowBtn.style.right = '10px';
+      forceShowBtn.style.zIndex = '9999';
+      forceShowBtn.style.background = 'blue';
+      forceShowBtn.style.color = 'white';
+      forceShowBtn.style.padding = '10px';
+      forceShowBtn.onclick = () => {
+        // Force all styles to show
+        stickyATC.style.visibility = 'visible !important';
+        stickyATC.style.opacity = '1 !important';
+        stickyATC.style.transform = 'translateY(0) !important';
+        stickyATC.style.display = 'block !important';
+        stickyATC.classList.add('show');
+        console.log('Sticky ATC: Force shown with inline styles');
+      };
+      document.body.appendChild(forceShowBtn);
     }
 
     // Handle variant change
@@ -262,9 +300,10 @@
   <div
     id="md-sticky-atc"
     class="atc-sticky-btn shadow-[0_0_20px_5px_rgba(0,0,0,0.1)] color-{{ section.settings.color_scheme }}"
-    data-offset="{{ section.settings.offset }}">
-    <div class="page-width">
-      <div class="page-width-inner">
+    data-offset="{{ section.settings.offset }}"
+    style="min-height: 80px;">
+    <div class="page-width" style="max-width: 100%; padding: 0 20px;">
+      <div class="page-width-inner" style="width: 100%;">
         <div class="product-content">
           {% if section.settings.show_img %}
             <img
