@@ -12,12 +12,14 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      z-index: 2;
+      z-index: 1000;
       visibility: hidden;
       opacity: 0;
       transform: translateY(100%);
       transition: all 0.15s ease-out;
       border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+      background: white;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
     }
     #md-sticky-atc.show {
       visibility: visible;
@@ -131,8 +133,15 @@
       };
 
       document.addEventListener('DOMContentLoaded', () => {
+    console.log('Sticky ATC: DOM loaded, initializing...');
+    
     const stickyATC = document.querySelector('#md-sticky-atc');
-    if (!stickyATC) return;
+    if (!stickyATC) {
+      console.error('Sticky ATC: #md-sticky-atc element not found!');
+      return;
+    }
+    
+    console.log('Sticky ATC: Found sticky element:', stickyATC);
 
     const selectField = stickyATC.querySelector('select[name="id"]');
     const priceBox = stickyATC.querySelector('#price-{{ section.id }}');
@@ -169,17 +178,26 @@
     });
 
     // Show/hide sticky ATC using Intersection Observer
-    const atcBtn = document.querySelector('.cta_product_from_submit_btn');
+    const atcBtn = document.querySelector('.cta_product_from_submit_btn') || 
+                   document.querySelector('button[name="add"]') ||
+                   document.querySelector('.product-form__submit');
+    
+    console.log('Sticky ATC: Found main button:', atcBtn);
+    
     if (atcBtn) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.boundingClientRect.bottom < 0) {
+            console.log('Sticky ATC: Intersection entry:', entry.isIntersecting, entry.boundingClientRect);
+            
+            if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
               // scrolled past (above viewport)
+              console.log('Sticky ATC: Showing sticky button');
               stickyATC.classList.add('show');
               document.documentElement.style.paddingBottom = `${stickyATC.offsetHeight}px`;
             } else {
               // partially or fully visible in viewport
+              console.log('Sticky ATC: Hiding sticky button');
               stickyATC.classList.remove('show');
               document.documentElement.style.paddingBottom = '0';
             }
@@ -192,6 +210,26 @@
         }
       );
       observer.observe(atcBtn);
+    } else {
+      console.error('Sticky ATC: Main ATC button not found!');
+    }
+    
+    // Debug: Manual test button (remove in production)
+    if (window.location.search.includes('sticky_debug=1')) {
+      const debugBtn = document.createElement('button');
+      debugBtn.textContent = 'Test Sticky ATC';
+      debugBtn.style.position = 'fixed';
+      debugBtn.style.top = '10px';
+      debugBtn.style.right = '10px';
+      debugBtn.style.zIndex = '9999';
+      debugBtn.style.background = 'red';
+      debugBtn.style.color = 'white';
+      debugBtn.style.padding = '10px';
+      debugBtn.onclick = () => {
+        stickyATC.classList.toggle('show');
+        console.log('Sticky ATC: Manual toggle, show class:', stickyATC.classList.contains('show'));
+      };
+      document.body.appendChild(debugBtn);
     }
 
     // Handle variant change
@@ -369,16 +407,22 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const variantSelect = document.querySelector('.sticky_atc_variant_selector');
+        console.log('Sticky ATC: Variant select element:', variantSelect);
 
-        subscribe(PUB_SUB_EVENTS.variantChange, function (eventData) {
-            const variantId = eventData.data.variant.id;
+        if (typeof subscribe !== 'undefined' && typeof PUB_SUB_EVENTS !== 'undefined') {
+            subscribe(PUB_SUB_EVENTS.variantChange, function (eventData) {
+                const variantId = eventData.data.variant.id;
+                console.log('Sticky ATC: Variant changed to:', variantId);
 
-            if (variantSelect) {
-                variantSelect.value = variantId;
-                const event = new Event('change', { bubbles: true });
-                variantSelect.dispatchEvent(event);
-            }
-        });
+                if (variantSelect) {
+                    variantSelect.value = variantId;
+                    const event = new Event('change', { bubbles: true });
+                    variantSelect.dispatchEvent(event);
+                }
+            });
+        } else {
+            console.warn('Sticky ATC: PubSub system not available, variant sync disabled');
+        }
     });
 
 </script>
