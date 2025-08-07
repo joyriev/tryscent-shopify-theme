@@ -11,21 +11,31 @@
         return;
       }
       
+      console.log('Sticky ATC found, forcing show for testing');
+      // Temporary: force show for testing
+      stickyATC.classList.add('show');
+      
       // Show/hide sticky ATC using Intersection Observer
       const atcBtn = document.querySelector('.cta_product_from_submit_btn') || 
                      document.querySelector('button[name="add"]') ||
                      document.querySelector('.product-form__submit');
       
+      console.log('Main ATC button found:', atcBtn);
+      
       if (atcBtn) {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
+              console.log('Intersection:', entry.isIntersecting, entry.boundingClientRect.bottom);
+              
               if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
                 // scrolled past (above viewport)
+                console.log('Showing sticky ATC');
                 stickyATC.classList.add('show');
                 document.documentElement.style.paddingBottom = `${stickyATC.offsetHeight}px`;
               } else {
                 // partially or fully visible in viewport
+                console.log('Hiding sticky ATC');
                 stickyATC.classList.remove('show');
                 document.documentElement.style.paddingBottom = '0';
               }
