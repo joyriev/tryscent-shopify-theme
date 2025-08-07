@@ -1,6 +1,7 @@
 {% comment %}
-  Product Bundler V2 - New Compact Layout
-  Szare tło, białe karty z cieniami, kompaktowy header
+  Product Bundler V2 - Separate Desktop and Mobile Versions
+  Desktop: .bundler-desktop-*
+  Mobile: .bundler-mobile-*
 {% endcomment %}
 
 {% assign bundle_collection = collections['smells-like'] %}
@@ -8,15 +9,16 @@
   {% assign bundle_collection = collections.first %}
 {% endunless %}
 
-<div class="product-bundler-v2" data-bundler>
-  <div class="bundler-container-v2">
+<!-- DESKTOP VERSION -->
+<div class="bundler-desktop" data-bundler>
+  <div class="bundler-desktop-container">
     
-    <!-- Compact Header with Benefits -->
-    <div class="bundler-header-v2">
-      <div class="header-left">
-        <h1 class="bundler-title-v2">Create Your Bundle!</h1>
-        <p class="bundler-subtitle-v2">Best scents you've ever smelled or your money back.</p>
-        <div class="bundler-reviews-v2">
+    <!-- Desktop Header -->
+    <div class="bundler-desktop-header">
+      <div class="desktop-header-left">
+        <h1 class="bundler-desktop-title">Create Your Bundle!</h1>
+        <p class="bundler-desktop-subtitle">Best scents you've ever smelled or your money back.</p>
+        <div class="bundler-desktop-reviews">
           {%- if shop.metafields.reviews.rating.value != blank -%}
             <div class="rating">
               <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="20" width="100">
@@ -33,17 +35,17 @@
         </div>
       </div>
       
-      <div class="header-right">
-        <div class="benefit-badges">
-          <div class="benefit-badge">
+      <div class="desktop-header-right">
+        <div class="desktop-benefit-badges">
+          <div class="desktop-benefit-badge">
             <div class="benefit-number">1</div>
             <span>Select Up To 5 Bottles To Get $100 OFF</span>
           </div>
-          <div class="benefit-badge">
+          <div class="desktop-benefit-badge">
             <div class="benefit-number">2</div>
             <span>Get Up To 4 Bottles For FREE</span>
           </div>
-          <div class="benefit-badge">
+          <div class="desktop-benefit-badge">
             <div class="benefit-number">3</div>
             <span>Add to cart & enjoy TryScent<br>We offer 60-day satisfaction guarantee</span>
           </div>
@@ -51,48 +53,44 @@
       </div>
     </div>
 
-    <!-- Search and Filter Section - Compact -->
-    <div class="bundler-search-filter-v2">
-      <div class="search-container-v2">
-        <input type="text" id="searchInput" placeholder="Search for scents..." onkeyup="filterProducts()">
+    <!-- Desktop Search and Filter -->
+    <div class="bundler-desktop-search-filter">
+      <div class="desktop-search-container">
+        <input type="text" id="desktopSearchInput" placeholder="Search for scents..." onkeyup="filterProducts()">
       </div>
-      <div class="filter-container-v2">
-        <button class="filter-btn-v2 active" data-filter="all" onclick="filterByCategory('all')">All</button>
-        <button class="filter-btn-v2" data-filter="man" onclick="filterByCategory('man')">Men</button>
-        <button class="filter-btn-v2" data-filter="woman" onclick="filterByCategory('woman')">Women</button>
+      <div class="desktop-filter-container">
+        <button class="desktop-filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
+        <button class="desktop-filter-btn" data-filter="man" onclick="filterByCategory('man')">Men</button>
+        <button class="desktop-filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Women</button>
       </div>
     </div>
 
-    <!-- Main Content Layout -->
-    <div class="bundler-main-content-v2">
+    <!-- Desktop Main Content -->
+    <div class="bundler-desktop-main-content">
       
-      <!-- Products Grid -->
-      <div class="bundler-products-v2" id="productsGrid">
+      <!-- Desktop Products Grid -->
+      <div class="bundler-desktop-products" id="desktopProductsGrid">
         {% for product in bundle_collection.products %}
           {% assign default_variant = product.variants | where: "title", "100ML" | first %}
           {% unless default_variant %}
             {% assign default_variant = product.variants.first %}
           {% endunless %}
           
-          <div class="product-card-v2 bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
-            <!-- Product Badge -->
+          <div class="desktop-product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}">
             {% if product.tags contains 'new' %}
-              <div class="product-badge-v2 new">New</div>
+              <div class="desktop-product-badge new">New</div>
             {% elsif product.tags contains 'popular' %}
-              <div class="product-badge-v2 popular">Most Popular</div>
+              <div class="desktop-product-badge popular">Most Popular</div>
             {% endif %}
             
-            <!-- Product Image -->
-            <div class="product-image-v2">
+            <div class="desktop-product-image">
               <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title }}" loading="lazy">
             </div>
             
-            <!-- Product Info -->
-            <div class="product-info-v2">
-              <h3 class="product-title-v2">{{ product.title }}</h3>
+            <div class="desktop-product-info">
+              <h3 class="desktop-product-title">{{ product.title }}</h3>
               
-              <!-- Reviews -->
-              <div class="product-reviews-v2">
+              <div class="desktop-product-reviews">
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating">
                     <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="12" width="60">
@@ -108,8 +106,7 @@
                 {%- endif -%}
               </div>
               
-              <!-- Price -->
-              <div class="product-price-v2" 
+              <div class="desktop-product-price" 
                    data-30ml="{{ default_variant.price | money }}"
                    data-50ml="{{ default_variant.price | money }}"
                    data-100ml="{{ default_variant.price | money }}"
@@ -120,58 +117,57 @@
               </div>
             </div>
             
-            <!-- Add to Bundle Button -->
-            <button class="add-to-bundle-btn-v2" onclick="selectProduct({{ product.id }})">
+            <button class="desktop-add-to-bundle-btn" onclick="selectProduct({{ product.id }})">
               ADD TO BUNDLE
             </button>
           </div>
         {% endfor %}
       </div>
       
-      <!-- Sidebar -->
-      <div class="bundler-sidebar-v2">
+      <!-- Desktop Sidebar -->
+      <div class="bundler-desktop-sidebar">
         
-        <!-- Bundle Type Selection -->
-        <div class="sidebar-section bundle-selector-v2">
+        <!-- Desktop Size Selection -->
+        <div class="desktop-sidebar-section desktop-size-selector">
           <h3>Select Size!</h3>
           <p>80% of customers buy 100ML</p>
-          <div class="size-buttons-v2">
-            <button class="size-btn-v2" data-variant="30ML" onclick="selectVariant('30ML')">30ML</button>
-            <button class="size-btn-v2" data-variant="50ML" onclick="selectVariant('50ML')">50ML</button>
-            <button class="size-btn-v2 active" data-variant="100ML" onclick="selectVariant('100ML')">100ML</button>
+          <div class="desktop-size-buttons">
+            <button class="desktop-size-btn" data-variant="30ML" onclick="selectVariant('30ML')">30ML</button>
+            <button class="desktop-size-btn" data-variant="50ML" onclick="selectVariant('50ML')">50ML</button>
+            <button class="desktop-size-btn active" data-variant="100ML" onclick="selectVariant('100ML')">100ML</button>
           </div>
         </div>
         
-        <!-- Bundle Options -->
-        <div class="sidebar-section bundle-options-v2">
+        <!-- Desktop Bundle Options -->
+        <div class="desktop-sidebar-section desktop-bundle-options">
           {% assign first_product = bundle_collection.products.first %}
           {% assign first_variant_100ml = first_product.variants | where: 'title', '100ML' | first %}
           {% assign base_price = first_variant_100ml.price | default: 2699 %}
           
-          <button class="bundle-option-v2 active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
+          <button class="desktop-bundle-option active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
             <span class="bundle-desc">Buy 2, Get 1 Free</span>
             <span class="bundle-price">{{ base_price | times: 2 | money }}</span>
             <span class="per-bottle">{{ base_price | times: 2 | divided_by: 3 | money }}/bottle</span>
             <div class="bundle-savings">SAVE {{ base_price | money }}</div>
           </button>
           
-          <button class="bundle-option-v2" data-bundle-type="3+2" onclick="selectBundleType('3+2')">
+          <button class="desktop-bundle-option" data-bundle-type="3+2" onclick="selectBundleType('3+2')">
             <span class="bundle-desc">Buy 3, Get 2 Free</span>
             <span class="bundle-price">{{ base_price | times: 3 | money }}</span>
             <span class="per-bottle">{{ base_price | times: 3 | divided_by: 5 | money }}/bottle</span>
             <div class="bundle-savings">SAVE {{ base_price | times: 2 | money }}</div>
           </button>
           
-          <button class="bundle-option-v2" data-bundle-type="4+3" onclick="selectBundleType('4+3')">
-            <div class="bundle-badge-v2">FREE SHIPPING</div>
+          <button class="desktop-bundle-option" data-bundle-type="4+3" onclick="selectBundleType('4+3')">
+            <div class="desktop-bundle-badge">FREE SHIPPING</div>
             <span class="bundle-desc">Buy 4, Get 3 Free</span>
             <span class="bundle-price">{{ base_price | times: 4 | money }}</span>
             <span class="per-bottle">{{ base_price | times: 4 | divided_by: 7 | money }}/bottle</span>
             <div class="bundle-savings">SAVE {{ base_price | times: 3 | money }}</div>
           </button>
           
-          <button class="bundle-option-v2" data-bundle-type="5+4" onclick="selectBundleType('5+4')">
-            <div class="bundle-badge-v2 best-value">Best Value</div>
+          <button class="desktop-bundle-option" data-bundle-type="5+4" onclick="selectBundleType('5+4')">
+            <div class="desktop-bundle-badge best-value">Best Value</div>
             <span class="bundle-desc">Buy 5, Get 4 Free</span>
             <span class="bundle-price">{{ base_price | times: 5 | money }}</span>
             <span class="per-bottle">{{ base_price | times: 5 | divided_by: 9 | money }}/bottle</span>
@@ -179,36 +175,36 @@
           </button>
         </div>
         
-        <!-- Progress Section -->
-        <div class="sidebar-section progress-section-v2">
+        <!-- Desktop Progress Section -->
+        <div class="desktop-sidebar-section desktop-progress-section">
           <h4>Please Select At Least 3 Scents</h4>
-          <div class="progress-bar-v2">
-            <div class="progress-fill-v2"></div>
-            <div class="progress-markers-v2">
+          <div class="desktop-progress-bar">
+            <div class="desktop-progress-fill"></div>
+            <div class="desktop-progress-markers">
               <div class="marker" data-count="0">0</div>
               <div class="marker" data-count="16">16</div>
               <div class="marker" data-count="24">24</div>
               <div class="marker" data-count="32">32</div>
             </div>
           </div>
-          <div class="selected-items-v2"></div>
+          <div class="desktop-selected-items"></div>
         </div>
         
-        <!-- Benefits -->
-        <div class="sidebar-section benefits-section-v2">
+        <!-- Desktop Benefits -->
+        <div class="desktop-sidebar-section desktop-benefits-section">
           <h4>Small Before You Commit</h4>
-          <div class="benefits-grid-v2">
-            <div class="benefit-item-v2">✓ Choosing a signature scent you'll love is a process</div>
-            <div class="benefit-item-v2">✓ Scent lasts 12 hours</div>
-            <div class="benefit-item-v2">✓ Worldwide shipping</div>
-            <div class="benefit-item-v2">✓ You pay 1/10 price of originals</div>
-            <div class="benefit-item-v2">✓ You can return up to 60 days</div>
-            <div class="benefit-item-v2">✓ Scent guarantee</div>
+          <div class="desktop-benefits-grid">
+            <div class="desktop-benefit-item">✓ Choosing a signature scent you'll love is a process</div>
+            <div class="desktop-benefit-item">✓ Scent lasts 12 hours</div>
+            <div class="desktop-benefit-item">✓ Worldwide shipping</div>
+            <div class="desktop-benefit-item">✓ You pay 1/10 price of originals</div>
+            <div class="desktop-benefit-item">✓ You can return up to 60 days</div>
+            <div class="desktop-benefit-item">✓ Scent guarantee</div>
           </div>
         </div>
         
-        <!-- Add to Cart Button -->
-        <button class="add-to-cart-btn-v2" onclick="addBundleToCartAndCheckout()">
+        <!-- Desktop Add to Cart Button -->
+        <button class="desktop-add-to-cart-btn" onclick="addBundleToCartAndCheckout()">
           ADD TO CART
         </button>
         
@@ -217,22 +213,241 @@
   </div>
 </div>
 
+<!-- MOBILE VERSION -->
+<div class="bundler-mobile" data-bundler>
+  <div class="bundler-mobile-container">
+    
+    <!-- Mobile Header -->
+    <div class="bundler-mobile-header">
+      <h1 class="bundler-mobile-title">Create Your Bundle!</h1>
+      <p class="bundler-mobile-subtitle">Best scents you've ever smelled or your money back.</p>
+      <div class="bundler-mobile-reviews">
+        {%- if shop.metafields.reviews.rating.value != blank -%}
+          <div class="rating">
+            <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="16" width="80">
+          </div>
+          <span class="rating-text">({{ shop.metafields.reviews.rating.value }} / {{ shop.metafields.reviews.rating.value.scale_max }})</span>
+          <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
+        {%- else -%}
+          <div class="rating">
+            <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="16" width="80">
+          </div>
+          <span class="rating-text">(5 / 5)</span>
+          <span class="review-count">{{ shop.metafields.judgeme.all_reviews_count | default: '150,983' }} Reviews</span>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- Mobile Search and Filter -->
+    <div class="bundler-mobile-search-filter">
+      <div class="mobile-search-container">
+        <input type="text" id="mobileSearchInput" placeholder="Search for scents..." onkeyup="filterProducts()">
+      </div>
+      <div class="mobile-filter-container">
+        <button class="mobile-filter-btn active" data-filter="all" onclick="filterByCategory('all')">All</button>
+        <button class="mobile-filter-btn" data-filter="man" onclick="filterByCategory('man')">Men</button>
+        <button class="mobile-filter-btn" data-filter="woman" onclick="filterByCategory('woman')">Women</button>
+      </div>
+    </div>
+
+    <!-- Mobile Products Grid -->
+    <div class="bundler-mobile-products" id="mobileProductsGrid">
+      {% for product in bundle_collection.products %}
+        {% assign default_variant = product.variants | where: "title", "100ML" | first %}
+        {% unless default_variant %}
+          {% assign default_variant = product.variants.first %}
+        {% endunless %}
+        
+        <div class="mobile-product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}">
+          {% if product.tags contains 'new' %}
+            <div class="mobile-product-badge new">New</div>
+          {% elsif product.tags contains 'popular' %}
+            <div class="mobile-product-badge popular">Most Popular</div>
+          {% endif %}
+          
+          <div class="mobile-product-image">
+            <img src="{{ product.featured_image | image_url: width: 150 }}" alt="{{ product.title }}" loading="lazy">
+          </div>
+          
+          <div class="mobile-product-info">
+            <h3 class="mobile-product-title">{{ product.title }}</h3>
+            
+            <div class="mobile-product-reviews">
+              {%- if product.metafields.reviews.rating.value != blank -%}
+                <div class="rating">
+                  <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="10" width="50">
+                </div>
+                <span class="rating-text">{{ product.metafields.reviews.rating.value }}</span>
+                <span class="review-count">({{ product.metafields.judgeme.reviews_count | default: '1,234' }})</span>
+              {%- else -%}
+                <div class="rating">
+                  <img src="{{ 'rating-stars.svg' | asset_url }}" alt="*****" height="10" width="50">
+                </div>
+                <span class="rating-text">4.8</span>
+                <span class="review-count">(1,234)</span>
+              {%- endif -%}
+            </div>
+            
+            <div class="mobile-product-price" 
+                 data-30ml="{{ default_variant.price | money }}"
+                 data-50ml="{{ default_variant.price | money }}"
+                 data-100ml="{{ default_variant.price | money }}"
+                 data-variant-30ml="{{ default_variant.id }}"
+                 data-variant-50ml="{{ default_variant.id }}"
+                 data-variant-100ml="{{ default_variant.id }}">
+              {{ default_variant.price | money }}
+            </div>
+          </div>
+          
+          <button class="mobile-add-to-bundle-btn" onclick="selectProduct({{ product.id }})">
+            ADD TO BUNDLE
+          </button>
+        </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Mobile Sticky Footer -->
+    <div class="mobile-sticky-footer" id="mobileStickyFooter" style="display: none;">
+      <div class="mobile-sticky-content">
+        <div class="mobile-product-info-sticky">
+          <div class="mobile-product-image-sticky">
+            <img src="{{ bundle_collection.products.first.featured_image | image_url: width: 40 }}" alt="Bundle">
+          </div>
+          <div class="mobile-product-details-sticky">
+            <h4>Your Bundle</h4>
+            <div class="mobile-price-sticky">Starting from $29.99</div>
+          </div>
+        </div>
+        
+        <button class="mobile-sticky-atc-btn" onclick="openMobileFullscreen()">
+          <span class="btn-text">REVIEW BUNDLE</span>
+          <span class="btn-status">0/3</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Fullscreen Cart -->
+    <div class="mobile-fullscreen-cart" id="mobileFullscreenCart" style="display: none;">
+      <div class="mobile-fullscreen-content">
+        
+        <!-- Mobile Fullscreen Header -->
+        <div class="mobile-fullscreen-header">
+          <div class="header-left">
+            <span class="scents-count">0 scents in box</span>
+          </div>
+          <div class="header-right">
+            <button class="keep-shopping-btn" onclick="closeMobileFullscreen()">Keep Shopping</button>
+          </div>
+        </div>
+        
+        <!-- Mobile Size Selection -->
+        <div class="mobile-sidebar-section mobile-size-selector">
+          <h3>Select Size!</h3>
+          <p>80% of customers buy 100ML</p>
+          <div class="mobile-size-buttons">
+            <button class="mobile-size-btn" data-variant="30ML" onclick="selectVariant('30ML')">30ML</button>
+            <button class="mobile-size-btn" data-variant="50ML" onclick="selectVariant('50ML')">50ML</button>
+            <button class="mobile-size-btn active" data-variant="100ML" onclick="selectVariant('100ML')">100ML</button>
+          </div>
+        </div>
+        
+        <!-- Mobile Bundle Options -->
+        <div class="mobile-sidebar-section mobile-bundle-options">
+          {% assign first_product = bundle_collection.products.first %}
+          {% assign first_variant_100ml = first_product.variants | where: 'title', '100ML' | first %}
+          {% assign base_price = first_variant_100ml.price | default: 2699 %}
+          
+          <div class="mobile-bundle-grid">
+            <button class="mobile-bundle-option active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
+              <span class="bundle-desc">Buy 2, Get 1 Free</span>
+              <span class="bundle-price">{{ base_price | times: 2 | money }}</span>
+              <span class="per-bottle">{{ base_price | times: 2 | divided_by: 3 | money }}/bottle</span>
+              <div class="bundle-savings">SAVE {{ base_price | money }}</div>
+            </button>
+            
+            <button class="mobile-bundle-option" data-bundle-type="3+2" onclick="selectBundleType('3+2')">
+              <span class="bundle-desc">Buy 3, Get 2 Free</span>
+              <span class="bundle-price">{{ base_price | times: 3 | money }}</span>
+              <span class="per-bottle">{{ base_price | times: 3 | divided_by: 5 | money }}/bottle</span>
+              <div class="bundle-savings">SAVE {{ base_price | times: 2 | money }}</div>
+            </button>
+            
+            <button class="mobile-bundle-option" data-bundle-type="4+3" onclick="selectBundleType('4+3')">
+              <div class="mobile-bundle-badge">FREE SHIPPING</div>
+              <span class="bundle-desc">Buy 4, Get 3 Free</span>
+              <span class="bundle-price">{{ base_price | times: 4 | money }}</span>
+              <span class="per-bottle">{{ base_price | times: 4 | divided_by: 7 | money }}/bottle</span>
+              <div class="bundle-savings">SAVE {{ base_price | times: 3 | money }}</div>
+            </button>
+            
+            <button class="mobile-bundle-option" data-bundle-type="5+4" onclick="selectBundleType('5+4')">
+              <div class="mobile-bundle-badge best-value">Best Value</div>
+              <span class="bundle-desc">Buy 5, Get 4 Free</span>
+              <span class="bundle-price">{{ base_price | times: 5 | money }}</span>
+              <span class="per-bottle">{{ base_price | times: 5 | divided_by: 9 | money }}/bottle</span>
+              <div class="bundle-savings">SAVE {{ base_price | times: 4 | money }}</div>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Mobile Progress Section -->
+        <div class="mobile-sidebar-section mobile-progress-section">
+          <h4>Please Select At Least 3 Scents</h4>
+          <div class="mobile-progress-bar">
+            <div class="mobile-progress-fill"></div>
+            <div class="mobile-progress-markers">
+              <div class="marker" data-count="0">0</div>
+              <div class="marker" data-count="16">16</div>
+              <div class="marker" data-count="24">24</div>
+              <div class="marker" data-count="32">32</div>
+            </div>
+          </div>
+          <div class="mobile-selected-items"></div>
+        </div>
+        
+        <!-- Mobile Benefits -->
+        <div class="mobile-sidebar-section mobile-benefits-section">
+          <h4>Small Before You Commit</h4>
+          <div class="mobile-benefits-grid">
+            <div class="mobile-benefit-item">✓ Choosing a signature scent you'll love is a process</div>
+            <div class="mobile-benefit-item">✓ Scent lasts 12 hours</div>
+            <div class="mobile-benefit-item">✓ Worldwide shipping</div>
+            <div class="mobile-benefit-item">✓ You pay 1/10 price of originals</div>
+            <div class="mobile-benefit-item">✓ You can return up to 60 days</div>
+            <div class="mobile-benefit-item">✓ Scent guarantee</div>
+          </div>
+        </div>
+        
+        <!-- Mobile Add to Cart Button -->
+        <button class="mobile-add-to-cart-btn" onclick="addBundleToCartAndCheckout()">
+          ADD TO CART
+        </button>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>
+
 <style>
-/* V2 Bundler Styles - Gray Background with White Cards */
-.product-bundler-v2 {
+/* V2 Bundler Styles - Separate Desktop and Mobile */
+
+/* DESKTOP STYLES - Gray Background with White Cards */
+.bundler-desktop {
   background: #f5f5f5;
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  display: block;
 }
 
-.bundler-container-v2 {
+.bundler-desktop-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Compact Header */
-.bundler-header-v2 {
+/* Desktop Header */
+.bundler-desktop-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -243,54 +458,54 @@
   margin-bottom: 20px;
 }
 
-.header-left {
+.desktop-header-left {
   flex: 1;
 }
 
-.bundler-title-v2 {
+.bundler-desktop-title {
   font-size: 28px;
   font-weight: 700;
   margin: 0 0 8px 0;
   color: #333;
 }
 
-.bundler-subtitle-v2 {
+.bundler-desktop-subtitle {
   font-size: 16px;
   color: #666;
   margin: 0 0 16px 0;
 }
 
-.bundler-reviews-v2 {
+.bundler-desktop-reviews {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.bundler-reviews-v2 .rating img {
+.bundler-desktop-reviews .rating img {
   height: 20px;
   width: 100px;
 }
 
-.bundler-reviews-v2 .rating-text,
-.bundler-reviews-v2 .review-count {
+.bundler-desktop-reviews .rating-text,
+.bundler-desktop-reviews .review-count {
   font-size: 14px;
   color: #666;
 }
 
-/* Header Right - Benefit Badges */
-.header-right {
+/* Desktop Header Right - Benefit Badges */
+.desktop-header-right {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.benefit-badges {
+.desktop-benefit-badges {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.benefit-badge {
+.desktop-benefit-badge {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -314,14 +529,14 @@
   flex-shrink: 0;
 }
 
-.benefit-badge span {
+.desktop-benefit-badge span {
   font-size: 14px;
   color: #333;
   line-height: 1.3;
 }
 
-/* Search and Filter - Compact */
-.bundler-search-filter-v2 {
+/* Desktop Search and Filter */
+.bundler-desktop-search-filter {
   background: white;
   padding: 16px 24px;
   border-radius: 12px;
@@ -332,11 +547,11 @@
   gap: 20px;
 }
 
-.search-container-v2 {
+.desktop-search-container {
   flex: 1;
 }
 
-.search-container-v2 input {
+.desktop-search-container input {
   width: 100%;
   padding: 10px 16px;
   border: 2px solid #e9ecef;
@@ -345,17 +560,17 @@
   transition: border-color 0.2s;
 }
 
-.search-container-v2 input:focus {
+.desktop-search-container input:focus {
   outline: none;
   border-color: #28a745;
 }
 
-.filter-container-v2 {
+.desktop-filter-container {
   display: flex;
   gap: 8px;
 }
 
-.filter-btn-v2 {
+.desktop-filter-btn {
   padding: 8px 16px;
   border: 2px solid #e9ecef;
   background: white;
@@ -366,30 +581,30 @@
   transition: all 0.2s;
 }
 
-.filter-btn-v2:hover,
-.filter-btn-v2.active {
+.desktop-filter-btn:hover,
+.desktop-filter-btn.active {
   background: #28a745;
   border-color: #28a745;
   color: white;
 }
 
-/* Main Content Layout */
-.bundler-main-content-v2 {
+/* Desktop Main Content */
+.bundler-desktop-main-content {
   display: flex;
   gap: 24px;
   align-items: flex-start;
 }
 
-/* Products Grid */
-.bundler-products-v2 {
+/* Desktop Products Grid */
+.bundler-desktop-products {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-/* Product Cards */
-.product-card-v2 {
+/* Desktop Product Cards */
+.desktop-product-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -399,12 +614,12 @@
   cursor: pointer;
 }
 
-.product-card-v2:hover {
+.desktop-product-card:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
-.product-badge-v2 {
+.desktop-product-badge {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -417,23 +632,23 @@
   text-transform: uppercase;
 }
 
-.product-image-v2 {
+.desktop-product-image {
   text-align: center;
   margin-bottom: 12px;
 }
 
-.product-image-v2 img {
+.desktop-product-image img {
   width: 80px;
   height: 80px;
   object-fit: contain;
 }
 
-.product-info-v2 {
+.desktop-product-info {
   text-align: center;
   margin-bottom: 16px;
 }
 
-.product-title-v2 {
+.desktop-product-title {
   font-size: 14px;
   font-weight: 600;
   margin: 0 0 8px 0;
@@ -441,7 +656,7 @@
   line-height: 1.3;
 }
 
-.product-reviews-v2 {
+.desktop-product-reviews {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -449,24 +664,24 @@
   margin-bottom: 8px;
 }
 
-.product-reviews-v2 .rating img {
+.desktop-product-reviews .rating img {
   height: 12px;
   width: 60px;
 }
 
-.product-reviews-v2 .rating-text,
-.product-reviews-v2 .review-count {
+.desktop-product-reviews .rating-text,
+.desktop-product-reviews .review-count {
   font-size: 11px;
   color: #666;
 }
 
-.product-price-v2 {
+.desktop-product-price {
   font-size: 16px;
   font-weight: 700;
   color: #333;
 }
 
-.add-to-bundle-btn-v2 {
+.desktop-add-to-bundle-btn {
   width: 100%;
   padding: 10px;
   background: #28a745;
@@ -479,12 +694,12 @@
   transition: background-color 0.2s;
 }
 
-.add-to-bundle-btn-v2:hover {
+.desktop-add-to-bundle-btn:hover {
   background: #218838;
 }
 
-/* Sidebar */
-.bundler-sidebar-v2 {
+/* Desktop Sidebar */
+.bundler-desktop-sidebar {
   width: 350px;
   flex-shrink: 0;
   display: flex;
@@ -492,34 +707,34 @@
   gap: 20px;
 }
 
-.sidebar-section {
+.desktop-sidebar-section {
   background: white;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar-section h3,
-.sidebar-section h4 {
+.desktop-sidebar-section h3,
+.desktop-sidebar-section h4 {
   margin: 0 0 12px 0;
   font-size: 18px;
   font-weight: 600;
   color: #333;
 }
 
-.sidebar-section p {
+.desktop-sidebar-section p {
   margin: 0 0 16px 0;
   font-size: 14px;
   color: #666;
 }
 
-/* Size Buttons */
-.size-buttons-v2 {
+/* Desktop Size Buttons */
+.desktop-size-buttons {
   display: flex;
   gap: 8px;
 }
 
-.size-btn-v2 {
+.desktop-size-btn {
   flex: 1;
   padding: 12px;
   border: 2px solid #e9ecef;
@@ -531,21 +746,21 @@
   transition: all 0.2s;
 }
 
-.size-btn-v2:hover,
-.size-btn-v2.active {
+.desktop-size-btn:hover,
+.desktop-size-btn.active {
   background: #28a745;
   border-color: #28a745;
   color: white;
 }
 
-/* Bundle Options */
-.bundle-options-v2 {
+/* Desktop Bundle Options */
+.desktop-bundle-options {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.bundle-option-v2 {
+.desktop-bundle-option {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -559,13 +774,13 @@
   text-align: left;
 }
 
-.bundle-option-v2:hover,
-.bundle-option-v2.active {
+.desktop-bundle-option:hover,
+.desktop-bundle-option.active {
   border-color: #28a745;
   background: #f8f9fa;
 }
 
-.bundle-badge-v2 {
+.desktop-bundle-badge {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -578,7 +793,7 @@
   text-transform: uppercase;
 }
 
-.bundle-badge-v2.best-value {
+.desktop-bundle-badge.best-value {
   background: linear-gradient(45deg, #ff4500, #ffd700, #ff6347, #ffff00);
 }
 
@@ -612,8 +827,8 @@
   text-transform: uppercase;
 }
 
-/* Progress Section */
-.progress-bar-v2 {
+/* Desktop Progress Section */
+.desktop-progress-bar {
   position: relative;
   height: 8px;
   background: #e9ecef;
@@ -621,14 +836,14 @@
   margin-bottom: 16px;
 }
 
-.progress-fill-v2 {
+.desktop-progress-fill {
   height: 100%;
   background: #28a745;
   border-radius: 4px;
   transition: width 0.3s;
 }
 
-.progress-markers-v2 {
+.desktop-progress-markers {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
@@ -640,25 +855,25 @@
   font-weight: 500;
 }
 
-.selected-items-v2 {
+.desktop-selected-items {
   min-height: 100px;
 }
 
-/* Benefits Grid */
-.benefits-grid-v2 {
+/* Desktop Benefits Grid */
+.desktop-benefits-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
-.benefit-item-v2 {
+.desktop-benefit-item {
   font-size: 12px;
   color: #333;
   line-height: 1.4;
 }
 
-/* Add to Cart Button */
-.add-to-cart-btn-v2 {
+/* Desktop Add to Cart Button */
+.desktop-add-to-cart-btn {
   width: 100%;
   padding: 16px;
   background: #28a745;
@@ -672,8 +887,517 @@
   text-transform: uppercase;
 }
 
-.add-to-cart-btn-v2:hover {
+.desktop-add-to-cart-btn:hover {
   background: #218838;
+}
+
+/* MOBILE STYLES */
+.bundler-mobile {
+  background: #f8f9fa;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  display: none;
+}
+
+.bundler-mobile-container {
+  padding: 16px;
+}
+
+/* Mobile Header */
+.bundler-mobile-header {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.bundler-mobile-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.bundler-mobile-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 12px 0;
+}
+
+.bundler-mobile-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.bundler-mobile-reviews .rating img {
+  height: 16px;
+  width: 80px;
+}
+
+.bundler-mobile-reviews .rating-text,
+.bundler-mobile-reviews .review-count {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Mobile Search and Filter */
+.bundler-mobile-search-filter {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.mobile-search-container {
+  margin-bottom: 12px;
+}
+
+.mobile-search-container input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.mobile-filter-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.mobile-filter-btn {
+  padding: 8px 16px;
+  border: 2px solid #e9ecef;
+  background: white;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mobile-filter-btn:hover,
+.mobile-filter-btn.active {
+  background: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+/* Mobile Products Grid */
+.bundler-mobile-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 80px; /* Space for sticky footer */
+}
+
+/* Mobile Product Cards */
+.mobile-product-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.mobile-product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-product-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #28a745;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mobile-product-image {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.mobile-product-image img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.mobile-product-info {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.mobile-product-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #333;
+  line-height: 1.3;
+}
+
+.mobile-product-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+
+.mobile-product-reviews .rating img {
+  height: 10px;
+  width: 50px;
+}
+
+.mobile-product-reviews .rating-text,
+.mobile-product-reviews .review-count {
+  font-size: 9px;
+  color: #666;
+}
+
+.mobile-product-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.mobile-add-to-bundle-btn {
+  width: 100%;
+  padding: 8px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mobile-add-to-bundle-btn:hover {
+  background: #218838;
+}
+
+/* Mobile Sticky Footer */
+.mobile-sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 12px 16px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.mobile-sticky-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-product-info-sticky {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.mobile-product-image-sticky img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.mobile-product-details-sticky h4 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.mobile-price-sticky {
+  font-size: 11px;
+  color: #666;
+}
+
+.mobile-sticky-atc-btn {
+  padding: 10px 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Mobile Fullscreen Cart */
+.mobile-fullscreen-cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 2000;
+  overflow-y: auto;
+}
+
+.mobile-fullscreen-content {
+  padding: 16px;
+}
+
+.mobile-fullscreen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.keep-shopping-btn {
+  background: none;
+  border: 2px solid #28a745;
+  color: #28a745;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Mobile Sidebar Sections */
+.mobile-sidebar-section {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.mobile-sidebar-section h3,
+.mobile-sidebar-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.mobile-sidebar-section p {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Mobile Size Buttons */
+.mobile-size-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.mobile-size-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e9ecef;
+  background: white;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mobile-size-btn:hover,
+.mobile-size-btn.active {
+  background: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+/* Mobile Bundle Options - 2x2 Grid */
+.mobile-bundle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.mobile-bundle-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  border: 2px solid #e9ecef;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  text-align: center;
+}
+
+.mobile-bundle-option:hover,
+.mobile-bundle-option.active {
+  border-color: #28a745;
+  background: #f8f9fa;
+}
+
+.mobile-bundle-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #28a745;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mobile-bundle-badge.best-value {
+  background: linear-gradient(45deg, #ff4500, #ffd700, #ff6347, #ffff00);
+}
+
+.mobile-bundle-option .bundle-desc {
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.mobile-bundle-option .bundle-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.mobile-bundle-option .per-bottle {
+  font-size: 9px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.mobile-bundle-option .bundle-savings {
+  background: linear-gradient(45deg, #32cd32, #00fa9a, #20b2aa, #32cd32);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Mobile Progress Section */
+.mobile-progress-bar {
+  position: relative;
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+
+.mobile-progress-fill {
+  height: 100%;
+  background: #28a745;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.mobile-progress-markers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.mobile-selected-items {
+  min-height: 60px;
+}
+
+/* Mobile Benefits Grid */
+.mobile-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.mobile-benefit-item {
+  font-size: 10px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Mobile Add to Cart Button */
+.mobile-add-to-cart-btn {
+  width: 100%;
+  padding: 14px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+}
+
+.mobile-add-to-cart-btn:hover {
+  background: #218838;
+}
+
+/* Responsive Display */
+@media (max-width: 768px) {
+  .bundler-desktop {
+    display: none !important;
+  }
+  .bundler-mobile {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .bundler-mobile {
+    display: none !important;
+  }
+  .bundler-desktop {
+    display: block !important;
+  }
+}
+
+.bundler-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Header */
+.bundler-header {
+  text-align: center;
+  padding: 40px 32px 32px 32px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-bottom: 1px solid #eee;
 }
 
 .bundler-title h1 {
