@@ -2,30 +2,44 @@
   <script>
     console.log('Sticky ATC: Section is being rendered!');
     
-    // Force show sticky ATC for testing
+// Initialize sticky ATC functionality
     document.addEventListener('DOMContentLoaded', function() {
       const stickyATC = document.getElementById('md-sticky-atc');
-      console.log('Sticky ATC element found:', stickyATC);
       
-      if (stickyATC) {
-        console.log('Current styles:', window.getComputedStyle(stickyATC));
-        
-        // Force it to be visible for testing
-        stickyATC.style.visibility = 'visible';
-        stickyATC.style.opacity = '1';
-        stickyATC.style.transform = 'translateY(0)';
-        stickyATC.style.position = 'fixed';
-        stickyATC.style.bottom = '0';
-        stickyATC.style.left = '0';
-        stickyATC.style.right = '0';
-        stickyATC.style.zIndex = '9999';
-        stickyATC.style.background = 'red';
-        stickyATC.style.height = '80px';
-        stickyATC.style.display = 'block';
-        
-        console.log('Sticky ATC forced to be visible with red background');
+      if (!stickyATC) {
+        console.error('Sticky ATC element not found');
+        return;
+      }
+      
+      // Show/hide sticky ATC using Intersection Observer
+      const atcBtn = document.querySelector('.cta_product_from_submit_btn') || 
+                     document.querySelector('button[name="add"]') ||
+                     document.querySelector('.product-form__submit');
+      
+      if (atcBtn) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting && entry.boundingClientRect.bottom < 0) {
+                // scrolled past (above viewport)
+                stickyATC.classList.add('show');
+                document.documentElement.style.paddingBottom = `${stickyATC.offsetHeight}px`;
+              } else {
+                // partially or fully visible in viewport
+                stickyATC.classList.remove('show');
+                document.documentElement.style.paddingBottom = '0';
+              }
+            });
+          },
+          {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0
+          }
+        );
+        observer.observe(atcBtn);
       } else {
-        console.error('Sticky ATC element NOT FOUND!');
+        console.error('Main ATC button not found!');
       }
     });
   </script>
@@ -60,7 +74,7 @@
       width: 25%;
     }
     #md-sticky-atc .page-width-inner {
-      padding: 16px 0;
+      padding: 20px 16px 24px 16px;
     }
     @media (min-width: 990px) {
       #md-sticky-atc .page-width-inner {
@@ -92,6 +106,16 @@
       display: flex;
       align-items: center;
       background: #fff;
+      gap: 12px;
+    }
+    #md-sticky-atc .select {
+      min-width: 120px;
+    }
+    #md-sticky-atc .select__select {
+      padding: 8px 12px !important;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
     }
     #md-sticky-atc .product-form .quantity {
       display: none;
@@ -342,7 +366,7 @@
             , class: 'form'
             , novalidate: 'novalidate' -%}
             <div class="quantity-input-wrapper">
-              <div class="select mr-2 w-auto fixed -top-[99999px] -left-[99999px]" style="{% if product.has_only_default_variant %}display: none;{% endif %}">
+              <div class="select mr-2 w-auto" style="{% if product.has_only_default_variant %}display: none;{% endif %}">
                 <select
                   class="select__select !w-auto !px-6 sticky_atc_variant_selector"
                   name="id"
