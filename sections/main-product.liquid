@@ -112,6 +112,15 @@
                     {{ block.settings.text }}
                   </div>
                 </div>
+              {%- when 'shipping_text' -%}
+                <div class="!my-6">
+                  <p class="my-0 text-center font-semibold tracking-normal">
+                    5-8 Days Delivery to <span class="shipping_location">Worldwide</span>
+                  </p>
+                  <p class="my-0 text-center tracking-normal shipping_text_canada">
+                    *Shipping Fee Calculated At Checkout
+                  </p>
+                </div>
               {%- when 'cta_review' -%}
                 <div class="pt-6 pb-2 border-0 border-t border-solid border-gray-200">
                   <div class="leading-snug tracking-normal italic [&_p]:!m-0 text-lg">
@@ -778,8 +787,22 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const ctaVideos = document.querySelectorAll(".cta_videos video");
+    // update shipping country text
+    const shippingLocation = document.querySelector(".shipping_location");
+    const shippingTextCanada = document.querySelector(".shipping_text_canada");
+    fetch("https://ipapi.co/country_name")
+      .then(response => response.text())
+      .then(countryName => {
+        shippingLocation.textContent = countryName;
+        if (countryName === "Canada") {
+          shippingTextCanada.textContent = "*Duties included at Checkout";
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching country code:", error);
+      });
 
+    const ctaVideos = document.querySelectorAll(".cta_videos video");
     function pauseAllVideos() {
       ctaVideos.forEach(video => {
         video.pause();
@@ -821,6 +844,11 @@
     {
       "type": "reactive_variant_selector",
       "name": "Reactive Variant Selector",
+      "limit": 1
+    },
+    {
+      "type": "shipping_text",
+      "name": "Shipping Text",
       "limit": 1
     },
     {
