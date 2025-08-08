@@ -62,9 +62,9 @@
 
   function scratch(x,y){
     ctx.globalCompositeOperation = 'destination-out';
-    const r = 26; // smoother brush
+    const r = Math.max(32, Math.floor(canvas.width * 0.035)); // bigger brush, responsive
     const g = ctx.createRadialGradient(x,y,0,x,y,r);
-    g.addColorStop(0,'rgba(0,0,0,0.9)');
+    g.addColorStop(0,'rgba(0,0,0,1)');
     g.addColorStop(1,'rgba(0,0,0,0)');
     ctx.fillStyle = g;
     ctx.beginPath();
