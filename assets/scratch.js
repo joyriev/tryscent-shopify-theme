@@ -103,6 +103,9 @@
   window.addEventListener('touchend', ()=> isDown=false);
 
   window.addEventListener('resize', resize); resize();
+  // Remove initial white overlay once scratch is ready
+  const loader = document.getElementById('scratch-loader');
+  if(loader){ loader.style.opacity = '0'; setTimeout(()=>loader.remove(), 150); }
 
   // CTA click
   if(cta){
