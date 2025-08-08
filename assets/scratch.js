@@ -63,33 +63,37 @@
   })();
 
   function renderPrize(){
-    // nothing to preload here, prize is separate layer underneath canvas
-    // we trigger reflow by toggling hidden attr
-    prize.hidden = false; prize.hidden = true; prize.hidden = false;
+    // show prize layer only after cover was drawn (with tiny delay safeguard)
+    setTimeout(() => { prize.hidden = false; }, 1);
   }
 
   function drawCover(after){
     const w = canvas.width, h = canvas.height;
     ctx.globalCompositeOperation = 'source-over';
+
+    // 1) draw sync placeholder cover immediately (ensures cover visible before anything else)
+    const grad = ctx.createLinearGradient(0,0,w,h);
+    grad.addColorStop(0,'#e6c679');
+    grad.addColorStop(1,'#b89549');
+    ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
+    ctx.strokeStyle = 'rgba(255,255,255,.12)';
+    for(let i=0;i<8;i++){ ctx.beginPath(); ctx.moveTo(0,i*h/8); ctx.lineTo(w,i*h/8); ctx.stroke(); }
+    ready();
+
+    // 2) asynchronously replace placeholder with the real cover image (if provided)
     const cover = section.getAttribute('data-cover');
     if(cover){
       const img = new Image();
       img.crossOrigin = 'anonymous';
-      img.onload = ()=>{ ctx.drawImage(img, 0, 0, w, h); ready(); if(typeof after==='function') setTimeout(after, 1); };
+      img.onload = ()=>{ ctx.globalCompositeOperation = 'source-over'; ctx.drawImage(img, 0, 0, w, h); if(typeof after==='function') setTimeout(after, 1); };
       img.src = cover;
     } else {
-      const grad = ctx.createLinearGradient(0,0,w,h);
-      grad.addColorStop(0,'#e6c679');
-      grad.addColorStop(1,'#b89549');
-      ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
-      ctx.strokeStyle = 'rgba(255,255,255,.12)';
-      for(let i=0;i<8;i++){ ctx.beginPath(); ctx.moveTo(0,i*h/8); ctx.lineTo(w,i*h/8); ctx.stroke(); }
-      ready(); if(typeof after==='function') setTimeout(after, 1);
+      if(typeof after==='function') setTimeout(after, 1);
     }
   }
 
   function ready(){
-    // Remove initial white overlay once image/cover is drawn
+    // Remove initial white overlay once placeholder cover is drawn
     const loader = document.getElementById('scratch-loader');
     if(loader){ loader.style.opacity = '0'; setTimeout(()=>loader.remove(), 150); }
   }
@@ -116,6 +120,13 @@
     scratch.prev = {x,y};
   }
 
+  canvas.addEventListener('mousedown', e=>{ isDown=true; scratch.prev=null; scratch(...Object.values(getPos(e))); });
+  canvas.addEventListener('mousemove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>55) finish(); }});
+  window.addEventListener('mouseup', ()=> { isDown=false; scratch.prev=null; });
+  canvas.addEventListener('touchstart', e=>{ isDown=true; scratch.prev=null; scratch(...Object.values(getPos(e))); e.preventDefault(); }, {passive:false});
+  canvas.addEventListener('touchmove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>55) finish(); } e.preventDefault(); }, {passive:false});
+  window.addEventListener('touchend', ()=> { isDown=false; scratch.prev=null; });
+
   function getPos(e){
     const r = canvas.getBoundingClientRect();
     const t = e.touches? e.touches[0]: e;
@@ -130,37 +141,17 @@
 
   function finish(){
     if(revealed) return; revealed = true;
-    // animate full clear and reveal
-    const clear = ()=>{ ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = '#000'; ctx.fillRect(0,0,canvas.width,canvas.height); };
-    clear();
+    // full clear
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
     canvas.style.pointerEvents = 'none';
-    label.hidden = true;
+    if(label) label.hidden = true;
     prize.hidden = false;
     if(cta){ cta.classList.add('active'); }
     const counter = document.querySelector('.scratch__counter');
     if(counter) counter.classList.add('active');
     try { launchConfetti(); } catch(_e) {}
-  }
-
-  canvas.addEventListener('mousedown', e=>{ isDown=true; scratch.prev=null; scratch(...Object.values(getPos(e))); });
-  canvas.addEventListener('mousemove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>55) finish(); }});
-  window.addEventListener('mouseup', ()=> { isDown=false; scratch.prev=null; });
-  canvas.addEventListener('touchstart', e=>{ isDown=true; scratch.prev=null; scratch(...Object.values(getPos(e))); e.preventDefault(); }, {passive:false});
-  canvas.addEventListener('touchmove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>55) finish(); } e.preventDefault(); }, {passive:false});
-  window.addEventListener('touchend', ()=> { isDown=false; scratch.prev=null; });
-
-  window.addEventListener('resize', resize); resize();
-  // Remove initial white overlay once scratch is ready
-  const loader = document.getElementById('scratch-loader');
-  if(loader){ loader.style.opacity = '0'; setTimeout(()=>loader.remove(), 150); }
-
-  // CTA click
-  if(cta){
-    cta.addEventListener('click', ()=>{
-      const cfgLink = section.getAttribute('data-cta-link') || '/collections/all';
-      const openNew = section.getAttribute('data-cta-new-tab') === 'true';
-      if(openNew){ window.open(cfgLink, '_blank'); } else { window.location.href = cfgLink; }
-    });
   }
 
   // lightweight confetti
@@ -180,4 +171,6 @@
       div.animate([{transform:div.style.transform, top:'-10px'},{transform:'rotate(720deg)', top:'110vh', left:`calc(${div.style.left} + ${drift}px)`}],{duration:fall, easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish=()=>div.remove();
     }
   }
+
+  window.addEventListener('resize', resize); resize();
 })(); 
