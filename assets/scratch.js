@@ -52,12 +52,16 @@
   const prize = document.getElementById('scratch-prize');
   const cta = document.getElementById('scratch-cta');
   const ctx = canvas.getContext('2d');
+  // Offscreen mask to compute reveal safely (no CORS taint)
+  const maskCanvas = document.createElement('canvas');
+  const maskCtx = maskCanvas.getContext('2d');
   let isDown = false;
   let revealed = false;
 
   function resize(){
     const rect = canvas.parentElement.getBoundingClientRect();
     canvas.width = rect.width; canvas.height = rect.height;
+    maskCanvas.width = rect.width; maskCanvas.height = rect.height;
     // ensure prize is hidden until cover is drawn
     prize.hidden = true;
     drawCover(() => { renderPrize(); });
@@ -115,22 +119,28 @@
   }
 
   function scratch(x,y){
-    ctx.globalCompositeOperation = 'destination-out';
-    const r = Math.max(39, Math.floor(canvas.width * 0.055) - 5); // slightly smaller brush
-    const drawDot = (dx,dy)=>{
-      ctx.beginPath();
-      ctx.arc(dx,dy,r,0,Math.PI*2);
-      ctx.fill();
+    const r = Math.max(39, Math.floor(canvas.width * 0.055) - 5);
+    const drawDot = (dx,dy, context)=>{
+      context.beginPath();
+      context.arc(dx,dy,r,0,Math.PI*2);
+      context.fill();
     };
-    drawDot(x,y);
+    // draw into on-screen canvas (destination-out) and into mask (opaque)
+    ctx.globalCompositeOperation = 'destination-out';
+    drawDot(x,y, ctx);
+    maskCtx.fillStyle = '#000';
+    drawDot(x,y, maskCtx);
     if(scratch.prev){
       const dist = Math.hypot(x-scratch.prev.x, y-scratch.prev.y);
-      const step = r*0.45; // very tight spacing → full coverage line
+      const step = r*0.45;
       const count = Math.max(1, Math.floor(dist/step));
       for(let i=1;i<=count;i++){
         const xi = scratch.prev.x + (x - scratch.prev.x)*i/count;
         const yi = scratch.prev.y + (y - scratch.prev.y)*i/count;
-        drawDot(xi,yi);
+        ctx.globalCompositeOperation = 'destination-out';
+        drawDot(xi,yi, ctx);
+        maskCtx.fillStyle = '#000';
+        drawDot(xi,yi, maskCtx);
       }
     }
     scratch.prev = {x,y};
@@ -150,9 +160,14 @@
   }
 
   function percentRevealed(){
-    const img = ctx.getImageData(0,0,canvas.width,canvas.height);
-    let cleared = 0; for(let i=3;i<img.data.length;i+=4){ if(img.data[i]===0) cleared++; }
-    return cleared / (canvas.width*canvas.height) * 100;
+    try{
+      const img = maskCtx.getImageData(0,0,maskCanvas.width,maskCanvas.height);
+      let cleared = 0; for(let i=3;i<img.data.length;i+=4){ if(img.data[i]!==0) cleared++; }
+      return cleared / (maskCanvas.width*maskCanvas.height) * 100;
+    }catch(_e){
+      // fallback if any issue
+      return 0;
+    }
   }
 
   function finish(){
@@ -216,3 +231,6 @@
       }
     }
   }
+
+  window.addEventListener('resize', resize); resize();
+})(); 
