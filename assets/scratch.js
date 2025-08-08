@@ -4,34 +4,47 @@
 
   // Counter logic (bottles left)
   const numEl = document.getElementById('bottles-left');
-  const startMin = +section.dataset.startMin || 30;
-  const startMax = +section.dataset.startMax || 60;
-  const decMin = +section.dataset.decrementMin || 1;
-  const decMax = +section.dataset.decrementMax || 3;
-  const intMin = +section.dataset.intervalMin || 8; // seconds
-  const intMax = +section.dataset.intervalMax || 18; // seconds
-  const floor = +section.dataset.floor || 3;
   const storeKey = section.dataset.storeKey || 'scratch_bottles_v1';
-
   function rand(min, max){ return Math.floor(Math.random()*(max-min+1))+min; }
 
+  // Bottles logic: start 150, go down to 15 over ~2 minutes, decrement 1-4 each tick
+  const COUNTER_START = 150;
+  const COUNTER_TARGET = 15;
+  const TOTAL_MS = 120000; // 2 min
+  const TICK_BASE = 3000; // 3s base
+  const TICK_JITTER = 800; // +/- jitter
+  const endTime = Date.now() + TOTAL_MS;
+
   let current = Number(localStorage.getItem(storeKey));
-  if(!current || Number.isNaN(current)){
-    current = rand(startMin, startMax);
+  if(!current || Number.isNaN(current) || current < COUNTER_TARGET || current > COUNTER_START){
+    current = COUNTER_START;
     localStorage.setItem(storeKey, String(current));
   }
   function updateCounter(){ if(numEl) numEl.textContent = String(current); }
   updateCounter();
 
-  function tick(){
-    if(current > floor){
-      current = Math.max(floor, current - rand(decMin, decMax));
+  function scheduleTick(){
+    const now = Date.now();
+    const remainMs = endTime - now;
+    if(remainMs <= 0 || current <= COUNTER_TARGET){
+      current = COUNTER_TARGET;
       localStorage.setItem(storeKey, String(current));
       updateCounter();
+      return;
     }
-    setTimeout(tick, rand(intMin, intMax)*1000);
+    const ticksLeft = Math.max(1, Math.ceil(remainMs / TICK_BASE));
+    const decNeeded = current - COUNTER_TARGET;
+    let step = rand(1,4);
+    const minAvg = Math.ceil(decNeeded / ticksLeft);
+    if(minAvg > step) step = Math.min(4, minAvg);
+    step = Math.min(step, decNeeded);
+    current -= step;
+    localStorage.setItem(storeKey, String(current));
+    updateCounter();
+    const nextDelay = Math.max(800, TICK_BASE + rand(-TICK_JITTER, TICK_JITTER));
+    setTimeout(scheduleTick, nextDelay);
   }
-  setTimeout(tick, rand(2,5)*1000);
+  setTimeout(scheduleTick, 1200);
 
   // Scratch card
   const canvas = document.getElementById('scratch-canvas');
@@ -164,6 +177,9 @@
       for(let i=0;i<14;i++) confettiPiece();
       if(Date.now()<end) requestAnimationFrame(frame);
     })();
+    // Fireworks bursts at random positions
+    for(let i=0;i<6;i++) setTimeout(()=>burst(), i*180);
+
     function confettiPiece(){
       const div = document.createElement('div');
       div.style.position='fixed'; div.style.top='-10px'; div.style.left=Math.random()*100+'%';
@@ -172,6 +188,29 @@
       document.body.appendChild(div);
       const fall = 1200 + Math.random()*800; const drift = (Math.random()*2-1)*120;
       div.animate([{transform:div.style.transform, top:'-10px'},{transform:'rotate(720deg)', top:'110vh', left:`calc(${div.style.left} + ${drift}px)`}],{duration:fall, easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish=()=>div.remove();
+    }
+
+    function burst(){
+      const cx = Math.random()*window.innerWidth;
+      const cy = Math.random()*window.innerHeight*0.5 + window.innerHeight*0.1;
+      const particles = 26;
+      for(let i=0;i<particles;i++){
+        const dot = document.createElement('div');
+        dot.style.position='fixed'; dot.style.left=cx+'px'; dot.style.top=cy+'px';
+        dot.style.width='6px'; dot.style.height='6px'; dot.style.borderRadius='50%';
+        dot.style.background=colors[Math.floor(Math.random()*colors.length)];
+        dot.style.zIndex='9999';
+        document.body.appendChild(dot);
+        const ang = (Math.PI*2) * (i/particles);
+        const dist = 80 + Math.random()*60;
+        const x2 = cx + Math.cos(ang)*dist;
+        const y2 = cy + Math.sin(ang)*dist;
+        dot.animate([
+          { transform:'scale(0.6)', opacity:1, offset:0},
+          { transform:'translate('+(x2-cx)+'px,'+(y2-cy)+'px) scale(1)', opacity:1, offset:0.7},
+          { transform:'translate('+(x2-cx)+'px,'+(y2-cy)+'px) scale(0.2)', opacity:0, offset:1}
+        ], { duration:900 + Math.random()*400, easing:'cubic-bezier(.2,.7,.2,1)' }).onfinish=()=>dot.remove();
+      }
     }
   }
 
