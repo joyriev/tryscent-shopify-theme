@@ -17,6 +17,7 @@
 <div id="scratch-loader" class="scratch-loader" aria-hidden="true"></div>
 
 <section class="scratch shopify-section--scratch" id="scratch-section"
+  style="background-image:url('{{ section.settings.background_image_url }}');background-size:cover;background-position:center;background-repeat:no-repeat;"
   data-start-min="30"
   data-start-max="60"
   data-decrement-min="1"
@@ -47,7 +48,7 @@
 
     <div class="scratch-card" aria-live="polite">
       <div class="scratch-card__prize" id="scratch-prize" hidden>
-        <div class="scratch-card__prize-banner">{{ section.settings.win_text }}</div>
+        <img src="{{ section.settings.prize_image_url }}" alt="Prize" style="max-width:90%;height:auto;display:block;" loading="eager">
       </div>
       <canvas class="scratch-card__canvas" id="scratch-canvas"></canvas>
       <div class="scratch-card__cover-label" id="scratch-label">{{ section.settings.scratch_label }}</div>
@@ -78,9 +79,10 @@
     { "type": "text", "id": "pill", "label": "Pill text", "default": "EXCLUSIVE DISCOUNTS" },
     { "type": "text", "id": "counter_prefix", "label": "Counter prefix", "default": "There are only" },
     { "type": "text", "id": "counter_suffix", "label": "Counter suffix", "default": "free bottles left" },
-    { "type": "text", "id": "win_text", "label": "Win text", "default": "YOU WON UP TO 4 FREE BOTTLES" },
+    { "type": "text", "id": "prize_image_url", "label": "Prize image URL", "default": "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ChatGPT_Image_8_sie_2025_19_15_59.png?v=1754673396" },
     { "type": "text", "id": "cover_image_url", "label": "Cover image URL", "default": "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/685d9ba8949e920a7f30c753_jul4-scratch.webp?v=1754670890" },
     { "type": "text", "id": "cta_text", "label": "CTA text", "default": "CLAIM YOUR PRIZE" },
+    { "type": "text", "id": "background_image_url", "label": "Background image URL", "default": "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ChatGPT_Image_8_sie_2025_19_23_39.png?v=1754673838" },
     { "type": "url", "id": "cta_link", "label": "CTA link", "default": "/collections/all" },
     { "type": "checkbox", "id": "cta_new_tab", "label": "Open CTA in new tab", "default": false }
   ],

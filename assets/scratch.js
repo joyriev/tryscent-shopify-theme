@@ -118,6 +118,9 @@
 
   function finish(){
     if(revealed) return; revealed = true;
+    // animate full clear and reveal
+    const clear = ()=>{ ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = '#000'; ctx.fillRect(0,0,canvas.width,canvas.height); };
+    clear();
     canvas.style.pointerEvents = 'none';
     label.hidden = true;
     prize.hidden = false;
