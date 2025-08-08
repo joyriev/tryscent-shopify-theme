@@ -1,0 +1,67 @@
+{{ 'scratch.css' | asset_url | stylesheet_tag }}
+
+<section class="scratch" id="scratch-section"
+  data-start-min="30"
+  data-start-max="60"
+  data-decrement-min="1"
+  data-decrement-max="3"
+  data-interval-min="8"
+  data-interval-max="18"
+  data-floor="3"
+  data-store-key="scratch_bottles_v1"
+  data-cta-link="{{ section.settings.cta_link }}"
+  data-cta-new-tab="{{ section.settings.cta_new_tab }}"
+>
+  <div class="scratch__inner">
+    {% if section.settings.logo != blank %}
+      <img class="scratch__logo" src="{{ section.settings.logo | image_url: width: 180 }}" alt="{{ section.settings.logo.alt | escape }}" loading="lazy" width="180" height="auto">
+    {% endif %}
+
+    <h1 class="scratch__title">{{ section.settings.title }}</h1>
+    <div class="scratch__subtitle">{{ section.settings.subtitle }}</div>
+
+    <div class="scratch__pill">{{ section.settings.pill }}</div>
+
+    <div class="scratch__counter">
+      {{ section.settings.counter_prefix }}
+      <span class="scratch__counter-num" id="bottles-left">--</span>
+      {{ section.settings.counter_suffix }}
+    </div>
+
+    <div class="scratch-card" aria-live="polite">
+      <div class="scratch-card__prize" id="scratch-prize" hidden>
+        <div class="scratch-card__prize-banner">{{ section.settings.win_text }}</div>
+      </div>
+      <canvas class="scratch-card__canvas" id="scratch-canvas"></canvas>
+      <div class="scratch-card__cover-label" id="scratch-label">{{ section.settings.scratch_label }}</div>
+    </div>
+
+    <button class="scratch__cta button" id="scratch-cta" hidden>
+      {{ section.settings.cta_text }}
+    </button>
+  </div>
+</section>
+
+<script src="{{ 'scratch.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Scratch & Win",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "text", "id": "title", "label": "Title", "default": "July 4th Super Giveaway" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "SCRATCH & WIN" },
+    { "type": "text", "id": "pill", "label": "Pill text", "default": "EXCLUSIVE DISCOUNTS" },
+    { "type": "text", "id": "counter_prefix", "label": "Counter prefix", "default": "There are only" },
+    { "type": "text", "id": "counter_suffix", "label": "Counter suffix", "default": "free bottles left" },
+    { "type": "text", "id": "win_text", "label": "Win text", "default": "YOU WON UP TO 4 FREE BOTTLES" },
+    { "type": "text", "id": "scratch_label", "label": "Scratch label", "default": "Scratch Here" },
+    { "type": "text", "id": "cta_text", "label": "CTA text", "default": "CLAIM YOUR PRIZE" },
+    { "type": "url", "id": "cta_link", "label": "CTA link", "default": "/collections/all" },
+    { "type": "checkbox", "id": "cta_new_tab", "label": "Open CTA in new tab", "default": false }
+  ],
+  "presets": [{ "name": "Scratch & Win" }]
+}
+{% endschema %} 
