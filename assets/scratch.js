@@ -62,7 +62,7 @@
 
   function scratch(x,y){
     ctx.globalCompositeOperation = 'destination-out';
-    const r = Math.max(32, Math.floor(canvas.width * 0.035)); // bigger brush, responsive
+    const r = Math.max(42, Math.floor(canvas.width * 0.05)); // stronger brush
     const g = ctx.createRadialGradient(x,y,0,x,y,r);
     g.addColorStop(0,'rgba(0,0,0,1)');
     g.addColorStop(1,'rgba(0,0,0,0)');
@@ -70,6 +70,22 @@
     ctx.beginPath();
     ctx.arc(x,y,r,0,Math.PI*2);
     ctx.fill();
+    // draw soft line to connect points for smooth stroke
+    if(scratch.prev){
+      const steps = Math.max(1, Math.floor(Math.hypot(x-scratch.prev.x, y-scratch.prev.y)/ (r*0.6)));
+      for(let i=1;i<=steps;i++){
+        const xi = scratch.prev.x + (x - scratch.prev.x)*i/steps;
+        const yi = scratch.prev.y + (y - scratch.prev.y)*i/steps;
+        const gi = ctx.createRadialGradient(xi,yi,0,xi,yi,r);
+        gi.addColorStop(0,'rgba(0,0,0,1)');
+        gi.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle = gi;
+        ctx.beginPath();
+        ctx.arc(xi,yi,r,0,Math.PI*2);
+        ctx.fill();
+      }
+    }
+    scratch.prev = {x,y};
   }
 
   function getPos(e){
@@ -95,12 +111,12 @@
     try { launchConfetti(); } catch(_e) {}
   }
 
-  canvas.addEventListener('mousedown', e=>{ isDown=true; scratch(...Object.values(getPos(e))); });
-  canvas.addEventListener('mousemove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>55) finish(); }});
-  window.addEventListener('mouseup', ()=> isDown=false);
-  canvas.addEventListener('touchstart', e=>{ isDown=true; scratch(...Object.values(getPos(e))); e.preventDefault(); }, {passive:false});
-  canvas.addEventListener('touchmove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>55) finish(); } e.preventDefault(); }, {passive:false});
-  window.addEventListener('touchend', ()=> isDown=false);
+  canvas.addEventListener('mousedown', e=>{ isDown=true; scratch.prev=null; scratch(...Object.values(getPos(e))); });
+  canvas.addEventListener('mousemove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>50) finish(); }});
+  window.addEventListener('mouseup', ()=> { isDown=false; scratch.prev=null; });
+  canvas.addEventListener('touchstart', e=>{ isDown=true; scratch.prev=null; scratch(...Object.values(getPos(e))); e.preventDefault(); }, {passive:false});
+  canvas.addEventListener('touchmove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>50) finish(); } e.preventDefault(); }, {passive:false});
+  window.addEventListener('touchend', ()=> { isDown=false; scratch.prev=null; });
 
   window.addEventListener('resize', resize); resize();
   // Remove initial white overlay once scratch is ready
