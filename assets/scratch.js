@@ -127,6 +127,7 @@
     };
     // draw into on-screen canvas (destination-out) and into mask (opaque)
     ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillStyle = '#000';
     drawDot(x,y, ctx);
     maskCtx.fillStyle = '#000';
     drawDot(x,y, maskCtx);
