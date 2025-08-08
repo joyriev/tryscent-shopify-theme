@@ -14,8 +14,8 @@
 .scratch-card{position:relative;margin:0 auto 16px;width:100%;max-width:var(--scratch-card-w);aspect-ratio: 5/3;border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.12);background:#d5b46b}
 .scratch-card__canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:auto}
 .scratch-card__cover-label{display:none}
-.scratch-card__prize{position:absolute;inset:0;background:linear-gradient(135deg,#0e1b3d,#142a66);color:#fff;display:flex;align-items:center;justify-content:center}
-.scratch-card__prize-banner{font-weight:900;font-size:clamp(18px,2.6vw,26px);padding:10px 14px;color:#fff;text-align:center;max-width:90%}
+.scratch-card__prize{position:absolute;inset:0;background:transparent;display:flex;align-items:center;justify-content:center}
+.scratch-card__prize img{width:100%;height:100%;object-fit:contain;display:block}
 
 .scratch__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:var(--scratch-card-w);margin:8px auto 0;background:linear-gradient(90deg,#ffd24d,#ffe27a,#ffd24d);background-size:200% 100%;animation:shine 1.6s linear infinite;border:none;border-radius:12px;padding:16px 22px;font-weight:900;font-size:1.05rem;letter-spacing:.02em;color:#1d1d1f;cursor:pointer;visibility:hidden;box-shadow:0 10px 26px rgba(255,210,77,.45)}
 .scratch__cta.active{visibility:visible}
