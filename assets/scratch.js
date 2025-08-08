@@ -45,7 +45,8 @@
   function resize(){
     const rect = canvas.parentElement.getBoundingClientRect();
     canvas.width = rect.width; canvas.height = rect.height;
-    // draw cover first (Scratch Here), then reveal prize layer underneath
+    // ensure prize is hidden until cover is drawn
+    prize.hidden = true;
     drawCover(() => { renderPrize(); });
   }
 
@@ -95,7 +96,7 @@
 
   function scratch(x,y){
     ctx.globalCompositeOperation = 'destination-out';
-    const r = Math.max(44, Math.floor(canvas.width * 0.055)); // solid, strong brush
+    const r = Math.max(39, Math.floor(canvas.width * 0.055) - 5); // slightly smaller brush
     const drawDot = (dx,dy)=>{
       ctx.beginPath();
       ctx.arc(dx,dy,r,0,Math.PI*2);
