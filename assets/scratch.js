@@ -5,6 +5,7 @@
   // Counter logic (bottles left)
   const numEl = document.getElementById('bottles-left');
   const storeKey = section.dataset.storeKey || 'scratch_bottles_v1';
+  const storeEndKey = storeKey + '_end';
   function rand(min, max){ return Math.floor(Math.random()*(max-min+1))+min; }
 
   // Bottles logic: start 150, go down to 15 over ~2 minutes, decrement 1-4 each tick
@@ -13,12 +14,17 @@
   const TOTAL_MS = 120000; // 2 min
   const TICK_BASE = 3000; // 3s base
   const TICK_JITTER = 800; // +/- jitter
-  const endTime = Date.now() + TOTAL_MS;
 
   let current = Number(localStorage.getItem(storeKey));
-  if(!current || Number.isNaN(current) || current < COUNTER_TARGET || current > COUNTER_START){
+  let endTime = Number(localStorage.getItem(storeEndKey));
+  const nowInit = Date.now();
+  const invalidCurrent = !current || Number.isNaN(current) || current <= COUNTER_TARGET || current > COUNTER_START;
+  const expired = !endTime || Number.isNaN(endTime) || endTime <= nowInit;
+  if(invalidCurrent || expired){
     current = COUNTER_START;
+    endTime = nowInit + TOTAL_MS;
     localStorage.setItem(storeKey, String(current));
+    localStorage.setItem(storeEndKey, String(endTime));
   }
   function updateCounter(){ if(numEl) numEl.textContent = String(current); }
   updateCounter();
@@ -29,8 +35,7 @@
     if(remainMs <= 0 || current <= COUNTER_TARGET){
       current = COUNTER_TARGET;
       localStorage.setItem(storeKey, String(current));
-      updateCounter();
-      return;
+      return updateCounter();
     }
     const ticksLeft = Math.max(1, Math.ceil(remainMs / TICK_BASE));
     const decNeeded = current - COUNTER_TARGET;
@@ -193,10 +198,14 @@
       for(let i=0;i<14;i++) confettiPiece();
       if(Date.now()<end) requestAnimationFrame(frame);
     })();
-    // Fireworks bursts at random positions
-    for(let i=0;i<6;i++) setTimeout(()=>burst(), i*180);
-    // also one central burst
-    setTimeout(()=>burst(window.innerWidth/2, window.innerHeight*0.4), 80);
+    // Fireworks bursts at random positions (guard against multiple fires)
+    const root = document.getElementById('scratch-fireworks') || document.body;
+    if(!root.dataset.fired){
+      root.dataset.fired = '1';
+      for(let i=0;i<6;i++) setTimeout(()=>burst(), i*180);
+      setTimeout(()=>burst(window.innerWidth/2, window.innerHeight*0.4), 80);
+      setTimeout(()=> delete root.dataset.fired, 1800);
+    }
 
     function confettiPiece(){
       const div = document.createElement('div');
