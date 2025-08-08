@@ -48,7 +48,7 @@
     </div>
 
     <div class="scratch-card" aria-live="polite">
-      <div class="scratch-card__prize" id="scratch-prize" hidden>
+      <div class="scratch-card__prize" id="scratch-prize" hidden style="visibility:hidden;">
         <img src="{{ section.settings.prize_image_url }}" alt="Prize" style="max-width:90%;height:auto;display:block;" loading="eager">
       </div>
       <canvas class="scratch-card__canvas" id="scratch-canvas"></canvas>
@@ -84,7 +84,7 @@
     { "type": "text", "id": "cover_image_url", "label": "Cover image URL", "default": "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/685d9ba8949e920a7f30c753_jul4-scratch.webp?v=1754670890" },
     { "type": "text", "id": "cta_text", "label": "CTA text", "default": "CLAIM YOUR PRIZE" },
     { "type": "text", "id": "background_image_url", "label": "Background image URL", "default": "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ChatGPT_Image_8_sie_2025_19_23_39.png?v=1754673838" },
-    { "type": "url", "id": "cta_link", "label": "CTA link", "default": "/collections/all" },
+    { "type": "text", "id": "cta_link", "label": "CTA link", "default": "https://tryscnet.co/build-your-bundle" },
     { "type": "checkbox", "id": "cta_new_tab", "label": "Open CTA in new tab", "default": false }
   ],
   "enabled_on": {
