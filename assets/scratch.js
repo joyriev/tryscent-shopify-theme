@@ -45,9 +45,8 @@
   function resize(){
     const rect = canvas.parentElement.getBoundingClientRect();
     canvas.width = rect.width; canvas.height = rect.height;
-    // draw prize first, cover on top so both visible instantly
-    renderPrize();
-    drawCover();
+    // draw cover first (Scratch Here), then reveal prize layer underneath
+    drawCover(() => { renderPrize(); });
   }
 
   // Preload cover image before first paint if requested
@@ -68,14 +67,14 @@
     prize.hidden = false; prize.hidden = true; prize.hidden = false;
   }
 
-  function drawCover(){
+  function drawCover(after){
     const w = canvas.width, h = canvas.height;
     ctx.globalCompositeOperation = 'source-over';
     const cover = section.getAttribute('data-cover');
     if(cover){
       const img = new Image();
       img.crossOrigin = 'anonymous';
-      img.onload = ()=>{ ctx.drawImage(img, 0, 0, w, h); ready(); };
+      img.onload = ()=>{ ctx.drawImage(img, 0, 0, w, h); ready(); if(typeof after==='function') after(); };
       img.src = cover;
     } else {
       const grad = ctx.createLinearGradient(0,0,w,h);
@@ -84,7 +83,7 @@
       ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
       ctx.strokeStyle = 'rgba(255,255,255,.12)';
       for(let i=0;i<8;i++){ ctx.beginPath(); ctx.moveTo(0,i*h/8); ctx.lineTo(w,i*h/8); ctx.stroke(); }
-      ready();
+      ready(); if(typeof after==='function') after();
     }
   }
 
