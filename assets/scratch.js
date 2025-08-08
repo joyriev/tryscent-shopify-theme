@@ -67,6 +67,9 @@
     setTimeout(() => { prize.hidden = false; }, 1);
   }
 
+  // Force prize element to be visually hidden until cover is drawn
+  prize.style.visibility = 'hidden';
+
   function drawCover(after){
     const w = canvas.width, h = canvas.height;
     ctx.globalCompositeOperation = 'source-over';
@@ -85,10 +88,10 @@
     if(cover){
       const img = new Image();
       img.crossOrigin = 'anonymous';
-      img.onload = ()=>{ ctx.globalCompositeOperation = 'source-over'; ctx.drawImage(img, 0, 0, w, h); if(typeof after==='function') setTimeout(after, 1); };
+      img.onload = ()=>{ ctx.globalCompositeOperation = 'source-over'; ctx.drawImage(img, 0, 0, w, h); if(typeof after==='function') setTimeout(() => { prize.style.visibility = 'visible'; after(); }, 1); };
       img.src = cover;
     } else {
-      if(typeof after==='function') setTimeout(after, 1);
+      if(typeof after==='function') setTimeout(() => { prize.style.visibility = 'visible'; after(); }, 1);
     }
   }
 
