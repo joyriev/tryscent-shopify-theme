@@ -15,7 +15,7 @@
 .scratch-card__canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:auto;z-index:2}
 .scratch-card__cover-label{display:none}
 .scratch-card__prize{position:absolute;inset:0;background:transparent;display:flex;align-items:center;justify-content:center;z-index:1}
-.scratch-card__prize img{width:100%;height:100%;object-fit:cover;object-position:top center;transform:scale(1.08);display:block}
+.scratch-card__prize img{width:100%;height:100%;object-fit:cover;object-position:top center;transform:scale(1.15);transform-origin:center center;display:block}
 
 .scratch__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:var(--scratch-card-w);margin:8px auto 0;background:linear-gradient(90deg,#ffd24d,#ffe27a,#ffd24d);background-size:200% 100%;animation:shine 1.6s linear infinite;border:none;border-radius:12px;padding:16px 22px;font-weight:900;font-size:1.05rem;letter-spacing:.02em;color:#1d1d1f;cursor:pointer;visibility:hidden;box-shadow:0 10px 26px rgba(255,210,77,.45)}
 .scratch__cta.active{visibility:visible}
