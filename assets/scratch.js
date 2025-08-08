@@ -75,7 +75,7 @@
     if(cover){
       const img = new Image();
       img.crossOrigin = 'anonymous';
-      img.onload = ()=>{ ctx.drawImage(img, 0, 0, w, h); ready(); if(typeof after==='function') after(); };
+      img.onload = ()=>{ ctx.drawImage(img, 0, 0, w, h); ready(); if(typeof after==='function') setTimeout(after, 1); };
       img.src = cover;
     } else {
       const grad = ctx.createLinearGradient(0,0,w,h);
@@ -84,7 +84,7 @@
       ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
       ctx.strokeStyle = 'rgba(255,255,255,.12)';
       for(let i=0;i<8;i++){ ctx.beginPath(); ctx.moveTo(0,i*h/8); ctx.lineTo(w,i*h/8); ctx.stroke(); }
-      ready(); if(typeof after==='function') after();
+      ready(); if(typeof after==='function') setTimeout(after, 1);
     }
   }
 
