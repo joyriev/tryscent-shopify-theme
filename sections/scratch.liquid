@@ -1,5 +1,10 @@
 {{ 'scratch.css' | asset_url | stylesheet_tag }}
 
+<style>
+  .scratch-page .shopify-section { display: none !important; }
+  #shopify-section-{{ section.id }} { display: block !important; }
+</style>
+
 <section class="scratch shopify-section--scratch" id="scratch-section"
   data-start-min="30"
   data-start-max="60"
