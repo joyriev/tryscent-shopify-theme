@@ -50,6 +50,18 @@
     drawCover();
   }
 
+  // Preload cover image before first paint if requested
+  (function preload(){
+    const cover = section.getAttribute('data-cover');
+    const want = section.getAttribute('data-cover-preload') === 'true';
+    if(!want || !cover) return;
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = cover;
+    document.head.appendChild(link);
+  })();
+
   function renderPrize(){
     // nothing to preload here, prize is separate layer underneath canvas
     // we trigger reflow by toggling hidden attr
