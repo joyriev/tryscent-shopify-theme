@@ -1,6 +1,6 @@
 {{ 'scratch.css' | asset_url | stylesheet_tag }}
 
-<section class="scratch" id="scratch-section"
+<section class="scratch shopify-section--scratch" id="scratch-section"
   data-start-min="30"
   data-start-max="60"
   data-decrement-min="1"
@@ -42,6 +42,11 @@
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.body.classList.add('scratch-page');
+  });
+</script>
 <script src="{{ 'scratch.js' | asset_url }}" defer></script>
 
 {% schema %}
@@ -62,6 +67,9 @@
     { "type": "url", "id": "cta_link", "label": "CTA link", "default": "/collections/all" },
     { "type": "checkbox", "id": "cta_new_tab", "label": "Open CTA in new tab", "default": false }
   ],
+  "enabled_on": {
+    "templates": ["page", "index"]
+  },
   "presets": [{ "name": "Scratch & Win" }]
 }
 {% endschema %} 
