@@ -36,7 +36,7 @@
       <img class="scratch__logo" src="{{ section.settings.logo | image_url: width: 180 }}" alt="{{ section.settings.logo.alt | escape }}" loading="lazy" width="180" height="auto">
     {% endif %}
 
-    <h1 class="scratch__title">{{ section.settings.title }}</h1>
+    <h1 class="scratch__title">{{ section.settings.title | default: 'Summer Super Giveaway' }}</h1>
     <div class="scratch__subtitle">{{ section.settings.subtitle }}</div>
 
     <div class="scratch__pill">{{ section.settings.pill }}</div>
@@ -75,7 +75,7 @@
   "class": "section",
   "settings": [
     { "type": "image_picker", "id": "logo", "label": "Logo" },
-    { "type": "text", "id": "title", "label": "Title", "default": "July 4th Super Giveaway" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Summer Super Giveaway" },
     { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "SCRATCH & WIN" },
     { "type": "text", "id": "pill", "label": "Pill text", "default": "EXCLUSIVE DISCOUNTS" },
     { "type": "text", "id": "counter_prefix", "label": "Counter prefix", "default": "There are only" },
