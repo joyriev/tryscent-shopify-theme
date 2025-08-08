@@ -63,7 +63,7 @@
       type="submit"
       name="add"
       value="1"
-      class="atc-button flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
+      class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
       aria-label="Add to cart"
       data-price="{{ product.selected_or_first_available_variant.price }}"
       data-compare-at-price="{{ product.selected_or_first_available_variant.compare_at_price }}">
@@ -95,7 +95,7 @@
   const atcButton = document.querySelector('.atc-button');
   const variantIdInput = document.querySelector('.product-variant-id');
   const currentPriceEl = document.querySelector('.current-price');
-  const comparePriceEl = document.querySelector('.compare-price');
+  const comparePriceEl = document.querySelectorAll('.compare-price');
 
   // Format price from cents to currency with symbol
   function formatPrice(price) {
@@ -134,7 +134,7 @@
       atcButton.setAttribute('data-compare-at-price', compareAtPrice);
 
       // Update price display
-      currentPriceEl.textContent = formatPrice(price);
+      currentPriceEl.forEach(el => el.textContent = formattedPrice);
       
       // Update compare at price display
       if (compareAtPrice && compareAtPrice > price) {
