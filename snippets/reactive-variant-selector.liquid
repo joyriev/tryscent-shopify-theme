@@ -60,7 +60,7 @@
   <div class="bg-white p-1.5 rounded-full flex shadow items-center">
     <button 
       id="decrement-quantity"
-      class="quantity__button cta_product_from_submit_btn !bg-black size-10 rounded-full disabled:opacity-50 disabled:cursor-not-allowed" 
+      class="quantity__button !bg-black size-10 rounded-full disabled:opacity-50 disabled:cursor-not-allowed" 
       type="button"
       disabled
       aria-label="Decrease quantity"
@@ -126,7 +126,7 @@
       type="submit"
       name="add"
       value="1"
-      class="atc-button flex flex-wrap items-center !mb-0 my-4 text-2xl !pb-3 !pt-3 rounded-full button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
+      class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 my-4 text-2xl !pb-3 !pt-3 rounded-full button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
       aria-label="Add to cart"
       data-price="{{ product.selected_or_first_available_variant.price }}"
       data-compare-at-price="{{ product.selected_or_first_available_variant.compare_at_price }}">
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Product and price elements
   const variantButtons = document.querySelectorAll('.variant-button');
   const variantIdInput = document.querySelector('.product-variant-id');
-  const currentPriceEl = document.querySelector('.current-price');
+  const currentPriceEl = document.querySelectorAll('.current-price');
   
   // Initialize current variant price
   let currentVariantPrice = {{ product.selected_or_first_available_variant.price }};
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const formattedPrice = formatPrice(totalPrice);
     
     // Update the price display
-    currentPriceEl.textContent = formattedPrice;
+    currentPriceEl.forEach(el => el.textContent = formattedPrice);
   }
 
   // Handle quantity changes
