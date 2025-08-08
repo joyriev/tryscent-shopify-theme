@@ -50,14 +50,21 @@
 
   function drawCover(){
     const w = canvas.width, h = canvas.height;
-    const grad = ctx.createLinearGradient(0,0,w,h);
-    grad.addColorStop(0,'#e6c679');
-    grad.addColorStop(1,'#b89549');
     ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
-    // subtle noise lines
-    ctx.strokeStyle = 'rgba(255,255,255,.12)';
-    for(let i=0;i<8;i++){ ctx.beginPath(); ctx.moveTo(0,i*h/8); ctx.lineTo(w,i*h/8); ctx.stroke(); }
+    const cover = section.getAttribute('data-cover');
+    if(cover){
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = ()=>{ ctx.drawImage(img, 0, 0, w, h); };
+      img.src = cover;
+    } else {
+      const grad = ctx.createLinearGradient(0,0,w,h);
+      grad.addColorStop(0,'#e6c679');
+      grad.addColorStop(1,'#b89549');
+      ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
+      ctx.strokeStyle = 'rgba(255,255,255,.12)';
+      for(let i=0;i<8;i++){ ctx.beginPath(); ctx.moveTo(0,i*h/8); ctx.lineTo(w,i*h/8); ctx.stroke(); }
+    }
   }
 
   function scratch(x,y){
