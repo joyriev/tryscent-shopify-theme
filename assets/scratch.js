@@ -179,6 +179,8 @@
     })();
     // Fireworks bursts at random positions
     for(let i=0;i<6;i++) setTimeout(()=>burst(), i*180);
+    // also one central burst
+    setTimeout(()=>burst(window.innerWidth/2, window.innerHeight*0.4), 80);
 
     function confettiPiece(){
       const div = document.createElement('div');
@@ -190,29 +192,27 @@
       div.animate([{transform:div.style.transform, top:'-10px'},{transform:'rotate(720deg)', top:'110vh', left:`calc(${div.style.left} + ${drift}px)`}],{duration:fall, easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish=()=>div.remove();
     }
 
-    function burst(){
-      const cx = Math.random()*window.innerWidth;
-      const cy = Math.random()*window.innerHeight*0.5 + window.innerHeight*0.1;
+    function burst(cx, cy){
+      const root = document.getElementById('scratch-fireworks') || document.body;
+      if(typeof cx!=='number') cx = Math.random()*window.innerWidth;
+      if(typeof cy!=='number') cy = Math.random()*window.innerHeight*0.5 + window.innerHeight*0.1;
       const particles = 26;
       for(let i=0;i<particles;i++){
         const dot = document.createElement('div');
-        dot.style.position='fixed'; dot.style.left=cx+'px'; dot.style.top=cy+'px';
+        dot.style.position='absolute'; dot.style.left=cx+'px'; dot.style.top=cy+'px';
         dot.style.width='6px'; dot.style.height='6px'; dot.style.borderRadius='50%';
         dot.style.background=colors[Math.floor(Math.random()*colors.length)];
-        dot.style.zIndex='9999';
-        document.body.appendChild(dot);
+        dot.style.zIndex='1';
+        root.appendChild(dot);
         const ang = (Math.PI*2) * (i/particles);
         const dist = 80 + Math.random()*60;
         const x2 = cx + Math.cos(ang)*dist;
         const y2 = cy + Math.sin(ang)*dist;
         dot.animate([
-          { transform:'scale(0.6)', opacity:1, offset:0},
+          { transform:'translate(0,0) scale(0.6)', opacity:1, offset:0},
           { transform:'translate('+(x2-cx)+'px,'+(y2-cy)+'px) scale(1)', opacity:1, offset:0.7},
           { transform:'translate('+(x2-cx)+'px,'+(y2-cy)+'px) scale(0.2)', opacity:0, offset:1}
         ], { duration:900 + Math.random()*400, easing:'cubic-bezier(.2,.7,.2,1)' }).onfinish=()=>dot.remove();
       }
     }
   }
-
-  window.addEventListener('resize', resize); resize();
-})(); 
