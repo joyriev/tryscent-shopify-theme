@@ -45,7 +45,15 @@
   function resize(){
     const rect = canvas.parentElement.getBoundingClientRect();
     canvas.width = rect.width; canvas.height = rect.height;
+    // draw prize first, cover on top so both visible instantly
+    renderPrize();
     drawCover();
+  }
+
+  function renderPrize(){
+    // nothing to preload here, prize is separate layer underneath canvas
+    // we trigger reflow by toggling hidden attr
+    prize.hidden = false; prize.hidden = true; prize.hidden = false;
   }
 
   function drawCover(){
@@ -69,27 +77,26 @@
 
   function scratch(x,y){
     ctx.globalCompositeOperation = 'destination-out';
-    const r = Math.max(42, Math.floor(canvas.width * 0.05)); // stronger brush
-    const g = ctx.createRadialGradient(x,y,0,x,y,r);
-    g.addColorStop(0,'rgba(0,0,0,1)');
-    g.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle = g;
-    ctx.beginPath();
-    ctx.arc(x,y,r,0,Math.PI*2);
-    ctx.fill();
-    // draw soft line to connect points for smooth stroke
+    const r = Math.max(48, Math.floor(canvas.width * 0.06)); // even stronger brush
+    // draw a solid series of overlapping circles to simulate continuous line
+    const drawDot = (dx,dy)=>{
+      const g = ctx.createRadialGradient(dx,dy,0,dx,dy,r);
+      g.addColorStop(0,'rgba(0,0,0,1)');
+      g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(dx,dy,r,0,Math.PI*2);
+      ctx.fill();
+    };
+    drawDot(x,y);
     if(scratch.prev){
-      const steps = Math.max(1, Math.floor(Math.hypot(x-scratch.prev.x, y-scratch.prev.y)/ (r*0.6)));
-      for(let i=1;i<=steps;i++){
-        const xi = scratch.prev.x + (x - scratch.prev.x)*i/steps;
-        const yi = scratch.prev.y + (y - scratch.prev.y)*i/steps;
-        const gi = ctx.createRadialGradient(xi,yi,0,xi,yi,r);
-        gi.addColorStop(0,'rgba(0,0,0,1)');
-        gi.addColorStop(1,'rgba(0,0,0,0)');
-        ctx.fillStyle = gi;
-        ctx.beginPath();
-        ctx.arc(xi,yi,r,0,Math.PI*2);
-        ctx.fill();
+      const dist = Math.hypot(x-scratch.prev.x, y-scratch.prev.y);
+      const step = r*0.5; // tight spacing for full coverage
+      const count = Math.max(1, Math.floor(dist/step));
+      for(let i=1;i<=count;i++){
+        const xi = scratch.prev.x + (x - scratch.prev.x)*i/count;
+        const yi = scratch.prev.y + (y - scratch.prev.y)*i/count;
+        drawDot(xi,yi);
       }
     }
     scratch.prev = {x,y};
