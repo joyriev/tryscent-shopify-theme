@@ -63,7 +63,7 @@
     if(cover){
       const img = new Image();
       img.crossOrigin = 'anonymous';
-      img.onload = ()=>{ ctx.drawImage(img, 0, 0, w, h); };
+      img.onload = ()=>{ ctx.drawImage(img, 0, 0, w, h); ready(); };
       img.src = cover;
     } else {
       const grad = ctx.createLinearGradient(0,0,w,h);
@@ -72,18 +72,20 @@
       ctx.fillStyle = grad; ctx.fillRect(0,0,w,h);
       ctx.strokeStyle = 'rgba(255,255,255,.12)';
       for(let i=0;i<8;i++){ ctx.beginPath(); ctx.moveTo(0,i*h/8); ctx.lineTo(w,i*h/8); ctx.stroke(); }
+      ready();
     }
+  }
+
+  function ready(){
+    // Remove initial white overlay once image/cover is drawn
+    const loader = document.getElementById('scratch-loader');
+    if(loader){ loader.style.opacity = '0'; setTimeout(()=>loader.remove(), 150); }
   }
 
   function scratch(x,y){
     ctx.globalCompositeOperation = 'destination-out';
-    const r = Math.max(48, Math.floor(canvas.width * 0.06)); // even stronger brush
-    // draw a solid series of overlapping circles to simulate continuous line
+    const r = Math.max(44, Math.floor(canvas.width * 0.055)); // solid, strong brush
     const drawDot = (dx,dy)=>{
-      const g = ctx.createRadialGradient(dx,dy,0,dx,dy,r);
-      g.addColorStop(0,'rgba(0,0,0,1)');
-      g.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle = g;
       ctx.beginPath();
       ctx.arc(dx,dy,r,0,Math.PI*2);
       ctx.fill();
@@ -91,7 +93,7 @@
     drawDot(x,y);
     if(scratch.prev){
       const dist = Math.hypot(x-scratch.prev.x, y-scratch.prev.y);
-      const step = r*0.5; // tight spacing for full coverage
+      const step = r*0.45; // very tight spacing → full coverage line
       const count = Math.max(1, Math.floor(dist/step));
       for(let i=1;i<=count;i++){
         const xi = scratch.prev.x + (x - scratch.prev.x)*i/count;
@@ -126,10 +128,10 @@
   }
 
   canvas.addEventListener('mousedown', e=>{ isDown=true; scratch.prev=null; scratch(...Object.values(getPos(e))); });
-  canvas.addEventListener('mousemove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>50) finish(); }});
+  canvas.addEventListener('mousemove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>55) finish(); }});
   window.addEventListener('mouseup', ()=> { isDown=false; scratch.prev=null; });
   canvas.addEventListener('touchstart', e=>{ isDown=true; scratch.prev=null; scratch(...Object.values(getPos(e))); e.preventDefault(); }, {passive:false});
-  canvas.addEventListener('touchmove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>50) finish(); } e.preventDefault(); }, {passive:false});
+  canvas.addEventListener('touchmove', e=>{ if(isDown){ scratch(...Object.values(getPos(e))); if(percentRevealed()>55) finish(); } e.preventDefault(); }, {passive:false});
   window.addEventListener('touchend', ()=> { isDown=false; scratch.prev=null; });
 
   window.addEventListener('resize', resize); resize();
