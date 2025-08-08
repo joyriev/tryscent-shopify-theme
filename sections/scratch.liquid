@@ -4,19 +4,16 @@
   /* Hide all sections by default on this page, but keep this one */
   .scratch-page .shopify-section { display: none !important; }
   #shopify-section-{{ section.id }} { display: block !important; }
-  /* Hide common Hextom bars (fsb/announcement/ub) when this section is present */
-  body:has(#shopify-section-{{ section.id }}) #fsb_bar,
-  body:has(#shopify-section-{{ section.id }}) #fsb_container,
-  body:has(#shopify-section-{{ section.id }}) [id*="hextom"],
-  body:has(#shopify-section-{{ section.id }}) [class*="hextom"],
-  body:has(#shopify-section-{{ section.id }}) [id*="ub_bar"],
-  body:has(#shopify-section-{{ section.id }}) [class*="ub-bar"] {
+  /* Force hide Hextom/Easy Announcement/UB bars on this page */
+  #epb_container, #epb_background, #epb_bar, [id^="epb_"], [class*="epb_"],
+  #fsb_bar, #fsb_container, [id*="hextom"], [class*="hextom"], [id*="ub_bar"], [class*="ub-bar"] {
     display: none !important;
   }
   /* Full-white overlay to prevent flash before isolation applies */
   .scratch-loader{position:fixed;inset:0;background:#fff;z-index:99999}
 </style>
 
+<script>(function(){try{document.body.classList.add('scratch-page');}catch(e){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('scratch-page')});}})();</script>
 <div id="scratch-loader" class="scratch-loader" aria-hidden="true"></div>
 
 <section class="scratch shopify-section--scratch" id="scratch-section"
