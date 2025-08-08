@@ -62,8 +62,13 @@
 
   function scratch(x,y){
     ctx.globalCompositeOperation = 'destination-out';
+    const r = 26; // smoother brush
+    const g = ctx.createRadialGradient(x,y,0,x,y,r);
+    g.addColorStop(0,'rgba(0,0,0,0.9)');
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle = g;
     ctx.beginPath();
-    ctx.arc(x,y,24,0,Math.PI*2);
+    ctx.arc(x,y,r,0,Math.PI*2);
     ctx.fill();
   }
 
@@ -84,8 +89,9 @@
     canvas.style.pointerEvents = 'none';
     label.hidden = true;
     prize.hidden = false;
-    if(cta){ cta.hidden = false; }
-    // simple confetti
+    if(cta){ cta.classList.add('active'); }
+    const counter = document.querySelector('.scratch__counter');
+    if(counter) counter.classList.add('active');
     try { launchConfetti(); } catch(_e) {}
   }
 
