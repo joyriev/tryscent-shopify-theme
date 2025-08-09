@@ -8,8 +8,6 @@
   {% assign bundle_collection = collections.first %}
 {% endunless %}
 
-{% assign current_currency = localization.country.currency.iso_code | default: shop.currency %}
-
 
 
 <div class="product-bundler" data-bundler>
@@ -78,29 +76,29 @@
         <div class="bundle-type-buttons">
           <button class="bundle-type-btn active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
             <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
-            <span class="bundle-total-price">{% if current_currency == "USD" %}{{ base_price | times: 2 | money | strip_html }}{% else %}{{ base_price | times: 2 | money }}{% endif %}</span>
-            <span class="bundle-price" id="price-2+1">{% if current_currency == 'USD' %}{{ base_price | times: 2 | divided_by: 3 | money | strip_html }}{% else %}{{ base_price | times: 2 | divided_by: 3 | money }}{% endif %} per bottle</span>
-            <div class="bundle-savings" id="savings-2+1">SAVE {% if current_currency == "USD" %}{{ base_price | money | strip_html }}{% else %}{{ base_price | money }}{% endif %}</div>
+            <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
+            <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
+            <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
           </button>
           <button class="bundle-type-btn" data-bundle-type="3+2" onclick="selectBundleType('3+2')">
             <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
-            <span class="bundle-total-price">{% if current_currency == "USD" %}{{ base_price | times: 3 | money | strip_html }}{% else %}{{ base_price | times: 3 | money }}{% endif %}</span>
-            <span class="bundle-price" id="price-3+2">{% if current_currency == 'USD' %}{{ base_price | times: 3 | divided_by: 5 | money | strip_html }}{% else %}{{ base_price | times: 3 | divided_by: 5 | money }}{% endif %} per bottle</span>
-            <div class="bundle-savings" id="savings-3+2">SAVE {% if current_currency == "USD" %}{{ base_price | times: 2 | money | strip_html }}{% else %}{{ base_price | times: 2 | money }}{% endif %}</div>
+            <span class="bundle-total-price">{{ base_price | times: 3 | money }}</span>
+            <span class="bundle-price" id="price-3+2">{{ base_price | times: 3 | divided_by: 5 | money }} per bottle</span>
+            <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
           </button>
           <button class="bundle-type-btn" data-bundle-type="4+3" onclick="selectBundleType('4+3')">
                               <div class="bundle-badge bestseller">FREE SHIPPING</div>
             <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
-            <span class="bundle-total-price">{% if current_currency == "USD" %}{{ base_price | times: 4 | money | strip_html }}{% else %}{{ base_price | times: 4 | money }}{% endif %}</span>
-            <span class="bundle-price" id="price-4+3">{% if current_currency == 'USD' %}{{ base_price | times: 4 | divided_by: 7 | money | strip_html }}{% else %}{{ base_price | times: 4 | divided_by: 7 | money }}{% endif %} per bottle</span>
-            <div class="bundle-savings" id="savings-4+3">SAVE {% if current_currency == "USD" %}{{ base_price | times: 3 | money | strip_html }}{% else %}{{ base_price | times: 3 | money }}{% endif %}</div>
+            <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
+            <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | divided_by: 7 | money }} per bottle</span>
+            <div class="bundle-savings" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
           </button>
           <button class="bundle-type-btn" data-bundle-type="5+4" onclick="selectBundleType('5+4')">
             <div class="bundle-badge best-value">Best Value</div>
             <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
-            <span class="bundle-total-price">{% if current_currency == 'USD' %}{{ base_price | times: 5 | money | strip_html }}{% else %}{{ base_price | times: 5 | money }}{% endif %}</span>
-            <span class="bundle-price" id="price-5+4">{% if current_currency == 'USD' %}{{ base_price | times: 5 | divided_by: 9 | money | strip_html }}{% else %}{{ base_price | times: 5 | divided_by: 9 | money }}{% endif %} per bottle</span>
-            <div class="bundle-savings" id="savings-5+4">SAVE {% if current_currency == "USD" %}{{ base_price | times: 4 | money | strip_html }}{% else %}{{ base_price | times: 4 | money }}{% endif %}</div>
+            <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
+            <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | divided_by: 9 | money }} per bottle</span>
+            <div class="bundle-savings" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
           </button>
         </div>
       </div>
@@ -128,8 +126,6 @@
           {% unless default_variant %}
             {% assign default_variant = product.variants.first %}
           {% endunless %}
-
-{% assign current_currency = localization.country.currency.iso_code | default: shop.currency %}
           
               <div class="product-card bundler-product" data-product-id="{{ product.id }}" data-variant-id="{{ default_variant.id }}" data-category="{{ product.tags | join: ' ' | downcase }}" data-current-variant="{{ currentVariant }}">
                 <!-- Product Badge -->
@@ -175,15 +171,15 @@
                     {% assign variant_50ml = product.variants | where: 'title', '50ML' | first %}
                     {% assign variant_100ml = product.variants | where: 'title', '100ML' | first %}
                     {% if default_variant.compare_at_price > default_variant.price %}
-                      <span class="product-compare-price">{% if current_currency == 'USD' %}{{ default_variant.compare_at_price | money | strip_html }}{% else %}{{ default_variant.compare_at_price | money }}{% endif %}</span>
+                      <span class="product-compare-price">{{ default_variant.compare_at_price | money }}</span>
                     {% endif %}
                     <span class="product-price" id="price-{{ product.id }}" 
-                          data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money | strip_html }}{% else %}{{ default_variant.price | money | strip_html }}{% endif %}" 
-                          data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money | strip_html }}{% else %}{{ default_variant.price | money | strip_html }}{% endif %}" 
-                          data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money | strip_html }}{% else %}{{ default_variant.price | money | strip_html }}{% endif %}"
+                          data-30ml="{% if variant_30ml %}{{ variant_30ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" 
+                          data-50ml="{% if variant_50ml %}{{ variant_50ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}" 
+                          data-100ml="{% if variant_100ml %}{{ variant_100ml.price | money }}{% else %}{{ default_variant.price | money }}{% endif %}"
                           data-variant-30ml="{% if variant_30ml %}{{ variant_30ml.id }}{% else %}{{ default_variant.id }}{% endif %}"
                           data-variant-50ml="{% if variant_50ml %}{{ variant_50ml.id }}{% else %}{{ default_variant.id }}{% endif %}"
-                          data-variant-100ml="{% if variant_100ml %}{{ variant_100ml.id }}{% else %}{{ default_variant.id }}{% endif %}">{% if current_currency == 'USD' %}{{ default_variant.price | money | strip_html }}{% else %}{{ default_variant.price | money | strip_html }}{% endif %}</span>
+                          data-variant-100ml="{% if variant_100ml %}{{ variant_100ml.id }}{% else %}{{ default_variant.id }}{% endif %}">{{ default_variant.price | money }}</span>
               </div>
                   
                   <!-- Add to Bundle Button -->
@@ -4035,26 +4031,3 @@ function applyFilters() {
   });
 }
 </script> 
-
-<script>
-(function(){
-  var currentCurrency = '{{ localization.country.currency.iso_code | default: shop.currency }}';
-  if (currentCurrency === 'USD') {
-    var root = document.querySelector('.product-bundler') || document.body;
-    function sanitize(el){ if(!el) return; el.textContent = el.textContent; }
-    function sanitizeAll(){
-      var sels = '.bundle-total-price,.bundle-price,.bundle-savings,.product-price,.product-compare-price';
-      root.querySelectorAll(sels).forEach(sanitize);
-    }
-    // Initial pass
-    document.addEventListener('DOMContentLoaded', sanitizeAll);
-    // After any async updates
-    ['bundle:update','bundle:prices:update'].forEach(function(evt){
-      document.addEventListener(evt, sanitizeAll);
-    });
-    // Observe mutations within the bundler only
-    var obs = new MutationObserver(function(){ sanitizeAll(); });
-    obs.observe(root, { subtree: true, childList: true, characterData: true });
-  }
-})();
-</script>
