@@ -2511,7 +2511,7 @@ window.selectProduct = function(productId, passedVariantId) {
   // Use current selected variant instead of passed variantId
   const priceElement = productCard.querySelector('.product-price');
   const variantKey = currentVariant.toLowerCase().replace('ml', 'ml');
-  const currentVariantPrice = priceElement ? priceElement.dataset[variantKey] || priceElement.innerHTML : '';
+  const currentVariantPrice = priceElement ? priceElement.dataset[variantKey] || priceElement.textContent : '';
   
   // Update product card variant ID to current variant
   productCard.dataset.variantId = currentVariant;
@@ -2579,7 +2579,7 @@ window.selectProduct = function(productId, passedVariantId) {
     
     // Get price
     const priceElement = productCard.querySelector('.product-price');
-    const price = priceElement ? priceElement.innerHTML : '';
+    const price = priceElement ? priceElement.textContent : '';
     
     // Get variant ID for current variant
     const variantKey = `variant-${currentVariant.toLowerCase()}`;
@@ -3274,7 +3274,7 @@ function cleanDataAttributes() {
     if (rawPrice) {
       // Remove any HTML tags and get clean text
       const cleanPrice = rawPrice.replace(/<[^>]*>/g, '');
-      priceElement.innerHTML = cleanPrice;
+      priceElement.textContent = cleanPrice;
     }
   });
   
@@ -3296,7 +3296,7 @@ function updateProductPrices(variant) {
     const variantId = priceElement.getAttribute(`data-variant-${variantData}`);
     
     if (priceData) {
-      priceElement.innerHTML = priceData;
+      priceElement.textContent = priceData;
       // Update variant ID in card
       card.setAttribute('data-variant-id', variantId);
     }
@@ -3341,7 +3341,7 @@ function updateBundlePrices() {
     if (totalPriceElement) {
       const totalPrice = config.buy * basePrice;
       const totalPriceText = currentPrice.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
-      totalpriceElement.innerHTML = totalPriceText;
+      totalPriceElement.textContent = totalPriceText;
     }
     
     // Update per bottle price
@@ -3455,7 +3455,7 @@ document.addEventListener('change', function(e) {
     const priceElement = productCard.querySelector('.product-price');
     
     // Update price display
-    priceElement.innerHTML = selectedOption.dataset.price;
+    priceElement.textContent = selectedOption.dataset.price;
     
     // Update selected product if it's in the selection
     const selectedProduct = selectedProducts.find(p => p.id === productId);
