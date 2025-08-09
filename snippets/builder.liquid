@@ -3296,7 +3296,7 @@ function updateProductPrices(variant) {
     const variantId = priceElement.getAttribute(`data-variant-${variantData}`);
     
     if (priceData) {
-      priceElement.textContent = priceData;
+      priceElement.innerHTML = priceData;
       // Update variant ID in card
       card.setAttribute('data-variant-id', variantId);
     }
@@ -3341,7 +3341,7 @@ function updateBundlePrices() {
     if (totalPriceElement) {
       const totalPrice = config.buy * basePrice;
       const totalPriceText = currentPrice.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
-      totalPriceElement.textContent = totalPriceText;
+      totalPriceElement.innerHTML = totalPriceText;
     }
     
     // Update per bottle price
@@ -3349,7 +3349,7 @@ function updateBundlePrices() {
     if (perBottleElement) {
       const perBottlePrice = (config.buy * basePrice) / config.total;
       const perBottleText = currentPrice.replace(/[\d,]+\.?\d*/, perBottlePrice.toFixed(2));
-      perBottleElement.textContent = perBottleText + ' per bottle';
+      perBottleElement.innerHTML = perBottleText + ' per bottle';
     }
     
     // Update savings
@@ -3455,7 +3455,7 @@ document.addEventListener('change', function(e) {
     const priceElement = productCard.querySelector('.product-price');
     
     // Update price display
-    priceElement.textContent = selectedOption.dataset.price;
+    priceElement.innerHTML = selectedOption.dataset.price;
     
     // Update selected product if it's in the selection
     const selectedProduct = selectedProducts.find(p => p.id === productId);
