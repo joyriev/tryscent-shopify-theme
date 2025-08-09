@@ -3341,7 +3341,7 @@ function updateBundlePrices() {
     if (totalPriceElement) {
       const totalPrice = config.buy * basePrice;
       const totalPriceText = currentPrice.replace(/[\d,]+\.?\d*/, totalPrice.toFixed(2));
-      totalPriceElement.textContent = totalPriceText;
+      totalPriceElement.innerHTML = totalPriceText;
     }
     
     // Update per bottle price
