@@ -243,4 +243,16 @@
   }
 
   window.addEventListener('resize', resize); resize();
+
+  // CTA click navigation
+  if(cta){
+    cta.addEventListener('click', function(e){
+      e.preventDefault();
+      const cfgLink = section.getAttribute('data-cta-link') || 'https://tryscent.co/pages/build-your-bundle/';
+      const openNew = section.getAttribute('data-cta-new-tab') === 'true';
+      try {
+        if(openNew) window.open(cfgLink, '_blank'); else window.location.assign(cfgLink);
+      } catch(_e){ window.location.href = cfgLink; }
+    });
+  }
 })(); 
