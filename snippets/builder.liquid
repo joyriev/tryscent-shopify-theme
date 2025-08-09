@@ -3274,7 +3274,7 @@ function cleanDataAttributes() {
     if (rawPrice) {
       // Remove any HTML tags and get clean text
       const cleanPrice = rawPrice.replace(/<[^>]*>/g, '');
-      priceElement.textContent = cleanPrice;
+      priceElement.innerHTML = cleanPrice;
     }
   });
   
