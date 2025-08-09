@@ -4048,6 +4048,10 @@ function applyFilters() {
     }
     // Initial pass
     document.addEventListener('DOMContentLoaded', sanitizeAll);
+    window.addEventListener('load', sanitizeAll);
+    document.addEventListener('shopify:section:load', sanitizeAll);
+    var sanitizeInterval = setInterval(sanitizeAll, 500);
+    setTimeout(function(){ clearInterval(sanitizeInterval); }, 15000);
     // After any async updates
     ['bundle:update','bundle:prices:update'].forEach(function(evt){
       document.addEventListener(evt, sanitizeAll);
