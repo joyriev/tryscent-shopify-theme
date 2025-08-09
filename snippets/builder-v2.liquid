@@ -3300,7 +3300,7 @@ function updateProductPrices(variant) {
     const variantId = priceElement.getAttribute(`data-variant-${variantData}`);
     
     if (priceData) {
-      priceElement.textContent = (priceData||'').replace(/<[^>]*>/g, '');
+      priceElement.textContent = priceData;
       // Update variant ID in card
       card.setAttribute('data-variant-id', variantId);
     }
@@ -3313,7 +3313,7 @@ function updateBundlePrices() {
   const firstProduct = document.querySelector('.product-price');
   if (!firstProduct) return;
   
-  const currentPrice = (firstProduct.textContent||'').replace(/<[^>]*>/g, '');
+  const currentPrice = firstProduct.textContent;
   
   // Extract numeric value from price
   const priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
@@ -4041,18 +4041,13 @@ function applyFilters() {
   var currentCurrency = '{{ localization.country.currency.iso_code | default: shop.currency }}';
   if (currentCurrency === 'USD') {
     var root = document.querySelector('.product-bundler') || document.body;
-    function sanitizeMoneyString(str){ try { return (str||'').replace(/<[^>]*>/g, '').replace(/\s{2,}/g, ' ').trim(); } catch(e){ return str||''; } }
-    function sanitize(el){ if(!el) return; el.textContent = sanitizeMoneyString(el.textContent); }
+    function sanitize(el){ if(!el) return; el.textContent = el.textContent; }
     function sanitizeAll(){
       var sels = '.bundle-total-price,.bundle-price,.bundle-savings,.product-price,.product-compare-price';
       root.querySelectorAll(sels).forEach(sanitize);
     }
     // Initial pass
     document.addEventListener('DOMContentLoaded', sanitizeAll);
-    window.addEventListener('load', sanitizeAll);
-    document.addEventListener('shopify:section:load', sanitizeAll);
-    var sanitizeInterval = setInterval(sanitizeAll, 500);
-    setTimeout(function(){ clearInterval(sanitizeInterval); }, 15000);
     // After any async updates
     ['bundle:update','bundle:prices:update'].forEach(function(evt){
       document.addEventListener(evt, sanitizeAll);
