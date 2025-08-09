@@ -3296,7 +3296,7 @@ function updateProductPrices(variant) {
     const variantId = priceElement.getAttribute(`data-variant-${variantData}`);
     
     if (priceData) {
-      priceElement.textContent = priceData;
+      priceElement.innerHTML = priceData;
       // Update variant ID in card
       card.setAttribute('data-variant-id', variantId);
     }
@@ -3349,7 +3349,7 @@ function updateBundlePrices() {
     if (perBottleElement) {
       const perBottlePrice = (config.buy * basePrice) / config.total;
       const perBottleText = currentPrice.replace(/[\d,]+\.?\d*/, perBottlePrice.toFixed(2));
-      perBottleElement.textContent = perBottleText + ' per bottle';
+      perBottleElement.innerHTML = perBottleText + ' per bottle';
     }
     
     // Update savings
