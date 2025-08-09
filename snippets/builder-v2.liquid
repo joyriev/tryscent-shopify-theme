@@ -77,7 +77,7 @@
           <button class="bundle-type-btn active" data-bundle-type="2+1" onclick="selectBundleType('2+1')">
             <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
             <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
-            <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
+            <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 }} per bottle</span>
             <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
           </button>
           <button class="bundle-type-btn" data-bundle-type="3+2" onclick="selectBundleType('3+2')">
