@@ -137,6 +137,22 @@
     grid-column: span 3 / span 3
 }
 
+.col-span-4 {
+    grid-column: span 4 / span 4
+}
+
+.col-span-6 {
+    grid-column: span 6 / span 6
+}
+
+.col-span-11 {
+    grid-column: span 11 / span 11
+}
+
+.col-span-9 {
+    grid-column: span 9 / span 9
+}
+
 .\!m-0 {
     margin: 0px !important
 }
@@ -183,6 +199,21 @@
 .my-2 {
     margin-top: 8px;
     margin-bottom: 8px
+}
+
+.my-6 {
+    margin-top: 24px;
+    margin-bottom: 24px
+}
+
+.my-4 {
+    margin-top: 16px;
+    margin-bottom: 16px
+}
+
+.my-3 {
+    margin-top: 12px;
+    margin-bottom: 12px
 }
 
 .\!mb-0 {
@@ -307,6 +338,18 @@
 
 .mt-\[44px\] {
     margin-top: 44px
+}
+
+.mt-3 {
+    margin-top: 12px
+}
+
+.-mt-12 {
+    margin-top: -48px
+}
+
+.-mt-20 {
+    margin-top: -80px
 }
 
 .line-clamp-1 {
@@ -680,6 +723,10 @@
     grid-template-columns: repeat(5, minmax(0, 1fr))
 }
 
+.grid-cols-10 {
+    grid-template-columns: repeat(10, minmax(0, 1fr))
+}
+
 .grid-rows-3 {
     grid-template-rows: repeat(3, minmax(0, 1fr))
 }
@@ -797,6 +844,12 @@
     --tw-space-y-reverse: 0;
     margin-top: calc(32px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(32px * var(--tw-space-y-reverse))
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(8px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(8px * var(--tw-space-y-reverse))
 }
 
 .overflow-hidden {
@@ -1101,6 +1154,11 @@
     background-color: rgb(0 0 0 / 0.4)
 }
 
+.bg-\[\#090909\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(9 9 9 / var(--tw-bg-opacity, 1))
+}
+
 .bg-gradient-to-b {
     background-image: linear-gradient(to bottom, var(--tw-gradient-stops))
 }
@@ -1115,6 +1173,18 @@
 
 .bg-gradient-to-t {
     background-image: linear-gradient(to top, var(--tw-gradient-stops))
+}
+
+.bg-\[url\(\'https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0086\/7932\/5753\/files\/builder-hero-bg\.png\?v\=1754908585\'\)\] {
+    background-image: url('https://cdn.shopify.com/s/files/1/0086/7932/5753/files/builder-hero-bg.png?v=1754908585')
+}
+
+.bg-\[linear-gradient\(to_right\2c \#00FF00\2c \#00FF00\)\] {
+    background-image: linear-gradient(to right,#00FF00,#00FF00)
+}
+
+.bg-\[linear-gradient\(to_right\2c \#28A745\2c \#20C997\2c \#28A745\)\] {
+    background-image: linear-gradient(to right,#28A745,#20C997,#28A745)
 }
 
 .from-amber-600\/30 {
@@ -1153,9 +1223,20 @@
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
 }
 
+.from-green-500 {
+    --tw-gradient-from: #22c55e var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(34 197 94 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+}
+
 .via-gray-700 {
     --tw-gradient-to: rgb(55 65 81 / 0)  var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), #374151 var(--tw-gradient-via-position), var(--tw-gradient-to)
+}
+
+.via-green-600 {
+    --tw-gradient-to: rgb(22 163 74 / 0)  var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), #16a34a var(--tw-gradient-via-position), var(--tw-gradient-to)
 }
 
 .to-gray-600 {
@@ -1164,6 +1245,10 @@
 
 .to-transparent {
     --tw-gradient-to: transparent var(--tw-gradient-to-position)
+}
+
+.to-green-700 {
+    --tw-gradient-to: #15803d var(--tw-gradient-to-position)
 }
 
 .bg-cover {
@@ -1304,6 +1389,11 @@
     padding-bottom: 64px
 }
 
+.px-12 {
+    padding-left: 48px;
+    padding-right: 48px
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -1358,6 +1448,18 @@
 
 .pt-6 {
     padding-top: 24px
+}
+
+.pb-24 {
+    padding-bottom: 96px
+}
+
+.pb-32 {
+    padding-bottom: 128px
+}
+
+.pb-12 {
+    padding-bottom: 48px
 }
 
 .text-center {
@@ -1669,6 +1771,18 @@
 .shadow-xl {
     --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.shadow-\[0_2px_8px_rgba\(0\2c 0\2c 0\2c 0\.12\)\] {
+    --tw-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    --tw-shadow-colored: 0 2px 8px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.shadow-\[0_4px_12px_rgba\(0\2c 0\2c 0\2c 0\.12\)\] {
+    --tw-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    --tw-shadow-colored: 0 4px 12px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
@@ -1992,6 +2106,15 @@
         padding-right: 24px
     }
 
+    .md\:px-0 {
+        padding-left: 0px;
+        padding-right: 0px
+    }
+
+    .md\:text-left {
+        text-align: left
+    }
+
     .md\:text-2xl {
         font-size: 24px;
         line-height: 32px
@@ -2105,6 +2228,10 @@
 
     .lg\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .lg\:grid-cols-10 {
+        grid-template-columns: repeat(10, minmax(0, 1fr))
     }
 
     .lg\:flex-row {
