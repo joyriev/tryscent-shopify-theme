@@ -180,7 +180,7 @@
             {% assign first_product = bundle_collection.products.first %}
             {% assign first_variant_100ml = first_product.variants | where: 'title', '100ML' | first %}
             {% assign base_price = first_variant_100ml.price | default: 2699 %}
-            <div class="bundle-type-buttons">
+            <div class="bundle-type-buttons space-y-4">
               <button
                 class="bundle-type-btn active"
                 data-bundle-type="2+1"
@@ -451,7 +451,7 @@
   .variant-btn {
     background: white;
     border: 1px solid #e0e0e0;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -484,7 +484,7 @@
   }
 
   .variant-size {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #222;
   }
@@ -517,9 +517,9 @@
 
   .bundle-type-btn {
     background: white;
-    border: 4px solid #e0e0e0;
-    border-radius: 32px;
-    padding: 24px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
@@ -544,6 +544,7 @@
     border-color: #28a745;
     background: white;
     color: #222;
+    border-width: 4px;
     box-shadow: 0 4px 16px rgba(40, 167, 69, 0.15);
   }
 
@@ -634,12 +635,6 @@
     border-radius: 16px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    position: absolute;
-    bottom: -16px;
-    left: 0;
-    right: 0;
-    transform: none;
-    width: 100%;
     text-align: center;
   }
 
