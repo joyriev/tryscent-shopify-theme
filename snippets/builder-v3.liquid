@@ -136,88 +136,90 @@
       </div>
       <!-- DESKTOP SIDEBAR -->
       <div class="bundler-sidebar desktop-sidebar col-span-4">
-        <!-- Variant Selection -->
-        <div class="variant-selection">
-          <h3 class="variant-title">Select Size!</h3>
-          <p class="variant-subtitle">80% of customers buy 100ML</p>
-          <div class="variant-buttons">
-            <button
-              class="variant-btn"
-              data-variant="30ML"
-              onclick="selectVariant('30ML')">
-              <div class="variant-image">
-                <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
-              </div>
-              <span class="variant-size">30ML</span>
-            </button>
-            <button
-              class="variant-btn"
-              data-variant="50ML"
-              onclick="selectVariant('50ML')">
-              <div class="variant-badge popular">Popular</div>
-              <div class="variant-image">
-                <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="50ML">
-              </div>
-              <span class="variant-size">50ML</span>
-            </button>
-            <button
-              class="variant-btn active"
-              data-variant="100ML"
-              onclick="selectVariant('100ML')">
-              <div class="variant-badge bestseller">Bestseller</div>
-              <div class="variant-image">
-                <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="100ML">
-              </div>
-              <span class="variant-size">100ML</span>
-            </button>
+        <div class="px-4 py-6 bg-white shadow-[0_4px_12px_rgba(0,0,0,0.12)] rounded-2xl">
+          <!-- Variant Selection -->
+          <div class="variant-selection">
+            <h3 class="variant-title">Select Size!</h3>
+            <p class="variant-subtitle">80% of customers buy 100ML</p>
+            <div class="variant-buttons">
+              <button
+                class="variant-btn"
+                data-variant="30ML"
+                onclick="selectVariant('30ML')">
+                <div class="variant-image">
+                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
+                </div>
+                <span class="variant-size">30ML</span>
+              </button>
+              <button
+                class="variant-btn"
+                data-variant="50ML"
+                onclick="selectVariant('50ML')">
+                <div class="variant-badge popular">Popular</div>
+                <div class="variant-image">
+                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="50ML">
+                </div>
+                <span class="variant-size">50ML</span>
+              </button>
+              <button
+                class="variant-btn active"
+                data-variant="100ML"
+                onclick="selectVariant('100ML')">
+                <div class="variant-badge bestseller">Bestseller</div>
+                <div class="variant-image">
+                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="100ML">
+                </div>
+                <span class="variant-size">100ML</span>
+              </button>
+            </div>
           </div>
-        </div>
 
 
-        <!-- Bundle Type Selection -->
-        <div class="bundle-type-selection" id="bundleSelection">
-          {% assign first_product = bundle_collection.products.first %}
-          {% assign first_variant_100ml = first_product.variants | where: 'title', '100ML' | first %}
-          {% assign base_price = first_variant_100ml.price | default: 2699 %}
-          <div class="bundle-type-buttons">
-            <button
-              class="bundle-type-btn active"
-              data-bundle-type="2+1"
-              onclick="selectBundleType('2+1')">
-              <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
-              <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
-              <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
-              <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
-            </button>
-            <button
-              class="bundle-type-btn"
-              data-bundle-type="3+2"
-              onclick="selectBundleType('3+2')">
-              <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
-              <span class="bundle-total-price">{{ base_price | times: 3 | money }}</span>
-              <span class="bundle-price" id="price-3+2">{{ base_price | times: 3 | divided_by: 5 | money }} per bottle</span>
-              <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
-            </button>
-            <button
-              class="bundle-type-btn"
-              data-bundle-type="4+3"
-              onclick="selectBundleType('4+3')">
-              <div class="bundle-badge bestseller">FREE SHIPPING</div>
-              <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
-              <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
-              <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | divided_by: 7 | money }} per bottle</span>
-              <div class="bundle-savings" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
-            </button>
-            <button
-              class="bundle-type-btn"
-              data-bundle-type="5+4"
-              onclick="selectBundleType('5+4')">
-              <div class="bundle-badge best-value">Best Value</div>
-              <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
-              <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
-              <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | divided_by: 9 | money }} per bottle</span>
-              <div class="bundle-savings" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
-            </button>
+          <!-- Bundle Type Selection -->
+          <div class="bundle-type-selection" id="bundleSelection">
+            {% assign first_product = bundle_collection.products.first %}
+            {% assign first_variant_100ml = first_product.variants | where: 'title', '100ML' | first %}
+            {% assign base_price = first_variant_100ml.price | default: 2699 %}
+            <div class="bundle-type-buttons">
+              <button
+                class="bundle-type-btn active"
+                data-bundle-type="2+1"
+                onclick="selectBundleType('2+1')">
+                <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
+                <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
+                <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
+                <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
+              </button>
+              <button
+                class="bundle-type-btn"
+                data-bundle-type="3+2"
+                onclick="selectBundleType('3+2')">
+                <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
+                <span class="bundle-total-price">{{ base_price | times: 3 | money }}</span>
+                <span class="bundle-price" id="price-3+2">{{ base_price | times: 3 | divided_by: 5 | money }} per bottle</span>
+                <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
+              </button>
+              <button
+                class="bundle-type-btn"
+                data-bundle-type="4+3"
+                onclick="selectBundleType('4+3')">
+                <div class="bundle-badge bestseller">FREE SHIPPING</div>
+                <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
+                <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
+                <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | divided_by: 7 | money }} per bottle</span>
+                <div class="bundle-savings" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
+              </button>
+              <button
+                class="bundle-type-btn"
+                data-bundle-type="5+4"
+                onclick="selectBundleType('5+4')">
+                <div class="bundle-badge best-value">Best Value</div>
+                <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
+                <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
+                <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | divided_by: 9 | money }} per bottle</span>
+                <div class="bundle-savings" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -426,27 +428,18 @@
     display: inline-block;
   }
 
-  /* Variant Selection */
-  .variant-selection {
-    padding: 32px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border-bottom: 1px solid #eee;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 10px;
-  }
-
   .variant-title {
     font-size: 3rem;
     font-weight: 700;
     color: #222;
-    margin: 0 0 16px;
+    margin: 0 0 8px;
+    text-align: center;
   }
 
   .variant-subtitle {
-    font-size: 2rem;
+    text-align: center;
     color: #666;
-    margin: 0 0 48px;
+    margin: 0 0 30px;
   }
 
   .variant-buttons {
@@ -457,16 +450,16 @@
 
   .variant-btn {
     background: white;
-    border: 4px solid #e0e0e0;
-    border-radius: 32px;
-    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 10px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     position: relative;
   }
@@ -479,6 +472,7 @@
 
   .variant-btn.active {
     border-color: #28a745;
+    border-width: 4px;
     background: linear-gradient(135deg, #f8fff9 0%, #ffffff 100%);
     box-shadow: 0 4px 16px rgba(40, 167, 69, 0.2);
   }
@@ -497,12 +491,12 @@
 
   .variant-badge {
     position: absolute;
-    top: -16px;
+    top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 8px 16px;
+    padding: 5px 10px;
     border-radius: 24px;
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     color: white;
@@ -518,21 +512,7 @@
 
   /* Bundle Type Selection */
   .bundle-type-selection {
-    padding: 32px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 10px;
-  }
-
-  .bundle-type-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    width: 100%;
-    margin: 0 auto;
-    flex-wrap: nowrap;
-    overflow: visible;
+    margin-top: 20px;
   }
 
   .bundle-type-btn {
@@ -547,7 +527,7 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    min-width: 150px;
+    width: 100%;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: visible;
@@ -1804,7 +1784,7 @@
 
     .variant-title {
       font-size: 2rem;
-      margin: 0 0 12px;
+      margin: 0 0 8px;
     }
 
     .variant-subtitle {
