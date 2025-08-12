@@ -11,7 +11,181 @@
 <div class="page-width" data-bundler>
   <div class="bundler-container">
     <!-- Main Content with Sidebar -->
-    <div class="grid grid-cols-10 gap-12">
+    <div class="md:grid md:grid-cols-10 gap-12">
+      <!-- DESKTOP SIDEBAR -->
+      <div class="bundler-sidebar desktop-sidebar col-span-4 mb-8 md:order-1">
+        <div class="px-4 py-6 bg-white shadow-[0_4px_12px_rgba(0,0,0,0.12)] rounded-2xl">
+          <!-- Variant Selection -->
+          <div class="variant-selection">
+            <h3 class="variant-title">Select Size!</h3>
+            <p class="variant-subtitle">80% of customers buy 100ML</p>
+            <div class="variant-buttons grid grid-cols-3 gap-3">
+              <button
+                class="variant-btn"
+                data-variant="30ML"
+                onclick="selectVariant('30ML')">
+                <div class="variant-image">
+                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
+                </div>
+                <span class="variant-size">30ML</span>
+              </button>
+              <button
+                class="variant-btn"
+                data-variant="50ML"
+                onclick="selectVariant('50ML')">
+                <div class="variant-badge popular">Popular</div>
+                <div class="variant-image">
+                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="50ML">
+                </div>
+                <span class="variant-size">50ML</span>
+              </button>
+              <button
+                class="variant-btn active"
+                data-variant="100ML"
+                onclick="selectVariant('100ML')">
+                <div class="variant-badge bestseller">Bestseller</div>
+                <div class="variant-image">
+                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="100ML">
+                </div>
+                <span class="variant-size">100ML</span>
+              </button>
+            </div>
+          </div>
+
+
+          <!-- Bundle Type Selection -->
+          <div class="bundle-type-selection" id="bundleSelection">
+            {% assign first_product = bundle_collection.products.first %}
+            {% assign first_variant_100ml = first_product.variants | where: 'title', '100ML' | first %}
+            {% assign base_price = first_variant_100ml.price | default: 2699 %}
+            <div class="bundle-type-buttons space-y-4">
+              <button
+                class="bundle-type-btn"
+                data-bundle-type="4+3"
+                onclick="selectBundleType('4+3')">
+                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
+                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex flex-col items-start justify-center gap-2">
+                    <div class="bundle-badge bestseller">Most Popular</div>
+                    <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
+                    <div class="bundle-savings" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
+                    <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | divided_by: 7 | money }} per bottle</span>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="bundle-type-btn active [&.active_.pill]:block"
+                data-bundle-type="2+1"
+                onclick="selectBundleType('2+1')">
+                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
+                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex flex-col items-start justify-center gap-2">
+                    <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
+                    <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
+                    <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="bundle-type-btn [&.active_.pill]:block"
+                data-bundle-type="3+2"
+                onclick="selectBundleType('3+2')">
+                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
+                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex flex-col items-start justify-center gap-2">
+                    <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
+                    <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span class="bundle-total-price">{{ base_price | times: 3 | money }}</span>
+                    <span class="bundle-price" id="price-3+2">{{ base_price | times: 3 | divided_by: 5 | money }} per bottle</span>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="bundle-type-btn [&.active_.pill]:block"
+                data-bundle-type="5+4"
+                onclick="selectBundleType('5+4')">
+                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
+                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex flex-col items-start justify-center gap-2">
+                    <div class="bundle-badge best-value">Best Value</div>
+                    <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
+                    <div class="bundle-savings" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
+                    <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | divided_by: 9 | money }} per bottle</span>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 py-6 bg-white shadow-[0_4px_12px_rgba(0,0,0,0.12)] rounded-2xl mt-8 [display:none] md:block">
+          <!-- Desktop Header -->
+          <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
+
+          <!-- Progress Section -->
+          <div class="cart-progress">
+            <div class="progress-text" id="cartProgressText">Please select at least 3 scents</div>
+            <div class="bundler-progress-container">
+              <div class="bundler-progress-bar">
+                <div class="bundler-progress-fill" id="cartProgressFill"></div>
+                <div class="progress-markers" id="progressMarkers">
+                  <!-- Markers will be generated dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selected Items -->
+          <div class="selected-items" id="selectedItems">
+            <div class="empty-cart">
+              <p>Your cart is empty.</p>
+            </div>
+          </div>
+
+          <!-- Add Bundle Button -->
+          <div class="sidebar-footer">
+            <button
+              id="addBundleBtnDesktop"
+              class="add-bundle-btn"
+              disabled>
+              <span class="btn-text" id="btnTextDesktop">Please Select 3 More Scents</span>
+              <span class="btn-status" id="btnStatusDesktop">0/3</span>
+            </button>
+          </div>
+          <div class="flex flex-col items-center gap-3 text-center bg-[#f0f2ec] p-6 rounded mt-5">
+            <img
+              src="//tryscent.co/cdn/shop/files/wt-money-back_1_64x64.svg?v=1751973614"
+              height="64"
+              width="64"
+              alt=""
+              class="size-16">
+            <h3 class="text-lg font-semibold tracking-normal m-0">Smell Before You Commit</h3>
+            <div class="m-0 leading-snug tracking-normal [&amp;&gt;p]:m-0 text-gray-950">
+              <p>Choosing a signature scent shouldn’t feel like a gamble. If something doesn’t feel like you, no pressure, you’re covered with our
+                <strong>60-day satisfaction guarantee. Return it. Keep what you love.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="col-span-6">
         <!-- Search and Filter Section -->
         <div class="bundler-search-filter">
@@ -131,181 +305,6 @@
           {% endfor %}
         </div>
       </div>
-      <!-- DESKTOP SIDEBAR -->
-      <div class="bundler-sidebar desktop-sidebar col-span-4">
-        <div class="px-4 py-6 bg-white shadow-[0_4px_12px_rgba(0,0,0,0.12)] rounded-2xl">
-          <!-- Variant Selection -->
-          <div class="variant-selection">
-            <h3 class="variant-title">Select Size!</h3>
-            <p class="variant-subtitle">80% of customers buy 100ML</p>
-            <div class="variant-buttons">
-              <button
-                class="variant-btn"
-                data-variant="30ML"
-                onclick="selectVariant('30ML')">
-                <div class="variant-image">
-                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
-                </div>
-                <span class="variant-size">30ML</span>
-              </button>
-              <button
-                class="variant-btn"
-                data-variant="50ML"
-                onclick="selectVariant('50ML')">
-                <div class="variant-badge popular">Popular</div>
-                <div class="variant-image">
-                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="50ML">
-                </div>
-                <span class="variant-size">50ML</span>
-              </button>
-              <button
-                class="variant-btn active"
-                data-variant="100ML"
-                onclick="selectVariant('100ML')">
-                <div class="variant-badge bestseller">Bestseller</div>
-                <div class="variant-image">
-                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="100ML">
-                </div>
-                <span class="variant-size">100ML</span>
-              </button>
-            </div>
-          </div>
-
-
-          <!-- Bundle Type Selection -->
-          <div class="bundle-type-selection" id="bundleSelection">
-            {% assign first_product = bundle_collection.products.first %}
-            {% assign first_variant_100ml = first_product.variants | where: 'title', '100ML' | first %}
-            {% assign base_price = first_variant_100ml.price | default: 2699 %}
-            <div class="bundle-type-buttons space-y-4">
-              <button
-                class="bundle-type-btn"
-                data-bundle-type="4+3"
-                onclick="selectBundleType('4+3')">
-                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
-                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
-                </div>
-                <div class="flex justify-between items-center w-full">
-                  <div class="flex flex-col items-start justify-center gap-2">
-                    <div class="bundle-badge bestseller">Most Popular</div>
-                    <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
-                    <div class="bundle-savings" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
-                  </div>
-                  <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
-                    <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | divided_by: 7 | money }} per bottle</span>
-                  </div>
-                </div>
-              </button>
-              <button
-                class="bundle-type-btn active [&.active_.pill]:block"
-                data-bundle-type="2+1"
-                onclick="selectBundleType('2+1')">
-                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
-                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
-                </div>
-                <div class="flex justify-between items-center w-full">
-                  <div class="flex flex-col items-start justify-center gap-2">
-                    <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
-                    <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
-                  </div>
-                  <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
-                    <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
-                  </div>
-                </div>
-              </button>
-              <button
-                class="bundle-type-btn [&.active_.pill]:block"
-                data-bundle-type="3+2"
-                onclick="selectBundleType('3+2')">
-                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
-                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
-                </div>
-                <div class="flex justify-between items-center w-full">
-                  <div class="flex flex-col items-start justify-center gap-2">
-                    <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
-                    <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
-                  </div>
-                  <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 3 | money }}</span>
-                    <span class="bundle-price" id="price-3+2">{{ base_price | times: 3 | divided_by: 5 | money }} per bottle</span>
-                  </div>
-                </div>
-              </button>
-              <button
-                class="bundle-type-btn [&.active_.pill]:block"
-                data-bundle-type="5+4"
-                onclick="selectBundleType('5+4')">
-                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
-                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
-                </div>
-                <div class="flex justify-between items-center w-full">
-                  <div class="flex flex-col items-start justify-center gap-2">
-                    <div class="bundle-badge best-value">Best Value</div>
-                    <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
-                    <div class="bundle-savings" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
-                  </div>
-                  <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
-                    <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | divided_by: 9 | money }} per bottle</span>
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="px-4 py-6 bg-white shadow-[0_4px_12px_rgba(0,0,0,0.12)] rounded-2xl mt-8">
-          <!-- Desktop Header -->
-          <h3 class="sidebar-title" id="sidebarTitle">Shopping Cart</h3>
-
-          <!-- Progress Section -->
-          <div class="cart-progress">
-            <div class="progress-text" id="cartProgressText">Please select at least 3 scents</div>
-            <div class="bundler-progress-container">
-              <div class="bundler-progress-bar">
-                <div class="bundler-progress-fill" id="cartProgressFill"></div>
-                <div class="progress-markers" id="progressMarkers">
-                  <!-- Markers will be generated dynamically -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Selected Items -->
-          <div class="selected-items" id="selectedItems">
-            <div class="empty-cart">
-              <p>Your cart is empty.</p>
-            </div>
-          </div>
-
-          <!-- Add Bundle Button -->
-          <div class="sidebar-footer">
-            <button
-              id="addBundleBtnDesktop"
-              class="add-bundle-btn"
-              disabled>
-              <span class="btn-text" id="btnTextDesktop">Please Select 3 More Scents</span>
-              <span class="btn-status" id="btnStatusDesktop">0/3</span>
-            </button>
-          </div>
-          <div class="flex flex-col items-center gap-3 text-center bg-[#f0f2ec] p-6 rounded mt-5">
-            <img
-              src="//tryscent.co/cdn/shop/files/wt-money-back_1_64x64.svg?v=1751973614"
-              height="64"
-              width="64"
-              alt=""
-              class="size-16">
-            <h3 class="text-lg font-semibold tracking-normal m-0">Smell Before You Commit</h3>
-            <div class="m-0 leading-snug tracking-normal [&amp;&gt;p]:m-0 text-gray-950">
-              <p>Choosing a signature scent shouldn’t feel like a gamble. If something doesn’t feel like you, no pressure, you’re covered with our
-                <strong>60-day satisfaction guarantee. Return it. Keep what you love.</strong>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- MOBILE STICKY FOOTER -->
       <div
         class="mobile-sticky-footer"
@@ -391,7 +390,20 @@
   </div>
 
 </div>
+
+{% comment %} <script>
+    /* Woot Buble holder */
+    document.addEventListener('DOMContentLoaded', function() {
+      const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
+      wootBubble.style.bottom = '105px';
+    });
+</script> {% endcomment %}
+
 <style>
+
+  .woot--bubble-holder {
+    display: none;
+  }
 
   /* Header */
   .bundler-header {
@@ -485,12 +497,6 @@
     text-align: center;
     color: #666;
     margin: 0 0 30px;
-  }
-
-  .variant-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
   }
 
   .variant-btn {
@@ -628,6 +634,7 @@
     font-size: 1.6rem;
     color: #222;
     font-weight: 700;
+    text-align: left;
   }
 
   .bundle-type-btn.active .bundle-type-title,
@@ -755,34 +762,8 @@
     flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 20px;
     margin-top: 24px;
-  }
-
-  /* Tablet - 2 columns */
-  @media (max-width: 1024px) {
-    .bundler-products {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      padding: 24px;
-    }
-  }
-
-  /* Mobile - 2 columns */
-  @media (max-width: 768px) {
-    .bundler-products {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      padding: 20px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .bundler-products {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      padding: 16px;
-    }
   }
 
   .product-card {
@@ -873,6 +854,7 @@
   /* Product Reviews */
   .product-reviews {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 6px;
@@ -1072,8 +1054,6 @@
   }
 
   .mobile-sticky-footer .mobile-benefit-item {
-    font-size: 0.7rem;
-    color: #666;
     flex: 1;
     text-align: center;
   }
@@ -1116,7 +1096,6 @@
   }
 
   .mobile-fullscreen-cart .scents-count {
-    font-size: 1.1rem;
     font-weight: 600;
     color: #222;
   }
@@ -1567,7 +1546,6 @@
     background: rgba(255, 255, 255, 0.2);
     padding: 4px 8px;
     border-radius: 6px;
-    font-size: 0.9rem;
     font-weight: 600;
   }
 
@@ -1720,11 +1698,6 @@
       flex-wrap: wrap;
     }
 
-    .bundler-products {
-      padding: 20px;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-
     .product-card {
       min-height: 400px;
     }
@@ -1736,10 +1709,6 @@
 
   /* Mobile Responsive Styles */
   @media (max-width: 768px) {
-    /* Hide desktop, show mobile */
-    .desktop-sidebar {
-      display: none !important;
-    }
 
     /* Show mobile sidebar when has items */
     .mobile-sidebar.show {
@@ -1804,66 +1773,6 @@
       font-weight: 700 !important;
       line-height: 20px !important;
       height: 20px !important;
-    }
-
-    /* Variant Selection Mobile */
-    .variant-selection {
-      padding: 20px 16px;
-      margin-bottom: 8px;
-    }
-
-    .variant-title {
-      font-size: 2rem;
-      margin: 0 0 8px;
-    }
-
-    .variant-subtitle {
-      font-size: 1.2rem;
-      margin: 0 0 24px;
-    }
-
-    .variant-buttons {
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .variant-btn {
-      padding: 20px;
-      gap: 12px;
-      min-width: 120px;
-      flex: 1;
-      max-width: 150px;
-    }
-
-    .variant-image {
-      width: 80px;
-      height: 80px;
-    }
-
-    .variant-size {
-      font-size: 1.4rem;
-    }
-
-    .variant-badge {
-      font-size: 0.8rem;
-      padding: 4px 8px;
-      top: -8px;
-    }
-
-    /* Bundle Type Selection Mobile - 2x2 Grid */
-    .bundle-type-selection {
-      padding: 20px 16px;
-      margin-bottom: 8px;
-    }
-
-    .bundle-type-buttons {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      grid-template-rows: 1fr 1fr !important;
-      gap: 16px !important;
-      row-gap: 30px !important;
-      flex-wrap: wrap;
     }
 
     .bundle-type-btn {
@@ -2298,10 +2207,6 @@
       font-size: 1.4rem;
     }
 
-    .variant-buttons {
-      gap: 12px;
-    }
-
     .variant-image {
       width: 60px;
       height: 60px;
@@ -2321,12 +2226,6 @@
 
     .bundle-total-price {
       font-size: 1.8rem;
-    }
-
-    .bundler-products {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      padding: 12px;
     }
 
     .product-card {
