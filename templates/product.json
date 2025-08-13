@@ -539,31 +539,12 @@
     "1751863713a9594609": {
       "type": "apps",
       "blocks": {
-        "instafeed_app_block_Kka4wj": {
-          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
-          "settings": {
-            "title": "",
-            "title_color": "",
-            "title_size_v2": 0,
-            "alignment": "center",
-            "instafeed_margin_top": 0,
-            "instafeed_margin_bottom": 0,
-            "instafeed_margin_sides": 0,
-            "show_instagram_link": false,
-            "link_alignment": "left",
-            "link_color": "#000000",
-            "background_color": "",
-            "feed_id": "",
-            "html_area": ""
-          }
-        },
         "judge_me_reviews_review_widget_K8hgi4": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         }
       },
       "block_order": [
-        "instafeed_app_block_Kka4wj",
         "judge_me_reviews_review_widget_K8hgi4"
       ],
       "settings": {
@@ -749,6 +730,21 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1755117642437d279b": {
+      "type": "apps",
+      "blocks": {
+        "instagram_feed_mp_instagram_tagged_block_txCWH6": {
+          "type": "shopify://apps/instagram-feed/blocks/mp_instagram_tagged_block/2e85b90f-5da9-4654-967e-051f1942340c",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "instagram_feed_mp_instagram_tagged_block_txCWH6"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -766,6 +762,7 @@
     "faq-section",
     "tryscent_guarantee_8hATfM",
     "floating-atc",
-    "image_with_text_hmaWn4"
+    "image_with_text_hmaWn4",
+    "1755117642437d279b"
   ]
 }
