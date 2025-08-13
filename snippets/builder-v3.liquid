@@ -311,6 +311,7 @@
         id="mobileStickyFooter"
         style="display: none;">
         <div class="sticky-content">
+          <div class="shoppingNote"></div>
           <button id="addBundleBtnSticky" class="add-bundle-btn">
             <span class="btn-text" id="btnTextSticky">REVIEW BUNDLE</span>
             <span class="btn-status" id="btnStatusSticky">0/3</span>
@@ -392,11 +393,11 @@
 </div>
 
 {% comment %} <script>
-                                                                                                                                          /* Woot Buble holder */
-                                                                                                                                          document.addEventListener('DOMContentLoaded', function() {
-                                                                                                                                            const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
-                                                                                                                                            wootBubble.style.bottom = '105px';
-                                                                                                                                          });
+                                                                                                                                                      /* Woot Buble holder */
+                                                                                                                                                      document.addEventListener('DOMContentLoaded', function() {
+                                                                                                                                                        const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
+                                                                                                                                                        wootBubble.style.bottom = '105px';
+                                                                                                                                                      });
 </script> {% endcomment %}
 
 <style>
@@ -1228,6 +1229,7 @@
     overflow-y: auto;
     opacity: 1;
     margin-bottom: 16px;
+    padding-right: 1rem;
   }
 
   .mobile-fullscreen-cart .selected-item {
@@ -2948,6 +2950,7 @@
       "cartProgressTextFullscreen"
     );
     const sidebarTitle = document.getElementById("sidebarTitle");
+    const shoppingNotes = document.querySelectorAll(".shoppingNote");
     const config = bundleConfig[currentBundleType];
 
     let text = "";
@@ -2972,6 +2975,9 @@
     if (cartProgressTextFullscreen)
       cartProgressTextFullscreen.textContent = text;
     if (sidebarTitle) sidebarTitle.textContent = title;
+    if (shoppingNotes.length > 0) shoppingNotes.forEach((note) => {
+      note.textContent = text;
+    });
   }
 
   // Generate progress markers
