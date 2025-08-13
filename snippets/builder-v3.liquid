@@ -70,7 +70,7 @@
                   <div class="flex flex-col items-start justify-center gap-2">
                     <div class="bundle-badge bestseller">Most Popular</div>
                     <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
-                    <div class="bundle-savings" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
+                    <div class="bundle-savings free-shipping" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
                   </div>
                   <div class="flex flex-col items-end">
                     <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
@@ -125,7 +125,7 @@
                   <div class="flex flex-col items-start justify-center gap-2">
                     <div class="bundle-badge best-value">Best Value</div>
                     <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
-                    <div class="bundle-savings" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
+                    <div class="bundle-savings free-shipping" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
                   </div>
                   <div class="flex flex-col items-end">
                     <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
@@ -393,11 +393,11 @@
 </div>
 
 {% comment %} <script>
-                                                                                                                                                      /* Woot Buble holder */
-                                                                                                                                                      document.addEventListener('DOMContentLoaded', function() {
-                                                                                                                                                        const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
-                                                                                                                                                        wootBubble.style.bottom = '105px';
-                                                                                                                                                      });
+                                                                                                                                                                            /* Woot Buble holder */
+                                                                                                                                                                            document.addEventListener('DOMContentLoaded', function() {
+                                                                                                                                                                              const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
+                                                                                                                                                                              wootBubble.style.bottom = '105px';
+                                                                                                                                                                            });
 </script> {% endcomment %}
 
 <style>
@@ -676,6 +676,14 @@
   .bundle-savings {
     color: #888888;
     font-weight: 500;
+  }
+
+  .bundle-savings.free-shipping {
+    color: #28a745 !important;
+  }
+
+  .free-shipping.bundle-savings:after {
+    content: " + Free Shipping";
   }
 
   @keyframes shiny-gradient {
@@ -1795,11 +1803,6 @@
 
     .bundle-price {
       font-size: 1.2rem;
-    }
-
-    .bundle-savings {
-      font-size: 1.05rem;
-      padding: 4px 8px;
     }
 
     .bundle-badge {
@@ -3289,7 +3292,7 @@
           /[\d,]+\.?\d*/,
           perBottlePrice.toFixed(2)
         );
-        perBottleElement.innerHTML = perBottleText + " per bottle";
+        perBottleElement.innerHTML = perBottleText + " / bottle";
       }
 
       // Update savings
