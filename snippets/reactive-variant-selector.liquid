@@ -94,7 +94,7 @@
   const variantButtons = document.querySelectorAll('.variant-button');
   const atcButton = document.querySelector('.atc-button');
   const variantIdInput = document.querySelector('.product-variant-id');
-  const currentPriceEl = document.querySelector('.current-price');
+  const currentPriceEl = document.querySelectorAll('.current-price');
   const comparePriceEl = document.querySelectorAll('.compare-price');
 
   // Format price from cents to currency with symbol
@@ -134,14 +134,14 @@
       atcButton.setAttribute('data-compare-at-price', compareAtPrice);
 
       // Update price display
-      currentPriceEl.forEach(el => el.textContent = formattedPrice);
+      currentPriceEl.forEach(el => el.textContent = formatPrice(price));
       
       // Update compare at price display
       if (compareAtPrice && compareAtPrice > price) {
-        comparePriceEl.textContent = formatPrice(compareAtPrice);
-        comparePriceEl.style.display = 'inline';
+        comparePriceEl.forEach(el => el.textContent = formatPrice(compareAtPrice));
+        comparePriceEl.forEach(el => el.style.display = 'inline');
       } else {
-        comparePriceEl.style.display = 'none';
+        comparePriceEl.forEach(el => el.style.display = 'none');
       }
     });
   });
