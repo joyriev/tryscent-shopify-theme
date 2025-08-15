@@ -17,7 +17,7 @@
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
-            <div class="grid grid-cols-2 px-6 gap-4">
+            <div class="grid-cols-2 px-6 gap-4 [display:none]">
               <a class="d-block no-underline text-black" href="https://tryscent.co/collections/all">
                 <img
                   class="w-full h-auto"
@@ -55,7 +55,7 @@
                 <p class="my-0 font-semibold text-center leading-snug">For Women</p>
               </a>
             </div>
-            <ul class="menu-drawer__menu has-submenu list-menu !px-6" role="list">
+            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
                   {%- if link.links != blank -%}
@@ -150,7 +150,7 @@
               {%- endfor -%}
             </ul>
           </nav>
-          <div class="!px-6 bg-white grid grid-cols-3 gap-4 text-center mb-0 py-4">
+          <div class="!px-6 bg-white grid-cols-3 gap-4 text-center mb-0 py-4 [display:none]">
             <div>
               <img
                 src="https://tryscent.co/cdn/shop/files/sandwatch.svg?v=1753955350"
