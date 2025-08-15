@@ -82,6 +82,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   align-content: space-between;
   overflow-y: auto;
   height: 100%;
+  background-color: #FAF9F6;
 }
 
 .menu-drawer__navigation {
@@ -95,13 +96,23 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .js .menu-drawer__menu li {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .menu-drawer__menu-item {
-  padding: 1.1rem 3rem;
+  padding: 1.1rem;
   text-decoration: none;
   font-size: 1.8rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-weight: 600;
+  background-color: #fff;
+}
+
+/* hide first 2 items */
+.js .menu-drawer__menu li:first-child,
+.js .menu-drawer__menu li:nth-child(2) {
+  display: none;
 }
 
 .menu-drawer summary.menu-drawer__menu-item {
@@ -113,8 +124,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__close-button:focus,
 .menu-drawer__menu-item:hover,
 .menu-drawer__close-button:hover {
-  color: rgb(var(--color-foreground));
-  background-color: rgba(var(--color-foreground), 0.04);
+  border-color: #28a745;
+  border-width: 2px;
 }
 
 .menu-drawer__menu-item--active:hover {
@@ -126,11 +137,16 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__menu-item > .svg-wrapper {
-  width: 15px;
+  width: 30px;
   position: absolute;
-  right: 3rem;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+  color: #fff;
+  background-color: #000;
+  height: 30px;
+  padding: 7px;
+  border-radius: 99px;
 }
 
 .js .menu-drawer__submenu {
