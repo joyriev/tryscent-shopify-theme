@@ -21,13 +21,14 @@
             <p class="variant-subtitle">80% of customers buy 100ML</p>
             <div class="variant-buttons grid grid-cols-3 gap-3">
               <button
-                class="variant-btn"
-                data-variant="30ML"
-                onclick="selectVariant('30ML')">
+                class="variant-btn active"
+                data-variant="100ML"
+                onclick="selectVariant('100ML')">
+                <div class="variant-badge bestseller">Bestseller</div>
                 <div class="variant-image">
-                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
+                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="100ML">
                 </div>
-                <span class="variant-size">30ML</span>
+                <span class="variant-size">100ML</span>
               </button>
               <button
                 class="variant-btn"
@@ -40,14 +41,13 @@
                 <span class="variant-size">50ML</span>
               </button>
               <button
-                class="variant-btn active"
-                data-variant="100ML"
-                onclick="selectVariant('100ML')">
-                <div class="variant-badge bestseller">Bestseller</div>
+                class="variant-btn"
+                data-variant="30ML"
+                onclick="selectVariant('30ML')">
                 <div class="variant-image">
-                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="100ML">
+                  <img src="https://tryscent.co/cdn/shop/files/Pineapple_Smoke_Vanilla_-_30ml.png?crop=center&height=100&v=1754413628&width=100" alt="30ML">
                 </div>
-                <span class="variant-size">100ML</span>
+                <span class="variant-size">30ML</span>
               </button>
             </div>
           </div>
@@ -80,24 +80,6 @@
               </button>
               <button
                 class="bundle-type-btn [&.active_.pill]:block"
-                data-bundle-type="2+1"
-                onclick="selectBundleType('2+1')">
-                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
-                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
-                </div>
-                <div class="flex justify-between items-center w-full">
-                  <div class="flex flex-col items-start justify-center gap-2">
-                    <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
-                    <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
-                  </div>
-                  <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
-                    <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
-                  </div>
-                </div>
-              </button>
-              <button
-                class="bundle-type-btn [&.active_.pill]:block"
                 data-bundle-type="3+2"
                 onclick="selectBundleType('3+2')">
                 <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
@@ -116,20 +98,19 @@
               </button>
               <button
                 class="bundle-type-btn [&.active_.pill]:block"
-                data-bundle-type="5+4"
-                onclick="selectBundleType('5+4')">
+                data-bundle-type="2+1"
+                onclick="selectBundleType('2+1')">
                 <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
                   <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
                 </div>
                 <div class="flex justify-between items-center w-full">
                   <div class="flex flex-col items-start justify-center gap-2">
-                    <div class="bundle-badge best-value">Best Value</div>
-                    <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
-                    <div class="bundle-savings free-shipping" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
+                    <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
+                    <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
                   </div>
                   <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
-                    <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | divided_by: 9 | money }} per bottle</span>
+                    <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
+                    <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
                   </div>
                 </div>
               </button>
@@ -393,11 +374,11 @@
 </div>
 
 {% comment %} <script>
-                                                                                                                                                                                            /* Woot Buble holder */
-                                                                                                                                                                                            document.addEventListener('DOMContentLoaded', function() {
-                                                                                                                                                                                              const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
-                                                                                                                                                                                              wootBubble.style.bottom = '105px';
-                                                                                                                                                                                            });
+                                                                                                                                                                                                    /* Woot Buble holder */
+                                                                                                                                                                                                    document.addEventListener('DOMContentLoaded', function() {
+                                                                                                                                                                                                      const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
+                                                                                                                                                                                                      wootBubble.style.bottom = '105px';
+                                                                                                                                                                                                    });
 </script> {% endcomment %}
 
 <style>
