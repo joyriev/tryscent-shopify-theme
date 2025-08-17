@@ -219,7 +219,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
             {%- endif -%}
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
             <div class="pr-10">
-              <div class="font-bold tracking-normal">
+              <div class="font-bold tracking-normal text-lg">
                 {% unless card_product.tags contains 'onsale' %}
                   <span class="starts_at_text">Starts at</span>
                 {% endunless %}
