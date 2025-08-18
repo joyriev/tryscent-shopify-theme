@@ -33,8 +33,108 @@
             data-id="{{ section.id }}"
             style="display: flex !important;"
             class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+            <li
+              class="grid__item scroll-trigger animate--slide-in"
+              data-cascade=""
+              style="--animation-order: 1;">
+              <div class="card-wrapper product-card-wrapper underline-links-hover">
+                <div class="
+         card card--standard
+         card--media
+         bg-white rounded-lg px-4 pt-4
+         " style="--ratio-percent: 100%;">
+                  <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;">
+                    <div class="card__media">
+                      <div class="media media--transparent media--hover-effect">
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/bundle-image.png?v=1755495968"
+                          alt="Buy 2 Get 1 Free"
+                          class="motion-reduce"
+                          width="1200"
+                          height="1200">
+                      </div>
+                    </div>
+                    <div class="card__content">
+                      <div class="card__information">
+                        <h3 class="card__heading">
+                          <a
+                            href="https://tryscent.co/pages/build-your-bundle"
+                            id="StandardCardNoMediaLink-template--17957298241606__homepage_products_tab_RwziwE-7892877410374"
+                            class="full-unstyled-link text-base"
+                            aria-labelledby="StandardCardNoMediaLink-template--17957298241606__homepage_products_tab_RwziwE-7892877410374 NoMediaStandardBadge-template--17957298241606__homepage_products_tab_RwziwE-7892877410374">
+                            Buy 2 Get 1 FREE
+                          </a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <div>
+                        <div class="text-green-600 text-xs font-semibold bg-green-600/10 px-2 py-1 rounded inline-block">
+                          Most Popular
+                        </div>
+                      </div>
+                      <div
+                        class="rating"
+                        role="img"
+                        aria-label="4.74 out of 5.0 stars">
+                        <img
+                          src="/cdn/shop/t/35/assets/rating-stars.svg?v=134568026622208682831753800129"
+                          alt="*****"
+                          height="13"
+                          width="66">
+                      </div>
+                      <p class="rating-text caption">
+                        <span aria-hidden="true">4.74 /           
+                  5.0</span>
+                      </p>
+                      <p class="rating-count caption">
+                        <span aria-hidden="true">(324)</span>
+                        <span class="visually-hidden">324           
+                  total reviews</span>
+                      </p>
+                      <h3 class="card__heading h5" id="title-template--17957298241606__homepage_products_tab_RwziwE-7892877410374">
+                        <a
+                          href="https://tryscent.co/pages/build-your-bundle"
+                          id="CardLink-template--17957298241606__homepage_products_tab_RwziwE-7892877410374"
+                          class="full-unstyled-link text-base md:text-lg font-semibold !no-underline hover:opacity-75 !leading-tight tracking-normal"
+                          aria-labelledby="CardLink-template--17957298241606__homepage_products_tab_RwziwE-7892877410374 Badge-template--17957298241606__homepage_products_tab_RwziwE-7892877410374">
+                          <div class="text-gray-500 text-base leading-none">
+                            Bundle Set
+                          </div>
+                          <div class="line-clamp-1">
+                            Buy 2 Get 1 FREE
+                          </div>
+                          <img
+                            class="absolute right-4 bottom-4 cursor-pointer"
+                            src="/cdn/shop/t/35/assets/plus-solid.svg?v=120613118813290881911753873315"
+                            alt="+"
+                            width="32"
+                            height="32">
+                        </a>
+                      </h3>
+                      <div class="card-information">
+                        <span class="caption-large light"></span>
+                        <div class="pr-10">
+                          <div class="font-bold tracking-normal text-lg">
+                            <span class="price_to_modify">$55.99</span>
+                            <span class="line-through text-[#c8202f] font-normal price_to_modify">
+                              $83.99
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__badge top right">
+                      <span id="Badge-template--17957298241606__homepage_products_tab_RwziwE-7892877410374" class="badge badge--bottom-left color-scheme-4">36% OFF</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
             {% assign skip_card_product_styles = false %}
-            {%- for product in collection.products limit: 8 -%}
+            {%- for product in collection.products limit: 7 -%}
               {% assign lazy_load = false %}
               {%- if forloop.index > 2 -%}
                 {%- assign lazy_load = true -%}
