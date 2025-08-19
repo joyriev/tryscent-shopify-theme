@@ -223,9 +223,9 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
                 {% unless card_product.tags contains 'onsale' %}
                   <span class="starts_at_text">Starts at</span>
                 {% endunless %}
-                {{ card_product.price | money }}
+                <span class="igPrice" data-product-id="{{ card_product.id }}">{{ card_product.price | money }}</span>
                 {% if card_product.tags contains 'onsale' %}
-                  <span class="line-through text-[#c8202f] font-normal">
+                  <span class="line-through text-[#c8202f] font-normal igComparePrice" data-product-id="{{ card_product.id }}">
                     {{ cart.currency.symbol }}{{ card_product.compare_at_price | money_without_currency }}
                   </span>
                 {% endif %}

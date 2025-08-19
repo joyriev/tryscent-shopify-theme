@@ -75,13 +75,13 @@
           role="status"
           {{ block.shopify_attributes }}>
           {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
-            <span class="compare-price line-through text-white/50 text-base" style="display: inline;">
+            <span class="compare-price line-through text-white/50 text-base" style="display: inline;" data-product-id="{{ product.id }}">
               {{ product.selected_or_first_available_variant.compare_at_price | money }}
             </span>
           {% else %}
             <span class="compare-price line-through text-white/50 text-base" style="display: none;"></span>
           {% endif %}
-          <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+          <span class="current-price" data-product-id="{{ product.id }}">{{ product.selected_or_first_available_variant.price | money }}</span>
         </div>
       </div>
       {%- render 'loading-spinner' -%}
