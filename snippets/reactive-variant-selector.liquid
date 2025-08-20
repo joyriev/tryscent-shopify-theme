@@ -1,4 +1,12 @@
-{%- assign product_form_id = 'product-form-' | append: section.id -%}
+{% liquid
+  assign product_form_id = 'product-form-' | append: section.id
+  assign selected_variant = product.selected_or_first_available_variant
+  for variant in product.variants
+    if variant.title == '50ML'
+      assign selected_variant = variant
+    endif
+  endfor
+%}
 
 <div class="flex justify-between items-center mb-3 !mt-6">
   <h2 class="m-0 text-base font-semibold">
@@ -17,7 +25,7 @@
       data-variant-id="{{ variant.id }}"
       data-price="{{ variant.price }}"
       data-compare-at-price="{{ variant.compare_at_price }}"
-      {% if variant == product.selected_or_first_available_variant %}
+      {% if variant.title == selected_variant.title %}
       aria-selected="true"
       style="border-color: #22613a;"
       {% endif %}>
@@ -57,7 +65,7 @@
     <input
       type="hidden"
       name="id"
-      value="{{ product.selected_or_first_available_variant.id }}"
+      value="{{ selected_variant.id }}"
       class="product-variant-id">
     <button
       type="submit"
@@ -65,8 +73,8 @@
       value="1"
       class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
       aria-label="Add to cart"
-      data-price="{{ product.selected_or_first_available_variant.price }}"
-      data-compare-at-price="{{ product.selected_or_first_available_variant.compare_at_price }}">
+      data-price="{{ selected_variant.price }}"
+      data-compare-at-price="{{ selected_variant.compare_at_price }}">
       <span>Add to cart</span>
       <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
         <div
@@ -74,14 +82,14 @@
           id="product-price"
           role="status"
           {{ block.shopify_attributes }}>
-          {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+          {% if selected_variant.compare_at_price > selected_variant.price %}
             <span class="compare-price line-through text-white/50 text-base" style="display: inline;">
-              {{ product.selected_or_first_available_variant.compare_at_price | money }}
+              {{ selected_variant.compare_at_price | money }}
             </span>
           {% else %}
             <span class="compare-price line-through text-white/50 text-base" style="display: none;"></span>
           {% endif %}
-          <span class="current-price">{{ product.selected_or_first_available_variant.price | money }}</span>
+          <span class="current-price">{{ selected_variant.price | money }}</span>
         </div>
       </div>
       {%- render 'loading-spinner' -%}
