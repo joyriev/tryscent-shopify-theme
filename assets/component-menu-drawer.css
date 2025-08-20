@@ -242,3 +242,38 @@ details[open].menu-opening > .menu-drawer__submenu {
     transition: none !important;
   }
 }
+
+/* IntelliGems Menu Drawer */
+.menu-drawer__navigation .grid-cols-2,
+.menu-drawer__inner-container .grid-cols-3 {
+  display: grid !important;
+}
+.menu-drawer__inner-container .menu-drawer__menu {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-top: 24px;
+}
+.js .menu-drawer__menu li {
+    margin-bottom: .7rem !important;
+}
+
+.menu-drawer__inner-container .menu-drawer__menu-item {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+}
+.menu-drawer__inner-container .menu-drawer__menu-item>.svg-wrapper {
+    color: #fff;
+    background-color: #000;
+    height: 30px;
+    width: 30px;
+    padding: 7px;
+    border-radius: 99px;
+    right: 1rem;
+}
+/* hide first 2 items */
+.js .menu-drawer__menu li:first-child,
+.js .menu-drawer__menu li:nth-child(2) {
+  display: none;
+}
