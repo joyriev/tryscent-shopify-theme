@@ -61,75 +61,75 @@
             <div class="bundle-type-buttons space-y-4">
               <button
                 class="bundle-type-btn [&.active_.pill]:block active"
-                data-bundle-type="4+3"
-                onclick="selectBundleType('4+3')">
+                data-bundle-type="5+3"
+                onclick="selectBundleType('5+3')">
                 <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
                   <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
                 </div>
                 <div class="flex justify-between items-center w-full">
                   <div class="flex flex-col items-start justify-center gap-2">
                     <div class="bundle-badge bestseller">Most Popular</div>
-                    <span class="bundle-type-desc">Buy 4, Get 3 Free</span>
-                    <div class="bundle-savings free-shipping" id="savings-4+3">SAVE {{ base_price | times: 3 | money }}</div>
+                    <span class="bundle-type-desc">Buy 5, Get 3 Free</span>
+                    <div class="bundle-savings free-shipping" id="savings-5+3">SAVE {{ base_price | times: 3 | money }}</div>
                   </div>
                   <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
-                    <span class="bundle-price" id="price-4+3">{{ base_price | times: 4 | divided_by: 7 | money }} per bottle</span>
+                    <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
+                    <span class="bundle-price" id="price-5+3">{{ base_price | times: 5 | divided_by: 8 | money }} per bottle</span>
                   </div>
                 </div>
               </button>
               <button
                 class="bundle-type-btn [&.active_.pill]:block"
-                data-bundle-type="2+1"
-                onclick="selectBundleType('2+1')">
+                data-bundle-type="3+1"
+                onclick="selectBundleType('3+1')">
                 <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
                   <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
                 </div>
                 <div class="flex justify-between items-center w-full">
                   <div class="flex flex-col items-start justify-center gap-2">
-                    <span class="bundle-type-desc">Buy 2, Get 1 Free</span>
-                    <div class="bundle-savings" id="savings-2+1">SAVE {{ base_price | money }}</div>
-                  </div>
-                  <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 2 | money }}</span>
-                    <span class="bundle-price" id="price-2+1">{{ base_price | times: 2 | divided_by: 3 | money }} per bottle</span>
-                  </div>
-                </div>
-              </button>
-              <button
-                class="bundle-type-btn [&.active_.pill]:block"
-                data-bundle-type="3+2"
-                onclick="selectBundleType('3+2')">
-                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
-                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
-                </div>
-                <div class="flex justify-between items-center w-full">
-                  <div class="flex flex-col items-start justify-center gap-2">
-                    <span class="bundle-type-desc">Buy 3, Get 2 Free</span>
-                    <div class="bundle-savings" id="savings-3+2">SAVE {{ base_price | times: 2 | money }}</div>
+                    <span class="bundle-type-desc">Buy 3, Get 1 Free</span>
+                    <div class="bundle-savings" id="savings-3+1">SAVE {{ base_price | money }}</div>
                   </div>
                   <div class="flex flex-col items-end">
                     <span class="bundle-total-price">{{ base_price | times: 3 | money }}</span>
-                    <span class="bundle-price" id="price-3+2">{{ base_price | times: 3 | divided_by: 5 | money }} per bottle</span>
+                    <span class="bundle-price" id="price-3+1">{{ base_price | times: 3 | divided_by: 4 | money }} per bottle</span>
                   </div>
                 </div>
               </button>
               <button
                 class="bundle-type-btn [&.active_.pill]:block"
-                data-bundle-type="5+4"
-                onclick="selectBundleType('5+4')">
+                data-bundle-type="4+2"
+                onclick="selectBundleType('4+2')">
+                <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
+                  <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex flex-col items-start justify-center gap-2">
+                    <span class="bundle-type-desc">Buy 4, Get 2 Free</span>
+                    <div class="bundle-savings" id="savings-4+2">SAVE {{ base_price | times: 2 | money }}</div>
+                  </div>
+                  <div class="flex flex-col items-end">
+                    <span class="bundle-total-price">{{ base_price | times: 4 | money }}</span>
+                    <span class="bundle-price" id="price-4+2">{{ base_price | times: 4 | divided_by: 6 | money }} per bottle</span>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="bundle-type-btn [&.active_.pill]:block"
+                data-bundle-type="6+4"
+                onclick="selectBundleType('6+4')">
                 <div class="flex-shrink-0 size-5 border border-solid border-gray-200 rounded-full">
                   <div class="pill size-[14px] rounded-full bg-[#28A745] mt-0.5 ml-0.5"></div>
                 </div>
                 <div class="flex justify-between items-center w-full">
                   <div class="flex flex-col items-start justify-center gap-2">
                     <div class="bundle-badge best-value">Best Value</div>
-                    <span class="bundle-type-desc">Buy 5, Get 4 Free</span>
-                    <div class="bundle-savings free-shipping" id="savings-5+4">SAVE {{ base_price | times: 4 | money }}</div>
+                    <span class="bundle-type-desc">Buy 6, Get 4 Free</span>
+                    <div class="bundle-savings free-shipping" id="savings-6+4">SAVE {{ base_price | times: 4 | money }}</div>
                   </div>
                   <div class="flex flex-col items-end">
-                    <span class="bundle-total-price">{{ base_price | times: 5 | money }}</span>
-                    <span class="bundle-price" id="price-5+4">{{ base_price | times: 5 | divided_by: 9 | money }} per bottle</span>
+                    <span class="bundle-total-price">{{ base_price | times: 6 | money }}</span>
+                    <span class="bundle-price" id="price-6+4">{{ base_price | times: 6 | divided_by: 10 | money }} per bottle</span>
                   </div>
                 </div>
               </button>
@@ -393,11 +393,11 @@
 </div>
 
 {% comment %} <script>
-                                                                                                                                                                                            /* Woot Buble holder */
-                                                                                                                                                                                            document.addEventListener('DOMContentLoaded', function() {
-                                                                                                                                                                                              const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
-                                                                                                                                                                                              wootBubble.style.bottom = '105px';
-                                                                                                                                                                                            });
+                                                                                                                                                                                              /* Woot Buble holder */
+                                                                                                                                                                                              document.addEventListener('DOMContentLoaded', function() {
+                                                                                                                                                                                                const wootBubble = document.querySelector('.woot--bubble-holder .woot-widget-bubble');
+                                                                                                                                                                                                wootBubble.style.bottom = '105px';
+                                                                                                                                                                                              });
 </script> {% endcomment %}
 
 <style>
@@ -2295,7 +2295,7 @@
   let selectedProducts = [];
   let currentFilter = "all";
   let currentSearch = "";
-  let currentBundleType = "4+3"; // Default bundle type
+  let currentBundleType = "5+3"; // Default bundle type
   let productQuantities = {}; // Store quantities for each product
   let currentVariant = "100ML"; // Default variant
   let variantPrices = {
@@ -2304,10 +2304,10 @@
     "100ML": 2699, // $26.99 in cents
   };
   let bundleConfig = {
-    "2+1": { buy: 2, free: 1, total: 3 },
-    "3+2": { buy: 3, free: 2, total: 5 },
-    "4+3": { buy: 4, free: 3, total: 7 },
-    "5+4": { buy: 5, free: 4, total: 9 },
+    "3+1": { buy: 3, free: 1, total: 4 },
+    "4+2": { buy: 4, free: 2, total: 6 },
+    "5+3": { buy: 5, free: 3, total: 8 },
+    "6+4": { buy: 6, free: 4, total: 10 }
   };
 
   // Make functions globally available immediately
