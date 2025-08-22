@@ -196,7 +196,7 @@
       <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
         <div class="field after:shadow-none">
           <input
-            class="search__input field__input bg-white/10 rounded p-3 h-10"
+            class="search__input field__input bg-[#F3F3F3] rounded p-3 h-10 focus:shadow-none focus:border-2 focus:border-[#226139] focus:border-solid focus:rounded"
             id="Search-In-Modal-2"
             type="search"
             name="q"
@@ -215,7 +215,7 @@
               spellcheck="false"
             {%- endif -%}
           >
-          <label class="field__label top-2.5" for="Search-In-Modal-2">{{ 'general.search.search' | t }}</label>
+          <label class="field__label top-2.5" for="Search-In-Modal-2">Find your perfume</label>
           <input type="hidden" name="options[prefix]" value="last">
           <button
             type="reset"
