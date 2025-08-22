@@ -19,9 +19,13 @@
 
 <div class="grid grid-cols-4 gap-3" id="variant-selector">
   {% for variant in product.variants %}
+    {% assign size = variant.title | remove: 'ML' %}
+    {% assign size_int = size | times: 1 %}
+    {% assign price_in_dollars = variant.price | times: 0.01 %}
+    {% assign per_ml = price_in_dollars | divided_by: size_int | round: 2 %}
     <button
       type="button"
-      class="variant-button flex flex-col items-center gap-2 rounded-lg p-2 pt-3 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
+      class="variant-button flex flex-col items-center gap-1 rounded-lg p-2 pt-3 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
       data-variant-id="{{ variant.id }}"
       data-price="{{ variant.price }}"
       data-compare-at-price="{{ variant.compare_at_price }}"
@@ -41,6 +45,7 @@
         </div>
       {% endif %}
       <span class="text-sm font-semibold">{{ variant.title }}</span>
+      <span class="text-xs text-gray-600">${{ per_ml }} Per Spray</span>
       {% if variant.title == '50ML' %}
         <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Popular</span>
       {% endif %}
