@@ -430,7 +430,7 @@ function updateProgress() {
     } away from another free bottle! (4+2 FREE)`;
 
     // Update first milestone pill
-    bottlePill1.style.borderColor = "#10B981"; // green-500
+    bottlePill1.style.borderColor = "#226139"; // green-500
 
     // Reset other pills
     [bottlePill2, shippingPill].forEach((pill) => {
@@ -444,7 +444,7 @@ function updateProgress() {
 
     // Update first two milestone pills
     [bottlePill1, bottlePill2].forEach((pill) => {
-      pill.style.borderColor = "#10B981"; // green-500
+      pill.style.borderColor = "#226139"; // green-500
     });
 
     // Reset shipping pill
@@ -454,7 +454,7 @@ function updateProgress() {
 
     // Update all pills
     [bottlePill1, bottlePill2, shippingPill].forEach((pill) => {
-      pill.style.borderColor = "#10B981"; // green-500
+      pill.style.borderColor = "#226139"; // green-500
     });
   }
 }
