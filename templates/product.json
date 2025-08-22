@@ -420,9 +420,9 @@
         "background_image": "shopify://shop_images/Frame_349.png",
         "offer_image": "shopify://shop_images/Group_27.png",
         "offer_text": "Special Offer",
-        "offer_title": "Get 3 Scents for  1 affordable price",
-        "offer_description": "For just $33.98, you get 2 full-size (50ml) bottles AND 1 30 ml bottle to try out.",
-        "offer_sub_description": "3 incredible scents that last all day and night.",
+        "offer_title": "Buy More, Get More Free",
+        "offer_description": "Choose your perfect bundle and receive matching free bottles in the same size: 30ml, 50ml, or 100ml.",
+        "offer_sub_description": "Scents that last all day. Luxury-inspired, up to 90% cheaper than designer brands.",
         "offer_button_text": "BUY 2 GET 1 FREE - ENDS SOON!",
         "offer_button_link": "",
         "padding_top": 72,
@@ -536,12 +536,32 @@
       "name": "Review Section Top",
       "settings": {}
     },
+    "1755117642437d279b": {
+      "type": "apps",
+      "blocks": {
+        "instagram_feed_mp_instagram_block_FgtetG": {
+          "type": "shopify://apps/instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
+          "settings": {
+            "mp_instagram_feed_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "instagram_feed_mp_instagram_block_FgtetG"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "1751863713a9594609": {
       "type": "apps",
       "blocks": {
         "judge_me_reviews_review_widget_K8hgi4": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
         }
       },
       "block_order": [
@@ -729,23 +749,6 @@
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "1755117642437d279b": {
-      "type": "apps",
-      "blocks": {
-        "instagram_feed_mp_instagram_block_FgtetG": {
-          "type": "shopify://apps/instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
-          "settings": {
-            "mp_instagram_feed_id": ""
-          }
-        }
-      },
-      "block_order": [
-        "instagram_feed_mp_instagram_block_FgtetG"
-      ],
-      "settings": {
-        "include_margins": true
       }
     }
   },
