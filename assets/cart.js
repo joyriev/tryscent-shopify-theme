@@ -393,51 +393,71 @@ subscribe(PUB_SUB_EVENTS.cartUpdate, (event) => {
 });
 
 function updateProgress() {
-  const cartTotalElement = document.querySelector("[data-cart-total]");
-  const cartTotal = parseFloat(cartTotalElement.dataset.cartTotal);
+  const cartElement = document.querySelector("[data-item-count]");
+  if (!cartElement) return;
+  
+  const itemCount = parseInt(cartElement.dataset.itemCount, 10) || 0;
   const progressBar = document.getElementById("progress-bar");
-  const shippingPill = document.getElementById("shipping-pill");
-  // const giftPill = document.getElementById("gift-pill");
   const milestoneMessage = document.getElementById("milestone-message");
-  const currencyRate = Shopify.currency.rate;
-  const currencySymbol = cartTotalElement.dataset.currencySymbol;
-
-  // Base thresholds in USD
-  const baseFreeShipping = 50;
-  const baseFreeGift = 80;
-
-  // Convert thresholds to current currency
-  const freeShippingThreshold = baseFreeShipping * currencyRate;
-  const freeGiftThreshold = baseFreeGift * currencyRate;
-
-  // Calculate progress
-  const progress = (cartTotal / freeGiftThreshold) * 100;
-
-  // Update progress bar
-  progressBar.style.width = Math.min(progress, 100) + "%";
-
-  // Update pill borders
-  if (cartTotal >= freeShippingThreshold) {
-    shippingPill.classList.remove("border-gray-200");
-    shippingPill.classList.add("border-green-500");
-  } else {
+  const bottlePill1 = document.getElementById("bottle-pill-1");
+  const bottlePill2 = document.getElementById("bottle-pill-2");
+  const shippingPill = document.getElementById("shipping-pill");
+  
+  // Milestone thresholds
+  const firstMilestone = 3;  // 3+1 free
+  const secondMilestone = 5; // 4+2 free
+  const shippingMilestone = 7; // Free shipping
+  
+  // Update progress bar (max width at shipping milestone)
+  const progress = Math.min((itemCount / shippingMilestone) * 100, 100);
+  progressBar.style.width = `${progress}%`;
+  
+  // Update milestone messages and pill styles
+  if (itemCount < firstMilestone) {
+    const bottlesNeeded = firstMilestone - itemCount;
+    milestoneMessage.textContent = `You're ${bottlesNeeded} ${bottlesNeeded === 1 ? 'bottle' : 'bottles'} away from a free bottle! (3+1 FREE)`;
+    
+    // Reset pill styles
+    [bottlePill1, bottlePill2, shippingPill].forEach(pill => {
+      pill.classList.remove("border-green-500");
+      pill.classList.add("border-gray-200");
+    });
+  } 
+  else if (itemCount < secondMilestone) {
+    const bottlesNeeded = secondMilestone - itemCount;
+    milestoneMessage.textContent = `You're ${bottlesNeeded} ${bottlesNeeded === 1 ? 'bottle' : 'bottles'} away from another free bottle! (4+2 FREE)`;
+    
+    // Update first milestone pill
+    bottlePill1.classList.remove("border-gray-200");
+    bottlePill1.classList.add("border-green-500");
+    
+    // Reset other pills
+    [bottlePill2, shippingPill].forEach(pill => {
+      pill.classList.remove("border-green-500");
+      pill.classList.add("border-gray-200");
+    });
+  }
+  else if (itemCount < shippingMilestone) {
+    const bottlesNeeded = shippingMilestone - itemCount;
+    milestoneMessage.textContent = `Add ${bottlesNeeded} more ${bottlesNeeded === 1 ? 'bottle' : 'bottles'} for free shipping!`;
+    
+    // Update first two milestone pills
+    [bottlePill1, bottlePill2].forEach(pill => {
+      pill.classList.remove("border-gray-200");
+      pill.classList.add("border-green-500");
+    });
+    
+    // Reset shipping pill
     shippingPill.classList.remove("border-green-500");
     shippingPill.classList.add("border-gray-200");
   }
-
-  // if (cartTotal >= freeGiftThreshold) {
-  //   giftPill.classList.remove("border-gray-200");
-  //   giftPill.classList.add("border-green-500");
-  // } else {
-  //   giftPill.classList.remove("border-green-500");
-  //   giftPill.classList.add("border-gray-200");
-  // }
-
-  // Update milestone message
-  if (cartTotal >= freeShippingThreshold) {
-    milestoneMessage.textContent = "🎁 You've unlocked free shipping!";
-  } else {
-    const remainingForShipping = Math.ceil(freeShippingThreshold - cartTotal);
-    milestoneMessage.textContent = `Add ${currencySymbol}${remainingForShipping} more to unlock free shipping.`;
+  else {
+    milestoneMessage.textContent = "🎉 You've unlocked free shipping!";
+    
+    // Update all pills
+    [bottlePill1, bottlePill2, shippingPill].forEach(pill => {
+      pill.classList.remove("border-gray-200");
+      pill.classList.add("border-green-500");
+    });
   }
 }
