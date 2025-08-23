@@ -12,36 +12,39 @@
     aria-expanded="false"
     aria-controls="{{ localPosition }}List"
     aria-describedby="{{ localPosition }}Label">
+    <span>
+      {{ localization.language.iso_code }}
+    </span>
     {%- case localization.country.iso_code -%}
-      {%- when 'DE' -%}
+      {%- when 'de' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Germany.svg' -%}
-      {%- when 'DA' -%}
+      {%- when 'da' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Denmark.svg' -%}
-      {%- when 'ES' -%}
+      {%- when 'es' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Spain.svg' -%}
-      {%- when 'FR' -%}
+      {%- when 'fr' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_France.svg' -%}
-      {%- when 'IT' -%}
+      {%- when 'it' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Italy.svg' -%}
-      {%- when 'NL' -%}
+      {%- when 'nl' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_Netherlands.svg' -%}
-      {%- when 'NO' -%}
+      {%- when 'no' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Norway.svg' -%}
-      {%- when 'SE' -%}
+      {%- when 'se' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Sweden.svg' -%}
-      {%- when 'JA' -%}
+      {%- when 'ja' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Japan.svg' -%}
-      {%- when 'KO' -%}
+      {%- when 'ko' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg' -%}
-      {%- when 'TH' -%}
+      {%- when 'th' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Thailand.svg' -%}
-      {%- when 'PT_BR' -%}
+      {%- when 'pt_br' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg' -%}
-      {%- when 'AR' -%}
+      {%- when 'ar' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Saudi_Arabia.svg' -%}
-      {%- when 'AF' -%}
+      {%- when 'af' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Africa.svg' -%}
-      {%- when 'PL' -%}
+      {%- when 'pl' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Poland.svg' -%}
       {%- else -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Kingdom_(3-5).svg' -%}
