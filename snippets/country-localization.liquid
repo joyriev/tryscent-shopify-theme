@@ -2,7 +2,7 @@
   Renders the country picker for the localization form
 
   Accepts:
-    - localPosition: pass in the position in which the form is coming up to create specific IDs
+  - localPosition: pass in the position in which the form is coming up to create specific IDs
 {%- endcomment -%}
 
 {%- liquid
@@ -28,13 +28,12 @@
 <div class="disclosure">
   <button
     type="button"
-    class="disclosure__button localization-form__select localization-selector link link--text caption-large"
+    class="disclosure__button localization-form__select localization-selector link link--text caption-large min-w-[1rem]"
     aria-expanded="false"
     aria-controls="{{ localPosition }}-country-results"
-    aria-describedby="{{ localPosition }}Label"
-  >
-    <span>
-      {{ localization.country.currency.iso_code }}
+    aria-describedby="{{ localPosition }}Label">
+    <span class="text-[26px]">
+      {% comment %} {{ localization.country.currency.iso_code }} {% endcomment %}
       {{ localization.country.currency.symbol -}}
     </span>
     {{ 'icon-caret.svg' | inline_asset_content }}
@@ -58,14 +57,12 @@
             autocorrect="off"
             autocomplete="off"
             autocapitalize="off"
-            spellcheck="false"
-          >
+            spellcheck="false">
           <label class="field__label" for="country-filter-input">{{ 'localization.search' | t }}</label>
           <button
             type="reset"
             class="country-filter__reset-button field__button hidden"
-            aria-label="{{ 'general.search.reset' | t }}"
-          >
+            aria-label="{{ 'general.search.reset' | t }}">
             {{- 'icon-reset.svg' | inline_asset_content -}}
           </button>
           <div class="country-filter__search-icon field__button motion-reduce">
@@ -76,38 +73,34 @@
       <button
         class="country-selector__close-button button--small link"
         type="button"
-        aria-label="{{ 'accessibility.close' | t }}"
-      >
+        aria-label="{{ 'accessibility.close' | t }}">
         {{- 'icon-close.svg' | inline_asset_content -}}
       </button>
     </div>
-    <div id="sr-country-search-results" class="visually-hidden" aria-live="polite"></div>
     <div
-      class="disclosure__list country-selector__list{% if show_currencies %} country-selector__list--with-multiple-currencies{% endif %}"
-      id="{{ localPosition }}-country-results"
-    >
+      id="sr-country-search-results"
+      class="visually-hidden"
+      aria-live="polite"></div>
+    <div class="disclosure__list country-selector__list{% if show_currencies %} country-selector__list--with-multiple-currencies{% endif %}" id="{{ localPosition }}-country-results">
       {% if show_popular_countries %}
         <ul
           role="list"
           class="list-unstyled popular-countries"
-          aria-label="{{ 'localization.popular_countries_regions' | t }}"
-        >
+          aria-label="{{ 'localization.popular_countries_regions' | t }}">
           {%- for country in popular_countries -%}
             <li class="disclosure__item" tabindex="-1">
               <a
                 class="link link--text disclosure__link caption-large focus-inset"
                 href="#"
                 {% if country.iso_code == localization.country.iso_code %}
-                  aria-current="true"
+                aria-current="true"
                 {% endif %}
                 data-value="{{ country.iso_code }}"
-                id="{{ country.name }}"
-              >
+                id="{{ country.name }}">
                 <span
                   {% if country.iso_code != localization.country.iso_code %}
-                    class="visibility-hidden"
-                  {% endif %}
-                >
+                  class="visibility-hidden"
+                  {% endif %}>
                   {{- 'icon-checkmark.svg' | inline_asset_content -}}
                 </span>
                 <span class="country">{{- country.name }}</span>
@@ -127,16 +120,14 @@
               class="link link--text disclosure__link caption-large focus-inset"
               href="#"
               {% if country.iso_code == localization.country.iso_code %}
-                aria-current="true"
+              aria-current="true"
               {% endif %}
               data-value="{{ country.iso_code }}"
-              id="{{ country.name }}"
-            >
+              id="{{ country.name }}">
               <span
                 {% if country.iso_code != localization.country.iso_code %}
-                  class="visibility-hidden"
-                {% endif %}
-              >
+                class="visibility-hidden"
+                {% endif %}>
                 {{- 'icon-checkmark.svg' | inline_asset_content -}}
               </span>
               <span class="country">{{- country.name }}</span>
@@ -152,4 +143,7 @@
   </div>
   <div class="country-selector__overlay"></div>
 </div>
-<input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+<input
+  type="hidden"
+  name="country_code"
+  value="{{ localization.country.iso_code }}">

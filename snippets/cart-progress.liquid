@@ -1,29 +1,31 @@
 {% assign item_count = cart.item_count %}
+{% if item_count > 0 %}
   <div
-  class="pb-4"
-  data-item-count="{{ item_count }}"
-  data-currency-symbol="{{ cart.currency.symbol }}">
-  <!-- Milestone messages -->
-  <div class="text-base font-semibold text-center mb-6" id="milestone-message"></div>
-  <div class="relative h-3 bg-gray-200 rounded-full mb-4">
-    <div
-      class="absolute top-0 left-0 h-full bg-[#226139] !block rounded-full"
-      style="width: 0%;"
-      id="progress-bar"></div>
+    class="pb-4"
+    data-item-count="{{ item_count }}"
+    data-currency-symbol="{{ cart.currency.symbol }}">
+    <!-- Milestone messages -->
+    <div class="text-base font-semibold text-center mb-6" id="milestone-message"></div>
+    <div class="relative h-3 bg-gray-200 rounded-full mb-4">
+      <div
+        class="absolute top-0 left-0 h-full bg-[#226139] !block rounded-full"
+        style="width: 0%;"
+        id="progress-bar"></div>
 
-    <!-- 3+1 Free Bottle Pill -->
-    <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[40%] [transform:translateX(-50%)] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="bottle-pill-1">
-      <span class="text-xs font-bold">3+1</span>
-    </div>
+      <!-- 3+1 Free Bottle Pill -->
+      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[40%] [transform:translateX(-50%)] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="bottle-pill-1">
+        <span class="text-xs font-bold">3+1</span>
+      </div>
 
-    <!-- 4+2 Free Bottles Pill -->
-    <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[70%] [transform:translateX(-50%)] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="bottle-pill-2">
-      <span class="text-xs font-bold">4+2</span>
-    </div>
+      <!-- 4+2 Free Bottles Pill -->
+      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[70%] [transform:translateX(-50%)] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="bottle-pill-2">
+        <span class="text-xs font-bold">4+2</span>
+      </div>
 
-    <!-- Free Shipping Pill -->
-    <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[90%] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="shipping-pill">
-      <span class="text-xs leading-none font-bold text-center">Free Ship</span>
+      <!-- Free Shipping Pill -->
+      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[90%] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="shipping-pill">
+        <span class="text-xs leading-none font-bold text-center">Free Ship</span>
+      </div>
     </div>
   </div>
-</div>
+{% endif %}
