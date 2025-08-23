@@ -12,9 +12,6 @@
     aria-expanded="false"
     aria-controls="{{ localPosition }}List"
     aria-describedby="{{ localPosition }}Label">
-    <span>
-      {{ localization.language.iso_code }}
-    </span>
     {%- case localization.language.iso_code -%}
       {%- when 'de' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Germany.svg' -%}
@@ -30,7 +27,7 @@
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_Netherlands.svg' -%}
       {%- when 'no' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Norway.svg' -%}
-      {%- when 'se' -%}
+      {%- when 'sv' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Sweden.svg' -%}
       {%- when 'ja' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Japan.svg' -%}
@@ -52,7 +49,7 @@
   <img
       src="{{ flag_url }}"
       alt="{{ language.endonym_name | escape }}"
-      class="size-6 object-cover object-center aspect-square rounded-full mt-1.5"
+      class="size-6 object-cover object-center aspect-square rounded-full mt-1.5 border border-solid border-gray-100"
       loading="lazy"
       width="24"
       height="16">
