@@ -15,7 +15,7 @@
     <span>
       {{ localization.language.iso_code }}
     </span>
-    {%- case localization.country.iso_code -%}
+    {%- case localization.language.iso_code -%}
       {%- when 'de' -%}
         {%- assign flag_url = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Germany.svg' -%}
       {%- when 'da' -%}
