@@ -45,7 +45,7 @@
         </div>
       {% endif %}
       <span class="text-sm font-semibold">{{ variant.title }}</span>
-      <span class="text-xs text-gray-600">${{ per_ml }} Per Spray</span>
+      <span class="text-xs text-gray-600">{{ cart.currency.symbol }}{{ per_ml }} Per Spray</span>
       {% if variant.title == '50ML' %}
         <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Popular</span>
       {% endif %}
