@@ -305,7 +305,6 @@
             {%- endform -%}
           </localization-form>
         {%- endif -%}
-        <!-- TODO: This one is not working on mobile, need to fix -->
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form data-prevent-hide>
             {%- form 'localization'
