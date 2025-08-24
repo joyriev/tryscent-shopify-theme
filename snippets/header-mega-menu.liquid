@@ -215,7 +215,7 @@
                   </div>
                   <a class="uppercase font-semibold tracking-wider text-black" href="/collections/all">See All</a>
                 </div>
-                <div class="col-span-4 relative">
+                <div class="col-span-4 relative !px-8">
                   <div class="swiper brands-slider">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
@@ -319,11 +319,18 @@
                       </div>
                     </div>
                   </div>
+                  <button type="button" class="swiper-button-prev border-0 bg-transparent [&:after]:text-black [&:after]:!text-lg !-left-0"></button>
+                  <button type="button" class="swiper-button-next border-0 bg-transparent [&:after]:text-black [&:after]:!text-lg !right-0"></button>
                   <script>
                     document.addEventListener('DOMContentLoaded', function () {
                       const swiper = new Swiper('.brands-slider', {
-                        slidesPerView: 5.5,
+                        slidesPerView: 5,
                         spaceBetween: 16,
+                        loop: true,
+                        navigation: {
+                          nextEl: '.swiper-button-next',
+                          prevEl: '.swiper-button-prev',
+                        },
                       });
                     });
                   </script>

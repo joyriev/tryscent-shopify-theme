@@ -109,6 +109,14 @@
     right: 0px !important
 }
 
+.\!-left-6 {
+    left: -24px !important
+}
+
+.\!-left-0 {
+    left: -0px !important
+}
+
 .isolate {
     isolation: isolate
 }
@@ -1310,6 +1318,16 @@
     padding-bottom: 24px
 }
 
+.px-12 {
+    padding-left: 48px;
+    padding-right: 48px
+}
+
+.\!px-8 {
+    padding-left: 32px !important;
+    padding-right: 32px !important
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -2251,6 +2269,26 @@
 
 .\[\&\.active_\.pill\]\:block.active .pill {
     display: block
+}
+
+.\[\&\:after\]\:text-lg:after {
+    font-size: 18px;
+    line-height: 28px
+}
+
+.\[\&\:after\]\:\!text-lg:after {
+    font-size: 18px !important;
+    line-height: 28px !important
+}
+
+.\[\&\:after\]\:text-black:after {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity, 1))
+}
+
+.\[\&\:before\]\:text-lg:before {
+    font-size: 18px;
+    line-height: 28px
 }
 
 .\[\&\>\*\]\:m-0>* {
