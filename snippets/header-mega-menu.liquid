@@ -1,94 +1,286 @@
-{% comment %}
-  Renders a megamenu for the header.
-
-  Usage:
-  {% render 'header-mega-menu' %}
-{% endcomment %}
-
 <nav class="header__inline-menu">
-  <ul class="list-menu list-menu--inline" role="list">
-    {%- for link in section.settings.menu.links -%}
-      <li>
-        {%- if link.links != blank -%}
-          <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
-              <summary
-                id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item list-menu__item link focus-inset"
-              >
-                <span
-                  {%- if link.child_active %}
-                    class="header__active-menu-item"
-                  {% endif %}
-                >
-                  {{- link.title | escape -}}
-                </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
-              </summary>
-              <div
-                id="MegaMenu-Content-{{ forloop.index }}"
-                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
-                tabindex="-1"
-              >
-                <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
-                  role="list"
-                >
-                  {%- for childlink in link.links -%}
-                    <li>
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
-                      </a>
-                      {%- if childlink.links != blank -%}
-                        <ul class="list-unstyled" role="list">
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      {%- endif -%}
-                    </li>
-                  {%- endfor -%}
-                </ul>
+  <ul class="list-menu list-menu--inline w-full justify-center gap-4" role="list">
+    <li class="flex items-center">
+      <a
+        id="HeaderMenu-buy-3-get-1-free"
+        href="/pages/build-your-bundle"
+        class="bg-[linear-gradient(to_right,#226139,#26964F)] inline-block px-2 rounded no-underline text-white">
+        <span>Buy 3, Get 1 FREE</span>
+      </a>
+    </li>
+    <li>
+      <header-menu>
+        <details id="Details-HeaderMenu-6" class="mega-menu">
+          <summary
+            id="HeaderMenu-men"
+            class="header__menu-item list-menu__item link focus-inset"
+            role="button"
+            aria-expanded="true"
+            aria-controls="MegaMenu-Content-6">
+            <span>Men</span>
+            {{ 'icon-caret.svg' | inline_asset_content }}
+          </summary>
+          <div
+            id="MegaMenu-Content-6"
+            class="mega-menu__content color-scheme-1 gradient motion-reduce global-settings-popup"
+            tabindex="-1">
+            <div class="page-width">
+              <div class="grid grid-cols-5 gap-6">
+                <div class="pr-2 border-0 border-r border-solid border-gray-200">
+                  <p class="my-0 text-gray-500">Men</p>
+                  <h3 class="mt-0 font-semibold text-2xl">Popular Scents</h3>
+                  <div class="flex gap-2 flex-wrap mb-8">
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/tomford%C2%AE">Tom Ford</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/creed®">Creed</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/inspired-by-prada">Prada</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/inspired-by-versace">Versace</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/louis-vuitton®">Louis Vuitton</a>
+                  </div>
+                  <a class="uppercase font-semibold tracking-wider text-black" href="/collections/man">See All</a>
+                </div>
+                <div class="col-span-4">
+                  <div class="grid grid-cols-5 gap-4">
+                    {% assign man_collection = collections['man'] %}
+                    {% if man_collection and man_collection.products_count > 0 %}
+                      {% for product in man_collection.products limit: 5 %}
+                        {% render 'product-card-megamenu'
+                          , product: product %}
+                      {% endfor %}
+                    {% else %}
+                      <p>No products found in the Man collection.</p>
+                    {% endif %}
+                  </div>
+                </div>
               </div>
-            </details>
-          </header-menu>
-        {%- else -%}
-          <a
-            id="HeaderMenu-{{ link.handle }}"
-            href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
-            {% if link.current %}
-              aria-current="page"
-            {% endif %}
-          >
-            <span
-              {%- if link.current %}
-                class="header__active-menu-item"
-              {% endif %}
-            >
-              {{- link.title | escape -}}
-            </span>
-          </a>
-        {%- endif -%}
-      </li>
-    {%- endfor -%}
+            </div>
+          </div>
+        </details>
+      </header-menu>
+    </li>
+    <li>
+      <header-menu>
+        <details id="Details-HeaderMenu-7" class="mega-menu">
+          <summary
+            id="HeaderMenu-women"
+            class="header__menu-item list-menu__item link focus-inset"
+            role="button"
+            aria-expanded="true"
+            aria-controls="MegaMenu-Content-7">
+            <span>Women</span>
+            {{ 'icon-caret.svg' | inline_asset_content }}
+          </summary>
+          <div
+            id="MegaMenu-Content-7"
+            class="mega-menu__content color-scheme-1 gradient motion-reduce global-settings-popup"
+            tabindex="-1">
+            <div class="page-width">
+              <div class="grid grid-cols-5 gap-6">
+                <div class="pr-2 border-0 border-r border-solid border-gray-200">
+                  <p class="my-0 text-gray-500">Women</p>
+                  <h3 class="mt-0 font-semibold text-2xl">Popular Scents</h3>
+                  <div class="flex gap-2 flex-wrap mb-8">
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/tomford%C2%AE">Tom Ford</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/dior®">Dior</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/inspired-by-chanel-no-5">Channel</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/inspired-by-montale">Montale</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/inspired-by-chanel-no-5">Channel No. 5</a>
+                  </div>
+                  <a class="uppercase font-semibold tracking-wider text-black" href="/collections/woman">See All</a>
+                </div>
+                <div class="col-span-4">
+                  <div class="grid grid-cols-5 gap-4">
+                    {% assign man_collection = collections['woman'] %}
+                    {% if man_collection and man_collection.products_count > 0 %}
+                      {% for product in man_collection.products limit: 5 %}
+                        {% render 'product-card-megamenu'
+                          , product: product %}
+                      {% endfor %}
+                    {% else %}
+                      <p>No products found in the Man collection.</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </header-menu>
+    </li>
+    <li>
+      <header-menu>
+        <details id="Details-HeaderMenu-6" class="mega-menu">
+          <summary
+            id="HeaderMenu-unisex"
+            class="header__menu-item list-menu__item link focus-inset"
+            role="button"
+            aria-expanded="true"
+            aria-controls="MegaMenu-Content-6">
+            <span>Unisex</span>
+            {{ 'icon-caret.svg' | inline_asset_content }}
+          </summary>
+          <div
+            id="MegaMenu-Content-6"
+            class="mega-menu__content color-scheme-1 gradient motion-reduce global-settings-popup"
+            tabindex="-1">
+            <div class="page-width">
+              <div class="grid grid-cols-5 gap-6">
+                <div class="pr-2 border-0 border-r border-solid border-gray-200">
+                  <p class="my-0 text-gray-500">Unisex</p>
+                  <h3 class="mt-0 font-semibold text-2xl">Popular Scents</h3>
+                  <div class="flex gap-2 flex-wrap mb-8">
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/tomford%C2%AE">Tom Ford</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/dior®">Dior</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/inspired-by-chanel-no-5">Channel</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/inspired-by-montale">Montale</a>
+                    <a class="inline-block no-underline text-gray-950 bg-gray-100 rounded px-3 py-1 text-sm" href="/collections/inspired-by-chanel-no-5">Channel No. 5</a>
+                  </div>
+                  <a class="uppercase font-semibold tracking-wider text-black" href="/collections/unisex">See All</a>
+                </div>
+                <div class="col-span-4">
+                  <div class="grid grid-cols-5 gap-4">
+                    {% assign man_collection = collections['unisex'] %}
+                    {% if man_collection and man_collection.products_count > 0 %}
+                      {% for product in man_collection.products limit: 5 %}
+                        {% render 'product-card-megamenu'
+                          , product: product %}
+                      {% endfor %}
+                    {% else %}
+                      <p>No products found in the Man collection.</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </header-menu>
+    </li>
+
+    <li>
+      <header-menu>
+        <details id="Details-HeaderMenu-5" class="mega-menu">
+          <summary
+            id="HeaderMenu-all-brands"
+            class="header__menu-item list-menu__item link focus-inset"
+            role="button"
+            aria-expanded="true"
+            aria-controls="MegaMenu-Content-5">
+            <span>All Brands</span>
+            {{ 'icon-caret.svg' | inline_asset_content }}
+          </summary>
+          <div
+            id="MegaMenu-Content-5"
+            class="mega-menu__content color-scheme-1 gradient motion-reduce global-settings-popup"
+            tabindex="-1">
+            <div class="page-width">
+              <div class="grid grid-cols-5 gap-6">
+                <div class="pr-2 border-0 border-r border-solid border-gray-200">
+                  <h3 class="mt-0 font-semibold text-2xl mb-4">Shop By Brand</h3>
+                  <a class="uppercase font-semibold tracking-wider text-black" href="/collections/unisex">See All</a>
+                </div>
+                <div class="col-span-4 relative">
+                  <div class="swiper brands-slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="/collections/dior®" class="p-4 bg-white rounded-lg border border-solid border-gray-200 no-underline block">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/dior.png?v=1756010383"
+                            alt="Dior"
+                            class="w-full h-auto max-h-20 object-contain"
+                            loading="lazy"
+                            width="120"
+                            height="80">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="/collections/creed®" class="p-4 bg-white rounded-lg border border-solid border-gray-200 no-underline block">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/aventus-creed.png?v=1756011364"
+                            alt="Dior"
+                            class="w-full h-auto max-h-20 object-contain"
+                            loading="lazy"
+                            width="120"
+                            height="80">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="/collections/dior®" class="p-4 bg-white rounded-lg border border-solid border-gray-200 no-underline block">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/dior.png?v=1756010383"
+                            alt="Dior"
+                            class="w-full h-auto max-h-20 object-contain"
+                            loading="lazy"
+                            width="120"
+                            height="80">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="/collections/dior®" class="p-4 bg-white rounded-lg border border-solid border-gray-200 no-underline block">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/dior.png?v=1756010383"
+                            alt="Dior"
+                            class="w-full h-auto max-h-20 object-contain"
+                            loading="lazy"
+                            width="120"
+                            height="80">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="/collections/dior®" class="p-4 bg-white rounded-lg border border-solid border-gray-200 no-underline block">
+                          <img
+                            src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/dior.png?v=1756010383"
+                            alt="Dior"
+                            class="w-full h-auto max-h-20 object-contain"
+                            loading="lazy"
+                            width="120"
+                            height="80">
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-prev !left-0 !text-gray-900"></div>
+                    <div class="swiper-button-next !right-0 !text-gray-900"></div>
+                  </div>
+                  <script>
+                    const swiper = new Swiper('.brands-slider', {
+                      slidesPerView: 5,
+                      spaceBetween: 16,
+                      navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                      },
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </header-menu>
+    </li>
+    <li>
+      <a
+        id="HeaderMenu-bestsellers"
+        href="/collections/best-sellers"
+        class="header__menu-item list-menu__item link link--text focus-inset">
+        <span>Bestsellers</span>
+      </a>
+    </li>
+    <li>
+      <a
+        id="HeaderMenu-take-our-quiz"
+        href="#quiz"
+        class="header__menu-item list-menu__item link link--text focus-inset">
+        <span>Take Our Quiz</span>
+      </a>
+    </li>
+    <li>
+      <a
+        id="HeaderMenu-about-us"
+        href="/pages/about-us"
+        class="header__menu-item list-menu__item link link--text focus-inset">
+        <span>About Us</span>
+      </a>
+    </li>
   </ul>
 </nav>

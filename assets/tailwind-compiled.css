@@ -101,6 +101,14 @@
     top: 2px
 }
 
+.\!left-0 {
+    left: 0px !important
+}
+
+.\!right-0 {
+    right: 0px !important
+}
+
 .isolate {
     isolation: isolate
 }
@@ -492,6 +500,14 @@
     height: 100%
 }
 
+.h-20 {
+    height: 80px
+}
+
+.max-h-20 {
+    max-height: 80px
+}
+
 .\!w-10 {
     width: 40px !important
 }
@@ -667,6 +683,10 @@
 
 .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr))
+}
+
+.grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr))
 }
 
 .grid-rows-3 {
@@ -1094,8 +1114,31 @@
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
+.bg-gray-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
+}
+
 .bg-\[linear-gradient\(to_right\2c \#28A745\2c \#20C997\2c \#28A745\)\] {
     background-image: linear-gradient(to right,#28A745,#20C997,#28A745)
+}
+
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops))
+}
+
+.bg-\[linear-gradient\(to_right\2c \#226139\2c \#26964F\)\] {
+    background-image: linear-gradient(to right,#226139,#26964F)
+}
+
+.from-\[\#226139\] {
+    --tw-gradient-from: #226139 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(34 97 57 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+}
+
+.to-\[\#26964F\] {
+    --tw-gradient-to: #26964F var(--tw-gradient-to-position)
 }
 
 .bg-cover {
@@ -1108,6 +1151,11 @@
 
 .fill-current {
     fill: currentColor
+}
+
+.object-contain {
+    -o-object-fit: contain;
+       object-fit: contain
 }
 
 .object-cover {
@@ -1299,6 +1347,10 @@
 
 .pt-6 {
     padding-top: 24px
+}
+
+.pr-2 {
+    padding-right: 8px
 }
 
 .text-center {
@@ -1569,6 +1621,16 @@
 .text-yellow-500 {
     --tw-text-opacity: 1;
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
+}
+
+.text-gray-700 {
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity, 1))
+}
+
+.\!text-gray-900 {
+    --tw-text-opacity: 1 !important;
+    color: rgb(17 24 39 / var(--tw-text-opacity, 1)) !important
 }
 
 .line-through {
