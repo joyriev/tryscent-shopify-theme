@@ -359,35 +359,6 @@ body {
       {% comment %} Load Swiper Assets {% endcomment %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script defer="" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <style>
-      .swiper {
-        padding: 0 32px;
-      }
-      .swiper-button-prev,
-      .swiper-button-next {
-        width: 24px;
-        height: 24px;
-        background: white;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-      }
-      .swiper-button-prev:after,
-      .swiper-button-next:after {
-        font-size: 12px;
-        font-weight: bold;
-        color: #000;
-      }
-      .swiper-button-prev:hover,
-      .swiper-button-next:hover {
-        transform: scale(1.1);
-      }
-      .swiper-slide {
-        height: auto;
-        display: flex;
-      }
-    </style>
-    {{ 'mega-menu.js' | asset_url | script_tag }}
 
     <script>
       if (Shopify.designMode) {
