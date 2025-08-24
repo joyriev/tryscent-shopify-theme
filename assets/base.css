@@ -2361,8 +2361,9 @@ input[type='checkbox'] {
 
 .header {
   display: grid;
-  grid-template-areas: 'left-icons heading search icons';
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-areas: 'left-icons heading icons'
+                       'search search search';
+  grid-template-columns: 30px 1fr auto;
   align-items: center;
 }
 
@@ -2441,7 +2442,7 @@ input[type='checkbox'] {
 .header__heading,
 .header__heading-link {
   grid-area: heading;
-  justify-self: center;
+  justify-self: left;
 }
 
 .header__heading-link {

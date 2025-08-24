@@ -168,7 +168,7 @@
               settings.logo
               | image_url: width: 600
               | image_tag:
-                class: 'header__heading-logo motion-reduce [display:none] lg:inline-block',
+                class: 'header__heading-logo motion-reduce',
                 widths: widths,
                 height: logo_height,
                 width: settings.logo_width,
@@ -176,7 +176,6 @@
                 sizes: sizes,
                 preload: true
             }}
-            <img src="{{ 'tryscent-mobile-logo.png' | asset_url }}" alt="{{ logo_alt }}" class="header__heading-logo motion-reduce inline-block lg:[display:none]" width="45" height="45">
           </div>
         {%- else -%}
           <span class="h2">{{ shop.name }}</span>
@@ -187,7 +186,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    <div class="[grid-area:search] px-2 lg:px-20">
+    <div class="[grid-area:search] pr-2 pb-[10px] lg:pb-0 lg:px-20">
       {%- if settings.predictive_search_enabled -%}
         <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
       {%- else -%}
@@ -294,7 +293,7 @@
     <div class="header__icons">
       <div class="desktop-localization-wrapper {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
         {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
+          <localization-form data-prevent-hide>
             {%- form 'localization'
               , id: 'HeaderLanguageForm'
               , class: 'localization-form' -%}
@@ -307,7 +306,7 @@
           </localization-form>
         {%- endif -%}
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
+          <localization-form data-prevent-hide>
             {%- form 'localization'
               , id: 'HeaderCountryForm'
               , class: 'localization-form' -%}
@@ -328,7 +327,7 @@
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+          class="header__icon header__icon--account link focus-inset"
           rel="nofollow"
         >
           {%- if section.settings.enable_customer_avatar -%}
