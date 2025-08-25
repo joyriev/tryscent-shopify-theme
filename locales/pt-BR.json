@@ -541,7 +541,22 @@
       "thank_you": {
         "announcement": {
           "close": "Fechar"
-        }
+        },
+        "confirmed_items_count": "%{confirmed_count} de %{total_count} itens estão confirmados",
+        "thank_you_confirmed_orders_with_email": "Em breve, você receberá e-mails de confirmação separados com os números de seus pedidos",
+        "thank_you_confirmed_orders_with_phone": "Em breve, você receberá textos de confirmação separados com os números de seus pedidos",
+        "thank_you_confirmed_orders_with_email_and_phone": "Em breve, você receberá e-mails de confirmação separados com os números de seus pedidos",
+        "thank_you_unconfirmed_items_heading": {
+          "one": "Um item não está confirmado",
+          "other": "Alguns itens não estão confirmados"
+        },
+        "thank_you_unconfirmed_items_description": {
+          "one": "Você não foi cobrado por isso",
+          "other": "Você não foi cobrado por isso"
+        },
+        "track_your_order_link_text": "Rastreie seu pedido",
+        "checkout_on_remote_shop_link_text": "Check-out em %{remoteShopName}",
+        "confirmed_orders_title": "Seus pedidos estão confirmados"
       },
       "payment": {
         "payment_option": {
@@ -560,6 +575,13 @@
       },
       "stock": {
         "out_of_stock_in_context_label": "Este produto não está disponível em seu país/região."
+      },
+      "order_summary": {
+        "unconfirmed_label": "Não confirmado"
+      },
+      "processing": {
+        "remote_shops_payments_processing": "Processamento de pagamentos",
+        "remote_checkout_count": "%{current} de %{total}"
       }
     }
   },
