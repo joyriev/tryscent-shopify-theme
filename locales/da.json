@@ -528,7 +528,8 @@
     "checkout": {
       "order_summary": {
         "total_price_label": "Samlet pris",
-        "total_due_label": "Samlet skyldig beløb"
+        "total_due_label": "Samlet skyldig beløb",
+        "unconfirmed_label": "Ubekræftet"
       },
       "payment": {
         "payment_option": {
@@ -547,6 +548,27 @@
       },
       "stock": {
         "out_of_stock_in_context_label": "Dette produkt er ikke tilgængeligt i dit land/område."
+      },
+      "processing": {
+        "remote_shops_payments_processing": "Behandling af betalinger",
+        "remote_checkout_count": "%{current} af %{total}"
+      },
+      "thank_you": {
+        "confirmed_items_count": "%{confirmed_count} af %{total_count} elementer er bekræftet",
+        "thank_you_confirmed_orders_with_email": "Du får snart separate bekræftelsesmails med dine ordrenumre.",
+        "thank_you_confirmed_orders_with_phone": "Du får snart separate bekræftelses-sms'er med dine ordrenumre.",
+        "thank_you_confirmed_orders_with_email_and_phone": "Du får snart separate bekræftelsesmails med dine ordrenumre.",
+        "thank_you_unconfirmed_items_heading": {
+          "one": "En vare er ikke bekræftet",
+          "other": "Nogle elementer er ikke bekræftet"
+        },
+        "thank_you_unconfirmed_items_description": {
+          "one": "Du er ikke blevet opkrævet betaling for dette",
+          "other": "Du er ikke blevet opkrævet betaling for disse"
+        },
+        "track_your_order_link_text": "Spor din ordre",
+        "checkout_on_remote_shop_link_text": "Checkout på %{remoteShopName}",
+        "confirmed_orders_title": "Dine ordrer er bekræftet"
       }
     }
   },
