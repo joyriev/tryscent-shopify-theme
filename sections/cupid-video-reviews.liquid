@@ -17,7 +17,115 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    Hello world
+    <div class="text-center max-w-screen-md mx-auto">
+      <h2 class="text-3xl font-black tracking-tight leading-snug my-0 mb-3">
+        THE BEST CHOICE FOR PHEROMONES
+      </h2>
+      <img
+        src="{{ 'rating-stars.svg' | asset_url }}"
+        alt="★★★★★"
+        width="90"
+        height="18">
+      <p class="text-lg font-medium text-gray-700 my-0 mt-3">
+        See why 500,000+ men trust Cupids fragrances                                        
+(Our customers were provided with a token of appreciation for sharing their stories with us)
+      </p>
+    </div>
+    <div class="grid grid-cols-4 gap-4 mt-12">
+      <div id="slide1" class="bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
+        <video
+          class="w-full aspect-[9/16] object-cover"
+          controls=""
+          preload="metadata"
+          playsinline=""
+          webkit-playsinline=""
+          poster="https://cdn.shopify.com/s/files/1/0770/7095/8817/files/imgi_62_1_8.webp?v=1753381148">
+          <source src="https://cdn.shopify.com/videos/c/o/v/d0e5076d1eae4fe5ab141eb7a0bad0fb.mp4" type="video/mp4">
+        </video>
+        <div class="p-4 text-center">
+          <img
+            src="{{ 'rating-stars.svg' | asset_url }}"
+            alt="★★★★★"
+            width="90"
+            height="18">
+          <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">You have nothing to lose</h3>
+          <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
+            “I already have a date locked in for next week, and I’m just getting started!”
+          </p>
+          <h4 class="text-black font-semibold text-xl mb-0 mt-3">Kyle G. | 36</h4>
+        </div>
+      </div>
+      <div id="slide2" class="bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
+        <video
+          class="w-full aspect-[9/16] object-cover"
+          controls=""
+          preload="metadata"
+          playsinline=""
+          webkit-playsinline=""
+          poster="https://cdn.shopify.com/s/files/1/0770/7095/8817/files/imgi_63_2_5.webp?v=1753381147">
+          <source src="https://cdn.shopify.com/videos/c/o/v/1aaac1d7bef54f02aa76ff77de3423cd.mp4" type="video/mp4">
+        </video>
+        <div class="p-4 text-center">
+          <img
+            src="{{ 'rating-stars.svg' | asset_url }}"
+            alt="★★★★★"
+            width="90"
+            height="18">
+          <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">You have nothing to lose</h3>
+          <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
+            “I already have a date locked in for next week, and I’m just getting started!”
+          </p>
+          <h4 class="text-black font-semibold text-xl mb-0 mt-3">Kyle G. | 36</h4>
+        </div>
+      </div>
+      <div id="slide3" class="bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
+        <video
+          class="w-full aspect-[9/16] object-cover"
+          controls=""
+          preload="metadata"
+          playsinline=""
+          webkit-playsinline=""
+          poster="https://cdn.shopify.com/s/files/1/0770/7095/8817/files/imgi_64_3_5.webp?v=1753381147">
+          <source src="https://cdn.shopify.com/videos/c/o/v/d82935d1cd8e45e2ad399f02f23feaf6.mp4" type="video/mp4">
+        </video>
+        <div class="p-4 text-center">
+          <img
+            src="{{ 'rating-stars.svg' | asset_url }}"
+            alt="★★★★★"
+            width="90"
+            height="18">
+          <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">You have nothing to lose</h3>
+          <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
+            “I already have a date locked in for next week, and I’m just getting started!”
+          </p>
+          <h4 class="text-black font-semibold text-xl mb-0 mt-3">Kyle G. | 36</h4>
+        </div>
+      </div>
+      <div id="slide4" class="bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
+        <video
+          class="w-full aspect-[9/16] object-cover"
+          controls=""
+          preload="metadata"
+          playsinline=""
+          webkit-playsinline=""
+          poster="https://cdn.shopify.com/s/files/1/0770/7095/8817/files/imgi_65_1717051572-EdwardTestimonial-thumbnail.webp?v=1753381147">
+          <source src="https://cdn.shopify.com/videos/c/o/v/12df8ef73730452dad83885d10372616.mp4" type="video/mp4">
+        </video>
+        <div class="p-4 text-center">
+          <img
+            src="{{ 'rating-stars.svg' | asset_url }}"
+            alt="★★★★★"
+            width="90"
+            height="18">
+          <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">You have nothing to lose</h3>
+          <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
+            “I already have a date locked in for next week, and I’m just getting started!”
+          </p>
+          <h4 class="text-black font-semibold text-xl mb-0 mt-3">Kyle G. | 36</h4>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -37,7 +145,7 @@
         "step": 4,
         "unit": "px",
         "label": "t:sections.all.padding.padding_top",
-        "default": 36
+        "default": 72
       }, {
         "type": "range",
         "id": "padding_bottom",
@@ -46,7 +154,7 @@
         "step": 4,
         "unit": "px",
         "label": "t:sections.all.padding.padding_bottom",
-        "default": 36
+        "default": 72
       }, {
         "type": "color",
         "id": "background_color",
