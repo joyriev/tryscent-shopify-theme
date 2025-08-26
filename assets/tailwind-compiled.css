@@ -29,6 +29,14 @@
     inset: 0px
 }
 
+.\!-left-0 {
+    left: -0px !important
+}
+
+.\!right-0 {
+    right: 0px !important
+}
+
 .-top-2\.5 {
     top: -10px
 }
@@ -99,22 +107,6 @@
 
 .top-\[2px\] {
     top: 2px
-}
-
-.\!left-0 {
-    left: 0px !important
-}
-
-.\!right-0 {
-    right: 0px !important
-}
-
-.\!-left-6 {
-    left: -24px !important
-}
-
-.\!-left-0 {
-    left: -0px !important
 }
 
 .isolate {
@@ -290,6 +282,10 @@
     margin-top: 2px
 }
 
+.mt-1\.5 {
+    margin-top: 6px
+}
+
 .mt-10 {
     margin-top: 40px
 }
@@ -336,14 +332,6 @@
 
 .mt-\[44px\] {
     margin-top: 44px
-}
-
-.mt-1 {
-    margin-top: 4px
-}
-
-.mt-1\.5 {
-    margin-top: 6px
 }
 
 .line-clamp-1 {
@@ -451,11 +439,6 @@
     height: 14px
 }
 
-.size-6 {
-    width: 24px;
-    height: 24px
-}
-
 .\!h-8 {
     height: 32px !important
 }
@@ -506,18 +489,6 @@
 
 .h-full {
     height: 100%
-}
-
-.h-20 {
-    height: 80px
-}
-
-.h-\[92px\] {
-    height: 92px
-}
-
-.max-h-20 {
-    max-height: 80px
 }
 
 .\!w-10 {
@@ -572,21 +543,8 @@
     width: 100%
 }
 
-.w-48 {
-    width: 192px
-}
-
-.min-w-\[2rem\] {
-    min-width: 32px
-}
-
 .min-w-\[1rem\] {
     min-width: 16px
-}
-
-.min-w-max {
-    min-width: -moz-max-content;
-    min-width: max-content
 }
 
 .max-w-16 {
@@ -635,10 +593,6 @@
 
 .max-w-full {
     max-width: 100%
-}
-
-.max-w-screen-lg {
-    max-width: 1024px
 }
 
 .flex-1 {
@@ -708,10 +662,6 @@
 
 .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr))
-}
-
-.grid-cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr))
 }
 
 .grid-rows-3 {
@@ -794,10 +744,6 @@
     gap: 32px
 }
 
-.\!gap-0 {
-    gap: 0px !important
-}
-
 .gap-x-6 {
     -moz-column-gap: 24px;
          column-gap: 24px
@@ -829,10 +775,6 @@
     --tw-space-y-reverse: 0;
     margin-top: calc(16px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(16px * var(--tw-space-y-reverse))
-}
-
-.overflow-auto {
-    overflow: auto
 }
 
 .overflow-hidden {
@@ -1106,6 +1048,11 @@
     background-color: rgb(0 0 0 / 0.4)
 }
 
+.bg-gray-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
+}
+
 .bg-gray-200 {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1))
@@ -1143,31 +1090,12 @@
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
-.bg-gray-100 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
-}
-
-.bg-\[linear-gradient\(to_right\2c \#28A745\2c \#20C997\2c \#28A745\)\] {
-    background-image: linear-gradient(to right,#28A745,#20C997,#28A745)
-}
-
-.bg-gradient-to-r {
-    background-image: linear-gradient(to right, var(--tw-gradient-stops))
-}
-
 .bg-\[linear-gradient\(to_right\2c \#226139\2c \#26964F\)\] {
     background-image: linear-gradient(to right,#226139,#26964F)
 }
 
-.from-\[\#226139\] {
-    --tw-gradient-from: #226139 var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(34 97 57 / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
-}
-
-.to-\[\#26964F\] {
-    --tw-gradient-to: #26964F var(--tw-gradient-to-position)
+.bg-\[linear-gradient\(to_right\2c \#28A745\2c \#20C997\2c \#28A745\)\] {
+    background-image: linear-gradient(to right,#28A745,#20C997,#28A745)
 }
 
 .bg-cover {
@@ -1238,9 +1166,9 @@
     padding-right: 12px !important
 }
 
-.\!px-6 {
-    padding-left: 24px !important;
-    padding-right: 24px !important
+.\!px-8 {
+    padding-left: 32px !important;
+    padding-right: 32px !important
 }
 
 .px-0 {
@@ -1318,18 +1246,16 @@
     padding-bottom: 24px
 }
 
-.px-12 {
-    padding-left: 48px;
-    padding-right: 48px
-}
-
-.\!px-8 {
-    padding-left: 32px !important;
-    padding-right: 32px !important
-}
-
 .\!pb-3 {
     padding-bottom: 12px !important
+}
+
+.\!pl-0 {
+    padding-left: 0px !important
+}
+
+.\!pl-3 {
+    padding-left: 12px !important
 }
 
 .\!pt-3 {
@@ -1352,6 +1278,10 @@
     padding-bottom: 24px
 }
 
+.pb-\[10px\] {
+    padding-bottom: 10px
+}
+
 .pl-16 {
     padding-left: 64px
 }
@@ -1362,6 +1292,10 @@
 
 .pr-10 {
     padding-right: 40px
+}
+
+.pr-2 {
+    padding-right: 8px
 }
 
 .pr-3 {
@@ -1386,26 +1320,6 @@
 
 .pt-6 {
     padding-top: 24px
-}
-
-.pr-2 {
-    padding-right: 8px
-}
-
-.pl-3 {
-    padding-left: 12px
-}
-
-.\!pl-3 {
-    padding-left: 12px !important
-}
-
-.pb-\[10px\] {
-    padding-bottom: 10px
-}
-
-.\!pl-0 {
-    padding-left: 0px !important
 }
 
 .text-center {
@@ -1439,6 +1353,10 @@
     font-size: 24px
 }
 
+.text-\[26px\] {
+    font-size: 26px
+}
+
 .text-base {
     font-size: 16px;
     line-height: 24px
@@ -1462,14 +1380,6 @@
 .text-xs {
     font-size: 12px;
     line-height: 16px
-}
-
-.text-\[28px\] {
-    font-size: 28px
-}
-
-.text-\[26px\] {
-    font-size: 26px
 }
 
 .\!font-black {
@@ -1676,16 +1586,6 @@
 .text-yellow-500 {
     --tw-text-opacity: 1;
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
-}
-
-.text-gray-700 {
-    --tw-text-opacity: 1;
-    color: rgb(55 65 81 / var(--tw-text-opacity, 1))
-}
-
-.\!text-gray-900 {
-    --tw-text-opacity: 1 !important;
-    color: rgb(17 24 39 / var(--tw-text-opacity, 1)) !important
 }
 
 .line-through {
@@ -2150,6 +2050,10 @@
     .md\:\[display\:block\] {
         display: block
     }
+
+    .md\:\[display\:none\] {
+        display: none
+    }
 }
 
 @media (min-width: 1024px) {
@@ -2188,10 +2092,6 @@
 
     .lg\:mt-\[44px\] {
         margin-top: 44px
-    }
-
-    .lg\:inline-block {
-        display: inline-block
     }
 
     .lg\:flex {
@@ -2257,10 +2157,6 @@
     .lg\:\[display\:block\] {
         display: block
     }
-
-    .lg\:\[display\:none\] {
-        display: none
-    }
 }
 
 .\[\&\.active\]\:\[transform\:translateY\(0\)\].active {
@@ -2271,11 +2167,6 @@
     display: block
 }
 
-.\[\&\:after\]\:text-lg:after {
-    font-size: 18px;
-    line-height: 28px
-}
-
 .\[\&\:after\]\:\!text-lg:after {
     font-size: 18px !important;
     line-height: 28px !important
@@ -2284,11 +2175,6 @@
 .\[\&\:after\]\:text-black:after {
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity, 1))
-}
-
-.\[\&\:before\]\:text-lg:before {
-    font-size: 18px;
-    line-height: 28px
 }
 
 .\[\&\>\*\]\:m-0>* {
