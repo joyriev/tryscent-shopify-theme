@@ -29,6 +29,14 @@
     inset: 0px
 }
 
+.\!-left-0 {
+    left: -0px !important
+}
+
+.\!right-0 {
+    right: 0px !important
+}
+
 .-top-2\.5 {
     top: -10px
 }
@@ -274,6 +282,10 @@
     margin-top: 2px
 }
 
+.mt-1\.5 {
+    margin-top: 6px
+}
+
 .mt-10 {
     margin-top: 40px
 }
@@ -320,6 +332,10 @@
 
 .mt-\[44px\] {
     margin-top: 44px
+}
+
+.mt-12 {
+    margin-top: 48px
 }
 
 .line-clamp-1 {
@@ -375,6 +391,10 @@
 
 .aspect-square {
     aspect-ratio: 1 / 1
+}
+
+.aspect-\[9\/16\] {
+    aspect-ratio: 9/16
 }
 
 .\!size-6 {
@@ -479,6 +499,10 @@
     height: 100%
 }
 
+.h-48 {
+    height: 192px
+}
+
 .\!w-10 {
     width: 40px !important
 }
@@ -531,6 +555,14 @@
     width: 100%
 }
 
+.w-48 {
+    width: 192px
+}
+
+.min-w-\[1rem\] {
+    min-width: 16px
+}
+
 .max-w-16 {
     max-width: 64px
 }
@@ -577,6 +609,10 @@
 
 .max-w-full {
     max-width: 100%
+}
+
+.max-w-screen-md {
+    max-width: 768px
 }
 
 .flex-1 {
@@ -999,6 +1035,11 @@
     background-color: rgb(235 244 239 / var(--tw-bg-opacity, 1))
 }
 
+.bg-\[\#F3F3F3\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 243 243 / var(--tw-bg-opacity, 1))
+}
+
 .bg-\[\#c8202f\] {
     --tw-bg-opacity: 1;
     background-color: rgb(200 32 47 / var(--tw-bg-opacity, 1))
@@ -1027,6 +1068,11 @@
     background-color: rgb(0 0 0 / 0.4)
 }
 
+.bg-gray-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
+}
+
 .bg-gray-200 {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1))
@@ -1035,11 +1081,6 @@
 .bg-gray-900 {
     --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
-}
-
-.bg-green-500 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1))
 }
 
 .bg-green-600\/10 {
@@ -1073,6 +1114,10 @@
     background-color: rgb(255 255 255 / 0.1)
 }
 
+.bg-\[linear-gradient\(to_right\2c \#226139\2c \#26964F\)\] {
+    background-image: linear-gradient(to right,#226139,#26964F)
+}
+
 .bg-\[linear-gradient\(to_right\2c \#28A745\2c \#20C997\2c \#28A745\)\] {
     background-image: linear-gradient(to right,#28A745,#20C997,#28A745)
 }
@@ -1087,6 +1132,11 @@
 
 .fill-current {
     fill: currentColor
+}
+
+.object-contain {
+    -o-object-fit: contain;
+       object-fit: contain
 }
 
 .object-cover {
@@ -1140,9 +1190,9 @@
     padding-right: 12px !important
 }
 
-.\!px-6 {
-    padding-left: 24px !important;
-    padding-right: 24px !important
+.\!px-8 {
+    padding-left: 32px !important;
+    padding-right: 32px !important
 }
 
 .px-0 {
@@ -1220,8 +1270,21 @@
     padding-bottom: 24px
 }
 
+.\!px-6 {
+    padding-left: 24px !important;
+    padding-right: 24px !important
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
+}
+
+.\!pl-0 {
+    padding-left: 0px !important
+}
+
+.\!pl-3 {
+    padding-left: 12px !important
 }
 
 .\!pt-3 {
@@ -1244,6 +1307,10 @@
     padding-bottom: 24px
 }
 
+.pb-\[10px\] {
+    padding-bottom: 10px
+}
+
 .pl-16 {
     padding-left: 64px
 }
@@ -1254,6 +1321,10 @@
 
 .pr-10 {
     padding-right: 40px
+}
+
+.pr-2 {
+    padding-right: 8px
 }
 
 .pr-3 {
@@ -1311,8 +1382,8 @@
     font-size: 24px
 }
 
-.text-\[10px\] {
-    font-size: 10px
+.text-\[26px\] {
+    font-size: 26px
 }
 
 .text-base {
@@ -1492,6 +1563,11 @@
     color: rgb(107 114 128 / var(--tw-text-opacity, 1))
 }
 
+.text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity, 1))
+}
+
 .text-gray-900 {
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity, 1))
@@ -1541,9 +1617,9 @@
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
 }
 
-.text-gray-600 {
+.text-gray-700 {
     --tw-text-opacity: 1;
-    color: rgb(75 85 99 / var(--tw-text-opacity, 1))
+    color: rgb(55 65 81 / var(--tw-text-opacity, 1))
 }
 
 .line-through {
@@ -1796,6 +1872,23 @@
     opacity: 0.75
 }
 
+.focus\:rounded:focus {
+    border-radius: 4px
+}
+
+.focus\:border-2:focus {
+    border-width: 2px
+}
+
+.focus\:border-solid:focus {
+    border-style: solid
+}
+
+.focus\:border-\[\#226139\]:focus {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 97 57 / var(--tw-border-opacity, 1))
+}
+
 .focus\:bg-transparent:focus {
     background-color: transparent
 }
@@ -1991,6 +2084,10 @@
     .md\:\[display\:block\] {
         display: block
     }
+
+    .md\:\[display\:none\] {
+        display: none
+    }
 }
 
 @media (min-width: 1024px) {
@@ -2081,6 +2178,10 @@
         padding-right: 16px
     }
 
+    .lg\:pb-0 {
+        padding-bottom: 0px
+    }
+
     .lg\:text-3xl {
         font-size: 30px;
         line-height: 36px
@@ -2106,6 +2207,16 @@
 
 .\[\&\.active_\.pill\]\:block.active .pill {
     display: block
+}
+
+.\[\&\:after\]\:\!text-lg:after {
+    font-size: 18px !important;
+    line-height: 28px !important
+}
+
+.\[\&\:after\]\:text-black:after {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity, 1))
 }
 
 .\[\&\>\*\]\:m-0>* {
