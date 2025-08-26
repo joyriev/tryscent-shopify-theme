@@ -383,6 +383,16 @@ body {
       class="content-for-layout focus-none"
       role="main"
       tabindex="-1">
+
+      {% comment %} The Bogo Banner for mobile {% endcomment %}
+      <a href="/pages/build-your-bundle" class="flex md:[display:none] no-underline text-black bundle-banner-for-mobile">
+        <img
+          class="w-full h-auto"
+          src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/b3g1.png?v=1756037683"
+          alt="Bogo Bundle"
+          width=""
+          height="">
+      </a>
       {{ content_for_layout }}
     </main>
 
