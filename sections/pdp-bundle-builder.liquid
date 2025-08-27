@@ -1,0 +1,138 @@
+<div class="bg-white py-12 md:py-16">
+  <div class="page-width">
+    <!-- Alpine.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    {% assign bundle_collection = collections['smells-like'] %}
+    {% unless bundle_collection %}
+      {% assign bundle_collection = collections.first %}
+    {% endunless %}
+
+    <div x-data="{
+    scents: [],
+    addScent(product) {
+      if(this.scents.length < 3 && !this.scents.find(s => s.id === product.id)){
+        this.scents.push(product);
+      }
+    },
+    removeScent(index) {
+      this.scents.splice(index, 1);
+    },
+    addBundleToCart() {
+      // add all 3 + free product to cart via AJAX
+      let items = this.scents.map(p => ({id: p.variant_id, quantity: 1}));
+
+      // Add free scent (replace with correct variant ID of 'ROUGH')
+      items.push({id: {{ all_products['rough'].selected_or_first_available_variant.id }}, quantity: 1});
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({items})
+      }).then(res => res.json())
+        .then(data => {
+          window.location.href = '/cart';
+        });
+    }
+  }" class="max-w-md mx-auto bg-white border rounded-xl shadow p-6">
+
+      <!-- Header -->
+      <h2 class="text-xl font-bold text-gray-900">Buy 3 Get 1 FREE</h2>
+      <p class="text-green-600">Build a bundle and get this scent for FREE!</p>
+
+      <!-- Free Scent -->
+      <div class="flex items-center mt-4">
+        <div class="relative w-16 h-16">
+          <img
+            src="{{ all_products['rough'].featured_image | img_url: '200x' }}"
+            class="rounded shadow"
+            alt="Free scent">
+          <span class="absolute -top-2 -left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">FREE</span>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm text-gray-600">Smells like</p>
+          <p class="text-lg font-bold">ROUGH</p>
+          <p class="text-sm text-gray-500">A bold, addictive scent for men – spicy, warm, and passionate.</p>
+        </div>
+      </div>
+
+      <!-- Add More Scents -->
+      <div class="mt-6 border-t pt-4">
+        <template x-if="scents.length < 3">
+          <p class="text-sm font-semibold text-gray-700 mb-2">ADD 3 MORE SCENTS</p>
+        </template>
+
+        <div class="grid grid-cols-3 gap-2">
+          <template x-for="i in 3">
+            <div>
+              <template x-if="!scents[i-1]">
+                <div class="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-green-600 rounded-lg bg-green-50">
+                  <select @change="addScent(JSON.parse($event.target.value))" class="text-xs text-gray-700 bg-transparent">
+                    <option value="">+ Add Scent</option>
+                    {% for product in bundle_collection.products %}
+                      <option value='{"id": {{ product.id }}, "variant_id": {{ product.selected_or_first_available_variant.id }}, "name": "{{ product.title | escape }}", "price": {{ product.price | divided_by: 100 }}, "img": "{{ product.featured_image | img_url: '200x' }}"}'>
+                        {{ product.title }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </template>
+              <template x-if="scents[i-1]">
+                <div class="relative p-2 border rounded-lg">
+                  <img :src="scents[i-1].img" class="w-16 h-16 mx-auto" />
+                  <p class="text-xs font-semibold mt-1 text-center" x-text="scents[i-1].name"></p>
+                  <button @click="removeScent(i-1)" class="absolute top-1 right-1 text-gray-500 hover:text-red-600">✕</button>
+                </div>
+              </template>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Completed Bundle -->
+      <template x-if="scents.length === 3">
+        <div class="mt-6 text-center">
+          <p class="font-semibold text-green-600 mb-2">🎉 YOUR BUNDLE IS READY 🎉</p>
+
+          <div class="grid grid-cols-3 gap-2 mb-3">
+            <template x-for="scent in scents" :key="scent.id">
+              <div class="p-2 border rounded-lg">
+                <img :src="scent.img" class="w-16 h-16 mx-auto" />
+                <p class="text-xs font-semibold mt-1" x-text="scent.name"></p>
+                <p class="text-xs text-gray-500" x-text="'$' + scent.price"></p>
+              </div>
+            </template>
+          </div>
+
+          <p class="line-through text-gray-500">$128.00</p>
+          <p class="text-xl font-bold text-red-600">$96.00
+            <span class="text-green-600">🎉 You Save $32.00!</span>
+          </p>
+
+          <button @click="addBundleToCart" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold">
+            Add Bundle to Cart
+          </button>
+        </div>
+      </template>
+
+      <!-- Disabled Button -->
+      <template x-if="scents.length < 3">
+        <button class="mt-6 w-full bg-gray-300 text-gray-600 py-3 rounded-lg font-semibold cursor-not-allowed" disabled>
+          Complete the Bundle
+        </button>
+      </template>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "PDP bundle builder",
+    "settings": [],
+    "presets": [
+      {
+        "name": "PDP bundle builder"
+      }
+    ]
+  }
+{% endschema %}
