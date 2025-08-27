@@ -16,7 +16,7 @@
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
-  <div class="page-width">
+  <div class="page-width overflow-hidden">
     <div class="text-center max-w-screen-md mx-auto">
       <h2 class="text-3xl font-black tracking-tight leading-snug my-0 mb-3">
         THE BEST CHOICE FOR FRAGRANCE LOVERS
@@ -27,109 +27,125 @@
         width="90"
         height="18">
       <p class="text-lg font-medium text-gray-700 my-0 mt-3">
-        Discover why 10,000+ people worldwide trust TryScent           
+        Discover why 10,000+ people worldwide trust TryScent                             
         to keep them smelling unforgettable.
         <p>(Our customers were provided with a token of appreciation for sharing their stories with us)</p>
       </p>
     </div>
-    <div class="grid grid-cols-4 gap-4 mt-12">
-      <div id="slide1" class="bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
-        <video
-          class="w-full aspect-[9/16] object-cover"
-          controls=""
-          preload="metadata"
-          playsinline=""
-          webkit-playsinline=""
-          poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/zoriana_1.png?v=1756272412">
-          <source src="https://cdn.shopify.com/videos/c/o/v/6650605336a44c15b83b132f18f7da08.mp4" type="video/mp4">
-        </video>
-        <div class="p-4 text-center">
-          <img
-            src="{{ 'rating-stars.svg' | asset_url }}"
-            alt="★★★★★"
-            width="90"
-            height="18">
-          <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">Confidence Boost in a Bottle</h3>
-          <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
-            “Every time I wear TryScent, I get compliments and it lasts longer”
-          </p>
-          <h4 class="text-black font-semibold text-xl mb-0 mt-3">
-            Zoriana H. | 29</h4>
+    <div class="cupids-video-slider max-w-full">
+      <div class="swiper-wrapper mt-12">
+        <div class="swiper-slide bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
+          <video
+            class="w-full aspect-[9/16] object-cover"
+            controls=""
+            preload="metadata"
+            playsinline=""
+            webkit-playsinline=""
+            poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/zoriana_1.png?v=1756272412">
+            <source src="https://cdn.shopify.com/videos/c/o/v/db00fc115be24d67bb5037d1a4ca50c7.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 text-center">
+            <img
+              src="{{ 'rating-stars.svg' | asset_url }}"
+              alt="★★★★★"
+              width="90"
+              height="18">
+            <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">Confidence Boost in a Bottle</h3>
+            <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
+              “Every time I wear TryScent, I get compliments and it lasts longer”
+            </p>
+            <h4 class="text-black font-semibold text-xl mb-0 mt-3">
+              Zoriana H. | 29</h4>
+          </div>
+        </div>
+        <div class="swiper-slide bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
+          <video
+            class="w-full aspect-[9/16] object-cover"
+            controls=""
+            preload="metadata"
+            playsinline=""
+            webkit-playsinline=""
+            poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/yana_1.png?v=1756272698">
+            <source src="https://cdn.shopify.com/videos/c/o/v/d8a79282e8eb4c0f80ca2d3dbe8d2e3b.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 text-center">
+            <img
+              src="{{ 'rating-stars.svg' | asset_url }}"
+              alt="★★★★★"
+              width="90"
+              height="18">
+            <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">Worth Every Penny</h3>
+            <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
+              “I used to spend $150+ on designer colognes. TryScent smells just as good, for a fraction.”
+            </p>
+            <h4 class="text-black font-semibold text-xl mb-0 mt-3">Yana L. | 34</h4>
+          </div>
+        </div>
+        <div class="swiper-slide bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
+          <video
+            class="w-full aspect-[9/16] object-cover"
+            controls=""
+            preload="metadata"
+            playsinline=""
+            webkit-playsinline=""
+            poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/yedesma_1.png?v=1756272854">
+            <source src="https://cdn.shopify.com/videos/c/o/v/0305041da62b4f34b9122e661484aabf.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 text-center">
+            <img
+              src="{{ 'rating-stars.svg' | asset_url }}"
+              alt="★★★★★"
+              width="90"
+              height="18">
+            <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">Smells Like Luxury</h3>
+            <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
+              “I wore this to a wedding, and three people asked what I was wearing. Instant win.”
+            </p>
+            <h4 class="text-black font-semibold text-xl mb-0 mt-3">Yedesma R. | 31</h4>
+          </div>
+        </div>
+        <div class="swiper-slide bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
+          <video
+            class="w-full aspect-[9/16] object-cover"
+            controls=""
+            preload="metadata"
+            playsinline=""
+            webkit-playsinline=""
+            poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/yana-o_1.png?v=1756273706">
+            <source src="https://cdn.shopify.com/videos/c/o/v/cc5a422a863b437ea7cad762ca172b35.mp4" type="video/mp4">
+          </video>
+          <div class="p-4 text-center">
+            <img
+              src="{{ 'rating-stars.svg' | asset_url }}"
+              alt="★★★★★"
+              width="90"
+              height="18">
+            <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">My Go-To Daily Scent</h3>
+            <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
+              “Light, fresh, and lasts longer than I expected. TryScent nailed it.”
+            </p>
+            <h4 class="text-black font-semibold text-xl mb-0 mt-3">Yana O. | 25</h4>
+          </div>
         </div>
       </div>
-      <div id="slide2" class="bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
-        <video
-          class="w-full aspect-[9/16] object-cover"
-          controls=""
-          preload="metadata"
-          playsinline=""
-          webkit-playsinline=""
-          poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/yana_1.png?v=1756272698">
-          <source src="https://cdn.shopify.com/videos/c/o/v/ebad6053a1e34ea1be475f8a2e53da59.mp4" type="video/mp4">
-        </video>
-        <div class="p-4 text-center">
-          <img
-            src="{{ 'rating-stars.svg' | asset_url }}"
-            alt="★★★★★"
-            width="90"
-            height="18">
-          <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">Worth Every Penny</h3>
-          <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
-            “I used to spend $150+ on designer colognes. TryScent smells just as good, for a fraction.”
-          </p>
-          <h4 class="text-black font-semibold text-xl mb-0 mt-3">Yana L. | 34</h4>
-        </div>
-      </div>
-      <div id="slide3" class="bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
-        <video
-          class="w-full aspect-[9/16] object-cover"
-          controls=""
-          preload="metadata"
-          playsinline=""
-          webkit-playsinline=""
-          poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/yedesma_1.png?v=1756272854">
-          <source src="https://cdn.shopify.com/videos/c/o/v/2f6e265ce8ba447bb324774c0d9dae8d.mp4" type="video/mp4">
-        </video>
-        <div class="p-4 text-center">
-          <img
-            src="{{ 'rating-stars.svg' | asset_url }}"
-            alt="★★★★★"
-            width="90"
-            height="18">
-          <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">Smells Like Luxury</h3>
-          <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
-            “I wore this to a wedding, and three people asked what I was wearing. Instant win.”
-          </p>
-          <h4 class="text-black font-semibold text-xl mb-0 mt-3">Yedesma R. | 31</h4>
-        </div>
-      </div>
-      <div id="slide4" class="bg-white border border-solid border-gray-200 rounded-2xl overflow-hidden">
-        <video
-          class="w-full aspect-[9/16] object-cover"
-          controls=""
-          preload="metadata"
-          playsinline=""
-          webkit-playsinline=""
-          poster="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/yana-o_1.png?v=1756273706">
-          <source src="https://cdn.shopify.com/videos/c/o/v/f85af50cfdb54e8cba53e0da38a92dc7.mp4" type="video/mp4">
-        </video>
-        <div class="p-4 text-center">
-          <img
-            src="{{ 'rating-stars.svg' | asset_url }}"
-            alt="★★★★★"
-            width="90"
-            height="18">
-          <h3 class="text-xl font-black tracking-tight leading-snug my-0 mt-2">My Go-To Daily Scent</h3>
-          <p class="text-lg font-medium text-gray-700 my-0 mt-2 leading-snug">
-            “Light, fresh, and lasts longer than I expected. TryScent nailed it.”
-          </p>
-          <h4 class="text-black font-semibold text-xl mb-0 mt-3">Yana O. | 25</h4>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.cupids-video-slider', {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+      breakpoints: {
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 20
+        }
+      }
+    });
+  });
+</script>
 
 {% schema %}
   {
