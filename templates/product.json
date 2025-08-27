@@ -305,6 +305,15 @@
       "name": "Marquee Labels",
       "settings": {}
     },
+    "cupid_video_reviews_Rm49am": {
+      "type": "cupid-video-reviews",
+      "name": "Cupid Video Reviews",
+      "settings": {
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "background_color": "#faf9f6"
+      }
+    },
     "scent_breakdown_rG4H3T": {
       "type": "scent-breakdown",
       "name": "Scent Breakdown",
@@ -536,6 +545,15 @@
       "name": "Review Section Top",
       "settings": {}
     },
+    "cupid_images_slider_TxtjTw": {
+      "type": "cupid-images-slider",
+      "name": "Cupid Images Slider",
+      "settings": {
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "background_color": "#FFFFFF"
+      }
+    },
     "1755117642437d279b": {
       "type": "apps",
       "blocks": {
@@ -549,6 +567,7 @@
       "block_order": [
         "instagram_feed_mp_instagram_block_FgtetG"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -558,14 +577,22 @@
       "blocks": {
         "judge_me_reviews_review_widget_K8hgi4": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
             "review_data": "sample_data",
             "max_width": 1200
           }
+        },
+        "judge_me_reviews_featured_carousel_JnwkJr": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1400
+          }
         }
       },
       "block_order": [
-        "judge_me_reviews_review_widget_K8hgi4"
+        "judge_me_reviews_review_widget_K8hgi4",
+        "judge_me_reviews_featured_carousel_JnwkJr"
       ],
       "settings": {
         "include_margins": true
@@ -755,6 +782,7 @@
   "order": [
     "main",
     "marquee_labels_dpeY47",
+    "cupid_video_reviews_Rm49am",
     "scent_breakdown_rG4H3T",
     "stacks_up_xtpACd",
     "special_offer_bogo_CFP4NP",
@@ -762,6 +790,7 @@
     "tryscent_statistics_3GrMac",
     "satisfaction_JKqcnA",
     "review_section_top_NPxmhB",
+    "cupid_images_slider_TxtjTw",
     "1755117642437d279b",
     "1751863713a9594609",
     "image_with_text_peK6rF",
