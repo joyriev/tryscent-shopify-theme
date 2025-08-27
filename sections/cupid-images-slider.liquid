@@ -1,27 +1,35 @@
 {%- style -%}
   @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(calc(-100% - 1.25rem)); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 1.25rem));
+    }
   }
-  
+
   @keyframes scrollReverse {
-    from { transform: translateX(calc(-100% - 1.25rem)); }
-    to { transform: translateX(0); }
+    from {
+      transform: translateX(calc(-100% - 1.25rem));
+    }
+    to {
+      transform: translateX(0);
+    }
   }
-  
+
   .animate-scroll {
     animation: scroll 60s linear infinite;
   }
-  
+
   .animate-scroll-reverse {
     animation: scrollReverse 60s linear infinite;
   }
-  
+
   .marquee:hover .animate-scroll,
   .marquee:hover .animate-scroll-reverse {
     animation-play-state: paused;
   }
-  
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -34,12 +42,12 @@
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding overflow-hidden"
   style="background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px">
-  
+
   <!-- First Marquee (Original Direction) -->
   <div class="marquee w-full overflow-hidden mb-8">
     <div class="flex gap-5 animate-scroll">
       {% for i in (1..18) %}
-        <div class="flex-shrink-0 w-48 h-48 overflow-hidden">
+        <div class="flex-shrink-0 size-28 md:size-48 overflow-hidden">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ugc{{ i }}.png"
             alt="UGC Image {{ i }}"
@@ -50,7 +58,7 @@
         </div>
       {% endfor %}
       {% for i in (1..18) %}
-        <div class="flex-shrink-0 w-48 h-48 overflow-hidden">
+        <div class="flex-shrink-0 size-28 md:size-48 overflow-hidden">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ugc{{ i }}.png"
             alt="UGC Image {{ i }}"
@@ -62,12 +70,12 @@
       {% endfor %}
     </div>
   </div>
-  
+
   <!-- Second Marquee (Reverse Direction) -->
   <div class="marquee w-full overflow-hidden">
     <div class="flex gap-5 animate-scroll-reverse">
       {% for i in (1..18) %}
-        <div class="flex-shrink-0 w-48 h-48 overflow-hidden">
+        <div class="flex-shrink-0 size-28 md:size-48 overflow-hidden">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ugc{{ i }}.png"
             alt="UGC Image {{ i }}"
@@ -78,7 +86,7 @@
         </div>
       {% endfor %}
       {% for i in (1..18) %}
-        <div class="flex-shrink-0 w-48 h-48 overflow-hidden">
+        <div class="flex-shrink-0 size-28 md:size-48 overflow-hidden">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ugc{{ i }}.png"
             alt="UGC Image {{ i }}"
