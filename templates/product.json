@@ -545,6 +545,15 @@
       "name": "Review Section Top",
       "settings": {}
     },
+    "cupid_images_slider_d3HRUT": {
+      "type": "cupid-images-slider",
+      "name": "Cupid Images Slider",
+      "settings": {
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "background_color": "#FFFFFF"
+      }
+    },
     "1755117642437d279b": {
       "type": "apps",
       "blocks": {
@@ -558,6 +567,7 @@
       "block_order": [
         "instagram_feed_mp_instagram_block_FgtetG"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -567,14 +577,22 @@
       "blocks": {
         "judge_me_reviews_review_widget_K8hgi4": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
             "review_data": "sample_data",
             "max_width": 1200
           }
+        },
+        "judge_me_reviews_featured_carousel_HRjPwU": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1400
+          }
         }
       },
       "block_order": [
-        "judge_me_reviews_review_widget_K8hgi4"
+        "judge_me_reviews_review_widget_K8hgi4",
+        "judge_me_reviews_featured_carousel_HRjPwU"
       ],
       "settings": {
         "include_margins": true
@@ -772,6 +790,7 @@
     "tryscent_statistics_3GrMac",
     "satisfaction_JKqcnA",
     "review_section_top_NPxmhB",
+    "cupid_images_slider_d3HRUT",
     "1755117642437d279b",
     "1751863713a9594609",
     "image_with_text_peK6rF",
