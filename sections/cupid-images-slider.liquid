@@ -43,10 +43,10 @@
   class="section-{{ section.id }}-padding overflow-hidden"
   style="background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px; padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px">
 
-  <!-- First Marquee (Original Direction) -->
+  <!-- First Marquee (Original Direction) - First 9 images -->
   <div class="marquee w-full overflow-hidden mb-8">
     <div class="flex gap-5 animate-scroll">
-      {% for i in (1..18) %}
+      {% for i in (1..9) %}
         <div class="flex-shrink-0 size-28 md:size-48 overflow-hidden">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ugc{{ i }}.png"
@@ -57,7 +57,7 @@
             class="w-full h-full object-cover">
         </div>
       {% endfor %}
-      {% for i in (1..18) %}
+      {% for i in (1..9) %}
         <div class="flex-shrink-0 size-28 md:size-48 overflow-hidden">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ugc{{ i }}.png"
@@ -71,10 +71,10 @@
     </div>
   </div>
 
-  <!-- Second Marquee (Reverse Direction) -->
+  <!-- Second Marquee (Reverse Direction) - Images 10-18 -->
   <div class="marquee w-full overflow-hidden">
     <div class="flex gap-5 animate-scroll-reverse">
-      {% for i in (1..18) %}
+      {% for i in (10..18) %}
         <div class="flex-shrink-0 size-28 md:size-48 overflow-hidden">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ugc{{ i }}.png"
@@ -85,7 +85,7 @@
             class="w-full h-full object-cover">
         </div>
       {% endfor %}
-      {% for i in (1..18) %}
+      {% for i in (10..18) %}
         <div class="flex-shrink-0 size-28 md:size-48 overflow-hidden">
           <img
             src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/ugc{{ i }}.png"
