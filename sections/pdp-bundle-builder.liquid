@@ -4,7 +4,7 @@
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="border border-solid border-gray-200 rounded-lg p-8">
         <h2 class="text-3xl font-bold text-gray-900 my-0">Buy 3 Get 1 FREE</h2>
-        <p class="text-lg text-green-600 font-medium my-2">Build a bundle and get this scent for FREE!</p>
+        <p class="text-lg text-green-700 font-semibold my-2">Build a bundle and get this scent for FREE!</p>
         <div class="grid grid-cols-3 gap-4 mt-8">
           <div class="relative">
             <img
@@ -101,99 +101,99 @@
           </button>
         </div>
       </div>
-
-
     </div>
     <!-- Product Selection Modal -->
-    <div
-      x-show="showProductModal"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-      @click.away="showProductModal = false">
-      <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto" @click.stop>
-
-        <!-- Modal Header -->
-        <div class="flex justify-between items-center mb-6">
-          <div>
-            <p class="text-sm text-gray-600">3-5 Days delivery to Thailand</p>
+    <div x-show="showProductModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" x-cloak>
+      <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 max-h-[90vh] flex flex-col" @click.away="showProductModal = false">
+        <div class="flex-shrink-0">
+          <button @click="showProductModal = false" class="absolute -top-2 -right-2 w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center hover:bg-green-700 border-0 text-3xl cursor-pointer transition">
+            <span class="[rotate:-45deg] svg-wrapper">
+              {{- 'icon-plus.svg' | inline_asset_content -}}
+            </span>
+          </button>
+        </div>
+        <div class="modal-header flex-shrink-0">
+          <div class="flex space-x-1 mb-4">
+            <button
+              @click="activeCategory = 'mens'"
+              :class="activeCategory === 'mens' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Men's</button>
+            <button
+              @click="activeCategory = 'womens'"
+              :class="activeCategory === 'womens' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Women's</button>
+            <button
+              @click="activeCategory = 'unisex'"
+              :class="activeCategory === 'unisex' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Unisex</button>
           </div>
-          <button @click="showProductModal = false" class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700">×</button>
-        </div>
 
-        <!-- Category Tabs -->
-        <div class="flex space-x-1 mb-6">
-          <button
-            @click="activeCategory = 'mens'"
-            :class="activeCategory === 'mens' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
-            class="px-4 py-2 rounded font-medium">Men's</button>
-          <button
-            @click="activeCategory = 'womens'"
-            :class="activeCategory === 'womens' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
-            class="px-4 py-2 rounded font-medium">Women's</button>
-          <button
-            @click="activeCategory = 'unisex'"
-            :class="activeCategory === 'unisex' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
-            class="px-4 py-2 rounded font-medium">Unisex</button>
-        </div>
-
-        <!-- Brand Filter -->
-        <div class="mb-6">
-          <select class="w-full p-3 border border-gray-300 rounded-lg">
-            <option>Shop by Brand</option>
-            <option>Brand A</option>
-            <option>Brand B</option>
-          </select>
-        </div>
-
-        <!-- Search -->
-        <div class="mb-6">
-          <div class="relative">
-            <input
-              type="text"
-              placeholder="Find your perfume"
-              class="w-full p-3 pl-10 bg-gray-100 rounded-lg border-0">
-          </div>
-        </div>
-
-        <!-- Products Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <template x-for="product in availableProducts" :key="product.id">
-            <div class="border border-gray-200 rounded-lg p-4">
-              <div class="flex justify-center mb-4">
-                <img
-                  :src="product.image"
-                  :alt="product.name"
-                  class="w-16 h-16 object-cover rounded mr-2">
-                <img
-                  :src="product.bottleImage"
-                  :alt="product.name + ' bottle'"
-                  class="w-12 h-12 object-cover rounded">
-              </div>
-              <div class="text-center">
-                <p class="text-gray-600 text-sm mb-1">Smells like</p>
-                <p class="text-gray-600 text-sm mb-1">50ml</p>
-                <h4 class="font-bold text-gray-900 mb-2" x-text="product.name"></h4>
-                <div class="flex justify-center items-center mb-2">
-                  <div class="flex text-yellow-400">
-                    ⭐⭐⭐⭐⭐
-                  </div>
-                  <span class="text-gray-600 text-sm ml-1">(31)</span>
-                </div>
-                <p class="text-gray-900 font-semibold mb-4" x-text="'$' + product.price"></p>
-                <button
-                  @click="addProduct(product)"
-                  :disabled="isProductSelected(product.id) || selectedProducts.length >= 3"
-                  :class="isProductSelected(product.id) || selectedProducts.length >= 3 ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'"
-                  class="w-full text-white py-2 px-4 rounded font-bold transition-colors">
-                  <span x-text="isProductSelected(product.id) ? 'Added' : 'Add+'"></span>
-                </button>
-              </div>
+          <!-- Search -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <select class="w-full p-3 border border-gray-300 rounded-lg">
+                <option>Shop by Brand</option>
+                <option>Brand A</option>
+                <option>Brand B</option>
+              </select>
             </div>
-          </template>
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Find your perfume"
+                class="w-full p-3 pl-10 bg-gray-100 rounded-lg border-0">
+              <span class="absolute top-1/2 left-2 transform -translate-y-1/2">
+                {{- 'icon-search.svg' | inline_asset_content -}}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {% comment %} Product Grid {% endcomment %}
+        <div class="flex-1 overflow-y-auto mt-4 -mx-2 px-2">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <template x-for="product in availableProducts" :key="product.id">
+              <div class="border border-gray-200 rounded-lg p-4">
+                <div class="flex justify-center mb-4">
+                  <img
+                    :src="product.image"
+                    :alt="product.name"
+                    height=""
+                    width=""
+                    class="w-full h-auto object-cover rounded mr-2">
+                </div>
+                <div class="text-center">
+                  <p class="text-gray-600 text-sm mb-1">Smells like</p>
+                  <p class="text-gray-600 text-sm mb-1">50ml</p>
+                  <h4 class="font-bold text-gray-900 mb-2" x-text="product.name"></h4>
+                  <div class="flex justify-center items-center mb-2">
+                    <div class="flex text-yellow-400">
+                      ⭐⭐⭐⭐⭐
+                    </div>
+                    <span class="text-gray-600 text-sm ml-1">(31)</span>
+                  </div>
+                  <p class="text-gray-900 font-semibold mb-4" x-text="'$' + product.price"></p>
+                  <button
+                    @click="addProduct(product)"
+                    :disabled="isProductSelected(product.id) || selectedProducts.length >= 3"
+                    :class="isProductSelected(product.id) || selectedProducts.length >= 3 ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'"
+                    class="w-full text-white py-2 px-4 rounded font-bold transition-colors">
+                    <span x-text="isProductSelected(product.id) ? 'Added' : 'Add+'"></span>
+                  </button>
+                </div>
+              </div>
+            </template>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+{% assign bundle_collection = collections['smells-like'] %}
+{% unless bundle_collection %}
+  {% assign bundle_collection = collections.first %}
+{% endunless %}
 
 <script>
   function bundleBuilder() {
@@ -202,38 +202,16 @@
         showProductModal: false,
         activeCategory: 'mens',
         availableProducts: [
-            {
-                id: 1,
-                name: 'Aventus',
-                price: 32.00,
-                image: 'https://via.placeholder.com/80x80/2C5234/FFFFFF?text=A',
-                bottleImage: 'https://via.placeholder.com/60x60/000000/FFFFFF?text=50ml',
+            {% for product in bundle_collection.products %}
+              {
+                id: {{ product.id }},
+                name: "{{ product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}",
+                price: "{{ product.selected_or_first_available_variant.price | money_with_currency }}",
+                image: "{{ product.featured_image | image_url }}",
+                bottleImage: "{{ product.featured_image | image_url }}",
                 category: 'mens'
             },
-            {
-                id: 2,
-                name: 'Sauvage',
-                price: 32.00,
-                image: 'https://via.placeholder.com/80x80/2C5234/FFFFFF?text=S',
-                bottleImage: 'https://via.placeholder.com/60x60/000000/FFFFFF?text=50ml',
-                category: 'mens'
-            },
-            {
-                id: 3,
-                name: 'LV Imagination',
-                price: 32.00,
-                image: 'https://via.placeholder.com/80x80/2C5234/FFFFFF?text=LV',
-                bottleImage: 'https://via.placeholder.com/60x60/87CEEB/000000?text=50ml',
-                category: 'unisex'
-            },
-            {
-                id: 4,
-                name: 'Pineapple Vanilla',
-                price: 32.00,
-                image: 'https://via.placeholder.com/80x80/2C5234/FFFFFF?text=PV',
-                bottleImage: 'https://via.placeholder.com/60x60/000000/FFFFFF?text=50ml',
-                category: 'womens'
-            }
+            {% endfor %}
         ],
 
         get originalTotal() {
