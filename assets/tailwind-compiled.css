@@ -197,6 +197,10 @@
     z-index: 50
 }
 
+.z-\[9999\] {
+    z-index: 9999
+}
+
 .col-span-2 {
     grid-column: span 2 / span 2
 }
@@ -2473,6 +2477,10 @@
 
     .md\:gap-6 {
         gap: 24px
+    }
+
+    .md\:gap-12 {
+        gap: 48px
     }
 
     .md\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
