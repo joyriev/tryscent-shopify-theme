@@ -1,129 +1,279 @@
-<div class="bg-white py-12 md:py-16">
-  <div class="page-width">
-    <!-- Alpine.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<div class="py-20 md:py-28">
+  <div class="page-width" x-data="bundleBuilder()">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="border border-solid border-gray-200 rounded-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 my-0">Buy 3 Get 1 FREE</h2>
+        <p class="text-lg text-green-600 font-medium my-2">Build a bundle and get this scent for FREE!</p>
+        <div class="grid grid-cols-3 gap-4 mt-8">
+          <div class="relative">
+            <img
+              src="{{ product.featured_image | image_url }}"
+              alt="Rough Perfume"
+              width=""
+              height=""
+              class="object-cover rounded w-full">
+            <div class="absolute top-0 left-0 [rotate:-20deg]">
+              <span class="bg-red-500 text-white px-3 py-1 rounded font-bold text-xs">FREE</span>
+            </div>
+          </div>
 
-    {% assign bundle_collection = collections['smells-like'] %}
-    {% unless bundle_collection %}
-      {% assign bundle_collection = collections.first %}
-    {% endunless %}
-
-    <div x-data="{
-    scents: [],
-    addScent(product) {
-      if(this.scents.length < 3 && !this.scents.find(s => s.id === product.id)){
-        this.scents.push(product);
-      }
-    },
-    removeScent(index) {
-      this.scents.splice(index, 1);
-    },
-    addBundleToCart() {
-      // add all 3 + free product to cart via AJAX
-      let items = this.scents.map(p => ({id: p.variant_id, quantity: 1}));
-
-      // Add free scent (replace with correct variant ID of 'ROUGH')
-      items.push({id: {{ all_products['rough'].selected_or_first_available_variant.id }}, quantity: 1});
-
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({items})
-      }).then(res => res.json())
-        .then(data => {
-          window.location.href = '/cart';
-        });
-    }
-  }" class="max-w-md mx-auto bg-white border rounded-xl shadow p-6">
-
-      <!-- Header -->
-      <h2 class="text-xl font-bold text-gray-900">Buy 3 Get 1 FREE</h2>
-      <p class="text-green-600">Build a bundle and get this scent for FREE!</p>
-
-      <!-- Free Scent -->
-      <div class="flex items-center mt-4">
-        <div class="relative w-16 h-16">
-          <img
-            src="{{ all_products['rough'].featured_image | img_url: '200x' }}"
-            class="rounded shadow"
-            alt="Free scent">
-          <span class="absolute -top-2 -left-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">FREE</span>
-        </div>
-        <div class="ml-3">
-          <p class="text-sm text-gray-600">Smells like</p>
-          <p class="text-lg font-bold">ROUGH</p>
-          <p class="text-sm text-gray-500">A bold, addictive scent for men – spicy, warm, and passionate.</p>
+          <div class="text-left relative col-span-2">
+            <p class="text-gray-600 mb-1 mt-0">Smells like</p>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2 mt-0">{{ product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}</h3>
+            <p class="text-gray-700 my-0 line-clamp-3">{{ product.metafields.custom.scent_breakdown | metafield_text }}</p>
+            <div class="absolute top-0 right-0">
+              <span class="text-gray-600 text-lg">50ML</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Add More Scents -->
-      <div class="mt-6 border-t pt-4">
-        <template x-if="scents.length < 3">
-          <p class="text-sm font-semibold text-gray-700 mb-2">ADD 3 MORE SCENTS</p>
-        </template>
 
-        <div class="grid grid-cols-3 gap-2">
-          <template x-for="i in 3">
-            <div>
-              <template x-if="!scents[i-1]">
-                <div class="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-green-600 rounded-lg bg-green-50">
-                  <select @change="addScent(JSON.parse($event.target.value))" class="text-xs text-gray-700 bg-transparent">
-                    <option value="">+ Add Scent</option>
-                    {% for product in bundle_collection.products %}
-                      <option value='{"id": {{ product.id }}, "variant_id": {{ product.selected_or_first_available_variant.id }}, "name": "{{ product.title | escape }}", "price": {{ product.price | divided_by: 100 }}, "img": "{{ product.featured_image | img_url: '200x' }}"}'>
-                        {{ product.title }}
-                      </option>
-                    {% endfor %}
-                  </select>
-                </div>
-              </template>
-              <template x-if="scents[i-1]">
-                <div class="relative p-2 border rounded-lg">
-                  <img :src="scents[i-1].img" class="w-16 h-16 mx-auto" />
-                  <p class="text-xs font-semibold mt-1 text-center" x-text="scents[i-1].name"></p>
-                  <button @click="removeScent(i-1)" class="absolute top-1 right-1 text-gray-500 hover:text-red-600">✕</button>
-                </div>
-              </template>
+      <!-- Add Products Section -->
+      <div>
+        <div class="text-center mb-6">
+          <h3 class="text-xl font-bold text-gray-900 my-0">
+            <span x-text="selectedProducts.length === 3 ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${3 - selectedProducts.length} MORE SCENT${3 - selectedProducts.length > 1 ? 'S' : ''}`"></span>
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <template x-for="i in (3 - selectedProducts.length)" :key="i">
+            <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+              <button @click="showProductModal = true" class="w-16 h-16 bg-green-600 text-white rounded-lg text-2xl hover:bg-green-700 transition-colors">+</button>
+              <p class="text-gray-700 mt-4 font-medium">Add Scent</p>
             </div>
           </template>
         </div>
-      </div>
 
-      <!-- Completed Bundle -->
-      <template x-if="scents.length === 3">
-        <div class="mt-6 text-center">
-          <p class="font-semibold text-green-600 mb-2">🎉 YOUR BUNDLE IS READY 🎉</p>
-
-          <div class="grid grid-cols-3 gap-2 mb-3">
-            <template x-for="scent in scents" :key="scent.id">
-              <div class="p-2 border rounded-lg">
-                <img :src="scent.img" class="w-16 h-16 mx-auto" />
-                <p class="text-xs font-semibold mt-1" x-text="scent.name"></p>
-                <p class="text-xs text-gray-500" x-text="'$' + scent.price"></p>
+        <!-- Selected Products Display -->
+        <div x-show="selectedProducts.length > 0" class="mb-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <template x-for="(product, index) in selectedProducts" :key="product.id">
+              <div class="border-2 border-gray-300 rounded-lg p-4 text-center relative">
+                <button @click="removeProduct(index)" class="absolute top-2 right-2 w-6 h-6 bg-red-500 text-white rounded-full text-xs">×</button>
+                <div class="flex justify-center mb-4">
+                  <img
+                    :src="product.image"
+                    :alt="product.name"
+                    class="w-16 h-16 object-cover rounded"
+                    width="64"
+                    height="64">
+                  <img
+                    :src="product.bottleImage"
+                    :alt="product.name + ' bottle'"
+                    class="w-12 h-12 object-cover rounded ml-2"
+                    width="64"
+                    height="64">
+                </div>
+                <p class="text-gray-600 text-sm mb-1">Smells like</p>
+                <h4 class="font-bold text-gray-900 mb-2" x-text="product.name"></h4>
+                <p class="text-gray-900 font-semibold" x-text="'$' + product.price"></p>
               </div>
             </template>
           </div>
 
-          <p class="line-through text-gray-500">$128.00</p>
-          <p class="text-xl font-bold text-red-600">$96.00
-            <span class="text-green-600">🎉 You Save $32.00!</span>
-          </p>
+          <!-- Pricing -->
+          <div class="text-center mb-6">
+            <div class="flex justify-center items-center space-x-4">
+              <span class="text-gray-400 line-through text-lg" x-text="'$' + originalTotal.toFixed(2)"></span>
+              <span class="text-red-600 text-2xl font-bold" x-text="'$' + bundleTotal.toFixed(2)"></span>
+              <span class="text-green-600 font-bold">🎉 You Save
+                <span x-text="'$' + savings.toFixed(2)"></span>!</span>
+            </div>
+          </div>
 
-          <button @click="addBundleToCart" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold">
-            Add Bundle to Cart
+          <!-- Add to Cart Button -->
+          <div x-show="selectedProducts.length === 3" class="text-center mb-8">
+            <button @click="addBundleToCart()" class="w-full bg-green-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-green-700 transition-colors">
+              Add Bundle to Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button
+            @click="showProductModal = true"
+            class="w-full bg-gray-400 text-white py-4 px-6 rounded-lg font-bold text-lg cursor-not-allowed"
+            disabled>
+            Complete the Bundle
           </button>
         </div>
-      </template>
+      </div>
 
-      <!-- Disabled Button -->
-      <template x-if="scents.length < 3">
-        <button class="mt-6 w-full bg-gray-300 text-gray-600 py-3 rounded-lg font-semibold cursor-not-allowed" disabled>
-          Complete the Bundle
-        </button>
-      </template>
+
+    </div>
+    <!-- Product Selection Modal -->
+    <div
+      x-show="showProductModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      @click.away="showProductModal = false">
+      <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto" @click.stop>
+
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center mb-6">
+          <div>
+            <p class="text-sm text-gray-600">3-5 Days delivery to Thailand</p>
+          </div>
+          <button @click="showProductModal = false" class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700">×</button>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="flex space-x-1 mb-6">
+          <button
+            @click="activeCategory = 'mens'"
+            :class="activeCategory === 'mens' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
+            class="px-4 py-2 rounded font-medium">Men's</button>
+          <button
+            @click="activeCategory = 'womens'"
+            :class="activeCategory === 'womens' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
+            class="px-4 py-2 rounded font-medium">Women's</button>
+          <button
+            @click="activeCategory = 'unisex'"
+            :class="activeCategory === 'unisex' ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'"
+            class="px-4 py-2 rounded font-medium">Unisex</button>
+        </div>
+
+        <!-- Brand Filter -->
+        <div class="mb-6">
+          <select class="w-full p-3 border border-gray-300 rounded-lg">
+            <option>Shop by Brand</option>
+            <option>Brand A</option>
+            <option>Brand B</option>
+          </select>
+        </div>
+
+        <!-- Search -->
+        <div class="mb-6">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Find your perfume"
+              class="w-full p-3 pl-10 bg-gray-100 rounded-lg border-0">
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <template x-for="product in availableProducts" :key="product.id">
+            <div class="border border-gray-200 rounded-lg p-4">
+              <div class="flex justify-center mb-4">
+                <img
+                  :src="product.image"
+                  :alt="product.name"
+                  class="w-16 h-16 object-cover rounded mr-2">
+                <img
+                  :src="product.bottleImage"
+                  :alt="product.name + ' bottle'"
+                  class="w-12 h-12 object-cover rounded">
+              </div>
+              <div class="text-center">
+                <p class="text-gray-600 text-sm mb-1">Smells like</p>
+                <p class="text-gray-600 text-sm mb-1">50ml</p>
+                <h4 class="font-bold text-gray-900 mb-2" x-text="product.name"></h4>
+                <div class="flex justify-center items-center mb-2">
+                  <div class="flex text-yellow-400">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                  <span class="text-gray-600 text-sm ml-1">(31)</span>
+                </div>
+                <p class="text-gray-900 font-semibold mb-4" x-text="'$' + product.price"></p>
+                <button
+                  @click="addProduct(product)"
+                  :disabled="isProductSelected(product.id) || selectedProducts.length >= 3"
+                  :class="isProductSelected(product.id) || selectedProducts.length >= 3 ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'"
+                  class="w-full text-white py-2 px-4 rounded font-bold transition-colors">
+                  <span x-text="isProductSelected(product.id) ? 'Added' : 'Add+'"></span>
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  function bundleBuilder() {
+    return {
+        selectedProducts: [],
+        showProductModal: false,
+        activeCategory: 'mens',
+        availableProducts: [
+            {
+                id: 1,
+                name: 'Aventus',
+                price: 32.00,
+                image: 'https://via.placeholder.com/80x80/2C5234/FFFFFF?text=A',
+                bottleImage: 'https://via.placeholder.com/60x60/000000/FFFFFF?text=50ml',
+                category: 'mens'
+            },
+            {
+                id: 2,
+                name: 'Sauvage',
+                price: 32.00,
+                image: 'https://via.placeholder.com/80x80/2C5234/FFFFFF?text=S',
+                bottleImage: 'https://via.placeholder.com/60x60/000000/FFFFFF?text=50ml',
+                category: 'mens'
+            },
+            {
+                id: 3,
+                name: 'LV Imagination',
+                price: 32.00,
+                image: 'https://via.placeholder.com/80x80/2C5234/FFFFFF?text=LV',
+                bottleImage: 'https://via.placeholder.com/60x60/87CEEB/000000?text=50ml',
+                category: 'unisex'
+            },
+            {
+                id: 4,
+                name: 'Pineapple Vanilla',
+                price: 32.00,
+                image: 'https://via.placeholder.com/80x80/2C5234/FFFFFF?text=PV',
+                bottleImage: 'https://via.placeholder.com/60x60/000000/FFFFFF?text=50ml',
+                category: 'womens'
+            }
+        ],
+
+        get originalTotal() {
+            return this.selectedProducts.reduce((sum, product) => sum + product.price, 0) + 32; // Including free product
+        },
+
+        get bundleTotal() {
+            return this.selectedProducts.reduce((sum, product) => sum + product.price, 0);
+        },
+
+        get savings() {
+            return this.originalTotal - this.bundleTotal;
+        },
+
+        addProduct(product) {
+            if (this.selectedProducts.length < 3 && !this.isProductSelected(product.id)) {
+                this.selectedProducts.push(product);
+                if (this.selectedProducts.length === 3) {
+                    this.showProductModal = false;
+                }
+            }
+        },
+
+        removeProduct(index) {
+            this.selectedProducts.splice(index, 1);
+        },
+
+        isProductSelected(productId) {
+            return this.selectedProducts.some(product => product.id === productId);
+        },
+
+        addBundleToCart() {
+            // Shopify cart functionality would go here
+            console.log('Adding bundle to cart:', this.selectedProducts);
+            alert('Bundle added to cart!');
+        }
+    }
+  }
+</script>
+
 
 {% schema %}
   {
