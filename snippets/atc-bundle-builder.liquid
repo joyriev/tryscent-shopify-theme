@@ -80,7 +80,7 @@
 
     {% comment %} Savings Display {% endcomment %}
     <div class="text-center mb-6" x-show="$store.bundleBuilder.selectedProducts.length === 3">
-      <div class="flex justify-center gap-2 items-center italic font-semibold text-lg tracking-tight">
+      <div class="flex justify-center gap-2 items-center italic font-semibold text-lg tracking-tight flex-wrap">
         <div class="text-gray-400 line-through">
           {{ cart.currency.symbol }}
           <span x-text="$store.bundleBuilder.originalTotal.toFixed(2)"></span>
