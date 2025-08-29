@@ -95,13 +95,53 @@
     </div>
     <button
       @click="$store.bundleBuilder.addBundleToCart()"
-      :disabled="$store.bundleBuilder.selectedProducts.length !== 3"
-      class="w-full bg-green-800 text-white py-4 px-6 rounded-lg font-bold text-2xl hover:bg-green-900 transition-colors cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-400 border-0 disabled:shadow-none">
-      <span x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'Add Bundle to Cart' : 'Complete the Bundle'"></span>
+      :disabled="$store.bundleBuilder.selectedProducts.length !== 3 || $store.bundleBuilder.addingToCart"
+      class="w-full bg-green-800 text-white py-4 px-6 rounded-lg font-bold text-2xl hover:bg-green-900 transition-colors cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-400 border-0 disabled:shadow-none"
+      x-bind:class="{'opacity-75': $store.bundleBuilder.addingToCart}">
+      <span x-show="!$store.bundleBuilder.addingToCart" x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'Add Bundle to Cart' : 'Complete the Bundle'"></span>
+      <span x-show="$store.bundleBuilder.addingToCart">Adding Bundle to Cart...</span>
     </button>
   </div>
-<!-- Product Selection Modal -->
 </div>
+
+{% comment %} Shadow Product Form for the main product {% endcomment %}
+{% liquid
+  assign product_form_id = 'product-form-' | append: section.id
+  assign main_variant = product.selected_or_first_available_variant
+  for variant in product.variants
+    if variant.title == '50ML'
+      assign main_variant = variant
+    endif
+  endfor
+%}
+
+<product-form
+  class="product-form !m-0"
+  data-hide-errors="{{ gift_card_recipient_feature_active }}"
+  data-section-id="{{ section.id }}">
+  {%- form 'product'
+    , product
+    , id: product_form_id
+    , class: 'form'
+    , novalidate: 'novalidate'
+    , data-type: 'add-to-cart-form'
+  -%}
+    <input
+      type="hidden"
+      name="id"
+      value="{{ main_variant.id }}"
+      class="product-variant-id">
+    <button
+      type="submit"
+      name="add"
+      value="1"
+      class="shadow_atc_button_for_bundle_builder h-0 w-0 visibility-hidden overflow-hidden fixed -top-[99999px] -left-[99999px]"
+      aria-label="Add to cart">
+      <span>Add to cart</span>
+      {%- render 'loading-spinner' -%}
+    </button>
+  {%- endform -%}
+</product-form>
 
 {% assign bundle_collection = collections['smells-like'] %}
 {% unless bundle_collection %}
@@ -115,16 +155,25 @@
       activeCategory: "All",
       selectedBrand: "",
       searchText: "",
+      addingToCart: false,
       selectedProducts: [],
       availableProducts: [
-        {% for product in bundle_collection.products %}
+        {% for bundle_product in bundle_collection.products %}
+          {% liquid
+            assign selected_variant = bundle_product.selected_or_first_available_variant
+            for variant in bundle_product.variants
+              if variant.title == '50ML'
+                assign selected_variant = variant
+              endif
+            endfor
+          %}
           {
-            id: {{ product.id }},
-            name: "{{ product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}",
-            price: "{{ product.selected_or_first_available_variant.price | money }}",
-            image: "{{ product.featured_image | image_url }}",
-            ratingCount: "{{ product.metafields.reviews.rating_count }}",
-            tags: {{ product.tags | json }}
+            id: {{ selected_variant.id }},
+            name: "{{ bundle_product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}",
+            price: "{{ selected_variant.price | money }}",
+            image: "{{ bundle_product.featured_image | image_url }}",
+            ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
+            tags: {{ bundle_product.tags | json }}
           },
         {% endfor %}
       ],
@@ -149,8 +198,30 @@
         return this.selectedProducts.some(product => product.id === productId);
       },
       addBundleToCart() {
-        console.log('Adding bundle to cart:', this.selectedProducts);
-        alert('Bundle added to cart!');
+        this.addingToCart = true;
+        const itemsToAdd = this.selectedProducts.map(product => ({
+          id: product.id,
+          quantity: 1
+        }));
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ items: itemsToAdd })
+        })
+        .then(res => res.json())
+        .then(data => {
+
+          const shadowAtcButton = document.querySelector('.shadow_atc_button_for_bundle_builder');
+          shadowAtcButton.click();
+
+          setTimeout(() => {
+            this.addingToCart = false;
+          }, 3000);
+        })
+        .catch(err => console.error(err));
       }
     });
   });
