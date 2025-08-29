@@ -1,0 +1,125 @@
+<div
+  x-show="showProductModal"
+  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]"
+  x-cloak>
+  <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 h-[90vh] flex flex-col relative" @click.away="showProductModal = false">
+
+    <button @click="showProductModal = false" class="absolute -top-2 -right-2 w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center hover:bg-green-700 border-0 text-3xl cursor-pointer transition">
+      <span class="[rotate:-45deg] svg-wrapper">
+        {{- 'icon-plus.svg' | inline_asset_content -}}
+      </span>
+    </button>
+    <div class="modal-header flex-shrink-0">
+      <div class="flex space-x-1 mb-4">
+        <button
+          @click="activeCategory = 'All'"
+          :class="activeCategory === 'All' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+          class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">All</button>
+        <button
+          @click="activeCategory = 'Man'"
+          :class="activeCategory === 'Man' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+          class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Men's</button>
+        <button
+          @click="activeCategory = 'Woman'"
+          :class="activeCategory === 'Woman' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+          class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Women's</button>
+      </div>
+
+      <!-- Search -->
+      <div class="grid grid-cols-2 gap-4">
+        <select x-model="selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-green-700 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+          <option selected value="">Shop By Brand</option>
+          <option value="Creed">Creed</option>
+          <option value="Dior">Dior</option>
+          <option value="Maison Francis Kurkdjian">Maison Francis Kurkdjian</option>
+          <option value="Tom Ford">Tom Ford</option>
+          <option value="Chanel">Chanel</option>
+          <option value="Armani">Armani</option>
+          <option value="Louis Vuitton">Louis Vuitton</option>
+          <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
+          <option value="Xerjoff">Xerjoff</option>
+          <option value="Versace">Versace</option>
+          <option value="Paco Rabanne">Paco Rabanne</option>
+          <option value="Valentino">Valentino</option>
+          <option value="YSL">YSL</option>
+          <option value="Prada">Prada</option>
+          <option value="Carolina Herrera">Carolina Herrera</option>
+          <option value="Giorgio Armani">Giorgio Armani</option>
+          <option value="Initio">Initio</option>
+          <option value="Hermes">Hermes</option>
+          <option value="Montale">Montale</option>
+          <option value="Kilian">Kilian</option>
+          <option value="Issey Miyake">Issey Miyake</option>
+          <option value="Lancôme">Lancôme</option>
+          <option value="Parfums de Marly">Parfums de Marly</option>
+        </select>
+        <div class="relative">
+          <input
+            type="text"
+            x-model="searchText"
+            placeholder="Find your perfume"
+            class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-700 focus:outline-none focus:ring-0">
+          <span class="absolute top-2.5 left-2.5 svg-wrapper">
+            {{- 'icon-search.svg' | inline_asset_content -}}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} Product Grid {% endcomment %}
+    <div class="flex-1 overflow-y-auto mt-4 -mx-2 px-2">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <template x-for="product in availableProducts" :key="product.id">
+          <template x-if="(product.tags.some(tag => tag === activeCategory) || activeCategory === 'All') &&
+     (selectedBrand === '' || product.tags.some(tag => 
+       tag.toLowerCase().includes(selectedBrand.toLowerCase())
+     )) &&
+     (searchText === '' || product.name.toLowerCase().includes(searchText.toLowerCase()))">
+            <div class="border border-solid border-gray-200 rounded-lg p-4 flex flex-col">
+              <div class="flex justify-center mb-4">
+                <img
+                  :src="product.image"
+                  :alt="product.name"
+                  height=""
+                  width=""
+                  class="w-full h-auto object-cover rounded mr-2">
+              </div>
+              <div class="relative mt-2 flex-1">
+                <p class="text-gray-600 text-sm absolute top-0 right-0 my-0">50ml</p>
+                <p class="text-gray-600 text-sm my-0">Smells like</p>
+                <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
+                <div class="flex items-center">
+                  <img
+                    src="{{ 'rating-stars.svg' | asset_url }}"
+                    alt="*****"
+                    height="13"
+                    width="66">
+                  <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
+                </div>
+                <p class="text-gray-900 font-semibold mb-2 mt-0" x-text="product.price"></p>
+              </div>
+              <button
+                @click="addProduct(product)"
+                :disabled="isProductSelected(product.id) || selectedProducts.length >= 3"
+                :class="isProductSelected(product.id) || selectedProducts.length >= 3 ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-700 hover:bg-green-800'"
+                class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer">
+                <span x-text="isProductSelected(product.id) ? 'Added' : 'Add+'"></span>
+              </button>
+            </div>
+          </template>
+        </template>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('bundleModal', {
+      show: false,
+      activeCategory: "All",
+      selectedBrand: "",
+      searchText: ""
+    })
+  })
+</script>
