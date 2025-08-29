@@ -1,10 +1,10 @@
 <div
-  x-show="showProductModal"
+  x-data
+  x-show="$store.bundleBuilder.showModal"
   class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]"
   x-cloak>
-  <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 h-[90vh] flex flex-col relative" @click.away="showProductModal = false">
-
-    <button @click="showProductModal = false" class="absolute -top-2 -right-2 w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center hover:bg-green-700 border-0 text-3xl cursor-pointer transition">
+  <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 h-[90vh] flex flex-col relative" @click.away="$store.bundleBuilder.showModal = false">
+    <button @click="$store.bundleBuilder.showModal = false" class="absolute -top-2 -right-2 w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center hover:bg-green-700 border-0 text-3xl cursor-pointer transition">
       <span class="[rotate:-45deg] svg-wrapper">
         {{- 'icon-plus.svg' | inline_asset_content -}}
       </span>
@@ -12,22 +12,22 @@
     <div class="modal-header flex-shrink-0">
       <div class="flex space-x-1 mb-4">
         <button
-          @click="activeCategory = 'All'"
-          :class="activeCategory === 'All' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+          @click="$store.bundleBuilder.activeCategory = 'All'"
+          :class="$store.bundleBuilder.activeCategory === 'All' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
           class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">All</button>
         <button
-          @click="activeCategory = 'Man'"
-          :class="activeCategory === 'Man' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+          @click="$store.bundleBuilder.activeCategory = 'Man'"
+          :class="$store.bundleBuilder.activeCategory === 'Man' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
           class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Men's</button>
         <button
-          @click="activeCategory = 'Woman'"
-          :class="activeCategory === 'Woman' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+          @click="$store.bundleBuilder.activeCategory = 'Woman'"
+          :class="$store.bundleBuilder.activeCategory === 'Woman' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
           class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Women's</button>
       </div>
 
       <!-- Search -->
       <div class="grid grid-cols-2 gap-4">
-        <select x-model="selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-green-700 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+        <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-green-700 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
           <option selected value="">Shop By Brand</option>
           <option value="Creed">Creed</option>
           <option value="Dior">Dior</option>
@@ -56,7 +56,7 @@
         <div class="relative">
           <input
             type="text"
-            x-model="searchText"
+            x-model="$store.bundleBuilder.searchText"
             placeholder="Find your perfume"
             class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-700 focus:outline-none focus:ring-0">
           <span class="absolute top-2.5 left-2.5 svg-wrapper">
@@ -69,12 +69,12 @@
     {% comment %} Product Grid {% endcomment %}
     <div class="flex-1 overflow-y-auto mt-4 -mx-2 px-2">
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <template x-for="product in availableProducts" :key="product.id">
-          <template x-if="(product.tags.some(tag => tag === activeCategory) || activeCategory === 'All') &&
-     (selectedBrand === '' || product.tags.some(tag => 
-       tag.toLowerCase().includes(selectedBrand.toLowerCase())
-     )) &&
-     (searchText === '' || product.name.toLowerCase().includes(searchText.toLowerCase()))">
+        <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
+          <template x-if="(product.tags.some(tag => tag === $store.bundleBuilder.activeCategory) || $store.bundleBuilder.activeCategory === 'All') &&
+         ($store.bundleBuilder.selectedBrand === '' || product.tags.some(tag => 
+           tag.toLowerCase().includes($store.bundleBuilder.selectedBrand.toLowerCase())
+         )) &&
+         ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()))">
             <div class="border border-solid border-gray-200 rounded-lg p-4 flex flex-col">
               <div class="flex justify-center mb-4">
                 <img
@@ -99,11 +99,11 @@
                 <p class="text-gray-900 font-semibold mb-2 mt-0" x-text="product.price"></p>
               </div>
               <button
-                @click="addProduct(product)"
-                :disabled="isProductSelected(product.id) || selectedProducts.length >= 3"
-                :class="isProductSelected(product.id) || selectedProducts.length >= 3 ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-700 hover:bg-green-800'"
+                @click="$store.bundleBuilder.addProduct(product)"
+                :disabled="$store.bundleBuilder.isProductSelected(product.id) || $store.bundleBuilder.selectedProducts.length >= 3"
+                :class="$store.bundleBuilder.isProductSelected(product.id) || $store.bundleBuilder.selectedProducts.length >= 3 ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-700 hover:bg-green-800'"
                 class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer">
-                <span x-text="isProductSelected(product.id) ? 'Added' : 'Add+'"></span>
+                <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Added' : 'Add+'"></span>
               </button>
             </div>
           </template>
@@ -112,14 +112,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('alpine:init', () => {
-    Alpine.store('bundleModal', {
-      show: false,
-      activeCategory: "All",
-      selectedBrand: "",
-      searchText: ""
-    })
-  })
-</script>

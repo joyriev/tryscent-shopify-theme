@@ -4,7 +4,7 @@
   }
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<div x-data="bundleBuilder()">
+<div x-data>
   <div class="border border-solid border-gray-200 bg-white rounded-lg p-8 mb-6">
     <h2 class="text-3xl font-bold text-gray-900 my-0">Buy 3 Get 1 FREE</h2>
     <p class="text-lg text-green-700 font-semibold my-2">Build your bundle and get one scent for FREE!</p>
@@ -32,17 +32,17 @@
     </div>
   </div>
   <!-- Add Products Section -->
-  <div>
+  <div x-cloak>
     <div class="text-center mb-6">
       <h3 class="text-xl font-bold text-gray-900 my-0 relative before:content-[''] before:block before:w-full before:h-[1px] before:bg-gray-200 before:absolute before:top-1/2 before:left-0 before:z-[-1]">
-        <span class="bg-[#faf9f6] inline-block px-4" x-text="selectedProducts.length === 3 ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${3 - selectedProducts.length} MORE SCENT${3 - selectedProducts.length > 1 ? 'S' : ''}`">ADD 3 MORE SCENTS</span>
+        <span class="bg-[#faf9f6] inline-block px-4" x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${3 - $store.bundleBuilder.selectedProducts.length} MORE SCENT${3 - $store.bundleBuilder.selectedProducts.length > 1 ? 'S' : ''}`">ADD 3 MORE SCENTS</span>
       </h3>
     </div>
     <div class="grid grid-cols-3 gap-4 pb-4 mb-6 border-0 border-b border-solid border-gray-200">
-      <template x-for="(product, index) in selectedProducts" :key="product.id">
+      <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="product.id">
         <div class="text-center relative">
           <div class="flex justify-center mb-4 border-2 border-solid border-green-700 rounded-lg">
-            <button @click="removeProduct(index)" class="absolute top-2 right-2 w-6 h-6 p-0 flex items-center justify-center bg-white rounded-full text-xs cursor-pointer border-0 shadow">
+            <button @click="$store.bundleBuilder.removeProduct(index)" class="absolute top-2 right-2 w-6 h-6 p-0 flex items-center justify-center bg-white rounded-full text-xs cursor-pointer border-0 shadow">
               <svg
                 width="10"
                 height="12"
@@ -64,10 +64,10 @@
           <p class="text-gray-900 my-0" x-text="product.price"></p>
         </div>
       </template>
-      <template x-for="i in (3 - selectedProducts.length)" :key="i">
+      <template x-for="i in (3 - $store.bundleBuilder.selectedProducts.length)" :key="i">
         <div class="text-center">
           <div class="border-2 border-dashed bg-white border-gray-300 rounded-lg grid place-items-center w-full aspect-square">
-            <button @click="$store.bundleModal.show = true" class="w-16 h-16 border-0 bg-green-700 text-white rounded-lg text-2xl hover:bg-green-700 transition-colors cursor-pointer">
+            <button @click="$store.bundleBuilder.showModal = true" class="w-16 h-16 border-0 bg-green-700 text-white rounded-lg text-2xl hover:bg-green-700 transition-colors cursor-pointer">
               <div class="svg-wrapper">
                 {{- 'icon-plus.svg' | inline_asset_content -}}
               </div>
@@ -78,26 +78,26 @@
       </template>
     </div>
 
-    <!-- Selected Products Display -->
-    <div class="text-center mb-6" x-show="selectedProducts.length === 3">
+    {% comment %} Savings Display {% endcomment %}
+    <div class="text-center mb-6" x-show="$store.bundleBuilder.selectedProducts.length === 3">
       <div class="flex justify-center gap-2 items-center italic font-semibold text-lg tracking-tight">
         <div class="text-gray-400 line-through">
           {{ cart.currency.symbol }}
-          <span x-text="originalTotal.toFixed(2)"></span>
+          <span x-text="$store.bundleBuilder.originalTotal.toFixed(2)"></span>
         </div>
         <div class="text-red-600">
           {{ cart.currency.symbol }}
-          <span x-text="bundleTotal.toFixed(2)"></span>
+          <span x-text="$store.bundleBuilder.bundleTotal.toFixed(2)"></span>
         </div>
         <div class="text-green-700 inline-block ml-2">🎉 You Save
-          <span x-text="availableProducts[0].price"></span>!</div>
+          <span x-text="$store.bundleBuilder.availableProducts[0].price"></span>!</div>
       </div>
     </div>
     <button
-      @click="addBundleToCart()"
-      :disabled="selectedProducts.length !== 3"
+      @click="$store.bundleBuilder.addBundleToCart()"
+      :disabled="$store.bundleBuilder.selectedProducts.length !== 3"
       class="w-full bg-green-800 text-white py-4 px-6 rounded-lg font-bold text-2xl hover:bg-green-900 transition-colors cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-400 border-0 disabled:shadow-none">
-      <span x-text="selectedProducts.length === 3 ? 'Add Bundle to Cart' : 'Complete the Bundle'"></span>
+      <span x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'Add Bundle to Cart' : 'Complete the Bundle'"></span>
     </button>
   </div>
 <!-- Product Selection Modal -->
@@ -109,13 +109,12 @@
 {% endunless %}
 
 <script>
-
   document.addEventListener('alpine:init', function() {
-    Alpine.data('bundleBuilder', bundleBuilder);
-  });
-
-  function bundleBuilder() {
-    return {
+    Alpine.store('bundleBuilder', {
+      showModal: false,
+      activeCategory: "All",
+      selectedBrand: "",
+      searchText: "",
       selectedProducts: [],
       availableProducts: [
         {% for product in bundle_collection.products %}
@@ -129,15 +128,12 @@
           },
         {% endfor %}
       ],
-
       get originalTotal() {
         return parseFloat(this.availableProducts[0].price.replace(/[^0-9.]/g, '')) * 4;
       },
-
       get bundleTotal() {
         return parseFloat(this.availableProducts[0].price.replace(/[^0-9.]/g, '')) * 3;
       },
-
       addProduct(product) {
         if (this.selectedProducts.length < 3 && !this.isProductSelected(product.id)) {
           this.selectedProducts.push(product);
@@ -146,19 +142,16 @@
           }
         }
       },
-
       removeProduct(index) {
         this.selectedProducts.splice(index, 1);
       },
-
       isProductSelected(productId) {
         return this.selectedProducts.some(product => product.id === productId);
       },
-
       addBundleToCart() {
         console.log('Adding bundle to cart:', this.selectedProducts);
         alert('Bundle added to cart!');
       }
-    }
-  }
+    });
+  });
 </script>
