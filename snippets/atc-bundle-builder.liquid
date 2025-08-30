@@ -163,8 +163,8 @@
     const variantsObj = {
       {% for variant in product.variants %}
         "{{ variant.title }}": {
-          originalPrice: "{{ variant.price | money }}",
-          compareAtPrice: "{{ variant.compare_at_price | money }}"
+          originalPrice: "{{ variant.price | money | strip_html }}",
+          compareAtPrice: "{{ variant.compare_at_price | money | strip_html }}"
         },
       {% endfor %}
     };
@@ -189,7 +189,7 @@
               {% for variant in bundle_product.variants %}
                 "{{ variant.title }}": {
                   id: {{ variant.id }},
-                  originalPrice: "{{ variant.price | money }}"
+                  originalPrice: "{{ variant.price | money | strip_html }}"
                 },
               {% endfor %}
             }
