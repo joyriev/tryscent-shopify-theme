@@ -1,3 +1,13 @@
+{% liquid
+  assign product_form_id = 'product-form-' | append: section.id
+  assign selected_variant = product.selected_or_first_available_variant
+  for variant in product.variants
+    if variant.title == '50ML'
+      assign selected_variant = variant
+    endif
+  endfor
+%}
+
 <style>
   [x-cloak] {
     display: none !important;
@@ -15,7 +25,10 @@
   </div>
 </div>
 
-<div class="grid grid-cols-4 gap-3" id="variant-selector">
+<div
+  class="grid grid-cols-4 gap-3"
+  id="variant-selector"
+  x-data>
   {% for variant in product.variants %}
     {% assign size = variant.title | remove: 'ML' %}
     {% assign size_int = size | times: 1 %}
@@ -24,13 +37,8 @@
     <button
       type="button"
       class="variant-button flex flex-col items-center gap-1 rounded-lg p-2 pt-3 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
-      data-variant-id="{{ variant.id }}"
-      data-price="{{ variant.price }}"
-      data-compare-at-price="{{ variant.compare_at_price }}"
-      {% if variant.title == selected_variant.title %}
-      aria-selected="true"
-      style="border-color: #22613a;"
-      {% endif %}>
+      @click="$store.bundleBuilder.selectedVariant = '{{ variant.title }}'; $store.bundleBuilder.variantId = '{{ variant.id }}'"
+      :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-green-700' : ''">
       {% if variant.image %}
         <div class="size-12 mx-auto">
           <img
@@ -67,18 +75,19 @@
     , data-type: 'add-to-cart-form'
   -%}
     <input
+      x-data
       type="hidden"
       name="id"
+      x-model="$store.bundleBuilder.variantId"
       value="{{ selected_variant.id }}"
       class="product-variant-id">
     <button
+      x-data
       type="submit"
       name="add"
       value="1"
       class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
-      aria-label="Add to cart"
-      data-price="{{ selected_variant.price }}"
-      data-compare-at-price="{{ selected_variant.compare_at_price }}">
+      aria-label="Add to cart">
       <span>Add to cart</span>
       <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
         <div
@@ -87,13 +96,9 @@
           role="status"
           {{ block.shopify_attributes }}>
           {% if selected_variant.compare_at_price > selected_variant.price %}
-            <span class="compare-price line-through text-white/50 text-base" style="display: inline;">
-              {{ selected_variant.compare_at_price | money }}
-            </span>
-          {% else %}
-            <span class="compare-price line-through text-white/50 text-base" style="display: none;"></span>
+            <span class="compare-price line-through text-white/50 text-base" x-text="$store.bundleBuilder.compareAtPrice"></span>
           {% endif %}
-          <span class="current-price">{{ selected_variant.price | money }}</span>
+          <span class="current-price" x-text="$store.bundleBuilder.originalPrice"></span>
         </div>
       </div>
       {%- render 'loading-spinner' -%}
@@ -103,7 +108,7 @@
 
 {% comment %} Bundle builder {% endcomment %}
 <div x-data>
-  <div class="border border-solid border-gray-200 bg-white rounded-lg p-8 mb-6">
+  <div class="border border-solid border-gray-200 bg-white rounded-lg p-6 mb-6">
     <h2 class="text-3xl font-bold text-gray-900 my-0">Buy 3 Get 1 FREE</h2>
     <p class="text-lg text-green-700 font-semibold my-2">Build your bundle and get one scent for FREE!</p>
     <div class="grid grid-cols-3 gap-4 mt-8">
@@ -124,7 +129,7 @@
         <h3 class="text-2xl font-bold text-gray-900 mb-2 mt-0">{{ product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}</h3>
         <p class="text-gray-700 my-0 line-clamp-2">{{ product.metafields.custom.scent_breakdown | metafield_text }}</p>
         <div class="absolute top-0 right-0">
-          <span class="text-gray-600 text-lg">50ML</span>
+          <span class="text-gray-600 text-lg" x-text="$store.bundleBuilder.selectedVariant">{{ selected_variant.title }}</span>
         </div>
       </div>
     </div>
@@ -194,24 +199,13 @@
     <button
       @click="$store.bundleBuilder.addBundleToCart()"
       :disabled="$store.bundleBuilder.selectedProducts.length !== 3 || $store.bundleBuilder.addingToCart"
-      class="w-full bg-green-800 text-white py-4 px-6 rounded-lg font-bold text-2xl hover:bg-green-900 transition-colors cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-400 border-0 disabled:shadow-none"
+      class="flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
       x-bind:class="{'opacity-75': $store.bundleBuilder.addingToCart}">
       <span x-show="!$store.bundleBuilder.addingToCart" x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'Add Bundle to Cart' : 'Complete the Bundle'"></span>
       <span x-show="$store.bundleBuilder.addingToCart">Adding Bundle to Cart...</span>
     </button>
   </div>
 </div>
-
-{% comment %} Shadow Product Form for the main product {% endcomment %}
-{% liquid
-  assign product_form_id = 'product-form-' | append: section.id
-  assign main_variant = product.selected_or_first_available_variant
-  for variant in product.variants
-    if variant.title == '50ML'
-      assign main_variant = variant
-    endif
-  endfor
-%}
 
 {% assign bundle_collection = collections['smells-like'] %}
 {% unless bundle_collection %}
@@ -220,7 +214,17 @@
 
 <script>
   document.addEventListener('alpine:init', function() {
+    const variantsObj = {
+      {% for variant in product.variants %}
+        "{{ variant.title }}": {
+          originalPrice: "{{ variant.price | money }}",
+          compareAtPrice: "{{ variant.compare_at_price | money }}"
+        },
+      {% endfor %}
+    };
     Alpine.store('bundleBuilder', {
+      selectedVariant: "{{ selected_variant.title }}",
+      variantId: "{{ selected_variant.id }}",
       showModal: false,
       activeCategory: "All",
       selectedBrand: "",
@@ -229,36 +233,43 @@
       selectedProducts: [],
       availableProducts: [
         {% for bundle_product in bundle_collection.products %}
-          {% liquid
-            assign selected_variant = bundle_product.selected_or_first_available_variant
-            for variant in bundle_product.variants
-              if variant.title == '50ML'
-                assign selected_variant = variant
-              endif
-            endfor
-          %}
           {
-            id: {{ selected_variant.id }},
+            id: {{ bundle_product.id }},
             name: "{{ bundle_product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}",
-            price: "{{ selected_variant.price | money }}",
             image: "{{ bundle_product.featured_image | image_url }}",
             ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
-            tags: {{ bundle_product.tags | json }}
+            tags: {{ bundle_product.tags | json }},
+            variants: {
+              {% for variant in bundle_product.variants %}
+                "{{ variant.title }}": {
+                  id: {{ variant.id }},
+                  originalPrice: "{{ variant.price | money }}"
+                },
+              {% endfor %}
+            }
           },
         {% endfor %}
       ],
+      get originalPrice() {
+        return variantsObj[this.selectedVariant].originalPrice;
+      },
+      get compareAtPrice() {
+        return variantsObj[this.selectedVariant].compareAtPrice;
+      },
       get originalTotal() {
-        return parseFloat(this.availableProducts[0].price.replace(/[^0-9.]/g, '')) * 4;
+        return parseFloat(variantsObj[this.selectedVariant].originalPrice.replace(/[^0-9.]/g, '')) * 4;
       },
       get bundleTotal() {
-        return parseFloat(this.availableProducts[0].price.replace(/[^0-9.]/g, '')) * 3;
+        return parseFloat(variantsObj[this.selectedVariant].originalPrice.replace(/[^0-9.]/g, '')) * 3;
       },
-      addProduct(product) {
+      addRemoveProduct(product) {
         if (this.selectedProducts.length < 3 && !this.isProductSelected(product.id)) {
           this.selectedProducts.push(product);
           if (this.selectedProducts.length === 3) {
             Alpine.store('bundleModal').show = false;
           }
+        } else {
+          this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
         }
       },
       removeProduct(index) {
@@ -269,23 +280,32 @@
       },
       addBundleToCart() {
         this.addingToCart = true;
-        const itemsToAdd = this.selectedProducts.map(product => ({
-          id: product.id,
-          quantity: 1
-        }));
+        // Skip the first product in the array
+        const items = [];
+
+        this.selectedProducts.forEach((product, index) => {
+          if (index === 0) {
+            this.variantId = product.variants[this.selectedVariant].id;
+          } else {
+            items.push({
+              id: product.variants[this.selectedVariant].id,
+              quantity: 1
+            });
+          }
+        });
+
         fetch('/cart/add.js', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify({ items: itemsToAdd })
+          body: JSON.stringify({ items })
         })
         .then(res => res.json())
         .then(data => {
-
-          const shadowAtcButton = document.querySelector('.shadow_atc_button_for_bundle_builder');
-          shadowAtcButton.click();
+          const atcButton = document.querySelector('.atc-button');
+          atcButton.click();
 
           setTimeout(() => {
             this.addingToCart = false;

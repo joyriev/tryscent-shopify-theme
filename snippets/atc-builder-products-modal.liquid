@@ -85,7 +85,7 @@
                   class="w-full h-auto object-cover rounded mr-2">
               </div>
               <div class="relative mt-2 flex-1">
-                <p class="text-gray-600 text-sm absolute top-0 right-0 my-0">50ml</p>
+                <p class="text-gray-600 text-sm absolute top-0 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
                 <p class="text-gray-600 text-sm my-0">Smells like</p>
                 <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
                 <div class="flex items-center">
@@ -96,14 +96,14 @@
                     width="66">
                   <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
                 </div>
-                <p class="text-gray-900 font-semibold mb-2 mt-0" x-text="product.price"></p>
+                <p class="text-gray-900 font-semibold mb-2 mt-0" x-text="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
               </div>
               <button
-                @click="$store.bundleBuilder.addProduct(product)"
-                :disabled="$store.bundleBuilder.isProductSelected(product.id) || $store.bundleBuilder.selectedProducts.length >= 3"
-                :class="$store.bundleBuilder.isProductSelected(product.id) || $store.bundleBuilder.selectedProducts.length >= 3 ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-700 hover:bg-green-800'"
-                class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer">
-                <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Added' : 'Add+'"></span>
+                @click="$store.bundleBuilder.addRemoveProduct(product)"
+                :disabled="!$store.bundleBuilder.isProductSelected(product.id) && $store.bundleBuilder.selectedProducts.length >= 3"
+                :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-red-700 hover:bg-red-800' : 'bg-green-700 hover:bg-green-800'"
+                class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Remove -' : 'Add +'"></span>
               </button>
             </div>
           </template>

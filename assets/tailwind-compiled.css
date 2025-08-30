@@ -1228,6 +1228,11 @@
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
+.bg-red-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1))
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -2057,6 +2062,11 @@
     background-color: rgb(20 83 45 / var(--tw-bg-opacity, 1))
 }
 
+.hover\:bg-red-800:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(153 27 27 / var(--tw-bg-opacity, 1))
+}
+
 .hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
@@ -2129,6 +2139,10 @@
 .disabled\:bg-gray-400:disabled {
     --tw-bg-opacity: 1;
     background-color: rgb(156 163 175 / var(--tw-bg-opacity, 1))
+}
+
+.disabled\:opacity-50:disabled {
+    opacity: 0.5
 }
 
 .disabled\:shadow-none:disabled {

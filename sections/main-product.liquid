@@ -827,9 +827,10 @@
 </product-info>
 
 {% render 'atc-builder-products-modal' %}
-
+  
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    {% comment %}  
     // update shipping country text
     const shippingLocation = document.querySelector(".shipping_location");
     const shippingTextCanada = document.querySelector(".shipping_text_canada");
@@ -844,6 +845,7 @@
       .catch(error => {
         console.error("Error fetching country code:", error);
       });
+    {% endcomment %}
 
     const ctaVideos = document.querySelectorAll(".cta_videos video");
     function pauseAllVideos() {
