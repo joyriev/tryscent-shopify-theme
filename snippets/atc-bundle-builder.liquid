@@ -96,9 +96,9 @@
           role="status"
           {{ block.shopify_attributes }}>
           {% if selected_variant.compare_at_price > selected_variant.price %}
-            <span class="compare-price line-through text-white/50 text-base" x-text="$store.bundleBuilder.compareAtPrice"></span>
+            <span class="compare-price line-through text-white/50 text-base" x-html="$store.bundleBuilder.compareAtPrice"></span>
           {% endif %}
-          <span class="current-price" x-text="$store.bundleBuilder.originalPrice"></span>
+          <span class="current-price" x-html="$store.bundleBuilder.originalPrice"></span>
         </div>
       </div>
       {%- render 'loading-spinner' -%}
@@ -163,8 +163,8 @@
     const variantsObj = {
       {% for variant in product.variants %}
         "{{ variant.title }}": {
-          originalPrice: "{{ variant.price | money | strip_html }}",
-          compareAtPrice: "{{ variant.compare_at_price | money | strip_html }}"
+          originalPrice: "{{ variant.price | money }}",
+          compareAtPrice: "{{ variant.compare_at_price | money }}"
         },
       {% endfor %}
     };
@@ -189,7 +189,7 @@
               {% for variant in bundle_product.variants %}
                 "{{ variant.title }}": {
                   id: {{ variant.id }},
-                  originalPrice: "{{ variant.price | money | strip_html }}"
+                  originalPrice: "{{ variant.price | money }}"
                 },
               {% endfor %}
             }
