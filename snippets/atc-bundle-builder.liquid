@@ -109,7 +109,7 @@
 {% comment %} Bundle builder {% endcomment %}
 <div x-data>
   <div class="border border-solid border-gray-200 bg-white rounded-lg p-6 mb-6">
-    <h2 class="text-3xl font-bold text-gray-900 my-0">Buy 3 Get 1 FREE</h2>
+    <h2 class="text-3xl font-bold text-gray-900 my-0">Buy 2 Get 1 FREE</h2>
     <p class="text-lg text-green-700 font-semibold my-2">Build your bundle and get one scent for FREE!</p>
     <div class="grid grid-cols-3 gap-4 mt-8">
       <div class="relative">
@@ -180,30 +180,9 @@
         </div>
       </template>
     </div>
-
-    {% comment %} Savings Display {% endcomment %}
-    <div class="text-center mb-6" x-show="$store.bundleBuilder.selectedProducts.length === 3">
-      <div class="flex justify-center gap-2 items-center italic font-semibold text-lg tracking-tight flex-wrap">
-        <div class="text-gray-400 line-through">
-          {{ cart.currency.symbol }}
-          <span x-text="$store.bundleBuilder.originalTotal.toFixed(2)"></span>
-        </div>
-        <div class="text-red-600">
-          {{ cart.currency.symbol }}
-          <span x-text="$store.bundleBuilder.bundleTotal.toFixed(2)"></span>
-        </div>
-        <div class="text-green-700 inline-block ml-2">🎉 You Save
-          <span x-text="$store.bundleBuilder.availableProducts[0].price"></span>!</div>
-      </div>
+    <div x-show="$store.bundleBuilder.addingToCart">
+      Redirecting you to Checkout...
     </div>
-    <button
-      @click="$store.bundleBuilder.addBundleToCart()"
-      :disabled="$store.bundleBuilder.selectedProducts.length !== 3 || $store.bundleBuilder.addingToCart"
-      class="flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
-      x-bind:class="{'opacity-75': $store.bundleBuilder.addingToCart}">
-      <span x-show="!$store.bundleBuilder.addingToCart" x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'Add Bundle to Cart' : 'Complete the Bundle'"></span>
-      <span x-show="$store.bundleBuilder.addingToCart">Adding Bundle to Cart...</span>
-    </button>
   </div>
 </div>
 
@@ -256,17 +235,12 @@
       get compareAtPrice() {
         return variantsObj[this.selectedVariant].compareAtPrice;
       },
-      get originalTotal() {
-        return parseFloat(variantsObj[this.selectedVariant].originalPrice.replace(/[^0-9.]/g, '')) * 4;
-      },
-      get bundleTotal() {
-        return parseFloat(variantsObj[this.selectedVariant].originalPrice.replace(/[^0-9.]/g, '')) * 3;
-      },
       addRemoveProduct(product) {
         if (this.selectedProducts.length < 3 && !this.isProductSelected(product.id)) {
           this.selectedProducts.push(product);
           if (this.selectedProducts.length === 3) {
-            Alpine.store('bundleModal').show = false;
+            this.showModal = false;
+            this.addBundleToCart();
           }
         } else {
           this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
@@ -280,38 +254,20 @@
       },
       addBundleToCart() {
         this.addingToCart = true;
-        // Skip the first product in the array
-        const items = [];
 
+        let checkoutURl = '/cart/';
         this.selectedProducts.forEach((product, index) => {
           if (index === 0) {
-            this.variantId = product.variants[this.selectedVariant].id;
+            checkoutURl += `${product.variants[this.selectedVariant].id}:1`;
           } else {
-            items.push({
-              id: product.variants[this.selectedVariant].id,
-              quantity: 1
-            });
+            checkoutURl += `,${product.variants[this.selectedVariant].id}:1`;
           }
         });
 
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({ items })
-        })
-        .then(res => res.json())
-        .then(data => {
-          const atcButton = document.querySelector('.atc-button');
-          atcButton.click();
-
-          setTimeout(() => {
-            this.addingToCart = false;
-          }, 3000);
-        })
-        .catch(err => console.error(err));
+        window.location.href = checkoutURl;
+        setTimeout(() => {
+          this.addingToCart = false;
+        }, 3000);
       }
     });
   });
