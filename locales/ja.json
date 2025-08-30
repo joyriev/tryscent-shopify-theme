@@ -529,7 +529,23 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "支払い方法を選択してください"
-        }
+        },
+        "crypto_modal": {
+          "header": "%{shop_name} %{total_price}支払うUSDC",
+          "error": {
+            "refresh": "リフレッシュ",
+            "close": "閉じる",
+            "sandbox_error": "何かが間違っていた",
+            "web_component_error": "このページを読み込むのに問題がありました"
+          }
+        },
+        "bank_account_type": {
+          "checking": "チェック",
+          "savings": "貯蓄"
+        },
+        "bank_account_choose": "アカウントを選択して安全に購入を完了する",
+        "bank_account_connect_another": "別の銀行口座に接続する",
+        "bank_account_connect": "銀行口座に接続"
       },
       "payment_errors": {
         "shop_pay_wallet_not_available": "ショップペイはこのチェックアウトではご利用いただけません。",
