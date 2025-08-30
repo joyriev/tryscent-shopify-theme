@@ -529,7 +529,23 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "결제 옵션을 선택하세요"
-        }
+        },
+        "crypto_modal": {
+          "header": "%{shop_name} %{total_price} 결제하기 USDC",
+          "error": {
+            "refresh": "새로 고침",
+            "close": "닫기",
+            "sandbox_error": "문제가 발생했습니다.",
+            "web_component_error": "이 페이지를 로드하는 동안 문제가 발생했습니다."
+          }
+        },
+        "bank_account_type": {
+          "checking": "확인",
+          "savings": "비용 절감"
+        },
+        "bank_account_choose": "안전하게 구매를 완료하려면 계정을 선택하세요.",
+        "bank_account_connect_another": "다른 은행 계좌 연결",
+        "bank_account_connect": "은행 계좌 연결"
       },
       "payment_errors": {
         "shop_pay_wallet_not_available": "이 결제에는 Shop Pay를 사용할 수 없습니다.",
