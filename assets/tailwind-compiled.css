@@ -37,6 +37,10 @@
     right: 0px !important
 }
 
+.-left-\[99999px\] {
+    left: -99999px
+}
+
 .-right-2 {
     right: -8px
 }
@@ -47,6 +51,10 @@
 
 .-top-2\.5 {
     top: -10px
+}
+
+.-top-\[99999px\] {
+    top: -99999px
 }
 
 .bottom-0 {
@@ -127,14 +135,6 @@
 
 .top-\[2px\] {
     top: 2px
-}
-
-.-left-\[99999px\] {
-    left: -99999px
-}
-
-.-top-\[99999px\] {
-    top: -99999px
 }
 
 .isolate {
@@ -577,6 +577,10 @@
     width: auto !important
 }
 
+.w-0 {
+    width: 0px
+}
+
 .w-10 {
     width: 40px
 }
@@ -623,10 +627,6 @@
 
 .w-full {
     width: 100%
-}
-
-.w-0 {
-    width: 0px
 }
 
 .min-w-\[1rem\] {
