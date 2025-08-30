@@ -541,7 +541,23 @@
       "payment": {
         "payment_option": {
           "accessibility_label": "Elija una opción de pago"
-        }
+        },
+        "crypto_modal": {
+          "header": "Pagar %{shop_name} %{total_price} USDC",
+          "error": {
+            "refresh": "Actualizar",
+            "close": "cerrar",
+            "sandbox_error": "Algo salió mal",
+            "web_component_error": "Se ha producido un problema al cargar esta página"
+          }
+        },
+        "bank_account_type": {
+          "checking": "Comprobación de",
+          "savings": "Ahorro"
+        },
+        "bank_account_choose": "Elija una cuenta para completar su compra de forma segura",
+        "bank_account_connect_another": "Conectar otra cuenta bancaria",
+        "bank_account_connect": "Conectar cuenta bancaria"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Su pedido solo puede enviarse a {{countriesList}}. Agregue una nueva dirección para continuar."
