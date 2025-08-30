@@ -10,105 +10,129 @@
       </span>
     </button>
     <div class="modal-header flex-shrink-0">
-      <div class="flex space-x-1 mb-4">
-        <button
-          @click="$store.bundleBuilder.activeCategory = 'All'"
-          :class="$store.bundleBuilder.activeCategory === 'All' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
-          class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">All</button>
-        <button
-          @click="$store.bundleBuilder.activeCategory = 'Man'"
-          :class="$store.bundleBuilder.activeCategory === 'Man' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
-          class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Men's</button>
-        <button
-          @click="$store.bundleBuilder.activeCategory = 'Woman'"
-          :class="$store.bundleBuilder.activeCategory === 'Woman' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
-          class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Women's</button>
+      <div>
+        <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-4 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${3 - $store.bundleBuilder.selectedProducts.length} MORE SCENT${3 - $store.bundleBuilder.selectedProducts.length > 1 ? 'S' : ''}`"></h2>
       </div>
 
-      <!-- Search -->
-      <div class="grid grid-cols-2 gap-4">
-        <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-green-700 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
-          <option selected value="">Shop By Brand</option>
-          <option value="Creed">Creed</option>
-          <option value="Dior">Dior</option>
-          <option value="Maison Francis Kurkdjian">Maison Francis Kurkdjian</option>
-          <option value="Tom Ford">Tom Ford</option>
-          <option value="Chanel">Chanel</option>
-          <option value="Armani">Armani</option>
-          <option value="Louis Vuitton">Louis Vuitton</option>
-          <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
-          <option value="Xerjoff">Xerjoff</option>
-          <option value="Versace">Versace</option>
-          <option value="Paco Rabanne">Paco Rabanne</option>
-          <option value="Valentino">Valentino</option>
-          <option value="YSL">YSL</option>
-          <option value="Prada">Prada</option>
-          <option value="Carolina Herrera">Carolina Herrera</option>
-          <option value="Giorgio Armani">Giorgio Armani</option>
-          <option value="Initio">Initio</option>
-          <option value="Hermes">Hermes</option>
-          <option value="Montale">Montale</option>
-          <option value="Kilian">Kilian</option>
-          <option value="Issey Miyake">Issey Miyake</option>
-          <option value="Lancôme">Lancôme</option>
-          <option value="Parfums de Marly">Parfums de Marly</option>
-        </select>
-        <div class="relative">
-          <input
-            type="text"
-            x-model="$store.bundleBuilder.searchText"
-            placeholder="Find your perfume"
-            class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-700 focus:outline-none focus:ring-0">
-          <span class="absolute top-2.5 left-2.5 svg-wrapper">
-            {{- 'icon-search.svg' | inline_asset_content -}}
-          </span>
+      <div x-show="$store.bundleBuilder.selectedProducts.length < 3">
+        <div class="flex space-x-1 mb-4">
+          <button
+            @click="$store.bundleBuilder.activeCategory = 'All'"
+            :class="$store.bundleBuilder.activeCategory === 'All' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+            class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">All</button>
+          <button
+            @click="$store.bundleBuilder.activeCategory = 'Man'"
+            :class="$store.bundleBuilder.activeCategory === 'Man' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+            class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Men's</button>
+          <button
+            @click="$store.bundleBuilder.activeCategory = 'Woman'"
+            :class="$store.bundleBuilder.activeCategory === 'Woman' ? 'border-2 border-green-700 bg-green-50' : 'bg-white border-gray-200'"
+            class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Women's</button>
+        </div>
+        <!-- Search -->
+        <div class="grid grid-cols-2 gap-4">
+          <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-green-700 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+            <option selected value="">Shop By Brand</option>
+            <option value="Creed">Creed</option>
+            <option value="Dior">Dior</option>
+            <option value="Maison Francis Kurkdjian">Maison Francis Kurkdjian</option>
+            <option value="Tom Ford">Tom Ford</option>
+            <option value="Chanel">Chanel</option>
+            <option value="Armani">Armani</option>
+            <option value="Louis Vuitton">Louis Vuitton</option>
+            <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
+            <option value="Xerjoff">Xerjoff</option>
+            <option value="Versace">Versace</option>
+            <option value="Paco Rabanne">Paco Rabanne</option>
+            <option value="Valentino">Valentino</option>
+            <option value="YSL">YSL</option>
+            <option value="Prada">Prada</option>
+            <option value="Carolina Herrera">Carolina Herrera</option>
+            <option value="Giorgio Armani">Giorgio Armani</option>
+            <option value="Initio">Initio</option>
+            <option value="Hermes">Hermes</option>
+            <option value="Montale">Montale</option>
+            <option value="Kilian">Kilian</option>
+            <option value="Issey Miyake">Issey Miyake</option>
+            <option value="Lancôme">Lancôme</option>
+            <option value="Parfums de Marly">Parfums de Marly</option>
+          </select>
+          <div class="relative">
+            <input
+              type="text"
+              x-model="$store.bundleBuilder.searchText"
+              placeholder="Find your perfume"
+              class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-700 focus:outline-none focus:ring-0">
+            <span class="absolute top-2.5 left-2.5 svg-wrapper">
+              {{- 'icon-search.svg' | inline_asset_content -}}
+            </span>
+          </div>
         </div>
       </div>
     </div>
 
     {% comment %} Product Grid {% endcomment %}
     <div class="flex-1 overflow-y-auto mt-4 -mx-2 px-2">
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
-          <template x-if="(product.tags.some(tag => tag === $store.bundleBuilder.activeCategory) || $store.bundleBuilder.activeCategory === 'All') &&
+      <template x-if="$store.bundleBuilder.selectedProducts.length === 3">
+        <div class="text-center mt-10">
+          <div role="status">
+            <svg
+              aria-hidden="true"
+              class="size-20 text-gray-200 animate-spin fill-green-700"
+              viewBox="0 0 100 101"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
+              <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
+            </svg>
+            <span class="sr-only">Loading...</span>
+          </div>
+          <p class="font-semibold text-lg tracking-normal">Redirecting To Checkout...</p>
+        </div>
+      </template>
+      <template x-if="$store.bundleBuilder.selectedProducts.length < 3">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
+            <template x-if="(product.tags.some(tag => tag === $store.bundleBuilder.activeCategory) || $store.bundleBuilder.activeCategory === 'All') &&
          ($store.bundleBuilder.selectedBrand === '' || product.tags.some(tag => 
            tag.toLowerCase().includes($store.bundleBuilder.selectedBrand.toLowerCase())
          )) &&
          ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()))">
-            <div class="border border-solid border-gray-200 rounded-lg p-4 flex flex-col">
-              <div class="flex justify-center mb-4">
-                <img
-                  :src="product.image"
-                  :alt="product.name"
-                  height=""
-                  width=""
-                  class="w-full h-auto object-cover rounded mr-2">
-              </div>
-              <div class="relative mt-2 flex-1">
-                <p class="text-gray-600 text-sm absolute top-0 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
-                <p class="text-gray-600 text-sm my-0">Smells like</p>
-                <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
-                <div class="flex items-center">
+              <div class="border border-solid border-gray-200 rounded-lg p-4 flex flex-col">
+                <div class="flex justify-center mb-4">
                   <img
-                    src="{{ 'rating-stars.svg' | asset_url }}"
-                    alt="*****"
-                    height="13"
-                    width="66">
-                  <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
+                    :src="product.image"
+                    :alt="product.name"
+                    height=""
+                    width=""
+                    class="w-full h-auto object-cover rounded mr-2">
                 </div>
-                <p class="text-gray-900 font-semibold mb-2 mt-0" x-text="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+                <div class="relative mt-2 flex-1">
+                  <p class="text-gray-600 text-sm absolute top-0 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
+                  <p class="text-gray-600 text-sm my-0">Smells like</p>
+                  <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
+                  <div class="flex items-center">
+                    <img
+                      src="{{ 'rating-stars.svg' | asset_url }}"
+                      alt="*****"
+                      height="13"
+                      width="66">
+                    <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
+                  </div>
+                  <p class="text-gray-900 font-semibold mb-2 mt-0" x-text="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+                </div>
+                <button
+                  @click="$store.bundleBuilder.addRemoveProduct(product)"
+                  :disabled="!$store.bundleBuilder.isProductSelected(product.id) && $store.bundleBuilder.selectedProducts.length >= 3"
+                  :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-red-700 hover:bg-red-800' : 'bg-green-700 hover:bg-green-800'"
+                  class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                  <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Remove -' : 'Add +'"></span>
+                </button>
               </div>
-              <button
-                @click="$store.bundleBuilder.addRemoveProduct(product)"
-                :disabled="!$store.bundleBuilder.isProductSelected(product.id) && $store.bundleBuilder.selectedProducts.length >= 3"
-                :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-red-700 hover:bg-red-800' : 'bg-green-700 hover:bg-green-800'"
-                class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-                <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Remove -' : 'Add +'"></span>
-              </button>
-            </div>
+            </template>
           </template>
-        </template>
-      </div>
+        </div>
+      </template>
     </div>
   </div>
 </div>
