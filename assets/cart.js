@@ -404,8 +404,8 @@ function updateProgress() {
   const shippingPill = document.getElementById("shipping-pill");
 
   // Milestone thresholds
-  const firstMilestone = 3; // 3+1 free
-  const secondMilestone = 5; // 4+2 free
+  const firstMilestone = 2; // 2+1 free
+  const secondMilestone = 4; // 3+2 free (4 items total needed for 2 free)
   const shippingMilestone = 7; // Free shipping
 
   // Update progress bar (max width at shipping milestone)
@@ -417,7 +417,7 @@ function updateProgress() {
     const bottlesNeeded = firstMilestone - itemCount;
     milestoneMessage.textContent = `You're ${bottlesNeeded} ${
       bottlesNeeded === 1 ? "bottle" : "bottles"
-    } away from a free bottle! (3+1 FREE)`;
+    } away from a free bottle! (2+1 FREE)`;
 
     // Reset pill styles
     [bottlePill1, bottlePill2, shippingPill].forEach((pill) => {
@@ -427,7 +427,7 @@ function updateProgress() {
     const bottlesNeeded = secondMilestone - itemCount;
     milestoneMessage.textContent = `You're ${bottlesNeeded} ${
       bottlesNeeded === 1 ? "bottle" : "bottles"
-    } away from another free bottle! (4+2 FREE)`;
+    } away from another free bottle! (3+2 FREE)`;
 
     // Update first milestone pill
     bottlePill1.style.borderColor = "#226139"; // green-500
