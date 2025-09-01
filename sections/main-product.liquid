@@ -139,6 +139,10 @@
                     </div>
                   </div>
                 </div>
+              {% when 'people_purchased' %}
+                <div class="flex items-center gap-3 bg-[#f0f2ec] p-6 rounded">
+                  over 1000+ people purchased this product
+                </div>
               {%- when 'cta_review' -%}
                 <div class="pt-6 pb-2 border-0 border-t border-solid border-gray-200">
                   <div class="leading-snug tracking-normal italic [&_p]:!m-0 text-lg">
@@ -936,6 +940,11 @@
           "label": "Money Back Guarantee Text"
         }
       ]
+    },
+    {
+      "type": "people_purchased",
+      "name": "People Purchased",
+      "limit": 1
     },
     {
       "type": "cta_review",
