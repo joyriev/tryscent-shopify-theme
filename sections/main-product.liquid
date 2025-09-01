@@ -140,8 +140,13 @@
                   </div>
                 </div>
               {% when 'people_purchased' %}
-                <div class="flex items-center gap-3 bg-[#f0f2ec] p-6 rounded">
-                  over 1000+ people purchased this product
+                <div class="grid grid-cols-3 items-center gap-4 bg-[#f0f2ec] p-6 rounded">
+                  <div class="col-span-1 flex">
+                    <img class="w-full h-auto" src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/people-images.png?v=1756736550" alt="" height="" width="">
+                  </div>
+                  <div class="col-span-2">
+                    <p class="my-0 leading-snug tracking-normal">Over <strong>826</strong> peoples form <span class="shipping_location font-semibold">Worldwide</span> have ordered in the last 7 days.</p>
+                  </div>
                 </div>
               {%- when 'cta_review' -%}
                 <div class="pt-6 pb-2 border-0 border-t border-solid border-gray-200">
@@ -834,22 +839,16 @@
   
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    {% comment %}  
     // update shipping country text
     const shippingLocation = document.querySelector(".shipping_location");
-    const shippingTextCanada = document.querySelector(".shipping_text_canada");
     fetch("https://ipapi.co/country_name")
       .then(response => response.text())
       .then(countryName => {
         shippingLocation.textContent = countryName;
-        if (countryName === "Canada") {
-          shippingTextCanada.textContent = "* 🇨🇦 Duties included at Checkout";
-        }
       })
       .catch(error => {
         console.error("Error fetching country code:", error);
       });
-    {% endcomment %}
 
     const ctaVideos = document.querySelectorAll(".cta_videos video");
     function pauseAllVideos() {
