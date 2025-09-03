@@ -22,7 +22,7 @@
         <h2 class="text-3xl mt-0 md:text-3xl font-black tracking-tight leading-snug text-center">{{ section.settings.makes_diferent_title }}</h2>
         <img
           class="lg:hidden w-full h-auto rounded-xl"
-          src={{section.settings.makes-different-image | image_url}}
+          src="{{ section.settings.makes-different-image | image_url: width: 400 }}"
           alt="makes different"
           width="450"
           height="450">
