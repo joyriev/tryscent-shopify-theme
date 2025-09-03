@@ -23,7 +23,7 @@
           <div class="sticky top-5">
             <img
               class="w-full h-auto"
-              src="{{ block.settings.image | image_url }}"
+              src="{{ block.settings.image | image_url: width: 450 }}"
               alt="{{ block.settings.heading }}"
               height="{{ block.settings.image.height }}"
               width="{{ block.settings.image.width }}">
