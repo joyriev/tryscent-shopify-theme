@@ -405,15 +405,27 @@
             return formattedPrice;
         }
       },
+      _formatEuPrice(price, format = '') {
+        const euPrice = price.toFixed(2).toString().replace('.', ',');
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
+
+        switch(format) {
+          case 'bottle':
+            return `${formattedPrice} per bottle`;
+          case 'savings':
+            return `SAVE ${formattedPrice}`;
+          default:
+            return formattedPrice;
+        }
+      },
       getBundlePrice(times) {
         const currentPrice = variantsObj[this.selectedVariant].price;
         const basePrice = this._parsePrice(currentPrice);
         const finalPrice = basePrice * times;
 
         if (currentPrice.includes(',')) {
-          const euPrice = finalPrice.toFixed(2).toString().replace('.', ',');
-          const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
-          return formattedPrice;
+          return this._formatEuPrice(finalPrice);
         }
 
         return this._formatPrice(finalPrice);
@@ -424,9 +436,7 @@
         const finalPrice = (basePrice * times) / total;
 
         if (currentPrice.includes(',')) {
-          const euPrice = finalPrice.toFixed(2).toString().replace('.', ',');
-          const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
-          return formattedPrice;
+          return this._formatEuPrice(finalPrice, 'bottle');
         }
 
         return this._formatPrice(finalPrice, 'bottle');
@@ -437,9 +447,7 @@
         const savings = basePrice * freeCount;
 
         if (currentPrice.includes(',')) {
-          const euPrice = savings.toFixed(2).toString().replace('.', ',');
-          const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
-          return formattedPrice;
+          return this._formatEuPrice(savings, 'savings');
         }
 
         return this._formatPrice(savings, 'savings');
