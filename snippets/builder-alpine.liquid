@@ -411,8 +411,8 @@
         const finalPrice = basePrice * times;
 
         if (currentPrice.includes(',')) {
-          finalPrice.toString().replace(',', '.');
-          return this._formatPrice(finalPrice);
+          const euPrice = finalPrice.toString().replace(',', '.');
+          return this._formatPrice(euPrice);
         }
         return this._formatPrice(finalPrice);
       },
