@@ -1,0 +1,511 @@
+{% assign chosen_product = all_products['pineapple-smoke-vanilla-50-ml-1-7-fl-oz'] %}
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<div class="page-width py-8 md:py-10">
+  {% comment %} Bundle Heading {% endcomment %}
+  <div class="text-center pb-8 md:pb-12 border-0 border-b border-solid border-gray-200">
+    <h1 class="font-bold text-4xl md:text-6xl my-0 leading-snug">Designer Scents For 90% Less.</h1>
+    <p class="text-xl md:text-3xl font-medium text-gray-600">Same ingredients. Same longevity. <br class="md:hidden"> Zero markup.</p>
+    <div class="flex items-center gap-2 justify-center">
+      <div class="rating">
+        <img
+          class="h-6 md:h-10 w-auto"
+          src="//tryscent.co/cdn/shop/t/56/assets/rating-stars.svg?v=134568026622208682831756094205"
+          alt="*****"
+          height=""
+          width="">
+      </div>
+      <span class="text-xl md:text-3xl">(5 / 5) 2785 Reviews</span>
+    </div>
+  </div>
+  {% comment %} X-Application Starts {% endcomment %}
+  <div x-data>
+    <div class="text-center pt-8 md:pt-12">
+      <h2 class="text-2xl md:text-4xl font-bold my-0">Select Size!</h2>
+      <p class="text-lg md:text-2xl font-medium text-gray-600 my-4">67% choose 100ML</p>
+    </div>
+    <div class="mx-auto max-w-screen-sm grid grid-cols-3 pt-4 gap-2 md:gap-6">
+      {% for variant in chosen_product.variants %}
+        {% unless variant.title == '7.5ML' %}
+          <button
+            class="bg-white rounded-xl p-3 md:p-6 border-3 border-solid border-gray-200 cursor-pointer relative"
+            @click="$store.bundleBuilder.selectedVariant = '{{ variant.title }}';"
+            :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-green-600' : ''">
+            {% if variant.title == '50ML' %}
+              <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#e64a4a,_#ff8a8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold">Popular</div>
+            {% endif %}
+            {% if variant.title == '100ML' %}
+              <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold">Bestseller</div>
+            {% endif %}
+            <div class="variant-image">
+              <img
+                class="w-full aspect-square object-contain"
+                src="{{ variant.image | image_url: width: 200, height: 200 }}"
+                height=""
+                width=""
+                alt="{{ variant.title }}">
+            </div>
+            <h4 class="font-semibold text-lg md:text-xl my-0">{{ variant.title }}</h4>
+          </button>
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="flex flex-wrap md:flex-row-reverse gap-2 md:gap-6 border-0 border-y border-solid border-gray-200 py-8 mb-6">
+      <div class="flex-grow grid grid-cols-2 gap-2 md:gap-6 mb-0">
+        <button
+          class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+          data-bundle-type="4+1"
+          @click="$store.bundleBuilder.selectedBundleType = '5+4'"
+          :class="$store.bundleBuilder.selectedBundleType === '5+4' ? 'border-green-600' : ''">
+          <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Free Shipping</div>
+          <div class="p-4 pt-6">
+            <h3 class="bundle-type-desc my-0 font-semibold">Buy 5, Get 4 Free</h3>
+            <p class="my-2 text-2xl font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice(5)">00.00</p>
+            <p class="my-0 text-green-700 text-lg" x-html="$store.bundleBuilder.getPerBottlePrice(5, 9)">00.00</p>
+          </div>
+          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getSavings(4)">SAVE 00.00</p>
+        </button>
+        <button
+          class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+          data-bundle-type="5+1"
+          @click="$store.bundleBuilder.selectedBundleType = '8+8'"
+          :class="$store.bundleBuilder.selectedBundleType === '8+8' ? 'border-green-600' : ''">
+          <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#e64a4a,_#ff8a8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Best Value</div>
+          <div class="p-4 pt-6">
+            <h3 class="bundle-type-desc my-0 font-semibold">Buy 8, Get 8 Free</h3>
+            <p class="my-2 text-2xl font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice(8)">00.00</p>
+            <p class="my-0 text-green-700 text-lg" x-html="$store.bundleBuilder.getPerBottlePrice(8, 16)">00.00</p>
+          </div>
+          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getSavings(8)">SAVE 00.00</p>
+        </button>
+      </div>
+      <div class="flex-grow grid grid-cols-2 gap-2 md:gap-6 mb-0">
+        <button
+          class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+          data-bundle-type="2+1"
+          @click="$store.bundleBuilder.selectedBundleType = '2+1'"
+          :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-green-600' : ''">
+          <div class="p-4 pt-6">
+            <h3 class="bundle-type-desc my-0 font-semibold">Buy 2, Get 1 Free</h3>
+            <p class="my-2 text-2xl font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice(2)">00.00</p>
+            <p class="my-0 text-green-700 text-lg" x-html="$store.bundleBuilder.getPerBottlePrice(2, 3)">00.00</p>
+          </div>
+          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getSavings(1)">SAVE 00.00</p>
+        </button>
+        <button
+          class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+          data-bundle-type="3+2"
+          @click="$store.bundleBuilder.selectedBundleType = '3+2'"
+          :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-green-600' : ''">
+          <div class="p-4 pt-6">
+            <h3 class="bundle-type-desc my-0 font-semibold">Buy 3, Get 2 Free</h3>
+            <p class="my-2 text-2xl font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice(3)">00.00</p>
+            <p class="my-0 text-green-700 text-lg" x-html="$store.bundleBuilder.getPerBottlePrice(3, 5)">00.00</p>
+          </div>
+          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getSavings(2)">SAVE 00.00</p>
+        </button>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-8 gap-6">
+      <div class="md:col-span-5">
+        <div class="mb-6">
+          <div class="flex space-x-1 mb-4">
+            <button
+              @click="$store.bundleBuilder.activeCategory = 'All'"
+              :class="$store.bundleBuilder.activeCategory === 'All' && 'border-2 border-green-600 bg-red-50'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">All</button>
+            <button
+              @click="$store.bundleBuilder.activeCategory = 'Man'"
+              :class="$store.bundleBuilder.activeCategory === 'Man' && 'border-2 border-green-600 bg-red-50'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Men's</button>
+            <button
+              @click="$store.bundleBuilder.activeCategory = 'Woman'"
+              :class="$store.bundleBuilder.activeCategory === 'Woman' && 'border-2 border-green-600 bg-red-50'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Women's</button>
+          </div>
+          <!-- Search -->
+          <div class="grid grid-cols-2 gap-4">
+            <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-green-600 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+              <option selected value="">Shop By Brand</option>
+              <option value="Creed">Creed</option>
+              <option value="Dior">Dior</option>
+              <option value="Maison Francis Kurkdjian">Maison Francis Kurkdjian</option>
+              <option value="Tom Ford">Tom Ford</option>
+              <option value="Chanel">Chanel</option>
+              <option value="Armani">Armani</option>
+              <option value="Louis Vuitton">Louis Vuitton</option>
+              <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
+              <option value="Xerjoff">Xerjoff</option>
+              <option value="Versace">Versace</option>
+              <option value="Paco Rabanne">Paco Rabanne</option>
+              <option value="Valentino">Valentino</option>
+              <option value="YSL">YSL</option>
+            </select>
+            <div class="relative">
+              <input
+                type="text"
+                x-model="$store.bundleBuilder.searchText"
+                placeholder="Find your perfume"
+                class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-600 focus:outline-none focus:ring-0">
+              <span class="absolute top-2.5 left-2.5 svg-wrapper">
+                {{- 'icon-search.svg' | inline_asset_content -}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
+            <template x-if="$store.bundleBuilder.shouldShowProduct(product)">
+              <div class="border border-solid rounded-lg p-4 flex flex-col" :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-green-600' : 'border-gray-200'">
+                <div class="flex justify-center mb-4">
+                  <img
+                    :src="product.image"
+                    :alt="product.name"
+                    height=""
+                    width=""
+                    class="w-full h-auto object-cover rounded mr-2">
+                </div>
+                <div class="relative mt-2 flex-1">
+                  <p class="text-gray-600 text-sm absolute top-0 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
+                  <p class="text-gray-600 text-sm my-0">Smells like</p>
+                  <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
+                  <div class="flex items-center">
+                    <img
+                      src="{{ 'rating-stars.svg' | asset_url }}"
+                      alt="*****"
+                      height="13"
+                      width="66">
+                    <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
+                  </div>
+                  <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+                </div>
+                <button
+                  x-show="!$store.bundleBuilder.isProductSelected(product.id)"
+                  @click="$store.bundleBuilder.addProduct(product)"
+                  :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
+                  class="w-full text-white text-lg bg-green-700 py-2.5 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                  Add +
+                </button>
+                <template x-if="$store.bundleBuilder.isProductSelected(product.id)">
+                  <div class="flex justify-between items-center p-1 rounded-full border border-solid border-gray-200">
+                    <button @click="$store.bundleBuilder.removeProduct(product.id)" class="text-white text-lg bg-green-700 size-10 rounded-full font-bold transition-colors border-0 cursor-pointer">-</button>
+                    <span x-text="$store.bundleBuilder.getProductQuantity(product.id)" class="font-bold text-xl"></span>
+                    <button
+                      :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
+                      @click="$store.bundleBuilder.addProduct(product)"
+                      class="text-white text-lg bg-green-700 size-10 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">+</button>
+                  </div>
+                </template>
+              </div>
+            </template>
+          </template>
+        </div>
+      </div>
+      <div class="md:col-span-3">
+        <div class="p-6 bg-white border border-solid border-gray-200 rounded-lg sticky top-6">
+          <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-6 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></h2>
+          {% comment %} Progress {% endcomment %}
+          <div class="bg-gray-200 rounded-full relative">
+            <div
+              class="bg-green-600 rounded-full h-4 !block transition-all duration-300"
+              role="progressbar"
+              :style="{ width: $store.bundleBuilder.progressWidth }"></div>
+            <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
+              <template x-for="i in $store.bundleBuilder.bundleLength">
+                <span
+                  class="w-6 h-6 flex items-center justify-center text-green-700 border-2 border-solid text-xs font-bold rounded-full"
+                  x-text="i"
+                  :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-gray-800 text-white border-gray-800' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-gray-800 border-green-600' : 'bg-white text-gray-800 border-gray-200')"></span>
+              </template>
+            </div>
+          </div>
+          <template x-if="$store.bundleBuilder.selectedProductsLength > 0">
+            <div class="space-y-2 my-8">
+              <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
+                <div class="flex items-center gap-3 p-3 border border-solid border-gray-200 rounded-lg bg-white relative">
+                  <button class="text-saffron font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
+                  <img
+                    :src="product.data.image"
+                    :alt="product.data.name"
+                    height=""
+                    width=""
+                    class="size-12 object-contain">
+                  <div class="flex-grow">
+                    <h4 class="my-0 font-bold" x-text="product.data.name"></h4>
+                    <p class="my-0 text-sm" x-text="$store.bundleBuilder.selectedVariant"></p>
+                  </div>
+                  <div class="p-1 rounded-full border border-solid border-gray-200 flex items-center justify-between gap-2">
+                    <button class="bg-green-700 text-white size-6 rounded-full font-bold cursor-pointer border-0" @click="$store.bundleBuilder.removeProduct(product.data.id)">-</button>
+                    <span class="leading-none" x-text="product.quantity"></span>
+                    <button
+                      class="bg-green-700 text-white size-6 rounded-full font-bold cursor-pointer border-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                      :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
+                      @click="$store.bundleBuilder.addProduct(product.data)">+</button>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </template>
+          <div x-show="$store.bundleBuilder.selectedProductsLength === 0" class="my-14">
+            <p class="text-gray-600 text-center">Your bundle is empty.</p>
+          </div>
+          <button
+            @click="$store.bundleBuilder.addBundleToCart()"
+            class="w-full text-white text-xl bg-green-700 py-3 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength">
+            <span x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'CHECKOUT' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    {% comment %} Mobile floating cart button {% endcomment %}
+    <div class="fixed bottom-0 left-0 w-full bg-white p-3 shadow-[0px_-4px_20px_rgba(0,0,0,0.15)] z-[9999] md:hidden">
+      <button
+        @click="$store.bundleBuilder.showMobileCart = true"
+        class="w-full py-3 px-7 text-xl rounded-full font-bold border-0 cursor-pointer transition-colors flex justify-between items-center"
+        :class="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength ? 'cursor-not-allowed bg-gray-200 text-gray-800' : 'bg-green-700 text-white'">
+        <span>Review Bundle</span>
+        <div class="text-base px-2 py-1 rounded bg-black/10">
+          <span x-text="$store.bundleBuilder.selectedProductsLength">0</span>
+          /
+          <span x-text="$store.bundleBuilder.bundleLength">0</span>
+        </div>
+      </button>
+    </div>
+    <div
+      x-cloak
+      x-show="$store.bundleBuilder.showMobileCart"
+      class="md:hidden fixed h-screen w-screen z-[999999] left-0 top-0 bg-white p-6 flex flex-col gap-6">
+      <div class="flex justify-between items-center border-0 border-b border-solid border-gray-200 pb-4">
+        <h2 class="text-base font-bold tracking-tight my-0" x-text="$store.bundleBuilder.selectedProductsLength + ' Scents in your bundle'"></h2>
+        <button @click="$store.bundleBuilder.showMobileCart = false" class="text-gray-800 font-bold py-2 px-3 bg-white border border-solid border-gray-200 rounded-full cursor-pointer">Keep Shopping</button>
+      </div>
+      <div class="bg-gray-200 rounded-full relative">
+        <div
+          class="bg-green-600 rounded-full h-4 !block transition-all duration-300"
+          role="progressbar"
+          :style="{ width: $store.bundleBuilder.progressWidth }"></div>
+        <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
+          <template x-for="i in $store.bundleBuilder.bundleLength">
+            <span
+              class="w-6 h-6 flex items-center justify-center text-green-700 border-2 border-solid text-xs font-bold rounded-full"
+              x-text="i"
+              :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-gray-800 text-white border-gray-800' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-gray-800 border-green-600' : 'bg-white text-gray-800 border-gray-200')"></span>
+          </template>
+        </div>
+      </div>
+      <template x-if="$store.bundleBuilder.selectedProductsLength > 0">
+        <div class="space-y-2 flex-grow overflow-y-auto">
+          <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
+            <div class="flex items-center gap-3 p-3 border border-solid border-gray-200 rounded-lg bg-white relative">
+              <button class="text-saffron font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
+              <img
+                :src="product.data.image"
+                :alt="product.data.name"
+                height=""
+                width=""
+                class="size-12 object-contain">
+              <div class="flex-grow">
+                <h4 class="my-0 font-bold" x-text="product.data.name"></h4>
+                <p class="my-0 text-sm" x-text="$store.bundleBuilder.selectedVariant"></p>
+              </div>
+              <div class="p-1 rounded-full border border-solid border-gray-200 flex items-center justify-between gap-2">
+                <button class="bg-green-700 text-white size-6 rounded-full font-bold cursor-pointer border-0" @click="$store.bundleBuilder.removeProduct(product.data.id)">-</button>
+                <span class="leading-none" x-text="product.quantity"></span>
+                <button
+                  class="bg-green-700 text-white size-6 rounded-full font-bold cursor-pointer border-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                  :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
+                  @click="$store.bundleBuilder.addProduct(product.data)">+</button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </template>
+      <div x-show="$store.bundleBuilder.selectedProductsLength === 0" class="flex-grow">
+        <p class="text-gray-600 text-center my-14">Your bundle is empty.</p>
+      </div>
+      <button
+        @click="$store.bundleBuilder.addBundleToCart()"
+        :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength"
+        class="w-full py-3 px-7 text-xl rounded-full font-bold border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+        :class="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength ? 'bg-gray-200 text-gray-800' : 'bg-green-700 text-white'">
+        CHECKOUT
+      </button>
+    </div>
+  </div>
+</div>
+
+{% liquid
+  assign bundle_collection = collections['all']
+  unless bundle_collection
+    assign bundle_collection = collections.first
+  endunless
+%}
+
+<script>
+  const variantsObj = {
+      {% for variant in chosen_product.variants %}
+        "{{ variant.title }}": {
+          price: "{{ variant.price | money }}"
+        },
+      {% endfor %}
+    };
+  document.addEventListener('alpine:init', function() {
+    Alpine.store('bundleBuilder', {
+      selectedVariant: "100ML",
+      selectedBundleType: "3+2",
+      activeCategory: "All",
+      selectedBrand: "",
+      searchText: "",
+      showMobileCart: false,
+      addingToCart: false,
+      selectedProducts: [],
+      availableProducts: [
+        {% for bundle_product in bundle_collection.products %}
+          {
+            id: {{ bundle_product.id }},
+            name: "{{ bundle_product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}",
+            image: "{{ bundle_product.featured_image | image_url }}",
+            ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
+            tags: {{ bundle_product.tags | json }},
+            variants: {
+              {% for variant in bundle_product.variants %}
+                "{{ variant.title }}": {
+                  id: {{ variant.id }},
+                  originalPrice: "{{ variant.price | money }}"
+                },
+              {% endfor %}
+            }
+          },
+        {% endfor %}
+      ],
+      _parsePrice(priceStr) {
+        const match = priceStr.match(/[\d,]+\.?\d*/);
+        if (!match) return 0;
+        
+        const cleanPrice = match[0].includes(',') ? 
+          match[0].replace(',', '.') : match[0];
+        return parseFloat(cleanPrice);
+      },
+      _formatPrice(price, format = '') {
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const formattedPrice = currentPrice.replace(/\d+(\.\d{2})?/g, price.toFixed(2));
+        
+        switch(format) {
+          case 'bottle':
+            return `${formattedPrice} per bottle`;
+          case 'savings':
+            return `SAVE ${formattedPrice}`;
+          default:
+            return formattedPrice;
+        }
+      },
+      getBundlePrice(times) {
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const basePrice = this._parsePrice(currentPrice);
+        const finalPrice = basePrice * times;
+        return this._formatPrice(finalPrice);
+      },
+      getPerBottlePrice(times, total) {
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const basePrice = this._parsePrice(currentPrice);
+        const finalPrice = (basePrice * times) / total;
+        return this._formatPrice(finalPrice, 'bottle');
+      },
+      getSavings(freeCount) {
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const basePrice = this._parsePrice(currentPrice);
+        const savings = basePrice * freeCount;
+        return this._formatPrice(savings, 'savings');
+      },
+      addProduct(product) {
+        // check if that product is already on the selected product array or not 
+        if (this.selectedProducts.some(item => item.data.id === product.id)) {
+          // the product is already on the list, just increase the quantity
+          this.selectedProducts.find(item => item.data.id === product.id).quantity++;
+        } else {
+          this.selectedProducts.push({quantity: 1, data: product});
+        }
+      },
+      removeProduct(productId) {
+        // find that product and decrease the quantity if quantity is 1 then remove it
+        const product = this.selectedProducts.find(item => item.data.id === productId);
+        if (product.quantity > 1) {
+          product.quantity--;
+        } else {
+          this.selectedProducts.splice(this.selectedProducts.indexOf(product), 1);
+        }
+      },
+      deleteProduct(productId) {
+        this.selectedProducts.splice(this.selectedProducts.indexOf(this.selectedProducts.find(product => product.data.id === productId)), 1);
+      },
+      isProductSelected(productId) {
+        return this.selectedProducts.some(product => product.data.id === productId);
+      },
+      getProductQuantity(productId) {
+        return this.selectedProducts.find(product => product.data.id === productId).quantity;
+      },
+      get bundleLength() {
+        return this.selectedBundleType.split("+").map(Number).reduce((a, b) => a + b, 0);
+      },
+      get paidProductsLength() {
+        const paidProducts = this.selectedBundleType.split("+")[0];
+        return parseInt(paidProducts);
+      },
+      get selectedProductsLength() {
+        return this.selectedProducts.reduce((acc, product) => acc + product.quantity, 0);
+      },
+      get progressWidth() {
+        const width = (this.selectedProductsLength / this.bundleLength) * 100;
+        return width + "%";
+      },
+      addBundleToCart() {
+        this.addingToCart = true;
+
+        let checkoutURl = '/cart/';
+        this.selectedProducts.forEach((product, index) => {
+          if (index === 0) {
+            checkoutURl += `${product.data.variants[this.selectedVariant].id}:${product.quantity}`;
+          } else {
+            checkoutURl += `,${product.data.variants[this.selectedVariant].id}:${product.quantity}`;
+          }
+        });
+
+        window.location.href = checkoutURl;
+        setTimeout(() => {
+          this.addingToCart = false;
+        }, 3000);
+      },
+      shouldShowProduct(product) {
+        const matchesCategory = this.activeCategory === 'All' || 
+          product.tags.some(tag => tag === this.activeCategory);
+          
+        const matchesBrand = !this.selectedBrand || 
+          product.tags.some(tag => 
+            tag.toLowerCase().includes(this.selectedBrand.toLowerCase())
+          );
+          
+        const matchesSearch = !this.searchText || 
+          product.name.toLowerCase().includes(this.searchText.toLowerCase()) || 
+          product.tags.some(tag => tag.toLowerCase().includes(this.searchText.toLowerCase()));
+          
+        return matchesCategory && matchesBrand && matchesSearch;
+      },
+      
+      init() {
+        Alpine.effect(() => {
+          const selectedBundleType = this.selectedBundleType;
+          console.log('Bundle type is changed: ', selectedBundleType);
+          if (this.selectedProductsLength > this.bundleLength) {
+            this.selectedProducts = [];
+          }
+        });
+      }
+    });
+  });
+</script>
