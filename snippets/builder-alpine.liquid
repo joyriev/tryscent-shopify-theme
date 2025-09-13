@@ -411,7 +411,7 @@
         const finalPrice = basePrice * times;
 
         if (currentPrice.includes(',')) {
-          const euPrice = finalPrice.toString().replace('.', ',');
+          const euPrice = finalPrice.toFixed(2).toString().replace('.', ',');
           const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
           return formattedPrice;
         }
@@ -424,7 +424,7 @@
         const finalPrice = (basePrice * times) / total;
 
         if (currentPrice.includes(',')) {
-          const euPrice = finalPrice.toString().replace('.', ',');
+          const euPrice = finalPrice.toFixed(2).toString().replace('.', ',');
           const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
           return formattedPrice;
         }
@@ -437,7 +437,7 @@
         const savings = basePrice * freeCount;
 
         if (currentPrice.includes(',')) {
-          const euPrice = savings.toString().replace('.', ',');
+          const euPrice = savings.toFixed(2).toString().replace('.', ',');
           const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
           return formattedPrice;
         }
