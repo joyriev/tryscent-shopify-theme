@@ -411,7 +411,7 @@
         const finalPrice = basePrice * times;
 
         if (currentPrice.includes(',')) {
-          const euPrice = finalPrice.toString().replace(',', '.');
+          const euPrice = finalPrice.toString().replace('.', ',');
           const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
           return formattedPrice;
         }
