@@ -206,7 +206,7 @@
           </template>
         </div>
       </div>
-      <div class="md:col-span-3">
+      <div class="md:col-span-3 [display:none] md:[display:block]">
         <div class="p-6 bg-white border border-solid border-gray-200 rounded-lg sticky top-6">
           <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-6 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></h2>
           {% comment %} Progress {% endcomment %}
