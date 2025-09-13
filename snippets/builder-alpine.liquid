@@ -415,18 +415,33 @@
           const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
           return formattedPrice;
         }
+
         return this._formatPrice(finalPrice);
       },
       getPerBottlePrice(times, total) {
         const currentPrice = variantsObj[this.selectedVariant].price;
         const basePrice = this._parsePrice(currentPrice);
         const finalPrice = (basePrice * times) / total;
+
+        if (currentPrice.includes(',')) {
+          const euPrice = finalPrice.toString().replace('.', ',');
+          const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
+          return formattedPrice;
+        }
+
         return this._formatPrice(finalPrice, 'bottle');
       },
       getSavings(freeCount) {
         const currentPrice = variantsObj[this.selectedVariant].price;
         const basePrice = this._parsePrice(currentPrice);
         const savings = basePrice * freeCount;
+
+        if (currentPrice.includes(',')) {
+          const euPrice = savings.toString().replace('.', ',');
+          const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
+          return formattedPrice;
+        }
+
         return this._formatPrice(savings, 'savings');
       },
       addProduct(product) {
