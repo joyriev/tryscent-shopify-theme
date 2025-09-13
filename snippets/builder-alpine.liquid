@@ -412,7 +412,8 @@
 
         if (currentPrice.includes(',')) {
           const euPrice = finalPrice.toString().replace(',', '.');
-          return this._formatPrice(euPrice);
+          const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
+          return formattedPrice;
         }
         return this._formatPrice(finalPrice);
       },
