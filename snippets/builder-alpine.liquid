@@ -355,10 +355,7 @@
         },
       {% endfor %}
     };
-
-    console.log({{ chosen_product.variants.first.price | times: 3 | money }});
-
-
+    
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
       selectedVariant: "100ML",
