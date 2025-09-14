@@ -385,6 +385,10 @@
         {% endfor %}
       ],
       _parsePrice(priceStr) {
+        if (priceStr.includes(',') && priceStr.includes('.')) {
+          console.log('complexPrice', priceStr);
+        }
+
         const match = priceStr.match(/[\d,]+\.?\d*/);
         if (!match) return 0;
         
@@ -407,11 +411,6 @@
       },
       _formatEuPrice(price, format = '') {
         const currentPrice = variantsObj[this.selectedVariant].price;
-
-        if (currentPrice.includes(',') && currentPrice.includes('.')) {
-          console.log('complexPrice', price);
-        }
-
         const euPrice = price.toFixed(2).toString().replace('.', ',');
         const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
 
