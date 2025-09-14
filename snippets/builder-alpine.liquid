@@ -65,10 +65,10 @@
           <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Free Shipping</div>
           <div class="p-4 pt-6">
             <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 5, Get 4 Free</h3>
-            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice(5)">00.00</p>
-            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice(5, 9)">00.00</p>
+            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('5+4')">00.00</p>
+            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('5+4')">00.00</p>
           </div>
-          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getSavings(4)">SAVE 00.00</p>
+          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('5+4')">SAVE 00.00</p>
         </button>
         <button
           class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
@@ -78,10 +78,10 @@
           <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#e64a4a,_#ff8a8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Best Value</div>
           <div class="p-4 pt-6">
             <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 8, Get 8 Free</h3>
-            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice(8)">00.00</p>
-            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice(8, 16)">00.00</p>
+            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('8+8')">00.00</p>
+            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('8+8')">00.00</p>
           </div>
-          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getSavings(8)">SAVE 00.00</p>
+          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('8+8')">SAVE 00.00</p>
         </button>
       </div>
       <div class="flex-grow grid grid-cols-2 gap-2 md:gap-6 mb-0">
@@ -92,10 +92,10 @@
           :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-green-600' : ''">
           <div class="p-4 pt-6">
             <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 2, Get 1 Free</h3>
-            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice(2)">00.00</p>
-            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice(2, 3)">00.00</p>
+            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('2+1')">00.00</p>
+            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('2+1')">00.00</p>
           </div>
-          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getSavings(1)">SAVE 00.00</p>
+          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('2+1')">SAVE 00.00</p>
         </button>
         <button
           class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
@@ -104,10 +104,10 @@
           :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-green-600' : ''">
           <div class="p-4 pt-6">
             <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 3, Get 2 Free</h3>
-            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice(3)">00.00</p>
-            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice(3, 5)">00.00</p>
+            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('3+2')">00.00</p>
+            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('3+2')">00.00</p>
           </div>
-          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getSavings(2)">SAVE 00.00</p>
+          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('3+2')">SAVE 00.00</p>
         </button>
       </div>
     </div>
@@ -348,13 +348,30 @@
 %}
 
 <script>
-  const variantsObj = {
-      {% for variant in chosen_product.variants %}
-        "{{ variant.title }}": {
-          price: "{{ variant.price | money }}"
-        },
-      {% endfor %}
-    };
+      const packagePrices = {
+        {% for variant in chosen_product.variants %}
+          "{{ variant.title }}": {
+            bundle: {
+                '2+1': "{{ variant.price | times: 2 | money }}",
+                '3+2': "{{ variant.price | times: 3 | money }}",
+                '5+4': "{{ variant.price | times: 5 | money }}",
+                '8+8': "{{ variant.price | times: 8 | money }}"
+            },
+            savings: {
+                '2+1': "{{ variant.price | times: 1 | money }}",
+                '3+2': "{{ variant.price | times: 2 | money }}",
+                '5+4': "{{ variant.price | times: 4 | money }}",
+                '8+8': "{{ variant.price | times: 8 | money }}"
+            },
+            perBottle: {
+                '2+1': "{{ variant.price | times: 2 | divided_by: 3 | money }}",
+                '3+2': "{{ variant.price | times: 3 | divided_by: 5 | money }}",
+                '5+4': "{{ variant.price | times: 5 | divided_by: 9 | money }}",
+                '8+8': "{{ variant.price | times: 8 | divided_by: 16 | money }}"
+            }
+          },
+        {% endfor %}
+      };
 
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
@@ -385,77 +402,14 @@
           },
         {% endfor %}
       ],
-      _parsePrice(priceStr) {
-        if (priceStr.includes(',') && priceStr.includes('.')) {
-          console.log('complexPrice', priceStr);
-        }
-
-        const match = priceStr.match(/[\d,]+\.?\d*/);
-        if (!match) return 0;
-        
-        const cleanPrice = match[0].includes(',') ? 
-          match[0].replace(',', '.') : match[0];
-        return parseFloat(cleanPrice);
+      getBundlePrice(bundleType) {
+        return packagePrices[this.selectedVariant].bundle[bundleType];
       },
-      _formatPrice(price, format = '') {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const formattedPrice = currentPrice.replace(/\d+(\.\d{2})?/g, price.toFixed(2));
-        
-        switch(format) {
-          case 'bottle':
-            return `${formattedPrice} per bottle`;
-          case 'savings':
-            return `SAVE ${formattedPrice}`;
-          default:
-            return formattedPrice;
-        }
+      getPerBottlePrice(bundleType) {
+        return packagePrices[this.selectedVariant].perBottle[bundleType] + ' per bottle';
       },
-      _formatEuPrice(price, format = '') {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const euPrice = price.toFixed(2).toString().replace('.', ',');
-        const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
-
-        switch(format) {
-          case 'bottle':
-            return `${formattedPrice} per bottle`;
-          case 'savings':
-            return `SAVE ${formattedPrice}`;
-          default:
-            return formattedPrice;
-        }
-      },
-      getBundlePrice(times) {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const basePrice = this._parsePrice(currentPrice);
-        let finalPrice = basePrice * times;
-
-        if (currentPrice.includes(',')) {
-          return this._formatEuPrice(finalPrice);
-        }
-
-        return this._formatPrice(finalPrice);
-      },
-      getPerBottlePrice(times, total) {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const basePrice = this._parsePrice(currentPrice);
-        const finalPrice = (basePrice * times) / total;
-
-        if (currentPrice.includes(',')) {
-          return this._formatEuPrice(finalPrice, 'bottle');
-        }
-
-        return this._formatPrice(finalPrice, 'bottle');
-      },
-      getSavings(freeCount) {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const basePrice = this._parsePrice(currentPrice);
-        const savings = basePrice * freeCount;
-
-        if (currentPrice.includes(',')) {
-          return this._formatEuPrice(savings, 'savings');
-        }
-
-        return this._formatPrice(savings, 'savings');
+      getBundleSavings(bundleType) {
+        return 'SAVE ' + packagePrices[this.selectedVariant].savings[bundleType];
       },
       addProduct(product) {
         // check if that product is already on the selected product array or not 
@@ -542,6 +496,4 @@
       }
     });
   });
-  
-  console.log("{{ chosen_product.variants.first.price | times: 3 | money }}");
 </script>
