@@ -406,8 +406,14 @@
         }
       },
       _formatEuPrice(price, format = '') {
-        const euPrice = price.toFixed(2).toString().replace('.', ',');
         const currentPrice = variantsObj[this.selectedVariant].price;
+
+        if (currentPrice.includes(',') && price.includes('.')) {
+          const complexPrice = price.toString().split('.')[0];
+          console.log('complexPrice', complexPrice);
+        }
+
+        const euPrice = price.toFixed(2).toString().replace('.', ',');
         const formattedPrice = currentPrice.replace(/\d+(\,\d{2})?/g, euPrice);
 
         switch(format) {
@@ -423,11 +429,6 @@
         const currentPrice = variantsObj[this.selectedVariant].price;
         const basePrice = this._parsePrice(currentPrice);
         let finalPrice = basePrice * times;
-
-        if (currentPrice.includes('.') && currentPrice.includes(',')) {
-            finalPrice = finalPrice.split('.')[0];
-            console.log('includes both', finalPrice);
-        }
 
         if (currentPrice.includes(',')) {
           return this._formatEuPrice(finalPrice);
