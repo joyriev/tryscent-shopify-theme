@@ -408,7 +408,7 @@
       _formatEuPrice(price, format = '') {
         const currentPrice = variantsObj[this.selectedVariant].price;
 
-        if (currentPrice.includes(',') && price.includes('.')) {
+        if (currentPrice.includes(',') && currentPrice.includes('.')) {
           const complexPrice = price.toString().split('.')[0];
           console.log('complexPrice', complexPrice);
         }
