@@ -203,9 +203,8 @@
                     </div>
                   {%- endif -%}  
                   <h1 class="!font-sans font-[700]  capitalize !tracking-normal flex flex-col">
-                    <div class="text-gray-500 mr-1 leading-snug text-lg">Smells like...</div>
                     <span class="uppercase text-3xl !tracking-wider">
-                      {{ product.title | remove: 'Smells like...' |  remove: 'Smells like ...' }}
+                      {{ product.title }}
                     </span>
                   </h1>
                 </div>
