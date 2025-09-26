@@ -30,43 +30,15 @@
             class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Women's</button>
         </div>
         <!-- Search -->
-        <div class="grid grid-cols-2 gap-4">
-          <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-green-700 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
-            <option selected value="">Shop By Brand</option>
-            <option value="Creed">Creed</option>
-            <option value="Dior">Dior</option>
-            <option value="Maison Francis Kurkdjian">Maison Francis Kurkdjian</option>
-            <option value="Tom Ford">Tom Ford</option>
-            <option value="Chanel">Chanel</option>
-            <option value="Armani">Armani</option>
-            <option value="Louis Vuitton">Louis Vuitton</option>
-            <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
-            <option value="Xerjoff">Xerjoff</option>
-            <option value="Versace">Versace</option>
-            <option value="Paco Rabanne">Paco Rabanne</option>
-            <option value="Valentino">Valentino</option>
-            <option value="YSL">YSL</option>
-            <option value="Prada">Prada</option>
-            <option value="Carolina Herrera">Carolina Herrera</option>
-            <option value="Giorgio Armani">Giorgio Armani</option>
-            <option value="Initio">Initio</option>
-            <option value="Hermes">Hermes</option>
-            <option value="Montale">Montale</option>
-            <option value="Kilian">Kilian</option>
-            <option value="Issey Miyake">Issey Miyake</option>
-            <option value="Lancôme">Lancôme</option>
-            <option value="Parfums de Marly">Parfums de Marly</option>
-          </select>
-          <div class="relative">
-            <input
-              type="text"
-              x-model="$store.bundleBuilder.searchText"
-              placeholder="Find your perfume"
-              class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-700 focus:outline-none focus:ring-0">
-            <span class="absolute top-2.5 left-2.5 svg-wrapper">
-              {{- 'icon-search.svg' | inline_asset_content -}}
-            </span>
-          </div>
+        <div class="relative">
+          <input
+            type="text"
+            x-model="$store.bundleBuilder.searchText"
+            placeholder="Find your perfume"
+            class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-700 focus:outline-none focus:ring-0">
+          <span class="absolute top-2.5 left-2.5 svg-wrapper">
+            {{- 'icon-search.svg' | inline_asset_content -}}
+          </span>
         </div>
       </div>
     </div>
@@ -108,7 +80,7 @@
                     class="w-full h-auto object-cover rounded mr-2">
                 </div>
                 <div class="relative mt-2 flex-1">
-                  <p class="text-gray-600 text-sm absolute top-0 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
+                  <p class="text-gray-600 text-sm absolute -top-6 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
                   <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
                   <div class="flex items-center">
                     <img
