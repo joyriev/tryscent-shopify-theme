@@ -290,7 +290,7 @@
         {%- endif -%}
       </div>
     </div>
-    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
+    <div class="text-center page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
         <small class="copyright__content"
           >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
@@ -310,6 +310,11 @@
           </ul>
         {%- endif -%}
       </div>
+      <p class="footer__copyright">
+        <small>
+          TryScent is an independent fragrance house. Our products are not affiliated with, endorsed by, or produced by any of the brands or designers mentioned. <br> Any references are for descriptive purposes only.
+        </small>
+      </p>
     </div>
   </div>
 </footer>
