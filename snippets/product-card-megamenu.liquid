@@ -5,11 +5,8 @@
     alt="{{ product.featured_image.alt }}"
     height="{{ product.featured_image.height }}"
     width="{{ product.featured_image.width }}">
-  <div class="text-gray-500 text-sm leading-none tracking-normal">
-    Smells like
-  </div>
   <div class="line-clamp-1 tracking-normal font-semibold text-black text-base">
-    {{ product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}
+    {{ product.title }}
   </div>
   {%- if product.metafields.reviews.rating.value != blank -%}
     <div

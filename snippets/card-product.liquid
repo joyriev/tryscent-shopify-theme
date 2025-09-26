@@ -208,12 +208,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               class="full-unstyled-link text-base md:text-xl font-semibold !no-underline hover:opacity-75 !leading-tight tracking-normal my-2"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-              <span class="text-gray-500 text-base leading-none">
-                Smells like...
-              </span>
-              <span>
-                {{ card_product.title | remove: 'Smells like...' |  remove: 'Smells like ...' }}
-              </span>
+              {{ card_product.title }}
             </a>
           </h3>
 

@@ -172,7 +172,6 @@
                 </div>
                 <div class="relative mt-2 flex-1">
                   <p class="text-gray-600 text-sm absolute top-0 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
-                  <p class="text-gray-600 text-sm my-0">Smells like</p>
                   <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
                   <div class="flex items-center">
                     <img
@@ -387,7 +386,7 @@
         {% for bundle_product in bundle_collection.products %}
           {
             id: {{ bundle_product.id }},
-            name: "{{ bundle_product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}",
+            name: "{{ bundle_product.title }}",
             image: "{{ bundle_product.featured_image | image_url }}",
             ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
             tags: {{ bundle_product.tags | json }},

@@ -24,8 +24,7 @@
           </div>
 
           <div class="text-left relative col-span-2">
-            <p class="text-gray-600 mb-1 mt-0">Smells like</p>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2 mt-0">{{ product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}</h3>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2 mt-0">{{ product.title }}</h3>
             <p class="text-gray-700 my-0 line-clamp-2">{{ product.metafields.custom.scent_breakdown | metafield_text }}</p>
             <div class="absolute top-0 right-0">
               <span class="text-gray-600 text-lg">50ML</span>
@@ -62,7 +61,6 @@
                   width=""
                   height="">
               </div>
-              <p class="text-gray-600 text-sm my-0">Smells like</p>
               <h4 class="font-bold text-gray-900 my-0 uppercase" x-text="product.name"></h4>
               <p class="text-gray-900 my-0" x-text="product.price"></p>
             </div>
@@ -193,7 +191,6 @@
                   </div>
                   <div class="relative mt-2 flex-1">
                     <p class="text-gray-600 text-sm absolute top-0 right-0 my-0">50ml</p>
-                    <p class="text-gray-600 text-sm my-0">Smells like</p>
                     <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
                     <div class="flex items-center">
                       <img
@@ -240,7 +237,7 @@
             {% for product in bundle_collection.products %}
               {
                 id: {{ product.id }},
-                name: "{{ product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}",
+                name: "{{ product.title }}",
                 price: "{{ product.selected_or_first_available_variant.price | money }}",
                 image: "{{ product.featured_image | image_url }}",
                 ratingCount: "{{ product.metafields.reviews.rating_count }}",
