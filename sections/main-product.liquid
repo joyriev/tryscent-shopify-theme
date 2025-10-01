@@ -95,7 +95,7 @@
                 </div>
               {% when 'cheaper_than' %}
                 <div class="flex items-center gap-1 font-semibold text-black">
-                  <span class="cheaper_than_text">...{{ product.metafields.custom.nuta | remove: 'Inspired By: ' | remove: 'Inspired by: ' }}...</span> 
+                  <span class="cheaper_than_text">"...{{ product.metafields.custom.nuta | remove: 'Inspired By: ' | remove: 'Inspired by: ' }}..."</span> 
                 </div>
               {%- when 'mobile_gallery' -%}
                 <div class="md:hidden">
