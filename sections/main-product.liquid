@@ -95,10 +95,7 @@
                 </div>
               {% when 'cheaper_than' %}
                 <div class="flex items-center gap-1 font-semibold text-black">
-                  <span class="cheaper_than_text">Smells like this fragrances</span> 
-                  <a target="_blank" class="text-[#22613a]" href="https://www.google.com/search?q={{ product.metafields.custom.nuta | remove: 'Inspired By:' | url_encode }}">
-                    on Google
-                  </a>
+                  <span class="cheaper_than_text">...{{ product.metafields.custom.nuta | remove: 'Inspired By:' | url_encode }}...</span> 
                 </div>
               {%- when 'mobile_gallery' -%}
                 <div class="md:hidden">
