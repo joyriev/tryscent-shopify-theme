@@ -1,17 +1,17 @@
 <div>
-  <a href="{{ section.settings.link }}">
+  <a class="flex" href="{{ section.settings.link }}">
     <img
-      class="[display:none] md:block"
-      src="{{ section.settings.image | image_url }}"
+      class="[display:none] md:block w-full h-auto"
+      src="{{ section.settings.image | image_url: width: 1920 }}"
       alt="Home banner"
-      width=""
-      height="">
+      width="1920"
+      height="1080">
     <img
-      class="md:hidden"
-      src="{{ section.settings.mobile_image | image_url }}"
+      class="md:hidden w-full h-auto"
+      src="{{ section.settings.mobile_image | image_url: width: 800 }}"
       alt="Home banner"
-      width=""
-      height="">
+      width="800"
+      height="800">
   </a>
 </div>
 {% schema %}
