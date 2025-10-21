@@ -1,15 +1,18 @@
 <div>
-  <img
-    src="{{ section.settings.image | image_url: 'master' }}"
-    alt="Home banner"
-    width="1920"
-    height="1080">
-
-  <img
-    src="{{ section.settings.mobile_image | image_url: 'master' }}"
-    alt="Home banner"
-    width="1920"
-    height="1080">
+  <a href="{{ section.settings.link }}">
+    <img
+      class="md:hidden"
+      src="{{ section.settings.image | image_url: 'master' }}"
+      alt="Home banner"
+      width=""
+      height="">
+    <img
+      class="hidden md:block"
+      src="{{ section.settings.mobile_image | image_url: 'master' }}"
+      alt="Home banner"
+      width=""
+      height="">
+  </a>
 </div>
 
 {% schema %}
@@ -24,6 +27,10 @@
         "id": "mobile_image",
         "type": "image_picker",
         "label": "Mobile Image"
+      }, {
+        "id": "link",
+        "type": "url",
+        "label": "Link"
       }
     ],
     "presets": [
