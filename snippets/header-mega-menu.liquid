@@ -1,3 +1,5 @@
+{% assign bundle_product = all_products['4-x-100ml-perfume-bottles'] %}
+
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline w-full justify-between gap-3 !pl-3" role="list">
     <li class="flex items-center">
@@ -5,7 +7,9 @@
         id="HeaderMenu-buy-3-get-1-free"
         href="/products/4-x-100ml-perfume-bottles"
         class="bg-[linear-gradient(to_right,#226139,#26964F)] inline-block px-2 rounded no-underline text-white">
-        <span>Buy 4X 100ML for <span class="price_to_modify">$44.44</span></span>
+        <span>Buy 4X 100ML for
+          {{ bundle_product.price | money }}
+        </span>
       </a>
     </li>
     <li>
