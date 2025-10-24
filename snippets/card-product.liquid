@@ -160,7 +160,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               </div>
             {% endif %}
 
-            <span class="text-gray-300 [display:none] md:inline-block">|</span>
+            {% comment %} <span class="text-gray-300 [display:none] md:inline-block">|</span> {% endcomment %}
 
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
               {% liquid
@@ -218,8 +218,9 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
             {%- endif -%}
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
-         
+             {% if card_product.metafields.custom.nuta != blank %}
               <div>"...{{ card_product.metafields.custom.nuta }}..."</div>
+             {% endif %}
 
               <div class="font-bold tracking-normal text-lg">
                 {% unless card_product.tags contains 'onsale' %}
