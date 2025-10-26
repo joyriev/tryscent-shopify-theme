@@ -3650,3 +3650,12 @@ details-disclosure > details {
 .choose-fragrances-opts label.form__label {
     font-weight: 500;
 }
+
+/* Mobile View: Font size 18px */
+@media (max-width: 767px) {
+  .discount-percent, 
+  .product-price, 
+  .compare-price {
+    font-size: 18px !important;
+  }
+}
