@@ -3651,11 +3651,17 @@ details-disclosure > details {
     font-weight: 500;
 }
 
-/* Mobile View: Font size 18px */
+/* Mobile Font Sizes */
 @media (max-width: 767px) {
-  .discount-percent, 
-  .product-price, 
-  .compare-price {
+  .price-container .discount-percent {
+    font-size: 18px !important;
+  }
+
+  .price-container .product-price {
+    font-size: 18px !important;
+  }
+
+  .price-container .compare-price {
     font-size: 18px !important;
   }
 }
