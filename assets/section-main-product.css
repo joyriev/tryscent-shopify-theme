@@ -1484,3 +1484,17 @@ a.product__text {
     border: none;
   }
 }
+/* Mobile Font Sizes */
+@media (max-width: 767px) {
+  .price-container .discount-percent {
+    font-size: 18px !important;
+  }
+
+  .price-container .product-price {
+    font-size: 18px !important;
+  }
+
+  .price-container .compare-price {
+    font-size: 18px !important;
+  }
+}
