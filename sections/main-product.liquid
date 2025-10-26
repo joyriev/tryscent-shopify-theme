@@ -130,17 +130,17 @@
 
                     <div class="flex items-center gap-3 text-2xl">
                       {% if product.compare_at_price > product.price %}
-                        <span class="text-red-600 font-bold text-[28px]">
+                        <span class="text-red-600 font-bold text-[28px] discount-percent">
                           -{{ discount_percent }}%
                         </span>
                       {% endif %}
 
-                      <span class="text-black font-bold text-[28px]">
+                      <span class="text-black font-bold text-[28px] product-price">
                         {{ product.price | money }}
                       </span>
 
                       {% if product.compare_at_price > product.price %}
-                        <span class="text-gray-500 font-semibold line-through text-[22px]">
+                        <span class="text-gray-500 font-semibold line-through text-[22px] compare-price">
                          RRP: {{ product.compare_at_price | money }}
                         </span>
                       {% endif %}
