@@ -268,6 +268,7 @@
             name: "{{ bundle_product.title }}",
             image: "{{ bundle_product.featured_image | image_url }}",
             ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
+            nuta: "{{ bundle_product.metafields.custom.nuta }}",
             tags: {{ bundle_product.tags | json }},
             variants: {
               {% for variant in bundle_product.variants %}
