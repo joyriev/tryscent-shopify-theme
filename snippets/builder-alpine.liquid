@@ -154,7 +154,8 @@
                 </div>
                 <div class="relative mt-2 flex-1">
                   <p class="text-gray-600 text-sm absolute -top-6 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
-                  <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
+                  <h4 class="font-bold text-gray-900 mt-1 mb-0" x-text="product.name"></h4>
+                  <p class="mt-0 mb-1">"...<span x-text="product.nuta"></span>..."</p>
                   <div class="flex items-center">
                     <img
                       src="{{ 'rating-stars.svg' | asset_url }}"
@@ -371,6 +372,7 @@
             name: "{{ bundle_product.title }}",
             image: "{{ bundle_product.featured_image | image_url }}",
             ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
+            nuta: "{{ bundle_product.metafields.custom.nuta }}",
             tags: {{ bundle_product.tags | json }},
             variants: {
               {% for variant in bundle_product.variants %}
