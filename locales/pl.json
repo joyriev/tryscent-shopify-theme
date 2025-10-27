@@ -186,9 +186,7 @@
         "price_at_each_html": "{{ price }}/szt."
       },
       "product_variants": "Warianty produktów",
-      "taxes_included": "Z wliczonymi podatkami.",
-      "duties_included": "Z wliczonymi cłami.",
-      "duties_and_taxes_included": "Z wliczonymi cłami i podatkami."
+      "duties_included": "Z wliczonymi cłami."
     },
     "modal": {
       "label": "Galeria multimediów"
@@ -326,13 +324,9 @@
       "estimated_total": "Przewidywana suma",
       "new_estimated_total": "Nowa przewidywana suma",
       "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Z wliczonymi cłami i podatkami. Obliczenie rabatów i <a href=\"{{ link }}\">wysyłki</a> przy realizacji zakupu.",
-      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Z wliczonymi cłami i podatkami. Obliczenie rabatów i wysyłki przy realizacji zakupu.",
       "taxes_included_shipping_at_checkout_with_policy_html": "Z wliczonymi podatkami. Obliczenie rabatów i <a href=\"{{ link }}\">wysyłki</a> przy realizacji zakupu.",
-      "taxes_included_shipping_at_checkout_without_policy": "Z wliczonymi podatkami. Obliczenie rabatów i wysyłki przy realizacji zakupu.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Z wliczonymi cłami. Obliczenie podatków, rabatów i <a href=\"{{ link }}\">wysyłki</a> przy realizacji zakupu.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Z wliczonymi cłami. Obliczenie podatków, rabatów i wysyłki przy realizacji zakupu.",
-      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Obliczenie podatków, rabatów i <a href=\"{{ link }}\">wysyłki</a> przy realizacji zakupu.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Obliczenie podatków, rabatów i wysyłki przy realizacji zakupu."
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Obliczenie podatków, rabatów i <a href=\"{{ link }}\">wysyłki</a> przy realizacji zakupu."
     },
     "footer": {
       "payment": "Metody płatności"
@@ -556,6 +550,24 @@
       "send_on_label": "Wyślij dnia (opcjonalnie)",
       "expanded": "Rozwinięty formularz odbiorcy karty prezentowej",
       "collapsed": "Zwinięty formularz odbiorcy karty prezentowej"
+    }
+  },
+  "customer_accounts": {
+    "payment_methods": {
+      "update_payment_method": {
+        "title": "Zaktualizuj metodę płatności",
+        "button_title": "Aktualizacja",
+        "billing_address": "Adres rozliczeniowy",
+        "disclaimer": "Ta metoda płatności zostanie zapisana dla przyszłych zakupów i może być używana do wszelkich powtarzających się lub odroczonych zakupów.",
+        "error_message": "Nie można zaktualizować metody płatności",
+        "current": "Aktualny"
+      }
+    },
+    "subscriptions": {
+      "update_success": {
+        "title": "Zaktualizowano metodę płatności",
+        "done_button": "Kontynuuj zakupy"
+      }
     }
   }
 }
