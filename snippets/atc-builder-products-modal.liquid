@@ -90,7 +90,7 @@
                       width="66">
                     <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
                   </div>
-                  <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+                  <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants && product.variants[$store.bundleBuilder.selectedVariant] ? product.variants[$store.bundleBuilder.selectedVariant].originalPrice : ''"></p>
                 </div>
                 <button
                   @click="$store.bundleBuilder.addRemoveProduct(product)"
