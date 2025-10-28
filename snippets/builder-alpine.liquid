@@ -9,25 +9,52 @@
 <div class="page-width py-8 md:py-10">
   {% comment %} Bundle Heading {% endcomment %}
   <div class="text-center pb-8 md:pb-12 border-0 border-b border-solid border-gray-200">
-    <h1 class="font-bold text-4xl md:text-6xl my-0 leading-snug">Designer Scents For 90% Less.</h1>
-    <p class="text-xl md:text-3xl font-medium text-gray-600">Same ingredients. Same longevity. <br class="md:hidden"> Zero markup.</p>
-    <div class="flex items-center gap-2 justify-center">
-      <div class="rating">
-        <img
-          class="h-6 md:h-10 w-auto"
-          src="//tryscent.co/cdn/shop/t/56/assets/rating-stars.svg?v=134568026622208682831756094205"
-          alt="*****"
-          height=""
-          width="">
-      </div>
-      <span class="text-xl md:text-3xl">(5 / 5) 2785 Reviews</span>
+    <h1 class="font-bold text-4xl md:text-6xl my-0 leading-snug">🔥 BLACK FRIDAY EXCLUSIVE 🔥</h1>
+    <p class="text-xl md:text-3xl font-medium text-gray-600">THE MORE YOU BUY, THE MORE FREE YOU GET!</p>
+    <div class="text-xl md:text-3xl font-medium text-gray-600 countdown">
+      COUNTDOWN:
+      <span id="countdown-timer" class="font-semibold text-red-600">--:--:--</span>
     </div>
+
+    <script>
+        // Target date (YYYY-MM-DDTHH:mm:ss format)
+        const targetDate = new Date('2025-12-31T23:59:59').getTime();
+
+        // Function to update countdown
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+
+          if (distance <= 0) {
+      document.getElementById('countdown-timer').textContent = '00:00:00';
+      clearInterval(timer);
+      return;
+          }
+
+          const hours = Math.floor((distance / (1000 * 60 * 60)) % 24)
+      .toString()
+      .padStart(2, '0');
+          const minutes = Math.floor((distance / (1000 * 60)) % 60)
+      .toString()
+      .padStart(2, '0');
+          const seconds = Math.floor((distance / 1000) % 60)
+      .toString()
+      .padStart(2, '0');
+
+          document.getElementById('countdown-timer').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Update every second
+        const timer = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+
   </div>
   {% comment %} X-Application Starts {% endcomment %}
   <div x-data>
-    <div class="text-center pt-8 md:pt-12">
-      <h2 class="text-2xl md:text-4xl font-bold my-0">Select Size!</h2>
-      <p class="text-lg md:text-2xl font-medium text-gray-600 my-4">67% choose 100ML</p>
+    <div class="pt-8 md:pt-12 flex flex-wrap gap-2 justify-center items-center mb-3 md:mb-6">
+      <h2 class="text-2xl md:text-4xl font-bold my-0">Select Size:</h2>
+      <p class="text-lg md:text-2xl font-medium text-gray-600 my-0 leading-snug">67% choose 100ML</p>
     </div>
     <div class="mx-auto max-w-screen-sm grid grid-cols-3 pt-4 gap-2 md:gap-6">
       {% for variant in chosen_product.variants %}
@@ -42,25 +69,19 @@
             {% if variant.title == '100ML' %}
               <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold">Bestseller</div>
             {% endif %}
-            <div class="variant-image">
-              <img
-                class="w-full aspect-square object-contain"
-                src="{{ variant.image | image_url: width: 200, height: 200 }}"
-                height=""
-                width=""
-                alt="{{ variant.title }}">
-            </div>
+
             <h4 class="font-semibold text-lg md:text-xl my-0">{{ variant.title }}</h4>
           </button>
         {% endunless %}
       {% endfor %}
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 border-0 border-y border-solid border-gray-200 py-8 mb-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-3 md:gap-x-6 border-0 border-y border-solid border-gray-200 py-8 mb-6">
       <button
-        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative flex flex-col justify-between"
         data-bundle-type="5+1"
         @click="$store.bundleBuilder.selectedBundleType = '6+6'"
         :class="$store.bundleBuilder.selectedBundleType === '6+6' ? 'border-green-600' : ''">
+        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#e64a4a,_#ff8a8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">💎 Great Deal</div>
         <div class="p-4 pt-6">
           <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 6, Get 6 Free</h3>
           <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('6+6')">00.00</p>
@@ -69,11 +90,11 @@
         <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('6+6')">SAVE 00.00</p>
       </button>
       <button
-        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative flex flex-col justify-between"
         data-bundle-type="8+12"
         @click="$store.bundleBuilder.selectedBundleType = '8+12'"
         :class="$store.bundleBuilder.selectedBundleType === '8+12' ? 'border-green-600' : ''">
-        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Most Popular</div>
+        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">⭐ Better Deal</div>
         <div class="p-4 pt-6">
           <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 8, Get 12 Free</h3>
           <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('8+12')">00.00</p>
@@ -82,11 +103,11 @@
         <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('8+12')">SAVE 00.00</p>
       </button>
       <button
-        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+        class="col-span-2 md:col-span-1 bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative flex flex-col justify-between"
         data-bundle-type="10+16"
         @click="$store.bundleBuilder.selectedBundleType = '10+16'"
         :class="$store.bundleBuilder.selectedBundleType === '10+16' ? 'border-green-600' : ''">
-        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#e64a4a,_#ff8a8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Best Value</div>
+        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#4a78e6,_#ffae8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">🔥 Best Deal</div>
         <div class="p-4 pt-6">
           <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 10, Get 16 Free</h3>
           <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('10+16')">00.00</p>
@@ -128,16 +149,16 @@
           <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
             <template x-if="$store.bundleBuilder.shouldShowProduct(product)">
               <div class="border border-solid rounded-lg p-4 flex flex-col" :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-green-600' : 'border-gray-200'">
-                <div class="flex justify-center mb-4">
+                <div class="flex justify-center relative">
                   <img
                     :src="product.image"
                     :alt="product.name"
                     height=""
                     width=""
-                    class="w-full h-auto object-cover rounded mr-2">
+                    class="w-full h-auto object-cover rounded">
+                  <p class="text-gray-600 text-sm font-semibold absolute top-1 right-1 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
                 </div>
-                <div class="relative mt-2 flex-1">
-                  <p class="text-gray-600 text-sm absolute -top-6 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
+                <div class="mt-2 flex-1">
                   <h4 class="font-bold text-gray-900 mt-1 mb-0" x-text="product.name"></h4>
                   <p class="mt-0 mb-1">"...<span x-text="product.nuta"></span>..."</p>
                   <div class="flex items-center">

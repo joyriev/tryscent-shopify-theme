@@ -137,6 +137,18 @@
     top: 2px
 }
 
+.right-6 {
+    right: 24px
+}
+
+.right-1 {
+    right: 4px
+}
+
+.top-1 {
+    top: 4px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -923,6 +935,15 @@
     row-gap: 12px
 }
 
+.gap-x-3 {
+    -moz-column-gap: 12px;
+         column-gap: 12px
+}
+
+.gap-y-6 {
+    row-gap: 24px
+}
+
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(4px * var(--tw-space-x-reverse));
@@ -1367,6 +1388,10 @@
 
 .bg-\[linear-gradient\(to_right\2c _\#e64a4a\2c _\#ff8a8a\)\] {
     background-image: linear-gradient(to right, #e64a4a, #ff8a8a)
+}
+
+.bg-\[linear-gradient\(to_right\2c _\#4a78e6\2c _\#ffae8a\)\] {
+    background-image: linear-gradient(to right, #4a78e6, #ffae8a)
 }
 
 .bg-cover {
@@ -2374,8 +2399,16 @@
         grid-column: span 5 / span 5
     }
 
+    .md\:col-span-1 {
+        grid-column: span 1 / span 1
+    }
+
     .md\:mt-14 {
         margin-top: 56px
+    }
+
+    .md\:mb-6 {
+        margin-bottom: 24px
     }
 
     .md\:block {
@@ -2478,6 +2511,11 @@
 
     .md\:gap-6 {
         gap: 24px
+    }
+
+    .md\:gap-x-6 {
+        -moz-column-gap: 24px;
+             column-gap: 24px
     }
 
     .md\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
