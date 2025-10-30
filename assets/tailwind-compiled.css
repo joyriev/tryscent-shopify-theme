@@ -222,6 +222,10 @@
     grid-column: span 6 / span 6
 }
 
+.col-span-5 {
+    grid-column: span 5 / span 5
+}
+
 .\!m-0 {
     margin: 0px !important
 }
@@ -942,6 +946,10 @@
 
 .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr))
+}
+
+.grid-cols-10 {
+    grid-template-columns: repeat(10, minmax(0, 1fr))
 }
 
 .grid-rows-3 {
@@ -1857,6 +1865,10 @@
     text-align: center
 }
 
+.align-middle {
+    vertical-align: middle
+}
+
 .\!font-sans {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important
 }
@@ -2161,6 +2173,11 @@
     color: rgb(29 78 216 / var(--tw-text-opacity, 1))
 }
 
+.text-\[\#22613a\] {
+    --tw-text-opacity: 1;
+    color: rgb(34 97 58 / var(--tw-text-opacity, 1))
+}
+
 .line-through {
     text-decoration-line: line-through
 }
@@ -2313,6 +2330,10 @@
 
 .\[background-image\:linear-gradient\(to_bottom\2c _\#6e32e9\2c _\#ff19a8\2c _\#fed45d\)\] {
     background-image: linear-gradient(to bottom, #6e32e9, #ff19a8, #fed45d)
+}
+
+.\[display\:grid\] {
+    display: grid
 }
 
 .\[display\:none\] {
@@ -2622,6 +2643,10 @@
     opacity: 0.75
 }
 
+.hover\:\[text-decoration\:none\]:hover {
+    text-decoration: none
+}
+
 .focus\:rounded:focus {
     border-radius: 4px
 }
@@ -2758,6 +2783,14 @@
         grid-column: span 5 / span 5
     }
 
+    .md\:col-span-4 {
+        grid-column: span 4 / span 4
+    }
+
+    .md\:col-span-6 {
+        grid-column: span 6 / span 6
+    }
+
     .md\:mb-6 {
         margin-bottom: 24px
     }
@@ -2858,6 +2891,10 @@
 
     .md\:gap-6 {
         gap: 24px
+    }
+
+    .md\:gap-3 {
+        gap: 12px
     }
 
     .md\:gap-x-6 {
