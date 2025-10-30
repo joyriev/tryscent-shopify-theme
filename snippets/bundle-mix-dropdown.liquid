@@ -65,16 +65,19 @@
         <p>Total matched products: {{ match_count }}</p>
       </div>
 
-      <div class="perfume-list" data-category="man" style="display:none">
-        {% for product in collections["man"].products %}
-          {% assign sel_var = "false" %}
-          {% for variant in product.variants %}
-            {% if variant.title contains productml %}
-              {% assign sel_var = variant.title %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
-          {%if sel_var != "false" %}
+    <!-- MEN COLLECTION -->
+    <div class="perfume-list" data-category="man" style="display:none">
+      {% assign productml = product.metafields.custom.select_bundle_dropdown_ml | append: 'ml' %}
+      {% for product in collections['man'].products %}
+        {% assign sel_var = 'false' %}
+        {% for variant in product.variants %}
+          {% assign variant_title_lower = variant.title | downcase %}
+          {% if variant_title_lower contains productml %}
+            {% assign sel_var = variant.title %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% if sel_var != 'false' %}
           <div class="perfume-item">
             <img src="{{ product.featured_image | img_url: '96x96' }}" alt="{{ product.title }}">
             <div class="title-wraps">
@@ -83,8 +86,8 @@
             </div>
           </div>
         {% endif %}
-        {% endfor %}
-      </div>
+      {% endfor %}
+    </div>
 
       <div class="perfume-list" data-category="woman" style="display:none">
         {% for product in collections.woman.products %}
