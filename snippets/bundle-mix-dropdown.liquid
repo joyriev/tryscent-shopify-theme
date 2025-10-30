@@ -29,10 +29,11 @@
       <button type="button" class="tab" data-category="woman">Women</button>
       <button type="button" class="tab" data-category="unisex">Unisex</button>
     </div>
-    {% assign productml = product.metafields.custom.select_bundle_dropdown_ml %}
+  
     <div class="perfume-lists">
       <div class="perfume-list" data-category="all">
         {% for product in collections["top-sellers"].products %}
+          {% assign productml = product.metafields.custom.select_bundle_dropdown_ml %}
           {% assign sel_var = "false" %}
           {% for variant in product.variants %}
             {% if variant.title contains productml %}
