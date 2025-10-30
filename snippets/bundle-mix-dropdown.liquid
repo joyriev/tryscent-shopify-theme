@@ -64,19 +64,27 @@
 
       <div class="perfume-list" data-category="man" style="display:none">
         {% for product in collections.man.products %}
-          {% assign sel_var = "false" %}
+        {% assign productml = product.metafields.custom.select_bundle_dropdown_ml | append: 'ml' %}
+        {% assign sel_var = "false" %}
+
+        {% if productml %}
+          {% assign productml_lower = productml | strip | downcase %}
           {% for variant in product.variants %}
-            {% if variant.title contains productml %}
+            {% assign variant_title_lower = variant.title | strip | downcase %}
+            {% if variant_title_lower contains productml_lower %}
               {% assign sel_var = variant.title %}
               {% break %}
             {% endif %}
           {% endfor %}
-          {%if sel_var != "false" %}
-          <div class="perfume-item">
-            <img src="{{ product.featured_image | img_url: '96x96' }}" alt="{{ product.title }}">
+        {% endif %}
+
+        {% if sel_var != "false" %}
+          {% assign match_count = match_count | plus: 1 %}
+          <div class="perfume-item" data-category="{{ product.type | downcase }}">
+            <img data-image="{{ product.featured_image | img_url }}" src="{{ product.featured_image | img_url: '60x60' }}" alt="{{ product.title }}">
             <div class="title-wraps">
               <div class="name-title">{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}</div>
-              <div class="meta">Men</div>
+              <div class="meta">{{ product.type }}</div>
             </div>
           </div>
         {% endif %}
