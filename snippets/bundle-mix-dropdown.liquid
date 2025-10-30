@@ -35,13 +35,13 @@
 {% assign match_count = 0 %}
 
 {% for product in collections["top-sellers"].products %}
-  {% assign productml = product.metafields.custom.select_bundle_dropdown_ml %}
+  {% assign productml = product.metafields.custom.select_bundle_dropdown_ml | append: 'ml' %}
   {% assign sel_var = "false" %}
 
   {% if productml %}
-    {% assign productml_lower = productml | downcase %}
+    {% assign productml_lower = productml | strip | downcase %}
     {% for variant in product.variants %}
-      {% assign variant_title_lower = variant.title | downcase %}
+      {% assign variant_title_lower = variant.title | strip | downcase %}
       {% if variant_title_lower contains productml_lower %}
         {% assign sel_var = variant.title %}
         {% break %}
@@ -58,10 +58,14 @@
         <div class="meta">{{ product.type }}</div>
       </div>
     </div>
+  {% else %}
+    {# Debug - remove once confirmed #}
+    <p style="color:red;">{{ product.title }} — no match for “{{ productml }}”</p>
   {% endif %}
 {% endfor %}
 
 <p>Total matched products: {{ match_count }}</p>
+
 
 
       </div>
