@@ -39,8 +39,10 @@
   {% assign sel_var = "false" %}
 
   {% if productml %}
+    {% assign productml_lower = productml | downcase %}
     {% for variant in product.variants %}
-      {% if variant.title | downcase contains productml | downcase %}
+      {% assign variant_title_lower = variant.title | downcase %}
+      {% if variant_title_lower contains productml_lower %}
         {% assign sel_var = variant.title %}
         {% break %}
       {% endif %}
@@ -57,12 +59,13 @@
       </div>
     </div>
   {% else %}
-    {# Debug output — remove later #}
+    {# Debug — remove once verified #}
     <p style="color:red;">{{ product.title }} — No match for “{{ productml }}”</p>
   {% endif %}
 {% endfor %}
 
 <p>Total matched products: {{ match_count }}</p>
+
 
       </div>
 
