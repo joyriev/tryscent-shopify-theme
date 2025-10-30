@@ -400,21 +400,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function applyFilters() {
-    const q = searchQuery.trim().toLowerCase();
-    perfumeLists.forEach(list => {
-      const showList = currentCategory === 'all' || list.dataset.category === currentCategory;
-      list.style.display = showList ? 'block' : 'none';
-      if (showList) {
-        const items = list.querySelectorAll('.perfume-item');
-        items.forEach(item => {
-          const titleEl = item.querySelector('.name-title');
-          const title = titleEl ? titleEl.textContent.toLowerCase() : '';
-          item.style.display = title.includes(q) ? 'flex' : 'none';
-        });
-      }
-    });
-  }
+function applyFilters() {
+  const q = searchQuery.trim().toLowerCase();
+
+  perfumeLists.forEach(list => {
+    // Show list only if it matches the active category
+    const matchesCategory = list.dataset.category === currentCategory;
+
+    list.style.display = matchesCategory ? 'block' : 'none';
+
+    if (matchesCategory) {
+      const items = list.querySelectorAll('.perfume-item');
+      items.forEach(item => {
+        const titleEl = item.querySelector('.name-title');
+        const title = titleEl ? titleEl.textContent.toLowerCase() : '';
+        item.style.display = title.includes(q) ? 'flex' : 'none';
+      });
+    }
+  });
+}
+
 
   function enableAddToCartCheck() {
     const allSelected = Array.from(headers).every(h => h.querySelector('.selectedPerfume img'));
