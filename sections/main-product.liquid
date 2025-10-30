@@ -165,7 +165,7 @@
                   {% render 'reactive-variant-selector', product: product %}
                 </div>
               {%- when 'atc_bundle_builder' -%}
-                <div class="atc-bundle-builder">
+                <div class="atc-bundle-builder" {{ block.shopify_attributes }}>
                   {% if product.tags contains 'Special_Offer' %}
                     {% render 'special-offer-builder', product: product %}
                   {% else %}
