@@ -89,16 +89,19 @@
       {% endfor %}
     </div>
 
-      <div class="perfume-list" data-category="woman" style="display:none">
-        {% for product in collections.woman.products %}
-          {% assign sel_var = "false" %}
-          {% for variant in product.variants %}
-            {% if variant.title contains productml %}
-              {% assign sel_var = variant.title %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
-          {%if sel_var != "false" %}
+    <!-- WOMEN COLLECTION -->
+    <div class="perfume-list" data-category="woman" style="display:none">
+      {% assign productml = product.metafields.custom.select_bundle_dropdown_ml | append: 'ml' %}
+      {% for product in collections['women'].products %}
+        {% assign sel_var = 'false' %}
+        {% for variant in product.variants %}
+          {% assign variant_title_lower = variant.title | downcase %}
+          {% if variant_title_lower contains productml %}
+            {% assign sel_var = variant.title %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% if sel_var != 'false' %}
           <div class="perfume-item">
             <img src="{{ product.featured_image | img_url: '96x96' }}" alt="{{ product.title }}">
             <div class="title-wraps">
@@ -106,27 +109,30 @@
               <div class="meta">Women</div>
             </div>
           </div>
-          {% endif %}
-        {% endfor %}
-      </div>
+        {% endif %}
+      {% endfor %}
+    </div>
 
+      <!-- UNISEX COLLECTION -->
       <div class="perfume-list" data-category="unisex" style="display:none">
-        {% for product in collections.unisex.products %}
-          {% assign sel_var = "false" %}
+        {% assign productml = product.metafields.custom.select_bundle_dropdown_ml | append: 'ml' %}
+        {% for product in collections['unisex'].products %}
+          {% assign sel_var = 'false' %}
           {% for variant in product.variants %}
-            {% if variant.title contains productml %}
+            {% assign variant_title_lower = variant.title | downcase %}
+            {% if variant_title_lower contains productml %}
               {% assign sel_var = variant.title %}
               {% break %}
             {% endif %}
           {% endfor %}
-          {%if sel_var != "false" %}
-          <div class="perfume-item">
-            <img src="{{ product.featured_image | img_url: '96x96' }}" alt="{{ product.title }}">
-            <div class="title-wraps">
-              <div class="name-title">{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}</div>
-              <div class="meta">Unisex</div>
+          {% if sel_var != 'false' %}
+            <div class="perfume-item">
+              <img src="{{ product.featured_image | img_url: '96x96' }}" alt="{{ product.title }}">
+              <div class="title-wraps">
+                <div class="name-title">{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}</div>
+                <div class="meta">Unisex</div>
+              </div>
             </div>
-          </div>
           {% endif %}
         {% endfor %}
       </div>
