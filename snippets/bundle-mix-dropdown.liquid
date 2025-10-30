@@ -45,6 +45,8 @@
             <div class="perfume-item" data-category="{{ product.type | downcase }}">
               <img data-image="{{ product.featured_image | img_url }}" src="{{ product.featured_image | img_url: '60x60' }}" alt="{{ product.title }}">
               <div class="title-wraps">
+                <p>Total products: {{ collections["top-sellers"].products_count }}</p>
+
                 <div class="name-title">{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}</div>
                 <div class="meta">{{ product.type }}</div>
               </div>
