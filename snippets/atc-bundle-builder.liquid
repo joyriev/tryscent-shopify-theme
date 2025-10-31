@@ -75,7 +75,12 @@
       value="{{ selected_variant.id }}"
       class="product-variant-id">
     {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-     {% render 'bundle-mix-dropdown' %}
+      {% render 'bundle-mix-dropdown' %}
+    {% else %}
+      <input
+        type="hidden"
+        name="properties[Inspired By]"
+        value="{{ product.metafields.custom.nuta }}" />
     {% endif %}
     <button
       x-data

@@ -41,10 +41,6 @@
     inset: 0px
 }
 
-.-left-10 {
-    left: -40px
-}
-
 .-right-2 {
     right: -8px
 }
@@ -143,10 +139,6 @@
 
 .top-\[-15px\] {
     top: -15px
-}
-
-.top-\[18px\] {
-    top: 18px
 }
 
 .top-\[2px\] {
@@ -351,10 +343,6 @@
     margin-left: 8px
 }
 
-.ml-auto {
-    margin-left: auto
-}
-
 .mr-1 {
     margin-right: 4px
 }
@@ -555,11 +543,6 @@
 .size-7 {
     width: 28px;
     height: 28px
-}
-
-.size-8 {
-    width: 32px;
-    height: 32px
 }
 
 .size-\[14px\] {
@@ -1000,12 +983,6 @@
     --tw-space-y-reverse: 0;
     margin-top: calc(16px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(16px * var(--tw-space-y-reverse))
-}
-
-.space-y-6 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(24px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(24px * var(--tw-space-y-reverse))
 }
 
 .overflow-hidden {
@@ -2195,19 +2172,9 @@
     position: absolute
 }
 
-.before\:bottom-6::before {
-    content: var(--tw-content);
-    bottom: 24px
-}
-
 .before\:left-0::before {
     content: var(--tw-content);
     left: 0px
-}
-
-.before\:left-4::before {
-    content: var(--tw-content);
-    left: 16px
 }
 
 .before\:left-\[1\.25rem\]::before {
@@ -2223,11 +2190,6 @@
 .before\:top-2::before {
     content: var(--tw-content);
     top: 8px
-}
-
-.before\:top-6::before {
-    content: var(--tw-content);
-    top: 24px
 }
 
 .before\:z-\[-1\]::before {
@@ -2263,27 +2225,6 @@
 .before\:w-full::before {
     content: var(--tw-content);
     width: 100%
-}
-
-.before\:border-0::before {
-    content: var(--tw-content);
-    border-width: 0px
-}
-
-.before\:border-l::before {
-    content: var(--tw-content);
-    border-left-width: 1px
-}
-
-.before\:border-dashed::before {
-    content: var(--tw-content);
-    border-style: dashed
-}
-
-.before\:border-gray-200::before {
-    content: var(--tw-content);
-    --tw-border-opacity: 1;
-    border-color: rgb(229 231 235 / var(--tw-border-opacity, 1))
 }
 
 .before\:bg-gray-200::before {
@@ -2335,11 +2276,6 @@
 .hover\:bg-\[\#368856\]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(54 136 86 / var(--tw-bg-opacity, 1))
-}
-
-.hover\:bg-gray-100:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
 }
 
 .hover\:bg-gray-300:hover {
