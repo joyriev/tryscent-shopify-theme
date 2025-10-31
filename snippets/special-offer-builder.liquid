@@ -146,7 +146,7 @@
                   {% endif %}
                 {% endfor %}
                 {%if sel_var != "false" %}
-                  <option value="{{ product.title }} - {{ sel_var }}">{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}</option>
+                  <option value="{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}">{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}</option>
                 {% endif %}
               {% endfor %}
             </select>
