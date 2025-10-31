@@ -74,6 +74,9 @@
       x-model="$store.bundleBuilder.variantId"
       value="{{ selected_variant.id }}"
       class="product-variant-id">
+    {% if product.metafields.custom.choose_your_fragrances_options != blank %}
+     {% render 'bundle-mix-dropdown' %}
+    {% endif %}
     <button
       x-data
       type="submit"
