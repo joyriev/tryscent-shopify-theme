@@ -1,16 +1,7 @@
 {% liquid
   assign product_form_id = 'product-form-' | append: section.id
   assign selected_variant = product.selected_or_first_available_variant
-  assign bundle_size = product.metafields.custom.choose_your_fragrances_options | times: 1 | default: 3
-  assign bottle_size = product.metafields.custom.select_bundle_dropdown_ml | append: 'ML' | default: '50ML'
 %}
-
-<style>
-  [x-cloak] {
-    display: none !important;
-  }
-</style>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 {% comment %} Add to cart form {% endcomment %}
 <product-form
@@ -31,130 +22,7 @@
       name="id"
       value="{{ selected_variant.id }}"
       class="product-variant-id">
-    {% comment %} {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-      <div class="pl-10 mb-8 space-y-6 relative before:content-[''] before:absolute before:left-4 before:top-6 before:bottom-6 before:border-0 before:border-l before:border-dashed before:border-gray-200">
-        {% assign words = clean | split: ' ' %}
-        {% assign size = '' %}
-
-        {% for word in words %}
-          {% if word contains '30' or word contains '50' or word contains '100' or word contains '150' %}
-            {% assign size = word %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-        {% assign bottle_icon = 'btl-icon.svg' | asset_url %}
-        {% assign productml = product.metafields.custom.select_bundle_dropdown_ml %}
-        {% for loop in (1..product.metafields.custom.choose_your_fragrances_options) %}
-          <div x-data="{ isOpen: false, selectedProduct: { name: '', image: '' } }" class="relative">
-            <div class="absolute top-[18px] -left-10 size-8 rounded-lg flex items-center justify-center text-white bg-[#22613a] z-10">{{ forloop.index }}</div>
-            <button
-              type="button"
-              @click="isOpen = !isOpen"
-              class="w-full flex items-center gap-2 p-1 pr-3 bg-white border border-solid border-gray-200 rounded-lg cursor-pointer">
-              <img
-                :src="selectedProduct.image || '{{ bottle_icon }}'"
-                alt=""
-                class="rounded"
-                width="60"
-                height="60">
-              <span x-text="selectedProduct.name || 'Choose your fragrance'"></span>
-              <span class="ml-auto size-4 inline-block">
-                {{ 'icon-caret.svg' | inline_asset_content }}
-              </span>
-            </button>
-            <input
-              type="hidden"
-              name="properties[Bottle {{ forloop.index }}]"
-              x-model="selectedProduct.name">
-            <div
-              x-cloak
-              x-show="isOpen"
-              @click.away="isOpen = false"
-              class="absolute z-10 left-0 w-full bg-white border border-solid border-gray-200 rounded-lg p-3">
-              <input
-                type="text"
-                x-model="searchText"
-                placeholder="Search fragrance"
-                class="w-full p-2 border border-solid border-gray-200 rounded-lg">
-              <ul class="list-none m-0 p-0">
-                {% for product in collections.all.products %}
-                  {% assign sel_var = "false" %}
-                  {% for variant in product.variants %}
-                    {% if variant.title contains productml %}
-                      {% assign sel_var = variant.title %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
-                  {% if sel_var != "false" %}
-                    <li
-                      x-show="searchText.length === 0 || product.title.toLowerCase().includes(searchText.toLowerCase())"
-                      @click="selectedProduct.name = '{{ product.title }} - {{ sel_var }}'; selectedProduct.image = '{{ product.featured_image | image_url: width: 100, height: 100, crop: 'center' }}'; isOpen = false"
-                      class="p-2 cursor-pointer hover:bg-gray-100 py-2 px-0 border-0 border-b border-solid border-gray-200 flex items-center gap-2">
-                      <img
-                        class="rounded"
-                        src="{{ product.featured_image | image_url: width: 100, height: 100, crop: 'center' }}"
-                        alt="{{ product.title }}"
-                        width="60"
-                        height="60">
-                      <span>{{ product.title }} - {{ sel_var }}</span>
-                      <span class="ml-auto">
-                        Men
-                      </span>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %} {% endcomment %}
-        {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-    <div class="choose-fragrances-container">
-      <p><strong>Choose your fragrances:</strong></p>
-      {% comment %} {% assign title = product.title %}
-      {% assign clean = title | remove: 'x' | remove: 'ml' | remove: 'ML' | remove: 'Perfume' | remove: 'Bottles' | remove: 'Bottle' | strip %}
-
-      {%- comment -%}
-      Split the title into words, then loop to find the numeric one
-      {%- endcomment -%}
-      {% assign words = clean | split: ' ' %}
-      {% assign size = '' %}
-
-      {% for word in words %}
-        {% if word contains '30' or word contains '50' or word contains '100' or word contains '150' %}
-          {% assign size = word %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-
-      {% capture ml_value %}
-         {{ size }}
-      {% endcapture %} {% endcomment %}
-      {% assign productml= product.metafields.custom.select_bundle_dropdown_ml %}
-      {% for loop in (1..product.metafields.custom.choose_your_fragrances_options) %}
-        <div class="choose-fragrances-opts choose-fragrances-opt-{{ forloop.index }} ">
-          <label class="form__label" for="Bottle-{{ forloop.index }}">Bottle {{ forloop.index }}:</label>
-          <div class="select">
-            <select id="Bottle-{{ forloop.index }}" class="select__select" name="properties[Bottle {{ forloop.index }}]">
-              {% for product in collections.all.products %}
-                {% assign sel_var = "false" %}
-                {% for variant in product.variants %}
-                  {% if variant.title contains productml %}
-                    {% assign sel_var = variant.title %}
-                    {% break %}
-                  {% endif %}
-                {% endfor %}
-                {%if sel_var != "false" %}
-                  <option value="{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}">{{ product.title }} Inspired by {{ product.metafields.custom.nuta }} - {{ sel_var }}</option>
-                {% endif %}
-              {% endfor %}
-            </select>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-    {% endif %}
+    {% render 'bundle-mix-dropdown' %}
     <button
       x-data
       type="submit"
@@ -193,39 +61,3 @@
     </div>
   </div>
 </div>
-{% comment %}
-{% assign bundle_collection = collections['top-sellers'] %}
-
-<script>
-    const availableProducts = [
-        {% for product in bundle_collection.products %}
-            {% assign category = 'Men' %}
-            {% if product.tags contains 'Women' or product.tags contains 'women' or product.tags contains 'Woman' or product.tags contains 'woman' %}
-                {% assign category = 'Women' %}
-            {% endif %}
-            {% if product.tags contains 'Unisex' or product.tags contains 'unisex' %}
-                {% assign category = 'Unisex' %}
-            {% endif %}
-            {
-                name: '{{ product.title }}',
-                category: '{{ category }}',
-                image: '{{ product.featured_image | image_url: width: 100, height: 100, crop: 'center' }}'
-            },
-        {% endfor %}
-    ];
-
-    document.addEventListener('alpine:init', function() {
-        Alpine.data('specialOffer', () => ({
-            availableProducts,
-            selectedProducts: Array({{ bundle_size }}).fill(null),
-            showModal: false,
-            addProduct(product) {
-                this.selectedProducts.push(product);
-            },
-            removeProduct(index) {
-                this.selectedProducts.splice(index, 1);
-            }
-        }));
-    });
-</script>
-{% endcomment %}
