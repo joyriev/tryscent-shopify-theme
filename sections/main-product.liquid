@@ -166,10 +166,10 @@
                 </div>
               {%- when 'atc_bundle_builder' -%}
                 <div class="atc-bundle-builder" {{ block.shopify_attributes }}>
-                  {% if product.tags contains 'Special_Offer' %}
+                  {% if product.metafields.custom.choose_your_fragrances_options != blank %}
                     {% render 'special-offer-builder', product: product %}
                   {% else %}
-                    {% render 'atc-bundle-builder', product: product %}
+                    {% render 'reactive-variant-selector', product: product %}
                   {% endif %}
                 </div>
               {%- when 'shipping_text' -%}
@@ -893,10 +893,6 @@
     </script>
   </div>
 </product-info>
-
-{% unless product.tags contains 'Special_Offer' %}
-  {% render 'atc-builder-products-modal' %}
-{% endunless %}
   
 <script>
   document.addEventListener("DOMContentLoaded", function () {
