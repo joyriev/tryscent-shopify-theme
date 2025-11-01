@@ -17,17 +17,19 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <div class="flex justify-center items-center gap-8">
-      <h2>Featured On:</h2>
-      <div class="flex justify-center items-center gap-8">
+    <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+      <h2 class="my-0">Featured On:</h2>
+      <div class="flex justify-center items-center gap-4 md:gap-8">
         {% for block in section.blocks %}
           {% if block.settings.featured_on_image != blank %}
-            <img
-              class="max-w-full h-auto"
-              src="{{ block.settings.featured_on_image | image_url }}"
-              alt="Perk Image"
-              width="{{ block.settings.featured_on_image.width }}"
-              height="{{ block.settings.featured_on_image.height }}">
+            <div class="flex">
+              <img
+                class="max-w-full h-auto"
+                src="{{ block.settings.featured_on_image | image_url }}"
+                alt="Perk Image"
+                width="{{ block.settings.featured_on_image.width }}"
+                height="{{ block.settings.featured_on_image.height }}">
+            </div>
           {% endif %}
         {% endfor %}
       </div>
