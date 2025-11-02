@@ -64,6 +64,9 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
+        {% if card_product.tags contains 'bundle_banner' %}
+          <div class="absolute z-50 bg-[#34603e] text-xs tracking-normal md:text-base text-white px-1 py-1 leading-none bottom-0 w-full left-0 text-center">Black Friday: 4 for $44</div>
+        {% endif %}
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
