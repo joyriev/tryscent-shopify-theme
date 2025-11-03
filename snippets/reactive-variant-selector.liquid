@@ -190,7 +190,7 @@
           priceContainer.insertBefore(newCompareSpan, currentPriceSpan);
         }
         const compareSpan = priceContainer.querySelector('.compare-price');
-        compareSpan.textContent = variantData.compareAtPrice;
+        compareSpan.innerHTML = variantData.compareAtPrice;
         compareSpan.style.display = '';
       } else {
         if (comparePriceSpan) {
@@ -198,7 +198,7 @@
         }
       }
 
-      currentPriceSpan.textContent = variantData.originalPrice;
+      currentPriceSpan.innerHTML = variantData.originalPrice;
     }
 
     // Add click event listeners to variant buttons
