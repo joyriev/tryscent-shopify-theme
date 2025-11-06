@@ -103,7 +103,7 @@
                   </div>
                 {% endif %}
                 {% if product.tags contains 'Bundle_Price_Show' %}
-                  <div id="price-{{ section.id }}" class="bundle-price-pdp" role="status" {{ block.shopify_attributes }}>
+                  <div id="price-{{ section.id }}" class="bundle-price-pdp pb-3" role="status" {{ block.shopify_attributes }}>
                     {% if product.compare_at_price > product.price %}
                       {% assign discount = product.compare_at_price | minus: product.price %}
                       {% assign discount_percent = discount | times: 100 | divided_by: product.compare_at_price | round %}
