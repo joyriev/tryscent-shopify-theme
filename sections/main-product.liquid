@@ -27,7 +27,7 @@
 
   {%- style -%}
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-top: 0px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
@@ -75,7 +75,7 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div style="display: flex;" class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-      <div class="grid__item product__media-wrapper pb-6 [display:none] md:block">
+      <div class="grid__item product__media-wrapper pb-6">
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -95,32 +95,13 @@
                 </div>
               {% when 'cheaper_than' %}
                 {% if product.metafields.custom.nuta  != blank %}
-                  <div class="flex items-center gap-1 font-semibold text-black">
-                    <span class="cheaper_than_text">"...{{ product.metafields.custom.nuta | remove: 'Inspired By: ' | remove: 'Inspired by: ' }}..."</span> 
-                  </div>
+                  <div class="text-sm"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ product.metafields.custom.nuta }}</span></div>
                 {% endif %}
                 {% if product.metafields.custom.bundle_product_content != blank %}
                   <div class="flex items-center gap-1 font-normal text-black leading-[normal]">
                     <span class="cheaper_than_text" style="font-size: 14px; line-height: normal;">{{ product.metafields.custom.bundle_product_content }}</span> 
                   </div>
                 {% endif %}
-                <!--- special Badage -------->
-                  {% if product.tags contains 'Special_Offer' %}
-                    <div style="
-                      display: inline-block;
-                      background-color: #f44336;
-                      color: white;
-                      padding: 0px 12px;
-                      font-weight: bold;
-                      border-radius: 4px;
-                      font-size: 14px;
-                      letter-spacing: 1px;
-                      text-transform: uppercase; 
-                    ">
-                      Special Offer
-                    </div>
-                  {% endif %}
-                <!--- End special Badage -------->
                 {% if product.tags contains 'Bundle_Price_Show' %}
                   <div id="price-{{ section.id }}" class="bundle-price-pdp" role="status" {{ block.shopify_attributes }}>
                     {% if product.compare_at_price > product.price %}
@@ -145,12 +126,7 @@
                         </span>
                       {% endif %}
                     </div>
-                  </div>
-                {% endif %}
-
-                {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-                  <div class="product-info__text">
-                    <div class="text-sm font-semibold text-black leading-normal" style="font-size:20px;">
+                    <div class="text-lg font-semibold text-black leading-normal">
                       Works out at just {{ product.price | divided_by: product.metafields.custom.choose_your_fragrances_options | money }}/bottle
                     </div>
                   </div>
@@ -246,7 +222,7 @@
               {%- when 'title' -%}
                 <div class="product__title relative" {{ block.shopify_attributes }}>
                   {%- if product.tags contains 'bestseller' or product.tags contains 'onsale' -%}
-                    <div class="absolute top-0 right-0">
+                    <div class="absolute top-0 left-0">
                       {% if product.tags contains 'onsale' %}
                         {%- assign discount_percent = 0 -%}
                         {%- if product.compare_at_price > product.price -%}
@@ -263,7 +239,7 @@
                       {% endif %}
                     </div>
                   {%- endif -%}  
-                  <h1 class="font-[700]  capitalize !tracking-normal flex flex-col pt-8">
+                  <h1 class="font-[700] leading-tight capitalize !tracking-normal flex flex-col pt-8">
                       {{ product.title }}
                   </h1>
                 </div>

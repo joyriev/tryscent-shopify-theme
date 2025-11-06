@@ -10,7 +10,7 @@
     <div class="text-sm italic text-gray-500">80% of customers buy 50ml or more</div>
   </div>
 
-  <div class="grid grid-cols-4 gap-3" id="variant-selector">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="variant-selector">
     {% for variant in product.variants %}
       {% assign size = variant.title | remove: 'ML' %}
       {% assign size_int = size | times: 1 %}
@@ -18,13 +18,13 @@
       {% assign per_ml = price_in_dollars | divided_by: size_int | round: 2 %}
       <button
         type="button"
-        class="variant-button flex flex-col items-center gap-1 rounded-lg p-2 pt-3 bg-white border-2 border-solid cursor-pointer font-['Figtree'] relative {% if variant.id == selected_variant.id %}border-green-700{% else %}border-gray-200{% endif %}"
+        class="variant-button flex md:flex-col items-center gap-2 rounded-lg p-2 pt-3 bg-white border-2 border-solid cursor-pointer font-['Figtree'] relative {% if variant.id == selected_variant.id %}border-green-700{% else %}border-gray-200{% endif %}"
         data-variant-id="{{ variant.id }}"
         data-variant-title="{{ variant.title }}"
         data-original-price="{{ variant.price | money }}"
         data-compare-price="{{ variant.compare_at_price | money }}">
         {% if variant.image %}
-          <div class="size-12 mx-auto">
+          <div class="size-12 md:mx-auto">
             <img
               src="{{ variant.image | image_url: width: 100, height: 100, crop: 'center' }}"
               alt="{{ variant.title }}"
@@ -34,10 +34,12 @@
               loading="lazy">
           </div>
         {% endif %}
-        <span class="text-sm font-semibold">{{ variant.title }}</span>
-        <span class="text-xs text-gray-600">
-          {{- cart.currency.symbol -}}
-          {{- per_ml }} Per Spray</span>
+        <div class="text-left md:text-center">
+          <div class="text-sm font-semibold">{{ variant.title }}</div>
+          <div class="text-xs text-gray-600">
+            {{- cart.currency.symbol -}}
+            {{- per_ml }} Per Spray</div>
+        </div>
         {% if variant.title == '50ML' %}
           <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Popular</span>
         {% endif %}
