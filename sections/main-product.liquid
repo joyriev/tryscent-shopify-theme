@@ -95,7 +95,8 @@
                 </div>
               {% when 'cheaper_than' %}
                 {% if product.metafields.custom.nuta  != blank %}
-                  <div class="text-sm"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ product.metafields.custom.nuta }}</span></div>
+                  {% assign nuta_list = product.metafields.custom.nuta | split: "," %}
+                  <div class="text-black"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
                 {% endif %}
                 {% if product.metafields.custom.bundle_product_content != blank %}
                   <div class="flex items-center gap-1 font-normal text-black leading-[normal]">

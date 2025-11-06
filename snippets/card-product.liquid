@@ -240,7 +240,8 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
             {%- endif -%}
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
              {% if card_product.metafields.custom.nuta != blank %}
-              <div class="text-sm"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ card_product.metafields.custom.nuta }}</span></div>
+              {% assign nuta_list = card_product.metafields.custom.nuta | split: "," %}
+              <div class="text-sm"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
              {% endif %}
 
               <div class="font-bold tracking-normal text-lg">
