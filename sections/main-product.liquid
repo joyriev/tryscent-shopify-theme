@@ -94,10 +94,26 @@
                   <span class="italic tracking-tighter">Inspired by</span> <a href="/search?q={{ product.metafields.custom.forgaylawyers | url_encode }}" class="font-semibold text-lg not-italic tracking-tight text-gray-900 ![text-decoration:none]">{{ product.metafields.custom.forgaylawyers }}</a>
                 </div>
               {% when 'cheaper_than' %}
-                {% if product.metafields.custom.nuta  != blank %}
-                  {% assign nuta_list = product.metafields.custom.nuta | split: "," %}
-                  <div class="text-black"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
-                {% endif %}
+                <div>
+                  {% if product.metafields.custom.nuta  != blank %}
+                    {% assign nuta_list = product.metafields.custom.nuta | split: "," %}
+                    <div class="text-black"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
+                  {% endif %}
+                  {% if product.metafields.custom.original_retail_price != blank %}
+                    <div>(Retail Price {{ product.metafields.custom.original_retail_price.value | money }})</div>
+                  {% endif %}
+                  {% if product.metafields.custom.scent_intensity != blank %}
+                    <div class="flex items-center gap-[5px]">
+                    Scent Intensity Scale: <span class="text-highlight leading-4">Statement</span>
+                    {% assign intensity = product.metafields.custom.scent_intensity.value | times: 1 %}
+                    <div class="flex gap-[5px] items-center justify-center ml-1">
+                        {% for i in (1..3) %}
+                            <div class="w-[8px] h-[8px] rounded-full {% if i <= intensity %}bg-[#22613A]{% else %}bg-gray-300{% endif %} !inline-block"></div>
+                        {% endfor %}
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
                 {% if product.metafields.custom.bundle_product_content != blank %}
                   <div class="flex items-center gap-1 font-normal text-black leading-[normal]">
                     <span class="cheaper_than_text" style="font-size: 14px; line-height: normal;">{{ product.metafields.custom.bundle_product_content }}</span> 
