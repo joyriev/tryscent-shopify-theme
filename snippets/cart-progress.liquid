@@ -1,29 +1,23 @@
 {% assign item_count = cart.item_count %}
+{% assign cart_total = cart.total_price %}
+{% assign base_product = all_products['bergamot-pepper-ambroxan'] %}
+{% assign milestone_amount = base_product.price | times: 5 %}
+{% assign more_amount = milestone_amount | minus: cart_total %}
+
 {% if item_count > 0 %}
-  <div
-    class="pb-4"
-    data-item-count="{{ item_count }}"
-    data-currency-symbol="{{ cart.currency.symbol }}">
-    <!-- Milestone messages -->
-    <div class="text-base font-semibold text-center mb-6" id="milestone-message"></div>
+  <div class="pb-4">
+    {% if cart_total > milestone_amount %}
+      <div class="text-base font-semibold text-center mb-6">Congratulations! You have unlocked free shipping!</div>
+    {% else %}
+      <div class="text-base font-semibold text-center mb-6">Add {{ more_amount | money }} more to unlock free shipping!</div>
+    {% endif %}
     <div class="relative h-3 bg-gray-200 rounded-full mb-4">
       <div
         class="absolute top-0 left-0 h-full bg-[#226139] !block rounded-full"
-        style="width: 0%;"
+        style="width: {{ cart_total | times: 50 | divided_by: milestone_amount }}%;"
         id="progress-bar"></div>
 
-      <!-- 2+1 Free Bottle Pill -->
-      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[30%] [transform:translateX(-50%)] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="bottle-pill-1">
-        <span class="text-xs font-bold">2+1</span>
-      </div>
-
-      <!-- 3+2 Free Bottles Pill -->
-      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[60%] [transform:translateX(-50%)] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="bottle-pill-2">
-        <span class="text-xs font-bold">3+2</span>
-      </div>
-
-      <!-- Free Shipping Pill -->
-      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[90%] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="shipping-pill">
+      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[50%] [transform:translateX(-50%)] bg-white border-2 border-solid rounded-full text-xs {% if milestone_amount > cart_total %}border-gray-200{% else %}border-[#226139]{% endif %}" id="shipping-pill">
         <span class="text-xs leading-none font-bold text-center">Free Ship</span>
       </div>
     </div>
