@@ -229,10 +229,6 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="text-sm"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
              {% endif %}
 
-             {% if card_product.metafields.custom.original_retail_price != blank %}
-              <div class="text-sm">(Retail Price {{ card_product.metafields.custom.original_retail_price.value |  money }})</div>
-             {% endif %}
-
               <div class="font-bold tracking-normal text-lg flex items-center flex-wrap gap-1">
                 {% unless card_product.tags contains 'onsale' %}
                   <span class="starts_at_text">Starts at</span>
@@ -257,6 +253,10 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="!text-gray-500 text-sm font-semibold tracking-normal">
                 Available in {{ card_product.variants_count }} sizes
               </div>
+
+              {% if card_product.metafields.custom.original_retail_price != blank %}
+              <div class="text-sm">(Retail Price {{ card_product.metafields.custom.original_retail_price.value |  money }})</div>
+             {% endif %}
             
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
