@@ -156,27 +156,12 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
       </div>
       <div class="card__content">
         <div class="card__information">
-          {% liquid
-            assign badge_text = ''
-            if card_product.tags contains 'bestseller'
-              assign badge_text = 'Best Seller'
-            endif
-            if card_product.tags contains 'onsale'
-              assign badge_text = 'On Sale'
-            endif
-            if card_product.tags contains 'viral'
-              assign badge_text = 'Online Viral'
-            endif
-            if card_product.tags contains 'popular'
-              assign badge_text = 'Most Popular'
-            endif
-          %}
 
           <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
-            {% if badge_text != '' %}
+            {% if card_product.tags contains 'onsale' %}
               <div>
                 <div class="text-green-600 text-xs font-semibold bg-green-600/10 px-2 py-1 rounded inline-block">
-                {{ badge_text }}
+                  On Sale
               </div>
               </div>
             {% endif %}
@@ -248,7 +233,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="text-sm">(Retail Price {{ card_product.metafields.custom.original_retail_price.value |  money }})</div>
              {% endif %}
 
-              <div class="font-bold tracking-normal text-lg">
+              <div class="font-bold tracking-normal text-lg flex items-center flex-wrap gap-1">
                 {% unless card_product.tags contains 'onsale' %}
                   <span class="starts_at_text">Starts at</span>
                 {% endunless %}
@@ -258,6 +243,15 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
                     {{ cart.currency.symbol }}{{ card_product.compare_at_price | money_without_currency }}
                   </span>
                 {% endif %}
+                {% if card_product.tags contains 'onsale' %}
+              {% assign discount_percent = 0 %}
+              {% if card_product.compare_at_price > card_product.price %}
+                {% assign discount_percent = card_product.compare_at_price | minus: card_product.price | times: 100.0 | divided_by: card_product.compare_at_price | round %}
+              {% endif %}
+              <span class="inline-block bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                {{ discount_percent }}% Off
+              </span>
+            {% endif %}
               </div>
 
               <div class="!text-gray-500 text-sm font-semibold tracking-normal">
