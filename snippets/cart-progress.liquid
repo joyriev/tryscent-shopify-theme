@@ -1,7 +1,7 @@
 {% assign item_count = cart.item_count %}
 {% assign cart_total = cart.total_price %}
 {% assign base_product = all_products['bergamot-pepper-ambroxan'] %}
-{% assign milestone_amount = base_product.price | times: 5 %}
+{% assign milestone_amount = base_product.price | times: 6.3 %}
 {% assign more_amount = milestone_amount | minus: cart_total %}
 
 {% if item_count > 0 %}
