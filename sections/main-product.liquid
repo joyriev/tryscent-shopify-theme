@@ -95,7 +95,7 @@
                 </div>
               {% when 'cheaper_than' %}
                 <div>
-                  {% if product.metafields.custom.nuta  != blank %}
+                  {% if product.metafields.custom.nuta  != blank and product.metafields.custom.choose_your_fragrances_options == blank %}
                     {% assign nuta_list = product.metafields.custom.nuta | split: "," %}
                     <div class="text-black"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
                   {% endif %}
