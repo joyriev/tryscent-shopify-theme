@@ -1,31 +1,37 @@
+{% assign first_product = all_products['3-x-50ml-perfume-bottles'] %}
+{% assign second_product = all_products['4-x-100ml-perfume-bottles'] %}
+{% assign third_product = all_products['5-x-100ml-perfume-bottles'] %}
+
 <li
   class="grid__item scroll-trigger animate--slide-in"
   data-cascade=""
   style="--animation-order: 1;">
   <div class="card-wrapper product-card-wrapper">
     <div class="card card--standard card--media bg-white hover:[text-decoration:none] rounded-lg p-4 [&>*]:m-0 flex flex-col justify-center gap-4 md:gap-6" style="--ratio-percent: 100%;">
-      <h3 class="text-2xl text-center leading-none">Buy &amp;
-        <strong>save.</strong>
+      <h3 class="text-2xl text-center leading-none">
+        <div class="font-bold text-3xl">
+          Black Friday
+        </div>
+        <div class="">
+          Sale.
+        </div>
       </h3>
-      <p class="text-center text-[#22613a] leading-snug">
-        <strong>Free shipping</strong>
-        with 6+ items.</p>
       <div class="flex flex-col gap-2 md:gap-3">
-        <a href="https://tryscent.co/products/3-x-50ml-perfume-bottles" class="bg-gray-100 rounded-lg no-underline hover:[text-decoration:none] text-black [display:grid] grid-cols-10 items-center">
-          <div class="p-3 md:p-4 pr-2 tracking-tight leading-none col-span-5 md:col-span-6">Buy 3 items</div>
-          <div class="text-[#22613a] font-bold md:text-lg text-center tracking-tight col-span-5 md:col-span-4">50% OFF</div>
+        <a href="{{ first_product.url }}" class="bg-gray-100 rounded-lg no-underline hover:[text-decoration:none] text-black [display:grid] grid-cols-10 items-center">
+          <div class="p-3 md:p-4 pr-2 tracking-tight leading-none col-span-5 md:col-span-6">3 for {{ first_product.price | money }}</div>
+          <div class="text-red-500 font-bold md:text-lg text-center tracking-tight col-span-5 md:col-span-4">50% OFF</div>
         </a>
-        <a href="https://tryscent.co/products/4-x-100ml-perfume-bottles" class="bg-gray-100 rounded-lg no-underline hover:[text-decoration:none] text-black [display:grid] grid-cols-10 items-center">
-          <div class="p-3 md:p-4 pr-2 tracking-tight leading-none col-span-5 md:col-span-6">Buy 4 items</div>
-          <div class="text-[#22613a] font-bold md:text-lg text-center tracking-tight col-span-5 md:col-span-4">63% OFF</div>
+        <a href="{{ second_product.url }}" class="bg-gray-100 rounded-lg no-underline hover:[text-decoration:none] text-black [display:grid] grid-cols-10 items-center">
+          <div class="p-3 md:p-4 pr-2 tracking-tight leading-none col-span-5 md:col-span-6">4 for {{ second_product.price | money }}</div>
+          <div class="text-red-500 font-bold md:text-lg text-center tracking-tight col-span-5 md:col-span-4">63% OFF</div>
         </a>
-        <a href="https://tryscent.co/products/5-x-100ml-perfume-bottles" class="bg-gray-100 rounded-lg no-underline hover:[text-decoration:none] text-black [display:grid] grid-cols-10 items-center">
-          <div class="p-3 md:p-4 pr-2 tracking-tight leading-none col-span-5 md:col-span-6">Buy 5+ items</div>
-          <div class="text-[#22613a] font-bold md:text-lg text-center tracking-tight col-span-5 md:col-span-4">44% OFF</div>
+        <a href="{{ third_product.url }}" class="bg-gray-100 rounded-lg no-underline hover:[text-decoration:none] text-black [display:grid] grid-cols-10 items-center">
+          <div class="p-3 md:p-4 pr-2 tracking-tight leading-none col-span-5 md:col-span-6">5 for {{ third_product.price | money }}</div>
+          <div class="text-red-500 font-bold md:text-lg text-center tracking-tight col-span-5 md:col-span-4">44% OFF</div>
         </a>
       </div>
       <p class="text-xs tracking-tight text-center">Discount automatically applied in cart.</p>
-      <a href="https://tryscent.co/collections/bundle-save" class="button px-2 rounded-lg">LEARN MORE</a>
+      <a href="https://tryscent.co/collections/bundle-save" class="button px-2 rounded-lg">SHOP NOW</a>
     </div>
   </div>
 </li>
