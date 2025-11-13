@@ -9,23 +9,6 @@
  */
 {
   "sections": {
-    "176302627339384c77": {
-      "type": "apps",
-      "blocks": {
-        "ez_bundles_discounts_complex_bundle_kJTRAa": {
-          "type": "shopify://apps/ez-bundles-discounts/blocks/complex-bundle/f569e784-b0ec-437e-a4bc-70c66e94410d",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "ez_bundles_discounts_complex_bundle_kJTRAa"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -50,7 +33,14 @@
         },
         "mobile_gallery_FUEn6Y": {
           "type": "mobile_gallery",
+          "disabled": true,
           "settings": {}
+        },
+        "ez_bundles_discounts_complex_bundle_mXVaJA": {
+          "type": "shopify://apps/ez-bundles-discounts/blocks/complex-bundle/f569e784-b0ec-437e-a4bc-70c66e94410d",
+          "settings": {
+            "product": "{{product}}"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -241,6 +231,7 @@
         "selling_points_9tdid6",
         "cheaper_than_yDGYG9",
         "mobile_gallery_FUEn6Y",
+        "ez_bundles_discounts_complex_bundle_mXVaJA",
         "variant_picker",
         "price",
         "quantity_selector",
@@ -265,7 +256,6 @@
         "collapsible_tab_F64PJg",
         "share"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "enable_sticky_info": true,
@@ -822,7 +812,6 @@
     }
   },
   "order": [
-    "176302627339384c77",
     "main",
     "pdp_bundle_builder",
     "marquee_labels_dpeY47",
