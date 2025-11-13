@@ -95,13 +95,15 @@
                 </div>
               {% when 'cheaper_than' %}
                 <div>
-                  <div class="flex items-center gap-2 mb-3">
-                    <img class="object-contain object-center bg-white" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="45" height="45">
-                    <div>
-                      <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
-                      <p class="text-sm my-0">Inspiration</p>
+                  {% if product.metafields.custom.inspiration != blank %}
+                    <div class="flex items-center gap-2 mb-3">
+                      <img class="object-contain object-center bg-white" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="45" height="45">
+                      <div>
+                        <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
+                        <p class="text-sm my-0">Inspiration</p>
+                      </div>
                     </div>
-                  </div>
+                  {% endif %}
                   {% if product.metafields.custom.original_retail_price != blank %}
                     <div>(Retail Price {{ product.metafields.custom.original_retail_price.value | money }})</div>
                   {% endif %}
