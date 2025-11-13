@@ -95,10 +95,13 @@
                 </div>
               {% when 'cheaper_than' %}
                 <div>
-                  {% if product.metafields.custom.nuta  != blank and product.metafields.custom.choose_your_fragrances_options == blank %}
-                    {% assign nuta_list = product.metafields.custom.nuta | split: "," %}
-                    <div class="text-black"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
-                  {% endif %}
+                  <div class="flex items-center gap-2 mb-3">
+                    <img class="object-contain object-center bg-white" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="45" height="45">
+                    <div>
+                      <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
+                      <p class="text-sm my-0">Inspiration</p>
+                    </div>
+                  </div>
                   {% if product.metafields.custom.original_retail_price != blank %}
                     <div>(Retail Price {{ product.metafields.custom.original_retail_price.value | money }})</div>
                   {% endif %}
