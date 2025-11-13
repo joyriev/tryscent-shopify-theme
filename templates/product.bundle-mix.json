@@ -9,6 +9,47 @@
  */
 {
   "sections": {
+    "176302627339384c77": {
+      "type": "apps",
+      "blocks": {
+        "foxsell_bundles_plus_dynamic_add_ons_j7ktMe": {
+          "type": "shopify://apps/foxsell-bundles-plus/blocks/dynamic_add_ons/60c4cb4e-60f4-4416-88a1-38594a8008f2",
+          "settings": {
+            "product": "{{product}}",
+            "show_all_tab": true,
+            "all_label": "All",
+            "columns_desktop": 3,
+            "columns_mobile": 2,
+            "variant_selector_label": "Select [option]",
+            "atk_label": "Add to Kit",
+            "atk_class": "",
+            "blank_button_label": "Unavailable",
+            "quantity_text": "Select 1 item",
+            "quantity_text_plural": "Select [qty] items",
+            "bundle-heading": "Build a Kit",
+            "percentage_discount_suffix": "% off",
+            "dropdown_threshold": 3,
+            "addon_heading": "Add Ons",
+            "addons_text": "Select [qty] addons",
+            "addons_text_different": "Select [min] to [max] addons",
+            "free_label": "Free",
+            "next_button": "Continue",
+            "back_button": "Back",
+            "add_to_cart_button": "Add to Cart",
+            "highlight_color": "#000000",
+            "highlight_text_color": "#fff",
+            "color_swatch_options": "Color, colour",
+            "color_swatch_config": ""
+          }
+        }
+      },
+      "block_order": [
+        "foxsell_bundles_plus_dynamic_add_ons_j7ktMe"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -248,6 +289,7 @@
         "collapsible_tab_F64PJg",
         "share"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "enable_sticky_info": true,
@@ -572,7 +614,7 @@
       "type": "apps",
       "blocks": {
         "instagram_feed_mp_instagram_block_FgtetG": {
-          "type": "shopify://apps/instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
+          "type": "shopify://apps/mageplaza-instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
           "settings": {
             "mp_instagram_feed_id": ""
           }
@@ -607,9 +649,9 @@
           "disabled": true,
           "settings": {
             "review_data": "sample_data",
+            "max_width": 1200,
             "show_shop_reviews": false,
-            "empty_state": "empty_widget",
-            "max_width": 1200
+            "empty_state": "empty_widget"
           }
         }
       },
@@ -804,6 +846,7 @@
     }
   },
   "order": [
+    "176302627339384c77",
     "main",
     "pdp_bundle_builder",
     "marquee_labels_dpeY47",
