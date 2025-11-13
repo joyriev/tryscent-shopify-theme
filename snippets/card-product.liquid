@@ -224,10 +224,13 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
             {%- endif -%}
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
-             {% if card_product.metafields.custom.nuta != blank %}
-              {% assign nuta_list = card_product.metafields.custom.nuta | split: "," %}
-              <div class="text-sm"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
-             {% endif %}
+             <div class="flex items-center gap-2 mb-3">
+              <img class="object-contain object-center" src="{{ card_product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ card_product.metafields.custom.inspiration.value.image.alt | escape }}" width="35" height="35">
+              <div>
+                <h4 class="text-sm font-semibold my-0 line-clamp-1">{{ card_product.metafields.custom.inspiration.value.name }}</h4>
+                <p class="text-xs my-0">Inspiration</p>
+              </div>
+            </div>
 
               <div class="font-bold tracking-normal text-lg flex items-center flex-wrap gap-1">
                 {% unless card_product.tags contains 'onsale' %}
