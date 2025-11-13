@@ -1,63 +1,161 @@
-{% liquid
-  assign product_form_id = 'product-form-' | append: section.id
-  assign selected_variant = product.selected_or_first_available_variant
-%}
+{% assign bundle_collection = collections['top-sellers'] %}
+{% assign product_count = product.metafields.custom.choose_your_fragrances_options %}
+{% assign dropdown_ml = product.metafields.custom.select_bundle_dropdown_ml | default: "50" %}
+{% assign bundle_ml = dropdown_ml | append: "ML" %}
 
-{% comment %} Add to cart form {% endcomment %}
-<product-form
-  x-data="specialOffer"
-  class="product-form !m-0"
-  data-hide-errors="{{ gift_card_recipient_feature_active }}"
-  data-section-id="{{ section.id }}">
-  {%- form 'product'
-    , product
-    , id: product_form_id
-    , class: 'form'
-    , novalidate: 'novalidate'
-    , data-type: 'add-to-cart-form'
-  -%}
-    <input
-      x-data
-      type="hidden"
-      name="id"
-      value="{{ selected_variant.id }}"
-      class="product-variant-id">
-    {% render 'bundle-mix-dropdown' %}
-    <button
-      x-data
-      type="submit"
-      name="add"
-      value="1"
-      class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
-      aria-label="Add to cart">
-      <span>Add to cart</span>
-      <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
-        <div
-          class="inline-block text-lg bg-[#1E5834] px-3 rounded"
-          id="product-price"
-          role="status"
-          {{ block.shopify_attributes }}>
-          {% if selected_variant.compare_at_price > selected_variant.price %}
-            <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
-          {% endif %}
-          <span class="current-price">{{ selected_variant.price | money }}</span>
-        </div>
-      </div>
-      {%- render 'loading-spinner' -%}
-    </button>
-  {%- endform -%}
-</product-form>
-<div class="my-6">
-  <div class="flex items-center gap-3 text-base">
-    <img
-      src="https://cdn.shopify.com/s/files/1/0623/0691/0402/files/thimbs_up.png?v=1751372431"
-      alt="Thumbs up badge"
-      class="w-10 h-10 flex-shrink-0"
-      width="40"
-      height="40" />
-    <div class="text-slate-900">
-      <strong class="font-semibold">Try it for 60 days, risk-free.</strong>
-      <span class="block">If you're not absolutely thrilled, we'll give you a full refund!</span>
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<div x-data>
+  <div class="flex flex-col gap-3 mb-6 relative pl-10 before:content-[''] before:absolute before:left-3 before:top-6 before:bottom-6 before:w-[0px] before:border-0 before:border-r before:border-dashed before:border-green-700">
+    <div class="absolute top-6 left-0 bottom-6 flex flex-col justify-between">
+      {% for i in (1..product_count) %}
+        <div class="text-white size-7 bg-[#22613A] rounded flex items-center justify-center">{{ i }}</div>
+      {% endfor %}
     </div>
+    <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="product.id">
+      <div class="bg-white border border-solid border-green-700 w-full p-[7px] flex items-center gap-2 justify-between rounded-lg">
+        <img
+          class="object-cover rounded"
+          :src="product.image"
+          :alt="product.name"
+          width="60"
+          height="60">
+        <div class="text-left flex flex-col gap-1">
+          <div class="font-bold text-lg leading-tight text-black line-clamp-1" x-text="product.name"></div>
+          <div class="text-sm line-clamp-1" x-text="product.nuta"></div>
+        </div>
+        <button @click="$store.bundleBuilder.removeProduct(index)" class="ml-auto size-8 bg-red-50 flex items-center justify-center rounded text-xs cursor-pointer border-0">
+          {% render 'icon-trash' %}
+        </button>
+      </div>
+    </template>
+    <template x-for="i in ({{ product_count }} - $store.bundleBuilder.selectedProducts.length)" :key="i">
+      <button @click="$store.bundleBuilder.showModal = true" class="bg-white border border-solid border-gray-200 flex items-center p-[7px] rounded-lg gap-2 pr-4 cursor-pointer">
+        {% render 'perfume-icon' %}
+        <div class="text-base">
+          Choose your perfume
+        </div>
+        <span class="inline-block ml-auto">{% render 'arrow-down' %}</span>
+      </button>
+    </template>
   </div>
+
+  <button
+    @click="$store.bundleBuilder.addBundleToCart()"
+    class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
+    aria-label="Add to cart"
+    :disabled="$store.bundleBuilder.addingToCart || $store.bundleBuilder.selectedProducts.length < {{ product_count }}">
+    <span>Add to cart</span>
+    <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
+      <div
+        class="inline-block text-lg bg-[#1E5834] px-3 rounded"
+        id="product-price"
+        role="status">
+        {% if product.compare_at_price > product.price %}
+          <span class="compare-price line-through text-white/50 text-base">{{ product.compare_at_price | money }}</span>
+        {% endif %}
+        <span class="current-price">{{ product.price | money }}</span>
+      </div>
+    </div>
+    <div x-show="$store.bundleBuilder.addingToCart" class="loading__spinner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="spinner"
+        viewBox="0 0 66 66">
+        <circle
+          stroke-width="6"
+          cx="33"
+          cy="33"
+          r="30"
+          fill="none"
+          stroke="#fff"
+          class="path !stroke-white"></circle>
+      </svg>
+    </div>
+  </button>
 </div>
+
+<script>
+  document.addEventListener('alpine:init', function() {
+    const variantsObj = {
+      {% for variant in product.variants %}
+        "{{ variant.title }}": {
+          originalPrice: "{{ variant.price | money }}",
+          compareAtPrice: "{{ variant.compare_at_price | money }}"
+        },
+      {% endfor %}
+    };
+    Alpine.store('bundleBuilder', {
+      selectedVariant: "{{ bundle_ml }}",
+      bundleLength: {{ product_count }},
+      showModal: false,
+      activeCategory: "All",
+      searchText: "",
+      addingToCart: false,
+      selectedProducts: [],
+      availableProducts: [
+        {% for bundle_product in bundle_collection.products %}
+          {
+            id: {{ bundle_product.id }},
+            name: "{{ bundle_product.title }}",
+            image: "{{ bundle_product.featured_image | image_url }}",
+            nuta: "{{ bundle_product.metafields.custom.nuta |  replace: ',', '' }}",
+            tags: {{ bundle_product.tags | json }},
+            variants: {
+              {% for variant in bundle_product.variants %}
+                "{{ variant.title }}": {
+                  id: {{ variant.id }}
+                },
+              {% endfor %}
+            }
+          },
+        {% endfor %}
+      ],
+      get originalPrice() {
+        return variantsObj[this.selectedVariant].originalPrice;
+      },
+      get compareAtPrice() {
+        return variantsObj[this.selectedVariant].compareAtPrice;
+      },
+      addRemoveProduct(product) {
+        if (this.selectedProducts.length < {{ product_count }} && !this.isProductSelected(product.id)) {
+          this.selectedProducts.push(product);
+          if (this.selectedProducts.length === {{ product_count }}) {
+            this.showModal = false;
+            // this.addBundleToCart();
+          }
+        } else {
+          this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
+        }
+      },
+      removeProduct(index) {
+        this.selectedProducts.splice(index, 1);
+      },
+      isProductSelected(productId) {
+        return this.selectedProducts.some(product => product.id === productId);
+      },
+      addBundleToCart() {
+        this.addingToCart = true;
+
+        let checkoutURl = 'https://tryscent.co/cart/';
+        this.selectedProducts.forEach((product, index) => {
+          if (index === 0) {
+            checkoutURl += `${product.variants[this.selectedVariant].id}:1`;
+          } else {
+            checkoutURl += `,${product.variants[this.selectedVariant].id}:1`;
+          }
+        });
+
+        window.location.href = checkoutURl;
+        setTimeout(() => {
+          this.addingToCart = false;
+        }, 3000);
+      }
+    });
+  });
+</script>
