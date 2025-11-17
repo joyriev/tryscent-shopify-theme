@@ -70,6 +70,11 @@
           :value="product.name + ' Inspired by ' + product.nuta + ' - ' + '{{ bundle_ml }}'" />
       </template>
 
+      <input
+        type="hidden"
+        name="properties[_bundle_items]"
+        :value="$store.bundleBuilder.selectedProducts.map(product => product.id).join(',')" />
+
       <button
         type="submit"
         name="add"
