@@ -142,19 +142,30 @@
       addBundleToCart() {
         this.addingToCart = true;
 
-        let checkoutURl = 'https://tryscent.co/cart/';
-        this.selectedProducts.forEach((product, index) => {
-          if (index === 0) {
-            checkoutURl += `${product.variants[this.selectedVariant].id}:1`;
-          } else {
-            checkoutURl += `,${product.variants[this.selectedVariant].id}:1`;
-          }
+        let bundleItems = this.selectedProducts.map(product => {
+          return product.variants[this.selectedVariant].id;
         });
 
-        window.location.href = checkoutURl;
-        setTimeout(() => {
+        fetch("/cart/add.js", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            items: [{
+              id: "{{ product.selected_or_first_available_variant.id }}",
+              quantity: 1,
+              properties: {
+                _bundle_items: bundleItems.join(",")
+              }
+            }]
+          })
+        }).then(() => {
           this.addingToCart = false;
-        }, 3000);
+        }).catch((error) => {
+          console.error(error);
+          this.addingToCart = false;
+        });
       }
     });
   });
