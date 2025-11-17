@@ -73,7 +73,7 @@
       <input
         type="hidden"
         name="properties[_bundle_items]"
-        :value="$store.bundleBuilder.selectedProducts.map(product => product.id).join(',')" />
+        :value="$store.bundleBuilder.selectedProducts.map(product => product.variants['{{ bundle_ml }}'].id).join(',')" />
 
       <button
         type="submit"
@@ -103,14 +103,6 @@
 
 <script>
   document.addEventListener('alpine:init', function() {
-    const variantsObj = {
-      {% for variant in product.variants %}
-        "{{ variant.title }}": {
-          originalPrice: "{{ variant.price | money }}",
-          compareAtPrice: "{{ variant.compare_at_price | money }}"
-        },
-      {% endfor %}
-    };
     Alpine.store('bundleBuilder', {
       selectedVariant: "{{ bundle_ml }}",
       bundleLength: {{ product_count }},
@@ -137,12 +129,6 @@
           },
         {% endfor %}
       ],
-      get originalPrice() {
-        return variantsObj[this.selectedVariant].originalPrice;
-      },
-      get compareAtPrice() {
-        return variantsObj[this.selectedVariant].compareAtPrice;
-      },
       addRemoveProduct(product) {
         if (this.selectedProducts.length < {{ product_count }} && !this.isProductSelected(product.id)) {
           this.selectedProducts.push(product);
