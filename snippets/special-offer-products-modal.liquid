@@ -14,17 +14,6 @@
       <div>
         <h2 class="text-lg md:text-xl font-bold text-gray-900 mt-0 mb-2 md:mb-4 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProducts.length === $store.bundleBuilder.bundleLength ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${ $store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProducts.length} MORE SCENT${ $store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProducts.length > 1 ? 'S' : ''}`"></h2>
       </div>
-
-      <div class="relative mb-2 md:mb-4">
-        <input
-          type="text"
-          x-model="$store.bundleBuilder.searchText"
-          placeholder="Find your perfume"
-          class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-green-700 focus:outline-none focus:ring-0">
-        <span class="absolute top-2.5 left-2.5 svg-wrapper">
-          {{- 'icon-search.svg' | inline_asset_content -}}
-        </span>
-      </div>
       <div x-show="$store.bundleBuilder.selectedProducts.length < $store.bundleBuilder.bundleLength">
         <div class="grid grid-cols-3 gap-2">
           <button
