@@ -121,17 +121,18 @@
 
 {% assign balck_friday_product = all_products['4-x-100ml-perfume-bottles'] %}
 
-<a href="{{ balck_friday_product.url }}" class="flex gap-4 items-center no-underline bg-black text-white rounded-xl p-4 md:p-6 shadow-md hover:bg-gray-900 transition">
+<a href="{{ balck_friday_product.url }}" class="flex gap-4 items-center no-underline bg-black text-white rounded-lg p-4 md:p-6 shadow-md hover:bg-gray-900 transition relative overflow-hidden">
+  <div class="absolute top-0 right-0 text-base font-semibold md:py-1 inline-block px-2 bg-[#b72f33] rounded-sm">50% Off</div>
   <div class="!block size-8 border-2 border-solid border-white rounded"></div>
   <div>
     <div class="text-sm uppercase tracking-wide font-semibold text-red-500 my-0">
       NY OVERSTOCK SALE
     </div>
-    <h3 class="text-2xl font-bold leading-tight text-white my-1">
+    <h3 class="text-xl md:text-2xl font-bold leading-tight text-white my-1">
       Get this for
       <span class="text-green-400">{{ balck_friday_product.price | divided_by: 4 | money }}/Bottle</span>
     </h3>
-    <p class="text-lg my-0">
+    <p class="text-base md:text-lg my-0">
       4 Bottles for
       <span class="font-semibold">{{ balck_friday_product.price | money }}</span>
       <span class="text-gray-400">
