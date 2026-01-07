@@ -62,7 +62,20 @@
         'cursor-pointer hover:bg-[#368856]': $store.bundleBuilder.selectedProducts.length >= {{ product_count }}
       }"
       class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
-      <span x-text="$store.bundleBuilder.selectedProducts.length >= {{ product_count }} ? 'SHOP NOW' : 'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' ITEMS'"></span>
+      <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text="'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' ITEMS'"></span>
+      <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">SHOP NOW
+        <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
+          <div
+            class="inline-block text-lg bg-[#1E5834] px-3 rounded"
+            id="product-price"
+            role="status">
+            {% if selected_variant.compare_at_price > selected_variant.price %}
+              <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
+            {% endif %}
+            <span class="current-price">{{ selected_variant.price | money }}</span>
+          </div>
+        </div>
+      </div>
       <div x-show="$store.bundleBuilder.addingToCart" class="loading__spinner">
         <svg
           xmlns="http://www.w3.org/2000/svg"

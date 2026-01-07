@@ -52,14 +52,14 @@
         </div>
       </template>
       <template x-if="$store.bundleBuilder.selectedProducts.length < $store.bundleBuilder.bundleLength">
-        <div class="">
+        <div class="space-y-2">
           <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
             <template x-if="(product.tags.some(tag => tag === $store.bundleBuilder.activeCategory) || $store.bundleBuilder.activeCategory === 'All') &&
          ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()))">
               <button
                 @click="$store.bundleBuilder.addRemoveProduct(product)"
-                :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-gray-100' : 'bg-white'"
-                class="border-0 border-t border-solid border-gray-200 w-full px-0 py-[7px] flex items-center gap-2 justify-between cursor-pointer">
+                :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-green-600 border-2' : 'border-gray-200 border'"
+                class="border-solid w-full p-2 flex items-center gap-2 justify-between cursor-pointer rounded-lg bg-white">
                 <img
                   class="object-cover rounded"
                   :src="product.image"
