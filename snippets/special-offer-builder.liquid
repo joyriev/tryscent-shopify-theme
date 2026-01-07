@@ -53,16 +53,31 @@
   </div>
 
   {% if product.tags contains 'bogo' %}
-    <a
+    <button
       x-data
-      :href="$store.bundleBuilder.selectedProducts.length >= {{ product_count }} ? $store.bundleBuilder.getCheckoutUrl() : 'javascript:void(0)'"
+      @click="$store.bundleBuilder.doCheckout()"
+      :disabled="$store.bundleBuilder.selectedProducts.length < {{ product_count }} || $store.bundleBuilder.addingToCart"
       :class="{
         'opacity-50 cursor-not-allowed': $store.bundleBuilder.selectedProducts.length < {{ product_count }},
         'cursor-pointer hover:bg-[#368856]': $store.bundleBuilder.selectedProducts.length >= {{ product_count }}
       }"
-      class="flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
+      class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
       <span x-text="$store.bundleBuilder.selectedProducts.length >= {{ product_count }} ? 'SHOP NOW' : 'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' ITEMS'"></span>
-    </a>
+      <div x-show="$store.bundleBuilder.addingToCart" class="loading__spinner">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="spinner"
+          viewBox="0 0 66 66">
+          <circle
+            stroke-width="6"
+            cx="33"
+            cy="33"
+            r="30"
+            fill="none"
+            class="path"></circle>
+        </svg>
+      </div>
+    </button>
   {% else %}
     <product-form
       class="product-form !m-0"
@@ -165,13 +180,16 @@
       isProductSelected(productId) {
         return this.selectedProducts.some(product => product.id === productId);
       },
-      getCheckoutUrl() {
+      doCheckout() {
+
+        this.addingToCart = true;
+
         const items = this.selectedProducts.map(product => {
           const variantId = product.variants[this.selectedVariant].id;
           return `${variantId}:1`;
         }).join(',');
 
-        return `/cart/${items}`;
+        window.location = `https://tryscent.co/cart/${items}`;
       }
     });
   });
