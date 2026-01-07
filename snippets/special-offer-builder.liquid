@@ -19,7 +19,10 @@
       {% endfor %}
     </div>
     <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="product.id">
-      <div class="bg-white border border-solid border-green-700 w-full p-[7px] flex items-center gap-2 justify-between rounded-lg">
+      <div class="bg-white border border-solid border-green-700 w-full p-[7px] flex items-center gap-2 justify-between rounded-lg relative">
+        {% if product.tags contains 'bogo' %}
+          <div x-show="index + 1 === {{ product_count }}" class="bg-[#b72f33] text-white px-2 py-1 font-semibold absolute top-0 right-0 rounded-tr-md leading-none text-sm">Free Bottle</div>
+        {% endif %}
         <img
           class="object-cover rounded"
           :src="product.image"
@@ -36,7 +39,10 @@
       </div>
     </template>
     <template x-for="i in ({{ product_count }} - $store.bundleBuilder.selectedProducts.length)" :key="i">
-      <button @click="$store.bundleBuilder.showModal = true" class="bg-white border border-solid border-gray-200 flex items-center p-[7px] rounded-lg gap-2 pr-4 cursor-pointer">
+      <button @click="$store.bundleBuilder.showModal = true" class="bg-white border border-solid border-gray-200 flex items-center p-[7px] rounded-lg gap-2 pr-4 cursor-pointer relative">
+        {% if product.tags contains 'bogo' %}
+          <div x-show="i === {{ product_count }} - $store.bundleBuilder.selectedProducts.length" class="bg-[#b72f33] text-white px-2 py-1 font-semibold absolute top-0 right-0 rounded-tr-md">Free Bottle</div>
+        {% endif %}
         {% render 'perfume-icon' %}
         <div class="text-base">
           Choose your perfume
@@ -46,59 +52,72 @@
     </template>
   </div>
 
-  <product-form
-    class="product-form !m-0"
-    data-hide-errors="{{ gift_card_recipient_feature_active }}"
-    data-section-id="{{ section.id }}">
-    {%- form 'product'
-      , product
-      , id: product_form_id
-      , class: 'form'
-      , novalidate: 'novalidate'
-      , data-type: 'add-to-cart-form'
-    -%}
-      <input
-        type="hidden"
-        name="id"
-        value="{{ selected_variant.id }}"
-        class="product-variant-id">
-
-      <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="index">
+  {% if product.tags contains 'bogo' %}
+    <a
+      x-data
+      :href="$store.bundleBuilder.selectedProducts.length >= {{ product_count }} ? $store.bundleBuilder.getCheckoutUrl() : 'javascript:void(0)'"
+      :class="{
+        'opacity-50 cursor-not-allowed': $store.bundleBuilder.selectedProducts.length < {{ product_count }},
+        'cursor-pointer hover:bg-[#368856]': $store.bundleBuilder.selectedProducts.length >= {{ product_count }}
+      }"
+      class="flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
+      <span x-text="$store.bundleBuilder.selectedProducts.length >= {{ product_count }} ? 'SHOP NOW' : 'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' ITEMS'"></span>
+    </a>
+  {% else %}
+    <product-form
+      class="product-form !m-0"
+      data-hide-errors="{{ gift_card_recipient_feature_active }}"
+      data-section-id="{{ section.id }}">
+      {%- form 'product'
+        , product
+        , id: product_form_id
+        , class: 'form'
+        , novalidate: 'novalidate'
+        , data-type: 'add-to-cart-form'
+      -%}
         <input
           type="hidden"
-          :name="'properties[Bottle ' + (index + 1) + ']'"
-          :value="product.name + ' Inspired by ' + product.nuta + ' - ' + '{{ bundle_ml }}'" />
-      </template>
+          name="id"
+          value="{{ selected_variant.id }}"
+          class="product-variant-id">
 
-      <input
-        type="hidden"
-        name="properties[_bundle_items]"
-        :value="$store.bundleBuilder.selectedProducts.map(product => product.variants['{{ bundle_ml }}'].id).join(',')" />
+        <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="index">
+          <input
+            type="hidden"
+            :name="'properties[Bottle ' + (index + 1) + ']'"
+            :value="product.name + ' Inspired by ' + product.nuta + ' - ' + '{{ bundle_ml }}'" />
+        </template>
 
-      <button
-        type="submit"
-        name="add"
-        value="1"
-        class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
-        aria-label="Add to cart"
-        disabled="disabled"
-        :disabled="$store.bundleBuilder.addingToCart || $store.bundleBuilder.selectedProducts.length < {{ product_count }}">
-        <span>Add to cart</span>
-        <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
-          <div
-            class="inline-block text-lg bg-[#1E5834] px-3 rounded"
-            id="product-price"
-            role="status">
-            {% if selected_variant.compare_at_price > selected_variant.price %}
-              <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
-            {% endif %}
-            <span class="current-price">{{ selected_variant.price | money }}</span>
+        <input
+          type="hidden"
+          name="properties[_bundle_items]"
+          :value="$store.bundleBuilder.selectedProducts.map(product => product.variants['{{ bundle_ml }}'].id).join(',')" />
+
+        <button
+          type="submit"
+          name="add"
+          value="1"
+          class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
+          aria-label="Add to cart"
+          disabled="disabled"
+          :disabled="$store.bundleBuilder.addingToCart || $store.bundleBuilder.selectedProducts.length < {{ product_count }}">
+          <span>Add to cart</span>
+          <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
+            <div
+              class="inline-block text-lg bg-[#1E5834] px-3 rounded"
+              id="product-price"
+              role="status">
+              {% if selected_variant.compare_at_price > selected_variant.price %}
+                <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
+              {% endif %}
+              <span class="current-price">{{ selected_variant.price | money }}</span>
+            </div>
           </div>
-        </div>
-        {%- render 'loading-spinner' -%}
-      </button>
-    {%- endform -%}
-  </product-form>
+          {%- render 'loading-spinner' -%}
+        </button>
+      {%- endform -%}
+    </product-form>
+  {% endif %}
 </div>
 
 <script>
@@ -145,6 +164,14 @@
       },
       isProductSelected(productId) {
         return this.selectedProducts.some(product => product.id === productId);
+      },
+      getCheckoutUrl() {
+        const items = this.selectedProducts.map(product => {
+          const variantId = product.variants[this.selectedVariant].id;
+          return `${variantId}:1`;
+        }).join(',');
+
+        return `/cart/${items}`;
       }
     });
   });
