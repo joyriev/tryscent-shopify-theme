@@ -8,17 +8,16 @@
  * ------------------------------------------------------------
  */
 {
-  "parent": "index.json",
-  "context": {
-    "market": "sweden"
-  },
   "sections": {
     "home_hero_banner_qmaB3G": {
       "settings": {
-        "image": "shopify://shop_images/4_for_48_banner_swedish.png",
-        "mobile_image": "shopify://shop_images/4_for_48_mobile_banner_swedish.png"
+        "mobile_image": "shopify://shop_images/4_for_48_mobile_banner_usd.png"
       },
       "blocks": {}
     }
-  }
+  },
+  "context": {
+    "market": "us"
+  },
+  "parent": "index.json"
 }
