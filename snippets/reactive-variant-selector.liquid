@@ -210,8 +210,8 @@
       currentPriceSpan.innerHTML = variantData.originalPrice;
 
       if(typeof variantSuggestion !== 'undefined') {
-        if(variant.title !== "100ML") {
-          if(variant.title === '50ML') {
+        if(variantData.title !== "100ML") {
+          if(variantData.title === '50ML') {
             variantSuggestion.innerHTML = `⚡ Upgrade to ${variantData.nextVariant} for <strong>${variantData.priceDifference}</strong> more!`;
           } else {
             variantSuggestion.innerHTML = `⚡ You’re <strong>${variantData.priceDifference}</strong> away from the best value size.`;
