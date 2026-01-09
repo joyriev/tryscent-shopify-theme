@@ -210,7 +210,7 @@
       currentPriceSpan.innerHTML = variantData.originalPrice;
 
       if(typeof variantSuggestion !== 'undefined') {
-        if(variantData.nextVariant || variant.title !== "10ML") {
+        if(variant.title !== "100ML") {
           if(variant.title === '50ML') {
             variantSuggestion.innerHTML = `⚡ Upgrade to ${variantData.nextVariant} for <strong>${variantData.priceDifference}</strong> more!`;
           } else {
