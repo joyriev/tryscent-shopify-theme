@@ -11,6 +11,40 @@
 </style>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+{%- liquid
+  assign next_bundle = product.metafields.custom.next_bundle
+  if next_bundle != blank
+    assign next_bundle_product = next_bundle.value
+    assign next_size = next_bundle_product.metafields.custom.select_bundle_dropdown_ml
+    assign next_count = next_bundle_product.metafields.custom.choose_your_fragrances_options
+    assign price_difference = next_bundle_product.price | minus: product.price | money
+    assign next_price = next_bundle_product.price | money
+  endif
+-%}
+
+{% if next_bundle != blank %}
+  <div class="bg-white border border-gray-200 rounded-lg px-4 py-2.5 mb-4">
+    <div class="flex items-center gap-2 text-black">
+      <svg
+        class="size-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+      </svg>
+      <span>Upgrade to {{ next_size }}ML for {{ price_difference }} more.</span>
+    </div>
+
+    <a href="{{ next_bundle_product.url }}" class="ml-auto font-medium text-[#22613A] whitespace-nowrap transition-colors">
+      {{ next_count }}x {{ next_size }}ML for {{ next_price }} →
+    </a>
+  </div>
+{% endif %}
+
 <div x-data>
   <div class="flex flex-col gap-3 mb-6 relative pl-10 before:content-[''] before:absolute before:left-3 before:top-6 before:bottom-6 before:w-[0px] before:border-0 before:border-r before:border-dashed before:border-green-700">
     <div class="absolute top-6 left-0 bottom-6 flex flex-col justify-between">
