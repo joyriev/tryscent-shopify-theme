@@ -211,9 +211,9 @@
 
       if(typeof variantSuggestion !== 'undefined') {
         if(variantData.nextVariant) {
-          variantSuggestion.innerText = `⚡ Get ${variantData.nextVariant} for ${variantData.priceDifference} more!`;
+          variantSuggestion.innerHTML = `⚡ Get ${variantData.nextVariant} for ${variantData.priceDifference} more!`;
         } else {
-          variantSuggestion.innerText = '🎉 Congratulations! You have the best deal!';
+          variantSuggestion.innerHTML = '🎉 Congratulations! You have the best deal!';
         }
       }
     }
