@@ -211,7 +211,10 @@
 
       if(typeof variantSuggestion !== 'undefined') {
         if(variantData.nextVariant) {
-          variantSuggestion.innerHTML = `⚡ Upgrade to ${variantData.nextVariant} for <strong>${variantData.priceDifference}</strong> more!`;
+          if() {
+          } else {
+            variantSuggestion.innerHTML = `⚡ Upgrade to ${variantData.nextVariant} for <strong>${variantData.priceDifference}</strong> more!`;
+          }
         } else {
           variantSuggestion.innerHTML = '🎉 Congratulations! You have the best deal!';
         }
