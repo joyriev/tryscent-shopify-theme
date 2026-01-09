@@ -49,6 +49,9 @@
       </button>
     {% endfor %}
   </div>
+  {% if product.tags contains 'variant_note' %}
+    <div id="variantSuggestion" class="mb-4 font-semibold text-black text-xl"></div>
+  {% endif %}
 {% endif %}
 
 {% comment %} Add to cart form {% endcomment %}
@@ -151,7 +154,9 @@
           title: "{{ variant.title }}",
           originalPrice: "{{ variant.price | money }}",
           compareAtPrice: "{{ variant.compare_at_price | money }}",
-          hasComparePrice: {% if variant.compare_at_price > variant.price %}true{% else %}false{% endif %}
+          hasComparePrice: {% if variant.compare_at_price > variant.price %}true{% else %}false{% endif %},
+          nextVariant: "{{ variant.metafields.custom.next_variant }}",
+          priceDifference: "{{ variant.metafields.custom.price_difference.value | money }}"
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     };
@@ -165,6 +170,7 @@
     const priceContainer = document.getElementById('product-price');
     const comparePriceSpan = priceContainer.querySelector('.compare-price');
     const currentPriceSpan = priceContainer.querySelector('.current-price');
+    const variantSuggestion = document.getElementById('variantSuggestion');
 
     // Update variant selection
     function updateVariant(variantId) {
@@ -202,6 +208,14 @@
       }
 
       currentPriceSpan.innerHTML = variantData.originalPrice;
+
+      if(typeof variantSuggestion !== 'undefined') {
+        if(variantData.nextVariant) {
+          variantSuggestion.innerText = `⚡ Get ${variantData.nextVariant} for ${variantData.priceDifference} more!`;
+        } else {
+          variantSuggestion.innerText = '🎉 Congratulations! You have the best deal!';
+        }
+      }
     }
 
     // Add click event listeners to variant buttons
