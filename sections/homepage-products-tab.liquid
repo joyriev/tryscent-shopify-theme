@@ -35,7 +35,7 @@
             class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
             {% render 'card-product-bogo' %}
             {% assign skip_card_product_styles = false %}
-            {%- for product in collection.products limit: 7 -%}
+            {%- for product in collection.products limit: 6 -%}
               {% assign lazy_load = false %}
               {%- if forloop.index > 2 -%}
                 {%- assign lazy_load = true -%}
@@ -61,6 +61,7 @@
               </li>
               {%- assign skip_card_product_styles = true -%}
             {%- endfor -%}
+            {% render 'edp-poster' %}
           </ul>
         {% else %}
           <p class="text-gray-500">No products found in this collection.</p>
