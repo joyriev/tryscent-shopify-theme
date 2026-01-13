@@ -86,100 +86,44 @@
     </template>
   </div>
 
-  {% if product.tags contains 'bogo' %}
-    <button
-      x-data
-      @click="$store.bundleBuilder.doCheckout()"
-      :disabled="$store.bundleBuilder.selectedProducts.length < {{ product_count }} || $store.bundleBuilder.addingToCart"
-      :class="{
+  <button
+    x-data
+    @click="{% if product.tags contains 'bogo' %}$store.bundleBuilder.doCheckout(){% else %}$store.bundleBuilder.doATCandCheckout(){% endif %}"
+    :disabled="$store.bundleBuilder.selectedProducts.length < {{ product_count }} || $store.bundleBuilder.addingToCart"
+    :class="{
         'opacity-50 cursor-not-allowed': $store.bundleBuilder.selectedProducts.length < {{ product_count }},
         'cursor-pointer hover:bg-[#368856]': $store.bundleBuilder.selectedProducts.length >= {{ product_count }}
       }"
-      class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
-      <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text="'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' ITEMS'"></span>
-      <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">SHOP NOW
-        <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
-          <div
-            class="inline-block text-lg bg-[#1E5834] px-3 rounded"
-            id="product-price"
-            role="status">
-            {% if selected_variant.compare_at_price > selected_variant.price %}
-              <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
-            {% endif %}
-            <span class="current-price">{{ selected_variant.price | money }}</span>
-          </div>
+    class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
+    <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text="'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' MORE'"></span>
+    <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">SHOP NOW
+      <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
+        <div
+          class="inline-block text-lg bg-[#1E5834] px-3 rounded"
+          id="product-price"
+          role="status">
+          {% if selected_variant.compare_at_price > selected_variant.price %}
+            <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
+          {% endif %}
+          <span class="current-price">{{ selected_variant.price | money }}</span>
         </div>
       </div>
-      <div x-show="$store.bundleBuilder.addingToCart" class="loading__spinner">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="spinner"
-          viewBox="0 0 66 66">
-          <circle
-            stroke-width="6"
-            cx="33"
-            cy="33"
-            r="30"
-            fill="none"
-            class="path"></circle>
-        </svg>
-      </div>
-    </button>
-  {% else %}
-    <product-form
-      class="product-form !m-0"
-      data-hide-errors="{{ gift_card_recipient_feature_active }}"
-      data-section-id="{{ section.id }}">
-      {%- form 'product'
-        , product
-        , id: product_form_id
-        , class: 'form'
-        , novalidate: 'novalidate'
-        , data-type: 'add-to-cart-form'
-      -%}
-        <input
-          type="hidden"
-          name="id"
-          value="{{ selected_variant.id }}"
-          class="product-variant-id">
-
-        <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="index">
-          <input
-            type="hidden"
-            :name="'properties[Bottle ' + (index + 1) + ']'"
-            :value="product.name + ' Inspired by ' + product.nuta + ' - ' + '{{ bundle_ml }}'" />
-        </template>
-
-        <input
-          type="hidden"
-          name="properties[_bundle_items]"
-          :value="$store.bundleBuilder.selectedProducts.map(product => product.variants['{{ bundle_ml }}'].id).join(',')" />
-
-        <button
-          type="submit"
-          name="add"
-          value="1"
-          class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
-          aria-label="Add to cart"
-          disabled="disabled"
-          :disabled="$store.bundleBuilder.addingToCart || $store.bundleBuilder.selectedProducts.length < {{ product_count }}">
-          <span>Add to cart</span>
-          <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
-            <div
-              class="inline-block text-lg bg-[#1E5834] px-3 rounded"
-              id="product-price"
-              role="status">
-              {% if selected_variant.compare_at_price > selected_variant.price %}
-                <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
-              {% endif %}
-              <span class="current-price">{{ selected_variant.price | money }}</span>
-            </div>
-          </div>
-          {%- render 'loading-spinner' -%}
-        </button>
-      {%- endform -%}
-    </product-form>
-  {% endif %}
+    </div>
+    <div x-show="$store.bundleBuilder.addingToCart" class="loading__spinner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="spinner"
+        viewBox="0 0 66 66">
+        <circle
+          stroke-width="6"
+          cx="33"
+          cy="33"
+          r="30"
+          fill="none"
+          class="path"></circle>
+      </svg>
+    </div>
+  </button>
 </div>
 
 <script>
@@ -215,7 +159,12 @@
           this.selectedProducts.push(product);
           if (this.selectedProducts.length === {{ product_count }}) {
             this.showModal = false;
-            this.doCheckout();
+            // Do auto ATC and redirect to checkout
+            {% if product.tags contains 'bogo' %}
+              this.doCheckout();
+            {% else %}
+              this.doATCandCheckout();
+            {% endif %}
           }
         } else {
           this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
@@ -237,6 +186,56 @@
         }).join(',');
 
         window.location = `https://tryscent.co/cart/${items}`;
+      },
+      doATCandCheckout() {
+        // Set loading state
+        this.addingToCart = true;
+        
+        // Create properties object with bundle items
+        const properties = {
+          "_bundle_items": this.selectedProducts.map(product => 
+            product.variants[this.selectedVariant].id
+          ).join(',')
+        };
+        // Add each selected product as a separate property
+        this.selectedProducts.forEach((product, index) => {
+          properties[`Bottle ${index + 1}`] = 
+            `${product.name} Inspired by ${product.nuta} - ${this.selectedVariant}`;
+        });
+        // Prepare cart items
+        const items = {
+          items: [{
+            id: {{ selected_variant.id }},
+            quantity: 1,
+            properties: properties
+          }]
+        };
+
+        // Make the API call
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(items),
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(() => {
+          // Redirect to cart after successful addition
+          window.location.href = '/checkout';
+        })
+        .catch(error => {
+          console.error('Error adding to cart:', error);
+          // Handle error (e.g., show error message to user)
+        })
+        .finally(() => {
+          this.addingToCart = false;
+        });
       }
     });
   });
