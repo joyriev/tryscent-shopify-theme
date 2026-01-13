@@ -215,7 +215,7 @@
           this.selectedProducts.push(product);
           if (this.selectedProducts.length === {{ product_count }}) {
             this.showModal = false;
-            // this.addBundleToCart();
+            this.doCheckout();
           }
         } else {
           this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
