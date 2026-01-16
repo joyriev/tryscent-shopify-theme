@@ -121,6 +121,43 @@
                   <div class="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-blue-100 font-semibold">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="🇪🇺" height="20" width="20" class="object-cover size-5 rounded-full"> <span>Crafted in EU</span>
                   </div>
+
+                  {% assign alternate_product = product.metafields.custom['18_25_alternative_product'].value %}
+
+                  {% if alternate_product != blank %}
+                    <div class="flex gap-3 pt-6">
+                      {%  if product.tags contains '25_edp' %}
+                        <a href="{{ alternate_product.url }}" class="flex-1 border-2 border-solid border-gray-100 hover:border-green-600 rounded-xl p-3 pt-4 bg-white no-underline transition-all">
+                          <h3 class="my-0 text-green-700 font-bold text-xl">18% EDP</h3>
+                          <p class="my-0 text-gray-900 text-base">Balanced</p>
+                          <p class="my-0 text-gray-700 text-sm">4–6 hours</p>
+                        </a>
+                        <div class="flex-1 border-2 border-solid border-amber-600 rounded-xl p-3 pt-4 bg-amber-50 relative">
+                          <span class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-semibold px-3 py-[2px] uppercase rounded-tr-lg rounded-bl-lg">
+                            Best Value
+                          </span>
+                          <h3 class="my-0 text-amber-700 font-bold text-xl">25% EDP</h3>
+                          <p class="my-0 text-gray-900 text-base">Extra Strong</p>
+                          <p class="my-0 text-gray-700 text-sm">8–12+ hours</p>
+                        </div>
+                      {%  else %} 
+                        <div class="flex-1 border-2 border-solid border-green-600 cursor-not-allowed rounded-xl p-3 pt-4 bg-white no-underline">
+                          <h3 class="my-0 text-green-700 font-bold text-xl">18% EDP</h3>
+                          <p class="my-0 text-gray-900 text-base">Balanced</p>
+                          <p class="my-0 text-gray-700 text-sm">4–6 hours</p>
+                        </div>
+                        <a href="{{ alternate_product.url }}" class="flex-1 border-2 border-solid border-gray-100 hover:border-amber-600 rounded-xl p-3 pt-4 bg-amber-50 relative no-underline transition-all">
+                          <span class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-semibold px-3 py-[2px] uppercase rounded-tr-lg rounded-bl-lg">
+                            Best Value
+                          </span>
+                          <h3 class="my-0 text-amber-700 font-bold text-xl">25% EDP</h3>
+                          <p class="my-0 text-gray-900 text-base">Extra Strong</p>
+                          <p class="my-0 text-gray-700 text-sm">8–12+ hours</p>
+                        </a>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+
                 </div>
                 {% if product.metafields.custom.bundle_product_content != blank %}
                   <div class="flex items-center gap-1 font-normal text-black leading-[normal]">

@@ -141,6 +141,14 @@
     top: 2px
 }
 
+.right-4 {
+    right: 16px
+}
+
+.top-4 {
+    top: 16px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -775,6 +783,10 @@
     max-width: 640px
 }
 
+.max-w-3xl {
+    max-width: 768px
+}
+
 .flex-1 {
     flex: 1 1 0%
 }
@@ -1095,6 +1107,14 @@
     border-top-right-radius: 6px
 }
 
+.rounded-bl-lg {
+    border-bottom-left-radius: 8px
+}
+
+.rounded-tr-lg {
+    border-top-right-radius: 8px
+}
+
 .border {
     border-width: 1px
 }
@@ -1224,6 +1244,11 @@
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
+.border-amber-600 {
+    --tw-border-opacity: 1;
+    border-color: rgb(217 119 6 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1331,6 +1356,11 @@
     background-color: rgb(0 0 0 / 0.4)
 }
 
+.bg-blue-100 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1))
+}
+
 .bg-gray-100 {
     --tw-bg-opacity: 1;
     background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1))
@@ -1417,9 +1447,14 @@
     background-color: rgb(255 255 255 / 0.4)
 }
 
-.bg-blue-100 {
+.bg-amber-50 {
     --tw-bg-opacity: 1;
-    background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1))
+    background-color: rgb(255 251 235 / var(--tw-bg-opacity, 1))
+}
+
+.bg-amber-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(217 119 6 / var(--tw-bg-opacity, 1))
 }
 
 .bg-opacity-50 {
@@ -1529,6 +1564,10 @@
     padding: 7px
 }
 
+.p-5 {
+    padding: 20px
+}
+
 .\!px-3 {
     padding-left: 12px !important;
     padding-right: 12px !important
@@ -1632,6 +1671,11 @@
 .py-8 {
     padding-top: 32px;
     padding-bottom: 32px
+}
+
+.py-\[2px\] {
+    padding-top: 2px;
+    padding-bottom: 2px
 }
 
 .\!pb-3 {
@@ -2041,6 +2085,11 @@
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
 }
 
+.text-amber-700 {
+    --tw-text-opacity: 1;
+    color: rgb(180 83 9 / var(--tw-text-opacity, 1))
+}
+
 .line-through {
     text-decoration-line: line-through
 }
@@ -2370,6 +2419,16 @@
 
 .last\:pb-0:last-child {
     padding-bottom: 0px
+}
+
+.hover\:border-green-600:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(22 163 74 / var(--tw-border-opacity, 1))
+}
+
+.hover\:border-amber-600:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(217 119 6 / var(--tw-border-opacity, 1))
 }
 
 .hover\:bg-\[\#02491c\]:hover {
