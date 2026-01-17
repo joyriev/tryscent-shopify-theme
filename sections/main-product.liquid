@@ -125,7 +125,8 @@
                   {% assign alternate_product = product.metafields.custom['18_25_alternative_product'].value %}
 
                   {% if alternate_product != blank %}
-                    <div class="flex gap-3 pt-6">
+                    <h3 class="!mb-3"><strong>Strength</strong> (Choose Concentration)</h3>
+                    <div class="flex gap-3">
                       {%  if product.tags contains '25_edp' %}
                         <a href="{{ alternate_product.url }}" class="flex-1 border-2 border-solid border-gray-100 hover:border-green-600 rounded-xl p-3 pt-4 bg-white no-underline transition-all">
                           <h3 class="my-0 text-green-700 font-bold text-xl">18% EDP</h3>
@@ -155,6 +156,9 @@
                           <p class="my-0 text-gray-700 text-sm">8–12+ hours</p>
                         </a>
                       {% endif %}
+                    </div>
+                    <div class="mt-2">
+                      <strong>25% = longest-lasting</strong> (Most perfumes are 15-20%)
                     </div>
                   {% endif %}
                 </div>
