@@ -465,11 +465,34 @@
     },
     "image_and_text": {
       "type": "image-and-text",
-      "disabled": true,
+      "blocks": {
+        "heading_ax7WWJ": {
+          "type": "heading",
+          "settings": {
+            "content": "Why EU-Made Fragrances Hit Different",
+            "heading_type": "h2",
+            "font_size": 32,
+            "mobile_font_size": 24
+          }
+        },
+        "text_gzPVkb": {
+          "type": "text",
+          "settings": {
+            "content": "<p>•⁠  ⁠Produced in EU facilities that follow strict cosmetic regulations<br/>•⁠  ⁠IFRA-compliant ingredients and formulations<br/>•⁠  ⁠No corner-cutting, no grey-market blending<br/></p><p>WE Craft Perfumes under strict European cosmetic standards</p>",
+            "mobile_content": "",
+            "font_size": 18
+          }
+        }
+      },
+      "block_order": [
+        "heading_ax7WWJ",
+        "text_gzPVkb"
+      ],
       "settings": {
         "background_color": "#fcfbf9",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-01-17_at_10.59.01.jpg",
         "rounded_image": true,
-        "image_placement": "0",
+        "image_placement": "1",
         "mobile_image_placement": "under_heading",
         "button_text": "",
         "button_url": "",
