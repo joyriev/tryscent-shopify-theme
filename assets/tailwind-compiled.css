@@ -1778,6 +1778,10 @@
     padding-top: 32px
 }
 
+.pl-12 {
+    padding-left: 48px
+}
+
 .text-left {
     text-align: left
 }
@@ -2594,6 +2598,10 @@
         order: 1
     }
 
+    .md\:-order-1 {
+        order: -1
+    }
+
     .md\:col-span-1 {
         grid-column: span 1 / span 1
     }
@@ -2634,6 +2642,10 @@
 
     .md\:mt-14 {
         margin-top: 56px
+    }
+
+    .md\:mt-12 {
+        margin-top: 48px
     }
 
     .md\:block {
@@ -3017,8 +3029,24 @@
     border-width: 0px !important
 }
 
+.\[\&\>p\:first-child\]\:mt-0>p:first-child {
+    margin-top: 0px
+}
+
+.\[\&\>p\:last-child\]\:mb-0>p:last-child {
+    margin-bottom: 0px
+}
+
 .\[\&\>p\]\:m-0>p {
     margin: 0px
+}
+
+.\[\&\>ul\]\:pl-6>ul {
+    padding-left: 24px
+}
+
+.\[\&\>ul\]\:text-left>ul {
+    text-align: left
 }
 
 .\[\&\]\:after\:\!text-xl::after {
