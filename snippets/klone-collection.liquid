@@ -49,7 +49,7 @@
         </select>
       </div>
     </div>
-    <div class="ml-auto text-right text-xl font-semibold">
+    <div class="ml-auto text-right text-xl font-semibold shrink-0">
       {{ chosen_variant.price | money }}
     </div>
   </button>
@@ -92,8 +92,8 @@
         </template>
       </div>
     </div>
-    <div class="ml-auto text-right text-xl font-semibold">
-      {{ chosen_variant.price | times: 3 | money }}
+    <div class="ml-auto text-right text-xl font-semibold shrink-0">
+      {{ chosen_variant.price | times: 2 | money }}
     </div>
   </button>
 
@@ -134,8 +134,8 @@
           </template>
         </div>
       </div>
-      <div class="ml-auto text-right text-xl font-semibold">
-        {{ chosen_variant.price | times: 2 | money }}
+      <div class="ml-auto text-right text-xl font-semibold shrink-0">
+        {{ chosen_variant.price | times: 3 | money }}
       </div>
     </button>
   </div>
