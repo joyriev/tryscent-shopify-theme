@@ -38,13 +38,14 @@
           {% for product in bundle_collection.products %}
             {% liquid
               assign variant = product.variants.first
+              assign nuta_list = product.metafields.custom.nuta | split: ','
               for variant in product.variants
                 if variant.title == '50ML'
                   assign variant = variant
                 endif
               endfor
             %}
-            <option value="{{ variant.id }}">...{{ product.metafields.custom.nuta }}</option>
+            <option value="{{ variant.id }}">...{{ nuta_list[1] }}</option>
           {% endfor %}
         </select>
       </div>
@@ -79,6 +80,7 @@
             {% for product in bundle_collection.products %}
               {% liquid
                 assign selected_variant = product.variants.first
+                assign nuta_list = product.metafields.custom.nuta | split: ','
                 for v in product.variants
                   if v.title == '50ML'
                     assign selected_variant = v
@@ -86,7 +88,7 @@
                   endif
                 endfor
               %}
-              <option value="{{ selected_variant.id }}">...{{ product.metafields.custom.nuta }}</option>
+              <option value="{{ selected_variant.id }}">...{{ nuta_list[1] }}</option>
             {% endfor %}
           </select>
         </template>
