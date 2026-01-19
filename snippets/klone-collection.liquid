@@ -33,7 +33,7 @@
         <select
           @change="$store.bundle.updateVariant('buy_1', 0, $event.target.value)"
           :value="$store.bundle.variants.buy_1[0]"
-          class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px]"
+          class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px] block"
           name="buy_one">
           {% for product in bundle_collection.products %}
             {% liquid
@@ -75,7 +75,7 @@
           <select
             @change="$store.bundle.updateVariant('buy_2_get_1_free', index, $event.target.value)"
             :value="variant"
-            class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px]">
+            class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px] block">
             {% for product in bundle_collection.products %}
               {% liquid
                 assign selected_variant = product.variants.first
@@ -117,10 +117,11 @@
             <select
               @change="$store.bundle.updateVariant('buy_3_get_2_free', index, $event.target.value)"
               :value="variant"
-              class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px]">
+              class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px] block">
               {% for product in bundle_collection.products %}
                 {% liquid
                   assign selected_variant = product.variants.first
+                  assign nuta_list = product.metafields.custom.nuta | split: ','
                   for v in product.variants
                     if v.title == '50ML'
                       assign selected_variant = v
@@ -128,7 +129,7 @@
                     endif
                   endfor
                 %}
-                <option value="{{ selected_variant.id }}">...{{ product.metafields.custom.nuta }}</option>
+                <option value="{{ selected_variant.id }}">...{{ nuta_list[1] }}</option>
               {% endfor %}
             </select>
           </template>
