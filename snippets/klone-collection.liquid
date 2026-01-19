@@ -19,7 +19,7 @@
 <div x-data class="flex flex-col gap-2">
   <button
     @click="$store.bundle.setPackage('buy_1')"
-    class="border-2 border-solid cursor-pointer p-3 flex gap-4 items-center bg-white border-gray-300 rounded-xl"
+    class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white border-gray-300 rounded-xl"
     :class="$store.bundle.package === 'buy_1' ? 'border-[#0F172A]' : 'border-gray-300'">
     <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid border-[#0F172A]">
       <span
@@ -56,7 +56,7 @@
 
   <button
     @click="$store.bundle.setPackage('buy_2_get_1_free')"
-    class="border-2 border-solid cursor-pointer p-3 flex gap-4 items-center bg-white border-gray-300 rounded-xl"
+    class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white border-gray-300 rounded-xl"
     :class="$store.bundle.package === 'buy_2_get_1_free' ? 'border-[#0F172A]' : 'border-gray-300'">
     <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid border-[#0F172A]">
       <span
@@ -101,7 +101,7 @@
     <div class="absolute top-0 right-2 text-white text-xs leading-snug px-2 py-1 uppercase bg-[#0F172A]">Best Value</div>
     <button
       @click="$store.bundle.setPackage('buy_3_get_2_free')"
-      class="border-2 border-solid cursor-pointer p-3 flex gap-4 items-center bg-white w-full border-[#0F172A] rounded-xl"
+      class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white w-full border-[#0F172A] rounded-xl"
       :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-[#0F172A]' : 'border-gray-300'">
       <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid border-[#0F172A]">
         <span x-show="$store.bundle.package === 'buy_3_get_2_free'" class="block size-4 rounded-full bg-[#0F172A]"></span>
@@ -140,8 +140,25 @@
     </button>
   </div>
 
-  <button @click="$store.bundle.addToCart()" class="w-full flex flex-wrap items-center text-2xl py-3 rounded-xl button bg-[#22613a] transition-colors shadow-xl tracking-normal mt-4">
+  <button
+    :disabled="$store.bundle.addingToCart"
+    @click="$store.bundle.addToCart()"
+    class="w-full flex flex-wrap items-center text-2xl py-3 rounded-xl button bg-[#22613a] transition-colors shadow-xl tracking-normal mt-4">
     Add to Cart
+    <div x-show="$store.bundle.addingToCart" class="loading__spinner">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="spinner"
+        viewBox="0 0 66 66">
+        <circle
+          stroke-width="6"
+          cx="33"
+          cy="33"
+          r="30"
+          fill="none"
+          class="path"></circle>
+      </svg>
+    </div>
   </button>
 </div>
 
@@ -149,7 +166,7 @@
   document.addEventListener('alpine:init', function() {
   Alpine.store('bundle', {
     package: 'buy_3_get_2_free',
-    
+    addingToCart: false,
     variants: {
       buy_1: [
         {% liquid 
@@ -203,6 +220,8 @@
     },
     
     addToCart() {
+      this.addingToCart = true;
+
       const selectedVariants = this.variants[this.package];
       const variantCounts = {};
       
