@@ -141,6 +141,10 @@
     top: 2px
 }
 
+.-bottom-4 {
+    bottom: -16px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -423,6 +427,10 @@
     margin-top: 44px
 }
 
+.\!mb-6 {
+    margin-bottom: 24px !important
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -639,6 +647,10 @@
     height: 100vh
 }
 
+.\!h-6 {
+    height: 24px !important
+}
+
 .max-h-\[60vh\] {
     max-height: 60vh
 }
@@ -787,8 +799,17 @@
     flex-shrink: 0
 }
 
+.shrink-0 {
+    flex-shrink: 0
+}
+
 .flex-grow {
     flex-grow: 1
+}
+
+.-translate-x-1\/2 {
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
 .-rotate-90 {
@@ -1014,6 +1035,12 @@
     margin-bottom: calc(16px * var(--tw-space-y-reverse))
 }
 
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(4px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(4px * var(--tw-space-y-reverse))
+}
+
 .overflow-hidden {
     overflow: hidden
 }
@@ -1237,6 +1264,11 @@
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
+.border-\[\#0F172A\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(15 23 42 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1443,6 +1475,21 @@
 
 .bg-white\/40 {
     background-color: rgb(255 255 255 / 0.4)
+}
+
+.bg-\[\#0F172A\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#f3f3f7\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 243 247 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#faf9f6\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 249 246 / var(--tw-bg-opacity, 1))
 }
 
 .bg-opacity-50 {
@@ -1662,6 +1709,11 @@
     padding-bottom: 2px
 }
 
+.\!px-1 {
+    padding-left: 4px !important;
+    padding-right: 4px !important
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -1768,6 +1820,10 @@
 
 .text-center {
     text-align: center
+}
+
+.text-right {
+    text-align: right
 }
 
 .\!font-sans {
