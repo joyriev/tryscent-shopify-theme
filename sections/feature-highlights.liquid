@@ -24,6 +24,9 @@
             <img
               class="size-7 md:size-10"
               src="{{ block.settings.perk_image | image_url: width: 150 }}"
+              loading="lazy"
+              height="{{ block.settings.perk_image.height }}"
+              width="{{ block.settings.perk_image.width }}"
               alt="Perk Image">
             <p class="text-xs md:text-base m-0 text-center text-black">{{ block.settings.perk_title }}</p>
             <p>{{ section.settings.perk_content }}</p>
