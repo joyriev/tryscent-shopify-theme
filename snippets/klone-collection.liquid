@@ -33,7 +33,7 @@
         <select
           @change="$store.bundle.updateVariant('buy_1', 0, $event.target.value)"
           :value="$store.bundle.variants.buy_1[0]"
-          class="!w-auto !px-1 !h-6 border border-gray-200 rounded border-solid"
+          class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px]"
           name="buy_one">
           {% for product in bundle_collection.products %}
             {% liquid
@@ -44,7 +44,7 @@
                 endif
               endfor
             %}
-            <option value="{{ variant.id }}">{{ product.title }}</option>
+            <option value="{{ variant.id }}">...{{ product.metafields.custom.nuta }}</option>
           {% endfor %}
         </select>
       </div>
@@ -75,7 +75,7 @@
           <select
             @change="$store.bundle.updateVariant('buy_2_get_1_free', index, $event.target.value)"
             :value="variant"
-            class="!w-auto !px-1 !h-6 border border-gray-200 rounded border-solid">
+            class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px]">
             {% for product in bundle_collection.products %}
               {% liquid
                 assign selected_variant = product.variants.first
@@ -86,7 +86,7 @@
                   endif
                 endfor
               %}
-              <option value="{{ selected_variant.id }}">{{ product.title }}</option>
+              <option value="{{ selected_variant.id }}">...{{ product.metafields.custom.nuta }}</option>
             {% endfor %}
           </select>
         </template>
@@ -117,7 +117,7 @@
             <select
               @change="$store.bundle.updateVariant('buy_3_get_2_free', index, $event.target.value)"
               :value="variant"
-              class="!w-auto !px-1 !h-6 border border-gray-200 rounded border-solid">
+              class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px]">
               {% for product in bundle_collection.products %}
                 {% liquid
                   assign selected_variant = product.variants.first
@@ -128,7 +128,7 @@
                     endif
                   endfor
                 %}
-                <option value="{{ selected_variant.id }}">{{ product.title }}</option>
+                <option value="{{ selected_variant.id }}">...{{ product.metafields.custom.nuta }}</option>
               {% endfor %}
             </select>
           </template>
