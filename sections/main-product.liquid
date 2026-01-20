@@ -280,6 +280,13 @@
                 >
                   {{- block.settings.text -}}
                 </p>
+              {%-  when 'custom_rating_text' -%}
+                <div>
+                  <img src="{{ 'rating-stars.svg' |  asset_url }}" alt="*****" height="" width="">
+                  <div>
+                    {{ block.settings.text }}
+                  </div>
+                </div>
               {%- when 'title' -%}
                 <div class="product__title relative" {{ block.shopify_attributes }}>
                   {%- if product.tags contains 'bestseller' or product.tags contains 'onsale' -%}
@@ -300,7 +307,7 @@
                       {% endif %}
                     </div>
                   {%- endif -%}  
-                  <h1 class="font-[700] leading-tight capitalize !tracking-normal flex flex-col pt-8">
+                  <h1 class="font-[700] leading-tight capitalize !tracking-normal flex flex-col {% if product.tags contains 'bestseller' or product.tags contains 'onsale' %}pt-8{% endif %}">
                       {{ product.title }}
                   </h1>
                 </div>
@@ -1124,6 +1131,19 @@
           ],
           "default": "body",
           "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+        }
+      ]
+    },
+    {
+      "type": "custom_rating_text",
+      "name": "Custom Rating Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "4.9/5 Rated (3,926 Reviews)",
+          "label": "Custom Rating Text"
         }
       ]
     },
