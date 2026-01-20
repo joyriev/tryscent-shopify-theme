@@ -1,4 +1,5 @@
 {% liquid
+  assign gift_product = all_products['gift-bag']
   assign bundle_collection = collections['top-sellers']
   assign chosen_product = all_products['pineapple-smoke-vanilla-50-ml-1-7-fl-oz']
   assign chosen_variant = chosen_product.variants.first
@@ -185,6 +186,28 @@
     </button>
   </div>
 
+  <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl bg-white mt-4">
+    <input
+      type="checkbox"
+      id="gift-bag"
+      x-model="$store.bundle.addGiftBag"
+      class="!size-5 cursor-pointer accent-[#22613A] border-gray-300 rounded">
+    <label for="gift-bag" class="flex items-center gap-4 cursor-pointer flex-1">
+      <img
+        src="{{ gift_product.featured_image | image_url: width: 100 }}"
+        alt="Gift Bag"
+        height="64"
+        width="64"
+        class="size-16 object-cover rounded-md bg-gray-100">
+      <div>
+        <div class="text-base font-semibold">Add:
+          <span class="font-bold">Gift Bag</span>
+        </div>
+        <div class="text-gray-600 font-semibold">{{ gift_product.price | money }}</div>
+      </div>
+    </label>
+  </div>
+
   <button
     :disabled="$store.bundle.addingToCart"
     @click="$store.bundle.addToCart()"
@@ -219,6 +242,8 @@
   document.addEventListener('alpine:init', function() {
   Alpine.store('bundle', {
     package: 'buy_3_get_2_free',
+    addGiftBag: false,
+    giftVariantId: '{{ gift_product.selected_or_first_available_variant.id }}',
     addingToCart: false,
     variants: {
       buy_1: [
@@ -273,23 +298,30 @@
     },
     
     addToCart() {
-      this.addingToCart = true;
+        this.addingToCart = true;
 
-      const selectedVariants = this.variants[this.package];
-      const variantCounts = {};
-      
-      // Count occurrences of each variant
-      selectedVariants.forEach(variantId => {
-        variantCounts[variantId] = (variantCounts[variantId] || 0) + 1;
-      });
-      
-      // Build cart URL: /cart/variant_id:quantity,variant_id:quantity
-      const cartItems = Object.entries(variantCounts).map(([id, qty]) => `${id}:${qty}`);
-      const cartUrl = '/cart/' + cartItems.join(',');
-      
-      // Redirect to cart
-      window.location.href = cartUrl;
-    }
+        // Clone selected variants to avoid mutating original array
+        let selectedVariants = [...this.variants[this.package]];
+        
+        // Add gift bag if checked
+        if (this.addGiftBag && this.giftVariantId) {
+          selectedVariants.push(this.giftVariantId);
+        }
+
+        const variantCounts = {};
+        
+        // Count occurrences of each variant
+        selectedVariants.forEach(variantId => {
+          variantCounts[variantId] = (variantCounts[variantId] || 0) + 1;
+        });
+        
+        // Build cart URL: /cart/variant_id:quantity,variant_id:quantity
+        const cartItems = Object.entries(variantCounts).map(([id, qty]) => `${id}:${qty}`);
+        const cartUrl = '/cart/' + cartItems.join(',');
+        
+        // Redirect to cart
+        window.location.href = cartUrl;
+      }
   });
   });
 </script>

@@ -571,8 +571,9 @@
     height: 14px
 }
 
-.\!h-6 {
-    height: 24px !important
+.\!size-5 {
+    width: 20px !important;
+    height: 20px !important
 }
 
 .\!h-8 {
@@ -757,10 +758,6 @@
 
 .max-w-\[1140px\] {
     max-width: 1140px
-}
-
-.max-w-\[200px\] {
-    max-width: 200px
 }
 
 .max-w-\[400px\] {
@@ -1102,6 +1099,10 @@
     border-radius: 12px
 }
 
+.rounded-md {
+    border-radius: 6px
+}
+
 .rounded-b-\[10px\] {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px
@@ -1182,11 +1183,6 @@
     border-style: dashed
 }
 
-.border-\[\#0F172A\] {
-    --tw-border-opacity: 1;
-    border-color: rgb(15 23 42 / var(--tw-border-opacity, 1))
-}
-
 .border-\[\#12121233\] {
     border-color: #12121233
 }
@@ -1204,6 +1200,11 @@
 .border-\[\#226139\] {
     --tw-border-opacity: 1;
     border-color: rgb(34 97 57 / var(--tw-border-opacity, 1))
+}
+
+.border-\[\#22613A\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 97 58 / var(--tw-border-opacity, 1))
 }
 
 .border-amber-600 {
@@ -1263,19 +1264,14 @@
     border-color: rgb(21 128 61 / var(--tw-border-opacity, 1))
 }
 
-.border-white {
-    --tw-border-opacity: 1;
-    border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
-}
-
-.border-\[\#22613A\] {
-    --tw-border-opacity: 1;
-    border-color: rgb(34 97 58 / var(--tw-border-opacity, 1))
-}
-
 .border-red-700 {
     --tw-border-opacity: 1;
     border-color: rgb(185 28 28 / var(--tw-border-opacity, 1))
+}
+
+.border-white {
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
 .border-b-gray-100 {
@@ -1296,11 +1292,6 @@
 .bg-\[\#090909\] {
     --tw-bg-opacity: 1;
     background-color: rgb(9 9 9 / var(--tw-bg-opacity, 1))
-}
-
-.bg-\[\#0F172A\] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
 }
 
 .bg-\[\#121212\] {
@@ -1483,6 +1474,11 @@
     background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
 }
 
+.bg-red-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1))
+}
+
 .bg-transparent {
     background-color: transparent
 }
@@ -1494,11 +1490,6 @@
 
 .bg-white\/40 {
     background-color: rgb(255 255 255 / 0.4)
-}
-
-.bg-red-700 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1))
 }
 
 .bg-opacity-50 {
@@ -1543,10 +1534,6 @@
 
 .fill-green-700 {
     fill: #15803d
-}
-
-.fill-\[\#22613A\] {
-    fill: #22613A
 }
 
 .object-contain {
@@ -1610,11 +1597,6 @@
 
 .p-\[7px\] {
     padding: 7px
-}
-
-.\!px-1 {
-    padding-left: 4px !important;
-    padding-right: 4px !important
 }
 
 .\!px-3 {
@@ -1725,11 +1707,6 @@
 .py-\[2px\] {
     padding-top: 2px;
     padding-bottom: 2px
-}
-
-.\!px-2 {
-    padding-left: 8px !important;
-    padding-right: 8px !important
 }
 
 .\!pb-3 {
@@ -2162,6 +2139,10 @@
 
 .no-underline {
     text-decoration-line: none
+}
+
+.accent-\[\#22613A\] {
+    accent-color: #22613A
 }
 
 .opacity-50 {
