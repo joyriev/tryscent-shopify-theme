@@ -281,9 +281,9 @@
                   {{- block.settings.text -}}
                 </p>
               {%-  when 'custom_rating_text' -%}
-                <div>
-                  <img src="{{ 'rating-stars.svg' |  asset_url }}" alt="*****" height="" width="">
-                  <div>
+                <div class="flex gap-1 items-center" {{ block.shopify_attributes }}>
+                  <img src="{{ 'rating-stars.svg' |  asset_url }}" alt="*****" height="16" width="80">
+                  <div class="leading-snug tracking-normal">
                     {{ block.settings.text }}
                   </div>
                 </div>
