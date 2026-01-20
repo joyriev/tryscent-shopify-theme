@@ -1273,6 +1273,11 @@
     border-color: rgb(34 97 58 / var(--tw-border-opacity, 1))
 }
 
+.border-red-700 {
+    --tw-border-opacity: 1;
+    border-color: rgb(185 28 28 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1489,6 +1494,11 @@
 
 .bg-white\/40 {
     background-color: rgb(255 255 255 / 0.4)
+}
+
+.bg-red-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1))
 }
 
 .bg-opacity-50 {
@@ -2255,6 +2265,10 @@
 
 .ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.ease-out {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1)
 }
 
 .\[backdrop-filter\:blur\(7px\)\] {

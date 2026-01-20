@@ -12,8 +12,28 @@
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+
+  .pulse {
+    position: relative;
+    animation: pulse 1.6s ease-out infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(237, 39, 0, 0.65);
+    }
+    60% {
+      box-shadow: 0 0 0 10px rgba(237, 39, 0, 0);
+    }
+  }
+</style>
+
 <div class="text-center relative pt-6 !mb-6 border-0 border-b border-gray-200 border-solid">
-  <span class="bg-[#faf9f6] absolute left-1/2 [transform:translateX(-50%)] -bottom-4">❄️ WINTER SALE ❄️</span>
+  <span class="bg-[#faf9f6] absolute left-1/2 [transform:translateX(-50%)] -bottom-4">🎉 New Year New Me 🎉</span>
 </div>
 
 <div x-data class="flex flex-col gap-2">
@@ -105,13 +125,13 @@
   </button>
 
   <div class="pt-6 relative">
-    <div class="absolute top-0 right-2 text-white text-xs leading-snug px-2 py-1 uppercase bg-[#22613A]">Best Value</div>
+    <div class="absolute top-0 right-2 text-white text-xs leading-snug px-2 py-1 uppercase bg-red-700 font-semibold">Best Value</div>
     <button
       @click="$store.bundle.setPackage('buy_3_get_2_free')"
-      class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white w-full rounded-xl"
-      :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-[#22613A]' : 'border-gray-300'">
-      <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-[#22613A]' : 'border-gray-300'">
-        <span x-show="$store.bundle.package === 'buy_3_get_2_free'" class="block size-4 rounded-full bg-[#22613A]"></span>
+      class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white w-full rounded-xl pulse"
+      :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-red-700' : 'border-gray-300'">
+      <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-red-700' : 'border-gray-300'">
+        <span x-show="$store.bundle.package === 'buy_3_get_2_free'" class="block size-4 rounded-full bg-red-700"></span>
       </div>
       <div class="flex-1 space-y-1">
         <div class="flex items-center justify-between">
@@ -183,7 +203,7 @@
 <script>
   document.addEventListener('alpine:init', function() {
   Alpine.store('bundle', {
-    package: 'buy_1',
+    package: 'buy_3_get_2_free',
     addingToCart: false,
     variants: {
       buy_1: [
