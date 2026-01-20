@@ -321,6 +321,10 @@
         
         // Redirect to cart
         window.location.href = cartUrl;
+
+        setTimeout(() => {
+          this.addingToCart = false;
+        }, 10000 );
       }
   });
   });
