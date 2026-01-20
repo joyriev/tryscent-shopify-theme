@@ -32,8 +32,23 @@
   }
 </style>
 
+<div class="[display:grid] grid-cols-2 gap-4 pt-4">
+  <div class="flex items-center gap-2">
+    <div class="size-6 [&>svg]:fill-[#22613A]">
+      {{ 'icon-stopwatch.svg' | inline_asset_content }}
+    </div>
+    <div class="text-sm md:text-lg font-semibold text-black">Long Lasting</div>
+  </div>
+  <div class="flex items-center gap-2">
+    <div class="size-6 [&>svg]:fill-[#22613A]">
+      {{ 'icon-price-tag.svg' | inline_asset_content }}
+    </div>
+    <div class="text-sm md:text-lg font-semibold text-black">At Fraction Cost</div>
+  </div>
+</div>
+
 <div class="text-center relative pt-6 !mb-6 border-0 border-b border-gray-200 border-solid">
-  <span class="bg-[#faf9f6] absolute left-1/2 [transform:translateX(-50%)] -bottom-4">🎉 New Year New Me 🎉</span>
+  <span class="bg-[#faf9f6] absolute left-1/2 [transform:translateX(-50%)] -bottom-4 font-semibold">🎉 New Year New Me 🎉</span>
 </div>
 
 <div x-data class="flex flex-col gap-2">
