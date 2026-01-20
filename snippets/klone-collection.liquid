@@ -172,10 +172,18 @@
   </button>
 </div>
 
+<div class="flex justify-center gap-2 pt-4">
+  {% assign enabled_payment_types = 'visa,master,american_express,paypal,ideal,klarna,google_pay,apple_pay,shopify_pay' | remove: ' ' | split: ','
+  %}
+  {% for type in enabled_payment_types %}
+    {{ type | payment_type_svg_tag: class: 'icon icon--full-color payment-icon-inline' }}
+  {% endfor %}
+</div>
+
 <script>
   document.addEventListener('alpine:init', function() {
   Alpine.store('bundle', {
-    package: 'buy_3_get_2_free',
+    package: 'buy_1',
     addingToCart: false,
     variants: {
       buy_1: [
