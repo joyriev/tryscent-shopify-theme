@@ -20,20 +20,25 @@
   <button
     @click="$store.bundle.setPackage('buy_1')"
     class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white border-gray-300 rounded-xl"
-    :class="$store.bundle.package === 'buy_1' ? 'border-[#0F172A]' : 'border-gray-300'">
-    <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid border-[#0F172A]">
+    :class="$store.bundle.package === 'buy_1' ? 'border-[#22613A]' : 'border-gray-300'">
+    <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_1' ? 'border-[#22613A]' : 'border-gray-300'">
       <span
         x-show="$store.bundle.package === 'buy_1'"
-        class="block size-4 rounded-full bg-[#0F172A]"
+        class="block size-4 rounded-full bg-[#22613A]"
         style="display: none;"></span>
     </div>
-    <div class="text-left space-y-1">
-      <h3 class="my-0 text-base font-semibold">Buy One</h3>
-      <div x-show="$store.bundle.package === 'buy_1'">
+    <div class="space-y-1 flex-1">
+      <div class="flex items-center justify-between">
+        <h3 class="my-0 text-base font-semibold">Buy One</h3>
+        <div class="ml-auto text-right text-xl font-semibold shrink-0">
+          {{ chosen_variant.price | money }}
+        </div>
+      </div>
+      <div class="mt-1" x-show="$store.bundle.package === 'buy_1'">
         <select
           @change="$store.bundle.updateVariant('buy_1', 0, $event.target.value)"
           :value="$store.bundle.variants.buy_1[0]"
-          class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px] block"
+          class="px-2 py-2 w-full border border-gray-200 rounded border-solid block focus:ring-0 focus:outline-none focus:shadow-none"
           name="buy_one">
           {% for product in bundle_collection.products %}
             {% liquid
@@ -50,25 +55,28 @@
         </select>
       </div>
     </div>
-    <div class="ml-auto text-right text-xl font-semibold shrink-0">
-      {{ chosen_variant.price | money }}
-    </div>
   </button>
 
   <button
     @click="$store.bundle.setPackage('buy_2_get_1_free')"
     class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white border-gray-300 rounded-xl"
-    :class="$store.bundle.package === 'buy_2_get_1_free' ? 'border-[#0F172A]' : 'border-gray-300'">
-    <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid border-[#0F172A]">
+    :class="$store.bundle.package === 'buy_2_get_1_free' ? 'border-[#22613A]' : 'border-gray-300'">
+    <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_2_get_1_free' ? 'border-[#22613A]' : 'border-gray-300'">
       <span
         x-show="$store.bundle.package === 'buy_2_get_1_free'"
-        class="block size-4 rounded-full bg-[#0F172A]"
+        class="block size-4 rounded-full bg-[#22613A]"
         style="display: none;"></span>
     </div>
-    <div class="text-left space-y-1">
-      <h3 class="my-0 text-base font-semibold">Buy 2 Get 1 Free
-      </h3>
-      <p class="my-0 text-gray-600">
+    <div class="flex-1 space-y-1">
+      <div class="flex items-center justify-between">
+        <h3 class="my-0 text-base font-semibold">
+          Buy 2 Get 1 Free
+        </h3>
+        <div class="text-xl font-semibold shrink-0">
+          {{ chosen_variant.price | times: 2 | money }}
+        </div>
+      </div>
+      <p class="my-0 text-gray-600 text-left">
         You Save {{ chosen_variant.price | times: 2 | money }}
       </p>
       <div x-show="$store.bundle.package === 'buy_2_get_1_free'" class="space-y-1">
@@ -76,7 +84,7 @@
           <select
             @change="$store.bundle.updateVariant('buy_2_get_1_free', index, $event.target.value)"
             :value="variant"
-            class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px] block">
+            class="px-2 py-2 w-full border border-gray-200 rounded border-solid block focus:ring-0 focus:outline-none focus:shadow-none">
             {% for product in bundle_collection.products %}
               {% liquid
                 assign selected_variant = product.variants.first
@@ -94,24 +102,26 @@
         </template>
       </div>
     </div>
-    <div class="ml-auto text-right text-xl font-semibold shrink-0">
-      {{ chosen_variant.price | times: 2 | money }}
-    </div>
   </button>
 
   <div class="pt-6 relative">
-    <div class="absolute top-0 right-2 text-white text-xs leading-snug px-2 py-1 uppercase bg-[#0F172A]">Best Value</div>
+    <div class="absolute top-0 right-2 text-white text-xs leading-snug px-2 py-1 uppercase bg-[#22613A]">Best Value</div>
     <button
       @click="$store.bundle.setPackage('buy_3_get_2_free')"
-      class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white w-full border-[#0F172A] rounded-xl"
-      :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-[#0F172A]' : 'border-gray-300'">
-      <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid border-[#0F172A]">
-        <span x-show="$store.bundle.package === 'buy_3_get_2_free'" class="block size-4 rounded-full bg-[#0F172A]"></span>
+      class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white w-full rounded-xl"
+      :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-[#22613A]' : 'border-gray-300'">
+      <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-[#22613A]' : 'border-gray-300'">
+        <span x-show="$store.bundle.package === 'buy_3_get_2_free'" class="block size-4 rounded-full bg-[#22613A]"></span>
       </div>
-      <div class="text-left space-y-1">
-        <h3 class="my-0 text-base font-semibold">Buy 3 Get 2 Free
-        </h3>
-        <p class="my-0 text-gray-600">
+      <div class="flex-1 space-y-1">
+        <div class="flex items-center justify-between">
+          <h3 class="my-0 text-base font-semibold">Buy 3 Get 2 Free
+          </h3>
+          <div class="text-xl font-semibold shrink-0">
+            {{ chosen_variant.price | times: 3 | money }}
+          </div>
+        </div>
+        <p class="my-0 text-gray-600 text-left">
           You Save {{ chosen_variant.price | times: 2 | money }}
         </p>
         <div x-show="$store.bundle.package === 'buy_3_get_2_free'" class="space-y-1">
@@ -119,7 +129,7 @@
             <select
               @change="$store.bundle.updateVariant('buy_3_get_2_free', index, $event.target.value)"
               :value="variant"
-              class="!px-1 !h-6 border border-gray-200 rounded border-solid max-w-[200px] block">
+              class="px-2 py-2 w-full border border-gray-200 rounded border-solid block focus:ring-0 focus:outline-none focus:shadow-none">
               {% for product in bundle_collection.products %}
                 {% liquid
                   assign selected_variant = product.variants.first
@@ -136,9 +146,6 @@
             </select>
           </template>
         </div>
-      </div>
-      <div class="ml-auto text-right text-xl font-semibold shrink-0">
-        {{ chosen_variant.price | times: 3 | money }}
       </div>
     </button>
   </div>
