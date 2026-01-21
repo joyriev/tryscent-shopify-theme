@@ -13,26 +13,6 @@
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<style>
-  [x-cloak] {
-    display: none !important;
-  }
-
-  .pulse {
-    position: relative;
-    animation: pulse 1.6s ease-out infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(237, 39, 0, 0.65);
-    }
-    60% {
-      box-shadow: 0 0 0 10px rgba(237, 39, 0, 0);
-    }
-  }
-</style>
-
 <div class="[display:grid] grid-cols-2 gap-4 pt-4">
   <div class="flex items-center gap-2">
     <div class="size-6 [&>svg]:fill-[#22613A]">
@@ -65,8 +45,8 @@
     </div>
     <div class="space-y-1 flex-1">
       <div class="flex items-center justify-between">
-        <h3 class="my-0 text-base font-semibold">Buy One</h3>
-        <div class="ml-auto text-right text-xl font-semibold shrink-0">
+        <h3 class="my-0 text-xl font-semibold">Buy One</h3>
+        <div class="text-xl font-semibold shrink-0">
           {{ chosen_variant.price | money }}
         </div>
       </div>
@@ -105,14 +85,14 @@
     </div>
     <div class="flex-1 space-y-1">
       <div class="flex items-center justify-between">
-        <h3 class="my-0 text-base font-semibold">
+        <h3 class="my-0 text-xl font-semibold">
           Buy 2 Get 1 Free
         </h3>
         <div class="text-xl font-semibold shrink-0">
           {{ chosen_variant.price | times: 2 | money }}
         </div>
       </div>
-      <p class="my-0 text-gray-600 text-left">
+      <p class="my-0 text-base text-left">
         You Save {{ chosen_variant.price | times: 2 | money }}
       </p>
       <div x-show="$store.bundle.package === 'buy_2_get_1_free'" class="space-y-1">
@@ -144,20 +124,20 @@
     <div class="absolute top-0 right-2 text-white text-xs leading-snug px-2 py-1 uppercase bg-red-700 font-semibold">Best Value</div>
     <button
       @click="$store.bundle.setPackage('buy_3_get_2_free')"
-      class="border-2 border-solid cursor-pointer p-3 flex gap-4 bg-white w-full rounded-xl pulse"
+      class="border-[3px] border-solid cursor-pointer p-3 flex gap-4 bg-white w-full rounded-xl"
       :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-red-700' : 'border-gray-300'">
       <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-red-700' : 'border-gray-300'">
         <span x-show="$store.bundle.package === 'buy_3_get_2_free'" class="block size-4 rounded-full bg-red-700"></span>
       </div>
       <div class="flex-1 space-y-1">
         <div class="flex items-center justify-between">
-          <h3 class="my-0 text-base font-semibold">Buy 3 Get 2 Free
+          <h3 class="my-0 text-xl font-semibold">Buy 3 Get 2 Free
           </h3>
           <div class="text-xl font-semibold shrink-0">
             {{ chosen_variant.price | times: 3 | money }}
           </div>
         </div>
-        <p class="my-0 text-gray-600 text-left">
+        <p class="my-0 text-base text-left">
           You Save {{ chosen_variant.price | times: 2 | money }}
         </p>
         <div x-show="$store.bundle.package === 'buy_3_get_2_free'" class="space-y-1">
@@ -203,7 +183,7 @@
         <div class="text-base font-semibold">Add:
           <span class="font-bold">Gift Bag</span>
         </div>
-        <div class="text-gray-600 font-semibold">{{ gift_product.price | money }}</div>
+        <div class="text-base font-semibold">{{ gift_product.price | money }}</div>
       </div>
     </label>
   </div>
