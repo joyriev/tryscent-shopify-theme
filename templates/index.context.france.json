@@ -8,21 +8,17 @@
  * ------------------------------------------------------------
  */
 {
-  "markets": {
-    "sweden": {
-      "parent": "@default"
-    },
-    "de": {
-      "parent": "@default"
-    },
-    "united-kingdom": {
-      "parent": "@default"
-    },
-    "denmark": {
-      "parent": "@default"
-    },
-    "france": {
-      "parent": "@default"
+  "sections": {
+    "home_hero_banner_qmaB3G": {
+      "settings": {
+        "image": "shopify://shop_images/tryscent_banner_v2_pc_french.webp",
+        "mobile_image": "shopify://shop_images/tryscent_banner_v2_pc_french.webp"
+      },
+      "blocks": {}
     }
-  }
+  },
+  "context": {
+    "market": "france"
+  },
+  "parent": "index.json"
 }
