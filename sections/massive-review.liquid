@@ -27,67 +27,82 @@
         <span class="text-sm font-medium text-slate-600">{{ section.settings.review_text }}</span>
       </div>
     </div>
-    <div class="columns-1 sm:columns-2 lg:columns-3 gap-3">
+    <div class="columns-2 lg:columns-3 gap-3">
       {% for block in section.blocks %}
-        <div class="mb-3 break-inside-avoid rounded-lg p-4 bg-white border border-solid border-gray-100" {{ block.shopify_attributes }}>
-          <div class="flex justify-between">
-            <div class="flex items-center gap-3">
-              {% if block.settings.author_image != blank %}
-                <img
-                  class="size-8 rounded-full"
-                  src="{{ block.settings.author_image |  image_url: width: 32, height: 32 }}"
-                  alt="{{ block.settings.author }}"
-                  width="32"
-                  height="32">
-              {% endif %}
-
-              <div class="flex flex-col gap-1">
-                <p class="text-sm font-bold text-slate-900 my-0">{{ block.settings.author | default: "Alex Thompson" }}</p>
-                {% if block.settings.show_verified_badge %}
-                  <div class="flex items-center gap-1 text-xs text-[#297af4] font-medium">
-                    <img
-                      src="{{ 'verified-badge.svg' | asset_url }}"
-                      alt="Verified Buyer"
-                      width="16"
-                      height="16"
-                      loading="lazy">
-                    Verified Buyer
-                  </div>
-                {% endif %}
-              </div>
-            </div>
-            <div class="flex flex-col items-end gap-1">
-              <img
-                src="{{ 'rating-stars.svg' |  asset_url }}"
-                alt="*****"
-                width="80"
-                height="16">
-              <div class="text-xs text-gray-400">{{ block.settings.date | default: "2 days ago" }}</div>
-            </div>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-2">{{ block.settings.title | default: "Absolutely love it!" }}</h3>
-          <div class="text-slate-600 text-sm leading-relaxed">
-            {{ block.settings.content | default: '"The fit is exactly what I was looking for. Shipping was incredibly fast, arrived in 2 days."' }}
-          </div>
-          {% if block.settings.product != blank %}
-            <div class="border-0 border-t border-solid border-gray-100 pt-2">
-              <a href="{{ block.settings.product.url }}" class="flex items-center gap-3">
-                {% if block.settings.product.image != blank %}
+        <div class="mb-3 break-inside-avoid rounded-lg bg-white border border-solid border-gray-100 overflow-hidden" {{ block.shopify_attributes }}>
+          {% if block.settings.review_image != blank %}
+            <img
+              class="w-full h-auto rounded-t-lg"
+              src="{{ block.settings.review_image | image_url: width: 360 }}"
+              alt="{{ block.settings.review_image.alt }}"
+              width="360"
+              height="360">
+          {% endif %}
+          <div class="p-2 md:p-4">
+            <div class="flex flex-wrap gap-2 justify-between">
+              <div class="flex items-center gap-3">
+                {% if block.settings.author_image != blank %}
                   <img
-                    class="size-8 rounded"
-                    src="{{ block.settings.product.image |  image_url: width: 32, height: 32 }}"
-                    alt="{{ block.settings.product.title }}"
-                    width="32"
-                    height="32">
+                    class="size-10 rounded-full [display:none] md:block flex-1"
+                    src="{{ block.settings.author_image |  image_url: width: 40, height: 40 }}"
+                    alt="{{ block.settings.author }}"
+                    width="40"
+                    height="40">
                 {% endif %}
 
                 <div class="flex flex-col gap-1">
-                  <p class="text-sm font-bold text-slate-900 my-0">{{ block.settings.product.title }}</p>
-                  <div>{{ block.settings.product.metafields.custom.inspiration.value.title }}</div>
+                  <p class="text-base font-bold text-slate-900 my-0">{{ block.settings.author | default: "Alex Thompson" }}</p>
+                  {% if block.settings.show_verified_badge %}
+                    <div class="flex items-center gap-1 text-xs text-[#297af4] font-medium">
+                      <img
+                        src="{{ 'verified-badge.svg' | asset_url }}"
+                        alt="Verified Buyer"
+                        width="16"
+                        height="16"
+                        loading="lazy">
+                      Verified Buyer
+                    </div>
+                  {% endif %}
                 </div>
-              </a>
+              </div>
+              <div class="flex flex-col md:items-end gap-1">
+                <div class="flex leading-none">
+                  {% assign rating = block.settings.rating | default: 5 | plus: 0 %}
+                  {% assign empty_stars = 5 | minus: rating %}
+
+                  {% for i in (1..rating) %}
+                    <span class="text-[#ffc109]">★</span>
+                  {% endfor %}
+
+                  {% for i in (1..empty_stars) %}
+                    <span class="text-gray-400">★</span>
+                  {% endfor %}
+                </div>
+
+                <div class="text-xs text-gray-400">{{ block.settings.date }}</div>
+              </div>
             </div>
-          {% endif %}
+            <div class="text-slate-600 text-sm leading-relaxed">
+              {{ block.settings.content }}
+            </div>
+            {% if block.settings.product != blank %}
+              <div class="border-0 border-t border-solid border-gray-100 pt-2">
+                <a href="{{ block.settings.product.url }}" class="flex items-center gap-3 no-underline text-black">
+                  <img
+                    class="size-8 rounded"
+                    src="{{ block.settings.product.images.first |  image_url: width: 32, height: 32 }}"
+                    alt="{{ block.settings.product.title }}"
+                    width="32"
+                    height="32">
+
+                  <div class="flex flex-col">
+                    <p class="text-sm font-bold text-slate-900 my-0 line-clamp-2 md:line-clamp-1">{{ block.settings.product.title }}</p>
+                    <div class="text-xs [display:none] md:block">Inspired By {{ block.settings.product.metafields.custom.inspiration.value.name }}</div>
+                  </div>
+                </a>
+              </div>
+            {% endif %}
+          </div>
         </div>
       {% endfor %}
     </div>
@@ -165,12 +180,6 @@
             "label": "Review Image"
           },
           {
-            "type": "text",
-            "id": "title",
-            "label": "Review Title",
-            "default": "Absolutely love it!"
-          },
-          {
             "type": "richtext",
             "id": "content",
             "label": "Review Content",
@@ -181,7 +190,8 @@
             "id": "author",
             "label": "Author Name",
             "default": "Alex Thompson"
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "author_image",
             "label": "Author Image"
