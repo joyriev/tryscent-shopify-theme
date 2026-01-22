@@ -145,6 +145,30 @@
     top: 2px
 }
 
+.bottom-8 {
+    bottom: 32px
+}
+
+.left-8 {
+    left: 32px
+}
+
+.right-8 {
+    right: 32px
+}
+
+.bottom-4 {
+    bottom: 16px
+}
+
+.left-4 {
+    left: 16px
+}
+
+.right-4 {
+    right: 16px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -1574,6 +1598,11 @@
     background-color: rgb(71 85 105 / var(--tw-bg-opacity, 1))
 }
 
+.bg-slate-400 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(148 163 184 / var(--tw-bg-opacity, 1))
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -2597,6 +2626,12 @@
     padding-bottom: 0px
 }
 
+.hover\:scale-110:hover {
+    --tw-scale-x: 1.1;
+    --tw-scale-y: 1.1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
 .hover\:border-amber-600:hover {
     --tw-border-opacity: 1;
     border-color: rgb(217 119 6 / var(--tw-border-opacity, 1))
@@ -2684,6 +2719,10 @@
 
 .hover\:\[text-decoration\:none\]:hover {
     text-decoration: none
+}
+
+.hover\:\[transform\:scale\(1\.1\)\]:hover {
+    transform: scale(1.1)
 }
 
 .focus\:rounded:focus {
