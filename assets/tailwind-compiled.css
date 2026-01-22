@@ -1569,6 +1569,11 @@
     background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1))
 }
 
+.bg-slate-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(71 85 105 / var(--tw-bg-opacity, 1))
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -2652,6 +2657,10 @@
     background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
 }
 
+.hover\:bg-\[120\%\]:hover {
+    background-position: 120%
+}
+
 .hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
@@ -2667,6 +2676,10 @@
 
 .hover\:opacity-75:hover {
     opacity: 0.75
+}
+
+.hover\:\[background-size\:120\%\]:hover {
+    background-size: 120%
 }
 
 .hover\:\[text-decoration\:none\]:hover {

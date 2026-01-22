@@ -1,0 +1,100 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    {% if section.settings.background_color != blank %}
+      background-color: {{ section.settings.background_color }};
+    {% endif %}
+    {% if section.settings.background_image != blank %}
+      background-image: url('{{ section.settings.background_image | image_url }}');
+    {% endif %}
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<div id="{{ section.id }}" class="section-{{ section.id }}-padding bg-cover bg-center">
+  <div class="page-width">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+      {% for block in section.blocks %}
+        <div {{ block.shopify_attributes }}>
+          <a
+            href="{{ block.settings.link }}"
+            class="bg-slate-600 p-8 w-full aspect-square block no-underline text-black bg-cover bg-center hover:[background-size:120%] transition-all"
+            style="{% if block.settings.image != blank %}background-image: url({{ block.settings.image | image_url }});{% endif %}">
+            <h3>{{ block.settings.text }}</h3>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Home Categories",
+    "class": "home-categories",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fcfbf9"
+      }, {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "category",
+        "name": "Category",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Text"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home Categories"
+      }
+    ]
+  }
+{% endschema %}
