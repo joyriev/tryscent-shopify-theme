@@ -1,0 +1,120 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.id }}"
+  class="section-{{ section.id }}-padding bg-cover bg-center"
+  style="background-color: {{ section.settings.background_color }}; background-image: url('{{ section.settings.background_image | image_url }}');">
+  <div class="page-width">
+    <h2 class="text-3xl md:text-4xl font-black mt-0 !mb-12 text-center">{{ section.settings.title }}</h2>
+    <ul
+      id="product-grid"
+      data-id="{{ section.id }}"
+      style="display: flex !important;"
+      class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+      {% for product in section.settings.collection.products limit: 4 %}
+        <li
+          class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order: {{ forloop.index }};"
+          {% endif %}>
+          {% render 'card-product'
+            , card_product: product
+            , media_aspect_ratio: section.settings.image_ratio
+            , image_shape: section.settings.image_shape
+            , show_secondary_image: section.settings.show_secondary_image
+            , show_vendor: section.settings.show_vendor
+            , show_rating: true
+            , lazy_load: true
+            , skip_styles: false
+            , quick_add: section.settings.quick_add
+            , section_id: section.id
+          %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Popular Products",
+    "class": "popular-products",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fcfbf9"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Popular Products"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      }, {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "View All"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "default": "/collections/all"
+      }, {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 36
+      }
+    ],
+    "presets": [
+      {
+        "name": "Popular Products"
+      }
+    ]
+  }
+{% endschema %}

@@ -267,6 +267,11 @@
     margin-bottom: 32px
 }
 
+.my-3 {
+    margin-top: 12px;
+    margin-bottom: 12px
+}
+
 .\!mb-0 {
     margin-bottom: 0px !important
 }
@@ -431,6 +436,14 @@
     margin-top: 44px
 }
 
+.\!mb-12 {
+    margin-bottom: 48px !important
+}
+
+.mt-auto {
+    margin-top: auto
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -443,6 +456,13 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3
 }
 
 .\!block {
@@ -1759,6 +1779,11 @@
 .py-\[2px\] {
     padding-top: 2px;
     padding-bottom: 2px
+}
+
+.\!px-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important
 }
 
 .\!pb-3 {
@@ -3245,6 +3270,10 @@
     content: var(--tw-content);
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity, 1))
+}
+
+.\[\&_br\]\:hidden br {
+    display: none
 }
 
 .\[\&_img\]\:rounded-xl img {
