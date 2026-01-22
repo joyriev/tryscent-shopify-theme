@@ -1331,6 +1331,11 @@
     border-color: rgb(15 23 42 / var(--tw-border-opacity, 1))
 }
 
+.border-black {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -3278,6 +3283,14 @@
 
 .\[\&_img\]\:rounded-xl img {
     border-radius: 12px
+}
+
+.\[\&_p\:first-child\]\:mt-0 p:first-child {
+    margin-top: 0px
+}
+
+.\[\&_p\:last-child\]\:mb-0 p:last-child {
+    margin-bottom: 0px
 }
 
 .\[\&_p\]\:\!m-0 p {

@@ -21,7 +21,15 @@
 
 <div id="{{ section.id }}" class="section-{{ section.id }}-padding bg-cover bg-center">
   <div class="page-width">
-    <h2 class="text-3xl md:text-4xl font-black mt-0 !mb-12 text-center">{{ section.settings.title }}</h2>
+    <div class="flex justify-between items-center mb-6">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black my-0">{{ section.settings.title }}</h2>
+        <div class="[&_p:first-child]:mt-0 [&_p:last-child]:mb-0">
+          {{ section.settings.description }}
+        </div>
+      </div>
+      <a href="{{ section.settings.button_link }}" class="no-underline text-black border-2 border-solid border-black px-6 py-2">{{ section.settings.button_text }}</a>
+    </div>
     <ul
       id="product-grid"
       data-id="{{ section.id }}"
