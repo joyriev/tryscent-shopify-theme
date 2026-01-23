@@ -1,28 +1,27 @@
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-    {% if section.settings.background_image != blank %}
-      background-image: url("{{ section.settings.background_image | image_url: width: 1920 }}");
+    padding-top: {{ section.settings.mobile_padding_top }}px;
+    padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    {% if section.settings.mobile_background_image != blank %}
+      background-image: url("{{ section.settings.mobile_background_image | image_url: width: 1920 }}");
     {% endif %}
     {% if section.settings.background_color != blank %}
       background-color: {{ section.settings.background_color }};
     {% endif %}
-
   }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+      {% if section.settings.background_image != blank %}
+        background-image: url("{{ section.settings.background_image | image_url: width: 1920 }}");
+      {% endif %}
     }
   }
 {%- endstyle -%}
 
-<div
-  id="{{ section.id }}"
-  class="section-{{ section.id }}-padding"
-  style="background-color: {{ section.settings.background_color }}">
+<div id="{{ section.id }}" class="section-{{ section.id }}-padding bg-cover bg-center">
   <div class="page-width">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 itm">
       <div class="flex flex-col justify-center items-center text-center [&>*]:m-0 gap-6 md:px-10">
@@ -88,18 +87,20 @@
           </svg>
           <span class="uppercase text-white text-center">{{ section.settings.review_text }}</span>
         </div>
-        <h1 class="text-3xl md:text-4xl font-black tracking-tight leading-snug text-white">{{ section.settings.title }}</h1>
-        <p class="text-lg font-medium text-gray-400">{{ section.settings.subtitle }}</p>
-        <a href="{{ section.settings.button_link }}" class="bg-[#137c44] text-white uppercase font-semibold no-underline px-12 py-3 text-lg rounded-full">{{ section.settings.button_text }}</a>
+        <h1 class="text-3xl md:text-4xl font-black tracking-tight leading-snug">{{ section.settings.title }}</h1>
+        <p class="text-lg font-medium text-gray-700">{{ section.settings.subtitle }}</p>
+        <a href="{{ section.settings.button_link }}" class="bg-[#137c44] text-white uppercase tracking-wide font-medium no-underline px-6 py-3 text-lg rounded-full min-w-[300px]">{{ section.settings.button_text }}</a>
       </div>
       <div class="text-center">
-        <img
-          class="max-w-full h-auto"
-          src="{{ section.settings.image | image_url: width: 450 }}"
-          fetchpriority="high"
-          alt="Hero Image"
-          width="450"
-          height="450">
+        {% if section.settings.image != blank %}
+          <img
+            class="max-w-full h-auto"
+            src="{{ section.settings.image | image_url: width: 450 }}"
+            fetchpriority="high"
+            alt="Hero Image"
+            width="450"
+            height="450">
+        {% endif %}
       </div>
     </div>
   </div>
@@ -123,10 +124,14 @@
       },
       {
         "type": "image_picker",
-        "id": "image",
-        "label": "Image"
+        "id": "mobile_background_image",
+        "label": "Mobile Background Image"
       },
       {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }, {
         "type": "text",
         "id": "review_text",
         "label": "Review Text",
@@ -166,7 +171,7 @@
         "type": "range",
         "id": "padding_top",
         "min": 0,
-        "max": 100,
+        "max": 400,
         "step": 4,
         "unit": "px",
         "label": "t:sections.all.padding.padding_top",
@@ -175,10 +180,28 @@
         "type": "range",
         "id": "padding_bottom",
         "min": 0,
-        "max": 100,
+        "max": 400,
         "step": 4,
         "unit": "px",
         "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 400,
+        "step": 4,
+        "unit": "px",
+        "label": "Mobile Padding Top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 400,
+        "step": 4,
+        "unit": "px",
+        "label": "Mobile Padding Bottom",
         "default": 36
       }
     ],
