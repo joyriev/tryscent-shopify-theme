@@ -22,7 +22,7 @@
     <div class="[display:grid] grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
       {% for block in section.blocks %}
         <div class="mb-3 rounded-lg bg-white border border-solid border-gray-100 overflow-hidden" {{ block.shopify_attributes }}>
-          <div class="p-2 md:p-4">
+          <div class="p-4">
             <div class="flex flex-wrap gap-2 justify-between mb-4">
               <div class="flex leading-none">
                 {% assign rating = block.settings.rating | default: 5 | plus: 0 %}
