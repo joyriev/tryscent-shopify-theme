@@ -2,6 +2,13 @@
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    {% if section.settings.background_image != blank %}
+      background-image: url("{{ section.settings.background_image | image_url: width: 1920 }}");
+    {% endif %}
+    {% if section.settings.background_color != blank %}
+      background-color: {{ section.settings.background_color }};
+    {% endif %}
+
   }
 
   @media screen and (min-width: 750px) {
@@ -83,12 +90,7 @@
         </div>
         <h1 class="text-3xl md:text-4xl font-black tracking-tight leading-snug text-white">{{ section.settings.title }}</h1>
         <p class="text-lg font-medium text-gray-400">{{ section.settings.subtitle }}</p>
-        {% comment %} <div class="grid grid-cols-2 gap-4">
-                    <a href="https://tryscent.co/collections/man" class="bg-[#137c44] text-white uppercase leading-snug tracking-tight no-underline px-4 md:px-6 py-3 text-sm md:text-base rounded-full">Save 90% on <br> Men's Perfume</a>
-                    <a href="https://tryscent.co/pages/build-your-bundle" class="bg-[#137c44] text-white uppercase leading-snug tracking-tight no-underline px-4 md:px-6 py-3 text-sm md:text-base rounded-full">Buy 2 <br> Get 1 FREE</a>
-                </div> {% endcomment %}
-        <a href="{{ section.settings.button_link }}" class="bg-[#137c44] text-white uppercase font-semibold no-underline px-6 py-3 text-lg rounded-full">{{ section.settings.button_text }}</a>
-      {% comment %} <a href="{{ section.settings.secondary_button_link }}" class="text-gray-200 uppercase font-semibold">{{ section.settings.secondary_button_text }}</a> {% endcomment %}
+        <a href="{{ section.settings.button_link }}" class="bg-[#137c44] text-white uppercase font-semibold no-underline px-12 py-3 text-lg rounded-full">{{ section.settings.button_text }}</a>
       </div>
       <div class="text-center">
         <img
@@ -116,6 +118,11 @@
       },
       {
         "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
         "id": "image",
         "label": "Image"
       },
@@ -124,8 +131,7 @@
         "id": "review_text",
         "label": "Review Text",
         "default": "LOVED BY 10,000 CUSTOMERS"
-      },
-      {
+      }, {
         "type": "text",
         "id": "title",
         "label": "Title",
