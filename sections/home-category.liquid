@@ -21,14 +21,14 @@
 
 <div id="{{ section.id }}" class="section-{{ section.id }}-padding bg-cover bg-center">
   <div class="page-width">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
       {% for block in section.blocks %}
         <div {{ block.shopify_attributes }}>
           <a href="{{ block.settings.link }}" class="relative overflow-hidden bg-slate-400 p-8 w-full aspect-square block no-underline text-black rounded-lg">
             {% if block.settings.image != blank %}
               <span class="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out hover:[transform:scale(1.1)]" style="background-image: url({{ block.settings.image | image_url: width: 450 }});"></span>
             {% endif %}
-            <h3 class="my-0 absolute left-8 bottom-8 right-8 z-10 text-center text-2xl font-bold bg-white px-4 py-3 shadow-xl">
+            <h3 class="my-0 absolute left-4 bottom-4 right-4 z-10 text-center text-lg font-bold bg-white py-2 shadow-xl">
               {{ block.settings.text }}
             </h3>
           </a>
