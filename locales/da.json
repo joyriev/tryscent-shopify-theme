@@ -583,6 +583,9 @@
       },
       "offsite_payment_failed": {
         "title": "Offsite-betaling mislykkedes"
+      },
+      "shop_policies": {
+        "terms_and_policies": "Vilkår og retningslinjer"
       }
     }
   },
@@ -628,7 +631,60 @@
         "errors": {
           "generic": "Der opstod et problem med PayPal. Prøv igen, eller brug en anden betalingsmetode."
         }
+      },
+      "add_payment_method": {
+        "subscription_contracts": {
+          "title": "Brug betalingsmetode til tilbagevendende ordrer",
+          "more_items": {
+            "one": "{{count}} flere produkter",
+            "other": "{{count}} flere produkter"
+          },
+          "product_count": {
+            "one": "{{count}} produkt",
+            "other": "{{count}} produkter"
+          },
+          "product_details": "Produktdetaljer",
+          "load_more": "Indlæs mere"
+        },
+        "updating_contracts": {
+          "one": "Opdaterer {{count}} abonnementsaftale...",
+          "other": "Opdaterer {{count}} abonnementsaftaler..."
+        },
+        "contracts_updated": {
+          "one": "Opdaterede {{count}} abonnementsaftale med succes",
+          "other": "Opdaterede {{count}} abonnementsaftaler med succes"
+        },
+        "contracts_update_failed": "Kunne ikke opdatere nogle abonnementsaftaler",
+        "subscription_contracts_updated": "Opdateret {{succeeded}} af {{total}} abonnementer",
+        "invalid_wallet_type_error": "Ugyldig tegnetype."
       }
+    },
+    "account_menu": {
+      "aria_labels": {
+        "close_menu": "Luk menu",
+        "back_to_main_menu": "Tilbage til hovedmenuen fra {{title}}",
+        "open_submenu": "{{title}}, åbner undermenu",
+        "loading_menu": "Indlæser menu",
+        "account": "Konto",
+        "sign_in_with_email": "Log ind med e-mail",
+        "sign_in": "Log ind"
+      }
+    },
+    "B2B": {
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "description_due_on_fulfillment_partially_paid_next": "Denne ordre blev delvist betalt. Du har en resterende saldo."
+          },
+          "due_date": "Forfalden {{date}}",
+          "total_balance": "Samlet saldo"
+        }
+      }
+    },
+    "errors": {
+      "not_upgraded": "Kundekonti opgraderes ikke.",
+      "failed_to_revert": "Kunne ikke gendanne kundekontoindstillinger.",
+      "revert_window_expired": "Fortrydelsesvinduet er udløbet."
     }
   }
 }
