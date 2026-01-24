@@ -352,7 +352,7 @@
       "each": "{{ money }}/stk",
       "product": "Produkt",
       "variant": "Variant",
-      "variant_total": "Variant i alt",
+      "variant_total": "Variant samlet",
       "items_added": {
         "one": "{{ quantity }} vare tilføjet",
         "other": "{{ quantity }} varer tilføjet"
@@ -362,14 +362,14 @@
         "other": "{{ quantity }} varer fjernet"
       },
       "product_variants": "Produktvarianter",
-      "total_items": "Varer i alt",
-      "remove_all_items_confirmation": "Vil du fjerne alle {{ quantity }} varer fra din indkøbskurv?",
+      "total_items": "Samlede varer",
+      "remove_all_items_confirmation": "Fjern alle {{ quantity }} varer fra din indkøbskurv?",
       "remove_all": "Fjern alle",
       "cancel": "Annuller",
-      "remove_all_single_item_confirmation": "Vil du fjerne 1 vare fra din indkøbskurv?",
-      "min_error": "Denne vare har en minimumsgrænse på {{ min }}",
-      "max_error": "Denne vare har en maksimumgrænse på {{ max }}",
-      "step_error": "Du kan kun tilføje denne vare i intervaller på {{ step }}"
+      "remove_all_single_item_confirmation": "Fjern 1 vare fra din indkøbskurv?",
+      "min_error": "Denne vare har et minimum på {{ min }}",
+      "max_error": "Denne vare har et maksimum på {{ max }}",
+      "step_error": "Du kan kun tilføje denne vare i intervaller af {{ step }}"
     }
   },
   "localization": {
