@@ -270,55 +270,54 @@
       "disabled": true,
       "settings": {}
     },
-    "marquee_labels_dpeY47": {
-      "type": "marquee-labels",
+    "feature_highlights_F49xPK": {
+      "type": "feature-highlights",
       "blocks": {
-        "label_4MQ8mr": {
-          "type": "label",
-          "disabled": true,
+        "perks_DPGCpd": {
+          "type": "perks",
           "settings": {
-            "icon": "shopify://shop_images/fast-delivery-truck-van-svgrepo-com.svg",
-            "label": "FREE SHIPPING ON ORDERS ABOVE $50"
+            "perk_image": "shopify://shop_images/icons_eu.webp",
+            "perk_title": "Made in the EU",
+            "perk_content": "Vegan, cruelty-free, and made in the EU."
           }
         },
-        "label_HET6Xn": {
-          "type": "label",
+        "perks_EWQVaW": {
+          "type": "perks",
           "settings": {
-            "icon": "shopify://shop_images/save-pound-svgrepo-com.svg",
-            "label": "SAVE UPTO 50% OFF WITH OUR BUNDLES & GIFT SETS"
+            "perk_image": "shopify://shop_images/icons_quality.webp",
+            "perk_title": "French Quality Standard",
+            "perk_content": "Crafted with the same attention to detail as designer brands."
           }
         },
-        "label_h4yRgb": {
-          "type": "label",
+        "perks_DrmURb": {
+          "type": "perks",
           "settings": {
-            "icon": "shopify://shop_images/verified-svgrepo-com.svg",
-            "label": "100% AUTHENTIC"
+            "perk_image": "shopify://shop_images/icons_guarantee.webp",
+            "perk_title": "Money-Back Guarantee",
+            "perk_content": "We accept products back within 60 days for a refund."
           }
         },
-        "label_REjpje": {
-          "type": "label",
+        "perks_CTzfGb": {
+          "type": "perks",
           "settings": {
-            "icon": "shopify://shop_images/achievement-svgrepo-com.svg",
-            "label": "EXPERT-CURATED COLLECTIONS"
-          }
-        },
-        "label_BAYHU7": {
-          "type": "label",
-          "settings": {
-            "icon": "shopify://shop_images/money-back-business-warranty-satisfaction-marketing-guaranted-svgrepo-com.svg",
-            "label": "RISK-FREE 60 DAYS MONEY BACK GUARANTEE"
+            "perk_image": "shopify://shop_images/icons_time.webp",
+            "perk_title": "Long-Lasting",
+            "perk_content": "Lasts for 12+ hours (some say longer)."
           }
         }
       },
       "block_order": [
-        "label_4MQ8mr",
-        "label_HET6Xn",
-        "label_h4yRgb",
-        "label_REjpje",
-        "label_BAYHU7"
+        "perks_DPGCpd",
+        "perks_EWQVaW",
+        "perks_DrmURb",
+        "perks_CTzfGb"
       ],
-      "name": "Marquee Labels",
-      "settings": {}
+      "name": "Feature Highlights",
+      "settings": {
+        "background_color": "#ffffff",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "cupid-video-reviews": {
       "type": "cupid-video-reviews",
@@ -1022,7 +1021,7 @@
   "order": [
     "main",
     "pdp_bundle_builder",
-    "marquee_labels_dpeY47",
+    "feature_highlights_F49xPK",
     "cupid-video-reviews",
     "scent_breakdown_rG4H3T",
     "stacks_up_xtpACd",
