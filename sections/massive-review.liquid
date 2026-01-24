@@ -10,7 +10,41 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .review-item {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .loading-spinner {
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid #1f2937;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
 {%- endstyle -%}
+
 <div
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
@@ -27,9 +61,12 @@
         <span class="text-sm font-medium text-slate-600">{{ section.settings.review_text }}</span>
       </div>
     </div>
-    <div class="columns-2 lg:columns-3 gap-3">
+    <div id="reviews-container-{{ section.id }}" class="columns-2 lg:columns-3 gap-3">
       {% for block in section.blocks %}
-        <div class="mb-3 break-inside-avoid rounded-lg bg-white border border-solid border-gray-100 overflow-hidden" {{ block.shopify_attributes }}>
+        <div
+          class="review-item mb-3 break-inside-avoid rounded-lg bg-white border border-solid border-gray-100 overflow-hidden {% if forloop.index > 20 %}hidden{% endif %}"
+          data-review-index="{{ forloop.index }}"
+          {{ block.shopify_attributes }}>
           {% if block.settings.review_image != blank %}
             <img
               class="w-full h-auto rounded-t-lg"
@@ -106,13 +143,74 @@
         </div>
       {% endfor %}
     </div>
-  {% comment %} <div class="mt-12 text-center">
-          <a href="{{ section.settings.button_link }}" class="px-8 py-3 border-2 border-solid border-slate-900 no-underline text-slate-900 font-bold text-sm uppercase tracking-wide hover:bg-slate-900 hover:text-white transition-colors">
-            {{ section.settings.button_text }}
-          </a>
-      </div> {% endcomment %}
+    <div id="load-more-container-{{ section.id }}" class="mt-12 text-center {% if section.blocks.size <= 20 %}hidden{% endif %}">
+      <button id="load-more-btn-{{ section.id }}" class="px-5 py-2 border border-solid border-gray-400 rounded-lg text-slate-900 font-bold text-sm uppercase tracking-wide bg-white hover:bg-slate-900 hover:text-white transition-colors cursor-pointer">
+        Show More Reviews
+      </button>
+      <div id="loading-spinner-{{ section.id }}" class="hidden flex items-center justify-center gap-2 mt-4">
+        <div class="loading-spinner"></div>
+        <span class="text-sm text-slate-600">Loading reviews...</span>
+      </div>
+    </div>
   </div>
 </div>
+
+<script>
+  (function() {
+  const sectionId = '{{ section.id }}';
+  const btn = document.getElementById(`load-more-btn-${sectionId}`);
+  const spinner = document.getElementById(`loading-spinner-${sectionId}`);
+  const container = document.getElementById(`reviews-container-${sectionId}`);
+  const loadMoreContainer = document.getElementById(`load-more-container-${sectionId}`);
+  
+  let currentlyShowing = 20;
+  const totalReviews = {{ section.blocks.size }};
+  const reviewsPerLoad = 10;
+
+  if (btn) {
+    btn.addEventListener('click', function() {
+      // Hide button and show spinner
+      btn.classList.add('hidden');
+      spinner.classList.remove('hidden');
+
+      // Simulate AJAX delay
+      setTimeout(function() {
+        const reviews = container.querySelectorAll('.review-item');
+        const nextBatch = currentlyShowing + reviewsPerLoad;
+        
+        // Show next batch of reviews
+        for (let i = currentlyShowing; i < Math.min(nextBatch, totalReviews); i++) {
+          if (reviews[i]) {
+            reviews[i].classList.remove('hidden');
+          }
+        }
+
+        currentlyShowing = Math.min(nextBatch, totalReviews);
+
+        // Hide spinner
+        spinner.classList.add('hidden');
+
+        // Show or hide the button based on remaining reviews
+        if (currentlyShowing < totalReviews) {
+          btn.classList.remove('hidden');
+        } else {
+          loadMoreContainer.classList.add('hidden');
+        }
+
+        // Smooth scroll to first new review
+        if (reviews[currentlyShowing - reviewsPerLoad]) {
+          setTimeout(() => {
+            reviews[currentlyShowing - reviewsPerLoad].scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'nearest' 
+            });
+          }, 100);
+        }
+      }, 800); // 800ms delay to simulate network request
+    });
+  }
+  })();
+</script>
 
 {% schema %}
   {
