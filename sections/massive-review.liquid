@@ -10,7 +10,64 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .review-item {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .loading-spinner {
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid #1f2937;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .masonry-container {
+    position: relative;
+  }
+
+  .masonry-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .masonry-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 {%- endstyle -%}
+
 <div
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
@@ -27,9 +84,13 @@
         <span class="text-sm font-medium text-slate-600">{{ section.settings.review_text }}</span>
       </div>
     </div>
-    <div class="columns-2 lg:columns-3 gap-3">
+
+    <div id="reviews-source-{{ section.id }}" class="hidden">
       {% for block in section.blocks %}
-        <div class="mb-3 break-inside-avoid rounded-lg bg-white border border-solid border-gray-100 overflow-hidden" {{ block.shopify_attributes }}>
+        <div
+          class="review-item rounded-lg bg-white border border-solid border-gray-100 overflow-hidden"
+          data-review-index="{{ forloop.index }}"
+          {{ block.shopify_attributes }}>
           {% if block.settings.review_image != blank %}
             <img
               class="w-full h-auto rounded-t-lg"
@@ -106,13 +167,158 @@
         </div>
       {% endfor %}
     </div>
-    <div class="mt-12 text-center">
-      <a href="{{ section.settings.button_link }}" class="px-8 py-3 border-2 border-solid border-slate-900 no-underline text-slate-900 font-bold text-sm uppercase tracking-wide hover:bg-slate-900 hover:text-white transition-colors">
-        {{ section.settings.button_text }}
-      </a>
+
+    <div id="reviews-container-{{ section.id }}" class="masonry-grid masonry-container"></div>
+
+    <div id="load-more-container-{{ section.id }}" class="mt-12 text-center {% if section.blocks.size <= 20 %}hidden{% endif %}">
+      <button id="load-more-btn-{{ section.id }}" class="px-5 py-2 border border-solid border-gray-400 rounded-lg text-slate-900 font-bold text-sm uppercase tracking-wide bg-white hover:bg-slate-900 hover:text-white transition-colors cursor-pointer">
+        Show More Reviews
+      </button>
+      <div id="loading-spinner-{{ section.id }}" class="hidden flex items-center justify-center gap-2 mt-4">
+        <div class="loading-spinner"></div>
+        <span class="text-sm text-slate-600">Loading reviews...</span>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  (function() {
+  const sectionId = '{{ section.id }}';
+  const btn = document.getElementById(`load-more-btn-${sectionId}`);
+  const spinner = document.getElementById(`loading-spinner-${sectionId}`);
+  const container = document.getElementById(`reviews-container-${sectionId}`);
+  const sourceContainer = document.getElementById(`reviews-source-${sectionId}`);
+  const loadMoreContainer = document.getElementById(`load-more-container-${sectionId}`);
+  
+  let currentlyShowing = 0;
+  const totalReviews = {{ section.blocks.size }};
+  const initialLoad = 20;
+  
+  let columns = [];
+  let columnHeights = [];
+  let numColumns = window.innerWidth >= 1024 ? 3 : 2;
+
+  // Initialize columns
+  function initColumns() {
+    container.innerHTML = '';
+    columns = [];
+    columnHeights = [];
+    numColumns = window.innerWidth >= 1024 ? 3 : 2;
+    
+    for (let i = 0; i < numColumns; i++) {
+      const col = document.createElement('div');
+      col.className = 'masonry-column';
+      container.appendChild(col);
+      columns.push(col);
+      columnHeights.push(0);
+    }
+  }
+
+  // Get shortest column index
+  function getShortestColumnIndex() {
+    let minHeight = columnHeights[0];
+    let minIndex = 0;
+    
+    for (let i = 1; i < columnHeights.length; i++) {
+      if (columnHeights[i] < minHeight) {
+        minHeight = columnHeights[i];
+        minIndex = i;
+      }
+    }
+    
+    return minIndex;
+  }
+
+  // Add reviews to masonry layout
+  function addReviews(count) {
+    const allReviews = sourceContainer.querySelectorAll('.review-item');
+    const end = Math.min(currentlyShowing + count, totalReviews);
+    
+    for (let i = currentlyShowing; i < end; i++) {
+      if (allReviews[i]) {
+        const clone = allReviews[i].cloneNode(true);
+        clone.style.opacity = '0';
+        
+        // Get the shortest column
+        const shortestIndex = getShortestColumnIndex();
+        columns[shortestIndex].appendChild(clone);
+        
+        // Force a reflow to get accurate height
+        clone.offsetHeight;
+        
+        // Update the height tracking (approximate)
+        const cardHeight = clone.offsetHeight || 300; // fallback height
+        columnHeights[shortestIndex] += cardHeight + 12; // 12px is the gap
+        
+        // Trigger fade in
+        setTimeout(() => {
+          clone.style.opacity = '';
+        }, 10);
+      }
+    }
+    
+    currentlyShowing = end;
+    
+    // Recalculate actual heights after all cards are added
+    setTimeout(() => {
+      for (let i = 0; i < columns.length; i++) {
+        columnHeights[i] = columns[i].offsetHeight;
+      }
+    }, 100);
+  }
+
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      const newNumColumns = window.innerWidth >= 1024 ? 3 : 2;
+      if (newNumColumns !== numColumns) {
+        const tempShowing = currentlyShowing;
+        currentlyShowing = 0;
+        initColumns();
+        addReviews(tempShowing);
+      }
+    }, 250);
+  });
+
+  // Initial load
+  initColumns();
+  addReviews(initialLoad);
+
+  // Load more button
+  if (btn) {
+    btn.addEventListener('click', function() {
+      btn.classList.add('hidden');
+      spinner.classList.remove('hidden');
+
+      setTimeout(function() {
+        addReviews(10);
+        
+        spinner.classList.add('hidden');
+
+        if (currentlyShowing < totalReviews) {
+          btn.classList.remove('hidden');
+        } else {
+          loadMoreContainer.classList.add('hidden');
+        }
+
+        // Smooth scroll
+        // const allCards = container.querySelectorAll('.review-item');
+        // if (allCards[currentlyShowing - 10]) {
+        //   setTimeout(() => {
+        //     allCards[currentlyShowing - 10].scrollIntoView({ 
+        //       behavior: 'smooth', 
+        //       block: 'nearest' 
+        //     });
+        //   }, 100);
+        // }
+      }, 800);
+    });
+  }
+  })();
+</script>
 
 {% schema %}
   {
