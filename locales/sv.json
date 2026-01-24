@@ -273,7 +273,7 @@
   },
   "sections": {
     "header": {
-      "announcement": "Meddelande",
+      "announcement": "Tillkännagivande",
       "menu": "Meny",
       "cart_count": {
         "one": "{{ count }} artikel",
@@ -281,28 +281,28 @@
       }
     },
     "cart": {
-      "title": "Din varukorg",
+      "title": "Din kundvagn",
       "caption": "Varukorgsartiklar",
       "remove_title": "Ta bort {{ title }}",
       "note": "Beställ särskilda instruktioner",
-      "checkout": "Gå till kassan",
-      "empty": "Din varukorg är tom",
-      "cart_error": "Ett fel uppstod när du uppdaterade din varukorg. Försök igen.",
-      "cart_quantity_error_html": "Du kan endast lägga till {{ quantity }} av denna artikel i din varukorg.",
+      "checkout": "Kolla in",
+      "empty": "Din kundvagn är tom",
+      "cart_error": "Det uppstod ett fel när din kundvagn skulle uppdateras. Vänligen försök igen.",
+      "cart_quantity_error_html": "Du kan bara lägga till {{ quantity }} av denna artikel i din kundvagn.",
       "headings": {
         "product": "Produkt",
         "price": "Pris",
         "total": "Totalt",
-        "quantity": "Kvantitet",
+        "quantity": "Antal",
         "image": "Produktbild"
       },
       "update": "Uppdatera",
       "login": {
         "title": "Har du ett konto?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logga in</a> för att gå till kassan snabbare."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logga in</a> för att handla snabbare."
       },
-      "estimated_total": "Beräknad totalsumma",
-      "new_estimated_total": "Nytt beräknat totalbelopp"
+      "estimated_total": "Beräknad total",
+      "new_estimated_total": "Ny beräknad total"
     },
     "footer": {
       "payment": "Betalningsmetoder"
@@ -310,17 +310,17 @@
     "featured_blog": {
       "view_all": "Visa alla",
       "onboarding_title": "Blogginlägg",
-      "onboarding_content": "Ge en sammanfattning av dina bloggposter till dina kunder"
+      "onboarding_content": "Ge dina kunder en sammanfattning av ditt blogginlägg"
     },
     "featured_collection": {
       "view_all": "Visa alla",
-      "view_all_label": "Visa alla produkter i produktserien {{ collection_name }}"
+      "view_all_label": "Visa alla produkter i {{ collection_name }}-samlingen"
     },
     "collection_list": {
       "view_all": "Visa alla"
     },
     "collection_template": {
-      "title": "Produktserie",
+      "title": "Kollektion",
       "empty": "Inga produkter hittades",
       "use_fewer_filters_html": "Använd färre filter eller <a class=\"{{ class }}\" href=\"{{ link }}\">ta bort alla</a>"
     },
@@ -328,28 +328,28 @@
       "load_video": "Ladda video: {{ description }}"
     },
     "slideshow": {
-      "load_slide": "Ladda bild",
+      "load_slide": "Ladda bildspel",
       "previous_slideshow": "Föregående bild",
       "next_slideshow": "Nästa bild",
-      "pause_slideshow": "Pausa bildspelet",
+      "pause_slideshow": "Pausa bildspel",
       "play_slideshow": "Spela bildspel",
       "carousel": "Karusell",
-      "slide": "Bild"
+      "slide": "Bildspel"
     },
     "page": {
-      "title": "Sidrubrik"
+      "title": "Sidtitel"
     },
     "announcements": {
-      "previous_announcement": "Tidigare meddelande",
-      "next_announcement": "Kommande meddelande",
+      "previous_announcement": "Föregående meddelande",
+      "next_announcement": "Nästa tillkännagivande",
       "carousel": "Karusell",
-      "announcement": "Meddelande",
+      "announcement": "Tillkännagivande",
       "announcement_bar": "Meddelandefält"
     },
     "quick_order_list": {
-      "product_total": "Delsumma för produkt",
-      "view_cart": "Visa varukorg",
-      "each": "{{ money }}/st.",
+      "product_total": "Produktdelsumma",
+      "view_cart": "Visa kundvagn",
+      "each": "{{ money }}/st",
       "product": "Produkt",
       "variant": "Variant",
       "variant_total": "Totalbelopp för variant",
