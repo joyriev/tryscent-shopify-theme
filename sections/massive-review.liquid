@@ -196,16 +196,6 @@
         } else {
           loadMoreContainer.classList.add('hidden');
         }
-
-        // Smooth scroll to first new review
-        if (reviews[currentlyShowing - reviewsPerLoad]) {
-          setTimeout(() => {
-            reviews[currentlyShowing - reviewsPerLoad].scrollIntoView({ 
-              behavior: 'smooth', 
-              block: 'nearest' 
-            });
-          }, 100);
-        }
       }, 800); // 800ms delay to simulate network request
     });
   }
