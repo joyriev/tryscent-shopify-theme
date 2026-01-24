@@ -43,6 +43,29 @@
   .hidden {
     display: none;
   }
+
+  .masonry-container {
+    position: relative;
+  }
+
+  .masonry-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .masonry-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 {%- endstyle -%}
 
 <div
@@ -61,10 +84,11 @@
         <span class="text-sm font-medium text-slate-600">{{ section.settings.review_text }}</span>
       </div>
     </div>
-    <div id="reviews-container-{{ section.id }}" class="columns-2 lg:columns-3 gap-3">
+
+    <div id="reviews-source-{{ section.id }}" class="hidden">
       {% for block in section.blocks %}
         <div
-          class="review-item mb-3 break-inside-avoid rounded-lg bg-white border border-solid border-gray-100 overflow-hidden {% if forloop.index > 20 %}hidden{% endif %}"
+          class="review-item rounded-lg bg-white border border-solid border-gray-100 overflow-hidden"
           data-review-index="{{ forloop.index }}"
           {{ block.shopify_attributes }}>
           {% if block.settings.review_image != blank %}
@@ -143,6 +167,9 @@
         </div>
       {% endfor %}
     </div>
+
+    <div id="reviews-container-{{ section.id }}" class="masonry-grid masonry-container"></div>
+
     <div id="load-more-container-{{ section.id }}" class="mt-12 text-center {% if section.blocks.size <= 20 %}hidden{% endif %}">
       <button id="load-more-btn-{{ section.id }}" class="px-5 py-2 border border-solid border-gray-400 rounded-lg text-slate-900 font-bold text-sm uppercase tracking-wide bg-white hover:bg-slate-900 hover:text-white transition-colors cursor-pointer">
         Show More Reviews
@@ -161,42 +188,133 @@
   const btn = document.getElementById(`load-more-btn-${sectionId}`);
   const spinner = document.getElementById(`loading-spinner-${sectionId}`);
   const container = document.getElementById(`reviews-container-${sectionId}`);
+  const sourceContainer = document.getElementById(`reviews-source-${sectionId}`);
   const loadMoreContainer = document.getElementById(`load-more-container-${sectionId}`);
   
-  let currentlyShowing = 20;
+  let currentlyShowing = 0;
   const totalReviews = {{ section.blocks.size }};
-  const reviewsPerLoad = 10;
+  const initialLoad = 20;
+  
+  let columns = [];
+  let columnHeights = [];
+  let numColumns = window.innerWidth >= 1024 ? 3 : 2;
 
+  // Initialize columns
+  function initColumns() {
+    container.innerHTML = '';
+    columns = [];
+    columnHeights = [];
+    numColumns = window.innerWidth >= 1024 ? 3 : 2;
+    
+    for (let i = 0; i < numColumns; i++) {
+      const col = document.createElement('div');
+      col.className = 'masonry-column';
+      container.appendChild(col);
+      columns.push(col);
+      columnHeights.push(0);
+    }
+  }
+
+  // Get shortest column index
+  function getShortestColumnIndex() {
+    let minHeight = columnHeights[0];
+    let minIndex = 0;
+    
+    for (let i = 1; i < columnHeights.length; i++) {
+      if (columnHeights[i] < minHeight) {
+        minHeight = columnHeights[i];
+        minIndex = i;
+      }
+    }
+    
+    return minIndex;
+  }
+
+  // Add reviews to masonry layout
+  function addReviews(count) {
+    const allReviews = sourceContainer.querySelectorAll('.review-item');
+    const end = Math.min(currentlyShowing + count, totalReviews);
+    
+    for (let i = currentlyShowing; i < end; i++) {
+      if (allReviews[i]) {
+        const clone = allReviews[i].cloneNode(true);
+        clone.style.opacity = '0';
+        
+        // Get the shortest column
+        const shortestIndex = getShortestColumnIndex();
+        columns[shortestIndex].appendChild(clone);
+        
+        // Force a reflow to get accurate height
+        clone.offsetHeight;
+        
+        // Update the height tracking (approximate)
+        const cardHeight = clone.offsetHeight || 300; // fallback height
+        columnHeights[shortestIndex] += cardHeight + 12; // 12px is the gap
+        
+        // Trigger fade in
+        setTimeout(() => {
+          clone.style.opacity = '';
+        }, 10);
+      }
+    }
+    
+    currentlyShowing = end;
+    
+    // Recalculate actual heights after all cards are added
+    setTimeout(() => {
+      for (let i = 0; i < columns.length; i++) {
+        columnHeights[i] = columns[i].offsetHeight;
+      }
+    }, 100);
+  }
+
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      const newNumColumns = window.innerWidth >= 1024 ? 3 : 2;
+      if (newNumColumns !== numColumns) {
+        const tempShowing = currentlyShowing;
+        currentlyShowing = 0;
+        initColumns();
+        addReviews(tempShowing);
+      }
+    }, 250);
+  });
+
+  // Initial load
+  initColumns();
+  addReviews(initialLoad);
+
+  // Load more button
   if (btn) {
     btn.addEventListener('click', function() {
-      // Hide button and show spinner
       btn.classList.add('hidden');
       spinner.classList.remove('hidden');
 
-      // Simulate AJAX delay
       setTimeout(function() {
-        const reviews = container.querySelectorAll('.review-item');
-        const nextBatch = currentlyShowing + reviewsPerLoad;
+        addReviews(10);
         
-        // Show next batch of reviews
-        for (let i = currentlyShowing; i < Math.min(nextBatch, totalReviews); i++) {
-          if (reviews[i]) {
-            reviews[i].classList.remove('hidden');
-          }
-        }
-
-        currentlyShowing = Math.min(nextBatch, totalReviews);
-
-        // Hide spinner
         spinner.classList.add('hidden');
 
-        // Show or hide the button based on remaining reviews
         if (currentlyShowing < totalReviews) {
           btn.classList.remove('hidden');
         } else {
           loadMoreContainer.classList.add('hidden');
         }
-      }, 800); // 800ms delay to simulate network request
+
+        // Smooth scroll
+        // const allCards = container.querySelectorAll('.review-item');
+        // if (allCards[currentlyShowing - 10]) {
+        //   setTimeout(() => {
+        //     allCards[currentlyShowing - 10].scrollIntoView({ 
+        //       behavior: 'smooth', 
+        //       block: 'nearest' 
+        //     });
+        //   }, 100);
+        // }
+      }, 800);
     });
   }
   })();
