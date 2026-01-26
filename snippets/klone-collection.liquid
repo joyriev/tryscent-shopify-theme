@@ -93,7 +93,7 @@
         </div>
       </div>
       <p class="my-0 text-base text-left">
-        You Save {{ chosen_variant.price | times: 2 | money }}
+        You Save {{ chosen_variant.price | money }}
       </p>
       <div x-show="$store.bundle.package === 'buy_2_get_1_free'" class="space-y-1">
         <template x-for="(variant, index) in $store.bundle.variants.buy_2_get_1_free" :key="index">
