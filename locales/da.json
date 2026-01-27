@@ -674,7 +674,14 @@
       "draft_order_details": {
         "payment_status": {
           "pending": {
-            "description_due_on_fulfillment_partially_paid_next": "Denne ordre blev delvist betalt. Du har en resterende saldo."
+            "description_due_on_fulfillment_partially_paid_next": "Denne ordre blev delvist betalt. Du har en resterende saldo.",
+            "banner_due_today_for_single_fulfillment": "{{amount}} betaling forfalder i dag. {{link}}",
+            "banner_due_today_for_multiple_fulfillments": "Betaling forfalder i dag for {{count}} leverancer",
+            "banner_overdue_for_single_fulfillment": {
+              "one": "Betaling på {{amount}} er {{count}} dage forsinket. {{link}}",
+              "other": "Betalingen på {{amount}} er {{count}} dage forsinket. {{link}}"
+            },
+            "banner_overdue_for_multiple_fulfillments": "Betaling forfalder for {{count}} opfyldelser"
           },
           "due_date": "Forfalden {{date}}",
           "total_balance": "Samlet saldo"
@@ -685,6 +692,13 @@
       "not_upgraded": "Kundekonti opgraderes ikke.",
       "failed_to_revert": "Kunne ikke gendanne kundekontoindstillinger.",
       "revert_window_expired": "Fortrydelsesvinduet er udløbet."
+    },
+    "order_details": {
+      "payment_confirmation": {
+        "payment_received": "Tak! Din betaling på {{amount}} er modtaget.",
+        "full_payment_received": "Tak! Din betaling på {{amount}} er modtaget, og denne ordre er nu fuldt betalt.",
+        "dismiss_label": "Afvis betalingsbekræftelse"
+      }
     }
   }
 }

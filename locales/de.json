@@ -650,7 +650,14 @@
       "draft_order_details": {
         "payment_status": {
           "pending": {
-            "description_due_on_fulfillment_partially_paid_next": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restbetrag."
+            "description_due_on_fulfillment_partially_paid_next": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restbetrag.",
+            "banner_due_today_for_single_fulfillment": "{{amount}} Zahlung ist heute fällig. {{link}}",
+            "banner_due_today_for_multiple_fulfillments": "Zahlung heute fällig für {{count}} Erfüllungen",
+            "banner_overdue_for_single_fulfillment": {
+              "one": "{{amount}} Zahlung ist {{count}} Tage überfällig. {{link}}",
+              "other": "{{amount}} Zahlung ist {{count}} Tage überfällig. {{link}}"
+            },
+            "banner_overdue_for_multiple_fulfillments": "Zahlung fällig für {{count}} Erfüllungen"
           },
           "due_date": "Fällig am {{date}}",
           "total_balance": "Gesamtsaldo"
@@ -661,6 +668,13 @@
       "not_upgraded": "Kundenkonten werden nicht aufgewertet.",
       "failed_to_revert": "Fehler beim Zurücksetzen der Kundeneinstellungen.",
       "revert_window_expired": "Das Rücksetzfenster ist abgelaufen."
+    },
+    "order_details": {
+      "payment_confirmation": {
+        "payment_received": "Danke! Ihre {{amount}} Zahlung wurde erhalten.",
+        "full_payment_received": "Danke! Ihre {{amount}} Zahlung wurde erhalten, und diese Bestellung ist jetzt vollständig bezahlt.",
+        "dismiss_label": "Zahlungsbestätigung ablehnen"
+      }
     }
   }
 }
