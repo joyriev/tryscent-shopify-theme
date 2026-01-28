@@ -1072,7 +1072,111 @@
         "picked_up_description_html": "Ihre Bestellung wurde am %{date} bei %{location_name} abgeholt.",
         "contact_us": "Kontaktieren Sie uns",
         "contact_us_lowercase": "kontaktieren Sie uns",
-        "contact_us_html": "Brauchen Sie Hilfe? %{contact_us}"
+        "contact_us_html": "Brauchen Sie Hilfe? %{contact_us}",
+        "updated_time": "Aktualisiert vor %{time_ago}",
+        "failure": "Nicht geliefert",
+        "failed_title": "Ihre Bestellung konnte nicht zugestellt werden",
+        "failed_contact_merchant": "Kontaktieren Sie %{company}, um die Lieferung zu vereinbaren.",
+        "failed_contact_merchant_no_company": "Kontaktieren Sie uns, um die Lieferung zu arrangieren.",
+        "non_shippable_title": "Ihre Bestellung ist abgeschlossen",
+        "login_title": "Melden Sie sich an, um alle Bestelldetails anzuzeigen",
+        "login_description": "Sie finden Ihre Bestellnummer auf dem Beleg, den Sie per E-Mail erhalten haben.",
+        "login_description_phone": "Sie können Ihre Bestellnummer auf dem Kassenbon finden, den Sie per SMS erhalten haben.",
+        "login_not_customer_html": "Nicht %{name}? Sie können %{link}",
+        "login_reorder_link_text": {
+          "one": "kaufen Sie auch dieses Produkt",
+          "other": "kaufe auch diese Produkte"
+        },
+        "customer_information_hidden_fields_message": "Melden Sie sich an, um alle Kundeninformationen anzuzeigen.",
+        "cancelled_title": "Ihre Bestellung wurde storniert",
+        "cancelled_description": "Ihre Bestellung wurde am %{date} storniert. Kontaktieren Sie uns, wenn Sie Fragen haben.",
+        "customer_validation_error": "Geben Sie eine gültige E-Mail-Adresse oder Bestellnummer ein.",
+        "customer_validation_error_phone": "Geben Sie eine gültige Telefonnummer oder Bestellnummer ein.",
+        "unfulfilled_items_title": "Vorbereitung für den Versand",
+        "unfulfilled_items_description": "Wir bereiten diese Artikel derzeit für den Versand vor.",
+        "marker": {
+          "current": "Aktueller Versandort"
+        },
+        "pick_up_in_store_marker": {
+          "current": "Aktueller Versandort"
+        },
+        "fulfillment": {
+          "fulfilled_table_title": "Artikel in dieser Sendung",
+          "unfulfilled_table_title": "Artikel, die für den Versand vorbereitet werden",
+          "quantity_label": "Menge"
+        },
+        "order_updates_description_missing": "Sie erhalten keine Versandaktualisierungen.",
+        "order_updates_subscribe_to_email_notifications": "Erhalten Sie Versandupdates per E-Mail",
+        "order_updates_subscribe_to_email_or_phone_notifications": "Erhalten Sie Versandupdates per E-Mail oder SMS",
+        "order_updates_subscribe_to_phone_notifications": "Erhalten Sie Versandupdates per SMS",
+        "order_updates_submit_subscription": "Absenden",
+        "other_options": "Andere Optionen",
+        "delivery_information_label": "Lieferinformationen:",
+        "gift_card_sent_confirmation": "Geschenkkarten versendet",
+        "qr_code": {
+          "send_link_to_phone": "Oder senden Sie einen Link an Ihr Telefon",
+          "title": "Verfolge auf deinem Telefon"
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Scannen Sie mit Ihrem Telefon"
+          },
+          "sms": {
+            "title": "Oder senden Sie einen Link an Ihr Telefon"
+          }
+        },
+        "view_business_customer_account": "Konto anzeigen",
+        "breadcrumbs_submitted": "Eingereicht",
+        "breadcrumbs_in_review": "In Überprüfung",
+        "missing_shipping_address_banner": {
+          "title": "Die Bestellung hat keine Versandadresse",
+          "text_html": "%{contact_us}, um Ihre Adresse hinzuzufügen",
+          "contact_us": "Kontaktieren Sie uns"
+        },
+        "in_store_purchase": "Kauf im Geschäft",
+        "thank_you_ready_for_picked_up": "Ihre Bestellung wurde bei %{address} abgeholt.",
+        "ready_for_delivery": "Versandbereit",
+        "order_updates_subscribe_to_email_notifications_failed": "Wir können diese E-Mail nicht für Aktualisierungen speichern. Versuchen Sie es erneut oder verwenden Sie eine andere E-Mail.",
+        "order_updates_subscribe_to_email_notifications_email_already_exists": "Die eingegebene E-Mail-Adresse existiert bereits.",
+        "subscriptions_management": {
+          "description": "Fahren Sie mit Ihrem Konto fort, um Ihre Abonnements einzusehen und zu verwalten.",
+          "button_label": "Verwalten Sie Ihr Abonnement"
+        },
+        "manage_order_label": "Verwalten Sie Ihre Bestellung",
+        "gift_card_confirmation_by_text_typ": {
+          "one": "Sie erhalten in wenigen Minuten eine SMS mit Ihrer Geschenkkarte.",
+          "other": "Sie erhalten in wenigen Minuten eine SMS mit Ihren Geschenkkarten."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "one": "Sie erhalten in wenigen Minuten eine E-Mail mit Ihrer Geschenkkarte.",
+          "other": "Sie erhalten in wenigen Minuten eine E-Mail mit Ihren Geschenkkarten."
+        },
+        "gift_card_email_title": {
+          "one": "Geschenkkarte wurde per E-Mail gesendet",
+          "other": "Geschenkkarten wurden per E-Mail versendet"
+        },
+        "gift_card_text_title": {
+          "one": "Geschenkkarte wurde per SMS gesendet",
+          "other": "Geschenkkarten wurden per SMS versendet"
+        },
+        "gift_card_resent_confirmation": {
+          "one": "Geschenkkarte wurde erneut gesendet.",
+          "other": "Geschenkkarten wurden erneut gesendet."
+        },
+        "gift_card_resend_failure": {
+          "one": "Beim erneuten Senden Ihrer Geschenkkarte ist ein Problem aufgetreten. Versuchen Sie es erneut oder kontaktieren Sie uns.",
+          "other": "Beim erneuten Senden Ihrer Geschenkkarten ist ein Problem aufgetreten. Versuchen Sie es erneut oder kontaktieren Sie uns."
+        },
+        "vat_invoices": {
+          "title": "Mehrwertsteuerrechnungen"
+        },
+        "verify_shop_account_title": "Überprüfen Sie Ihr Shop-Konto",
+        "verify_shop_account_message": "Ihre Informationen wurden bei Shop gespeichert, verifizieren Sie Ihr Konto, um es automatisch in Millionen von Geschäften zu verwenden.",
+        "verify_shop_account_cta": "Verifizieren Sie Ihr Konto",
+        "verify_shop_account_confirmation": "Zur Kasse-Daten gespeichert",
+        "announcement": {
+          "collapse": "Zusammenklappen"
+        }
       },
       "general": {
         "remove_chip": "Artikel entfernen",
@@ -1987,6 +2091,19 @@
         "draft_order_payment_due_on_fulfillment": "Ihre Zahlung wird fällig, sobald Ihre Bestellung bestätigt und ausgeführt wurde.",
         "draft_order_deposit_due_later": "{{depositAmount}} wird fällig, sobald Ihre Bestellung bestätigt ist. Der Restbetrag wird zu den Bedingungen von {{translatedName}} fällig.",
         "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} wird fällig, sobald Ihre Bestellung bestätigt ist. Der Restbetrag wird fällig, sobald Ihre Bestellung ausgeführt ist."
+      },
+      "review": {
+        "title": "Bewertung",
+        "review_title": "Schließen Sie Ihre Bestellung ab",
+        "checkout_as_guest": "Zur Kasse als Gast",
+        "account_more_actions": "Weitere Aktionen für dieses Konto",
+        "checkout_a_different_way": "Zur Kasse auf eine andere Weise",
+        "blocks": {
+          "billing_address_title": "Abrechnung",
+          "shipping_address_title": "Lieferung an",
+          "change_contact_method_link_label": "Kontaktinformationen ändern",
+          "change_company_location_link_label": "Firmenstandort ändern"
+        }
       }
     },
     "sentence": {

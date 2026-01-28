@@ -1229,7 +1229,40 @@
         },
         "missing_shipping_address_banner": {
           "title": "Ordren har ikke en leveringsadresse"
-        }
+        },
+        "first_payment_complete": "Første betaling fuldført",
+        "company_location_section_title": "Firma og placering",
+        "thank_you_ready_for_picked_up": "Din ordre blev afhentet på %{address}.",
+        "order_updates_subscribe_to_email_notifications_failed": "Vi kan ikke gemme denne e-mail til opdateringer. Prøv igen eller brug en anden e-mail.",
+        "order_updates_subscribe_to_email_notifications_email_already_exists": "Den e-mail, du indtastede, findes allerede.",
+        "gift_card_confirmation_by_text_typ": {
+          "one": "Du vil modtage en sms med dit gavekort om et par minutter.",
+          "other": "Du vil modtage en sms med dine gavekort om et par minutter."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "one": "Du vil modtage en e-mail med dit gavekort om et par minutter.",
+          "other": "Du vil modtage en e-mail med dine gavekort om et par minutter."
+        },
+        "gift_card_email_title": {
+          "one": "Gavekort blev sendt via e-mail",
+          "other": "Gavekort blev sendt via e-mail"
+        },
+        "gift_card_text_title": {
+          "one": "Gavekort blev sendt via sms",
+          "other": "Gavekort blev sendt via sms-besked"
+        },
+        "resend_gift_cards_by_email": "Send e-mail igen",
+        "resend_gift_cards_by_text": "Send sms-besked igen",
+        "gift_card_resent_confirmation": {
+          "one": "Gavekortet blev sendt igen.",
+          "other": "Gavekort blev gensendt."
+        },
+        "gift_card_resend_failure": {
+          "one": "Der opstod et problem med at gensende dit gavekort. Prøv igen eller kontakt os.",
+          "other": "Der opstod et problem med at gensende dine gavekort. Prøv igen eller kontakt os."
+        },
+        "verify_shop_account_message": "Dine oplysninger blev gemt hos Shop, bekræft din konto for automatisk at bruge dem i millioner af butikker.",
+        "verify_shop_account_confirmation": "Checkout oplysninger gemt"
       },
       "general": {
         "remove_chip": "Fjern vare",
@@ -1904,6 +1937,72 @@
       "failed_payment": {
         "payment_not_processed_text": "Du er ikke blevet opkrævet. Gå tilbage til din kurv for at fuldføre dit køb.",
         "return_to_cart_button_label": "Vend tilbage til kurven"
+      },
+      "review": {
+        "title": "Anmeldelse",
+        "review_title": "Fuldfør din ordre",
+        "review_and_confirm_title": "Gennemse og bekræft",
+        "checkout_as_guest": "Checkout som gæst",
+        "checkout_a_different_way": "Checkout en anden måde",
+        "blocks": {
+          "shipping_method_title": "Forsendelsesmetode",
+          "change_contact_method_link_label": "Skift kontaktinformation",
+          "change_billing_address_link_label": "Skift faktureringsadresse",
+          "change_company_location_link_label": "Skift virksomhedsplacering",
+          "change_shipping_method_link_label": "Skift forsendelsesmetode",
+          "change_payment_method_link_label": "Skift betalingsmetode",
+          "purchase_order_number_title": "PO nummer",
+          "change_purchase_order_number_label": "Skift PO-nummer",
+          "no_address": "(Uden adresse)",
+          "no_purchase_order_number": "(Uden PO-nummer)",
+          "due_after_order_reviewed_html": "Forfalder efter ordren er gennemgået",
+          "review_title_free_order": "Gennemse og fuldfør din ordre",
+          "payment_method_saved_company_location": "Gem kort til denne placering",
+          "company_location": "Virksomhedens placering"
+        },
+        "block_title": "Gennemse dine oplysninger",
+        "item_header": {
+          "section": "Sektion"
+        }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Send mig e-mails med nyheder og tilbud",
+        "post_accept_marketing_checkbox_label": "Du er tilmeldt for at modtage nyheder og tilbud via e-mail",
+        "pending_accept_marketing_checkbox_label": "Tjek din e-mail for at bekræfte dit abonnement på nyheder og tilbud",
+        "accept_sms_checkbox_label": "Send mig en besked med nyheder og tilbud",
+        "disclaimer": {
+          "privacy_policy": "Privatlivspolitik"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Privatlivspolitik",
+            "description_html": "Ved at tilmelde dig via sms accepterer du at modtage tilbagevendende automatiserede markedsføringsbeskeder, herunder påmindelser om indkøbskurv, på det angivne telefonnummer. Samtykke er ikke en betingelse for køb. Svar STOP for at afmelde. Svar HJÆLP for hjælp. Beskedhyppighed varierer. Beskedsatser og datapriser kan forekomme. Se vores %{privacy_policy_link} og %{terms_of_service_link}.",
+            "description_transactional_html": "Du kan modtage sms-beskeder vedrørende ordrebekræftelse og forsendelsesopdateringer. Svar STOP for at afmelde. Svar HJÆLP for hjælp. Beskedfrekvensen varierer. Besked- og datapriser kan forekomme. Se vores %{privacy_policy_modal_link} og %{terms_of_service_modal_link}."
+          },
+          "mobile_phone_number": "Mobiltelefonnummer"
+        },
+        "unsubscribe": {
+          "title": "Du har afmeldt dig",
+          "description": "Du vil ikke modtage flere påmindelser om din indkøbskurv fra os."
+        }
+      },
+      "shop_policies": {
+        "privacy_policy": "Fortrolighedspolitik",
+        "terms_of_service": "Vilkår for service",
+        "shipping_policy": "Forsendelse",
+        "terms_of_sale": "Salgsbetingelser",
+        "subscription_policy": "Aflysninger",
+        "purchase_options_policy": "Købsmulighedspolitik",
+        "purchase_options_cancellation_policy": "Aflysninger",
+        "cookie_preferences": "Småkager",
+        "terms_and_policies": "Vilkår og retningslinjer"
+      },
+      "remote_policies": {
+        "unavailable_policy": "Der er ikke angivet nogen %{policy_name} for denne butik. For yderligere oplysninger, kontakt venligst %{shop_name} direkte."
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Handelsbetingelser for registreret forhandler",
+        "privacy_policy": "Fortrolighedspolitik for Merchant of Record"
       }
     },
     "sentence": {
