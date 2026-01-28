@@ -594,8 +594,48 @@
         "free_order_notice_html": "Ihre Bestellung ist <strong>kostenlos</strong>. Keine Zahlung ist erforderlich.",
         "express_checkout_free_order": "Für eine kostenlose Bestellung wird Ihnen nichts berechnet",
         "order_covered_by_gift_cards_notice": {
-          "one": "Ihre Bestellung wird durch Ihre Geschenkkarte abgedeckt."
-        }
+          "one": "Ihre Bestellung wird durch Ihre Geschenkkarte abgedeckt.",
+          "other": "Ihre Bestellung wird durch Ihre Geschenkkarten abgedeckt."
+        },
+        "offsite_gateway_redirect_hint": "Sie werden zu %{gateway_label} weitergeleitet, um Ihren Kauf abzuschließen.",
+        "offsite_gateway_review_page_redirect_hint": "Nachdem Sie Ihre Bestellung überprüft haben, werden Sie zu %{gateway_label} weitergeleitet, um Ihren Kauf abzuschließen.",
+        "offsite_gateway_redirect_hint_multi_currency_html": "%{gateway_label} Gesamt %{total_shop_price}",
+        "offsite_gateway_redirect_hint_no_button_label": "Sie werden zu %{gateway_label} weitergeleitet, um Ihren Kauf abzuschließen.",
+        "receiver_payment_experience_hint": "Nach Aufgabe Ihrer Bestellung erhalten Sie die Zahlungsinformationen. Zahlen Sie bitte innerhalb von %{due_days} Tagen bei Multibanco oder online.",
+        "billing_address_rollup_accessibility_label": "Rechnungsadressoptionen",
+        "billing_address_description": "Wählen Sie die Adresse aus, die mit Ihrer Karte oder Zahlungsmethode übereinstimmt.",
+        "billing_address_description_no_shipping_address": "Geben Sie die Adresse ein, die mit Ihrer Karte oder Zahlungsmethode übereinstimmt.",
+        "no_js_credit_card_fields_redirect_hint": "Sie werden weitergeleitet, um Ihre Zahlungsinformationen hinzuzufügen.",
+        "card_fields_container_prefix": "Feldbehälter für:",
+        "card_fields_unavailable_html": {
+          "one": "Zahlungen mit Kredit- und Bankkarten sind derzeit nicht möglich.<br><a href=\"%{current_url}\">Diese Seite neu laden</a> oder später erneut versuchen.",
+          "other": "Zahlungen mit Kredit- und Bankkarten sind derzeit nicht möglich.<br><a href=\"%{current_url}\">Diese Seite neu laden</a> oder eine andere Zahlungsmethode versuchen."
+        },
+        "card_fields_processing_error": "Bei der Zahlungsabwicklung ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung.",
+        "technical_error": "Zahlungen können derzeit aufgrund eines technischen Problems nicht verarbeitet werden. Versuchen Sie es in ein paar Minuten erneut.",
+        "no_method_error": "Dieser Laden kann derzeit keine Zahlungen akzeptieren.",
+        "not_configured_error": "Dieser Laden kann derzeit keine Zahlungen akzeptieren.",
+        "missing_credit_card_error": "Geben Sie Ihre Kartendaten ein, um die Zahlung abzuschließen",
+        "shop_pay_ideal_unavailable_error": "iDEAL ist für diese Bestellung nicht verfügbar. Wählen Sie eine andere Zahlungsmethode.",
+        "payment_method_not_available_for_shipping_address_error": "Zahlungsmethode für die ausgewählte Lieferadresse nicht verfügbar. Wählen Sie eine andere Zahlungsmethode.",
+        "billing_address_not_supported_for_payment_method_error": "Diese Zahlungsmethode ist für Ihre Rechnungsadresse und Währung nicht verfügbar. Versuchen Sie eine andere Zahlungsmethode.",
+        "generic_incorrect_card_info": "Ihre Zahlungsdaten konnten nicht verifiziert werden. Überprüfen Sie Ihre Kartendaten und versuchen Sie es erneut.",
+        "sofort_label": "Sofort Banküberweisung",
+        "paypal_wallet_label": "PayPal-Brieftasche",
+        "shop_pay_installments_label": "Shop Pay Ratenzahlung",
+        "continue_to_guest_checkout": "Weiter zur Gastbestellung",
+        "klarna_pay_later_label": "Später bezahlen mit Klarna",
+        "klarna_pay_now_label": "Jetzt mit Klarna bezahlen",
+        "multibanco_label": "Multibank",
+        "klarna_slice_it_label": "Finanzieren mit Klarna",
+        "afterpay_label": "Zahlung auf Rechnung",
+        "cashapppay_label": "Cash App Bezahlen",
+        "blik_label": "Blick",
+        "twint_label": "ZWEIFACH",
+        "swish_label": "Rausch",
+        "grabpay_label": "GrabBezahlen",
+        "kcp_creditcard_label": "KCP Kreditkarte",
+        "usdc_label": "US-Dollar-Cent"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."
