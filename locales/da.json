@@ -576,7 +576,7 @@
         "thank_you_from_shop": "Fra %{shop_name}"
       },
       "general": {
-        "remove_chip": "Fjern varen",
+        "remove_chip": "Fjern vare",
         "page_title": "Betaling",
         "skip_to_content": "Spring til indholdet",
         "complete_purchase_button_label": "Fuldfør ordre",
@@ -767,13 +767,93 @@
         "submit_for_review_notice_label": "Betaling forfalder først, når din ordre er gennemgået",
         "back_button_label": "Retur",
         "autocomplete_zero_item": "Ingen varer tilgængelige",
-        "submit": "Indsend"
+        "submit": "Indsend",
+        "processing": "Behandler…",
+        "stepper": {
+          "decrease": "Formindsk {{type}}",
+          "minimum_reached": "Minimum på {{value}} nået",
+          "maximum_reached": "Maksimum på {{value}} nået"
+        },
+        "dates": {
+          "weekdays_abbreviation": {
+            "monday": "Mo",
+            "tuesday": "Du",
+            "wednesday": "Vi",
+            "thursday": "Tak",
+            "friday": "Fra",
+            "saturday": "Sa",
+            "sunday": "Su"
+          },
+          "months": {
+            "april": "april",
+            "september": "september"
+          }
+        },
+        "datepicker": {
+          "show_previous_month": "Vis forrige måned, {{month}} {{year}}",
+          "range_start": "Rækkevidde start",
+          "in_range": "På lager",
+          "range_end": "Rækkevidde slutning"
+        },
+        "list_formatter": {
+          "and": {
+            "lastWordConnector": "{{previousWords}}, og {{lastWord}}"
+          },
+          "or": {
+            "lastWordConnector": "{{previousWords}}, eller {{lastWord}}"
+          }
+        },
+        "map": {
+          "cluster_title": {
+            "one": "Klynge af {{number}} markør",
+            "other": "Klynge af {{number}} markører"
+          }
+        },
+        "dropzone": {
+          "invalid_file_type": "Filtype ikke understøttet",
+          "dragged_over": "Slip filen for at uploade"
+        }
       },
       "payment_gateway": {
         "bank_account_label": "Bankkonto"
       },
       "offsite_payment_failed": {
         "title": "Offsite-betaling mislykkedes"
+      },
+      "payment_collection": {
+        "cancelled": "Denne betaling er ikke længere nødvendig. Besøg ordresiden for detaljer.",
+        "paid": "Denne betaling er allerede blevet indsendt. Besøg ordre-siden for detaljer."
+      },
+      "contact": {
+        "title": "Information",
+        "shipping_used_as_billing_notice": "Dette vil også blive brugt som din faktureringsadresse for denne ordre.",
+        "contact_method_title": "Kontakt",
+        "email_label": "E-mail",
+        "email_rollup_accessibility_label": "E-mailindstillinger",
+        "email_placeholder": "E-mail",
+        "email_or_phone_label": "Email eller mobiltelefonnummer",
+        "email_or_phone_placeholder": "Email eller mobiltelefonnummer",
+        "optional_first_name_label": "Fornavn (valgfrit)",
+        "storefront_link": "forhandlerens hjemmeside",
+        "company_attention_label": "Firma/Opmærksomhed",
+        "optional_company_attention_label": "Firma/Opmærksomhed (valgfrit)",
+        "optional_company_label": "Firma (valgfrit)",
+        "address2_label": "Lejlighed, suite osv.",
+        "optional_address2_label": "Lejlighed, suite osv. (valgfrit)",
+        "country_label": "Land/Region",
+        "country_code": "Land-/regionskode",
+        "county_label": "Amt",
+        "county_placeholder": "Amt",
+        "region_label": "Region",
+        "region_placeholder": "Region",
+        "region_none": "Ingen valgt",
+        "governorate_label": "Guvernørdømme",
+        "governorate_placeholder": "Guvernørdømme",
+        "state_and_territory_label": "Stat/fylke",
+        "state_and_territory_placeholder": "Stat/fylke",
+        "phone_rollup_accessibility_label": "Telefonmuligheder",
+        "phone_country_code_label": "Telefonnummer landekode",
+        "optional_phone_label": "Telefon (valgfrit)"
       }
     },
     "sentence": {

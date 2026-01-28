@@ -736,7 +736,92 @@
         "submit_order_button_label": "Skicka beställning",
         "submit_for_review_button_label": "Skicka för granskning",
         "submit_for_review_notice_label": "Betalning förfaller inte förrän din beställning har granskats",
-        "autocomplete_zero_item": "Inga artiklar tillgängliga"
+        "autocomplete_zero_item": "Inga artiklar tillgängliga",
+        "processing": "Bearbetar…",
+        "stepper": {
+          "increase": "Öka {{type}}",
+          "decrease": "Minska {{type}}",
+          "minimum_reached": "Minst {{value}} uppnått",
+          "maximum_reached": "Maximalt {{value}} uppnått"
+        },
+        "remove_tag": "Ta bort etikett",
+        "dates": {
+          "weekdays": {
+            "tuesday": "tisdag",
+            "thursday": "torsdag",
+            "saturday": "lördag"
+          },
+          "weekdays_abbreviation": {
+            "monday": "Mån",
+            "tuesday": "Du",
+            "wednesday": "Vi",
+            "thursday": "t:",
+            "friday": "Franska",
+            "saturday": "Så",
+            "sunday": "Su"
+          },
+          "months": {
+            "january": "Januari",
+            "february": "Februari",
+            "march": "Mars",
+            "may": "Maj",
+            "june": "Juni",
+            "july": "Juli",
+            "august": "Augusti",
+            "october": "Oktober",
+            "november": "November"
+          }
+        },
+        "datepicker": {
+          "show_previous_month": "Visa föregående månad, {{month}} {{year}}",
+          "show_next_month": "Visa nästa månad, {{month}} {{year}}",
+          "range_start": "Sortimentsstart",
+          "in_range": "I sortimentet",
+          "range_end": "Slut på sortimentet"
+        },
+        "list_formatter": {
+          "and": {
+            "lastWordConnector": "{{previousWords}}, och {{lastWord}}"
+          },
+          "or": {
+            "lastWordConnector": "{{previousWords}}, eller {{lastWord}}"
+          }
+        },
+        "map": {
+          "cluster_title": {
+            "one": "Klunga av {{number}} markör"
+          }
+        },
+        "sheet": {
+          "expand": "Expandera"
+        },
+        "dropzone": {
+          "invalid_file_type": "Filtyp stöds inte",
+          "dragged_over": "Släpp filen för att ladda upp"
+        }
+      },
+      "payment_collection": {
+        "cancelled": "Denna betalning krävs inte längre. Besök ordersidan för detaljer.",
+        "paid": "Denna betalning har redan skickats in. Besök ordersidan för detaljer."
+      },
+      "contact": {
+        "shipping_used_as_billing_notice": "Detta kommer också att användas som din faktureringsadress för denna beställning.",
+        "email_or_phone_label": "E-post eller mobiltelefonnummer",
+        "email_or_phone_placeholder": "E-post eller mobiltelefonnummer",
+        "company_attention_label": "Företag/Attn",
+        "optional_company_attention_label": "Företag/Attn (valfritt)",
+        "address2_label": "Lägenhet, svit, etc.",
+        "optional_address2_label": "Lägenhet, svit, etc. (valfritt)",
+        "country_label": "Land/Region",
+        "country_code": "Land-/regionskod",
+        "province_label": "Provins",
+        "province_placeholder": "Provins",
+        "state_label": "Status",
+        "state_placeholder": "Status",
+        "region_none": "Inget valt",
+        "governorate_label": "Guvernement",
+        "governorate_placeholder": "Guvernement",
+        "phone_country_code_label": "Telefonnummer landskod"
       }
     }
   }
