@@ -1196,7 +1196,70 @@
             "year": {
               "other": "hver %{count} år"
             }
+          },
+          "initial_order_discounted": "Første forsendelsesomkostning %{discounted_shipping_cost}, derefter %{frequency_description}",
+          "prepaid_initial_order_discounted": "Første forsendelsesomkostning %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Første forsendelsesomkostning %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Første forsendelsesomkostning %{discounted_shipping_price} %{prepaid_delivery_frequency}, derefter %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Første forsendelsesomkostning %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), derefter %{shipping_price} %{billing_cycle}",
+          "recurring_order_shipping_price": "efterfulgt af %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "Første ordre inkluderet, efterfulgt af %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} pr. levering), efterfulgt af %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Første ordre gratis",
+            "other": "Første %{count} ordrer gratis"
           }
+        },
+        "shipping_information_required_notice": "Forsendelsesoplysninger er påkrævet. {{link}}.",
+        "shipping_information_redirect_link": "Indtast dine oplysninger her",
+        "no_other_methods_available": "Ingen andre metoder tilgængelige",
+        "duties_and_taxes_options": {
+          "ddu_caption": "Der kan forekomme yderligere gebyrer",
+          "ddp_caption": "Ingen ekstra gebyrer ved levering"
+        },
+        "shipping_used_as_billing_notice": "Dette vil også blive brugt som din faktureringsadresse for denne ordre.",
+        "shipping_address_rollup_accessibility_label": "Forsendelsesadresse muligheder",
+        "third_party_address_timeout": "Kan ikke indlæse adresser. Prøv igen eller brug en anden adresse.",
+        "third_party_address_error": "Der opstod en fejl under indlæsning af adressevalg. Indtast din adresse manuelt nedenfor.",
+        "third_party_payment_timeout": "Kan ikke indlæse betalingsmetoder. Prøv igen eller brug en anden betalingsmetode.",
+        "third_party_payment_error": "Der opstod en fejl under indlæsning af betalingsvalg. Brug en anden betalingsmetode.",
+        "address_default": "Indstil som standard",
+        "different_shipping_method_summary": "Indtast en anden leveringsadresse for at se tilgængelige forsendelsesmetoder",
+        "invalid_shipping_method_summary": "Indtast en gyldig leveringsadresse for at se tilgængelige forsendelsesmetoder",
+        "invalid_shipping_method_summary_selected": "Vælg en anden leveringsadresse for at se tilgængelige leveringsmetoder",
+        "method_summary": {
+          "incomplete_address_entered": "Indtast en komplet leveringsadresse for at se tilgængelige forsendelsesmetoder",
+          "incomplete_address_selected": "Vælg en komplet leveringsadresse for at se tilgængelige forsendelsesmetoder"
+        },
+        "local_pickup": {
+          "rollup_title": "Afhentningssted",
+          "rollup_accessibility_label": "Afhentningssted muligheder"
+        },
+        "missing_shipping_address": "Forsendelsesadresse mangler",
+        "pre_order_ships_later": "Sendes senere",
+        "split_shipping_shipment_notice": "Din ordre vil ankomme om %{quantity_shipments}",
+        "split_shipping_first_shipment_notice": "Din første ordre vil ankomme om %{quantity_shipments}",
+        "split_shipping_multiple_shipment_notice": "Din ordre vil ankomme i flere forsendelser",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "Din ordre vil ankomme i %{quantity} forsendelser",
+        "split_shipping_more_shipping_options": "Flere forsendelsesmuligheder",
+        "split_shipping_option_free": "Gratis shipping",
+        "split_shipping_option_fastest": "Hurtigst",
+        "split_shipping_option_recommended": "Anbefalet"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "title": "Yderligere information",
+          "shipping_credential_cn": "Bopæls-ID-nummer",
+          "tax_credential_it": "Skatteidentifikationsnummer (valgfrit)",
+          "tax_email_it": "PEC (valgfrit)",
+          "tax_credential_co": "Cédula/ Momsnummer",
+          "tax_credential_type_co": "Type ID-kort",
+          "shipping_credential_co": "Cédula/ Momsnummer",
+          "shipping_credential_type_co": "Type ID-kort",
+          "tax_credential_ec": "CVR/MOMS/IVA",
+          "shipping_credential_ec": "CVR/MOMS/IVA",
+          "tax_credential_gt": "NIT/MOMS",
+          "shipping_credential_gt": "NIT/MOMS"
         }
       }
     },

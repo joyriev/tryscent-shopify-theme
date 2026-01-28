@@ -1191,7 +1191,90 @@
           "prepaid_delivery_frequency": {
             "one": "für %{count} Lieferung",
             "other": "für %{count} Lieferungen"
+          },
+          "initial_order_discounted": "Erste Versandkosten %{discounted_shipping_cost}, dann %{frequency_description}",
+          "prepaid_initial_order_discounted": "Erste Versandkosten %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Erste Versandkosten %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Erste Versandkosten %{discounted_shipping_price} %{prepaid_delivery_frequency}, danach %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Erste Versandkosten %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), danach %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "Inbegriffen",
+          "first_order_shipping_price_included": "Erste Bestellung enthalten, gefolgt von %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} pro Lieferung), gefolgt von %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Erste Bestellung kostenlos",
+            "other": "Die ersten %{count} Bestellungen kostenlos"
           }
+        },
+        "shipping_information_redirect_link": "Geben Sie hier Ihre Informationen ein",
+        "loading_progressive_rates": "Suche nach weiteren Tarifen…",
+        "duties_and_taxes_options": {
+          "ddu_title": "Zahlung bei Lieferung",
+          "ddu_caption": "Zusätzliche Gebühren können anfallen",
+          "ddp_title": "Jetzt bezahlen",
+          "ddp_caption": "Keine zusätzlichen Gebühren bei Lieferung"
+        },
+        "shipping_used_as_billing_notice": "Dies wird auch als Ihre Rechnungsadresse für diese Bestellung verwendet.",
+        "shipping_address_title": "Lieferung an",
+        "shipping_address_rollup_accessibility_label": "Versand an Adressoptionen",
+        "third_party_address_timeout": "Adressen können nicht geladen werden. Erneut versuchen oder eine andere Adresse verwenden.",
+        "third_party_address_error": "Beim Laden der Adressauswahl ist ein Fehler aufgetreten. Geben Sie Ihre Adresse unten manuell ein.",
+        "third_party_payment_timeout": "Zahlungsmethoden können nicht geladen werden. Erneut versuchen oder eine andere Zahlungsmethode verwenden.",
+        "third_party_payment_error": "Beim Laden der Zahlungswahl ist ein Fehler aufgetreten. Verwenden Sie eine andere Zahlungsmethode.",
+        "add_delivery_instructions": "Lieferanweisungen hinzufügen",
+        "back": "Hinten",
+        "address_more": "Weitere Aktionen für diese Adresse",
+        "address_confirm": "Sind Sie sicher, dass Sie diese Adresse aus Ihrem Konto löschen möchten?",
+        "address_form": {
+          "cancel": "Abbrechen",
+          "update": "Änderungen sparen",
+          "generic_error": "Beim Speichern Ihrer Adresse ist ein Problem aufgetreten. Bitte versuchen Sie es erneut.",
+          "one_time_address_subtitle": "Verwenden Sie für diese Bestellung eine Einmaladresse"
+        },
+        "different_shipping_method_summary": "Geben Sie eine andere Lieferadresse ein, um verfügbare Versandmethoden anzuzeigen",
+        "invalid_shipping_method_summary": "Geben Sie eine gültige Versandadresse ein, um verfügbare Versandmethoden anzuzeigen",
+        "invalid_shipping_method_summary_selected": "Wählen Sie eine andere Versandadresse, um verfügbare Versandmethoden anzuzeigen",
+        "method_summary": {
+          "incomplete_address_entered": "Geben Sie eine vollständige Versandadresse ein, um verfügbare Versandmethoden anzuzeigen",
+          "incomplete_address_selected": "Wählen Sie eine vollständige Versandadresse aus, um verfügbare Versandmethoden anzuzeigen"
+        },
+        "local_pickup": {
+          "search_address": "Adresse suchen",
+          "rollup_accessibility_label": "Abholort-Optionen"
+        },
+        "split_shipping_merchandise_quantity_label_standard": "%{quantity} Stück",
+        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} mehr",
+        "split_shipping_merchandise_shipment_number": "Sendung %{number} von %{total}",
+        "pre_order_ships_now": "Schiffe jetzt",
+        "pre_order_ships_later": "Versendet später",
+        "pre_order_ships_date": "Versand am %{date}",
+        "split_shipping_shipped_by_shop": "Versandt durch %{shop_name}",
+        "split_shipping_multiple_shipment_label": "Mehrere Sendungen",
+        "split_shipping_shipping_label": "Methode",
+        "split_shipping_shipment_notice": "Ihre Bestellung wird in %{quantity_shipments} eintreffen",
+        "split_shipping_first_shipment_notice": "Ihre erste Bestellung wird in %{quantity_shipments} eintreffen",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} Sendungen",
+        "split_shipping_multiple_shipment_notice": "Ihre Bestellung wird in mehreren Lieferungen ankommen",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "Ihre Bestellung wird in %{quantity} Lieferungen eintreffen",
+        "split_shipping_more_shipping_options": "Mehr Versandoptionen",
+        "split_shipping_shipment_number": "Sendung %{number}",
+        "split_shipping_option_free": "Kostenloser Versand",
+        "split_shipping_option_fastest": "Schnellste",
+        "add_shipping_address": "Versandadresse hinzufügen",
+        "choose_new_address": "Wählen Sie eine neue Adresse aus"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "shipping_credential_kr": "Persönlicher Zollcode",
+          "shipping_credential_cn": "Ausweisnummer",
+          "tax_credential_it": "Steueridentifikationsnummer (optional)",
+          "tax_credential_co": "Ausweis/Mehrwertsteuer",
+          "tax_credential_type_co": "Typ Ausweis",
+          "shipping_credential_co": "Ausweis/Mehrwertsteuer",
+          "shipping_credential_type_co": "Typ Ausweis",
+          "tax_credential_ec": "USt-IdNr./RUC/USt-IdNr.",
+          "shipping_credential_ec": "USt-IdNr./RUC/USt-IdNr.",
+          "tax_credential_gt": "NIT/UST",
+          "shipping_credential_gt": "NIT/UST"
         }
       }
     },

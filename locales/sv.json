@@ -1146,7 +1146,81 @@
             "year": {
               "other": "varje %{count} år"
             }
+          },
+          "initial_order_discounted": "Först fraktkostnad %{discounted_shipping_cost}, sedan %{frequency_description}",
+          "prepaid_initial_order_discounted": "Första fraktkostnaden %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Första fraktkostnaden %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Första fraktkostnaden %{discounted_shipping_price} %{prepaid_delivery_frequency}, sedan %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Första fraktkostnaden %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), sedan %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "Inkluderat",
+          "first_order_shipping_price_included": "Första beställningen ingår, följt av %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} per leverans), följt av %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Första beställningen gratis",
+            "other": "Första %{count} beställningarna gratis"
+          },
+          "free_for_first_n_order": {
+            "one": "För första beställningen",
+            "other": "För de första %{count} beställningarna"
           }
+        },
+        "one_time_purchase_shipping": "Engångsfrakt",
+        "shipping_information_required_notice": "Fraktinformation krävs. {{link}}.",
+        "shipping_information_redirect_link": "Ange din information här",
+        "loading_progressive_rates": "Söker efter fler priser…",
+        "no_other_methods_available": "Inga andra metoder tillgängliga",
+        "duties_and_taxes_options": {
+          "ddp_title": "Betala nu",
+          "ddp_caption": "Inga extra avgifter vid leverans"
+        },
+        "shipping_used_as_billing_notice": "Detta kommer också att användas som din faktureringsadress för denna beställning.",
+        "shipping_address_title": "Skickas till",
+        "shipping_address_rollup_accessibility_label": "Fraktalternativ till adress",
+        "third_party_address_timeout": "Det gick inte att ladda adresser. Försök igen eller använd en annan adress.",
+        "third_party_address_error": "Ett fel uppstod vid inläsning av adressval. Ange din adress manuellt nedan.",
+        "third_party_payment_timeout": "Det gick inte att ladda betalningsmetoder. Försök igen eller använd en annan betalningsmetod.",
+        "third_party_payment_error": "Ett fel uppstod vid inläsning av betalningsvalet. Använd en annan betalningsmetod.",
+        "delete": "Ta bort",
+        "address_more": "Fler åtgärder för denna adress",
+        "address_confirm": "Är du säker på att du vill ta bort den här adressen från ditt konto?",
+        "address_form": {
+          "generic_error": "Det uppstod ett problem när din adress skulle sparas. Försök igen.",
+          "one_time_address_subtitle": "Använd en engångsadress för denna beställning"
+        },
+        "local_pickup": {
+          "rollup_title": "Upphämtningsplats",
+          "rollup_accessibility_label": "Upphämtningsplatsalternativ"
+        },
+        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} till",
+        "split_shipping_merchandise_shipment_number": "Sändning %{number} av %{total}",
+        "pre_order_ships_now": "Skickas nu",
+        "pre_order_ships_later": "Skickas senare",
+        "pre_order_ships_date": "Skickas %{date}",
+        "split_shipping_shipment_notice": "Din beställning kommer att anlända om %{quantity_shipments}",
+        "split_shipping_first_shipment_notice": "Din första beställning kommer att anlända om %{quantity_shipments}",
+        "split_shipping_multiple_shipment_notice": "Din beställning kommer att levereras i flera leveranser",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "Din beställning kommer att levereras i %{quantity} leveranser",
+        "split_shipping_more_shipping_options": "Fler fraktalternativ",
+        "split_shipping_shipment_number": "Sändning %{number}",
+        "split_shipping_merchandise_quantity_label_inline_primary": "Antal: %{quantity}",
+        "split_shipping_option_recommended": "Rekommenderad"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "shipping_credential_kr": "Personligt tullkod",
+          "shipping_credential_cn": "Personnummer",
+          "tax_credential_cl": "ROT",
+          "shipping_credential_cl": "ROT",
+          "tax_credential_co": "ID/Skattnummer",
+          "tax_credential_type_co": "Typ Cédula",
+          "shipping_credential_co": "ID/Skattnummer",
+          "shipping_credential_type_co": "Typ Cédula",
+          "tax_credential_cr": "Identifikationsnummer/RUT",
+          "shipping_credential_cr": "Identifikationsnummer/RUT",
+          "tax_credential_ec": "CI/RUC/MOMS",
+          "shipping_credential_ec": "CI/RUC/MOMS",
+          "tax_credential_gt": "NIT/MOMS",
+          "shipping_credential_gt": "NIT/MOMS"
         }
       }
     }
