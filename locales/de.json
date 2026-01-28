@@ -3333,7 +3333,70 @@
         "pickup_point": "Abholpunkt"
       },
       "subtitle": "Bestätigt {{date}}",
-      "summary_totals_title_accessibility_label": "Bestellsummen"
+      "summary_totals_title_accessibility_label": "Bestellsummen",
+      "shop_order_tracking": {
+        "title_header": "Scannen Sie mit Ihrem Telefon",
+        "real_time_delivery_updates": "Der Shop sendet Ihnen Echtzeit-Lieferupdates, sobald Ihre Bestellung versandt wurde."
+      },
+      "edit_summary": {
+        "added_with_quantity": "Hinzugefügt {{quantity}}",
+        "removed_with_quantity": "Entfernt {{quantity}}",
+        "updated_at": "Ihre Bestellung wurde am {{date}} aktualisiert",
+        "returned_with_quantities": "Zurückgegeben {{delta}} von {{total}}",
+        "removed_with_quantities": "Entfernt {{delta}} von {{total}}",
+        "return_line_item_removed": "Vom Umtausch ausgeschlossen"
+      },
+      "taxes_included": "Inklusive {{amount}} Steuern",
+      "duties_and_taxes_included": "Gesamtbetrag beinhaltet Zölle und Steuern. Keine zusätzlichen Gebühren bei Lieferung.",
+      "duties": "Zölle",
+      "ok_duties_tooltip": "Diese Bestellung wird aus einem anderen Land versandt, daher wurden Zölle zu Ihrer Bestellsumme hinzugefügt.",
+      "error_duties_tooltip": "Diese Bestellung wird aus einem anderen Land versandt, daher können bei der Lieferung Zölle und Steuern anfallen.",
+      "zero_duties_tooltip": "Diese Bestellung wird aus einem anderen Land versandt. Bei Bestellungen dieses Werts werden keine Zollgebühren erhoben.",
+      "unit_price": "{{price}}/Stück",
+      "pagination": {
+        "load_more": "Mehr laden",
+        "load_more_accessibility_label": "Mehr Artikel laden"
+      },
+      "login_to_view_all_order_details": "Melden Sie sich an, um alle Bestelldetails anzuzeigen.",
+      "logged_in_account_no_permission_to_order": "Sie sind angemeldet als {{email}}. Dieses Konto hat keine Berechtigung, diese Bestellung zu verwalten.",
+      "log_in_to_a_different_account": "Melden Sie sich bei einem anderen Konto an",
+      "fees": {
+        "restocking_fee": "Wiederauffüllungsgebühr",
+        "return_shipping_fee": "Rückversand"
+      },
+      "vat_invoices": {
+        "title": "Mehrwertsteuerrechnungen"
+      },
+      "cash_rounding": "Bargeldrundung",
+      "adjusted_total": "Angepasste Summe",
+      "due_on_fulfillment": "Fällig bei Erfüllung"
+    },
+    "addresses": {
+      "back_button": "Hinten",
+      "add_address_banner": "Adressen hinzufügen, die beim Bezahlen verwendet werden sollen",
+      "address_deleted_notification": "Adresse gelöscht",
+      "cancel_deletion_button": "Abbrechen",
+      "cancel_deletion_button_accessibility_label": "Löschen von {{address}} abbrechen",
+      "delete_button_accessibility_label": "Lösche {{address}}",
+      "delete_confirmation_button_accessibility_label": "Lösche {{address}}",
+      "delete_confirmation_message": "Adresse löschen? Bestehende Bestellungen sind nicht betroffen.",
+      "delete_confirmation_description": "Bestehende Bestellungen sind nicht betroffen.",
+      "edit_button_accessibility_label": "Bearbeite {{address}}",
+      "edit_section_accessibility_label": "Bearbeite {{address}}",
+      "loading_finished_accessibility_message": "Neue Seite mit Adressen wurde geladen",
+      "loading_shipping_accessibility_message": "Lade Versandadresse",
+      "pagination": {
+        "load_more": "Mehr laden"
+      }
+    },
+    "address_form": {
+      "attention": "Achtung",
+      "attention_company": "Firma/Aufmerksamkeit",
+      "cancel": "Abbrechen",
+      "default_address": "Dies ist meine Standardadresse",
+      "loading_edit_form_accessibility_message": "Lade Formular zur Adressbearbeitung",
+      "loading_form_accessibility_message": "Lade Adressformular",
+      "update_success_notification": "Adresse aktualisiert"
     }
   }
 }

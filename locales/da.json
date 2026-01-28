@@ -3113,7 +3113,62 @@
     "addresses": {
       "back_button_accessibility_label": "Tilbage til redigering af adresse {{address}}",
       "add_address_banner": "Tilføj adresser til brug ved kassen",
-      "no_addresses_banner": "Ingen adresser tilføjet"
+      "no_addresses_banner": "Ingen adresser tilføjet",
+      "address_deleted_notification": "Adresse slettet",
+      "delete_confirmation_message": "Slet adresse? Eksisterende ordrer påvirkes ikke.",
+      "delete_confirmation_title": "Slet adresse?",
+      "loading_finished_accessibility_message": "Ny side med adresser er indlæst",
+      "pagination": {
+        "load_more": "Indlæs mere"
+      }
+    },
+    "address_form": {
+      "attention": "Opmærksomhed",
+      "attention_company": "Firma/opmærksomhed",
+      "auto_complete_title": "Forslag",
+      "cancel_accessibility_label": "Annuller redigering af adresse {{address}}",
+      "creation_success_notification": "Adresse tilføjet",
+      "default_address_creation_success_notification": "Standardadresse tilføjet",
+      "default_address_update_success_notification": "Standardadresse opdateret",
+      "loading_edit_form_accessibility_message": "Indlæser redigeringsformular for adresse",
+      "loading_finished_accessibility_message": "Adresseformular er indlæst",
+      "save_accessibility_label": "Gem adresse {{address}}",
+      "update_success_notification": "Adresse opdateret"
+    },
+    "account_menu": {
+      "signed_out_state": {
+        "sheet_title": "Log ind eller opret konto",
+        "email_field_label": "E-mail"
+      },
+      "signed_in_state": {
+        "greeting_with_name": "Hej, {{first_name}}"
+      },
+      "location_picker": {
+        "search_field_placeholder": "Søgning"
+      },
+      "aria_labels": {
+        "back_to_main_menu": "Tilbage til hovedmenuen fra {{title}}",
+        "sign_in_with_email": "Log ind med e-mail"
+      }
+    },
+    "B2B": {
+      "locations": {
+        "contact_email": "E-mail",
+        "contact_list_title": "Folk",
+        "location_picker_label": "Stednavn",
+        "location_picker_accessibility_label": "Stednavn: {{locationName}}",
+        "net_payment_terms_description": "{{name}}: betalinger forfalder inden for {{numberOfDays}} dage",
+        "deposit_percentage": "{{percentage}} depositum",
+        "pagination": {
+          "load_more": "Indlæs mere"
+        },
+        "payment_terms": "Betalingsbetingelser",
+        "section_title": "Placering",
+        "shipping_address_required": "Tilføj en leveringsadresse til denne placering for at begynde at afgive ordrer.",
+        "staff_and_permissions_title": "Personale og tilladelser",
+        "tax_id": "Skatte-ID",
+        "tax_exemption_not_applicable": "Ikke relevant"
+      }
     }
   }
 }

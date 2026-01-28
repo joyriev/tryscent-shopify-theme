@@ -962,7 +962,59 @@
     "addresses": {
       "back_button_accessibility_label": "Tillbaka till redigering av adress {{address}}",
       "add_address_banner": "Lägg till adresser att använda vid kassan",
-      "no_addresses_banner": "Inga adresser tillagda"
+      "no_addresses_banner": "Inga adresser tillagda",
+      "address_deleted_notification": "Adress borttagen",
+      "cancel_adding_address_accessibility_label": "Avbryt tillägg av adress",
+      "delete_button": "Ta bort",
+      "delete_confirmation_message": "Ta bort adress? Befintliga beställningar påverkas inte.",
+      "delete_confirmation_title": "Ta bort adress?",
+      "delete_confirmation_description": "Befintliga beställningar påverkas inte.",
+      "loading_finished_accessibility_message": "Ny adresssida har laddats",
+      "pagination": {
+        "load_more": "Ladda mer",
+        "load_more_accessibility_label": "Ladda fler adresser"
+      }
+    },
+    "address_form": {
+      "attention": "Uppmärksamhet",
+      "attention_company": "Företag/uppmärksamhet",
+      "attention_help_text": "Namnet på en person eller avdelning",
+      "auto_complete_close_accessibility_label": "Stäng förslag",
+      "cancel_accessibility_label": "Avbryt redigering av adress {{address}}",
+      "default_address": "Det här är min standardadress",
+      "loading_edit_form_accessibility_message": "Laddar formulär för att redigera adress",
+      "loading_form_accessibility_message": "Laddar adressformulär",
+      "loading_finished_accessibility_message": "Adressformuläret har laddats"
+    },
+    "account_menu": {
+      "signed_out_state": {
+        "alternate_divider": "ELLER",
+        "orders_button": "Beställningar"
+      },
+      "signed_in_state": {
+        "greeting_with_name": "Hej, {{first_name}}",
+        "orders_button": "Beställningar"
+      },
+      "aria_labels": {
+        "close_menu": "Stäng meny",
+        "loading_menu": "Laddar meny"
+      }
+    },
+    "B2B": {
+      "locations": {
+        "contact_list_title": "Personer",
+        "contact_name": "[name]",
+        "net_payment_terms_description": "{{name}}: betalningar förfaller inom {{numberOfDays}} dagar",
+        "deposit_percentage": "{{percentage}} handpenning",
+        "pagination": {
+          "load_more": "Ladda mer",
+          "load_more_accessibility_label": "Ladda fler platser"
+        },
+        "section_title": "Placering",
+        "shipping_address_required": "Lägg till en leveransadress till denna plats för att börja lägga beställningar.",
+        "tax_exemptions": "Skatteundantag",
+        "taxes_none": "Ingen"
+      }
     }
   },
   "shopify": {
