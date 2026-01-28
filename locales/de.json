@@ -3437,6 +3437,204 @@
         "tax_details_title": "Steuerangaben",
         "multiple_tax_exemptions": "{{taxExemptionsCount}} mehr",
         "tax_exemption_not_applicable": "N/V"
+      },
+      "location_selection": {
+        "description": "Wenn Sie bereits Artikel in Ihrem Warenkorb haben, kann das Ändern des Standorts die Preise und Mengen im Warenkorb beeinflussen.",
+        "description_switch_later": "Sie können später jederzeit wechseln",
+        "list_loading_accessibility_message": "Lade Liste der Standorte",
+        "list_loading_address_accessibility_message": "Ladeadresse für {{locationName}}",
+        "list_loading_finished_accessibility_message": "Liste der Standorte wurde geladen",
+        "loading_store_accessibility_message": "Zum Laden gehen",
+        "no_location_title": "Nur persönliche Bestellungen",
+        "no_location_description": "Sie haben keine Berechtigung mehr, Bestellungen für {{company}} aufzugeben. Persönliche Bestellungen können Sie weiterhin aufgeben.",
+        "search_location_title": "Wählen Sie einen Standort aus",
+        "selection_cancel_button": "Abbrechen",
+        "selection_confirmation_button": "Standort wählen",
+        "selection_continue_button": "Fortsetzen",
+        "title": "Für welchen Standort kaufen Sie ein?",
+        "title_choose_location": "Wählen Sie einen Standort aus",
+        "clear_search": "Suche löschen",
+        "try_new_search": "Versuchen Sie eine neue Suche"
+      },
+      "addresses": {
+        "add_shipping_address_button": "Versandadresse hinzufügen",
+        "add_shipping_address_section_accessibility_label": "Versandadresse hinzufügen",
+        "cancel_adding_shipping_address_accessibility_label": "Hinzufügen der Versandadresse abbrechen",
+        "save_new_billing_address_accessibility_label": "Rechnungsadresse sparen",
+        "save_new_shipping_address_accessibility_label": "Lieferadresse sparen"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all_accessibility_label": "Alle Bestellungen in der Überprüfung ausblenden",
+          "show_all_accessibility_label": "Alle Bestellungen in der Überprüfung anzeigen",
+          "show_all_orders_in_review": "Alle Bestellungen in der Überprüfung anzeigen",
+          "show_less_orders_in_review": "Weniger Bestellungen in der Überprüfung anzeigen",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Sie haben keine ausstehenden Bestellungen",
+            "pending_orders": {
+              "one": "Sie haben {{count}} ausstehende Bestellung",
+              "other": "Sie haben {{count}} ausstehende Bestellungen"
+            },
+            "more_than_pagination_length": "Sie haben mehr als {{count}} ausstehende Bestellungen"
+          },
+          "pagination": {
+            "nav_accessibility_label": "Bestellungen in der Überprüfungsnavigation Schaltflächen"
+          }
+        },
+        "removed_company_contact_tooltip": "Aus dem Unternehmen entfernt"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Bestätigt am {{date}} von Bestellung {{draftOrderName}}",
+        "loading": "Lade Bestelldetails",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Ihre Zahlung ist {{count}} Tag überfällig",
+              "other": "Ihre Zahlung ist seit {{count}} Tagen überfällig"
+            },
+            "banner_due": {
+              "one": "Ihre Zahlung ist in {{count}} Tag fällig",
+              "other": "Ihre Zahlung ist in {{count}} Tagen fällig"
+            },
+            "banner_due_today": "Ihre Zahlung ist heute fällig",
+            "banner_due_today_for_single_fulfillment": "{{amount}} Zahlung ist heute fällig. {{link}}",
+            "banner_due_today_for_multiple_fulfillments": "Zahlung heute fällig für {{count}} Erfüllungen",
+            "banner_overdue_for_single_fulfillment": {
+              "one": "Die Zahlung in Höhe von {{amount}} ist {{count}} Tag überfällig. {{link}}",
+              "other": "Die Zahlung in Höhe von {{amount}} ist seit {{count}} Tagen überfällig. {{link}}"
+            },
+            "banner_overdue_for_multiple_fulfillments": "Zahlung fällig für {{count}} Erfüllungen",
+            "title": "Zahlung fällig",
+            "title_due_on_fulfillment": "Zahlung fällig bei Erfüllung",
+            "description_overdue": "Ihre Zahlung ist verspätet.",
+            "description_partially_paid": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restbetrag.",
+            "description_authorized": "Ihre Zahlungsmethode wird am Fälligkeitsdatum belastet, oder Sie können jetzt bezahlen.",
+            "description_waiting_for_manual_payment": "Diese Bestellung hat eine ausstehende Zahlung. Der Kontostand wird aktualisiert, sobald die Zahlung eingegangen ist.",
+            "description_due_on_receipt": "Sie erhalten eine Rechnung, wenn die Zahlung fällig ist.",
+            "description_due_on_receipt_partially_paid": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restbetrag. Sie erhalten eine Rechnung, wenn die Zahlung fällig ist.",
+            "description_due_on_fulfillment": "Die Zahlung ist fällig, sobald alle Artikel in dieser Bestellung erfüllt sind.",
+            "description_due_on_fulfillment_partially_paid": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restbetrag. Die Payment ist fällig, sobald alle Artikel in dieser Bestellung erfüllt sind.",
+            "description_due_on_fulfillment_partially_paid_next": "Diese Bestellung wurde teilweise bezahlt. Sie haben einen Restbetrag."
+          },
+          "draft": {
+            "description": "Zahlungsdetails werden festgelegt, wenn die Bestellung bestätigt wird.",
+            "title": "Zahlung noch nicht fällig",
+            "in_review": {
+              "description": "Zahlungsdetails werden festgelegt, wenn die Bestellung bestätigt wird.",
+              "title": "Zahlung noch nicht fällig"
+            },
+            "submitted": {
+              "description": "Zahlung abschicken, um diese Bestellung zu bestätigen.",
+              "title": "Zur Bestätigung bezahlen",
+              "deposit": {
+                "due_later": "Der Saldo richtet sich nach den Bedingungen von {{translatedName}} und ist fällig am {{dueDate}}.",
+                "due_on_fulfillment": "Der Restbetrag ist fällig, sobald alle Artikel in dieser Bestellung erfüllt sind.",
+                "due_on_receipt": "Sie erhalten eine Rechnung für den verbleibenden Restbetrag.",
+                "due_on_date": "Der Saldo ist am {{dueDate}} fällig."
+              }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}} wird fällig, sobald Ihre Bestellung bestätigt ist. Der Restbetrag wird zu den Bedingungen von {{translatedName}} fällig.",
+              "due_on_fulfillment": "{{depositAmount}} wird fällig, sobald Ihre Bestellung bestätigt ist. Der Restbetrag wird fällig, wenn die Bestellung ausgeführt wird.",
+              "due_on_receipt": "{{depositAmount}} wird fällig, sobald Ihre Bestellung bestätigt ist. Der Restbetrag wird später fällig.",
+              "due_on_date": "{{depositAmount}} wird fällig, sobald Ihre Bestellung bestätigt ist. Der Restbetrag wird am {{dueDate}} fällig."
+            }
+          },
+          "paid": {
+            "title_with_date": "Bezahlt {{date}}",
+            "description": "Ihre Bestellung ist vollständig bezahlt."
+          },
+          "refund": {
+            "title": "Erstattet",
+            "title_with_date": "Erstattet am {{date}}",
+            "description_full_refund": "Sie haben eine vollständige Rückerstattung für diese Bestellung erhalten.",
+            "description_single_refund": "Sie haben eine teilweise Rückerstattung für diese Bestellung erhalten.",
+            "description_multiple_refunds": "Sie haben Teilrückerstattungen für diese Bestellung erhalten."
+          },
+          "canceled": {
+            "title": "Zahlung abgebrochen",
+            "description": "Ihnen wurde nichts berechnet."
+          },
+          "due_date": "Fällig am {{date}}",
+          "total_balance": "Gesamtsaldo",
+          "pay_now": "Jetzt bezahlen",
+          "pay_now_accessibility_label": "Jetzt für die Bestellung {{orderName}} bezahlen"
+        },
+        "order_timeline": {
+          "expand_events_accessibility_label": "Entwurfsbestelldetails anzeigen",
+          "hide_events_accessibility_label": "Entwurfsbestelldetails ausblenden"
+        },
+        "subtitle": "Eingereicht am {{date}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Diese Zahlungsmethode wird für zukünftige Einkäufe an diesem Standort nicht mehr verfügbar sein.",
+          "description_with_replacement": "Das Löschen dieser Zahlungsmethode wirkt sich auf vorautorisierte Zahlungen für diesen Standort aus. Ersetzen Sie sie durch eine alternative Zahlungsmethode, um weiterhin kommende Bestellungen zu erhalten."
+        },
+        "payment_details": {
+          "draft_label": "Entwurf der Bestellung {{name}}"
+        }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "PO-Nummer hinzufügen",
+        "add_modal_title": "PO-Nummer hinzufügen",
+        "cancel": "Abbrechen",
+        "close_modal_accessibility_label": "Modal zum Schließen der PO-Nummer",
+        "edit_accessibility_label": "PO-Nummer bearbeiten",
+        "edit_modal_title": "PO-Nummer bearbeiten",
+        "empty_state": "Keine Bestellnummer (PO-Nummer)",
+        "modal_po_number_input_max_length_error": "Bestellnummern dürfen höchstens {{maxLength}} Zeichen lang sein.",
+        "title": "Bestellnummer #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Beim Löschen dieser Adresse ist ein Problem aufgetreten. Versuchen Sie es erneut oder aktualisieren Sie die Seite."
+      },
+      "addresses_loading_issue": {
+        "description": "Verbindungsfehler. Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut."
+      },
+      "banner_title": {
+        "one": "Es gibt {{count}} Fehler",
+        "other": "Es gibt {{count}} Fehler"
+      },
+      "failed_address_creation": {
+        "description": "Beim Erstellen Ihrer Adresse ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung."
+      },
+      "failed_address_update": {
+        "description": "Beim Aktualisieren Ihrer Adresse ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren, oder überprüfen Sie Ihre Internetverbindung."
+      },
+      "load_address_form_error": {
+        "title": "Adresseformular kann nicht geladen werden",
+        "description": "Das Adressformular konnte nicht geladen werden.",
+        "refresh_button": "Seite aktualisieren"
+      },
+      "load_orders_error": {
+        "description": "Erneut versuchen oder später zurückkommen."
+      },
+      "load_paypal_error": {
+        "description": "Es gibt ein Problem beim Laden von PayPal. Bitte versuchen Sie es erneut."
+      },
+      "logout_everywhere": {
+        "description": "Beim Abmelden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+      },
+      "no_access_to_locations": {
+        "description": "Sie haben keinen Zugriff auf irgendwelche Standorte"
+      },
+      "not_found": {
+        "description": "Überprüfen Sie die URL oder versuchen Sie es in ein paar Minuten erneut."
+      },
+      "order_not_found": {
+        "description": "Diese Bestellung existiert nicht oder Sie haben keine Berechtigung, sie anzusehen."
+      },
+      "profile_update_error": {
+        "description": "Beim Aktualisieren Ihres Profils ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren, oder überprüfen Sie Ihre Internetverbindung."
+      },
+      "profile_name_update_error": {
+        "description": "Beim Aktualisieren Ihres Namens ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung."
+      },
+      "resend_link": {
+        "too_many_requests": "Zu viele Anfragen. Bitte versuchen Sie es später erneut."
       }
     }
   }

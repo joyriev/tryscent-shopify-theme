@@ -533,6 +533,40 @@
         "disclaimer": "Denna betalningsmetod kommer att sparas för framtida köp och kan användas för alla återkommande eller uppskjutna köp.",
         "error_message": "Det går inte att uppdatera betalningsmetod",
         "current": "Nuvarande"
+      },
+      "add_payment_method_dropdown": {
+        "bank_account_consent": "Genom att lägga till en betalningsmetod godkänner du att ditt kort debiteras eller att ditt bankkonto belastas för framtida köp som du godkänner, tills du avbryter."
+      },
+      "bank_account": {
+        "loading_accessibility_message": "Bankkontoknappen laddas",
+        "iframe_title_accessibility_label": "Bankkontoinställning",
+        "generic_error": "Kunde inte lägga till bankkonto. Försök igen senare."
+      },
+      "add_payment_method_banner": "Lägg till betalningsmetod för snabbare utcheckning eller förauktoriserade tjänster",
+      "no_payment_methods_banner": "Inga betalningsmetoder tillagda",
+      "delete_payment_method_button": "Ta bort",
+      "delete_payment_method_button_accessibility_label": "Ta bort {{paymentMethodName}}",
+      "expiration_warning_button_accessibility_label": "Visa utgångsvarning för {{paymentMethodName}} som slutar på {{lastDigits}}",
+      "expires_soon": "Detta kort går snart ut",
+      "expired": "Detta kort har gått ut",
+      "expired_badge_label": "Utgånget",
+      "card_update_consent": "Denna betalningsmetod kommer att sparas för framtida köp.",
+      "card_update_consent_subscriptions": "Denna betalningsmetod kommer att sparas för framtida köp och kan användas för alla återkommande eller uppskjutna köp.",
+      "credit_card_title": "Kreditkort",
+      "or": "ELLER",
+      "google_pay": {
+        "iframe_title_accessibility_label": "Lägg till Google Pay betalningsmetod",
+        "loading_accessibility_message": "Laddar Google Pay",
+        "loading": "Laddar Google Pay",
+        "errors": {
+          "missing_billing_address": "Google Pay kräver en faktureringsadress. Vänligen lägg till en på ditt konto."
+        }
+      },
+      "pay_pal": {
+        "loading_accessibility_message": "Laddar PayPal"
+      },
+      "apple_pay": {
+        "loading": "Laddar Apple Pay"
       }
     },
     "date": {
@@ -1052,7 +1086,156 @@
       },
       "draft_order_details": {
         "draft_order_subtitle": "Bekräftat {{date}} från beställning {{draftOrderName}}",
-        "loading": "Laddar orderdetaljer"
+        "loading": "Laddar orderdetaljer",
+        "loading_finished_accessibility_message": "Orderdetaljer har laddats",
+        "payment_status": {
+          "pending": {
+            "banner_due_today_for_single_fulfillment": "{{amount}} betalning förfaller idag. {{link}}",
+            "banner_due_today_for_multiple_fulfillments": "Betalning förfaller idag för {{count}} leveranser",
+            "banner_overdue_for_single_fulfillment": {
+              "one": "{{amount}} betalning är {{count}} dag försenad. {{link}}",
+              "other": "{{amount}} betalning är {{count}} dagar försenad. {{link}}"
+            },
+            "banner_overdue_for_multiple_fulfillments": "Betalning förfaller för {{count}} leveranser",
+            "title": "Betalning förfaller",
+            "title_with_date": "Betalning förfaller {{date}}",
+            "title_due_on_receipt": "Betalning inte förfallen än",
+            "title_due_on_fulfillment": "Betalning förfaller vid leverans",
+            "description_partially_paid": "Denna beställning är delvis betald. Du har en återstående balans.",
+            "description_authorized": "Din betalningsmetod kommer att debiteras på förfallodagen, eller så kan du betala nu.",
+            "description_waiting_for_manual_payment": "Denna beställning har en väntande betalning. Saldo kommer att uppdateras när betalningen mottagits.",
+            "description_due_on_receipt": "Du kommer att få en faktura när betalningen ska göras.",
+            "description_due_on_receipt_partially_paid": "Denna beställning har delvis betalats. Du har en kvarvarande balans. Du kommer att få en faktura när betalningen förfaller.",
+            "description_due_on_fulfillment": "Betalning ska göras när alla artiklar i denna beställning har levererats.",
+            "description_due_on_fulfillment_partially_paid": "Denna beställning har delvis betalats. Du har en återstående balans. Betalning förfaller när alla artiklar i denna beställning har levererats.",
+            "description_due_on_fulfillment_partially_paid_next": "Denna beställning är delvis betald. Du har en återstående balans."
+          },
+          "draft": {
+            "description": "Betalningsuppgifter bestäms när beställningen bekräftas.",
+            "title": "Betalning inte förfallen än",
+            "in_review": {
+              "description": "Betalningsuppgifter bestäms när beställningen bekräftas.",
+              "title": "Betalning inte förfallen än"
+            },
+            "submitted": {
+              "description": "Skicka betalning för att bekräfta denna beställning.",
+              "deposit": {
+                "title": "Betalning förfaller",
+                "due_later": "Salditet är enligt villkoren för {{translatedName}} och förfaller den {{dueDate}}.",
+                "due_on_fulfillment": "Balansen ska betalas när alla artiklar i denna beställning har levererats.",
+                "due_on_receipt": "Du kommer att få en faktura för det återstående beloppet.",
+                "due_on_date": "Salditot ska betalas den {{dueDate}}."
+              }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}} ska betalas när din beställning bekräftas. Resterande belopp ska betalas enligt {{translatedName}} villkor.",
+              "due_on_fulfillment": "{{depositAmount}} ska betalas när din beställning bekräftas. Resterande belopp ska betalas när beställningen är fullbordad.",
+              "due_on_receipt": "{{depositAmount}} ska betalas när din beställning bekräftas. Resterande belopp ska betalas senare.",
+              "due_on_date": "{{depositAmount}} ska betalas när din beställning bekräftas. Resterande belopp ska betalas den {{dueDate}}."
+            }
+          },
+          "paid": {
+            "title_with_date": "Betald {{date}}",
+            "description": "Din beställning är helt betald."
+          },
+          "refund": {
+            "title": "Återbetald",
+            "title_with_date": "Återbetalat {{date}}",
+            "description_full_refund": "Du har fått full återbetalning för denna beställning.",
+            "description_single_refund": "Du har fått en delvis återbetalning för denna beställning.",
+            "description_multiple_refunds": "Du har fått delvisa återbetalningar för denna beställning."
+          },
+          "canceled": {
+            "title": "Betalning avbruten"
+          },
+          "pay_now": "Betala nu",
+          "pay_now_accessibility_label": "Betala nu för beställning {{orderName}}"
+        },
+        "order_timeline": {
+          "expand_events_accessibility_label": "Visa utkast av orderdetaljer",
+          "hide_events_accessibility_label": "Dölj utkastets orderdetaljer"
+        },
+        "subtitle": "Inlämnad {{date}}",
+        "title": "Beställ {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Denna betalningsmetod kommer inte längre att vara tillgänglig för framtida köp från denna plats.",
+          "description_with_replacement": "Att ta bort denna betalningsmetod kommer att påverka förautorisera betalningar för denna plats. Ersätt den med en alternativ betalningsmetod för att fortsätta ta emot kommande beställningar."
+        },
+        "payment_details": {
+          "order_label": "Beställ {{name}}",
+          "draft_label": "Utkast till beställning {{name}}"
+        }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Lägg till PO-nummer",
+        "add_modal_title": "Lägg till PO-nummer",
+        "close_modal_accessibility_label": "Stäng modal för PO-nummer",
+        "discard": "Kassera",
+        "discard_changes_modal_title": "Kasta ändringar?",
+        "edit_accessibility_label": "Redigera PO-nummer",
+        "edit_modal_title": "Redigera PO-nummer",
+        "empty_state": "Inget PO-nummer",
+        "modal_po_number_input_label": "PO-nummer",
+        "modal_po_number_input_max_length_error": "PO-nummer har högst {{maxLength}} tecken.",
+        "title": "Beställningsnummer #{{poNumber}}"
+      }
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Det uppstod ett problem när denna adress skulle tas bort. Försök igen eller uppdatera sidan."
+      },
+      "failed_address_creation": {
+        "description": "Det uppstod ett problem när din adress skulle skapas. Försök att uppdatera sidan eller kontrollera din internetanslutning."
+      },
+      "failed_address_update": {
+        "description": "Det uppstod ett problem med att uppdatera din adress. Försök att uppdatera sidan eller kontrollera din internetanslutning."
+      },
+      "load_address_form_error": {
+        "title": "Kan inte ladda adressformuläret",
+        "description": "Kunde inte ladda adressformuläret.",
+        "refresh_button": "Uppdatera sidan"
+      },
+      "load_orders_error": {
+        "title": "Kunde inte ladda beställningar"
+      },
+      "load_paypal_error": {
+        "description": "Det uppstod ett problem vid inläsning av PayPal. Vänligen försök igen."
+      },
+      "logout_everywhere": {
+        "description": "Något gick fel vid utloggningen. Vänligen försök igen."
+      },
+      "not_found": {
+        "description": "Kontrollera URL:en eller försök igen om några minuter.",
+        "title": "Det uppstod ett problem när sidan skulle laddas"
+      },
+      "order_not_found": {
+        "description": "Den här beställningen finns inte eller så har du inte behörighet att se den.",
+        "title": "Order hittades inte"
+      },
+      "profile_update_error": {
+        "description": "Det uppstod ett problem vid uppdatering av din profil. Försök att uppdatera sidan eller kontrollera din internetanslutning."
+      },
+      "profile_name_update_error": {
+        "description": "Det uppstod ett problem med att uppdatera ditt namn. Försök att uppdatera sidan eller kontrollera din internetanslutning."
+      },
+      "resend_link": {
+        "generic": "Misslyckad förfrågan"
+      },
+      "load_extension_error": {
+        "description": "Uppdatera den här sidan eller försök igen om några minuter.",
+        "refresh_button": "Uppdatera sidan"
+      },
+      "already_upgraded": "Kundkonton är redan uppgraderade.",
+      "failed_to_upgrade": "Misslyckades med att uppgradera kundkontots inställningar.",
+      "not_upgraded": "Kundkonton uppgraderas inte.",
+      "failed_to_revert": "Misslyckades med att återställa kundkontots inställningar.",
+      "revert_window_expired": "Återställningsfönstret har gått ut."
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "description": "Var god försök igen om några minuter"
       }
     }
   },
