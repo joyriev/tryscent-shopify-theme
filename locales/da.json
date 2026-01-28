@@ -2972,7 +2972,107 @@
       "order_details": "Ordredetaljer",
       "order_details_skeleton_accessibility_label": "Log ind for at se alle ordreoplysninger.",
       "card_ending_with": "slutter med {{lastDigits}}",
-      "company_and_location": "Firma og placering"
+      "company_and_location": "Firma og placering",
+      "group_title_label": "Del af: {{groupTitle}}",
+      "group_title_label_with_parent": "Til: {{groupTitle}}",
+      "grouped_view_components": {
+        "expand_line_items": "Vis {{count}} varer",
+        "collapse_line_items": "Skjul {{count}} varer",
+        "line_item_summary_accessibility_label": "{{productTitle}}, Antal: {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "Genstande i {{productTitle}} sæt"
+      },
+      "loading_finished_accessibility_message": "Ordredetaljer er blevet indlæst",
+      "location": "Placering",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} antal {{quantity}}",
+        "previous": "Vis tidligere varer",
+        "load_more_items": {
+          "one": "Indlæs {{count}} flere varer",
+          "other": "Indlæs {{count}} flere varer"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "Vis ordresammendrag",
+        "closed": "Skjul ordresammendrag"
+      },
+      "no_data_provided_accessibility_label": "{{fieldName}} er tom",
+      "not_applicable": "Ikke relevant",
+      "partially_refunded_label": "DELT REFUNDERET",
+      "payment_confirmation": {
+        "payment_received": "Tak! Din betaling på {{amount}} er modtaget.",
+        "full_payment_received": "Tak! Din betaling på {{amount}} er modtaget, og denne ordre er nu fuldt betalt."
+      },
+      "payment": {
+        "status_in_review": "Betaling forfalder efter gennemgang",
+        "payment_type": {
+          "store_credit": "Butikskredit",
+          "cash_on_delivery": "Kontant ved Levering (COD)",
+          "bank_deposit": "Bankindskud",
+          "manual": "Brugervejledning"
+        },
+        "card_payment_details": "afsluttes med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "afsluttes med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Butikskredit - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Betalt med Shop Pay afdrag"
+        },
+        "manual_payment_methods": {
+          "cash_on_delivery": "Kontant ved levering (COD) - {{formattedTransactionAmount}}",
+          "manual": "Manual - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_less": "Vis mindre"
+        },
+        "emv_details": {
+          "auth": "AUTORISERET:",
+          "aid": "HJÆLP:",
+          "source": "Vi er Fluxidi, et mode e-handelsmærke.  \nVi sælger dametøj og herretøj med et premium skandinavisk–italiensk look: vinterjakker, lammeskinds- og læderjakker, frakker, strik, bukser, sko og accessories.  \nVi bruger to linjer: “Inspired by Design” (overkommelig) og “Premium” (high-end)."
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Betalt med Shop Pay afdrag",
+        "desktop_qr_code_content": {
+          "description": "Få påmindelser om dine afdrag med Shop."
+        }
+      },
+      "request_return_failed": "Der opstod et problem med at behandle din anmodning. Prøv venligst igen.",
+      "login_card": {
+        "resend_link_and_login": "For at se dine ordreoplysninger skal du logge ind eller sende et nyt link til den e-mail eller det telefonnummer, der blev brugt ved kassen.",
+        "resend_link_only": "For at se dine ordreoplysninger, send et nyt link til den e-mail eller telefonnummer, der blev brugt ved kassen.",
+        "resend_link": "Send ny link",
+        "link_expired": "Link udløbet"
+      },
+      "remaining_amount": "Tilbageværende",
+      "marketing_description": "Du vil modtage markedsføringsmails. Du kan afmelde dig når som helst.",
+      "marketing_checkbox_label": "Send mig e-mails med nyheder og tilbud",
+      "marketing_checkmark_label": "Du er tilmeldt for at modtage nyheder og tilbud via e-mail",
+      "returns": {
+        "ineligible_return_message": "Ingen varer i denne ordre er berettiget til returnering.",
+        "ineligible_return_message_when_returned": "Ingen yderligere varer i denne ordre er berettiget til returnering.",
+        "print_shipping_label": "Print forsendelsesetiket",
+        "tracking_number": "Sporingsnummer:",
+        "exchange_header": "Byttevarer",
+        "exchange_subheader": "Byttevarer vil blive tilføjet til ordren, når returneringen er gennemført."
+      },
+      "shipping": {
+        "method": "Forsendelsesmetode",
+        "summary": "Forsendelse",
+        "free_shipping_discount": "Gratis fragt",
+        "subscription": "Abonnementsforsendelse"
+      },
+      "pickup": {
+        "pickup_location": "Afhentningssted"
+      },
+      "show_order_summary": "Vis ordresammendrag",
+      "hide_order_summary": "Skjul ordresammendrag",
+      "subtitle": "Bekræftet {{date}}",
+      "subtotal": "Delsum",
+      "summary_list_title_accessibility_label": "Bestil varer",
+      "summary_title": "Ordresammendrag",
+      "summary_totals_title_accessibility_label": "Ordretotaler",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Download Shop for at spore pakken"
+      }
     }
   }
 }

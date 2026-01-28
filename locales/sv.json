@@ -828,7 +828,99 @@
       "order_details_skeleton_accessibility_label": "Logga in för att se alla orderdetaljer.",
       "card_ending_with": "slutar med {{lastDigits}}",
       "contact": "Kontakt",
-      "fully_refunded_label": "ÅTERBETALD"
+      "fully_refunded_label": "ÅTERBETALD",
+      "grouped_view_components": {
+        "collapse_line_items": "Dölj {{count}} föremål",
+        "line_item_summary_accessibility_label": "{{productTitle}}, Antal: {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "Artiklar i {{productTitle}} paketet"
+      },
+      "loading": "Laddar orderdetaljer",
+      "loading_finished_accessibility_message": "Orderdetaljer har laddats",
+      "location": "Placering",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} antal {{quantity}}",
+        "next": "Visa nästa artiklar",
+        "load_more_items": {
+          "one": "Ladda {{count}} fler artiklar",
+          "other": "Ladda {{count}} fler artiklar"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "closed": "Dölj ordersammanfattning"
+      },
+      "no_data": "Ingen",
+      "partially_refunded_label": "DELVIS ÅTERBETALD",
+      "payment_confirmation": {
+        "payment_received": "Tack! Din betalning på {{amount}} har mottagits.",
+        "full_payment_received": "Tack! Din betalning på {{amount}} har mottagits, och denna beställning är nu helt betald.",
+        "dismiss_label": "Avvisa betalningsbekräftelse"
+      },
+      "payment": {
+        "status_in_review": "Betalning förfaller efter granskning",
+        "status_unpaid": "Betalning förfaller den {{date}}",
+        "payment_type": {
+          "store_credit": "Butikskredit",
+          "cash_on_delivery": "Kontant betalning vid Leverans (COD)"
+        },
+        "card_payment_details": "slutar med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "slutar med {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Butikskredit - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Betalat med Shop Pay delbetalningar"
+        },
+        "manual_payment_methods": {
+          "money_order": "Postanvisning - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Postförskott (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Bankinsättning - {{formattedTransactionAmount}}",
+          "manual": "Handbok - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "Visa alla",
+          "details": "Detaljer"
+        },
+        "emv_details": {
+          "auth": "AUTENTISERING:",
+          "aid": "Hjälp:",
+          "source": "Vi säljer armbandsur och tillbehör för klockor. Vårt varumärke heter Pagani Design, var noga med att inte översätta varumärkesnamnet när det förekommer, så att varumärkesprofilen blir perfekt."
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Betalat med Shop Pay delbetalningar",
+        "desktop_qr_code_content": {
+          "title": "Skanna för påminnelser",
+          "description": "Få påminnelser om dina delbetalningar med Shop."
+        }
+      },
+      "refunded_amount": "Återbetald",
+      "request_return_failed": "Det uppstod ett problem när din förfrågan skulle behandlas. Vänligen försök igen.",
+      "login_card": {
+        "resend_link_and_login": "För att se dina orderdetaljer, logga in eller skicka en ny länk till den e-postadress eller det telefonnummer som användes vid kassan.",
+        "resend_link_only": "För att se dina orderdetaljer, skicka en ny länk till den e-postadress eller det telefonnummer som användes vid kassan."
+      },
+      "remaining_amount": "Kvar",
+      "marketing_description": "Du kommer att få marknadsföringsmejl. Du kan avregistrera dig när som helst.",
+      "marketing_checkbox_label": "Skicka nyheter och erbjudanden till mig via e-post",
+      "marketing_checkmark_label": "Du är prenumerant för att ta emot nyheter och erbjudanden via e-post",
+      "returns": {
+        "ineligible_return_message": "Inga artiklar i denna beställning är berättigade till retur.",
+        "ineligible_return_message_when_returned": "Inga ytterligare artiklar i denna beställning är berättigade till retur.",
+        "print_shipping_label": "Skriv ut fraktetikett",
+        "exchange_header": "Byt varor",
+        "exchange_subheader": "Bytessaker kommer att läggas till i beställningen när returen är slutförd."
+      },
+      "shipping": {
+        "method": "Fraktmetod",
+        "summary": "Frakt",
+        "one_time": "Engångsfrakt"
+      },
+      "show_order_summary": "Visa orderöversikt",
+      "subtitle": "Bekräftat {{date}}",
+      "summary_list_title_accessibility_label": "Beställningsartiklar",
+      "summary_title": "Orderöversikt",
+      "summary_totals_title_accessibility_label": "Ordertotaler",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Ladda ner Shop för att spåra paketet"
+      }
     }
   },
   "shopify": {
