@@ -2449,7 +2449,42 @@
     },
     "addresses": {
       "pincode": "Pinkode",
-      "region": "Region"
+      "region": "Region",
+      "state_and_territory": "Stat/fylke",
+      "county": "Amt",
+      "governorate": "Guvernørdømme"
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "Bedst sælgende",
+        "za": "Alfabetisk, Z-A",
+        "date_ascending": "Dato, ældst til nyest",
+        "date_descending": "Dato, ny til gammel"
+      }
+    },
+    "errors": {
+      "blank": "kan ikke være tom",
+      "blocked_address": "Denne placering understøttes ikke",
+      "credit_card_session_expired": "Kreditkortautorisationen er udløbet, indtast venligst dine betalingsoplysninger igen. Dit kort er ikke blevet opkrævet.",
+      "empty": "kan ikke være tom",
+      "invalid_email": "skal være en gyldig e-mailadresse",
+      "discount_expired": "Denne rabat er ikke længere gyldig",
+      "discount_limit_reached": "Denne rabat har nået sin brugsgrænse",
+      "discount_not_found": "Kan ikke finde en gyldig rabat, der matcher den indtastede kode",
+      "customer_already_used_once_per_customer_discount_notice": "Denne rabat har nået sin brugsgrænse",
+      "gift_card_already_applied": "Koden er allerede blevet anvendt ved din betaling",
+      "gift_card_currency_mismatch": "Dit gavekort er i %{gift_card_currency}. Kontakt os for at få det udstedt igen i %{checkout_currency}.",
+      "gift_card_depleted": "Der er ikke flere midler tilbage på dette gavekort",
+      "gift_card_expired": "Gavekortet er udløbet",
+      "contains_html_tags": "kan ikke indeholde HTML-tags",
+      "password_mismatch": "skal matche den angivne adgangskode",
+      "contains_spaces": "starter eller slutter med mellemrum.",
+      "invalid_province_in_country": "er ikke en gyldig provins i %{country}",
+      "invalid_region_in_country": "er ikke en gyldig region i %{country}",
+      "not_supported": "understøttes ikke",
+      "full_name_required": "Indtast et fornavn og efternavn",
+      "invalid_for_card_type": "er ikke gyldig",
+      "invalid_start_date_or_issue_number_for_debit": "en gyldig startdato eller udstedelsesnummer er påkrævet"
     }
   },
   "customer_accounts": {

@@ -2434,7 +2434,40 @@
     },
     "addresses": {
       "pincode": "PIN-kod",
-      "state": "Status"
+      "state": "Status",
+      "governorate": "Guvernement",
+      "confirm": "Är du säker på att du vill ta bort den här adressen?"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Utvalda",
+        "best_selling": "Bäst säljande",
+        "az": "Alfabetiskt, A-Ö",
+        "za": "Alfabetiskt, Z-A",
+        "price_descending": "Pris, högst till lägst",
+        "date_descending": "Datum, nyast till äldst"
+      }
+    },
+    "errors": {
+      "blocked_address": "Den här platsen stöds inte",
+      "credit_card_session_expired": "Kreditkortsauktoriseringen har gått ut, vänligen ange din betalningsinformation igen. Ditt kort har inte debiterats.",
+      "invalid_email": "måste vara en giltig e-postadress",
+      "discount_disabled": "Denna rabatt har inaktiverats",
+      "discount_expired": "Denna rabatt är inte giltig längre",
+      "discount_not_found": "Det gick inte att hitta någon giltig rabatt som matchar den angivna koden",
+      "gift_card_already_applied": "Kod har redan tillämpats på din kassa",
+      "gift_card_currency_mismatch": "Ditt presentkort är i %{gift_card_currency}. Kontakta oss för att få det omutfärdat i %{checkout_currency}.",
+      "gift_card_disabled": "Presentkort är inaktiverat",
+      "gift_card_expired": "Presentkortet har gått ut",
+      "contains_html_tags": "kan inte innehålla HTML-taggar",
+      "too_short": "är för kort (minst %{count} tecken)",
+      "too_long": "är för lång (maximalt %{count} tecken)",
+      "invalid_for_country": "är inte giltigt för %{country}",
+      "invalid_for_country_and_province": "är inte giltigt för %{province} och %{country}",
+      "invalid_state_in_country": "är inte en giltig stat i %{country}",
+      "invalid_type": "ursäkta, vi accepterar inte kort av denna typ",
+      "expired": "har gått ut",
+      "invalid_start_date_or_issue_number_for_debit": "ett giltigt startdatum eller utgåvenummer krävs"
     }
   }
 }
