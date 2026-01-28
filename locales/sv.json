@@ -1996,6 +1996,57 @@
       "mor_policies": {
         "terms_and_conditions": "Villkor för Merchant of Record",
         "privacy_policy": "Sekretesspolicy för Merchant of Record"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Belopp att betala för beställning %{order_name}",
+        "changes_summary": {
+          "added": {
+            "one": "Tillagt",
+            "other": "Tillagd %{count}"
+          },
+          "subtracted": "Borttaget %{count}",
+          "returned": "Returnerad %{count}",
+          "return_line_item_removed": "Tog bort %{count} från retur"
+        },
+        "additional_payment_requested": "Betalning av %{total_outstanding} krävs",
+        "checkout_review_and_pay": "Din beställning %{order_name} har uppdaterats. Granska dessa ändringar och betala sedan för att bekräfta din beställning.",
+        "order_updated_on": "Din beställning uppdaterades den %{last_edited_at}.",
+        "order_review_and_pay": "Din beställning har uppdaterats. Granska och betala för att bekräfta din beställning."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Ditt kreditkort kommer att debiteras %{amount}",
+        "payment_total_label": "Betalningssumma",
+        "change_currency_link": "Byt till %{currency_name}",
+        "card_provider_fx_charges_warning": "Din kortutgivare kan ta ut avgifter på transaktioner i %{currency_code}.",
+        "currency_not_supported_by_shop": "Den valuta du valde är inte längre tillgänglig. Alla priser är nu i %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Din kundvagn har uppdaterats baserat på ditt leveransland.",
+        "cart_and_currency_updated_based_on_country": "Din kundvagn och valuta har uppdaterats baserat på ditt leveransland.",
+        "currency_updated_for_country": "Valuta uppdaterad för %{country}"
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Ditt land/region har uppdaterats. Ange din leveransadress för att fortsätta till kassan."
+      },
+      "tips": {
+        "description": "Visa ditt stöd för laget på %{shop_name}",
+        "update_tip": "Uppdateringstips",
+        "message": "Tack, vi uppskattar det."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "one": "Köp %{product_name} och %{count} annan vara",
+          "other": "Köp %{product_name} och %{count} andra föremål"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals_with_initial_order_shipping_discount": "Första betalningen %{total_price_with_discount}, sedan %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Första betalningen %{total_price}",
+            "other": "Första %{count} betalningarna %{total_price} vardera"
+          }
+        }
       }
     }
   }

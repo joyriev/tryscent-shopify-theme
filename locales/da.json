@@ -2003,6 +2003,57 @@
       "mor_policies": {
         "terms_and_conditions": "Handelsbetingelser for registreret forhandler",
         "privacy_policy": "Fortrolighedspolitik for Merchant of Record"
+      },
+      "markets": {
+        "invalid_market_manager_error": "Gennemse dine kontaktoplysninger, inden du fuldfører betalingen"
+      },
+      "notifications": {
+        "title": "Underretninger"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Beløb at betale for ordre %{order_name}",
+        "changes_summary": {
+          "added": {
+            "other": "Tilføjet %{count}"
+          },
+          "subtracted": "Fjernet %{count}",
+          "returned": "Returneret %{count}",
+          "return_line_item_removed": "Fjernet %{count} fra retur"
+        },
+        "additional_payment_requested": "Betaling af %{total_outstanding} er nødvendig",
+        "checkout_review_and_pay": "Din ordre %{order_name} blev opdateret. Gennemgå disse ændringer, og betal derefter for at bekræfte din ordre.",
+        "order_review_and_pay": "Din ordre blev opdateret. Gennemse og betal for at bekræfte din ordre."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Dit kreditkort vil blive opkrævet %{amount}",
+        "payment_total_label": "Betalingssum",
+        "card_provider_fx_charges_warning": "Din kortudbyder kan opkræve gebyrer ved transaktioner i %{currency_code}.",
+        "currency_not_supported_by_shop": "Den valuta, du valgte, er ikke længere tilgængelig. Alle priser er nu i %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Din indkøbskurv er blevet opdateret baseret på dit leveringsland.",
+        "cart_and_currency_updated_based_on_country": "Din kurv og valuta er blevet opdateret baseret på dit forsendelsesland.",
+        "currency_updated_for_country": "Valuta opdateret for %{country}"
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Dit land/område er blevet opdateret. Indtast din leveringsadresse for at fortsætte til kassen."
+      },
+      "tips": {
+        "description": "Vis din støtte til holdet hos %{shop_name}",
+        "presets_description": "Vælg en drikkepengeprocent",
+        "custom_label": "Brugerdefineret tip",
+        "update_tip": "Opdateringstip",
+        "message": "Tak, vi værdsætter det."
+      },
+      "subscriptions": {
+        "recurring_totals": "%{total_price} hver %{interval}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Første betaling %{total_price}",
+            "other": "Første %{count} betalinger à %{total_price} hver"
+          },
+          "following_cycles": ", derefter %{total_price} hver %{interval}"
+        }
       }
     },
     "sentence": {
