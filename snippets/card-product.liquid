@@ -231,8 +231,8 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
                 <div class="flex items-center gap-2 mb-3">
                   <img class="object-contain object-center" src="{{ card_product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ card_product.metafields.custom.inspiration.value.image.alt | escape }}" width="35" height="35">
                   <div>
+                    <p class="text-xs my-0">Inspired by:</p>
                     <h4 class="text-sm font-semibold my-0 line-clamp-1">{{ card_product.metafields.custom.inspiration.value.name }}</h4>
-                    <p class="text-xs my-0">Inspiration</p>
                   </div>
                 </div>
               {% endif %}
