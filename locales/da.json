@@ -2690,7 +2690,9 @@
         "verify_button": "Bekræft",
         "verify_button_accessibility_label": "Bekræft engangskode",
         "cancel_button": "Annuller",
-        "cancel_button_accessibility_label": "Annuller redigering af e-mail"
+        "cancel_button_accessibility_label": "Annuller redigering af e-mail",
+        "email_resend_button_success_toast_message": "Bekræftelseskode sendt",
+        "email_resend_button_error_banner_message": "Kunne ikke sende bekræftelseskode"
       },
       "email_update_success_modal": {
         "title": "Bekræft e-mail",
@@ -2702,11 +2704,22 @@
         "editable_email_help_text": "Denne e-mail bruges til login og opdateringer om ordrer.",
         "email": "E-mail",
         "errors": {
-          "name_too_long": "{{fieldName}} er for langt (maksimum er 255 tegn)"
+          "name_too_long": "{{fieldName}} er for langt (maksimum er 255 tegn)",
+          "name_cannot_contain_url": "{{fieldName}} må ikke indeholde en URL",
+          "name_cannot_contain_html_tags": "{{fieldName}} må ikke indeholde HTML-koder",
+          "email_cant_be_blank": "E-mail kan ikke være tom",
+          "invalid_email_format": "Indtast en gyldig e-mailadresse"
         }
       },
       "loading_accessibility_message": "Indlæser kontoinformation",
-      "loading_finished_accessibility_message": "Kontooplysninger er indlæst"
+      "loading_finished_accessibility_message": "Kontooplysninger er indlæst",
+      "profile_update_confirmation_message": "Profil opdateret",
+      "email_update_confirmation_message": "E-mail opdateret til {{email}}",
+      "people": {
+        "pagination": {
+          "load_more": "Indlæs mere"
+        }
+      }
     },
     "navigation_and_structure": {
       "loading_policy_content_accessibility_label": "Indlæser politikindhold",
@@ -2748,6 +2761,26 @@
         }
       }
     },
-    "enable_javascript": "For at se din konto skal du aktivere JavaScript i dine browserindstillinger eller logge ind med en anden browser."
+    "enable_javascript": "For at se din konto skal du aktivere JavaScript i dine browserindstillinger eller logge ind med en anden browser.",
+    "orders": {
+      "list_layout_accessibility_label": "Layoutmuligheder",
+      "list_title_confirmed_orders_accessibility_label": "Ordrer: bekræftet",
+      "list_title_pending_orders_accessibility_label": "Ordrer: afventende",
+      "switch_order_type_pending_orders_accessibility_label": "Skift ordrestype, viser i øjeblikket ventende ordrer",
+      "switch_order_type_confirmed_orders_accessibility_label": "Skift ordrestype, viser i øjeblikket bekræftede ordrer",
+      "order_list": {
+        "delivered": "Leveret {{date}}",
+        "empty_state_order_source_description": "Kun ordrer afgivet af {{email}} vil blive vist her.",
+        "empty_state_title_for_pending_orders": "Ingen ventende ordrer",
+        "no_order_banner": "For at teste din udvidelse på siden for ordrestatus, opret en ordre.",
+        "estimated_shortform": "Etableret {{date}}",
+        "one_images_accessibility_label": "Bestillingen indeholder {{lineItemName1}}",
+        "two_images_accessibility_label": "Bestillingen indeholder {{lineItemName1}}, {{lineItemName2}}",
+        "three_images_accessibility_label": "Bestillingen indeholder {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "Bestillingen indeholder {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "Bestillingen indeholder {{lineItemName1}}, {{lineItemName2}} og {{numberOfAdditionalProducts}} flere produkter",
+        "more_than_four_products_accessibility_label": "Bestillingen indeholder {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}} og {{numberOfAdditionalProducts}} flere produkter"
+      }
+    }
   }
 }

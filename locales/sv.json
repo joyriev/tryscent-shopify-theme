@@ -574,8 +574,61 @@
         "email_help_text": "E-post kan inte redigeras",
         "editable_email_help_text": "Denna e-post används för inloggning och orderuppdateringar.",
         "errors": {
-          "name_too_long": "{{fieldName}} är för långt (maximalt är 255 tecken)"
+          "name_too_long": "{{fieldName}} är för långt (maximalt är 255 tecken)",
+          "name_cannot_contain_url": "{{fieldName}} kan inte innehålla webbadress",
+          "name_cannot_contain_html_tags": "{{fieldName}} kan inte innehålla HTML-taggar",
+          "email_cant_be_blank": "E-post kan inte vara tom"
         }
+      },
+      "verify_new_email_modal": {
+        "title": "Verifiera e-post",
+        "description": "Ange koden som skickades till {{email}}",
+        "one_time_password_label": "6-siffrig kod",
+        "email_resend_button_accessibility_label": "Skicka verifieringskoden igen",
+        "verify_button_accessibility_label": "Verifiera engångslösenordet",
+        "email_resend_button_success_toast_message": "Verifieringskod skickad",
+        "email_resend_button_error_banner_message": "Kunde inte skicka verifieringskod"
+      },
+      "email_update_success_modal": {
+        "title": "Verifiera e-post",
+        "description": "E-post uppdaterad. Omdirigerar till inloggning."
+      },
+      "profile_update_confirmation_message": "Profil uppdaterad",
+      "email_update_confirmation_message": "E-post uppdaterad till {{email}}",
+      "people": {
+        "pagination": {
+          "load_more": "Ladda mer",
+          "load_more_accessibility_label": "Ladda fler personer",
+          "loading_accessibility_label": "Laddar personer"
+        }
+      }
+    },
+    "orders": {
+      "list_layout_accessibility_label": "Layoutalternativ",
+      "list_title": "Beställningar",
+      "list_title_with_pending_orders": "Beställningar:",
+      "list_title_confirmed_orders_accessibility_label": "Beställningar: bekräftade",
+      "list_title_pending_orders_accessibility_label": "Beställningar: väntande",
+      "switch_order_type_pending_orders_accessibility_label": "Byt ordertyp, visar för närvarande väntande ordrar",
+      "switch_order_type_confirmed_orders_accessibility_label": "Byt ordertyp, visar för närvarande bekräftade beställningar",
+      "order_list": {
+        "column_headers": {
+          "order": "Beställning"
+        },
+        "empty_state_order_source_description": "Endast beställningar gjorda av {{email}} kommer att visas här.",
+        "empty_state_subtitle": "Gå till butiken för att lägga en beställning.",
+        "empty_state_title": "Inga beställningar än",
+        "empty_state_with_location_title": "Inga beställningar för {{locationName}}",
+        "empty_state_title_for_pending_orders": "Inga väntande beställningar",
+        "no_order_banner": "För att testa din tillägg på sidan Orderstatus, skapa en order.",
+        "estimated_shortform": "Grundat {{date}}",
+        "estimated_delivery": "Förväntad {{date}}",
+        "one_images_accessibility_label": "Beställningen innehåller {{lineItemName1}}",
+        "two_images_accessibility_label": "Beställningen innehåller {{lineItemName1}}, {{lineItemName2}}",
+        "three_images_accessibility_label": "Beställningen innehåller {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}",
+        "four_images_accessibility_label": "Beställningen innehåller {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}}, {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "Beställningen innehåller {{lineItemName1}}, {{lineItemName2}} och {{numberOfAdditionalProducts}} ytterligare produkter",
+        "more_than_four_products_accessibility_label": "Beställningen innehåller {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}} och {{numberOfAdditionalProducts}} ytterligare produkter"
       }
     }
   },
