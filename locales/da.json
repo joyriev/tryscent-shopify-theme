@@ -441,25 +441,25 @@
       "order_number_link": "Ordrenummer {{ number }}",
       "date": "Dato",
       "payment_status": "Betalingsstatus",
-      "fulfillment_status": "Klargøringsstatus",
+      "fulfillment_status": "Opfyldelsesstatus",
       "total": "I alt",
-      "none": "Du har ikke afgivet nogen ordrer endnu."
+      "none": "Du har endnu ikke afgivet nogen ordrer."
     },
     "recover_password": {
       "title": "Nulstil din adgangskode",
-      "subtext": "Vi sender dig en mail, så du kan forny din adgangskode",
-      "success": "Vi har sendt dig en mail med et link, så du kan opdatere din adgangskode."
+      "subtext": "Vi sender dig en e-mail for at nulstille din adgangskode",
+      "success": "Vi har sendt dig en e-mail med et link til at opdatere din adgangskode."
     },
     "register": {
       "title": "Opret konto",
       "first_name": "Fornavn",
       "last_name": "Efternavn",
-      "email": "Mailadresse",
+      "email": "E-mail",
       "password": "Adgangskode",
       "submit": "Opret"
     },
     "reset_password": {
-      "title": "Forny adgangskode til konto",
+      "title": "Nulstil kontoadgangskode",
       "subtext": "Indtast en ny adgangskode",
       "password": "Adgangskode",
       "password_confirm": "Bekræft adgangskode",
@@ -482,46 +482,46 @@
       "price": "Pris",
       "quantity": "Antal",
       "total": "I alt",
-      "fulfilled_at_html": "Klargjort den {{ date }}",
-      "track_shipment": "Følg forsendelse",
+      "fulfilled_at_html": "Opfyldt {{ date }}",
+      "track_shipment": "Spor forsendelse",
       "tracking_url": "Sporingslink",
-      "tracking_company": "Fragtfirma",
-      "tracking_number": "Trackingnummer",
-      "subtotal": "Subtotal",
-      "total_duties": "Told",
+      "tracking_company": "Transportør",
+      "tracking_number": "Sporingsnummer",
+      "subtotal": "Delsum",
+      "total_duties": "Afgifter",
       "total_refunded": "Refunderet"
     }
   },
   "gift_cards": {
     "issued": {
-      "title": "Her er din gavekortsaldo ({{ value }}) for {{ shop }}!",
+      "title": "Her er din gavekortsaldo på {{ value }} til {{ shop }}!",
       "subtext": "Dit gavekort",
-      "gift_card_code": "Gavekortskode",
-      "shop_link": "Besøg webshop",
-      "add_to_apple_wallet": "Føj til Apple Wallet",
-      "qr_image_alt": "QR-kode – scan for at indløse gavekort",
-      "copy_code": "Kopiér gavekortskode",
+      "gift_card_code": "Gavekortkode",
+      "shop_link": "Besøg onlinebutik",
+      "add_to_apple_wallet": "Tilføj til Apple Wallet",
+      "qr_image_alt": "QR-kode — scan for at indløse gavekort",
+      "copy_code": "Kopiér gavekortkode",
       "expired": "Udløbet",
-      "copy_code_success": "Koden er blevet kopieret",
-      "how_to_use_gift_card": "Brug gavekortkoden online eller som QR-kode i butikken",
+      "copy_code_success": "Kode kopieret succesfuldt",
+      "how_to_use_gift_card": "Brug gavekortkoden online eller QR-koden i butikken",
       "expiration_date": "Udløber {{ expires_on }}"
     }
   },
   "recipient": {
     "form": {
-      "checkbox": "Jeg vil sende som en gave",
-      "email_label": "Modtagers mailadresse",
-      "email": "Mail",
-      "name_label": "Modtagerens navn (valgfrit)",
+      "checkbox": "Jeg vil gerne sende dette som en gave",
+      "email_label": "Modtagerens e-mail",
+      "email": "E-mail",
+      "name_label": "Modtagernavn (valgfrit)",
       "name": "Navn",
       "message_label": "Besked (valgfrit)",
       "message": "Besked",
-      "max_characters": "Højst {{ max_chars }} tegn",
-      "email_label_optional_for_no_js_behavior": "Modtagerens mailadresse (valgfrit)",
+      "max_characters": "{{ max_chars }} tegn maks",
+      "email_label_optional_for_no_js_behavior": "Modtagerens e-mail (valgfrit)",
       "send_on": "ÅÅÅÅ-MM-DD",
-      "send_on_label": "Send (valgfrit)",
-      "expanded": "Formularen til modtager af gavekort er vist",
-      "collapsed": "Formularen til modtager af gavekort er skjult"
+      "send_on_label": "Send videre (valgfrit)",
+      "expanded": "Gavekortmodtagerformular udvidet",
+      "collapsed": "Gavekortmodtagerformular skjult"
     }
   },
   "shopify": {
