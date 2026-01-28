@@ -854,7 +854,123 @@
         "have_an_account_label": "Ein Konto haben?",
         "save_my_information_label": "Spare diese Informationen für das nächste Mal",
         "invalid_address": "Die ausgewählte Adresse ist ungültig. %{update_address_link} oder wählen Sie eine andere Adresse aus.",
-        "incomplete_address": "Die ausgewählte Adresse ist unvollständig. %{update_address_link} oder wählen Sie eine andere Adresse aus."
+        "incomplete_address": "Die ausgewählte Adresse ist unvollständig. %{update_address_link} oder wählen Sie eine andere Adresse aus.",
+        "rollup_accessibility_label": "Kontooptionen",
+        "invalid_shipping_method_summary": "Wählen Sie eine gültige Versandadresse aus, um verfügbare Versandmethoden anzuzeigen",
+        "saved_address_option_description": {
+          "one": "Sie haben {{count}} gespeicherte Adresse.",
+          "other": "Sie haben {{count}} gespeicherte Adressen."
+        },
+        "saved_address_option_link": "Gespeicherte Adresse verwenden"
+      },
+      "remote_merchandise_only": {
+        "title": "Schließen Sie Ihren Kauf ab",
+        "remote_only_notice": "Diese Artikel werden von anderen Geschäften verkauft und versandt. Zur Kasse bei jedem Geschäft, um Ihren Einkauf abzuschließen.",
+        "return_to_store_label": "Zurück zum Geschäft",
+        "single_shop_transition": "Wir leiten Sie zu %{advertiser} weiter, um Ihren Kauf abzuschließen."
+      },
+      "stock": {
+        "page_title": "Inventarprobleme",
+        "title": "Nicht auf Lager",
+        "items_unavailable_notice": "Einige Artikel sind nicht mehr verfügbar.",
+        "quantity_column_header": "Menge",
+        "reduced_with_quantity_label": "Nur noch %{quantity_available} übrig",
+        "continue_shopping_button_label": "Fortsetzen",
+        "return_to_store_label": "Zurück zum Geschäft",
+        "continue_cta_label": "Zur Kasse gehen",
+        "empty_cart_label": "Ihr Warenkorb ist leer",
+        "quantity_update": {
+          "description": "Die verfügbaren Mengen für diese Artikel haben sich geändert und wurden in Ihrem Warenkorb aktualisiert."
+        },
+        "unpurchasable_product": {
+          "title": "Nicht kaufbares Produkt",
+          "header": "Einige Artikel wurden aus Ihrem Warenkorb entfernt",
+          "message": "Diese Artikel sind für B2B-Bestellungen nicht verfügbar."
+        },
+        "unpurchasable_product_generic": {
+          "title": "Nicht kaufbares Produkt",
+          "header": "Einige Artikel wurden aus Ihrem Warenkorb entfernt"
+        },
+        "unfulfillable_product": {
+          "title": "Lieferung nicht verfügbar",
+          "default_message": {
+            "one": "Die gewählte Liefermethode ist für diesen Artikel nicht mehr verfügbar.",
+            "other": "Die gewählte Liefermethode ist für diese Artikel nicht mehr verfügbar."
+          }
+        },
+        "unshippable_product": {
+          "title": "Keine Lieferung verfügbar",
+          "header": {
+            "one": "Keine Lieferung für %{count} Artikel verfügbar",
+            "other": "Keine Lieferung für %{count} Artikel verfügbar"
+          },
+          "message": {
+            "one": "Dieser Artikel wird aus Ihrem Warenkorb entfernt, da für Ihre Adresse keine Liefermethoden verfügbar sind.",
+            "other": "Diese Artikel werden aus Ihrem Warenkorb entfernt, da für Ihre Adresse keine Liefermethoden verfügbar sind."
+          },
+          "status_column_header": "Keine Lieferung"
+        },
+        "price_update": {
+          "description": "Die Preise für diese Artikel haben sich geändert und wurden in Ihrem Warenkorb aktualisiert.",
+          "updated_price": "Aktualisierter Preis"
+        },
+        "price_and_quantity_update": {
+          "description": "Preise und verfügbare Mengen für diese Artikel haben sich geändert und wurden in Ihrem Warenkorb aktualisiert."
+        },
+        "out_of_stock": {
+          "description": "Diese Artikel sind nicht mehr verfügbar und wurden aus Ihrem Warenkorb entfernt.",
+          "items_unavailable": "Einige Artikel sind nicht mehr verfügbar und wurden aus Ihrem Warenkorb entfernt."
+        },
+        "out_of_stock_in_context_label": "Dieses Produkt ist in Ihrem Land/Ihrer Region nicht verfügbar."
+      },
+      "contextual_availability": {
+        "products_not_available": {
+          "one": "Dieses Produkt wird aus Ihrem Warenkorb entfernt, da es in Ihrem Land/Ihrer Region nicht verfügbar ist.",
+          "other": "Diese Produkte werden aus Ihrem Warenkorb entfernt, da sie in Ihrem Land/Ihrer Region nicht verfügbar sind."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Dieses Produkt ist in Ihrem Land/Ihrer Region nicht verfügbar.",
+          "other": "Diese Produkte sind in Ihrem Land/Ihrer Region nicht verfügbar."
+        }
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "all_products_one": "Das Produkt in Ihrem Warenkorb ist nicht für die Lieferung nach %{location_name} verfügbar.",
+          "all_products_other": "Die Produkte in Ihrem Warenkorb sind nicht für die Lieferung nach %{location_name} verfügbar."
+        },
+        "indeterminate_location_fallback": "Ihr Standort",
+        "cart_updated": "Ihr Warenkorb wurde aktualisiert.",
+        "change_address_only": "Lieferadresse ändern, um fortzufahren.",
+        "change_address_or_remove": "Lieferadresse ändern oder %{remove_action}.",
+        "remove_items_action": {
+          "one": "nicht verfügbaren Artikel entfernen",
+          "other": "nicht verfügbare Artikel entfernen"
+        },
+        "empty_cart_action": "Warenkorb leeren und zum Geschäft zurückkehren"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Keine Lieferung für %{count} Artikel verfügbar",
+            "other": "Keine Lieferung für %{count} Artikel verfügbar"
+          },
+          "message": {
+            "one": "Dieser Artikel wird aus Ihrem Warenkorb entfernt, da für Ihre Adresse keine Liefermethoden verfügbar sind.",
+            "other": "Diese Artikel werden aus Ihrem Warenkorb entfernt, da für Ihre Adresse keine Liefermethoden verfügbar sind."
+          },
+          "label": "Keine Lieferung"
+        }
+      },
+      "order_summary": {
+        "from_other_stores_heading": "Aus anderen Geschäften",
+        "from_multiple_stores_heading": "Von mehreren Geschäften",
+        "view_all_items": {
+          "one": "%{count} Artikel anzeigen"
+        },
+        "more_items_modal": {
+          "clear_search": "Suche löschen",
+          "empty_results": "Keine Ergebnisse gefunden für \"%{searchText}\". Überprüfen Sie die Rechtschreibung oder verwenden Sie ein anderes Wort oder eine andere Wendung."
+        }
       }
     },
     "sentence": {

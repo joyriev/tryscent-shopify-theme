@@ -854,7 +854,113 @@
       "customer_account": {
         "save_my_information_label": "Spara denna information till nästa gång",
         "invalid_address": "Det valda adressen är ogiltig. %{update_address_link} eller välj en annan adress.",
-        "incomplete_address": "Den valda adressen är ofullständig. %{update_address_link} eller välj en annan adress."
+        "incomplete_address": "Den valda adressen är ofullständig. %{update_address_link} eller välj en annan adress.",
+        "rollup_accessibility_label": "Kontoinställningar",
+        "invalid_shipping_method_summary": "Välj en giltig leveransadress för att se tillgängliga leveransmetoder"
+      },
+      "remote_merchandise_only": {
+        "remote_only_notice": "Dessa föremål säljs och skickas av andra butiker. Checkout hos varje butik för att slutföra ditt köp.",
+        "return_to_store_label": "Återvänd till butiken",
+        "checkout_on_shop_label": "Slutför köpet på %{shop_name}",
+        "single_shop_transition": "Omdirigerar dig till %{advertiser} för att slutföra ditt köp."
+      },
+      "stock": {
+        "page_title": "Lagerproblem",
+        "title": "Slut i lager",
+        "items_unavailable_notice": "Vissa artiklar finns inte längre tillgängliga.",
+        "quantity_column_header": "Antal",
+        "removed_from_cart_notice": "Borttagen från kundvagnen",
+        "reduced_label": "Nedsatt",
+        "reduced_with_quantity_label": "Endast %{quantity_available} kvar",
+        "remove_from_cart_button_label": "Ta bort från kundvagn",
+        "go_back_to_cart_button_label": "Gå tillbaka till min kundvagn",
+        "return_to_store_label": "Återvänd till butiken",
+        "continue_cta_label": "Fortsätt till kassan",
+        "empty_cart_label": "Din kundvagn är tom",
+        "quantity_update": {
+          "page_title": "Uppdatering av kvantitet",
+          "title": "Uppdatering av kvantitet",
+          "description": "Tillgängliga kvantiteter för dessa artiklar har ändrats och uppdateras i din kundvagn."
+        },
+        "unpurchasable_product": {
+          "title": "Ej köpbar produkt",
+          "header": "Vissa artiklar togs bort från din kundvagn",
+          "message": "Dessa artiklar är inte tillgängliga för B2B-beställningar."
+        },
+        "unpurchasable_product_generic": {
+          "title": "Ej köpbar produkt",
+          "header": "Vissa artiklar togs bort från din kundvagn",
+          "message": "Dessa artiklar finns inte tillgängliga."
+        },
+        "unfulfillable_product": {
+          "message": {
+            "one": "%{delivery_method} är inte längre tillgängligt för denna vara.",
+            "other": "%{delivery_method} är inte längre tillgängligt för dessa artiklar."
+          }
+        },
+        "unshippable_product": {
+          "message": {
+            "one": "Den här varan kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress.",
+            "other": "Dessa artiklar kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress."
+          }
+        },
+        "price_update": {
+          "description": "Priserna för dessa artiklar har ändrats och är uppdaterade i din kundvagn."
+        },
+        "price_and_quantity_update": {
+          "title": "Pris- och kvantitetsuppdatering",
+          "description": "Priser och tillgängliga kvantiteter för dessa artiklar har ändrats och uppdateras i din kundvagn."
+        },
+        "out_of_stock": {
+          "description": "Dessa artiklar finns inte längre tillgängliga och har tagits bort från din kundvagn.",
+          "items_unavailable": "Vissa artiklar finns inte längre tillgängliga och har tagits bort från din kundvagn."
+        },
+        "out_of_stock_in_context_label": "Denna produkt är inte tillgänglig i ditt land/region."
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Otillgänglig produkt",
+          "other": "Otillgängliga produkter"
+        },
+        "products_not_available": {
+          "one": "Den här produkten kommer att tas bort från din kundvagn eftersom den inte är tillgänglig i ditt land/region.",
+          "other": "Dessa produkter kommer att tas bort från din kundvagn eftersom de inte är tillgängliga i ditt land/region."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Denna produkt är inte tillgänglig i ditt land/region.",
+          "other": "Dessa produkter är inte tillgängliga i ditt land/region."
+        },
+        "unavailable_label": "Ej tillgänglig"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Denna produkt finns inte tillgänglig för leverans till %{location_name}.",
+          "some_products_other": "Dessa produkter finns inte tillgängliga för leverans till %{location_name}.",
+          "all_products_one": "Produkten i din kundvagn kan inte levereras till %{location_name}.",
+          "all_products_other": "Produkterna i din kundvagn kan inte levereras till %{location_name}."
+        },
+        "cart_updated": "Din kundvagn har uppdaterats.",
+        "change_address_only": "Byt leveransadress för att fortsätta.",
+        "change_address_or_remove": "Byt leveransadress eller %{remove_action}.",
+        "empty_cart_action": "töm kundvagnen och återgå till butiken"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "message": {
+            "one": "Den här varan kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress.",
+            "other": "Dessa artiklar kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress."
+          }
+        }
+      },
+      "order_summary": {
+        "title": "Orderöversikt",
+        "view_all_items": {
+          "other": "Visa alla %{count} föremål"
+        },
+        "more_items_modal": {
+          "clear_search": "Rensa sökning",
+          "empty_results": "Inga resultat hittades för \"%{searchText}\". Kontrollera stavningen eller använd ett annat ord eller uttryck."
+        }
       }
     }
   }
