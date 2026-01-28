@@ -535,5 +535,99 @@
         "current": "Nuvarande"
       }
     }
+  },
+  "shopify": {
+    "sentence": {
+      "two_words_connector": "och",
+      "last_word_connector": ", och"
+    },
+    "checkout": {
+      "general": {
+        "page_title": "Kassa",
+        "skip_to_content": "Hoppa till innehåll",
+        "breadcrumb": "Brödsmulor",
+        "complete_purchase_button_label": "Slutför beställning",
+        "authenticate_purchase_button_label": "Verifiera betalning",
+        "all_rights_reserved": "Alla rättigheter förbehållna %{shop_name}",
+        "cart": "Kundvagn",
+        "continue_to_review": "Granska beställning",
+        "back_to_contact_information": "Tillbaka till information",
+        "back_to_shipping_method": "Tillbaka till frakt",
+        "back_to_payment_method": "Återgå till betalning",
+        "choose_billing_address": "Välj en faktureringsadress",
+        "contact_us_html": "Kontakta oss för mer information",
+        "autocomplete_single_item": "1 artikel tillgänglig",
+        "autocomplete_multi_item": "{{number}} artiklar tillgängliga",
+        "autocomplete_close": "Stäng förslag",
+        "checkout_context": {
+          "step_one": "%{shop_name} - Kassan"
+        },
+        "errors": {
+          "only_empty_terms_accepted": "Denna policy accepterar endast tomma villkor.",
+          "session_identifier_not_unique_error": "Något gick fel med din beställning, försök att slutföra köpet igen.",
+          "line_item_limit_reached": "Det maximala antalet radposter har uppnåtts.",
+          "session_is_already_finished": "Denna kassa-session har redan slutförts.",
+          "merchandise": {
+            "only_value_constraint": "Endast exakta värden är tillåtna i varuindatan.",
+            "merchandise_variant_not_found": "Produktvariant hittades inte.",
+            "merchandise_not_applicable": "Produktvariant kan inte köpas.",
+            "mixed_currencies": "Kassan innehåller varor med olika valutor.",
+            "bundle_products_not_supported_for_b2b": "Paketvaror kan inte läggas till i B2B-beställningar för denna plats.",
+            "gift_card_quantity_mismatch": "När du anger presentkortskoder måste antalet artiklar och antalet presentkortskoder stämma överens.",
+            "gift_card_not_supported": "Presentkort stöds inte vid denna kassa.",
+            "gift_card_not_unique": "Presentkort med koden {{code}} förekommer mer än en gång i denna kassa. Koderna formateras innan jämförelse.",
+            "gift_card_used": "Presentkortskoden {{code}} är redan tilldelad ett presentkort. Koder formateras innan jämförelse.",
+            "gift_card_invalid": "Presentkortskoden {{code}} är ogiltig.",
+            "gift_card_code_changed": "Presentkortskoden {{proposed_code}} ändrades till {{formatted_code}} för att följa formateringsreglerna.",
+            "gift_card_with_attributes_not_supported": "Presentkort med anpassade attribut stöds inte vid denna kassa.",
+            "gift_card_with_components_not_supported": "Presentkort med komponenter stöds inte vid denna kassa.",
+            "selling_plan_mismatch": "Prenumerationen har uppdaterats.",
+            "selling_plan_not_supported_b2b": "Prenumerationer stöds inte för B2B-kassan.",
+            "price_mismatch": "Det tidigare föreslagna priset för denna vara var ogiltigt och har uppdaterats.",
+            "inventory_not_found": "Ingen lagerstatus hittades för denna vara.",
+            "product_not_published": "Produkten är inte publicerad.",
+            "product_not_published_in_buyer_location": "Produkten är inte publicerad på köparens plats.",
+            "duplicated_stable_id": "Denna produktlinje har samma stabila ID som en annan linje.",
+            "minimum_quantity_not_met": "Antalet av vissa artiklar uppfyller inte det minsta kravet.",
+            "maximum_quantity_exceeded": "Antalet av vissa artiklar överstiger det tillåtna maxvärdet.",
+            "quantity_increment_not_met": "Antalet av vissa artiklar uppfyller inte beställningsgränserna.",
+            "quantity_rules_not_met": "Antalet av vissa artiklar uppfyller inte beställningsgränserna.",
+            "bundle_requires_components": "Detta paket med varor har inga komponenter.",
+            "title_too_long": "Varans titel är för lång.",
+            "title_empty": "Varans titel är tom."
+          },
+          "buyer_identity": {
+            "business_customer_does_not_match_company": "Företagskontakt har inte tillgång till företaget.",
+            "customer_account_required": "Du måste logga in för att fortsätta.",
+            "company_purchase_permission_required": "Kunden har inte behörighet att lägga företagsbeställningar.",
+            "personal_order_not_allowed": "Personliga beställningar är inte tillåtna för denna butik.",
+            "lost_access_to_company": "Kunden förlorade tillgång till något företag.",
+            "contact_info_does_not_match_customer_account": "Kontaktuppgifterna måste stämma överens med det konto du är inloggad på.",
+            "phone_number_does_not_match_expected_pattern": "Det angivna telefonnumret stämmer inte överens med det förväntade mönstret.",
+            "email_required": "En e-postadress krävs när varan köps med en prenumeration.",
+            "email_domain_is_invalid": "Den angivna domänen kan inte lösas.",
+            "missing_contact_method": "Saknar en giltig kontaktmetod.",
+            "checkout_completion_target_is_missing": "Målet för slutförande av Checkout saknas.",
+            "invalid_customer_profile": "En ogiltig kundprofil angavs.",
+            "customer_profile_access_restricted": "Checkout har inte behörighet att komma åt kundprofilen.",
+            "checkout_completion_target_is_invalid_proc": "Ogiltigt mål för slutförande av utcheckning.",
+            "buyer_identity_presentment_currency_does_not_match": "Det uppstod ett problem vid behandlingen av din beställning. Försök igen om några minuter."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "Varukorg måste ha endast en leveransrad.",
+            "external_delivery_promise_error": "Ett fel uppstod vid hämtning av ett externt leveranslöfte.",
+            "options_instructions_invalid": "De angivna instruktionerna stämmer inte överens med det förväntade mönstret.",
+            "destination_address_required": "En destinationsadress krävs för att fortsätta.",
+            "pickup_points_unavailable": "Upphämtningsställen är för närvarande inte tillgängliga.",
+            "local_pickup_delivery_line_detail_changed": "Den nuvarande strategin för lokal upphämtning måste ändras för att fortsätta.",
+            "selected_pickup_option_no_longer_available": "Det tidigare valda upphämtningsalternativet är inte längre tillgängligt.",
+            "local_pickup_no_delivery_strategy_available": "Ingen tillgänglig lokal upphämtningsleveransstrategi hittades.",
+            "origin_location_id_required": "Ett ursprungsplats-ID krävs när leveransmetoden RETAIL begärs.",
+            "invalid_origin_location_id": "Kunde inte hitta en plats som matchar ursprungsplatsens ID.",
+            "origin_location_id_not_allowed": "De begärda leveransmetoderna stöder inte en ursprungsplats-ID."
+          }
+        }
+      }
+    }
   }
 }

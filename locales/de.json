@@ -558,8 +558,98 @@
         "thank_you_from_shop": "Von %{shop_name}"
       },
       "general": {
-        "remove_chip": "Artikel entfernen"
+        "remove_chip": "Artikel entfernen",
+        "page_title": "Zur Kasse",
+        "skip_to_content": "Zum Inhalt springen",
+        "breadcrumb": "Brotkrumen",
+        "continue_button_label": "Fortsetzen",
+        "complete_purchase_button_label": "Bestellung abschließen",
+        "pay_now_button_label": "Jetzt bezahlen",
+        "continue_to_shipping_method": "Weiter zur Versandabwicklung",
+        "continue_to_payment_method": "Zur Zahlung fortfahren",
+        "back_to_contact_information": "Zurück zur Information",
+        "choose_shipping_method": "Wählen Sie eine Versandart",
+        "choose_payment_method": "Wählen Sie eine Zahlungsmethode",
+        "choose_billing_address": "Wählen Sie eine Rechnungsadresse aus",
+        "contact_us_html": "Kontaktieren Sie uns für weitere Informationen",
+        "autocomplete_single_item": "1 Artikel verfügbar",
+        "autocomplete_multi_item": "{{number}} Artikel verfügbar",
+        "forwarding_indicator": {
+          "new_window": "Öffnet in einem neuen Fenster.",
+          "external": "Öffnet eine externe Website.",
+          "external_and_new_window": "Öffnet eine externe Website in einem neuen Fenster."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} - Kasse"
+        },
+        "errors": {
+          "only_empty_terms_accepted": "Diese Richtlinie akzeptiert nur leere Bedingungen.",
+          "session_identifier_not_unique_error": "Bei Ihrer Bestellung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+          "line_item_limit_reached": "Die maximale Anzahl der Positionen wurde erreicht.",
+          "session_is_already_finished": "Diese Kassensitzung wurde bereits abgeschlossen.",
+          "merchandise": {
+            "only_value_constraint": "Nur exakte Werte sind bei der Wareneingabe erlaubt.",
+            "merchandise_not_found": "Produkt nicht gefunden.",
+            "merchandise_variant_not_found": "Produktvariante nicht gefunden.",
+            "merchandise_not_applicable": "Produktvariante kann nicht gekauft werden.",
+            "mixed_currencies": "Zur Kasse enthält Positionen mit verschiedenen Währungen.",
+            "bundle_products_not_supported_for_b2b": "Gebündelte Artikel können für diesen Standort nicht zu B2B-Bestellungen hinzugefügt werden.",
+            "gift_card_quantity_mismatch": "Beim Angeben von Geschenkkartencodes müssen die Menge der Position und die Anzahl der Geschenkkartencodes übereinstimmen.",
+            "gift_card_not_supported": "Geschenkkarten werden an dieser Kasse nicht unterstützt.",
+            "gift_card_not_unique": "Geschenkgutschein mit dem Code {{code}} wird in diesem Bezahlvorgang mehrmals verwendet. Codes werden vor dem Vergleich formatiert.",
+            "gift_card_used": "Geschenkgutscheincode {{code}} ist bereits einem Geschenkgutschein zugewiesen. Codes werden vor dem Vergleich formatiert.",
+            "gift_card_invalid": "Geschenkgutscheincode {{code}} ist ungültig.",
+            "gift_card_with_attributes_not_supported": "Geschenkkarten mit benutzerdefinierten Attributen werden an diesem Checkout nicht unterstützt.",
+            "gift_card_with_components_not_supported": "Geschenkkarten mit Komponenten werden an dieser Kasse nicht unterstützt.",
+            "selling_plan_not_supported_b2b": "Abonnements werden für den B2B-Checkout nicht unterstützt.",
+            "price_mismatch": "Der zuvor vorgeschlagene Preis für diese Ware war ungültig und wurde aktualisiert.",
+            "inventory_not_found": "Für diese Ware wurde kein Lagerbestand gefunden.",
+            "product_not_published": "Produkt ist nicht veröffentlicht.",
+            "product_not_published_in_buyer_location": "Produkt ist am Standort des Käufers nicht veröffentlicht.",
+            "duplicated_stable_id": "Diese Warenlinie hat dieselbe Stable-ID wie eine andere Linie.",
+            "minimum_quantity_not_met": "Die Menge einiger Artikel erfüllt nicht die erforderliche Mindestanzahl.",
+            "maximum_quantity_exceeded": "Die Menge einiger Artikel überschreitet das zulässige Maximum.",
+            "quantity_increment_not_met": "Die Menge einiger Artikel entspricht nicht den Bestellgrenzen.",
+            "quantity_rules_not_met": "Die Menge einiger Artikel entspricht nicht den Bestellgrenzen.",
+            "bundle_requires_components": "Dieses Bündelprodukt hat keine Komponenten.",
+            "title_too_long": "Der Titel der Ware ist zu lang.",
+            "title_empty": "Der Titel der Ware ist leer."
+          },
+          "buyer_identity": {
+            "business_customer_does_not_match_company": "Der Firmenkontakt hat keinen Zugriff auf das Unternehmen.",
+            "customer_account_required": "Sie müssen sich anmelden, um fortzufahren.",
+            "company_location_required": "Der Kunde muss einen Firmenstandort auswählen, um fortzufahren.",
+            "company_purchase_permission_required": "Der Kunde hat keine Berechtigung, Firmenbestellungen aufzugeben.",
+            "personal_order_not_allowed": "Persönliche Bestellungen sind für diesen Shop nicht erlaubt.",
+            "lost_access_to_company": "Der Kunde hat den Zugriff auf alle Unternehmen verloren.",
+            "contact_info_does_not_match_customer_account": "Die Kontaktinformationen müssen mit dem Konto übereinstimmen, bei dem Sie angemeldet sind.",
+            "phone_number_does_not_match_expected_pattern": "Die angegebene Telefonnummer entspricht nicht dem erwarteten Muster.",
+            "email_required": "Eine E-Mail ist erforderlich, wenn die Ware über ein Abonnement gekauft wird.",
+            "checkout_completion_target_is_missing": "Das Ziel für den Abschluss der Zur Kasse fehlt.",
+            "invalid_customer_profile": "Ein ungültiges Kundenprofil wurde bereitgestellt.",
+            "customer_profile_access_restricted": "Zur Kasse hat keine Berechtigung, auf das Kundenprofil zuzugreifen.",
+            "checkout_completion_target_is_invalid_proc": "Ungültiges Ziel für den Abschluss des Checkouts.",
+            "buyer_identity_presentment_currency_does_not_match": "Bei der Verarbeitung Ihrer Bestellung ist ein Problem aufgetreten. Versuchen Sie es in ein paar Minuten erneut."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "Der Warenkorb darf nur eine Lieferzeile enthalten.",
+            "wrong_number_of_delivery_lines": "Für jede Warengruppe muss eine Lieferlinie angegeben werden.",
+            "external_delivery_promise_error": "Ein Fehler beim Abrufen des externen Lieferzusagens.",
+            "destination_address_required": "Eine Zieladresse ist erforderlich, um fortzufahren.",
+            "pickup_points_unavailable": "Abholstellen sind derzeit nicht verfügbar.",
+            "local_pickup_delivery_line_detail_changed": "Die aktuelle Strategie für die lokale Abholung muss geändert werden, um fortzufahren.",
+            "selected_pickup_option_no_longer_available": "Die zuvor ausgewählte Abholoption ist nicht mehr verfügbar.",
+            "local_pickup_no_delivery_strategy_available": "Keine verfügbare Abhol-Lieferstrategie vor Ort gefunden.",
+            "origin_location_id_required": "Eine Ursprungsstandort-ID ist erforderlich, wenn die Liefermethode RETAIL angefordert wird.",
+            "invalid_origin_location_id": "Konnte keinen Ort finden, der mit der Ursprungsstandort-ID übereinstimmt.",
+            "origin_location_id_not_allowed": "Die angeforderten Liefermethoden unterstützen keine Ursprungsstandort-ID."
+          }
+        }
       }
+    },
+    "sentence": {
+      "two_words_connector": "und",
+      "last_word_connector": ", und"
     }
   },
   "customer_accounts": {
