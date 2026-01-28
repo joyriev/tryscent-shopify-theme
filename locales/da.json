@@ -2119,7 +2119,148 @@
         "selector_tabs": "Afhentningsstedvælger",
         "could_not_resolve_address": "Din adresse kunne ikke findes. Prøv igen eller brug en anden adresse",
         "no_pickup_points_near_you": "Ingen afhentningssteder fundet i nærheden af den valgte adresse",
-        "no_pickup_points_near_location": "Ingen afhentningssteder fundet i nærheden af din placering"
+        "no_pickup_points_near_location": "Ingen afhentningssteder fundet i nærheden af din placering",
+        "pickup_unavailable_banner_title": {
+          "one": "Ingen afhentningssteder tilgængelige for din vare",
+          "other": "Ingen afhentningssteder tilgængelige for dine varer"
+        },
+        "no_pickup_points_found": "Ingen afhentningssteder fundet",
+        "paginator": {
+          "header": {
+            "one": "Viser %{first} - %{last} af %{count} punkt",
+            "other": "Viser %{first} - %{last} af %{count} point"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} af %{count} punkt",
+            "other": "%{pickup_point_index} af %{count} punkter"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} af %{count} punkt",
+            "other": "%{first} - %{last} af %{count} point"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} afhentningssted nær din placering",
+          "other": "%{count} afhentningssteder nær din placering"
+        },
+        "change": "Skift placering",
+        "geolocation": {
+          "shared_location_button": "Brug min placering",
+          "errors": {
+            "unsuported_by_browser": "Geolokalisering understøttes ikke af din browser. Prøv igen eller brug en anden browser.",
+            "permission_not_allowed": "Tillad deling af din placering.",
+            "permission_denied": "Kunne ikke finde din placering. Prøv igen."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "title": "Der opstod et problem med vores kasse",
+          "message": "Opdater denne side eller prøv igen om et par minutter",
+          "action": {
+            "cta": "Opdater side"
+          },
+          "request_id": "Anmodnings-ID: {{requestId}}"
+        },
+        "embed_errors": {
+          "storefront_password_required": "Denne butik er adgangskodebeskyttet",
+          "customer_account_required": "Kunde konto er påkrævet for at fuldføre kassen",
+          "invalid_cart": "Kurven er ikke længere gyldig",
+          "not_authorized": "Checkout-godkendelse mislykkedes. Bekræft dine applikationsoplysninger",
+          "killswitch_enabled": "Checkout er midlertidigt utilgængelig",
+          "policy_violation": "Kan ikke fuldføre kassen på grund af begrænsninger i politikindstillingerne",
+          "unrecoverable_failure": "Kan ikke indlæse kassen. Prøv igen"
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "Vend tilbage til kurven",
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} for at opdatere mængderne",
+        "subscription_changed": "En af dine abonnementer er blevet ændret.",
+        "company_location_changed": "Din indkøbskurv er blevet opdateret. Gennemse din ordre, før du sender den.",
+        "company_location_changed_product_removed": "Din indkøbskurv er blevet opdateret, fordi nogle produkter ikke er tilgængelige på dette sted. Gennemgå din ordre, før du sender den.",
+        "individual_violations_title": {
+          "OtherViolations": "Bestillingsinformation",
+          "UnhandledViolations": "Bestillingsinformation"
+        },
+        "all_violations_content": "Ring eller {{emailLink}} til os for at opdatere disse oplysninger og fuldføre din bestilling:",
+        "all_violations_email_link": "e-mail",
+        "editable_shipping_address_violations_message_title": "Tilføj disse oplysninger for at fuldføre din ordre:",
+        "editable_shipping_address_violations_message_footer": "For permanent at opdatere adressen for denne placering, {{emailLink}}.",
+        "editable_shipping_address_violations_email_link": "kontakt os",
+        "shipping_address_incomplete_title": "Forsendelsesadressen er ufuldstændig",
+        "calculating_shipping": "Forsendelse beregnes stadig. Prøv igen om et par sekunder. Du er ikke blevet opkrævet.",
+        "calculating_taxes": "Skatter bliver stadig beregnet. Prøv igen om et par sekunder. Du er ikke blevet opkrævet.",
+        "generic_processing_error": {
+          "title": "Der opstod et problem med at behandle din ordre",
+          "body": "Du er ikke blevet opkrævet. Prøv igen eller brug en anden betalingsmetode."
+        },
+        "payment_method_not_available_with_payment_terms": "Den betalingsmetode, du valgte, er ikke længere tilgængelig, fordi betalingen for denne ordre nu sker på {{paymentTerms}} vilkår",
+        "payment_method_not_available_with_fulfillment_terms": "Den betalingsmetode, du valgte, er ikke længere tilgængelig, fordi betalingen for denne ordre nu forfalder ved opfyldelse.",
+        "payment_method_not_available_with_fixed_terms": "Den betalingsmetode, du valgte, er ikke længere tilgængelig, fordi betalingen for denne ordre forfalder senere.",
+        "payment_method_not_available_with_review_requirement": "Den betalingsmetode, du valgte, er ikke længere tilgængelig, fordi betalingen forfalder, når din ordre er bekræftet.",
+        "contact_information": {
+          "header": "For at opdatere dine oplysninger, {{emailLink}}.",
+          "email_link": "kontakt os"
+        }
+      },
+      "review_address_modal": {
+        "title": "Anmeldelsesadresse",
+        "subtitle": {
+          "one": "Denne ordre vil blive sendt til den adresse, som {{merchant}} har oplyst.",
+          "other": "Denne ordre vil blive sendt til en adresse oplyst af {{merchant}}. Vælg en leveringsadresse."
+        },
+        "subtitle_no_match": "Denne adresse stemmer ikke overens med nogen af dine gemte adresser.",
+        "subtitle_must_use": "Din ordre vil blive sendt til denne adresse.",
+        "return_to_cart": "Vend tilbage til kurven"
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Anmeldelse",
+          "link_label": "{{partnerDisplayName}} Vilkår og Betingelser"
+        }
+      },
+      "online_store_chat": {
+        "title": "Spørgsmål? Chat med os"
+      },
+      "local_pickup": {
+        "location_information": {
+          "one": "Der er %{count} sted med lager tæt på dig",
+          "other": "Der er %{count} steder med lager tæt på dig"
+        },
+        "toggle_location": "Skift placering",
+        "your_location": "din placering",
+        "no_stores_found": "Ingen butikker fundet",
+        "all_stores_far_away": {
+          "title": "De nærmeste steder er mere end %{distance} væk",
+          "description": "Vælg et sted eller %{ship_to_address_link}",
+          "ship_to_address_link": "sendes til adresse",
+          "change_location_link": "Skift din placering"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "Din tidligere valgte placering er ikke længere tilgængelig",
+          "description": "Vælg en ny placering eller %{ship_to_address_link}",
+          "ship_to_address_link": "sendes til adresse"
+        },
+        "could_not_resolve_address": "Din adresse kunne ikke findes. Prøv igen eller brug en anden adresse",
+        "paginator": {
+          "accessibility_label": "Lokal afhentning sideinddeling"
+        },
+        "reveal_more_label": {
+          "one": "Vis %{count} flere steder",
+          "other": "Vis %{count} flere steder"
+        }
+      },
+      "captcha": {
+        "title": "Fuldfør CAPTCHA'en for at fortsætte",
+        "errors": {
+          "not_solved": "Fuldfør CAPTCHA'en for at fortsætte"
+        }
+      },
+      "discount_errors": {
+        "generic_error": "Din ordre kunne ikke behandles, fordi din rabatkode ikke længere er tilgængelig. Gennemgå din ordretotal og prøv igen."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Du har ikke længere tilladelse til at afgive B2B-ordrer. %{logout_url} for i stedet at afgive en personlig ordre."
       }
     },
     "sentence": {

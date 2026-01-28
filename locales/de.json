@@ -2275,7 +2275,74 @@
         "selector_tabs": "Abholort-Auswahl",
         "could_not_resolve_address": "Ihre Adresse konnte nicht gefunden werden. Versuchen Sie es erneut oder verwenden Sie eine andere Adresse.",
         "no_pickup_points_near_you": "Keine Abholstellen in der Nähe der ausgewählten Adresse gefunden",
-        "no_pickup_points_near_location": "Keine Abholstellen in Ihrer Nähe gefunden"
+        "no_pickup_points_near_location": "Keine Abholstellen in Ihrer Nähe gefunden",
+        "pickup_unavailable_banner_title": {
+          "one": "Keine Abholstellen für Ihren Artikel verfügbar",
+          "other": "Keine Abholstellen für Ihre Artikel verfügbar"
+        },
+        "no_pickup_points_found": "Keine Abholstellen gefunden",
+        "paginator": {
+          "header": {
+            "one": "Zeigt %{first} - %{last} von %{count} Punkt",
+            "other": "Zeige %{first} - %{last} von %{count} Punkten"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} von %{count} Punkt",
+            "other": "%{pickup_point_index} von %{count} Punkten"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} von %{count} Punkt",
+            "other": "%{first} - %{last} von %{count} Punkten"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} Abholstelle in Ihrer Nähe",
+          "other": "%{count} Abholstellen in Ihrer Nähe"
+        },
+        "change": "Standort ändern",
+        "waiting_on_pickup_point_location_notice": "Suche nach Abholstellen...",
+        "geolocation": {
+          "errors": {
+            "unsuported_by_browser": "Die Geolokalisierung wird von Ihrem Browser nicht unterstützt. Versuchen Sie es erneut oder verwenden Sie einen anderen Browser.",
+            "permission_not_allowed": "Standortfreigabe erlauben.",
+            "permission_denied": "Standort konnte nicht ermittelt werden. Bitte versuchen Sie es erneut."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "message": "Aktualisieren Sie diese Seite oder versuchen Sie es in ein paar Minuten erneut",
+          "action": {
+            "cta": "Seite aktualisieren"
+          }
+        },
+        "embed_errors": {
+          "storefront_password_required": "Dieser Shop ist passwortgeschützt",
+          "customer_account_required": "Ein Kundenkonto ist erforderlich, um den Kauf abzuschließen",
+          "cart_completed": "Dieser Checkout wurde bereits abgeschlossen",
+          "invalid_cart": "Der Warenkorb ist nicht mehr gültig",
+          "not_authorized": "Die Authentifizierung beim Zur Kasse schlug fehl. Überprüfen Sie Ihre Anwendungsanmeldedaten.",
+          "killswitch_enabled": "Zur Kasse ist vorübergehend nicht verfügbar",
+          "policy_violation": "Checkout konnte aufgrund von Einschränkungen in der Richtlinienkonfiguration nicht abgeschlossen werden",
+          "unrecoverable_failure": "Konnte den Bezahlvorgang nicht laden. Bitte erneut versuchen"
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "Zurück zum Warenkorb",
+        "subscription_changed": "Eines Ihrer Abonnements wurde geändert.",
+        "company_location_changed": "Ihr Warenkorb wurde aktualisiert. Überprüfen Sie Ihre Bestellung, bevor Sie sie absenden.",
+        "company_location_changed_product_removed": "Ihr Warenkorb wurde aktualisiert, da einige Produkte an diesem Standort nicht verfügbar sind. Überprüfen Sie Ihre Bestellung, bevor Sie sie absenden.",
+        "all_violations_content": "Rufen Sie uns an oder {{emailLink}}, um diese Informationen zu aktualisieren und Ihre Bestellung abzuschließen:",
+        "all_violations_email_link": "E-Mail",
+        "editable_shipping_address_violations_message_title": "Fügen Sie diese Informationen hinzu, um Ihre Bestellung abzuschließen:",
+        "editable_shipping_address_violations_message_footer": "Um die Adresse für diesen Standort dauerhaft zu ändern, {{emailLink}}.",
+        "editable_shipping_address_violations_email_link": "kontaktieren Sie uns",
+        "shipping_address_incomplete_title": "Die Versandadresse ist unvollständig",
+        "calculating_shipping": "Der Versand wird noch berechnet. Versuchen Sie es in ein paar Sekunden erneut. Ihnen wurde noch nichts berechnet.",
+        "calculating_taxes": "Die Steuern werden noch berechnet. Versuchen Sie es in ein paar Sekunden erneut. Ihnen wurden keine Gebühren berechnet.",
+        "generic_processing_error": {
+          "title": "Bei der Verarbeitung Ihrer Bestellung ist ein Problem aufgetreten"
+        }
       }
     },
     "sentence": {

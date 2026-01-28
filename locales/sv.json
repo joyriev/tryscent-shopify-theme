@@ -2103,7 +2103,128 @@
         "selector_tabs": "Upphämtningsplatsväljare",
         "could_not_resolve_address": "Din adress kunde inte hittas. Försök igen eller använd en annan adress",
         "no_pickup_points_near_you": "Inga upphämtningsställen hittades nära den valda adressen",
-        "no_pickup_points_near_location": "Inga upphämtningsställen hittades nära din plats"
+        "no_pickup_points_near_location": "Inga upphämtningsställen hittades nära din plats",
+        "pickup_unavailable_banner_title": {
+          "one": "Inga upphämtningsställen tillgängliga för din vara",
+          "other": "Inga upphämtningsställen tillgängliga för dina artiklar"
+        },
+        "no_pickup_points_found": "Inga upphämtningsställen hittades",
+        "paginator": {
+          "header": {
+            "one": "Visar %{first} - %{last} av %{count} poäng",
+            "other": "Visar %{first} - %{last} av %{count} poäng"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} av %{count} punkt"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} av %{count} poäng",
+            "other": "%{first} - %{last} av %{count} poäng"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} upphämtningsställe nära din plats",
+          "other": "%{count} upphämtningsställen nära din plats"
+        },
+        "change": "Byt plats",
+        "waiting_on_pickup_point_location_notice": "Söker efter upphämtningsställen...",
+        "geolocation": {
+          "errors": {
+            "unsuported_by_browser": "Att hämta geolokalisering stöds inte av din webbläsare. Försök igen eller använd en annan webbläsare.",
+            "permission_not_allowed": "Tillåt att dela din plats.",
+            "permission_denied": "Kunde inte få din plats. Försök igen."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "message": "Uppdatera den här sidan eller försök igen om några minuter",
+          "action": {
+            "cta": "Uppdatera sidan"
+          },
+          "request_id": "Begäran ID: {{requestId}}"
+        },
+        "embed_errors": {
+          "storefront_password_required": "Den här butiken är lösenordsskyddad",
+          "customer_account_required": "Kundkonto krävs för att slutföra kassan",
+          "cart_completed": "Denna utcheckning har redan slutförts",
+          "invalid_cart": "Korgen är inte längre giltig",
+          "not_authorized": "Autentisering vid Checkout misslyckades. Kontrollera dina ansökningsuppgifter",
+          "killswitch_enabled": "Checkout är tillfälligt otillgängligt",
+          "policy_violation": "Kan inte slutföra utcheckningen på grund av begränsningar i policyns konfiguration",
+          "unrecoverable_failure": "Kunde inte ladda kassan. Försök igen."
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "Återgå till kundvagnen",
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} för att uppdatera mängderna",
+        "company_location_changed": "Din kundvagn har uppdaterats. Granska din beställning innan du skickar in den.",
+        "company_location_changed_product_removed": "Din kundvagn har uppdaterats eftersom vissa produkter inte finns tillgängliga på denna plats. Granska din beställning innan du skickar in den.",
+        "violations_title": "{{violation}} saknas eller är ogiltigt",
+        "all_violations_content": "Ring eller {{emailLink}} oss för att uppdatera denna information och slutföra din beställning:",
+        "editable_shipping_address_violations_message_title": "Lägg till denna information för att slutföra din beställning:",
+        "editable_shipping_address_violations_message_footer": "För att permanent uppdatera adressen för denna plats, {{emailLink}}.",
+        "calculating_shipping": "Fraktkostnaden beräknas fortfarande. Försök igen om några sekunder. Du har inte debiterats.",
+        "calculating_taxes": "Skatter beräknas fortfarande. Försök igen om några sekunder. Du har inte debiterats.",
+        "generic_processing_error": {
+          "title": "Det uppstod ett problem vid behandlingen av din beställning"
+        },
+        "payment_method_not_available_with_payment_terms": "Den betalningsmetod du valde är inte längre tillgänglig eftersom betalning för denna beställning nu sker på {{paymentTerms}} villkor",
+        "payment_method_not_available_with_fulfillment_terms": "Betalningsmetoden du valde är inte längre tillgänglig eftersom betalning för denna beställning nu ska göras vid leverans",
+        "payment_method_not_available_with_fixed_terms": "Den betalningsmetod du valde är inte längre tillgänglig eftersom betalningen för denna beställning förfaller senare",
+        "payment_method_not_available_with_review_requirement": "Den betalningsmetod du valde är inte längre tillgänglig eftersom betalning kommer att ske när din beställning har bekräftats.",
+        "contact_information": {
+          "header": "För att uppdatera din information, {{emailLink}}."
+        }
+      },
+      "review_address_modal": {
+        "title": "Recensionsadress",
+        "subtitle": {
+          "one": "Denna beställning kommer att skickas till den adress som {{merchant}} har angett.",
+          "other": "Denna beställning kommer att skickas till en adress som anges av {{merchant}}. Välj en leveransadress."
+        },
+        "subtitle_no_match": "Den här adressen matchar ingen av dina sparade adresser.",
+        "subtitle_must_use": "Din beställning kommer att skickas till denna adress.",
+        "return_to_cart": "Återgå till kundvagnen"
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Recension",
+          "link_label": "{{partnerDisplayName}} Villkor och bestämmelser"
+        }
+      },
+      "local_pickup": {
+        "all_stores_far_away": {
+          "title": "De närmaste platserna ligger mer än %{distance} bort",
+          "ship_to_address_link": "leveransadress"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "Din tidigare valda plats är inte längre tillgänglig",
+          "ship_to_address_link": "leveransadress"
+        },
+        "could_not_resolve_address": "Din adress kunde inte hittas. Försök igen eller använd en annan adress",
+        "paginator": {
+          "accessibility_label": "Sidindelning för lokal upphämtning"
+        },
+        "reveal_more_label": {
+          "one": "Visa %{count} fler platser",
+          "other": "Visa %{count} fler platser"
+        }
+      },
+      "captcha": {
+        "title": "Slutför CAPTCHA för att fortsätta",
+        "errors": {
+          "not_solved": "Slutför CAPTCHA för att fortsätta"
+        }
+      },
+      "clipboard": {
+        "failed_to_copy": "Misslyckades med att kopiera"
+      },
+      "discount_errors": {
+        "generic_error": "Din beställning kunde inte behandlas eftersom din rabattkod inte längre är giltig. Granska din ordertotal och försök igen."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Du har inte längre tillåtelse att lägga B2B-beställningar. %{logout_url} för att istället lägga en personlig beställning."
       }
     }
   }
