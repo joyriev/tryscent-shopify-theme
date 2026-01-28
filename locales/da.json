@@ -656,9 +656,118 @@
             "local_pickup_no_delivery_strategy_available": "Ingen tilgængelig lokal afhentningsleveringsstrategi fundet.",
             "origin_location_id_required": "En oprindelseslokations-ID er påkrævet, når leveringsmetoden DETAILHANDLEN anmodes om.",
             "invalid_origin_location_id": "Kunne ikke finde en placering, der matcher oprindelsesstedets ID.",
-            "origin_location_id_not_allowed": "De ønskede leveringsmetoder understøtter ikke et oprindelseslokations-ID."
+            "origin_location_id_not_allowed": "De ønskede leveringsmetoder understøtter ikke et oprindelseslokations-ID.",
+            "auto_fulfill_not_allowed": "Denne session er ikke autoriseret til at tilsidesætte opfyldelsesadfærden.",
+            "auto_fulfill_required": "Automatisk opfyldelse er påkrævet, når leveringsmetoden DETAIL ønskes.",
+            "prefetch_shipping_rates_used": "Forudindhentede forsendelsespriser bør aldrig returnere priser.",
+            "fulfillment_constraints_not_satisfied": "En eller flere opfyldelsesbegrænsninger blev ikke opfyldt.",
+            "must_fulfill_from_constraint_not_satisfied": "Opfyldelsesbegrænsninger er ikke opfyldt, fordi varer ikke kan leveres fra de krævede lokationer.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Opfyldelsesbegrænsninger er ikke opfyldt, fordi varer ikke kan opfyldes fra samme placering.",
+            "delivery_strategy_conditions_not_satisfied": "Leveringsstrategier er tilgængelige for denne placering, men deres betingelser er ikke opfyldt.",
+            "out_of_stock_at_origin_location": "Ingen lagerbeholdning på oprindelsesstedet.",
+            "invalid_signature": "Ugyldig rabatkode."
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "Rabat er ikke tilladt i B2B-butikker.",
+            "custom_discount_not_honoured": "Den angivne brugerdefinerede rabat blev ikke honoreret.",
+            "unsupported_expectation": "Den angivne rabatlinje indeholdt en forventning, som politikken ikke kunne fortolke.",
+            "additional_requested_discount_code_discarded": "{{code}} er gyldig, men ikke anvendelig. Tjek rabatbetingelserne.",
+            "additional_requested_discount_discarded": "Din rabat er gyldig, men ikke anvendelig. Tjek rabatbetingelserne.",
+            "allocations_mismatch": "Din rabatkode er ændret. Gennemse din kurv og prøv igen.",
+            "discount_title_too_long": "Rabatoverskrift må ikke være længere end 255 tegn."
+          },
+          "tax": {
+            "unresolvable_tax_terms": "De foreslåede vilkår kan ikke løses i den nuværende forhandlingssituation.",
+            "tax_inclusivity_mismatch": "Forhandle på ny med konkret totalTaxAndDutyAmount eller totalAmountIncludedInTarget værdi.",
+            "proposed_allocations_required": "Manglende felt for 'foreslåede tildelinger'.",
+            "merchandise_terms_must_be_defined": "Vilkår for varer skal defineres.",
+            "delivery_terms_must_be_defined": "Leveringsbetingelser skal defineres.",
+            "merchandise_discount_terms_must_be_defined": "Vilkår for rabat på varer skal defineres.",
+            "delivery_discount_terms_must_be_defined": "Betingelser for leveringsrabat skal defineres.",
+            "allocated_required": "Manglende 'allocated' felt.",
+            "value_required": "Manglende 'value'-felt.",
+            "line_splits_not_supported": "'merchandise lines'-feltet skal opdeles, så hver har en enkelt linjekomponent i sælgerforslaget."
+          },
+          "payment": {
+            "positive_amount_expected": "Beløbet, der skal betales, skal være større end 0.",
+            "total_amount_mismatch": "Det samlede beløb, der skal betales, stemmer ikke overens med summen af betalingsbeløbene.",
+            "subscription_terms_not_accepted": "Abonnementsbetingelser ikke accepteret.",
+            "missing_session_id": "Manglende kreditkort-sessioninformation.",
+            "gateway_not_supported": "Betalingsgateway understøtter ikke lagring af betalingsmetoden.",
+            "credit_card_last_name_required": "'efternavn' kan ikke være tom.",
+            "invalid_address_type": "Den angivne adresse type er ugyldig for denne betalingsmetode.",
+            "missing_retail_attributions": "Detailhandelsangivelser er påkrævet for manuelt indtastede kreditkortbetalinger.",
+            "unexpected_retail_attributions": "Detaljer om detailhandel blev uventet angivet for kreditkortbetaling.",
+            "wallet_content_missing": "Indholdet af tegnebogen mangler.",
+            "payment_instrument_not_found": "Kunne ikke finde betalingsmetode",
+            "unauthorized_capture_method": "Konfiguration af betalingsindfangningsmetoden er ikke tilladt.",
+            "saved_payment_methods_not_enabled": "Gemte betalingsmetoder er ikke aktiveret for denne butik.",
+            "saved_payment_methods_cvv_verification_disabled": "Den valgte betalingsmetode kræver CVV-verifikation, som ikke er aktiveret for denne butik. Vælg en anden betalingsmetode.",
+            "store_credit_not_enabled": "Butikskredit er ikke aktiveret for denne butik.",
+            "store_credit_account_not_found": "Butikskreditkonto ikke fundet.",
+            "store_credit_account_mismatch": "Butikskreditkontoen stemmer ikke overens med køberens identitet.",
+            "store_credit_mismatched_currency": "Butikskreditkontoens valuta stemmer ikke overens med betalingsvalutaen.",
+            "store_credit_insufficient_funds": "Der er utilstrækkelige midler på butikskreditkontoen.",
+            "store_credit_buying_gift_card": "Du kan ikke bruge butikskredit til at købe et gavekort.",
+            "paypal_express_address_invalid": "PayPal returnerede en ugyldig adresse."
+          },
+          "tip": {
+            "not_accepted_by_shop": "Butikken accepterer ikke drikkepenge.",
+            "only_one_tip_line_allowed": "Flere tiplinjer understøttes ikke.",
+            "currency_change_reset": "Drikkepenge er nulstillet på grund af valutaskift.",
+            "tips_not_allowed_for_deferred_purchase_options": "Tips understøttes endnu ikke for udskudte købsoptioner."
+          },
+          "sale_attribution": {
+            "draft_order_not_exist": "Denne kladdeordre findes ikke i den nuværende butik.",
+            "staff_member_not_exist": "Denne medarbejder findes ikke i den nuværende butik.",
+            "location_not_exist": "Denne placering findes ikke i den nuværende butik.",
+            "point_of_sale_device_not_exist": "Denne salgsstedsenhed findes ikke i den nuværende butik.",
+            "unresolvable_target_merchandise_lines": "De foreslåede salgsattributioner kan ikke løses i den nuværende forhandlingssituation."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Din købers forslag skal indeholde ikke-forhandlingsbare_vilkår.",
+            "invalid_signature": "Signaturen for {{target_terms}} er ugyldig."
+          },
+          "inventory": {
+            "missing_quantity_value": "Mængdefeltet mangler i køberens lagerlinjer.",
+            "changing_behavior_not_allowed": "Denne kunde har ikke tilladelse til at ændre lageradfærd.",
+            "only_one_inventory_behavior_allowed": "I øjeblikket er kun én lageradfærd tilladt pr. kasse."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Afvisning af told er ikke tilladt ved denne betaling."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Detailhandelstildeling er ikke tilladt for denne betaling.",
+            "retail_attribution_required": "Detailhandelstildeling er påkrævet for denne betaling."
+          },
+          "captcha": {
+            "metadata_missing": "Det er nødvendigt at gennemføre en captcha for denne betaling.",
+            "metadata_mismatch": "Den angivne captcha-udbyder og type stemmer ikke overens med de forventede værdier.",
+            "job_enqueue_failed": "Captcha-valideringsopgaven kunne ikke sættes i kø.",
+            "job_already_queued": "Captcha-validering er allerede blevet sat i kø for denne captcha-token.",
+            "token_expired": "Den angivne captcha-token er udløbet. Fuldfør en ny captcha for at fortsætte betalingen.",
+            "token_invalid": "Den angivne captcha-token var ugyldig. Fuldfør en ny captcha for at fortsætte betalingen.",
+            "token_not_valid_for_session": "Den angivne captcha kan ikke bruges med denne kasse."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "Det modtagne beløb skal være i butikkens valuta."
+          },
+          "checkout_source": {
+            "revoked": "Denne kasse er ikke længere tilgængelig."
           }
-        }
+        },
+        "title": "Betaling - {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Betaling",
+        "loading": "Indlæser…",
+        "loading_title": "Betaling - {{shopName}}",
+        "google_map_title": "Google Kort",
+        "confirm_order_button_label": "Bekræft ordre",
+        "submit_order_button_label": "Indsend ordre",
+        "submit_for_review_button_label": "Indsend til gennemgang",
+        "submit_for_review_notice_label": "Betaling forfalder først, når din ordre er gennemgået",
+        "back_button_label": "Retur",
+        "autocomplete_zero_item": "Ingen varer tilgængelige",
+        "submit": "Indsend"
       },
       "payment_gateway": {
         "bank_account_label": "Bankkonto"
