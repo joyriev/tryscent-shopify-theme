@@ -125,32 +125,32 @@
         "decrease": "Formindsk mængden for {{ product }}",
         "minimum_of": "Minimum af {{ quantity }}",
         "maximum_of": "Maksimum {{ quantity }}",
-        "multiples_of": "Intervaller på {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i indkøbskurven",
+        "multiples_of": "Trin på {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i kurv",
         "note": "Se mængderegler",
-        "min_of": "Min. {{ quantity }}",
-        "max_of": "Maks. {{ quantity }}"
+        "min_of": "Min {{ quantity }}",
+        "max_of": "Maks {{ quantity }}"
       },
       "price": {
         "from_price_html": "Fra {{ price }}",
         "regular_price": "Normalpris",
-        "sale_price": "Udsalgspris",
-        "unit_price": "Stykpris"
+        "sale_price": "Salgspris",
+        "unit_price": "Enhedspris"
       },
       "share": "Del dette produkt",
       "sold_out": "Udsolgt",
-      "unavailable": "Ikke tilgængelig",
-      "vendor": "Forhandler",
+      "unavailable": "Utilgængelig",
+      "vendor": "Sælger",
       "video_exit_message": "{{ title }} åbner video i fuld skærm i samme vindue.",
-      "xr_button": "Se den i dit område",
-      "xr_button_label": "Se den i dine omgivelser – indlæser vare i et augmented reality-vindue",
+      "xr_button": "Se i dit rum",
+      "xr_button_label": "Se i dit rum, indlæser genstand i vindue med udvidet virkelighed",
       "pickup_availability": {
-        "view_store_info": "Se butiksoplysninger",
-        "check_other_stores": "Kontrollér tilgængelighed i andre butikker",
-        "pick_up_available": "Afhentning er tilgængelig",
-        "pick_up_available_at_html": "Afhentning er tilgængelig på <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Afhentning er ikke tilgængelig på <span class=\"color-foreground\">{{ location_name }}</span> i øjeblikket",
-        "unavailable": "Tilgængelighed for afhentning kunne ikke indlæses",
+        "view_store_info": "Se butikoplysninger",
+        "check_other_stores": "Tjek tilgængelighed i andre butikker",
+        "pick_up_available": "Afhentning tilgængelig",
+        "pick_up_available_at_html": "Afhentning muligt på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Afhentning er i øjeblikket ikke tilgængelig på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Kunne ikke indlæse afhentningsmuligheder",
         "refresh": "Opdater"
       },
       "media": {
@@ -163,12 +163,12 @@
         "load_video": "Afspil video {{ index }} i gallerivisning",
         "image_available": "Billede {{ index }} er nu tilgængeligt i gallerivisning"
       },
-      "view_full_details": "Se komplette oplysninger",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Levering</a> beregnes ved betaling.",
+      "view_full_details": "Se fulde detaljer",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Forsendelse</a> beregnet ved betaling.",
       "choose_options": "Vælg muligheder",
       "choose_product_options": "Vælg muligheder for {{ product_name }}",
       "value_unavailable": "{{ option_value }} - Ikke tilgængelig",
-      "variant_sold_out_or_unavailable": "Varianten er udsolgt eller utilgængelig",
+      "variant_sold_out_or_unavailable": "Variant udsolgt eller utilgængelig",
       "inventory_in_stock": "På lager",
       "inventory_in_stock_show_count": "{{ quantity }} på lager",
       "inventory_low_stock": "Lav lagerbeholdning",
@@ -181,22 +181,22 @@
         "note": "Mængderabat tilgængelig",
         "minimum": "Mere end {{ quantity }}",
         "price_range": "{{ minimum }} – {{ maximum }}",
-        "price_at_each_html": "til {{ price }} pr. stk."
+        "price_at_each_html": "til {{ price }}/stk"
       },
       "product_variants": "Produktvarianter",
-      "duties_included": "Inklusive told."
+      "duties_included": "Pligter inkluderet."
     },
     "modal": {
       "label": "Mediegalleri"
     },
     "facets": {
       "apply": "Anvend",
-      "clear": "Ryd",
+      "clear": "Klar",
       "clear_all": "Fjern alle",
       "from": "Fra",
-      "filter_and_sort": "Filtrer og sortér",
+      "filter_and_sort": "Filtrer og sorter",
       "filter_by_label": "Filter:",
-      "filter_button": "Filtrer",
+      "filter_button": "Filter",
       "filters_selected": {
         "one": "{{ count }} valgt",
         "other": "{{ count }} valgt"
@@ -204,7 +204,7 @@
       "max_price": "Den højeste pris er {{ price }}",
       "product_count": {
         "one": "{{ product_count }} af {{ count }} produkt",
-        "other": "{{ product_count }} af {{ count }} produkter"
+        "other": "{{ product_count }} af {{ count }} varer"
       },
       "product_count_simple": {
         "one": "{{ count }} produkt",
@@ -215,7 +215,7 @@
       "sort_by_label": "Sortér efter:",
       "to": "Til",
       "clear_filter": "Fjern filter",
-      "filter_selected_accessibility": "{{ type }} ({{ count }} filtre er valgt)",
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filtre valgt)",
       "show_more": "Vis mere",
       "show_less": "Vis mindre",
       "filter_and_operator_subtitle": "Match alle"
