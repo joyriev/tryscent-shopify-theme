@@ -1327,7 +1327,106 @@
         "swish_label": "Snabb betalning",
         "grabpay_label": "FåBetalning",
         "kcp_creditcard_label": "KCP Kreditkort",
-        "usdc_cashback_title": "1 % cashback"
+        "usdc_cashback_title": "1 % cashback",
+        "usdc_cashback_additional_info": "Få 1 % tillbaka i USDC direkt i din plånbok.",
+        "purchase_options_card_update_agreement_label_html": "Genom att uppdatera din betalningsmetod godkänner du betalningar för alla återkommande eller uppskjutna köp enligt denna butiks <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">avbokningsvillkor</a>.",
+        "subscription_card_update_agreement_label": "Att ändra betalningsmetod kommer att uppdatera din prenumeration och framtida återkommande betalningar.",
+        "subscription_agreement_label": "En eller flera varor i din kundvagn är ett uppskjutet köp eller ett abonnemang. Genom att fortsätta med din betalning godkänner du att din betalningsmetod automatiskt debiteras till det pris och den frekvens som anges på denna sida tills det avslutas eller du avbryter. Alla avbokningar omfattas av %{cancelled}.",
+        "subscription_agreement_cancelled": "avbokningspolicy",
+        "subscription_heading": "Prenumerationsavtal",
+        "subscription_agreement_label_html": "Jag förstår att jag godkänner en prenumeration. Den kommer att förnyas till det pris och med den frekvens som anges tills den avslutas eller <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">avbryts</a>.",
+        "purchase_options_agreement_label": "En eller flera varor i din kundvagn är ett uppskjutet eller återkommande köp. Genom att fortsätta med din betalning godkänner du att din betalningsmetod automatiskt debiteras till det pris och den frekvens som anges på denna sida tills det avslutas eller du avbokar. Alla avbokningar omfattas av %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "Jag förstår att en eller flera varor i min kundvagn är ett uppskjutet eller återkommande köp. Genom att fortsätta godkänner jag\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">avbokningsvillkoren</a>\noch ger dig tillåtelse att debitera mitt betalningssätt till de priser, med den frekvens och på de datum som anges på denna sida tills min\nbeställning är fullbordad eller jag avbokar, om det är tillåtet.",
+        "purchase_options_agreement_label_wallets": "Genom att fortsätta med din betalning godkänner du de framtida avgifter som anges på denna sida samt avbokningspolicyn.",
+        "change_currency_section_description": "Välj ett valutalternativ",
+        "no_real_orders_dev_store": "Den här butiken kan inte ta emot riktiga beställningar eller riktiga betalningar.",
+        "waiting_on_payment_methods": "Hämtar tillgängliga betalningsmetoder...",
+        "apple_pay_payment_error": "Din betalning kunde inte slutföras. Försök igen eller använd en annan betalningsmetod.",
+        "no_taxes_banner_content": "Skatter kommer inte att debiteras på denna beställning. När du har mottagit betalningen kan skatter inte längre läggas till.",
+        "apple": {
+          "not_available": "Apple Pay är inte tillgängligt i denna webbläsare. För att koppla ditt Apple Pay-konto behöver du använda Safari på en Apple-enhet."
+        },
+        "google": {
+          "connect": "Klicka för att ansluta till ditt Google Pay-konto",
+          "error_authorizing": "Fel vid auktorisering av betalning"
+        },
+        "account_connected": "Konto anslutet.",
+        "mor_disclaimer_html": "Genom att klicka nedan och slutföra din beställning godkänner du att köpa din(a) vara(or) från Global-e som registrerad säljare för denna transaktion, enligt Global-e:s <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">villkor</a> och <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">integritetspolicy</a>. Global-e är en internationell leveranstjänst för %{shop_name}",
+        "pending_payment": {
+          "multibanco": {
+            "instruction_html": "Gör din betalning på Multibanco eller online med uppgifterna nedan. Vid frågor eller för att uppdatera betalningsuppgifter, %{contact_us}."
+          }
+        },
+        "order_covered_by_store_credit_notice": "Din beställning täcks av ditt butikskredit.",
+        "order_covered_by_redeemables_notice": "Din beställning är täckt.",
+        "store_credit": {
+          "label": "Butikskredit",
+          "apply_label": "Använd butikskredit",
+          "add_label": "Lägg till butikskredit",
+          "manage_label": "Hantera butikskredit",
+          "buying_gift_card": "Du kan inte använda butikskredit för att köpa ett presentkort",
+          "no_fixed_selling_plans": "Du kan inte använda butikskredit med uppskjutna köpalternativ"
+        },
+        "clear": "Klar",
+        "billing_must_match_shipping_notice": "Din betalningsmetods faktureringsadress måste stämma överens med leveransadressen.",
+        "use_order_billing_address_label": "Använd beställningens faktureringsadress",
+        "use_location_billing_address_label": "Använd faktureringsadress för platsen",
+        "no_working_method_error": "Den här butiken kan inte ta emot betalningar just nu. Uppdatera sidan eller kom tillbaka senare.",
+        "brand_not_available": "Denna butik accepterar inte {{brand}}. Använd ett annat kort för att betala.",
+        "shipping_rate_updated": "Tillgängliga fraktmetoder har uppdaterats. Bekräfta ditt val innan du går till kassan.",
+        "preview_not_available": {
+          "title": "Förhandsvisning inte tillgänglig",
+          "content": "Oroa dig inte, denna expresskassa fungerar för dina kunder."
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_number": "Ange ett giltigt ärendenummer"
+            },
+            "invalid": {
+              "verification_value": "Ange en giltig CVV eller säkerhetskod"
+            }
+          }
+        },
+        "simulated_checkout": "Förhandsvisning kommer snart",
+        "simulated_express_checkout": "Plånböcker är inte tillgängliga i redigeringsförhandsvisningen på grund av din region eller webbläsare",
+        "vaulting_agreement_label": "Spara mina betalningsuppgifter hos %{company} för en snabbare kassa.",
+        "business_customer_vaulting_payment_label": "Spara denna betalningsmetod vid kassan och ge %{company} tillåtelse att debitera den för framtida köp på denna plats. Alla kontakter som är knutna till denna plats kan använda betalningsmetoden.",
+        "business_customer_with_bank_account_vaulting_payment_label": "Spara denna betalningsmetod vid kassan och ge %{company} tillåtelse att dra pengar från ditt konto för framtida köp som du godkänner för denna plats, tills du avbryter. Alla kontakter som är kopplade till denna plats kan använda betalningsmetoden.",
+        "purchase_options_and_vaulting_agreement_label": "En eller flera varor i din kundvagn är ett uppskjutet köp eller ett prenumerationsköp. Genom att fortsätta med din betalning godkänner du att din betalningsmetod automatiskt debiteras till det pris och den frekvens som anges på denna sida tills det avslutas eller du avbeställer. Alla avbeställningar omfattas av %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "avbokningspolicy",
+        "saved_credit_card_info": "Sista fyra siffrorna",
+        "saved_credit_card_cvv_verification": "För verifieringsändamål, ange ditt korts säkerhetskod.",
+        "saved_credit_card_actions": {
+          "delete": "Ta bort"
+        },
+        "saved_credit_cards_modal": {
+          "done": "Klart"
+        },
+        "delete_credit_card_modal": {
+          "title": "Ta bort kort",
+          "confirmation": "Är du säker på att du vill ta bort {{brandName}} som slutar på {{lastDigits}}?",
+          "delete": "Ta bort"
+        },
+        "edit_credit_card_modal": {
+          "done": "Klart",
+          "description": "Du kan endast ändra faktureringsadressen för ditt kort.",
+          "fields": {
+            "name": "Namn på kortet",
+            "billing": "Faktureras till"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Det finns %{count} utgången kort, som du kan se och redigera i ditt konto.",
+          "other": "Det finns %{count} utgångna kort, som du kan se och redigera i ditt konto."
+        },
+        "local_payment_method_receiver_notice": "Efter att du har lagt din beställning kommer du att få betalningsuppgifter. Gör betalningen vid en bankomat eller online inom {{dueDays}} dagar.",
+        "order_edit_banner_title": "Betalning av {{amount_owed}} krävs",
+        "order_edit_banner_subtitle": "Din beställning {{order_number}} har uppdaterats. Granska dessa ändringar och betala sedan för att bekräfta din beställning.",
+        "order_edit_banner_items_added": {
+          "one": "Tillagt",
+          "other": "Tillagd %{count}"
+        }
       }
     }
   }

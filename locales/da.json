@@ -768,7 +768,106 @@
         "swish_label": "Svirp",
         "grabpay_label": "GribBetaling",
         "kcp_creditcard_label": "KCP Kreditkort",
-        "usdc_cashback_title": "1% tilbagebetaling"
+        "usdc_cashback_title": "1% tilbagebetaling",
+        "usdc_cashback_additional_info": "Få 1% tilbage i USDC direkte i din tegnebog.",
+        "purchase_options_card_update_agreement_label_html": "Ved at opdatere din betalingsmetode giver du tilladelse til betalinger for ethvert tilbagevendende eller udskudt køb i henhold til denne butiks <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">afbestillingspolitik</a>.",
+        "subscription_card_update_agreement_label": "Ændring af betalingsmetoden vil opdatere dit abonnement og fremtidige tilbagevendende betalinger.",
+        "subscription_agreement_label": "En eller flere varer i din kurv er et udskudt eller abonnements køb. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og med den hyppighed, der er angivet på denne side, indtil det ophører eller du annullerer. Alle annulleringer er underlagt %{cancelled}.",
+        "subscription_agreement_cancelled": "afbestillingspolitik",
+        "subscription_agreement_label_html": "Jeg forstår, at jeg indgår i et abonnement. Det vil blive fornyet til den angivne pris og med den angivne hyppighed, indtil det ophører eller bliver\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">annulleret</a>.",
+        "purchase_options_agreement_label": "En eller flere varer i din kurv er et udskudt eller tilbagevendende køb. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og med den hyppighed, der er angivet på denne side, indtil det ophører eller du annullerer. Alle annulleringer er underlagt %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "Jeg forstår, at en eller flere varer i min kurv er et udskudt eller tilbagevendende køb. Ved at fortsætte accepterer jeg\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">afbestillingsbetingelserne</a>\nog giver dig tilladelse til at opkræve min betalingsmetode til de priser, hyppighed og datoer, der er angivet på denne side, indtil min\nbestilling er opfyldt eller jeg afmelder, hvis det er tilladt.",
+        "purchase_options_agreement_label_wallets": "Ved at fortsætte med din betaling accepterer du de fremtidige gebyrer, der er angivet på denne side, samt afbestillingspolitikken.",
+        "no_real_orders_dev_store": "Denne butik kan ikke acceptere rigtige ordrer eller rigtige betalinger.",
+        "waiting_on_payment_methods": "Henter tilgængelige betalingsmetoder...",
+        "apple_pay_payment_error": "Din betaling kunne ikke gennemføres. Prøv igen eller brug en anden betalingsmetode.",
+        "taxes_not_included": "Skatter ikke inkluderet",
+        "no_taxes_banner_content": "Der vil ikke blive opkrævet skat på denne ordre. Når du har modtaget betalingen, kan der ikke længere tilføjes skat.",
+        "paypal": {
+          "connect": "Klik for at forbinde din PayPal-konto"
+        },
+        "apple": {
+          "connect": "Klik for at forbinde din Apple Pay-konto",
+          "not_available": "Apple Pay er ikke tilgængelig i denne browser. For at forbinde din Apple Pay-konto skal du bruge Safari på en Apple-enhed."
+        },
+        "google": {
+          "connect": "Klik for at forbinde med din Google Pay-konto",
+          "error_authorizing": "Fejl ved godkendelse af betaling"
+        },
+        "account_connected": "Konto tilsluttet.",
+        "mor_disclaimer_html": "Ved at klikke nedenfor og fuldføre din bestilling accepterer du at købe dine vare(r) fra Global-e som registreret sælger for denne transaktion, i henhold til Global-e's <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Vilkår og Betingelser</a> og <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Fortrolighedspolitik</a>. Global-e er en international leveringsserviceudbyder til %{shop_name}",
+        "pending_payment": {
+          "due_notice": "Din betaling på %{amount_due} forfalder den %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "Din betaling på %{amount_due} forfalder.",
+            "instruction_html": "Foretag din betaling hos Multibanco eller online ved hjælp af nedenstående oplysninger. For spørgsmål eller for at opdatere betalingsoplysninger, %{contact_us}.",
+            "find_nearest_atm": "Find nærmeste hæveautomat"
+          }
+        },
+        "order_covered_by_store_credit_notice": "Din ordre er dækket af din butikskredit.",
+        "order_covered_by_redeemables_notice": "Din ordre er dækket.",
+        "store_credit": {
+          "label": "Butikskredit",
+          "apply_label": "Anvend butikskredit",
+          "add_label": "Tilføj butikskredit",
+          "manage_label": "Administrer butikskredit",
+          "buying_gift_card": "Du kan ikke bruge butikskredit til at købe et gavekort",
+          "no_fixed_selling_plans": "Du kan ikke bruge butikskredit med udskudte købsoptioner"
+        },
+        "clear": "Klar",
+        "location_billing_address_label": "Faktureringsadresse for placering",
+        "location_shipping_address_label": "Leveringsadresse for forsendelse",
+        "use_order_billing_address_label": "Brug faktureringsadresse fra ordren",
+        "use_location_billing_address_label": "Brug faktureringsadresse som placering",
+        "use_location_shipping_address_label": "Brug leveringsadresse for placering",
+        "no_working_method_error": "Denne butik kan ikke acceptere betalinger lige nu. Opdater denne side eller kom tilbage senere.",
+        "shipping_rate_updated": "Tilgængelige forsendelsesmetoder er blevet opdateret. Bekræft dit valg, før du går til kassen.",
+        "preview_not_available": {
+          "title": "Forhåndsvisning ikke tilgængelig",
+          "content": "Bare rolig, denne ekspresbetaling fungerer for dine kunder.",
+          "button": "Okay"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Indtast en gyldig udstedelsesdato",
+              "issue_number": "Indtast et gyldigt udgavenummer"
+            },
+            "invalid": {
+              "verification_value": "Indtast en gyldig CVV eller sikkerhedskode"
+            }
+          }
+        },
+        "simulated_express_checkout": "Punge er ikke tilgængelige i editorens forhåndsvisning på grund af din region eller browser",
+        "vaulting_agreement_label": "Gem mine betalingsoplysninger hos %{company} for en hurtigere betaling.",
+        "business_customer_vaulting_payment_label": "Gem denne betalingsmetode ved kassen og giv %{company} tilladelse til at trække beløb for fremtidige køb på dette sted. Alle kontakter tilknyttet dette sted kan bruge betalingsmetoden.",
+        "business_customer_with_bank_account_vaulting_payment_label": "Gem denne betalingsmetode ved kassen og giv %{company} tilladelse til at trække beløb på din konto for fremtidige køb, du godkender for dette sted, indtil du annullerer. Alle kontakter tilknyttet dette sted kan bruge betalingsmetoden.",
+        "purchase_options_and_vaulting_agreement_label": "Én eller flere varer i din kurv er et udskudt køb eller et abonnement. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og med den hyppighed, der er angivet på denne side, indtil det ophører eller du annullerer. Alle annulleringer er underlagt %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "afbestillingspolitik",
+        "saved_credit_card_cvv_verification": "For verifikationsformål, indtast dit korts sikkerhedskode.",
+        "saved_credit_cards_modal": {
+          "done": "Færdig"
+        },
+        "delete_credit_card_modal": {
+          "confirmation": "Er du sikker på, at du vil slette {{brandName}} med endelse {{lastDigits}}?"
+        },
+        "edit_credit_card_modal": {
+          "done": "Færdig",
+          "description": "Du kan kun ændre faktureringsadressen på dit kort.",
+          "fields": {
+            "default": "Indstil som standard"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Der er %{count} udløbet kort, som du kan se og redigere i din konto.",
+          "other": "Der er %{count} udløbne kort, som du kan se og redigere i din konto."
+        },
+        "local_payment_method_receiver_notice": "Efter du har afgivet din bestilling, vil du modtage betalingsoplysninger. Foretag betalingen i en pengeautomat eller online inden for {{dueDays}} dage.",
+        "order_edit_banner_title": "Betaling af {{amount_owed}} er nødvendig",
+        "order_edit_banner_subtitle": "Din ordre {{order_number}} blev opdateret. Gennemgå disse ændringer, og betal derefter for at bekræfte din ordre.",
+        "order_edit_banner_items_added": {
+          "other": "Tilføjet %{count}"
+        }
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."

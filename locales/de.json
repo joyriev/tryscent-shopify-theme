@@ -635,7 +635,116 @@
         "swish_label": "Rausch",
         "grabpay_label": "GrabBezahlen",
         "kcp_creditcard_label": "KCP Kreditkarte",
-        "usdc_label": "US-Dollar-Cent"
+        "usdc_label": "US-Dollar-Cent",
+        "usdc_cashback_additional_info": "Erhalten Sie 1 % in USDC direkt in Ihre Wallet zurück.",
+        "usdc_cashback_terms": "Bedingungen Anwenden",
+        "purchase_options_card_update_agreement_label_html": "Indem Sie Ihre Zahlungsmethode aktualisieren, erteilen Sie die Erlaubnis für Zahlungen bei allen wiederkehrenden oder aufgeschobenen Käufen gemäß der <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">Stornierungsbedingungen</a> dieses Geschäfts.",
+        "subscription_card_update_agreement_label": "Die Änderung der Zahlungsmethode aktualisiert Ihr Abonnement und zukünftige wiederkehrende Zahlungen.",
+        "subscription_agreement_label": "Ein oder mehrere Artikel in Ihrem Warenkorb sind ein aufgeschobener Kauf oder ein Abonnement. Indem Sie mit Ihrer Zahlung fortfahren, stimmen Sie zu, dass Ihre Zahlungsmethode automatisch zum auf dieser Seite angegebenen Preis und in der angegebenen Häufigkeit belastet wird, bis das Abonnement endet oder Sie es kündigen. Alle Kündigungen unterliegen dem %{cancelled}.",
+        "subscription_agreement_cancelled": "Stornierungsbedingungen",
+        "subscription_heading": "Abonnementvertrag",
+        "subscription_agreement_label_html": "Ich verstehe, dass ich einem Abonnement zustimme. Es wird zum angegebenen Preis und in der angegebenen Häufigkeit verlängert, bis es endet oder <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">gekündigt</a> wird.",
+        "purchase_options_agreement_label": "Ein oder mehrere Artikel in Ihrem Warenkorb sind ein aufgeschobener oder wiederkehrender Kauf. Indem Sie mit Ihrer Zahlung fortfahren, stimmen Sie zu, dass Ihre Zahlungsmethode automatisch zum auf dieser Seite angegebenen Preis und in der angegebenen Häufigkeit belastet wird, bis der Vorgang endet oder Sie kündigen. Alle Kündigungen unterliegen der %{cancellation_policy_label}.",
+        "purchase_options_agreement_label_html": "Ich verstehe, dass ein oder mehrere Artikel in meinem Warenkorb ein aufgeschobener oder wiederkehrender Kauf sind. Indem ich fortfahre, stimme ich der\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">Stornierungsrichtlinie</a>\nzu und ermächtige Sie, meine Zahlungsmethode zu den auf dieser Seite angegebenen Preisen, Häufigkeiten und Terminen zu belasten, bis meine Bestellung erfüllt ist oder ich, sofern erlaubt, storniere.",
+        "purchase_options_agreement_label_wallets": "Indem Sie mit Ihrer Zahlung fortfahren, stimmen Sie den auf dieser Seite aufgeführten zukünftigen Gebühren und der Stornierungsrichtlinie zu.",
+        "change_currency_section_description": "Wählen Sie eine Währungsoption aus",
+        "no_real_orders_dev_store": "Dieser Shop kann keine echten Bestellungen oder echten Zahlungen annehmen.",
+        "waiting_on_payment_methods": "Verfügbare Zahlungsmethoden werden geladen...",
+        "apple_pay_payment_error": "Ihre Zahlung konnte nicht abgeschlossen werden. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "no_taxes_banner_content": "Für diese Bestellung werden keine Steuern berechnet. Sobald Sie die Zahlung erhalten haben, können keine Steuern mehr hinzugefügt werden.",
+        "paypal": {
+          "connect": "Klicken Sie, um Ihr PayPal-Konto zu verbinden"
+        },
+        "apple": {
+          "connect": "Klicken Sie, um Ihr Apple Pay-Konto zu verbinden",
+          "not_available": "Apple Pay ist in diesem Browser nicht verfügbar. Um Ihr Apple Pay-Konto zu verbinden, müssen Sie Safari auf einem Apple-Gerät verwenden."
+        },
+        "google": {
+          "connect": "Klicken Sie, um sich mit Ihrem Google Pay-Konto zu verbinden"
+        },
+        "mor_disclaimer_html": "Indem Sie unten klicken und Ihre Bestellung abschließen, stimmen Sie zu, Ihre Artikel von Global-e als Händler für diese Transaktion zu kaufen, gemäß den <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Geschäftsbedingungen</a> und der <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Datenschutzerklärung</a> von Global-e. Global-e ist ein internationaler Dienstleister für die Auftragsabwicklung von %{shop_name}.",
+        "pending_payment": {
+          "due_notice": "Ihre Zahlung in Höhe von %{amount_due} ist fällig am %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "Ihre Zahlung in Höhe von %{amount_due} ist fällig.",
+            "instruction_html": "Leisten Sie Ihre Zahlung bei Multibanco oder online mit den untenstehenden Angaben. Bei Fragen oder zur Aktualisierung der Zahlungsdaten, %{contact_us}.",
+            "entity": "Einheit",
+            "find_nearest_atm": "Nächsten Geldautomaten finden"
+          }
+        },
+        "order_covered_by_store_credit_notice": "Ihre Bestellung wird durch Ihr Guthaben im Geschäft abgedeckt.",
+        "order_covered_by_redeemables_notice": "Ihre Bestellung ist abgedeckt.",
+        "store_credit": {
+          "label": "Guthaben im Geschäft",
+          "apply_label": "Guthaben im Geschäft anwenden",
+          "add_label": "Guthaben hinzufügen",
+          "manage_label": "Guthaben verwalten",
+          "buying_gift_card": "Sie können Guthaben aus dem Geschäft nicht verwenden, um eine Geschenkkarte zu kaufen.",
+          "no_fixed_selling_plans": "Sie können Guthaben im Geschäft nicht mit aufgeschobenen Kaufoptionen verwenden."
+        },
+        "clear": "Klar",
+        "billing_must_match_shipping_notice": "Die Rechnungsadresse Ihrer Zahlungsmethode muss mit der Lieferadresse übereinstimmen.",
+        "location_billing_address_label": "Rechnungsadresse Standort",
+        "location_shipping_address_label": "Versandadresse des Standorts",
+        "use_location_shipping_address_label": "Versandadresse des Standorts verwenden",
+        "no_working_method_error": "Dieser Laden kann derzeit keine Zahlungen akzeptieren. Aktualisieren Sie diese Seite oder kommen Sie später wieder.",
+        "brand_not_available": "Dieses Geschäft akzeptiert {{brand}} nicht. Verwenden Sie eine andere Karte zur Bezahlung.",
+        "shipping_rate_updated": "Verfügbare Versandmethoden wurden aktualisiert. Bestätigen Sie Ihre Auswahl, bevor Sie zur Kasse gehen.",
+        "billing_address_invalid_phone": "Aktualisieren Sie die Telefonnummer in Ihrer Rechnungsadresse für {{label}} {{last_digits}}, um fortzufahren.",
+        "billing_address_invalid_phone_no_card": "Aktualisieren Sie die Telefonnummer in Ihrer Rechnungsadresse, um fortzufahren.",
+        "preview_not_available": {
+          "content": "Keine Sorge, dieser Express-Checkout funktioniert für Ihre Kunden.",
+          "button": "In Ordnung"
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Geben Sie ein gültiges Ausstellungsdatum ein",
+              "issue_number": "Geben Sie eine gültige Ausgabenummer ein"
+            },
+            "invalid": {
+              "verification_value": "Geben Sie einen gültigen CVV- oder Sicherheitscode ein"
+            }
+          }
+        },
+        "simulated_checkout": "Vorschau kommt bald",
+        "simulated_express_checkout": "Brieftaschen sind in der Editor-Vorschau aufgrund Ihrer Region oder Ihres Browsers nicht verfügbar",
+        "vaulting_agreement_label": "Speichere meine Zahlungsinformationen bei %{company} für einen schnelleren Bezahlvorgang.",
+        "business_customer_vaulting_payment_label": "Speichern Sie diese Zahlungsmethode beim Bezahlen und erteilen Sie %{company} die Erlaubnis, sie für zukünftige Einkäufe an diesem Standort zu belasten. Alle Kontakte, die diesem Standort zugewiesen sind, können die Zahlungsmethode verwenden.",
+        "business_customer_with_bank_account_vaulting_payment_label": "Speichern Sie diese Zahlungsmethode beim Bezahlen und erteilen Sie %{company} die Erlaubnis, Ihr Konto für zukünftige Einkäufe, die Sie an diesem Ort genehmigen, zu belasten, bis Sie widerrufen. Alle Kontakte, die diesem Ort zugewiesen sind, können die Zahlungsmethode verwenden.",
+        "purchase_options_and_vaulting_agreement_label": "Ein oder mehrere Artikel in Ihrem Warenkorb sind ein aufgeschobener Kauf oder ein Abonnement. Indem Sie mit Ihrer Zahlung fortfahren, stimmen Sie zu, dass Ihre Zahlungsmethode automatisch zum auf dieser Seite angegebenen Preis und in der angegebenen Häufigkeit belastet wird, bis das Abonnement endet oder Sie es kündigen. Alle Kündigungen unterliegen der %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "Stornierungsbedingungen",
+        "use_different_credit_card_label": "Verwenden Sie eine andere Karte",
+        "saved_credit_card": "Ihre gespeicherte Kreditkarte",
+        "saved_credit_card_info": "Letzte vier Ziffern",
+        "saved_credit_card_cvv_verification": "Geben Sie zu Verifizierungszwecken den Sicherheitscode Ihrer Karte ein.",
+        "saved_credit_cards_modal": {
+          "cancel": "Abbrechen"
+        },
+        "add_credit_card_modal": {
+          "cancel": "Abbrechen"
+        },
+        "delete_credit_card_modal": {
+          "confirmation": "Sind Sie sicher, dass Sie das {{brandName}} mit der Endung {{lastDigits}} löschen möchten?",
+          "cancel": "Abbrechen"
+        },
+        "edit_credit_card_modal": {
+          "cancel": "Abbrechen",
+          "description": "Sie können nur die Rechnungsadresse Ihrer Karte ändern.",
+          "fields": {
+            "name": "Name auf der Karte"
+          }
+        },
+        "expired_cards_info": {
+          "one": "Es gibt %{count} abgelaufene Karte, die Sie in Ihrem Konto ansehen und bearbeiten können.",
+          "other": "Es gibt %{count} abgelaufene Karten, die Sie in Ihrem Konto ansehen und bearbeiten können."
+        },
+        "local_payment_method_receiver_notice": "Nachdem Sie Ihre Bestellung aufgegeben haben, erhalten Sie die Zahlungsdetails. Tätigen Sie die Zahlung an einem Geldautomaten oder online innerhalb von {{dueDays}} Tagen.",
+        "order_edit_banner_title": "Zahlung von {{amount_owed}} ist erforderlich",
+        "order_edit_banner_subtitle": "Ihre Bestellung {{order_number}} wurde aktualisiert. Überprüfen Sie diese Änderungen und bezahlen Sie dann, um Ihre Bestellung zu bestätigen.",
+        "order_edit_banner_items_added": {
+          "other": "Hinzugefügt %{count}"
+        }
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."
