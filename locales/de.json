@@ -1733,7 +1733,67 @@
         }
       },
       "processing": {
-        "redirecting_notice": "Bitte warten Sie, während wir Sie weiterleiten."
+        "redirecting_notice": "Bitte warten Sie, während wir Sie weiterleiten.",
+        "redirecting_to_bank": "Weiterleitung zu {{bank}}",
+        "complete_your_purchase_title": "Schließen Sie Ihren Kauf ab",
+        "continue_to_payment_gateway_notice": "Zur Zahlung fortfahren, um Ihre Zahlungsinformationen hinzuzufügen.",
+        "continue_to_payment_gateway_button_label": "Zur Zahlung fortfahren",
+        "complete_your_purchase_title_error": "Korrigieren Sie Ihre Zahlungsinformationen",
+        "continue_to_payment_gateway_notice_error": "Ihre Zahlungsinformationen konnten nicht verifiziert werden.",
+        "your_order_has_been_received_title": "Danke für Ihre Bestellung",
+        "you_will_receive_confirmation": "Wir erhalten gerade viele Bestellungen. Sie sollten bald eine Bestätigung per E-Mail oder SMS erhalten. Wenn Sie diese nicht innerhalb der nächsten Stunde bekommen, lassen Sie es uns wissen.",
+        "you_will_not_be_charged": "Sie werden noch nicht belastet.",
+        "wait": {
+          "short": "Ihre Bestellung wird bearbeitet.",
+          "medium": {
+            "one": "Ihre Bestellung wird bearbeitet. Die voraussichtliche Wartezeit beträgt %{count} Minute.",
+            "other": "Ihre Bestellung wird bearbeitet. Die voraussichtliche Wartezeit beträgt %{count} Minuten."
+          },
+          "long": "Sie erhalten eine E-Mail, sobald Ihre Bestellung bearbeitet wurde. Derzeit gibt es ein hohes Bestellaufkommen.",
+          "no_auto_refresh_html": "Wenn Sie nicht automatisch weitergeleitet werden, %{link}.",
+          "refresh_this_page": "diese Seite aktualisieren"
+        },
+        "remote_shops_payments_processing": "Zahlungen verarbeiten",
+        "action_required": "Handlung erforderlich",
+        "modal_notice": "Wir nehmen Kontakt mit {{paymentMethod}} auf"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Schließen Sie Ihren Kauf mit Ihrem {{paymentMethod}}-Code ab",
+        "timer_message": "Sie haben {{timeLeft}} Zeit zu bezahlen",
+        "copy_text": "Kopiere den {{paymentMethod}}-Code",
+        "open_app_text": "Öffnen Sie die {{paymentMethod}}-App",
+        "header": "Bezahlen mit {{paymentMethod}}",
+        "qr_code": {
+          "instructions": "Schließen Sie Ihren Kauf mit Ihrem {{paymentMethod}}-Code ab"
+        },
+        "external": {
+          "instructions": "Bestätigen Sie die Zahlung in Ihrer App, um diesen Kauf abzuschließen"
+        },
+        "close": "Die Herausforderung abschließen"
+      },
+      "failed_payment": {
+        "page_title": "Die Zahlung konnte nicht verarbeitet werden",
+        "title": "Die Zahlung konnte nicht verarbeitet werden",
+        "payment_not_processed_title": "Ihre Zahlung konnte nicht verarbeitet werden",
+        "payment_not_processed_text": "Ihnen wurde nichts berechnet. Kehren Sie zu Ihrem Warenkorb zurück, um Ihren Kauf abzuschließen."
+      },
+      "payment_gateway": {
+        "bank_deposit_label": "Bankeinzahlung",
+        "cash_on_delivery_label": "Nachnahme (Barzahlung bei Lieferung)",
+        "money_order_label": "Postanweisung",
+        "deferred_payment_label": "Zahlungsmethode später wählen",
+        "fixed_payment_label": "Ihre Zahlung ist fällig am {{dueDate}}.",
+        "generic_payment_terms": "Sie sind auf {{translatedName}} Bedingungen. Ihre Zahlung ist fällig am {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} bei einem Konto mit Zugang zu diesem Ort, um gespeicherte Zahlungsmethoden hinzuzufügen oder zu verwenden.",
+            "link": "Anmelden"
+          }
+        },
+        "direct_payment_terms": "Sie sind auf {{translatedName}} Bedingungen. Ihre Karte wird am {{dueDate}} belastet.",
+        "fixed_direct_payment_terms": "Ihre Karte wird am {{dueDate}} belastet.",
+        "order_due_on_fulfillment_choose_later": "Ihre Zahlung wird fällig, sobald Ihre Bestellung erfüllt ist.",
+        "order_due_on_fulfillment_payment": "Ihre Karte wird belastet, sobald Ihre Bestellung ausgeführt wurde."
       }
     },
     "sentence": {

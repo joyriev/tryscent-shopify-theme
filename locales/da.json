@@ -1046,7 +1046,32 @@
           "one": "%{count} genstand",
           "other": "%{count} elementer"
         },
-        "thank_you_from_shop": "Fra %{shop_name}"
+        "thank_you_from_shop": "Fra %{shop_name}",
+        "confirmation_email_sent_text": "En bekræftelsesmail er blevet sendt til %{email}",
+        "return_to_store_link_label": "Fortsæt med at handle",
+        "print_link_label": "Udskriv kvittering",
+        "page_title": "Tak, %{display_name}!",
+        "purchase_order_number_title": "PO nummer #%{purchase_order_number}",
+        "cancelled_page_title": "Bestilling annulleret",
+        "failed_pending_payment_page_title": "Der er et problem med din betaling",
+        "customer_information_title": "Ordredetaljer",
+        "company_location_title": "Placering",
+        "shipping_address_map_title": "Google-kort, der viser præcis placering af leveringsadresse: %{address}",
+        "payment_method_not_charged": "Ikke opkrævet",
+        "shipping_method_title": "Forsendelsesmetode",
+        "tracking_number": "Sporingsnummer:",
+        "company_tracking_number": "%{company} sporingsnummer:",
+        "estimated_arrival": "Forventet leveringsdato:",
+        "estimated_delivery": "Nuværende leveringsestimat:",
+        "re-order": "Bestil de samme varer igen",
+        "confirmed_items_count": "%{confirmed_count} af %{total_count} ting er bekræftet",
+        "items_fulfilled_by_store": {
+          "one": "Varer, du har købt, vil komme fra %{remote_shop_name}.",
+          "other": "Varer, du har købt, vil komme fra andre butikker."
+        },
+        "gift_card_confirmation_by_text": "Hvis du ikke modtog det, send teksten igen eller kontakt os.",
+        "gift_card_confirmation_by_email": "Hvis du ikke modtog den, send e-mailen igen eller kontakt os.",
+        "thank_you_title_payments_app_pending_buyer_action_required": "Din ordre er modtaget"
       },
       "general": {
         "remove_chip": "Fjern vare",
@@ -1288,7 +1313,28 @@
         }
       },
       "payment_gateway": {
-        "bank_account_label": "Bankkonto"
+        "bank_account_label": "Bankkonto",
+        "bank_deposit_label": "Bankindskud",
+        "cash_on_delivery_label": "Kontant ved Levering (COD)",
+        "generic_payment_terms": "Du er på {{translatedName}} vilkår. Din betaling forfalder den {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} til en konto med adgang til dette sted for at tilføje eller bruge gemte betalingsmetoder."
+          }
+        },
+        "direct_payment_terms": "Du er på {{translatedName}} vilkår. Dit kort vil blive opkrævet den {{dueDate}}.",
+        "fixed_direct_payment_terms": "Dit kort vil blive opkrævet den {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Din betaling forfalder, når din ordre er gennemført.",
+        "order_due_on_fulfillment_payment": "Dit kort vil blive opkrævet, når din ordre er fuldført.",
+        "order_deposit_due_now": "{{depositAmount}} forfalder i dag. Restbeløbet følger {{translatedName}} betingelser og forfalder den {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} forfalder i dag. Restbeløbet forfalder, når din ordre er opfyldt.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} forfalder i dag. Restbeløbet forfalder senere.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} forfalder i dag. Restbeløbet forfalder den {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "Dit kort vil blive opkrævet, når din ordre er bekræftet.",
+        "draft_order_payment_due_later_terms": "Du vil være på {{translatedName}} vilkår, når din bestilling er bekræftet.",
+        "draft_order_payment_due_on_fulfillment": "Din betaling forfalder, når din ordre er bekræftet og gennemført.",
+        "draft_order_deposit_due_later": "{{depositAmount}} forfalder, når din bestilling er bekræftet. Restbeløbet betales efter {{translatedName}}'s betingelser.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} forfalder, når din bestilling er bekræftet. Restbeløbet forfalder, når din bestilling er opfyldt."
       },
       "offsite_payment_failed": {
         "title": "Offsite-betaling mislykkedes"
@@ -1665,7 +1711,41 @@
       "processing": {
         "redirecting_page_title": "Omdirigerer…",
         "redirecting_title": "Omdirigerer…",
-        "redirecting_notice": "Vent venligst, mens vi omdirigerer dig."
+        "redirecting_notice": "Vent venligst, mens vi omdirigerer dig.",
+        "complete_your_purchase_title": "Fuldfør dit køb",
+        "continue_to_payment_gateway_notice_error": "Din betalingsinformation kunne ikke bekræftes.",
+        "continue_to_payment_gateway_button_label_error": "Opdater betalingsoplysninger",
+        "page_title": "Behandler ordre",
+        "title": "Behandler ordre",
+        "you_will_receive_confirmation": "Vi modtager mange ordrer lige nu. Du bør snart modtage en bekræftelse via e-mail eller sms. Hvis du ikke modtager den inden for den næste time, så lad os det vide.",
+        "you_will_not_be_charged": "Du vil ikke blive opkrævet endnu",
+        "wait": {
+          "medium": {
+            "one": "Din ordre behandles. Forventet ventetid er %{count} minut.",
+            "other": "Din ordre behandles. Forventet ventetid er %{count} minutter."
+          },
+          "long": "Du vil modtage en e-mail, så snart din ordre er behandlet. Der er i øjeblikket et højt antal ordrer.",
+          "no_auto_refresh_html": "Hvis du ikke bliver omdirigeret automatisk, %{link}.",
+          "refresh_this_page": "opdater denne side"
+        },
+        "remote_shops_payments_processing": "Behandler betalinger",
+        "action_required": "Handling påkrævet",
+        "modal_notice": "Vi kontakter {{paymentMethod}}"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Fuldfør dit køb ved at bruge din {{paymentMethod}} kode",
+        "copy_text": "Kopiér {{paymentMethod}} kode",
+        "open_app_text": "Åbn {{paymentMethod}} appen",
+        "qr_code": {
+          "instructions": "Fuldfør dit køb ved at bruge din {{paymentMethod}} kode"
+        },
+        "external": {
+          "instructions": "Bekræft betalingen i din app for at fuldføre dette køb"
+        }
+      },
+      "failed_payment": {
+        "payment_not_processed_text": "Du er ikke blevet opkrævet. Gå tilbage til din kurv for at fuldføre dit køb.",
+        "return_to_cart_button_label": "Vend tilbage til kurven"
       }
     },
     "sentence": {

@@ -1643,7 +1643,97 @@
       },
       "processing": {
         "redirecting_page_title": "Omdirigerar…",
-        "redirecting_title": "Omdirigerar…"
+        "redirecting_title": "Omdirigerar…",
+        "redirecting_to_bank": "Omdirigerar till {{bank}}",
+        "complete_your_purchase_title_error": "Korrigera din betalningsinformation",
+        "continue_to_payment_gateway_button_label_error": "Uppdatera betalningsinformation",
+        "page_title": "Bearbetar beställning",
+        "title": "Bearbetar beställning",
+        "your_order_has_been_received_title": "Tack för din beställning",
+        "you_will_receive_confirmation": "Vi får in många beställningar just nu. Du bör snart få en bekräftelse via e-post eller sms. Om du inte får den inom en timme, hör av dig till oss.",
+        "you_will_not_be_charged": "Du kommer inte att debiteras än",
+        "wait": {
+          "short": "Din beställning behandlas.",
+          "medium": {
+            "one": "Din beställning behandlas. Beräknad väntetid är %{count} minut.",
+            "other": "Din beställning behandlas. Beräknad väntetid är %{count} minuter."
+          },
+          "long": "Du kommer att få ett e-postmeddelande så snart din beställning har behandlats. Det är för närvarande en hög volym av beställningar.",
+          "no_auto_refresh_html": "Om du inte omdirigeras automatiskt, %{link}.",
+          "refresh_this_page": "uppdatera denna sida"
+        }
+      },
+      "payment_challenge_modal": {
+        "instructions": "Slutför ditt köp med din {{paymentMethod}}-kod",
+        "qr_code": {
+          "instructions": "Slutför ditt köp med din {{paymentMethod}}-kod"
+        },
+        "external": {
+          "instructions": "Bekräfta betalningen i din app för att slutföra detta köp"
+        }
+      },
+      "failed_payment": {
+        "page_title": "Betalningen kunde inte behandlas",
+        "title": "Betalningen kunde inte behandlas",
+        "payment_not_processed_title": "Din betalning kunde inte behandlas",
+        "payment_not_processed_text": "Du har inte debiterats. Gå tillbaka till din kundvagn för att slutföra ditt köp."
+      },
+      "payment_gateway": {
+        "credit_card_label": "Kreditkort",
+        "cash_on_delivery_label": "Kontant betalning vid Leverans (COD)",
+        "debit_card_label": "Betalkort",
+        "fixed_payment_label": "Din betalning förfaller den {{dueDate}}.",
+        "generic_payment_terms": "Du är på {{translatedName}} villkor. Din betalning ska vara gjord senast {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} till ett konto med åtkomst till denna plats för att lägga till eller använda sparade betalningsmetoder."
+          }
+        },
+        "direct_payment_terms": "Du är på {{translatedName}} villkor. Ditt kort kommer att debiteras den {{dueDate}}.",
+        "fixed_direct_payment_terms": "Ditt kort kommer att debiteras den {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Din betalning förfaller när din beställning har behandlats.",
+        "order_due_on_fulfillment_payment": "Ditt kort kommer att debiteras när din beställning har behandlats.",
+        "order_due_on_receipt_choose_later": "Din betalning förfaller vid mottagandet.",
+        "order_deposit_due_now": "{{depositAmount}} förfaller idag. Resterande belopp följer villkoren för {{translatedName}} och förfaller den {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} ska betalas idag. Resterande belopp ska betalas när din beställning är fullgjord.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} ska betalas idag. Resterande belopp ska betalas senare.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} ska betalas idag. Resterande belopp ska betalas den {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms": "Din betalning kommer att förfalla när din beställning har bekräftats.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "Ditt kort kommer att debiteras när din beställning har bekräftats.",
+        "draft_order_payment_due_later_terms": "Du kommer att vara på {{translatedName}} villkor när din beställning har bekräftats.",
+        "draft_order_payment_due_on_fulfillment": "Din betalning kommer att förfalla när din beställning har bekräftats och genomförts.",
+        "draft_order_deposit_due_later": "{{depositAmount}} ska betalas när din beställning bekräftas. Resterande belopp ska betalas enligt {{translatedName}} villkor.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} ska betalas när din beställning bekräftas. Resterande belopp ska betalas när din beställning är fullbordad."
+      },
+      "thank_you": {
+        "confirmation_email_sent_text": "Ett bekräftelsemejl har skickats till %{email}",
+        "return_to_store_link_label": "Fortsätt handla",
+        "shipping_information_title": "Fraktinformation",
+        "page_title": "Tack, %{display_name}!",
+        "purchase_order_number_title": "PO-nummer #%{purchase_order_number}",
+        "cancelled_page_title": "Beställning avbruten",
+        "failed_pending_payment_page_title": "Det finns ett problem med din betalning",
+        "customer_information_title": "Orderdetaljer",
+        "company_location_title": "Placering",
+        "shipping_address_map_title": "Google-karta som visar nålmarkering för leveransadress: %{address}",
+        "payment_method_not_charged": "Inte laddad",
+        "estimated_arrival": "Beräknat leveransdatum:",
+        "estimated_delivery": "Aktuell leveransberäkning:",
+        "re-order": "Beställ samma artiklar igen",
+        "confirmed_items_count": "%{confirmed_count} av %{total_count} föremål är bekräftade",
+        "items_fulfilled_by_store": {
+          "one": "Varor du har köpt kommer från %{remote_shop_name}.",
+          "other": "Varor du har köpt kommer att skickas från andra butiker."
+        },
+        "gift_card_confirmation_by_text": "Om du inte mottog det, skicka texten igen eller kontakta oss.",
+        "gift_card_confirmation_by_email": "Om du inte mottog det, skicka e-postmeddelandet igen eller kontakta oss.",
+        "resend_gift_cards": "Skicka om presentkort",
+        "thank_you_title": "Din beställning är bekräftad",
+        "thank_you_title_payment": "Din betalning är bekräftad",
+        "thank_you_title_review": "Din beställning har skickats för granskning",
+        "thank_you_title_payments_app_pending_default": "Din betalning behandlas",
+        "thank_you_title_payments_app_pending_buyer_action_required": "Din beställning har mottagits",
+        "thank_you_title_payments_app_failed_pending_payment": "Din betalning kunde inte behandlas"
       }
     }
   }
