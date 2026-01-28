@@ -223,7 +223,7 @@
   },
   "templates": {
     "search": {
-      "no_results": "Inga resultat hittades för \"{{ terms }}\". Kontrollera stavningen eller använd ett annat ord eller fras.",
+      "no_results": "Inga resultat hittades för ”{{ terms }}”. Kontrollera stavningen eller använd ett annat ord eller uttryck.",
       "results_with_count": {
         "one": "{{ count }} resultat",
         "other": "{{ count }} resultat"
@@ -231,13 +231,13 @@
       "title": "Sökresultat",
       "page": "Sida",
       "products": "Produkter",
-      "search_for": "Sök efter \"{{ terms }}\"",
+      "search_for": "Sök efter “{{ terms }}”",
       "results_with_count_and_term": {
-        "one": "hittat {{ count }} resultat för \"{{ terms }}\"",
-        "other": "hittat {{ count }} resultat för \"{{ terms }}\""
+        "one": "{{ count }} resultat hittades för ”{{ terms }}”",
+        "other": "{{ count }} resultat hittades för ”{{ terms }}”"
       },
       "results_pages_with_count": {
-        "one": "{{ count }}-sida",
+        "one": "{{ count }} sida",
         "other": "{{ count }} sidor"
       },
       "results_products_with_count": {
@@ -252,17 +252,17 @@
       }
     },
     "cart": {
-      "cart": "Varukorg"
+      "cart": "Kundvagn"
     },
     "contact": {
       "form": {
-        "name": "Namn",
-        "email": "E-postadress",
+        "name": "[name]",
+        "email": "E-post",
         "phone": "Telefonnummer",
         "comment": "Kommentar",
         "send": "Skicka",
-        "post_success": "Tack för att du kontaktar oss. Vi återkommer till dig så snart som möjligt.",
-        "error_heading": "Justera följande:",
+        "post_success": "Tack för att du kontaktade oss. Vi återkommer till dig så snart som möjligt.",
+        "error_heading": "Vänligen justera följande:",
         "title": "Kontaktformulär"
       }
     },
@@ -373,13 +373,13 @@
     }
   },
   "localization": {
-    "country_label": "Land/Region",
+    "country_label": "Land/region",
     "language_label": "Språk",
     "update_language": "Uppdatera språk",
     "update_country": "Uppdatera land/region",
     "search": "Sök",
     "popular_countries_regions": "Populära länder/regioner",
-    "country_results_count": "{{ count }} länder/regioner hittades"
+    "country_results_count": "{{ count }} länder/områden hittades"
   },
   "customer": {
     "account": {
@@ -395,7 +395,7 @@
       "password": "Lösenord",
       "password_confirm": "Bekräfta lösenordet",
       "submit": "Aktivera konto",
-      "cancel": "Avvisa inbjudan"
+      "cancel": "Avböj inbjudan"
     },
     "addresses": {
       "title": "Adresser",
@@ -408,7 +408,7 @@
       "address1": "Adress 1",
       "address2": "Adress 2",
       "city": "Stad",
-      "country": "Land/Region",
+      "country": "Land/region",
       "province": "Provins",
       "zip": "Postnummer",
       "phone": "Telefon",
@@ -417,20 +417,20 @@
       "update": "Uppdatera adress",
       "cancel": "Avbryt",
       "edit": "Redigera",
-      "delete": "Radera",
-      "delete_confirm": "Är du säker på att du vill radera den här adressen?"
+      "delete": "Ta bort",
+      "delete_confirm": "Är du säker på att du vill ta bort den här adressen?"
     },
     "log_in": "Logga in",
     "log_out": "Logga ut",
     "login_page": {
       "cancel": "Avbryt",
       "create_account": "Skapa konto",
-      "email": "E-postadress",
-      "forgot_password": "Har du glömt ditt lösenord?",
+      "email": "E-post",
+      "forgot_password": "Glömt ditt lösenord?",
       "guest_continue": "Fortsätt",
       "guest_title": "Fortsätt som gäst",
       "password": "Lösenord",
-      "title": "Inloggning",
+      "title": "Logga in",
       "sign_in": "Logga in",
       "submit": "Skicka",
       "alternate_provider_separator": "eller"
@@ -466,21 +466,21 @@
       "submit": "Återställ lösenord"
     },
     "order": {
-      "title": "Order {{ name }}",
-      "date_html": "Beställd den {{ date }}",
-      "cancelled_html": "Ordern avbröts den {{ date }}",
-      "cancelled_reason": "Anledning: {{ reason }}",
+      "title": "Beställ {{ name }}",
+      "date_html": "Publicerad den {{ date }}",
+      "cancelled_html": "Beställning avbruten den {{ date }}",
+      "cancelled_reason": "Orsak: {{ reason }}",
       "billing_address": "Faktureringsadress",
       "payment_status": "Betalningsstatus",
       "shipping_address": "Leveransadress",
-      "fulfillment_status": "Distributionsstatus",
+      "fulfillment_status": "Leveransstatus",
       "discount": "Rabatt",
       "shipping": "Frakt",
       "tax": "Skatt",
       "product": "Produkt",
-      "sku": "SKU",
+      "sku": "Artikelnummer",
       "price": "Pris",
-      "quantity": "Kvantitet",
+      "quantity": "Antal",
       "total": "Totalt",
       "fulfilled_at_html": "Distribuerad {{ date }}",
       "track_shipment": "Spåra försändelse",

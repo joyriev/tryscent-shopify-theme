@@ -211,8 +211,8 @@
         "other": "{{ count }} produkter"
       },
       "reset": "Nulstil",
-      "sort_button": "Sortér",
-      "sort_by_label": "Sortér efter:",
+      "sort_button": "Sorteret",
+      "sort_by_label": "Sorter efter:",
       "to": "Til",
       "clear_filter": "Fjern filter",
       "filter_selected_accessibility": "{{ type }} ({{ count }} filtre valgt)",
@@ -223,7 +223,7 @@
   },
   "templates": {
     "search": {
-      "no_results": "Der blev ikke fundet nogen resultater for “{{ terms }}”. Kontrollér stavemåden, eller brug et andet ord eller udtryk.",
+      "no_results": "Ingen resultater fundet for “{{ terms }}”. Tjek stavningen eller brug et andet ord eller udtryk.",
       "results_with_count": {
         "one": "{{ count }} resultat",
         "other": "{{ count }} resultater"
@@ -233,8 +233,8 @@
       "products": "Produkter",
       "search_for": "Søg efter “{{ terms }}”",
       "results_with_count_and_term": {
-        "one": "Der blev fundet {{ count }} resultat for “{{ terms }}”",
-        "other": "Der blev fundet {{ count }} resultater for “{{ terms }}”"
+        "one": "{{ count }} resultat fundet for “{{ terms }}”",
+        "other": "{{ count }} resultater fundet for “{{ terms }}”"
       },
       "results_pages_with_count": {
         "one": "{{ count }} side",
@@ -252,22 +252,22 @@
       }
     },
     "cart": {
-      "cart": "Indkøbskurv"
+      "cart": "Kurv"
     },
     "contact": {
       "form": {
         "name": "Navn",
-        "email": "Mailadresse",
+        "email": "E-mail",
         "phone": "Telefonnummer",
         "comment": "Kommentar",
         "send": "Send",
-        "post_success": "Tak for din henvendelse. Vi kontakter dig hurtigst muligt.",
-        "error_heading": "Juster følgende:",
+        "post_success": "Tak for at kontakte os. Vi vender tilbage til dig så hurtigt som muligt.",
+        "error_heading": "Justér venligst følgende:",
         "title": "Kontaktformular"
       }
     },
     "404": {
-      "title": "Siden blev ikke fundet",
+      "title": "Side ikke fundet",
       "subtext": "404"
     }
   },
@@ -373,29 +373,29 @@
     }
   },
   "localization": {
-    "country_label": "Land/område",
+    "country_label": "Land/region",
     "language_label": "Sprog",
     "update_language": "Opdater sprog",
-    "update_country": "Opdater land/område",
-    "search": "Søg",
-    "popular_countries_regions": "Populære lande/områder",
-    "country_results_count": "{{ count }} lande/områder er fundet"
+    "update_country": "Opdater land/region",
+    "search": "Søgning",
+    "popular_countries_regions": "Populære lande/regioner",
+    "country_results_count": "{{ count }} lande/områder fundet"
   },
   "customer": {
     "account": {
       "title": "Konto",
-      "details": "Kontooplysninger",
+      "details": "Kontodetaljer",
       "view_addresses": "Se adresser",
-      "return": "Tilbage til kontooplysninger"
+      "return": "Gå tilbage til kontooplysninger"
     },
     "account_fallback": "Konto",
     "activate_account": {
       "title": "Aktivér konto",
-      "subtext": "Opret en adgangskode, så du kan aktivere din konto.",
+      "subtext": "Opret din adgangskode for at aktivere din konto.",
       "password": "Adgangskode",
       "password_confirm": "Bekræft adgangskode",
       "submit": "Aktivér konto",
-      "cancel": "Afslå invitation"
+      "cancel": "Afslå invitationen"
     },
     "addresses": {
       "title": "Adresser",

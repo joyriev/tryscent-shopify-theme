@@ -436,19 +436,19 @@
       "alternate_provider_separator": "oder"
     },
     "orders": {
-      "title": "Bestellhistorie",
+      "title": "Bestellverlauf",
       "order_number": "Bestellung",
       "order_number_link": "Bestellnummer {{ number }}",
       "date": "Datum",
       "payment_status": "Zahlungsstatus",
-      "fulfillment_status": "Fulfillmentstatus",
-      "total": "Gesamtsumme",
-      "none": "Du hast noch keine Bestellungen aufgegeben."
+      "fulfillment_status": "Erfüllungsstatus",
+      "total": "Gesamt",
+      "none": "Sie haben noch keine Bestellungen aufgegeben."
     },
     "recover_password": {
-      "title": "Setze dein Passwort zurück",
-      "subtext": "Wir werden dir eine E-Mail zum Zurücksetzen deines Passworts schicken",
-      "success": "Wir haben dir eine E-Mail mit einem Link zum Aktualisieren deines Passworts geschickt."
+      "title": "Setzen Sie Ihr Passwort zurück",
+      "subtext": "Wir senden Ihnen eine E-Mail, um Ihr Passwort zurückzusetzen",
+      "success": "Wir haben Ihnen eine E-Mail mit einem Link zum Aktualisieren Ihres Passworts gesendet."
     },
     "register": {
       "title": "Konto erstellen",
@@ -459,8 +459,8 @@
       "submit": "Erstellen"
     },
     "reset_password": {
-      "title": "Passwort für Konto zurücksetzen",
-      "subtext": "Neues Passwort eingeben",
+      "title": "Passwort für das Konto zurücksetzen",
+      "subtext": "Geben Sie ein neues Passwort ein",
       "password": "Passwort",
       "password_confirm": "Passwort bestätigen",
       "submit": "Passwort zurücksetzen"
@@ -482,46 +482,46 @@
       "price": "Preis",
       "quantity": "Menge",
       "total": "Gesamt",
-      "fulfilled_at_html": "Ausgeführt am {{ date }}",
-      "track_shipment": "Sendung nachverfolgen",
+      "fulfilled_at_html": "Erfüllt am {{ date }}",
+      "track_shipment": "Sendung verfolgen",
       "tracking_url": "Tracking-Link",
-      "tracking_company": "Versanddienstleister",
-      "tracking_number": "Trackingnummer",
+      "tracking_company": "Anbieter",
+      "tracking_number": "Sendungsnummer",
       "subtotal": "Zwischensumme",
-      "total_duties": "Zollgebühren",
-      "total_refunded": "Zurückerstattet"
+      "total_duties": "Zölle",
+      "total_refunded": "Erstattet"
     }
   },
   "gift_cards": {
     "issued": {
-      "title": "Hier ist dein {{ value }}-Gutschein für {{ shop }}!",
-      "subtext": "Dein Gutschein",
-      "gift_card_code": "Gutscheincode",
-      "shop_link": "Onlineshop besuchen",
-      "add_to_apple_wallet": "Zu Apple Wallet hinzufügen",
-      "qr_image_alt": "QR-Code – Scannen, um Gutschein einzulösen",
-      "copy_code": "Geschenkgutscheincode kopieren",
+      "title": "Hier ist dein Guthaben von {{ value }} auf der Geschenkkarte für {{ shop }}!",
+      "subtext": "Ihre Geschenkkarte",
+      "gift_card_code": "Geschenkkartencode",
+      "shop_link": "Online-Shop besuchen",
+      "add_to_apple_wallet": "Zur Apple Wallet hinzufügen",
+      "qr_image_alt": "QR-Code — scannen, um Geschenkkarte einzulösen",
+      "copy_code": "Geschenkkartencode kopieren",
       "expired": "Abgelaufen",
       "copy_code_success": "Code erfolgreich kopiert",
-      "how_to_use_gift_card": "Verwende diesen Geschenkgutscheincode online oder verwende den QR-Code im Shop",
-      "expiration_date": "Gültig bis {{ expires_on }}"
+      "how_to_use_gift_card": "Verwenden Sie den Geschenkkartencode online oder den QR-Code im Geschäft",
+      "expiration_date": "Läuft ab am {{ expires_on }}"
     }
   },
   "recipient": {
     "form": {
       "checkbox": "Ich möchte dies als Geschenk senden",
-      "email_label": "Empfänger E-Mail",
+      "email_label": "Empfänger-E-Mail",
       "email": "E-Mail",
-      "name_label": "Name des Empfängers (optional)",
+      "name_label": "Empfängername (optional)",
       "name": "Name",
       "message_label": "Nachricht (optional)",
       "message": "Nachricht",
-      "max_characters": "Maximal {{ max_chars }} Zeichen",
-      "email_label_optional_for_no_js_behavior": "E-Mail-Adresse des Empfängers (optional)",
+      "max_characters": "{{ max_chars }} Zeichen maximal",
+      "email_label_optional_for_no_js_behavior": "Empfänger-E-Mail (optional)",
       "send_on": "JJJJ-MM-TT",
-      "send_on_label": "Senden am (optional)",
-      "expanded": "Formular für den Empfänger des Gutscheins erweitert",
-      "collapsed": "Formular für den Empfänger des Gutscheins minimiert"
+      "send_on_label": "Senden an (optional)",
+      "expanded": "Geschenkkarten-Empfängerformular erweitert",
+      "collapsed": "Geschenkkarten-Empfängerformular eingeklappt"
     }
   },
   "shopify": {
