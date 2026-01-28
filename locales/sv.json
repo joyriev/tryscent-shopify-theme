@@ -1513,7 +1513,49 @@
         "credit_card_name_blank": "Ange ditt namn exakt som det står på ditt kort",
         "credit_card_name_invalid": "Ange ditt namn exakt som det står på ditt kort",
         "credit_card_start_month_invalid": "Ange en giltig startmånad för kortet",
-        "delivery_line_detail_changed": "Vissa leveransuppgifter kan ha ändrats. Kontrollera din leveransmetod och försök igen."
+        "delivery_line_detail_changed": "Vissa leveransuppgifter kan ha ändrats. Kontrollera din leveransmetod och försök igen.",
+        "delivery_zone_not_found": "Den angivna zonen hittades inte i det angivna landet.",
+        "reduction_code_code_not_found": "Ange en giltig rabattkod eller presentkort",
+        "reduction_code_gift_cards_not_supported_with_deferred_purchase_options": "Presentkort stöds inte med uppskjutna köp.",
+        "shipping_line_phone_blank": "Ange ett telefonnummer för att använda denna leveransmetod",
+        "tips_invalid_tip_amount": "Ange ett dricksbelopp mindre än %{amount}",
+        "gift_card_already_applied": "Detta presentkort har redan använts för din beställning",
+        "gift_card_disabled": "Detta presentkort är inte längre tillgängligt",
+        "gift_card_expired": "Detta presentkort har gått ut",
+        "gift_card_currency_mismatch": "Endast presentkort i %{checkout_currency} kan användas för denna beställning",
+        "gift_cards_not_supported_with_deferred_purchase_options": "Presentkort stöds inte med uppskjutna köp.",
+        "payment_gateway_not_in_test_mode": "är inte inställd för att testa beställningar. Den här butiken kan inte ta emot riktiga beställningar eller riktiga betalningar.",
+        "payment_gateway_unsupported_for_subscriptions": "Denna betalningsmetod är inte tillgänglig för prenumerationsbeställningar.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Denna betalningsmetod är inte tillgänglig för uppskjutna köp.",
+        "payment_gateway_unsupported_for_country": "Denna betalningsmetod är inte tillgänglig för ditt leveransland.",
+        "payment_gateway_unsupported_for_development_store_html": "För att lägga en testbeställning behöver du använda en testbetalningsgateway. Läs mer om <a href=\"%{docs_link}\">testning av beställningar i utvecklingsbutiker</a>.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Du har nått gränsen för beställningar i utvecklingsbutiken med denna betalningshanterare. För att göra en ny beställning måste du använda en testbetalningsgateway. Läs mer om <a href=\"%{docs_link}\">testning av beställningar i utvecklingsbutiker</a>.",
+        "purchase_options_agreement_blank": "För att fortsätta med ditt köp, godkänn villkoren för uppskjutet eller återkommande köp.",
+        "physical_gift_card_invalid_quantity": "Fysiska presentkortsposter måste ha en kvantitet som matchar antalet presentkortskoder.",
+        "physical_gift_card_duplicate_code": "Fysiskt presentkortspost innehåller duplicerad kod.",
+        "physical_gift_card_invalid_code": "Fysisk presentkortskod är ogiltig.",
+        "email_blank": "Ange en e-postadress",
+        "phone_blank": "Ange ett telefonnummer",
+        "address_country_invalid": "Välj ett land/område från listan",
+        "address_zip_invalid": "Ange en giltig postnummer / postkod",
+        "gift_card_invalid": "Presentkort \"••••%{last_four_characters}\" är inte längre giltigt",
+        "vaulting_agreement_blank": "Din betalningsmetod måste sparas eftersom betalning för saldot på denna beställning förfaller senare.",
+        "shipping_method_invalid_phone_number": "Uppdatera telefonnumret i din leveransadress för att se tillgängliga fraktmetoder.",
+        "split_cart_international_shipping_not_supported": "Alla artiklar måste använda samma leveransmetod vid internationell frakt. Uppdatera leveransmetoden eller skapa flera beställningar.",
+        "invalid_delivery_address_reference_handle": "Referenshandtaget för leveransadressen kunde inte kopplas till någon tillgänglig leveransadress.",
+        "must_use_available_delivery_address": "Leveransadress måste väljas från de tillgängliga leveransadresserna.",
+        "must_use_available_shipping_rate": "Fraktkostnad måste väljas från de tillgängliga fraktpriserna.",
+        "split_by_delivery_method_not_allowed": "Uppdelning efter leveransmetod är inte tillåten för denna session eller butik."
+      },
+      "store_credit_errors": {
+        "generic_error": "Det uppstod ett problem med ditt butikskredit. Försök igen eller ladda om sidan."
+      },
+      "redeemable_errors": {
+        "gift_card": {
+          "duplicate": "Presentkortet har redan använts på din beställning",
+          "expired": "Detta presentkort har gått ut",
+          "currency_mismatch": "Endast presentkort i %{shop_currency} accepteras"
+        }
       }
     }
   }
