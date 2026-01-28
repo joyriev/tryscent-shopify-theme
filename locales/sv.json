@@ -82,11 +82,11 @@
       "new_window": "Öppnas i ett nytt fönster.",
       "external": "Öppnar extern webbplats."
     },
-    "loading": "Laddar ...",
+    "loading": "Laddar...",
     "skip_to_product_info": "Hoppa till produktinformation",
-    "total_reviews": "totalt antal recensioner",
+    "total_reviews": "totala recensioner",
     "star_reviews_info": "{{ rating_value }} av {{ rating_max }} stjärnor",
-    "collapsible_content_title": "Innehåll som kan döljas",
+    "collapsible_content_title": "Fällbart innehåll",
     "complementary_products": "Kompletterande produkter"
   },
   "blogs": {
@@ -97,34 +97,34 @@
         "one": "{{ count }} kommentar",
         "other": "{{ count }} kommentarer"
       },
-      "moderated": "Notera att kommentarer behöver godkännas innan de publiceras.",
+      "moderated": "Observera att kommentarer måste godkännas innan de publiceras.",
       "comment_form_title": "Lämna en kommentar",
-      "name": "Namn",
-      "email": "Email",
+      "name": "[name]",
+      "email": "E-post",
       "message": "Kommentar",
-      "post": "Lägg upp kommentar",
-      "back_to_blog": "Tillbaka till blogg",
-      "share": "Dela denna artikel",
-      "success": "Din kommentar har lagts upp! Tack!",
-      "success_moderated": "Din kommentar har lagts upp. Vi kommer publicera den lite senare, eftersom att bloggen är modererad."
+      "post": "Skicka kommentar",
+      "back_to_blog": "Tillbaka till bloggen",
+      "share": "Dela den här artikeln",
+      "success": "Din kommentar har publicerats! Tack!",
+      "success_moderated": "Din kommentar har publicerats framgångsrikt. Vi kommer att publicera den om en liten stund, eftersom vår blogg är modererad."
     }
   },
   "onboarding": {
-    "product_title": "Exempel på produktnamn",
-    "collection_title": "Namn på produktserien"
+    "product_title": "Exempel på produkttitel",
+    "collection_title": "Namnet på din samling"
   },
   "products": {
     "product": {
-      "add_to_cart": "Lägg i varukorgen",
+      "add_to_cart": "Lägg till i kundvagn",
       "description": "Beskrivning",
-      "on_sale": "Rea",
+      "on_sale": "Utförsäljning",
       "quantity": {
-        "label": "Kvantitet",
-        "input_label": "Kvantitet för {{ product }}",
-        "increase": "Öka kvantitet för {{ product }}",
-        "decrease": "Minska kvantitet för {{ product }}",
-        "minimum_of": "Minimum på {{ quantity }}",
-        "maximum_of": "Maximum på {{ quantity }}",
+        "label": "Antal",
+        "input_label": "Antal för {{ product }}",
+        "increase": "Öka mängden för {{ product }}",
+        "decrease": "Minska mängden för {{ product }}",
+        "minimum_of": "Minst {{ quantity }}",
+        "maximum_of": "Maximalt {{ quantity }}",
         "multiples_of": "Ökningar i steg om {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i varukorg",
         "note": "Visa kvantitetsregler",
@@ -154,14 +154,14 @@
         "refresh": "Uppdatera"
       },
       "media": {
-        "open_media": "Öppna mediet {{ index }} i modalfönster",
-        "play_model": "Spela 3D-visaren",
+        "open_media": "Öppna media {{ index }} i fönster",
+        "play_model": "Spela 3D-visare",
         "play_video": "Spela video",
-        "gallery_viewer": "Gallerivisning",
-        "load_image": "Ladda bilden {{ index }} i gallerivisning",
-        "load_model": "Ladda 3D-modellen {{ index }} i gallerivisning",
-        "load_video": "Spela videon {{ index }} i gallerivisning",
-        "image_available": "Bilden {{ index }} är nu tillgänglig i gallerivisning"
+        "gallery_viewer": "Galleri-visare",
+        "load_image": "Ladda bild {{ index }} i gallerivyn",
+        "load_model": "Ladda 3D-modell {{ index }} i gallerivyn",
+        "load_video": "Spela upp video {{ index }} i gallerivyn",
+        "image_available": "Bild {{ index }} är nu tillgänglig i gallerivyn"
       },
       "view_full_details": "Visa alla uppgifter",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beräknas i kassan.",
@@ -171,11 +171,11 @@
       "variant_sold_out_or_unavailable": "Varianten är slutsåld eller inte tillgänglig",
       "inventory_in_stock": "I lager",
       "inventory_in_stock_show_count": "{{ quantity }} i lager",
-      "inventory_low_stock": "Låg lagernivå",
-      "inventory_low_stock_show_count": "Låg lagernivå: {{ quantity }} kvar",
+      "inventory_low_stock": "Lågt lager",
+      "inventory_low_stock_show_count": "Lågt lager: {{ quantity }} kvar",
       "inventory_out_of_stock": "Slut i lager",
       "inventory_out_of_stock_continue_selling": "I lager",
-      "sku": "Lagerhållningsenhet",
+      "sku": "Artikelnummer",
       "volume_pricing": {
         "title": "Volymprissättning",
         "note": "Volymprissättning är tillgängligt",

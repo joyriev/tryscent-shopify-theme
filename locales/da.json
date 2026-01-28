@@ -80,51 +80,51 @@
     "refresh_page": "At vælge et udvalg resulterer i en fuld sideopdatering.",
     "link_messages": {
       "new_window": "Åbner i et nyt vindue.",
-      "external": "Åbner eksternt website."
+      "external": "Åbner ekstern hjemmeside."
     },
     "loading": "Indlæser...",
     "skip_to_product_info": "Spring til produktinformation",
-    "total_reviews": "anmeldelser i alt",
+    "total_reviews": "samlede anmeldelser",
     "star_reviews_info": "{{ rating_value }} ud af {{ rating_max }} stjerner",
-    "collapsible_content_title": "Indhold, der kan skjules",
-    "complementary_products": "Supplerende produkter"
+    "collapsible_content_title": "Sammenklappeligt indhold",
+    "complementary_products": "Komplementære produkter"
   },
   "blogs": {
     "article": {
-      "blog": "Blog",
+      "blog": "Blogg",
       "read_more_title": "Læs mere: {{ title }}",
       "comments": {
         "one": "{{ count }} kommentar",
         "other": "{{ count }} kommentarer"
       },
-      "moderated": "Bemærk, at kommentarer skal godkendes, før de bliver offentliggjort.",
-      "comment_form_title": "Indsend en kommentar",
+      "moderated": "Bemærk venligst, at kommentarer skal godkendes, før de offentliggøres.",
+      "comment_form_title": "Efterlad en kommentar",
       "name": "Navn",
-      "email": "Mailadresse",
+      "email": "E-mail",
       "message": "Kommentar",
       "post": "Skriv kommentar",
-      "back_to_blog": "Tilbage til blog",
+      "back_to_blog": "Tilbage til bloggen",
       "share": "Del denne artikel",
-      "success": "Din kommentar er blevet offentliggjort! Tak!",
-      "success_moderated": "Din kommentar er blevet offentliggjort. Den bliver offentliggjort om lidt, da vores blog er under opsyn."
+      "success": "Din kommentar blev sendt med succes! Tak!",
+      "success_moderated": "Din kommentar blev sendt med succes. Vi vil offentliggøre den om lidt, da vores blog er modereret."
     }
   },
   "onboarding": {
     "product_title": "Eksempel på produkttitel",
-    "collection_title": "Navnet på din kollektion"
+    "collection_title": "Navnet på din samling"
   },
   "products": {
     "product": {
-      "add_to_cart": "Læg i indkøbskurv",
+      "add_to_cart": "Læg i kurv",
       "description": "Beskrivelse",
       "on_sale": "Udsalg",
       "quantity": {
         "label": "Antal",
         "input_label": "Antal for {{ product }}",
-        "increase": "Øg antallet for {{ product }}",
-        "decrease": "Reducer antallet for {{ product }}",
-        "minimum_of": "Minimum på {{ quantity }}",
-        "maximum_of": "Maksimum på {{ quantity }}",
+        "increase": "Forøg mængden for {{ product }}",
+        "decrease": "Formindsk mængden for {{ product }}",
+        "minimum_of": "Minimum af {{ quantity }}",
+        "maximum_of": "Maksimum {{ quantity }}",
         "multiples_of": "Intervaller på {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i indkøbskurven",
         "note": "Se mængderegler",
@@ -154,14 +154,14 @@
         "refresh": "Opdater"
       },
       "media": {
-        "open_media": "Åbn mediet {{ index }} i modus",
-        "play_model": "Afspil 3D-fremviser",
+        "open_media": "Åbn medie {{ index }} i modalvindue",
+        "play_model": "Afspil 3D Viewer",
         "play_video": "Afspil video",
-        "gallery_viewer": "Fremviser til Galleri",
-        "load_image": "Indlæs billedet {{ index }} i gallerivisning",
-        "load_model": "Indlæs 3D-modellen {{ index }} i gallerivisning",
-        "load_video": "Afspil videoen {{ index }} i gallerivisning",
-        "image_available": "Billedet {{ index }} er nu tilgængeligt i gallerivisning"
+        "gallery_viewer": "Galleri-fremviser",
+        "load_image": "Indlæs billede {{ index }} i gallerivisning",
+        "load_model": "Indlæs 3D-model {{ index }} i gallerivisning",
+        "load_video": "Afspil video {{ index }} i gallerivisning",
+        "image_available": "Billede {{ index }} er nu tilgængeligt i gallerivisning"
       },
       "view_full_details": "Se komplette oplysninger",
       "shipping_policy_html": "<a href=\"{{ link }}\">Levering</a> beregnes ved betaling.",
@@ -172,10 +172,10 @@
       "inventory_in_stock": "På lager",
       "inventory_in_stock_show_count": "{{ quantity }} på lager",
       "inventory_low_stock": "Lav lagerbeholdning",
-      "inventory_low_stock_show_count": "Lav lagerbeholdning: {{ quantity }} tilbage",
-      "inventory_out_of_stock": "Ikke på lager",
+      "inventory_low_stock_show_count": "Få på lager: {{ quantity }} tilbage",
+      "inventory_out_of_stock": "Udsolgt",
       "inventory_out_of_stock_continue_selling": "På lager",
-      "sku": "SKU",
+      "sku": "Varenummer",
       "volume_pricing": {
         "title": "Mængderabat",
         "note": "Mængderabat tilgængelig",
