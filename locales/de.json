@@ -125,32 +125,32 @@
         "decrease": "Menge für {{ product }} verringern",
         "minimum_of": "Mindestens {{ quantity }}",
         "maximum_of": "Maximal {{ quantity }}",
-        "multiples_of": "In {{ quantity }}er Schritten",
+        "multiples_of": "Schritte von {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> im Warenkorb",
         "note": "Mengenregeln anzeigen",
         "min_of": "Mindestens {{ quantity }}",
-        "max_of": "Höchstens {{ quantity }}"
+        "max_of": "Maximal {{ quantity }}"
       },
       "price": {
-        "from_price_html": "Von {{ price }}",
-        "regular_price": "Normaler Preis",
+        "from_price_html": "Ab {{ price }}",
+        "regular_price": "Regulärer Preis",
         "sale_price": "Verkaufspreis",
-        "unit_price": "Grundpreis"
+        "unit_price": "Stückpreis"
       },
       "share": "Dieses Produkt teilen",
       "sold_out": "Ausverkauft",
       "unavailable": "Nicht verfügbar",
-      "vendor": "Anbieter",
-      "video_exit_message": "{{ title }} öffnet das Video auf derselben Seite im Vollbildmodus.",
-      "xr_button": "In deinem Bereich ansehen",
-      "xr_button_label": "\"Ansicht in deinem Raum\" lädt den Artikel in ein Augmented-Reality-Fenster",
+      "vendor": "Verkäufer",
+      "video_exit_message": "{{ title }} öffnet das Vollbildvideo im selben Fenster.",
+      "xr_button": "Im Raum anzeigen",
+      "xr_button_label": "Im Raum anzeigen, lädt Artikel im Fenster für erweiterte Realität",
       "pickup_availability": {
-        "view_store_info": "Shop-Informationen anzeigen",
-        "check_other_stores": "Verfügbarkeit in anderen Shops überprüfen",
+        "view_store_info": "Geschäftsinformationen anzeigen",
+        "check_other_stores": "Verfügbarkeit in anderen Geschäften prüfen",
         "pick_up_available": "Abholung verfügbar",
-        "pick_up_available_at_html": "Abholung bei <span class=\"color-foreground\">{{ location_name }}</span> verfügbar",
-        "pick_up_unavailable_at_html": "Abholung bei <span class=\"color-foreground\">{{ location_name }}</span> derzeit nicht verfügbar",
-        "unavailable": "Verfügbarkeit für Abholungen konnte nicht geladen werden",
+        "pick_up_available_at_html": "Abholung verfügbar bei <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Abholung derzeit nicht verfügbar bei <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Abholverfügbarkeit konnte nicht geladen werden",
         "refresh": "Aktualisieren"
       },
       "media": {
@@ -164,10 +164,10 @@
         "image_available": "Bild {{ index }} ist jetzt in der Galerieansicht verfügbar"
       },
       "view_full_details": "Vollständige Details anzeigen",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Versand</a> wird beim Checkout berechnet",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Versand</a> wird beim Bezahlen berechnet.",
       "choose_options": "Optionen wählen",
       "choose_product_options": "Wählen Sie Optionen für {{ product_name }}",
-      "value_unavailable": "{{ option_value }} – nicht verfügbar",
+      "value_unavailable": "{{ option_value }} - Nicht verfügbar",
       "variant_sold_out_or_unavailable": "Variante ausverkauft oder nicht verfügbar",
       "inventory_in_stock": "Auf Lager",
       "inventory_in_stock_show_count": "{{ quantity }} auf Lager",
@@ -177,21 +177,21 @@
       "inventory_out_of_stock_continue_selling": "Auf Lager",
       "sku": "Artikelnummer",
       "volume_pricing": {
-        "title": "Volumenabhängige Preisgestaltung",
-        "note": "Volumenabhängige Preisgestaltung verfügbar",
+        "title": "Mengenrabatt",
+        "note": "Mengenrabatt verfügbar",
         "minimum": "{{ quantity }}+",
         "price_range": "{{ minimum }}–{{ maximum }}",
-        "price_at_each_html": "bei {{ price }}/Stück"
+        "price_at_each_html": "bei {{ price }} pro Stück"
       },
       "product_variants": "Produktvarianten",
-      "duties_included": "Inkl. Zollgebühren."
+      "duties_included": "Pflichten inbegriffen."
     },
     "modal": {
-      "label": "Medien-Galerie"
+      "label": "Mediengalerie"
     },
     "facets": {
       "apply": "Anwenden",
-      "clear": "Löschen",
+      "clear": "Klar",
       "clear_all": "Alle entfernen",
       "from": "Von",
       "filter_and_sort": "Filtern und sortieren",
@@ -204,7 +204,7 @@
       "max_price": "Der höchste Preis ist {{ price }}",
       "product_count": {
         "one": "{{ product_count }} von {{ count }} Produkt",
-        "other": "{{ product_count }} von {{ count }} Produkten"
+        "other": "{{ product_count }} von {{ count }} Erzeugnissen"
       },
       "product_count_simple": {
         "one": "{{ count }} Produkt",
@@ -213,17 +213,17 @@
       "reset": "Zurücksetzen",
       "sort_button": "Sortieren",
       "sort_by_label": "Sortieren nach:",
-      "to": "Bis",
+      "to": "Zu",
       "clear_filter": "Filter entfernen",
       "filter_selected_accessibility": "{{ type }} ({{ count }} Filter ausgewählt)",
       "show_more": "Mehr anzeigen",
       "show_less": "Weniger anzeigen",
-      "filter_and_operator_subtitle": "Allen entsprechen"
+      "filter_and_operator_subtitle": "Alle abgleichen"
     }
   },
   "templates": {
     "search": {
-      "no_results": "Keine Ergebnisse gefunden für \"{{ terms }}\". Überprüfe die Schreibweise oder versuche es mit einer anderen Suchanfrage.",
+      "no_results": "Keine Ergebnisse gefunden für „{{ terms }}“. Überprüfen Sie die Rechtschreibung oder verwenden Sie ein anderes Wort oder einen anderen Ausdruck.",
       "results_with_count": {
         "one": "{{ count }} Ergebnis",
         "other": "{{ count }} Ergebnisse"
@@ -231,10 +231,10 @@
       "title": "Suchergebnisse",
       "page": "Seite",
       "products": "Produkte",
-      "search_for": "Nach \"{{ terms }}\" suchen",
+      "search_for": "Suche nach „{{ terms }}“",
       "results_with_count_and_term": {
-        "one": "{{ count }} Ergebnis für \"{{ terms }}\" gefunden",
-        "other": "{{ count }} Ergebnisse für \"{{ terms }}\" gefunden"
+        "one": "{{ count }} Ergebnis gefunden für „{{ terms }}“",
+        "other": "{{ count }} Ergebnisse gefunden für „{{ terms }}“"
       },
       "results_pages_with_count": {
         "one": "{{ count }} Seite",
@@ -261,8 +261,8 @@
         "phone": "Telefonnummer",
         "comment": "Kommentar",
         "send": "Senden",
-        "post_success": "Danke, dass du uns kontaktiert hast. Wir werden uns so schnell wie möglich bei dir melden.",
-        "error_heading": "Bitte passe Folgendes an:",
+        "post_success": "Danke, dass Sie uns kontaktiert haben. Wir werden uns so schnell wie möglich bei Ihnen melden.",
+        "error_heading": "Bitte passen Sie Folgendes an:",
         "title": "Kontaktformular"
       }
     },
@@ -377,7 +377,7 @@
     "language_label": "Sprache",
     "update_language": "Sprache aktualisieren",
     "update_country": "Land/Region aktualisieren",
-    "search": "Suchen",
+    "search": "Suche",
     "popular_countries_regions": "Beliebte Länder/Regionen",
     "country_results_count": "{{ count }} Länder/Regionen gefunden"
   },
@@ -391,7 +391,7 @@
     "account_fallback": "Konto",
     "activate_account": {
       "title": "Konto aktivieren",
-      "subtext": "Erstelle ein Passwort, um dein Konto zu aktiveren.",
+      "subtext": "Erstellen Sie Ihr Passwort, um Ihr Konto zu aktivieren.",
       "password": "Passwort",
       "password_confirm": "Passwort bestätigen",
       "submit": "Konto aktivieren",

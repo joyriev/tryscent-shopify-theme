@@ -125,32 +125,32 @@
         "decrease": "Minska mängden för {{ product }}",
         "minimum_of": "Minst {{ quantity }}",
         "maximum_of": "Maximalt {{ quantity }}",
-        "multiples_of": "Ökningar i steg om {{ quantity }}",
-        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i varukorg",
+        "multiples_of": "Steg om {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i kundvagnen",
         "note": "Visa kvantitetsregler",
-        "min_of": "Min. {{ quantity }}",
-        "max_of": "Max. {{ quantity }}"
+        "min_of": "Min {{ quantity }}",
+        "max_of": "Max {{ quantity }}"
       },
       "price": {
         "from_price_html": "Från {{ price }}",
         "regular_price": "Ordinarie pris",
-        "sale_price": "Försäljningspris",
+        "sale_price": "Rea pris",
         "unit_price": "Enhetspris"
       },
       "share": "Dela den här produkten",
       "sold_out": "Slutsåld",
-      "unavailable": "Inte tillgängliga",
-      "vendor": "Säljare",
+      "unavailable": "Ej tillgänglig",
+      "vendor": "Leverantör",
       "video_exit_message": "{{ title }} öppnar helskärmsvideo i samma fönster.",
       "xr_button": "Visa i ditt utrymme",
-      "xr_button_label": "Visa i ditt utrymme, laddar artiklar i fönster med förstärkt verklighet",
+      "xr_button_label": "Visa i ditt utrymme, laddar objekt i fönstret för förstärkt verklighet",
       "pickup_availability": {
-        "view_store_info": "Visa butiksinformation",
-        "check_other_stores": "Kontrollerar tillgänglighet i andra butiker",
-        "pick_up_available": "Hämtning tillgänglig",
-        "pick_up_available_at_html": "Hämtning tillgänglig på <span class=\"color-foreground\">{{ location_name }}</span>",
-        "pick_up_unavailable_at_html": "Det går för närvarande inte att få hämtning på <span class=\"color-foreground\">{{ location_name }}</span>",
-        "unavailable": "Det gick inte att ladda hämtningstillgänglighet",
+        "view_store_info": "Visa butikens information",
+        "check_other_stores": "Kontrollera tillgänglighet i andra butiker",
+        "pick_up_available": "Upphämtning tillgänglig",
+        "pick_up_available_at_html": "Upphämtning tillgänglig på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_unavailable_at_html": "Upphämtning är för närvarande inte tillgänglig på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "unavailable": "Kunde inte ladda upphämtningsmöjligheter",
         "refresh": "Uppdatera"
       },
       "media": {
@@ -163,12 +163,12 @@
         "load_video": "Spela upp video {{ index }} i gallerivyn",
         "image_available": "Bild {{ index }} är nu tillgänglig i gallerivyn"
       },
-      "view_full_details": "Visa alla uppgifter",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beräknas i kassan.",
+      "view_full_details": "Visa fullständiga detaljer",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beräknas vid kassan.",
       "choose_options": "Välj alternativ",
       "choose_product_options": "Välj alternativ för {{ product_name }}",
-      "value_unavailable": "{{ option_value }} – inte tillgängligt",
-      "variant_sold_out_or_unavailable": "Varianten är slutsåld eller inte tillgänglig",
+      "value_unavailable": "{{ option_value }} - Otillgänglig",
+      "variant_sold_out_or_unavailable": "Variant slutsåld eller otillgänglig",
       "inventory_in_stock": "I lager",
       "inventory_in_stock_show_count": "{{ quantity }} i lager",
       "inventory_low_stock": "Lågt lager",
@@ -178,28 +178,28 @@
       "sku": "Artikelnummer",
       "volume_pricing": {
         "title": "Volymprissättning",
-        "note": "Volymprissättning är tillgängligt",
+        "note": "Volympriser tillgängliga",
         "minimum": "Fler än {{ quantity }}",
         "price_range": "{{ minimum }}–{{ maximum }}",
         "price_at_each_html": "för {{ price }}/st"
       },
       "product_variants": "Produktvarianter",
-      "duties_included": "Tullavgifter ingår."
+      "duties_included": "Uppgifter inkluderade."
     },
     "modal": {
       "label": "Mediagalleri"
     },
     "facets": {
-      "apply": "Tillämpa",
-      "clear": "Rensa",
+      "apply": "Verkställ",
+      "clear": "Klar",
       "clear_all": "Ta bort alla",
       "from": "Från",
       "filter_and_sort": "Filtrera och sortera",
       "filter_by_label": "Filter:",
       "filter_button": "Filter",
       "filters_selected": {
-        "one": "{{ count }} har valts",
-        "other": "{{ count }} har valts"
+        "one": "{{ count }} valda",
+        "other": "{{ count }} valda"
       },
       "max_price": "Det högsta priset är {{ price }}",
       "product_count": {
@@ -215,7 +215,7 @@
       "sort_by_label": "Sortera efter:",
       "to": "Till",
       "clear_filter": "Ta bort filter",
-      "filter_selected_accessibility": "{{ type }} ({{ count }}) filter valda",
+      "filter_selected_accessibility": "{{ type }} ({{ count }} filter valda)",
       "show_more": "Visa mer",
       "show_less": "Visa mindre",
       "filter_and_operator_subtitle": "Matcha alla"
