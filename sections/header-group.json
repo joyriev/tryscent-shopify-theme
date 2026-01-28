@@ -58,45 +58,19 @@
         "label_nYhF3R",
         "label_RqnDUx"
       ],
+      "disabled": true,
       "name": "Marquee Labels",
       "settings": {}
     },
-    "offer_announcement_nfkc8A": {
+    "offer_announcement_cN6pMF": {
       "type": "offer-announcement",
-      "disabled": true,
       "name": "Offer Announcement",
       "settings": {
         "background_color": "#c8202f",
-        "prepend_text": "TRYSCENT - 60 DAY RISK-FREE GUARANTEE - SHOP NOW →",
-        "link_text": "",
-        "append_text": "",
-        "link": "shopify://products/buy-2-get-1-free"
-      }
-    },
-    "announcement_bar_krbQAj": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_PEh9WY": {
-          "type": "announcement",
-          "disabled": true,
-          "settings": {
-            "text": "TRYSCENT – 60 DAY RISK-FREE GUARANTEE – SHOP NOW →",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement_PEh9WY"
-      ],
-      "name": "t:sections.announcement-bar.presets.name",
-      "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-4ecf9bcf-7887-4727-9c21-991f25dd397a",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "prepend_text": "Valentine Offer",
+        "link_text": "Buy 2 Get 1 Free!",
+        "append_text": "Shop Now 👉",
+        "link": "shopify://products/tryscent-collection"
       }
     },
     "header": {
@@ -121,8 +95,7 @@
   },
   "order": [
     "marquee_labels_CjAgNU",
-    "offer_announcement_nfkc8A",
-    "announcement_bar_krbQAj",
+    "offer_announcement_cN6pMF",
     "header"
   ]
 }
