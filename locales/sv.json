@@ -1013,7 +1013,46 @@
         "section_title": "Placering",
         "shipping_address_required": "Lägg till en leveransadress till denna plats för att börja lägga beställningar.",
         "tax_exemptions": "Skatteundantag",
-        "taxes_none": "Ingen"
+        "taxes_none": "Ingen",
+        "tax_exemptions_modal_button_accessibility_label": "Visa alla skatteundantag"
+      },
+      "location_selection": {
+        "continue_to_store": "Fortsätt till butik",
+        "description": "Om du redan har varor i din kundvagn kan en ändring av plats påverka priser och kvantiteter i kundvagnen.",
+        "list_loading_accessibility_message": "Läser in lista över platser",
+        "list_loading_finished_accessibility_message": "Listan över platser har laddats",
+        "loading_store_accessibility_message": "På väg till butiken",
+        "no_location_title": "Endast personliga beställningar",
+        "no_location_description": "Du har inte längre tillåtelse att lägga beställningar för {{company}}. Du kan fortfarande lägga personliga beställningar.",
+        "clear_search": "Rensa sökning",
+        "try_new_search": "Prova en ny sökning"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Dölj allt",
+          "hide_all_accessibility_label": "Dölj alla beställningar under granskning",
+          "show_all_accessibility_label": "Visa alla beställningar under granskning",
+          "show_all_orders_in_review": "Visa alla beställningar under granskning",
+          "show_less_orders_in_review": "Visa färre beställningar under granskning",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Du har inga väntande beställningar",
+            "pending_orders": {
+              "one": "Du har {{count}} väntande beställning",
+              "other": "Du har {{count}} väntande beställningar"
+            },
+            "more_than_pagination_length": "Du har mer än {{count}} väntande beställningar"
+          },
+          "pagination": {
+            "nav_accessibility_label": "Navigeringsknappar för beställningar under granskning"
+          }
+        },
+        "order_list_column_headers_location": "Placering",
+        "order_list_column_headers_contact": "Kontakt",
+        "removed_company_contact_tooltip": "Borttagen från företaget"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Bekräftat {{date}} från beställning {{draftOrderName}}",
+        "loading": "Laddar orderdetaljer"
       }
     }
   },
