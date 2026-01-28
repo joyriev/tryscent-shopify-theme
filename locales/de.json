@@ -3183,6 +3183,10 @@
       "update_success": {
         "title": "Zahlungsmethode aktualisiert",
         "done_button": "Weiter einkaufen"
+      },
+      "update_payment_instrument": {
+        "title": "Zahlungsmethode ändern",
+        "select_new_payment_method": "Wählen Sie eine neue Zahlungsmethode aus"
       }
     },
     "callback": {
@@ -3850,7 +3854,77 @@
       "processing": "Verarbeitung…",
       "decrease": "Verringere {{type}}",
       "minimumReached": "Mindestanzahl von {{value}} erreicht",
-      "maximumReached": "Maximal {{value}} erreicht"
+      "maximumReached": "Maximal {{value}} erreicht",
+      "tuesdayAbbreviation": "Du",
+      "wednesdayAbbreviation": "Wir",
+      "thursdayAbbreviation": "Der",
+      "showPreviousMonth": "Vorherigen Monat anzeigen, {{month}} {{year}}",
+      "inRange": "In Reichweite",
+      "removeItem": "Entfernen {{label}}",
+      "mapClusterTitle": {
+        "one": "Gruppe von {{number}} Markierungen",
+        "other": "Gruppe von {{number}} Markierungen"
+      },
+      "dropzoneDraggedOver": "Datei zum Hochladen hier ablegen"
+    },
+    "profile_preview_bar": {
+      "navigate_to_admin": "Zur Verwaltung navigieren",
+      "previewing": "Sie sehen eine Vorschau:",
+      "viewing": "Sie sehen:"
+    },
+    "active_inspector": {
+      "extension": {
+        "select": "Wählen Sie die Erweiterung mit dem Namen {{extensionName}} aus",
+        "unselect": "Wähle die Erweiterung mit dem Namen {{extensionName}} ab",
+        "move_down": "Erweiterung an die nächste Position verschieben",
+        "move_up": "Erweiterung an die vorherige Position verschieben",
+        "move_down_tooltip": "Zur nächsten Position wechseln",
+        "move_up_tooltip": "Zur vorherigen Position wechseln"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Dieser Link kann nicht im Editor geöffnet werden. Er wird in einem neuen Fenster geöffnet ({{resolved_to_link}}). Klicken Sie auf OK, um fortzufahren."
+    },
+    "settings": {
+      "loading_accessibility_message": "Lade Einstellungsseite",
+      "log_out_everywhere": {
+        "description": "Wenn Sie ein Gerät verloren haben oder Sicherheitsbedenken haben, melden Sie sich überall ab, um die Sicherheit Ihres Kontos zu gewährleisten.",
+        "warning_message": "Sie werden auf diesem Gerät ebenfalls abgemeldet."
+      }
+    },
+    "shop_ads": {
+      "title": "Weitere Produkte, die Ihnen gefallen könnten",
+      "subtitle": "Für begrenzte Zeit verfügbar",
+      "button": "Im Shop entdecken"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "enabled": "Kunden können Rücksendungen selbst anfordern und verwalten.",
+        "disabled": "Kunden müssen den Händler kontaktieren, um eine Rücksendung anzufordern."
+      }
+    },
+    "intents": {
+      "subscription_replace_payment_method": {
+        "title": "Zahlungsmethode ändern",
+        "loading": "Lade Modal zur Ersetzung der Zahlungsmethode",
+        "invalid_subscription_contract": "Abonnement konnte nicht gefunden werden",
+        "expiry_date": "Ablauf {{expiryDate}}"
+      }
+    },
+    "sign_in": {
+      "brand_logo_alt_text": "%{shop_name} Zeichenzeichen",
+      "processing": "Verarbeitung…",
+      "step_one": {
+        "page_title": "Anmelden - %{shop_name}",
+        "subheading": "Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Bestätigungscode zu",
+        "input_field_label": "E-Mail",
+        "button": "Fortsetzen"
+      },
+      "step_two": {
+        "page_title": "Code eingeben - %{shop_name}",
+        "restart_link": "Mit einer anderen E-Mail anmelden",
+        "button": "Absenden"
+      }
     }
   }
 }
