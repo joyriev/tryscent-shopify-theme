@@ -3167,8 +3167,16 @@
           "other": "Aktualisiere {{count}} Abonnementverträge..."
         },
         "contracts_updated": {
-          "one": "{{count}} Abonnementvertrag erfolgreich aktualisiert"
-        }
+          "one": "{{count}} Abonnementvertrag erfolgreich aktualisiert",
+          "other": "{{count}} Abonnementverträge erfolgreich aktualisiert"
+        },
+        "contracts_update_failed": "Einige Abonnementverträge konnten nicht aktualisiert werden",
+        "subscription_contracts_updated": "Aktualisiert {{succeeded}} von {{total}} Abonnements",
+        "invalid_wallet_type_error": "Ungültiger Wallet-Typ."
+      },
+      "three_d_secure": {
+        "title": "3D Sicherung",
+        "verification_failed": "Ihre Zahlung konnte nicht verifiziert werden. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode."
       }
     },
     "subscriptions": {
@@ -3822,6 +3830,27 @@
       "too_many_attempts": {
         "description": "Bitte versuchen Sie es in ein paar Minuten erneut"
       }
+    },
+    "payment_method_brands": {
+      "visa": "Visum",
+      "mastercard": "Masterkarte",
+      "forbrugsforeningen": "Verbrauchervereinigung",
+      "dankort": "Dankkarte",
+      "hipercard": "Hiperkarte",
+      "shoppay": "Shop Bezahlen",
+      "applepay": "Apple Bezahlen",
+      "googlepay": "Google Bezahlen",
+      "storecredit": "Guthaben im Geschäft",
+      "bogus": "Falsch"
+    },
+    "ui_components": {
+      "clear": "Klar",
+      "clipboardFailedToCopy": "Kopieren fehlgeschlagen",
+      "submit": "Absenden",
+      "processing": "Verarbeitung…",
+      "decrease": "Verringere {{type}}",
+      "minimumReached": "Mindestanzahl von {{value}} erreicht",
+      "maximumReached": "Maximal {{value}} erreicht"
     }
   }
 }
