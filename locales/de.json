@@ -2417,7 +2417,126 @@
         "generic_error": "Ihre Bestellung konnte nicht bearbeitet werden, da Ihr Rabattcode nicht mehr verfügbar ist. Überprüfen Sie Ihren Gesamtbestellwert und versuchen Sie es erneut."
       },
       "b2b_errors": {
-        "lost_b2b_purchasing_permissions": "Sie haben keine Berechtigung mehr, B2B-Bestellungen aufzugeben. %{logout_url}, um stattdessen eine persönliche Bestellung aufzugeben."
+        "lost_b2b_purchasing_permissions": "Sie haben keine Berechtigung mehr, B2B-Bestellungen aufzugeben. %{logout_url}, um stattdessen eine persönliche Bestellung aufzugeben.",
+        "lost_permissions_subtitle": "Sie haben keine Berechtigung mehr, B2B-Bestellungen aufzugeben. Melden Sie sich ab, um eine persönliche Bestellung aufzugeben."
+      },
+      "shop_pay_external": {
+        "title": "Shop Pay Zur Kasse",
+        "errors": {
+          "try_again_later": "Überprüfen Sie Ihre Verbindung oder schließen Sie dieses Fenster und versuchen Sie es in wenigen Momenten erneut.",
+          "checkout_has_expired": "Ihr Bestellvorgang ist abgelaufen. Schließen Sie dieses Fenster und versuchen Sie erneut, bei {{shopName}} zu bestellen."
+        },
+        "return_to_store_simple": "Zurück zum Geschäft"
+      },
+      "wallets": {
+        "return_to_store": "Zurück zum Geschäft",
+        "return_to_checkout": "Zurück zur Kasse",
+        "redirect_hint": "Sie werden gebeten, sich mit {{walletName}} anzumelden.",
+        "logged_in": "Verbunden mit {{email}}",
+        "payment_in_progress_title": "Zahlung wird durchgeführt",
+        "payment_in_progress_body": "Ihre Zahlung wird bearbeitet. Ihre Bestellung wird in Kürze abgeschlossen.",
+        "redirection_notice": "Sie werden zu {{walletName}} weitergeleitet, um Ihren Kauf abzuschließen",
+        "errors": {
+          "unavailable": {
+            "description": "{{walletName}} war nicht verfügbar. Verwenden Sie eine andere Zahlungsmethode oder versuchen Sie es später erneut.",
+            "instructions": "Es gab ein Problem mit {{walletName}}. Kehren Sie zum Laden zurück, um es erneut zu versuchen, oder wählen Sie eine andere Zahlungsmethode.",
+            "unavailable_for_country": "{{walletName}} ist in {{countryName}} nicht verfügbar. Wählen Sie eine andere Zahlungsmethode, um Ihren Kauf abzuschließen."
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} steht für Ihre Bestellung derzeit nicht zur Verfügung. Um Ihren Einkauf fortzusetzen, wählen Sie eine andere Zahlungsmethode."
+          },
+          "generic": "Es gab ein Problem mit {{walletName}}. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+          "discount_code": "Dieser Rabattcode kann nicht angewendet werden. Überprüfen Sie Ihren Code und versuchen Sie es erneut.",
+          "terminal": "Es gab ein Problem mit {{walletName}}. Verwenden Sie eine andere Zahlungsmethode.",
+          "detour": {
+            "stock_problems": "Einige Artikel sind nicht mehr verfügbar. Schließen Sie {{walletName}} und versuchen Sie es erneut.",
+            "price_change": "Einige Artikelpreise haben sich geändert. Schließe {{walletName}}, um deine Bestellung zu überprüfen und es erneut zu versuchen.",
+            "queue": "Sie wurden in eine Warteschlange zum Bezahlen eingereiht. Schließen Sie {{walletName}}, um fortzufahren.",
+            "currency_change": "Sie können mit {{walletName}} keine andere Adresse verwenden. Nutzen Sie die ursprüngliche Adresse oder probieren Sie eine andere Zahlungsmethode aus."
+          },
+          "unsupported": {
+            "address": "Der Händler kann an diese Adresse nicht liefern",
+            "wallet_is_unavailable": "{{walletName}} kann mit dieser Adresse nicht verwendet werden. Wählen Sie eine andere Adresse oder schließen Sie {{walletName}}, um Ihren Kauf abzuschließen."
+          },
+          "outdated": {
+            "shipping_method": "Die Versandoptionen für Ihre Bestellung haben sich geändert. Überprüfen Sie Ihre Auswahl.",
+            "payment_terms": "Die Zahlungsbedingungen haben sich geändert. Überprüfen Sie Ihre Bestellung"
+          },
+          "invalid": {
+            "shipping_address": "Geben Sie eine gültige Versandadresse ein",
+            "billing_address": "Geben Sie eine gültige Rechnungsadresse ein",
+            "shipping_option": "Wählen Sie eine gültige Versandoption",
+            "email": "Geben Sie eine gültige E-Mail-Adresse ein",
+            "zone": "Geben Sie einen gültigen Bundesstaat / eine gültige Provinz ein",
+            "billing_zone": "Geben Sie einen gültigen Bundesland-/Provinz der Rechnungsadresse ein",
+            "emirate": "Geben Sie ein gültiges Emirat ein",
+            "postal_code": "Geben Sie eine gültige Postleitzahl ein",
+            "phone": "Geben Sie eine gültige Telefonnummer ein",
+            "billing_phone": "Geben Sie eine gültige Telefonnummer der Rechnungsadresse ein",
+            "reduction_code": "Geben Sie einen gültigen Rabattcode oder eine Geschenkkarte ein",
+            "billing_zip": "Geben Sie eine gültige Rechnungsadresse PLZ / Postleitzahl ein"
+          },
+          "missing": {
+            "first_name": "Geben Sie einen Vornamen ein",
+            "billing_first_name": "Geben Sie einen Vornamen für die Rechnungsadresse ein",
+            "last_name": "Geben Sie einen Nachnamen ein",
+            "address1": "Geben Sie eine Adresse ein",
+            "billing_address1": "Geben Sie eine Rechnungsadresse ein",
+            "address2": "Geben Sie eine Wohnung, Suite usw. ein.",
+            "billing_address2": "Geben Sie eine Rechnungsadresse, Wohnung, Suite usw. ein.",
+            "city": "Geben Sie eine Stadt ein",
+            "billing_city": "Geben Sie eine Rechnungsadresse Stadt ein",
+            "province": "Wählen Sie einen Bundesstaat / eine Provinz aus",
+            "billing_province": "Wählen Sie einen Bundesstaat / eine Provinz für die Rechnungsadresse aus",
+            "country": "Wählen Sie ein Land/Region aus",
+            "zip": "Geben Sie eine Postleitzahl ein",
+            "billing_zip": "Geben Sie eine Rechnungsadresse PLZ / Postleitzahl ein",
+            "phone": "Geben Sie eine Telefonnummer ein"
+          },
+          "formatting": {
+            "name_contains_emojis": "Emoji aus deinem Namen entfernen",
+            "postal_code_contains_emoji": "Entfernen Sie Emojis aus Ihrer Postleitzahl",
+            "first_name_too_long": "Der Vorname enthält zu viele Buchstaben",
+            "last_name_too_long": "Der Nachname enthält zu viele Buchstaben"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Ihre Versandadresse ist ungültig. Wählen Sie eine andere Adresse oder verwenden Sie eine neue."
+        },
+        "scrim": {
+          "continue_purchase_in_window": "Fahren Sie mit Ihrem Kauf im {{walletName}} Fenster fort",
+          "and_return_to_checkout": "und kehre zur Kasse zurück"
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "Reduzieren Sie die Größe der Notiz auf 5000 oder weniger Zeichen."
+      },
+      "offsite_payment_failed": {
+        "title": "Zahlung außerhalb der Website fehlgeschlagen",
+        "payment_not_processed_text": "Versuchen Sie, den QR-Code erneut zu scannen. Wenn es immer noch nicht funktioniert, informieren Sie unser Personal und versuchen Sie eine andere Zahlungsmethode.",
+        "payment_link_expired_text": "Versuchen Sie, den QR-Code erneut zu scannen."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Der Geschenkkartenpreis muss größer als 0 sein.",
+            "gift_card_price_must_not_exceed_limit": "Der Preis der Geschenkkarte darf %{gift_card_limit} nicht überschreiten.",
+            "subtotal_limit_reached": "Der Höchstwert der Positionen wurde erreicht.",
+            "signature_mismatch": "Unstimmigkeit bei der Warenunterschrift für Zeile %{stable_id}."
+          }
+        }
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "Der Warenkorb enthält nur Fernbedienungsware. Um den Kauf abzuschließen, ist eine Weiterleitung zum Fernbedienungsladen erforderlich.",
+          "currency_mismatch": "Dieser Artikel kann nicht zu Ihrem Warenkorb hinzugefügt werden, da er aus einem Geschäft stammt, das eine andere Währung verwendet.",
+          "currency_mismatch_removal": "Ein Artikel wurde aus Ihrem Warenkorb entfernt, da er aus einem Geschäft stammt, das eine andere Währung verwendet.",
+          "max_remote_shops_exceeded": "Dieses Produkt kann nicht hinzugefügt werden, da Ihr Warenkorb bereits die maximale Anzahl von anderen Geschäften enthält."
+        }
+      },
+      "units": {
+        "centiliter": "kl",
+        "meter": "xm",
+        "ounce": "Unze",
+        "pound": "Pfund"
       }
     },
     "sentence": {

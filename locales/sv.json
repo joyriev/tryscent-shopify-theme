@@ -2326,7 +2326,72 @@
       },
       "units": {
         "centiliter": "kl",
-        "ounce": "uns"
+        "ounce": "uns",
+        "fluid_ounce": "fl uns",
+        "pint": "pt",
+        "quart": "qt",
+        "gallon": "tjej",
+        "inch": "i",
+        "yard": "yd",
+        "square_foot": "ft²"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "Adressen stöds inte för det aktuella medlemskapet.",
+        "items_split_across_locations_unsupported": "Prime-leverans är inte tillgänglig för din beställning. Dina fraktalternativ har uppdaterats."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Navigera till Online Store"
+        }
+      },
+      "required_extensions": {
+        "errors": {
+          "interaction_required": "En tilläggsinteraktion krävs för att slutföra utcheckningen."
+        }
+      },
+      "taxes": {
+        "tax_details": "Ytterligare skattedetaljer",
+        "vat_number": {
+          "field": {
+            "tooltip": "Validerar momsnummer och tillämpar automatiskt omvänd skattskyldighet på beställningar när det är tillämpligt"
+          },
+          "add": "Lägg till ett momsnummer",
+          "vaulted": "Momsnummer: %{number}",
+          "badge": "Momsnummer: %{number}",
+          "domestic_order": "Omvänd skattskyldighet gäller endast för gränsöverskridande EU-beställningar. Standardmoms debiteras för lokala beställningar.",
+          "status": {
+            "invalid_format": {
+              "at": "Österrikiska momsnummer innehåller AT och 9 tecken",
+              "be": "Belgiska momsnummer innehåller BE och 10 tecken",
+              "bg": "Bulgariens momsnummer innehåller BG och 9-10 tecken",
+              "hr": "Kroatien momsnummer innehåller HR och 11 tecken",
+              "cy": "Cyperns momsnummer innehåller CY och 9 tecken",
+              "cz": "Tjeckiska momsnummer innehåller CZ och 8-10 tecken",
+              "dk": "Danska momsnummer innehåller DK och 8 tecken",
+              "ee": "Estniska momsnummer innehåller EE och 9 tecken",
+              "fi": "Finländska momsnummer innehåller FI och 8 tecken",
+              "fr": "Franska momsnummer innehåller FR och 11 tecken",
+              "de": "Tyska momsnummer innehåller DE och 9 tecken",
+              "gr": "Greklands momsnummer innehåller EL och 9 tecken",
+              "hu": "Ungerska momsnummer innehåller HU och 8 tecken",
+              "ie": "Irländska momsnummer innehåller IE och 8-9 tecken",
+              "it": "Italienska momsnummer innehåller IT och 11 tecken",
+              "lv": "Lettlands momsnummer innehåller LV och 11 tecken",
+              "lt": "Litauiska momsnummer innehåller LT och 9-12 tecken",
+              "lu": "Luxemburgs momsnummer innehåller LU och 8 tecken",
+              "mt": "Maltesiska momsnummer innehåller MT och 8 tecken",
+              "nl": "Nederländernas momsnummer innehåller NL och 12 tecken",
+              "pl": "Polska momsnummer innehåller PL och 10 tecken",
+              "pt": "Portugisiska momsnummer innehåller PT och 9 tecken",
+              "ro": "Rumänska momsnummer innehåller RO och 10 tecken",
+              "sk": "Slovakiska momsnummer innehåller SK och 10 tecken",
+              "si": "Sloveniens momsnummer innehåller SI och 8 tecken",
+              "es": "Spanska momsnummer innehåller ES och 9 tecken",
+              "se": "Svenska momsnummer innehåller SE och 12 tecken",
+              "gb": "Momsnummer i Storbritannien innehåller GB eller XI och 5-12 tecken"
+            }
+          }
+        }
       }
     }
   }
