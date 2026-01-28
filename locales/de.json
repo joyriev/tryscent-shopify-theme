@@ -532,11 +532,69 @@
         },
         "crypto_modal": {
           "error": {
-            "refresh": "Refresh",
+            "refresh": "Aktualisieren",
             "close": "schließen",
-            "sandbox_error": "Etwas ist schief gelaufen",
-            "web_component_error": "Es gab ein Problem beim Laden dieser Seite"
-          }
+            "sandbox_error": "Etwas ist schiefgelaufen",
+            "web_component_error": "Beim Laden dieser Seite ist ein Problem aufgetreten"
+          },
+          "header": "Zahle %{total_price} USDC bei %{shop_name}"
+        },
+        "network_card_payment_options": "Wählen Sie ein Kartennetzwerk",
+        "network_card_persistence_description": "Das ausgewählte Netzwerk wird zusammen mit Ihrer Zahlungsmethode für zukünftige Transaktionen gespeichert.",
+        "amazon_payments_label": "Amazon Bezahlung",
+        "amazon_payments_login_hint": "Sie werden aufgefordert, sich mit Amazon anzumelden.",
+        "amazon_payments_failed_mfa_challenge": "Die ausgewählte Zahlungsmethode konnte nicht verwendet werden. Wählen Sie eine andere Methode oder wenden Sie sich an Ihre Bank oder Kartenherausgeber.",
+        "amazon_payments_abandoned_mfa_challenge": "Ihre Zahlung konnte nicht abgeschlossen werden. Versuchen Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank oder den Kartenaussteller.",
+        "amazon_payments_could_not_enqueue_authorize": "Bei der Verarbeitung Ihrer Zahlung ist ein Problem aufgetreten. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "amount_left_to_pay_label": "Zahlung fällig:",
+        "discount_button_action_label": "Rabattcode Anwenden",
+        "discount_show_more_warnings": {
+          "one": "Zeige %{count} weitere",
+          "other": "Zeige %{count} weitere"
+        },
+        "gift_card_code_label": "Geschenkkartencode",
+        "gift_card_balance_label": "Gleichgewicht:",
+        "supported_card_brands_more_label": "und mehr…",
+        "credit_card_vaulting_sign_in_banner_title": "Spare deine Kreditkarte",
+        "credit_card_vaulting_sign_in_banner_info": "Melden Sie sich an oder erstellen Sie ein Konto, um Ihre Kreditkarte für zukünftige Einkäufe zu sparen.",
+        "credit_card_vaulting_sign_in_banner_button_label": "Anmelden",
+        "ftd_vault_credit_card_label": "Speichere diese Kreditkarte in meinem Konto für einen schnelleren Checkout",
+        "card_pay_with": "Bezahlen mit:",
+        "card_security_vault_notice": "Wir benötigen Ihre Daten für zukünftige Zahlungen. Alle Transaktionen sind sicher und verschlüsselt.",
+        "name_on_card_label": "Name auf der Karte",
+        "name_on_card_placeholder": "Name auf der Karte",
+        "card_expiry_label": "Ablaufdatum (MM / JJ)",
+        "card_expiry_placeholder": "Ablaufdatum (MM / JJ)",
+        "credit_card_start_month": "Startmonat",
+        "credit_card_start_year": "Startjahr",
+        "delete_customer_mandate_modal_body": "Wenn Sie diese Karte entfernen, müssen Sie sie erneut hinzufügen, bevor Sie sie für Zahlungen verwenden können.",
+        "delete_customer_mandate_modal_cancel": "Abbrechen",
+        "card_verification_confirm": "Geben Sie zu Verifizierungszwecken den Sicherheitscode Ihrer Karte ein.",
+        "card_expiry_date_explanation": "Kartenablaufdatum im Format: Monat, Monat, Jahr, Jahr",
+        "card_verification_value_explanation": "3-stelliger Sicherheitscode, der sich normalerweise auf der Rückseite Ihrer Karte befindet. American Express Karten haben einen 4-stelligen Code auf der Vorderseite.",
+        "card_verification_value_explanation_amex": "4-stelliger Sicherheitscode auf der Vorderseite Ihrer Karte",
+        "card_verification_value_explanation_other": "3-stelliger Sicherheitscode auf der Rückseite Ihrer Karte",
+        "card_start_label": "Ausgabedatum (MM / JJ)",
+        "card_start_placeholder": "Ausgabedatum (MM / JJ)",
+        "card_issue_number_label": "Ausgabenummer",
+        "card_issue_number_placeholder": "Ausgabenummer",
+        "paypal_disconnect": "Trennen",
+        "expiry_long": "(Läuft ab %{month}/%{year})",
+        "expiry_short": "(Verf. %{month}/%{year})",
+        "crypto_payment_method": {
+          "description": "Sichere Verbindung zu Ihrer Wallet im Base-Netzwerk herstellen",
+          "tooltip": "Ihr Wallet-Guthaben und Ihre Adresse werden nicht geteilt und nur der angeforderte Betrag kann abgebucht werden"
+        },
+        "saved_by_payment_method": "Gespeichert durch %{payment_method}",
+        "pay_with_payment_method": "Bezahlen mit %{payment_method}",
+        "different_credit_card_label": "Verwenden Sie eine andere Kreditkarte",
+        "same_billing_address_label": "Wie Lieferadresse",
+        "billing_address_associated_with_mandate": "Adresse verwenden, die mit der Zahlungsmethode verknüpft ist",
+        "billing_address_associated_with_mandate_info": "Wenn Sie Ihre Rechnungsadresse ändern möchten, entfernen Sie bitte Ihre Kreditkartendaten und geben Sie sie erneut ein.",
+        "free_order_notice_html": "Ihre Bestellung ist <strong>kostenlos</strong>. Keine Zahlung ist erforderlich.",
+        "express_checkout_free_order": "Für eine kostenlose Bestellung wird Ihnen nichts berechnet",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Ihre Bestellung wird durch Ihre Geschenkkarte abgedeckt."
         }
       },
       "shipping_errors": {
@@ -1274,7 +1332,18 @@
           "tax_credential_ec": "USt-IdNr./RUC/USt-IdNr.",
           "shipping_credential_ec": "USt-IdNr./RUC/USt-IdNr.",
           "tax_credential_gt": "NIT/UST",
-          "shipping_credential_gt": "NIT/UST"
+          "shipping_credential_gt": "NIT/UST",
+          "tax_credential_id": "Steueridentifikationsnummer",
+          "shipping_credential_id": "Steueridentifikationsnummer",
+          "tax_credential_type_mx": "Steuersystem",
+          "tax_credential_use_mx": "Verwendung von CFDI",
+          "tax_credential_py": "USt-IdNr./RUC/USt-IdNr.",
+          "shipping_credential_py": "USt-IdNr./RUC/USt-IdNr.",
+          "tax_credential_pt": "NIF/UST-ID",
+          "shipping_credential_pt": "NIF/UST-ID",
+          "shipping_credential_tw": "Nationale Identifikationsnummer/USt-IdNr.",
+          "tax_credential_tr": "Türkische Republik Identifikationsnummer/USt-IdNr.",
+          "shipping_credential_tr": "Türkische Republik Identifikationsnummer/USt-IdNr."
         }
       }
     },

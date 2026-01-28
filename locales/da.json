@@ -671,10 +671,10 @@
         "crypto_modal": {
           "header": "Betal %{shop_name} %{total_price} USDC",
           "error": {
-            "refresh": "Opdatering",
-            "close": "tæt på",
+            "refresh": "Opdater",
+            "close": "lukke",
             "sandbox_error": "Noget gik galt",
-            "web_component_error": "Der var et problem med at indlæse denne side"
+            "web_component_error": "Der opstod et problem med at indlæse denne side"
           }
         },
         "bank_account_type": {
@@ -685,7 +685,55 @@
         "bank_account_connect_another": "Tilslut en anden bankkonto",
         "bank_account_connect": "Tilslut bankkonto",
         "bank_account_vaulted_company_location": "Bankkonto gemt for denne placering",
-        "bank_account_generic_error": "Kunne ikke tilføje bankkonto. Prøv igen senere."
+        "bank_account_generic_error": "Kunne ikke tilføje bankkonto. Prøv igen senere.",
+        "network_card_payment_options": "Vælg et kortnetværk",
+        "network_card_persistence_description": "Det valgte netværk vil blive gemt sammen med din betalingsmetode til fremtidige transaktioner.",
+        "amazon_payments_label": "Amazon Betaling",
+        "amazon_payments_login_hint": "Du vil blive bedt om at logge ind med Amazon.",
+        "amazon_payments_logout": "Log ud fra Amazon Pay",
+        "amazon_payments_failed_mfa_challenge": "Den valgte betalingsmetode kunne ikke bruges. Vælg en anden metode eller kontakt din bank eller kortudsteder.",
+        "amazon_payments_abandoned_mfa_challenge": "Din betaling kunne ikke gennemføres. Prøv en anden betalingsmetode eller kontakt din bank eller kortudsteder.",
+        "amazon_payments_could_not_enqueue_authorize": "Der opstod et problem med behandlingen af din betaling. Prøv igen eller brug en anden betalingsmetode.",
+        "amount_left_to_pay_label": "Betaling forfalder:",
+        "gift_card_code_label": "Gavekortkode",
+        "apply_gift_card_button_label": "Anvend",
+        "gift_card_balance_label": "Balance:",
+        "supported_card_brands_more_label": "og mere…",
+        "detected_card_brand": "Registreret kortmærke: {brand}",
+        "ftd_vault_credit_card_label": "Gem dette kreditkort på min konto for en hurtigere betaling",
+        "card_security_vault_notice": "Vi har brug for dine oplysninger til fremtidige betalinger. Alle transaktioner er sikre og krypterede.",
+        "card_expiry_label": "Udløbsdato (MM / ÅÅ)",
+        "card_expiry_placeholder": "Udløbsdato (MM / ÅÅ)",
+        "delete_customer_mandate_modal_title": "Fjern dette betalingskort?",
+        "delete_customer_mandate_modal_body": "Hvis du fjerner dette kort, skal du tilføje det igen, før du kan bruge det til betalinger.",
+        "delete_customer_mandate_modal_confirm": "Fjern kort",
+        "card_verification_confirm": "For verifikationsformål, indtast dit korts sikkerhedskode.",
+        "card_expiry_date_explanation": "Kortets udløbsdato i format: måned, måned, år, år",
+        "card_expiration_month_label": "Udløbs måned",
+        "card_verification_value_explanation": "3-cifret sikkerhedskode, som normalt findes på bagsiden af dit kort. American Express-kort har en 4-cifret kode placeret på forsiden.",
+        "card_verification_value_explanation_amex": "4-cifret sikkerhedskode på forsiden af dit kort",
+        "card_verification_value_explanation_other": "3-cifret sikkerhedskode på bagsiden af dit kort",
+        "card_start_label": "Udstedelsesdato (MM / ÅÅ)",
+        "card_start_placeholder": "Udstedelsesdato (MM / ÅÅ)",
+        "card_issue_number_label": "Udgavenummer",
+        "card_issue_number_placeholder": "Udgavenummer",
+        "paypal_disconnect": "Afbryd forbindelse",
+        "ends_with_label": "slutter med %{last_digits}",
+        "payment_method_saved": "Betalingsmetode gemt",
+        "card_vaulted_company_location": "Kort gemt til denne placering",
+        "crypto_payment_method": {
+          "description": "Opret sikker forbindelse til din tegnebog på Base-netværket",
+          "tooltip": "Din tegnebogs saldo og adresse vil ikke blive delt, og kun det anmodede beløb kan trækkes."
+        },
+        "saved_by_payment_method": "Gemt af %{payment_method}",
+        "same_billing_address_label": "Samme som leveringsadresse",
+        "billing_address_associated_with_mandate": "Brug adresse tilknyttet betalingsmetode",
+        "billing_address_associated_with_mandate_info": "Hvis du ønsker at ændre din faktureringsadresse, skal du fjerne og indtaste dine kreditkortoplysninger igen",
+        "free_order_notice_html": "Din ordre er <strong>gratis</strong>. Ingen betaling er påkrævet.",
+        "express_checkout_free_order": "Du vil ikke blive opkrævet for en gratis ordre",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Din ordre er dækket af dit gavekort."
+        }
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."
@@ -1259,7 +1307,18 @@
           "tax_credential_ec": "CVR/MOMS/IVA",
           "shipping_credential_ec": "CVR/MOMS/IVA",
           "tax_credential_gt": "NIT/MOMS",
-          "shipping_credential_gt": "NIT/MOMS"
+          "shipping_credential_gt": "NIT/MOMS",
+          "tax_credential_my": "TIN/Registreringsnummer",
+          "shipping_credential_my": "TIN/Registreringsnummer",
+          "tax_credential_type_mx": "Skatteordning",
+          "tax_credential_use_mx": "Brug af CFDI",
+          "tax_credential_py": "CVR/MOMS/IVA",
+          "shipping_credential_py": "CVR/MOMS/IVA",
+          "tax_credential_pt": "CVR/MOMS",
+          "shipping_credential_pt": "CVR/MOMS",
+          "shipping_credential_tw": "Nationalt ID-nummer/MOMS",
+          "tax_credential_tr": "Tyrkiets Republik Identitetsnummer/MOMS",
+          "shipping_credential_tr": "Tyrkiets Republik Identitetsnummer/MOMS"
         }
       }
     },

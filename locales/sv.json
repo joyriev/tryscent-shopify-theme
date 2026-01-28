@@ -1220,7 +1220,79 @@
           "tax_credential_ec": "CI/RUC/MOMS",
           "shipping_credential_ec": "CI/RUC/MOMS",
           "tax_credential_gt": "NIT/MOMS",
-          "shipping_credential_gt": "NIT/MOMS"
+          "shipping_credential_gt": "NIT/MOMS",
+          "tax_credential_my": "TIN/Registreringsnummer",
+          "shipping_credential_my": "TIN/Registreringsnummer",
+          "tax_credential_type_mx": "Skattesystemet",
+          "tax_credential_use_mx": "Användning av CFDI",
+          "tax_credential_py": "CI/RUC/MOMS",
+          "shipping_credential_py": "CI/RUC/MOMS",
+          "tax_credential_pt": "NIF/IVA",
+          "shipping_credential_pt": "NIF/IVA",
+          "shipping_credential_tw": "Nationellt ID-nummer/momsnummer",
+          "tax_credential_tr": "Turkiska republikens identitetsnummer/MOMS",
+          "shipping_credential_tr": "Turkiska republikens identitetsnummer/MOMS"
+        }
+      },
+      "payment": {
+        "network_card_payment_options": "Välj ett kortnätverk",
+        "network_card_persistence_description": "Det valda nätverket kommer att sparas med din betalningsmetod för framtida transaktioner.",
+        "amazon_payments_label": "Amazon Betalning",
+        "amazon_payments_failed_mfa_challenge": "Den valda betalningsmetoden kunde inte användas. Välj en annan metod eller kontakta din bank eller kortutgivare.",
+        "amazon_payments_abandoned_mfa_challenge": "Din betalning kunde inte slutföras. Försök med en annan betalningsmetod eller kontakta din bank eller kortutgivare.",
+        "amazon_payments_could_not_enqueue_authorize": "Det uppstod ett problem vid behandlingen av din betalning. Försök igen eller använd en annan betalningsmetod.",
+        "amount_left_to_pay_label": "Betalning förfaller:",
+        "discount_codes_removed_summary": {
+          "one": "Rabattkoden %{count} togs bort",
+          "other": "%{count} rabattkoder togs bort"
+        },
+        "apply_gift_card_button_label": "Verkställ",
+        "gift_card_balance_label": "Balans:",
+        "detected_card_brand": "Upptäckt kortmärke: {brand}",
+        "credit_card_vaulting_sign_in_banner_title": "Spara ditt kreditkort",
+        "credit_card_vaulting_sign_in_banner_info": "Logga in eller skapa ett konto för att spara ditt kreditkort för framtida köp.",
+        "ftd_vault_credit_card_label": "Spara detta kreditkort på mitt konto för en snabbare utcheckning",
+        "card_information_notice": "Alla transaktioner är säkra och krypterade. Kreditkortsuppgifter sparas aldrig.",
+        "name_on_card_label": "Namn på kortet",
+        "name_on_card_placeholder": "Namn på kortet",
+        "card_expired": "Utgånget",
+        "card_expiry_label": "Utgångsdatum (MM / ÅÅ)",
+        "card_expiry_placeholder": "Utgångsdatum (MM / ÅÅ)",
+        "delete_customer_mandate_modal_body": "Om du tar bort detta kort måste du lägga till det igen innan du kan använda det för betalningar.",
+        "delete_customer_mandate_modal_confirm": "Ta bort kort",
+        "card_verification_confirm": "För verifieringsändamål, ange ditt korts säkerhetskod.",
+        "card_expiry_date_explanation": "Kortets utgångsdatum i formatet: månad, månad, år, år",
+        "card_verification_value_explanation": "3-siffrig säkerhetskod som vanligtvis finns på baksidan av ditt kort. American Express-kort har en 4-siffrig kod som finns på framsidan.",
+        "card_start_label": "Utgivningsdatum (MM / ÅÅ)",
+        "card_start_placeholder": "Utgivningsdatum (MM / ÅÅ)",
+        "card_issue_number_label": "Utgåvenummer",
+        "card_issue_number_placeholder": "Utgåvenummer",
+        "paypal_disconnect": "Koppla bort",
+        "ends_with_label": "slutar med %{last_digits}",
+        "payment_method_saved": "Betalningsmetod sparad",
+        "card_vaulted_company_location": "Kort sparat för denna plats",
+        "bank_account_vaulted_company_location": "Bankkonto sparat för denna plats",
+        "expiry_long": "(Upphör %{month}/%{year})",
+        "expiry_short": "(Giltigt till %{month}/%{year})",
+        "crypto_payment_method": {
+          "description": "Anslut säkert till din plånbok på Base-nätverket",
+          "tooltip": "Ditt plånboksaldo och din adress kommer inte att delas och endast det begärda beloppet kan dras."
+        },
+        "crypto_modal": {
+          "error": {
+            "close": "stäng",
+            "sandbox_error": "Något gick fel",
+            "web_component_error": "Det uppstod ett problem vid inläsning av denna sida"
+          }
+        },
+        "different_credit_card_label": "Använd ett annat kreditkort",
+        "same_billing_address_label": "Samma som leveransadress",
+        "billing_address_associated_with_mandate": "Använd adress kopplad till betalningsmetoden",
+        "billing_address_associated_with_mandate_info": "Om du vill ändra din faktureringsadress, ta bort och ange dina kreditkortsuppgifter på nytt",
+        "free_order_notice_html": "Din beställning är <strong>gratis</strong>. Ingen betalning krävs.",
+        "express_checkout_free_order": "Du kommer inte att debiteras för en gratis beställning",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Din beställning täcks av ditt presentkort."
         }
       }
     }
