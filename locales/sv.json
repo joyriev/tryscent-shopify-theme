@@ -2276,8 +2276,57 @@
             "billing_phone": "Ange ett giltigt telefonnummer för faktureringsadressen",
             "reduction_code": "Ange en giltig rabattkod eller presentkort",
             "billing_zip": "Ange en giltig faktureringsadress postnummer / postkod"
+          },
+          "missing": {
+            "billing_first_name": "Ange ett faktureringsadressens förnamn",
+            "address2": "Ange en lägenhet, svit, etc.",
+            "billing_address2": "Ange en faktureringsadress lägenhet, svit, etc.",
+            "billing_city": "Ange en faktureringsadress stad",
+            "province": "Välj en stat / provins",
+            "billing_province": "Välj en faktureringsadress stat / provins",
+            "country": "Välj ett land/område",
+            "billing_zip": "Ange en faktureringsadress postnummer",
+            "phone": "Ange ett telefonnummer"
+          },
+          "formatting": {
+            "name_contains_emojis": "Ta bort emoji från ditt namn",
+            "postal_code_contains_emoji": "Ta bort emoji från ditt postnummer"
+          }
+        },
+        "scrim": {
+          "continue_purchase_in_window": "Fortsätt ditt köp i {{walletName}}-fönstret",
+          "and_return_to_checkout": "och återvänd till Checkout"
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "Minska storleken på anteckningen till 5000 eller färre tecken."
+      },
+      "offsite_payment_failed": {
+        "title": "Betalning utanför webbplatsen misslyckades",
+        "payment_not_processed_text": "Försök skanna QR-koden igen. Om det fortfarande inte fungerar, meddela vår personal och prova en annan betalningsmetod.",
+        "payment_link_expired_text": "Försök skanna QR-koden igen."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Presentkortets pris måste vara större än 0.",
+            "gift_card_price_must_not_exceed_limit": "Presentkortets pris får inte överstiga %{gift_card_limit}.",
+            "subtotal_limit_reached": "Det maximala värdet för artikelrader har uppnåtts.",
+            "signature_mismatch": "Varumärkessignatur stämmer inte för rad %{stable_id}."
           }
         }
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "Kassan innehåller endast fjärrvaror. En omdirigering till den fjärrbutiken krävs för att slutföra köpet.",
+          "currency_mismatch": "Den här varan kan inte läggas till i din kundvagn eftersom den kommer från en butik som använder en annan valuta.",
+          "currency_mismatch_removal": "En vara togs bort från din kundvagn eftersom den kommer från en butik som använder en annan valuta.",
+          "max_remote_shops_exceeded": "Den här produkten kan inte läggas till eftersom din kundvagn redan har maxantalet från andra butiker."
+        }
+      },
+      "units": {
+        "centiliter": "kl",
+        "ounce": "uns"
       }
     }
   }

@@ -1528,7 +1528,9 @@
         "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} forfalder, når din bestilling er bekræftet. Restbeløbet forfalder, når din bestilling er opfyldt."
       },
       "offsite_payment_failed": {
-        "title": "Offsite-betaling mislykkedes"
+        "title": "Betaling uden for stedet mislykkedes",
+        "payment_not_processed_text": "Prøv at scanne QR-koden igen. Hvis det stadig ikke virker, så giv vores personale besked og prøv en anden betalingsmetode.",
+        "payment_link_expired_title": "Betalingslink udløbet"
       },
       "payment_collection": {
         "cancelled": "Denne betaling er ikke længere nødvendig. Besøg ordresiden for detaljer.",
@@ -2319,9 +2321,60 @@
             "billing_zip": "Indtast en gyldig faktureringsadresse postnummer / postnummer"
           },
           "missing": {
-            "first_name": "Indtast et fornavn"
+            "first_name": "Indtast et fornavn",
+            "billing_first_name": "Indtast et faktureringsadresses fornavn",
+            "last_name": "Indtast et efternavn",
+            "address1": "Indtast en adresse",
+            "billing_address1": "Indtast en faktureringsadresse",
+            "address2": "Indtast en lejlighed, suite osv.",
+            "billing_address2": "Indtast en faktureringsadresse lejlighed, suite osv.",
+            "city": "Indtast en by",
+            "billing_city": "Indtast en faktureringsadresse by",
+            "province": "Vælg en stat / provins",
+            "billing_province": "Vælg en faktureringsadresse stat / provins",
+            "country": "Vælg et land/område",
+            "zip": "Indtast et postnummer",
+            "billing_zip": "Indtast en faktureringsadresse postnummer / postkode",
+            "phone": "Indtast et telefonnummer",
+            "contact_info": "Indtast kontaktoplysninger"
+          },
+          "formatting": {
+            "first_name_too_long": "Fornavn indeholder for mange bogstaver",
+            "last_name_too_long": "Efternavn indeholder for mange bogstaver",
+            "address_too_long": "Adressefeltet er for langt"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Din leveringsadresse er ugyldig. Vælg en anden adresse eller brug en ny."
+        },
+        "scrim": {
+          "continue_purchase_in_window": "Fortsæt dit køb i {{walletName}} vinduet",
+          "and_return_to_checkout": "og vend tilbage til Checkout"
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "Reducer størrelsen på noten til 5000 eller færre tegn."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_be_greater_than_zero": "Gavekortets pris skal være større end 0.",
+            "gift_card_price_must_not_exceed_limit": "Gavekortets pris må ikke overstige %{gift_card_limit}.",
+            "subtotal_limit_reached": "Den maksimale værdi af linjeposter er nået.",
+            "signature_mismatch": "Vareunderskrift stemmer ikke overens for linje %{stable_id}."
           }
         }
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "Kassen indeholder kun fjernvarer. En omdirigering til den eksterne butik er nødvendig for at fuldføre købet.",
+          "currency_mismatch": "Denne vare kan ikke tilføjes til din kurv, fordi den kommer fra en butik, der bruger en anden valuta.",
+          "currency_mismatch_removal": "En vare blev fjernet fra din kurv, fordi den kommer fra en butik, der bruger en anden valuta.",
+          "max_remote_shops_exceeded": "Dette produkt kan ikke tilføjes, fordi din kurv allerede har det maksimale fra andre butikker."
+        }
+      },
+      "units": {
+        "centiliter": "kl",
+        "meter": "min",
+        "pound": "lb"
       }
     },
     "sentence": {
