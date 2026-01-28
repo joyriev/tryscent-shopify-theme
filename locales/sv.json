@@ -706,8 +706,15 @@
           "other": "Uppdaterar {{count}} prenumerationsavtal..."
         },
         "contracts_updated": {
-          "one": "Uppdaterade {{count}} prenumerationsavtal framgångsrikt"
-        }
+          "one": "Uppdaterade {{count}} prenumerationsavtal framgångsrikt",
+          "other": "Uppdaterade {{count}} prenumerationsavtal framgångsrikt"
+        },
+        "contracts_update_failed": "Misslyckades med att uppdatera vissa prenumerationsavtal",
+        "subscription_contracts_updated": "Uppdaterade {{succeeded}} av {{total}} prenumerationer"
+      },
+      "three_d_secure": {
+        "title": "3D Säkerhet",
+        "verification_failed": "Din betalning kunde inte verifieras. Försök igen eller använd en annan betalningsmetod."
       }
     },
     "date": {
@@ -1378,6 +1385,28 @@
       "too_many_attempts": {
         "description": "Var god försök igen om några minuter"
       }
+    },
+    "payment_method_brands": {
+      "mastercard": "Masterkort",
+      "discover": "Upptäck",
+      "dinersclub": "Dinersklubben",
+      "forbrugsforeningen": "Förbruksföreningen",
+      "hipercard": "Hiperkort",
+      "shoppay": "Shoppa med Pay",
+      "applepay": "Apple Betalning",
+      "googlepay": "Google Betala",
+      "storecredit": "Butikskredit"
+    },
+    "ui_components": {
+      "clear": "Klar",
+      "clipboardFailedToCopy": "Misslyckades med att kopiera",
+      "processing": "Bearbetar…",
+      "increase": "Öka {{type}}",
+      "decrease": "Minska {{type}}",
+      "minimumReached": "Minst {{value}} uppnått",
+      "maximumReached": "Maximalt {{value}} uppnått",
+      "april": "april",
+      "september": "september"
     }
   },
   "shopify": {

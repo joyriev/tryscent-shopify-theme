@@ -2920,8 +2920,16 @@
           "other": "Opdaterer {{count}} abonnementsaftaler..."
         },
         "contracts_updated": {
-          "one": "Opdaterede {{count}} abonnementsaftale med succes"
-        }
+          "one": "Opdaterede {{count}} abonnementsaftale med succes",
+          "other": "Opdaterede {{count}} abonnementsaftaler med succes"
+        },
+        "contracts_update_failed": "Kunne ikke opdatere nogle abonnementsaftaler",
+        "subscription_contracts_updated": "Opdateret {{succeeded}} af {{total}} abonnementer",
+        "invalid_wallet_type_error": "Ugyldig tegnetype."
+      },
+      "three_d_secure": {
+        "title": "3D Sikkerhed",
+        "verification_failed": "Din betaling kunne ikke bekræftes. Prøv igen eller brug en anden betalingsmetode."
       }
     },
     "enable_javascript": "For at se din konto skal du aktivere JavaScript i dine browserindstillinger eller logge ind med en anden browser.",
@@ -3525,6 +3533,32 @@
       "too_many_attempts": {
         "description": "Prøv venligst igen om et par minutter"
       }
+    },
+    "payment_method_brands": {
+      "visa": "Visum",
+      "discover": "Opdag",
+      "dinersclub": "Diners Klub",
+      "maestro": "Mester",
+      "hipercard": "Hiperkort",
+      "shoppay": "Shop Betaling",
+      "applepay": "Apple Betaling",
+      "googlepay": "Google Betal",
+      "storecredit": "Butikskredit",
+      "bogus": "Falsk"
+    },
+    "privacy_banner": {
+      "cookie_preferences_link": "Cookie-præferencer"
+    },
+    "ui_components": {
+      "clear": "Klar",
+      "expandNotification": "Se mere",
+      "submit": "Indsend",
+      "processing": "Behandler…",
+      "decrease": "Formindsk {{type}}",
+      "minimumReached": "Minimum på {{value}} nået",
+      "maximumReached": "Maksimum på {{value}} nået",
+      "april": "april",
+      "september": "september"
     }
   }
 }

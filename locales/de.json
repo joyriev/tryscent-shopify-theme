@@ -3103,7 +3103,71 @@
         "card_start_placeholder": "Ausgabedatum (MM / JJ)",
         "tooltip": {
           "card_verification_value_explanation_amex": "4-stelliger Sicherheitscode auf der Vorderseite Ihrer Karte",
-          "card_verification_value_explanation_other": "3-stelliger Sicherheitscode auf der Rückseite Ihrer Karte"
+          "card_verification_value_explanation_other": "3-stelliger Sicherheitscode auf der Rückseite Ihrer Karte",
+          "card_verification_value_explanation": "3-stelliger Sicherheitscode, der sich normalerweise auf der Rückseite Ihrer Karte befindet. American Express Karten haben einen 4-stelligen Code auf der Vorderseite."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Geben Sie Ihren Namen genau so ein, wie er auf Ihrer Karte steht",
+          "credit_card_number_invalid": "Geben Sie eine gültige Kartennummer ein",
+          "credit_card_expiry_invalid": "Geben Sie ein gültiges Ablaufdatum der Karte ein",
+          "credit_card_verification_value_blank": "Geben Sie den CVV- oder Sicherheitscode auf Ihrer Karte ein"
+        },
+        "unavailable": {
+          "text": "Kredit- und Debitkartenzahlungen sind derzeit nicht verfügbar.",
+          "link_text": "Diese Seite aktualisieren",
+          "suffix": "oder versuchen Sie es später noch einmal."
+        }
+      },
+      "payment_delete": {
+        "description_without_replacement": "Diese Zahlungsmethode wird für zukünftige Einkäufe nicht mehr verfügbar sein.",
+        "description_with_replacement": "Das Löschen dieser Zahlungsmethode wirkt sich auf vorautorisierte Zahlungen aus. Sie können sie optional durch eine andere Zahlungsmethode ersetzen, um weiterhin zukünftige Bestellungen zu erhalten.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "Das Löschen dieser Zahlungsmethode wirkt sich auf vorautorisierte Zahlungen aus. Sofern Sie keine alternative Zahlungsmethode auswählen, wird diese Zahlungsmethode weiterhin für ausstehende Beträge bei bestehenden Bestellungen belastet. Die Auswahl einer alternativen Zahlungsmethode ermöglicht es Ihnen, kommende Abonnementbestellungen ohne Unterbrechung zu erhalten.",
+          "with_pending_orders": "Das Löschen dieser Zahlungsmethode entfernt sie aus Ihrem Konto und macht sie für zukünftige Käufe nicht mehr verfügbar. Sofern Sie keine alternative Zahlungsmethode auswählen, wird sie weiterhin für ausstehende Beträge bei bestehenden Bestellungen belastet.",
+          "with_subscriptions": "Das Löschen dieser Zahlungsmethode wirkt sich auf vorautorisierte Zahlungen aus. Ersetzen Sie sie durch eine alternative Zahlungsmethode, um weiterhin zukünftige Bestellungen zu erhalten."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Das Löschen dieser Zahlungsmethode wirkt sich auf vorautorisierte Zahlungen aus. Für ausstehende Salden bei bestehenden Bestellungen wird diese Zahlungsmethode weiterhin belastet, aber Sie erhalten keine zukünftigen Abonnementbestellungen mehr. Fügen Sie eine alternative Zahlungsmethode hinzu, um weiterhin Abonnementbestellungen zu erhalten.",
+          "with_pending_orders": "Das Löschen dieser Zahlungsmethode entfernt sie aus Ihrem Konto und macht sie für zukünftige Käufe nicht mehr verfügbar. Für ausstehende Beträge bei bestehenden Bestellungen wird sie jedoch weiterhin belastet.",
+          "with_subscriptions": "Das Löschen dieser Zahlungsmethode wirkt sich auf vorautorisierte Zahlungen aus. Fügen Sie eine alternative Zahlungsmethode hinzu, um weiterhin kommende Bestellungen zu erhalten."
+        },
+        "payment_method_selector_placeholder": "Wählen Sie eine alternative Zahlungsmethode (optional)",
+        "replace_method_with_new_method_description": "Ihre {{currentPaymentMethodName}} wird gelöscht und durch Ihre {{newPaymentMethodName}} ersetzt.",
+        "error_when_deleting": "Wir entschuldigen uns, aber es ist ein Fehler aufgetreten und wir konnten diese Zahlungsmethode nicht löschen. Bitte versuchen Sie es später erneut oder aktualisieren Sie die Seite.",
+        "delete_and_replace_button_accessibility_label": "{{currentPaymentMethodName}} löschen und durch {{newPaymentMethodName}} ersetzen.",
+        "loading_available_payment_methods_accessibility_label": "Lade verfügbare Zahlungsmethoden"
+      },
+      "add_payment_method": {
+        "missing_customer_error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder wenden Sie sich an den Kundendienst.",
+        "replace_mode_warning": "Das Löschen dieser Zahlungsmethode wirkt sich auf Abonnements oder Vorbestellungen aus. Ersetzen Sie sie durch eine alternative Zahlungsmethode, um weiterhin kommende Bestellungen zu erhalten.",
+        "choose_from_list": "Aus Liste wählen",
+        "add_new_button": "Neu hinzufügen",
+        "billing_address": {
+          "add_billing_address_button": "Neu hinzufügen",
+          "choose_billing_address_from_list_button": "Aus Liste wählen",
+          "choose_billing_address_from_list_button_accessibility_label": "Wählen Sie eine Rechnungsadresse aus der Liste aus",
+          "missing_billing_address_error_message": "Bitte geben Sie eine Rechnungsadresse an",
+          "default_checkbox": "Als Standardzahlungsmethode festlegen"
+        },
+        "subscription_contracts": {
+          "title": "Zahlungsmethode für wiederkehrende Bestellungen verwenden",
+          "more_items": {
+            "one": "{{count}} weiteres Produkt",
+            "other": "{{count}} weitere Produkte"
+          },
+          "product_count": {
+            "one": "{{count}} Produkt",
+            "other": "{{count}} Produkte"
+          },
+          "product_details": "Produktdetails",
+          "load_more": "Mehr laden"
+        },
+        "updating_contracts": {
+          "one": "Aktualisiere {{count}} Abonnementvertrag...",
+          "other": "Aktualisiere {{count}} Abonnementverträge..."
+        },
+        "contracts_updated": {
+          "one": "{{count}} Abonnementvertrag erfolgreich aktualisiert"
         }
       }
     },
