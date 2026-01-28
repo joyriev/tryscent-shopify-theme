@@ -1064,7 +1064,90 @@
         "maximum_discount_code_limit_reached": "Du har nått det högsta antalet rabattkoder. Ta bort en befintlig kod för att använda <strong style=\"text-transform:uppercase\">%{code}</strong>.",
         "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> fungerar inte just nu. Kontakta oss för hjälp.",
         "due_on_fulfillment": "Förfallodag vid fullgörande",
-        "duties_label": "Tullar"
+        "duties_label": "Tullar",
+        "recurring_total_multiple_label": "Denna beställning har en återkommande avgift för flera artiklar.",
+        "deferred_total_due_date_label": "Totalt att betala {{date}}",
+        "full_price": "Fullt pris: %{price}",
+        "custom_discount": "Anpassad rabatt",
+        "collapse_component_information": {
+          "other": "Dölj %{count} föremål"
+        },
+        "alternative_payment_currency_total": "Debiterad %{amount_due}",
+        "discount_applies_to_subscription_items_only": "Denna rabatt gäller endast för prenumerationsartiklar"
+      },
+      "shipping": {
+        "shipping_method_rollup_accessibility_label": "Fraktmetodsalternativ",
+        "shipping_method_first_shipment_group_title": {
+          "one": "Första leveransen",
+          "other": "Första leveranserna"
+        },
+        "subscription_shipping": "Prenumerationsleverans",
+        "subscription_local_delivery": "Prenumeration lokal leverans",
+        "subscription_pickup": "Prenumerationsupphämtning",
+        "waiting_on_rate_notice": "Hämtar tillgängliga fraktpriser…",
+        "waiting_on_pickup_location_notice": "Hämtplatser som blir tillgängliga…",
+        "no_rates_for_cart_or_destination_notice": "Det finns inga fraktmetoder tillgängliga för din kundvagn eller adress",
+        "no_pickup_location_notice": "Minst en av dina produkter finns inte tillgänglig för upphämtning",
+        "no_rates_contact_notice": "Kontakta oss för mer information",
+        "cheapest_rate_label": "Billigast",
+        "delivery_today": "Samma dag leverans %{time}",
+        "delivery_tomorrow": "Leverans nästa dag %{time}",
+        "arrives_time_range": "Levereras %{min_time}–%{max_time}",
+        "estimated_time": "Beräknad %{time}",
+        "estimated_time_range": "Beräknad %{min_time}–%{max_time}",
+        "default_description": "Skickas inom 1 arbetsdag",
+        "unbranded_default_description": "Redo att skickas",
+        "shipping_line_phone_label": "Mobiltelefonnummer (obligatoriskt)",
+        "shipping_line_phone": "Din budbärare kan använda detta nummer för att kontakta dig.",
+        "shipping_line_delivery_phone_label": "Mobiltelefonnummer",
+        "shipping_line_delivery_phone": "Du kan bli kontaktad med uppdateringar om din leverans.",
+        "shipping_line_delivery_instructions": "Ange nödvändig information som dörrkoder eller instruktioner för avlämning.",
+        "other_method": {
+          "zero": "Inga andra metoder tillgängliga",
+          "one": "%{count} annan metod tillgänglig på",
+          "other": "%{count} andra metoder tillgängliga från och med"
+        },
+        "shipping_rate_discounted_amount": "Före: %{original_amount}. Nu: %{amount}",
+        "prime_not_available": {
+          "default": "Prime-leverans är inte tillgänglig för din beställning. Dina fraktalternativ har uppdaterats."
+        },
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "Fri frakt för %{count} fler leveranser"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "Fri frakt för %{count} leveranser till, sedan %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "Fri frakt för %{count} leverans, sedan %{recurring_order_shipping_price}",
+            "other": "Fri frakt för %{count} leveranser, sedan %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} fler leveranser för %{shipping_price}",
+            "other": "%{count} fler leveranser för %{shipping_price} styck"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "other": "%{count} fler leveranser för %{shipping_price} styck"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Fri frakt för den första %{cycle}, därefter %{recurring_order_shipping_price}",
+            "other": "Fri frakt för den första %{cycle}, därefter %{recurring_order_shipping_price}"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "varje %{count} dagar"
+            },
+            "week": {
+              "other": "varje %{count} veckor"
+            },
+            "month": {
+              "other": "varje %{count} månader"
+            },
+            "year": {
+              "other": "varje %{count} år"
+            }
+          }
+        }
       }
     }
   }

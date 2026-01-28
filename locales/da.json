@@ -656,7 +656,13 @@
         "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> virker ikke lige nu. Kontakt os for hjælp.",
         "due_on_fulfillment": "Forfald ved opfyldelse",
         "duties_label": "Afgifter",
-        "may_be_charged_on_delivery": "Kan opkræves ved levering"
+        "may_be_charged_on_delivery": "Kan opkræves ved levering",
+        "updated_shipping_method": "Opdateret forsendelsesmetode: %{shipping_method}",
+        "recurring_payments": "Gentagne betalinger",
+        "recurring_total_multiple_label": "Denne ordre har et tilbagevendende gebyr for flere varer.",
+        "deferred_total_due_date_label": "Samlet beløb forfaldent {{date}}",
+        "deferred_total_due_date_label_next": "Forfalden %{date}",
+        "custom_discount": "Brugerdefineret rabat"
       },
       "payment": {
         "payment_option": {
@@ -1095,6 +1101,101 @@
           "message": {
             "one": "Denne vare vil blive fjernet fra din kurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse.",
             "other": "Disse varer vil blive fjernet fra din kurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse."
+          }
+        }
+      },
+      "shipping": {
+        "title": "Forsendelse",
+        "shipping_method_title": "Forsendelsesmetode",
+        "shipping_method_rollup_accessibility_label": "Forsendelsesmetode muligheder",
+        "shipping_method_recurring_shipments_group_title": {
+          "one": "Gentagen forsendelse",
+          "other": "Gentagne forsendelser"
+        },
+        "subscription_shipping": "Abonnementsforsendelse",
+        "subscription_local_delivery": "Abonnement lokal levering",
+        "subscription_pickup": "Abonnementsafhentning",
+        "waiting_on_rate_notice": "Henter tilgængelige forsendelsespriser…",
+        "waiting_on_pickup_location_notice": "Henter tilgængelige afhentningssteder…",
+        "no_rates_for_cart_or_destination_notice": "Der er ingen forsendelsesmetoder tilgængelige for din kurv eller adresse",
+        "no_pickup_location_notice": "Mindst ét af dine produkter er ikke tilgængeligt for afhentning",
+        "no_rates_for_country_notice": "Ingen forsendelsespriser fundet for denne adresse.",
+        "cheapest_rate_label": "Billigste",
+        "delivery_today": "Samme dags levering %{time}",
+        "delivery_tomorrow": "Næste dags levering %{time}",
+        "delivery": "Levering %{time}",
+        "arrives_time": "Ankommer %{time}",
+        "arrives_time_range": "Ankommer om %{min_time}–%{max_time}",
+        "estimated_time": "Anslået %{time}",
+        "estimated_time_range": "Anslået %{min_time}–%{max_time}",
+        "default_description": "Afsendes inden for 1 hverdag",
+        "shipping_line_phone_label": "Mobiltelefonnummer (påkrævet)",
+        "shipping_line_delivery_phone_label": "Mobiltelefonnummer",
+        "shipping_line_delivery_instructions": "Indtast nødvendige oplysninger som dørkoder eller afleveringsinstruktioner.",
+        "other_method": {
+          "zero": "Ingen andre metoder tilgængelige",
+          "one": "%{count} anden metode tilgængelig på",
+          "other": "%{count} andre metoder tilgængelige fra og med"
+        },
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "Gratis levering for %{count} flere levering",
+            "other": "Gratis levering for %{count} flere forsendelser"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "Gratis levering for %{count} forsendelse",
+            "other": "Gratis levering for %{count} forsendelser"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "Gratis levering for %{count} flere leverancer, derefter %{recurring_order_shipping_price}",
+            "other": "Gratis levering for %{count} flere leverancer, derefter %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "Gratis levering for %{count} forsendelse, derefter %{recurring_order_shipping_price}",
+            "other": "Gratis levering for %{count} forsendelser, derefter %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} flere leveringer for %{shipping_price}",
+            "other": "%{count} flere leverancer til %{shipping_price} hver"
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "other": "%{count} flere leverancer til %{shipping_price} hver"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Gratis levering for den første %{cycle}, efterfulgt af %{recurring_order_shipping_price}",
+            "other": "Gratis levering for den første %{cycle}, efterfulgt af %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} for %{count} flere leverancer",
+            "other": "%{shipping_price} for %{count} flere leverancer (%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "other": "%{shipping_price} for %{count} leverancer (%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{shipping_price} for %{count} flere leverancer, efterfulgt af %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} for %{count} flere leverancer (%{per_delivery_cost}), efterfulgt af %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{shipping_price} for %{count} levering, efterfulgt af %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} for %{count} leverancer (%{per_delivery_cost}), efterfulgt af %{recurring_order_shipping_price}"
+          },
+          "prepaid_delivery_frequency": {
+            "other": "for %{count} leverancer"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "hver %{count} dag(e)"
+            },
+            "week": {
+              "other": "hver %{count} uge(r)"
+            },
+            "month": {
+              "other": "hver %{count} måned"
+            },
+            "year": {
+              "other": "hver %{count} år"
+            }
           }
         }
       }
