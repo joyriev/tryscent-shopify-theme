@@ -2697,22 +2697,41 @@
         "description": "E-mail opdateret succesfuldt. Omdirigerer til login."
       },
       "profile_card": {
-        "invalid_email_format": "Indtast en gyldig e-mail"
-      }
+        "invalid_email_format": "Indtast en gyldig e-mail",
+        "email_help_text": "E-mail kan ikke redigeres",
+        "editable_email_help_text": "Denne e-mail bruges til login og opdateringer om ordrer.",
+        "email": "E-mail",
+        "errors": {
+          "name_too_long": "{{fieldName}} er for langt (maksimum er 255 tegn)"
+        }
+      },
+      "loading_accessibility_message": "Indlæser kontoinformation",
+      "loading_finished_accessibility_message": "Kontooplysninger er indlæst"
     },
     "navigation_and_structure": {
-      "loading_policy_content_accessibility_label": "Indlæsning af politikindhold",
+      "loading_policy_content_accessibility_label": "Indlæser politikindhold",
       "account_menu": {
         "nav_accessibility_label": "Konto navigation",
         "open_menu_accessibility_label": "Åbn kontonavigation",
         "close_menu_accessibility_label": "Luk kontonavigation",
         "loading_message": "Indlæser kontonavigation"
-      }
+      },
+      "contact_email_subject": "Kontakt fra {{shopName}} netbutik",
+      "document_title": "{{sectionName}} - {{shopName}} - Konto",
+      "logout_overlay_label": "Logger ud...",
+      "shop_logo_accessibility_label": "{{shopName}} logo",
+      "settings_link": "Indfatninger",
+      "location_switcher_toast_message": "Placering skiftet til {{locationName}}",
+      "switch_location": "Skift placering",
+      "no_locations_found": "Ingen lokationer fundet",
+      "company_location": "Virksomhedens placering",
+      "search": "Søgning",
+      "skip_to_content": "Spring til indholdet"
     },
     "announcement_bar": {
-      "expand_label": "Udvid meddelelseslinjen",
-      "collapse_label": "Skjul meddelelseslinjen",
-      "close_label": "Luk meddelelseslinjen"
+      "expand_label": "Udvid meddelelseslinje",
+      "collapse_label": "Skjul meddelelseslinje",
+      "close_label": "Luk meddelelseslinje"
     },
     "payment_methods": {
       "update_payment_method": {

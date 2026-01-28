@@ -2754,7 +2754,161 @@
           "decrement_fulfilled_line_item": "Zurückgegeben %{delta} von %{total}",
           "decrement_return_line_item": "%{delta} von der Rückgabe entfernt"
         }
+      },
+      "order": {
+        "financial_status": {
+          "voided": "Ungültig",
+          "refunded": "Erstattet"
+        },
+        "fulfillment_status": {
+          "complete": "Abgeschlossen",
+          "unfulfilled": "Unerfüllt",
+          "restocked": "Nachgefüllt"
+        },
+        "transaction_status": {
+          "failure": "Fehler"
+        },
+        "cancel_reason": {
+          "declined": "Zahlung abgelehnt",
+          "fraud": "Betrügerische Bestellung",
+          "customer": "Kunde hat Bestellung geändert/storniert",
+          "other": "Andere"
+        },
+        "cash_on_delivery": "Nachnahme (Barzahlung bei Lieferung)"
+      },
+      "cart": {
+        "only_n_items_available": "Sie können nur %{count} %{name} zum Warenkorb hinzufügen.",
+        "too_many_items_in_cart": "Sie können nicht mehr %{name} zum Warenkorb hinzufügen.",
+        "only_one_added_to_cart": "Aufgrund der Verfügbarkeit wurde nur 1 Artikel zu Ihrem Warenkorb hinzugefügt.",
+        "only_n_added_to_cart": "Aufgrund der Verfügbarkeit wurden nur %{quantity} Artikel zu Ihrem Warenkorb hinzugefügt.",
+        "maximum_available_quantity_reached": "Die maximale Menge dieses Artikels befindet sich bereits in Ihrem Warenkorb.",
+        "less_than_minimum": "Dieser Artikel hat eine Mindestmenge von %{min}.",
+        "more_than_maximum": "Dieser Artikel hat eine Höchstmenge von %{max}.",
+        "not_respect_step": "Sie können diesen Artikel nur in Schritten von %{step} hinzufügen.",
+        "empty_update": "Leerer Warenkorb kann nicht aktualisiert werden",
+        "missing_parameters": "keine gültige ID- oder Linienparameter",
+        "invalid_input": "Der Parameter %{parameter} ist ungültig.",
+        "too_many_line_items_error": "Ihr Warenkorb darf nicht mehr als %{max} Artikel enthalten.",
+        "stock_problems_html": "Ein oder mehrere Artikel sind nicht mehr verfügbar. Wir haben einen <a href='%{link}'>aktualisierten Warenkorb</a> bereitgestellt.",
+        "items_changed": "Ein oder mehrere Elemente wurden geändert.",
+        "variant_not_found": "Variante nicht gefunden",
+        "variant_requires_selling_plan": "Variante kann nur mit einem Verkaufsplan gekauft werden.",
+        "selling_plan_not_available_for_company_locations": "Für B2B-Bestellungen ist nur ein einmaliger Kauf möglich",
+        "digital_product_not_available_for_company_locations": "Dieser Artikel kann nicht zu einer B2B-Bestellung hinzugefügt werden",
+        "buyer_cannot_purchase_for_company_locations": "Für diesen Standort können Sie nicht einkaufen",
+        "selling_plan_not_applicable": "Verkaufsplan kann nicht auf Variante angewendet werden",
+        "shipping_address_invalid": "Bei der Berechnung Ihrer Versandkosten ist ein Problem aufgetreten. Fahren Sie mit dem Checkout fort, um eine Versandart auszuwählen, bevor Sie Ihre Bestellung abschließen.",
+        "bundle_requires_components": "Das Bündelprodukt '%{name}' kann nicht zum Warenkorb hinzugefügt werden.",
+        "gift_card_with_components_not_supported": "Das Bündelprodukt '%{name}' kann nicht zum Warenkorb hinzugefügt werden.",
+        "gift_card_price_must_be_greater_than_zero": "Das Bündelprodukt '%{name}' kann nicht zum Warenkorb hinzugefügt werden.",
+        "gift_card_recipient_validation_error": "Der angegebene Empfänger der Geschenkkarte ist ungültig",
+        "view_lines_limit_reached": "Zeilen müssen weniger als oder gleich %{limit} sein",
+        "cart_too_large": "Der Warenkorb ist zu groß.",
+        "cart_attributes_error": "Warenkorb-Eigenschaften enthalten ungültige Daten.",
+        "merchandise_line_transformers": {
+          "run_error": "Ein Fehler ist in Ihrem Warenkorb aufgetreten."
+        },
+        "merchandise_not_applicable": "Artikel kann in der konfigurierten Form nicht gekauft werden."
+      },
+      "storefront": {
+        "invalid_password": "Passwort falsch, bitte versuchen Sie es erneut."
+      },
+      "tags": {
+        "add_articles": "Suche auf Artikel mit dem Schlagwort %{tag} eingrenzen",
+        "add_products": "Auswahl auf Produkte mit dem Schlagwort %{tag} eingrenzen",
+        "remove_articles": "Suche auf Artikel ausweiten, die nicht mit %{tag} gekennzeichnet sind",
+        "remove_products": "Entferne das Etikett %{tag}"
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Vielen Dank, dass Sie sich für unseren Mailingliste angemeldet haben.",
+        "disclaimer": "Sie können sich jederzeit abmelden.",
+        "unsubscribe": "Abbestellen"
+      },
+      "unsubscribed": {
+        "confirmation": "Sie haben sich von unserem Mailingliste abgemeldet.",
+        "disclaimer": "Sie erhalten keine weiteren Marketing-Updates von uns. Sie können sich jederzeit wieder anmelden.",
+        "preview": "Sie sehen eine Vorschau dessen, was Kunden sehen werden, wenn sie sich abmelden."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Sie haben sich für die E-Mail-Öffnungsnachverfolgung angemeldet.</b>",
+          "visibility": "Die Öffnungsraten von E-Mails werden anonym gemeldet. Wir sehen nur, ob Sie eine E-Mail im Rahmen einer aggregierten Öffnungsrate geöffnet haben.",
+          "opt_out_html": "Sie können <a style='text-decoration:underline;' href='%{link}'>das Nachverfolgen des Öffnens von E-Mails ablehnen</a>, wenn Sie diese Information nicht teilen möchten.",
+          "preview_bar": "Sie sehen eine Vorschau dessen, was Kunden sehen werden, wenn sie sich für die E-Mail-Öffnungsnachverfolgung anmelden."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Sie haben sich vom E-Mail-Öffnungs-Tracking abgemeldet.</b>",
+          "visibility": "Wir werden nicht sehen, ob Sie unsere E-Mails geöffnet haben.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Zustimmen</a> zur Nachverfolgung des Öffnens von E-Mails.",
+          "preview_bar": "Sie sehen eine Vorschau dessen, was Kunden sehen werden, wenn sie das Tracking des Öffnens von E-Mails ablehnen."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Wir verfolgen keine E-Mail-Öffnungen mehr.</b>",
+          "privacy_policy": "Nachdem diese E-Mail gesendet wurde, haben wir unsere Datenschutzrichtlinie aktualisiert und verfolgen keine Öffnungen mehr."
+        },
+        "track": {
+          "status_html": "<b>E-Mail-Öffnungs-Tracking wird gemeldet.</b>",
+          "visibility": "Wir sehen nur, ob Sie die E-Mail geöffnet haben, als Teil der gesamten Öffnungsrate der E-Mails."
+        },
+        "updated_policy": {
+          "status_html": "<b>E-Mail-Öffnungs-Tracking wird gemeldet.</b>",
+          "visibility": "Wir haben unsere Richtlinie aktualisiert und verfolgen jetzt das Öffnen von E-Mails. Die Öffnungsraten der E-Mails werden anonym gemeldet. Wir sehen nur, ob Sie eine E-Mail als Teil der gesamten Öffnungsrate geöffnet haben.",
+          "opt_out_html": "Wenn Sie diese Informationen nicht teilen möchten, können Sie sich <a style='text-decoration:underline;' href='%{link}'>abmelden.</a>"
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "out_of_stock": "Nicht auf Lager"
+        }
+      }
+    },
+    "search": {
+      "error": "Beim Laden Ihrer Suchergebnisse ist ein Problem aufgetreten. Bitte aktualisieren Sie die Seite oder versuchen Sie es später erneut.",
+      "sorting": {
+        "price_ascending": "Preis, aufsteigend",
+        "price_descending": "Preis, von hoch nach niedrig"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Fehler - %{title}",
+      "shopping_cart": "Ihr Warenkorb",
+      "checkpoint": "Kontrollpunkt"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} Rabatte wurden angewendet"
+    },
+    "challenge": {
+      "message": "Um fortzufahren, lassen Sie uns wissen, dass Sie kein Roboter sind.",
+      "error": "Deine Antwort war nicht korrekt, bitte versuche es erneut.",
+      "submit_button_text": "Absenden"
+    },
+    "checkpoint": {
+      "message": "Lösen Sie das Captcha, um fortzufahren",
+      "error": "Captcha-Validierung fehlgeschlagen",
+      "submit_button_text": "Absenden"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Normalerweise in 1 Stunde fertig",
+        "two_hours": "Normalerweise in 2 Stunden fertig",
+        "four_hours": "Normalerweise in 4 Stunden fertig",
+        "twenty_four_hours": "Normalerweise in 24 Stunden fertig",
+        "two_to_four_days": "Normalerweise in 2-4 Tagen fertig",
+        "five_or_more_days": "Normalerweise in 5+ Tagen fertig",
+        "zero_to_two_hours": "Normalerweise in 2 Stunden fertig",
+        "two_to_four_hours": "Normalerweise in 4 Stunden fertig",
+        "immediately": "Jetzt abholbereit",
+        "next_day": "Bereit zur Abholung am nächsten Tag"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Dieser Artikel ist ein wiederkehrender oder aufgeschobener Kauf. Indem ich fortfahre, stimme ich der %{cancellationPolicyLink} zu und ermächtige Sie, meine Zahlungsmethode zu den auf dieser Seite angegebenen Preisen, Häufigkeiten und Terminen zu belasten, bis meine Bestellung erfüllt ist oder ich, sofern erlaubt, kündige.",
+      "buyer_consent_cart": "Einer oder mehrere der Artikel in Ihrem Warenkorb sind wiederkehrende oder aufgeschobene Käufe. Indem ich fortfahre, stimme ich der %{cancellationPolicyLink} zu und ermächtige Sie, meine Zahlungsmethode zu den auf dieser Seite angegebenen Preisen, Häufigkeiten und Terminen zu belasten, bis meine Bestellung erfüllt ist oder ich, sofern erlaubt, storniere.",
+      "cancellation_policy": "Stornierungsbedingungen"
     }
   },
   "customer_accounts": {
@@ -2776,7 +2930,13 @@
       }
     },
     "navigation_and_structure": {
-      "loading_policy_content_accessibility_label": "Laden von Richtlinieninhalten"
+      "loading_policy_content_accessibility_label": "Laden von Richtlinieninhalten",
+      "account_menu": {
+        "nav_accessibility_label": "Kontoverwaltung",
+        "open_menu_accessibility_label": "Konto öffnen Navigation",
+        "close_menu_accessibility_label": "Konto-Navigation schließen",
+        "loading_message": "Lade Kontonavigation"
+      }
     },
     "announcement_bar": {
       "expand_label": "Ankündigungsleiste erweitern",
@@ -2803,6 +2963,17 @@
         "title": "Zahlungsmethode aktualisiert",
         "done_button": "Weiter einkaufen"
       }
-    }
+    },
+    "callback": {
+      "try_again": "Versuchen Sie es erneut"
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "one": "vor {{count}} Minute(n)"
+        }
+      }
+    },
+    "enable_javascript": "Um Ihr Konto anzuzeigen, aktivieren Sie JavaScript in den Browsereinstellungen oder melden Sie sich mit einem anderen Browser an."
   }
 }
