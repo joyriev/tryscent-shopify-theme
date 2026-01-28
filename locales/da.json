@@ -528,12 +528,87 @@
     "checkout": {
       "order_summary": {
         "total_price_label": "Samlet pris",
-        "total_due_label": "Samlet skyldig beløb",
+        "total_due_label": "Samlet beløb due",
         "title": "Ordresammendrag",
         "group_title_label": "Del af \"%{group_title}\"",
         "more_items_modal": {
           "search_item": "Søgning",
           "empty_results": "Ingen resultater fundet for \"%{searchText}\". Tjek stavningen eller brug et andet ord eller udtryk."
+        },
+        "order_name_label": "Bestil %{name}",
+        "discount_title_stacking": {
+          "other": "Rabat"
+        },
+        "discount_order_stacking": {
+          "one": "Ordre rabat",
+          "other": "Ordre rabatter"
+        },
+        "discount_not_found": "Kan ikke finde en gyldig rabat, der matcher den indtastede kode",
+        "discount_code_applied": "Rabatkode anvendt",
+        "discount_code_applied_with_code": "Rabatkode %{code} er blevet anvendt",
+        "discount_code_removed": "Rabatkode %{code} er blevet fjernet",
+        "discount_code_replaced": "Rabatkode %{old_code} fjernet, og %{code} er blevet anvendt",
+        "discount_code_replaced_multiple": "Flere rabatkoder er fjernet, og %{code} er blevet anvendt",
+        "discount_code_allocations_mismatch": "Din <strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ændret. Gennemse din kurv og prøv igen.",
+        "order_discounts_apply_to_local_shop": "Rabat ved bestilling gælder kun for varer fra %{shop_name}",
+        "gift_card_applied": "Gavekort anvendt",
+        "enter_shipping_address": "Indtast leveringsadresse",
+        "add_discount_or_gift_card": "Tilføj en rabatkode eller gavekort",
+        "remove_gift_card_label": "Gavekort uden beløb",
+        "return_restocking_fee_label": "Genopfyldningsgebyr",
+        "return_shipping_fee_label": "Returforsendelse",
+        "free_shipping_discount_label": "Gratis shipping",
+        "apply_discount_button_label": "Anvend",
+        "applied_discount_message": "%{amount} rabat på den samlede ordrepris",
+        "discount_has_been_applied": "Rabat er blevet anvendt",
+        "discount_has_been_removed": "Rabat er fjernet",
+        "gift_card_subscriptions_notice": "Gavekort gælder kun for din første betaling",
+        "discount_already_applied": "Der er blevet anvendt en rabat på denne ordre. Du kan ikke tilføje en anden rabat.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ikke gyldig for varerne i din kurv",
+        "discount_requires_customer_notice": "Indtast dine forsendelsesoplysninger for at anvende rabatkoden <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ikke tilgængelig for dig lige nu",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode kræver berettiget kunde",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ikke tilgængelig for din leveringsadresse",
+        "customer_already_used_once_per_customer_discount_notice": "Rabatten med koden <strong style=\"text-transform:uppercase\">%{code}</strong> er allerede brugt",
+        "subtotal_label": "Delsum",
+        "subtotal_label_with_quantity": {
+          "one": "Delsum · %{count} vare",
+          "other": "Delsum · %{count} varer"
+        },
+        "shipping_label": "Forsendelse",
+        "no_pickup_location": "Der er ingen afhentningssteder tilgængelige.",
+        "pickup_unavailable_banner_title": {
+          "one": "Ingen butikker tilgængelige med din vare",
+          "other": "Ingen butikker tilgængelige med dine varer"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "one": "Ingen butikker tilgængelige i %{country} med din vare",
+          "other": "Ingen butikker tilgængelige i %{country} med dine varer"
+        },
+        "tip_label": "Drikkepenge",
+        "unconfirmed_label": "Ubekræftet",
+        "calculating_shipping": "Beregner…",
+        "calculating": "Beregner…",
+        "shipping_discount_title": "Forsendelsesrabat",
+        "shipping_pending_message": "Endnu ikke tilgængelig",
+        "shipping_policy_link": "Forsendelsesomkostninger",
+        "taxes_label": "Skatter",
+        "estimated_taxes_label_short": "Anslået",
+        "estimated_taxes_finalization_tooltip_content_short": "Skat afregnet efter betaling",
+        "order_total_label": "Ordre Total",
+        "price_before_discount_aria_text": "Originalpris",
+        "price_after_discount_aria_text": "Nedsat pris",
+        "total_paid_label": "Samlet betalt",
+        "total_outstanding_label": "Beløb at betale",
+        "total_due_today_label": "Samlet skyldig i dag",
+        "total_due_later_label": "Samlet skyldig senere",
+        "payment_due_label": "Betaling forfalder",
+        "discount_and_gift_card_savings_notice": "Efter %{discount_amount} i rabatter og %{gift_card_amount} i gavekort",
+        "cost_table_title": "Omkostningsoversigt",
+        "cost_table_item_column_header": "Genstand",
+        "price_per_item": {
+          "accessibility_label": "%{price} pr. stk.",
+          "label": "%{price}/stk"
         }
       },
       "payment": {
