@@ -776,10 +776,59 @@
             "expired_delivery_guarantee_description": "Denna beställnings 30-dagars Shop Promise-garanti har gått ut.",
             "expired_badge_label": "Utgånget",
             "order_includes_guarantees_label": "Din beställning inkluderar {{deliveryAgreementsCount}} garantier",
-            "order_includes_guarantees_description": "Shop Promise garanterar snabb och pålitlig leverans. Begär Shop Cash om din beställning anländer efter {{date}}."
+            "order_includes_guarantees_description": "Shop Promise garanterar snabb och pålitlig leverans. Begär Shop Cash om din beställning anländer efter {{date}}.",
+            "delivered_after_label": "Levereras efter {{date}}",
+            "delivered_after_description": "Eftersom din beställning kom fram sent, har du rätt att kräva {{amount}} Butikskredit.",
+            "claimed_shop_cash_description": "Eftersom denna beställning anlände sent, har du begärt {{amount}} Butikskredit.",
+            "eligible_to_claim_shop_cash_description": "Eftersom din beställning kom fram sent, har du rätt att kräva {{amount}} Butikskredit.",
+            "learn_more_button_label": "Lär dig mer",
+            "claim_shop_cash_button_label": "Kräv Shop Cash",
+            "scan_to_claim_shop_cash_label": "Skanna för att hämta {{amount}} butikskassa"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Leverans garanterad av",
+            "mixed_brands_label": "Leverans garanterad",
+            "not_delivered_by_label": "Inte levererat före {{date}}",
+            "modal_accessibility_button_label": "Detaljer om leveranslöfte"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Lös in din Shop Cash",
+            "no_shop_app_label": "{{appDownloadLink}} för att hämta butikskredit",
+            "download_shop_app_label": "Ladda ner butik"
+          },
+          "details_modal": {
+            "title": "Leverans garanterad av",
+            "modal_accessiblity_label": "Detaljer om leveranslöfte",
+            "delivery_by_label": "Leverans senast {{date}}",
+            "delivery_guaranteed_by_label": "Leverans garanterad senast {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garanterar snabb och pålitlig leverans. Begär Shop Cash om din beställning kommer för sent.",
+              "may_be_eligible_not_authorized_label": "Du kan vara berättigad att kräva Shop Cash eftersom denna beställning anlände sent. Logga in för att se detaljer.",
+              "redeemed_label": "Du har redan hämtat Shop Cash eftersom denna beställning anlände sent.",
+              "expired_label": "Denna beställning är inte berättigad till ett krav på sen leverans eftersom 30-dagars garantin har löpt ut.",
+              "no_shop_cash_label": "Denna beställning är inte berättigad till ett krav på sen leverans eftersom den inte betalades med Shop Pay.",
+              "no_longer_guaranteed_label": "Dessa artiklar omfattas inte längre av någon leveransgaranti.",
+              "claim_shop_cash_title": "Skanna för att hämta ut {{amount}} i butikskassa",
+              "claim_shop_cash_description": "Du kan använda din Shop Cash vid framtida köp i Shop-appen."
+            }
           }
         }
-      }
+      },
+      "fulfillment_status_title": "Leveransstatus: {{status}}",
+      "buy_again_accessibility_label": "Köp igen för beställning {{orderId}}",
+      "manage_accessiblity_label": "Hantera beställning {{orderId}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_accessibility_label": "Visa detaljer för orderleverans",
+        "hide_events_accessibility_label": "Dölj leveransdetaljer för beställningen"
+      },
+      "order_details_skeleton_accessibility_label": "Logga in för att se alla orderdetaljer.",
+      "card_ending_with": "slutar med {{lastDigits}}",
+      "contact": "Kontakt",
+      "fully_refunded_label": "ÅTERBETALD"
     }
   },
   "shopify": {

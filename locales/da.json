@@ -2917,10 +2917,62 @@
             "title": "Leveringsgaranti",
             "active_delivery_guarantee_label": "Levering inden {{date}}",
             "order_includes_guarantees_label": "Din ordre indeholder {{deliveryAgreementsCount}} garantier",
-            "order_includes_guarantees_description": "Shop Promise garanterer hurtig og pålidelig levering. Kræv Shop Cash, hvis din ordre ankommer efter {{date}}."
+            "order_includes_guarantees_description": "Shop Promise garanterer hurtig og pålidelig levering. Kræv Shop Cash, hvis din ordre ankommer efter {{date}}.",
+            "delivered_after_label": "Leveret efter {{date}}",
+            "delivered_after_description": "Fordi din ordre ankom sent, er du berettiget til at kræve {{amount}} Butikskredit.",
+            "claimed_shop_cash_description": "Fordi denne ordre ankom sent, har du krævet {{amount}} Butikskredit.",
+            "eligible_to_claim_shop_cash_description": "Fordi din ordre ankom sent, er du berettiget til at kræve {{amount}} Butikskredit.",
+            "learn_more_button_label": "Lær mere",
+            "claim_shop_cash_button_label": "Krav Shoppen Kontanter",
+            "scan_to_claim_shop_cash_label": "Scan for at gøre krav på {{amount}} Butikskredit"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Levering understøttet af",
+            "mixed_brands_label": "Levering garanteret",
+            "not_delivered_by_label": "Ikke leveret inden {{date}}",
+            "modal_accessibility_button_label": "Detaljer om leveringsløfte"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Krav din Shop Cash",
+            "no_shop_app_label": "{{appDownloadLink}} for at hente Butikspenge",
+            "download_shop_app_label": "Download butik"
+          },
+          "details_modal": {
+            "title": "Levering understøttet af",
+            "modal_accessiblity_label": "Detaljer om leveringsløfte",
+            "delivery_guarantee_label": "Leveringsgaranti",
+            "delivery_by_label": "Levering inden {{date}}",
+            "delivery_guaranteed_by_label": "Levering garanteret inden {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garanterer hurtig og pålidelig levering. Kræv Shop Cash, hvis din ordre ankommer for sent.",
+              "may_be_eligible_not_authorized_label": "Du kan være berettiget til at kræve Shop Cash, fordi denne ordre ankom for sent. Log ind for at se detaljer.",
+              "redeemed_label": "Du har allerede krævet Shop Cash, fordi denne ordre ankom for sent.",
+              "expired_label": "Denne ordre er ikke berettiget til et krav om forsinket levering, fordi 30-dages garantien er udløbet.",
+              "no_shop_cash_label": "Denne ordre er ikke berettiget til en krav om forsinket levering, fordi den ikke blev betalt med Shop Pay.",
+              "no_longer_guaranteed_label": "Disse varer er ikke længere dækket af en leveringsgaranti.",
+              "claim_shop_cash_title": "Scan for at få {{amount}} i Butikskredit"
+            }
           }
         }
-      }
+      },
+      "status_mark_as_delivered": "Marker som leveret",
+      "fulfillment_status_title": "Opfyldelsesstatus: {{status}}",
+      "manage_accessiblity_label": "Administrer ordre {{orderId}}",
+      "group_title_label": "Del af: {{groupTitle}}",
+      "group_title_label_with_parent": "Til: {{groupTitle}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_accessibility_label": "Vis ordre forsendelsesdetaljer",
+        "hide_events_accessibility_label": "Skjul forsendelsesdetaljer for ordre"
+      },
+      "addresses_section_title": "Fakturering og forsendelse",
+      "order_details": "Ordredetaljer",
+      "order_details_skeleton_accessibility_label": "Log ind for at se alle ordreoplysninger.",
+      "card_ending_with": "slutter med {{lastDigits}}",
+      "company_and_location": "Firma og placering"
     }
   }
 }
