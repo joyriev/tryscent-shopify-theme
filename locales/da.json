@@ -1043,8 +1043,8 @@
       },
       "thank_you": {
         "thank_you_item_label": {
-          "one": "%{count} genstand",
-          "other": "%{count} elementer"
+          "one": "%{count} vare",
+          "other": "%{count} varer"
         },
         "thank_you_from_shop": "Fra %{shop_name}",
         "confirmation_email_sent_text": "En bekræftelsesmail er blevet sendt til %{email}",
@@ -1071,7 +1071,53 @@
         },
         "gift_card_confirmation_by_text": "Hvis du ikke modtog det, send teksten igen eller kontakt os.",
         "gift_card_confirmation_by_email": "Hvis du ikke modtog den, send e-mailen igen eller kontakt os.",
-        "thank_you_title_payments_app_pending_buyer_action_required": "Din ordre er modtaget"
+        "thank_you_title_payments_app_pending_buyer_action_required": "Din ordre er modtaget",
+        "thank_you_confirmed_with_email_description": {
+          "single_store": "Du vil snart modtage en bekræftelsesmail",
+          "multi_store": "Du vil snart modtage separate bekræftelses-e-mails fra hver butik"
+        },
+        "thank_you_confirmed_with_phone_description": {
+          "single_store": "Du vil snart modtage en bekræftelsesbesked",
+          "multi_store": "Du vil snart modtage separate bekræftelsestekster fra hver butik"
+        },
+        "thank_you_confirmed_with_email_and_phone_description": {
+          "single_store": "Du vil snart modtage en bekræftelsesmail",
+          "multi_store": "Du vil snart modtage separate bekræftelses-e-mails fra hver butik"
+        },
+        "thank_you_confirmed_order_with_phone": "Du vil snart modtage en bekræftelsesbesked med dit ordrenummer.",
+        "thank_you_confirmed_orders_with_email": "Du vil snart modtage separate bekræftelses-e-mails med dine ordrenumre",
+        "thank_you_confirmed_orders_with_phone": "Du vil snart modtage separate bekræftelsestekster med dine ordrenumre",
+        "thank_you_confirmed_orders_with_email_and_phone": "Du vil snart modtage separate bekræftelses-e-mails med dine ordrenumre",
+        "thank_you_confirmed_order_with_email_payment": "Du foretog en betaling på din ordre %{date}.",
+        "thank_you_confirmed_order_with_phone_payment": "Du foretog en betaling på din ordre %{date}.",
+        "thank_you_confirmed_order_with_email_and_phone_payment": "Du foretog en betaling på din ordre %{date}.",
+        "thank_you_confirmed_order_with_email_pick_up": "Du vil modtage en e-mail, når din ordre er klar til afhentning.",
+        "thank_you_confirmed_order_with_phone_pick_up": "Du vil modtage en sms, når din ordre er klar til afhentning.",
+        "thank_you_confirmed_order_with_email_and_phone_pick_up": "Du vil modtage en e-mail, når din ordre er klar til afhentning.",
+        "thank_you_confirmed_order_with_missing": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse.",
+        "thank_you_confirmed_order_with_missing_payment": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse.",
+        "thank_you_confirmed_order_with_missing_pick_up": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse.",
+        "thank_you_confirmed_order_with_draft": "Vi giver dig besked, hvis vi har brug for flere oplysninger, eller når din ordre er bekræftet.",
+        "thank_you_confirmed_order_with_draft_payment": "Vi giver dig besked, hvis vi har brug for flere oplysninger, eller når din ordre er bekræftet.",
+        "thank_you_confirmed_order_with_draft_pick_up": "Vi giver dig besked, hvis vi har brug for flere oplysninger, eller når din ordre er bekræftet.",
+        "thank_you_payments_app_failed_pending_payment": "Du blev ikke opkrævet for din ordre. Gå tilbage til din kurv for at gennemgå din ordre og betale igen.",
+        "thank_you_payments_app_failed_pending_payment_payment": "Du blev ikke opkrævet for din ordre. Gå tilbage til din kurv for at gennemgå din ordre og betale igen.",
+        "thank_you_payments_app_failed_pending_payment_pick_up": "Du blev ikke opkrævet for din ordre. Gå tilbage til din kurv for at gennemgå din ordre og betale igen.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing_payment": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse.",
+        "thank_you_payments_app_pending_payment_description_default_with_missing_pick_up": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone": "Du vil snart modtage en bekræftelsesmail med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone_payment": "Du vil snart modtage en bekræftelsesmail med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_and_phone_pick_up": "Du vil snart modtage en bekræftelsesmail med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_default_with_email": "Du vil snart modtage en bekræftelsesmail med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_payment": "Du vil snart modtage en bekræftelsesmail med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_default_with_email_pick_up": "Du vil snart modtage en bekræftelsesmail med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone": "Du vil snart modtage en bekræftelsesbesked med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone_payment": "Du vil snart modtage en bekræftelsesbesked med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_default_with_phone_pick_up": "Du vil snart modtage en bekræftelsesbesked med dit ordrenummer.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_payment": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse.",
+        "thank_you_payments_app_pending_payment_description_buyer_action_required_with_missing_pick_up": "Kontakt os via e-mail eller telefon for at modtage en ordrebekræftelse."
       },
       "general": {
         "remove_chip": "Fjern vare",
