@@ -1426,7 +1426,61 @@
         "order_edit_banner_items_added": {
           "one": "Tillagt",
           "other": "Tillagd %{count}"
-        }
+        },
+        "order_edit_banner_items_removed": {
+          "in_full": "Borttagen",
+          "with_quantities": "Borttaget {{delta}} av {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Returnerat {{quantity}}",
+          "with_quantities": "Returnerat {{delta}} av {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "with_quantities": "Tog bort {{delta}} från retur"
+        },
+        "order_edit_banner_single_item_added": "Tillagt",
+        "order_edit_banner_multiple_items_added": "Tillagd {{amount}}",
+        "order_edit_banner_single_item_removed": "Borttagen",
+        "order_edit_banner_multiple_items_removed": "Borttaget {{amount}}",
+        "order_edit_banner_single_item_returned": "Returnerat",
+        "order_edit_banner_multiple_items_returned": "Returnerat {{amount}}",
+        "order_edit_banner_multiple_items_return_line_item_removed": "Tog bort {{amount}} från retur",
+        "gift_card_wrapper": {
+          "apply_gift_card_label": "Använd ett presentkort",
+          "apply_another_gift_card_label": "Använd ett annat presentkort"
+        },
+        "gift_card_store_credit": {
+          "add_label": "Lägg till ett presentkort eller butikskredit",
+          "manage_label": "Hantera presentkort eller butikskredit"
+        },
+        "gift_card_checkbox_label": "Använd presentkort",
+        "custom_onsite_payment_method_modal": {
+          "title": "Anpassad bekräftelse av betalning på plats"
+        },
+        "markets_pro_disclaimer_label": "Genom att lägga din beställning godkänner du att köpa från Global-e som den registrerade handlaren, underkastad Global-e:s %{markets_pro_terms} och %{privacy_policy}, och att dela din information med %{shop_name}.",
+        "markets_pro_disclaimer_terms_and_conditions": "Villkor och bestämmelser",
+        "markets_pro_disclaimer_privacy_policy": "Sekretesspolicy",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Villkor för Merchant of Record",
+        "markets_pro_disclaimer_privacy_policy_title": "Sekretesspolicy för Merchant of Record",
+        "purchase_order_number": {
+          "title": "PO-nummer",
+          "label": "PO-nummer (valfritt)"
+        },
+        "alternative_payment_currency_total_manual_payment_notice": "Observera: det omräknade totalbeloppet är %{amount_due}.",
+        "waiting_on_taxes_message": "Om dina skatter inte beräknas inom de närmaste sekunderna, uppdatera sidan.",
+        "waiting_on_taxes_notice": "Beräkna skatter",
+        "payment_method_rollup_accessibility_label": "Betalningsmetoder",
+        "payment_method_update_failed": "Uppdatering av betalningsmetod misslyckades.",
+        "payment_method_incompatible_with_payment_terms": "Betalningsmetoden är inte kompatibel med betalningsvillkoren.",
+        "proposed_gateway_unavailable": "Den föreslagna betalningsgatewayen är otillgänglig",
+        "pay_in_installments_split_pay_short": "4 betalningar om %{amount}",
+        "gift_cards_unavailable": "Ditt presentkort kan inte längre användas för denna beställning och har tagits bort",
+        "payment_flexibility_terms_id_mismatch": "Betalningsflexibilitet villkor ID-matchning saknas",
+        "bank_account_type": {
+          "checking": "Kontrollerar",
+          "savings": "Besparingar"
+        },
+        "new_bank_account_disclaimer": "Genom att slutföra din beställning ger du %{shop_name} tillåtelse att dra beloppet från kontot nedan via ACH, vid den angivna tiden."
       }
     }
   }

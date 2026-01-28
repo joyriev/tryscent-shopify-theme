@@ -528,7 +528,7 @@
     "checkout": {
       "payment": {
         "payment_option": {
-          "accessibility_label": "Wählen Sie eine Zahlungsoption"
+          "accessibility_label": "Wählen Sie eine Zahlungsmethode"
         },
         "crypto_modal": {
           "error": {
@@ -744,7 +744,59 @@
         "order_edit_banner_subtitle": "Ihre Bestellung {{order_number}} wurde aktualisiert. Überprüfen Sie diese Änderungen und bezahlen Sie dann, um Ihre Bestellung zu bestätigen.",
         "order_edit_banner_items_added": {
           "other": "Hinzugefügt %{count}"
-        }
+        },
+        "order_edit_banner_items_removed": {
+          "with_quantities": "Entfernt {{delta}} von {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Zurückgegeben {{quantity}}",
+          "with_quantities": "Zurückgegeben {{delta}} von {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Vom Umtausch ausgeschlossen"
+        },
+        "order_edit_banner_multiple_items_added": "Hinzugefügt {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Entfernt {{amount}}",
+        "order_edit_banner_multiple_items_returned": "Zurückgegeben {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Vom Umtausch ausgeschlossen",
+        "order_edit_banner_multiple_items_return_line_item_removed": "{{amount}} von der Rückgabe entfernt",
+        "gift_card_wrapper": {
+          "heading": "Geschenkkarte",
+          "apply_gift_card_label": "Geschenkkarte anwenden",
+          "apply_another_gift_card_label": "Eine weitere Geschenkkarte anwenden",
+          "gift_card_label": "Geschenkkarte %{identifier}",
+          "payment_tag": "Geschenkkarte",
+          "add_label": "Geschenkkarte hinzufügen",
+          "manage_label": "Geschenkkarten verwalten"
+        },
+        "gift_card_store_credit": {
+          "add_label": "Eine Geschenkkarte oder Guthaben hinzufügen",
+          "manage_label": "Geschenkkarten oder Guthaben verwalten"
+        },
+        "gift_card_checkbox_label": "Geschenkkarte anwenden",
+        "custom_onsite_payment_method_modal": {
+          "title": "Benutzerdefinierte Vor-Ort-Zahlungsbestätigung"
+        },
+        "markets_pro_disclaimer_label": "Indem Sie Ihre Bestellung aufgeben, erklären Sie sich damit einverstanden, bei Global-e als Händler im Register zu kaufen, unterliegt den %{markets_pro_terms} und %{privacy_policy} von Global-e und teilen Ihre Informationen mit %{shop_name}.",
+        "markets_pro_disclaimer_terms_and_conditions": "Allgemeine Geschäftsbedingungen",
+        "markets_pro_disclaimer_privacy_policy": "Datenschutzrichtlinie",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Geschäftsbedingungen des Händlers",
+        "markets_pro_disclaimer_privacy_policy_title": "Datenschutzerklärung des Händlers im Auftrag",
+        "alternative_payment_currency_total_notice": "Hinweis: Ihnen werden %{amount_due} berechnet.",
+        "alternative_payment_currency_total_manual_payment_notice": "Hinweis: Der umgerechnete Gesamtbetrag beträgt %{amount_due}.",
+        "waiting_on_taxes_message": "Wenn Ihre Steuern nicht innerhalb der nächsten Sekunden berechnet werden, aktualisieren Sie die Seite.",
+        "waiting_on_taxes_notice": "Steuern berechnen",
+        "payment_method_rollup_accessibility_label": "Zahlungsmethodenoptionen",
+        "payment_method_incompatible_with_payment_terms": "Zahlungsmethode ist mit den Zahlungsbedingungen nicht kompatibel.",
+        "proposed_gateway_unavailable": "Das vorgeschlagene Zahlungsgateway ist nicht verfügbar",
+        "pay_in_installments_split_pay_short": "4 Zahlungen zu je %{amount}",
+        "gift_cards_unavailable": "Ihre Geschenkkarte kann für diese Bestellung nicht mehr verwendet werden und wurde entfernt",
+        "payment_flexibility_terms_id_mismatch": "Zahlungsflexibilitätsbedingungen ID stimmt nicht überein",
+        "bank_account_type": {
+          "checking": "Überprüfung",
+          "savings": "Ersparnisse"
+        },
+        "new_bank_account_disclaimer": "Indem Sie Ihre Bestellung abschließen, erteilen Sie %{shop_name} die Erlaubnis, das unten angegebene Konto per Lastschriftverfahren mit dem angegebenen Betrag und zum angegebenen Zeitpunkt zu belasten."
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."

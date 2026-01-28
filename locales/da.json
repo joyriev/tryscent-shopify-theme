@@ -678,7 +678,7 @@
           }
         },
         "bank_account_type": {
-          "checking": "Kontrol",
+          "checking": "Kontrollerer",
           "savings": "Besparelser"
         },
         "bank_account_choose": "Vælg en konto for at gennemføre dit køb på en sikker måde",
@@ -867,7 +867,50 @@
         "order_edit_banner_subtitle": "Din ordre {{order_number}} blev opdateret. Gennemgå disse ændringer, og betal derefter for at bekræfte din ordre.",
         "order_edit_banner_items_added": {
           "other": "Tilføjet %{count}"
-        }
+        },
+        "order_edit_banner_items_removed": {
+          "with_quantities": "Fjernet {{delta}} af {{quantity}}"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "Returneret {{quantity}}",
+          "with_quantities": "Returneret {{delta}} af {{quantity}}"
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "Fjernet fra retur",
+          "with_quantities": "Fjernet {{delta}} fra retur"
+        },
+        "order_edit_banner_multiple_items_added": "Tilføjet {{amount}}",
+        "order_edit_banner_multiple_items_removed": "Fjernet {{amount}}",
+        "order_edit_banner_multiple_items_returned": "Returneret {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "Fjernet fra retur",
+        "order_edit_banner_multiple_items_return_line_item_removed": "Fjernet {{amount}} fra retur",
+        "gift_card_store_credit": {
+          "add_label": "Tilføj et gavekort eller butikskredit",
+          "manage_label": "Administrer gavekort eller butikskredit"
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "Brugerdefineret bekræftelse af betaling på stedet"
+        },
+        "markets_pro_disclaimer_label": "Ved at afgive din ordre accepterer du at købe fra Global-e som den registrerede forhandler, underlagt Global-e’s %{markets_pro_terms} og %{privacy_policy}, og dele dine oplysninger med %{shop_name}.",
+        "markets_pro_disclaimer_privacy_policy": "Privatlivspolitik",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Handelsbetingelser for registreret forhandler",
+        "markets_pro_disclaimer_privacy_policy_title": "Fortrolighedspolitik for Merchant of Record",
+        "purchase_order_number": {
+          "title": "PO nummer",
+          "label": "PO nummer (valgfrit)"
+        },
+        "alternative_payment_currency_total_notice": "Bemærk: du vil blive opkrævet %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Bemærk: den omregnede total er %{amount_due}.",
+        "waiting_on_taxes_message": "Hvis dine skatter ikke beregnes inden for de næste par sekunder, opdater siden.",
+        "waiting_on_taxes_notice": "Beregning af skatter",
+        "payment_method_rollup_accessibility_label": "Betalingsmetode muligheder",
+        "payment_method_update_failed": "Opdatering af betalingsmetode mislykkedes.",
+        "payment_method_incompatible_with_payment_terms": "Betalingsmetoden er ikke kompatibel med betalingsbetingelserne.",
+        "proposed_gateway_unavailable": "Den foreslåede betalingsgateway er utilgængelig",
+        "pay_in_installments_split_pay_short": "4 betalinger af %{amount}",
+        "gift_cards_unavailable": "Dit gavekort kan ikke længere anvendes til denne ordre og er blevet fjernet",
+        "payment_flexibility_terms_id_mismatch": "Betalingsfleksibilitetsbetingelser ID-mismatch",
+        "new_bank_account_disclaimer": "Ved at fuldføre din ordre giver du %{shop_name} tilladelse til at trække beløbet på den nedenstående konto via ACH på det angivne tidspunkt."
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."
