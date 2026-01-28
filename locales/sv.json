@@ -1019,7 +1019,52 @@
           "accessibility_label": "%{price} per styck",
           "label": "%{price}/st"
         },
-        "quantity_label": "Antal"
+        "quantity_label": "Antal",
+        "product_image_quantity_label": "Antal",
+        "scroll_order_summary": "Bläddra för fler artiklar",
+        "collapse_order_summary": "Dölj ordersammanfattning",
+        "original_price": "Originalpris",
+        "sale_price": "Rea pris",
+        "order_total_updated_label": "Uppdaterat totalt",
+        "total_already_paid_label": "Betald",
+        "unit_price": {
+          "per_item": {
+            "single": "%{price} styck",
+            "one": "%{price} per %{count} styck",
+            "other": "%{price} per %{count} stycken"
+          }
+        },
+        "multiple_shipping_lines_label": "Frakt totalt",
+        "recurring_total_tooltip": "Inkluderar inte frakt, skatt, tullavgifter eller eventuella tillämpliga rabatter.",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> kunde inte användas tillsammans med dina befintliga rabatter.",
+        "percent_off_shipping": "%{percent}% rabatt på frakten",
+        "amount_off_shipping": "%{amount} rabatt på frakten",
+        "deferred_payment_info": {
+          "title": "Betalning av %{amount_due} förfaller den %{due_at}",
+          "description_html": "För frågor om din beställning, %{contact_us}.",
+          "paid_today": "Totalt betalat idag",
+          "paid_today_next": "Betald idag",
+          "due_on_fulfillment_title": "Betalning av %{amount_due} ska ske vid leverans",
+          "due_on_receipt_title": "Betalning av %{amount_due} ska ske vid mottagandet"
+        },
+        "deferred_balance_info": {
+          "title": "Saldo på {{amount_due}} förfaller den {{due_at}}",
+          "due_on_fulfillment_title": "Saldo på {{amount_due}} ska betalas vid leverans"
+        },
+        "payment_terms_totals": {
+          "due_today": "Totalt att betala idag",
+          "due_today_next": "Förfaller idag",
+          "due_later": "Totalt att betala %{due_at}",
+          "due_on_fulfillment": "Totalt att betala vid leverans",
+          "due_on_fulfillment_next": "Förfallodag vid fullgörande",
+          "due_on_receipt": "Totalt att betala vid mottagande",
+          "due_later_checkout_to_draft": "Totalt att betala senare",
+          "total_paid": "Totalt betalt"
+        },
+        "maximum_discount_code_limit_reached": "Du har nått det högsta antalet rabattkoder. Ta bort en befintlig kod för att använda <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> fungerar inte just nu. Kontakta oss för hjälp.",
+        "due_on_fulfillment": "Förfallodag vid fullgörande",
+        "duties_label": "Tullar"
       }
     }
   }
