@@ -1481,6 +1481,39 @@
           "savings": "Besparingar"
         },
         "new_bank_account_disclaimer": "Genom att slutföra din beställning ger du %{shop_name} tillåtelse att dra beloppet från kontot nedan via ACH, vid den angivna tiden."
+      },
+      "field_errors": {
+        "address_address1_too_long": "Den första adressraden är för lång (maximalt 255 tecken)",
+        "address_address1_contains_emojis": "Address1 kan inte innehålla emojis",
+        "address_address1_contains_html_tags": "Address1 kan inte innehålla HTML-taggar.",
+        "address_address2_blank": "Ange en lägenhet, svit, etc.",
+        "address_address2_too_long": "Den andra adressraden är för lång (maximalt 255 tecken)",
+        "address_address2_contains_emojis": "Address2 kan inte innehålla emojis",
+        "address_address2_contains_html_tags": "Address2 kan inte innehålla HTML-taggar.",
+        "address_city_too_long": "Staden är för lång (maximalt 255 tecken)",
+        "address_city_contains_emojis": "Staden kan inte innehålla emojis",
+        "address_city_contains_html_tags": "Staden kan inte innehålla HTML-taggar.",
+        "address_city_contains_mathematical_symbols": "Staden kan inte innehålla matematiska symboler",
+        "address_country_blank": "Välj ett land/område",
+        "address_province_blank": "Välj en stat / provins",
+        "address_province_invalid": "Välj en giltig stat / provins",
+        "address_company_too_long": "Företagsnamnet är för långt (maximalt 255 tecken)",
+        "address_company_contains_emojis": "Företaget kan inte innehålla emojis",
+        "address_company_contains_html_tags": "Företaget kan inte innehålla HTML-taggar.",
+        "address_company_contains_mathematical_symbols": "Företagsnamn får inte innehålla matematiska symboler",
+        "address_phone_contains_emojis": "Telefonnumret kan inte innehålla emojis",
+        "address_zip_blocked_address": "Den här platsen stöds inte",
+        "address_zip_too_long": "Postnummer är för långt (maximalt 255 tecken)",
+        "address_zip_not_supported": "Den här platsen stöds inte",
+        "address_zip_invalid_for_country": "Ange en giltig postnummer för %{country}",
+        "address_zip_invalid_for_province": "Ange en giltig postnummer för %{province}",
+        "address_zip_invalid_for_country_and_province": "Ange en giltig postnummer för %{province}, %{country}",
+        "address_zip_contains_emojis": "Postnummer får inte innehålla emojis",
+        "address_generic_error": "Fältfel",
+        "credit_card_name_blank": "Ange ditt namn exakt som det står på ditt kort",
+        "credit_card_name_invalid": "Ange ditt namn exakt som det står på ditt kort",
+        "credit_card_start_month_invalid": "Ange en giltig startmånad för kortet",
+        "delivery_line_detail_changed": "Vissa leveransuppgifter kan ha ändrats. Kontrollera din leveransmetod och försök igen."
       }
     }
   }
