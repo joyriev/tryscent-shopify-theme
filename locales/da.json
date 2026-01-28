@@ -2260,7 +2260,68 @@
         "generic_error": "Din ordre kunne ikke behandles, fordi din rabatkode ikke længere er tilgængelig. Gennemgå din ordretotal og prøv igen."
       },
       "b2b_errors": {
-        "lost_b2b_purchasing_permissions": "Du har ikke længere tilladelse til at afgive B2B-ordrer. %{logout_url} for i stedet at afgive en personlig ordre."
+        "lost_b2b_purchasing_permissions": "Du har ikke længere tilladelse til at afgive B2B-ordrer. %{logout_url} for i stedet at afgive en personlig ordre.",
+        "lost_permissions_title": "Ingen placeringstilladelser"
+      },
+      "shop_pay_external": {
+        "title": "Shop Pay Betaling",
+        "errors": {
+          "problem_loading": "Der opstod et problem med at indlæse Shop Pay",
+          "try_again_later": "Tjek din forbindelse eller luk dette vindue og prøv igen om et øjeblik.",
+          "checkout_has_expired": "Din betaling er udløbet. Luk dette vindue og prøv at betale igen fra {{shopName}}."
+        },
+        "return_to_store": "Gå tilbage til {{shopName}}",
+        "return_to_store_simple": "Vend tilbage til butikken"
+      },
+      "wallets": {
+        "return_to_store": "Vend tilbage til butikken",
+        "return_to_checkout": "Gå tilbage til kassen",
+        "redirect_hint": "Du vil blive bedt om at logge ind med {{walletName}}.",
+        "logged_in": "Forbundet til {{email}}",
+        "shipping_line_label": "Forsendelse",
+        "payment_in_progress_title": "Betaling i gang",
+        "payment_in_progress_body": "Din betaling behandles. Din ordre vil snart være færdig.",
+        "redirection_notice": "Du vil blive omdirigeret til {{walletName}} for at fuldføre dit køb",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} ikke tilgængelig",
+            "description": "{{walletName}} var ikke tilgængelig. Brug en anden betalingsmetode eller prøv igen senere.",
+            "instructions": "Der opstod et problem med {{walletName}}. Gå tilbage til butikken for at prøve igen eller vælg en anden betalingsmetode."
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} er i øjeblikket ikke tilgængelig for din ordre. For at fortsætte dit køb, vælg en anden betalingsmetode."
+          },
+          "generic": "Der opstod et problem med {{walletName}}. Prøv igen eller brug en anden betalingsmetode.",
+          "discount_code": "Kan ikke anvende denne rabatkode. Tjek din kode og prøv igen.",
+          "detour": {
+            "stock_problems": "Nogle varer er ikke længere tilgængelige. Luk {{walletName}} og prøv igen.",
+            "price_change": "Nogle varepriser er ændret. Luk {{walletName}} for at gennemgå din ordre og prøv igen.",
+            "queue": "Du er blevet sat i kø for at betale. Luk {{walletName}} for at fortsætte."
+          },
+          "unsupported": {
+            "address": "Forhandleren kan ikke levere til denne adresse",
+            "wallet_is_unavailable": "{{walletName}} kan ikke bruges med denne adresse. Vælg en anden adresse eller luk {{walletName}} for at fuldføre dit køb",
+            "postal_code": "Denne placering understøttes ikke"
+          },
+          "outdated": {
+            "shipping_method": "Forsendelsesmulighederne er ændret for din ordre. Gennemse dit valg.",
+            "payment_terms": "Betalingsbetingelserne er ændret. Gennemse din ordre"
+          },
+          "invalid": {
+            "shipping_option": "Vælg en gyldig forsendelsesmulighed",
+            "email": "Indtast en gyldig e-mailadresse",
+            "zone": "Indtast en gyldig stat / provins",
+            "billing_zone": "Indtast en gyldig faktureringsadresse stat / provins",
+            "emirate": "Indtast en gyldig emirat",
+            "postal_code": "Indtast et gyldigt postnummer",
+            "billing_phone": "Indtast et gyldigt telefonnummer til faktureringsadressen",
+            "reduction_code": "Indtast en gyldig rabatkode eller gavekort",
+            "billing_zip": "Indtast en gyldig faktureringsadresse postnummer / postnummer"
+          },
+          "missing": {
+            "first_name": "Indtast et fornavn"
+          }
+        }
       }
     },
     "sentence": {

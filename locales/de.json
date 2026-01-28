@@ -2341,8 +2341,83 @@
         "calculating_shipping": "Der Versand wird noch berechnet. Versuchen Sie es in ein paar Sekunden erneut. Ihnen wurde noch nichts berechnet.",
         "calculating_taxes": "Die Steuern werden noch berechnet. Versuchen Sie es in ein paar Sekunden erneut. Ihnen wurden keine Gebühren berechnet.",
         "generic_processing_error": {
-          "title": "Bei der Verarbeitung Ihrer Bestellung ist ein Problem aufgetreten"
+          "title": "Bei der Verarbeitung Ihrer Bestellung ist ein Problem aufgetreten",
+          "body": "Ihnen wurde nichts berechnet. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode."
+        },
+        "payment_method_not_available_with_payment_terms": "Die von Ihnen gewählte Zahlungsmethode ist nicht mehr verfügbar, da die Zahlung für diese Bestellung nun auf {{paymentTerms}} Bedingungen erfolgt.",
+        "payment_method_not_available_with_fulfillment_terms": "Die von Ihnen gewählte Zahlungsmethode ist nicht mehr verfügbar, da die Zahlung für diese Bestellung jetzt bei Erfüllung fällig ist.",
+        "payment_method_not_available_with_fixed_terms": "Die von Ihnen gewählte Zahlungsmethode ist nicht mehr verfügbar, da die Zahlung für diese Bestellung später fällig ist.",
+        "payment_method_not_available_with_review_requirement": "Die von Ihnen gewählte Zahlungsmethode ist nicht mehr verfügbar, da die Zahlung fällig wird, sobald Ihre Bestellung bestätigt ist.",
+        "contact_information": {
+          "header": "Um Ihre Angaben zu aktualisieren, {{emailLink}}.",
+          "email_link": "kontaktieren Sie uns"
         }
+      },
+      "review_address_modal": {
+        "title": "Bewertungsadresse",
+        "subtitle": {
+          "other": "Diese Bestellung wird an eine von {{merchant}} angegebene Adresse versandt. Wählen Sie eine Versandadresse aus."
+        },
+        "subtitle_no_match": "Diese Adresse stimmt mit keiner Ihrer gespeicherten Adressen überein.",
+        "subtitle_must_use": "Ihre Bestellung wird an diese Adresse versandt."
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Bewertung",
+          "link_label": "{{partnerDisplayName}} Geschäftsbedingungen"
+        }
+      },
+      "online_store_chat": {
+        "title": "Fragen? Chatten Sie mit uns"
+      },
+      "local_pickup": {
+        "location_address_search_placeholder": "%{postal_code_label} oder Anschrift",
+        "location_information": {
+          "one": "Es gibt %{count} Lagerort in Ihrer Nähe mit Vorrat",
+          "other": "Es gibt %{count} Standorte mit Lagerbestand in Ihrer Nähe"
+        },
+        "toggle_location": "Standort ändern",
+        "cancel": "Abbrechen",
+        "your_location": "Ihr Standort",
+        "search_button": "Geschäfte finden",
+        "no_stores_found": "Keine Geschäfte gefunden",
+        "all_stores_far_away": {
+          "title": "Die nächstgelegenen Orte sind mehr als %{distance} entfernt",
+          "description": "Wählen Sie einen Ort oder %{ship_to_address_link}",
+          "change_location_link": "Ändern Sie Ihren Standort"
+        },
+        "selected_pickup_option_no_longer_available": {
+          "title": "Ihr zuvor ausgewählter Standort ist nicht mehr verfügbar",
+          "description": "Wählen Sie einen neuen Ort oder %{ship_to_address_link}",
+          "ship_to_address_link": "Lieferadresse"
+        },
+        "could_not_resolve_address": "Ihre Adresse konnte nicht gefunden werden. Versuchen Sie es erneut oder verwenden Sie eine andere Adresse.",
+        "paginator": {
+          "accessibility_label": "Lokale Abholung Paginierung",
+          "label": {
+            "one": "%{first} - %{last} von %{count} Geschäft",
+            "other": "%{first} - %{last} von %{count} Geschäften"
+          }
+        },
+        "reveal_more_label": {
+          "one": "Zeige %{count} weitere Standorte",
+          "other": "Zeige %{count} weitere Standorte"
+        }
+      },
+      "captcha": {
+        "title": "Vervollständigen Sie das CAPTCHA, um fortzufahren",
+        "errors": {
+          "not_solved": "Vervollständigen Sie das CAPTCHA, um fortzufahren"
+        }
+      },
+      "clipboard": {
+        "failed_to_copy": "Kopieren fehlgeschlagen"
+      },
+      "discount_errors": {
+        "generic_error": "Ihre Bestellung konnte nicht bearbeitet werden, da Ihr Rabattcode nicht mehr verfügbar ist. Überprüfen Sie Ihren Gesamtbestellwert und versuchen Sie es erneut."
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Sie haben keine Berechtigung mehr, B2B-Bestellungen aufzugeben. %{logout_url}, um stattdessen eine persönliche Bestellung aufzugeben."
       }
     },
     "sentence": {

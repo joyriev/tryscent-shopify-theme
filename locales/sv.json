@@ -2224,7 +2224,60 @@
         "generic_error": "Din beställning kunde inte behandlas eftersom din rabattkod inte längre är giltig. Granska din ordertotal och försök igen."
       },
       "b2b_errors": {
-        "lost_b2b_purchasing_permissions": "Du har inte längre tillåtelse att lägga B2B-beställningar. %{logout_url} för att istället lägga en personlig beställning."
+        "lost_b2b_purchasing_permissions": "Du har inte längre tillåtelse att lägga B2B-beställningar. %{logout_url} för att istället lägga en personlig beställning.",
+        "lost_permissions_subtitle": "Du har inte längre behörighet att lägga B2B-beställningar. Logga ut för att lägga en personlig beställning."
+      },
+      "shop_pay_external": {
+        "title": "Shop Pay Kassabetalning",
+        "errors": {
+          "problem_loading": "Det uppstod ett problem vid inläsning av Shop Pay",
+          "try_again_later": "Kontrollera din anslutning eller stäng detta fönster och försök igen om några ögonblick.",
+          "checkout_has_expired": "Din kassa har gått ut. Stäng detta fönster och försök att slutföra köpet igen från {{shopName}}."
+        },
+        "return_to_store_simple": "Återvänd till butiken"
+      },
+      "wallets": {
+        "return_to_store": "Återvänd till butiken",
+        "return_to_checkout": "Återgå till kassan",
+        "shipping_line_label": "Frakt",
+        "payment_in_progress_body": "Din betalning behandlas. Din beställning kommer att slutföras snart.",
+        "redirection_notice": "Du kommer att omdirigeras till {{walletName}} för att slutföra ditt köp",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} finns inte tillgänglig",
+            "description": "{{walletName}} var inte tillgänglig. Använd en annan betalningsmetod eller försök igen senare.",
+            "instructions": "Det uppstod ett problem med {{walletName}}. Gå tillbaka till butiken för att försöka igen eller välj ett annat betalningssätt.",
+            "unavailable_for_country": "{{walletName}} är inte tillgängligt i {{countryName}}. Välj en annan betalningsmetod för att slutföra ditt köp"
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} är för närvarande inte tillgänglig för din beställning. För att fortsätta ditt köp, välj en annan betalningsmetod."
+          },
+          "discount_code": "Det gick inte att använda denna rabattkod. Kontrollera din kod och försök igen.",
+          "detour": {
+            "stock_problems": "Vissa artiklar finns inte längre tillgängliga. Stäng {{walletName}} och försök igen.",
+            "price_change": "Vissa varupriser har ändrats. Stäng {{walletName}} för att granska din beställning och försök igen.",
+            "queue": "Du har placerats i en kö för att slutföra köpet. Stäng {{walletName}} för att fortsätta."
+          },
+          "unsupported": {
+            "address": "Handlaren kan inte leverera till denna adress",
+            "wallet_is_unavailable": "{{walletName}} kan inte användas med denna adress. Välj en annan adress eller stäng {{walletName}} för att slutföra ditt köp",
+            "postal_code": "Den här platsen stöds inte"
+          },
+          "outdated": {
+            "shipping_method": "Fraktalternativen har ändrats för din beställning. Granska ditt val.",
+            "payment_terms": "Betalningsvillkoren har ändrats. Granska din beställning"
+          },
+          "invalid": {
+            "shipping_option": "Välj ett giltigt fraktalternativ",
+            "zone": "Ange en giltig stat / provins",
+            "billing_zone": "Ange en giltig faktureringsadress stat / provins",
+            "emirate": "Ange en giltig emirat",
+            "postal_code": "Ange en giltig postnummer / postkod",
+            "billing_phone": "Ange ett giltigt telefonnummer för faktureringsadressen",
+            "reduction_code": "Ange en giltig rabattkod eller presentkort",
+            "billing_zip": "Ange en giltig faktureringsadress postnummer / postkod"
+          }
+        }
       }
     }
   }
