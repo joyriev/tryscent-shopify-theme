@@ -2824,7 +2824,100 @@
         "sort_title": "Sorteret",
         "sort": {
           "date": {
-            "newest": "Nyeste til ældste"
+            "newest": "Nyeste til ældste",
+            "oldest": "Ældste til nyeste"
+          },
+          "location": {
+            "ascending": "Placering (A-Å)",
+            "descending": "Placering (Z-A)"
+          },
+          "order_total": {
+            "ascending": "Ordre total (lav til høj)",
+            "descending": "Ordre total (høj til lav)"
+          }
+        },
+        "location_filter_picker": {
+          "current_location": "Nuværende placering"
+        },
+        "filter_title": "Filter",
+        "filter": {
+          "clear_all": "Ryd alle",
+          "apply": "Anvend",
+          "date": {
+            "title": "Bestillingsdato",
+            "last_7_days": "Sidste 7 dage",
+            "last_30_days": "Sidste 30 dage",
+            "last_90_days": "Sidste 90 dage",
+            "last_365_days": "Sidste 12 måneder"
+          }
+        },
+        "show_order_actions_accessibility_label": "Vis ordrehandlinger for ordre {{name}}",
+        "view_order_accessibility_label": "Se ordre {{orderName}}"
+      },
+      "order_status": {
+        "preparing_for_shipping_label": "Forbereder til forsendelse",
+        "ready_for_pickup_description": "Disse varer er klar til afhentning. Venligst medbring din ordrebekræftelse, når du henter din ordre.",
+        "ready_for_pickup_location": "Din ordre er klar til afhentning på stedet",
+        "picked_up_label": "Hentet op",
+        "come_back": "Kom tilbage til denne side for opdateringer om status på din forsendelse.",
+        "company_tracking_number": "{{company}} sporingsnummer:",
+        "confirmed_description_pickup": "Du vil modtage en e-mail, når din ordre er klar til afhentning.",
+        "confirmed_description_digital": "Du vil modtage en e-mail, når din ordre er klar.",
+        "confirmed_description_gift_card_text": "Du vil modtage en sms, når din ordre er klar.",
+        "complete_label": "Fuldstændig",
+        "delivered_description_gift_card": {
+          "one": "Gavekort blev sendt via e-mail.",
+          "other": "Gavekort blev sendt via e-mail."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "Gavekort blev sendt via sms.",
+          "other": "Gavekort blev sendt via sms."
+        },
+        "gift_resend_success": {
+          "one": "Gavekort gensendt",
+          "other": "Gavekort gensendt"
+        },
+        "gift_resend_failure": {
+          "one": "Der opstod et problem med at gensende dit gavekort. Prøv igen eller kontakt os.",
+          "other": "Der opstod et problem med at gensende dine gavekort. Prøv igen eller kontakt os."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "Gavekort vil blive sendt i en separat e-mail.",
+          "other": "Hvert gavekort vil blive sendt i en separat e-mail."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "Gavekort vil blive sendt i en separat tekst.",
+          "other": "Hvert gavekort vil blive sendt i en separat tekst."
+        },
+        "expected_by": "Forventes den {{date}}",
+        "was_expected_by": "Forventet inden {{date}}",
+        "buy_with_prime_logo_accessibility_label": "Amazon Køb med Prime-logo",
+        "in_review_title": "Din ordre er under gennemgang",
+        "last_updated": "Sidst opdateret {{date}}",
+        "no_tracking_number": "Der er intet sporingsnummer for denne forsendelse.",
+        "tracking_number": {
+          "one": "Sporingsnummer",
+          "other": "Sporingsnumre"
+        },
+        "out_for_delivery_label": "Udleveres",
+        "submitted_label": "Indsendt",
+        "submitted_description": "Gennemse ordre- og betalingsoplysninger.",
+        "view_order_for_details": "Se ordre for detaljer",
+        "delivery_promise_v2": {
+          "promise_line": {
+            "shop_promise_brand_label": "Levering garanteret af",
+            "external_promise_brand_label": "Levering af",
+            "not_delivered_by_label": "Leveret efter {{date}}",
+            "delivery_guarantee_expired_label": "Leveringsgaranti udløbet",
+            "modal_accessibility_button_label": "Detaljer om leveringsløfte",
+            "track_with_shop_button_label": "Spor med Shop",
+            "claim_shop_cash_button_label": "Krav Shoppen Kontanter"
+          },
+          "details_modal": {
+            "title": "Leveringsgaranti",
+            "active_delivery_guarantee_label": "Levering inden {{date}}",
+            "order_includes_guarantees_label": "Din ordre indeholder {{deliveryAgreementsCount}} garantier",
+            "order_includes_guarantees_description": "Shop Promise garanterer hurtig og pålidelig levering. Kræv Shop Cash, hvis din ordre ankommer efter {{date}}."
           }
         }
       }

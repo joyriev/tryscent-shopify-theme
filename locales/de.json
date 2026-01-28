@@ -2918,15 +2918,17 @@
         "email_resend_button": "Code erneut senden",
         "email_resend_button_accessibility_label": "Verifizierungscode erneut senden",
         "one_time_password_label": "6-stelliger Code",
-        "title": "E-Mail verifizieren",
-        "verify_button_accessibility_label": "Einmalpasswort überprüfen",
+        "title": "E-Mail bestätigen",
+        "verify_button_accessibility_label": "Einmalpasswort verifizieren",
         "verify_button": "Überprüfen",
         "cancel_button": "Abbrechen",
-        "cancel_button_accessibility_label": "Bearbeitung der E-Mail abbrechen"
+        "cancel_button_accessibility_label": "Bearbeitung der E-Mail abbrechen",
+        "email_resend_button_success_toast_message": "Verifizierungscode gesendet",
+        "email_resend_button_error_banner_message": "Verifizierungscode konnte nicht gesendet werden"
       },
       "email_update_success_modal": {
-        "title": "E-Mail verifizieren",
-        "description": "E-Mail erfolgreich aktualisiert. Weiterleitung zur Anmeldung."
+        "title": "E-Mail bestätigen",
+        "description": "E-Mail erfolgreich aktualisiert. Weiterleitung zum Login."
       },
       "loading_accessibility_message": "Lade Kontoinformationen",
       "profile_card": {
@@ -2936,7 +2938,18 @@
         "email": "E-Mail",
         "phone_number_help_text": "Telefonnummer kann nicht bearbeitet werden",
         "errors": {
-          "name_too_long": "{{fieldName}} ist zu lang (maximal sind 255 Zeichen)"
+          "name_too_long": "{{fieldName}} ist zu lang (maximal sind 255 Zeichen)",
+          "name_cannot_contain_url": "{{fieldName}} darf keine Internetadresse enthalten",
+          "invalid_email_format": "Geben Sie eine gültige E-Mail-Adresse ein"
+        }
+      },
+      "profile_update_confirmation_message": "Profil aktualisiert",
+      "email_update_confirmation_message": "E-Mail auf {{email}} aktualisiert",
+      "people": {
+        "pagination": {
+          "load_more": "Mehr laden",
+          "load_more_accessibility_label": "Mehr Personen laden",
+          "loading_accessibility_label": "Lade Personen"
         }
       }
     },
@@ -3003,6 +3016,120 @@
         }
       }
     },
-    "enable_javascript": "Um Ihr Konto anzuzeigen, aktivieren Sie JavaScript in den Browsereinstellungen oder melden Sie sich mit einem anderen Browser an."
+    "enable_javascript": "Um Ihr Konto anzuzeigen, aktivieren Sie JavaScript in den Browsereinstellungen oder melden Sie sich mit einem anderen Browser an.",
+    "orders": {
+      "switch_order_type_pending_orders_accessibility_label": "Bestellart wechseln, derzeit ausstehende Bestellungen anzeigen",
+      "switch_order_type_confirmed_orders_accessibility_label": "Bestellart wechseln, derzeit bestätigte Bestellungen anzeigen",
+      "order_list": {
+        "delivered": "Geliefert am {{date}}",
+        "empty_state_order_source_description": "Nur Bestellungen, die von {{email}} aufgegeben wurden, werden hier angezeigt.",
+        "empty_state_subtitle": "Gehe zum Geschäft, um eine Bestellung aufzugeben.",
+        "no_order_banner": "Um Ihre Erweiterung auf der Bestellstatusseite zu testen, erstellen Sie eine Bestellung.",
+        "estimated_shortform": "Gegründet {{date}}",
+        "one_images_accessibility_label": "Bestellung enthält {{lineItemName1}}",
+        "two_images_accessibility_label": "Bestellung enthält {{lineItemName1}}, {{lineItemName2}}",
+        "more_than_three_products_accessibility_label": "Die Bestellung enthält {{lineItemName1}}, {{lineItemName2}} und {{numberOfAdditionalProducts}} weitere Produkte",
+        "more_than_four_products_accessibility_label": "Die Bestellung enthält {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}} und {{numberOfAdditionalProducts}} weitere Produkte",
+        "carousel": {
+          "three_products_accessibility_label": "Die Bestellung enthält {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "Die Bestellung enthält {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "Die Bestellung enthält {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}, {{lineItemName5}} Menge {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "Die Bestellung enthält {{lineItemName1}} Menge {{lineItemQuantity1}}, {{lineItemName2}} Menge {{lineItemQuantity2}}, {{lineItemName3}} Menge {{lineItemQuantity3}}, {{lineItemName4}} Menge {{lineItemQuantity4}}, {{lineItemName5}} Menge {{lineItemQuantity5}}, {{lineItemName6}} Menge {{lineItemQuantity6}}",
+          "view_order_details": "Bestelldetails ansehen",
+          "previous": "Zurück"
+        },
+        "no_filtered_results_description": "Filter entfernen oder anpassen, um Ihre Bestellungen zu sehen",
+        "no_filtered_results_title": "Keine gefilterten Ergebnisse",
+        "pagination": {
+          "nav_accessibility_label": "Bestell-Navigationsschaltflächen",
+          "previous_accessibility_label": "Frühere Bestellungen",
+          "load_more": "Mehr laden",
+          "load_more_accessibility_label": "Mehr Bestellungen laden"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Bestellung zur Ansicht der Details",
+            "last_updated": "Zuletzt aktualisiert {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Voraussichtliche Lieferung {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "due_today": "Zahlung fällig heute",
+            "due_without_date": "Zahlung fällig",
+            "due_on_fulfillment": "Zahlung fällig bei Erfüllung",
+            "pay_to_confirm": "Zur Bestätigung bezahlen",
+            "payment_not_due": "Zahlung noch nicht fällig"
+          },
+          "list_view": {
+            "due_today": "Fällig heute",
+            "due_on_fulfillment": "Fällig bei Erfüllung",
+            "pay_to_confirm": "Zur Bestätigung bezahlen"
+          }
+        },
+        "sort_currently_sorted_by_accessibility_label": "Derzeit sortiert nach: {{option}}",
+        "sort": {
+          "date": {
+            "newest": "Neueste zuerst",
+            "oldest": "Älteste zuerst, neueste zuletzt"
+          },
+          "location": {
+            "ascending": "Ort (A-Z)",
+            "descending": "Ort (Z-A)"
+          },
+          "order_number": {
+            "ascending": "Bestellnummer (aufsteigend)",
+            "descending": "Bestellnummer (absteigend)"
+          },
+          "order_total": {
+            "ascending": "Bestellgesamtbetrag (aufsteigend)",
+            "descending": "Gesamtbestellwert (absteigend)"
+          }
+        },
+        "filter": {
+          "clear_section": "Abschnitt löschen",
+          "clear_all": "Alle löschen",
+          "date": {
+            "last_7_days": "Letzte 7 Tage",
+            "last_30_days": "Letzte 30 Tage",
+            "last_90_days": "Letzte 90 Tage",
+            "last_365_days": "Letzte 12 Monate"
+          }
+        },
+        "show_order_actions_accessibility_label": "Bestellaktionen für Bestellung {{name}} anzeigen",
+        "view_order": "Bestellung ansehen"
+      },
+      "order_status": {
+        "attempted_delivery_label": "Zustellversuch",
+        "attempted_to_deliver_label": "Zustellversuch unternommen",
+        "preparing_for_shipping_label": "Vorbereitung für den Versand",
+        "ready_for_pickup_label": "Bereit zur Abholung",
+        "ready_for_pickup_description": "Diese Artikel sind zur Abholung bereit. Bitte bringen Sie Ihre Bestellbestätigung mit, wenn Sie Ihre Bestellung abholen.",
+        "ready_for_pickup_location": "Ihre Bestellung ist zur Abholung am Standort bereit",
+        "canceled_label": "Abgebrochen",
+        "canceled_title": "Ihre Bestellung wurde storniert",
+        "come_back": "Kehren Sie auf diese Seite zurück, um Updates zum Status Ihrer Sendung zu erhalten.",
+        "company_tracking_number": "{{company}} Sendungsnummer:",
+        "confirmed_title": "Ihre Bestellung ist bestätigt",
+        "confirmed_description_pickup": "Sie erhalten eine E-Mail, wenn Ihre Bestellung zur Abholung bereitsteht.",
+        "confirmed_description_digital": "Sie erhalten eine E-Mail, sobald Ihre Bestellung fertig ist.",
+        "confirmed_description_gift_card_text": "Sie erhalten eine SMS, wenn Ihre Bestellung fertig ist.",
+        "delivered_label": "Geliefert",
+        "delivered_description_gift_card": {
+          "one": "Geschenkkarte wurde per E-Mail gesendet.",
+          "other": "Geschenkkarten wurden per E-Mail versendet."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "Geschenkkarte wurde per SMS gesendet.",
+          "other": "Geschenkkarten wurden per SMS versendet."
+        },
+        "gift_card_label": {
+          "one": "Geschenkkarte",
+          "other": "Geschenkkarten"
+        }
+      }
+    }
   }
 }
