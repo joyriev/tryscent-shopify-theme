@@ -1594,7 +1594,56 @@
         "processing_error_checkout_as_guest": "Det uppstod ett problem vid behandlingen av din betalning. Försök igen med en annan betalningsmetod eller {{checkout_as_guest_link}}.",
         "selected_payment_method": "Det uppstod ett problem med din valda betalningsmetod och du har inte debiterats. Försök igen eller använd en annan betalningsmetod.",
         "payment_method_billing_address": "Det uppstod ett problem med faktureringsadressen för din valda betalningsmetod och du har inte debiterats. Kontrollera adressen och försök igen eller använd en annan betalningsmetod.",
-        "test_mode_live_card": "Den här butiken kan inte ta emot riktiga beställningar eller riktiga betalningar."
+        "test_mode_live_card": "Den här butiken kan inte ta emot riktiga beställningar eller riktiga betalningar.",
+        "transient_error": "Det uppstod ett problem vid behandlingen av din betalning. Försök att uppdatera sidan eller kontrollera din internetanslutning.",
+        "successful_offsite_with_gift_card_error": "Det uppstod ett problem vid behandlingen av din presentkortbetalning. Försök igen eller använd en annan betalningsmetod.",
+        "development_store_order_limit_reached": "Du har nått gränsen för beställningar i utvecklingsbutiken med denna betalningshanterare. För att göra en ny beställning måste du använda en testbetalningsgateway. Läs mer om %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "För att lägga en testbeställning behöver du använda en testbetalningsgateway. Läs mer om %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "testar beställningar i utvecklingsbutiker",
+        "payment_above_threshold": "Betalningsbeloppet överstiger den monetära gränsen för denna region. Minska totalsumman och försök igen",
+        "risky": "Det uppstod ett problem vid behandlingen av din betalning. Försök igen eller använd en annan betalningsmetod.",
+        "name_mismatch": "Kontrollera dina kortuppgifter. Namnet på ditt kort och faktureringsadressen stämmer inte överens.",
+        "shop_pay_wallet_not_available": "Shop Pay är inte tillgängligt för denna kassa.",
+        "paypal_over_capture": "Ditt orderbelopp har uppdaterats. Betala med {{walletName}} för att slutföra din beställning.",
+        "captcha_required": "Ange betalningsuppgifter och lös captcha för att slutföra ditt köp.",
+        "captcha_required_without_payment_information": "Lös captcha för att slutföra ditt köp."
+      },
+      "shipping_errors": {
+        "shipping_method": "Fraktalternativen har ändrats för din beställning. Granska ditt val.",
+        "shipping_method_not_available": "Din kundvagn har uppdaterats och de artiklar du lagt till kan inte skickas till din adress. Ta bort artiklarna för att slutföra din beställning.",
+        "shipping_method_not_available_generic": {
+          "one": "Din beställning kan inte skickas till den valda adressen. Kontrollera din adress för att säkerställa att den är korrekt och försök igen, eller välj en annan adress.",
+          "other": "Vissa artiklar i din kundvagn kan inte skickas till den adress du angav. Kontrollera din adress för att säkerställa att den är korrekt och försök igen, eller välj en annan adress."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Varorna i kundvagnen uppfyller inte pris- eller viktkraven för att kvalificera sig för frakt. Uppdatera din kundvagn och försök igen.",
+        "shipping_method_not_available_updated": {
+          "one": "Föremålet du lade till skickas inte till din plats. Ta bort det för att gå till Checkout, eller kontakta butiken.",
+          "other": "En eller flera artiklar du lagt till skickas inte till din plats. Ta bort dem för att Checkout, eller kontakta butiken."
+        },
+        "payment_method_not_supported": "Du kan inte använda denna betalningsmetod för %{country}. Använd en annan betalningsmetod för att skicka till detta land.",
+        "title": "Frakt ej tillgänglig",
+        "invalid_selected_address": "Den valda leveransadressen är inte giltig",
+        "invalid_selected_address_with_update_link": "Den valda leveransadressen är inte giltig. %{update_address_link} eller välj en annan adress",
+        "unavailable_addresses_only_countries": "Din beställning kan endast skickas till {{countriesList}}. Lägg till en ny adress för att fortsätta.",
+        "unavailable_address_country": "Frakt är inte tillgängligt i det land du valde. Använd en annan adress för att fortsätta",
+        "unavailable_selected_address": "Frakt inte tillgänglig för vald adress",
+        "unavailable_selected_address_for_region": "Frakt är inte tillgänglig för {{region}}. Välj en annan adress för att fortsätta"
+      },
+      "alternative_payment_method_banner": {
+        "or_check_out_another_way": "Eller gå till Checkout på ett annat sätt",
+        "or_pay_with_credit_card": "Eller betala med kreditkort"
+      },
+      "post_purchase": {
+        "page_title": "Efter köp",
+        "title": "Efter köp",
+        "escape_confirmation": "Du har betalat för din beställning.",
+        "components": {
+          "processing": "Bearbetar…"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Omdirigerar…",
+        "redirecting_title": "Omdirigerar…"
       }
     }
   }

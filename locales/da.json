@@ -913,16 +913,88 @@
         "new_bank_account_disclaimer": "Ved at fuldføre din ordre giver du %{shop_name} tilladelse til at trække beløbet på den nedenstående konto via ACH på det angivne tidspunkt."
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte."
+        "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte.",
+        "shipping_method": "Forsendelsesmulighederne er ændret for din ordre. Gennemse dit valg.",
+        "shipping_method_not_available": "Din indkøbskurv er blevet opdateret, og de varer, du har tilføjet, kan ikke sendes til din adresse. Fjern varerne for at fuldføre din ordre.",
+        "shipping_method_not_available_generic": {
+          "one": "Din ordre kan ikke sendes til den valgte adresse. Gennemgå din adresse for at sikre, at den er korrekt, og prøv igen, eller vælg en anden adresse.",
+          "other": "Nogle varer i din kurv kan ikke sendes til den adresse, du har indtastet. Gennemgå din adresse for at sikre, at den er korrekt, og prøv igen, eller vælg en anden adresse."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Varer i kurven opfylder ikke pris- eller vægtkravene for at kvalificere til forsendelse. Opdater din kurv og prøv igen.",
+        "shipping_method_not_available_updated": {
+          "one": "Den vare, du har tilføjet, kan ikke sendes til din adresse. Fjern den for at gennemføre Checkout, eller kontakt butikken.",
+          "other": "En eller flere varer, du har tilføjet, kan ikke sendes til din adresse. Fjern dem for at gennemføre Checkout, eller kontakt butikken."
+        },
+        "payment_method_not_supported": "Du kan ikke bruge denne betalingsmetode til %{country}. Brug en anden betalingsmetode for at sende til dette land.",
+        "empty_state": "Indtast din leveringsadresse for at se tilgængelige forsendelsesmetoder.",
+        "title": "Forsendelse ikke tilgængelig",
+        "invalid_selected_address_with_update_link": "Den valgte leveringsadresse er ikke gyldig. %{update_address_link} eller vælg en anden adresse",
+        "unavailable_address_country": "Forsendelse er ikke tilgængelig i det land, du har valgt. Brug en anden adresse for at fortsætte",
+        "unavailable_selected_address": "Forsendelse ikke tilgængelig for den valgte adresse",
+        "unavailable_selected_address_for_region": "Forsendelse er ikke tilgængelig for {{region}}. Vælg en anden adresse for at fortsætte"
       },
       "payment_errors": {
-        "shop_pay_wallet_not_available": "Shop Pay er ikke tilgængelig for denne kasse.",
+        "shop_pay_wallet_not_available": "Shop Pay er ikke tilgængelig for denne betaling.",
         "market_manager_blocks_wallet_payments": "Betalingsmetoden understøttes ikke i dit land.",
-        "captcha_required": "Indtast venligst betalingsoplysninger og løs captchaen for at gennemføre dit køb.",
-        "captcha_required_without_payment_information": "Løs venligst captchaen for at gennemføre dit køb."
+        "captcha_required": "Indtast betalingsoplysninger og løs captchaen for at fuldføre dit køb.",
+        "captcha_required_without_payment_information": "Løs captchaen for at fuldføre dit køb.",
+        "amount_too_small": "Det mindste betalingsbeløb skal være højere end $0,50 USD. Prøv igen med et højere beløb.",
+        "method_not_available": "Den ønskede betalingsmetode er ikke tilgængelig. Vælg en anden betalingsmetode og prøv igen.",
+        "available_methods_updated": "Tilgængelige betalingsmetoder er blevet opdateret.",
+        "generic_error": "Der opstod et problem med behandlingen af din betaling. Prøv igen eller brug en anden betalingsmetode.",
+        "credit_card_processing": "Din betaling kan ikke behandles af tekniske årsager. Prøv igen om et par minutter eller brug en anden betalingsmetode.",
+        "checkout_amount_changed": "Din betaling kunne ikke gennemføres, fordi det skyldige beløb ved kassen er ændret. Tjek din ordre og prøv igen.",
+        "deferred_payment_not_allowed": "Udsatte betalinger er ikke tilladt. Tjek din ordre og prøv igen.",
+        "deferred_payment_required": "Denne ordre kræver udsat betaling. Tjek din ordre og prøv igen.",
+        "deferred_amount_changed": "Din betaling kunne ikke gennemføres, fordi det udskudte betalingsbeløb er ændret. Tjek din ordre og prøv igen.",
+        "deferred_date_changed": "Din betaling kunne ikke gennemføres, fordi den udskudte betalingsdato er ændret. Tjek din ordre og prøv igen.",
+        "order_total_changed": "Din samlede ordre er ændret. Gennemse og prøv igen.",
+        "payment_processing": "Din betaling kan ikke behandles af tekniske årsager. Prøv igen eller brug en anden betalingsmetode.",
+        "payment_processing_no_retry": "Din betaling kan ikke gennemføres af tekniske årsager. Prøv en anden betalingsmetode.",
+        "paypal_zero_amount": "Du kan ikke bruge PayPal til ordrer på %{amount}. Bekræft, at din ordre er korrekt, og betal uden PayPal.",
+        "paypal_invalid_token": "PayPal var ikke tilgængelig. Prøv igen eller brug en anden betalingsmulighed.",
+        "pay_later_failed": "Der opstod en fejl under behandlingen af din betaling med Pay later. Vælg en anden betalingsmetode og prøv igen.",
+        "three_d_secure_failed": "Din betaling kunne ikke bekræftes. Prøv igen eller brug en anden betalingsmetode.",
+        "three_d_secure_failed_duplicate": "Kortets 3D Secure-godkendelse mislykkedes, fordi en anden allerede er i gang.",
+        "three_d_secure_failed_payment_method": "Dit kort kunne ikke bekræftes. Prøv igen eller tilføj et andet kort.",
+        "three_d_secure_throttled": "For mange forsøg; vent før du prøver igen",
+        "subscription_agreement_blank": "For at købe et abonnement skal dine betalingsoplysninger gemmes. For at fortsætte, bekræft at du er enig, eller fjern abonnementsvarer fra din ordre.",
+        "insufficient_funds": "Din betaling blev afvist på grund af utilstrækkelige midler. Prøv igen eller brug en anden betalingsmetode.",
+        "multiple_deferred_payment_not_allowed": "Der er kun tilladt én udsat betaling pr. anmodning. Tjek din anmodning og prøv igen.",
+        "shipping_must_match_billing": "Faktureringsadressen skal være den samme som leveringsadressen. Brug en anden betalingsmetode.",
+        "shipping_company_required_error": "{{shopName}} kræver et firmanavn til leveringsadressen.",
+        "decision_rule_block": "Der opstod et problem med behandlingen af din betaling. Kontakt butiksejeren.",
+        "pick_up_card": "Dit kort blev afvist. Prøv igen eller brug en anden betalingsmetode.",
+        "cannot_verify": "Dine betalingsoplysninger kunne ikke bekræftes. Tjek dine kortoplysninger og prøv igen.",
+        "invalid_cvc": "Indtast en gyldig sikkerhedskode",
+        "payment_method_not_applicable": "Denne betalingsmetode er ikke anvendelig. Brug en anden betalingsmetode.",
+        "card_declined": "Dit kort blev afvist. Prøv igen eller brug en anden betalingsmetode.",
+        "processing_error": "Der opstod et problem med behandlingen af din betaling. Prøv igen eller brug en anden betalingsmetode.",
+        "processing_error_checkout_as_guest": "Der opstod et problem med at behandle din betaling. Prøv igen med en anden betalingsmetode eller {{checkout_as_guest_link}}.",
+        "selected_payment_method": "Der opstod et problem med din valgte betalingsmetode, og du er ikke blevet opkrævet. Prøv igen eller brug en anden betalingsmetode.",
+        "payment_method_billing_address": "Der var et problem med faktureringsadressen for din valgte betalingsmetode, og du er ikke blevet opkrævet. Tjek adressen og prøv igen, eller brug en anden betalingsmetode.",
+        "call_issuer": "Dit kort blev afvist. Brug en anden betalingsmetode eller kontakt din bank for mere information.",
+        "test_mode_live_card": "Denne butik kan ikke acceptere rigtige ordrer eller rigtige betalinger.",
+        "test_mode_enabled_only_test_cards": "Testtilstand er aktiveret, kun testkreditkort kan tilføjes.",
+        "transient_error": "Der opstod et problem med at behandle din betaling. Prøv at opdatere denne side eller tjek din internetforbindelse.",
+        "missing_shipping_address": "Din betaling kunne ikke behandles, fordi din leveringsadresse mangler. Tilføj en leveringsadresse og prøv igen.",
+        "invalid_shipping_address": "Din betaling kunne ikke behandles, fordi vi ikke kunne finde din leveringsadresse. Tjek din leveringsadresse og prøv igen.",
+        "successful_offsite_with_gift_card_error": "Der opstod et problem med behandlingen af din gavekortbetaling. Prøv igen eller brug en anden betalingsmetode.",
+        "development_store_order_limit_reached": "Du har nået grænsen for ordrer i udviklingsbutikken med denne betalingsbehandler. For at afgive en ny ordre skal du bruge en testbetalingsgateway. Læs mere om %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "For at afgive en testbestilling skal du bruge en testbetalingsgateway. Læs mere om %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "testordrer i udviklingsbutikker",
+        "payment_above_threshold": "Betalingsbeløbet overstiger det monetære loft for denne region. Reducer det samlede beløb og prøv igen",
+        "risky": "Der opstod et problem med behandlingen af din betaling. Prøv igen eller brug en anden betalingsmetode.",
+        "name_mismatch": "Kontrollér dine kortoplysninger. Navnet på dit kort og faktureringsadressen stemmer ikke overens.",
+        "paypal_over_capture": "Din samlede ordre blev opdateret. Betal med {{walletName}} for at fuldføre din ordre."
       },
       "merchant_instruction_errors": {
-        "invalid_entrypoint_for_remote_negotiation": "Fjernforhandlingsinstruktionen kan ikke gives til en ikke-fjernforhandlingssession."
+        "invalid_entrypoint_for_remote_negotiation": "Fjernforhandlingsinstruktionen kan ikke gives til en ikke-fjernforhandlingssession.",
+        "empty_stable_id": "Instruktionen for %{position} %{name} varer indeholder en tom stabil ID.",
+        "invalid_stable_id_target": "Instruktionen for %{position} %{name} varer henviser til stable ID %{stable_id}, men den stable ID findes ikke i varelinjerne.",
+        "duplicate_variant_id": "Instruktionen for %{position} %{name} varer indeholder en duplikeret variant-ID %{variant_id}.",
+        "invalid_variant_id_target": "Instruktionen for %{name}-varer henviser til variant-ID %{variant_id}, men den variant findes ikke i varelinjerne.",
+        "invalid_price_override_target": "Prisoverskrivningsinstruktionen for varelinje %{stable_id} er ugyldig, da det er en del af en pakke."
       },
       "stock": {
         "out_of_stock_in_context_label": "Dette produkt er ikke tilgængeligt i dit land/område.",
@@ -1574,8 +1646,26 @@
       "redeemable_errors": {
         "gift_card": {
           "insufficient_funds": "Dette gavekort har ingen penge tilbage",
-          "currency_mismatch": "Kun gavekort i %{shop_currency} accepteres"
+          "currency_mismatch": "Kun gavekort i %{shop_currency} accepteres",
+          "generic": "Gavekortet kunne ikke tilføjes til kassen",
+          "no_longer_available": "Dette gavekort kan ikke længere bruges ved denne betaling"
         }
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Ekspres betaling",
+        "or_check_out_another_way": "Eller prøv en anden måde at Checkout på"
+      },
+      "post_purchase": {
+        "components": {
+          "expand": "Se mere",
+          "processing": "Behandler…",
+          "submit": "Indsend"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Omdirigerer…",
+        "redirecting_title": "Omdirigerer…",
+        "redirecting_notice": "Vent venligst, mens vi omdirigerer dig."
       }
     },
     "sentence": {

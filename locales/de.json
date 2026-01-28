@@ -799,12 +799,30 @@
         "new_bank_account_disclaimer": "Indem Sie Ihre Bestellung abschließen, erteilen Sie %{shop_name} die Erlaubnis, das unten angegebene Konto per Lastschriftverfahren mit dem angegebenen Betrag und zum angegebenen Zeitpunkt zu belasten."
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."
+        "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren.",
+        "shipping_method": "Die Versandoptionen für Ihre Bestellung haben sich geändert. Überprüfen Sie Ihre Auswahl.",
+        "shipping_method_not_available": "Ihr Warenkorb wurde aktualisiert und die von Ihnen hinzugefügten Artikel können nicht an Ihre Adresse versendet werden. Entfernen Sie die Artikel, um Ihre Bestellung abzuschließen.",
+        "shipping_method_not_available_generic": {
+          "one": "Ihre Bestellung kann nicht an die ausgewählte Adresse versendet werden. Überprüfen Sie Ihre Adresse, um sicherzustellen, dass sie korrekt ist, und versuchen Sie es erneut, oder wählen Sie eine andere Adresse aus.",
+          "other": "Einige Artikel in Ihrem Warenkorb können nicht an die von Ihnen eingegebene Adresse versendet werden. Überprüfen Sie Ihre Adresse, um sicherzustellen, dass sie korrekt ist, und versuchen Sie es erneut, oder wählen Sie eine andere Adresse aus."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Die Artikel im Warenkorb erfüllen nicht die Preis- oder Gewichtsvoraussetzungen für den Versand. Aktualisieren Sie Ihren Warenkorb und versuchen Sie es erneut.",
+        "shipping_method_not_available_updated": {
+          "one": "Der Artikel, den Sie hinzugefügt haben, wird nicht an Ihren Standort versandt. Entfernen Sie ihn, um zur Kasse zu gehen, oder kontaktieren Sie das Geschäft.",
+          "other": "Ein oder mehrere Artikel, die Sie hinzugefügt haben, werden nicht an Ihren Standort geliefert. Entfernen Sie sie, um zur Kasse zu gehen, oder kontaktieren Sie das Geschäft."
+        },
+        "payment_method_not_supported": "Sie können diese Zahlungsmethode für %{country} nicht verwenden. Nutzen Sie eine andere Zahlungsmethode, um in dieses Land zu versenden.",
+        "empty_state": "Geben Sie Ihre Lieferadresse ein, um verfügbare Versandmethoden anzuzeigen.",
+        "invalid_selected_address": "Die ausgewählte Versandadresse ist ungültig",
+        "invalid_selected_address_with_update_link": "Die ausgewählte Lieferadresse ist ungültig. %{update_address_link} oder wählen Sie eine andere Adresse aus",
+        "unavailable_address_country": "Der Versand ist in dem von Ihnen ausgewählten Land nicht verfügbar. Verwenden Sie eine andere Adresse, um fortzufahren.",
+        "unavailable_selected_address": "Versand für die ausgewählte Adresse nicht verfügbar",
+        "unavailable_selected_address_for_region": "Der Versand ist für {{region}} nicht verfügbar. Wählen Sie eine andere Adresse, um fortzufahren."
       },
       "payment_errors": {
         "shop_pay_wallet_not_available": "Shop Pay ist für diesen Checkout nicht verfügbar.",
-        "market_manager_blocks_wallet_payments": "Die Zahlungsmethode wird in Ihrem Land nicht unterstützt.",
-        "captcha_required_without_payment_information": "Bitte lösen Sie das Captcha, um Ihren Einkauf abzuschließen.",
+        "market_manager_blocks_wallet_payments": "Zahlungsmethode wird in Ihrem Land nicht unterstützt.",
+        "captcha_required_without_payment_information": "Lösen Sie das Sicherheitsrätsel, um Ihren Kauf abzuschließen.",
         "amount_too_small": "Der Mindestzahlungsbetrag muss höher als 0,50 USD sein. Versuchen Sie es erneut mit einem höheren Betrag.",
         "method_not_available": "Die gewünschte Zahlungsmethode ist nicht verfügbar. Wählen Sie eine andere Zahlungsmethode und versuchen Sie es erneut.",
         "generic_error": "Bei der Verarbeitung Ihrer Zahlung ist ein Problem aufgetreten. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
@@ -844,7 +862,20 @@
         "selected_payment_method": "Es gab ein Problem mit Ihrer ausgewählten Zahlungsmethode und Ihnen wurde nichts berechnet. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
         "payment_method_billing_address": "Es gab ein Problem mit der Rechnungsadresse Ihrer ausgewählten Zahlungsmethode und Ihnen wurde nichts berechnet. Überprüfen Sie die Adresse und versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
         "call_issuer": "Ihre Karte wurde abgelehnt. Verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich für weitere Informationen an Ihre Bank.",
-        "test_mode_live_card": "Dieser Shop kann keine echten Bestellungen oder echten Zahlungen annehmen."
+        "test_mode_live_card": "Dieser Shop kann keine echten Bestellungen oder echten Zahlungen annehmen.",
+        "transient_error": "Bei der Verarbeitung Ihrer Zahlung ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung.",
+        "missing_shipping_address": "Ihre Zahlung konnte nicht verarbeitet werden, da Ihre Lieferadresse fehlt. Fügen Sie eine Lieferadresse hinzu und versuchen Sie es erneut.",
+        "invalid_shipping_address": "Ihre Zahlung konnte nicht verarbeitet werden, da wir Ihre Lieferadresse nicht finden konnten. Überprüfen Sie Ihre Lieferadresse und versuchen Sie es erneut.",
+        "successful_offsite_with_gift_card_error": "Bei der Verarbeitung Ihrer Geschenkkarten-Zahlung ist ein Problem aufgetreten. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "development_store_order_limit_reached": "Sie haben das Limit für Bestellungen in Entwicklungsläden mit diesem Zahlungsabwickler erreicht. Um eine weitere Bestellung aufzugeben, müssen Sie ein Testzahlungstor verwenden. Erfahren Sie mehr über %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "Um eine Testbestellung aufzugeben, müssen Sie ein Test-Zahlungstor verwenden. Erfahren Sie mehr über %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "Testbestellungen in Entwicklungsstores",
+        "payment_above_threshold": "Der Zahlungsbetrag liegt über dem Geldbetraglimit für diese Region. Verringern Sie den Gesamtbetrag und versuchen Sie es erneut.",
+        "risky": "Bei der Verarbeitung Ihrer Zahlung ist ein Problem aufgetreten. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+        "expired_buyer_action": "Die Zahlungsmethode hat die Zeitüberschreitung erreicht. Bitte versuchen Sie es erneut.",
+        "name_mismatch": "Überprüfen Sie Ihre Kartendaten. Der Name auf Ihrer Karte und die Rechnungsadresse stimmen nicht überein.",
+        "paypal_over_capture": "Ihre Bestellsumme wurde aktualisiert. Zahlen Sie mit {{walletName}}, um Ihre Bestellung abzuschließen.",
+        "captcha_required": "Geben Sie die Zahlungsinformationen ein und lösen Sie das Sicherheitsrätsel, um Ihren Kauf abzuschließen."
       },
       "merchant_instruction_errors": {
         "invalid_entrypoint_for_remote_negotiation": "Die Fernverhandlungsanweisung kann nicht an eine Nicht-Fernverhandlungssitzung übermittelt werden.",
@@ -1687,6 +1718,22 @@
           "throttle_limit_exceeded": "Sie haben die maximale Anzahl an Versuchen überschritten. Versuchen Sie es später erneut.",
           "no_longer_available": "Diese Geschenkkarte kann an dieser Kasse nicht mehr verwendet werden."
         }
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Express-Kasse",
+        "or_check_out_another_way": "Oder auf eine andere Weise zur Kasse gehen",
+        "or_pay_with_credit_card": "Oder mit Kreditkarte bezahlen",
+        "show_more_options": "Mehr Optionen anzeigen"
+      },
+      "post_purchase": {
+        "escape_confirmation": "Sie haben für Ihre Bestellung bezahlt.",
+        "components": {
+          "processing": "Verarbeitung…",
+          "submit": "Absenden"
+        }
+      },
+      "processing": {
+        "redirecting_notice": "Bitte warten Sie, während wir Sie weiterleiten."
       }
     },
     "sentence": {
