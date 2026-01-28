@@ -2652,7 +2652,109 @@
     },
     "addresses": {
       "pincode": "PIN-Code",
-      "state": "Status"
+      "state": "Status",
+      "state_and_territory": "Bundesland/Territorium",
+      "county": "Landkreis",
+      "emirate": "Emirat",
+      "governorate": "Gouvernement",
+      "confirm": "Sind Sie sicher, dass Sie diese Adresse löschen möchten?"
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "Bestseller",
+        "price_ascending": "Preis, aufsteigend",
+        "price_descending": "Preis, von hoch nach niedrig",
+        "date_descending": "Datum, neu nach alt"
+      }
+    },
+    "errors": {
+      "credit_card_session_expired": "Die Autorisierung der Kreditkarte ist abgelaufen, bitte geben Sie Ihre Zahlungsinformationen erneut ein. Ihre Karte wurde nicht belastet.",
+      "invalid_email": "muss eine gültige E-Mail-Adresse sein",
+      "discount_limit_reached": "Dieser Rabatt hat sein Nutzungslimit erreicht",
+      "discount_not_found": "Es konnte kein gültiger Rabatt gefunden werden, der dem eingegebenen Code entspricht",
+      "customer_already_used_once_per_customer_discount_notice": "Dieser Rabatt hat sein Nutzungslimit erreicht",
+      "gift_card_already_applied": "Der Code wurde bereits auf Ihren Checkout angewendet",
+      "gift_card_code_invalid": "Code ist ungültig",
+      "gift_card_currency_mismatch": "Ihre Geschenkkarte ist in %{gift_card_currency}. Kontaktieren Sie uns, um sie in %{checkout_currency} neu ausstellen zu lassen.",
+      "gift_card_depleted": "Auf dieser Geschenkkarte sind keine Guthaben mehr vorhanden",
+      "gift_card_disabled": "Geschenkkarte ist deaktiviert",
+      "bad_domain": "enthält einen ungültigen Domainnamen",
+      "taken": "ist bereits vergeben",
+      "too_short": "ist zu kurz (mindestens %{count} Zeichen)",
+      "too_long": "ist zu lang (maximal %{count} Zeichen)",
+      "contains_spaces": "beginnt oder endet mit Leerzeichen.",
+      "invalid_for_country": "ist für %{country} nicht gültig",
+      "invalid_for_country_and_province": "ist für %{province} und %{country} nicht gültig",
+      "invalid_state_in_country": "ist kein gültiger Bundesstaat in %{country}",
+      "full_name_required": "Geben Sie einen Vor- und Nachnamen ein",
+      "invalid_for_card_type": "ist ungültig",
+      "invalid_type": "Entschuldigung, wir akzeptieren keine Karten dieses Typs",
+      "invalid_format": "Format ist ungültig",
+      "expired": "ist abgelaufen",
+      "invalid_start_date_or_issue_number_for_debit": "Ein gültiges Startdatum oder eine Ausgabennummer ist erforderlich",
+      "reset_password_html": "Diese E-Mail-Adresse ist bereits mit einem Konto verknüpft. Wenn dieses Konto Ihnen gehört, können Sie <a href=\"/account/login#recover\">Ihr Passwort zurücksetzen</a>",
+      "verify_email": "Wir haben eine E-Mail an %{customer_email} gesendet. Bitte klicken Sie auf den enthaltenen Link, um Ihre E-Mail-Adresse zu bestätigen.",
+      "product_not_available": "Produkt ist für diesen Kunden nicht veröffentlicht.",
+      "shop_404": {
+        "title": "Erstellen Sie eine E-Commerce-Website und verkaufen Sie online! E-Commerce-Software von Shopify",
+        "heros": {
+          "store_unavailable": "Entschuldigung, dieser Laden ist derzeit nicht verfügbar.",
+          "store_not_exist": "Dieser Laden existiert nicht.",
+          "no_storefront": "Dieser Laden hat noch keine Website."
+        },
+        "links": {
+          "explore_other_stores": "Andere Geschäfte entdecken",
+          "start_free_trial": "Kostenlose Testversion starten"
+        },
+        "owner_ctas": {
+          "header": "Sind Sie der Ladenbesitzer?",
+          "fix_domain": "Schließe die Einrichtung deiner neuen Webadresse ab, indem du zu %{domain_settings_link} gehst. Klicke auf „Domain verbinden“ und gib ein: %{domain}.<br>Falls du Schwierigkeiten hast, dich in deinen Laden einzuloggen, versuche die Seite %{forgot_your_store_link}.",
+          "fix_domain_link_text": "deine Domain-Einstellungen",
+          "forgot_your_store_link_text": "Haben Sie Ihr Geschäft vergessen?",
+          "add_storefront": "Sie können Ihre Webseite einrichten, indem Sie den Kanal für den Onlineshop in Ihrem %{admin_link} hinzufügen. Wenn Sie Schwierigkeiten haben, sich in Ihren Laden einzuloggen, versuchen Sie es auf der Seite %{forgot_your_store_link}.",
+          "admin_link_text": "Administrator"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "caption": "Erhalten Sie die Funktionen, die Sie benötigen, um Ihr Einzelhandelsgeschäft zu betreiben, egal ob Sie gerade erst anfangen oder expandieren.",
+            "link_text": "Kostenlose Testversion starten"
+          },
+          "open_a_store": {
+            "header": "Eröffnen Sie einen neuen Shopify-Shop",
+            "caption": "Beginnen Sie eine 3-tägige kostenlose Testphase und fahren Sie dann für 1 $/Monat für die nächsten 3 Monate fort.",
+            "link_text": "Jetzt anmelden"
+          },
+          "editions": {
+            "header": "Zur Kasse Shopify Editions",
+            "caption": "Mit über 100 Produktaktualisierungen können Sie produktiver und kreativer sein und im Handel mächtiger als je zuvor.",
+            "link_text": "Entdecken Sie die neuesten Ausgaben"
+          },
+          "store_owner": {
+            "header": "Sind Sie der Ladenbesitzer?",
+            "caption": "Haben Sie Schwierigkeiten, sich in Ihren Laden einzuloggen? Versuchen Sie die Funktion %{forgot_your_store_link}. Wenn Sie Ihren Laden wieder aktivieren möchten, wenden Sie sich an %{shopify_support_link}.",
+            "shopify_support_link_text": "Shopify-Support"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "subscribe_error": "Abonnementfehler",
+        "unsubscribe_error": "Abmeldefehler",
+        "no_account_found": "Kein Konto mit dieser E-Mail-Adresse gefunden.",
+        "invalid_credentials": "Falsche E-Mail oder falsches Passwort.",
+        "denylisted_reset_password": "Auf Ihr Konto konnte nicht zugegriffen werden, da das aktuelle Passwort nicht sicher ist. Sie erhalten eine E-Mail, um Ihr Passwort zu aktualisieren.",
+        "signup_disabled": "Die Erstellung von Kundenkonten wurde deaktiviert."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Hinzugefügt %{delta}",
+          "increment_item": "Hinzugefügt %{delta}",
+          "decrement_item": "Entfernt %{delta} von %{total}",
+          "decrement_fulfilled_line_item": "Zurückgegeben %{delta} von %{total}",
+          "decrement_return_line_item": "%{delta} von der Rückgabe entfernt"
+        }
+      }
     }
   },
   "customer_accounts": {

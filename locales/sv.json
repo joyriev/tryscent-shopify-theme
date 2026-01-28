@@ -2467,7 +2467,124 @@
       "invalid_state_in_country": "är inte en giltig stat i %{country}",
       "invalid_type": "ursäkta, vi accepterar inte kort av denna typ",
       "expired": "har gått ut",
-      "invalid_start_date_or_issue_number_for_debit": "ett giltigt startdatum eller utgåvenummer krävs"
+      "invalid_start_date_or_issue_number_for_debit": "ett giltigt startdatum eller utgåvenummer krävs",
+      "reset_password_html": "Denna e-postadress är redan kopplad till ett konto. Om detta konto är ditt kan du <a href=\"/account/login#recover\">återställa ditt lösenord</a>",
+      "verify_email": "Vi har skickat ett e-postmeddelande till %{customer_email}, vänligen klicka på länken som finns med för att bekräfta din e-postadress.",
+      "product_not_available": "produkten är inte publicerad för denna kund.",
+      "shop_404": {
+        "title": "Skapa en e-handelswebbplats och sälj online! E-handelsprogramvara från Shopify",
+        "heros": {
+          "store_unavailable": "Tyvärr, denna butik är för närvarande otillgänglig.",
+          "store_not_exist": "Den här butiken finns inte.",
+          "no_storefront": "Den här butiken har ingen webbplats än."
+        },
+        "links": {
+          "start_free_trial": "Starta en gratis provperiod"
+        },
+        "owner_ctas": {
+          "header": "Är du butiksägaren?",
+          "fix_domain": "Slutför inställningen av din nya webbadress, gå till %{domain_settings_link}. Klicka på ”Anslut domän” och ange: %{domain}.<br>Om du har svårt att komma in i din butik, prova sidan %{forgot_your_store_link}.",
+          "forgot_your_store_link_text": "glömde din butik",
+          "add_storefront": "Du kan ställa in din webbplats genom att lägga till kanalen Onlinebutik i din %{admin_link}. Om du har svårt att komma in i din butik, prova sidan %{forgot_your_store_link}.",
+          "admin_link_text": "administratör"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "caption": "Få de funktioner du behöver för att driva din detaljhandel, oavsett om du precis har startat eller växer.",
+            "link_text": "Starta gratis provperiod"
+          },
+          "open_a_store": {
+            "caption": "Starta en 3-dagars gratis provperiod, fortsätt sedan för $1/månad under de nästa 3 månaderna."
+          },
+          "editions": {
+            "header": "Checkout Shopify-utgåvorna",
+            "caption": "Med över 100 produktuppdateringar kan du vara mer produktiv och kreativ, och kraftfull inom handel än du någonsin kunnat föreställa dig.",
+            "link_text": "Utforska senaste utgåvorna"
+          },
+          "store_owner": {
+            "header": "Är du butiksägaren?",
+            "caption": "Har du svårt att komma in i din butik? Prova funktionen %{forgot_your_store_link}. Om du vill återaktivera din butik, kontakta %{shopify_support_link}.",
+            "shopify_support_link_text": "Shopify-support"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "unsubscribe_error": "Avregistreringsfel",
+        "no_account_found": "Inget konto hittades med den e-postadressen.",
+        "invalid_credentials": "Felaktig e-postadress eller lösenord.",
+        "denylisted_reset_password": "Ditt konto kunde inte nås eftersom det nuvarande lösenordet inte är säkert. Du kommer att få ett e-postmeddelande för att uppdatera ditt lösenord."
+      },
+      "address": {
+        "updated": "Adress uppdaterad.",
+        "error_updating": "Fel vid uppdatering av adress",
+        "created": "Adress skapad framgångsrikt",
+        "error_creating": "Fel vid skapande av adress.",
+        "deleted": "Adress borttagen framgångsrikt",
+        "error_deleting": "Fel vid borttagning av adress."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Tillagd %{delta}",
+          "increment_item": "Tillagd %{delta}",
+          "decrement_item": "Borttaget %{delta} av %{total}",
+          "decrement_fulfilled_line_item": "Returnerat %{delta} av %{total}"
+        }
+      },
+      "order": {
+        "not_available": "Denna beställning är inte tillgänglig",
+        "financial_status": {
+          "pending": "Väntande",
+          "expired": "Utgånget"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Uppfylld",
+          "complete": "Fullständig",
+          "unfulfilled": "Ouppfylld",
+          "restocked": "Påfyllt"
+        },
+        "transaction_status": {
+          "success": "Framgång",
+          "pending": "Väntande",
+          "failure": "Misslyckande"
+        },
+        "cancel_reason": {
+          "inventory": "Artiklar ej tillgängliga",
+          "fraud": "Bedräglig beställning",
+          "customer": "Kunden ändrade/avbröt beställningen",
+          "other": "Annat"
+        },
+        "cash_on_delivery": "Kontant betalning vid Leverans (COD)"
+      },
+      "cart": {
+        "not_found": "Varukorg hittades inte",
+        "only_n_items_available": "Du kan endast lägga till %{count} %{name} i kundvagnen.",
+        "too_many_items_in_cart": "Du kan inte lägga till fler %{name} i kundvagnen.",
+        "only_one_added_to_cart": "Endast 1 artikel lades till i din kundvagn på grund av tillgänglighet.",
+        "only_n_added_to_cart": "Endast %{quantity} artiklar lades till i din kundvagn på grund av tillgänglighet.",
+        "maximum_available_quantity_reached": "Den maximala mängden av denna artikel finns redan i din kundvagn.",
+        "less_than_minimum": "Denna artikel har en minimum på %{min}.",
+        "more_than_maximum": "Denna artikel har en högsta mängd på %{max}.",
+        "not_respect_step": "Du kan endast lägga till denna vara i steg om %{step}.",
+        "all_items_in_cart": "Alla %{count} %{name} finns i din kundvagn.",
+        "empty_update": "kan inte uppdatera tom kundvagn",
+        "missing_parameters": "ingen giltig id- eller linjeparameter",
+        "generic_error": "Varukorgsfel",
+        "invalid_input": "%{parameter} parameter är ogiltig.",
+        "product_not_available": "Produkten finns inte tillgänglig",
+        "too_many_line_items_error": "Din kundvagn kan inte innehålla fler än %{max} artiklar.",
+        "link_expired": "Länken har gått ut",
+        "link_no_longer_exists": "Länken finns inte längre.",
+        "stock_problems_html": "En eller flera varor finns inte längre tillgängliga. Vi har lagt till en <a href='%{link}'>uppdaterad kundvagn</a>.",
+        "changed": "Varukorg ändrad",
+        "product_sold_out": "Produkten '%{name}' är redan slutsåld.",
+        "variant_requires_selling_plan": "Variant kan endast köpas med en försäljningsplan.",
+        "selling_plan_not_available_for_company_locations": "Endast engångsköp är tillgängligt för B2B-beställningar",
+        "digital_product_not_available_for_company_locations": "Den här artikeln kan inte läggas till i en B2B-beställning",
+        "buyer_cannot_purchase_for_company_locations": "Du kan inte köpa för denna plats",
+        "selling_plan_not_applicable": "Kan inte tillämpa försäljningsplan på variant"
+      }
     }
   }
 }

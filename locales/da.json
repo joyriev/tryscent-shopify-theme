@@ -2484,7 +2484,111 @@
       "not_supported": "understøttes ikke",
       "full_name_required": "Indtast et fornavn og efternavn",
       "invalid_for_card_type": "er ikke gyldig",
-      "invalid_start_date_or_issue_number_for_debit": "en gyldig startdato eller udstedelsesnummer er påkrævet"
+      "invalid_start_date_or_issue_number_for_debit": "en gyldig startdato eller udstedelsesnummer er påkrævet",
+      "reset_password_html": "Denne e-mailadresse er allerede tilknyttet en konto. Hvis denne konto er din, kan du <a href=\"/account/login#recover\">nulstille din adgangskode</a>",
+      "verify_email": "Vi har sendt en e-mail til %{customer_email}, klik venligst på det medfølgende link for at bekræfte din e-mailadresse.",
+      "product_not_available": "produktet er ikke offentliggjort for denne kunde.",
+      "shop_404": {
+        "title": "Opret en e-handelswebside og sælg online! E-handelssoftware fra Shopify",
+        "heros": {
+          "store_unavailable": "Beklager, denne butik er i øjeblikket utilgængelig.",
+          "store_not_exist": "Denne butik findes ikke.",
+          "no_storefront": "Denne butik har endnu ikke en hjemmeside."
+        },
+        "owner_ctas": {
+          "header": "Er du butiksindehaveren?",
+          "fix_domain": "Færdiggør opsætningen af din nye webadresse ved at gå til %{domain_settings_link}. Klik på \"Forbind domæne\" og indtast: %{domain}.<br>Hvis du har problemer med at komme ind i din butik, prøv siden %{forgot_your_store_link}.",
+          "forgot_your_store_link_text": "glemte din butik",
+          "add_storefront": "Du kan opsætte din hjemmeside ved at tilføje Online Butik-kanalen i din %{admin_link}. Hvis du har problemer med at komme ind i din butik, så prøv siden %{forgot_your_store_link}."
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Sælg personligt",
+            "caption": "Få de funktioner, du har brug for til at drive din detailbutik, uanset om du er ved at starte op eller udvide."
+          },
+          "open_a_store": {
+            "header": "Åbn en ny Shopify-butik",
+            "caption": "Start en 3-dages gratis prøveperiode, og fortsæt derefter for $1/måned i de næste 3 måneder."
+          },
+          "editions": {
+            "header": "Checkout Shopify Editions",
+            "caption": "Med over 100 produktopdateringer kan du være mere produktiv og kreativ samt mere kraftfuld i handel, end du nogensinde havde forestillet dig.",
+            "link_text": "Udforsk de nyeste udgaver"
+          },
+          "store_owner": {
+            "header": "Er du butiksindehaveren?",
+            "caption": "Har du problemer med at få adgang til din butik? Prøv funktionen %{forgot_your_store_link}. Hvis du ønsker at genaktivere din butik, kontakt %{shopify_support_link}.",
+            "shopify_support_link_text": "Shopify support"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Fejl ved nulstilling af adgangskode",
+        "subscribe_error": "Abonnementsfejl",
+        "unsubscribe_error": "Fejl ved afmelding",
+        "no_account_found": "Ingen konto fundet med den e-mail.",
+        "invalid_credentials": "Forkert e-mail eller adgangskode.",
+        "denylisted_reset_password": "Din konto kunne ikke tilgås, fordi den nuværende adgangskode ikke er sikker. Du vil modtage en e-mail for at opdatere din adgangskode."
+      },
+      "address": {
+        "updated": "Adresse opdateret med succes.",
+        "error_updating": "Fejl ved opdatering af adresse",
+        "error_creating": "Fejl ved oprettelse af adresse.",
+        "deleted": "Adresse slettet med succes",
+        "error_deleting": "Fejl ved sletning af adresse."
+      },
+      "line_item": {
+        "item_status": {
+          "decrement_return_line_item": "Fjernet %{delta} fra retur"
+        }
+      },
+      "order": {
+        "financial_status": {
+          "unpaid": "Ubetalt",
+          "voided": "Ugyldig"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Opfyldt",
+          "complete": "Fuldstændig",
+          "unfulfilled": "Uopfyldt"
+        },
+        "cancel_reason": {
+          "inventory": "Varer ikke tilgængelige",
+          "fraud": "Falsk ordre",
+          "customer": "Kunden ændrede/annullerede ordren",
+          "staff": "Personale fejl"
+        },
+        "cash_on_delivery": "Kontant ved Levering (COD)"
+      },
+      "cart": {
+        "not_found": "Kurv ikke fundet",
+        "only_n_items_available": "Du kan kun tilføje %{count} %{name} til kurven.",
+        "too_many_items_in_cart": "Du kan ikke tilføje flere %{name} til kurven.",
+        "only_one_added_to_cart": "Kun 1 vare blev tilføjet til din kurv på grund af tilgængelighed.",
+        "only_n_added_to_cart": "Kun %{quantity} varer blev tilføjet til din indkøbskurv på grund af tilgængelighed.",
+        "maximum_available_quantity_reached": "Den maksimale mængde af denne vare er allerede i din kurv.",
+        "less_than_minimum": "Denne vare har en minimum på %{min}.",
+        "more_than_maximum": "Denne vare har en maksimum på %{max}.",
+        "not_respect_step": "Du kan kun tilføje denne vare i trin af %{step}.",
+        "all_items_in_cart": "Alle %{count} %{name} er i din kurv.",
+        "empty_update": "kan ikke opdatere tom indkøbskurv",
+        "missing_parameters": "ingen gyldig id- eller linjeparameter",
+        "generic_error": "Kurvfejl",
+        "invalid_input": "%{parameter} parameter er ugyldig.",
+        "too_many_line_items_error": "Din kurv kan ikke indeholde mere end %{max} varer.",
+        "link_expired": "Link udløbet",
+        "link_no_longer_exists": "Link findes ikke længere.",
+        "stock_problems_html": "Én eller flere varer er ikke længere tilgængelige. Vi har opdateret din <a href='%{link}'>indkøbskurv</a>.",
+        "changed": "Kurv ændret",
+        "items_changed": "Et eller flere elementer er ændret.",
+        "variant_requires_selling_plan": "Variant kan kun købes med en salgsplan.",
+        "selling_plan_not_available_for_company_locations": "Der kan kun foretages ét enkelt køb for B2B-ordrer",
+        "digital_product_not_available_for_company_locations": "Denne vare kan ikke tilføjes til en B2B-bestilling",
+        "buyer_cannot_purchase_for_company_locations": "Du kan ikke købe til denne placering",
+        "selling_plan_not_applicable": "Kan ikke anvende salgsplan på variant"
+      }
     }
   },
   "customer_accounts": {
