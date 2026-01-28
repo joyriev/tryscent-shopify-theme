@@ -1554,8 +1554,47 @@
         "gift_card": {
           "duplicate": "Presentkortet har redan använts på din beställning",
           "expired": "Detta presentkort har gått ut",
-          "currency_mismatch": "Endast presentkort i %{shop_currency} accepteras"
+          "currency_mismatch": "Endast presentkort i %{shop_currency} accepteras",
+          "generic": "Presentkortet kunde inte läggas till i kassan",
+          "throttle_limit_exceeded": "Du har överskridit det maximala antalet försök. Försök igen senare.",
+          "no_longer_available": "Detta presentkort kan inte längre användas vid denna kassa"
         }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "Instruktionen för varor för %{position} %{name} innehåller ett tomt stabilt ID.",
+        "invalid_stable_id_target": "Instruktionen för varor för %{position} %{name} hänvisar till stabilt ID %{stable_id}, men det stabila ID:t finns inte i varulinjerna.",
+        "duplicate_variant_id": "Instruktionen för varor för %{position} %{name} innehåller en duplicerad variant-ID %{variant_id}.",
+        "invalid_variant_id_target": "Instruktionen för varor för %{name} hänvisar till variant-ID %{variant_id}, men den varianten finns inte i varulinjerna.",
+        "invalid_price_override_target": "Prisöverskrivningsinstruktionen för artikelrad %{stable_id} är ogiltig eftersom det är en del av ett paket."
+      },
+      "payment_errors": {
+        "amount_too_small": "Det minsta betalningsbeloppet måste vara högre än 0,50 USD. Försök igen med ett högre belopp.",
+        "generic_error": "Det uppstod ett problem vid behandlingen av din betalning. Försök igen eller använd en annan betalningsmetod.",
+        "rejected_transaction": "Din betalning avvisades. Försök igen eller använd en annan betalningsmetod.",
+        "credit_card_processing": "Din betalning kan inte behandlas på grund av tekniska problem. Försök igen om några minuter eller använd en annan betalningsmetod.",
+        "checkout_amount_changed": "Din betalning kunde inte behandlas eftersom beloppet som ska betalas vid kassan har ändrats. Kontrollera din beställning och försök igen.",
+        "deferred_payment_not_allowed": "Avbetalningar är inte tillåtna. Kontrollera din beställning och försök igen.",
+        "deferred_payment_required": "Denna beställning kräver uppskjuten betalning. Kontrollera din beställning och försök igen.",
+        "deferred_amount_changed": "Din betalning kunde inte behandlas eftersom det uppskjutna betalningsbeloppet har ändrats. Kontrollera din beställning och försök igen.",
+        "deferred_date_changed": "Din betalning kunde inte behandlas eftersom det uppskjutna betalningsdatumet har ändrats. Kontrollera din beställning och försök igen.",
+        "order_total_changed": "Din ordertotal har ändrats. Granska och försök igen.",
+        "payment_processing": "Din betalning kan inte behandlas på grund av tekniska problem. Försök igen eller använd en annan betalningsmetod.",
+        "payment_processing_no_retry": "Din betalning kan inte behandlas på grund av tekniska problem. Försök med en annan betalningsmetod.",
+        "paypal_zero_amount": "Du kan inte använda PayPal för beställningar på %{amount}. Bekräfta att din beställning är korrekt och slutför köpet utan PayPal.",
+        "paypal_invalid_token": "PayPal var inte tillgängligt. Försök igen eller använd ett annat betalningsalternativ.",
+        "pay_later_failed": "Det uppstod ett fel vid behandlingen av din betalning med Pay later. Välj en annan betalningsmetod och försök igen.",
+        "three_d_secure_failed_duplicate": "Kreditkortets 3D Secure-autentisering misslyckades eftersom en annan redan pågår.",
+        "subscription_agreement_blank": "För att köpa en prenumeration måste dina betalningsuppgifter sparas. För att fortsätta, bekräfta att du godkänner eller ta bort prenumerationsartiklar från din beställning.",
+        "insufficient_funds": "Din betalning avvisades på grund av otillräckliga medel. Försök igen eller använd en annan betalningsmetod.",
+        "multiple_deferred_payment_not_allowed": "Endast en uppskjuten betalning tillåts per förfrågan. Kontrollera din förfrågan och försök igen.",
+        "shipping_must_match_billing": "Faktureringsadressen måste stämma överens med leveransadressen. Använd en annan betalningsmetod.",
+        "decision_rule_block": "Det uppstod ett problem vid behandlingen av din betalning. Kontakta butikens ägare.",
+        "expired_card": "Ditt kort har gått ut. Använd en annan betalningsmetod.",
+        "processing_error": "Det uppstod ett problem vid behandlingen av din betalning. Försök igen eller använd en annan betalningsmetod.",
+        "processing_error_checkout_as_guest": "Det uppstod ett problem vid behandlingen av din betalning. Försök igen med en annan betalningsmetod eller {{checkout_as_guest_link}}.",
+        "selected_payment_method": "Det uppstod ett problem med din valda betalningsmetod och du har inte debiterats. Försök igen eller använd en annan betalningsmetod.",
+        "payment_method_billing_address": "Det uppstod ett problem med faktureringsadressen för din valda betalningsmetod och du har inte debiterats. Kontrollera adressen och försök igen eller använd en annan betalningsmetod.",
+        "test_mode_live_card": "Den här butiken kan inte ta emot riktiga beställningar eller riktiga betalningar."
       }
     }
   }

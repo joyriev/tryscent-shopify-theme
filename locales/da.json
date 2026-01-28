@@ -1538,7 +1538,44 @@
         "credit_card_start_month_invalid": "Indtast en gyldig startmåned for kortet",
         "credit_card_start_year_invalid": "Indtast et gyldigt startår for kortet",
         "credit_card_verification_value_blank": "Indtast CVV- eller sikkerhedskoden på dit kort",
-        "delivery_line_detail_changed": "Nogle leveringsdetaljer kan være ændret. Bekræft din forsendelsesmetode og prøv igen."
+        "delivery_line_detail_changed": "Nogle leveringsdetaljer kan være ændret. Bekræft din forsendelsesmetode og prøv igen.",
+        "reduction_code_code_not_found": "Indtast en gyldig rabatkode eller gavekort",
+        "reduction_code_gift_cards_not_supported_with_deferred_purchase_options": "Gavekort understøttes ikke med udskudte købsoptioner.",
+        "tips_invalid_tip_amount": "Indtast et tip mindre end %{amount}",
+        "gift_card_already_applied": "Dette gavekort er allerede blevet anvendt på din ordre",
+        "gift_card_depleted": "Dette gavekort har ingen penge tilbage",
+        "gift_card_currency_mismatch": "Kun gavekort i %{checkout_currency} kan bruges til denne ordre",
+        "gift_cards_not_supported_with_deferred_purchase_options": "Gavekort understøttes ikke med udskudte købsoptioner.",
+        "payment_gateway_needs_paid_plan_error": "Denne betalingsmetode er ikke tilgængelig i butikken lige nu",
+        "payment_gateway_not_in_test_mode": "er ikke sat op til at teste ordrer. Denne butik kan ikke acceptere rigtige ordrer eller rigtige betalinger.",
+        "payment_gateway_incompatible_with_multi_currency": "For at fuldføre denne betaling i din lokale valuta, skal du betale med kreditkort.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Denne betalingsmetode er ikke tilgængelig for udskudte købsoptioner.",
+        "payment_gateway_unsupported_for_development_store_html": "For at afgive en testordre skal du bruge en testbetalingsgateway. Læs mere om <a href=\"%{docs_link}\">test af ordrer i udviklingsbutikker</a>.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Du har nået grænsen for ordrer i udviklingsbutikken med denne betalingsbehandler. For at afgive en ny ordre skal du bruge en testbetalingsgateway. Læs mere om <a href=\"%{docs_link}\">test af ordrer i udviklingsbutikker</a>.",
+        "purchase_options_agreement_blank": "For at fortsætte med dit køb, accepter betingelserne for udskudt eller tilbagevendende køb.",
+        "physical_gift_card_invalid_quantity": "Fysiske gavekortlinjeposter skal have en mængde, der matcher antallet af gavekortkoder.",
+        "physical_gift_card_duplicate_code": "Fysisk gavekortlinjepost indeholder duplikeret kode.",
+        "physical_gift_card_invalid_code": "Den fysiske gavekortkode er ugyldig.",
+        "email_blank": "Indtast en e-mailadresse",
+        "phone_blank": "Indtast et telefonnummer",
+        "address_country_invalid": "Vælg et land/område fra listen",
+        "address_zip_invalid": "Indtast et gyldigt postnummer",
+        "gift_card_invalid": "Gavekort \"••••%{last_four_characters}\" er ikke længere gyldigt",
+        "vaulting_agreement_blank": "Din betalingsmetode skal gemmes, fordi betalingen for restbeløbet på denne ordre forfalder senere.",
+        "shipping_method_invalid_phone_number": "Opdater telefonnummeret i din leveringsadresse for at se tilgængelige forsendelsesmetoder.",
+        "split_cart_international_shipping_not_supported": "Alle varer skal bruge den samme leveringsmetode ved international forsendelse. Opdater leveringsmetoden eller opret flere ordrer.",
+        "invalid_delivery_address_reference_handle": "Referencen til leveringsadressen kunne ikke matches med nogen tilgængelige leveringsadresser.",
+        "must_use_available_delivery_address": "Leveringsadressen skal vælges fra de tilgængelige leveringsadresser.",
+        "must_use_available_shipping_rate": "Forsendelsesprisen skal vælges fra de tilgængelige forsendelsespriser."
+      },
+      "store_credit_errors": {
+        "generic_error": "Der opstod et problem med din butikskredit. Prøv igen eller genindlæs siden."
+      },
+      "redeemable_errors": {
+        "gift_card": {
+          "insufficient_funds": "Dette gavekort har ingen penge tilbage",
+          "currency_mismatch": "Kun gavekort i %{shop_currency} accepteres"
+        }
       }
     },
     "sentence": {
