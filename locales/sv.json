@@ -534,6 +534,21 @@
         "error_message": "Det går inte att uppdatera betalningsmetod",
         "current": "Nuvarande"
       }
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneWeekAgo": "{{weekday}} klockan {{time}}",
+        "yesterday": "Igår kl {{time}}",
+        "today": "Idag klockan {{time}}",
+        "tomorrow": "Imorgon klockan {{time}}",
+        "lessThanOneWeekAway": "{{weekday}} klockan {{time}}"
+      }
+    },
+    "enable_javascript": "För att visa ditt konto, aktivera JavaScript i dina webbläsarinställningar eller logga in med en annan webbläsare.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Dölj kontomenyn"
+      }
     }
   },
   "shopify": {
@@ -2583,8 +2598,113 @@
         "selling_plan_not_available_for_company_locations": "Endast engångsköp är tillgängligt för B2B-beställningar",
         "digital_product_not_available_for_company_locations": "Den här artikeln kan inte läggas till i en B2B-beställning",
         "buyer_cannot_purchase_for_company_locations": "Du kan inte köpa för denna plats",
-        "selling_plan_not_applicable": "Kan inte tillämpa försäljningsplan på variant"
+        "selling_plan_not_applicable": "Kan inte tillämpa försäljningsplan på variant",
+        "shipping_address_not_required": "Den här kundvagnen kräver ingen frakt",
+        "shipping_address_invalid": "Det uppstod ett problem vid beräkningen av dina fraktkostnader. Fortsätt till kassan för att välja en fraktsats innan du slutför din beställning.",
+        "bundle_requires_components": "Paketprodukten '%{name}' kan inte läggas till i kundvagnen.",
+        "gift_card_with_components_not_supported": "Paketprodukten '%{name}' kan inte läggas till i kundvagnen.",
+        "gift_card_price_must_be_greater_than_zero": "Paketprodukten '%{name}' kan inte läggas till i kundvagnen.",
+        "gift_card_recipient_validation_error": "Den angivna mottagaren av presentkortet är ogiltig",
+        "cart_too_large": "Varukorg är för stor.",
+        "cart_attributes_error": "Varukorgens egenskaper innehåller ogiltiga uppgifter.",
+        "merchandise_line_transformers": {
+          "run_error": "Ett fel uppstod i din kundvagn."
+        },
+        "merchandise_not_applicable": "Artikeln kan inte köpas i den konfigurerade formen."
+      },
+      "storefront": {
+        "invalid_password": "Lösenordet är fel, försök igen."
+      },
+      "tags": {
+        "add_products": "Begränsa urvalet till produkter som matchar etiketten %{tag}",
+        "remove_articles": "Utöka sökningen till artiklar som inte är märkta %{tag}",
+        "remove_products": "Ta bort taggen %{tag}"
       }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "disclaimer": "Du kan avregistrera dig när som helst.",
+        "unsubscribe": "Avsluta prenumerationen"
+      },
+      "unsubscribed": {
+        "confirmation": "Du har avregistrerat dig från vår e-postlista.",
+        "disclaimer": "Du kommer inte att få några fler marknadsföringsuppdateringar från oss. Du kan prenumerera igen när som helst.",
+        "preview": "Du förhandsgranskar vad kunderna kommer att se när de avregistrerar sig."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Du har valt att spåra öppning av e-post.</b>",
+          "visibility": "E-postöppningsfrekvenser kommer att rapporteras anonymt. Vi kommer endast att se om du har öppnat ett e-postmeddelande som en del av en sammanställd e-postöppningsfrekvens.",
+          "opt_out_html": "Du kan <a style='text-decoration:underline;' href='%{link}'>avstå</a> från att spåra öppning av e-post om du inte vill dela denna information.",
+          "preview_bar": "Du förhandsgranskar vad kunderna kommer att se när de väljer att aktivera e-postöppningsspårning."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Du har valt att inte spåra öppning av e-post.</b>",
+          "visibility": "Vi kommer inte att se om du har öppnat våra e-postmeddelanden.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Anmäl dig</a> till e-postöppningsspårning.",
+          "preview_bar": "Du förhandsgranskar vad kunderna kommer att se när de väljer att avstå från e-postöppningsspårning."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Vi spårar inte längre några e-postöppningar.</b>",
+          "privacy_policy": "Efter att detta e-postmeddelande skickades uppdaterade vi vår integritetspolicy och vi spårar inte längre öppningar."
+        },
+        "track": {
+          "status_html": "<b>E-postöppningsspårning rapporteras.</b>",
+          "visibility": "Vi kommer endast att se om du har öppnat e-postmeddelandet, som en del av den totala öppningsfrekvensen för e-post."
+        },
+        "updated_policy": {
+          "status_html": "<b>E-postöppningsspårning rapporteras.</b>",
+          "visibility": "Vi har uppdaterat vår policy och spårar nu e-postöppningar. Öppningsfrekvenser för e-post kommer att rapporteras anonymt. Vi kommer endast att se om du har öppnat ett e-postmeddelande som en del av den totala öppningsfrekvensen.",
+          "opt_out_html": "Om du inte vill dela denna information kan du <a style='text-decoration:underline;' href='%{link}'>avregistrera dig.</a>"
+        }
+      }
+    },
+    "search": {
+      "error": "Det uppstod ett problem när dina sökresultat skulle laddas. Vänligen uppdatera sidan eller försök igen senare.",
+      "sorting": {
+        "price_descending": "Pris, högst till lägst"
+      }
+    },
+    "page_titles": {
+      "shopping_cart": "Din Varukorg",
+      "order": "Beställ %{name}",
+      "search_results": {
+        "one": "Sök: %{count} resultat hittades för \"%{terms}\"",
+        "other": "Sök: %{count} resultat hittades för \"%{terms}\""
+      },
+      "collections": "Kollektioner",
+      "not_found": "404 Ej hittad",
+      "checkpoint": "Kontrollpunkt"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} rabatter har tillämpats"
+    },
+    "challenge": {
+      "message": "För att fortsätta, låt oss veta att du inte är en robot.",
+      "error": "Ditt svar var inte korrekt, försök igen."
+    },
+    "checkpoint": {
+      "message": "Lös Captcha för att fortsätta",
+      "error": "Captcha-validering misslyckades"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Vanligtvis klart inom 1 timme",
+        "two_hours": "Vanligtvis klart inom 2 timmar",
+        "four_hours": "Vanligtvis klart inom 4 timmar",
+        "twenty_four_hours": "Vanligtvis klart inom 24 timmar",
+        "two_to_four_days": "Vanligtvis klart inom 2-4 dagar",
+        "five_or_more_days": "Vanligtvis klart inom 5+ dagar",
+        "zero_to_two_hours": "Vanligtvis klart inom 2 timmar",
+        "two_to_four_hours": "Vanligtvis klart inom 4 timmar",
+        "immediately": "Redo för avhämtning nu",
+        "next_day": "Klar för avhämtning nästa dag"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Denna vara är ett återkommande eller uppskjutet köp. Genom att fortsätta godkänner jag %{cancellationPolicyLink} och ger dig tillåtelse att debitera min betalningsmetod till de priser, den frekvens och de datum som anges på denna sida tills min beställning är fullbordad eller jag avbeställer, om det är tillåtet.",
+      "buyer_consent_cart": "En eller flera av varorna i din kundvagn är ett återkommande eller uppskjutet köp. Genom att fortsätta godkänner jag %{cancellationPolicyLink} och ger dig tillåtelse att debitera min betalningsmetod till de priser, den frekvens och de datum som anges på denna sida tills min beställning är fullföljd eller jag avbokar, om det är tillåtet.",
+      "cancellation_policy": "avbokningspolicy"
     }
   }
 }
