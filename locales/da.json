@@ -2751,9 +2751,16 @@
         "title": "Opdater betalingsmetode",
         "button_title": "Opdatering",
         "billing_address": "Faktureringsadresse",
-        "disclaimer": "Denne betalingsmetode vil blive gemt til fremtidige køb og kan bruges til ethvert tilbagevendende eller udskudt køb.",
+        "disclaimer": "Denne betalingsmetode vil blive gemt til fremtidige køb og kan bruges til eventuelle tilbagevendende eller udskudte køb.",
         "error_message": "Kan ikke opdatere betalingsmetode",
-        "current": "Nuværende"
+        "current": "Nuværende",
+        "subscriptions_list_accessibility_label": "Liste over abonnementsprodukter",
+        "pre_orders_list_accessibility_label": "Liste over produkter i ventende ordre",
+        "resources_list_accessibility_label": "Abonnementsprodukter og ventende ordreprodukter, der bruger denne betalingsmetode",
+        "resources_card_scroll": "Rul for flere varer",
+        "loading_form_accessibility_message": "Indlæser opdateringsformular for betalingsmetode",
+        "loading_current_payment_method": "Indlæser den aktuelle betalingsmetode",
+        "loading_digital_wallets": "Indlæser digitale tegnebogsmuligheder"
       },
       "pay_pal": {
         "errors": {
@@ -2827,7 +2834,94 @@
         "replace_payment_method": "Udskift betalingsmetode",
         "checkout_card_banner": "Denne betalingsmetode kan kun bruges til forudautoriserede betalinger. Den vil ikke blive vist ved kassen, hvis du er logget ind i denne butik.",
         "default_checkbox": "Indstil som standard",
-        "default_checkbox_accessibility_label": "Indstil denne betalingsmetode som standard"
+        "default_checkbox_accessibility_label": "Indstil denne betalingsmetode som standard",
+        "replace_payment_method_button": "Erstatte"
+      },
+      "edit_payment_method": {
+        "title": "Rediger betalingsmetode",
+        "payment_method_updated_toast": "Betalingsmetode opdateret",
+        "billing_address_choose_from_list": "Vælg fra listen",
+        "future_purchases_notice": "Denne betalingsmetode vil blive gemt til fremtidige køb.",
+        "generic_error": "Der opstod et problem med opdateringen. Prøv venligst igen."
+      },
+      "link_expired": {
+        "message": "Dette link til at opdatere din betalingsmetode er udløbet.",
+        "update_message": "Dette link til at opdatere din betalingsmetode er udløbet.",
+        "add_message": "Dette link til at tilføje din betalingsmetode er udløbet.",
+        "return_home_button": "Tilbage til startsiden"
+      },
+      "update_success": {
+        "title": "Betalingsmetode opdateret"
+      },
+      "add_success": {
+        "title": "Betalingsmetode tilføjet"
+      },
+      "card_fields": {
+        "card_expiry_label": "Udløbsdato (MM / ÅÅ)",
+        "card_expiry_placeholder": "Udløbsdato (MM / ÅÅ)",
+        "card_start_label": "Udstedelsesdato (MM / ÅÅ)",
+        "card_start_placeholder": "Udstedelsesdato (MM / ÅÅ)",
+        "tooltip": {
+          "tooltip_accessibility_label": "Mere information",
+          "card_verification_value_explanation": "3-cifret sikkerhedskode, som normalt findes på bagsiden af dit kort. American Express-kort har en 4-cifret kode placeret på forsiden."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Indtast dit navn præcis som det står på dit kort",
+          "credit_card_number_invalid": "Indtast et gyldigt kortnummer",
+          "credit_card_expiry_invalid": "Indtast en gyldig kortudløbsdato",
+          "credit_card_verification_value_blank": "Indtast CVV- eller sikkerhedskoden på dit kort"
+        },
+        "unavailable": {
+          "text": "Betaling med kredit- og betalingskort er ikke tilgængelig lige nu.",
+          "suffix": "eller prøv igen senere."
+        }
+      },
+      "payment_delete": {
+        "description_without_replacement": "Denne betalingsmetode vil ikke længere være tilgængelig for fremtidige køb.",
+        "description_with_replacement": "Sletning af denne betalingsmetode vil påvirke forudautoriserede betalinger. Du kan eventuelt erstatte den med en anden betalingsmetode for at fortsætte med at modtage kommende ordrer.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "Sletning af denne betalingsmetode vil påvirke forudautoriserede betalinger. Medmindre du vælger en alternativ betalingsmetode, vil denne betalingsmetode stadig blive opkrævet for eventuelle udestående saldi på eksisterende ordrer. Valg af en alternativ betalingsmetode vil gøre det muligt for dig at modtage kommende abonnementsordrer uden afbrydelse.",
+          "with_pending_orders": "Sletning af denne betalingsmetode vil fjerne den fra din konto og vil ikke længere være tilgængelig for fremtidige køb. Medmindre du vælger en alternativ betalingsmetode, vil den stadig blive opkrævet for eventuelle udestående saldi på eksisterende ordrer.",
+          "with_subscriptions": "Sletning af denne betalingsmetode vil påvirke forudautoriserede betalinger. Erstat den med en alternativ betalingsmetode for at fortsætte med at modtage kommende ordrer."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Sletning af denne betalingsmetode vil påvirke forudautoriserede betalinger. Denne betalingsmetode vil stadig blive opkrævet for eventuelle udestående saldi på eksisterende ordrer, men du vil ikke modtage kommende abonnementsordrer. Tilføj en alternativ betalingsmetode for at fortsætte med at modtage abonnementsordrer.",
+          "with_pending_orders": "Sletning af denne betalingsmetode vil fjerne den fra din konto og vil ikke længere være tilgængelig for fremtidige køb. Den vil stadig blive opkrævet for eventuelle udestående saldi på eksisterende ordrer.",
+          "with_subscriptions": "Sletning af denne betalingsmetode vil påvirke forudautoriserede betalinger. Tilføj en alternativ betalingsmetode for at fortsætte med at modtage kommende ordrer."
+        },
+        "error_when_deleting": "Vi beklager, men noget gik galt, og vi kunne ikke slette denne betalingsmetode. Prøv venligst igen senere eller opdater siden.",
+        "delete_and_replace_button_accessibility_label": "Slet {{currentPaymentMethodName}} og erstat med {{newPaymentMethodName}}.",
+        "deleted_successfully": "Betalingsmetode slettet succesfuldt."
+      },
+      "add_payment_method": {
+        "payment_method_added_confirmation": "Betalingsmetode tilføjet",
+        "missing_customer_error": "Noget gik galt. Prøv venligst igen eller kontakt support.",
+        "replace_mode_warning": "Sletning af denne betalingsmetode vil påvirke abonnementer eller forudbestillinger. Erstat den med en alternativ betalingsmetode for at fortsætte med at modtage kommende ordrer.",
+        "choose_from_list": "Vælg fra listen",
+        "billing_address": {
+          "choose_billing_address_from_list_button": "Vælg fra listen",
+          "choose_billing_address_from_list_button_accessibility_label": "Vælg en faktureringsadresse fra listen",
+          "missing_billing_address_error_message": "Angiv venligst en faktureringsadresse",
+          "default_checkbox": "Indstil som standard betalingsmetode"
+        },
+        "subscription_contracts": {
+          "more_items": {
+            "one": "{{count}} flere produkter",
+            "other": "{{count}} flere produkter"
+          },
+          "product_count": {
+            "one": "{{count}} produkt",
+            "other": "{{count}} produkter"
+          },
+          "product_details": "Produktdetaljer"
+        },
+        "updating_contracts": {
+          "one": "Opdaterer {{count}} abonnementsaftale...",
+          "other": "Opdaterer {{count}} abonnementsaftaler..."
+        },
+        "contracts_updated": {
+          "one": "Opdaterede {{count}} abonnementsaftale med succes"
+        }
       }
     },
     "enable_javascript": "For at se din konto skal du aktivere JavaScript i dine browserindstillinger eller logge ind med en anden browser.",

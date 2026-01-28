@@ -528,11 +528,21 @@
     "payment_methods": {
       "update_payment_method": {
         "title": "Uppdatera betalningsmetod",
-        "button_title": "Uppdatering",
+        "button_title": "Uppdatera",
         "billing_address": "Faktureringsadress",
         "disclaimer": "Denna betalningsmetod kommer att sparas för framtida köp och kan användas för alla återkommande eller uppskjutna köp.",
-        "error_message": "Det går inte att uppdatera betalningsmetod",
-        "current": "Nuvarande"
+        "error_message": "Kan inte uppdatera betalningsmetod",
+        "current": "Aktuell",
+        "subscriptions_list_accessibility_label": "Prenumerationsprodukter lista",
+        "pre_orders_list_accessibility_label": "Lista över produkter för väntande beställning",
+        "resources_list_accessibility_label": "Prenumerationsprodukter och väntande beställningsprodukter som använder denna betalningsmetod",
+        "resources_card_show_more": "Visa mer",
+        "resources_card_show_less": "Visa mindre",
+        "loading_form_accessibility_message": "Laddar formulär för uppdatering av betalningsmetod",
+        "loading_current_payment_method": "Läser in aktuell betalningsmetod",
+        "loading_digital_wallets": "Laddar digitala plånboksalternativ",
+        "loading_card_fields": "Laddar kreditkortsfält",
+        "loading_resources": "Läser in prenumerationer och kommande beställningar"
       },
       "add_payment_method_dropdown": {
         "bank_account_consent": "Genom att lägga till en betalningsmetod godkänner du att ditt kort debiteras eller att ditt bankkonto belastas för framtida köp som du godkänner, tills du avbryter."
@@ -614,6 +624,90 @@
         "invalid_payment_method_message": "Använd ett nytt kreditkort för att fortsätta ta emot kommande beställningar.",
         "replace_payment_method": "Byt betalningsmetod",
         "checkout_card_banner": "Denna betalningsmetod kan endast användas för förautentiserade betalningar. Den kommer inte att visas i kassan om du är inloggad i denna butik."
+      },
+      "edit_payment_method": {
+        "title": "Redigera betalningsmetod",
+        "payment_method_updated_toast": "Betalningsmetod uppdaterad",
+        "billing_address_choose_from_list": "Välj från listan",
+        "future_purchases_notice": "Denna betalningsmetod kommer att sparas för framtida köp.",
+        "generic_error": "Det uppstod ett problem vid uppdateringen. Vänligen försök igen."
+      },
+      "link_expired": {
+        "return_home_button": "Tillbaka till startsidan"
+      },
+      "update_success": {
+        "done_button": "Fortsätt handla"
+      },
+      "add_success": {
+        "title": "Betalningsmetod tillagd"
+      },
+      "card_fields": {
+        "name_on_card_label": "Namn på kortet",
+        "name_on_card_placeholder": "Namn på kortet",
+        "card_expiry_label": "Utgångsdatum (MM / ÅÅ)",
+        "card_expiry_placeholder": "Utgångsdatum (MM / ÅÅ)",
+        "card_start_label": "Utgivningsdatum (MM / ÅÅ)",
+        "card_start_placeholder": "Utgivningsdatum (MM / ÅÅ)",
+        "tooltip": {
+          "card_verification_value_explanation": "3-siffrig säkerhetskod som vanligtvis finns på baksidan av ditt kort. American Express-kort har en 4-siffrig kod som finns på framsidan."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Ange ditt namn exakt som det står på ditt kort",
+          "credit_card_expiry_invalid": "Ange ett giltigt kortutgångsdatum"
+        },
+        "unavailable": {
+          "text": "Betalningar med kredit- och betalkort är inte tillgängliga just nu.",
+          "link_text": "Uppdatera denna sida"
+        }
+      },
+      "payment_delete": {
+        "title": "Ta bort betalningsmetod",
+        "description_without_replacement": "Denna betalningsmetod kommer inte längre att vara tillgänglig för framtida köp.",
+        "description_with_replacement": "Att ta bort denna betalningsmetod kommer att påverka förautoriseringar av betalningar. Du kan välja att ersätta den med en annan betalningsmetod för att fortsätta ta emot kommande beställningar.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "Att ta bort denna betalningsmetod kommer att påverka förautorisera betalningar. Om du inte väljer en alternativ betalningsmetod kommer denna betalningsmetod fortfarande att debiteras för eventuella utestående saldon på befintliga beställningar. Att välja en alternativ betalningsmetod gör att du kan ta emot kommande prenumerationsbeställningar utan avbrott.",
+          "with_pending_orders": "Att ta bort denna betalningsmetod kommer att radera den från ditt konto och den kommer inte längre att vara tillgänglig för framtida köp. Om du inte väljer en alternativ betalningsmetod kommer den fortfarande att debiteras för eventuella utestående saldon på befintliga beställningar.",
+          "with_subscriptions": "Att ta bort denna betalningsmetod kommer att påverka förautorisera betalningar. Byt ut den mot en alternativ betalningsmetod för att fortsätta ta emot kommande beställningar."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Att ta bort denna betalningsmetod kommer att påverka förautorisera betalningar. Denna betalningsmetod kommer fortfarande att debiteras för eventuella utestående saldon på befintliga beställningar, men du kommer inte att få kommande prenumerationsbeställningar. Lägg till en alternativ betalningsmetod för att fortsätta ta emot prenumerationsbeställningar.",
+          "with_pending_orders": "Att ta bort denna betalningsmetod kommer att ta bort den från ditt konto och den kommer inte längre att vara tillgänglig för framtida köp. Den kommer fortfarande att debiteras för eventuella utestående saldon på befintliga beställningar.",
+          "with_subscriptions": "Att ta bort denna betalningsmetod kommer att påverka förautorisera betalningar. Lägg till en alternativ betalningsmetod för att fortsätta ta emot kommande beställningar."
+        },
+        "payment_method_selector_placeholder": "Välj en ersättningsbetalningsmetod (valfritt)",
+        "payment_method_selector_no_alternative_payment": "Ingen ersättningsmetod",
+        "replace_method_with_new_method_description": "Din {{currentPaymentMethodName}} kommer att tas bort och ersättas med din {{newPaymentMethodName}}.",
+        "error_when_deleting": "Vi ber om ursäkt men något gick fel och vi kunde inte ta bort denna betalningsmetod. Vänligen försök igen senare eller uppdatera sidan.",
+        "delete_and_replace_button_accessibility_label": "Ta bort {{currentPaymentMethodName}} och ersätt med {{newPaymentMethodName}}.",
+        "deleted_successfully": "Betalningsmetod borttagen framgångsrikt.",
+        "loading_available_payment_methods_accessibility_label": "Laddar tillgängliga betalningsmetoder"
+      },
+      "add_payment_method": {
+        "payment_method_added_confirmation": "Betalningsmetod tillagd",
+        "missing_customer_error": "Något gick fel. Vänligen försök igen eller kontakta supporten.",
+        "replace_mode_warning": "Att ta bort denna betalningsmetod kommer att påverka prenumerationer eller förbeställningar. Byt ut den mot en alternativ betalningsmetod för att fortsätta ta emot kommande beställningar.",
+        "choose_from_list": "Välj från listan",
+        "billing_address": {
+          "choose_billing_address_from_list_button": "Välj från listan",
+          "missing_billing_address_error_message": "Vänligen ange en faktureringsadress",
+          "default_checkbox": "Ange som standardbetalningsmetod"
+        },
+        "subscription_contracts": {
+          "title": "Använd betalningsmetod för återkommande beställningar",
+          "more_items": {
+            "one": "{{count}} fler produkt",
+            "other": "{{count}} fler produkter"
+          },
+          "product_details": "Produktdetaljer",
+          "load_more": "Ladda mer"
+        },
+        "updating_contracts": {
+          "one": "Uppdaterar {{count}} abonnemangskontrakt...",
+          "other": "Uppdaterar {{count}} prenumerationsavtal..."
+        },
+        "contracts_updated": {
+          "one": "Uppdaterade {{count}} prenumerationsavtal framgångsrikt"
+        }
       }
     },
     "date": {

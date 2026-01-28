@@ -2988,11 +2988,20 @@
     "payment_methods": {
       "update_payment_method": {
         "title": "Zahlungsmethode aktualisieren",
-        "button_title": "Update",
+        "button_title": "Aktualisieren",
         "billing_address": "Rechnungsadresse",
-        "disclaimer": "Diese Zahlungsmethode wird für zukünftige Käufe gespeichert und kann für alle wiederkehrenden oder aufgeschobenen Käufe verwendet werden.",
-        "error_message": "Zahlungsmethode kann nicht aktualisiert werden",
-        "current": "Aktuell"
+        "disclaimer": "Diese Zahlungsmethode wird für zukünftige Käufe gespeichert und kann für wiederkehrende oder aufgeschobene Käufe verwendet werden.",
+        "error_message": "Zahlungsmethode konnte nicht aktualisiert werden",
+        "current": "Aktuell",
+        "pre_orders_title": "Bevorstehend",
+        "pre_orders_list_accessibility_label": "Liste der ausstehenden Bestellprodukte",
+        "resources_list_accessibility_label": "Abonnementprodukte und ausstehende Bestellprodukte, die diese Zahlungsmethode verwenden",
+        "resources_card_scroll": "Scrollen für weitere Artikel",
+        "loading_form_accessibility_message": "Lade Formular zur Aktualisierung der Zahlungsmethode",
+        "loading_current_payment_method": "Lade aktuelle Zahlungsmethode",
+        "loading_digital_wallets": "Digitale Wallet-Optionen werden geladen",
+        "loading_card_fields": "Lade Kreditkartenfelder",
+        "loading_resources": "Abonnements und bevorstehende Bestellungen werden geladen"
       },
       "pay_pal": {
         "errors": {
@@ -3024,7 +3033,77 @@
       },
       "apple_pay": {
         "errors": {
-          "generic": "Es gab ein Problem mit Apple Pay. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode."
+          "generic": "Es gab ein Problem mit Apple Pay. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+          "missing_billing_address": "Apple Pay erfordert eine Rechnungsadresse. Bitte fügen Sie eine zu Ihrem Konto hinzu."
+        }
+      },
+      "store_credit": {
+        "label": "Guthaben im Geschäft",
+        "accesibility_label": "Guthaben - {{formattedBalance}}",
+        "expirable_amounts_label": "Verfallbare Beträge",
+        "details_modal": {
+          "title": "Verfallbarer Guthaben im Geschäft",
+          "amount_label": "Betrag",
+          "event_label": "Veranstaltung",
+          "events": {
+            "adjustment": "Einstellung",
+            "order_payment": "Bestellzahlung",
+            "order_refund": "Bestellrückerstattung",
+            "payment_failure": "Zahlung fehlgeschlagen",
+            "payment_returned": "Zahlung zurückerstattet"
+          },
+          "expirable_balance_info": "Ein Teil Ihres Guthabens wird zu einem zukünftigen Zeitpunkt verfallen",
+          "expirable_amount_label": "Gesamt verfallbarer Betrag",
+          "expirable_amounts_info": "Beträge, die früher verfallen, werden beim Bezahlen zuerst angewendet",
+          "expirable_amounts_button": "Ansehen",
+          "expired_amounts_button": "Abgelaufene Beträge anzeigen",
+          "pagination": {
+            "load_more_label": "Mehr laden",
+            "load_more_accessibility_label": "Mehr ablaufbare Beträge laden"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "Zahlungsmethode Details",
+        "payment_method_expiring_on": "Läuft ab am {{expiryDate}}",
+        "preauthorized_payments": "Vorausgenehmigte Zahlungen",
+        "close_payment_modal_accessibility_label": "Zahlungsmethode-Details schließen",
+        "payment_method_not_found_error": "Zahlungsmethode konnte nicht gefunden werden",
+        "payment_details_loading": "Lade Zahlungsart-Details",
+        "pre_authorized_payments": "Vorausgenehmigte Zahlungen",
+        "edit_payment_method_button_accessibility_label": "Zahlungsmethode mit den Endziffern {{lastDigits}} bearbeiten",
+        "invalid_payment_method_message": "Verwenden Sie eine neue Kreditkarte, um weiterhin kommende Bestellungen zu erhalten.",
+        "replace_payment_method": "Zahlungsmethode ändern",
+        "checkout_card_banner": "Diese Zahlungsmethode kann nur für vorautorisierte Zahlungen verwendet werden. Sie wird an der Kasse nicht angezeigt, wenn Sie in diesem Geschäft angemeldet sind."
+      },
+      "edit_payment_method": {
+        "cancel_edit_payment_method_button": "Abbrechen",
+        "billing_address_add_new": "Neu hinzufügen",
+        "billing_address_choose_from_list": "Aus Liste wählen",
+        "future_purchases_notice": "Diese Zahlungsmethode wird für zukünftige Einkäufe gespeichert.",
+        "generic_error": "Beim Aktualisieren ist ein Problem aufgetreten. Bitte versuchen Sie es erneut."
+      },
+      "link_expired": {
+        "message": "Dieser Link zum Aktualisieren Ihrer Zahlungsmethode ist abgelaufen.",
+        "update_message": "Dieser Link zum Aktualisieren Ihrer Zahlungsmethode ist abgelaufen.",
+        "add_message": "Dieser Link zum Hinzufügen Ihrer Zahlungsmethode ist abgelaufen."
+      },
+      "update_success": {
+        "done_button": "Einkauf fortsetzen"
+      },
+      "add_success": {
+        "done_button": "Einkauf fortsetzen"
+      },
+      "card_fields": {
+        "name_on_card_label": "Name auf der Karte",
+        "name_on_card_placeholder": "Name auf der Karte",
+        "card_expiry_label": "Ablaufdatum (MM / JJ)",
+        "card_expiry_placeholder": "Ablaufdatum (MM / JJ)",
+        "card_start_label": "Ausgabedatum (MM / JJ)",
+        "card_start_placeholder": "Ausgabedatum (MM / JJ)",
+        "tooltip": {
+          "card_verification_value_explanation_amex": "4-stelliger Sicherheitscode auf der Vorderseite Ihrer Karte",
+          "card_verification_value_explanation_other": "3-stelliger Sicherheitscode auf der Rückseite Ihrer Karte"
         }
       }
     },
