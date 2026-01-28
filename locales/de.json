@@ -2997,6 +2997,34 @@
       "pay_pal": {
         "errors": {
           "generic": "Es gab ein Problem mit PayPal. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode."
+        },
+        "loading_accessibility_message": "Lade PayPal"
+      },
+      "add_payment_method_dropdown": {
+        "bank_account_consent": "Indem Sie eine Zahlungsmethode hinzufügen, autorisieren Sie, dass Ihre Karte belastet oder Ihr Bankkonto für zukünftige Käufe, die Sie genehmigen, belastet wird, bis Sie dies widerrufen."
+      },
+      "bank_account": {
+        "loading_accessibility_message": "Bankkonto-Schaltfläche wird geladen",
+        "generic_error": "Konnte das Bankkonto nicht hinzufügen. Bitte versuchen Sie es später erneut."
+      },
+      "add_payment_method_banner": "Zahlungsmethode hinzufügen für schnelleren Checkout oder vorautorisierte Dienste",
+      "edit_payment_method_button_accessibility_label": "Bearbeite {{paymentMethodName}} mit der Endung {{lastDigits}}",
+      "edit_payment_method_brand_button_accessibility_label": "Bearbeite {{paymentMethodName}}",
+      "back_button": "Hinten",
+      "expiration_warning_button_accessibility_label": "Zeige Ablaufwarnung für {{paymentMethodName}} mit Endziffern {{lastDigits}}",
+      "card_update_consent": "Diese Zahlungsmethode wird für zukünftige Einkäufe gespeichert.",
+      "card_update_consent_subscriptions": "Diese Zahlungsmethode wird für zukünftige Käufe gespeichert und kann für wiederkehrende oder aufgeschobene Käufe verwendet werden.",
+      "digital_wallet_title": "Digitale Geldbörse",
+      "or": "ODER",
+      "google_pay": {
+        "errors": {
+          "generic": "Es gab ein Problem mit Google Pay. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode.",
+          "missing_billing_address": "Google Pay benötigt eine Rechnungsadresse. Bitte fügen Sie eine zu Ihrem Konto hinzu."
+        }
+      },
+      "apple_pay": {
+        "errors": {
+          "generic": "Es gab ein Problem mit Apple Pay. Versuchen Sie es erneut oder verwenden Sie eine andere Zahlungsmethode."
         }
       }
     },
@@ -3634,7 +3662,22 @@
         "description": "Beim Aktualisieren Ihres Namens ist ein Problem aufgetreten. Versuchen Sie, diese Seite zu aktualisieren oder überprüfen Sie Ihre Internetverbindung."
       },
       "resend_link": {
-        "too_many_requests": "Zu viele Anfragen. Bitte versuchen Sie es später erneut."
+        "too_many_requests": "Zu viele Anfragen. Bitte versuchen Sie es später erneut.",
+        "generic": "Fehlgeschlagene Anfrage"
+      },
+      "load_extension_error": {
+        "description": "Aktualisieren Sie diese Seite oder versuchen Sie es in ein paar Minuten erneut.",
+        "refresh_button": "Seite aktualisieren"
+      },
+      "already_upgraded": "Kundenkonten sind bereits aktualisiert.",
+      "failed_to_upgrade": "Fehler beim Aktualisieren der Kontoeinstellungen des Kunden.",
+      "not_upgraded": "Kundenkonten werden nicht aufgewertet.",
+      "failed_to_revert": "Fehler beim Zurücksetzen der Kundeneinstellungen.",
+      "revert_window_expired": "Das Rücksetzfenster ist abgelaufen."
+    },
+    "throttle": {
+      "too_many_attempts": {
+        "description": "Bitte versuchen Sie es in ein paar Minuten erneut"
       }
     }
   }

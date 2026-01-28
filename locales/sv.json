@@ -566,7 +566,54 @@
         "loading_accessibility_message": "Laddar PayPal"
       },
       "apple_pay": {
-        "loading": "Laddar Apple Pay"
+        "loading": "Laddar Apple Pay",
+        "errors": {
+          "not_available": "Apple Pay är inte tillgängligt på den här enheten.",
+          "missing_billing_address": "Apple Pay kräver en faktureringsadress. Vänligen lägg till en på ditt konto."
+        }
+      },
+      "store_credit": {
+        "label": "Butikskredit",
+        "accesibility_label": "Butikskredit - {{formattedBalance}}",
+        "expirable_amounts_button": "Visa utgångsbelopp",
+        "expirable_amounts_label": "Utgångsbelopp",
+        "details_modal": {
+          "title": "Utgående butikskredit",
+          "balance_label": "Balans",
+          "event_label": "Evenemang",
+          "events": {
+            "order_refund": "Orderåterbetalning",
+            "order_cancellation": "Orderavbokning",
+            "tax_finalization": "Slutgiltig skatteavstämning"
+          },
+          "expirable_balance_info": "En del av ditt saldo kommer att gå ut vid ett framtida datum",
+          "expirable_amount_label": "Totalt förfallobart belopp",
+          "expirable_amounts_info": "Belopp som går ut tidigare används först vid kassan",
+          "expired_amounts_button": "Visa utgångna belopp",
+          "pagination": {
+            "load_more_label": "Ladda mer",
+            "load_more_accessibility_label": "Ladda fler utgångsbelopp"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "Betalningsmetodens detaljer",
+        "credit_card_details_accessibility_label": "slutar med {{lastDigits}}",
+        "card_info_title": "Kortinformation",
+        "payment_method_expired_on": "Utgånget den {{expiryDate}}",
+        "preauthorized_payments": "Förhandsauktoriserade betalningar",
+        "close_payment_modal_accessibility_label": "Stäng modal för betalningsmetodens detaljer",
+        "payment_method_not_found_error": "Kan inte hitta betalningsmetod",
+        "payment_details_loading": "Laddar betalningsmetodens detaljer",
+        "pre_authorized_payments": "Förhandsauktoriserade betalningar",
+        "total_amount_of_subscription_line_items_left": "och {{total}} till",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} artiklar totalt, visar {{totalItemsToDisplay}} artiklar.",
+        "next_payment_due": "Nästa betalning förfaller {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button_accessibility_label": "Redigera betalningsmetod som slutar på {{lastDigits}}",
+        "loading_shop_pay": "Laddar Shop Pay",
+        "invalid_payment_method_message": "Använd ett nytt kreditkort för att fortsätta ta emot kommande beställningar.",
+        "replace_payment_method": "Byt betalningsmetod",
+        "checkout_card_banner": "Denna betalningsmetod kan endast användas för förautentiserade betalningar. Den kommer inte att visas i kassan om du är inloggad i denna butik."
       }
     },
     "date": {

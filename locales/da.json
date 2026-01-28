@@ -2786,8 +2786,48 @@
       },
       "apple_pay": {
         "errors": {
-          "generic": "Der opstod et problem med Apple Pay. Prøv igen eller brug en anden betalingsmetode."
+          "generic": "Der opstod et problem med Apple Pay. Prøv igen eller brug en anden betalingsmetode.",
+          "missing_billing_address": "Apple Pay kræver en faktureringsadresse. Tilføj venligst en til din konto."
         }
+      },
+      "store_credit": {
+        "label": "Butikskredit",
+        "accesibility_label": "Butikskredit - {{formattedBalance}}",
+        "expirable_amounts_button": "Se udløbende beløb",
+        "expirable_amounts_label": "Udløbsbare mængder",
+        "details_modal": {
+          "title": "Udløbsbar butikskredit",
+          "events": {
+            "order_refund": "Ordre refundering",
+            "order_cancellation": "Ordreannullering",
+            "tax_finalization": "Skatteafslutning"
+          },
+          "expirable_balance_info": "Nogle af dine saldo vil udløbe på en fremtidig dato",
+          "expirable_amount_label": "Samlet udløbbar mængde",
+          "expirable_amounts_info": "Beløb, der udløber først, anvendes først ved kassen",
+          "expired_amounts_button": "Se udløbne beløb",
+          "pagination": {
+            "load_more_label": "Indlæs mere",
+            "load_more_accessibility_label": "Indlæs flere udløbende beløb"
+          }
+        }
+      },
+      "payment_details": {
+        "title": "Betalingsmetode detaljer",
+        "credit_card_details_accessibility_label": "slutter med {{lastDigits}}",
+        "payment_method_expiring_on": "Udløber den {{expiryDate}}",
+        "payment_method_expired_on": "Udløbet den {{expiryDate}}",
+        "preauthorized_payments": "Forudautoriserede betalinger",
+        "close_payment_modal_accessibility_label": "Luk betalingsmetode detaljer modal",
+        "payment_method_not_found_error": "Kan ikke finde betalingsmetode",
+        "payment_details_loading": "Indlæser betalingsmetodeoplysninger",
+        "pre_authorized_payments": "Forudautoriserede betalinger",
+        "next_payment_due": "Næste betaling forfalder {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button_accessibility_label": "Rediger betalingsmetode, der slutter med {{lastDigits}}",
+        "replace_payment_method": "Udskift betalingsmetode",
+        "checkout_card_banner": "Denne betalingsmetode kan kun bruges til forudautoriserede betalinger. Den vil ikke blive vist ved kassen, hvis du er logget ind i denne butik.",
+        "default_checkbox": "Indstil som standard",
+        "default_checkbox_accessibility_label": "Indstil denne betalingsmetode som standard"
       }
     },
     "enable_javascript": "For at se din konto skal du aktivere JavaScript i dine browserindstillinger eller logge ind med en anden browser.",
