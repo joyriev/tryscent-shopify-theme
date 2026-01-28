@@ -10,20 +10,20 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Brug adgangskode for at få adgang til butikken:",
-      "login_password_button": "Brug adgangskode for at få adgang",
+      "login_form_heading": "Indtast butik ved hjælp af adgangskode:",
+      "login_password_button": "Indtast med adgangskode",
       "login_form_password_label": "Adgangskode",
       "login_form_password_placeholder": "Din adgangskode",
       "login_form_error": "Forkert adgangskode!",
-      "login_form_submit": "Få adgang",
-      "admin_link_html": "Er du butiksejeren? <a href=\"/admin\" class=\"link underlined-link\">Log ind her</a>",
+      "login_form_submit": "Indtast",
+      "admin_link_html": "Er du butiksindehaveren? <a href=\"/admin\" class=\"link underlined-link\">Log ind her</a>",
       "powered_by_shopify_html": "Denne butik vil blive drevet af {{ shopify }}"
     },
     "social": {
       "alt_text": {
         "share_on_facebook": "Del på Facebook",
         "share_on_twitter": "Del på X",
-        "share_on_pinterest": "Pin på Pinterest"
+        "share_on_pinterest": "Fastgør på Pinterest"
       },
       "links": {
         "twitter": "X (Twitter)",
@@ -37,7 +37,7 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "Tilbage til butikken",
+    "continue_shopping": "Fortsæt med at handle",
     "pagination": {
       "label": "Sideinddeling",
       "page": "Side {{ number }}",
@@ -45,45 +45,45 @@
       "previous": "Forrige side"
     },
     "search": {
-      "search": "Søg",
+      "search": "Søgning",
       "reset": "Ryd søgeord"
     },
     "cart": {
-      "view": "Se indkøbskurv ({{ count }})",
-      "item_added": "Varen er lagt i indkøbskurven",
-      "view_empty_cart": "Se indkøbskurv"
+      "view": "Se kurv ({{ count }})",
+      "item_added": "Vare tilføjet til din indkøbskurv",
+      "view_empty_cart": "Se kurv"
     },
     "share": {
       "copy_to_clipboard": "Kopiér link",
       "share_url": "Link",
-      "success_message": "Linket er kopieret til udklipsholderen",
+      "success_message": "Link kopieret til udklipsholder",
       "close": "Luk deling"
     },
     "slider": {
       "of": "af",
       "next_slide": "Skub til højre",
       "previous_slide": "Skub til venstre",
-      "name": "Diasshow"
+      "name": "Skyder"
     }
   },
   "newsletter": {
-    "label": "Mail",
-    "success": "Tak, fordi du har tegnet et abonnement",
-    "button_label": "Abonner"
+    "label": "E-mail",
+    "success": "Tak for dit abonnement",
+    "button_label": "Tilmeld"
   },
   "accessibility": {
-    "skip_to_text": "Gå til indhold",
+    "skip_to_text": "Spring til indholdet",
     "close": "Luk",
     "unit_price_separator": "pr.",
-    "vendor": "Forhandler:",
+    "vendor": "Leverandør:",
     "error": "Fejl",
-    "refresh_page": "Hele siden bliver genindlæst, når du vælger et afsnit.",
+    "refresh_page": "At vælge et udvalg resulterer i en fuld sideopdatering.",
     "link_messages": {
       "new_window": "Åbner i et nyt vindue.",
       "external": "Åbner eksternt website."
     },
     "loading": "Indlæser...",
-    "skip_to_product_info": "Gå til produktoplysninger",
+    "skip_to_product_info": "Spring til produktinformation",
     "total_reviews": "anmeldelser i alt",
     "star_reviews_info": "{{ rating_value }} ud af {{ rating_max }} stjerner",
     "collapsible_content_title": "Indhold, der kan skjules",
@@ -3590,6 +3590,63 @@
         "remove": "Fjern udvidelse",
         "move_down_tooltip": "Flyt til næste position",
         "move_up_tooltip": "Flyt til forrige position"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Dette link kan ikke åbnes inde i redigeringsprogrammet. Det vil blive åbnet i et nyt vindue ({{resolved_to_link}}). Klik OK for at fortsætte."
+    },
+    "settings": {
+      "title": "Indfatninger",
+      "loading_accessibility_message": "Indlæser indstillingsside",
+      "log_out_everywhere": {
+        "description": "Hvis du har mistet en enhed eller har sikkerhedsbekymringer, skal du logge ud overalt for at sikre sikkerheden af din konto."
+      }
+    },
+    "shop_ads": {
+      "title": "Andre produkter, du måske kan lide",
+      "button": "Udforsk i Shop"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "enabled": "Kunder kan selv anmode om og håndtere returneringer.",
+        "disabled": "Kunder skal kontakte forhandleren for at anmode om en returnering."
+      }
+    },
+    "subscriptions": {
+      "update_payment_instrument": {
+        "title": "Udskift betalingsmetode",
+        "no_payment_methods_available": "Ingen betalingsmetoder tilgængelige",
+        "success": "Betalingsmetode opdateret"
+      }
+    },
+    "intents": {
+      "subscription_replace_payment_method": {
+        "title": "Udskift betalingsmetode",
+        "loading": "Indlæser modal til udskiftning af betalingsmetode",
+        "success": "Betalingsmetode opdateret",
+        "invalid_subscription_contract": "Kan ikke finde abonnementet",
+        "edit_current_payment_method": "Rediger nuværende betalingsmetode",
+        "edit_selected_payment_method": "Rediger valgt betalingsmetode"
+      }
+    },
+    "sign_in": {
+      "brand_logo_alt_text": "%{shop_name} Logo",
+      "step_one": {
+        "page_title": "Log ind - %{shop_name}",
+        "subheading": "Indtast din e-mail, så sender vi dig en bekræftelseskode",
+        "subheading_with_sign_in_options": "Log ind eller opret en konto",
+        "input_field_label": "E-mail"
+      },
+      "step_two": {
+        "page_title": "Indtast kode - %{shop_name}",
+        "restart_link": "Log ind med en anden e-mail",
+        "button": "Indsend"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "Indtast en gyldig e-mailadresse",
+          "invalid_code": "Indtast den korrekte 6-cifrede kode"
+        }
       }
     }
   }

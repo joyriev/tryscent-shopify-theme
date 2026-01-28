@@ -10,20 +10,20 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Shop mit Passwort betreten:",
-      "login_password_button": "Mit Passwort betreten",
+      "login_form_heading": "Geschäft mit Passwort betreten:",
+      "login_password_button": "Mit Passwort eingeben",
       "login_form_password_label": "Passwort",
-      "login_form_password_placeholder": "Dein Passwort",
+      "login_form_password_placeholder": "Ihr Passwort",
       "login_form_error": "Falsches Passwort!",
       "login_form_submit": "Eingeben",
-      "admin_link_html": "Bist du der Shop-Inhaber? <a href=\"/admin\" class=\"link underlined-link\">Hier einloggen</a>",
-      "powered_by_shopify_html": "Dieser Shop wird unterstützt von {{ shopify }}"
+      "admin_link_html": "Sind Sie der Ladenbesitzer? <a href=\"/admin\" class=\"link underlined-link\">Hier einloggen</a>",
+      "powered_by_shopify_html": "Dieser Laden wird betrieben von {{ shopify }}"
     },
     "social": {
       "alt_text": {
         "share_on_facebook": "Auf Facebook teilen",
         "share_on_twitter": "Auf X teilen",
-        "share_on_pinterest": "Auf Pinterest pinnen"
+        "share_on_pinterest": "An Pinterest anheften"
       },
       "links": {
         "twitter": "X (Twitter)",
@@ -37,7 +37,7 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "Weiter shoppen",
+    "continue_shopping": "Einkauf fortsetzen",
     "pagination": {
       "label": "Seitennummerierung",
       "page": "Seite {{ number }}",
@@ -45,45 +45,45 @@
       "previous": "Vorherige Seite"
     },
     "search": {
-      "search": "Suchen",
-      "reset": "Suchbegriff zurücksetzen"
+      "search": "Suche",
+      "reset": "Suchbegriff löschen"
     },
     "cart": {
       "view": "Warenkorb ansehen ({{ count }})",
-      "item_added": "Artikel wurde in den Warenkorb gelegt",
+      "item_added": "Artikel zu Ihrem Warenkorb hinzugefügt",
       "view_empty_cart": "Warenkorb ansehen"
     },
     "share": {
       "copy_to_clipboard": "Link kopieren",
-      "share_url": "Link",
+      "share_url": "Verbindung",
       "success_message": "Link in die Zwischenablage kopiert",
       "close": "Teilen schließen"
     },
     "slider": {
       "of": "von",
-      "next_slide": "Nach rechts schieben",
-      "previous_slide": "Nach links schieben",
-      "name": "Slider"
+      "next_slide": "Nach rechts wischen",
+      "previous_slide": "Nach links wischen",
+      "name": "Schieberegler"
     }
   },
   "newsletter": {
     "label": "E-Mail",
-    "success": "Danke für deine Anmeldung",
+    "success": "Danke für dein Abonnement",
     "button_label": "Abonnieren"
   },
   "accessibility": {
-    "skip_to_text": "Direkt zum Inhalt",
+    "skip_to_text": "Zum Inhalt springen",
     "close": "Schließen",
     "unit_price_separator": "pro",
-    "vendor": "Anbieter:",
+    "vendor": "Verkäufer:",
     "error": "Fehler",
-    "refresh_page": "Wenn du dich für eine Auswahl entscheidest, wird die Seite komplett aktualisiert.",
+    "refresh_page": "Das Auswählen einer Auswahl führt zu einer vollständigen Seitenaktualisierung.",
     "link_messages": {
       "new_window": "Wird in einem neuen Fenster geöffnet.",
       "external": "Öffnet externe Webseite."
     },
     "loading": "Wird geladen ...",
-    "skip_to_product_info": "Zu Produktinformationen springen",
+    "skip_to_product_info": "Zum Produktinformationen springen",
     "total_reviews": "Bewertungen insgesamt",
     "star_reviews_info": "{{ rating_value }} von {{ rating_max }} Sternen",
     "collapsible_content_title": "Einklappbarer Inhalt",
@@ -3924,6 +3924,12 @@
         "page_title": "Code eingeben - %{shop_name}",
         "restart_link": "Mit einer anderen E-Mail anmelden",
         "button": "Absenden"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "Geben Sie eine gültige E-Mail-Adresse ein",
+          "invalid_code": "Geben Sie den korrekten 6-stelligen Code ein"
+        }
       }
     }
   }
