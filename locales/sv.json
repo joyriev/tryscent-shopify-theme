@@ -437,29 +437,29 @@
     },
     "orders": {
       "title": "Orderhistorik",
-      "order_number": "Order",
+      "order_number": "Beställning",
       "order_number_link": "Ordernummer {{ number }}",
       "date": "Datum",
       "payment_status": "Betalningsstatus",
-      "fulfillment_status": "Distributionsstatus",
+      "fulfillment_status": "Leveransstatus",
       "total": "Totalt",
-      "none": "Du har ännu inte lagt någon order."
+      "none": "Du har inte gjort några beställningar än."
     },
     "recover_password": {
       "title": "Återställ ditt lösenord",
-      "subtext": "Vi skickar dig ett e-postmeddelande så att du kan återställa ditt lösenord",
-      "success": "Vi har skickat dig ett e-postmeddelande med en länk för att uppdatera ditt lösenord."
+      "subtext": "Vi kommer att skicka ett e-postmeddelande till dig för att återställa ditt lösenord",
+      "success": "Vi har skickat ett e-postmeddelande till dig med en länk för att uppdatera ditt lösenord."
     },
     "register": {
       "title": "Skapa konto",
       "first_name": "Förnamn",
       "last_name": "Efternamn",
-      "email": "E-postadress",
+      "email": "E-post",
       "password": "Lösenord",
       "submit": "Skapa"
     },
     "reset_password": {
-      "title": "Återställ kontolösenord",
+      "title": "Återställ kontolösenordet",
       "subtext": "Ange ett nytt lösenord",
       "password": "Lösenord",
       "password_confirm": "Bekräfta lösenordet",
@@ -482,46 +482,46 @@
       "price": "Pris",
       "quantity": "Antal",
       "total": "Totalt",
-      "fulfilled_at_html": "Distribuerad {{ date }}",
+      "fulfilled_at_html": "Uppfyllt {{ date }}",
       "track_shipment": "Spåra försändelse",
       "tracking_url": "Spårningslänk",
-      "tracking_company": "Transportör",
+      "tracking_company": "Operatör",
       "tracking_number": "Spårningsnummer",
       "subtotal": "Delsumma",
-      "total_duties": "Tullavgifter",
+      "total_duties": "Tullar",
       "total_refunded": "Återbetald"
     }
   },
   "gift_cards": {
     "issued": {
-      "title": "Här är ditt presentkort värt {{ value }} för {{ shop }}!",
+      "title": "Här är ditt presentkortssaldo på {{ value }} för {{ shop }}!",
       "subtext": "Ditt presentkort",
       "gift_card_code": "Presentkortskod",
-      "shop_link": "Besök webbshop",
+      "shop_link": "Besök webbutik",
       "add_to_apple_wallet": "Lägg till i Apple Wallet",
-      "qr_image_alt": "QR-kod – skanna för att lösa in presentkort",
+      "qr_image_alt": "QR-kod — skanna för att lösa in presentkortet",
       "copy_code": "Kopiera presentkortskod",
-      "expired": "Har gått ut",
-      "copy_code_success": "Koden kopierades",
+      "expired": "Utgånget",
+      "copy_code_success": "Kod kopierad framgångsrikt",
       "how_to_use_gift_card": "Använd presentkortskoden online eller QR-koden i butik",
-      "expiration_date": "Går ut {{ expires_on }}"
+      "expiration_date": "Upphör {{ expires_on }}"
     }
   },
   "recipient": {
     "form": {
       "checkbox": "Jag vill skicka detta som en gåva",
       "email_label": "Mottagarens e-postadress",
-      "email": "E-postadress",
+      "email": "E-post",
       "name_label": "Mottagarens namn (valfritt)",
-      "name": "Namn",
+      "name": "[name]",
       "message_label": "Meddelande (valfritt)",
       "message": "Meddelande",
       "max_characters": "Max. {{ max_chars }} tecken",
-      "email_label_optional_for_no_js_behavior": "Mottagarens e-postadress (valfritt)",
+      "email_label_optional_for_no_js_behavior": "Mottagarens e-post (valfritt)",
       "send_on": "ÅÅÅÅ-MM-DD",
       "send_on_label": "Skicka den (valfritt)",
-      "expanded": "Mottagarformulär för presentkort öppnat",
-      "collapsed": "Mottagarformulär för presentkort stängt"
+      "expanded": "Formulär för mottagare av presentkort utökat",
+      "collapsed": "Formulär för presentkortsmottagare ihopfällt"
     }
   },
   "customer_accounts": {
