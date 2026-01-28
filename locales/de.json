@@ -2152,6 +2152,130 @@
       "mor_policies": {
         "terms_and_conditions": "Geschäftsbedingungen des Händlers",
         "privacy_policy": "Datenschutzerklärung des Händlers im Auftrag"
+      },
+      "markets": {
+        "invalid_market_manager_error": "Überprüfen Sie Ihre Kontaktinformationen, bevor Sie die Zahlung abschließen"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Zu zahlender Betrag für Bestellung %{order_name}",
+        "changes_summary": {
+          "added": {
+            "other": "Hinzugefügt %{count}"
+          },
+          "subtracted": "Entfernt %{count}",
+          "returned": "Zurückgegeben %{count}",
+          "return_line_item_removed": "%{count} aus Rückgabe entfernt"
+        },
+        "additional_payment_requested": "Zahlung von %{total_outstanding} ist erforderlich",
+        "checkout_review_and_pay": "Ihre Bestellung %{order_name} wurde aktualisiert. Überprüfen Sie diese Änderungen und bezahlen Sie dann, um Ihre Bestellung zu bestätigen.",
+        "order_updated_on": "Ihre Bestellung wurde am %{last_edited_at} aktualisiert.",
+        "order_review_and_pay": "Ihre Bestellung wurde aktualisiert. Überprüfen und bezahlen Sie, um Ihre Bestellung zu bestätigen."
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Ihre Kreditkarte wird mit %{amount} belastet",
+        "payment_total_label": "Gesamtzahlung",
+        "change_currency_link": "Wechsel zu %{currency_name}",
+        "card_provider_fx_charges_warning": "Ihr Kartenanbieter kann Gebühren für Transaktionen in %{currency_code} erheben.",
+        "currency_not_supported_by_shop": "Die von Ihnen gewählte Währung ist nicht mehr verfügbar. Alle Preise sind jetzt in %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Ihr Warenkorb wurde basierend auf Ihrem Versandland aktualisiert.",
+        "cart_and_currency_updated_based_on_country": "Ihr Warenkorb und die Währung wurden basierend auf Ihrem Versandland aktualisiert."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Ihr Land/Ihre Region wurde aktualisiert. Geben Sie Ihre Lieferadresse ein, um mit dem Checkout fortzufahren."
+      },
+      "tips": {
+        "description": "Zeigen Sie Ihre Unterstützung für das Team bei %{shop_name}",
+        "presets_description": "Wählen Sie einen Trinkgeldprozentsatz aus",
+        "custom_label": "Benutzerdefinierte Spitze",
+        "update_tip": "Aktualisierungstipp",
+        "message": "Danke, wir wissen das zu schätzen."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "Kaufen Sie %{product_name}",
+          "one": "Kaufen Sie %{product_name} und %{count} weiteren Artikel",
+          "other": "Kaufen Sie %{product_name} und %{count} weitere Artikel"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals": "%{total_price} alle %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Erste Zahlung %{total_price_with_discount}, dann %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "other": "Erste %{count} Zahlungen jeweils %{total_price}"
+          },
+          "following_cycles": ", dann %{total_price} alle %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", dann %{count} Zahlung bei %{total_price}",
+            "other": ", dann %{count} Zahlungen zu je %{total_price}"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "delete_customer_mandate": {
+          "generic_error": "Bei der Verarbeitung Ihrer Anfrage ist ein Problem aufgetreten.",
+          "success_message": "Ihre Zahlungsmethode wurde erfolgreich gelöscht"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "description": "Versuchen Sie es in ein paar Minuten noch einmal"
+        },
+        "line_to_check_out": "Du stehst in der Schlange zur Kasse",
+        "cart_summary_heading": "Ihr Warenkorb",
+        "inventory": {
+          "partial_inventory_banner": "Ein Teil Ihres Warenkorbs ist ausverkauft und wird beim Bezahlen nicht verfügbar sein.",
+          "sold_out": {
+            "heading": "Ihr Warenkorb ist ausverkauft",
+            "storefront_body": "Zurück zum Geschäft, um weiter einzukaufen",
+            "no_storefront_body": "Leider ist der Artikel, den Sie kaufen möchten, nicht mehr verfügbar.",
+            "link": "Zurück zum Geschäft"
+          }
+        },
+        "time_to_checkout_title": "Zeit zum Bezahlen - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Berechnung der geschätzten Wartezeit",
+          "one": "Geschätzte Wartezeit: {{count}} Minute",
+          "other": "Geschätzte Wartezeit: {{count}} Minuten"
+        },
+        "last_checked": "(Zuletzt geprüft: {{time}})",
+        "footer": {
+          "heading": "Aktualisieren Sie diese Seite nicht, sie wird automatisch aktualisiert.",
+          "body": "Artikel in Ihrem Warenkorb sind erst reserviert, wenn Sie den Kauf abschließen."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Bei der Verarbeitung Ihrer Anfrage ist ein Problem aufgetreten. Bitte wenden Sie sich an den Ladenbesitzer."
+      },
+      "no_address_location": {
+        "title": "Ort ohne Adresse",
+        "header": "Für diesen Standort ist keine Versandadresse vorhanden",
+        "alt_header": "Fehlende Versandadresse",
+        "message": "Kontaktieren Sie uns, um eine Adresse für diesen Standort hinzuzufügen, um den Kauf abzuschließen.",
+        "email_us_button_label": "Senden Sie uns eine E-Mail"
+      },
+      "order_errors": {
+        "creation_failure": "Bei der Erstellung Ihrer Bestellung ist ein Problem aufgetreten. Versuchen Sie es erneut oder kontaktieren Sie uns für weitere Informationen.",
+        "network_failure": "Ihre Bestellung konnte aufgrund eines Netzwerkfehlers nicht abgeschickt werden. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+        "inventory_reservation_failure": "Einige Artikel sind nicht mehr verfügbar."
+      },
+      "session_errors": {
+        "session_not_unique": "Bei der Verarbeitung Ihrer Bestellung ist ein Problem aufgetreten. Aktualisieren Sie diese Seite, um zum Shop zurückzukehren.",
+        "session_already_finished": "Diese Bestellung wurde bereits aufgegeben. Sie können zum Geschäft zurückkehren, um eine neue Bestellung zu starten."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Bei der Verarbeitung Ihrer Bestellung ist ein Problem aufgetreten. Versuchen Sie es in ein paar Minuten erneut."
+      },
+      "pickup_point": {
+        "title": "Abholpunkt",
+        "selector_tabs": "Abholort-Auswahl",
+        "could_not_resolve_address": "Ihre Adresse konnte nicht gefunden werden. Versuchen Sie es erneut oder verwenden Sie eine andere Adresse.",
+        "no_pickup_points_near_you": "Keine Abholstellen in der Nähe der ausgewählten Adresse gefunden",
+        "no_pickup_points_near_location": "Keine Abholstellen in Ihrer Nähe gefunden"
       }
     },
     "sentence": {

@@ -2054,6 +2054,72 @@
           },
           "following_cycles": ", derefter %{total_price} hver %{interval}"
         }
+      },
+      "customer_payment_methods": {
+        "delete_customer_mandate": {
+          "generic_error": "Der opstod et problem med at behandle din anmodning.",
+          "success_message": "Din betalingsmetode er blevet slettet med succes"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "description": "Prøv igen om et par minutter"
+        },
+        "line_to_check_out": "Du står i kø til Checkout",
+        "cart_summary_heading": "Din kurv",
+        "merchandise": {
+          "available": "Tilgængelig"
+        },
+        "inventory": {
+          "partial_inventory_banner": "En del af din kurv er udsolgt og vil ikke være tilgængelig for køb ved kassen.",
+          "sold_out": {
+            "heading": "Din kurv er udsolgt",
+            "storefront_body": "Gå tilbage til butikken for at fortsætte med at handle",
+            "no_storefront_body": "Desværre er varen, du ønsker at købe, ikke længere tilgængelig.",
+            "link": "Tilbage til butikken"
+          }
+        },
+        "time_to_checkout_title": "Tid til at betale - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Beregner anslået ventetid",
+          "less_than_one": "Anslået ventetid: Mindre end et minut",
+          "one": "Anslået ventetid: {{count}} minut",
+          "other": "Anslået ventetid: {{count}} minutter"
+        },
+        "last_checked": "(Sidst kontrolleret: {{time}})",
+        "footer": {
+          "heading": "Opdater ikke denne side, den opdateres automatisk.",
+          "body": "Varer i din kurv er ikke reserveret, før du gennemfører betalingen."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Der opstod et problem med at behandle din forespørgsel. Kontakt butiksejeren."
+      },
+      "no_address_location": {
+        "title": "Placering uden adresse",
+        "header": "Du har ikke en leveringsadresse til denne placering",
+        "message": "Kontakt os for at tilføje en adresse til denne lokation for at fuldføre betalingen.",
+        "email_us_button_label": "Send os en e-mail"
+      },
+      "order_errors": {
+        "creation_failure": "Der opstod et problem med at oprette din ordre. Prøv igen, eller kontakt os for flere oplysninger.",
+        "network_failure": "Din ordre kunne ikke sendes på grund af en netværksfejl. Tjek din forbindelse og prøv igen."
+      },
+      "session_errors": {
+        "session_not_unique": "Der opstod et problem med at behandle din ordre. Opdater denne side for at vende tilbage til butikken.",
+        "session_already_finished": "Denne ordre er allerede blevet indsendt. Du kan vende tilbage til butikken for at starte en ny ordre."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Der opstod et problem med at behandle din ordre. Prøv igen om et par minutter."
+      },
+      "pickup_point": {
+        "no_business_hours": "Ingen åbningstider tilgængelige",
+        "open_twenty_four_hours": "Åben 24/7",
+        "search_button": "Søgning",
+        "selector_tabs": "Afhentningsstedvælger",
+        "could_not_resolve_address": "Din adresse kunne ikke findes. Prøv igen eller brug en anden adresse",
+        "no_pickup_points_near_you": "Ingen afhentningssteder fundet i nærheden af den valgte adresse",
+        "no_pickup_points_near_location": "Ingen afhentningssteder fundet i nærheden af din placering"
       }
     },
     "sentence": {
