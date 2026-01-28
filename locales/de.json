@@ -3194,10 +3194,146 @@
             "active_delivery_guarantee_label": "Lieferung bis {{date}}",
             "expired_delivery_guarantee_description": "Die 30-Tage-Shop-Versprechen-Garantie für diese Bestellung ist abgelaufen.",
             "order_includes_guarantees_label": "Ihre Bestellung enthält {{deliveryAgreementsCount}} Garantien",
-            "order_includes_guarantees_description": "Die Shop-Garantie sichert eine schnelle, verlässliche Zustellung zu. Fordern Sie Shop-Guthaben an, falls Ihre Bestellung nach dem {{date}} eintrifft."
+            "order_includes_guarantees_description": "Die Shop-Garantie sichert eine schnelle, verlässliche Zustellung zu. Fordern Sie Shop-Guthaben an, falls Ihre Bestellung nach dem {{date}} eintrifft.",
+            "delivered_after_label": "Geliefert nach dem {{date}}",
+            "delivered_after_description": "Da Ihre Bestellung verspätet eingetroffen ist, haben Sie Anspruch auf {{amount}} Einkaufsguthaben.",
+            "claimed_shop_cash_description": "Da diese Bestellung verspätet eingetroffen ist, haben Sie {{amount}} Einkaufsguthaben beansprucht.",
+            "eligible_to_claim_shop_cash_description": "Da Ihre Bestellung verspätet eingetroffen ist, haben Sie Anspruch auf {{amount}} Einkaufsguthaben.",
+            "claim_shop_cash_button_label": "Shop-Guthaben beanspruchen",
+            "view_balance_in_shop_button_label": "Kontostand im Shop anzeigen",
+            "scan_to_claim_shop_cash_label": "Scannen, um {{amount}} Einkaufsgeld zu erhalten"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Lieferung unterstützt von",
+            "mixed_brands_label": "Lieferung garantiert",
+            "modal_accessibility_button_label": "Details zum Lieferzusagen"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Fordern Sie Ihr Shop-Guthaben an",
+            "no_shop_app_label": "{{appDownloadLink}} um Einkaufsgeld zu beanspruchen"
+          },
+          "details_modal": {
+            "title": "Lieferung unterstützt von",
+            "modal_accessiblity_label": "Details zum Lieferzusagen",
+            "delivery_guarantee_label": "Liefergarantie",
+            "delivery_by_label": "Lieferung bis {{date}}",
+            "delivery_guaranteed_by_label": "Lieferung garantiert bis {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "Shop Promise garantiert eine schnelle und zuverlässige Lieferung. Fordern Sie Shop Cash an, wenn Ihre Bestellung verspätet ankommt.",
+              "may_be_eligible_not_authorized_label": "Sie könnten berechtigt sein, Shop Cash zu beanspruchen, da diese Bestellung verspätet eingetroffen ist. Melden Sie sich an, um Details zu sehen.",
+              "redeemed_label": "Sie haben bereits Shop Cash beansprucht, da diese Bestellung zu spät angekommen ist.",
+              "expired_label": "Diese Bestellung ist nicht für eine Anspruch auf verspätete Lieferung berechtigt, da die 30-Tage-Garantie abgelaufen ist.",
+              "no_shop_cash_label": "Für diese Bestellung kann kein Anspruch auf verspätete Lieferung geltend gemacht werden, da sie nicht mit Shop Pay bezahlt wurde.",
+              "no_longer_guaranteed_label": "Für diese Artikel gibt es keine Liefergarantie mehr.",
+              "claim_shop_cash_title": "Scannen, um {{amount}} im Laden-Guthaben einzulösen",
+              "claim_shop_cash_description": "Sie können Ihr Shop Cash für zukünftige Einkäufe in der Shop-App verwenden."
+            }
           }
         }
-      }
+      },
+      "status_mark_as_delivered": "Als geliefert markieren",
+      "fulfillment_status_title": "Erfüllungsstatus: {{status}}",
+      "buy_again_accessibility_label": "Erneut kaufen für Bestellung {{orderId}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_accessibility_label": "Bestelldetails der Lieferung anzeigen",
+        "hide_events_accessibility_label": "Bestelldetails zum Versand ausblenden"
+      },
+      "addresses_section_title": "Rechnung und Versand",
+      "order_details_skeleton_accessibility_label": "Melden Sie sich an, um alle Bestelldetails anzuzeigen.",
+      "fully_refunded_label": "RÜCKERSTATTET",
+      "grouped_view_components": {
+        "expand_line_items": "Zeige {{count}} Artikel",
+        "line_item_summary_list_accessibility_label": "Artikel im {{productTitle}} Paket"
+      },
+      "loading": "Lade Bestelldetails",
+      "image_gallery": {
+        "product_name_and_quantity": "{{productName}} Menge {{quantity}}",
+        "load_more_items": {
+          "one": "Lade {{count}} weitere Artikel",
+          "other": "Lade {{count}} weitere Artikel"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "closed": "Bestellübersicht ausblenden"
+      },
+      "not_applicable": "N/V",
+      "partially_refunded_label": "TEILWEISE ERSTATTET",
+      "payment_confirmation": {
+        "payment_received": "Danke! Ihre Zahlung über {{amount}} wurde erhalten.",
+        "full_payment_received": "Danke! Ihre Zahlung in Höhe von {{amount}} wurde erhalten, und diese Bestellung ist nun vollständig bezahlt.",
+        "dismiss_label": "Zahlungsbestätigung ablehnen"
+      },
+      "payment": {
+        "status_in_review": "Zahlung fällig nach Überprüfung",
+        "payment_type": {
+          "gift_card": "Geschenkkarte",
+          "store_credit": "Guthaben im Geschäft",
+          "money_order": "Postanweisung",
+          "cash_on_delivery": "Nachnahme (Barzahlung bei Lieferung)",
+          "bank_deposit": "Bankeinzahlung",
+          "manual": "Handbuch"
+        },
+        "card_payment_details": "endet mit {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "endet mit {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "Guthaben im Geschäft - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Bezahlt mit Shop Pay Ratenzahlung",
+          "view_schedule": "Zeitplan anzeigen"
+        },
+        "manual_payment_methods": {
+          "money_order": "Postanweisung - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Nachnahme (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Bankeinzahlung - {{formattedTransactionAmount}}",
+          "manual": "Handbuch - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "details": "Einzelheiten"
+        },
+        "emv_details": {
+          "auth": "AUTHENTIFIZIEREN:",
+          "aid": "HILFE:",
+          "source": "t:"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Bezahlt mit Shop Pay Ratenzahlung",
+        "description": "Behalten Sie Ihren Zahlungsplan mit Erinnerungen in der Shop-App im Blick.",
+        "desktop_qr_code_content": {
+          "title": "Für Erinnerungen scannen",
+          "description": "Erhalten Sie Erinnerungen an Ihre Ratenzahlungen mit Shop."
+        }
+      },
+      "refunded_amount": "Erstattet",
+      "request_return_failed": "Bei der Verarbeitung Ihrer Anfrage ist ein Problem aufgetreten. Bitte versuchen Sie es erneut.",
+      "login_card": {
+        "resend_link_and_login": "Um Ihre Bestelldetails anzusehen, melden Sie sich an oder senden Sie einen neuen Link an die beim Checkout verwendete E-Mail-Adresse oder Telefonnummer.",
+        "resend_link_only": "Um Ihre Bestelldetails anzusehen, senden Sie einen neuen Link an die beim Checkout verwendete E-Mail-Adresse oder Telefonnummer."
+      },
+      "marketing_section_title": "News und Angebote",
+      "marketing_description": "Sie erhalten Marketing-E-Mails. Sie können sich jederzeit abmelden.",
+      "marketing_checkbox_label": "Senden Sie mir E-Mails mit Neuigkeiten und Angeboten",
+      "marketing_checkmark_label": "Sie sind für den Erhalt von E-Mail-News und Angeboten angemeldet",
+      "returns": {
+        "ineligible_return_message": "Keine Artikel in dieser Bestellung sind für eine Rückgabe berechtigt.",
+        "ineligible_return_message_when_returned": "Keine weiteren Artikel in dieser Bestellung sind für eine Rückgabe berechtigt.",
+        "return_and_refund_modal_header": "Rückerstattungsrichtlinie",
+        "tracking_number": "Sendungsnummer:",
+        "exchange_header": "Artikel tauschen",
+        "exchange_subheader": "Umtauschartikel werden der Bestellung hinzugefügt, sobald die Rücksendung abgeschlossen ist."
+      },
+      "shipping": {
+        "subscription": "Abonnementversand"
+      },
+      "pickup": {
+        "pickup": "Abholung",
+        "pickup_point": "Abholpunkt"
+      },
+      "subtitle": "Bestätigt {{date}}",
+      "summary_totals_title_accessibility_label": "Bestellsummen"
     }
   }
 }
