@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
-  <head>
+  <head> {% render 'sb-js-lazyload' %} 
     <script>
       /* >> Heatmap.com :: Snippet << */(function (h,e,a,t,m,ap) { (h._heatmap_paq = []).push([ 'setTrackerUrl', (h.heatUrl = e) + a]); h.hErrorLogs=h.hErrorLogs || []; ap=t.createElement('script');  ap.src=h.heatUrl+'preprocessor.min.js?sid='+m;  ap.defer=true; t.head.appendChild(ap); ['error', 'unhandledrejection'].forEach(function (ty) {     h.addEventListener(ty, function (et) { h.hErrorLogs.push({ type: ty, event: et }); }); });})(window,'https://dashboard.heatmap.com/','heatmap.php',document,3912);
     </script>
@@ -365,7 +365,7 @@ body {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-  </head>
+  {% render 'lazyload_img' %} {% render 'sb-cls-improve' %} </head>
 
   <body class="{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -469,5 +469,5 @@ body {
       });
     </script>
     {% comment %} {% render 'navidium-script' %} {% endcomment %}
-  </body>
+   {% render 'sb-preload-booster' %} </body>
 </html>
