@@ -365,7 +365,8 @@ body {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-  {% render 'lazyload_img' %} {% render 'sb-cls-improve' %} </head>
+  {%- comment -%}{% render 'lazyload_img' %} {% render 'sb-cls-improve' %}{%- endcomment -%}
+ </head>
 
   <body class="{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
