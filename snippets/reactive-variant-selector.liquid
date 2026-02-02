@@ -214,7 +214,7 @@
 
       currentPriceSpan.innerHTML = variantData.originalPrice;
 
-      if(typeof variantSuggestion !== 'undefined') {
+      {% comment %} if(typeof variantSuggestion !== 'undefined') {
         if(variantData.title !== "100ML") {
           if(variantData.title === '50ML') {
             variantSuggestion.innerHTML = `⚡ You’re <strong>${variantData.priceDifference}</strong> away from the best value size.`;
@@ -224,7 +224,7 @@
         } else {
           variantSuggestion.innerHTML = '🎉 Congratulations! You have the best deal!';
         }
-      }
+      } {% endcomment %}
     }
 
     // Add click event listeners to variant buttons
