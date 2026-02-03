@@ -41,3 +41,43 @@
   ]
 }
 </script>
+
+{% if template == 'index' %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TryScent",
+    "url": "https://tryscent.co",
+    "logo": "https://tryscent.co/cdn/shop/files/catsoft-logo.svg",
+    "description": "Premium Designer Fragrance Dupes - Creed, Dior & Tom Ford Alternatives",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "113 Jalan Besar",
+      "addressLocality": "Singapore",
+      "postalCode": "08833",
+      "addressCountry": "SG"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+18883736114",
+      "contactType": "customer service",
+      "email": "hello@tryscent.co"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TryScent",
+    "url": "https://tryscent.co",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tryscent.co/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+{% endif %}
