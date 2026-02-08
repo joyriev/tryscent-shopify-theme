@@ -73,6 +73,10 @@
     bottom: 0px
 }
 
+.bottom-4 {
+    bottom: 16px
+}
+
 .bottom-6 {
     bottom: 24px
 }
@@ -87,6 +91,10 @@
 
 .left-2\.5 {
     left: 10px
+}
+
+.left-4 {
+    left: 16px
 }
 
 .left-\[2px\] {
@@ -107,6 +115,10 @@
 
 .right-2 {
     right: 8px
+}
+
+.right-4 {
+    right: 16px
 }
 
 .top-0 {
@@ -143,18 +155,6 @@
 
 .top-\[2px\] {
     top: 2px
-}
-
-.bottom-4 {
-    bottom: 16px
-}
-
-.left-4 {
-    left: 16px
-}
-
-.right-4 {
-    right: 16px
 }
 
 .isolate {
@@ -1007,6 +1007,10 @@
     row-gap: 4px
 }
 
+.gap-y-2 {
+    row-gap: 8px
+}
+
 .gap-y-3 {
     row-gap: 12px
 }
@@ -1241,6 +1245,11 @@
     border-color: rgb(217 119 6 / var(--tw-border-opacity, 1))
 }
 
+.border-black {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity, 1))
+}
+
 .border-black\/5 {
     border-color: rgb(0 0 0 / 0.05)
 }
@@ -1296,11 +1305,6 @@
 .border-white {
     --tw-border-opacity: 1;
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
-}
-
-.border-black {
-    --tw-border-opacity: 1;
-    border-color: rgb(0 0 0 / var(--tw-border-opacity, 1))
 }
 
 .border-b-gray-100 {
@@ -1503,6 +1507,11 @@
     background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1))
 }
 
+.bg-slate-400 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(148 163 184 / var(--tw-bg-opacity, 1))
+}
+
 .bg-transparent {
     background-color: transparent
 }
@@ -1514,11 +1523,6 @@
 
 .bg-white\/40 {
     background-color: rgb(255 255 255 / 0.4)
-}
-
-.bg-slate-400 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(148 163 184 / var(--tw-bg-opacity, 1))
 }
 
 .bg-opacity-50 {
