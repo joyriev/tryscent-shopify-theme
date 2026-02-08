@@ -8,7 +8,7 @@
   <div class="flex -mx-[15px] md:mx-0">
     <div id="productSwiper" class="swiper md:w-[calc(100%-144px)]">
       <div class="swiper-wrapper">
-        {% if product.tags contains "local_image" %}
+        {% if product.tags contains "Hide_Bundle" %}
           {% assign image_found = false %}
           {% for image in product.images %}
             {% assign curr_currency = localization.country.currency.iso_code | prepend: "bundle_" | downcase %}
@@ -148,7 +148,7 @@
   <div class="[display:none] md:block">
     <div id="productThumbnails" class="swiper mt-4">
       <div class="swiper-wrapper [&>.swiper-slide-thumb-active]:border-[#226139] [&>.swiper-slide-thumb-active]:opacity-100">
-        {% if product.tags contains "local_image" %}
+        {% if product.tags contains "Hide_Bundle" %}
           {% assign image_found = false %}
           {% for image in product.images %}
             {% assign curr_currency = localization.country.currency.iso_code | prepend: "bundle_" | downcase %}
