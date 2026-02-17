@@ -105,7 +105,7 @@
                     </div>
                   {% endif %}
                   {% if product.metafields.custom.original_retail_price != blank %}
-                    <div>(RRP: {{ product.metafields.custom.original_retail_price.value | money }})</div>
+                    <div>(Designer Price: {{ product.metafields.custom.original_retail_price.value | money }})</div>
                   {% endif %}
                   {% if product.metafields.custom.scent_intensity != blank %}
                     <div class="flex items-center gap-[5px]">
@@ -183,7 +183,7 @@
 
                       {% if product.compare_at_price > product.price %}
                         <span class="text-gray-500 font-semibold line-through text-[22px] compare-price">
-                         RRP: {{ product.compare_at_price | money }}
+                         Designer Price: {{ product.compare_at_price | money }}
                         </span>
                       {% endif %}
                     </div>
