@@ -25,9 +25,18 @@
       
       <!-- Play icon overlay -->
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div class="bg-white/90 rounded-full p-4 shadow-lg pointer-events-auto cursor-pointer hover:bg-white transition-colors play-button">
-          <svg class="w-8 h-8 text-brand" fill="currentColor" viewBox="0 0 20 20">
+        <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors play-button">
+          <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+      
+      <!-- Pause button overlay (hidden by default) -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-200 pause-overlay" style="display: none;">
+        <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors pause-button bg-black/50">
+          <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
           </svg>
         </div>
       </div>
@@ -37,80 +46,30 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const videoContainers = document.querySelectorAll(".video-container");
-    let currentPlayingVideo = null;
+    const videos = document.querySelectorAll(".cta_videos video");
+    const playButtons = document.querySelectorAll(".cta_videos .play-button");
+    const pauseButtons = document.querySelectorAll(".cta_videos .pause-button");
+    const pauseOverlays = document.querySelectorAll(".cta_videos .pause-overlay");
 
-    videoContainers.forEach(container => {
-      const video = container.querySelector('video');
-      const playButton = container.querySelector('.play-button');
-
-      // Create pause button overlay (hidden by default)
-      const pauseButton = document.createElement('div');
-      pauseButton.className = 'absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-200';
-      pauseButton.innerHTML = `
-        <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors pause-button bg-black/50">
-          <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-          </svg>
-        </div>
-      `;
-      container.appendChild(pauseButton);
-
-      function handlePlayClick() {
-        // Pause any currently playing video
-        if (currentPlayingVideo && currentPlayingVideo !== video) {
-          currentPlayingVideo.pause();
-        }
-
-        // Play or pause current video
-        if (video.paused) {
-          video.play();
-          currentPlayingVideo = video;
-          playButton.style.display = 'none';
-        } else {
-          video.pause();
-        }
-      }
-
-      // Show pause button on hover when video is playing
-      container.addEventListener('mouseenter', function() {
-        if (!video.paused) {
-          pauseButton.classList.remove('opacity-0');
-          pauseButton.classList.add('opacity-100');
-        }
+    playButtons.forEach((playButton, index) => {
+      playButton.addEventListener("click", () => {
+        const video = videos[index];
+        const pauseOverlay = pauseOverlays[index];
+        handlePlayClick(video, playButton, pauseOverlay);
       });
-
-      container.addEventListener('mouseleave', function() {
-        pauseButton.classList.remove('opacity-100');
-        pauseButton.classList.add('opacity-0');
-      });
-
-      // Handle pause button click
-      pauseButton.querySelector('.pause-button').addEventListener('click', function() {
-        video.pause();
-      });
-
-      // Handle video events
-      video.addEventListener('play', function() {
-        currentPlayingVideo = video;
-        playButton.style.display = 'none';
-      });
-
-      video.addEventListener('pause', function() {
-        if (currentPlayingVideo === video) {
-          currentPlayingVideo = null;
-        }
-        playButton.style.display = 'flex';
-      });
-
-      video.addEventListener('ended', function() {
-        currentPlayingVideo = null;
-        playButton.style.display = 'flex';
-      });
-
-      // Add click handler to play button and video
-      playButton.addEventListener('click', handlePlayClick);
-      video.addEventListener('click', handlePlayClick);
     });
+
+    function handlePlayClick(video, playButton, pauseOverlay) {
+      // Play or pause current video
+      if (video.paused) {
+        video.play();
+        playButton.style.display = 'none';
+        pauseOverlay.style.display = 'flex';
+      } else {
+        video.pause();
+        playButton.style.display = 'flex';
+        pauseOverlay.style.display = 'none';
+      }
+    }
   });
 </script>
