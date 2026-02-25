@@ -9,20 +9,24 @@
     {% assign video_url = video.sources[1].url %}
     {% assign poster_url = block.settings[video_poster_setting] | image_url %}
     
-    <div class="aspect-w-16 aspect-h-9 relative video-container" data-video-url="{{ video_url }}">
-      <img
-        src="{{ poster_url }}"
-        alt="Video thumbnail {{ i }}"
-        class="w-full h-full object-cover rounded-lg shadow cursor-pointer video-poster"
+    <div class="aspect-w-16 aspect-h-9 relative video-container">
+      <video
+        width="100%"
+        class="w-full h-full object-cover rounded-lg shadow cursor-pointer"
+        poster="{{ poster_url }}"
+        data-video-url="{{ video_url }}"
         loading="lazy"
         width="640"
         height="360"
       >
+        <source src="{{ video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       
       <!-- Play icon overlay -->
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors play-button">
-          <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+        <div class="bg-white/90 rounded-full p-4 shadow-lg pointer-events-auto cursor-pointer hover:bg-white transition-colors play-button">
+          <svg class="w-8 h-8 text-brand" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
           </svg>
         </div>
@@ -37,96 +41,76 @@
     let currentPlayingVideo = null;
 
     videoContainers.forEach(container => {
-      const poster = container.querySelector('.video-poster');
+      const video = container.querySelector('video');
       const playButton = container.querySelector('.play-button');
-      const videoUrl = container.dataset.videoUrl;
 
-      function createVideoElement() {
-        const video = document.createElement('video');
-        video.width = '100%';
-        video.className = 'w-full h-full object-cover rounded-lg shadow';
-        video.controls = false;
-        video.autoplay = true;
-        video.innerHTML = `<source src="${videoUrl}" type="video/mp4">`;
-        return video;
-      }
+      // Create pause button overlay (hidden by default)
+      const pauseButton = document.createElement('div');
+      pauseButton.className = 'absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-200';
+      pauseButton.innerHTML = `
+        <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors pause-button bg-black/50">
+          <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      `;
+      container.appendChild(pauseButton);
 
       function handlePlayClick() {
-        // Pause any currently playing video and restore its poster
-        if (currentPlayingVideo) {
+        // Pause any currently playing video
+        if (currentPlayingVideo && currentPlayingVideo !== video) {
           currentPlayingVideo.pause();
-          const currentContainer = currentPlayingVideo.closest('.video-container');
-          restorePoster(currentContainer);
         }
 
-        // Create and append video
-        const video = createVideoElement();
-        container.innerHTML = '';
-        container.appendChild(video);
-        currentPlayingVideo = video;
-
-        // Add pause button overlay
-        const pauseButton = document.createElement('div');
-        pauseButton.className = 'absolute inset-0 flex items-center justify-center pointer-events-none';
-        pauseButton.innerHTML = `
-          <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors pause-button">
-            <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-            </svg>
-          </div>
-        `;
-        container.appendChild(pauseButton);
-
-        // Handle pause button click
-        pauseButton.querySelector('.pause-button').addEventListener('click', function() {
+        // Play or pause current video
+        if (video.paused) {
+          video.play();
+          currentPlayingVideo = video;
+          playButton.style.display = 'none';
+        } else {
           video.pause();
-        });
+        }
+      }
 
-        // Handle video end
-        video.addEventListener('ended', function() {
+      // Show pause button on hover when video is playing
+      container.addEventListener('mouseenter', function() {
+        if (!video.paused) {
+          pauseButton.classList.remove('opacity-0');
+          pauseButton.classList.add('opacity-100');
+        }
+      });
+
+      container.addEventListener('mouseleave', function() {
+        pauseButton.classList.remove('opacity-100');
+        pauseButton.classList.add('opacity-0');
+      });
+
+      // Handle pause button click
+      pauseButton.querySelector('.pause-button').addEventListener('click', function() {
+        video.pause();
+      });
+
+      // Handle video events
+      video.addEventListener('play', function() {
+        currentPlayingVideo = video;
+        playButton.style.display = 'none';
+      });
+
+      video.addEventListener('pause', function() {
+        if (currentPlayingVideo === video) {
           currentPlayingVideo = null;
-          restorePoster(container);
-        });
+        }
+        playButton.style.display = 'flex';
+      });
 
-        // Handle video pause (show pause icon)
-        video.addEventListener('pause', function() {
-          if (currentPlayingVideo === video) {
-            currentPlayingVideo = null;
-            restorePoster(container);
-          }
-        });
-      }
+      video.addEventListener('ended', function() {
+        currentPlayingVideo = null;
+        playButton.style.display = 'flex';
+      });
 
-      function restorePoster(container) {
-        // Restore poster with play icon
-        const posterImg = document.createElement('img');
-        posterImg.src = poster.src;
-        posterImg.alt = poster.alt;
-        posterImg.className = poster.className;
-        posterImg.loading = 'lazy';
-        posterImg.width = '640';
-        posterImg.height = '360';
-        
-        const playIcon = document.createElement('div');
-        playIcon.className = 'absolute inset-0 flex items-center justify-center pointer-events-none';
-        playIcon.innerHTML = `
-          <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors play-button">
-            <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-            </svg>
-          </div>
-        `;
-        
-        container.innerHTML = '';
-        container.appendChild(posterImg);
-        container.appendChild(playIcon);
-        
-        // Re-attach click handler
-        playIcon.querySelector('.play-button').addEventListener('click', handlePlayClick);
-      }
-
-      // Add click handler to play button
+      // Add click handler to play button and video
       playButton.addEventListener('click', handlePlayClick);
+      video.addEventListener('click', handlePlayClick);
     });
   });
 </script>
