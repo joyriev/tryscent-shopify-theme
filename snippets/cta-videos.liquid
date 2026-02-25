@@ -1,0 +1,132 @@
+<div class="grid grid-cols-3 gap-3 pt-6 cta_videos">
+  {% for i in (1..3) %}
+    {% assign video_setting = 'video' | append: i %}
+    {% assign video_poster_setting = 'video_poster_' | append: i %}
+    {% if block.settings[video_setting] == blank %}
+      {% continue %}
+    {% endif %}
+    {% assign video = block.settings[video_setting] %}
+    {% assign video_url = video.sources[1].url %}
+    {% assign poster_url = block.settings[video_poster_setting] | image_url %}
+    
+    <div class="aspect-w-16 aspect-h-9 relative video-container" data-video-url="{{ video_url }}">
+      <img
+        src="{{ poster_url }}"
+        alt="Video thumbnail {{ i }}"
+        class="w-full h-full object-cover rounded-lg shadow cursor-pointer video-poster"
+        loading="lazy"
+        width="640"
+        height="360"
+      >
+      
+      <!-- Play icon overlay -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors play-button">
+          <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const videoContainers = document.querySelectorAll(".video-container");
+    let currentPlayingVideo = null;
+
+    videoContainers.forEach(container => {
+      const poster = container.querySelector('.video-poster');
+      const playButton = container.querySelector('.play-button');
+      const videoUrl = container.dataset.videoUrl;
+
+      function createVideoElement() {
+        const video = document.createElement('video');
+        video.width = '100%';
+        video.className = 'w-full h-full object-cover rounded-lg shadow';
+        video.controls = false;
+        video.autoplay = true;
+        video.innerHTML = `<source src="${videoUrl}" type="video/mp4">`;
+        return video;
+      }
+
+      function handlePlayClick() {
+        // Pause any currently playing video and restore its poster
+        if (currentPlayingVideo && currentPlayingVideo !== container.querySelector('video')) {
+          currentPlayingVideo.pause();
+          const currentContainer = currentPlayingVideo.closest('.video-container');
+          restorePoster(currentContainer);
+        }
+
+        // Create and append video
+        const video = createVideoElement();
+        container.innerHTML = '';
+        container.appendChild(video);
+        currentPlayingVideo = video;
+
+        // Add pause button overlay
+        const pauseButton = document.createElement('div');
+        pauseButton.className = 'absolute inset-0 flex items-center justify-center pointer-events-none';
+        pauseButton.innerHTML = `
+          <div class="bg-black/50 rounded-full p-4 shadow-lg pointer-events-auto cursor-pointer hover:bg-black/70 transition-colors pause-button">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        `;
+        container.appendChild(pauseButton);
+
+        // Handle pause button click
+        pauseButton.querySelector('.pause-button').addEventListener('click', function() {
+          video.pause();
+        });
+
+        // Handle video end
+        video.addEventListener('ended', function() {
+          currentPlayingVideo = null;
+          restorePoster(container);
+        });
+
+        // Handle video pause (show pause icon)
+        video.addEventListener('pause', function() {
+          if (currentPlayingVideo === video) {
+            currentPlayingVideo = null;
+            restorePoster(container);
+          }
+        });
+      }
+
+      function restorePoster(container) {
+        // Restore poster with play icon
+        const posterImg = document.createElement('img');
+        posterImg.src = poster.src;
+        posterImg.alt = poster.alt;
+        posterImg.className = poster.className;
+        posterImg.loading = 'lazy';
+        posterImg.width = '640';
+        posterImg.height = '360';
+        
+        const playIcon = document.createElement('div');
+        playIcon.className = 'absolute inset-0 flex items-center justify-center pointer-events-none';
+        playIcon.innerHTML = `
+          <div class="bg-white/90 rounded-full p-4 shadow-lg pointer-events-auto cursor-pointer hover:bg-white transition-colors play-button">
+            <svg class="w-8 h-8 text-brand" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        `;
+        
+        container.innerHTML = '';
+        container.appendChild(posterImg);
+        container.appendChild(playIcon);
+        
+        // Re-attach click handler
+        playIcon.querySelector('.play-button').addEventListener('click', handlePlayClick);
+      }
+
+      // Add click handler to play button
+      playButton.addEventListener('click', handlePlayClick);
+    });
+  });
+</script>

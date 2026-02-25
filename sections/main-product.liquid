@@ -257,22 +257,7 @@
                   </h3>
                 </div>
               {%- when 'videos' -%}
-                <div class="grid grid-cols-3 gap-3 pt-6 cta_videos">
-                  {% for i in (1..3) %}
-                    {% assign video_setting = 'video' | append: i %}
-                    {% assign video_poster_setting = 'video_poster_' | append: i %}
-                    {% if block.settings[video_setting] == blank %}
-                      {% continue %}
-                    {% endif %}
-                    {% assign video = block.settings[video_setting] %}
-                    <div class="aspect-w-16 aspect-h-9 relative">
-                      <video width="100%" class="rounded-lg shadow cursor-pointer" poster="{{ block.settings[video_poster_setting] |  image_url }}">
-                        <source src="{{ video.sources[1].url }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  {% endfor %}
-                </div>
+                {% render 'cta-videos', block: block %}
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext !my-6 text-center{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -954,24 +939,6 @@
       .catch(error => {
         console.error("Error fetching country code:", error);
       });
-
-    const ctaVideos = document.querySelectorAll(".cta_videos video");
-    function pauseAllVideos() {
-      ctaVideos.forEach(video => {
-        video.pause();
-      });
-    }
-
-    ctaVideos.forEach(video => {
-      video.addEventListener("click", function () {
-        if (video.paused) {
-          pauseAllVideos();
-          video.play();
-        } else {
-          video.pause();
-        }
-      });
-    });
   });
 </script>
 {% render 'schema-breadcrumbs' %}

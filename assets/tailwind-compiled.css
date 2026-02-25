@@ -13,6 +13,14 @@
     border-width: 0
 }
 
+.pointer-events-none {
+    pointer-events: none
+}
+
+.pointer-events-auto {
+    pointer-events: auto
+}
+
 .visible {
     visibility: visible
 }
@@ -1606,6 +1614,14 @@
     background-color: rgb(255 255 255 / 0.4)
 }
 
+.bg-white\/90 {
+    background-color: rgb(255 255 255 / 0.9)
+}
+
+.bg-black\/50 {
+    background-color: rgb(0 0 0 / 0.5)
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -2755,6 +2771,15 @@
 .hover\:bg-slate-900:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
+}
+
+.hover\:bg-white:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+}
+
+.hover\:bg-black\/70:hover {
+    background-color: rgb(0 0 0 / 0.7)
 }
 
 .hover\:text-white:hover {
