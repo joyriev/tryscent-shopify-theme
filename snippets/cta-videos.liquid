@@ -69,8 +69,8 @@
         const pauseButton = document.createElement('div');
         pauseButton.className = 'absolute inset-0 flex items-center justify-center pointer-events-none';
         pauseButton.innerHTML = `
-          <div class="bg-black/50 rounded-full p-4 shadow-lg pointer-events-auto cursor-pointer hover:bg-black/70 transition-colors pause-button">
-            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+          <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors pause-button">
+            <svg class="size-12 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
             </svg>
           </div>
@@ -110,8 +110,8 @@
         const playIcon = document.createElement('div');
         playIcon.className = 'absolute inset-0 flex items-center justify-center pointer-events-none';
         playIcon.innerHTML = `
-          <div class="bg-white/90 rounded-full p-4 shadow-lg pointer-events-auto cursor-pointer hover:bg-white transition-colors play-button">
-            <svg class="w-8 h-8 text-brand" fill="currentColor" viewBox="0 0 20 20">
+          <div class="flex rounded-full shadow-lg pointer-events-auto cursor-pointer transition-colors play-button">
+            <svg class="size-12 text-brand" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
             </svg>
           </div>
