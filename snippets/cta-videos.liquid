@@ -52,27 +52,22 @@
         videos.forEach((video, i) => {
           if (i === index) {
             video.play();
+            playButton.style.display = "none";
+            pauseButtons[i].style.display = "flex";
           } else {
             video.pause();
-            pauseOverlays[i].style.display = "none";
-            play
+            pauseButtons[i].style.display = "none";
+            playButtons[i].style.display = "flex";
           }
         });
-
-
-
-        const video = videos[index];
-        const pauseOverlay = pauseOverlays[index];
-        handlePlayClick(video, playButton, pauseOverlay);
       });
     });
 
     pauseButtons.forEach((pauseButton, index) => {
       pauseButton.addEventListener("click", () => {
-        const video = videos[index];
-        const playButton = playButtons[index];
-        const pauseOverlay = pauseOverlays[index];
-        handlePauseClick(video, playButton, pauseOverlay);
+        videos[index].pause();
+        pauseButton.style.display = "none";
+        playButtons[index].style.display = "flex";
       });
     });
 
