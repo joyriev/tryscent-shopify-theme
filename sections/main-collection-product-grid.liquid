@@ -176,11 +176,7 @@
                   </li>
                 {%- assign skip_card_product_styles = true -%}
               {%- endfor -%}
-              {% if collection.handle == 'woman' or collection.handle == 'unisex' %}
-                {% render 'edp-poster' %}
-              {% endif %}
             </ul>
-
             {%- if paginate.pages > 1 -%}
               {% render 'pagination'
                 , paginate: paginate
