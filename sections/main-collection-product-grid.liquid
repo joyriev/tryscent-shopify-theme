@@ -146,9 +146,9 @@
                 grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               ">
-              {% unless collection.handle contains 'bundle-save' %}
+              {% comment %} {% unless collection.handle contains 'bundle-save' %}
                 {% render 'card-product-bogo' %}
-              {% endunless %}
+              {% endunless %} {% endcomment %}
               {% assign skip_card_product_styles = false %}
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
