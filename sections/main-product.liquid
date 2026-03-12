@@ -209,6 +209,8 @@
                     {% render 'reactive-variant-selector', product: product %}
                   {% endif %}
                 </div>
+              {%- when 'magic_perfume_atc' -%}
+                {% render 'magic-perfume-atc' %}
               {%- when 'shipping_text' -%}
                 <div class="!my-6">
                   <p class="my-0 text-center font-semibold tracking-normal">
@@ -985,6 +987,11 @@
     {
       "type": "atc_bundle_builder",
       "name": "Atc Bundle Builder",
+      "limit": 1
+    },
+    {
+      "type": "magic_perfume_atc",
+      "name": "Magic Perfume Atc",
       "limit": 1
     },
     {
