@@ -10,6 +10,15 @@
   endfor
 %}
 
+{% assign selling_points = product.metafields.custom.selling_points.value %}
+{% if selling_points %}
+  <ul id="atc_scroll_target" class="list-none pl-0">
+    {% for point in selling_points %}
+      <li>✅ {{ point }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
 {% if product.variants.size > 1 %}
   {% comment %} Variant Selector {% endcomment %}
   <div class="flex justify-between items-center mb-3 !mt-6">
