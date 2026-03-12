@@ -13,10 +13,6 @@
     border-width: 0
 }
 
-.pointer-events-none {
-    pointer-events: none
-}
-
 .pointer-events-auto {
     pointer-events: auto
 }
@@ -167,14 +163,6 @@
 
 .top-\[2px\] {
     top: 2px
-}
-
-.left-\[10\%\] {
-    left: 10%
-}
-
-.left-\[90\%\] {
-    left: 90%
 }
 
 .isolate {
@@ -891,6 +879,12 @@
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
 
+.scale-100 {
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+}
+
 .transform {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
@@ -999,6 +993,10 @@
 
 .items-baseline {
     align-items: baseline
+}
+
+.items-stretch {
+    align-items: stretch
 }
 
 .justify-end {
@@ -1136,6 +1134,12 @@
     --tw-space-y-reverse: 0;
     margin-top: calc(16px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(16px * var(--tw-space-y-reverse))
+}
+
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(20px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(20px * var(--tw-space-y-reverse))
 }
 
 .overflow-hidden {
@@ -1620,14 +1624,6 @@
 
 .bg-white\/40 {
     background-color: rgb(255 255 255 / 0.4)
-}
-
-.bg-white\/90 {
-    background-color: rgb(255 255 255 / 0.9)
-}
-
-.bg-black\/50 {
-    background-color: rgb(0 0 0 / 0.5)
 }
 
 .bg-opacity-50 {
@@ -2289,6 +2285,11 @@
     color: rgb(74 222 128 / var(--tw-text-opacity, 1))
 }
 
+.text-green-500 {
+    --tw-text-opacity: 1;
+    color: rgb(34 197 94 / var(--tw-text-opacity, 1))
+}
+
 .text-green-600 {
     --tw-text-opacity: 1;
     color: rgb(22 163 74 / var(--tw-text-opacity, 1))
@@ -2364,6 +2365,10 @@
     accent-color: #22613A
 }
 
+.opacity-0 {
+    opacity: 0
+}
+
 .opacity-40 {
     opacity: 0.4
 }
@@ -2378,14 +2383,6 @@
 
 .opacity-80 {
     opacity: 0.8
-}
-
-.opacity-0 {
-    opacity: 0
-}
-
-.opacity-100 {
-    opacity: 1
 }
 
 .shadow {
@@ -2486,16 +2483,20 @@
     transition-duration: 150ms
 }
 
+.transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+
 .transition-transform {
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms
 }
 
-.transition-opacity {
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms
+.duration-200 {
+    transition-duration: 200ms
 }
 
 .duration-300 {
@@ -2504,10 +2505,6 @@
 
 .duration-500 {
     transition-duration: 500ms
-}
-
-.duration-200 {
-    transition-duration: 200ms
 }
 
 .ease-in {
@@ -2769,6 +2766,11 @@
     background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1))
 }
 
+.hover\:bg-gray-800:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1))
+}
+
 .hover\:bg-gray-900:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
@@ -2799,15 +2801,6 @@
     background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
 }
 
-.hover\:bg-white:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
-}
-
-.hover\:bg-black\/70:hover {
-    background-color: rgb(0 0 0 / 0.7)
-}
-
 .hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
@@ -2821,20 +2814,12 @@
     text-decoration-line: none
 }
 
-.hover\:opacity-75:hover {
-    opacity: 0.75
-}
-
 .hover\:opacity-100:hover {
     opacity: 1
 }
 
-.hover\:\!opacity-100:hover {
-    opacity: 1 !important
-}
-
-.hover\:opacity-60:hover {
-    opacity: 0.6
+.hover\:opacity-75:hover {
+    opacity: 0.75
 }
 
 .hover\:\[text-decoration\:none\]:hover {
@@ -3043,6 +3028,12 @@
 
     .md\:max-w-\[400px\] {
         max-width: 400px
+    }
+
+    .md\:scale-105 {
+        --tw-scale-x: 1.05;
+        --tw-scale-y: 1.05;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
     }
 
     .md\:grid-cols-10 {
