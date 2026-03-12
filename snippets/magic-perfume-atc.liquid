@@ -26,7 +26,7 @@
     <div class="text-sm italic text-gray-500">The 50ml — chosen by 8 out of 10 customers</div>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="variant-selector">
+  <div class="flex gap-3" id="variant-selector">
     {% for variant in product.variants %}
       {% assign size = variant.title | remove: 'ML' %}
       {% assign size_int = size | times: 1 %}
@@ -34,12 +34,12 @@
       {% assign per_ml = price_in_dollars | divided_by: size_int | round: 2 %}
       <button
         type="button"
-        class="variant-button flex md:flex-col items-center gap-2 rounded-lg p-2 pt-3 bg-white border-2 border-solid cursor-pointer font-['Figtree'] relative {% if variant.id == selected_variant.id %}border-green-700{% else %}border-gray-200{% endif %}"
+        class="variant-button flex-grow flex md:flex-col items-center gap-2 rounded-lg p-2 pt-3 bg-white border-2 border-solid cursor-pointer font-['Figtree'] relative {% if variant.id == selected_variant.id %}border-green-700{% else %}border-gray-200{% endif %}"
         data-variant-id="{{ variant.id }}"
         data-variant-title="{{ variant.title }}"
         data-original-price="{{ variant.price | money }}"
         data-compare-price="{{ variant.compare_at_price | money }}">
-        <div class="text-left md:text-center">
+        <div class="text-center">
           <div class="text-sm font-semibold">{{ variant.title }}</div>
           <div class="text-xs text-gray-600">
             {{- cart.currency.symbol -}}
