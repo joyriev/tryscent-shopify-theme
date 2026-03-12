@@ -114,14 +114,6 @@
   {%- endform -%}
 </product-form>
 
-<div class="!my-6">
-  <p class="my-0 text-center font-semibold tracking-normal">
-    Delivered to
-    <span class="shipping_location">Worldwide</span>
-    in 5 business days. No customs fees.
-  </p>
-</div>
-
 <div class="my-6">
   <div class="flex items-center gap-3 text-base">
     <img
@@ -132,32 +124,10 @@
       height="40" />
     <div class="text-slate-900">
       <strong class="font-semibold">Try it for 60 days, risk-free.</strong>
-      <span class="block">If you're not absolutely thrilled, we'll give you a full refund!</span>
+      <span class="[display:none] md:block">If you're not absolutely thrilled, we'll give you a full refund!</span>
     </div>
   </div>
 </div>
-
-{% assign balck_friday_product = all_products['buy-2-get-1-free-1'] %}
-
-<a href="https://tryscent.co/products/tryscent-collection" class="flex gap-4 items-center no-underline bg-black text-white rounded-lg p-4 md:p-6 shadow-md hover:bg-gray-900 transition relative overflow-hidden">
-  <div class="absolute top-0 right-0 text-base font-semibold md:py-1 inline-block px-2 bg-[#b72f33] rounded-sm">50% Off</div>
-  <div class="!block size-8 border-2 border-solid border-white rounded"></div>
-  <div>
-    <div class="text-sm uppercase tracking-wide font-semibold text-red-500 my-0">
-      BLACK FRIDAY SALE
-    </div>
-    <h3 class="text-xl md:text-2xl font-bold leading-tight text-white my-1">
-      Buy 2 Get 1 Free
-    </h3>
-    <p class="text-base md:text-lg my-0">
-      3 Bottles for
-      <span class="font-semibold">{{ balck_friday_product.price | money }}</span>
-      <span class="text-gray-400">
-        <span class="line-through">Designer Price: {{ balck_friday_product.compare_at_price | money }}.</span>
-      </span>
-    </p>
-  </div>
-</a>
 
 <script>
   (function() {
