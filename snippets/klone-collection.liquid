@@ -18,18 +18,18 @@
     <div class="size-6 [&>svg]:fill-[#22613A]">
       {{ 'icon-stopwatch.svg' | inline_asset_content }}
     </div>
-    <div class="text-sm md:text-lg font-semibold text-black">Long Lasting</div>
+    <div class="text-sm md:text-lg font-semibold text-black">Långvarig</div>
   </div>
   <div class="flex items-center gap-2">
     <div class="size-6 [&>svg]:fill-[#22613A]">
       {{ 'icon-price-tag.svg' | inline_asset_content }}
     </div>
-    <div class="text-sm md:text-lg font-semibold text-black">At Fraction Cost</div>
+    <div class="text-sm md:text-lg font-semibold text-black">Till bråkkostnad</div>
   </div>
 </div>
 
 <div class="text-center relative pt-6 !mb-6 border-0 border-b border-gray-200 border-solid">
-  <span class="bg-[#faf9f6] absolute left-1/2 [transform:translateX(-50%)] -bottom-4 font-semibold text-nowrap text-black">🎉 New Year New Me 🎉</span>
+  <span class="bg-[#faf9f6] absolute left-1/2 [transform:translateX(-50%)] -bottom-4 font-semibold text-nowrap text-black">🎉 St. Patrick's Day-rea 🎉</span>
 </div>
 
 <div x-data class="flex flex-col gap-2">
@@ -165,7 +165,7 @@
       </div>
     </button>
   </div>
-
+{%comment%}
   <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl bg-white mt-4">
     <input
       type="checkbox"
@@ -186,7 +186,7 @@
         <div class="text-base font-semibold">{{ gift_product.price | money }}</div>
       </div>
     </label>
-  </div>
+  </div> {%endcomment%}
 
   <button
     :disabled="$store.bundle.addingToCart"
