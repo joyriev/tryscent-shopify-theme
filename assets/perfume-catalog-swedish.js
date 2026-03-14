@@ -78,7 +78,7 @@ window.SwedishPerfumeCatalog = {
       id: "tom_ford_ombre_leather",
       name: "Ombre Leather",
       brand: "Tom Ford",
-      image: "https://tryscent.co/cdn/shop/files/Tom_Ford_Ombre_Leather.png",
+      image: "https://tryscent.co/cdn/shop/files/Tom_Ford_Ombre_Leather.avif?v=1763008490",
       top_notes: ["Kardemumma", "Jasmin", "Immortelle"],
       heart_notes: ["Läder", "Patchouli", "Viol"],
       base_notes: ["Amber", "Björktjära", "Mysk"],
