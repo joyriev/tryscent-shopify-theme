@@ -2256,6 +2256,76 @@
       .trim();
   }
 
+  // ===== FUZZY MATCHING ALGORITHM (Levenshtein Distance) =====
+  function fuzzyMatch(input, target) {
+    const s = input.toLowerCase();
+    const t = target.toLowerCase();
+    
+    if (s === t) return 100; // Exact match
+    if (t.includes(s)) return 85; // Substring match
+    if (s.includes(t)) return 80; // Input contains target
+    
+    // Calculate Levenshtein distance
+    const len = Math.max(s.length, t.length);
+    const dist = levenshteinDistance(s, t);
+    
+    // Allow up to 2 character differences for fuzzy matching
+    if (dist <= 2 && len > 3) {
+      return Math.max(60, 100 - (dist * 15));
+    }
+    
+    return 0;
+  }
+
+  // ===== LEVENSHTEIN DISTANCE HELPER =====
+  function levenshteinDistance(s, t) {
+    const d = [];
+    for (let i = 0; i <= s.length; i++) {
+      d[i] = [i];
+    }
+    for (let j = 0; j <= t.length; j++) {
+      d[0][j] = j;
+    }
+    for (let i = 1; i <= s.length; i++) {
+      for (let j = 1; j <= t.length; j++) {
+        const cost = s[i - 1] === t[j - 1] ? 0 : 1;
+        d[i][j] = Math.min(
+          d[i - 1][j] + 1,      // deletion
+          d[i][j - 1] + 1,      // insertion
+          d[i - 1][j - 1] + cost // substitution
+        );
+      }
+    }
+    return d[s.length][t.length];
+  }
+
+  // ===== MULTI-WORD FUZZY SEARCH =====
+  function multiWordFuzzyMatch(query, text) {
+    const queryWords = normalizeText(query).split(/\s+/);
+    const textWords = normalizeText(text).split(/\s+/);
+    
+    let totalScore = 0;
+    let matchedWords = 0;
+    
+    for (const qWord of queryWords) {
+      let bestWordScore = 0;
+      for (const tWord of textWords) {
+        bestWordScore = Math.max(bestWordScore, fuzzyMatch(qWord, tWord));
+      }
+      if (bestWordScore > 0) {
+        totalScore += bestWordScore;
+        matchedWords++;
+      }
+    }
+    
+    // Return average score only if all query words found matches
+    if (matchedWords === queryWords.length) {
+      return totalScore / queryWords.length;
+    }
+    
+    return 0;
+  }
+
   // ===== UTFÖR SÖKNING I VÅRA PRODUKTER =====
   function searchProducts(query) {
     if (!query || query.length < 1) return [];
@@ -2269,37 +2339,53 @@
       let bestScore = 0;
       const searchText = normalizeText(product.title);
       const searchTextNoSpaces = searchText.replace(/\s+/g, '');
+      const normBrand = normalizeText(product.brand);
+      const normBrandNoSpaces = normBrand.replace(/\s+/g, '');
       
-      // Exact match (högsta poäng)
+      // 1. Exact match (högsta poäng)
       if (searchText === normalizedQuery || searchTextNoSpaces === queryNoSpaces) {
         bestScore = 100;
       }
-      // Innehåller match
-      else if (searchText.includes(normalizedQuery) || searchTextNoSpaces.includes(queryNoSpaces)) {
-        bestScore = 90;
-      }
-      // Produktnummer match
-      else if (product.number && product.number === query) {
-        bestScore = 95;
-      }
-      // Sök i searchTerms
-      else if (product.searchTerms) {
-        for (const term of product.searchTerms) {
-          const normTerm = normalizeText(term);
-          if (normTerm.includes(normalizedQuery) || normalizedQuery.includes(normTerm)) {
-            bestScore = Math.max(bestScore, 85);
-          }
+      // 2. Fuzzy match on title
+      else {
+        const fuzzyTitleScore = multiWordFuzzyMatch(normalizedQuery, product.title);
+        if (fuzzyTitleScore > 0) {
+          bestScore = Math.max(bestScore, fuzzyTitleScore + 5);
         }
-      }
-      // Brand match
-      else if (product.brand) {
-        const normBrand = normalizeText(product.brand);
-        if (normBrand.includes(normalizedQuery) || normalizedQuery.includes(normBrand)) {
-          bestScore = Math.max(bestScore, 80);
+        
+        // 3. Fuzzy match on brand
+        const fuzzyBrandScore = multiWordFuzzyMatch(normalizedQuery, product.brand);
+        if (fuzzyBrandScore > 0) {
+          bestScore = Math.max(bestScore, fuzzyBrandScore);
         }
       }
       
-      if (bestScore > 50 && !addedIds.has(product.id)) {
+      // 4. Produktnummer match
+      if (product.number && product.number === query) {
+        bestScore = Math.max(bestScore, 95);
+      }
+      
+      // 5. Sök i searchTerms med fuzzy matching
+      if (product.searchTerms && bestScore < 85) {
+        for (const term of product.searchTerms) {
+          const fuzzyTermScore = multiWordFuzzyMatch(normalizedQuery, term);
+          if (fuzzyTermScore > 65) {
+            bestScore = Math.max(bestScore, fuzzyTermScore);
+          }
+        }
+      }
+      
+      // 6. Direkt contains match (fallback)
+      if (bestScore < 70) {
+        if (searchText.includes(normalizedQuery) || searchTextNoSpaces.includes(queryNoSpaces)) {
+          bestScore = Math.max(bestScore, 75);
+        }
+        if (normBrand.includes(normalizedQuery) || normBrandNoSpaces.includes(queryNoSpaces)) {
+          bestScore = Math.max(bestScore, 70);
+        }
+      }
+      
+      if (bestScore > 55 && !addedIds.has(product.id)) {
         results.push({ product, score: bestScore });
         addedIds.add(product.id);
       }
@@ -2326,18 +2412,42 @@
         const searchName = normalizeText(perfume.name);
         const searchBrand = normalizeText(perfume.brand);
         const searchNameNoSpaces = searchName.replace(/\s+/g, '');
+        const searchBrandNoSpaces = searchBrand.replace(/\s+/g, '');
         
+        // 1. Exact match
         if (searchName === normalizedQuery || searchNameNoSpaces === queryNoSpaces) {
           score = 100;
-        } else if (searchName.includes(normalizedQuery) || searchNameNoSpaces.includes(queryNoSpaces)) {
-          score = 90;
-        } else if (searchBrand.includes(normalizedQuery)) {
-          score = 80;
-        } else if (perfume.productNumbers && perfume.productNumbers.some(num => num === query)) {
-          score = 95;
+        }
+        // 2. Fuzzy match on perfume name
+        else {
+          const fuzzyNameScore = multiWordFuzzyMatch(normalizedQuery, perfume.name);
+          if (fuzzyNameScore > 0) {
+            score = Math.max(score, fuzzyNameScore + 5);
+          }
+          
+          // 3. Fuzzy match on brand
+          const fuzzyBrandScore = multiWordFuzzyMatch(normalizedQuery, perfume.brand);
+          if (fuzzyBrandScore > 0) {
+            score = Math.max(score, fuzzyBrandScore);
+          }
         }
         
-        if (score > 60) {
+        // 4. Product number match
+        if (perfume.productNumbers && perfume.productNumbers.some(num => num === query)) {
+          score = Math.max(score, 95);
+        }
+        
+        // 5. Fallback: direct contains match
+        if (score < 70) {
+          if (searchName.includes(normalizedQuery) || searchNameNoSpaces.includes(queryNoSpaces)) {
+            score = Math.max(score, 75);
+          }
+          if (searchBrand.includes(normalizedQuery) || searchBrandNoSpaces.includes(queryNoSpaces)) {
+            score = Math.max(score, 70);
+          }
+        }
+        
+        if (score > 55) {
           results.push({ perfume, score });
         }
       });
