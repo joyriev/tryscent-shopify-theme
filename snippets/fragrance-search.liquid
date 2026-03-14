@@ -10,7 +10,7 @@
   - KÖNSSPECIFIKA REKOMMENDATIONER
 {% endcomment %}
 
-<!-- Ladda vår kurerade katalog -->
+<!-- Ladda vår kurerade katalog med äkta parfymer -->
 <script src="{{ 'perfume-catalog-swedish.js' | asset_url }}"></script>
 
 <style>
@@ -879,7 +879,7 @@ window.fcToggleSearch = function() {
         <span class="fc-offer-icon">🎁</span>
         <div class="fc-offer-text">
           <strong>KÖP 3 FÅ 1 GRATIS</strong>
-          <span id="fcOfferSubtext">Lägg till 3 produkter för en gratis gåva</span>
+          <span id="fcOfferSubtext">Lägg till 3 produkter för en gratis present</span>
         </div>
       </div>
       <div class="fc-offer-status" id="fcOfferStatus">0/3</div>
@@ -890,7 +890,7 @@ window.fcToggleSearch = function() {
       <div class="fc-offer-progress-bar">
         <div class="fc-offer-progress-fill" id="fcOfferProgress" style="width: 0%;"></div>
       </div>
-      <div class="fc-offer-message" id="fcOfferMessage">Lägg till 3 produkter för en gratis gåva</div>
+      <div class="fc-offer-message" id="fcOfferMessage">Lägg till 3 produkter för en gratis present</div>
     </div>
 
     <!-- INFO SECTION -->
@@ -1070,7 +1070,7 @@ window.fcToggleSearch = function() {
     return matrix[b.length][a.length];
   }
 
-  // ===== CALCULATE FUZZY SIMILARITY SCORE - ADVANCED =====
+  // ===== CALCULATE FUZZY SIMILARITY SCORE =====
   function calculateFuzzyScore(query, target) {
     if (!query || !target) return 0;
     
@@ -1085,12 +1085,11 @@ window.fcToggleSearch = function() {
       return 95;
     }
     
-    // ===== FULL STRING LEVENSHTEIN =====
+    // Full string Levenshtein
     const distance = levenshteinDistance(normalizedQuery, normalizedTarget);
     const maxLen = Math.max(normalizedQuery.length, normalizedTarget.length);
     const fullStringSimilarity = ((maxLen - distance) / maxLen) * 100;
     
-    // Return early if similarity is good from full string comparison
     if (fullStringSimilarity > 60) {
       return fullStringSimilarity;
     }
@@ -1099,7 +1098,7 @@ window.fcToggleSearch = function() {
     const queryWords = normalizedQuery.split(' ');
     const targetWords = normalizedTarget.split(' ');
     
-    let bestScore = fullStringSimilarity; // Start with full string score
+    let bestScore = fullStringSimilarity;
     
     for (const qWord of queryWords) {
       if (qWord.length < 2) continue;
@@ -1145,7 +1144,7 @@ window.fcToggleSearch = function() {
     // Add individual words
     words.forEach(word => variants.add(word));
     
-    // Add word combinations (for brand+name matching)
+    // Add word combinations
     if (words.length > 1) {
       variants.add(words.join('')); // without spaces
       variants.add(words.slice(0, 2).join('')); // first two words
@@ -1229,10 +1228,11 @@ window.fcToggleSearch = function() {
 
   // ===== BRAND ABBREVIATION MAPPING =====
   const brandAbbreviations = {
-    "tf": "tom ford",
+    "ck": "calvin klein",
     "ysl": "yves saint laurent",
     "jpg": "jean paul gaultier",
     "dg": "dolce gabbana",
+    "tf": "tom ford",
     "pr": "paco rabanne",
     "ch": "chanel",
     "di": "dior",
@@ -1241,7 +1241,547 @@ window.fcToggleSearch = function() {
     "mfk": "maison francis kurkdjian"
   };
 
-  // ===== ENHANCED SEARCH FUNCTION WITH FUZZY MATCHING =====
+  // ===== COMPLETE HARDCODED PRODUCT DATABASE - TRYSCENT PRODUCTS =====
+  const hardcodedProducts = [
+    // ===== TOM FORD INSPIRED =====
+    {
+      id: "hardcoded-tryscent-leather-luxe-474",
+      title: "Leather Luxe - No. 474 (unisex)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/LeatherLuxe.png?v=1760616731",
+      url: "https://tryscent.co/products/leather-luxe",
+      variant: 43530879959110,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "474",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Leather",
+      searchTerms: ["leather luxe", "tom ford", "474", "leather"]
+    },
+    {
+      id: "hardcoded-tryscent-vanilla-ceremony-053",
+      title: "Vanilla Ceremony - No. 053 (unisex)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/VanillaCeremony.png?v=1760617982",
+      url: "https://tryscent.co/products/vanilla-ceremony-50-ml-1-7-fl-oz",
+      variant: 43530901520454,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "053",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Vanille Fatale",
+      searchTerms: ["vanilla ceremony", "tom ford", "053", "vanilla"]
+    },
+    {
+      id: "hardcoded-tryscent-cherry-vanilla-438",
+      title: "Cherry Vanilla - No. 438 (unisex)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/sweet_cherry_vanilla_1.png?v=1760543242",
+      url: "https://tryscent.co/products/sweet-cherry-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530902011974,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "438",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Lost Cherry",
+      searchTerms: ["cherry vanilla", "tom ford", "438", "cherry"]
+    },
+    {
+      id: "hardcoded-tryscent-tobacco-dreams-193",
+      title: "Tobacco Dreams - No. 193 (unisex)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/TobaccoDreams.png?v=1760617971",
+      url: "https://tryscent.co/products/tobacco-dreams",
+      variant: 43573345517638,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "193",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Tobacco Vanille",
+      searchTerms: ["tobacco dreams", "tom ford", "193", "tobacco"]
+    },
+    {
+      id: "hardcoded-tryscent-wild-rebel-232",
+      title: "Wild Rebel - No. 232 (unisex)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WildRebel.png?v=1760618131",
+      url: "https://tryscent.co/products/wild-rebel",
+      variant: 43573379137606,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "232",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Fucking Fabulous",
+      searchTerms: ["wild rebel", "tom ford", "232", "fucking fabulous"]
+    },
+    {
+      id: "hardcoded-tryscent-royal-oud-287",
+      title: "Royal Oud - No. 287 (unisex)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/RoyalOud.png?v=1760617683",
+      url: "https://tryscent.co/products/royal-oud",
+      variant: 43572889059398,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "287",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Oud Wood",
+      searchTerms: ["royal oud", "tom ford", "287", "oud"]
+    },
+    {
+      id: "hardcoded-tryscent-midnight-oud-286",
+      title: "Midnight Oud - No. 286M (unisex)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/MidnightOud.png?v=1760617060",
+      url: "https://tryscent.co/products/midnight-oud",
+      variant: 43572609122374,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "286",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Ombre Nomade",
+      searchTerms: ["midnight oud", "tom ford", "286", "ombre nomade"]
+    },
+
+    // ===== CREED INSPIRED =====
+    {
+      id: "hardcoded-tryscent-pineapple-smoke-288",
+      title: "Pineapple Smoke - No. 288 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/pineapple_smoke_vanilla_1.png?v=1760542371",
+      url: "https://tryscent.co/products/pineapple-smoke-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530905059398,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "288",
+      gender: "m",
+      inspiredBy: "Creed Aventus",
+      searchTerms: ["pineapple smoke", "creed", "288", "aventus"]
+    },
+
+    // ===== DIOR INSPIRED =====
+    {
+      id: "hardcoded-tryscent-ginger-amber-230",
+      title: "Ginger Amber - No. 230 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/Lemon_Ginger_Amber_Fixed.png?v=1763032479",
+      url: "https://tryscent.co/products/bergamot-pepper-ambroxan",
+      variant: 43530906763334,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "230",
+      gender: "m",
+      inspiredBy: "Dior Sauvage",
+      searchTerms: ["ginger amber", "dior", "230", "sauvage"]
+    },
+    {
+      id: "hardcoded-tryscent-spiced-woods-366",
+      title: "Spiced Woods - No. 366 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/Spiced_Vanilla_Woods_1.png?v=1763040499",
+      url: "https://tryscent.co/products/blue-steel",
+      variant: 43530884481094,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "366",
+      gender: "m",
+      inspiredBy: "Dior Sauvage Elixir",
+      searchTerms: ["spiced woods", "dior", "366", "sauvage elixir"]
+    },
+    {
+      id: "hardcoded-tryscent-violet-fuel-350",
+      title: "Violet Fuel - No. 350 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/VioletLeatherGasoline.png?v=1760617994",
+      url: "https://tryscent.co/products/violet-leather-gasoline",
+      variant: 43530891821126,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "350",
+      gender: "m",
+      inspiredBy: "Dior Fahrenheit",
+      searchTerms: ["violet fuel", "dior", "350", "fahrenheit"]
+    },
+
+    // ===== YSL INSPIRED =====
+    {
+      id: "hardcoded-tryscent-floral-lavender-034",
+      title: "Floral Lavender - No. 034 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WhiteFloralsLavender.png?v=1760618018",
+      url: "https://tryscent.co/products/white-florals-lavender-50-ml-1-7-fl-oz",
+      variant: 43530900930630,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "034",
+      gender: "w",
+      inspiredBy: "Yves Saint Laurent Libre",
+      searchTerms: ["floral lavender", "ysl", "034", "libre"]
+    },
+    {
+      id: "hardcoded-tryscent-berry-vanilla-132",
+      title: "Berry Vanilla - No. 132 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/Blackberry_Vanilla_Musk_1.png?v=1763032374",
+      url: "https://tryscent.co/products/black-berry-vanilla-musk",
+      variant: 43530904240198,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "132",
+      gender: "w",
+      inspiredBy: "Yves Saint Laurent Black Opium",
+      searchTerms: ["berry vanilla", "ysl", "132", "black opium"]
+    },
+    {
+      id: "hardcoded-tryscent-sage-cedar-283",
+      title: "Sage Cedar - No. 283 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/BergamotSageCedar.png?v=1760614424",
+      url: "https://tryscent.co/products/bergamot-sage-cedar-50-ml",
+      variant: 43530906566726,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "283",
+      gender: "m",
+      inspiredBy: "Yves Saint Laurent Y",
+      searchTerms: ["sage cedar", "ysl", "283", "y"]
+    },
+
+    // ===== CHANEL INSPIRED =====
+    {
+      id: "hardcoded-tryscent-orange-patchouli-067",
+      title: "Orange Patchouli - No. 067 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/OrangeRosePatchouli.png?v=1760617372",
+      url: "https://tryscent.co/products/orange-rose-patchouli-50-ml-1-7-fl-oz",
+      variant: 43530902929478,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "067",
+      gender: "w",
+      inspiredBy: "Chanel Coco Mademoiselle",
+      searchTerms: ["orange patchouli", "chanel", "067", "coco mademoiselle"]
+    },
+    {
+      id: "hardcoded-tryscent-rose-sandalwood-077",
+      title: "Rose Sandalwood - No. 077 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/aldehydes_rose_sandalwood.png?v=1760537365",
+      url: "https://tryscent.co/products/aldehydes-rose-sandalwood-50-ml-1-7-fl-oz",
+      variant: 43530904469574,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "077",
+      gender: "w",
+      inspiredBy: "Chanel No. 5",
+      searchTerms: ["rose sandalwood", "chanel", "077", "no 5"]
+    },
+
+    // ===== ARMANI INSPIRED =====
+    {
+      id: "hardcoded-tryscent-currant-woods-129",
+      title: "Currant Woods - No. 129 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/BlackcurrantVanillaWoods.png?v=1760614587",
+      url: "https://tryscent.co/products/blackcurrant-vanilla-woods-50-ml-1-7-fl-oz",
+      variant: 43530892345414,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "129",
+      gender: "w",
+      inspiredBy: "Giorgio Armani Si",
+      searchTerms: ["currant woods", "armani", "129", "si"]
+    },
+    {
+      id: "hardcoded-tryscent-signature-blend-227",
+      title: "Signature Blend - No. 227 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/SignatureBlend.png?v=1760617688",
+      url: "https://tryscent.co/products/signature-blend",
+      variant: 43573210349638,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "227",
+      gender: "m",
+      inspiredBy: "Hermès Terre d'Hermès",
+      searchTerms: ["signature blend", "hermes", "227", "terre"]
+    },
+
+    // ===== PACO RABANNE INSPIRED =====
+    {
+      id: "hardcoded-tryscent-cinnamon-leather-275",
+      title: "Cinnamon Leather - No. 275 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/CinnamonLeatherAmber.png?v=1760614606",
+      url: "https://tryscent.co/products/cinnamon-leather-amber",
+      variant: 43530906435654,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "275",
+      gender: "m",
+      inspiredBy: "Paco Rabanne 1 Million",
+      searchTerms: ["cinnamon leather", "paco rabanne", "275", "1 million"]
+    },
+    {
+      id: "hardcoded-tryscent-honey-woods-023",
+      title: "Honey Woods - No. 023 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/HoneyFloralsWoods.png?v=1760616491",
+      url: "https://tryscent.co/products/honey-florals-woods",
+      variant: 43530903715910,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "023",
+      gender: "w",
+      inspiredBy: "Paco Rabanne Lady Million",
+      searchTerms: ["honey woods", "paco rabanne", "023", "lady million"]
+    },
+
+    // ===== JPG INSPIRED =====
+    {
+      id: "hardcoded-tryscent-lavender-mint-247",
+      title: "Lavender Mint - No. 247 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/lavender_mint_vanilla_1.png?v=1760554189",
+      url: "https://tryscent.co/products/lavender-mint-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530905681990,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "247",
+      gender: "m",
+      inspiredBy: "Jean Paul Gaultier Le Male",
+      searchTerms: ["lavender mint", "jpg", "247", "le male"]
+    },
+
+    // ===== VERSACE INSPIRED =====
+    {
+      id: "hardcoded-tryscent-alpha-charm-248",
+      title: "Alpha Charm - No. 248 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/AlphaAttraction.png?v=1760614128",
+      url: "https://tryscent.co/products/alpha-attraction",
+      variant: 43530886643782,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "248",
+      gender: "m",
+      inspiredBy: "Versace Eros",
+      searchTerms: ["alpha charm", "versace", "248", "eros"]
+    },
+
+    // ===== HUGO BOSS INSPIRED =====
+    {
+      id: "hardcoded-tryscent-apple-sandalwood-234",
+      title: "Apple Sandalwood - No. 234 (m)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/apple_cinnamon_woods.png?v=1760538455",
+      url: "https://tryscent.co/products/apple-cinnamon-sandalwood",
+      variant: 43530907254854,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "234",
+      gender: "m",
+      inspiredBy: "Hugo Boss Boss Bottled",
+      searchTerms: ["apple sandalwood", "hugo boss", "234", "boss bottled"]
+    },
+
+    // ===== MUGLER INSPIRED =====
+    {
+      id: "hardcoded-tryscent-amber-woods-004",
+      title: "Amber Woods - No. 004 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/JasmineAmberWoods.png?v=1760616524",
+      url: "https://tryscent.co/products/jasmine-amber-woods-50-ml-1-7-fl-oz",
+      variant: 43530889887814,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "004",
+      gender: "w",
+      inspiredBy: "Mugler Alien",
+      searchTerms: ["amber woods", "mugler", "004", "alien"]
+    },
+
+    // ===== PRADA INSPIRED =====
+    {
+      id: "hardcoded-tryscent-floral-amber-437",
+      title: "Floral Amber - No. 437 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WhiteFloralsAmber.png?v=1760618006",
+      url: "https://tryscent.co/products/white-florals-amber-50-ml-1-7-fl-oz",
+      variant: 43530901422150,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "437",
+      gender: "w",
+      inspiredBy: "Prada Paradoxe",
+      searchTerms: ["floral amber", "prada", "437", "paradoxe"]
+    },
+
+    // ===== VALENTINO INSPIRED =====
+    {
+      id: "hardcoded-tryscent-pink-mirage-469",
+      title: "Pink Mirage - No. 469 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/PinkMirage.png?v=1760617557",
+      url: "https://tryscent.co/products/pink-mirage",
+      variant: 43530902831174,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "469",
+      gender: "w",
+      inspiredBy: "Valentino Donna Born in Roma",
+      searchTerms: ["pink mirage", "valentino", "469", "born in roma"]
+    },
+
+    // ===== MFK INSPIRED =====
+    {
+      id: "hardcoded-tryscent-saffron-amber-466",
+      title: "Saffron Amber - No. 466 (unisex)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/rose_saffron_amber.png?v=1760542469",
+      url: "https://tryscent.co/products/saffron-rose-amber-50-ml-1-7-fl-oz",
+      variant: 43530902339654,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "466",
+      gender: "unisex",
+      inspiredBy: "Maison Francis Kurkdjian Baccarat Rouge 540",
+      searchTerms: ["saffron amber", "mfk", "466", "baccarat"]
+    },
+
+    // ===== NARCISO INSPIRED =====
+    {
+      id: "hardcoded-tryscent-skin-reverie-457",
+      title: "Skin Reverie - No. 457 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/SkinReverie.png?v=1760617783",
+      url: "https://tryscent.co/products/skin-reverie-50-ml-1-7-fl-oz",
+      variant: 43530902143046,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "457",
+      gender: "w",
+      inspiredBy: "Narciso Rodriguez For Her",
+      searchTerms: ["skin reverie", "narciso", "457", "for her"]
+    },
+
+    // ===== CAROLINA HERRERA INSPIRED =====
+    {
+      id: "hardcoded-tryscent-cocoa-tonka-461",
+      title: "Cocoa Tonka - No. 461 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/JasmineCocoaTonka.png?v=1760616529",
+      url: "https://tryscent.co/products/jasmine-cocoa-tonka",
+      variant: 43530903060550,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "461",
+      gender: "w",
+      inspiredBy: "Carolina Herrera Good Girl",
+      searchTerms: ["cocoa tonka", "carolina herrera", "461", "good girl"]
+    },
+
+    // ===== LANCOME INSPIRED =====
+    {
+      id: "hardcoded-tryscent-iris-praline-412",
+      title: "Iris Praline - No. 412 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/IrisPralineVanilla.png?v=1760616516",
+      url: "https://tryscent.co/products/iris-praline-vanilla",
+      variant: 43530903191622,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "412",
+      gender: "w",
+      inspiredBy: "Lancôme La Vie Est Belle",
+      searchTerms: ["iris praline", "lancome", "412", "la vie est belle"]
+    },
+
+    // ===== DIOR FEMININE INSPIRED =====
+    {
+      id: "hardcoded-tryscent-ylang-rose-159",
+      title: "Ylang Rose - No. 159 (w)",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/YlangYlangRoseJasmine.png?v=1760618062",
+      url: "https://tryscent.co/products/ylang-ylang-rose-jasmine-50-ml-1-7-fl-oz",
+      variant: 43530900766790,
+      price: 12999,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "159",
+      gender: "w",
+      inspiredBy: "Dior J'adore",
+      searchTerms: ["ylang rose", "dior", "159", "jadore"]
+    },
+
+    // ===== BUNDLE PRODUCTS =====
+    {
+      id: "hardcoded-tryscent-bundle-4x50ml",
+      title: "4X 50ml Perfume Bottles",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/4x50MLUSD.png?v=1763133438",
+      url: "https://tryscent.co/products/4x-50ml-perfume-bottles",
+      variant: 44002280734790,
+      price: 59000,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "bundle-4x50",
+      gender: "unisex",
+      searchTerms: ["bundle", "4x50", "4 bottles", "4x50ml"]
+    },
+    {
+      id: "hardcoded-tryscent-bundle-6x100ml",
+      title: "6X 100ml Perfume Bottles",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/6x100MLUSD.png?v=1763134481",
+      url: "https://tryscent.co/products/6x-100ml-perfume-bottles",
+      variant: 44002293907526,
+      price: 98900,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "bundle-6x100",
+      gender: "unisex",
+      searchTerms: ["bundle", "6x100", "6 bottles", "6x100ml"]
+    },
+    {
+      id: "hardcoded-tryscent-bundle-5x50ml",
+      title: "5X 50ml Perfume Bottles",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/5x50MLUSD.png?v=1763133199",
+      url: "https://tryscent.co/products/5x-50ml-perfume-bottles",
+      variant: 44002280112198,
+      price: 69000,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "bundle-5x50",
+      gender: "unisex",
+      searchTerms: ["bundle", "5x50", "5 bottles", "5x50ml"]
+    },
+    {
+      id: "hardcoded-tryscent-bundle-4x100ml",
+      title: "4X 100ml Perfume Bottles",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/4x100MLUSD.png?v=1763134356",
+      url: "https://tryscent.co/products/4x-100ml-perfume-bottles",
+      variant: 44002293416006,
+      price: 79000,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "bundle-4x100",
+      gender: "unisex",
+      searchTerms: ["bundle", "4x100", "4 bottles", "4x100ml"]
+    },
+    {
+      id: "hardcoded-tryscent-bundle-3x100ml",
+      title: "3X 100ml Perfume Bottles",
+      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/3x100MLUSD.png?v=1763134290",
+      url: "https://tryscent.co/products/3x-100ml-perfume-bottles",
+      variant: 44002292596806,
+      price: 38000,
+      brand: "TryScent",
+      brandKey: "tryscent",
+      number: "bundle-3x100",
+      gender: "unisex",
+      searchTerms: ["bundle", "3x100", "3 bottles", "3x100ml"]
+    }
+  ];
+
+  // ===== ENHANCED SEARCH FUNCTION =====
   function enhancedSearch(query) {
     if (!query || query.length < 1) return [];
     
@@ -1378,19 +1918,6 @@ window.fcToggleSearch = function() {
         }
       }
       
-      // Advanced Levenshtein matching on searchTerms
-      if (bestScore < 85 && product.searchTerms) {
-        for (const term of product.searchTerms) {
-          if (term.length >= 3) {
-            const termScore = calculateFuzzyScore(queryLower, term);
-            if (termScore >= 65) {
-              bestScore = Math.max(bestScore, termScore * 1.1);
-              matchReasons.push('levenshtein-search-term');
-            }
-          }
-        }
-      }
-      
       // Check product variations against query
       const normalizedQuery = normalizeText(query);
       if (titleVariations.some(v => v === normalizedQuery)) {
@@ -1421,480 +1948,6 @@ window.fcToggleSearch = function() {
     results.sort((a, b) => b.score - a.score);
     return results;
   }
-
-  // ===== COMPLETE HARDCODED PRODUCT DATABASE =====
-  // Based on the data from tryscent.co
-  const hardcodedProducts = [
-    // Tom Ford Inspired
-    {
-      id: "hardcoded-tryscent-leather-luxe-474",
-      title: "Leather Luxe - No. 474 (unisex)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/LeatherLuxe.png?v=1760616731",
-      url: "https://tryscent.co/products/leather-luxe",
-      variant: 43530879959110,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "474",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Leather",
-      searchTerms: ["leather luxe", "tom ford", "474", "leather"]
-    },
-    {
-      id: "hardcoded-tryscent-vanilla-ceremony-053",
-      title: "Vanilla Ceremony - No. 053 (unisex)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/VanillaCeremony.png?v=1760617982",
-      url: "https://tryscent.co/products/vanilla-ceremony-50-ml-1-7-fl-oz",
-      variant: 43530901520454,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "053",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Vanille Fatale",
-      searchTerms: ["vanilla ceremony", "tom ford", "053", "vanilla"]
-    },
-    {
-      id: "hardcoded-tryscent-cherry-vanilla-438",
-      title: "Cherry Vanilla - No. 438 (unisex)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/sweet_cherry_vanilla_1.png?v=1760543242",
-      url: "https://tryscent.co/products/sweet-cherry-vanilla-50-ml-1-7-fl-oz",
-      variant: 43530902011974,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "438",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Lost Cherry",
-      searchTerms: ["cherry vanilla", "tom ford", "438", "cherry"]
-    },
-    {
-      id: "hardcoded-tryscent-tobacco-dreams-193",
-      title: "Tobacco Dreams - No. 193 (unisex)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/TobaccoDreams.png?v=1760617971",
-      url: "https://tryscent.co/products/tobacco-dreams",
-      variant: 43573345517638,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "193",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Tobacco Vanille",
-      searchTerms: ["tobacco dreams", "tom ford", "193", "tobacco"]
-    },
-    {
-      id: "hardcoded-tryscent-wild-rebel-232",
-      title: "Wild Rebel - No. 232 (unisex)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WildRebel.png?v=1760618131",
-      url: "https://tryscent.co/products/wild-rebel",
-      variant: 43573379137606,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "232",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Fucking Fabulous",
-      searchTerms: ["wild rebel", "tom ford", "232", "fucking fabulous"]
-    },
-    {
-      id: "hardcoded-tryscent-royal-oud-287",
-      title: "Royal Oud - No. 287 (unisex)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/RoyalOud.png?v=1760617683",
-      url: "https://tryscent.co/products/royal-oud",
-      variant: 43572889059398,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "287",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Oud Wood",
-      searchTerms: ["royal oud", "tom ford", "287", "oud"]
-    },
-    {
-      id: "hardcoded-tryscent-midnight-oud-286",
-      title: "Midnight Oud - No. 286M (unisex)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/MidnightOud.png?v=1760617060",
-      url: "https://tryscent.co/products/midnight-oud",
-      variant: 43572609122374,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "286",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Ombre Nomade",
-      searchTerms: ["midnight oud", "tom ford", "286", "ombre nomade"]
-    },
-
-    // Creed Inspired
-    {
-      id: "hardcoded-tryscent-pineapple-smoke-288",
-      title: "Pineapple Smoke - No. 288 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/pineapple_smoke_vanilla_1.png?v=1760542371",
-      url: "https://tryscent.co/products/pineapple-smoke-vanilla-50-ml-1-7-fl-oz",
-      variant: 43530905059398,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "288",
-      gender: "m",
-      inspiredBy: "Creed Aventus",
-      searchTerms: ["pineapple smoke", "creed", "288", "aventus"]
-    },
-
-    // Dior Inspired
-    {
-      id: "hardcoded-tryscent-ginger-amber-230",
-      title: "Ginger Amber - No. 230 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/Lemon_Ginger_Amber_Fixed.png?v=1763032479",
-      url: "https://tryscent.co/products/bergamot-pepper-ambroxan",
-      variant: 43530906763334,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "230",
-      gender: "m",
-      inspiredBy: "Dior Sauvage",
-      searchTerms: ["ginger amber", "dior", "230", "sauvage"]
-    },
-    {
-      id: "hardcoded-tryscent-spiced-woods-366",
-      title: "Spiced Woods - No. 366 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/Spiced_Vanilla_Woods_1.png?v=1763040499",
-      url: "https://tryscent.co/products/blue-steel",
-      variant: 43530884481094,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "366",
-      gender: "m",
-      inspiredBy: "Dior Sauvage Elixir",
-      searchTerms: ["spiced woods", "dior", "366", "sauvage elixir"]
-    },
-    {
-      id: "hardcoded-tryscent-violet-fuel-350",
-      title: "Violet Fuel - No. 350 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/VioletLeatherGasoline.png?v=1760617994",
-      url: "https://tryscent.co/products/violet-leather-gasoline",
-      variant: 43530891821126,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "350",
-      gender: "m",
-      inspiredBy: "Dior Fahrenheit",
-      searchTerms: ["violet fuel", "dior", "350", "fahrenheit"]
-    },
-
-    // YSL Inspired
-    {
-      id: "hardcoded-tryscent-floral-lavender-034",
-      title: "Floral Lavender - No. 034 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WhiteFloralsLavender.png?v=1760618018",
-      url: "https://tryscent.co/products/white-florals-lavender-50-ml-1-7-fl-oz",
-      variant: 43530900930630,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "034",
-      gender: "w",
-      inspiredBy: "Libre",
-      searchTerms: ["floral lavender", "ysl", "034", "libre"]
-    },
-    {
-      id: "hardcoded-tryscent-berry-vanilla-132",
-      title: "Berry Vanilla - No. 132 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/Blackberry_Vanilla_Musk_1.png?v=1763032374",
-      url: "https://tryscent.co/products/black-berry-vanilla-musk",
-      variant: 43530904240198,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "132",
-      gender: "w",
-      inspiredBy: "Yves Saint Laurent Black Opium",
-      searchTerms: ["berry vanilla", "ysl", "132", "black opium"]
-    },
-    {
-      id: "hardcoded-tryscent-sage-cedar-283",
-      title: "Sage Cedar - No. 283 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/BergamotSageCedar.png?v=1760614424",
-      url: "https://tryscent.co/products/bergamot-sage-cedar-50-ml",
-      variant: 43530906566726,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "283",
-      gender: "m",
-      inspiredBy: "Yves Saint Laurent Y",
-      searchTerms: ["sage cedar", "ysl", "283", "y"]
-    },
-
-    // Chanel Inspired
-    {
-      id: "hardcoded-tryscent-orange-patchouli-067",
-      title: "Orange Patchouli - No. 067 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/OrangeRosePatchouli.png?v=1760617372",
-      url: "https://tryscent.co/products/orange-rose-patchouli-50-ml-1-7-fl-oz",
-      variant: 43530902929478,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "067",
-      gender: "w",
-      inspiredBy: "Chanel Coco Mademoiselle",
-      searchTerms: ["orange patchouli", "chanel", "067", "coco mademoiselle"]
-    },
-    {
-      id: "hardcoded-tryscent-rose-sandalwood-077",
-      title: "Rose Sandalwood - No. 077 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/aldehydes_rose_sandalwood.png?v=1760537365",
-      url: "https://tryscent.co/products/aldehydes-rose-sandalwood-50-ml-1-7-fl-oz",
-      variant: 43530904469574,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "077",
-      gender: "w",
-      inspiredBy: "Chanel No. 5",
-      searchTerms: ["rose sandalwood", "chanel", "077", "no 5"]
-    },
-
-    // Armani Inspired
-    {
-      id: "hardcoded-tryscent-currant-woods-129",
-      title: "Currant Woods - No. 129 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/BlackcurrantVanillaWoods.png?v=1760614587",
-      url: "https://tryscent.co/products/blackcurrant-vanilla-woods-50-ml-1-7-fl-oz",
-      variant: 43530892345414,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "129",
-      gender: "w",
-      inspiredBy: "Giorgio Armani Si",
-      searchTerms: ["currant woods", "armani", "129", "si"]
-    },
-    {
-      id: "hardcoded-tryscent-signature-blend-227",
-      title: "Signature Blend - No. 227 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/SignatureBlend.png?v=1760617688",
-      url: "https://tryscent.co/products/signature-blend",
-      variant: 43573210349638,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "227",
-      gender: "m",
-      inspiredBy: "Hermès Terre d'Hermès",
-      searchTerms: ["signature blend", "hermes", "227", "terre"]
-    },
-
-    // Paco Rabanne Inspired
-    {
-      id: "hardcoded-tryscent-cinnamon-leather-275",
-      title: "Cinnamon Leather - No. 275 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/CinnamonLeatherAmber.png?v=1760614606",
-      url: "https://tryscent.co/products/cinnamon-leather-amber",
-      variant: 43530906435654,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "275",
-      gender: "m",
-      inspiredBy: "Paco Rabanne 1 Million",
-      searchTerms: ["cinnamon leather", "paco rabanne", "275", "1 million"]
-    },
-    {
-      id: "hardcoded-tryscent-honey-woods-023",
-      title: "Honey Woods - No. 023 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/HoneyFloralsWoods.png?v=1760616491",
-      url: "https://tryscent.co/products/honey-florals-woods",
-      variant: 43530903715910,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "023",
-      gender: "w",
-      inspiredBy: "Paco Rabanne Lady Million",
-      searchTerms: ["honey woods", "paco rabanne", "023", "lady million"]
-    },
-
-    // Jean Paul Gaultier Inspired
-    {
-      id: "hardcoded-tryscent-lavender-mint-247",
-      title: "Lavender Mint - No. 247 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/lavender_mint_vanilla_1.png?v=1760554189",
-      url: "https://tryscent.co/products/lavender-mint-vanilla-50-ml-1-7-fl-oz",
-      variant: 43530905681990,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "247",
-      gender: "m",
-      inspiredBy: "Jean Paul Gaultier Le Male",
-      searchTerms: ["lavender mint", "jpg", "247", "le male"]
-    },
-
-    // Versace Inspired
-    {
-      id: "hardcoded-tryscent-alpha-charm-248",
-      title: "Alpha Charm - No. 248 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/AlphaAttraction.png?v=1760614128",
-      url: "https://tryscent.co/products/alpha-attraction",
-      variant: 43530886643782,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "248",
-      gender: "m",
-      inspiredBy: "Versace Eros",
-      searchTerms: ["alpha charm", "versace", "248", "eros"]
-    },
-
-    // Hugo Boss Inspired
-    {
-      id: "hardcoded-tryscent-apple-sandalwood-234",
-      title: "Apple Sandalwood - No. 234 (m)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/apple_cinnamon_woods.png?v=1760538455",
-      url: "https://tryscent.co/products/apple-cinnamon-sandalwood",
-      variant: 43530907254854,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "234",
-      gender: "m",
-      inspiredBy: "Hugo Boss Boss Bottled",
-      searchTerms: ["apple sandalwood", "hugo boss", "234", "boss bottled"]
-    },
-
-    // Mugler Inspired
-    {
-      id: "hardcoded-tryscent-amber-woods-004",
-      title: "Amber Woods - No. 004 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/JasmineAmberWoods.png?v=1760616524",
-      url: "https://tryscent.co/products/jasmine-amber-woods-50-ml-1-7-fl-oz",
-      variant: 43530889887814,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "004",
-      gender: "w",
-      inspiredBy: "Mugler Alien",
-      searchTerms: ["amber woods", "mugler", "004", "alien"]
-    },
-
-    // Prada Inspired
-    {
-      id: "hardcoded-tryscent-floral-amber-437",
-      title: "Floral Amber - No. 437 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WhiteFloralsAmber.png?v=1760618006",
-      url: "https://tryscent.co/products/white-florals-amber-50-ml-1-7-fl-oz",
-      variant: 43530901422150,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "437",
-      gender: "w",
-      inspiredBy: "Prada Paradoxe",
-      searchTerms: ["floral amber", "prada", "437", "paradoxe"]
-    },
-
-    // Valentino Inspired
-    {
-      id: "hardcoded-tryscent-pink-mirage-469",
-      title: "Pink Mirage - No. 469 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/PinkMirage.png?v=1760617557",
-      url: "https://tryscent.co/products/pink-mirage",
-      variant: 43530902831174,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "469",
-      gender: "w",
-      inspiredBy: "Valentino Donna Born in Roma",
-      searchTerms: ["pink mirage", "valentino", "469", "born in roma"]
-    },
-
-    // MFK Inspired
-    {
-      id: "hardcoded-tryscent-saffron-amber-466",
-      title: "Saffron Amber - No. 466 (unisex)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/rose_saffron_amber.png?v=1760542469",
-      url: "https://tryscent.co/products/saffron-rose-amber-50-ml-1-7-fl-oz",
-      variant: 43530902339654,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "466",
-      gender: "unisex",
-      inspiredBy: "Maison Francis Kurkdjian Baccarat Rouge 540",
-      searchTerms: ["saffron amber", "mfk", "466", "baccarat"]
-    },
-
-    // Narciso Rodriguez Inspired
-    {
-      id: "hardcoded-tryscent-skin-reverie-457",
-      title: "Skin Reverie - No. 457 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/SkinReverie.png?v=1760617783",
-      url: "https://tryscent.co/products/skin-reverie-50-ml-1-7-fl-oz",
-      variant: 43530902143046,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "457",
-      gender: "w",
-      inspiredBy: "Narciso Rodriguez For Her",
-      searchTerms: ["skin reverie", "narciso", "457", "for her"]
-    },
-
-    // Carolina Herrera Inspired
-    {
-      id: "hardcoded-tryscent-cocoa-tonka-461",
-      title: "Cocoa Tonka - No. 461 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/JasmineCocoaTonka.png?v=1760616529",
-      url: "https://tryscent.co/products/jasmine-cocoa-tonka",
-      variant: 43530903060550,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "461",
-      gender: "w",
-      inspiredBy: "Carolina Herrera Good Girl",
-      searchTerms: ["cocoa tonka", "carolina herrera", "461", "good girl"]
-    },
-
-    // Lancome Inspired
-    {
-      id: "hardcoded-tryscent-iris-praline-412",
-      title: "Iris Praline - No. 412 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/IrisPralineVanilla.png?v=1760616516",
-      url: "https://tryscent.co/products/iris-praline-vanilla",
-      variant: 43530903191622,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "412",
-      gender: "w",
-      inspiredBy: "Lancôme La Vie Est Belle",
-      searchTerms: ["iris praline", "lancome", "412", "la vie est belle"]
-    },
-
-    // Dior Feminine Inspired
-    {
-      id: "hardcoded-tryscent-ylang-rose-159",
-      title: "Ylang Rose - No. 159 (w)",
-      image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/YlangYlangRoseJasmine.png?v=1760618062",
-      url: "https://tryscent.co/products/ylang-ylang-rose-jasmine-50-ml-1-7-fl-oz",
-      variant: 43530900766790,
-      price: 12999,
-      brand: "TryScent",
-      brandKey: "tryscent",
-      number: "159",
-      gender: "w",
-      inspiredBy: "Dior J'adore",
-      searchTerms: ["ylang rose", "dior", "159", "jadore"]
-    }
-  ];
 
   // ===== ENHANCED SEARCH FUNCTION =====
   function searchHardcodedProducts(query) {
@@ -1957,7 +2010,8 @@ window.fcToggleSearch = function() {
       if (perfume.gender && product.gender) {
         if (perfume.gender.toLowerCase() === product.gender.toLowerCase() ||
             (perfume.gender === 'Female' && product.gender === 'w') ||
-            (perfume.gender === 'Male' && product.gender === 'm')) {
+            (perfume.gender === 'Male' && product.gender === 'm') ||
+            (perfume.gender === 'Unisex' && product.gender === 'unisex')) {
           score += 15;
         }
       }
@@ -1979,7 +2033,6 @@ window.fcToggleSearch = function() {
 
   // ===== HARDCODED "YOU MIGHT LIKE IT" RECOMMENDATIONS =====
   const hardcodedRecommendations = {
-    // Tom Ford inspired
     "474": "287",  // Leather Luxe → Royal Oud
     "053": "438",  // Vanilla Ceremony → Cherry Vanilla
     "438": "193",  // Cherry Vanilla → Tobacco Dreams
@@ -1987,63 +2040,29 @@ window.fcToggleSearch = function() {
     "232": "287",  // Wild Rebel → Royal Oud
     "287": "286",  // Royal Oud → Midnight Oud
     "286": "474",  // Midnight Oud → Leather Luxe
-    
-    // Creed inspired
     "288": "230",  // Pineapple Smoke → Ginger Amber
-    
-    // Dior inspired
     "230": "366",  // Ginger Amber → Spiced Woods
     "366": "350",  // Spiced Woods → Violet Fuel
     "350": "230",  // Violet Fuel → Ginger Amber
-    
-    // YSL inspired
     "034": "132",  // Floral Lavender → Berry Vanilla
     "132": "283",  // Berry Vanilla → Sage Cedar
     "283": "034",  // Sage Cedar → Floral Lavender
-    
-    // Chanel inspired
     "067": "077",  // Orange Patchouli → Rose Sandalwood
     "077": "067",  // Rose Sandalwood → Orange Patchouli
-    
-    // Armani inspired
     "129": "227",  // Currant Woods → Signature Blend
     "227": "129",  // Signature Blend → Currant Woods
-    
-    // Paco Rabanne inspired
     "275": "023",  // Cinnamon Leather → Honey Woods
     "023": "275",  // Honey Woods → Cinnamon Leather
-    
-    // JPG inspired
     "247": "248",  // Lavender Mint → Alpha Charm
-    
-    // Versace inspired
     "248": "247",  // Alpha Charm → Lavender Mint
-    
-    // Hugo Boss inspired
     "234": "275",  // Apple Sandalwood → Cinnamon Leather
-    
-    // Mugler inspired
     "004": "457",  // Amber Woods → Skin Reverie
-    
-    // Prada inspired
     "437": "469",  // Floral Amber → Pink Mirage
-    
-    // Valentino inspired
     "469": "437",  // Pink Mirage → Floral Amber
-    
-    // MFK inspired
     "466": "438",  // Saffron Amber → Cherry Vanilla
-    
-    // Narciso inspired
     "457": "461",  // Skin Reverie → Cocoa Tonka
-    
-    // Carolina Herrera inspired
     "461": "412",  // Cocoa Tonka → Iris Praline
-    
-    // Lancome inspired
     "412": "159",  // Iris Praline → Ylang Rose
-    
-    // Dior Feminine inspired
     "159": "067"   // Ylang Rose → Orange Patchouli
   };
 
@@ -2266,7 +2285,7 @@ window.fcToggleSearch = function() {
       btn.style.background = '#2E7D32';
       
       fetchCartAndUpdate().then(cart => {
-        showNotification(`✓ Tillagd! ${cart.item_count}/3 produkter för gratis gåva`);
+        showNotification(`✓ Tillagd! ${cart.item_count}/3 produkter för gratis present`);
       });
       
       setTimeout(() => {
@@ -2328,14 +2347,14 @@ window.fcToggleSearch = function() {
     
     if (itemCount >= 3) {
       offerStatus.textContent = '🎉 GRATIS!';
-      offerSubtext.textContent = 'Du kvalificerar dig för en gratis gåva!';
-      offerMessage.textContent = '🎉 Du kvalificerar dig för en GRATIS gåva!';
+      offerSubtext.textContent = 'Du kvalificerar dig för en gratis present!';
+      offerMessage.textContent = '🎉 Du kvalificerar dig för en GRATIS present!';
       offerBanner.classList.add('qualified');
     } else {
       const needed = 3 - itemCount;
       offerStatus.textContent = `${itemCount}/3`;
-      offerSubtext.textContent = `Lägg till ${needed} fler för en gratis gåva`;
-      offerMessage.textContent = `Lägg till ${needed} fler produkter för en gratis gåva`;
+      offerSubtext.textContent = `Lägg till ${needed} fler för en gratis present`;
+      offerMessage.textContent = `Lägg till ${needed} fler produkter för en gratis present`;
       offerBanner.classList.remove('qualified');
     }
   }
@@ -2376,8 +2395,6 @@ window.fcToggleSearch = function() {
           score = 100;
         } else if (perfumeName.includes(queryLower) || perfumeBrand.includes(queryLower)) {
           score = 80;
-        } else if (perfume.inspiredBy && perfume.inspiredBy.toLowerCase().includes(queryLower)) {
-          score = 70;
         } else {
           // Fuzzy matching
           const nameScore = calculateFuzzyScore(queryLower, perfumeName);
@@ -2413,7 +2430,7 @@ window.fcToggleSearch = function() {
               <div class="fc-real-perfume-info">
                 <div class="fc-real-perfume-name">${perfume.name}</div>
                 <div class="fc-real-perfume-brand">${perfume.brand}</div>
-                ${perfume.inspiredBy ? `<div class="fc-real-perfume-year">Inspirerad av: ${perfume.inspiredBy}</div>` : ''}
+                ${perfume.year ? `<div class="fc-real-perfume-year">${perfume.year}</div>` : ''}
               </div>
             </div>
           `;
