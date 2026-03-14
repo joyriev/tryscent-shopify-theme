@@ -799,9 +799,29 @@
   </div>
 </div>
 
+<!-- Load Swedish Perfume Catalog -->
+<script src="{{ 'perfume-cataloge-sw.js' | asset_url }}"></script>
+
 <script>
 (function() {
-  // ===== ALL YOUR SHOPIFY PRODUCTS - HARDCODED WITH COMPLETE DATA =====
+  // ===== LOAD DYNAMIC CATALOG =====
+  let allPerfumes = [];
+  
+  // Initialize dynamic catalog on load
+  if (window.SwedishPerfumeCatalog) {
+    // Get all array properties (brands)
+    for (let brandKey in window.SwedishPerfumeCatalog) {
+      if (brandKey.startsWith('_')) continue; // Skip index
+      if (Array.isArray(window.SwedishPerfumeCatalog[brandKey])) {
+        window.SwedishPerfumeCatalog[brandKey].forEach(perfume => {
+          allPerfumes.push(perfume);
+        });
+      }
+    }
+    console.log(`✓ Katalog laddad: ${allPerfumes.length} parfymer från ${Object.keys(window.SwedishPerfumeCatalog).filter(k => !k.startsWith('_')).length} märken`);
+  }
+  
+  // ===== FALLBACK HARDCODED PRODUCTS FOR RECOMMENDATIONS =====
   const hardcodedProducts = [
     // ===== MAISON FRANCIS KURKDJIAN INSPIRED =====
     {
@@ -2249,18 +2269,20 @@
   function getRecommendationForProduct(product) {
     if (!product || !product.number) return null;
     
+    const productsToSearch = allPerfumes.length > 0 ? allPerfumes : hardcodedProducts;
+    
     // Kolla om det finns en hårdkodad rekommendation för detta produktnummer
     const recNumber = hardcodedRecommendations[product.number];
     if (recNumber) {
-      const recommended = hardcodedProducts.find(p => p.number === recNumber);
+      const recommended = productsToSearch.find(p => p.number === recNumber || p.productNumbers?.includes(recNumber));
       if (recommended && recommended.id !== product.id) {
         return recommended;
       }
     }
     
     // Fallback: annan produkt från samma brand
-    const sameBrand = hardcodedProducts.find(p => 
-      p.brandKey === product.brandKey && 
+    const sameBrand = productsToSearch.find(p => 
+      (p.brandKey === product.brandKey || p.brand === product.brand) && 
       p.id !== product.id &&
       p.gender === product.gender
     );
@@ -2287,7 +2309,10 @@
     const results = [];
     const addedIds = new Set();
     
-    hardcodedProducts.forEach(product => {
+    // Use dynamic catalog if available, fallback to hardcoded
+    const productsToSearch = allPerfumes.length > 0 ? allPerfumes : hardcodedProducts;
+    
+    productsToSearch.forEach(product => {
       // Sök i titel
       const titleNorm = normalizeText(product.title);
       if (titleNorm.includes(normalizedQuery) || normalizedQuery.includes(titleNorm)) {
@@ -2389,7 +2414,8 @@
   };
 
   window.fcShowProductDetail = function(productId) {
-    const product = hardcodedProducts.find(p => p.id === productId);
+    const productsToSearch = allPerfumes.length > 0 ? allPerfumes : hardcodedProducts;
+    const product = productsToSearch.find(p => p.id === productId);
     if (!product) return;
     
     currentView = 'detail';
