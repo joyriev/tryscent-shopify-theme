@@ -2298,6 +2298,20 @@
     return d[s.length][t.length];
   }
 
+  // ===== BRAND ALIASES =====
+  const brandAliases = {
+    'ysl': 'Yves Saint Laurent',
+    'dg': 'Dolce & Gabbana',
+    'ck': 'Calvin Klein',
+    'mfk': 'Maison Francis Kurkdjian',
+    'tf': 'Tom Ford',
+    'pg': 'Paco Rabanne',
+    'jpg': 'Jean Paul Gaultier',
+    'cg': 'Chanel',
+    'hb': 'Hugo Boss',
+    'hg': 'Hermès'
+  };
+
   // ===== MULTI-WORD FUZZY SEARCH =====
   function multiWordFuzzyMatch(query, text) {
     const queryWords = normalizeText(query).split(/\s+/);
@@ -2356,6 +2370,15 @@
         const fuzzyBrandScore = multiWordFuzzyMatch(normalizedQuery, product.brand);
         if (fuzzyBrandScore > 0) {
           bestScore = Math.max(bestScore, fuzzyBrandScore);
+        }
+        
+        // 3.5 Brand alias match (e.g., "ysl" → "Yves Saint Laurent")
+        const queryLower = normalizedQuery.toLowerCase();
+        if (brandAliases[queryLower]) {
+          const aliasedBrand = brandAliases[queryLower];
+          if (normBrand.toLowerCase().includes(aliasedBrand.toLowerCase())) {
+            bestScore = Math.max(bestScore, 90);
+          }
         }
       }
       
@@ -2428,6 +2451,15 @@
           const fuzzyBrandScore = multiWordFuzzyMatch(normalizedQuery, perfume.brand);
           if (fuzzyBrandScore > 0) {
             score = Math.max(score, fuzzyBrandScore);
+          }
+          
+          // 3.5 Brand alias match
+          const queryLower = normalizedQuery.toLowerCase();
+          if (brandAliases[queryLower]) {
+            const aliasedBrand = brandAliases[queryLower];
+            if (searchBrand.toLowerCase().includes(aliasedBrand.toLowerCase())) {
+              score = Math.max(score, 90);
+            }
           }
         }
         
