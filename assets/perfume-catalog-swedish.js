@@ -450,6 +450,19 @@ window.SwedishPerfumeCatalog = {
       productNumbers: ["196"]
     },
     {
+      id: "dior_miss_dior_le_parfum",
+      name: "Miss Dior Le Parfum",
+      brand: "Dior",
+      image: "https://tryscent.co/cdn/shop/files/Dior_Miss_Dior_Le_Parfum.png?v=1771367270",
+      top_notes: ["Mandarin", "Citrus", "Bergamott"],
+      heart_notes: ["Turkisk ros", "Bulgarisk ros", "Jasmin"],
+      base_notes: ["Amber", "Patchouli", "Vanilj", "Träiga noter"],
+      description: "En sensuell och elegant orientalisk-chypre doft som kombinerar blommiga ackord med varma träiga toner. Denna koncentrerade version av Miss Dior erbjuder en djup, rik och förförisk upplevelse med mandarin i toppen, rosor i hjärtat och en bas av amber, patchouli och vanilj. Perfekt för kvällar och speciella tillfällen.",
+      year: "2012",
+      gender: "Female",
+      productNumbers: ["196"]
+    },
+    {
       id: "dior_miss_cherie",
       name: "Miss Chérie",
       brand: "Dior",
