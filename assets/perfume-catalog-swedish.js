@@ -625,7 +625,7 @@ window.SwedishPerfumeCatalog = {
       id: "jpg_le_male",
       name: "Le Male",
       brand: "Jean Paul Gaultier",
-      image: "https://tryscent.co/cdn/shop/files/Jean_Paul_Gaultier_Le_Male.png",
+      image: "https://tryscent.co/cdn/shop/files/Le_Male_Jean_Paul_Gaultier.avif?v=1763048520",
       top_notes: ["Mynta", "Lavendel", "Bergamott", "Kardemumma"],
       heart_notes: ["Kanel", "Apelsinblomma", "Kummin"],
       base_notes: ["Vanilj", "Tonka", "Amber", "Ceder"],
