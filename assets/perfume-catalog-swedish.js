@@ -1128,7 +1128,7 @@ window.SwedishPerfumeCatalog = {
       id: "creed_aventus",
       name: "Aventus",
       brand: "Creed",
-      image: "https://tryscent.co/cdn/shop/files/creed-aventus.png",
+      image: "https://tryscent.co/cdn/shop/files/creed_aventus.webp?v=1763008550",
       top_notes: ["Ananas", "Bergamott", "Svarta vinbär", "Äpple"],
       heart_notes: ["Björk", "Jasmin", "Patchouli", "Ros"],
       base_notes: ["Ekmossa", "Amber", "Vanilj", "Mysk"],
