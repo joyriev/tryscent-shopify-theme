@@ -480,19 +480,6 @@ window.SwedishPerfumeCatalog = {
       productNumbers: ["412", "101"]
     },
     {
-      id: "lancome_la_vie_est_belle_intense",
-      name: "La Vie Est Belle Intensément",
-      brand: "Lancôme",
-      image: "https://tryscent.co/cdn/shop/files/Lancome_La_Vie_Est_Belle_6045969c-df9c-4de9-a9eb-e1a8a7b8cf1f.avif?v=1763048752",
-      top_notes: ["Mandarin", "Svarta vinbär", "Bergamott"],
-      heart_notes: ["Tuberos", "Jasmin", "Apelsinblomma"],
-      base_notes: ["Pralin", "Vanilj", "Patchouli", "Tonka"],
-      description: "En intensivare version av La Vie Est Belle.",
-      year: "2017",
-      gender: "Female",
-      productNumbers: ["109"]
-    },
-    {
       id: "lancome_tresor",
       name: "Trésor",
       brand: "Lancôme",
@@ -646,19 +633,6 @@ window.SwedishPerfumeCatalog = {
       year: "2015",
       gender: "Male",
       productNumbers: ["349"]
-    },
-    {
-      id: "jpg_scandal",
-      name: "Scandal",
-      brand: "Jean Paul Gaultier",
-      image: "https://tryscent.co/cdn/shop/files/Jean_Paul_Gaultier_SCANDAL.png",
-      top_notes: ["Mandarin", "Gardenia", "Blodapelsin"],
-      heart_notes: ["Honung", "Jasmin", "Ros"],
-      base_notes: ["Patchouli", "Tonka", "Ceder"],
-      description: "En djärv och lekfull doft med ett gourmand-hjärta.",
-      year: "2017",
-      gender: "Female",
-      productNumbers: ["192"]
     },
     {
       id: "jpg_la_belle",
