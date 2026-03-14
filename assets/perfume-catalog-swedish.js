@@ -112,6 +112,19 @@ window.SwedishPerfumeCatalog = {
       year: "2015",
       gender: "Male",
       productNumbers: ["286"]
+    },
+    {
+      id: "tom_ford_ombre_nomade",
+      name: "Ombre Nomade",
+      brand: "Tom Ford",
+      image: "https://tryscent.co/cdn/shop/files/Tom_Ford_Ombre_Nomade.avif?v=1763008490",
+      top_notes: ["Raspberry", "Saffron", "Rose", "Oud"],
+      heart_notes: ["Incense", "Birch", "Leather", "Geranium"],
+      base_notes: ["Amberwood", "Benzoin", "Oud", "Smoky Notes"],
+      description: "En mörk, dramatisk och förförisk doft som kombinerar rik ros med djup, rökig oud. Ombre Nomade är en kraftfull och lyxig komposition som lämnar ett bestående intryck, perfekt för kvällar och speciella tillfällen.",
+      year: "2018",
+      gender: "Unisex",
+      productNumbers: ["286"]
     }
   ],
 
