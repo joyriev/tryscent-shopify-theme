@@ -862,7 +862,7 @@ window.SwedishPerfumeCatalog = {
       id: "boss_hugo",
       name: "Hugo",
       brand: "Hugo Boss",
-      image: "https://tryscent.co/cdn/shop/files/Hugo_Boss_Hugo.png",
+      image: "https://tryscent.co/cdn/shop/files/Hugo_Boss_Boss_Bottled.avif?v=1763048407",
       top_notes: ["Gröna noter", "Basilika", "Mynta"],
       heart_notes: ["Lavendel", "Geranium", "Muskatellsalvia"],
       base_notes: ["Ceder", "Sandelträ", "Mysk"],
