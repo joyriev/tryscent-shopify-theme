@@ -2804,6 +2804,29 @@ window.SwedishPerfumeCatalog = {
     }
   ],
 
+  // ===== CREED =====
+  creed: [
+    {
+      id: "creed_aventus",
+      name: "Aventus Creed",
+      brand: "Creed",
+      image: "https://magicperfume.co/cdn/shop/files/creed-aventus.png",
+      top_notes: ["Ananas", "Bergamott", "Svarta vinbär", "Äpple"],
+      heart_notes: ["Björk", "Jasmin", "Patchouli", "Ros"],
+      base_notes: ["Ekmossa", "Mysk", "Amber", "Vanilj"],
+      description: "En legendarisk doft som hyllar styrka, kraft och framgång. Inspirerad av Napoleon Bonaparte, kombinerar Aventus fruktiga toppnoter med en rökig och träig bas för en unik och kraftfull signatur.",
+      year: "2010",
+      gender: "Male",
+      productNumbers: ["288"],
+      shopifyProduct: {
+        title: "Doftar som... Pineapple Smoke - No. 288 (m)",
+        url: "https://tryscent.co/products/pineapple-smoke-vanilla-50-ml-1-7-fl-oz",
+        price: "124.99 kr",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/pineapple_smoke_vanilla_1.png?v=1760542371"
+      }
+    }
+  ],
+
   // ===== INDEX FOR FAST SEARCHING =====
   _index: {}
 };
