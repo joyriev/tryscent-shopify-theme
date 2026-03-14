@@ -764,6 +764,19 @@ window.SwedishPerfumeCatalog = {
       productNumbers: ["318"]
     },
     {
+      id: "armani_emporio_he",
+      name: "Emporio He",
+      brand: "Giorgio Armani",
+      image: "https://tryscent.co/cdn/shop/files/Emporio_Armani_He.webp?v=1772216199",
+      top_notes: ["Bergamott", "Mandarin", "Citron"],
+      heart_notes: ["Jasmin", "Rosmarin", "Salvia"],
+      base_notes: ["Ceder", "Sandelträ", "Mysk", "Amber"],
+      description: "En frisk och maskulin doft för den moderna mannen som kombinerar citrus med träiga toner.",
+      year: "1998",
+      gender: "Male",
+      productNumbers: ["242"]
+    },
+    {
       id: "armani_si",
       name: "Si",
       brand: "Giorgio Armani",
