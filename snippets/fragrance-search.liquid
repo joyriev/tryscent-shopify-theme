@@ -2,9 +2,9 @@
   FRAGRANCE CODE SÖK POPUP - PREMIUM DESIGN
   - SÖK PÅ RIKTIGA PARFYMER - Dior, Chanel, Tom Ford, etc.
   - VISAR VÅRA PRODUKTER SOM "DIN PARFYM" när du klickar på en riktig parfym
-  - HARDCODED REKOMMENDATIONER - Varje riktig parfym har en matchande produkt
-  - AVANCERAD FUZZY SÖK - Hittar även vid stavfel, inga mellanslag
+  - HARDCODED REKOMMENDATIONER - Varje produkt har en matchande rekommendation
   - KÖNSSPECIFIKA REKOMMENDATIONER - Man till man, kvinna till kvinna
+  - TOTAL: 78 PRODUKTER
 {% endcomment %}
 
 <!-- Ladda vår kurerade katalog med äkta parfymer -->
@@ -731,63 +731,6 @@
   font-size: 14px;
 }
 
-/* ===== SUGGESTIONS SECTION ===== */
-.fc-suggestions-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #2C2420;
-  margin: 20px 20px 10px 20px;
-}
-
-.fc-suggestion-item {
-  background: #FFFFFF;
-  padding: 15px 20px;
-  margin: 0;
-  border-bottom: 1px solid #F0E8E0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  transition: background 0.2s ease;
-}
-
-.fc-suggestion-item:hover {
-  background: #FEF9F5;
-}
-
-.fc-suggestion-image {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #FFFFFF;
-  padding: 5px;
-  border: 1px solid #EDE5DC;
-}
-
-.fc-suggestion-info {
-  flex: 1;
-}
-
-.fc-suggestion-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: #2C2420;
-  margin-bottom: 2px;
-}
-
-.fc-suggestion-price {
-  font-size: 13px;
-  font-weight: 600;
-  color: #C41E3A;
-}
-
-.fc-suggestion-tag {
-  font-size: 11px;
-  color: #8A7A70;
-  margin-top: 2px;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 520px) {
   .fc-search-popup {
@@ -916,79 +859,9 @@
 
 <script>
 (function() {
-  // ===== YOUR 66 HARDCODED PRODUCTS FROM THE EXTRACTED DATA =====
-  // PASTE ALL YOUR 66 PRODUCTS HERE WITH CORRECT VARIANT IDs
+  // ===== ALL 78 HARDCODED PRODUCTS FROM YOUR STORE =====
   const hardcodedProducts = [
-    {
-      id: "tryscent_053",
-      title: "Vanilla Ceremony - No. 053",
-      image: "https://tryscent.co/cdn/shop/files/VanillaCeremony.png?v=1760617982&width=533",
-      url: "https://tryscent.co/en-gb/products/vanilla-ceremony-50-ml-1-7-fl-oz",
-      variant: 43530901520454,
-      price: 12999,
-      brand: "Tom Ford Vanille Fatale",
-      brandKey: "tomford",
-      number: "053",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Vanille Fatale",
-      searchTerms: ["vanilla ceremony", "053", "tom ford vanille fatale", "vanilla", "ceremony"]
-    },
-    {
-      id: "tryscent_067",
-      title: "Orange Patchouli - No. 067",
-      image: "https://tryscent.co/cdn/shop/files/OrangeRosePatchouli.png?v=1760617372&width=533",
-      url: "https://tryscent.co/en-gb/products/orange-rose-patchouli-50-ml-1-7-fl-oz",
-      variant: 43530902929478,
-      price: 12999,
-      brand: "Chanel Coco Mademoiselle",
-      brandKey: "chanel",
-      number: "067",
-      gender: "female",
-      inspiredBy: "Chanel Coco Mademoiselle",
-      searchTerms: ["orange patchouli", "067", "chanel coco mademoiselle", "orange", "patchouli"]
-    },
-    {
-      id: "tryscent_132",
-      title: "Berry Vanilla - No. 132",
-      image: "https://tryscent.co/cdn/shop/files/Blackberry_Vanilla_Musk_1.png?v=1763032374&width=533",
-      url: "https://tryscent.co/en-gb/products/black-berry-vanilla-musk",
-      variant: 43530904240198,
-      price: 12999,
-      brand: "Yves Saint Laurent Black Opium",
-      brandKey: "ysl",
-      number: "132",
-      gender: "female",
-      inspiredBy: "Yves Saint Laurent Black Opium",
-      searchTerms: ["berry vanilla", "132", "ysl black opium", "berry", "vanilla"]
-    },
-    {
-      id: "tryscent_159",
-      title: "Ylang Rose - No. 159",
-      image: "https://tryscent.co/cdn/shop/files/YlangYlangRoseJasmine.png?v=1760618062&width=533",
-      url: "https://tryscent.co/en-gb/products/ylang-ylang-rose-jasmine-50-ml-1-7-fl-oz",
-      variant: 43530900766790,
-      price: 12999,
-      brand: "Dior J'adore",
-      brandKey: "dior",
-      number: "159",
-      gender: "female",
-      inspiredBy: "Dior J'adore",
-      searchTerms: ["ylang rose", "159", "dior j'adore", "ylang", "rose"]
-    },
-    {
-      id: "tryscent_193",
-      title: "Tobacco Dreams - No. 193",
-      image: "https://tryscent.co/cdn/shop/files/TobaccoDreams.png?v=1760617971&width=533",
-      url: "https://tryscent.co/en-gb/products/tobacco-dreams",
-      variant: 43573345517638,
-      price: 12999,
-      brand: "Tom Ford Tobacco Vanille",
-      brandKey: "tomford",
-      number: "193",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Tobacco Vanille",
-      searchTerms: ["tobacco dreams", "193", "tom ford tobacco vanille", "tobacco", "vanille"]
-    },
+    // ===== DIOR — 9 products =====
     {
       id: "tryscent_230",
       title: "Ginger Amber - No. 230",
@@ -1001,119 +874,7 @@
       number: "230",
       gender: "male",
       inspiredBy: "Dior Sauvage",
-      searchTerms: ["ginger amber", "230", "dior sauvage", "ginger", "amber"]
-    },
-    {
-      id: "tryscent_234",
-      title: "Apple Sandalwood - No. 234",
-      image: "https://tryscent.co/cdn/shop/files/apple_cinnamon_woods.png?v=1760538455&width=533",
-      url: "https://tryscent.co/en-gb/products/apple-cinnamon-sandalwood",
-      variant: 43530907254854,
-      price: 12999,
-      brand: "Hugo Boss Boss Bottled",
-      brandKey: "hugoboss",
-      number: "234",
-      gender: "male",
-      inspiredBy: "Hugo Boss Boss Bottled",
-      searchTerms: ["apple sandalwood", "234", "hugo boss boss bottled", "apple", "sandalwood"]
-    },
-    {
-      id: "tryscent_247",
-      title: "Lavender Mint - No. 247",
-      image: "https://tryscent.co/cdn/shop/files/lavender_mint_vanilla_1.png?v=1760554189&width=533",
-      url: "https://tryscent.co/en-gb/products/lavender-mint-vanilla-50-ml-1-7-fl-oz",
-      variant: 43530905681990,
-      price: 12999,
-      brand: "Jean Paul Gaultier Le Male",
-      brandKey: "jpg",
-      number: "247",
-      gender: "male",
-      inspiredBy: "Jean Paul Gaultier Le Male",
-      searchTerms: ["lavender mint", "247", "jean paul gaultier le male", "lavender", "mint"]
-    },
-    {
-      id: "tryscent_248",
-      title: "Alpha Charm - No. 248",
-      image: "https://tryscent.co/cdn/shop/files/AlphaAttraction.png?v=1760614128&width=533",
-      url: "https://tryscent.co/en-gb/products/alpha-attraction",
-      variant: 43530886643782,
-      price: 12999,
-      brand: "Versace Eros",
-      brandKey: "versace",
-      number: "248",
-      gender: "male",
-      inspiredBy: "Versace Eros",
-      searchTerms: ["alpha charm", "248", "versace eros", "alpha", "charm"]
-    },
-    {
-      id: "tryscent_275",
-      title: "Cinnamon Leather - No. 275",
-      image: "https://tryscent.co/cdn/shop/files/CinnamonLeatherAmber.png?v=1760614606&width=533",
-      url: "https://tryscent.co/en-gb/products/cinnamon-leather-amber",
-      variant: 43530906435654,
-      price: 12999,
-      brand: "Paco Rabanne 1 Million",
-      brandKey: "pacorabanne",
-      number: "275",
-      gender: "male",
-      inspiredBy: "Paco Rabanne 1 Million",
-      searchTerms: ["cinnamon leather", "275", "paco rabanne 1 million", "cinnamon", "leather"]
-    },
-    {
-      id: "tryscent_283",
-      title: "Sage Cedar - No. 283",
-      image: "https://tryscent.co/cdn/shop/files/BergamotSageCedar.png?v=1760614424&width=533",
-      url: "https://tryscent.co/en-gb/products/bergamot-sage-cedar-50-ml",
-      variant: 43530906566726,
-      price: 12999,
-      brand: "Yves Saint Laurent Y",
-      brandKey: "ysl",
-      number: "283",
-      gender: "male",
-      inspiredBy: "Yves Saint Laurent Y",
-      searchTerms: ["sage cedar", "283", "ysl y", "sage", "cedar"]
-    },
-    {
-      id: "tryscent_286",
-      title: "Midnight Oud - No. 286M",
-      image: "https://tryscent.co/cdn/shop/files/MidnightOud.png?v=1760617060&width=533",
-      url: "https://tryscent.co/en-gb/products/midnight-oud",
-      variant: 43572609122374,
-      price: 12999,
-      brand: "Tom Ford Ombre Nomade",
-      brandKey: "tomford",
-      number: "286",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Ombre Nomade",
-      searchTerms: ["midnight oud", "286", "tom ford ombre nomade", "midnight", "oud"]
-    },
-    {
-      id: "tryscent_287",
-      title: "Royal Oud - No. 287",
-      image: "https://tryscent.co/cdn/shop/files/RoyalOud.png?v=1760617683&width=533",
-      url: "https://tryscent.co/en-gb/products/royal-oud",
-      variant: 43572889059398,
-      price: 12999,
-      brand: "Tom Ford Oud Wood",
-      brandKey: "tomford",
-      number: "287",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Oud Wood",
-      searchTerms: ["royal oud", "287", "tom ford oud wood", "royal", "oud"]
-    },
-    {
-      id: "tryscent_288",
-      title: "Pineapple Smoke - No. 288",
-      image: "https://tryscent.co/cdn/shop/files/pineapple_smoke_vanilla_1.png?v=1760542371&width=533",
-      url: "https://tryscent.co/en-gb/products/pineapple-smoke-vanilla-50-ml-1-7-fl-oz",
-      variant: 43530905059398,
-      price: 12999,
-      brand: "Creed Aventus",
-      brandKey: "creed",
-      number: "288",
-      gender: "male",
-      inspiredBy: "Creed Aventus",
-      searchTerms: ["pineapple smoke", "288", "creed aventus", "pineapple", "smoke"]
+      searchTerms: ["ginger amber", "230", "dior sauvage", "ginger", "amber", "sauvage"]
     },
     {
       id: "tryscent_350",
@@ -1127,7 +888,35 @@
       number: "350",
       gender: "male",
       inspiredBy: "Dior Fahrenheit",
-      searchTerms: ["violet fuel", "350", "dior fahrenheit", "violet", "fuel"]
+      searchTerms: ["violet fuel", "350", "dior fahrenheit", "violet", "fuel", "fahrenheit"]
+    },
+    {
+      id: "tryscent_206",
+      title: "Doftar som... Fahrenheit - No. 206",
+      image: "https://tryscent.co/cdn/shop/files/206M_c.webp?v=1771320982&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-206m",
+      variant: 43530891821127,
+      price: 12999,
+      brand: "Dior Fahrenheit",
+      brandKey: "dior",
+      number: "206",
+      gender: "male",
+      inspiredBy: "Dior Fahrenheit",
+      searchTerms: ["fahrenheit", "206", "dior fahrenheit"]
+    },
+    {
+      id: "tryscent_338",
+      title: "Doftar som... Sauvage Parfum - No. 338",
+      image: "https://tryscent.co/cdn/shop/files/338M_c.webp?v=1771320888&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-338m",
+      variant: 43530884481095,
+      price: 12999,
+      brand: "Dior Sauvage",
+      brandKey: "dior",
+      number: "338",
+      gender: "male",
+      inspiredBy: "Dior Sauvage",
+      searchTerms: ["sauvage", "338", "dior sauvage"]
     },
     {
       id: "tryscent_366",
@@ -1144,6 +933,736 @@
       searchTerms: ["spiced woods", "366", "dior sauvage elixir", "spiced", "woods"]
     },
     {
+      id: "tryscent_277",
+      title: "Doftar som... Homme Intense - No. 277",
+      image: "https://tryscent.co/cdn/shop/files/277M_c.webp?v=1771320914&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-277m",
+      variant: 43530891821128,
+      price: 12999,
+      brand: "Dior Homme Intense",
+      brandKey: "dior",
+      number: "277",
+      gender: "male",
+      inspiredBy: "Dior Homme Intense",
+      searchTerms: ["homme intense", "277", "dior homme intense"]
+    },
+    {
+      id: "tryscent_159",
+      title: "Ylang Rose - No. 159",
+      image: "https://tryscent.co/cdn/shop/files/YlangYlangRoseJasmine.png?v=1760618062&width=533",
+      url: "https://tryscent.co/en-gb/products/ylang-ylang-rose-jasmine-50-ml-1-7-fl-oz",
+      variant: 43530900766790,
+      price: 12999,
+      brand: "Dior J'adore",
+      brandKey: "dior",
+      number: "159",
+      gender: "female",
+      inspiredBy: "Dior J'adore",
+      searchTerms: ["ylang rose", "159", "dior j'adore", "ylang", "rose"]
+    },
+    {
+      id: "tryscent_196",
+      title: "Doftar som... Miss Dior Le Parfum - No. 196",
+      image: "https://tryscent.co/cdn/shop/files/196W_c.webp?v=1771321011&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-196w",
+      variant: 43530900766792,
+      price: 12999,
+      brand: "Dior Miss Dior Le Parfum",
+      brandKey: "dior",
+      number: "196",
+      gender: "female",
+      inspiredBy: "Dior Miss Dior Le Parfum",
+      searchTerms: ["miss dior", "196", "dior miss dior"]
+    },
+    {
+      id: "tryscent_145",
+      title: "Doftar som... Hypnotic Poison - No. 145",
+      image: "https://tryscent.co/cdn/shop/files/145W_c.webp?v=1771321017&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-145w",
+      variant: 43530900766793,
+      price: 12999,
+      brand: "Dior Hypnotic Poison",
+      brandKey: "dior",
+      number: "145",
+      gender: "female",
+      inspiredBy: "Dior Hypnotic Poison",
+      searchTerms: ["hypnotic poison", "145", "dior hypnotic poison"]
+    },
+
+    // ===== TOM FORD — 9 products =====
+    {
+      id: "tryscent_287",
+      title: "Royal Oud - No. 287",
+      image: "https://tryscent.co/cdn/shop/files/RoyalOud.png?v=1760617683&width=533",
+      url: "https://tryscent.co/en-gb/products/royal-oud",
+      variant: 43572889059398,
+      price: 12999,
+      brand: "Tom Ford Oud Wood",
+      brandKey: "tomford",
+      number: "287",
+      gender: "male",
+      inspiredBy: "Tom Ford Oud Wood",
+      searchTerms: ["royal oud", "287", "tom ford oud wood", "royal", "oud"]
+    },
+    {
+      id: "tryscent_193",
+      title: "Tobacco Dreams - No. 193",
+      image: "https://tryscent.co/cdn/shop/files/TobaccoDreams.png?v=1760617971&width=533",
+      url: "https://tryscent.co/en-gb/products/tobacco-dreams",
+      variant: 43573345517638,
+      price: 12999,
+      brand: "Tom Ford Tobacco Vanille",
+      brandKey: "tomford",
+      number: "193",
+      gender: "male",
+      inspiredBy: "Tom Ford Tobacco Vanille",
+      searchTerms: ["tobacco dreams", "193", "tom ford tobacco vanille", "tobacco", "vanille"]
+    },
+    {
+      id: "tryscent_232",
+      title: "Wild Rebel - No. 232",
+      image: "https://tryscent.co/cdn/shop/files/WildRebel.png?v=1760618131&width=533",
+      url: "https://tryscent.co/en-gb/products/wild-rebel",
+      variant: 43573379137606,
+      price: 12999,
+      brand: "Tom Ford Fucking Fabulous",
+      brandKey: "tomford",
+      number: "232",
+      gender: "male",
+      inspiredBy: "Tom Ford Fucking Fabulous",
+      searchTerms: ["wild rebel", "232", "tom ford fucking fabulous", "wild", "rebel"]
+    },
+    {
+      id: "tryscent_286m",
+      title: "Midnight Oud - No. 286M",
+      image: "https://tryscent.co/cdn/shop/files/MidnightOud.png?v=1760617060&width=533",
+      url: "https://tryscent.co/en-gb/products/midnight-oud",
+      variant: 43572609122374,
+      price: 12999,
+      brand: "Tom Ford Ombre Nomade",
+      brandKey: "tomford",
+      number: "286",
+      gender: "male",
+      inspiredBy: "Tom Ford Ombre Nomade",
+      searchTerms: ["midnight oud", "286", "tom ford ombre nomade", "midnight", "oud"]
+    },
+    {
+      id: "tryscent_474",
+      title: "Leather Luxe - No. 474",
+      image: "https://tryscent.co/cdn/shop/files/LeatherLuxe.png?v=1760616731&width=533",
+      url: "https://tryscent.co/en-gb/products/leather-luxe",
+      variant: 43530879959110,
+      price: 12999,
+      brand: "Tom Ford Ombre Leather",
+      brandKey: "tomford",
+      number: "474",
+      gender: "male",
+      inspiredBy: "Tom Ford Ombre Leather",
+      searchTerms: ["leather luxe", "474", "tom ford ombre leather", "leather", "luxe"]
+    },
+    {
+      id: "tryscent_286",
+      title: "Doftar som... Extreme - No. 286",
+      image: "https://tryscent.co/cdn/shop/files/286M_c.webp?v=1771320861&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-286m",
+      variant: 43572609122375,
+      price: 12999,
+      brand: "Tom Ford Noir Extreme",
+      brandKey: "tomford",
+      number: "286",
+      gender: "male",
+      inspiredBy: "Tom Ford Noir Extreme",
+      searchTerms: ["extreme", "286", "tom ford noir extreme"]
+    },
+    {
+      id: "tryscent_053",
+      title: "Vanilla Ceremony - No. 053",
+      image: "https://tryscent.co/cdn/shop/files/VanillaCeremony.png?v=1760617982&width=533",
+      url: "https://tryscent.co/en-gb/products/vanilla-ceremony-50-ml-1-7-fl-oz",
+      variant: 43530901520454,
+      price: 12999,
+      brand: "Tom Ford Vanille Fatale",
+      brandKey: "tomford",
+      number: "053",
+      gender: "female",
+      inspiredBy: "Tom Ford Vanille Fatale",
+      searchTerms: ["vanilla ceremony", "053", "tom ford vanille fatale", "vanilla", "ceremony"]
+    },
+    {
+      id: "tryscent_438",
+      title: "Cherry Vanilla - No. 438",
+      image: "https://tryscent.co/cdn/shop/files/sweet_cherry_vanilla_1.png?v=1760543242&width=533",
+      url: "https://tryscent.co/en-gb/products/sweet-cherry-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530902011974,
+      price: 12999,
+      brand: "Tom Ford Lost Cherry",
+      brandKey: "tomford",
+      number: "438",
+      gender: "female",
+      inspiredBy: "Tom Ford Lost Cherry",
+      searchTerms: ["cherry vanilla", "438", "tom ford lost cherry", "cherry", "vanilla"]
+    },
+    {
+      id: "tryscent_434",
+      title: "Doftar som... Cherry Smoke - No. 434",
+      image: "https://tryscent.co/cdn/shop/files/434W_c.webp?v=1771483722&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-434w",
+      variant: 43530902011975,
+      price: 12999,
+      brand: "Tom Ford Cherry Smoke",
+      brandKey: "tomford",
+      number: "434",
+      gender: "female",
+      inspiredBy: "Tom Ford Cherry Smoke",
+      searchTerms: ["cherry smoke", "434", "tom ford cherry smoke"]
+    },
+
+    // ===== HUGO BOSS — 10 products =====
+    {
+      id: "tryscent_234",
+      title: "Apple Sandalwood - No. 234",
+      image: "https://tryscent.co/cdn/shop/files/apple_cinnamon_woods.png?v=1760538455&width=533",
+      url: "https://tryscent.co/en-gb/products/apple-cinnamon-sandalwood",
+      variant: 43530907254854,
+      price: 12999,
+      brand: "Hugo Boss Boss Bottled",
+      brandKey: "hugoboss",
+      number: "234",
+      gender: "male",
+      inspiredBy: "Hugo Boss Boss Bottled",
+      searchTerms: ["apple sandalwood", "234", "hugo boss boss bottled", "apple", "sandalwood"]
+    },
+    {
+      id: "tryscent_223",
+      title: "Doftar som... Hugo - No. 223",
+      image: "https://tryscent.co/cdn/shop/files/223M_c.webp?v=1771320851&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-223m",
+      variant: 43530907254855,
+      price: 12999,
+      brand: "Hugo Boss Hugo Man",
+      brandKey: "hugoboss",
+      number: "223",
+      gender: "male",
+      inspiredBy: "Hugo Boss Hugo Man",
+      searchTerms: ["hugo", "223", "hugo boss hugo man"]
+    },
+    {
+      id: "tryscent_184",
+      title: "Doftar som... The Scent - No. 184",
+      image: "https://tryscent.co/cdn/shop/files/184W_c.webp?v=1771320891&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-184w",
+      variant: 43530907254856,
+      price: 12999,
+      brand: "Hugo Boss The Scent",
+      brandKey: "hugoboss",
+      number: "184",
+      gender: "male",
+      inspiredBy: "Hugo Boss The Scent",
+      searchTerms: ["the scent", "184", "hugo boss the scent"]
+    },
+    {
+      id: "tryscent_022",
+      title: "Doftar som... Deep Red - No. 022",
+      image: "https://tryscent.co/cdn/shop/files/022W_c.webp?v=1771320838&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-022w",
+      variant: 43530892345424,
+      price: 12999,
+      brand: "Hugo Boss Deep Red",
+      brandKey: "hugoboss",
+      number: "022",
+      gender: "female",
+      inspiredBy: "Hugo Boss Deep Red",
+      searchTerms: ["deep red", "022", "hugo boss deep red"]
+    },
+    {
+      id: "tryscent_058",
+      title: "Doftar som... Ma Vie - No. 058",
+      image: "https://tryscent.co/cdn/shop/files/058W_c.webp?v=1771320842&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-058w",
+      variant: 43530892345420,
+      price: 12999,
+      brand: "Hugo Boss Ma Vie",
+      brandKey: "hugoboss",
+      number: "058",
+      gender: "female",
+      inspiredBy: "Hugo Boss Ma Vie",
+      searchTerms: ["ma vie", "058", "hugo boss ma vie"]
+    },
+    {
+      id: "tryscent_270",
+      title: "Doftar som... The Scent - No. 270",
+      image: "https://tryscent.co/cdn/shop/files/270M_c.webp?v=1771320924&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-270m",
+      variant: 43530892345423,
+      price: 12999,
+      brand: "Hugo Boss The Scent for Her",
+      brandKey: "hugoboss",
+      number: "270",
+      gender: "female",
+      inspiredBy: "Hugo Boss The Scent for Her",
+      searchTerms: ["the scent", "270", "hugo boss the scent for her"]
+    },
+    {
+      id: "tryscent_060",
+      title: "Doftar som... Boss Woman - No. 60",
+      image: "https://tryscent.co/cdn/shop/files/060W_c.webp?v=1771320952&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-060w",
+      variant: 43530892345421,
+      price: 12999,
+      brand: "Hugo Boss Boss Woman",
+      brandKey: "hugoboss",
+      number: "060",
+      gender: "female",
+      inspiredBy: "Hugo Boss Boss Woman",
+      searchTerms: ["boss woman", "060", "hugo boss boss woman"]
+    },
+    {
+      id: "tryscent_098",
+      title: "Doftar som... ALIVE - No. 098",
+      image: "https://tryscent.co/cdn/shop/files/098W_c.webp?v=1771320931&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-021w",
+      variant: 43530892345419,
+      price: 12999,
+      brand: "Hugo Boss Alive",
+      brandKey: "hugoboss",
+      number: "098",
+      gender: "female",
+      inspiredBy: "Hugo Boss Alive",
+      searchTerms: ["alive", "098", "hugo boss alive"]
+    },
+    {
+      id: "tryscent_148",
+      title: "Doftar som... Boss Orange - No. 148",
+      image: "https://tryscent.co/cdn/shop/files/148W_c.webp?v=1771320866&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-148w",
+      variant: 43530892345422,
+      price: 12999,
+      brand: "Hugo Boss Boss Orange",
+      brandKey: "hugoboss",
+      number: "148",
+      gender: "female",
+      inspiredBy: "Hugo Boss Boss Orange",
+      searchTerms: ["boss orange", "148", "hugo boss boss orange"]
+    },
+    {
+      id: "tryscent_242",
+      title: "Doftar som... He - No. 242",
+      image: "https://tryscent.co/cdn/shop/files/242M_c.webp?v=1771320847&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-293m",
+      variant: 43530886643788,
+      price: 12999,
+      brand: "Giorgio Armani Emporio He",
+      brandKey: "armani",
+      number: "242",
+      gender: "male",
+      inspiredBy: "Giorgio Armani Emporio He",
+      searchTerms: ["he", "242", "giorgio armani he"]
+    },
+
+    // ===== GIORGIO ARMANI — 8 products =====
+    {
+      id: "tryscent_221",
+      title: "Doftar som.. Acqua Di Gio - No. 221",
+      image: "https://tryscent.co/cdn/shop/files/221M_c.webp?v=1771320949&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-221m",
+      variant: 43530886643787,
+      price: 12999,
+      brand: "Giorgio Armani Acqua di Gio",
+      brandKey: "armani",
+      number: "221",
+      gender: "male",
+      inspiredBy: "Giorgio Armani Acqua di Gio",
+      searchTerms: ["acqua di gio", "221", "giorgio armani acqua di gio"]
+    },
+    {
+      id: "tryscent_260",
+      title: "Doftar som... Armani Code - No. 260",
+      image: "https://tryscent.co/cdn/shop/files/260M_c.webp?v=1771320894&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-260m",
+      variant: 43530886643788,
+      price: 12999,
+      brand: "Giorgio Armani Code",
+      brandKey: "armani",
+      number: "260",
+      gender: "male",
+      inspiredBy: "Giorgio Armani Code",
+      searchTerms: ["armani code", "260", "giorgio armani code"]
+    },
+    {
+      id: "tryscent_318",
+      title: "Doftar som... Stronger With You Intensely - No. 318",
+      image: "https://tryscent.co/cdn/shop/files/318M_c.webp?v=1771320974&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-318m",
+      variant: 43530886643789,
+      price: 12999,
+      brand: "Giorgio Armani Stronger With You Intensely",
+      brandKey: "armani",
+      number: "318",
+      gender: "male",
+      inspiredBy: "Giorgio Armani Stronger With You Intensely",
+      searchTerms: ["stronger with you", "318", "giorgio armani stronger with you"]
+    },
+    {
+      id: "tryscent_150",
+      title: "Doftar som... Emporio She - No. 150",
+      image: "https://tryscent.co/cdn/shop/files/150W_c.webp?v=1771320791&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-150w",
+      variant: 43530892345418,
+      price: 12999,
+      brand: "Giorgio Armani Emporio She",
+      brandKey: "armani",
+      number: "150",
+      gender: "female",
+      inspiredBy: "Giorgio Armani Emporio She",
+      searchTerms: ["emporio she", "150", "giorgio armani she"]
+    },
+    {
+      id: "tryscent_129",
+      title: "Currant Woods - No. 129",
+      image: "https://tryscent.co/cdn/shop/files/BlackcurrantVanillaWoods.png?v=1760614587&width=533",
+      url: "https://tryscent.co/en-gb/products/blackcurrant-vanilla-woods-50-ml-1-7-fl-oz",
+      variant: 43530892345414,
+      price: 12999,
+      brand: "Giorgio Armani Si",
+      brandKey: "armani",
+      number: "129",
+      gender: "female",
+      inspiredBy: "Giorgio Armani Si",
+      searchTerms: ["currant woods", "129", "giorgio armani si", "currant", "woods"]
+    },
+    {
+      id: "tryscent_135",
+      title: "Doftar som... Code for Women - No. 135",
+      image: "https://tryscent.co/cdn/shop/files/135Wc.webp?v=1772214212&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-135w",
+      variant: 43530892345416,
+      price: 12999,
+      brand: "Giorgio Armani Code for Women",
+      brandKey: "armani",
+      number: "135",
+      gender: "female",
+      inspiredBy: "Giorgio Armani Code for Women",
+      searchTerms: ["code for women", "135", "giorgio armani code for women"]
+    },
+    {
+      id: "tryscent_140",
+      title: "Doftar som... MY WAY - No. 140",
+      image: "https://tryscent.co/cdn/shop/files/140W_c.webp?v=1771320996&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-140w",
+      variant: 43530892345415,
+      price: 12999,
+      brand: "Giorgio Armani My Way",
+      brandKey: "armani",
+      number: "140",
+      gender: "female",
+      inspiredBy: "Giorgio Armani My Way",
+      searchTerms: ["my way", "140", "giorgio armani my way"]
+    },
+    {
+      id: "tryscent_040",
+      title: "Doftar som... Diamonds - No. 040",
+      image: "https://tryscent.co/cdn/shop/files/040Wc.webp?v=1771320858&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-040w",
+      variant: 43530892345417,
+      price: 12999,
+      brand: "Giorgio Armani Diamonds",
+      brandKey: "armani",
+      number: "040",
+      gender: "female",
+      inspiredBy: "Giorgio Armani Diamonds",
+      searchTerms: ["diamonds", "040", "giorgio armani diamonds"]
+    },
+
+    // ===== YSL — 5 products =====
+    {
+      id: "tryscent_283",
+      title: "Sage Cedar - No. 283",
+      image: "https://tryscent.co/cdn/shop/files/BergamotSageCedar.png?v=1760614424&width=533",
+      url: "https://tryscent.co/en-gb/products/bergamot-sage-cedar-50-ml",
+      variant: 43530906566726,
+      price: 12999,
+      brand: "Yves Saint Laurent Y",
+      brandKey: "ysl",
+      number: "283",
+      gender: "male",
+      inspiredBy: "Yves Saint Laurent Y",
+      searchTerms: ["sage cedar", "283", "ysl y", "sage", "cedar"]
+    },
+    {
+      id: "tryscent_132",
+      title: "Berry Vanilla - No. 132",
+      image: "https://tryscent.co/cdn/shop/files/Blackberry_Vanilla_Musk_1.png?v=1763032374&width=533",
+      url: "https://tryscent.co/en-gb/products/black-berry-vanilla-musk",
+      variant: 43530904240198,
+      price: 12999,
+      brand: "Yves Saint Laurent Black Opium",
+      brandKey: "ysl",
+      number: "132",
+      gender: "female",
+      inspiredBy: "Yves Saint Laurent Black Opium",
+      searchTerms: ["berry vanilla", "132", "ysl black opium", "berry", "vanilla"]
+    },
+    {
+      id: "tryscent_034",
+      title: "Floral Lavender - No. 034",
+      image: "https://tryscent.co/cdn/shop/files/WhiteFloralsLavender.png?v=1760618018&width=533",
+      url: "https://tryscent.co/en-gb/products/white-florals-lavender-50-ml-1-7-fl-oz",
+      variant: 43530900930630,
+      price: 12999,
+      brand: "Yves Saint Laurent Libre",
+      brandKey: "ysl",
+      number: "034",
+      gender: "female",
+      inspiredBy: "Yves Saint Laurent Libre",
+      searchTerms: ["floral lavender", "034", "ysl libre", "floral", "lavender"]
+    },
+    {
+      id: "tryscent_083",
+      title: "Doftar som... Opium - No. 083",
+      image: "https://tryscent.co/cdn/shop/files/083WcFIX.webp?v=1772215194&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-083w",
+      variant: 43530904240200,
+      price: 12999,
+      brand: "Yves Saint Laurent Opium",
+      brandKey: "ysl",
+      number: "083",
+      gender: "female",
+      inspiredBy: "Yves Saint Laurent Opium",
+      searchTerms: ["opium", "083", "ysl opium"]
+    },
+    {
+      id: "tryscent_134",
+      title: "Doftar som... Manifesto - No. 134",
+      image: "https://tryscent.co/cdn/shop/files/134W_c.webp?v=1771320909&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-134w",
+      variant: 43530904240201,
+      price: 12999,
+      brand: "Yves Saint Laurent Manifesto",
+      brandKey: "ysl",
+      number: "134",
+      gender: "female",
+      inspiredBy: "Yves Saint Laurent Manifesto",
+      searchTerms: ["manifesto", "134", "ysl manifesto"]
+    },
+
+    // ===== CHANEL — 6 products =====
+    {
+      id: "tryscent_252",
+      title: "Doftar som... Bleu - No. 252",
+      image: "https://tryscent.co/cdn/shop/files/252M_c.webp?v=1771320970&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-252m",
+      variant: 43530886643790,
+      price: 12999,
+      brand: "Chanel Bleu",
+      brandKey: "chanel",
+      number: "252",
+      gender: "male",
+      inspiredBy: "Chanel Bleu de Chanel",
+      searchTerms: ["bleu", "252", "chanel bleu"]
+    },
+    {
+      id: "tryscent_222",
+      title: "Doftar som... Allure Homme Sport - No. 222",
+      image: "https://tryscent.co/cdn/shop/files/222Mc.webp?v=1772215047&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-222m",
+      variant: 43530886643791,
+      price: 12999,
+      brand: "Chanel Allure Homme Sport",
+      brandKey: "chanel",
+      number: "222",
+      gender: "male",
+      inspiredBy: "Chanel Allure Homme Sport",
+      searchTerms: ["allure homme sport", "222", "chanel allure homme sport"]
+    },
+    {
+      id: "tryscent_067",
+      title: "Orange Patchouli - No. 067",
+      image: "https://tryscent.co/cdn/shop/files/OrangeRosePatchouli.png?v=1760617372&width=533",
+      url: "https://tryscent.co/en-gb/products/orange-rose-patchouli-50-ml-1-7-fl-oz",
+      variant: 43530902929478,
+      price: 12999,
+      brand: "Chanel Coco Mademoiselle",
+      brandKey: "chanel",
+      number: "067",
+      gender: "female",
+      inspiredBy: "Chanel Coco Mademoiselle",
+      searchTerms: ["orange patchouli", "067", "chanel coco mademoiselle", "orange", "patchouli"]
+    },
+    {
+      id: "tryscent_079",
+      title: "Doftar som... Coco - No. 079",
+      image: "https://tryscent.co/cdn/shop/files/079W_c.webp?v=1771320962&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-079w",
+      variant: 43530904469576,
+      price: 12999,
+      brand: "Chanel Coco Mademoiselle",
+      brandKey: "chanel",
+      number: "079",
+      gender: "female",
+      inspiredBy: "Chanel Coco Mademoiselle",
+      searchTerms: ["coco", "079", "chanel coco"]
+    },
+    {
+      id: "tryscent_077",
+      title: "Rose Sandalwood - No. 077",
+      image: "https://tryscent.co/cdn/shop/files/aldehydes_rose_sandalwood.png?v=1760537365&width=533",
+      url: "https://tryscent.co/en-gb/products/aldehydes-rose-sandalwood-50-ml-1-7-fl-oz",
+      variant: 43530904469574,
+      price: 12999,
+      brand: "Chanel N°5",
+      brandKey: "chanel",
+      number: "077",
+      gender: "female",
+      inspiredBy: "Chanel N°5",
+      searchTerms: ["rose sandalwood", "077", "chanel no5", "rose", "sandalwood"]
+    },
+    {
+      id: "tryscent_006",
+      title: "Doftar som... Chance - No. 006",
+      image: "https://tryscent.co/cdn/shop/files/006W_c.webp?v=1771320993&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-006w",
+      variant: 43530904469575,
+      price: 12999,
+      brand: "Chanel Chance",
+      brandKey: "chanel",
+      number: "006",
+      gender: "female",
+      inspiredBy: "Chanel Chance",
+      searchTerms: ["chance", "006", "chanel chance"]
+    },
+
+    // ===== PACO RABANNE — 6 products =====
+    {
+      id: "tryscent_275",
+      title: "Cinnamon Leather - No. 275",
+      image: "https://tryscent.co/cdn/shop/files/CinnamonLeatherAmber.png?v=1760614606&width=533",
+      url: "https://tryscent.co/en-gb/products/cinnamon-leather-amber",
+      variant: 43530906435654,
+      price: 12999,
+      brand: "Paco Rabanne 1 Million",
+      brandKey: "pacorabanne",
+      number: "275",
+      gender: "male",
+      inspiredBy: "Paco Rabanne 1 Million",
+      searchTerms: ["cinnamon leather", "275", "paco rabanne 1 million", "cinnamon", "leather"]
+    },
+    {
+      id: "tryscent_228",
+      title: "Doftar som... Invictus - No. 228",
+      image: "https://tryscent.co/cdn/shop/files/228M_c.webp?v=1771320955&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-228m",
+      variant: 43530906435656,
+      price: 12999,
+      brand: "Paco Rabanne Invictus",
+      brandKey: "pacorabanne",
+      number: "228",
+      gender: "male",
+      inspiredBy: "Paco Rabanne Invictus",
+      searchTerms: ["invictus", "228", "paco rabanne invictus"]
+    },
+    {
+      id: "tryscent_334",
+      title: "Doftar som... One Million Elixir - No. 334",
+      image: "https://tryscent.co/cdn/shop/files/334M_c.webp?v=1771320873&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-334m",
+      variant: 43530906435655,
+      price: 12999,
+      brand: "Paco Rabanne 1 Million Elixir",
+      brandKey: "pacorabanne",
+      number: "334",
+      gender: "male",
+      inspiredBy: "Paco Rabanne 1 Million Elixir",
+      searchTerms: ["one million elixir", "334", "paco rabanne 1 million elixir"]
+    },
+    {
+      id: "tryscent_399",
+      title: "Doftar som... Phantom - No. 399",
+      image: "https://tryscent.co/cdn/shop/files/399M_c.webp?v=1771320877&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-399m",
+      variant: 43530906435657,
+      price: 12999,
+      brand: "Paco Rabanne Phantom",
+      brandKey: "pacorabanne",
+      number: "399",
+      gender: "male",
+      inspiredBy: "Paco Rabanne Phantom",
+      searchTerms: ["phantom", "399", "paco rabanne phantom"]
+    },
+    {
+      id: "tryscent_023",
+      title: "Honey Woods - No. 023",
+      image: "https://tryscent.co/cdn/shop/files/HoneyFloralsWoods.png?v=1760616491&width=533",
+      url: "https://tryscent.co/en-gb/products/honey-florals-woods",
+      variant: 43530903715910,
+      price: 12999,
+      brand: "Paco Rabanne Lady Million",
+      brandKey: "pacorabanne",
+      number: "023",
+      gender: "female",
+      inspiredBy: "Paco Rabanne Lady Million",
+      searchTerms: ["honey woods", "023", "paco rabanne lady million", "honey", "woods"]
+    },
+    {
+      id: "tryscent_498",
+      title: "Doftar som... Fame - No. 498",
+      image: "https://tryscent.co/cdn/shop/files/498W_c.webp?v=1771321008&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-498w",
+      variant: 43530903715911,
+      price: 12999,
+      brand: "Paco Rabanne Fame",
+      brandKey: "pacorabanne",
+      number: "498",
+      gender: "female",
+      inspiredBy: "Paco Rabanne Fame",
+      searchTerms: ["fame", "498", "paco rabanne fame"]
+    },
+
+    // ===== JEAN PAUL GAULTIER — 3 products =====
+    {
+      id: "tryscent_247",
+      title: "Lavender Mint - No. 247",
+      image: "https://tryscent.co/cdn/shop/files/lavender_mint_vanilla_1.png?v=1760554189&width=533",
+      url: "https://tryscent.co/en-gb/products/lavender-mint-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530905681990,
+      price: 12999,
+      brand: "Jean Paul Gaultier Le Male",
+      brandKey: "jpg",
+      number: "247",
+      gender: "male",
+      inspiredBy: "Jean Paul Gaultier Le Male",
+      searchTerms: ["lavender mint", "247", "jean paul gaultier le male", "lavender", "mint"]
+    },
+    {
+      id: "tryscent_349",
+      title: "Doftar som... Ultra Male - No. 349",
+      image: "https://tryscent.co/cdn/shop/files/349M_c.webp?v=1771320928&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-349m",
+      variant: 43530905681991,
+      price: 12999,
+      brand: "Jean Paul Gaultier Ultra Male",
+      brandKey: "jpg",
+      number: "349",
+      gender: "male",
+      inspiredBy: "Jean Paul Gaultier Ultra Male",
+      searchTerms: ["ultra male", "349", "jean paul gaultier ultra male"]
+    },
+    {
+      id: "tryscent_442",
+      title: "Doftar som... Classique Essence de Parfum - No. 442",
+      image: "https://tryscent.co/cdn/shop/files/442W_c.webp?v=1771320959&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-442w",
+      variant: 43530903191625,
+      price: 12999,
+      brand: "Jean Paul Gaultier Classique",
+      brandKey: "jpg",
+      number: "442",
+      gender: "female",
+      inspiredBy: "Jean Paul Gaultier Classique",
+      searchTerms: ["classique", "442", "jean paul gaultier classique"]
+    },
+
+    // ===== LANCÔME — 4 products =====
+    {
       id: "tryscent_412",
       title: "Iris Praline - No. 412",
       image: "https://tryscent.co/cdn/shop/files/IrisPralineVanilla.png?v=1760616516&width=533",
@@ -1157,6 +1676,50 @@
       inspiredBy: "Lancôme La Vie Est Belle",
       searchTerms: ["iris praline", "412", "lancome la vie est belle", "iris", "praline"]
     },
+    {
+      id: "tryscent_101",
+      title: "Doftar som... La Vie Est Belle - No. 101",
+      image: "https://tryscent.co/cdn/shop/files/101W_c.webp?v=1771765712&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-101w",
+      variant: 43530903191623,
+      price: 12999,
+      brand: "Lancôme La Vie Est Belle",
+      brandKey: "lancome",
+      number: "101",
+      gender: "female",
+      inspiredBy: "Lancôme La Vie Est Belle",
+      searchTerms: ["la vie est belle", "101", "lancome la vie est belle"]
+    },
+    {
+      id: "tryscent_141",
+      title: "Doftar som... Tresor - No. 141",
+      image: "https://tryscent.co/cdn/shop/files/141W_c.webp?v=1771320946&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-141w",
+      variant: 43530903191624,
+      price: 12999,
+      brand: "Lancôme Tresor",
+      brandKey: "lancome",
+      number: "141",
+      gender: "female",
+      inspiredBy: "Lancôme Tresor",
+      searchTerms: ["tresor", "141", "lancome tresor"]
+    },
+    {
+      id: "tryscent_049",
+      title: "Doftar som… Nomade - No. 049",
+      image: "https://tryscent.co/cdn/shop/files/049wc.webp?v=1772224134&width=533",
+      url: "https://tryscent.co/en-gb/products/riecht-wie-nomade",
+      variant: 43530889887817,
+      price: 12999,
+      brand: "Lancôme Idole / La Vie Est Belle",
+      brandKey: "lancome",
+      number: "049",
+      gender: "female",
+      inspiredBy: "Lancôme Idole",
+      searchTerms: ["nomade", "049", "lancome nomade"]
+    },
+
+    // ===== PRADA — 3 products =====
     {
       id: "tryscent_437",
       title: "Floral Amber - No. 437",
@@ -1172,46 +1735,48 @@
       searchTerms: ["floral amber", "437", "prada paradoxe", "floral", "amber"]
     },
     {
-      id: "tryscent_438",
-      title: "Cherry Vanilla - No. 438",
-      image: "https://tryscent.co/cdn/shop/files/sweet_cherry_vanilla_1.png?v=1760543242&width=533",
-      url: "https://tryscent.co/en-gb/products/sweet-cherry-vanilla-50-ml-1-7-fl-oz",
-      variant: 43530902011974,
+      id: "tryscent_182",
+      title: "Doftar som... Candy - No. 182",
+      image: "https://tryscent.co/cdn/shop/files/182W_c.webp?v=1771320903&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-182w",
+      variant: 43530901422151,
       price: 12999,
-      brand: "Tom Ford Lost Cherry",
-      brandKey: "tomford",
-      number: "438",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Lost Cherry",
-      searchTerms: ["cherry vanilla", "438", "tom ford lost cherry", "cherry", "vanilla"]
-    },
-    {
-      id: "tryscent_461",
-      title: "Cocoa Tonka - No. 461",
-      image: "https://tryscent.co/cdn/shop/files/JasmineCocoaTonka.png?v=1760616529&width=533",
-      url: "https://tryscent.co/en-gb/products/jasmine-cocoa-tonka",
-      variant: 43530903060550,
-      price: 12999,
-      brand: "Carolina Herrera Good Girl",
-      brandKey: "carolinaherrera",
-      number: "461",
+      brand: "Prada Candy",
+      brandKey: "prada",
+      number: "182",
       gender: "female",
-      inspiredBy: "Carolina Herrera Good Girl",
-      searchTerms: ["cocoa tonka", "461", "carolina herrera good girl", "cocoa", "tonka"]
+      inspiredBy: "Prada Candy",
+      searchTerms: ["candy", "182", "prada candy"]
     },
     {
-      id: "tryscent_466",
-      title: "Saffron Amber - No. 466",
-      image: "https://tryscent.co/cdn/shop/files/rose_saffron_amber.png?v=1760542469&width=533",
-      url: "https://tryscent.co/en-gb/products/saffron-rose-amber-50-ml-1-7-fl-oz",
-      variant: 43530902339654,
+      id: "tryscent_286p",
+      title: "Doftar som... Extreme - No. 286",
+      image: "https://tryscent.co/cdn/shop/files/286M_c.webp?v=1771320861&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-286m",
+      variant: 43530886643789,
       price: 12999,
-      brand: "Maison Francis Kurkdjian Baccarat Rouge 540",
-      brandKey: "mfk",
-      number: "466",
-      gender: "unisex",
-      inspiredBy: "Maison Francis Kurkdjian Baccarat Rouge 540",
-      searchTerms: ["saffron amber", "466", "mfk baccarat rouge", "saffron", "amber"]
+      brand: "Prada Luna Rossa Extreme",
+      brandKey: "prada",
+      number: "286",
+      gender: "male",
+      inspiredBy: "Prada Luna Rossa Extreme",
+      searchTerms: ["extreme", "286", "prada luna rossa extreme"]
+    },
+
+    // ===== VALENTINO — 2 products =====
+    {
+      id: "tryscent_360",
+      title: "Doftar som... Uomo Born in Roma - No. 360",
+      image: "https://tryscent.co/cdn/shop/files/360M_c.webp?v=1771320939&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-360m",
+      variant: 43530886643790,
+      price: 12999,
+      brand: "Valentino Uomo Born in Roma",
+      brandKey: "valentino",
+      number: "360",
+      gender: "male",
+      inspiredBy: "Valentino Uomo Born in Roma",
+      searchTerms: ["uomo born in roma", "360", "valentino uomo born in roma"]
     },
     {
       id: "tryscent_469",
@@ -1227,155 +1792,404 @@
       inspiredBy: "Valentino Donna Born in Roma",
       searchTerms: ["pink mirage", "469", "valentino donna born in roma", "pink", "mirage"]
     },
+
+    // ===== CAROLINA HERRERA — 2 products =====
     {
-      id: "tryscent_474",
-      title: "Leather Luxe - No. 474",
-      image: "https://tryscent.co/cdn/shop/files/LeatherLuxe.png?v=1760616731&width=533",
-      url: "https://tryscent.co/en-gb/products/leather-luxe",
-      variant: 43530879959110,
+      id: "tryscent_461",
+      title: "Cocoa Tonka - No. 461",
+      image: "https://tryscent.co/cdn/shop/files/JasmineCocoaTonka.png?v=1760616529&width=533",
+      url: "https://tryscent.co/en-gb/products/jasmine-cocoa-tonka",
+      variant: 43530903060550,
       price: 12999,
-      brand: "Tom Ford Ombre Leather",
-      brandKey: "tomford",
-      number: "474",
-      gender: "unisex",
-      inspiredBy: "Tom Ford Ombre Leather",
-      searchTerms: ["leather luxe", "474", "tom ford ombre leather", "leather", "luxe"]
+      brand: "Carolina Herrera Good Girl",
+      brandKey: "carolinaherrera",
+      number: "461",
+      gender: "female",
+      inspiredBy: "Carolina Herrera Good Girl",
+      searchTerms: ["cocoa tonka", "461", "carolina herrera good girl", "cocoa", "tonka"]
     },
-    // Continue with all your other products from pages 2-7...
-    // Add the remaining products with correct variant IDs
+    {
+      id: "tryscent_404",
+      title: "Doftar som... Very Good Girl - No. 404",
+      image: "https://tryscent.co/cdn/shop/files/404W_c.webp?v=1771320887&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-404w",
+      variant: 43530903060551,
+      price: 12999,
+      brand: "Carolina Herrera Very Good Girl",
+      brandKey: "carolinaherrera",
+      number: "404",
+      gender: "female",
+      inspiredBy: "Carolina Herrera Very Good Girl",
+      searchTerms: ["very good girl", "404", "carolina herrera very good girl"]
+    },
+
+    // ===== CALVIN KLEIN — 2 products =====
+    {
+      id: "tryscent_215",
+      title: "Doftar som... Eternity - No. 215",
+      image: "https://tryscent.co/cdn/shop/files/215Mc.webp?v=1772224045&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-215m",
+      variant: 43530886643783,
+      price: 12999,
+      brand: "Calvin Klein Eternity for Men",
+      brandKey: "calvinklein",
+      number: "215",
+      gender: "male",
+      inspiredBy: "Calvin Klein Eternity",
+      searchTerms: ["eternity", "215", "calvin klein eternity"]
+    },
+    {
+      id: "tryscent_106",
+      title: "Doftar som... Eternity - No. 106",
+      image: "https://tryscent.co/cdn/shop/files/106Wc.webp?v=1772215849&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-106w",
+      variant: 43530892345425,
+      price: 12999,
+      brand: "Calvin Klein Eternity for Women",
+      brandKey: "calvinklein",
+      number: "106",
+      gender: "female",
+      inspiredBy: "Calvin Klein Eternity",
+      searchTerms: ["eternity", "106", "calvin klein eternity"]
+    },
+
+    // ===== MUGLER — 2 products =====
+    {
+      id: "tryscent_004",
+      title: "Amber Woods - No. 004",
+      image: "https://tryscent.co/cdn/shop/files/JasmineAmberWoods.png?v=1760616524&width=533",
+      url: "https://tryscent.co/en-gb/products/jasmine-amber-woods-50-ml-1-7-fl-oz",
+      variant: 43530889887814,
+      price: 12999,
+      brand: "Mugler Alien",
+      brandKey: "mugler",
+      number: "004",
+      gender: "female",
+      inspiredBy: "Mugler Alien",
+      searchTerms: ["amber woods", "004", "mugler alien", "amber", "woods"]
+    },
+    {
+      id: "tryscent_113",
+      title: "Doftar som... Angel - No. 113",
+      image: "https://tryscent.co/cdn/shop/files/113W_c.webp?v=1771320884&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-113w",
+      variant: 43530889887815,
+      price: 12999,
+      brand: "Mugler Angel",
+      brandKey: "mugler",
+      number: "113",
+      gender: "female",
+      inspiredBy: "Mugler Angel",
+      searchTerms: ["angel", "113", "mugler angel"]
+    },
+
+    // ===== CHLOÉ — 2 products =====
+    {
+      id: "tryscent_024",
+      title: "Doftar som... Chloé - No. 024",
+      image: "https://tryscent.co/cdn/shop/files/024W_c.webp?v=1771320966&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-024w",
+      variant: 43530889887816,
+      price: 12999,
+      brand: "Chloé Chloé",
+      brandKey: "chloe",
+      number: "024",
+      gender: "female",
+      inspiredBy: "Chloé Chloé",
+      searchTerms: ["chloe", "024", "chloe chloe"]
+    },
+    {
+      id: "tryscent_049c",
+      title: "Doftar som… Nomade - No. 049",
+      image: "https://tryscent.co/cdn/shop/files/049wc.webp?v=1772224134&width=533",
+      url: "https://tryscent.co/en-gb/products/riecht-wie-nomade",
+      variant: 43530889887817,
+      price: 12999,
+      brand: "Chloé Nomade",
+      brandKey: "chloe",
+      number: "049",
+      gender: "female",
+      inspiredBy: "Chloé Nomade",
+      searchTerms: ["nomade", "049", "chloe nomade"]
+    },
+
+    // ===== MAISON FRANCIS KURKDJIAN — 1 product =====
+    {
+      id: "tryscent_466",
+      title: "Saffron Amber - No. 466",
+      image: "https://tryscent.co/cdn/shop/files/rose_saffron_amber.png?v=1760542469&width=533",
+      url: "https://tryscent.co/en-gb/products/saffron-rose-amber-50-ml-1-7-fl-oz",
+      variant: 43530902339654,
+      price: 12999,
+      brand: "Maison Francis Kurkdjian Baccarat Rouge 540",
+      brandKey: "mfk",
+      number: "466",
+      gender: "female",
+      inspiredBy: "Maison Francis Kurkdjian Baccarat Rouge 540",
+      searchTerms: ["saffron amber", "466", "mfk baccarat rouge", "saffron", "amber"]
+    },
+
+    // ===== CREED — 1 product =====
+    {
+      id: "tryscent_288",
+      title: "Pineapple Smoke - No. 288",
+      image: "https://tryscent.co/cdn/shop/files/pineapple_smoke_vanilla_1.png?v=1760542371&width=533",
+      url: "https://tryscent.co/en-gb/products/pineapple-smoke-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530905059398,
+      price: 12999,
+      brand: "Creed Aventus",
+      brandKey: "creed",
+      number: "288",
+      gender: "male",
+      inspiredBy: "Creed Aventus",
+      searchTerms: ["pineapple smoke", "288", "creed aventus", "pineapple", "smoke"]
+    },
+
+    // ===== VERSACE — 1 product =====
+    {
+      id: "tryscent_248",
+      title: "Alpha Charm - No. 248",
+      image: "https://tryscent.co/cdn/shop/files/AlphaAttraction.png?v=1760614128&width=533",
+      url: "https://tryscent.co/en-gb/products/alpha-attraction",
+      variant: 43530886643782,
+      price: 12999,
+      brand: "Versace Eros",
+      brandKey: "versace",
+      number: "248",
+      gender: "male",
+      inspiredBy: "Versace Eros",
+      searchTerms: ["alpha charm", "248", "versace eros", "alpha", "charm"]
+    },
+
+    // ===== HERMÈS — 1 product =====
+    {
+      id: "tryscent_227",
+      title: "Signature Blend - No. 227",
+      image: "https://tryscent.co/cdn/shop/files/SignatureBlend.png?v=1760617688&width=533",
+      url: "https://tryscent.co/en-gb/products/signature-blend",
+      variant: 43573210349638,
+      price: 12999,
+      brand: "Hermès Terre d'Hermès",
+      brandKey: "hermes",
+      number: "227",
+      gender: "male",
+      inspiredBy: "Hermès Terre d'Hermès",
+      searchTerms: ["signature blend", "227", "hermes terre", "signature", "blend"]
+    },
+
+    // ===== NARCISO RODRIGUEZ — 1 product =====
+    {
+      id: "tryscent_457",
+      title: "Skin Reverie - No. 457",
+      image: "https://tryscent.co/cdn/shop/files/SkinReverie.png?v=1760617783&width=533",
+      url: "https://tryscent.co/en-gb/products/skin-reverie-50-ml-1-7-fl-oz",
+      variant: 43530902143046,
+      price: 12999,
+      brand: "Narciso Rodriguez For Her",
+      brandKey: "narciso",
+      number: "457",
+      gender: "female",
+      inspiredBy: "Narciso Rodriguez For Her",
+      searchTerms: ["skin reverie", "457", "narciso rodriguez for her", "skin", "reverie"]
+    },
+
+    // ===== GIVENCHY — 1 product =====
+    {
+      id: "tryscent_142",
+      title: "Doftar som... Ange Ou Demon - No. 142",
+      image: "https://tryscent.co/cdn/shop/files/142W_c.webp?v=1771320855&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-142w",
+      variant: 43530892345427,
+      price: 12999,
+      brand: "Givenchy Ange Ou Demon",
+      brandKey: "givenchy",
+      number: "142",
+      gender: "female",
+      inspiredBy: "Givenchy Ange Ou Demon",
+      searchTerms: ["ange ou demon", "142", "givenchy ange ou demon"]
+    },
+
+    // ===== DAVIDOFF — 1 product =====
+    {
+      id: "tryscent_200",
+      title: "Doftar som... Cool Water - No. 200",
+      image: "https://tryscent.co/cdn/shop/files/200M_c.webp?v=1771320870&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-200m",
+      variant: 43530886643785,
+      price: 12999,
+      brand: "Davidoff Cool Water",
+      brandKey: "davidoff",
+      number: "200",
+      gender: "male",
+      inspiredBy: "Davidoff Cool Water",
+      searchTerms: ["cool water", "200", "davidoff cool water"]
+    },
+
+    // ===== JOOP! — 1 product =====
+    {
+      id: "tryscent_211",
+      title: "Doftar som... Joop Homme - No. 211",
+      image: "https://tryscent.co/cdn/shop/files/211M_c.webp?v=1771320905&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-211m",
+      variant: 43530886643784,
+      price: 12999,
+      brand: "Joop! Homme",
+      brandKey: "joop",
+      number: "211",
+      gender: "male",
+      inspiredBy: "Joop! Homme",
+      searchTerms: ["joop", "211", "joop homme"]
+    },
+
+    // ===== KENZO — 1 product =====
+    {
+      id: "tryscent_074",
+      title: "Doftar som... Flower - No. 074",
+      image: "https://tryscent.co/cdn/shop/files/074W_c.webp?v=1771320921&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-074w",
+      variant: 43530892345428,
+      price: 12999,
+      brand: "Kenzo Flower",
+      brandKey: "kenzo",
+      number: "074",
+      gender: "female",
+      inspiredBy: "Kenzo Flower",
+      searchTerms: ["flower", "074", "kenzo flower"]
+    },
+
+    // ===== DOLCE & GABBANA — 1 product =====
+    {
+      id: "tryscent_094",
+      title: "Doftar som... The One - No. 094",
+      image: "https://tryscent.co/cdn/shop/files/094W_c.webp?v=1771320819&width=533",
+      url: "https://tryscent.co/en-gb/products/magic-perfume-no-094w",
+      variant: 43530892345426,
+      price: 12999,
+      brand: "Dolce & Gabbana The One",
+      brandKey: "dolcegabbana",
+      number: "094",
+      gender: "female",
+      inspiredBy: "Dolce & Gabbana The One",
+      searchTerms: ["the one", "094", "dolce gabbana the one"]
+    }
   ];
 
   // ===== HARDCODED "DU KANSKE OCKSÅ GILLAR" REKOMMENDATIONER =====
+  // Baserat på din tabell för singel-brand produkter
   const hardcodedRecommendations = {
-    // Tom Ford rekommendationer
-    '438': '193',  // Lost Cherry → Tobacco Vanille
-    '193': '232',  // Tobacco Vanille → Fucking Fabulous
-    '232': '287',  // Fucking Fabulous → Oud Wood
-    '287': '474',  // Oud Wood → Ombre Leather
-    '474': '286',  // Ombre Leather → Noir Extreme
-    '286': '053',  // Noir Extreme → Vanille Fatale
-    '053': '438',  // Vanille Fatale → Lost Cherry
+    // DIOR
+    '230': '350',  // Sauvage → Fahrenheit
+    '350': '366',  // Fahrenheit → Sauvage Elixir
+    '206': '230',  // Fahrenheit → Sauvage
+    '338': '230',  // Sauvage Parfum → Sauvage
+    '366': '287',  // Sauvage Elixir → Oud Wood
+    '277': '287',  // Homme Intense → Oud Wood
+    '159': '145',  // J'adore → Hypnotic Poison
+    '196': '159',  // Miss Dior → J'adore
+    '145': '132',  // Hypnotic Poison → Black Opium
 
-    // YSL rekommendationer
+    // TOM FORD
+    '287': '193',  // Oud Wood → Tobacco Vanille
+    '193': '232',  // Tobacco Vanille → Fucking Fabulous
+    '232': '286',  // Fucking Fabulous → Noir Extreme
+    '286': '474',  // Noir Extreme → Ombre Leather
+    '474': '287',  // Ombre Leather → Oud Wood
+    '053': '438',  // Vanille Fatale → Lost Cherry
+    '438': '053',  // Lost Cherry → Vanille Fatale
+    '434': '438',  // Cherry Smoke → Lost Cherry
+
+    // HUGO BOSS
+    '234': '223',  // Boss Bottled → Hugo
+    '223': '184',  // Hugo → The Scent
+    '184': '270',  // The Scent Him → The Scent Her
+    '022': '058',  // Deep Red → Ma Vie
+    '058': '060',  // Ma Vie → Boss Woman
+    '270': '098',  // The Scent Her → Alive
+    '060': '148',  // Boss Woman → Boss Orange
+    '098': '022',  // Alive → Deep Red
+    '148': '060',  // Boss Orange → Boss Woman
+    '242': '221',  // Emporio He → Acqua Di Gio
+
+    // GIORGIO ARMANI
+    '221': '260',  // Acqua Di Gio → Armani Code
+    '260': '318',  // Armani Code → Stronger With You
+    '318': '221',  // Stronger With You → Acqua Di Gio
+    '150': '129',  // Emporio She → Si
+    '129': '140',  // Si → My Way
+    '135': '040',  // Code for Women → Diamonds
+    '140': '135',  // My Way → Code for Women
+    '040': '150',  // Diamonds → Emporio She
+
+    // YSL
+    '283': '132',  // Y → Black Opium
     '132': '034',  // Black Opium → Libre
     '034': '083',  // Libre → Opium
     '083': '134',  // Opium → Manifesto
-    '134': '283',  // Manifesto → Y
-    '283': '132',  // Y → Black Opium
+    '134': '132',  // Manifesto → Black Opium
 
-    // Valentino rekommendationer
-    '469': '360',  // Donna Born in Roma → Uomo Born in Roma
-    '360': '469',  // Uomo Born in Roma → Donna Born in Roma
+    // CHANEL
+    '252': '222',  // Bleu → Allure Homme Sport
+    '222': '252',  // Allure Homme Sport → Bleu
+    '067': '079',  // Orange Patchouli → Coco
+    '079': '077',  // Coco → No.5
+    '077': '006',  // No.5 → Chance
+    '006': '067',  // Chance → Orange Patchouli
 
-    // Prada rekommendationer
+    // PACO RABANNE
+    '275': '334',  // 1 Million → 1 Million Elixir
+    '228': '399',  // Invictus → Phantom
+    '334': '275',  // 1 Million Elixir → 1 Million
+    '399': '228',  // Phantom → Invictus
+    '023': '498',  // Lady Million → Fame
+    '498': '023',  // Fame → Lady Million
+
+    // JEAN PAUL GAULTIER
+    '247': '349',  // Le Male → Ultra Male
+    '349': '247',  // Ultra Male → Le Male
+    '442': '247',  // Classique → Le Male
+
+    // LANCÔME
+    '412': '101',  // Iris Praline → La Vie Est Belle
+    '101': '141',  // La Vie Est Belle → Tresor
+    '141': '049',  // Tresor → Nomade
+    '049': '412',  // Nomade → Iris Praline
+
+    // PRADA
     '437': '182',  // Paradoxe → Candy
     '182': '437',  // Candy → Paradoxe
+    '286p': '287', // Prada Extreme → Oud Wood
 
-    // Carolina Herrera rekommendationer
+    // VALENTINO
+    '360': '469',  // Uomo Born in Roma → Donna Born in Roma
+    '469': '360',  // Donna Born in Roma → Uomo Born in Roma
+
+    // CAROLINA HERRERA
     '461': '404',  // Good Girl → Very Good Girl
     '404': '461',  // Very Good Girl → Good Girl
 
-    // Chanel rekommendationer
-    '067': '077',  // Coco Mademoiselle → No.5
-    '077': '006',  // No.5 → Chance
-    '006': '079',  // Chance → Coco
-    '079': '139',  // Coco → Coco Mademoiselle Intense
-    '139': '252',  // Coco Mademoiselle Intense → Bleu
-    '252': '222',  // Bleu → Allure Homme Sport
-    '222': '067',  // Allure Homme Sport → Coco Mademoiselle
+    // CALVIN KLEIN
+    '215': '106',  // Eternity Men → Eternity Women
+    '106': '215',  // Eternity Women → Eternity Men
 
-    // Dior rekommendationer
-    '159': '145',  // J'adore → Hypnotic Poison
-    '145': '196',  // Hypnotic Poison → Miss Dior
-    '196': '082',  // Miss Dior → Miss Cherie
-    '082': '277',  // Miss Cherie → Homme Intense
-    '277': '230',  // Homme Intense → Sauvage
-    '230': '366',  // Sauvage → Sauvage Elixir
-    '366': '206',  // Sauvage Elixir → Fahrenheit
-    '206': '350',  // Fahrenheit → Fahrenheit Le Parfum
-    '350': '159',  // Fahrenheit Le Parfum → J'adore
-
-    // Lancôme rekommendationer
-    '412': '109',  // La Vie Est Belle → La Vie Est Belle Intense
-    '109': '141',  // La Vie Est Belle Intense → Trésor
-    '141': '412',  // Trésor → La Vie Est Belle
-
-    // Narciso Rodriguez rekommendationer
-    '457': '457',  // For Her / Musc Noir (samma nummer)
-
-    // Paco Rabanne rekommendationer
-    '275': '334',  // 1 Million → 1 Million Elixir
-    '334': '228',  // 1 Million Elixir → Invictus
-    '228': '399',  // Invictus → Phantom
-    '399': '498',  // Phantom → Fame
-    '498': '023',  // Fame → Lady Million
-    '023': '275',  // Lady Million → 1 Million
-
-    // Jean Paul Gaultier rekommendationer
-    '247': '349',  // Le Male → Ultra Male
-    '349': '192',  // Ultra Male → Scandal
-    '192': '412',  // Scandal → La Belle
-    '412': '442',  // La Belle → Classique
-    '442': '247',  // Classique → Le Male
-
-    // Mugler rekommendationer
+    // MUGLER
     '004': '113',  // Alien → Angel
     '113': '004',  // Angel → Alien
 
-    // Chloé rekommendationer
+    // CHLOÉ
     '024': '049',  // Chloé → Nomade
-    '049': '024',  // Nomade → Chloé
+    '049c': '024', // Nomade → Chloé
 
-    // Giorgio Armani rekommendationer
-    '129': '140',  // Si → My Way
-    '140': '135',  // My Way → Code for Women
-    '135': '040',  // Code for Women → Diamonds
-    '040': '150',  // Diamonds → Emporio She
-    '150': '221',  // Emporio She → Acqua di Gio
-    '221': '260',  // Acqua di Gio → Armani Code
-    '260': '318',  // Armani Code → Stronger With You Intensely
-    '318': '129',  // Stronger With You Intensely → Si
-
-    // Hugo Boss rekommendationer
-    '098': '058',  // Alive → Ma Vie
-    '058': '060',  // Ma Vie → Boss Woman
-    '060': '148',  // Boss Woman → Boss Orange
-    '148': '184',  // Boss Orange → The Scent (her)
-    '184': '270',  // The Scent (her) → The Scent (him)
-    '270': '223',  // The Scent (him) → Hugo
-    '223': '234',  // Hugo → Boss Bottled
-    '234': '022',  // Boss Bottled → Deep Red
-    '022': '098',  // Deep Red → Alive
-
-    // Calvin Klein rekommendationer
-    '106': '215',  // Eternity Women → Eternity Men
-    '215': '209',  // Eternity Men → CK One
-    '209': '106',  // CK One → Eternity Women
-
-    // Dolce & Gabbana rekommendationer
-    '017': '094',  // Light Blue → The One
-    '094': '017',  // The One → Light Blue
-
-    // Givenchy rekommendationer
-    '142': '142',  // Ange ou Demon (själv)
-
-    // Kenzo rekommendationer
-    '074': '074',  // Flower (själv)
-
-    // Hermès rekommendationer
-    '227': '227',  // Terre d'Hermès (själv)
-
-    // Davidoff rekommendationer
-    '200': '200',  // Cool Water (själv)
-
-    // Joop! rekommendationer
-    '211': '211',  // Joop! Homme (själv)
-
-    // Creed rekommendationer
-    '288': '288',  // Aventus (själv)
-
-    // Bvlgari rekommendationer
-    '305': '305'   // Aqva (själv)
+    // SINGLE BRAND PRODUCTS (med rekommendationer från din tabell)
+    '466': '132',  // MFK Baccarat → Black Opium
+    '288': '287',  // Creed Aventus → Oud Wood
+    '248': '228',  // Versace Eros → Invictus
+    '227': '221',  // Hermès Terre → Acqua Di Gio
+    '457': '129',  // Narciso For Her → Armani Si
+    '142': '132',  // Givenchy Ange Ou Demon → Black Opium
+    '200': '221',  // Davidoff Cool Water → Acqua Di Gio
+    '211': '247',  // Joop Homme → Le Male
+    '074': '049',  // Kenzo Flower → Nomade
+    '094': '412'   // Dolce & Gabbana The One → Iris Praline
   };
 
   // ===== VARIABLES =====
@@ -1561,9 +2375,35 @@
     steps.style.display = 'none';
     
     // Hitta matchande produkt från vår kollektion
-    const ourProduct = hardcodedProducts.find(p => 
-      perfume.productNumbers && perfume.productNumbers.includes(p.number)
-    );
+    let ourProduct = null;
+    
+    // Försök hitta med productNumbers
+    if (perfume.productNumbers && perfume.productNumbers.length > 0) {
+      for (const num of perfume.productNumbers) {
+        ourProduct = hardcodedProducts.find(p => p.number === num.toString());
+        if (ourProduct) break;
+      }
+    }
+    
+    // Om inte hittad, försök hitta med brand + namn matchning
+    if (!ourProduct) {
+      const perfumeBrand = perfume.brand.toLowerCase();
+      const perfumeName = perfume.name.toLowerCase();
+      
+      ourProduct = hardcodedProducts.find(p => {
+        // Kolla om brand matchar
+        if (p.brand && p.brand.toLowerCase().includes(perfumeBrand)) {
+          // Kolla om namn innehåller nyckelord
+          const nameWords = perfumeName.split(' ');
+          for (const word of nameWords) {
+            if (word.length > 3 && p.title.toLowerCase().includes(word)) {
+              return true;
+            }
+          }
+        }
+        return false;
+      });
+    }
     
     let html = `<button class="fc-back-btn" onclick="window.fcGoBack()">Tillbaka</button>`;
     
@@ -1572,6 +2412,7 @@
       html += '<div class="fc-grid-2col">';
       html += renderProductCard(ourProduct, 'Doftar som...');
       
+      // Hitta rekommendation för denna produkt
       const recommendation = getRecommendationForProduct(ourProduct);
       if (recommendation) {
         html += renderProductCard(recommendation, 'Du kanske också gillar');
@@ -1579,13 +2420,16 @@
         html += '<div class="fc-product-card" style="visibility: hidden;"></div>';
       }
       html += '</div>';
+    } else {
+      html += `<div class="fc-subsection-title">Ingen matchande produkt hittades</div>`;
+      html += '<div class="fc-grid-2col"><div class="fc-product-card" style="visibility: hidden;"></div><div class="fc-product-card" style="visibility: hidden;"></div></div>';
     }
     
     // Visa detaljer om den riktiga parfymen
     html += `
       <div class="fc-detailed-view">
         <div class="fc-detailed-header">
-          <img class="fc-detailed-image" src="${perfume.image}" alt="${perfume.name}">
+          <img class="fc-detailed-image" src="${perfume.image}" alt="${perfume.name}" onerror="this.src='https://via.placeholder.com/110x110?text=Parfym'">
           <div>
             <div class="fc-detailed-name">${perfume.name}</div>
             <div class="fc-detailed-brand">${perfume.brand}</div>
