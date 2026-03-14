@@ -508,20 +508,7 @@ window.SwedishPerfumeCatalog = {
       year: "2003",
       gender: "Female",
       productNumbers: ["457"]
-    },
-    {
-      id: "narciso_musc_noir",
-      name: "Musc Noir",
-      brand: "Narciso Rodriguez",
-      image: "https://tryscent.co/cdn/shop/files/Narciso_Rodriguez_Musc_Noir_for_Her.webp?v=1772223687",
-      top_notes: ["Plommon", "Bergamott", "Mandarin"],
-      heart_notes: ["Tuberos", "Jasmin", "Mysk"],
-      base_notes: ["Patchouli", "Vanilj", "Ceder"],
-      description: "En djupare, mörkare version av For Her.",
-      year: "2018",
-      gender: "Female",
-      productNumbers: ["457"]
-    }
+    },    
   ],
 
   // ===== PACO RABANNE =====
