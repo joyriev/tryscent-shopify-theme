@@ -1185,6 +1185,7 @@ window.SwedishPerfumeCatalog = {
   ],
 
   // ===== CAROLINA HERRERA (fortsättning) =====
+  carolinaHerreraMore: [
     {
       id: "carolina_very_good_girl",
       name: "Very Good Girl Carolina Herrera",
@@ -1984,7 +1985,827 @@ window.SwedishPerfumeCatalog = {
         image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/148W_c.webp?v=1771320953"
       }
     }
-  ]
+  ],
+
+  // ===== MAISON FRANCIS KURKDJIAN =====
+  maisonFrancisKurkdjian: [
+    {
+      id: "mfk_baccarat_rouge_540",
+      name: "Baccarat Rouge 540 Maison Francis Kurkdjian",
+      brand: "Maison Francis Kurkdjian",
+      image: "https://magicperfume.co/cdn/shop/files/rouge_540.jpg",
+      top_notes: ["Saffran", "Jasmin"],
+      heart_notes: ["Ceder", "Amberträ"],
+      base_notes: ["Ambroxan", "Ethyl Maltol", "Amber"],
+      description: "En ikonisk och lyxig doft som fångar kristallens alkemi.",
+      year: "2015",
+      gender: "Unisex",
+      productNumbers: ["466"],
+      shopifyProduct: {
+        title: "Doftar som... Saffron Amber - No. 466 (unisex)",
+        url: "https://tryscent.co/products/saffron-rose-amber-50-ml-1-7-fl-oz",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/rose_saffron_amber.png?v=1760542469"
+      }
+    }
+  ],
+
+  // ===== TOM FORD =====
+  tomFord: [
+    {
+      id: "tomford_lost_cherry",
+      name: "Lost Cherry Tom Ford",
+      brand: "Tom Ford",
+      image: "https://magicperfume.co/cdn/shop/files/Tom_Ford_Lost_Cherry.png",
+      top_notes: ["Körsbär", "Mandel", "Likör"],
+      heart_notes: ["Körsbär", "Ros", "Jasmin"],
+      base_notes: ["Vanilj", "Benzoin", "Ceder"],
+      description: "En förförisk och lekfull doft som fångar essensen av en förbjuden frukt.",
+      year: "2018",
+      gender: "Unisex",
+      productNumbers: ["438"],
+      shopifyProduct: {
+        title: "Doftar som... Cherry Vanilla - No. 438 (unisex)",
+        url: "https://tryscent.co/products/sweet-cherry-vanilla-50-ml-1-7-fl-oz",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/sweet_cherry_vanilla_1.png?v=1760543242"
+      }
+    },
+    {
+      id: "tomford_vanille_fatale",
+      name: "Vanille Fatale Tom Ford",
+      brand: "Tom Ford",
+      image: "https://d3mcqtyhv5hy6w.cloudfront.net/perfumes/67b907132b0e14660a563a40_clipped.webp",
+      top_notes: ["Saffran", "Neroli", "Bergamott"],
+      heart_notes: ["Vanilj", "Kaffe", "Läder"],
+      base_notes: ["Amber", "Myrra", "Benzoin"],
+      description: "En mörk och berusande vaniljdoft.",
+      year: "2017",
+      gender: "Unisex",
+      productNumbers: ["053"],
+      shopifyProduct: {
+        title: "Doftar som... Vanilla Ceremony - No. 053 (unisex)",
+        url: "https://tryscent.co/products/vanilla-ceremony-50-ml-1-7-fl-oz",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/VanillaCeremony.png?v=1760617982"
+      }
+    },
+    {
+      id: "tomford_tobacco_vanille",
+      name: "Tobacco Vanille Tom Ford",
+      brand: "Tom Ford",
+      image: "https://magicperfume.co/cdn/shop/files/Tom_Ford_Tobacco_Vanille.png",
+      top_notes: ["Tobak", "Kryddor"],
+      heart_notes: ["Vanilj", "Kakao", "Tonka"],
+      base_notes: ["Torkad frukt", "Tränoter"],
+      description: "En varm och kryddig doft med rika tobaks- och vaniljnoter.",
+      year: "2007",
+      gender: "Unisex",
+      productNumbers: ["193"],
+      shopifyProduct: {
+        title: "Doftar som... Tobacco Dreams - No. 193 (unisex)",
+        url: "https://tryscent.co/products/tobacco-dreams",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/TobaccoDreams.png?v=1760617971"
+      }
+    },
+    {
+      id: "tomford_fucking_fabulous",
+      name: "Fucking Fabulous Tom Ford",
+      brand: "Tom Ford",
+      image: "https://magicperfume.co/cdn/shop/files/Tom_Ford_Fucking_Fabulous_EDP.png",
+      top_notes: ["Salvia", "Lavendel"],
+      heart_notes: ["Läder", "Mandel", "Vanilj"],
+      base_notes: ["Tonka", "Amber", "Tränoter"],
+      description: "En djärv, provokativ doft med läder- och mandeltoner.",
+      year: "2017",
+      gender: "Unisex",
+      productNumbers: ["232"],
+      shopifyProduct: {
+        title: "Doftar som... Wild Rebel - No. 232 (unisex)",
+        url: "https://tryscent.co/products/wild-rebel",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WildRebel.png?v=1760618131"
+      }
+    }
+  ],
+
+  // ===== YVES SAINT LAURENT =====
+  ysl: [
+    {
+      id: "ysl_black_opium",
+      name: "Black Opium Yves Saint Laurent",
+      brand: "Yves Saint Laurent",
+      image: "https://magicperfume.co/cdn/shop/files/Yves_Saint_Laurent_Black_Opium.png",
+      top_notes: ["Kaffe", "Rosa Peppar", "Apelsinblomma"],
+      heart_notes: ["Jasmin", "Bittermandel", "Lakrits"],
+      base_notes: ["Vanilj", "Ceder", "Patchouli"],
+      description: "En djärv och kantig doft som fångar rockkulturens anda.",
+      year: "2014",
+      gender: "Female",
+      productNumbers: ["132"],
+      shopifyProduct: {
+        title: "Doftar som... Berry Vanilla - No. 132 (w)",
+        url: "https://tryscent.co/products/black-berry-vanilla-musk",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/Blackberry_Vanilla_Musk_1.png?v=1763032374"
+      }
+    },
+    {
+      id: "ysl_libre",
+      name: "Libre Yves Saint Laurent",
+      brand: "Yves Saint Laurent",
+      image: "https://magicperfume.co/cdn/shop/files/Libre.jpg",
+      top_notes: ["Lavendel", "Bergamott", "Mandarin"],
+      heart_notes: ["Apelsinblomma", "Jasmin", "Ros"],
+      base_notes: ["Vanilj", "Amber", "Mysk"],
+      description: "En fri och djärv doft för den självsäkra kvinnan.",
+      year: "2019",
+      gender: "Female",
+      productNumbers: ["034"],
+      shopifyProduct: {
+        title: "Doftar som... Floral Lavender - No. 034 (w)",
+        url: "https://tryscent.co/products/white-florals-lavender-50-ml-1-7-fl-oz",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WhiteFloralsLavender.png?v=1760618018"
+      }
+    },
+    {
+      id: "ysl_manifesto",
+      name: "Manifesto Yves Saint Laurent",
+      brand: "Yves Saint Laurent",
+      image: "https://magicperfume.co/cdn/shop/files/Yves_Saint_Laurent_Manifesto.avif",
+      top_notes: ["Gröna noter", "Bergamott", "Persika"],
+      heart_notes: ["Jasmin", "Liljekonvalj", "Apelsinblomma"],
+      base_notes: ["Vanilj", "Ceder", "Mysk", "Tonka"],
+      description: "En varm, träig och samtidigt fräsch doft som fångar essensen av en frisinnad kvinna.",
+      year: "2012",
+      gender: "Female",
+      productNumbers: ["134"],
+      shopifyProduct: {
+        title: "Doftar som... Manifesto - No. 134 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-134w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/134W_c.webp?v=1771320909"
+      }
+    },
+    {
+      id: "ysl_opium",
+      name: "Opium Yves Saint Laurent",
+      brand: "Yves Saint Laurent",
+      image: "https://magicperfume.co/cdn/shop/files/Yves_Saint_Laurent_Opium.jpg",
+      top_notes: ["Mandarin", "Plommon", "Kryddnejlika", "Koriander"],
+      heart_notes: ["Kryddnejlika", "Ros", "Jasmin", "Liljekonvalj"],
+      base_notes: ["Opium", "Myrra", "Amber", "Sandelträ"],
+      description: "En legendarisk orientalisk doft som är både kryddig och sinnlig.",
+      year: "1977",
+      gender: "Female",
+      productNumbers: ["083"],
+      shopifyProduct: {
+        title: "Doftar som... Opium - No. 083 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-083w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/083WcFIX.webp?v=1772215194"
+      }
+    }
+  ],
+
+  // ===== VALENTINO =====
+  valentino: [
+    {
+      id: "valentino_born_in_roma",
+      name: "Donna Born in Roma Valentino",
+      brand: "Valentino",
+      image: "https://magicperfume.co/cdn/shop/files/Valentino_Donna_Born_In_Roma.png",
+      top_notes: ["Svarta vinbär", "Bergamott", "Jasmin"],
+      heart_notes: ["Ros", "Jasmin", "Ceder"],
+      base_notes: ["Vanilj", "Mysk", "Ceder"],
+      description: "En modern och kantig doft som fångar den romerska ungdomskulturens anda.",
+      year: "2019",
+      gender: "Female",
+      productNumbers: ["469"],
+      shopifyProduct: {
+        title: "Doftar som... Pink Mirage - No. 469 (w)",
+        url: "https://tryscent.co/products/pink-mirage",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/PinkMirage.png?v=1760617557"
+      }
+    }
+  ],
+
+  // ===== PRADA =====
+  prada: [
+    {
+      id: "prada_paradoxe",
+      name: "Paradoxe Prada",
+      brand: "Prada",
+      image: "https://magicperfume.co/cdn/shop/files/Prada_Paradoxe.jpg",
+      top_notes: ["Päron", "Bergamott", "Mandarin"],
+      heart_notes: ["Apelsinblomma", "Jasmin", "Ros"],
+      base_notes: ["Vanilj", "Amber", "Ceder"],
+      description: "En modern och paradoxal doft som leker med kontraster.",
+      year: "2022",
+      gender: "Female",
+      productNumbers: ["437"],
+      shopifyProduct: {
+        title: "Doftar som... Floral Amber - No. 437 (w)",
+        url: "https://tryscent.co/products/white-florals-amber-50-ml-1-7-fl-oz",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/WhiteFloralsAmber.png?v=1760618006"
+      }
+    },
+    {
+      id: "prada_candy",
+      name: "Candy Prada",
+      brand: "Prada",
+      image: "https://magicperfume.co/cdn/shop/files/Prada_Candy.avif",
+      top_notes: ["Karamell", "Mysk", "Vanilj"],
+      heart_notes: ["Benzoin", "Mysk"],
+      base_notes: ["Vanilj", "Mysk", "Karamell"],
+      description: "En lekfull och njutbar gourmand-doft som fångar glädje och kvinnlighet.",
+      year: "2011",
+      gender: "Female",
+      productNumbers: ["182"],
+      shopifyProduct: {
+        title: "Doftar som... Candy - No. 182 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-182w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/182W_c.webp?v=1771320903"
+      }
+    }
+  ],
+
+  // ===== CAROLINA HERRERA =====
+  carolinaHerrera: [
+    {
+      id: "carolina_good_girl",
+      name: "Good Girl Carolina Herrera",
+      brand: "Carolina Herrera",
+      image: "https://magicperfume.co/cdn/shop/files/Carolina_Herrera_Good_Girl_Velvet_Fatale.png",
+      top_notes: ["Plommon", "Saffran", "Bergamott"],
+      heart_notes: ["Tuberos", "Jasmin", "Apelsinblomma"],
+      base_notes: ["Läder", "Vanilj", "Patchouli", "Tonka"],
+      description: "En förförisk och mystisk doft som fångar dualiteten hos en modern kvinna.",
+      year: "2016",
+      gender: "Female",
+      productNumbers: ["461"],
+      shopifyProduct: {
+        title: "Doftar som... Cocoa Tonka - No. 461 (w)",
+        url: "https://tryscent.co/products/jasmine-cocoa-tonka",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/JasmineCocoaTonka.png?v=1760616529"
+      }
+    },
+    {
+      id: "carolina_very_good_girl",
+      name: "Very Good Girl Carolina Herrera",
+      brand: "Carolina Herrera",
+      image: "https://magicperfume.co/cdn/shop/files/Carolina_Herrera_Very_Good_Girl.png",
+      top_notes: ["Hallon", "Svarta vinbär", "Litchi"],
+      heart_notes: ["Ros", "Tuberos", "Apelsinblomma"],
+      base_notes: ["Vanilj", "Tonka", "Ceder"],
+      description: "En djärv och fräsch tolkning av den ikoniska Good Girl-doften.",
+      year: "2020",
+      gender: "Female",
+      productNumbers: ["404"],
+      shopifyProduct: {
+        title: "Doftar som... Very Good Girl - No. 404 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-404w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/404W_c.webp?v=1771320887"
+      }
+    }
+  ],
+
+  // ===== ADDITIONAL DIOR PERFUMES =====
+  diorAdditional: [
+    {
+      id: "dior_miss_cherie",
+      name: "Miss Chérie Dior",
+      brand: "Dior",
+      image: "https://magicperfume.co/cdn/shop/files/Christian_Dior_Miss_Dior_Cherie.jpg",
+      top_notes: ["Jordgubbe", "Mandarin", "Rosa Peppar"],
+      heart_notes: ["Jasmin", "Ros", "Karamell", "Popcorn"],
+      base_notes: ["Patchouli", "Mysk", "Ceder"],
+      description: "En lekfull och romantisk doft som fångar en ung kvinnas anda.",
+      year: "2005",
+      gender: "Female",
+      productNumbers: ["082"],
+      shopifyProduct: {
+        title: "Doftar som... Miss Cherie - No. 082 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-082w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/082W_c.webp?v=1771320990"
+      }
+    }
+  ],
+
+  // ===== LANCOME =====
+  lancome: [
+    {
+      id: "lancome_la_vie_est_belle",
+      name: "La Vie Est Belle Lancôme",
+      brand: "Lancôme",
+      image: "https://magicperfume.co/cdn/shop/files/Lancome_La_Vie_Est_Belle.png",
+      top_notes: ["Svarta vinbär", "Päron", "Apelsinblomma"],
+      heart_notes: ["Iris", "Jasmin", "Apelsinblomma"],
+      base_notes: ["Pralin", "Vanilj", "Patchouli", "Tonka"],
+      description: "En strålande och glädjefylld doft som hyllar livets skönhet.",
+      year: "2012",
+      gender: "Female",
+      productNumbers: ["412"],
+      shopifyProduct: {
+        title: "Doftar som... Iris Praline - No. 412 (w)",
+        url: "https://tryscent.co/products/iris-praline-vanilla",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/IrisPralineVanilla.png?v=1760616516"
+      }
+    },
+    {
+      id: "lancome_tresor",
+      name: "Trésor Lancôme",
+      brand: "Lancôme",
+      image: "https://magicperfume.co/cdn/shop/files/Lancome_Tresor.png",
+      top_notes: ["Persika", "Aprikos", "Ros"],
+      heart_notes: ["Liljekonvalj", "Jasmin", "Iris"],
+      base_notes: ["Vanilj", "Sandelträ", "Mysk"],
+      description: "En romantisk och tidlös doft som fångar kärlekens essens.",
+      year: "1990",
+      gender: "Female",
+      productNumbers: ["141"],
+      shopifyProduct: {
+        title: "Doftar som... Tresor - No. 141 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-141w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/141W_c.webp?v=1771320957"
+      }
+    }
+  ],
+
+  // ===== NARCISO RODRIGUEZ =====
+  narciso: [
+    {
+      id: "narciso_for_her",
+      name: "For Her Narciso Rodriguez",
+      brand: "Narciso Rodriguez",
+      image: "https://magicperfume.co/cdn/shop/files/For_Her.webp",
+      top_notes: ["Plommon", "Bergamott", "Mandarin"],
+      heart_notes: ["Tuberos", "Jasmin", "Mysk"],
+      base_notes: ["Patchouli", "Vanilj", "Ceder"],
+      description: "En sensuell och mystisk doft som hyllar myskets kraft.",
+      year: "2003",
+      gender: "Female",
+      productNumbers: ["457"],
+      shopifyProduct: {
+        title: "Doftar som... Skin Reverie - No. 457 (w)",
+        url: "https://tryscent.co/products/skin-reverie-50-ml-1-7-fl-oz",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/SkinReverie.png?v=1760617783"
+      }
+    },
+    {
+      id: "narciso_musc_noir",
+      name: "Musc Noir For Her Narciso Rodriguez",
+      brand: "Narciso Rodriguez",
+      image: "https://magicperfume.co/cdn/shop/files/Narciso_Rodriguez_Musc_Noir_For_Her.png",
+      top_notes: ["Plommon", "Bergamott", "Mandarin"],
+      heart_notes: ["Tuberos", "Jasmin", "Mysk"],
+      base_notes: ["Patchouli", "Vanilj", "Ceder"],
+      description: "En djupare, mörkare och mer intensiv version av den ikoniska For Her.",
+      year: "2018",
+      gender: "Female",
+      productNumbers: ["457"],
+      shopifyProduct: {
+        title: "Doftar som... Musc Noir For Her - No. 457 (w)",
+        url: "https://tryscent.co/products/skin-reverie-50-ml-1-7-fl-oz",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/SkinReverie.png?v=1760617783"
+      }
+    }
+  ],
+
+  // ===== PACO RABANNE ADDITIONAL =====
+  pacoRabanneAdditional: [
+    {
+      id: "paco_lady_million",
+      name: "Lady Million Paco Rabanne",
+      brand: "Paco Rabanne",
+      image: "https://magicperfume.co/cdn/shop/files/Paco_Rabanne_Lady_Million.png",
+      top_notes: ["Hallon", "Neroli", "Citron"],
+      heart_notes: ["Apelsinblomma", "Jasmin", "Honung"],
+      base_notes: ["Patchouli", "Amber", "Ceder"],
+      description: "En strålande och glamourös doft för den moderna kvinnan.",
+      year: "2010",
+      gender: "Female",
+      productNumbers: ["023"],
+      shopifyProduct: {
+        title: "Doftar som... Honey Woods - No. 023 (w)",
+        url: "https://tryscent.co/products/honey-florals-woods",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/HoneyFloralsWoods.png?v=1760616491"
+      }
+    },
+    {
+      id: "paco_fame",
+      name: "Fame Paco Rabanne",
+      brand: "Paco Rabanne",
+      image: "https://magicperfume.co/cdn/shop/files/Paco_Rabanne_Fame.png",
+      top_notes: ["Mango", "Bergamott", "Mandarin"],
+      heart_notes: ["Jasmin", "Ros", "Rökelse"],
+      base_notes: ["Sandelträ", "Vanilj", "Mysk"],
+      description: "En livlig och modern doft som hyllar självförverkligande.",
+      year: "2022",
+      gender: "Female",
+      productNumbers: ["498"],
+      shopifyProduct: {
+        title: "Doftar som... Fame - No. 498 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-498w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/498W_c.webp?v=1771321008"
+      }
+    }
+  ],
+
+  // ===== JEAN PAUL GAULTIER =====
+  jpg: [
+    {
+      id: "jpg_classique_essence",
+      name: "Classique Essence de Parfum Jean Paul Gaultier",
+      brand: "Jean Paul Gaultier",
+      image: "https://magicperfume.co/cdn/shop/files/Jean_Paul_Gaultier_Classique_Essence_de_Parfum.png",
+      top_notes: ["Ros", "Ingefära", "Bergamott"],
+      heart_notes: ["Tuberos", "Jasmin", "Apelsinblomma"],
+      base_notes: ["Vanilj", "Amber", "Mysk"],
+      description: "En intensivare och sinnligare tolkning av den ikoniska Classique.",
+      year: "2013",
+      gender: "Female",
+      productNumbers: ["442"],
+      shopifyProduct: {
+        title: "Doftar som... Classique Essence de Parfum - No. 442 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-442w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/442W_c.webp?v=1771320911"
+      }
+    },
+    {
+      id: "jpg_la_belle",
+      name: "La Belle Jean Paul Gaultier",
+      brand: "Jean Paul Gaultier",
+      image: "https://magicperfume.co/cdn/shop/files/Jean_Paul_Gaultier_La_Belle.png",
+      top_notes: ["Päron", "Bergamott"],
+      heart_notes: ["Jasmin", "Apelsinblomma"],
+      base_notes: ["Vanilj", "Tonka", "Ceder"],
+      description: "En förförisk och beroendeframkallande gourmand-doft.",
+      year: "2019",
+      gender: "Female",
+      productNumbers: ["412"],
+      shopifyProduct: {
+        title: "Doftar som... La Belle - No. 412 (w)",
+        url: "https://tryscent.co/products/iris-praline-vanilla",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/IrisPralineVanilla.png?v=1760616516"
+      }
+    }
+  ],
+
+  // ===== MUGLER =====
+  mugler: [
+    {
+      id: "mugler_alien",
+      name: "Alien Mugler",
+      brand: "Mugler",
+      image: "https://magicperfume.co/cdn/shop/files/Alien.webp",
+      top_notes: ["Jasmin", "Amber"],
+      heart_notes: ["Tränoter", "Mysk"],
+      base_notes: ["Vanilj", "Ceder"],
+      description: "En mystisk och sensuell doft som fångar essensen av en kosmisk resa.",
+      year: "2005",
+      gender: "Female",
+      productNumbers: ["004"],
+      shopifyProduct: {
+        title: "Doftar som... Amber Woods - No. 004 (w)",
+        url: "https://tryscent.co/products/jasmine-amber-woods-50-ml-1-7-fl-oz",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/JasmineAmberWoods.png?v=1760616524"
+      }
+    },
+    {
+      id: "mugler_angel",
+      name: "Angel Mugler",
+      brand: "Mugler",
+      image: "https://magicperfume.co/cdn/shop/files/Thierry_Mugler_Angel_1992.png",
+      top_notes: ["Sockervadd", "Bergamott", "Ananas", "Kokos"],
+      heart_notes: ["Honung", "Röda bär", "Persika", "Plommon", "Aprikos"],
+      base_notes: ["Patchouli", "Vanilj", "Choklad", "Karamell"],
+      description: "En revolutionerande gourmand-doft som förändrade parfymeriet för alltid.",
+      year: "1992",
+      gender: "Female",
+      productNumbers: ["113"],
+      shopifyProduct: {
+        title: "Doftar som... Angel - No. 113 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-113w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/113W_c.webp?v=1771320884"
+      }
+    }
+  ],
+
+  // ===== CHLOE =====
+  chloe: [
+    {
+      id: "chloe_chloe",
+      name: "Chloé",
+      brand: "Chloé",
+      image: "https://magicperfume.co/cdn/shop/files/Chloe.png",
+      top_notes: ["Pion", "Litchi", "Freesia"],
+      heart_notes: ["Magnolia", "Ros", "Liljekonvalj"],
+      base_notes: ["Ceder", "Amber", "Mysk"],
+      description: "En fräsch och elegant rosdoft som fångar den moderna kvinnans anda.",
+      year: "2008",
+      gender: "Female",
+      productNumbers: ["024"],
+      shopifyProduct: {
+        title: "Doftar som... Chloé - No. 024 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-024w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/024W_c.webp?v=1771321027"
+      }
+    },
+    {
+      id: "chloe_nomade",
+      name: "Nomade Chloé",
+      brand: "Chloé",
+      image: "https://magicperfume.co/cdn/shop/files/Chloe_Nomade.png",
+      top_notes: ["Mirabell", "Citron", "Bergamott"],
+      heart_notes: ["Freesia", "Jasmin", "Ros"],
+      base_notes: ["Ekmossa", "Sandelträ", "Amber"],
+      description: "En fri och äventyrlig doft för den moderna nomaden.",
+      year: "2018",
+      gender: "Female",
+      productNumbers: ["049"],
+      shopifyProduct: {
+        title: "Doftar som… Nomade - No. 049 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-049w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/049W_c.webp?v=1771320880"
+      }
+    }
+  ],
+
+  // ===== ADDITIONAL ARMANI PERFUMES =====
+  armaniAdditional: [
+    {
+      id: "armani_code_for_women",
+      name: "Code for Women Giorgio Armani",
+      brand: "Giorgio Armani",
+      image: "https://magicperfume.co/cdn/shop/files/Giorgio_Armani_Code_for_Woman.jpg",
+      top_notes: ["Apelsinblomma", "Jasmin", "Bergamott"],
+      heart_notes: ["Honung", "Mandel", "Ingefära"],
+      base_notes: ["Vanilj", "Sandelträ", "Mysk"],
+      description: "En förförisk och elegant orientalisk blommig doft för kvinnor.",
+      year: "2006",
+      gender: "Female",
+      productNumbers: ["135"],
+      shopifyProduct: {
+        title: "Doftar som... Code for Women - No. 135 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-135w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/135W_c.webp?v=1771320962"
+      }
+    },
+    {
+      id: "armani_emporio_she",
+      name: "Emporio Armani She Giorgio Armani",
+      brand: "Giorgio Armani",
+      image: "https://magicperfume.co/cdn/shop/files/Giorgio_Armani_Emporio_She.jpg",
+      top_notes: ["Citron", "Bergamott", "Ros"],
+      heart_notes: ["Jasmin", "Pion", "Liljekonvalj"],
+      base_notes: ["Sandelträ", "Mysk", "Vanilj"],
+      description: "En frisk och feminin doft som fångar den moderna ungdomens anda.",
+      year: "1998",
+      gender: "Female",
+      productNumbers: ["150"],
+      shopifyProduct: {
+        title: "Doftar som... Emporio She - No. 150 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-150w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/150W_c.webp?v=1771320968"
+      }
+    }
+  ],
+
+  // ===== ADDITIONAL HUGO BOSS PERFUMES =====
+  hugoBossAdditional: [
+    {
+      id: "boss_alive",
+      name: "Alive Hugo Boss",
+      brand: "Hugo Boss",
+      image: "https://magicperfume.co/cdn/shop/files/Hugo_Boss_ALIVE.jpg",
+      top_notes: ["Äpple", "Svarta vinbär", "Plommon"],
+      heart_notes: ["Ros", "Jasmin", "Kanel"],
+      base_notes: ["Vanilj", "Mysk", "Ceder"],
+      description: "En livlig och energisk doft som hyllar livsglädjen.",
+      year: "2019",
+      gender: "Female",
+      productNumbers: ["098"],
+      shopifyProduct: {
+        title: "Doftar som... ALIVE - No. 098 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-098w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/098W_c.webp?v=1771321015"
+      }
+    },
+    {
+      id: "boss_ma_vie",
+      name: "Ma Vie Hugo Boss",
+      brand: "Hugo Boss",
+      image: "https://magicperfume.co/cdn/shop/files/Hugo_Boss_Ma_Vie.jpg",
+      top_notes: ["Citrus", "Fruktnoter", "Bergamott"],
+      heart_notes: ["Ros", "Jasmin", "Liljekonvalj"],
+      base_notes: ["Vanilj", "Mysk", "Ceder"],
+      description: "En fräsch och elegant doft som hyllar livets skönhet.",
+      year: "2010",
+      gender: "Female",
+      productNumbers: ["058"],
+      shopifyProduct: {
+        title: "Doftar som... Ma Vie - No. 058 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-058w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/058W_c.webp?v=1771320976"
+      }
+    },
+    {
+      id: "boss_boss_woman",
+      name: "Boss Woman Hugo Boss",
+      brand: "Hugo Boss",
+      image: "https://magicperfume.co/cdn/shop/files/Boss_Woman.jpg",
+      top_notes: ["Mandarin", "Äpple", "Persika"],
+      heart_notes: ["Ros", "Jasmin", "Lilja"],
+      base_notes: ["Sandelträ", "Mysk", "Vanilj"],
+      description: "En klassisk och elegant doft för den framgångsrika moderna kvinnan.",
+      year: "2000",
+      gender: "Female",
+      productNumbers: ["060"],
+      shopifyProduct: {
+        title: "Doftar som... Boss Woman - No. 60 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-060w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/060W_c.webp?v=1771320933"
+      }
+    },
+    {
+      id: "boss_orange",
+      name: "Boss Orange Hugo Boss",
+      brand: "Hugo Boss",
+      image: "https://magicperfume.co/cdn/shop/files/Hugo_Boss_Boss_Orange.jpg",
+      top_notes: ["Äpple", "Vita blommor", "Citrus"],
+      heart_notes: ["Ros", "Jasmin", "Pion"],
+      base_notes: ["Sandelträ", "Mysk", "Vanilj"],
+      description: "En fräsch och bekymmersfri doft för den moderna kvinnan.",
+      year: "2003",
+      gender: "Female",
+      productNumbers: ["148"],
+      shopifyProduct: {
+        title: "Doftar som... Boss Orange - No. 148 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-148w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/148W_c.webp?v=1771320953"
+      }
+    },
+    {
+      id: "boss_the_scent_women",
+      name: "The Scent For Her Hugo Boss",
+      brand: "Hugo Boss",
+      image: "https://magicperfume.co/cdn/shop/files/Hugo_Boss_The_Scent.png",
+      top_notes: ["Persika", "Osmanthus", "Bergamott"],
+      heart_notes: ["Lavendel", "Maninka", "Fruktnoter"],
+      base_notes: ["Läder", "Patchouli", "Ceder"],
+      description: "En förförisk och magnetisk doft som fångar attraktionens essens.",
+      year: "2015",
+      gender: "Female",
+      productNumbers: ["184"],
+      shopifyProduct: {
+        title: "Doftar som... The Scent - No. 184 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-184w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/184W_c.webp?v=1771321022"
+      }
+    },
+    {
+      id: "boss_deep_red",
+      name: "Deep Red Hugo Boss",
+      brand: "Hugo Boss",
+      image: "https://magicperfume.co/cdn/shop/files/Hugo_Boss_Deep_Red.jpg",
+      top_notes: ["Svarta vinbär", "Mandarin", "Rosa Peppar"],
+      heart_notes: ["Ros", "Jasmin", "Apelsinblomma"],
+      base_notes: ["Patchouli", "Vanilj", "Ceder"],
+      description: "En livlig och passionerad doft som fångar intensiteten av rött.",
+      year: "2006",
+      gender: "Female",
+      productNumbers: ["022"],
+      shopifyProduct: {
+        title: "Doftar som... Deep Red - No. 022 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-022w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/022W_c.webp?v=1771320985"
+      }
+    }
+  ],
+
+  // ===== ADDITIONAL CALVIN KLEIN PERFUMES =====
+  calvinKleinAdditional: [
+    {
+      id: "ck_eternity_women",
+      name: "Eternity For Women Calvin Klein",
+      brand: "Calvin Klein",
+      image: "https://magicperfume.co/cdn/shop/files/Calvin_Klein_Eternity.png",
+      top_notes: ["Mandarin", "Bergamott", "Citron"],
+      heart_notes: ["Liljekonvalj", "Ros", "Jasmin"],
+      base_notes: ["Sandelträ", "Mysk", "Amber"],
+      description: "En tidlös och romantisk doft som hyllar den eviga kärleken.",
+      year: "1988",
+      gender: "Female",
+      productNumbers: ["106"],
+      shopifyProduct: {
+        title: "Doftar som... Eternity - No. 106 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-106w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/106Wc.webp?v=1772215849"
+      }
+    }
+  ],
+
+  // ===== DOLCE & GABBANA =====
+  dolceGabbana: [
+    {
+      id: "dolce_gabbana_the_one",
+      name: "The One Dolce & Gabbana",
+      brand: "Dolce & Gabbana",
+      image: "https://magicperfume.co/cdn/shop/files/Dolce_Gabbana_The_One.jpg",
+      top_notes: ["Bergamott", "Mandarin", "Litchi"],
+      heart_notes: ["Ros", "Jasmin", "Liljekonvalj"],
+      base_notes: ["Vanilj", "Amber", "Patchouli"],
+      description: "En sensuell och elegant doft för den moderna kvinnan.",
+      year: "2006",
+      gender: "Female",
+      productNumbers: ["094"],
+      shopifyProduct: {
+        title: "Doftar som... The One - No. 094 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-094w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/094W_c.webp?v=1771320905"
+      }
+    }
+  ],
+
+  // ===== GIVENCHY =====
+  givenchy: [
+    {
+      id: "givenchy_ange_ou_demon",
+      name: "Ange Ou Demon Givenchy",
+      brand: "Givenchy",
+      image: "https://magicperfume.co/cdn/shop/files/Ange_Ou_Demon.jpg",
+      top_notes: ["Saffran", "Ylang-Ylang", "Lilja"],
+      heart_notes: ["Ros", "Jasmin", "Apelsinblomma"],
+      base_notes: ["Vanilj", "Sandelträ", "Patchouli"],
+      description: "En mystisk och förförisk doft som leker med kontrasterna mellan gott och ont.",
+      year: "2006",
+      gender: "Female",
+      productNumbers: ["142"],
+      shopifyProduct: {
+        title: "Doftar som... Ange Ou Demon - No. 142 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-142w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/142W_c.webp?v=1771320980"
+      }
+    }
+  ],
+
+  // ===== KENZO =====
+  kenzo: [
+    {
+      id: "kenzo_flower",
+      name: "Flower by Kenzo",
+      brand: "Kenzo",
+      image: "https://magicperfume.co/cdn/shop/files/KENZO_FLOWER.jpg",
+      top_notes: ["Hagtorn", "Svarta vinbär", "Mandarin"],
+      heart_notes: ["Ros", "Jasmin", "Viol"],
+      base_notes: ["Vanilj", "Mysk", "Ceder"],
+      description: "En poetisk och ömtålig doft som hyllar vallmons skönhet.",
+      year: "2000",
+      gender: "Female",
+      productNumbers: ["074"],
+      shopifyProduct: {
+        title: "Doftar som... Flower - No. 074 (w)",
+        url: "https://tryscent.co/products/magic-perfume-no-074w",
+        price: "£11.00",
+        image: "https://cdn.shopify.com/s/files/1/0086/7932/5753/files/074W_c.webp?v=1771320902"
+      }
+    }
+  ],
+
+  // ===== INDEX FOR FAST SEARCHING =====
+  _index: {}
 };
 
 // Add index for easy searching
