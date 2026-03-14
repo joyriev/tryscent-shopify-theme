@@ -1132,7 +1132,7 @@ window.SwedishPerfumeCatalog = {
       id: "versace_eros",
       name: "Eros",
       brand: "Versace",
-      image: "https://tryscent.co/cdn/shop/files/Versace_Eros.webp?v=1772214918",
+      image: "https://tryscent.co/cdn/shop/files/eros_versace.jpg?v=1763008550",
       top_notes: ["Mynta", "Grönt äpple", "Citron"],
       heart_notes: ["Tonka", "Ambrosia", "Geranium"],
       base_notes: ["Vanilj", "Ceder", "Ekmossa", "Patchouli"],
