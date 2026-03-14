@@ -65,7 +65,7 @@ window.SwedishPerfumeCatalog = {
       id: "tom_ford_fucking_fabulous",
       name: "Fucking Fabulous",
       brand: "Tom Ford",
-      image: "https://tryscent.co/cdn/shop/files/Tom_Ford_Fucking_Fabulous_EDP.png",
+      image: "https://tryscent.co/cdn/shop/files/Fabulous_Tom_Ford.avif?v=1763047131",
       top_notes: ["Salvia", "Lavendel"],
       heart_notes: ["Läder", "Mandel", "Vanilj"],
       base_notes: ["Tonka", "Amber", "Tränoter"],
