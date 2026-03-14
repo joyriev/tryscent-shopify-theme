@@ -1402,11 +1402,17 @@
   function getRecommendationForProduct(product) {
     if (!product || !product.number) return null;
     
+    console.log('Söker rekommendation för produktnummer:', product.number);
+    
     // Kolla om det finns en hårdkodad rekommendation
     const recNumber = hardcodedRecommendations[product.number];
-    if (recNumber && recNumber !== product.number) {
+    if (recNumber) {
+      console.log('Hittade rekommendationsnummer:', recNumber);
       const recommended = hardcodedProducts.find(p => p.number === recNumber);
-      if (recommended) return recommended;
+      if (recommended) {
+        console.log('Rekommenderad produkt:', recommended.title);
+        return recommended;
+      }
     }
     
     // Fallback: annan produkt från samma brand med samma kön
@@ -1416,7 +1422,13 @@
       p.gender === product.gender
     );
     
-    return sameBrand || null;
+    if (sameBrand) {
+      console.log('Hittade same-brand rekommendation:', sameBrand.title);
+      return sameBrand;
+    }
+    
+    console.log('Ingen rekommendation hittades');
+    return null;
   }
 
   // ===== NORMALISERA TEXT FÖR SÖKNING (hanterar åäö) =====
