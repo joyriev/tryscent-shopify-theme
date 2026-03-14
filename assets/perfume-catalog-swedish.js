@@ -655,7 +655,7 @@ window.SwedishPerfumeCatalog = {
       id: "mugler_alien",
       name: "Alien",
       brand: "Mugler",
-      image: "https://tryscent.co/cdn/shop/files/Alien.webp",
+      image: "https://tryscent.co/cdn/shop/files/Mugler_Alien.avif?v=1763049213",
       top_notes: ["Jasmin", "Amber"],
       heart_notes: ["Tränoter", "Mysk"],
       base_notes: ["Vanilj", "Ceder"],
