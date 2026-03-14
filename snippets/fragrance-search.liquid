@@ -11,7 +11,820 @@
 <script src="{{ 'perfume-catalog-swedish.js' | asset_url }}"></script>
 
 <style>
-/* All your existing CSS - keep exactly as is */
+/* ===== PREMIUM FRAGRANCE CODE POPUP ===== */
+.fc-float-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ===== FLOATING BUTTON ===== */
+.fc-search-toggle {
+  background: #C41E3A;
+  border-radius: 30px;
+  padding: 14px 28px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  border: none;
+  min-width: 130px;
+}
+
+.fc-search-toggle:hover {
+  background: #A51D36;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(165, 29, 54, 0.4);
+}
+
+.fc-search-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  fill: none;
+}
+
+.fc-toggle-text {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ===== POPUP CONTAINER ===== */
+.fc-search-popup {
+  position: fixed;
+  bottom: 110px;
+  right: 30px;
+  width: 440px;
+  max-height: 80vh;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  overflow-y: auto;
+  transform: translateY(30px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.fc-search-popup.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Premium Scrollbar */
+.fc-search-popup::-webkit-scrollbar {
+  width: 6px;
+}
+.fc-search-popup::-webkit-scrollbar-track {
+  background: #F8F4F0;
+  border-radius: 10px;
+}
+.fc-search-popup::-webkit-scrollbar-thumb {
+  background: #C41E3A;
+  border-radius: 10px;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.fc-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: #F8F4F0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  color: #4A3F39;
+  transition: all 0.2s ease;
+  z-index: 10;
+  border: none;
+  opacity: 0.9;
+}
+
+.fc-close-btn:hover {
+  background: #EDE5DC;
+  color: #C41E3A;
+  transform: rotate(90deg);
+}
+
+/* ===== OFFER BANNER - PREMIUM ===== */
+.fc-offer-banner {
+  background: linear-gradient(135deg, #FFF5EB, #FFE8DA);
+  border: 2px solid #C41E3A;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 20px 20px 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 15px -5px rgba(196, 30, 58, 0.2);
+  transition: all 0.3s ease;
+}
+
+.fc-offer-banner.qualified {
+  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  border-color: #2E7D32;
+  box-shadow: 0 8px 15px -5px rgba(46, 125, 50, 0.2);
+}
+
+.fc-offer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.fc-offer-icon {
+  font-size: 28px;
+  background: #C41E3A;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 5px 10px rgba(196, 30, 58, 0.3);
+  transition: background 0.3s ease;
+  flex-shrink: 0;
+}
+
+.fc-offer-banner.qualified .fc-offer-icon {
+  background: #2E7D32;
+  box-shadow: 0 5px 10px rgba(46, 125, 50, 0.3);
+}
+
+.fc-offer-text {
+  flex: 1;
+}
+
+.fc-offer-text strong {
+  display: block;
+  font-size: 15px;
+  color: #C41E3A;
+  font-weight: 800;
+  margin-bottom: 2px;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+  line-height: 1.3;
+}
+
+.fc-offer-banner.qualified .fc-offer-text strong {
+  color: #2E7D32;
+}
+
+.fc-offer-text span {
+  font-size: 12px;
+  color: #4A3F39;
+  font-weight: 500;
+  display: block;
+  line-height: 1.4;
+}
+
+.fc-offer-status {
+  background: #C41E3A;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(196, 30, 58, 0.2);
+  transition: all 0.3s ease;
+  min-width: 65px;
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.fc-offer-banner.qualified .fc-offer-status {
+  background: #2E7D32;
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+}
+
+/* Progress bar */
+.fc-offer-progress-container {
+  padding: 0 20px 15px 20px;
+}
+
+.fc-offer-progress-bar {
+  height: 6px;
+  background: #EDE5DC;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.fc-offer-progress-fill {
+  height: 100%;
+  background: #C41E3A;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.fc-offer-banner.qualified .fc-offer-progress-fill {
+  background: #2E7D32;
+}
+
+.fc-offer-message {
+  font-size: 12px;
+  color: #4A3F39;
+  margin-top: 8px;
+  text-align: right;
+  font-weight: 500;
+  padding-right: 5px;
+}
+
+/* ===== INFO SECTION ===== */
+.fc-info-section {
+  padding: 5px 20px 5px 20px;
+}
+
+.fc-info-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8A7A70;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ===== LOGO SECTION - CLICKABLE ===== */
+.fc-logo-section {
+  padding: 0 20px 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.fc-logo-section:hover {
+  opacity: 0.8;
+}
+
+.fc-logo-red {
+  width: 60px;
+  height: 60px;
+  background: #C41E3A;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 15px rgba(196, 30, 58, 0.25);
+}
+
+.fc-logo-fc {
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.fc-brand-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2C2420;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* ===== SEARCH SECTION WITH CLEAR BUTTON ===== */
+.fc-search-section {
+  padding: 0 20px 20px 20px;
+  position: relative;
+}
+
+.fc-search-container {
+  position: relative;
+  border-bottom: 2px solid #EDE5DC;
+  transition: border-color 0.2s ease;
+}
+
+.fc-search-container:focus-within {
+  border-color: #C41E3A;
+}
+
+.fc-search-field {
+  width: 100%;
+  padding: 15px 45px 15px 0;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  color: #2C2420;
+}
+
+.fc-search-field::placeholder {
+  color: #B0A298;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.fc-clear-search {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: #F8F4F0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #8A7A70;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.fc-clear-search:hover {
+  background: #EDE5DC;
+  color: #C41E3A;
+}
+
+/* ===== STEPS SECTION - PREMIUM BOX ===== */
+.fc-steps-section {
+  padding: 0 20px 25px 20px;
+}
+
+.fc-steps-box {
+  background: #FEFCF9;
+  border: 1px solid #EDE5DC;
+  border-radius: 24px;
+  padding: 28px 20px;
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, 0.08);
+}
+
+.fc-steps-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #2C2420;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.fc-steps-title span {
+  display: block;
+  color: #C41E3A;
+  font-size: 24px;
+}
+
+.fc-step-item {
+  font-size: 15px;
+  margin: 20px 0;
+  color: #4A3F39;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.fc-step-number {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background: #C41E3A;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(196, 30, 58, 0.2);
+}
+
+/* ===== SECTION TITLES ===== */
+.fc-section-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #C41E3A;
+  margin: 20px 20px 15px 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #EDE5DC;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.fc-subsection-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2C2420;
+  margin: 20px 20px 15px 20px;
+}
+
+/* ===== REAL PERFUME LIST ===== */
+.fc-real-perfume-item {
+  background: #FFFFFF;
+  padding: 15px 20px;
+  margin: 0;
+  border-bottom: 1px solid #F0E8E0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: background 0.2s ease;
+}
+
+.fc-real-perfume-item:hover {
+  background: #FEF9F5;
+}
+
+.fc-real-perfume-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #FFFFFF;
+  padding: 5px;
+  border: 1px solid #EDE5DC;
+}
+
+.fc-real-perfume-info {
+  flex: 1;
+}
+
+.fc-real-perfume-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2C2420;
+  margin-bottom: 4px;
+}
+
+.fc-real-perfume-brand {
+  font-size: 14px;
+  color: #C41E3A;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.fc-real-perfume-year {
+  font-size: 12px;
+  color: #B0A298;
+}
+
+/* ===== PRODUCT GRID ===== */
+.fc-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 0 20px 20px 20px;
+}
+
+.fc-product-card {
+  text-align: center;
+}
+
+.fc-badge {
+  background: #F8F4F0;
+  padding: 6px 12px;
+  border-radius: 40px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #4A3F39;
+  margin-bottom: 12px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border: 1px solid #EDE5DC;
+}
+
+.fc-product-inner {
+  background: #FFFFFF;
+  border: 1px solid #EDE5DC;
+  border-radius: 20px;
+  padding: 18px 12px;
+  transition: all 0.2s ease;
+}
+
+.fc-product-inner:hover {
+  border-color: #C41E3A;
+  box-shadow: 0 8px 18px -8px rgba(196, 30, 58, 0.15);
+}
+
+/* ===== ENLARGED CATALOGUE IMAGES ===== */
+.fc-product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.1));
+}
+
+.fc-product-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #2C2420;
+}
+
+.fc-product-price {
+  font-size: 14px;
+  font-weight: 800;
+  color: #C41E3A;
+  margin-bottom: 10px;
+}
+
+.fc-add-to-cart {
+  width: 100%;
+  background: #C41E3A;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  transition: background 0.2s ease;
+}
+
+.fc-add-to-cart:hover {
+  background: #A51D36;
+}
+
+.fc-view-link {
+  font-size: 11px;
+  color: #8A7A70;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.fc-view-link:hover {
+  color: #C41E3A;
+}
+
+/* ===== DETAILED VIEW ===== */
+.fc-detailed-view {
+  background: #FEFCF9;
+  border-radius: 24px;
+  padding: 20px;
+  margin: 0 20px 20px 20px;
+  border: 1px solid #EDE5DC;
+}
+
+.fc-back-btn {
+  background: none;
+  border: none;
+  padding: 0 20px 15px 20px;
+  font-size: 13px;
+  color: #8A7A70;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+
+.fc-back-btn:hover {
+  color: #C41E3A;
+}
+
+.fc-back-btn:before {
+  content: "←";
+  font-size: 16px;
+}
+
+.fc-detailed-header {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EDE5DC;
+}
+
+.fc-detailed-image {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #FFFFFF;
+  padding: 10px;
+  border: 1px solid #EDE5DC;
+}
+
+.fc-detailed-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #2C2420;
+  margin-bottom: 6px;
+}
+
+.fc-detailed-brand {
+  font-size: 15px;
+  color: #C41E3A;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.fc-detailed-meta {
+  font-size: 13px;
+  color: #8A7A70;
+  margin-top: 5px;
+}
+
+/* ===== NOTES ===== */
+.fc-notes-section {
+  margin: 20px 0;
+}
+
+.fc-note-category {
+  margin-bottom: 18px;
+}
+
+.fc-note-category h4 {
+  font-size: 13px;
+  font-weight: 800;
+  color: #C41E3A;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.fc-note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fc-note-tag {
+  background: #FFFFFF;
+  border: 1px solid #EDE5DC;
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 12px;
+  color: #4A3F39;
+  font-weight: 500;
+}
+
+.fc-description {
+  margin: 20px 0 0 0;
+  padding: 18px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #EDE5DC;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4A3F39;
+}
+
+/* ===== NOTIFICATION ===== */
+.fc-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2E7D32;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 10001;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.fc-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== LOADING & NO RESULTS ===== */
+.fc-loading, .fc-no-results {
+  text-align: center;
+  padding: 40px;
+  color: #B0A298;
+  background: #FEFCF9;
+  border-radius: 20px;
+  margin: 20px;
+  font-size: 14px;
+}
+
+/* ===== SUGGESTIONS SECTION ===== */
+.fc-suggestions-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2C2420;
+  margin: 20px 20px 10px 20px;
+}
+
+.fc-suggestion-item {
+  background: #FFFFFF;
+  padding: 15px 20px;
+  margin: 0;
+  border-bottom: 1px solid #F0E8E0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: background 0.2s ease;
+}
+
+.fc-suggestion-item:hover {
+  background: #FEF9F5;
+}
+
+.fc-suggestion-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #FFFFFF;
+  padding: 5px;
+  border: 1px solid #EDE5DC;
+}
+
+.fc-suggestion-info {
+  flex: 1;
+}
+
+.fc-suggestion-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2C2420;
+  margin-bottom: 2px;
+}
+
+.fc-suggestion-price {
+  font-size: 13px;
+  font-weight: 600;
+  color: #C41E3A;
+}
+
+.fc-suggestion-tag {
+  font-size: 11px;
+  color: #8A7A70;
+  margin-top: 2px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 520px) {
+  .fc-search-popup {
+    width: 90vw;
+    right: 5vw;
+    left: 5vw;
+    bottom: 100px;
+  }
+  
+  .fc-offer-banner {
+    margin: 15px 15px 15px 15px;
+    padding: 15px;
+  }
+  
+  .fc-info-section, .fc-logo-section, .fc-search-section, .fc-steps-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .fc-steps-box {
+    padding: 20px 15px;
+  }
+  
+  .fc-offer-text strong {
+    font-size: 14px;
+  }
+  
+  .fc-offer-text span {
+    font-size: 11px;
+  }
+  
+  .fc-offer-status {
+    font-size: 13px;
+    padding: 5px 10px;
+    min-width: 55px;
+  }
+}
 </style>
 
 <div class="fc-float-wrapper">
@@ -24,9 +837,79 @@
     <span class="fc-toggle-text">Sök</span>
   </div>
 
-  <!-- Search Popup - Same HTML structure -->
+  <!-- Search Popup -->
   <div class="fc-search-popup" id="fcSearchPopup">
-    <!-- ... keep all your existing HTML ... -->
+    <div class="fc-close-btn" onclick="window.fcToggleSearch()">✕</div>
+
+    <!-- OFFER BANNER -->
+    <div class="fc-offer-banner" id="fcOfferBanner">
+      <div class="fc-offer-left">
+        <span class="fc-offer-icon">🎁</span>
+        <div class="fc-offer-text">
+          <strong>KÖP 3 FÅ 1 GRATIS</strong>
+          <span id="fcOfferSubtext">Lägg till 3 produkter för en gratis present</span>
+        </div>
+      </div>
+      <div class="fc-offer-status" id="fcOfferStatus">0/3</div>
+    </div>
+    
+    <!-- Progress bar -->
+    <div class="fc-offer-progress-container">
+      <div class="fc-offer-progress-bar">
+        <div class="fc-offer-progress-fill" id="fcOfferProgress" style="width: 0%;"></div>
+      </div>
+      <div class="fc-offer-message" id="fcOfferMessage">Lägg till 3 produkter för en gratis present</div>
+    </div>
+
+    <!-- INFO SECTION -->
+    <div class="fc-info-section">
+      <div class="fc-info-label">INFORMATION FRÅN:</div>
+    </div>
+
+    <!-- Logo Section -->
+    <a href="https://fragrancecode.com" target="_blank" style="text-decoration: none;">
+      <div class="fc-logo-section">
+        <div class="fc-logo-red">
+          <span class="fc-logo-fc">FC</span>
+        </div>
+        <span class="fc-brand-text">FRAGRANCE CODE</span>
+      </div>
+    </a>
+
+    <!-- Search Input -->
+    <div class="fc-search-section">
+      <div class="fc-search-container">
+        <input type="text" 
+               id="fcSearchInput" 
+               class="fc-search-field" 
+               placeholder="Sök efter riktig parfym (t.ex. Dior Sauvage)..."
+               autocomplete="off">
+        <button class="fc-clear-search" id="fcClearSearch">✕</button>
+      </div>
+    </div>
+
+    <!-- Steps Section -->
+    <div class="fc-steps-section" id="fcSteps">
+      <div class="fc-steps-box">
+        <div class="fc-steps-title">
+          SÅ HITTAR DU<br><span>DIN PARFYM.</span>
+        </div>
+        <div class="fc-step-item">
+          <span class="fc-step-number">1</span>
+          <span>SÖK PÅ DEN RIKTIGA PARFYMEN DU ÄLSKAR (t.ex. Dior Sauvage).</span>
+        </div>
+        <div class="fc-step-item">
+          <span class="fc-step-number">2</span>
+          <span>KLICKA PÅ PARFYMEN FÖR ATT SE VÅR VERSION.</span>
+        </div>
+        <div class="fc-step-item">
+          <span class="fc-step-number">3</span>
+          <span>UPPTÄCK DIN NYA FAVORITPARFYM TILL ETT BRA PRIS!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Content -->
     <div id="fcContent"></div>
   </div>
 </div>
@@ -34,8 +917,8 @@
 <script>
 (function() {
   // ===== YOUR 66 HARDCODED PRODUCTS FROM THE EXTRACTED DATA =====
+  // PASTE ALL YOUR 66 PRODUCTS HERE WITH CORRECT VARIANT IDs
   const hardcodedProducts = [
-    // Paste ALL your extracted products here in this format:
     {
       id: "tryscent_053",
       title: "Vanilla Ceremony - No. 053",
@@ -64,7 +947,302 @@
       inspiredBy: "Chanel Coco Mademoiselle",
       searchTerms: ["orange patchouli", "067", "chanel coco mademoiselle", "orange", "patchouli"]
     },
-    // ... add all 66 products here ...
+    {
+      id: "tryscent_132",
+      title: "Berry Vanilla - No. 132",
+      image: "https://tryscent.co/cdn/shop/files/Blackberry_Vanilla_Musk_1.png?v=1763032374&width=533",
+      url: "https://tryscent.co/en-gb/products/black-berry-vanilla-musk",
+      variant: 43530904240198,
+      price: 12999,
+      brand: "Yves Saint Laurent Black Opium",
+      brandKey: "ysl",
+      number: "132",
+      gender: "female",
+      inspiredBy: "Yves Saint Laurent Black Opium",
+      searchTerms: ["berry vanilla", "132", "ysl black opium", "berry", "vanilla"]
+    },
+    {
+      id: "tryscent_159",
+      title: "Ylang Rose - No. 159",
+      image: "https://tryscent.co/cdn/shop/files/YlangYlangRoseJasmine.png?v=1760618062&width=533",
+      url: "https://tryscent.co/en-gb/products/ylang-ylang-rose-jasmine-50-ml-1-7-fl-oz",
+      variant: 43530900766790,
+      price: 12999,
+      brand: "Dior J'adore",
+      brandKey: "dior",
+      number: "159",
+      gender: "female",
+      inspiredBy: "Dior J'adore",
+      searchTerms: ["ylang rose", "159", "dior j'adore", "ylang", "rose"]
+    },
+    {
+      id: "tryscent_193",
+      title: "Tobacco Dreams - No. 193",
+      image: "https://tryscent.co/cdn/shop/files/TobaccoDreams.png?v=1760617971&width=533",
+      url: "https://tryscent.co/en-gb/products/tobacco-dreams",
+      variant: 43573345517638,
+      price: 12999,
+      brand: "Tom Ford Tobacco Vanille",
+      brandKey: "tomford",
+      number: "193",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Tobacco Vanille",
+      searchTerms: ["tobacco dreams", "193", "tom ford tobacco vanille", "tobacco", "vanille"]
+    },
+    {
+      id: "tryscent_230",
+      title: "Ginger Amber - No. 230",
+      image: "https://tryscent.co/cdn/shop/files/Lemon_Ginger_Amber_Fixed.png?v=1763032479&width=533",
+      url: "https://tryscent.co/en-gb/products/bergamot-pepper-ambroxan",
+      variant: 43530906763334,
+      price: 12999,
+      brand: "Dior Sauvage",
+      brandKey: "dior",
+      number: "230",
+      gender: "male",
+      inspiredBy: "Dior Sauvage",
+      searchTerms: ["ginger amber", "230", "dior sauvage", "ginger", "amber"]
+    },
+    {
+      id: "tryscent_234",
+      title: "Apple Sandalwood - No. 234",
+      image: "https://tryscent.co/cdn/shop/files/apple_cinnamon_woods.png?v=1760538455&width=533",
+      url: "https://tryscent.co/en-gb/products/apple-cinnamon-sandalwood",
+      variant: 43530907254854,
+      price: 12999,
+      brand: "Hugo Boss Boss Bottled",
+      brandKey: "hugoboss",
+      number: "234",
+      gender: "male",
+      inspiredBy: "Hugo Boss Boss Bottled",
+      searchTerms: ["apple sandalwood", "234", "hugo boss boss bottled", "apple", "sandalwood"]
+    },
+    {
+      id: "tryscent_247",
+      title: "Lavender Mint - No. 247",
+      image: "https://tryscent.co/cdn/shop/files/lavender_mint_vanilla_1.png?v=1760554189&width=533",
+      url: "https://tryscent.co/en-gb/products/lavender-mint-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530905681990,
+      price: 12999,
+      brand: "Jean Paul Gaultier Le Male",
+      brandKey: "jpg",
+      number: "247",
+      gender: "male",
+      inspiredBy: "Jean Paul Gaultier Le Male",
+      searchTerms: ["lavender mint", "247", "jean paul gaultier le male", "lavender", "mint"]
+    },
+    {
+      id: "tryscent_248",
+      title: "Alpha Charm - No. 248",
+      image: "https://tryscent.co/cdn/shop/files/AlphaAttraction.png?v=1760614128&width=533",
+      url: "https://tryscent.co/en-gb/products/alpha-attraction",
+      variant: 43530886643782,
+      price: 12999,
+      brand: "Versace Eros",
+      brandKey: "versace",
+      number: "248",
+      gender: "male",
+      inspiredBy: "Versace Eros",
+      searchTerms: ["alpha charm", "248", "versace eros", "alpha", "charm"]
+    },
+    {
+      id: "tryscent_275",
+      title: "Cinnamon Leather - No. 275",
+      image: "https://tryscent.co/cdn/shop/files/CinnamonLeatherAmber.png?v=1760614606&width=533",
+      url: "https://tryscent.co/en-gb/products/cinnamon-leather-amber",
+      variant: 43530906435654,
+      price: 12999,
+      brand: "Paco Rabanne 1 Million",
+      brandKey: "pacorabanne",
+      number: "275",
+      gender: "male",
+      inspiredBy: "Paco Rabanne 1 Million",
+      searchTerms: ["cinnamon leather", "275", "paco rabanne 1 million", "cinnamon", "leather"]
+    },
+    {
+      id: "tryscent_283",
+      title: "Sage Cedar - No. 283",
+      image: "https://tryscent.co/cdn/shop/files/BergamotSageCedar.png?v=1760614424&width=533",
+      url: "https://tryscent.co/en-gb/products/bergamot-sage-cedar-50-ml",
+      variant: 43530906566726,
+      price: 12999,
+      brand: "Yves Saint Laurent Y",
+      brandKey: "ysl",
+      number: "283",
+      gender: "male",
+      inspiredBy: "Yves Saint Laurent Y",
+      searchTerms: ["sage cedar", "283", "ysl y", "sage", "cedar"]
+    },
+    {
+      id: "tryscent_286",
+      title: "Midnight Oud - No. 286M",
+      image: "https://tryscent.co/cdn/shop/files/MidnightOud.png?v=1760617060&width=533",
+      url: "https://tryscent.co/en-gb/products/midnight-oud",
+      variant: 43572609122374,
+      price: 12999,
+      brand: "Tom Ford Ombre Nomade",
+      brandKey: "tomford",
+      number: "286",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Ombre Nomade",
+      searchTerms: ["midnight oud", "286", "tom ford ombre nomade", "midnight", "oud"]
+    },
+    {
+      id: "tryscent_287",
+      title: "Royal Oud - No. 287",
+      image: "https://tryscent.co/cdn/shop/files/RoyalOud.png?v=1760617683&width=533",
+      url: "https://tryscent.co/en-gb/products/royal-oud",
+      variant: 43572889059398,
+      price: 12999,
+      brand: "Tom Ford Oud Wood",
+      brandKey: "tomford",
+      number: "287",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Oud Wood",
+      searchTerms: ["royal oud", "287", "tom ford oud wood", "royal", "oud"]
+    },
+    {
+      id: "tryscent_288",
+      title: "Pineapple Smoke - No. 288",
+      image: "https://tryscent.co/cdn/shop/files/pineapple_smoke_vanilla_1.png?v=1760542371&width=533",
+      url: "https://tryscent.co/en-gb/products/pineapple-smoke-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530905059398,
+      price: 12999,
+      brand: "Creed Aventus",
+      brandKey: "creed",
+      number: "288",
+      gender: "male",
+      inspiredBy: "Creed Aventus",
+      searchTerms: ["pineapple smoke", "288", "creed aventus", "pineapple", "smoke"]
+    },
+    {
+      id: "tryscent_350",
+      title: "Violet Fuel - No. 350",
+      image: "https://tryscent.co/cdn/shop/files/VioletLeatherGasoline.png?v=1760617994&width=533",
+      url: "https://tryscent.co/en-gb/products/violet-leather-gasoline",
+      variant: 43530891821126,
+      price: 12999,
+      brand: "Dior Fahrenheit",
+      brandKey: "dior",
+      number: "350",
+      gender: "male",
+      inspiredBy: "Dior Fahrenheit",
+      searchTerms: ["violet fuel", "350", "dior fahrenheit", "violet", "fuel"]
+    },
+    {
+      id: "tryscent_366",
+      title: "Spiced Woods - No. 366",
+      image: "https://tryscent.co/cdn/shop/files/Spiced_Vanilla_Woods_1.png?v=1763040499&width=533",
+      url: "https://tryscent.co/en-gb/products/blue-steel",
+      variant: 43530884481094,
+      price: 12999,
+      brand: "Dior Sauvage Elixir",
+      brandKey: "dior",
+      number: "366",
+      gender: "male",
+      inspiredBy: "Dior Sauvage Elixir",
+      searchTerms: ["spiced woods", "366", "dior sauvage elixir", "spiced", "woods"]
+    },
+    {
+      id: "tryscent_412",
+      title: "Iris Praline - No. 412",
+      image: "https://tryscent.co/cdn/shop/files/IrisPralineVanilla.png?v=1760616516&width=533",
+      url: "https://tryscent.co/en-gb/products/iris-praline-vanilla",
+      variant: 43530903191622,
+      price: 12999,
+      brand: "Lancôme La Vie Est Belle",
+      brandKey: "lancome",
+      number: "412",
+      gender: "female",
+      inspiredBy: "Lancôme La Vie Est Belle",
+      searchTerms: ["iris praline", "412", "lancome la vie est belle", "iris", "praline"]
+    },
+    {
+      id: "tryscent_437",
+      title: "Floral Amber - No. 437",
+      image: "https://tryscent.co/cdn/shop/files/WhiteFloralsAmber.png?v=1760618006&width=533",
+      url: "https://tryscent.co/en-gb/products/white-florals-amber-50-ml-1-7-fl-oz",
+      variant: 43530901422150,
+      price: 12999,
+      brand: "Prada Paradoxe",
+      brandKey: "prada",
+      number: "437",
+      gender: "female",
+      inspiredBy: "Prada Paradoxe",
+      searchTerms: ["floral amber", "437", "prada paradoxe", "floral", "amber"]
+    },
+    {
+      id: "tryscent_438",
+      title: "Cherry Vanilla - No. 438",
+      image: "https://tryscent.co/cdn/shop/files/sweet_cherry_vanilla_1.png?v=1760543242&width=533",
+      url: "https://tryscent.co/en-gb/products/sweet-cherry-vanilla-50-ml-1-7-fl-oz",
+      variant: 43530902011974,
+      price: 12999,
+      brand: "Tom Ford Lost Cherry",
+      brandKey: "tomford",
+      number: "438",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Lost Cherry",
+      searchTerms: ["cherry vanilla", "438", "tom ford lost cherry", "cherry", "vanilla"]
+    },
+    {
+      id: "tryscent_461",
+      title: "Cocoa Tonka - No. 461",
+      image: "https://tryscent.co/cdn/shop/files/JasmineCocoaTonka.png?v=1760616529&width=533",
+      url: "https://tryscent.co/en-gb/products/jasmine-cocoa-tonka",
+      variant: 43530903060550,
+      price: 12999,
+      brand: "Carolina Herrera Good Girl",
+      brandKey: "carolinaherrera",
+      number: "461",
+      gender: "female",
+      inspiredBy: "Carolina Herrera Good Girl",
+      searchTerms: ["cocoa tonka", "461", "carolina herrera good girl", "cocoa", "tonka"]
+    },
+    {
+      id: "tryscent_466",
+      title: "Saffron Amber - No. 466",
+      image: "https://tryscent.co/cdn/shop/files/rose_saffron_amber.png?v=1760542469&width=533",
+      url: "https://tryscent.co/en-gb/products/saffron-rose-amber-50-ml-1-7-fl-oz",
+      variant: 43530902339654,
+      price: 12999,
+      brand: "Maison Francis Kurkdjian Baccarat Rouge 540",
+      brandKey: "mfk",
+      number: "466",
+      gender: "unisex",
+      inspiredBy: "Maison Francis Kurkdjian Baccarat Rouge 540",
+      searchTerms: ["saffron amber", "466", "mfk baccarat rouge", "saffron", "amber"]
+    },
+    {
+      id: "tryscent_469",
+      title: "Pink Mirage - No. 469",
+      image: "https://tryscent.co/cdn/shop/files/PinkMirage.png?v=1760617557&width=533",
+      url: "https://tryscent.co/en-gb/products/pink-mirage",
+      variant: 43530902831174,
+      price: 12999,
+      brand: "Valentino Donna Born in Roma",
+      brandKey: "valentino",
+      number: "469",
+      gender: "female",
+      inspiredBy: "Valentino Donna Born in Roma",
+      searchTerms: ["pink mirage", "469", "valentino donna born in roma", "pink", "mirage"]
+    },
+    {
+      id: "tryscent_474",
+      title: "Leather Luxe - No. 474",
+      image: "https://tryscent.co/cdn/shop/files/LeatherLuxe.png?v=1760616731&width=533",
+      url: "https://tryscent.co/en-gb/products/leather-luxe",
+      variant: 43530879959110,
+      price: 12999,
+      brand: "Tom Ford Ombre Leather",
+      brandKey: "tomford",
+      number: "474",
+      gender: "unisex",
+      inspiredBy: "Tom Ford Ombre Leather",
+      searchTerms: ["leather luxe", "474", "tom ford ombre leather", "leather", "luxe"]
+    },
+    // Continue with all your other products from pages 2-7...
+    // Add the remaining products with correct variant IDs
   ];
 
   // ===== HARDCODED "DU KANSKE OCKSÅ GILLAR" REKOMMENDATIONER =====
@@ -200,6 +1378,26 @@
     '305': '305'   // Aqva (själv)
   };
 
+  // ===== VARIABLES =====
+  let currentView = 'search';
+  let currentSearchQuery = '';
+  let searchTimer = null;
+
+  // Get elements
+  const searchInput = document.getElementById('fcSearchInput');
+  const clearSearch = document.getElementById('fcClearSearch');
+  const steps = document.getElementById('fcSteps');
+  const content = document.getElementById('fcContent');
+  const searchPopup = document.getElementById('fcSearchPopup');
+  const stickyButton = document.getElementById('fcStickyButton');
+  
+  // Offer elements
+  const offerBanner = document.getElementById('fcOfferBanner');
+  const offerStatus = document.getElementById('fcOfferStatus');
+  const offerProgress = document.getElementById('fcOfferProgress');
+  const offerMessage = document.getElementById('fcOfferMessage');
+  const offerSubtext = document.getElementById('fcOfferSubtext');
+
   // ===== HITTA REKOMMENDERAD PRODUKT =====
   function getRecommendationForProduct(product) {
     if (!product || !product.number) return null;
@@ -232,7 +1430,7 @@
       .trim();
   }
 
-  // ===== UTFÖR SÖKNING MED FUZZY LOGIC =====
+  // ===== UTFÖR SÖKNING I VÅRA PRODUKTER =====
   function searchProducts(query) {
     if (!query || query.length < 1) return [];
     
@@ -333,7 +1531,7 @@
           <img class="fc-product-image" src="${product.image}" alt="${product.title}" loading="lazy">
           <div class="fc-product-title">${product.title}</div>
           <div class="fc-product-price">${priceFormatted}</div>
-          <button class="fc-add-to-cart" onclick="event.stopPropagation(); window.fcAddToCart('${product.url}', ${product.variant}, event)">Lägg i varukorg</button>
+          <button class="fc-add-to-cart" onclick="event.stopPropagation(); window.fcAddToCart(${product.variant}, event)">Lägg i varukorg</button>
           <div>
             <span class="fc-view-link" onclick="event.stopPropagation(); window.fcViewDetails('${product.url}')">Se detaljer</span>
           </div>
@@ -348,7 +1546,7 @@
     if (!perfume) return;
     
     currentView = 'detail';
-    document.getElementById('fcSteps').style.display = 'none';
+    steps.style.display = 'none';
     
     // Hitta matchande produkt från vår kollektion
     const ourProduct = hardcodedProducts.find(p => 
@@ -379,7 +1577,7 @@
           <div>
             <div class="fc-detailed-name">${perfume.name}</div>
             <div class="fc-detailed-brand">${perfume.brand}</div>
-            <div class="fc-detailed-meta">${perfume.year || ''} | ${perfume.gender}</div>
+            <div class="fc-detailed-meta">${perfume.year || ''} | ${perfume.gender === 'Male' ? 'Man' : perfume.gender === 'Female' ? 'Kvinna' : 'Unisex'}</div>
           </div>
         </div>
         
@@ -418,13 +1616,13 @@
       </div>
     `;
     
-    document.getElementById('fcContent').innerHTML = html;
+    content.innerHTML = html;
   };
 
   // ===== UTFÖR SÖKNING =====
   function performSearch(query) {
     currentSearchQuery = query;
-    document.getElementById('fcContent').innerHTML = '<div class="fc-loading">Söker...</div>';
+    content.innerHTML = '<div class="fc-loading">Söker...</div>';
     
     setTimeout(() => {
       const realPerfumes = searchRealPerfumes(query);
@@ -440,7 +1638,7 @@
           const p = result.perfume;
           html += `
             <div class="fc-real-perfume-item" onclick="window.fcShowPerfumeDetail('${p.id}')">
-              <img class="fc-real-perfume-image" src="${p.image}" alt="${p.name}" loading="lazy">
+              <img class="fc-real-perfume-image" src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/60x60?text=Parfym'">
               <div class="fc-real-perfume-info">
                 <div class="fc-real-perfume-name">${p.name}</div>
                 <div class="fc-real-perfume-brand">${p.brand}</div>
@@ -461,7 +1659,7 @@
           
           html += `
             <div class="fc-real-perfume-item" onclick="window.fcViewDetails('${p.url}')">
-              <img class="fc-real-perfume-image" src="${p.image}" alt="${p.title}" loading="lazy">
+              <img class="fc-real-perfume-image" src="${p.image}" alt="${p.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/60x60?text=TryScent'">
               <div class="fc-real-perfume-info">
                 <div class="fc-real-perfume-name">${p.title}</div>
                 <div class="fc-real-perfume-year">${priceFormatted}</div>
@@ -475,18 +1673,187 @@
         html = '<div class="fc-no-results">Inga produkter hittades för "' + query + '"</div>';
       }
       
-      document.getElementById('fcContent').innerHTML = html;
+      content.innerHTML = html;
     }, 300);
   }
 
-  // ===== RESTEN AV FUNKTIONERNA (lägg i varukorg, toggle, etc.) =====
-  // ... keep all your existing functions (fcAddToCart, fcViewDetails, fcToggleSearch, etc.)
-  // Make sure to update them to work with your variant IDs
+  // ===== SÖKHANTERARE =====
+  function handleSearch() {
+    const query = searchInput.value.trim();
+    
+    if (query.length < 1) {
+      if (currentView !== 'detail') {
+        steps.style.display = 'block';
+        content.innerHTML = '';
+      }
+      return;
+    }
+    
+    steps.style.display = 'none';
+    currentView = 'search';
+    
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => performSearch(query), 300);
+  }
 
-  // ===== INITIALISERA =====
+  // ===== LÄGG TILL I VARUKORG =====
+  window.fcAddToCart = function(variantId, event) {
+    if (event) event.stopPropagation();
+    
+    const btn = event.target;
+    const originalText = btn.innerText;
+    
+    btn.innerText = 'Lägger till...';
+    btn.disabled = true;
+    
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity: 1 })
+    })
+    .then(response => response.json())
+    .then(data => {
+      btn.innerText = '✓ Tillagd!';
+      btn.style.background = '#2E7D32';
+      
+      fetch('/cart.js')
+        .then(r => r.json())
+        .then(cart => {
+          updateOfferDisplay(cart.item_count);
+          showNotification(`✓ Tillagd! ${cart.item_count}/3 produkter för gratis present`);
+        });
+      
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = '#C41E3A';
+        btn.disabled = false;
+      }, 2000);
+    })
+    .catch(error => {
+      btn.innerText = 'Fel';
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.disabled = false;
+      }, 2000);
+    });
+  };
+
+  // ===== VISA NOTIS =====
+  function showNotification(message) {
+    let notification = document.querySelector('.fc-notification');
+    if (!notification) {
+      notification = document.createElement('div');
+      notification.className = 'fc-notification';
+      document.body.appendChild(notification);
+    }
+    
+    notification.textContent = message;
+    notification.classList.add('show');
+    
+    setTimeout(() => {
+      notification.classList.remove('show');
+    }, 2000);
+  }
+
+  // ===== UPPDATERA ERBJUDANDE =====
+  function updateOfferDisplay(itemCount) {
+    if (!offerStatus || !offerProgress || !offerMessage || !offerSubtext) return;
+    
+    const percentage = Math.min((itemCount / 3) * 100, 100);
+    offerProgress.style.width = percentage + '%';
+    
+    if (itemCount >= 3) {
+      offerStatus.textContent = '🎉 GRATIS!';
+      offerSubtext.textContent = 'Du kvalificerar dig för en gratis present!';
+      offerMessage.textContent = '🎉 Du kvalificerar dig för en GRATIS present!';
+      offerBanner.classList.add('qualified');
+    } else {
+      const needed = 3 - itemCount;
+      offerStatus.textContent = `${itemCount}/3`;
+      offerSubtext.textContent = `Lägg till ${needed} fler för en gratis present`;
+      offerMessage.textContent = `Lägg till ${needed} fler produkter för en gratis present`;
+      offerBanner.classList.remove('qualified');
+    }
+  }
+
+  // ===== HÄMTA VARUKORG =====
+  function fetchCartAndUpdate() {
+    return fetch('/cart.js')
+      .then(response => response.json())
+      .then(cart => {
+        updateOfferDisplay(cart.item_count);
+        return cart;
+      })
+      .catch(() => ({ item_count: 0 }));
+  }
+
+  // ===== VISA DETALJER =====
+  window.fcViewDetails = function(url) {
+    window.location.href = url;
+  };
+
+  // ===== GÅ TILLBAKA =====
+  window.fcGoBack = function() {
+    currentView = 'search';
+    if (currentSearchQuery.length >= 1) {
+      performSearch(currentSearchQuery);
+    } else {
+      steps.style.display = 'block';
+      content.innerHTML = '';
+    }
+  };
+
+  // ===== TOGGLE SÖKRUTA =====
+  window.fcToggleSearch = function() {
+    if (searchPopup.classList.contains('active')) {
+      searchPopup.classList.remove('active');
+    } else {
+      searchPopup.classList.add('active');
+      searchInput.focus();
+      fetchCartAndUpdate();
+    }
+  };
+
+  // ===== INIT =====
   document.addEventListener('DOMContentLoaded', function() {
-    // Your existing initialization code
+    if (searchInput) {
+      searchInput.addEventListener('keyup', handleSearch);
+    }
+    
+    if (clearSearch) {
+      clearSearch.addEventListener('click', function() {
+        searchInput.value = '';
+        searchInput.focus();
+        steps.style.display = 'block';
+        content.innerHTML = '';
+        currentView = 'search';
+      });
+    }
+    
+    setTimeout(fetchCartAndUpdate, 500);
+    
+    // Stäng vid klick utanför
+    document.addEventListener('click', function(event) {
+      if (searchPopup && !searchPopup.contains(event.target) && 
+          stickyButton && !stickyButton.contains(event.target) && 
+          searchPopup.classList.contains('active')) {
+        searchPopup.classList.remove('active');
+      }
+    });
+    
+    // Escape-tangent
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && searchPopup && searchPopup.classList.contains('active')) {
+        searchPopup.classList.remove('active');
+      }
+    });
+    
+    // Förhindra att klick inuti popupen stänger den
+    if (searchPopup) {
+      searchPopup.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    }
   });
-
 })();
 </script>
