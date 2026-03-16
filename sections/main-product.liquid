@@ -109,7 +109,7 @@
                   {% endif %}
                   {% if product.metafields.custom.scent_intensity != blank %}
                     <div class="flex items-center gap-[5px]">
-                    Scent Intensity Scale: <span class="text-highlight leading-4">Påstående</span>
+                    Doftintensitetsskala: <span class="text-highlight leading-4">Påstående</span>
                     {% assign intensity = product.metafields.custom.scent_intensity.value | times: 1 %}
                     <div class="flex gap-[5px] items-center justify-center ml-1">
                         {% for i in (1..3) %}
