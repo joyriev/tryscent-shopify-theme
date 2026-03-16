@@ -1210,7 +1210,101 @@
         "unbranded_description_with_fulfillment_weeks": {
           "one": "Expédié sous %{count} semaine",
           "other": "Expédié sous %{count} semaines"
-        }
+        },
+        "shipping_line_phone_label": "Numéro de téléphone portable (obligatoire)",
+        "shipping_line_phone": "Votre livreur peut utiliser ce numéro pour vous contacter.",
+        "shipping_line_delivery_phone_label": "Numéro de téléphone mobile",
+        "shipping_line_delivery_phone": "Vous pourriez être contacté pour des mises à jour concernant votre livraison.",
+        "optional_shipping_line_delivery_instructions_label": "Instructions de livraison (facultatif)",
+        "shipping_line_delivery_instructions": "Saisissez les informations nécessaires telles que les codes de porte ou les instructions de dépôt.",
+        "other_method": {
+          "zero": "Aucune autre méthode disponible",
+          "one": "%{count} autre méthode disponible sur"
+        },
+        "prime_not_available": {
+          "default": "La livraison Prime n'est pas disponible pour votre commande. Vos options de livraison ont été mises à jour."
+        },
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "Livraison gratuite pour %{count} de plus",
+            "other": "Livraison gratuite pour %{count} livraisons supplémentaires"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "Livraison gratuite pour %{count} livraison",
+            "other": "Livraison gratuite pour %{count} livraisons"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "Livraison gratuite pour %{count} livraisons supplémentaires, puis %{recurring_order_shipping_price}",
+            "other": "Livraison gratuite pour %{count} livraisons supplémentaires, puis %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "Livraison gratuite pour %{count} livraisons, puis %{recurring_order_shipping_price}",
+            "other": "Livraison gratuite pour %{count} livraisons, puis %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} livraison(s) supplémentaire(s) pour %{shipping_price}"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Livraison gratuite pour le premier %{cycle}, puis %{recurring_order_shipping_price}",
+            "other": "Livraison gratuite pour le premier %{cycle}, puis %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} pour %{count} livraisons supplémentaires",
+            "other": "%{shipping_price} pour %{count} livraisons supplémentaires (%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{shipping_price} pour %{count} livraison"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{shipping_price} pour %{count} livraisons supplémentaires, suivi de %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} pour %{count} livraisons supplémentaires (%{per_delivery_cost}), suivi de %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{shipping_price} pour %{count} livraison, suivi de %{recurring_order_shipping_price}"
+          },
+          "subscription_free_with_frequency_label": "Livraison gratuite %{delivery_frequency}",
+          "prepaid_delivery_frequency": {
+            "one": "pour %{count} livraison",
+            "other": "pour %{count} livraisons"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "tous les %{count} jours"
+            },
+            "week": {
+              "other": "toutes les %{count} semaines"
+            },
+            "month": {
+              "other": "tous les %{count} mois"
+            },
+            "year": {
+              "other": "tous les %{count} ans"
+            }
+          },
+          "initial_order_discounted": "Premier coût d'expédition %{discounted_shipping_cost}, puis %{frequency_description}",
+          "prepaid_initial_order_discounted": "Premier coût d'expédition %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Premier coût d'expédition %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Premier coût d'expédition %{discounted_shipping_price} %{prepaid_delivery_frequency}, puis %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Premier coût de livraison %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), puis %{shipping_price} %{billing_cycle}",
+          "recurring_order_shipping_price": "suivi de %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "other": "Premières %{count} commandes gratuites"
+          },
+          "free_for_first_n_order": {
+            "other": "Pour les %{count} premières commandes"
+          }
+        },
+        "one_time_purchase_shipping": "Expédition unique",
+        "shipping_information_required_notice": "Les informations de livraison sont obligatoires. {{link}}.",
+        "shipping_information_redirect_link": "Entrez vos informations ici",
+        "loading_progressive_rates": "Recherche de plus de tarifs…",
+        "no_other_methods_available": "Aucune autre méthode disponible",
+        "duties_and_taxes_options": {
+          "ddu_caption": "Des frais supplémentaires peuvent s'appliquer",
+          "ddp_caption": "Pas de frais supplémentaires à la livraison"
+        },
+        "shipping_used_as_billing_notice": "Cela servira également d'adresse de facturation pour cette commande.",
+        "address_update": "Mettre à jour l'adresse"
       }
     },
     "sentence": {
