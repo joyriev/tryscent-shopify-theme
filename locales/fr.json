@@ -3365,7 +3365,169 @@
       "signed_out_state": {
         "section_divider": "Plus de façons de se connecter",
         "alternate_divider": "OU",
-        "use_email_button": "Utiliser plutôt le courriel"
+        "use_email_button": "Utiliser plutôt le courriel",
+        "email_field_label": "Courriel"
+      },
+      "location_picker": {
+        "search_field_placeholder": "Recherche"
+      },
+      "aria_labels": {
+        "sign_in_with_email": "Se connecter avec courriel"
+      }
+    },
+    "B2B": {
+      "account_information": {
+        "company_card_name_label": "Nom de l'entreprise"
+      },
+      "locations": {
+        "contact_email": "Courriel",
+        "location_picker_label": "Nom du lieu",
+        "location_picker_accessibility_label": "Nom du lieu : {{locationName}}",
+        "net_payment_terms_description": "{{name}} : paiements dus dans {{numberOfDays}} jours",
+        "deposit_percentage": "acompte de {{percentage}}",
+        "pagination": {
+          "load_more_accessibility_label": "Charger plus d’emplacements"
+        },
+        "payment_terms": "Conditions de paiement",
+        "shipping_address_required": "Ajoutez une adresse de livraison à cet endroit pour commencer à passer des commandes.",
+        "tax_details_title": "Détails fiscaux",
+        "tax_id": "Numéro d'identification fiscale",
+        "multiple_tax_exemptions": "{{taxExemptionsCount}} de plus",
+        "taxes_none": "Aucun",
+        "tax_exemption_not_applicable": "N/D",
+        "tax_exemptions_modal_button_accessibility_label": "Voir toutes les exonérations fiscales"
+      },
+      "location_selection": {
+        "continue_to_store": "Continuer à enregistrer",
+        "description": "Si vous avez déjà des articles dans votre panier, changer de lieu pourrait affecter les prix et les quantités du panier.",
+        "description_switch_later": "Vous pouvez toujours changer plus tard",
+        "list_item_without_address_accessibility_label": "{{name}} : Pas d'adresse",
+        "list_loading_accessibility_message": "Chargement de la liste des emplacements",
+        "list_loading_address_accessibility_message": "Chargement de l'adresse pour {{locationName}}",
+        "list_loading_finished_accessibility_message": "La liste des emplacements a été chargée",
+        "loading_store_accessibility_message": "Aller au magasin",
+        "no_location_description": "Vous n'avez plus la permission de passer des commandes pour {{company}}. Vous pouvez toujours passer des commandes personnelles.",
+        "search": "Rechercher des lieux",
+        "search_location_title": "Choisissez un emplacement",
+        "selection_confirmation_button": "Choisissez l'emplacement",
+        "title": "Pour quel lieu achetez-vous ?",
+        "title_choose_location": "Choisissez un emplacement",
+        "try_new_search": "Essayez une nouvelle recherche"
+      },
+      "addresses": {
+        "add_shipping_address_button": "Ajouter une adresse de livraison",
+        "add_shipping_address_section_accessibility_label": "Ajouter une adresse de livraison",
+        "cancel_adding_shipping_address_accessibility_label": "Annuler l'ajout de l'adresse de livraison",
+        "save_new_shipping_address_accessibility_label": "Enregistrer l'adresse de livraison",
+        "shipping_address_card_title": "Adresse de livraison"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Tout cacher",
+          "show_all_accessibility_label": "Afficher toutes les commandes en cours de révision",
+          "show_all_orders_in_review": "Afficher toutes les commandes en cours de révision",
+          "show_less_orders_in_review": "Afficher moins de commandes en cours d'examen",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Vous n'avez aucune commande en attente",
+            "pending_orders": {
+              "one": "Vous avez {{count}} commande en attente",
+              "other": "Vous avez {{count}} commandes en attente"
+            },
+            "more_than_pagination_length": "Vous avez plus de {{count}} commandes en attente"
+          }
+        },
+        "order_list_column_headers_contact": "Contactez-nous",
+        "removed_company_contact_tooltip": "Retiré de l'entreprise"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Confirmé le {{date}} de la commande {{draftOrderName}}",
+        "loading": "Chargement des détails de la commande",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Votre paiement a {{count}} jour de retard",
+              "other": "Votre paiement a {{count}} jours de retard"
+            },
+            "banner_due": {
+              "one": "Votre paiement est dû dans {{count}} jour",
+              "other": "Votre paiement est dû dans {{count}} jours"
+            },
+            "banner_due_today_for_single_fulfillment": "Un paiement de {{amount}} est dû aujourd'hui. {{link}}",
+            "banner_due_today_for_multiple_fulfillments": "Paiement dû aujourd'hui pour {{count}} commandes à exécuter",
+            "banner_overdue_for_single_fulfillment": {
+              "one": "Le paiement de {{amount}} a {{count}} jour de retard. {{link}}",
+              "other": "Le paiement de {{amount}} a {{count}} jours de retard. {{link}}"
+            },
+            "banner_overdue_for_multiple_fulfillments": "Paiement dû pour {{count}} exécutions de commande",
+            "title_due_on_fulfillment": "Paiement dû à la réalisation",
+            "description_overdue": "Votre paiement est en retard.",
+            "description_partially_paid": "Cette commande a été partiellement réglée. Il vous reste un solde à payer.",
+            "description_authorized": "Votre mode de paiement sera débité à la date d'échéance, ou vous pouvez payer dès maintenant.",
+            "description_waiting_for_manual_payment": "Cette commande a un paiement en attente. Le solde sera mis à jour dès réception du paiement.",
+            "description_due_on_receipt": "Vous recevrez une facture lorsque le paiement sera dû.",
+            "description_due_on_receipt_partially_paid": "Cette commande a été partiellement réglée. Il vous reste un solde à payer. Vous recevrez une facture lorsque le paiement sera dû.",
+            "description_due_on_fulfillment": "Le paiement est dû une fois que tous les articles de cette commande ont été livrés.",
+            "description_due_on_fulfillment_partially_paid": "Cette commande a été partiellement réglée. Il vous reste un solde à payer. Le paiement est dû une fois que tous les articles de cette commande ont été livrés.",
+            "description_due_on_fulfillment_partially_paid_next": "Cette commande a été partiellement réglée. Il vous reste un solde à payer."
+          },
+          "draft": {
+            "description": "Les détails de paiement sont fixés lors de la confirmation de la commande.",
+            "title": "Paiement non encore dû",
+            "in_review": {
+              "description": "Les détails de paiement sont fixés lors de la confirmation de la commande.",
+              "title": "Paiement non encore dû"
+            },
+            "submitted": {
+              "description": "Soumettez le paiement pour confirmer cette commande.",
+              "deposit": {
+                "due_later": "Le solde est selon les conditions de {{translatedName}} et est dû le {{dueDate}}.",
+                "due_on_fulfillment": "Le solde est dû une fois que tous les articles de cette commande ont été livrés."
+              }
+            },
+            "deposit": {
+              "due_later": "{{depositAmount}} sera dû lors de la confirmation de votre commande. Le solde sera selon les conditions de {{translatedName}}.",
+              "due_on_fulfillment": "{{depositAmount}} sera dû lors de la confirmation de votre commande. Le solde sera dû à la livraison de la commande.",
+              "due_on_receipt": "{{depositAmount}} sera dû lors de la confirmation de votre commande. Le solde sera dû ultérieurement.",
+              "due_on_date": "{{depositAmount}} sera dû lors de la confirmation de votre commande. Le solde sera dû le {{dueDate}}."
+            }
+          },
+          "paid": {
+            "title_with_date": "Payé {{date}}",
+            "description": "Votre commande est entièrement réglée."
+          },
+          "refund": {
+            "description_full_refund": "Vous avez reçu un remboursement complet pour cette commande.",
+            "description_single_refund": "Vous avez reçu un remboursement partiel pour cette commande."
+          },
+          "canceled": {
+            "description": "Vous n'avez pas été facturé."
+          },
+          "due_date": "À rendre pour le {{date}}",
+          "pay_now_accessibility_label": "Payer maintenant la commande {{orderName}}"
+        },
+        "order_timeline": {
+          "expand_events_accessibility_label": "Afficher les détails du bon de commande provisoire"
+        },
+        "title": "Commander {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Cette méthode de paiement ne sera plus disponible pour les achats futurs à cet endroit.",
+          "description_with_replacement": "La suppression de ce mode de paiement affectera les paiements préautorisés pour ce lieu. Remplacez-le par un autre mode de paiement pour continuer à recevoir les commandes à venir."
+        },
+        "payment_details": {
+          "order_label": "Commander {{name}}",
+          "draft_label": "Brouillon de commande {{name}}"
+        }
+      },
+      "purchase_order_number": {
+        "close_modal_accessibility_label": "Fermer la fenêtre du numéro de commande",
+        "discard": "Jeter",
+        "discard_changes_modal_title": "Ignorer les modifications ?",
+        "edit_accessibility_label": "Modifier le numéro de commande",
+        "edit_modal_title": "Modifier le numéro de commande",
+        "empty_state": "Pas de numéro de bon de commande",
+        "modal_po_number_input_label": "Numéro de commande"
       }
     }
   }
