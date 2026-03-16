@@ -810,7 +810,26 @@
         "waiting_on_taxes_message": "Si vos impôts ne sont pas calculés dans les prochaines secondes, actualisez la page.",
         "waiting_on_taxes_notice": "Calcul des impôts",
         "payment_method": "Méthode de paiement",
-        "payment_method_rollup_accessibility_label": "Options de mode de paiement"
+        "payment_method_rollup_accessibility_label": "Options de mode de paiement",
+        "expired_payment_method": "La méthode de paiement sélectionnée a expiré",
+        "payment_method_update_failed": "La mise à jour du mode de paiement a échoué.",
+        "payment_method_incompatible_with_payment_terms": "La méthode de paiement est incompatible avec les conditions de paiement.",
+        "proposed_gateway_unavailable": "La passerelle de paiement proposée est indisponible",
+        "pay_in_installments_split_pay_short": "4 paiements de %{amount}",
+        "gift_cards_unavailable": "Votre carte-cadeau ne peut plus être utilisée pour cette commande et a été retirée",
+        "payment_flexibility_terms_id_mismatch": "Incompatibilité d'identifiant des conditions de souplesse de paiement",
+        "bank_account_type": {
+          "checking": "Vérification"
+        },
+        "new_bank_account_disclaimer": "En complétant votre commande, vous autorisez %{shop_name} à débiter le compte ci-dessous via ACH pour le montant et au moment indiqués.",
+        "bank_account_disclaimer": "Les paiements ACH peuvent prendre jusqu'à 4 jours ouvrables pour être traités.",
+        "bank_account_connect": "Connecter un compte bancaire",
+        "bank_account_missing": "Le compte bancaire doit être relié",
+        "bank_account_generic_error": "Impossible d'ajouter le compte bancaire. Veuillez réessayer plus tard.",
+        "separate_payments_label": "Vos articles proviennent de plusieurs magasins. Vous serez facturé en %{separate_payments_link}.",
+        "add_payment_method": "Ajouter un mode de paiement",
+        "add_new_payment_method": "Ajouter un nouveau mode de paiement",
+        "choose_new_payment_method": "Choisissez un nouveau mode de paiement"
       },
       "thank_you": {
         "thank_you_item_label": {
@@ -1567,6 +1586,47 @@
           "tax_credential_tr": "Numéro d'identité de la République de Turquie/TVA",
           "shipping_credential_tr": "Numéro d'identité de la République de Turquie/TVA"
         }
+      },
+      "billing": {
+        "billing_address_rollup_accessibility_label": "Facturer à des options",
+        "same_as_shipping": "Identique à l'adresse de livraison",
+        "address_more": "Plus d'actions pour cette adresse",
+        "address_edit": "Modifier l'adresse",
+        "address_delete": "Supprimer l'adresse",
+        "address_confirm": "Êtes-vous sûr de vouloir supprimer cette adresse de votre compte ?"
+      },
+      "company_location": {
+        "location_title": "Emplacement de l'entreprise",
+        "location_rollup_accessibility_label": "Options de localisation de l'entreprise"
+      },
+      "payment_summary": {
+        "express_payment_gateway_label": "Exprimer"
+      },
+      "field_errors": {
+        "handle_email_invalid": "Entrez une adresse courriel valide",
+        "email_invalid": "Entrez une adresse courriel valide",
+        "email_or_phone_blank": "Entrez un courriel ou un numéro de téléphone",
+        "email_or_phone_invalid": "Entrez un courriel valide ou un numéro de téléphone mobile",
+        "address_first_name_too_long": "Le prénom est trop long (le maximum est de 255 caractères)",
+        "address_first_name_contains_emojis": "Le prénom ne peut pas contenir d’émojis",
+        "address_first_name_contains_url": "Le prénom ne peut pas contenir une adresse web",
+        "address_last_name_blank": "Entrez un nom de famille",
+        "address_last_name_too_long": "Le nom de famille est trop long (le maximum est de 255 caractères)",
+        "address_last_name_contains_emojis": "Le nom de famille ne peut pas contenir d’émojis",
+        "address_last_name_contains_url": "Le nom de famille ne peut pas contenir une adresse web",
+        "address_last_name_contains_mathematical_symbols": "Le nom de famille ne peut pas contenir de symboles mathématiques",
+        "address_address1_blank": "Saisissez une adresse",
+        "address_address1_too_long": "La première ligne d'adresse est trop longue (le maximum est de 255 caractères)",
+        "address_address1_contains_emojis": "L'adresse1 ne peut pas contenir d'émojis",
+        "address_address1_contains_html_tags": "L'adresse1 ne peut pas contenir de balises HTML.",
+        "address_address1_contains_mathematical_symbols": "La première ligne d'adresse ne peut pas contenir de symboles mathématiques",
+        "address_address2_blank": "Entrez un appartement, une suite, etc.",
+        "address_address2_too_long": "La deuxième ligne d'adresse est trop longue (le maximum est de 255 caractères)",
+        "address_address2_contains_emojis": "Address2 ne peut pas contenir d’émojis",
+        "address_address2_contains_html_tags": "Address2 ne peut pas contenir de balises HTML.",
+        "address_address2_contains_mathematical_symbols": "La deuxième ligne d'adresse ne peut pas contenir de symboles mathématiques",
+        "address_city_too_long": "La ville est trop longue (le maximum est de 255 caractères)",
+        "address_city_contains_emojis": "La ville ne peut pas contenir d’émojis"
       }
     },
     "sentence": {
