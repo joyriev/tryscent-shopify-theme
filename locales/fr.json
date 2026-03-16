@@ -2609,12 +2609,236 @@
         "ounce": "once",
         "fluid_ounce": "fl oz",
         "pint": "Portugal",
-        "gallon": "fille"
+        "gallon": "fille",
+        "inch": "dans",
+        "foot": "pied"
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "L'adresse n'est pas prise en charge pour l'adhésion actuelle.",
+        "items_split_across_locations_unsupported": "La livraison Prime n'est pas disponible pour votre commande. Vos options de livraison ont été mises à jour."
+      },
+      "editor": {
+        "navigation": {
+          "store_logo_accessibility_label": "Aller à la boutique en ligne"
+        }
+      },
+      "tooltip": {
+        "accessibility_label_context": "Plus d'informations sur %{context}",
+        "additional_payment_methods": "Méthodes de paiement supplémentaires"
+      },
+      "too_many_requests": {
+        "title": "Trop de tentatives de paiement",
+        "body": "Veuillez patienter quelques minutes puis réessayez depuis votre panier.",
+        "return_to_cart": "Retour au panier"
+      },
+      "required_extensions": {
+        "errors": {
+          "interaction_required": "Une interaction avec l’extension est nécessaire pour finaliser le paiement."
+        }
+      },
+      "taxes": {
+        "tax_details": "Détails fiscaux supplémentaires",
+        "vat_number": {
+          "field": {
+            "tooltip": "Valide le numéro de TVA et applique automatiquement l'autoliquidation sur les commandes lorsque cela est applicable"
+          },
+          "vaulted": "Numéro de TVA : %{number}",
+          "badge": "Numéro de TVA : %{number}",
+          "domestic_order": "L'exonération de la taxe inversée s'applique uniquement aux commandes transfrontalières dans l'UE. La TVA normale est appliquée pour les commandes locales.",
+          "status": {
+            "invalid_format": {
+              "at": "Les numéros de TVA autrichiens contiennent AT et 9 caractères",
+              "be": "Les numéros de TVA belges contiennent BE et 10 caractères",
+              "bg": "Les numéros de TVA en Bulgarie contiennent BG et 9 à 10 caractères",
+              "hr": "Les numéros de TVA croates contiennent HR et 11 caractères",
+              "cy": "Les numéros de TVA chypriotes contiennent CY et 9 caractères",
+              "cz": "Les numéros de TVA de la République tchèque contiennent CZ et 8 à 10 caractères",
+              "dk": "Les numéros de TVA danois contiennent DK et 8 caractères",
+              "ee": "Les numéros de TVA estoniens contiennent EE et 9 caractères",
+              "fi": "Les numéros de TVA finlandais contiennent FI et 8 caractères",
+              "fr": "Les numéros de TVA français contiennent FR et 11 caractères",
+              "de": "Les numéros de TVA allemands contiennent DE et 9 caractères",
+              "gr": "Les numéros de TVA en Grèce contiennent EL et 9 caractères",
+              "hu": "Les numéros de TVA hongrois contiennent HU et 8 caractères",
+              "ie": "Les numéros de TVA irlandais contiennent IE et 8 à 9 caractères",
+              "it": "Les numéros de TVA italiens contiennent IT et 11 caractères",
+              "lv": "Les numéros de TVA en Lettonie contiennent LV et 11 caractères",
+              "lt": "Les numéros de TVA lituaniens contiennent LT et de 9 à 12 caractères",
+              "lu": "Les numéros de TVA luxembourgeois contiennent LU et 8 caractères",
+              "mt": "Les numéros de TVA de Malte contiennent MT et 8 caractères",
+              "nl": "Les numéros de TVA des Pays-Bas contiennent NL et 12 caractères",
+              "pl": "Les numéros de TVA en Pologne contiennent PL et 10 caractères",
+              "pt": "Les numéros de TVA portugais contiennent PT et 9 caractères",
+              "ro": "Les numéros de TVA en Roumanie contiennent RO et 10 caractères",
+              "sk": "Les numéros de TVA slovaques contiennent SK et 10 caractères",
+              "si": "Les numéros de TVA slovènes contiennent SI et 8 caractères",
+              "es": "Les numéros de TVA espagnols contiennent ES et 9 caractères",
+              "se": "Les numéros de TVA suédois contiennent SE et 12 caractères",
+              "gb": "Les numéros de TVA du Royaume-Uni contiennent GB ou XI et de 5 à 12 caractères"
+            },
+            "invalid_number": {
+              "at": "Entrez un numéro de TVA autrichien valide",
+              "be": "Entrez un numéro de TVA belge valide",
+              "bg": "Entrez un numéro de TVA bulgare valide",
+              "hr": "Entrez un numéro de TVA croate valide",
+              "cy": "Entrez un numéro de TVA chypriote valide",
+              "dk": "Entrez un numéro de TVA danois valide",
+              "fi": "Entrez un numéro de TVA finlandais valide",
+              "de": "Entrez un numéro de TVA allemand valide",
+              "hu": "Entrez un numéro de TVA hongrois valide",
+              "lv": "Entrez un numéro de TVA letton valide",
+              "lt": "Entrez un numéro de TVA lituanien valide",
+              "mt": "Entrez un numéro de TVA maltais valide",
+              "pt": "Entrez un numéro de TVA portugais valide",
+              "ro": "Entrez un numéro de TVA roumain valide",
+              "sk": "Entrez un numéro de TVA slovaque valide",
+              "si": "Entrez un numéro de TVA slovène valide",
+              "se": "Entrez un numéro de TVA suédois valide",
+              "gb": "Entrez un numéro de TVA valide du Royaume-Uni"
+            }
+          },
+          "accessibility": {
+            "status": {
+              "applied": "L'exonération de TVA a été appliquée",
+              "domestic": "Exonération de TVA non appliquée",
+              "invalid_number": "Exonération de TVA échouée",
+              "service_unavailable": "Impossible de vérifier l'exonération de TVA",
+              "service_error": "Impossible de vérifier l'exonération de TVA"
+            }
+          }
+        }
       }
     },
     "sentence": {
       "two_words_connector": "et",
       "last_word_connector": ", et"
+    },
+    "links": {
+      "powered_by_shopify": "Propulsé par Shopify"
+    },
+    "attributes": {
+      "email": "courriel",
+      "first_name": "prénom",
+      "last_name": "nom de famille",
+      "body": "corps"
+    },
+    "addresses": {
+      "zip_code": "Code postal",
+      "pincode": "Code PIN",
+      "confirm": "Êtes-vous sûr de vouloir supprimer cette adresse ?"
+    },
+    "collections": {
+      "sorting": {
+        "az": "Par ordre alphabétique, de A à Z",
+        "za": "Par ordre alphabétique, de Z à A",
+        "price_ascending": "Prix, du plus bas au plus élevé",
+        "price_descending": "Prix, du plus élevé au plus bas",
+        "date_ascending": "Date, du plus ancien au plus récent",
+        "date_descending": "Date, du plus récent au plus ancien"
+      }
+    },
+    "errors": {
+      "blank": "ne peut pas être vide",
+      "blocked_address": "Cet emplacement n'est pas pris en charge",
+      "credit_card_session_expired": "L'autorisation de la carte de crédit a expiré, veuillez saisir de nouveau vos informations de paiement. Votre carte n'a pas été débitée.",
+      "empty": "ne peut pas être vide",
+      "invalid_email": "doit être une adresse courriel valide",
+      "discount_disabled": "Cette remise a été désactivée",
+      "discount_expired": "Cette remise n'est plus valable",
+      "discount_limit_reached": "Cette remise a atteint sa limite d'utilisation",
+      "discount_not_found": "Impossible de trouver une remise valide correspondant au code saisi",
+      "customer_already_used_once_per_customer_discount_notice": "Cette remise a atteint sa limite d'utilisation",
+      "gift_card_already_applied": "Le code a déjà été appliqué à votre commande",
+      "gift_card_currency_mismatch": "Votre carte cadeau est en %{gift_card_currency}. Contactez-nous pour la faire réémettre en %{checkout_currency}.",
+      "gift_card_depleted": "Il ne reste plus de crédit sur cette carte-cadeau",
+      "gift_card_disabled": "La carte-cadeau est désactivée",
+      "gift_card_expired": "La carte-cadeau a expiré",
+      "bad_domain": "contient un nom de domaine invalide",
+      "taken": "a déjà été pris",
+      "invalid_province_in_country": "n'est pas une province valide en %{country}",
+      "invalid_state_in_country": "n'est pas un état valide dans %{country}",
+      "invalid_region_in_country": "n'est pas une région valide dans %{country}",
+      "full_name_required": "Entrez un prénom et un nom de famille",
+      "invalid_for_card_type": "n'est pas valide",
+      "invalid_type": "désolé, nous n'acceptons pas les cartes de ce type",
+      "invalid_format": "le format n'est pas valide",
+      "expired": "a expiré",
+      "invalid_start_date_or_issue_number_for_debit": "une date de début valide ou un numéro d'édition est requis",
+      "reset_password_html": "Cette adresse courriel est déjà associée à un compte. Si ce compte vous appartient, vous pouvez <a href=\"/account/login#recover\">réinitialiser votre mot de passe</a>",
+      "verify_email": "Nous avons envoyé un e-mail à %{customer_email}, veuillez cliquer sur le lien inclus pour vérifier votre adresse e-mail.",
+      "product_not_available": "le produit n'est pas publié pour ce client.",
+      "shop_404": {
+        "title": "Créez un site de commerce en ligne et vendez sur Internet ! Logiciel de commerce électronique par Shopify",
+        "heros": {
+          "store_unavailable": "Désolé, ce magasin est actuellement indisponible.",
+          "store_not_exist": "Ce magasin n'existe pas.",
+          "no_storefront": "Cette boutique n'a pas encore de site web."
+        },
+        "links": {
+          "explore_other_stores": "Explorer d'autres magasins",
+          "start_free_trial": "Commencez un essai gratuit"
+        },
+        "owner_ctas": {
+          "header": "Êtes-vous le propriétaire du magasin ?",
+          "fix_domain": "Terminez la configuration de votre nouvelle adresse web en vous rendant sur %{domain_settings_link}. Cliquez sur « Connecter le domaine » et saisissez : %{domain}.<br>Si vous avez des difficultés à accéder à votre boutique, essayez la page %{forgot_your_store_link}.",
+          "forgot_your_store_link_text": "avez-vous oublié votre magasin",
+          "add_storefront": "Vous pouvez configurer votre site web en ajoutant le canal Boutique en ligne dans votre %{admin_link}. Si vous avez des difficultés à accéder à votre boutique, essayez la page %{forgot_your_store_link}.",
+          "admin_link_text": "administrateur"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "caption": "Obtenez les fonctionnalités dont vous avez besoin pour gérer votre magasin de détail, que vous débutiez ou que vous soyez en pleine expansion.",
+            "link_text": "Commencer l'essai gratuit"
+          },
+          "open_a_store": {
+            "header": "Ouvrir une nouvelle boutique Shopify",
+            "caption": "Commencez un essai gratuit de 3 jours, puis poursuivez pour 1 $/mois pendant les 3 mois suivants.",
+            "link_text": "Inscrivez-vous maintenant"
+          },
+          "editions": {
+            "header": "Découvrez les Éditions Shopify",
+            "caption": "Avec plus de 100 mises à jour de produits, vous pouvez être plus productif et créatif, et plus puissant dans le commerce que vous ne l'auriez jamais imaginé.",
+            "link_text": "Explorez les dernières éditions"
+          },
+          "store_owner": {
+            "header": "Êtes-vous le propriétaire du magasin ?",
+            "caption": "Vous avez des difficultés à accéder à votre boutique ? Essayez la fonctionnalité %{forgot_your_store_link}. Si vous souhaitez réactiver votre boutique, contactez %{shopify_support_link}.",
+            "shopify_support_link_text": "Assistance Shopify"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Erreur de réinitialisation du mot de passe",
+        "subscribe_error": "Erreur d'abonnement",
+        "no_account_found": "Aucun compte trouvé avec cet courriel.",
+        "invalid_credentials": "Adresse courriel ou mot de passe incorrect.",
+        "denylisted_reset_password": "Votre compte n'a pas pu être consulté car le mot de passe actuel n'est pas sûr. Vous recevrez un courriel pour mettre à jour votre mot de passe.",
+        "signup_disabled": "La création de compte client a été désactivée."
+      },
+      "address": {
+        "updated": "Adresse mise à jour avec succès.",
+        "created": "Adresse créée avec succès",
+        "deleted": "Adresse supprimée avec succès"
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Ajouté %{delta}",
+          "increment_item": "Ajouté %{delta}",
+          "decrement_item": "Supprimé %{delta} sur %{total}",
+          "decrement_fulfilled_line_item": "Restitué %{delta} sur %{total}",
+          "decrement_return_line_item": "Retiré %{delta} du retour"
+        }
+      },
+      "order": {
+        "financial_status": {
+          "authorized": "Autorisé",
+          "pending": "En attente",
+          "paid": "Payé",
+          "unpaid": "Non payé"
+        }
+      }
     }
   },
   "customer_accounts": {
