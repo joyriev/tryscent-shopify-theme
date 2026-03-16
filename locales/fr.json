@@ -3071,7 +3071,155 @@
       "order_status": {
         "preparing_for_shipping_label": "Préparation à l'expédition",
         "ready_for_pickup_label": "Prêt à être retiré",
-        "ready_for_pickup_description": "Ces articles sont prêts à être retirés. Veuillez apporter votre confirmation de commande lorsque vous venez chercher votre commande."
+        "ready_for_pickup_description": "Ces articles sont prêts à être retirés. Veuillez apporter votre confirmation de commande lorsque vous venez chercher votre commande.",
+        "ready_for_pickup_location": "Votre commande est prête à être retirée à l'emplacement",
+        "picked_up_label": "Ramassé",
+        "canceled_label": "Annulé",
+        "come_back": "Revenez sur cette page pour des mises à jour concernant l'état de votre envoi.",
+        "company_tracking_number": "Numéro de suivi {{company}} :",
+        "confirmed_label": "Confirmé",
+        "confirmed_description_pickup": "Vous recevrez un courriel lorsque votre commande sera prête à être retirée.",
+        "confirmed_description_digital": "Vous recevrez un courriel lorsque votre commande sera prête.",
+        "confirmed_description_gift_card_text": "Vous recevrez un message texte lorsque votre commande sera prête.",
+        "complete_label": "Terminer",
+        "delivered_label": "Livré",
+        "delivered_description_gift_card": {
+          "one": "La carte-cadeau a été envoyée par courriel.",
+          "other": "Les cartes-cadeaux ont été envoyées par courriel."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "La carte-cadeau a été envoyée par message texte.",
+          "other": "Les cartes-cadeaux ont été envoyées par message texte."
+        },
+        "gift_card_label": {
+          "one": "Carte cadeau"
+        },
+        "gift_card_resend_button": {
+          "one": "Renvoyer la carte-cadeau",
+          "other": "Renvoyer les cartes-cadeaux"
+        },
+        "gift_resend_failure": {
+          "one": "Un problème est survenu lors de la réexpédition de votre carte-cadeau. Veuillez réessayer ou nous contacter.",
+          "other": "Un problème est survenu lors de la réexpédition de vos cartes-cadeaux. Veuillez réessayer ou nous contacter."
+        },
+        "confirmed_gift_card_additional_description": {
+          "one": "La carte-cadeau sera envoyée dans un courriel séparé.",
+          "other": "Chaque carte-cadeau sera envoyée dans un courriel distinct."
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "one": "La carte-cadeau sera envoyée dans un message séparé.",
+          "other": "Chaque carte-cadeau sera envoyée dans un texte séparé."
+        },
+        "status_timestamp": "Mis à jour le {{date}}",
+        "estimated_delivery": "Prévu pour {{date}}",
+        "expected_by": "Prévu pour le {{date}}",
+        "was_expected_by": "Était attendu pour le {{date}}",
+        "buy_with_prime_logo_accessibility_label": "Logo Amazon Acheter avec Prime",
+        "last_updated": "Dernière mise à jour {{date}}",
+        "multiple_shipments_label": "Expéditions multiples",
+        "multiple_statuses_label": "Plusieurs statuts de commande",
+        "no_tracking_number": "Il n’y a pas de numéro de suivi pour cet envoi.",
+        "on_its_way_label": "En route",
+        "resume_tracking": "Suivi du curriculum vitae",
+        "submitted_label": "Soumis",
+        "submitted_description": "Vérifiez les détails de la commande et du paiement.",
+        "there_was_a_problem_label": "Il y a eu un problème",
+        "view_order_for_details": "Voir les détails de la commande",
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "new_window_disclaimer": "(s’ouvre dans une nouvelle fenêtre)"
+          }
+        },
+        "delivery_promise_v2": {
+          "promise_line": {
+            "not_delivered_by_label": "Livré après le {{date}}",
+            "download_shop_app_button_label": "Télécharger Boutique pour suivre",
+            "track_with_shop_button_label": "Suivre avec Boutique",
+            "claim_shop_cash_button_label": "Réclamer l'argent du magasin"
+          },
+          "details_modal": {
+            "active_delivery_guarantee_label": "Livraison avant le {{date}}",
+            "expired_delivery_guarantee_description": "La garantie de 30 jours du Promesse Boutique pour cette commande a expiré.",
+            "order_includes_guarantees_label": "Votre commande inclut {{deliveryAgreementsCount}} garanties",
+            "order_includes_guarantees_description": "Shop Promise garantit une livraison rapide et fiable. Réclamez Shop Cash si votre commande arrive après le {{date}}.",
+            "delivered_after_label": "Livré après le {{date}}",
+            "delivered_after_description": "Parce que votre commande est arrivée en retard, vous pouvez réclamer {{amount}} de Shop Cash.",
+            "claimed_shop_cash_description": "Parce que cette commande est arrivée en retard, vous avez réclamé {{amount}} Shop Cash.",
+            "eligible_to_claim_shop_cash_description": "Parce que votre commande est arrivée en retard, vous pouvez réclamer {{amount}} de Shop Cash.",
+            "claim_shop_cash_button_label": "Réclamer l'argent du magasin",
+            "view_balance_in_shop_button_label": "Voir le solde dans la boutique",
+            "scan_to_claim_shop_cash_label": "Scannez pour réclamer {{amount}} en argent boutique"
+          }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "Livraison garantie par",
+            "not_delivered_by_label": "Non livré avant le {{date}}"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "Réclamez votre argent boutique",
+            "no_shop_app_label": "{{appDownloadLink}} pour réclamer des Shop Cash",
+            "download_shop_app_label": "Boutique de téléchargement"
+          },
+          "details_modal": {
+            "title": "Livraison garantie par",
+            "delivery_guarantee_label": "Garantie de livraison",
+            "delivery_by_label": "Livraison avant le {{date}}",
+            "delivery_guaranteed_by_label": "Livraison garantie avant le {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "La Promesse Boutique garantit une livraison rapide et fiable. Réclamez des Bons Boutique si votre commande arrive en retard.",
+              "may_be_eligible_not_authorized_label": "Vous pourriez avoir droit à un remboursement Shop Cash car cette commande est arrivée en retard. Connectez-vous pour voir les détails.",
+              "redeemed_label": "Vous avez déjà réclamé de l'argent boutique car cette commande est arrivée en retard.",
+              "expired_label": "Cette commande n'est pas éligible à une réclamation pour retard de livraison car la garantie de 30 jours est expirée.",
+              "no_shop_cash_label": "Cette commande n'est pas éligible à une réclamation pour retard de livraison car elle n'a pas été réglée avec Shop Pay.",
+              "no_longer_guaranteed_label": "Ces articles ne bénéficient plus d'une garantie de livraison.",
+              "claim_shop_cash_title": "Scannez pour réclamer {{amount}} en Shop Cash",
+              "claim_shop_cash_description": "Vous pouvez utiliser votre Argent Boutique pour vos achats futurs dans l'application Boutique."
+            }
+          }
+        }
+      },
+      "status_mark_as_delivered": "Marquer comme livré",
+      "fulfillment_status_title": "Statut d'exécution : {{status}}",
+      "buy_again": "Acheter de nouveau",
+      "group_title_label": "Fait partie de : {{groupTitle}}",
+      "group_title_label_with_parent": "Pour : {{groupTitle}}"
+    },
+    "order_details": {
+      "shipment_timeline": {
+        "expand_events_accessibility_label": "Afficher les détails de l'expédition de la commande",
+        "hide_events_accessibility_label": "Masquer les détails de l'expédition de la commande"
+      },
+      "addresses_section_title": "Facturation et livraison",
+      "contact": "Contactez-nous",
+      "group_title_label": "Fait partie de : {{groupTitle}}",
+      "group_title_label_with_parent": "Pour : {{groupTitle}}",
+      "grouped_view_components": {
+        "expand_line_items": "Afficher {{count}} articles",
+        "collapse_line_items": "Masquer {{count}} articles",
+        "line_item_summary_accessibility_label": "{{productTitle}}, Quantité : {{refundableQuantity}}",
+        "line_item_summary_list_accessibility_label": "Articles dans le pack {{productTitle}}"
+      },
+      "discount": "Remise",
+      "discount_order_stacking": {
+        "one": "Remise sur commande",
+        "other": "Remises sur commande"
+      },
+      "price_before_discount_accessibility_label": "Prix d'origine",
+      "compare_at_sale": "Soldes ({{saleAmount}})",
+      "hide_items": "Cacher les articles",
+      "loading": "Chargement des détails de la commande",
+      "image_gallery": {
+        "product_name_and_quantity": "Quantité de {{productName}} : {{quantity}}",
+        "next": "Afficher les éléments suivants",
+        "load_more_items": {
+          "one": "Charger {{count}} articles de plus",
+          "other": "Charger {{count}} articles de plus"
+        }
+      },
+      "mobile_summary_toggle_button": {
+        "open": "Afficher le récapitulatif de la commande",
+        "closed": "Masquer le récapitulatif de la commande"
       }
     }
   }
