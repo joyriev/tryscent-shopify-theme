@@ -850,7 +850,227 @@
         "email_or_phone_placeholder": "Adresse courriel ou numéro de téléphone mobile",
         "optional_first_name_label": "Prénom (facultatif)",
         "last_name_label": "Nom de famille",
-        "company_attention_label": "Entreprise/Attention"
+        "company_attention_label": "Entreprise/Attention",
+        "optional_company_attention_label": "Entreprise/Attention (facultatif)",
+        "optional_company_label": "Entreprise (facultatif)",
+        "optional_address2_label": "Appartement, suite, etc. (facultatif)",
+        "country_label": "Pays/Région",
+        "country_code": "Code pays/région",
+        "region_none": "Aucun sélectionné",
+        "phone_country_code_label": "Indicatif téléphonique international",
+        "optional_phone_label": "Téléphone (facultatif)",
+        "phone_tooltip": "Au cas où nous aurions besoin de vous contacter au sujet de votre commande",
+        "zip_code_label": "Code postal",
+        "zip_code_placeholder": "Code postal",
+        "pincode_label": "Code PIN",
+        "pincode_placeholder": "Code PIN",
+        "civic_number_warning": "Ajoutez un numéro de maison si vous en avez un",
+        "optional_last_name_label": "Nom de famille (facultatif)",
+        "different_shipping_address_label": "Expédier à une autre adresse",
+        "different_shipping_address_text": "Utilisez une adresse unique pour cette commande",
+        "change_company_location_link_label": "Changer l'emplacement de l'entreprise",
+        "ship_to_company": "Livrer à {{companyName}}"
+      },
+      "delivery_options": {
+        "ship_to_address": "Expédier à l'adresse",
+        "shipping_address": "Adresse de livraison",
+        "pick_up": "Ramasser",
+        "pick_up_from_store": "Retrait en magasin",
+        "pick_up_locations": "Lieux de retrait",
+        "pick_up_in_one_hour": "Généralement prêt en 1 heure",
+        "pick_up_in_two_hours": "Habituellement prêt en 2 heures",
+        "pick_up_in_four_hours": "Généralement prêt en 4 heures",
+        "pick_up_in_twenty_four_hours": "Généralement prêt en 24 heures",
+        "pick_up_in_two_to_four_days": "Généralement prêt en 2 à 4 jours",
+        "pick_up_in_five_or_more_days": "Généralement prêt en plus de 5 jours",
+        "pick_up_in_zero_to_two_hours": "Prêt à être retiré dans 2 heures",
+        "pick_up_in_two_to_four_hours": "Prêt à être retiré dans 4 heures",
+        "pick_up_immediately": "Prêt à être retiré maintenant",
+        "pick_up_next_day": "Prêt à être retiré le lendemain",
+        "pickup_point_method_definition": "Livrer au point de retrait",
+        "company_location_no_address_banner": "Les commandes expédiées vers des lieux sans adresse seront soumises à un examen.",
+        "none_method_definition": "Pas de livraison",
+        "subscription_pickup_information": "Cette méthode de livraison s'appliquera à tous les articles de cette commande ainsi qu'à toutes les commandes futures pour cet abonnement."
+      },
+      "customer_account": {
+        "not_user_label": "Pas %{first_name} ?",
+        "have_an_account_label": "Vous avez un compte ?",
+        "save_my_information_label": "Enregistrez cette information pour la prochaine fois",
+        "invalid_address": "L'adresse sélectionnée est invalide. %{update_address_link} ou choisissez une autre adresse.",
+        "incomplete_address": "L'adresse sélectionnée est incomplète. %{update_address_link} ou choisissez une autre adresse.",
+        "rollup_accessibility_label": "Options de compte",
+        "invalid_shipping_method_summary": "Sélectionnez une adresse de livraison valide pour voir les modes de livraison disponibles",
+        "saved_address_option_description": {
+          "one": "Vous avez {{count}} adresse enregistrée.",
+          "other": "Vous avez {{count}} adresses enregistrées."
+        }
+      },
+      "remote_merchandise_only": {
+        "remote_only_notice": "Ces articles sont vendus et expédiés par d'autres magasins. Effectuez le paiement auprès de chaque magasin pour finaliser votre achat.",
+        "return_to_store_label": "Retour au magasin",
+        "detail_item_label": {
+          "one": "{{count}} article",
+          "other": "{{count}} articles"
+        },
+        "checkout_on_shop_label": "Passer à la caisse sur %{shop_name}",
+        "single_shop_transition": "Redirection vers %{advertiser} pour finaliser votre achat."
+      },
+      "stock": {
+        "page_title": "Problèmes de stock",
+        "title": "Rupture de stock",
+        "reduced_with_quantity_label": "Il ne reste que %{quantity_available}",
+        "go_back_to_cart_button_label": "Retourner à mon panier",
+        "remove": "Supprimer",
+        "return_to_store_label": "Retour au magasin",
+        "continue_cta_label": "Continuer le paiement",
+        "item_label": {
+          "one": "{{count}} article",
+          "other": "{{count}} articles"
+        },
+        "quantity_update": {
+          "description": "Les quantités disponibles pour ces articles ont changé et sont mises à jour dans votre panier."
+        },
+        "unpurchasable_product": {
+          "title": "Produit non achetable",
+          "message": "Ces articles ne sont pas disponibles pour les commandes interentreprises.",
+          "status_column_header": "Non disponible"
+        },
+        "unpurchasable_product_generic": {
+          "title": "Produit non achetable",
+          "status_column_header": "Non disponible"
+        },
+        "unfulfillable_product": {
+          "title": "Livraison non disponible",
+          "message": {
+            "one": "%{delivery_method} n'est plus disponible pour cet article.",
+            "other": "%{delivery_method} n'est plus disponible pour ces articles."
+          },
+          "default_message": {
+            "one": "La méthode de livraison choisie n'est plus disponible pour cet article.",
+            "other": "La méthode de livraison choisie n'est plus disponible pour ces articles."
+          }
+        },
+        "unshippable_product": {
+          "header": {
+            "one": "Aucune livraison disponible pour %{count} article",
+            "other": "Aucune livraison disponible pour %{count} articles"
+          },
+          "message": {
+            "one": "Cet article sera retiré de votre panier car aucune méthode de livraison n'est disponible pour votre adresse.",
+            "other": "Ces articles seront retirés de votre panier car aucun mode de livraison n'est disponible pour votre adresse."
+          },
+          "status_column_header": "Pas de livraison"
+        },
+        "price_update": {
+          "title": "Mise à jour des prix",
+          "description": "Les prix de ces articles ont changé et sont mis à jour dans votre panier.",
+          "updated_price": "Prix mis à jour"
+        },
+        "price_and_quantity_update": {
+          "title": "Mise à jour du prix et de la quantité",
+          "description": "Les prix et les quantités disponibles pour ces articles ont changé et sont mis à jour dans votre panier."
+        },
+        "out_of_stock_in_context_label": "Ce produit n'est pas disponible dans votre pays/région."
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Produit indisponible",
+          "other": "Produits indisponibles"
+        },
+        "products_not_available": {
+          "one": "Ce produit sera retiré de votre panier car il n'est pas disponible dans votre pays/région.",
+          "other": "Ces produits seront retirés de votre panier car ils ne sont pas disponibles dans votre pays/région."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Ce produit n'est pas disponible dans votre pays/région."
+        },
+        "unavailable_label": "Indisponible"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Ce produit n'est pas disponible pour la livraison à %{location_name}.",
+          "some_products_other": "Ces produits ne sont pas disponibles pour la livraison à %{location_name}.",
+          "all_products_one": "Le produit dans votre panier n'est pas disponible pour la livraison à %{location_name}.",
+          "all_products_other": "Les produits dans votre panier ne sont pas disponibles pour la livraison à %{location_name}."
+        },
+        "change_address_only": "Changez l'adresse de livraison pour continuer.",
+        "change_address_or_remove": "Modifier l'adresse de livraison ou %{remove_action}.",
+        "remove_items_action": {
+          "one": "supprimer l'article indisponible"
+        },
+        "empty_cart_action": "vider le panier et retourner au magasin"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Aucune livraison disponible pour %{count} article",
+            "other": "Aucune livraison disponible pour %{count} articles"
+          },
+          "message": {
+            "one": "Cet article sera retiré de votre panier car aucune méthode de livraison n'est disponible pour votre adresse.",
+            "other": "Ces articles seront retirés de votre panier car aucun mode de livraison n'est disponible pour votre adresse."
+          },
+          "label": "Pas de livraison"
+        }
+      },
+      "order_summary": {
+        "group_title_label": "Fait partie de \"%{group_title}\"",
+        "for_add_on": "Pour : %{group_title}",
+        "from_other_stores_heading": "D'autres magasins",
+        "from_multiple_stores_heading": "De plusieurs magasins",
+        "number_items": {
+          "one": "%{count} article",
+          "other": "%{count} articles"
+        },
+        "view_all_items": {
+          "one": "Voir %{count} article",
+          "other": "Voir les %{count} articles"
+        },
+        "more_items_modal": {
+          "search_item": "Recherche",
+          "empty_results": "Aucun résultat trouvé pour \"%{searchText}\". Vérifiez l'orthographe ou utilisez un mot ou une expression différente."
+        },
+        "order_name_label": "Commander %{name}",
+        "shopping_cart_label": "Panier d'achat",
+        "discount_title": "Remise",
+        "discount_title_stacking": {
+          "one": "Remise",
+          "other": "Rabais"
+        },
+        "discount_order_stacking": {
+          "one": "Remise sur commande",
+          "other": "Remises sur commande"
+        },
+        "discount_label": "Code de réduction",
+        "discount_not_found": "Impossible de trouver une remise valide correspondant au code saisi",
+        "discount_placeholder": "Code de réduction",
+        "discount_code_allocations_mismatch": "Votre code de réduction <strong style=\"text-transform:uppercase\">%{code}</strong> a changé. Vérifiez votre panier et réessayez.",
+        "order_discounts_apply_to_local_shop": "Les remises de commande s'appliquent uniquement aux articles de %{shop_name}",
+        "gift_card_applied": "Carte-cadeau appliquée",
+        "enter_shipping_address": "Saisir l'adresse de livraison",
+        "gift_card_title": "Carte cadeau",
+        "gift_card_label": "Carte cadeau",
+        "gift_card_placeholder": "Carte cadeau",
+        "gift_card_and_discount_title": "Code de réduction ou carte cadeau",
+        "gift_card_and_discount_label": "Code de réduction ou carte cadeau",
+        "gift_card_and_discount_placeholder": "Code de réduction ou carte cadeau",
+        "remove_gift_card_label": "Carte-cadeau claire",
+        "remove_discount_label": "Supprimer la remise",
+        "return_restocking_fee_label": "Frais de réapprovisionnement",
+        "return_shipping_fee_label": "Retour de l'envoi",
+        "free_shipping_discount_label": "Livraison gratuite",
+        "apply_discount_button_label": "Appliquer",
+        "applied_discount_message": "%{amount} de réduction sur le prix total de la commande",
+        "discount_has_been_applied": "La remise a été appliquée",
+        "discount_has_been_removed": "La remise a été supprimée",
+        "gift_card_subscriptions_notice": "Les cartes-cadeaux ne s'appliqueront qu'à votre premier paiement",
+        "discount_already_applied": "Une remise a été appliquée à cette commande. Vous ne pouvez pas ajouter une autre remise.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> code de réduction n’est pas valide pour les articles dans votre panier",
+        "discount_requires_customer_notice": "Saisissez vos informations de livraison pour appliquer le code de réduction <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> code de réduction n’est pas disponible pour vous en ce moment",
+        "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> code de réduction réservé aux clients éligibles",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> code de réduction n’est pas disponible pour votre adresse de livraison",
+        "customer_already_used_once_per_customer_discount_notice": "Le code de réduction <strong style=\"text-transform:uppercase\">%{code}</strong> a déjà été utilisé"
       }
     },
     "sentence": {
