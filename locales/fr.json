@@ -551,12 +551,31 @@
         "return_to_cart": "Retourner au panier"
       },
       "shipping_errors": {
-        "unavailable_addresses_only_countries": "Votre commande ne peut être expédiée qu'à {{countriesList}}. Ajoutez une nouvelle adresse pour continuer."
+        "unavailable_addresses_only_countries": "Votre commande ne peut être expédiée qu'à {{countriesList}}. Ajoutez une nouvelle adresse pour continuer.",
+        "shipping_method": "Les options de livraison ont changé pour votre commande. Veuillez revoir votre choix.",
+        "shipping_method_not_available": "Votre panier a été mis à jour et les articles que vous avez ajoutés ne peuvent pas être expédiés à votre adresse. Retirez les articles pour finaliser votre commande.",
+        "shipping_method_not_available_generic": {
+          "one": "Votre commande ne peut pas être expédiée à l'adresse choisie. Vérifiez votre adresse pour vous assurer qu'elle est correcte et réessayez, ou choisissez une autre adresse.",
+          "other": "Certains articles dans votre panier ne peuvent pas être expédiés à l'adresse que vous avez saisie. Vérifiez votre adresse pour vous assurer qu'elle est correcte et réessayez, ou choisissez une autre adresse."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Les articles dans le panier ne remplissent pas les conditions de prix ou de poids pour bénéficier de la livraison. Mettez à jour votre panier et réessayez.",
+        "shipping_method_not_available_updated": {
+          "one": "L'article que vous avez ajouté ne peut pas être expédié à votre adresse. Retirez-le pour passer à la caisse, ou contactez le magasin.",
+          "other": "Un ou plusieurs articles que vous avez ajoutés ne sont pas expédiés à votre adresse. Supprimez-les pour passer à la caisse, ou contactez le magasin."
+        },
+        "payment_method_not_supported": "Vous ne pouvez pas utiliser ce mode de paiement pour %{country}. Utilisez un autre mode de paiement pour expédier vers ce pays.",
+        "empty_state": "Saisissez votre adresse de livraison pour voir les modes d'expédition disponibles.",
+        "title": "Livraison non disponible",
+        "invalid_selected_address": "L'adresse de livraison sélectionnée n'est pas valide",
+        "invalid_selected_address_with_update_link": "L'adresse de livraison sélectionnée n'est pas valide. %{update_address_link} ou choisissez une autre adresse",
+        "unavailable_address_country": "La livraison n'est pas disponible dans le pays que vous avez choisi. Utilisez une autre adresse pour continuer",
+        "unavailable_selected_address": "Livraison non disponible pour l'adresse sélectionnée",
+        "unavailable_selected_address_for_region": "La livraison n’est pas disponible pour {{region}}. Sélectionnez une autre adresse pour continuer"
       },
       "payment_errors": {
-        "shop_pay_wallet_not_available": "Shop Pay n'est pas disponible pour cette caisse.",
-        "market_manager_blocks_wallet_payments": "Le mode de paiement n'est pas pris en charge dans votre pays.",
-        "captcha_required": "Veuillez saisir les informations de paiement et résoudre le captcha pour finaliser votre achat.",
+        "shop_pay_wallet_not_available": "Shop Pay n'est pas disponible pour ce paiement.",
+        "market_manager_blocks_wallet_payments": "La méthode de paiement n'est pas prise en charge dans votre pays.",
+        "captcha_required": "Saisissez les informations de paiement et résolvez le captcha pour finaliser votre achat.",
         "amount_too_small": "Le montant minimum du paiement doit être supérieur à 0,50 $ US. Veuillez réessayer avec un montant plus élevé.",
         "method_not_available": "La méthode de paiement demandée n'est pas disponible. Choisissez une autre méthode de paiement et réessayez.",
         "available_methods_updated": "Les méthodes de paiement disponibles ont été mises à jour.",
@@ -578,7 +597,36 @@
         "subscription_agreement_blank": "Pour acheter un abonnement, vos informations de paiement doivent être enregistrées. Pour continuer, confirmez que vous acceptez ou retirez les articles d'abonnement de votre commande.",
         "insufficient_funds": "Votre paiement a été refusé en raison de fonds insuffisants. Veuillez réessayer ou utiliser un autre mode de paiement.",
         "multiple_deferred_payment_not_allowed": "Un seul paiement différé est autorisé par demande. Vérifiez votre demande et réessayez.",
-        "shipping_must_match_billing": "L'adresse de facturation doit correspondre à l'adresse de livraison. Utilisez un autre mode de paiement."
+        "shipping_must_match_billing": "L'adresse de facturation doit correspondre à l'adresse de livraison. Utilisez un autre mode de paiement.",
+        "shipping_company_required_error": "{{shopName}} nécessite un nom d'entreprise pour l'adresse de livraison.",
+        "decision_rule_block": "Un problème est survenu lors du traitement de votre paiement. Veuillez contacter le propriétaire du magasin.",
+        "pick_up_card": "Votre carte a été refusée. Veuillez réessayer ou utiliser un autre mode de paiement.",
+        "cannot_verify": "Les informations de votre paiement n'ont pas pu être vérifiées. Vérifiez les détails de votre carte et réessayez.",
+        "invalid_number": "Entrez un numéro de carte valide",
+        "invalid_expiry_date": "Entrez une date d'expiration valide",
+        "invalid_cvc": "Entrez un code de sécurité valide",
+        "expired_card": "Votre carte a expiré. Utilisez un autre mode de paiement.",
+        "payment_method_not_applicable": "Cette méthode de paiement n'est pas applicable. Utilisez une autre méthode de paiement.",
+        "card_declined": "Votre carte a été refusée. Veuillez réessayer ou utiliser un autre mode de paiement.",
+        "processing_error": "Un problème est survenu lors du traitement de votre paiement. Veuillez réessayer ou utiliser un autre mode de paiement.",
+        "processing_error_checkout_as_guest": "Un problème est survenu lors du traitement de votre paiement. Essayez à nouveau avec un autre moyen de paiement ou {{checkout_as_guest_link}}.",
+        "selected_payment_method": "Un problème est survenu avec votre mode de paiement sélectionné et vous n'avez pas été facturé. Veuillez réessayer ou utiliser un autre mode de paiement.",
+        "payment_method_billing_address": "Il y a eu un problème avec l'adresse de facturation de votre moyen de paiement sélectionné et vous n'avez pas été débité. Vérifiez l'adresse et réessayez ou utilisez un autre moyen de paiement.",
+        "call_issuer": "Votre carte a été refusée. Utilisez un autre mode de paiement ou contactez votre banque pour plus d'informations.",
+        "test_mode_live_card": "Cette boutique ne peut pas accepter de commandes réelles ni de paiements réels.",
+        "transient_error": "Un problème est survenu lors du traitement de votre paiement. Essayez de rafraîchir cette page ou vérifiez votre connexion internet.",
+        "missing_shipping_address": "Votre paiement n’a pas pu être traité car votre adresse de livraison est manquante. Ajoutez une adresse de livraison et réessayez.",
+        "invalid_shipping_address": "Votre paiement n’a pas pu être traité car nous n’avons pas trouvé votre adresse de livraison. Vérifiez votre adresse de livraison et réessayez.",
+        "successful_offsite_with_gift_card_error": "Un problème est survenu lors du traitement de votre paiement par carte-cadeau. Veuillez réessayer ou utiliser un autre mode de paiement.",
+        "development_store_order_limit_reached": "Vous avez atteint la limite des commandes pour boutique de développement avec ce processeur de paiement. Pour passer une autre commande, vous devrez utiliser une passerelle de paiement de test. En savoir plus sur %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "Pour passer une commande test, vous devrez utiliser une passerelle de paiement de test. En savoir plus sur %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "test des commandes dans les boutiques en cours de développement",
+        "payment_above_threshold": "Le montant du paiement dépasse la limite monétaire pour cette région. Réduisez le total et réessayez.",
+        "risky": "Un problème est survenu lors du traitement de votre paiement. Veuillez réessayer ou utiliser un autre mode de paiement.",
+        "expired_buyer_action": "Le délai de la méthode de paiement est expiré. Veuillez réessayer.",
+        "name_mismatch": "Vérifiez les informations de votre carte. Le nom sur votre carte et l'adresse de facturation ne correspondent pas.",
+        "captcha_required_without_payment_information": "Résolvez le captcha pour finaliser votre achat.",
+        "payment_credential_delegation_error": "Un problème est survenu lors du traitement de votre paiement. Choisissez un nouveau mode de paiement."
       },
       "merchant_instruction_errors": {
         "invalid_entrypoint_for_remote_negotiation": "L'instruction de négociation à distance ne peut pas être fournie à une session de négociation non distante.",
@@ -1114,7 +1162,34 @@
         }
       },
       "payment_gateway": {
-        "bank_account_label": "Compte bancaire"
+        "bank_account_label": "Compte bancaire",
+        "bank_deposit_label": "Dépôt bancaire",
+        "cash_on_delivery_label": "Paiement à la livraison (PAL)",
+        "money_order_label": "Mandat postal",
+        "credit_or_debit_card_label": "Crédit/Débit",
+        "deferred_payment_label": "Choisir le mode de paiement plus tard",
+        "fixed_payment_label": "Votre paiement sera dû le {{dueDate}}.",
+        "generic_payment_terms": "Vous êtes en termes avec {{translatedName}}. Votre paiement sera dû le {{dueDate}}.",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} à un compte ayant accès à cet emplacement pour ajouter ou utiliser des méthodes de paiement enregistrées.",
+            "link": "Se connecter"
+          }
+        },
+        "direct_payment_terms": "Vous êtes en termes avec {{translatedName}}. Votre carte sera débitée le {{dueDate}}.",
+        "fixed_direct_payment_terms": "Votre carte sera débitée le {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Votre paiement sera exigible une fois votre commande exécutée.",
+        "order_due_on_fulfillment_payment": "Votre carte sera débitée une fois votre commande exécutée.",
+        "order_due_on_receipt_choose_later": "Votre paiement sera exigible à réception.",
+        "order_deposit_due_now": "{{depositAmount}} est dû aujourd'hui. Le solde est selon les conditions de {{translatedName}} et est dû le {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} est dû aujourd’hui. Le solde sera dû une fois votre commande traitée.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} est dû aujourd'hui. Le solde sera dû plus tard.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} est dû aujourd'hui. Le solde sera dû le {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms": "Votre paiement sera exigible une fois votre commande confirmée.",
+        "draft_order_payment_due_later_terms": "Vous serez en bons termes avec {{translatedName}} une fois votre commande confirmée.",
+        "draft_order_payment_due_on_fulfillment": "Votre paiement sera exigible une fois que votre commande aura été confirmée et exécutée.",
+        "draft_order_deposit_due_later": "{{depositAmount}} sera dû lors de la confirmation de votre commande. Le solde sera selon les conditions de {{translatedName}}.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} sera dû lorsque votre commande sera confirmée. Le solde sera à régler une fois votre commande exécutée."
       },
       "embed": {
         "header": {
@@ -1733,6 +1808,54 @@
           "generic": "La carte-cadeau n'a pas pu être ajoutée au paiement",
           "throttle_limit_exceeded": "Vous avez dépassé le nombre maximal de tentatives. Réessayez plus tard."
         }
+      },
+      "alternative_payment_method_banner": {
+        "or_pay_another_way": "Ou payez d'une autre manière",
+        "or_check_out_another_way": "Ou essayez une autre méthode",
+        "or_pay_with_credit_card": "Ou payez par carte de crédit",
+        "show_more_options": "Afficher plus d'options",
+        "hide_more_options": "Masquer plus d'options"
+      },
+      "post_purchase": {
+        "page_title": "Après-achat",
+        "title": "Après-achat",
+        "escape_action": "Voir la confirmation de commande ›",
+        "components": {
+          "expand": "Voir plus",
+          "processing": "Traitement…"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Redirection…",
+        "redirecting_title": "Redirection…",
+        "redirecting_notice": "Veuillez patienter pendant que nous vous redirigeons.",
+        "redirecting_to_bank": "Redirection vers {{bank}}",
+        "complete_your_purchase_title_error": "Corrigez vos informations de paiement",
+        "continue_to_payment_gateway_notice_error": "Nous n'avons pas pu vérifier vos informations de paiement.",
+        "you_will_receive_confirmation": "Nous recevons actuellement de nombreuses commandes. Vous devriez bientôt recevoir une confirmation par courriel ou par message texte. Si vous ne la recevez pas dans l'heure qui vient, faites-le nous savoir.",
+        "you_will_not_be_charged": "Vous ne serez pas encore facturé",
+        "wait": {
+          "medium": {
+            "one": "Votre commande est en cours de traitement. Le temps d'attente estimé est de %{count} minute.",
+            "other": "Votre commande est en cours de traitement. Le temps d'attente estimé est de %{count} minutes."
+          },
+          "long": "Vous recevrez un courriel dès que votre commande sera traitée. Il y a actuellement un grand nombre de commandes.",
+          "no_auto_refresh_html": "Si vous n’êtes pas redirigé automatiquement, %{link}.",
+          "refresh_this_page": "rafraîchir cette page"
+        },
+        "remote_shops_payments_processing": "Traitement des paiements"
+      },
+      "payment_challenge_modal": {
+        "instructions": "Finalisez votre achat en utilisant votre code {{paymentMethod}}",
+        "qr_code": {
+          "instructions": "Finalisez votre achat en utilisant votre code {{paymentMethod}}"
+        },
+        "close": "Fermer le défi"
+      },
+      "failed_payment": {
+        "page_title": "Le paiement n'a pas pu être traité",
+        "title": "Le paiement n'a pas pu être traité",
+        "payment_not_processed_text": "Vous n'avez pas été facturé. Retournez à votre panier pour finaliser votre achat."
       }
     },
     "sentence": {
