@@ -3220,6 +3220,152 @@
       "mobile_summary_toggle_button": {
         "open": "Afficher le récapitulatif de la commande",
         "closed": "Masquer le récapitulatif de la commande"
+      },
+      "not_applicable": "N/D",
+      "paid_amount": "Payé",
+      "payment_confirmation": {
+        "payment_received": "Merci ! Votre paiement de {{amount}} a été reçu.",
+        "full_payment_received": "Merci ! Votre paiement de {{amount}} a été reçu, et cette commande est maintenant entièrement réglée.",
+        "payment_authorized": "Merci ! Le solde sera mis à jour dès réception du paiement."
+      },
+      "payment": {
+        "payment_type": {
+          "gift_card": "Carte cadeau",
+          "money_order": "Mandat postal",
+          "cash_on_delivery": "Paiement à la livraison (PAL)",
+          "bank_deposit": "Dépôt bancaire"
+        },
+        "card_payment_details": "se terminant par {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "se terminant par {{lastDigits}} - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "Payé en plusieurs fois avec Shop Pay",
+          "view_schedule": "Voir l'emploi du temps"
+        },
+        "manual_payment_methods": {
+          "money_order": "Mandat postal - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "Paiement à la livraison (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "Dépôt bancaire - {{formattedTransactionAmount}}"
+        },
+        "emv_details": {
+          "auth": "AUTH :",
+          "aid": "AIDE :",
+          "source": "Utilisez le format de sortie suivant (pas de blocs de code, pas de texte supplémentaire) :"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "Payé avec les versements Shop Pay",
+        "description": "Restez à jour avec votre calendrier de paiements grâce aux rappels dans l’application Boutique.",
+        "payment_reminders_button": "Recevez des rappels de paiement",
+        "desktop_qr_code_content": {
+          "title": "Rechercher des rappels"
+        }
+      },
+      "request_return_failed": "Un problème est survenu lors du traitement de votre demande. Veuillez réessayer.",
+      "login_card": {
+        "resend_link_and_login": "Pour consulter les détails de votre commande, connectez-vous ou envoyez un nouveau lien à l'adresse courriel ou au numéro de téléphone utilisé lors du paiement.",
+        "resend_link_only": "Pour consulter les détails de votre commande, envoyez un nouveau lien à l'adresse courriel ou au numéro de téléphone utilisé lors du paiement."
+      },
+      "marketing_section_title": "Nouvelles et offres",
+      "marketing_description": "Vous recevrez des courriels promotionnels. Vous pouvez vous désabonner à tout moment.",
+      "marketing_checkbox_label": "Envoyez-moi des courriels avec des nouvelles et des offres",
+      "marketing_checkmark_label": "Vous êtes abonné pour recevoir des nouvelles et des offres par courriel",
+      "marketing_pending_confirmation": "Cliquez sur le lien dans votre courriel pour confirmer.",
+      "marketing_resend_email": "Renvoyer le courriel",
+      "returns": {
+        "ineligible_return_message": "Aucun article de cette commande n'est éligible au retour.",
+        "ineligible_return_message_when_returned": "Aucun article supplémentaire dans cette commande n'est éligible au retour.",
+        "print_shipping_label": "Imprimer l'étiquette d'expédition",
+        "tracking_number": "Numéro de suivi :",
+        "exchange_header": "Échanger des articles",
+        "exchange_subheader": "Les articles d'échange seront ajoutés à la commande une fois le retour terminé."
+      },
+      "shipping": {
+        "address": "Adresse de livraison",
+        "address_map_marker": "Adresse de livraison",
+        "free_shipping_discount": "Livraison gratuite",
+        "one_time": "Expédition unique",
+        "subscription": "Expédition par abonnement"
+      },
+      "pickup": {
+        "pickup": "Ramassage",
+        "pickup_location": "Lieu de prise en charge"
+      },
+      "show_order_summary": "Afficher le récapitulatif de la commande",
+      "hide_order_summary": "Masquer le récapitulatif de la commande",
+      "subtitle": "Confirmé {{date}}",
+      "summary_list_title_accessibility_label": "Articles de commande",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Télécharger Boutique pour suivre le colis",
+        "track_order_with_shop": "Suivre la commande avec Shop",
+        "real_time_delivery_updates": "La boutique vous enverra des mises à jour en temps réel sur la livraison dès que votre commande sera expédiée."
+      },
+      "edit_summary": {
+        "added_with_quantity": "Ajouté {{quantity}}",
+        "removed_with_quantity": "Supprimé {{quantity}}",
+        "returned_with_quantities": "Retourné {{delta}} sur {{total}}",
+        "removed_with_quantities": "Supprimé {{delta}} sur {{total}}",
+        "return_line_item_removed": "Retiré du retour",
+        "return_line_item_removed_with_quantities": "Retiré {{delta}} du retour"
+      },
+      "shop_pay": {
+        "order_completed_with": "Commande terminée avec"
+      },
+      "taxes_included": "Incluant {{amount}} en taxes",
+      "duties_and_taxes_included": "Le total comprend les droits et taxes. Aucun frais supplémentaire à la livraison.",
+      "duties": "Fonctions",
+      "ok_duties_tooltip": "Cette commande est expédiée depuis un autre pays, des droits de douane ont donc été ajoutés au total de votre commande.",
+      "error_duties_tooltip": "Cette commande est expédiée depuis un autre pays, des droits et taxes peuvent donc être appliqués à la livraison.",
+      "zero_duties_tooltip": "Cette commande est expédiée depuis un autre pays. Les droits de douane ne sont pas facturés pour les commandes de cette valeur.",
+      "tip": "Conseil",
+      "title": "Commander {{name}}",
+      "unit_price": "{{price}}/unité",
+      "logged_in_account_no_permission_to_order": "Vous êtes connecté en tant que {{email}}. Ce compte n'a pas l'autorisation de gérer cette commande.",
+      "fees": {
+        "restocking_fee": "Frais de réapprovisionnement",
+        "return_shipping_fee": "Retour de l'envoi"
+      },
+      "due_on_date": "À rendre pour le {{date}}",
+      "due_on_fulfillment": "Dû à l'exécution",
+      "due_on_receipt": "Payable à réception"
+    },
+    "addresses": {
+      "back_button_accessibility_label": "Retour à la modification de l'adresse {{address}}",
+      "add_address_banner": "Ajouter des adresses à utiliser lors du paiement",
+      "default_address": {
+        "title_accessibility_label": "Adresse par défaut : {{address}}"
+      },
+      "delete_confirmation_button": "Supprimer l'adresse",
+      "delete_confirmation_message": "Supprimer l'adresse ? Les commandes en cours ne seront pas affectées.",
+      "delete_confirmation_title": "Supprimer l'adresse ?",
+      "delete_confirmation_description": "Les commandes en cours ne sont pas affectées.",
+      "edit_modal_title": {
+        "default": "Modifier l'adresse",
+        "billing": "Modifier l'adresse de facturation",
+        "shipping": "Modifier l'adresse de livraison"
+      },
+      "loading_accessibility_message": "Chargement de l'adresse",
+      "loading_addresses_accessibility_message": "Chargement des adresses",
+      "loading_billing_accessibility_message": "Chargement de l'adresse de facturation",
+      "loading_finished_accessibility_message": "Une nouvelle page d'adresses a été chargée",
+      "loading_shipping_accessibility_message": "Chargement de l'adresse de livraison",
+      "pagination": {
+        "load_more_accessibility_label": "Charger plus d'adresses"
+      }
+    },
+    "address_form": {
+      "attention": "Attention",
+      "attention_company": "Entreprise/attention",
+      "attention_help_text": "Le nom d'une personne ou d'un service",
+      "loading_add_form_accessibility_message": "Chargement du nouveau formulaire d'adresse",
+      "loading_edit_form_accessibility_message": "Chargement du formulaire de modification d'adresse",
+      "loading_form_accessibility_message": "Chargement du formulaire d'adresse",
+      "loading_finished_accessibility_message": "Le formulaire d'adresse a été chargé"
+    },
+    "account_menu": {
+      "signed_out_state": {
+        "section_divider": "Plus de façons de se connecter",
+        "alternate_divider": "OU",
+        "use_email_button": "Utiliser plutôt le courriel"
       }
     }
   }
