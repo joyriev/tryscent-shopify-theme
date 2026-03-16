@@ -2991,7 +2991,87 @@
         "empty_state_title": "Aucune commande pour le moment",
         "empty_state_title_for_pending_orders": "Aucune commande en attente",
         "no_order_banner": "Pour tester votre extension sur la page de suivi de commande, créez une commande.",
-        "estimated_shortform": "Est. {{date}}"
+        "estimated_shortform": "Est. {{date}}",
+        "estimated_delivery": "Prévu pour {{date}}",
+        "one_images_accessibility_label": "La commande inclut {{lineItemName1}}",
+        "more_than_three_products_accessibility_label": "La commande comprend {{lineItemName1}}, {{lineItemName2}} et {{numberOfAdditionalProducts}} autres produits",
+        "more_than_four_products_accessibility_label": "La commande comprend {{lineItemName1}}, {{lineItemName2}}, {{lineItemName3}} et {{numberOfAdditionalProducts}} autres produits",
+        "plus_more_products": "+{{numberOfAdditionalProducts}} produits",
+        "carousel": {
+          "one_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}, {{lineItemName4}} quantité {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}, {{lineItemName4}} quantité {{lineItemQuantity4}}, {{lineItemName5}} quantité {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}, {{lineItemName4}} quantité {{lineItemQuantity4}}, {{lineItemName5}} quantité {{lineItemQuantity5}}, {{lineItemName6}} quantité {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "La commande comprend {{lineItemName1}} quantité {{lineItemQuantity1}}, {{lineItemName2}} quantité {{lineItemQuantity2}}, {{lineItemName3}} quantité {{lineItemQuantity3}}, {{lineItemName4}} quantité {{lineItemQuantity4}}, {{lineItemName5}} quantité {{lineItemQuantity5}}, {{lineItemName6}} quantité {{lineItemQuantity6}} et plus",
+          "view_order_details": "Voir les détails de la commande"
+        },
+        "items": {
+          "one": "{{count}} article",
+          "other": "{{count}} articles"
+        },
+        "order_link": "Voir la commande {{name}}",
+        "order_number": "Commander {{name}}",
+        "orders_title": "Confirmé",
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Voir les détails de la commande",
+            "estimated_delivery": "Prévu pour {{date}}",
+            "last_updated": "Dernière mise à jour {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Livraison estimée le {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "due_today": "Paiement dû aujourd'hui",
+            "due_on_fulfillment": "Paiement dû à la réalisation",
+            "payment_not_due": "Paiement non encore dû"
+          },
+          "list_view": {
+            "due": "À rendre pour le {{date}}",
+            "due_today": "À rendre aujourd'hui",
+            "due_on_fulfillment": "Dû à l'exécution"
+          }
+        },
+        "sort_by": "Trier par : {{option}}",
+        "sort_hide_options_accessibility_label": "Masquer les options de tri pour les commandes confirmées.",
+        "sort_show_options_accessibility_label": "Afficher les options de tri pour les commandes confirmées.",
+        "sort_currently_sorted_by_accessibility_label": "Trié actuellement par : {{option}}",
+        "sort": {
+          "location": {
+            "ascending": "Emplacement (A-Z)",
+            "descending": "Emplacement (Z-A)"
+          },
+          "order_number": {
+            "ascending": "Numéro de commande (du plus petit au plus grand)",
+            "descending": "Numéro de commande (du plus élevé au plus bas)"
+          },
+          "order_total": {
+            "ascending": "Total de la commande (du plus bas au plus élevé)",
+            "descending": "Total de la commande (du plus élevé au plus bas)"
+          }
+        },
+        "filter": {
+          "date": {
+            "title": "Date de commande",
+            "today": "Aujourd'hui",
+            "last_7_days": "7 derniers jours",
+            "last_30_days": "30 derniers jours",
+            "last_90_days": "Derniers 90 jours",
+            "last_365_days": "12 derniers mois",
+            "custom": "Personnalisé"
+          }
+        },
+        "view_order": "Voir la commande",
+        "view_order_accessibility_label": "Voir la commande {{orderName}}"
+      },
+      "order_status": {
+        "preparing_for_shipping_label": "Préparation à l'expédition",
+        "ready_for_pickup_label": "Prêt à être retiré",
+        "ready_for_pickup_description": "Ces articles sont prêts à être retirés. Veuillez apporter votre confirmation de commande lorsque vous venez chercher votre commande."
       }
     }
   }
