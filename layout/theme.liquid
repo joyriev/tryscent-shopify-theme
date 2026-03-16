@@ -643,6 +643,8 @@ body {
     </script>
   {% comment %} {% render 'navidium-script' %} {% endcomment %}
   {% comment %} {% render 'sb-preload-booster' %}  {% endcomment %}
-   {% include 'fragrance-search' %}
+   {% unless template.name == 'product' %}
+    {% render 'fragrance-search' %}
+   {% endunless %}
 </body>
 </html>
