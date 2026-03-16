@@ -2533,9 +2533,83 @@
             "postal_code": "Cet emplacement n'est pas pris en charge"
           },
           "outdated": {
-            "shipping_method": "Les options de livraison ont changé pour votre commande. Veuillez revoir votre choix."
+            "shipping_method": "Les options de livraison ont changé pour votre commande. Veuillez revoir votre choix.",
+            "payment_terms": "Les conditions de paiement ont changé. Veuillez vérifier votre commande"
+          },
+          "invalid": {
+            "shipping_address": "Entrez une adresse de livraison valide",
+            "billing_address": "Entrez une adresse de facturation valide",
+            "shipping_option": "Choisissez une option d'expédition valide",
+            "email": "Entrez une adresse courriel valide",
+            "zone": "Entrez un état / une province valide",
+            "billing_zone": "Entrez un état / une province de facturation valide",
+            "emirate": "Entrez un émirat valide",
+            "postal_code": "Entrez un code postal valide",
+            "phone": "Entrez un numéro de téléphone valide",
+            "billing_phone": "Entrez un numéro de téléphone valide pour l'adresse de facturation",
+            "reduction_code": "Entrez un code de réduction ou une carte-cadeau valide",
+            "billing_must_match_shipping": "Doit correspondre à l'adresse de livraison",
+            "billing_zip": "Entrez un code postal / ZIP de facturation valide"
+          },
+          "missing": {
+            "billing_first_name": "Entrez un prénom pour l'adresse de facturation",
+            "last_name": "Entrez un nom de famille",
+            "address1": "Saisissez une adresse",
+            "address2": "Entrez un appartement, une suite, etc.",
+            "billing_address2": "Saisissez un appartement, une suite, etc., pour l'adresse de facturation.",
+            "billing_city": "Entrez une ville pour l'adresse de facturation",
+            "province": "Sélectionnez un état / une province",
+            "billing_province": "Sélectionnez un état / une province pour l'adresse de facturation",
+            "country": "Sélectionnez un pays/région",
+            "billing_zip": "Entrez un code postal / code postal de facturation",
+            "phone": "Entrez un numéro de téléphone"
+          },
+          "formatting": {
+            "name_contains_emojis": "Supprimez les émoticônes de votre nom",
+            "postal_code_contains_emoji": "Supprimez les émoticônes de votre code postal",
+            "last_name_too_long": "Le nom de famille contient trop de lettres",
+            "address_too_long": "La ligne d'adresse est trop longue"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Votre adresse de livraison est invalide. Sélectionnez une autre adresse ou utilisez-en une nouvelle.",
+          "processing_error_checkout_as_guest": "Un problème est survenu lors du traitement de votre paiement. Veuillez réessayer ou {{checkout_as_guest_link}}."
+        },
+        "scrim": {
+          "continue_purchase_in_window": "Continuez votre achat dans la fenêtre {{walletName}}",
+          "and_return_to_checkout": "et revenir à la caisse"
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "Réduisez la taille de la note à 5000 caractères ou moins."
+      },
+      "offsite_payment_failed": {
+        "title": "Le paiement hors site a échoué",
+        "payment_not_processed_title": "Paiement échoué",
+        "payment_not_processed_text": "Essayez de scanner de nouveau le code QR. Si cela ne fonctionne toujours pas, informez notre personnel et essayez un autre mode de paiement.",
+        "payment_link_expired_text": "Essayez de scanner de nouveau le code QR."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_not_exceed_limit": "Le prix de la carte cadeau ne doit pas dépasser %{gift_card_limit}.",
+            "subtotal_limit_reached": "La valeur maximale des articles en ligne a été atteinte.",
+            "signature_mismatch": "Incohérence de signature de marchandise pour la ligne %{stable_id}."
           }
         }
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "Le panier ne contient que des articles à distance. Une redirection vers la boutique à distance est nécessaire pour finaliser l'achat.",
+          "currency_mismatch": "Cet article ne peut pas être ajouté à votre panier car il provient d'une boutique qui utilise une monnaie différente.",
+          "currency_mismatch_removal": "Un article a été retiré de votre panier car il provient d'une boutique qui utilise une monnaie différente.",
+          "max_remote_shops_exceeded": "Ce produit ne peut pas être ajouté car votre panier contient déjà le maximum provenant d'autres magasins."
+        }
+      },
+      "units": {
+        "meter": "moyen",
+        "ounce": "once",
+        "fluid_ounce": "fl oz",
+        "pint": "Portugal",
+        "gallon": "fille"
       }
     },
     "sentence": {
