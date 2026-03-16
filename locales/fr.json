@@ -10,13 +10,13 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Accéder à la boutique à l'aide d'un mot de passe :",
-      "login_password_button": "Saisir avec un mot de passe",
+      "login_form_heading": "Entrez dans la boutique en utilisant le mot de passe :",
+      "login_password_button": "Entrez en utilisant le mot de passe",
       "login_form_password_label": "Mot de passe",
       "login_form_password_placeholder": "Votre mot de passe",
-      "login_form_error": "Mot de passe incorrect !",
-      "login_form_submit": "Saisir",
-      "admin_link_html": "La boutique vous appartient-elle ? <a href=\"/admin\" class=\"link underlined-link\">Se connecter ici</a>",
+      "login_form_error": "Mot de passe incorrect !",
+      "login_form_submit": "Entrer",
+      "admin_link_html": "Êtes-vous le propriétaire du magasin ? <a href=\"/admin\" class=\"link underlined-link\">Connectez-vous ici</a>",
       "powered_by_shopify_html": "Cette boutique sera propulsée par {{ shopify }}"
     },
     "social": {
@@ -37,7 +37,7 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "Continuer les achats",
+    "continue_shopping": "Continuer vos achats",
     "pagination": {
       "label": "Pagination",
       "page": "Page {{ number }}",
@@ -50,7 +50,7 @@
     },
     "cart": {
       "view": "Voir le panier ({{ count }})",
-      "item_added": "Article ajouté au panier",
+      "item_added": "Article ajouté à votre panier",
       "view_empty_cart": "Voir le panier"
     },
     "share": {
@@ -61,76 +61,76 @@
     },
     "slider": {
       "of": "de",
-      "next_slide": "Faire glisser vers la droite",
-      "previous_slide": "Faire glisser vers la gauche",
-      "name": "Carrousel"
+      "next_slide": "Glisser vers la droite",
+      "previous_slide": "Glisser vers la gauche",
+      "name": "Curseur"
     }
   },
   "newsletter": {
-    "label": "E-mail",
-    "success": "Merci de votre inscription",
-    "button_label": "S'inscrire"
+    "label": "Courriel",
+    "success": "Merci pour votre abonnement",
+    "button_label": "S'abonner"
   },
   "accessibility": {
-    "skip_to_text": "Ignorer et passer au contenu",
+    "skip_to_text": "Passer au contenu",
     "close": "Fermer",
     "unit_price_separator": "par",
-    "vendor": "Fournisseur :",
+    "vendor": "Vendeur :",
     "error": "Erreur",
-    "refresh_page": "Le choix d'une sélection entraîne l'actualisation de la page entière.",
+    "refresh_page": "Choisir une sélection entraîne un rechargement complet de la page.",
     "link_messages": {
-      "new_window": "S'ouvre dans une nouvelle fenêtre.",
+      "new_window": "S’ouvre dans une nouvelle fenêtre.",
       "external": "Ouvre un site web externe."
     },
-    "loading": "Chargement en cours...",
-    "skip_to_product_info": "Passer aux informations produits",
-    "total_reviews": "total des critiques",
+    "loading": "Chargement...",
+    "skip_to_product_info": "Passer à l'information sur le produit",
+    "total_reviews": "avis totaux",
     "star_reviews_info": "{{ rating_value }} sur {{ rating_max }} étoiles",
-    "collapsible_content_title": "Contenu réductible",
+    "collapsible_content_title": "Contenu repliable",
     "complementary_products": "Produits complémentaires"
   },
   "blogs": {
     "article": {
-      "blog": "Blog",
-      "read_more_title": "Lire la suite : {{ title }}",
+      "blog": "Blogue",
+      "read_more_title": "En savoir plus : {{ title }}",
       "comments": {
-        "one": "{{ count }} commentaire",
-        "other": "{{ count }} commentaires",
+        "one": "{{ count }} commentaire",
+        "other": "{{ count }} commentaires",
         "many": "{{ count }} commentaires"
       },
       "moderated": "Veuillez noter que les commentaires doivent être approuvés avant d'être publiés.",
       "comment_form_title": "Laisser un commentaire",
       "name": "Nom",
-      "email": "E-mail",
+      "email": "Courriel",
       "message": "Commentaire",
-      "post": "Publier le commentaire",
-      "back_to_blog": "Retour au blog",
+      "post": "Publier un commentaire",
+      "back_to_blog": "Retour au blogue",
       "share": "Partager cet article",
-      "success": "Votre commentaire a bien été publié ! Merci !",
-      "success_moderated": "Votre commentaire a bien été publié. Nous le publierons sous peu, conformément au processus de modération de notre blog."
+      "success": "Votre commentaire a été publié avec succès ! Merci !",
+      "success_moderated": "Votre commentaire a été publié avec succès. Nous le mettrons en ligne sous peu, car notre blogue est modéré."
     }
   },
   "onboarding": {
-    "product_title": "Titre du produit",
+    "product_title": "Exemple de titre de produit",
     "collection_title": "Le nom de votre collection"
   },
   "products": {
     "product": {
       "add_to_cart": "Ajouter au panier",
       "description": "Description",
-      "on_sale": "Promotion",
-      "product_variants": "Variantes de produits",
+      "on_sale": "Soldes",
+      "product_variants": "Variantes de produit",
       "quantity": {
         "label": "Quantité",
         "input_label": "Quantité pour {{ product }}",
-        "increase": "Augmenter la quantité de {{ product }}",
-        "decrease": "Réduire la quantité de {{ product }}",
+        "increase": "Augmenter la quantité pour {{ product }}",
+        "decrease": "Diminuer la quantité pour {{ product }}",
         "minimum_of": "Minimum de {{ quantity }}",
         "maximum_of": "Maximum de {{ quantity }}",
         "multiples_of": "Incréments de {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> dans le panier",
         "note": "Voir les règles de quantité",
-        "min_of": "Min. {{ quantity }}",
+        "min_of": "Min {{ quantity }}",
         "max_of": "Max. {{ quantity }}"
       },
       "price": {
@@ -157,26 +157,26 @@
       },
       "media": {
         "open_media": "Ouvrir le média {{ index }} dans une fenêtre modale",
-        "play_model": "Lire la visionneuse 3D",
+        "play_model": "Visionneuse 3D",
         "play_video": "Lire la vidéo",
-        "gallery_viewer": "Visionneuse de la galerie",
-        "load_image": "Charger l'image {{ index }} dans la galerie",
-        "load_model": "Charger le modèle 3D {{ index }} dans la galerie",
-        "load_video": "Lire la vidéo {{ index }} dans la galerie",
-        "image_available": "L'image {{ index }} est maintenant disponible dans la galerie"
+        "gallery_viewer": "Visionneuse de galerie",
+        "load_image": "Charger l’image {{ index }} en vue galerie",
+        "load_model": "Charger le modèle 3D {{ index }} en vue galerie",
+        "load_video": "Lire la vidéo {{ index }} en mode galerie",
+        "image_available": "L'image {{ index }} est maintenant disponible en vue galerie"
       },
       "view_full_details": "Afficher tous les détails",
       "shipping_policy_html": "<a href=\"{{ link }}\">Frais d'expédition</a> calculés à l'étape de paiement.",
       "choose_options": "Choisir des options",
-      "choose_product_options": "Choisir des options pour {{ product_name }}",
+      "choose_product_options": "Choisissez les options pour {{ product_name }}",
       "value_unavailable": "{{ option_value }} – indisponible",
       "variant_sold_out_or_unavailable": "Variante épuisée ou indisponible",
       "inventory_in_stock": "En stock",
-      "inventory_in_stock_show_count": "{{ quantity }} en stock",
-      "inventory_low_stock": "Stock bas",
-      "inventory_low_stock_show_count": "Stock bas : {{ quantity }} restant(s)",
-      "sku": "SKU",
-      "inventory_out_of_stock": "En rupture de stock",
+      "inventory_in_stock_show_count": "{{ quantity }} en stock",
+      "inventory_low_stock": "Stock faible",
+      "inventory_low_stock_show_count": "Stock faible : {{ quantity }} restant(s)",
+      "sku": "UGS",
+      "inventory_out_of_stock": "Rupture de stock",
       "inventory_out_of_stock_continue_selling": "En stock",
       "volume_pricing": {
         "title": "Tarification basée sur le volume",
@@ -3829,7 +3829,99 @@
       "saturdayAbbreviation": "Sa",
       "sundayAbbreviation": "Su",
       "rangeStart": "Début de la gamme",
-      "inRange": "À portée"
+      "inRange": "À portée",
+      "rangeEnd": "Fin de gamme",
+      "autocompleteOptionsAvailable": {
+        "one": "{{count}} article disponible",
+        "other": "{{count}} articles disponibles"
+      },
+      "removeTag": "Supprimer l’étiquette",
+      "mapClusterTitle": {
+        "one": "Groupe de {{number}} marqueurs",
+        "other": "Groupe de {{number}} marqueurs"
+      },
+      "expandSheet": "Développer",
+      "qrCode": "Code QR",
+      "dropzoneDraggedOver": "Déposez le fichier pour le téléverser"
+    },
+    "profile_preview_bar": {
+      "hide_bar": "Cacher la barre",
+      "navigate_to_admin": "Aller à l'administration",
+      "previewing": "Vous êtes en train de prévisualiser :",
+      "viewing": "Vous regardez :",
+      "not_available": "Données de profil non disponibles"
+    },
+    "active_inspector": {
+      "extension": {
+        "select": "Sélectionnez l’extension nommée {{extensionName}}",
+        "unselect": "Désélectionnez l’extension nommée {{extensionName}}",
+        "move_down": "Déplacer l'extension à la position suivante",
+        "move_up": "Déplacer l'extension à la position précédente",
+        "remove": "Supprimer l'extension",
+        "move_down_tooltip": "Passer à la position suivante",
+        "move_up_tooltip": "Déplacer vers la position précédente"
+      }
+    },
+    "editor": {
+      "link_new_tab_confirmation": "Ce lien ne peut pas être ouvert dans l’éditeur. Il s’ouvrira dans une nouvelle fenêtre ({{resolved_to_link}}). Cliquez sur OK pour continuer."
+    },
+    "settings": {
+      "loading_accessibility_message": "Chargement de la page des réglages",
+      "log_out_everywhere": {
+        "title": "Se déconnecter partout",
+        "description": "Si vous avez perdu un appareil ou avez des inquiétudes concernant la sécurité, déconnectez-vous partout pour garantir la sûreté de votre compte.",
+        "button": "Se déconnecter partout"
+      }
+    },
+    "shop_ads": {
+      "title": "Autres produits qui pourraient vous plaire",
+      "button": "Explorer sur la boutique"
+    },
+    "knowledge_base": {
+      "self_serve_returns": {
+        "disabled": "Les clients doivent contacter le commerçant pour demander un retour."
+      }
+    },
+    "subscriptions": {
+      "update_payment_instrument": {
+        "title": "Remplacer le mode de paiement",
+        "loading": "Chargement des modes de paiement",
+        "select_new_payment_method": "Sélectionnez un nouveau mode de paiement",
+        "success": "Méthode de paiement mise à jour",
+        "use_new_payment_method": "+ Utiliser un nouveau mode de paiement"
+      }
+    },
+    "intents": {
+      "subscription_replace_payment_method": {
+        "title": "Remplacer le mode de paiement",
+        "loading": "Chargement du modal de remplacement de méthode de paiement",
+        "success": "Méthode de paiement mise à jour",
+        "invalid_subscription_contract": "Impossible de trouver l'abonnement",
+        "expiry_date": "Exp. {{expiryDate}}",
+        "edit_current_payment_method": "Modifier le mode de paiement actuel",
+        "edit_selected_payment_method": "Modifier le mode de paiement sélectionné"
+      }
+    },
+    "sign_in": {
+      "brand_logo_alt_text": "Logo %{shop_name}",
+      "processing": "Traitement…",
+      "step_one": {
+        "subheading": "Entrez votre adresse e-mail et nous vous enverrons un code de vérification",
+        "subheading_with_sign_in_options": "Connectez-vous ou créez un compte",
+        "input_field_label": "Courriel"
+      },
+      "step_two": {
+        "page_title": "Entrez le code - %{shop_name}",
+        "heading": "Saisir le code",
+        "restart_link": "Se connecter avec une autre adresse courriel",
+        "input_field_label": "code à 6 chiffres"
+      },
+      "error": {
+        "invalid": {
+          "invalid_email": "Entrez une adresse courriel valide",
+          "invalid_code": "Entrez le code correct à 6 chiffres"
+        }
+      }
     }
   }
 }
