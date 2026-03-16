@@ -1151,8 +1151,12 @@
         "resend_gift_cards_by_email": "Renvoyer le courriel",
         "resend_gift_cards_by_text": "Renvoyer le message texte",
         "gift_card_resend_failure": {
-          "one": "Un problème est survenu lors de la réexpédition de votre carte-cadeau. Veuillez réessayer ou nous contacter."
-        }
+          "one": "Un problème est survenu lors de la réexpédition de votre carte-cadeau. Veuillez réessayer ou nous contacter.",
+          "other": "Un problème est survenu lors de la réexpédition de vos cartes-cadeaux. Veuillez réessayer ou nous contacter."
+        },
+        "verify_shop_account_title": "Vérifiez votre compte Boutique",
+        "verify_shop_account_message": "Vos informations ont été enregistrées avec Shop, vérifiez votre compte pour les utiliser automatiquement dans des millions de boutiques.",
+        "verify_shop_account_cta": "Vérifiez votre compte"
       },
       "general": {
         "remove_chip": "Supprimer l'article",
@@ -2096,6 +2100,266 @@
         "page_title": "Le paiement n'a pas pu être traité",
         "title": "Le paiement n'a pas pu être traité",
         "payment_not_processed_text": "Vous n'avez pas été facturé. Retournez à votre panier pour finaliser votre achat."
+      },
+      "vaulted": {
+        "change_button": "Changer"
+      },
+      "review": {
+        "title": "Avis",
+        "review_title": "Complétez votre commande",
+        "review_and_confirm_title": "Vérifiez et confirmez",
+        "checkout_as_guest": "Payer en tant qu'invité",
+        "account_more_actions": "Plus d'actions pour ce compte",
+        "checkout_a_different_way": "Découvrez une autre manière",
+        "blocks": {
+          "contact_method_title": "Contactez-nous",
+          "shipping_method_title": "Mode d'expédition",
+          "payment_method_title": "Méthode de paiement",
+          "change_link_label": "Changer",
+          "change_contact_method_link_label": "Modifier les informations de contact",
+          "change_billing_address_link_label": "Modifier l'adresse de facturation",
+          "change_company_location_link_label": "Changer l'emplacement de l'entreprise",
+          "change_shipping_address_link_label": "Modifier l'adresse de livraison",
+          "change_shipping_method_link_label": "Modifier le mode d'expédition",
+          "change_payment_method_link_label": "Changer de mode de paiement",
+          "pick_up_in_store_shipping_method_html": "Retrait en magasin · %{location_name}",
+          "purchase_order_number_title": "Numéro de commande",
+          "change_purchase_order_number_label": "Modifier le numéro de bon de commande",
+          "change_delivery_method_link_label": "Changer le mode de livraison",
+          "no_address": "(Pas d'adresse)",
+          "no_purchase_order_number": "(Pas de numéro de bon de commande)",
+          "due_after_order_reviewed_html": "À payer après examen de la commande",
+          "review_title_free_order": "Vérifiez et finalisez votre commande",
+          "company_location": "Emplacement de l'entreprise",
+          "pickup_items_at": {
+            "one": "Retirer %{count} article(s) à",
+            "other": "Retirez %{count} articles à"
+          },
+          "ship_items_to": {
+            "one": "Expédier %{count} article(s) à"
+          }
+        },
+        "block_title": "Vérifiez vos informations"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Envoyez-moi des courriels avec des nouvelles et des offres",
+        "post_accept_marketing_checkbox_label": "Vous êtes abonné pour recevoir des nouvelles et des offres par courriel",
+        "pending_accept_marketing_checkbox_label": "Vérifiez votre courriel pour confirmer votre abonnement aux nouvelles et aux offres",
+        "accept_sms_checkbox_label": "Envoie-moi des nouvelles et des offres par message",
+        "disclaimer": {
+          "terms_of_service": "Conditions d'utilisation"
+        },
+        "sms": {
+          "disclaimer": {
+            "terms_of_service": "Conditions d'utilisation",
+            "description_html": "En vous inscrivant par SMS, vous acceptez de recevoir des messages marketing automatisés récurrents, y compris des rappels de panier, au numéro de téléphone fourni. Le consentement n'est pas une condition d'achat. Répondez STOP pour vous désabonner. Répondez HELP pour obtenir de l'aide. La fréquence des messages varie. Des frais de messagerie et de données peuvent s'appliquer. Consultez notre %{privacy_policy_link} et %{terms_of_service_link}.",
+            "description_transactional_html": "Vous pouvez recevoir des messages texte concernant la confirmation de commande et les mises à jour d'expédition. Répondez STOP pour vous désabonner. Répondez HELP pour obtenir de l'aide. La fréquence des messages peut varier. Des frais de messagerie et de données peuvent s'appliquer. Consultez notre %{privacy_policy_modal_link} et %{terms_of_service_modal_link}."
+          },
+          "get_offers_by_text": "Recevez des offres par message texte"
+        },
+        "unsubscribe": {
+          "title": "Vous vous êtes désabonné",
+          "description": "Vous ne recevrez plus de rappels de panier de notre part."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Inscrivez-moi pour recevoir les nouvelles et offres de ce magasin"
+      },
+      "shop_policies": {
+        "select_policy_label": "Sélectionnez une police",
+        "terms_of_service": "Conditions d'utilisation",
+        "terms_of_sale": "Conditions de vente",
+        "purchase_options_policy": "Politique des options d'achat",
+        "contact_information": "Contactez-nous",
+        "cookie_preferences": "Biscuits",
+        "terms_and_policies": "Conditions et politiques"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Conditions générales du commerçant officiel",
+        "privacy_policy": "Politique de confidentialité du commerçant officiel"
+      },
+      "order_payment_collection": {
+        "changes_summary": {
+          "added": {
+            "other": "Ajouté %{count}"
+          },
+          "subtracted": "Supprimé %{count}",
+          "returned": "Retourné %{count}",
+          "return_line_item_removed": "Retiré %{count} du retour"
+        },
+        "additional_payment_requested": "Le paiement de %{total_outstanding} est nécessaire",
+        "order_review_and_pay": "Votre commande a été mise à jour. Vérifiez-la et payez pour confirmer votre commande."
+      },
+      "change_currency": {
+        "payment_total_label": "Total du paiement",
+        "change_currency_link": "Changer en %{currency_name}",
+        "card_provider_fx_charges_warning": "Votre fournisseur de carte peut facturer des frais sur les transactions en %{currency_code}.",
+        "currency_not_supported_by_shop": "La devise que vous avez sélectionnée n'est plus disponible. Tous les prix sont désormais en %{currency_code}."
+      },
+      "change_country": {
+        "cart_and_currency_updated_based_on_country": "Votre panier et votre devise ont été mis à jour en fonction de votre pays de livraison.",
+        "currency_updated_for_country": "Devise mise à jour pour %{country}"
+      },
+      "tips": {
+        "description": "Montrez votre soutien à l'équipe de %{shop_name}",
+        "custom_label": "Pointe personnalisée",
+        "update_tip": "Conseil de mise à jour",
+        "message": "Merci, nous vous en sommes reconnaissants."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "one": "Achetez %{product_name} et %{count} autre article",
+          "other": "Achetez %{product_name} et %{count} autres articles"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "other": "%{count} jours"
+          },
+          "week": {
+            "other": "%{count} semaines"
+          },
+          "month": {
+            "other": "%{count} mois"
+          },
+          "year": {
+            "one": "année",
+            "other": "%{count} ans"
+          }
+        },
+        "recurring_totals": "%{total_price} toutes les %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Premier paiement %{total_price_with_discount}, puis %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Premier paiement %{total_price}",
+            "other": "Premiers %{count} paiements de %{total_price} chacun"
+          },
+          "following_cycles": ", puis %{total_price} tous les %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", puis %{count} paiement à %{total_price}",
+            "other": ", puis %{count} paiements de %{total_price} chacun"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Méthodes de paiement",
+        "title": "Méthodes de paiement",
+        "delete_customer_mandate": {
+          "success_message": "Votre mode de paiement a été supprimé avec succès"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "Trop de tentatives"
+        },
+        "line_to_check_out": "Vous êtes en attente pour passer à la caisse",
+        "inventory": {
+          "partial_inventory_banner": "Une partie de votre panier est en rupture de stock et ne sera pas disponible à l'achat lors du passage à la caisse.",
+          "sold_out": {
+            "storefront_body": "Retournez au magasin pour continuer vos achats",
+            "no_storefront_body": "Malheureusement, l'article que vous souhaitez acheter n'est plus disponible.",
+            "link": "Retour au magasin"
+          }
+        },
+        "title": "File d'attente",
+        "time_to_checkout_title": "Il est temps de passer à la caisse - {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Calcul du temps d'attente estimé",
+          "less_than_one": "Temps d'attente estimé : moins d'une minute",
+          "one": "Temps d'attente estimé : {{count}} minute",
+          "other": "Temps d'attente estimé : {{count}} minutes"
+        },
+        "last_checked": "(Dernière vérification : {{time}})",
+        "footer": {
+          "heading": "Ne rafraîchissez pas cette page, elle se mettra à jour automatiquement.",
+          "body": "Les articles dans votre panier ne sont pas réservés tant que vous n'avez pas finalisé votre commande."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Un problème est survenu lors du traitement de votre demande. Veuillez contacter le propriétaire du magasin."
+      },
+      "no_address_location": {
+        "header": "Vous n'avez pas d'adresse de livraison pour cet emplacement",
+        "alt_header": "Adresse de livraison manquante",
+        "message": "Contactez-nous pour ajouter une adresse à cet emplacement afin de finaliser la commande.",
+        "email_us_button_label": "Envoyez-nous un courriel"
+      },
+      "order_errors": {
+        "creation_failure": "Un problème est survenu lors de la création de votre commande. Veuillez réessayer ou nous contacter pour plus de détails.",
+        "network_failure": "Votre commande n'a pas pu être envoyée en raison d'une erreur réseau. Vérifiez votre connexion et réessayez."
+      },
+      "session_errors": {
+        "session_already_finished": "Cette commande a déjà été envoyée. Vous pouvez retourner à la boutique pour commencer une nouvelle commande."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Un problème est survenu lors du traitement de votre commande. Veuillez réessayer dans quelques minutes."
+      },
+      "pickup_point": {
+        "business_hours": "Heures d'ouverture",
+        "no_business_hours": "Aucun horaire d'ouverture disponible",
+        "open_twenty_four_hours": "Ouvert 24h/24 et 7j/7",
+        "title": "Point de retrait",
+        "search_button": "Recherche",
+        "selector_tabs": "Sélecteur de point de retrait",
+        "could_not_resolve_address": "Votre adresse n'a pas pu être trouvée. Essayez de nouveau ou utilisez une autre adresse",
+        "no_pickup_points_near_you": "Aucun point de retrait trouvé près de l'adresse sélectionnée",
+        "no_pickup_points_near_location": "Aucun point de retrait trouvé près de votre emplacement",
+        "pickup_unavailable_banner_title": {
+          "one": "Aucun point de retrait disponible pour votre article",
+          "other": "Aucun point de retrait disponible pour vos articles"
+        },
+        "no_pickup_points_found": "Aucun point de retrait trouvé",
+        "paginator": {
+          "header": {
+            "one": "Affichage de %{first} à %{last} sur %{count} point",
+            "other": "Affichage de %{first} à %{last} sur %{count} points"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} sur %{count} point",
+            "other": "%{pickup_point_index} sur %{count} points"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} sur %{count} point",
+            "other": "%{first} - %{last} sur %{count} points"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} point de retrait près de chez vous",
+          "other": "%{count} points de retrait près de chez vous"
+        },
+        "waiting_on_pickup_point_location_notice": "Recherche des points de retrait...",
+        "geolocation": {
+          "shared_location_button": "Utiliser ma position",
+          "errors": {
+            "unsuported_by_browser": "La géolocalisation n'est pas prise en charge par votre navigateur. Réessayez ou utilisez un autre navigateur.",
+            "permission_not_allowed": "Autoriser le partage de votre position.",
+            "permission_denied": "Impossible de déterminer votre position. Veuillez réessayer."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "title": "Un problème est survenu lors de notre passage en caisse",
+          "message": "Rafraîchissez cette page ou réessayez dans quelques minutes",
+          "action": {
+            "cta": "Rafraîchir la page"
+          }
+        },
+        "embed_errors": {
+          "customer_account_required": "Un compte client est nécessaire pour finaliser la commande",
+          "invalid_cart": "Le panier n'est plus valide",
+          "not_authorized": "Échec de l'authentification lors du paiement. Vérifiez les identifiants de votre application",
+          "killswitch_enabled": "Le passage en caisse est temporairement indisponible",
+          "policy_violation": "Impossible de finaliser l'achat en raison des restrictions de configuration des règles",
+          "unrecoverable_failure": "Impossible de charger la caisse. Veuillez réessayer."
+        }
+      },
+      "notice_banner": {
+        "subscription_changed": "Une de vos abonnements a changé.",
+        "company_location_changed": "Votre panier a été mis à jour. Vérifiez votre commande avant de la valider.",
+        "company_location_changed_product_removed": "Votre panier a été mis à jour car certains produits ne sont pas disponibles à cet endroit. Veuillez vérifier votre commande avant de la valider.",
+        "violations_title": "{{violation}} est manquant ou invalide"
       }
     },
     "sentence": {
