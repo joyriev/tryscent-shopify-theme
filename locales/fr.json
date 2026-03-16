@@ -569,7 +569,46 @@
             "sandbox_error": "Quelque chose n'a pas fonctionné",
             "web_component_error": "Il y a eu un problème de chargement de cette page"
           }
-        }
+        },
+        "network_card_payment_options": "Choisissez un réseau de cartes",
+        "network_card_persistence_description": "Le réseau sélectionné sera enregistré avec votre mode de paiement pour les transactions futures.",
+        "amazon_payments_label": "Paiement Amazon",
+        "amazon_payments_login_hint": "Vous serez invité à vous connecter avec Amazon.",
+        "amazon_payments_logout": "Se déconnecter d'Amazon Pay",
+        "amazon_payments_failed_mfa_challenge": "La méthode de paiement sélectionnée n'a pas pu être utilisée. Choisissez une autre méthode ou contactez votre banque ou l'émetteur de votre carte.",
+        "amazon_payments_abandoned_mfa_challenge": "Votre paiement n'a pas pu être effectué. Essayez un autre mode de paiement ou contactez votre banque ou l'émetteur de votre carte.",
+        "amazon_payments_could_not_enqueue_authorize": "Un problème est survenu lors du traitement de votre paiement. Veuillez réessayer ou utiliser un autre mode de paiement.",
+        "amount_left_to_pay_label": "Paiement dû :",
+        "discount_button_action_label": "Appliquer le code de réduction",
+        "discount_codes_removed_summary": {
+          "one": "Le code de réduction %{count} a été supprimé",
+          "other": "%{count} codes de réduction ont été supprimés"
+        },
+        "discount_codes_modified_summary": {
+          "one": "Le code de réduction %{count} a été modifié",
+          "other": "%{count} codes de réduction ont été modifiés"
+        },
+        "discount_codes_removed_or_modified_summary": {
+          "one": "Le code de réduction %{count} a été supprimé ou modifié",
+          "other": "%{count} codes de réduction ont été supprimés ou modifiés"
+        },
+        "gift_card_code_label": "Code de carte cadeau",
+        "gift_card_balance_label": "Balance :",
+        "supported_card_brands_more_label": "et plus encore…",
+        "detected_card_brand": "Marque de carte détectée : {brand}",
+        "credit_card_vaulting_sign_in_banner_info": "Connectez-vous ou créez un compte pour enregistrer votre carte de crédit pour de futurs achats.",
+        "ftd_vault_credit_card_label": "Enregistrez cette carte de crédit sur mon compte pour un paiement plus rapide",
+        "card_pay_with": "Payer avec :",
+        "card_security_notice": "Toutes les transactions sont sûres et chiffrées.",
+        "card_security_vault_notice": "Nous avons besoin de vos coordonnées pour les paiements futurs. Toutes les transactions sont sûres et chiffrées.",
+        "card_information_notice": "Toutes les transactions sont sûres et chiffrées. Les informations de carte de crédit ne sont jamais conservées.",
+        "card_expiry_label": "Date d'expiration (MM / AA)",
+        "card_expiry_placeholder": "Date d'expiration (MM / AA)",
+        "credit_card_start_month": "Mois de début",
+        "credit_card_start_year": "Année de début",
+        "delete_customer_mandate_modal_title": "Supprimer cette carte de paiement ?",
+        "delete_customer_mandate_modal_body": "Si vous retirez cette carte, vous devrez la rajouter avant de pouvoir l’utiliser pour des paiements.",
+        "delete_customer_mandate_modal_confirm": "Retirer la carte"
       },
       "thank_you": {
         "thank_you_item_label": {
@@ -1305,6 +1344,27 @@
         },
         "shipping_used_as_billing_notice": "Cela servira également d'adresse de facturation pour cette commande.",
         "address_update": "Mettre à jour l'adresse"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "tax_credential_gt": "NIF/TVA",
+          "shipping_credential_gt": "NIF/TVA",
+          "tax_credential_my": "Numéro d'identification fiscale/Numéro d'enregistrement",
+          "shipping_credential_my": "Numéro d'identification fiscale/Numéro d'enregistrement",
+          "shipping_credential_mx": "CFR",
+          "tax_credential_mx": "CFR",
+          "tax_credential_type_mx": "Régime fiscal",
+          "tax_credential_use_mx": "Utilisation du CFDI",
+          "tax_credential_py": "CI/RUC/TVA",
+          "shipping_credential_py": "CI/RUC/TVA",
+          "tax_credential_pt": "NIF/TVA",
+          "shipping_credential_pt": "NIF/TVA",
+          "tax_credential_es": "N° d'identification fiscale (DNI/NIF)",
+          "shipping_credential_es": "N° d'identification fiscale (DNI/NIF)",
+          "shipping_credential_tw": "Numéro d'identification national/TVA",
+          "tax_credential_tr": "Numéro d'identité de la République de Turquie/TVA",
+          "shipping_credential_tr": "Numéro d'identité de la République de Turquie/TVA"
+        }
       }
     },
     "sentence": {
