@@ -566,9 +566,10 @@
           "error": {
             "refresh": "Rafraîchir",
             "close": "fermer",
-            "sandbox_error": "Quelque chose n'a pas fonctionné",
-            "web_component_error": "Il y a eu un problème de chargement de cette page"
-          }
+            "sandbox_error": "Une erreur est survenue",
+            "web_component_error": "Un problème est survenu lors du chargement de cette page"
+          },
+          "header": "Payer %{shop_name} %{total_price} USDC"
         },
         "network_card_payment_options": "Choisissez un réseau de cartes",
         "network_card_persistence_description": "Le réseau sélectionné sera enregistré avec votre mode de paiement pour les transactions futures.",
@@ -608,7 +609,60 @@
         "credit_card_start_year": "Année de début",
         "delete_customer_mandate_modal_title": "Supprimer cette carte de paiement ?",
         "delete_customer_mandate_modal_body": "Si vous retirez cette carte, vous devrez la rajouter avant de pouvoir l’utiliser pour des paiements.",
-        "delete_customer_mandate_modal_confirm": "Retirer la carte"
+        "delete_customer_mandate_modal_confirm": "Retirer la carte",
+        "card_expiry_date_explanation": "Date d'expiration de la carte au format : mois, mois, année, année",
+        "card_expiration_month_label": "Mois d'expiration",
+        "card_expiration_year_label": "Année d'expiration",
+        "card_verification_value_explanation": "Code de sécurité à 3 chiffres généralement situé au dos de votre carte. Les cartes American Express possèdent un code à 4 chiffres situé sur le devant.",
+        "card_verification_value_explanation_amex": "Code de sécurité à 4 chiffres au recto de votre carte",
+        "card_verification_value_explanation_other": "Code de sécurité à 3 chiffres au dos de votre carte",
+        "card_start_label": "Date d'émission (MM / AA)",
+        "card_start_placeholder": "Date d'émission (MM / AA)",
+        "card_issue_number_label": "Numéro de numéro",
+        "card_issue_number_placeholder": "Numéro de numéro",
+        "card_change_label": "Changer",
+        "crypto_payment_method": {
+          "description": "Connectez-vous en toute sécurité à votre portefeuille sur le réseau Base",
+          "tooltip": "Le solde de votre portefeuille et votre adresse ne seront pas partagés et seul le montant demandé pourra être prélevé"
+        },
+        "different_credit_card_label": "Utiliser une autre carte de crédit",
+        "same_billing_address_label": "Identique à l'adresse de livraison",
+        "billing_address_associated_with_mandate": "Utiliser l'adresse associée au mode de paiement",
+        "billing_address_associated_with_mandate_info": "Si vous souhaitez modifier votre adresse de facturation, supprimez et saisissez de nouveau les informations de votre carte de crédit",
+        "free_order_notice_html": "Votre commande est <strong>gratuite</strong>. Aucun paiement n'est requis.",
+        "order_covered_by_gift_cards_notice": {
+          "other": "Votre commande est couverte par vos cartes-cadeaux."
+        },
+        "offsite_gateway_redirect_hint_multi_currency_html": "Total %{total_shop_price} %{gateway_label}",
+        "receiver_payment_experience_hint": "Après avoir passé votre commande, vous recevrez les détails de paiement. Effectuez le paiement au Multibanco ou en ligne dans un délai de %{due_days} jours.",
+        "billing_address_rollup_accessibility_label": "Options d'adresse de facturation",
+        "billing_address_description": "Sélectionnez l'adresse qui correspond à votre carte ou mode de paiement.",
+        "billing_address_description_no_shipping_address": "Saisissez l'adresse correspondant à votre carte ou mode de paiement.",
+        "no_js_credit_card_fields_redirect_hint": "Vous serez redirigé pour ajouter vos informations de paiement.",
+        "card_fields_container_prefix": "Conteneur de champ pour :",
+        "card_fields_unavailable_html": {
+          "other": "Les paiements par carte de crédit et de débit ne sont pas disponibles pour le moment.<br><a href=\"%{current_url}\">Actualisez cette page</a> ou essayez un autre mode de paiement."
+        },
+        "card_fields_processing_error": "Un problème est survenu lors du traitement du paiement. Essayez de rafraîchir cette page ou vérifiez votre connexion internet.",
+        "technical_error": "Les paiements ne peuvent pas être traités pour le moment en raison d'un problème technique. Veuillez réessayer dans quelques minutes.",
+        "no_method_error": "Cette boutique ne peut pas accepter les paiements pour le moment.",
+        "not_configured_error": "Cette boutique ne peut pas accepter les paiements pour le moment.",
+        "missing_credit_card_error": "Saisissez les informations de votre carte pour finaliser le paiement",
+        "shop_pay_ideal_unavailable_error": "iDEAL | Wero n'est pas disponible pour cette commande. Choisissez un autre mode de paiement.",
+        "payment_method_not_available_for_shipping_address_error": "Méthode de paiement non disponible pour l'adresse de livraison sélectionnée. Choisissez une autre méthode de paiement.",
+        "billing_address_not_supported_for_payment_method_error": "Cette méthode de paiement n'est pas disponible pour votre adresse de facturation et votre devise. Essayez une autre méthode de paiement.",
+        "generic_incorrect_card_info": "Les informations de votre paiement n'ont pas pu être vérifiées. Vérifiez les détails de votre carte et réessayez.",
+        "sofort_label": "Virement bancaire immédiat",
+        "paypal_wallet_label": "Portefeuille PayPal",
+        "shop_pay_installments_label": "Paiements échelonnés Shop Pay",
+        "continue_to_guest_checkout": "Continuer en tant qu'invité",
+        "klarna_pay_now_label": "Payer maintenant avec Klarna",
+        "multibanco_label": "Multibanque",
+        "eps_label": "virement eps",
+        "klarna_slice_it_label": "Financez avec Klarna",
+        "afterpay_label": "Paiement différé",
+        "cashapppay_label": "Paiement Cash App",
+        "blik_label": "Regard"
       },
       "thank_you": {
         "thank_you_item_label": {
