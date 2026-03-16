@@ -223,6 +223,15 @@
 
       currentPriceSpan.innerHTML = variantData.originalPrice;
 
+       // Update all other current-price elements in the page
+      const allCurrentPriceElements = document.querySelectorAll('.current-price');
+      allCurrentPriceElements.forEach(element => {
+        // Skip the main price container element that we already updated
+        if (element !== currentPriceSpan && element.textContent.trim() !== '') {
+          element.innerHTML = variantData.originalPrice;
+        }
+      });
+
       {% comment %} if(typeof variantSuggestion !== 'undefined') {
         if(variantData.title !== "100ML") {
           if(variantData.title === '50ML') {
