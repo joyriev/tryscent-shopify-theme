@@ -3120,9 +3120,25 @@
             "other": "{{count}} produits supplémentaires"
           },
           "product_count": {
-            "one": "{{count}} produit"
+            "one": "{{count}} produit",
+            "other": "{{count}} produits"
           }
-        }
+        },
+        "updating_contracts": {
+          "one": "Mise à jour de {{count}} contrat d'abonnement...",
+          "other": "Mise à jour de {{count}} contrats d'abonnement..."
+        },
+        "contracts_updated": {
+          "one": "Contrat d'abonnement mis à jour avec succès pour {{count}}",
+          "other": "{{count}} contrats d'abonnement mis à jour avec succès"
+        },
+        "contracts_update_failed": "Échec de la mise à jour de certains contrats d'abonnement",
+        "subscription_contracts_updated": "Mise à jour de {{succeeded}} abonnements sur {{total}}",
+        "invalid_wallet_type_error": "Type de portefeuille invalide."
+      },
+      "three_d_secure": {
+        "title": "3D Sécurisé",
+        "verification_failed": "Votre paiement n'a pas pu être vérifié. Réessayez ou utilisez un autre mode de paiement."
       }
     },
     "date": {
@@ -3768,6 +3784,52 @@
       "too_many_attempts": {
         "message": "Trop de tentatives"
       }
+    },
+    "payment_method_brands": {
+      "mastercard": "Carte Mastercard",
+      "discover": "Découvrir",
+      "dinersclub": "Club des Dîners",
+      "elo": "Élo",
+      "visaelectron": "Visa Électron",
+      "maestro": "Maître",
+      "forbrugsforeningen": "Association de consommation",
+      "hipercard": "Hipercarte",
+      "unionpay": "UnionPay",
+      "shoppay": "Boutique Pay",
+      "applepay": "Paiement Apple",
+      "googlepay": "Paiement Google",
+      "bogus": "Faux"
+    },
+    "privacy_banner": {
+      "cookie_preferences_link": "Préférences des cookies"
+    },
+    "ui_components": {
+      "clear": "Clair",
+      "clipboardFailedToCopy": "Échec de la copie",
+      "processing": "Traitement…",
+      "increase": "Augmenter {{type}}",
+      "decrease": "Diminuer {{type}}",
+      "january": "janvier",
+      "march": "mars",
+      "may": "mai",
+      "june": "juin",
+      "july": "juillet",
+      "august": "août",
+      "september": "septembre",
+      "october": "octobre",
+      "december": "décembre",
+      "monday": "lundi",
+      "saturday": "samedi",
+      "sunday": "dimanche",
+      "mondayAbbreviation": "Mo",
+      "tuesdayAbbreviation": "Toi",
+      "wednesdayAbbreviation": "Nous",
+      "thursdayAbbreviation": "Th",
+      "fridayAbbreviation": "Français",
+      "saturdayAbbreviation": "Sa",
+      "sundayAbbreviation": "Su",
+      "rangeStart": "Début de la gamme",
+      "inRange": "À portée"
     }
   }
 }
