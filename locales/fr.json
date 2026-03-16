@@ -2836,8 +2836,72 @@
           "authorized": "Autorisé",
           "pending": "En attente",
           "paid": "Payé",
-          "unpaid": "Non payé"
-        }
+          "unpaid": "Non payé",
+          "voided": "Annulé",
+          "partially_paid": "Partiellement payé",
+          "partially_refunded": "Partiellement remboursé",
+          "refunded": "Remboursé"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Expédié",
+          "complete": "Terminer",
+          "partial": "Partiel",
+          "unfulfilled": "Non réalisé",
+          "restocked": "Réapprovisionné"
+        },
+        "transaction_status": {
+          "success": "Succès",
+          "pending": "En attente"
+        },
+        "cancel_reason": {
+          "inventory": "Articles indisponibles",
+          "customer": "Client a modifié/annulé la commande"
+        },
+        "cash_on_delivery": "Paiement à la livraison (PAL)"
+      },
+      "cart": {
+        "only_n_items_available": "Vous ne pouvez ajouter que %{count} %{name} au panier.",
+        "only_one_added_to_cart": "Un seul article a été ajouté à votre panier en raison de la disponibilité.",
+        "only_n_added_to_cart": "Seulement %{quantity} articles ont été ajoutés à votre panier en raison de la disponibilité.",
+        "not_respect_step": "Vous ne pouvez ajouter cet article qu'en incréments de %{step}.",
+        "all_items_in_cart": "Tous les %{count} %{name} sont dans votre panier.",
+        "empty_update": "impossible de mettre à jour un panier vide",
+        "missing_parameters": "aucun identifiant ou paramètre de ligne valide",
+        "generic_error": "Erreur de panier",
+        "invalid_input": "Le paramètre %{parameter} est invalide.",
+        "product_not_available": "Produit non disponible",
+        "too_many_line_items_error": "Votre panier ne peut pas contenir plus de %{max} articles.",
+        "link_expired": "Lien expiré",
+        "stock_problems_html": "Un ou plusieurs articles ne sont plus disponibles. Nous avons fourni un <a href='%{link}'>panier mis à jour</a>.",
+        "changed": "Panier modifié",
+        "product_sold_out": "Le produit '%{name}' est déjà en rupture de stock.",
+        "variant_not_found": "Impossible de trouver la variante",
+        "variant_requires_selling_plan": "La variante ne peut être achetée qu'avec un plan de vente.",
+        "selling_plan_not_available_for_company_locations": "Un achat unique est disponible pour les commandes interentreprises",
+        "digital_product_not_available_for_company_locations": "Cet article ne peut pas être ajouté à une commande interentreprises",
+        "selling_plan_not_applicable": "Impossible d'appliquer le plan de vente à la variante",
+        "shipping_address_not_required": "Ce panier ne nécessite pas d'expédition",
+        "shipping_address_invalid": "Un problème est survenu lors du calcul de vos frais de port. Continuez vers la caisse pour choisir un tarif d'expédition avant de finaliser votre commande.",
+        "bundle_requires_components": "Le produit groupé '%{name}' ne peut pas être ajouté au panier.",
+        "gift_card_with_components_not_supported": "Le produit groupé '%{name}' ne peut pas être ajouté au panier.",
+        "gift_card_price_must_be_greater_than_zero": "Le produit groupé '%{name}' ne peut pas être ajouté au panier.",
+        "gift_card_recipient_validation_error": "Le destinataire spécifié de la carte-cadeau est invalide",
+        "view_lines_limit_reached": "Les lignes doivent contenir au maximum %{limit} caractères",
+        "cart_too_large": "Le panier est trop volumineux.",
+        "cart_attributes_error": "Les attributs du panier contiennent des données invalides.",
+        "merchandise_line_transformers": {
+          "run_error": "Une erreur est survenue dans votre panier."
+        },
+        "merchandise_not_applicable": "L'article ne peut pas être acheté dans cette configuration."
+      },
+      "storefront": {
+        "invalid_password": "Mot de passe incorrect, veuillez réessayer."
+      },
+      "tags": {
+        "add_articles": "Restreindre la recherche aux articles contenant également le tag %{tag}",
+        "add_products": "Restreindre la sélection aux produits correspondant au tag %{tag}",
+        "remove_articles": "Élargir la recherche aux articles qui ne sont pas étiquetés %{tag}",
+        "remove_products": "Supprimer le %{tag}"
       }
     }
   },
