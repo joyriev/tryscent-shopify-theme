@@ -863,6 +863,79 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {% when 'dialect_notes' %}
+                  <div class="!my-10 space-y-6">
+                    <h3 class="font-semibold text-lg">Scent Notes:</h3>
+                    <div class="flex gap-3 flex-wrap">
+                      <div class="flex gap-2 items-center">
+                        <img
+                          src="{{ 'top-notes.png' | asset_url }}"
+                          alt="Top Notes"
+                          width="24"
+                          height="24">
+                        <h3 class="font-semibold tracking-widest text-sm my-0">TOP</h3>
+                      </div>
+                      <div class="flex flex-wrap items-center gap-2">
+                        {% for note in product.metafields.custom.upper_notes.value %}
+                          <div class="bg-white rounded-full flex items-center gap-3 px-3 py-1">
+                            <img
+                              src="{{ note.icon | image_url: width: 64, height: 64 }}"
+                              alt="{{ note.name }}"
+                              width="24"
+                              height="24"
+                              loading="lazy">
+                            <span>{{ note.name }}</span>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="flex gap-3 flex-wrap">
+                      <div class="flex gap-2 items-center">
+                        <img
+                          src="{{ 'middle-notes.png' | asset_url }}"
+                          alt="Middle Notes"
+                          width="24"
+                          height="24">
+                        <h3 class="font-semibold tracking-widest text-sm my-0">MIDDLE</h3>
+                      </div>
+                      <div class="flex flex-wrap items-center gap-2">
+                        {% for note in product.metafields.custom.center_notes.value %}
+                          <div class="bg-white rounded-full flex items-center gap-3 px-3 py-1">
+                            <img
+                              src="{{ note.icon | image_url: width: 64, height: 64 }}"
+                              alt="{{ note.name }}"
+                              width="24"
+                              height="24"
+                              loading="lazy">
+                            <span>{{ note.name }}</span>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="flex gap-3 flex-wrap">
+                      <div class="flex gap-2 items-center">
+                        <img
+                          src="{{ 'base-notes.png' | asset_url }}"
+                          alt="Base Notes"
+                          width="24"
+                          height="24">
+                        <h3 class="font-semibold tracking-widest text-sm my-0">BASE</h3>
+                      </div>
+                      <div class="flex flex-wrap items-center gap-2">
+                        {% for note in product.metafields.custom.deeper_notes.value %}
+                          <div class="bg-white rounded-full flex items-center gap-3 px-3 py-1">
+                            <img
+                              src="{{ note.icon | image_url: width: 64, height: 64 }}"
+                              alt="{{ note.name }}"
+                              width="24"
+                              height="24"
+                              loading="lazy">
+                            <span>{{ note.name }}</span>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -984,6 +1057,11 @@
     {
       "type": "reactive_variant_selector",
       "name": "Reactive Variant Selector",
+      "limit": 1
+    },
+    {
+      "type": "dialect_notes",
+      "name": "Dialect Notes",
       "limit": 1
     },
     {
