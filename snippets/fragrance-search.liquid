@@ -2816,7 +2816,9 @@
   document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE CART & PRODUCT PAGE DETECTION =====
     function isMobile() {
-      return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      // Check ONLY user agent, NOT viewport width
+      // This way narrow desktop windows won't be treated as mobile
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
     
     function isCartPage() {
