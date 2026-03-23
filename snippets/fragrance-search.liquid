@@ -2814,6 +2814,59 @@
 
   // ===== INIT =====
   document.addEventListener('DOMContentLoaded', function() {
+    // ===== MOBILE CART & PRODUCT PAGE DETECTION =====
+    function isMobile() {
+      return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    
+    function isCartPage() {
+      return window.location.pathname.includes('/cart') || window.location.href.includes('/cart');
+    }
+    
+    function isProductPage() {
+      return window.location.pathname.includes('/products/') || window.location.pathname.includes('/product/');
+    }
+    
+    function updateSearchButtonVisibility() {
+      if (!stickyButton) return;
+      
+      if (isMobile() && (isCartPage() || isProductPage())) {
+        // Hide search button on mobile cart page or product page
+        stickyButton.style.display = 'none';
+        if (searchPopup && searchPopup.classList.contains('active')) {
+          searchPopup.classList.remove('active');
+        }
+      } else {
+        // Show search button everywhere else
+        stickyButton.style.display = 'flex';
+      }
+    }
+    
+    // Initial check on page load
+    updateSearchButtonVisibility();
+    
+    // Check visibility on window resize (orientation change)
+    window.addEventListener('resize', updateSearchButtonVisibility);
+    
+    // Check visibility when page becomes visible (mobile back navigation)
+    document.addEventListener('visibilitychange', function() {
+      if (document.visibilityState === 'visible') {
+        updateSearchButtonVisibility();
+      }
+    });
+    
+    // Detect when user navigates back/forward
+    window.addEventListener('popstate', updateSearchButtonVisibility);
+    
+    // Monitor for dynamic page navigation changes
+    let lastPath = window.location.pathname;
+    setInterval(function() {
+      if (window.location.pathname !== lastPath) {
+        lastPath = window.location.pathname;
+        setTimeout(updateSearchButtonVisibility, 50);
+      }
+    }, 1000);
+    
     if (searchInput) {
       searchInput.addEventListener('keyup', handleSearch);
     }
