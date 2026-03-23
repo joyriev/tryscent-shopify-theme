@@ -2839,16 +2839,15 @@
       // ONLY hide if BOTH: mobile AND (cart OR product)
       if (mobile && (onCart || onProduct)) {
         console.log('[updateSearchButtonVisibility] HIDING - mobile on cart/product');
-        stickyButton.style.display = 'none';
+        stickyButton.setAttribute('style', 'display: none !important;');
         if (searchPopup && searchPopup.classList.contains('active')) {
           searchPopup.classList.remove('active');
         }
       } else {
         // ALWAYS show on desktop (>=769px) regardless of page
-        // SHOW on mobile if not on cart/product page
-        console.log('[updateSearchButtonVisibility] SHOWING');
-        stickyButton.style.display = 'inline-flex';
-        stickyButton.style.visibility = 'visible';
+        console.log('[updateSearchButtonVisibility] SHOWING - setting display to flex');
+        stickyButton.setAttribute('style', 'display: flex !important; visibility: visible !important;');
+        stickyButton.classList.remove('hidden');
       }
     }
     
