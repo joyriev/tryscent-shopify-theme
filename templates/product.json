@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "text_GrNJKg": {
-          "type": "text",
-          "settings": {
-            "text": "Top Notes: {{ product.metafields.custom.top_notes.value.heading.value }}",
-            "text_style": "body"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -54,6 +47,13 @@
           "type": "price",
           "disabled": true,
           "settings": {}
+        },
+        "text_GrNJKg": {
+          "type": "text",
+          "settings": {
+            "text": "Top Notes: {{ product.metafields.custom.top_notes.value.heading.value }}",
+            "text_style": "body"
+          }
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -239,13 +239,13 @@
         }
       },
       "block_order": [
-        "text_GrNJKg",
         "title",
         "selling_points_9tdid6",
         "cheaper_than_yDGYG9",
         "variant_picker",
         "text_fQLMC7",
         "price",
+        "text_GrNJKg",
         "quantity_selector",
         "buy_buttons",
         "atc_bundle_builder_aLJUaV",
