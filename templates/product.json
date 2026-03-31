@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "text_GrNJKg": {
+          "type": "text",
+          "settings": {
+            "text": "Top Notes: {{ product.metafields.custom.top_notes.value.heading.value }}",
+            "text_style": "body"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -232,6 +239,7 @@
         }
       },
       "block_order": [
+        "text_GrNJKg",
         "title",
         "selling_points_9tdid6",
         "cheaper_than_yDGYG9",
