@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "text_fQLMC7": {
-          "type": "text",
-          "settings": {
-            "text": "Scent Notes: {{ product.metafields.custom.top_notes.value.heading.value }}",
-            "text_style": "body"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -40,6 +33,13 @@
           "settings": {
             "picker_type": "button",
             "swatch_shape": "circle"
+          }
+        },
+        "text_fQLMC7": {
+          "type": "text",
+          "settings": {
+            "text": "Scent Notes: {{ product.metafields.custom.top_notes.value.heading.value }}",
+            "text_style": "body"
           }
         },
         "price": {
@@ -231,11 +231,11 @@
         }
       },
       "block_order": [
-        "text_fQLMC7",
         "title",
         "selling_points_9tdid6",
         "cheaper_than_yDGYG9",
         "variant_picker",
+        "text_fQLMC7",
         "price",
         "quantity_selector",
         "buy_buttons",
