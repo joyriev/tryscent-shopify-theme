@@ -264,7 +264,7 @@
                 {% render 'cta-videos', block: block %}
               {%- when 'text' -%}
                 <p
-                  class="product__text inline-richtext !my-6 text-center{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  class="product__text inline-richtext !my-6{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
