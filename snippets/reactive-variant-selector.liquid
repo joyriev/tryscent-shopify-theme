@@ -44,12 +44,12 @@
               loading="lazy">
           </div>
         {% endif %}
-       {% comment %} <div class="text-left md:text-center">
+       <div class="text-left md:text-center">
           <div class="text-sm font-semibold">{{ variant.title }}</div>
           <div class="text-xs text-gray-600">
             {{- cart.currency.symbol -}}
             {{- per_ml }} Per Spray</div>
-        </div>{% endcomment %}
+        </div>
         {% if variant.title contains '50' %}
           <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Popular</span>
         {% endif %}
