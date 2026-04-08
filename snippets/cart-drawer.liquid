@@ -21,36 +21,10 @@
       aria-modal="true"
       aria-label="{{ 'sections.cart.title' | t }}"
       tabindex="-1">
-      {%- if cart == empty -%}
-        <div class="drawer__inner-empty">
-          <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
-            <div class="cart-drawer__empty-content">
-              <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
-              <button
-                class="drawer__close"
-                type="button"
-                onclick="this.closest('cart-drawer').close()"
-                aria-label="{{ 'accessibility.close' | t }}">
-                <span class="svg-wrapper">
-                  {{- 'icon-close.svg' | inline_asset_content -}}
-                </span>
-              </button>
-              <a href="{{ routes.all_products_collection_url }}" class="button">
-                {{ 'general.continue_shopping' | t }}
-              </a>
-
-              {%- if shop.customer_accounts_enabled and customer == null -%}
-                <p class="cart__login-title h3">{{ 'sections.cart.login.title' | t }}</p>
-                <p class="cart__login-paragraph">
-                  {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
-                </p>
-              {%- endif -%}
-            </div>
-          </div>
-        </div>
-      {%- endif -%}
       <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
+        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}
+          <span style="color: #6c6c6c; margin: 0 5px;">•</span>
+          {{ cart.item_count }}</h2>
         <button
           class="drawer__close"
           type="button"
@@ -62,7 +36,27 @@
         </button>
       </div>
       <div class="flex-grow overflow-y-auto -mr-3 pr-3 bg-white">
-        {% render 'cart-progress' %}
+        {%- if cart == empty -%}
+          <div class="drawer__inner-empty">
+            <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
+              <div class="cart-drawer__empty-content">
+                <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
+                <a href="{{ routes.all_products_collection_url }}" class="button">
+                  {{ 'general.continue_shopping' | t }}
+                </a>
+
+                {%- if shop.customer_accounts_enabled and customer == null -%}
+                  <p class="cart__login-title h3">{{ 'sections.cart.login.title' | t }}</p>
+                  <p class="cart__login-paragraph">
+                    {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
+                  </p>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- else -%}
+          {% render 'cart-progress' %}
+        {%- endif -%}
         <cart-drawer-items
           {% if cart == empty %}
           class=" is-empty"
@@ -76,31 +70,6 @@
               {%- if cart != empty -%}
                 <div class="drawer__cart-items-wrapper">
                   <table class="cart-items" role="table">
-                    <thead role="rowgroup">
-                      <tr role="row">
-                        <th id="CartDrawer-ColumnProductImage" role="columnheader">
-                          <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
-                        </th>
-                        <th
-                          id="CartDrawer-ColumnProduct"
-                          class="caption-with-letter-spacing"
-                          scope="col"
-                          role="columnheader">
-                          {{ 'sections.cart.headings.product' | t }}
-                        </th>
-                        <th
-                          id="CartDrawer-ColumnTotal"
-                          class="right caption-with-letter-spacing"
-                          scope="col"
-                          role="columnheader">
-                          {{ 'sections.cart.headings.total' | t }}
-                        </th>
-                        <th id="CartDrawer-ColumnQuantity" role="columnheader">
-                          <span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span>
-                        </th>
-                      </tr>
-                    </thead>
-
                     <tbody role="rowgroup">
                       {%- for item in cart.items -%}
                         <tr
@@ -487,47 +456,6 @@
                 </ul>
               {%- endif -%}
             </div>
-
-            <div class="totals" role="status">
-              <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-              <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
-            </div>
-
-            <small class="tax-note caption-large rte">
-              {%- if cart.duties_included and cart.taxes_included -%}
-                {%- if shop.shipping_policy.body == blank -%}
-                  {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
-                {%- else -%}
-                  {{
-                    'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html' | t: link: shop.shipping_policy.url
-                  }}
-                {%- endif -%}
-              {%- elsif cart.duties_included == false and cart.taxes_included -%}
-                {%- if shop.shipping_policy.body == blank -%}
-                  {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
-                {%- else -%}
-                  {{
-                    'sections.cart.taxes_included_shipping_at_checkout_with_policy_html' | t: link: shop.shipping_policy.url
-                  }}
-                {%- endif -%}
-              {%- elsif cart.duties_included and cart.taxes_included == false -%}
-                {%- if shop.shipping_policy.body == blank -%}
-                  {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
-                {%- else -%}
-                  {{
-                    'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html' | t: link: shop.shipping_policy.url
-                  }}
-                {%- endif -%}
-              {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
-                {%- if shop.shipping_policy.body == blank -%}
-                  {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
-                {%- else -%}
-                  {{
-                    'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html' | t: link: shop.shipping_policy.url
-                  }}
-                {%- endif -%}
-              {%- endif -%}
-            </small>
           </div>
 
           <!-- CTAs -->
@@ -543,15 +471,17 @@
               disabled
               {% endif %}>
               {{ 'sections.cart.checkout' | t }}
+              <span style="opacity: 0.6; margin: 0 5px;">•</span>
+              {{ cart.total_price | money_with_currency }}
             </button>
           </div>
-          <div class="flex gap-1 space-between mt-6">
-            {% assign enabled_payment_types = 'visa,master,american_express,paypal,ideal,klarna,google_pay,apple_pay,shopify_pay' | remove: ' ' | split: ','
-            %}
-            {% for type in enabled_payment_types %}
-              {{ type | payment_type_svg_tag: class: 'icon icon--full-color payment-icon-inline' }}
-            {% endfor %}
-          </div>
+          <img
+            style="margin-top: 20px;"
+            src="{{ 'payment-badge.svg' | asset_url }}"
+            alt="Payment methods"
+            width="100%"
+            height="auto"
+            loading="lazy">
         </div>
       {% endif %}
     </div>
