@@ -1,0 +1,103 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  id="{{ section.id }}"
+  class="section-{{ section.id }}-padding"
+  style="background-color: {{ section.settings.background_color }}">
+  <div class="page-width">
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-[#C8A96E]">The smell journey</p>
+        <h2 class="mt-5 font-[Playfair_Display] text-4xl leading-tight text-[#F5F2EC] md:text-[46px]">How it develops on skin</h2>
+        <p class="mt-5 max-w-md text-base leading-8 text-[#B0ADA6]">The first 30 seconds sell the scent. The next 12 hours decide whether you keep wearing it.</p>
+      </div>
+      <div class="border border-white/10 bg-[#111118] p-6 md:p-8">
+        <div class="mb-10">
+          <div class="h-px w-full bg-[linear-gradient(90deg,#C8A96E_0%,rgba(200,169,110,0.4)_50%,rgba(200,169,110,0.12)_100%)]"></div>
+          <div class="mt-3 flex justify-between font-mono text-[10px] uppercase tracking-[0.18em] text-[#8D887C]">
+            <span data-loc="client/src/components/storefront.tsx:724">0</span>
+            <span>15 min</span>
+            <span>4 hr</span>
+            <span>12 hr</span>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <div class="grid gap-3 md:grid-cols-[180px_1fr] md:gap-6">
+            <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[#C8A96E]">OPENING · 0–15 MIN</p>
+            <div>
+              <p class="text-sm font-semibold text-[#F5F2EC]">Pineapple · Black Currant · Apple · Lemon · Pink Pepper</p>
+              <p class="mt-3 text-sm leading-7 text-[#B0ADA6]">Bright, fresh, slightly sharp. The kind of opening that gets noticed when you walk into a room.</p>
+            </div>
+          </div>
+          <div class="grid gap-3 md:grid-cols-[180px_1fr] md:gap-6">
+            <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[#C8A96E]">HEART · 1–4 HRS</p>
+            <div>
+              <p class="text-sm font-semibold text-[#F5F2EC]">Birch · Rose · Jasmine</p>
+              <p class="mt-3 text-sm leading-7 text-[#B0ADA6]">The fruit fades. Something warmer takes over. Smoky, slightly floral, confident.</p>
+            </div>
+          </div>
+          <div class="grid gap-3 md:grid-cols-[180px_1fr] md:gap-6">
+            <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-[#C8A96E]">BASE · 4–12+ HRS</p>
+            <div>
+              <p class="text-sm font-semibold text-[#F5F2EC]">Sandalwood · Oakmoss · Musk</p>
+              <p class="mt-3 text-sm leading-7 text-[#B0ADA6]">This is what people smell on your jacket the next day. Warm, woody, clean.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Manus Smell Journey",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fcfbf9"
+      }, {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 72
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 72
+      }
+    ],
+    "presets": [
+      {
+        "name": "Manus Smell Journey"
+      }
+    ]
+  }
+{% endschema %}
