@@ -861,6 +861,10 @@
     max-width: 1024px
 }
 
+.max-w-screen-lg {
+    max-width: 1024px
+}
+
 .flex-1 {
     flex: 1 1 0%
 }
@@ -2751,6 +2755,10 @@
 
 .\[grid-area\:search\] {
     grid-area: search
+}
+
+.\[grid-template-columns\:1\.1fr_1fr_1fr\] {
+    grid-template-columns: 1.1fr 1fr 1fr
 }
 
 .\[rotate\:-20deg\] {
