@@ -26,11 +26,11 @@
 {% if product.variants.size > 1 %}
   {% comment %} Variant Selector {% endcomment %}
   <h2 class="m-0 text-sm text-gray-400 tracking-wide font-normal">Välj format:</h2>
-  <div class="flex gap-3 flex-wrap" id="variant-selector">
+  <div class="flex gap-3" id="variant-selector">
     {% for variant in product.variants %}
       <button
         type="button"
-        class="variant-button flex md:flex-col items-center gap-2 rounded-lg px-7 pt-5 pb-4 bg-white border-2 border-solid cursor-pointer font-sans relative {% if variant.id == selected_variant.id %}border-black{% else %}border-gray-200{% endif %}"
+        class="variant-button flex md:flex-col items-center gap-2 rounded-lg px-5 flex-grow pt-5 pb-4 bg-white border-2 border-solid cursor-pointer font-sans relative {% if variant.id == selected_variant.id %}border-black{% else %}border-gray-200{% endif %}"
         data-variant-id="{{ variant.id }}"
         data-variant-title="{{ variant.title }}"
         data-original-price="{{ variant.price | money }}"
