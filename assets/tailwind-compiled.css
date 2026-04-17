@@ -157,6 +157,14 @@
     top: 2px
 }
 
+.\!left-0 {
+    left: 0px !important
+}
+
+.\!right-0 {
+    right: 0px !important
+}
+
 .isolate {
     isolation: isolate
 }
@@ -456,6 +464,10 @@
     margin-top: 44px
 }
 
+.\!mt-8 {
+    margin-top: 32px !important
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -599,6 +611,16 @@
 .size-\[14px\] {
     width: 14px;
     height: 14px
+}
+
+.\!size-7 {
+    width: 28px !important;
+    height: 28px !important
+}
+
+.size-3 {
+    width: 12px;
+    height: 12px
 }
 
 .h-0 {
@@ -1414,6 +1436,11 @@
     border-color: rgb(255 255 255 / 0.1)
 }
 
+.\!border-gray-200 {
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(229 231 235 / var(--tw-border-opacity, 1)) !important
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1687,6 +1714,15 @@
     background-color: rgb(255 255 255 / 0.4)
 }
 
+.bg-\[\#f2f2f2\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(242 242 242 / var(--tw-bg-opacity, 1))
+}
+
+.bg-white\/60 {
+    background-color: rgb(255 255 255 / 0.6)
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -1918,6 +1954,11 @@
     padding-bottom: 2px
 }
 
+.\!py-4 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -2034,6 +2075,10 @@
     padding-top: 32px
 }
 
+.pt-5 {
+    padding-top: 20px
+}
+
 .text-left {
     text-align: left
 }
@@ -2060,6 +2105,10 @@
 
 .font-serif {
     font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif
+}
+
+.font-\[\'Plus_Jakarta_Sans\'\] {
+    font-family: 'Plus Jakarta Sans'
 }
 
 .text-2xl {
