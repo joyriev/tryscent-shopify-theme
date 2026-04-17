@@ -12,13 +12,18 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_rating_text_8HH7Ud": {
+          "type": "custom_rating_text",
+          "settings": {
+            "text": "4,7/5 (10 000+) Visa alla"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
         },
         "selling_points_9tdid6": {
           "type": "selling_points",
-          "disabled": true,
           "settings": {}
         },
         "cheaper_than_yDGYG9": {
@@ -27,45 +32,11 @@
             "number": 0
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
-          "disabled": true,
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "text_fQLMC7": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Scent Notes: {{ product.metafields.custom.top_notes.value.heading.value }}",
-            "text_style": "subtitle"
-          }
-        },
-        "price": {
-          "type": "price",
-          "disabled": true,
-          "settings": {}
-        },
         "text_GrNJKg": {
           "type": "text",
           "settings": {
             "text": "<strong>Toppnoter:</strong> {{ product.metafields.custom.top_notes.value.heading.value }}",
             "text_style": "body"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "disabled": true,
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
           }
         },
         "atc_bundle_builder_aLJUaV": {
@@ -141,15 +112,11 @@
         }
       },
       "block_order": [
+        "custom_rating_text_8HH7Ud",
         "title",
         "selling_points_9tdid6",
         "cheaper_than_yDGYG9",
-        "variant_picker",
-        "text_fQLMC7",
-        "price",
         "text_GrNJKg",
-        "quantity_selector",
-        "buy_buttons",
         "atc_bundle_builder_aLJUaV",
         "dialect_notes_NHiwen",
         "collapsible_tab_XYmgtQ",
