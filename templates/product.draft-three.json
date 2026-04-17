@@ -22,26 +22,11 @@
           "type": "title",
           "settings": {}
         },
-        "selling_points_9tdid6": {
-          "type": "selling_points",
-          "settings": {}
-        },
-        "cheaper_than_yDGYG9": {
-          "type": "cheaper_than",
+        "custom_liquid_E8WMB4": {
+          "type": "custom_liquid",
           "settings": {
-            "number": 0
+            "custom_liquid": "{% render 'draft-three-atc' %}"
           }
-        },
-        "text_GrNJKg": {
-          "type": "text",
-          "settings": {
-            "text": "<strong>Toppnoter:</strong> {{ product.metafields.custom.top_notes.value.heading.value }}",
-            "text_style": "body"
-          }
-        },
-        "atc_bundle_builder_aLJUaV": {
-          "type": "atc_bundle_builder",
-          "settings": {}
         },
         "dialect_notes_NHiwen": {
           "type": "dialect_notes",
@@ -114,10 +99,7 @@
       "block_order": [
         "custom_rating_text_8HH7Ud",
         "title",
-        "selling_points_9tdid6",
-        "cheaper_than_yDGYG9",
-        "text_GrNJKg",
-        "atc_bundle_builder_aLJUaV",
+        "custom_liquid_E8WMB4",
         "dialect_notes_NHiwen",
         "collapsible_tab_XYmgtQ",
         "collapsible_tab_tUEYBx",
