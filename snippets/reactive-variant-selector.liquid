@@ -6,7 +6,7 @@
   for variant in product.variants
     assign variant_title_down = variant.title | downcase
 
-    if variant_title_down contains '50'
+    if variant_title_down contains '100'
       assign selected_variant = variant
       break
     endif
@@ -17,7 +17,7 @@
   {% comment %} Variant Selector {% endcomment %}
   <div class="flex justify-between items-center mb-3 !mt-6">
     <h2 class="m-0 text-base font-semibold">Välj Storlek:</h2>
-    <div class="text-sm italic text-gray-500">50 ml - vald av 8 av 10 kunder</div>
+    <div class="text-sm italic text-gray-500">100 ml - vald av 8 av 10 kunder</div>
   </div>
 
   <div class="grid grid-cols-3 gap-3" id="variant-selector">
