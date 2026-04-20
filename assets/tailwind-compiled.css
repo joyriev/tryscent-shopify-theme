@@ -157,14 +157,6 @@
     top: 2px
 }
 
-.\!left-0 {
-    left: 0px !important
-}
-
-.\!right-0 {
-    right: 0px !important
-}
-
 .isolate {
     isolation: isolate
 }
@@ -316,6 +308,10 @@
     margin-top: 24px !important
 }
 
+.\!mt-8 {
+    margin-top: 32px !important
+}
+
 .-mr-3 {
     margin-right: -12px
 }
@@ -464,10 +460,6 @@
     margin-top: 44px
 }
 
-.\!mt-8 {
-    margin-top: 32px !important
-}
-
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -583,6 +575,11 @@
     height: 112px
 }
 
+.size-3 {
+    width: 12px;
+    height: 12px
+}
+
 .size-4 {
     width: 16px;
     height: 16px
@@ -611,16 +608,6 @@
 .size-\[14px\] {
     width: 14px;
     height: 14px
-}
-
-.\!size-7 {
-    width: 28px !important;
-    height: 28px !important
-}
-
-.size-3 {
-    width: 12px;
-    height: 12px
 }
 
 .h-0 {
@@ -1436,11 +1423,6 @@
     border-color: rgb(255 255 255 / 0.1)
 }
 
-.\!border-gray-200 {
-    --tw-border-opacity: 1 !important;
-    border-color: rgb(229 231 235 / var(--tw-border-opacity, 1)) !important
-}
-
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1581,6 +1563,11 @@
     background-color: rgb(240 242 236 / var(--tw-bg-opacity, 1))
 }
 
+.bg-\[\#f2f2f2\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(242 242 242 / var(--tw-bg-opacity, 1))
+}
+
 .bg-\[\#faf9f6\] {
     --tw-bg-opacity: 1;
     background-color: rgb(250 249 246 / var(--tw-bg-opacity, 1))
@@ -1714,15 +1701,6 @@
     background-color: rgb(255 255 255 / 0.4)
 }
 
-.bg-\[\#f2f2f2\] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(242 242 242 / var(--tw-bg-opacity, 1))
-}
-
-.bg-white\/60 {
-    background-color: rgb(255 255 255 / 0.6)
-}
-
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -1832,6 +1810,11 @@
 
 .p-\[7px\] {
     padding: 7px
+}
+
+.\!py-4 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important
 }
 
 .px-0 {
@@ -1954,11 +1937,6 @@
     padding-bottom: 2px
 }
 
-.\!py-4 {
-    padding-top: 16px !important;
-    padding-bottom: 16px !important
-}
-
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -2067,16 +2045,16 @@
     padding-top: 16px
 }
 
+.pt-5 {
+    padding-top: 20px
+}
+
 .pt-6 {
     padding-top: 24px
 }
 
 .pt-8 {
     padding-top: 32px
-}
-
-.pt-5 {
-    padding-top: 20px
 }
 
 .text-left {
@@ -2103,16 +2081,12 @@
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
-.font-serif {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif
-}
-
-.font-\[\'Plus_Jakarta_Sans\'\] {
-    font-family: 'Plus Jakarta Sans'
-}
-
 .font-sans {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+.font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif
 }
 
 .text-2xl {
