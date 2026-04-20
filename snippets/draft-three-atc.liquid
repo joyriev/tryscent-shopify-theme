@@ -7,7 +7,8 @@
 {% if selling_points %}
   <ul id="atc_scroll_target" class="list-none pl-0 text-base">
     {% for point in selling_points %}
-      <li class="mt-2 leading-snug">{{ point }}</li>
+      {% assign point_value = point | remove: '✅' %}
+      <li class="mt-2 leading-snug">✅ {{ point_value }}</li>
     {% endfor %}
   </ul>
 {% endif %}
