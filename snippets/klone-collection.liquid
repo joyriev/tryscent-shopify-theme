@@ -86,14 +86,14 @@
     <div class="flex-1 space-y-1">
       <div class="flex items-center justify-between">
         <h3 class="my-0 text-xl font-semibold">
-          3+1 (Buy 3 Get 1 Free)
+          3+1 (Köp 3 Få 1 Gratis)
         </h3>
         <div class="text-xl font-semibold shrink-0">
           {{ chosen_variant.price | times: 3 | money }}
         </div>
       </div>
       <p class="my-0 text-base text-left">
-        You Save {{ chosen_variant.price | money }}
+        Du sparar {{ chosen_variant.price | money }}
       </p>
       <div x-show="$store.bundle.package === 'buy_3_get_1_free'" class="space-y-1">
         <template x-for="(variant, index) in $store.bundle.variants.buy_3_get_1_free" :key="index">
@@ -131,14 +131,14 @@
       </div>
       <div class="flex-1 space-y-1">
         <div class="flex items-center justify-between">
-          <h3 class="my-0 text-xl font-semibold">4+2 (Buy 4 Get 2 Free)
+          <h3 class="my-0 text-xl font-semibold">4+2 (Köp 4 Få 2 Gratis)
           </h3>
           <div class="text-xl font-semibold shrink-0">
             {{ chosen_variant.price | times: 4 | money }}
           </div>
         </div>
         <p class="my-0 text-base text-left">
-          You Save {{ chosen_variant.price | times: 2 | money }}
+          Du sparar {{ chosen_variant.price | times: 2 | money }}
         </p>
         <div x-show="$store.bundle.package === 'buy_4_get_2_free'" class="space-y-1">
           <template x-for="(variant, index) in $store.bundle.variants.buy_4_get_2_free" :key="index">
