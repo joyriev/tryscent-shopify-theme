@@ -74,31 +74,31 @@
   </button>
 
   <button
-    @click="$store.bundle.setPackage('buy_2_get_1_free')"
+    @click="$store.bundle.setPackage('buy_3_get_1_free')"
     class="border-[3px] border-solid cursor-pointer p-3 flex gap-4 bg-white rounded-xl"
-    :class="$store.bundle.package === 'buy_2_get_1_free' ? 'border-[#22613A]' : 'border-gray-300'">
-    <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_2_get_1_free' ? 'border-[#22613A]' : 'border-gray-300'">
+    :class="$store.bundle.package === 'buy_3_get_1_free' ? 'border-[#22613A]' : 'border-gray-300'">
+    <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_3_get_1_free' ? 'border-[#22613A]' : 'border-gray-300'">
       <span
-        x-show="$store.bundle.package === 'buy_2_get_1_free'"
+        x-show="$store.bundle.package === 'buy_3_get_1_free'"
         class="block size-4 rounded-full bg-[#22613A]"
         style="display: none;"></span>
     </div>
     <div class="flex-1 space-y-1">
       <div class="flex items-center justify-between">
         <h3 class="my-0 text-xl font-semibold">
-          Buy 2 Get 1 Free
+          3+1 (Buy 3 Get 1 Free)
         </h3>
         <div class="text-xl font-semibold shrink-0">
-          {{ chosen_variant.price | times: 2 | money }}
+          {{ chosen_variant.price | times: 3 | money }}
         </div>
       </div>
       <p class="my-0 text-base text-left">
         You Save {{ chosen_variant.price | money }}
       </p>
-      <div x-show="$store.bundle.package === 'buy_2_get_1_free'" class="space-y-1">
-        <template x-for="(variant, index) in $store.bundle.variants.buy_2_get_1_free" :key="index">
+      <div x-show="$store.bundle.package === 'buy_3_get_1_free'" class="space-y-1">
+        <template x-for="(variant, index) in $store.bundle.variants.buy_3_get_1_free" :key="index">
           <select
-            @change="$store.bundle.updateVariant('buy_2_get_1_free', index, $event.target.value)"
+            @change="$store.bundle.updateVariant('buy_3_get_1_free', index, $event.target.value)"
             :value="variant"
             class="px-2 py-2 w-full border border-gray-200 rounded border-solid block focus:ring-0 focus:outline-none focus:shadow-none">
             {% for product in bundle_collection.products %}
@@ -123,27 +123,27 @@
   <div class="pt-6 relative">
     <div class="absolute top-0 right-2 text-white text-xs leading-snug px-2 py-1 uppercase bg-[#22613A] font-semibold">Best Value</div>
     <button
-      @click="$store.bundle.setPackage('buy_3_get_2_free')"
+      @click="$store.bundle.setPackage('buy_4_get_2_free')"
       class="border-[3px] border-solid cursor-pointer p-3 flex gap-4 bg-white w-full rounded-xl"
-      :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-[#22613A]' : 'border-gray-300'">
-      <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_3_get_2_free' ? 'border-[#22613A]' : 'border-gray-300'">
-        <span x-show="$store.bundle.package === 'buy_3_get_2_free'" class="block size-4 rounded-full bg-[#22613A]"></span>
+      :class="$store.bundle.package === 'buy_4_get_2_free' ? 'border-[#22613A]' : 'border-gray-300'">
+      <div class="shrink-0 size-6 flex items-center justify-center rounded-full border-2 border-solid" :class="$store.bundle.package === 'buy_4_get_2_free' ? 'border-[#22613A]' : 'border-gray-300'">
+        <span x-show="$store.bundle.package === 'buy_4_get_2_free'" class="block size-4 rounded-full bg-[#22613A]"></span>
       </div>
       <div class="flex-1 space-y-1">
         <div class="flex items-center justify-between">
-          <h3 class="my-0 text-xl font-semibold">Buy 3 Get 2 Free
+          <h3 class="my-0 text-xl font-semibold">4+2 (Buy 4 Get 2 Free)
           </h3>
           <div class="text-xl font-semibold shrink-0">
-            {{ chosen_variant.price | times: 3 | money }}
+            {{ chosen_variant.price | times: 4 | money }}
           </div>
         </div>
         <p class="my-0 text-base text-left">
           You Save {{ chosen_variant.price | times: 2 | money }}
         </p>
-        <div x-show="$store.bundle.package === 'buy_3_get_2_free'" class="space-y-1">
-          <template x-for="(variant, index) in $store.bundle.variants.buy_3_get_2_free" :key="index">
+        <div x-show="$store.bundle.package === 'buy_4_get_2_free'" class="space-y-1">
+          <template x-for="(variant, index) in $store.bundle.variants.buy_4_get_2_free" :key="index">
             <select
-              @change="$store.bundle.updateVariant('buy_3_get_2_free', index, $event.target.value)"
+              @change="$store.bundle.updateVariant('buy_4_get_2_free', index, $event.target.value)"
               :value="variant"
               class="px-2 py-2 w-full border border-gray-200 rounded border-solid block focus:ring-0 focus:outline-none focus:shadow-none">
               {% for product in bundle_collection.products %}
@@ -165,28 +165,29 @@
       </div>
     </button>
   </div>
-{%comment%}
-  <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl bg-white mt-4">
+  {%comment%}
+    <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl bg-white mt-4">
     <input
-      type="checkbox"
-      id="gift-bag"
-      x-model="$store.bundle.addGiftBag"
-      class="!size-5 cursor-pointer accent-[#22613A] border-gray-300 rounded">
+    type="checkbox"
+    id="gift-bag"
+    x-model="$store.bundle.addGiftBag"
+    class="!size-5 cursor-pointer accent-[#22613A] border-gray-300 rounded">
     <label for="gift-bag" class="flex items-center gap-4 cursor-pointer flex-1">
-      <img
-        src="{{ gift_product.featured_image | image_url: width: 100 }}"
-        alt="Gift Bag"
-        height="64"
-        width="64"
-        class="size-16 object-cover rounded-md bg-gray-100">
-      <div>
-        <div class="text-base font-semibold">Add:
-          <span class="font-bold">Gift Bag</span>
-        </div>
-        <div class="text-base font-semibold">{{ gift_product.price | money }}</div>
-      </div>
+    <img
+    src="{{ gift_product.featured_image | image_url: width: 100 }}"
+    alt="Gift Bag"
+    height="64"
+    width="64"
+    class="size-16 object-cover rounded-md bg-gray-100">
+    <div>
+    <div class="text-base font-semibold">Add:
+    <span class="font-bold">Gift Bag</span>
+    </div>
+    <div class="text-base font-semibold">{{ gift_product.price | money }}</div>
+    </div>
     </label>
-  </div> {%endcomment%}
+    </div>
+  {%endcomment%}
 
   <button
     :disabled="$store.bundle.addingToCart"
@@ -212,7 +213,9 @@
 
 <div class="!my-6">
   <p class="my-0 text-center font-semibold tracking-normal">
-    Delivered to <span class="shipping_location">Worldwide</span> in 5 business days. No customs fees.
+    Delivered to
+    <span class="shipping_location">Worldwide</span>
+    in 5 business days. No customs fees.
   </p>
 </div>
 
@@ -245,8 +248,8 @@
         %}
         '{{ selected_variant.id }}'
       ],
-      buy_2_get_1_free: [
-        {% for product in bundle_collection.products limit: 3 %}
+      buy_3_get_1_free: [
+        {% for product in bundle_collection.products limit: 4 %}
           {% liquid 
             assign selected_variant = product.variants.first
             for v in product.variants
@@ -259,8 +262,8 @@
           '{{ selected_variant.id }}'{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ],
-      buy_3_get_2_free: [
-        {% for product in bundle_collection.products limit: 5 %}
+      buy_4_get_2_free: [
+        {% for product in bundle_collection.products limit: 6 %}
           {% liquid 
             assign selected_variant = product.variants.first
             for v in product.variants
