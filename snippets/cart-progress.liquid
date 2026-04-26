@@ -5,19 +5,19 @@
 
     <div class="bc-progress-text" style="color: #000000;">
       {% if cart_count >= 4 %}
-        🎉 3+1 erbjudande <br> aktiverat!
+        🎉 4+2 erbjudande <br> aktiverat!
       {% else %}
         Lägg
-        <strong>{{ 4 | minus: cart_count }}</strong>
+        <strong>{{ 6 | minus: cart_count }}</strong>
         flaskor till och få en
-        <strong>1 gratis</strong>.
+        <strong>2 gratis</strong>.
       {% endif %}
     </div>
     <div class="bc-progress-bar" style="background-color: #E2E2E2; margin-bottom: 0;">
       <div class="bc-progress-fill" style="width: {{ progress_percentage }}%; background-color: #93D3FF;"></div>
       <div class="bc-checkpoints">
-        <div class="bc-checkpoint {% if cart_count >= 4 %}is-reached{% endif %}" style="left: 100%; 
-               background-color: {% if cart_count >= 4 %}#93D3FF{% else %}#E2E2E2{% endif %};
+        <div class="bc-checkpoint {% if cart_count >= 6 %}is-reached{% endif %}" style="left: 100%; 
+               background-color: {% if cart_count >= 6 %}#93D3FF{% else %}#E2E2E2{% endif %};
                color: #000000;">
           {{ 'icon-perfume.svg' | inline_asset_content }}
         </div>
