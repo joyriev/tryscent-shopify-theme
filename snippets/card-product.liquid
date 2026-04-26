@@ -69,9 +69,6 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
         {% if card_product.tags contains '25_edp' %}
           <div class="absolute z-50 bg-[#b72f33] font-medium text-xs tracking-normal md:text-base text-white px-2 py-1 leading-none top-0 left-0 text-center">25% EDP</div>
         {% endif %}
-        {% if card_product.tags contains 'bundle_banner' %}
-          <div class="absolute z-50 bg-[#b72f33] font-medium text-xs tracking-normal md:text-base text-white px-1 py-1 leading-none bottom-0 w-full left-0 text-center">Val Deal: Buy 2 Get 1</div>
-        {% endif %}
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
