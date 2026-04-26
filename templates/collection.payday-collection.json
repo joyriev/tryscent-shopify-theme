@@ -73,11 +73,29 @@
       "disabled": true,
       "settings": {}
     },
+    "177719297559b6f794": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e785142_aNhdBb": {
+          "type": "ai_gen_block_e785142",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Payday_4_2_Banner.png",
+            "mobile_image": "shopify://shop_images/Payday_sale_mobile.png"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e785142_aNhdBb"
+      ],
+      "settings": {}
+    },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": false,
-        "show_collection_image": false,
+        "show_collection_image": true,
         "color_scheme": "scheme-2"
       }
     },
@@ -130,6 +148,7 @@
   },
   "order": [
     "insta_story_6kD6Ki",
+    "177719297559b6f794",
     "banner",
     "product-grid",
     "rich_text_fnCgkL"
