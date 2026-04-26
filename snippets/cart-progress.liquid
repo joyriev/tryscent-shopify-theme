@@ -1,10 +1,10 @@
 <div class="bc-rewards-bars-wrap" style="flex-direction: row;">
   <div class="bc-progress-wrap">
     {% assign cart_count = cart.item_count %}
-    {% assign progress_percentage = cart_count | times: 25 | at_most: 100 %}
+    {% assign progress_percentage = cart_count | times: 17 | at_most: 100 %}
 
     <div class="bc-progress-text" style="color: #000000;">
-      {% if cart_count >= 4 %}
+      {% if cart_count >= 6 %}
         🎉 4+2 erbjudande <br> aktiverat!
       {% else %}
         Lägg
