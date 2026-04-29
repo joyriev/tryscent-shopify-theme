@@ -1,5 +1,3 @@
-{{ product.title }}
-
 {% if product.metafields.custom.similar_scents != blank %}
   <p class="text-base font-serif leading-tight">Parfymer med liknande doftnoter:</p>
   {% assign similar_scents = product.metafields.custom.similar_scents.value %}
