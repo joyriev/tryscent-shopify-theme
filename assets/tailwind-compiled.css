@@ -1857,11 +1857,6 @@
     padding-right: 0px
 }
 
-.px-1 {
-    padding-left: 4px;
-    padding-right: 4px
-}
-
 .px-2 {
     padding-left: 8px;
     padding-right: 8px
@@ -2813,6 +2808,36 @@
     to {
         transform: translateX(-50%)
     }
+}
+
+.shimmer-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #fff0, #fff3, #fff0);
+    transform: skew(-25deg);
+    animation: shimmer 3s infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -150%;
+  }
+  80% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
 }
 
 .before\:absolute::before {
