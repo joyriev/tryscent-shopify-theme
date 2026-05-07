@@ -654,8 +654,9 @@ body {
     {% comment %} hide woot bubble chat {% endcomment %}
     {% if page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
       <style>
+        .timebar-section-bg,
         .woot--bubble-holder {
-          display: none;
+          display: none !important;
         }
       </style>
     {% endif %}
