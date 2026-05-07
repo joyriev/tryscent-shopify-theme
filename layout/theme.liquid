@@ -646,7 +646,7 @@ body {
     </script>
   {% comment %} {% render 'navidium-script' %} {% endcomment %}
   {% comment %} {% render 'sb-preload-booster' %}  {% endcomment %}
-   {% unless template.name == 'product' %}
+   {% unless template.name == 'product' or page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
     {% render 'fragrance-search' %}
    {% endunless %}
    {% render 'checkout-modal' %}
