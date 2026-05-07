@@ -516,6 +516,15 @@ body {
         font-weight: 600;
       }
     </style>
+    {% comment %} hide woot bubble chat {% endcomment %}
+    {% if page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
+      <style>
+        .timebar-section-bg,
+        .woot--bubble-holder {
+          display: none !important;
+        }
+      </style>
+    {% endif %}
     <a
       href="{{ routes.root_url }}/products/tryscent-collection"
       class="timebar-section-bg"
@@ -650,15 +659,5 @@ body {
       {% render 'fragrance-search' %}
     {% endunless %}
     {% render 'checkout-modal' %}
-
-    {% comment %} hide woot bubble chat {% endcomment %}
-    {% if page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
-      <style>
-        .timebar-section-bg,
-        .woot--bubble-holder {
-          display: none !important;
-        }
-      </style>
-    {% endif %}
   </body>
 </html>
