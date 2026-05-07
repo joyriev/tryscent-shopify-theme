@@ -516,18 +516,18 @@ body {
         font-weight: 600;
       }
     </style>
- <a
+    <a
       href="{{ routes.root_url }}/products/tryscent-collection"
       class="timebar-section-bg"
       style="background-image: url(https://downloadmsoffice.com/wp-content/uploads/2025/11/sale-bg.png);">
       <div class="timebar-container">
         <div class="timebar-row">
           <div class="timebar-sale-text">
-           Lönedagsrea:
+            Lönedagsrea:
           </div>
           <div id="flipdown" class="flipdown"></div>
           <div class="timebar-sale-text">
-           Köp 4, få 2 gratis 🎁
+            Köp 4, få 2 gratis 🎁
           </div>
         </div>
       </div>
@@ -559,7 +559,7 @@ body {
       class="content-for-layout focus-none"
       role="main"
       tabindex="-1">
-      {% capture ICART_FULL_PAGE_LAYOUT %}{{ content_for_layout }}{% endcapture %}{% include 'icart-variables', ICART_FULL_PAGE_LAYOUT: ICART_FULL_PAGE_LAYOUT %}
+      {{ content_for_layout }}
     </main>
 
     {% sections 'footer-group' %}
@@ -644,11 +644,20 @@ body {
         });
       });
     </script>
-  {% comment %} {% render 'navidium-script' %} {% endcomment %}
-  {% comment %} {% render 'sb-preload-booster' %}  {% endcomment %}
-   {% unless template.name == 'product' or page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
-    {% render 'fragrance-search' %}
-   {% endunless %}
-   {% render 'checkout-modal' %}
-</body>
+    {% comment %} {% render 'navidium-script' %} {% endcomment %}
+    {% comment %} {% render 'sb-preload-booster' %}  {% endcomment %}
+    {% unless template.name == 'product' or page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
+      {% render 'fragrance-search' %}
+    {% endunless %}
+    {% render 'checkout-modal' %}
+
+    {% comment %} hide woot bubble chat {% endcomment %}
+    {% if page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
+      <style>
+        .woot--bubble-holder {
+          display: none;
+        }
+      </style>
+    {% endif %}
+  </body>
 </html>
