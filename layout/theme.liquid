@@ -536,7 +536,7 @@ body {
           </div>
           <div id="flipdown" class="flipdown"></div>
           <div class="timebar-sale-text">
-            Köp 4, få 2 gratis 🎁
+            Köp 3, få 1 gratis 🎁
           </div>
         </div>
       </div>
@@ -658,6 +658,6 @@ body {
     {% unless template.name == 'product' or page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
       {% render 'fragrance-search' %}
     {% endunless %}
-    {% render 'checkout-modal' %}
+  {% comment %} {% render 'checkout-modal' %} {% endcomment %}
   </body>
 </html>
