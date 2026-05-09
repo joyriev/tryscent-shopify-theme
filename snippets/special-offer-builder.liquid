@@ -125,7 +125,9 @@
 
 <div class="!my-6">
   <p class="my-0 text-center font-semibold tracking-normal">
-    Delivered to <span class="shipping_location">Worldwide</span> in 5 business days. No customs fees.
+    Delivered to
+    <span class="shipping_location">Worldwide</span>
+    in 5 business days. No customs fees.
   </p>
 </div>
 
@@ -146,6 +148,8 @@
             name: "{{ bundle_product.title }}",
             image: "{{ bundle_product.featured_image | image_url }}",
             nuta: "{{ bundle_product.metafields.custom.nuta |  replace: ',', '' }}",
+            inspiration_image: "{{ bundle_product.metafields.custom.inspiration.value.image | image_url }}",
+            inspiration_name: "{{ bundle_product.metafields.custom.inspiration.value.name }}",
             tags: {{ bundle_product.tags | json }},
             variants: {
               {% for variant in bundle_product.variants %}
