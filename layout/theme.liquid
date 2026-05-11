@@ -658,6 +658,6 @@ body {
     {% unless template.name == 'product' or page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
       {% render 'fragrance-search' %}
     {% endunless %}
-  {% comment %} {% render 'checkout-modal' %} {% endcomment %}
+  {% render 'checkout-modal' %}
   </body>
 </html>
