@@ -77,6 +77,16 @@
             {% endfor %}
           </ul>
         </div>
+        {% if section.settings.quality_badge != blank %}
+          <div class="mt-8">
+            <img
+              src="{{ section.settings.quality_badge | image_url: width: 200 }}"
+              alt="Quality Badge"
+              height="auto"
+              width="auto"
+              class="max-w-full">
+          </div>
+        {% endif %}
       </div>
 
       <!-- Right side - Steps -->
@@ -152,6 +162,10 @@
         "id": "btn_text",
         "label": "Button Text",
         "default": "View All"
+      }, {
+        "type": "image_picker",
+        "id": "quality_badge",
+        "label": "Quality Badge"
       }, {
         "type": "header",
         "content": "Section Padding"
