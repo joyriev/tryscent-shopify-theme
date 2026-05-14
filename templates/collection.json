@@ -75,19 +75,44 @@
     },
     "collection_header_UAKfye": {
       "type": "collection-header",
+      "blocks": {
+        "guarantee_mt3eiH": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/sandwatch.svg",
+            "text": "Lasts 12+ Hours"
+          }
+        },
+        "guarantee_pL7fyb": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/heart.svg",
+            "text": "loved by 10,000+"
+          }
+        },
+        "guarantee_Ygqtrt": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/sheild-star.svg",
+            "text": "60 day satisfaction guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "guarantee_mt3eiH",
+        "guarantee_pL7fyb",
+        "guarantee_Ygqtrt"
+      ],
+      "disabled": true,
       "name": "Collection Header",
       "settings": {
         "background_color": "#242833",
         "bg_image": "shopify://shop_images/builder-hero-bg.png",
-        "rounded_image": true,
-        "image_placement": "0",
-        "mobile_image_placement": "under_heading",
-        "button_text": "",
-        "button_url": "",
-        "columns_gap": 40,
-        "rows_gap": 20,
-        "content_alignment": "center",
-        "blocks_gap": 24,
+        "social_proof_text": "Join 10,000+ happy customers",
+        "collection_title": "Collection Title",
+        "collection_description": "Best scents you've ever smelled or your money back.",
+        "btn_link": "",
+        "btn_text": "View All",
         "padding_top": 72,
         "padding_bottom": 72,
         "mobile_padding_top": 40,
