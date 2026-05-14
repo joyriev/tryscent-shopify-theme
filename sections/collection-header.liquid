@@ -29,7 +29,7 @@
       <div class="text-center md:text-left px-4 md:px-0">
         <!-- Customer rating badge -->
         <div class="inline-flex items-center bg-black/40 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-600">
-          <div class="flex items-center space-x-2">
+          <div class="flex items-center flex-wrap justify-center space-x-2">
             <div class="flex text-yellow-400">
               <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
@@ -63,7 +63,7 @@
             aria-label="View All">
             {{ section.settings.btn_text }}
           </a>
-          <ul class="flex flex-wrap gap-x-6 gap-y-3 list-unstyled">
+          <ul class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3 list-unstyled">
             {% for block in section.blocks %}
               {% if block.type == 'guarantee' %}
                 <li class="flex items-center gap-1.5" {{ block.shopify_attributes }}>
