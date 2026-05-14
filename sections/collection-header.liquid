@@ -1,0 +1,264 @@
+{%- style -%}
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.mobile_padding_top }}px;
+    padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+    background-color: {{ section.settings.background_color }};
+    background-image: url('{{ section.settings.bg_mobile_image | image_url: width: 1920 }}');
+    background-size: cover;
+    background-position: center;
+
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background_image: url('{{ section.settings.bg_image | image_url: width: 1920 }}');
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }} bg-[#121212] bg-cover">
+  <div class="page-width">
+    <div class="grid lg:grid-cols-2 gap-18 items-center">
+      <!-- Left side - Main content -->
+      <div class="text-center md:text-left px-4 md:px-0">
+        <!-- Customer rating badge -->
+        <div class="inline-flex items-center bg-black/40 backdrop-blur-sm rounded-full px-4 py-2 border border-gray-600">
+          <div class="flex items-center space-x-2">
+            <div class="flex text-yellow-400">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+              </svg>
+            </div>
+            <span class="text-white font-medium text-sm md:text-base">10,000s Happy Customers</span>
+          </div>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold my-4 text-white leading-tight">
+          Create Your Bundle!
+        </h1>
+        <p class="my-0 text-white">
+          Best scents you've ever smelled or your money back.
+        </p>
+      </div>
+
+      <!-- Right side - Steps -->
+      <div class="space-y-3 md:space-y-6">
+        <div class="flex items-center space-x-4 border border-solid border-gray-600/30 bg-[#090909] backdrop-blur-sm rounded-full p-2 md:p-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-[linear-gradient(to_right,#28A745,#20C997,#28A745)] rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-sm">01</span>
+          </div>
+          <div>
+            <h3 class="text-white font-medium text-sm tracking-normal md:text-lg my-0">
+              Select Up To 5 Bottles To Get $100 OFF
+            </h3>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4 border border-solid border-gray-600/30 bg-[#090909] backdrop-blur-sm rounded-full p-2 md:p-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-[linear-gradient(to_right,#28A745,#20C997,#28A745)] rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-sm">02</span>
+          </div>
+          <div>
+            <h3 class="text-white font-medium text-sm tracking-normal md:text-lg my-0">
+              Get Up To 4 Bottles For
+              <span class="text-green-400">FREE</span>
+            </h3>
+            <p class="text-gray-400 my-0 text-xs md:text-base">
+              Get to try more scents. Keep some, give some!
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4 border border-solid border-gray-600/30 bg-[#090909] backdrop-blur-sm rounded-full p-2 md:p-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-[linear-gradient(to_right,#28A745,#20C997,#28A745)] rounded-full flex items-center justify-center">
+            <span class="text-white font-bold text-sm">03</span>
+          </div>
+          <div>
+            <h3 class="text-white font-medium text-sm tracking-normal md:text-lg my-0">
+              Add to cart & enjoy TryScent
+            </h3>
+            <p class="text-gray-400 my-0 text-xs md:text-base">
+              We offer 60-day satisfaction guarantee.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Collection Header",
+        "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fcfbf9"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_mobile_image",
+        "label": "Background Mobile Image"
+      },
+      {
+        "type": "header",
+        "content": "Contents"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Section Image",
+      },
+      {
+      "type": "checkbox",
+        "id": "rounded_image",
+        "label": "Rounded Image",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Layout Settings"
+      },
+      {
+        "type": "select",
+        "options": [{ "value": "0", "label": "Image First"}, {"value": "1", "label": "Image Second"}],
+        "id": "image_placement",
+        "label": "Image Placement",
+        "default": "0"
+      },
+      {
+        "type": "select",
+        "options": [{"value": "under_heading", "label": "Under Heading"}, {"value": "on_top", "label": "On Top"}],
+        "label": "Mobile Image Placement",
+        "id": "mobile_image_placement",
+        "default": "under_heading"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Section Button Text"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Section Button URL"
+      },
+      {
+        "type": "range",
+        "id": "columns_gap",
+        "label": "Columns Gap",
+        "default": 40,
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "rows_gap",
+        "label": "Rows Gap (Mobile)",
+        "default": 20,
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px"
+      },
+      {
+        "type": "select",
+        "label": "Content Vertical Alignment",
+        "id": "content_alignment",
+        "options": [
+            {
+                "value": "baseline",
+                "label": "Baseline"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "end",
+                "label": "End"
+            }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "range",
+        "id": "blocks_gap",
+        "label": "Blocks Gap",
+        "default": 24,
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Section Padding"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 400,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 72
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 400,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 72
+      }, {
+        "type": "header",
+        "content": "Mobile Padding"
+      }, {
+        "type": "range",
+        "id": "mobile_padding_top",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "Mobile Padding Top",
+        "default": 40
+      }, {
+        "type": "range",
+        "id": "mobile_padding_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "unit": "px",
+        "label": "Mobile Padding Bottom",
+        "default": 40
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Header"
+      }
+    ]
+  }
+{% endschema %}
