@@ -54,23 +54,24 @@
         <p class="my-0 text-white">
           {{ section.settings.collection_description }}
         </p>
-        <div class="max-w-[400px] mx-auto mt-8 flex flex-col gap-6 items-center">
+        <div class="mt-8 max-w-[400px] flex flex-col gap-4">
           <a
             href="{{ section.settings.btn_link }}"
-            class="no-underline text-white tracking-normal font-medium px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full text-lg text-center transition-colors w-full block tabs-cta-ripple-animation"
+            class="no-underline text-white tracking-normal font-medium px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full text-lg text-center transition-colors w-full block"
             aria-label="View All">
             {{ section.settings.btn_text }}
           </a>
-          <ul class="flex justify-center flex-wrap gap-x-6 gap-y-3 list-unstyled">
+          <ul class="flex flex-wrap gap-x-6 gap-y-3 list-unstyled">
             {% for block in section.blocks %}
               {% if block.type == 'guarantee' %}
                 <li class="flex items-center gap-1.5">
                   <img
+                    class="[filter:invert(1)]"
                     src="{{ block.settings.icon | image_url: width: 24 }}"
                     height="16"
                     width="auto"
                     alt="Icon">
-                  <span class="leading-none">{{ block.settings.text }}</span>
+                  <span class="leading-none text-white">{{ block.settings.text }}</span>
                 </li>
               {% endif %}
             {% endfor %}
@@ -80,6 +81,25 @@
 
       <!-- Right side - Steps -->
       <div class="space-y-3 md:space-y-6">
+        {% for block in section.blocks %}
+          {% if block.type == 'step' %}
+            <div class="flex items-center space-x-4 border border-solid border-gray-600/30 bg-[#090909] backdrop-blur-sm rounded-full p-2 md:p-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-[linear-gradient(to_right,#28A745,#20C997,#28A745)] rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-sm">0{{ forloop.index }}</span>
+              </div>
+              <div>
+                <div>
+                  <h3 class="text-white font-medium text-sm tracking-normal md:text-lg my-0">
+                    {{ block.settings.step_title }}
+                  </h3>
+                  <p class="text-gray-400 my-0 text-xs md:text-base">
+                    {{ block.settings.step_description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
         <div class="flex items-center space-x-4 border border-solid border-gray-600/30 bg-[#090909] backdrop-blur-sm rounded-full p-2 md:p-4">
           <div class="flex-shrink-0 w-10 h-10 bg-[linear-gradient(to_right,#28A745,#20C997,#28A745)] rounded-full flex items-center justify-center">
             <span class="text-white font-bold text-sm">01</span>
@@ -226,6 +246,20 @@
             "type": "text",
             "id": "text",
             "label": "Text"
+          }
+        ]
+      }, {
+        "type": "step",
+        "name": "Step",
+        "settings": [
+          {
+            "type": "text",
+            "id": "step_title",
+            "label": "Step Title"
+          }, {
+            "type": "text",
+            "id": "step_description",
+            "label": "Step Description"
           }
         ]
       }
