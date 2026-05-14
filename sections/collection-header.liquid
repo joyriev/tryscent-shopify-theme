@@ -64,7 +64,7 @@
           <ul class="flex flex-wrap gap-x-6 gap-y-3 list-unstyled">
             {% for block in section.blocks %}
               {% if block.type == 'guarantee' %}
-                <li class="flex items-center gap-1.5">
+                <li class="flex items-center gap-1.5" {{ block.shopify_attributes }}>
                   <img
                     class="[filter:invert(1)]"
                     src="{{ block.settings.icon | image_url: width: 24 }}"
@@ -83,7 +83,7 @@
       <div class="space-y-3 md:space-y-6">
         {% for block in section.blocks %}
           {% if block.type == 'step' %}
-            <div class="flex items-center space-x-4 border border-solid border-gray-600/30 bg-[#090909] backdrop-blur-sm rounded-full p-2 md:p-4">
+            <div class="flex items-center space-x-4 border border-solid border-gray-600/30 bg-[#090909] backdrop-blur-sm rounded-full p-2 md:p-4" {{ block.shopify_attributes }}>
               <div class="flex-shrink-0 w-10 h-10 bg-[linear-gradient(to_right,#28A745,#20C997,#28A745)] rounded-full flex items-center justify-center">
                 <span class="text-white font-bold text-sm">0{{ forloop.index }}</span>
               </div>
