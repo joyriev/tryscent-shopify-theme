@@ -13,7 +13,9 @@
     .section-{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
-      background_image: url('{{ section.settings.bg_image | image_url: width: 1920 }}');
+      {% if section.settings.bg_image %}
+        background-image: url('{{ section.settings.bg_image | image_url: width: 1920 }}');
+      {% endif %}
     }
   }
 {%- endstyle -%}
@@ -43,15 +45,37 @@
                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
               </svg>
             </div>
-            <span class="text-white font-medium text-sm md:text-base">10,000s Happy Customers</span>
+            <span class="text-white font-medium text-sm">{{ section.settings.social_proof_text }}</span>
           </div>
         </div>
         <h1 class="text-3xl md:text-5xl font-bold my-4 text-white leading-tight">
-          Create Your Bundle!
+          {{ section.settings.collection_title }}
         </h1>
         <p class="my-0 text-white">
-          Best scents you've ever smelled or your money back.
+          {{ section.settings.collection_description }}
         </p>
+        <div class="max-w-[400px] mx-auto mt-8 flex flex-col gap-6 items-center">
+          <a
+            href="{{ section.settings.btn_link }}"
+            class="no-underline text-white tracking-normal font-medium px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full text-lg text-center transition-colors w-full block tabs-cta-ripple-animation"
+            aria-label="View All">
+            {{ section.settings.btn_text }}
+          </a>
+          <ul class="flex justify-center flex-wrap gap-x-6 gap-y-3 list-unstyled">
+            {% for block in section.blocks %}
+              {% if block.type == 'guarantee' %}
+                <li class="flex items-center gap-1.5">
+                  <img
+                    src="{{ block.settings.icon | image_url: width: 24 }}"
+                    height="16"
+                    width="auto"
+                    alt="Icon">
+                  <span class="leading-none">{{ block.settings.text }}</span>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
       </div>
 
       <!-- Right side - Steps -->
@@ -101,7 +125,7 @@
 {% schema %}
   {
     "name": "Collection Header",
-        "settings": [
+    "settings": [
       {
         "type": "color",
         "id": "background_color",
@@ -121,97 +145,31 @@
       {
         "type": "header",
         "content": "Contents"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Section Image",
-      },
-      {
-      "type": "checkbox",
-        "id": "rounded_image",
-        "label": "Rounded Image",
-        "default": true
-      },
-      {
-        "type": "header",
-        "content": "Layout Settings"
-      },
-      {
-        "type": "select",
-        "options": [{ "value": "0", "label": "Image First"}, {"value": "1", "label": "Image Second"}],
-        "id": "image_placement",
-        "label": "Image Placement",
-        "default": "0"
-      },
-      {
-        "type": "select",
-        "options": [{"value": "under_heading", "label": "Under Heading"}, {"value": "on_top", "label": "On Top"}],
-        "label": "Mobile Image Placement",
-        "id": "mobile_image_placement",
-        "default": "under_heading"
-      },
-      {
+      }, {
         "type": "text",
-        "id": "button_text",
-        "label": "Section Button Text"
-      },
-      {
+        "id": "social_proof_text",
+        "label": "Social Proof Text",
+        "default": "Join 10,000+ happy customers"
+      }, {
+        "type": "text",
+        "id": "collection_title",
+        "label": "Collection Title",
+        "default": "Collection Title"
+      }, {
+        "type": "text",
+        "id": "collection_description",
+        "label": "Collection Description",
+        "default": "Best scents you've ever smelled or your money back."
+      }, {
         "type": "url",
-        "id": "button_url",
-        "label": "Section Button URL"
-      },
-      {
-        "type": "range",
-        "id": "columns_gap",
-        "label": "Columns Gap",
-        "default": 40,
-        "min": 0,
-        "max": 200,
-        "step": 4,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "rows_gap",
-        "label": "Rows Gap (Mobile)",
-        "default": 20,
-        "min": 0,
-        "max": 200,
-        "step": 4,
-        "unit": "px"
-      },
-      {
-        "type": "select",
-        "label": "Content Vertical Alignment",
-        "id": "content_alignment",
-        "options": [
-            {
-                "value": "baseline",
-                "label": "Baseline"
-            },
-            {
-                "value": "center",
-                "label": "Center"
-            },
-            {
-                "value": "end",
-                "label": "End"
-            }
-        ],
-        "default": "center"
-      },
-      {
-        "type": "range",
-        "id": "blocks_gap",
-        "label": "Blocks Gap",
-        "default": 24,
-        "min": 0,
-        "max": 200,
-        "step": 4,
-        "unit": "px"
-      },
-      {
+        "id": "btn_link",
+        "label": "Button Link"
+      }, {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button Text",
+        "default": "View All"
+      }, {
         "type": "header",
         "content": "Section Padding"
       }, {
@@ -253,6 +211,23 @@
         "unit": "px",
         "label": "Mobile Padding Bottom",
         "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "type": "guarantee",
+        "name": "Guarantee",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
       }
     ],
     "presets": [
