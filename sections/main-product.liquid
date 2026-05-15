@@ -113,9 +113,11 @@
                 {% endif %}
               {% when 'made_in_the_eu' %}
                 {% unless product.template_suffix == 'magic-perfume' %}
-                  <div class="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-blue-100 font-semibold">
+                 <div>
+                   <div class="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-blue-100 font-semibold">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="🇪🇺" height="20" width="20" class="object-cover size-5 rounded-full"> <span>Made in the EU</span>
                   </div>
+                 </div>
                 {% endunless %}
               {% when 'designer_price' %}
                 {% if product.metafields.custom.original_retail_price != blank %}
