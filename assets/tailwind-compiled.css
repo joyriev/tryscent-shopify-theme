@@ -169,6 +169,18 @@
     top: 2px
 }
 
+.bottom-1 {
+    bottom: 4px
+}
+
+.bottom-2 {
+    bottom: 8px
+}
+
+.left-1 {
+    left: 4px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -227,11 +239,6 @@
 
 .m-0 {
     margin: 0px
-}
-
-.\!-my-2 {
-    margin-top: -8px !important;
-    margin-bottom: -8px !important
 }
 
 .\!my-6 {
@@ -908,10 +915,6 @@
     max-width: 576px
 }
 
-.max-w-\[200px\] {
-    max-width: 200px
-}
-
 .flex-1 {
     flex: 1 1 0%
 }
@@ -1060,10 +1063,6 @@
 
 .items-stretch {
     align-items: stretch
-}
-
-.justify-start {
-    justify-content: flex-start
 }
 
 .justify-end {
@@ -1781,6 +1780,11 @@
     background-color: rgb(255 255 255 / 0.6)
 }
 
+.bg-yellow-300 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(253 224 71 / var(--tw-bg-opacity, 1))
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -2276,10 +2280,6 @@
     font-style: italic
 }
 
-.not-italic {
-    font-style: normal
-}
-
 .ordinal {
     --tw-ordinal: ordinal;
     font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)
@@ -2617,6 +2617,14 @@
     text-decoration-line: none
 }
 
+.decoration-2 {
+    text-decoration-thickness: 2px
+}
+
+.underline-offset-4 {
+    text-underline-offset: 4px
+}
+
 .accent-\[\#22613A\] {
     accent-color: #22613A
 }
@@ -2827,10 +2835,6 @@
 
 .\[rotate\:-45deg\] {
     rotate: -45deg
-}
-
-.\!\[text-decoration\:none\] {
-    text-decoration: none !important
 }
 
 .\[transform\:rotate\(-3deg\)\] {
@@ -3152,6 +3156,10 @@
 
 .hover\:no-underline:hover {
     text-decoration-line: none
+}
+
+.hover\:decoration-\[\#22613A\]:hover {
+    text-decoration-color: #22613A
 }
 
 .hover\:opacity-100:hover {
