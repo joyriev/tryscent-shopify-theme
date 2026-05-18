@@ -925,6 +925,8 @@
           <div>
             {%- for block in section.blocks -%}
               {%- case block.type -%}
+                {% when 'expanded_notes' %}
+                  {% render 'expanded-notes' %}
                 {%- when 'collapsible_tab' -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                     <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -1141,6 +1143,11 @@
     {
       "type": "cta_review",
       "name": "CTA Review",
+      "limit": 1
+    },
+    {
+      "type": "expanded_notes",
+      "name": "Expanded Notes",
       "limit": 1
     },
     {
