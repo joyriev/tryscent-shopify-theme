@@ -32,36 +32,54 @@
     <div class="swiper" id="you-may-like-swiper">
       <div class="swiper-wrapper">
         {% for product in section.settings.collection.products limit: 5 %}
-          <div class="swiper-slide">
-            {% render 'card-product'
-              , card_product: product
-              , media_aspect_ratio: section.settings.image_ratio
-              , image_shape: section.settings.image_shape
-              , show_secondary_image: section.settings.show_secondary_image
-              , show_vendor: section.settings.show_vendor
-              , show_rating: true
-              , lazy_load: true
-              , skip_styles: false
-              , quick_add: section.settings.quick_add
-              , section_id: section.id
-            %}
+          <div class="swiper-slide max-w-[250px]">
+            <a href="{{ product.url }}" class="block no-underline text-inherit bg-white p-3 rounded-lg border border-solid border-gray-200">
+              <div class="aspect-square rounded-lg overflow-hidden bg-[#FAF8F3] mb-3 relative">
+                <img
+                  src="{{ product.featured_image | image_url: width: 300 }}"
+                  alt="{{ product.title }}"
+                  height="216"
+                  width="216"
+                  class="w-full h-full object-cover">
+              </div>
+              <p class="text-xs text-gray-500 m-0 mb-1 line-clamp-1">Inspired by {{ product.metafields.custom.inspiration.value.name }}</p>
+              <h3 class="text-sm font-semibold m-0 mb-2 line-clamp-1">{{ product.title }}</h3>
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-bold text-gray-900">{{ product.price | money }}</span>
+                <span class="text-xs text-gray-400 line-through">{{ product.compare_at_price | money }}</span>
+              </div>
+            </a>
           </div>
         {% endfor %}
       </div>
+      <button class="swiper-button-prev border-0 rounded-full !flex bg-white !size-8 [&]:after:!text-sm [&]:after:text-black disabled:!pointer-events-auto" aria-label="Previous"></button>
+      <button class="swiper-button-next border-0 rounded-full !flex bg-white !size-8 [&]:after:!text-sm [&]:after:text-black disabled:!pointer-events-auto" aria-label="Next"></button>
     </div>
   </div>
 </div>
 
 
 <script>
+  document.addEventListener('DOMContentLoaded', function () {
+
     const youMayLikeSwiper = new Swiper('#you-may-like-swiper', {
-        slidesPerView: 4,
-        spaceBetween: 20,
+        slidesPerView: 2,
+        spaceBetween: 10,
+
         navigation: {
             nextEl: '#you-may-like-swiper .swiper-button-next',
             prevEl: '#you-may-like-swiper .swiper-button-prev',
         },
+
+        breakpoints: {
+            768: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+            }
+        }
     });
+
+  });
 </script>
 
 {% schema %}

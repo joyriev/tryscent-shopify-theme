@@ -169,18 +169,6 @@
     top: 2px
 }
 
-.bottom-1 {
-    bottom: 4px
-}
-
-.bottom-2 {
-    bottom: 8px
-}
-
-.left-1 {
-    left: 4px
-}
-
 .isolate {
     isolation: isolate
 }
@@ -379,6 +367,10 @@
     margin-bottom: 16px
 }
 
+.mb-5 {
+    margin-bottom: 20px
+}
+
 .mb-6 {
     margin-bottom: 24px
 }
@@ -399,6 +391,10 @@
     margin-left: 4px
 }
 
+.ml-1\.5 {
+    margin-left: 6px
+}
+
 .ml-2 {
     margin-left: 8px
 }
@@ -409,6 +405,10 @@
 
 .mr-1 {
     margin-right: 4px
+}
+
+.mr-1\.5 {
+    margin-right: 6px
 }
 
 .mr-2 {
@@ -485,18 +485,6 @@
 
 .mt-\[44px\] {
     margin-top: 44px
-}
-
-.mb-5 {
-    margin-bottom: 20px
-}
-
-.ml-1\.5 {
-    margin-left: 6px
-}
-
-.mr-1\.5 {
-    margin-right: 6px
 }
 
 .line-clamp-1 {
@@ -687,6 +675,10 @@
     height: 96px
 }
 
+.h-3\.5 {
+    height: 14px
+}
+
 .h-4 {
     height: 16px
 }
@@ -755,14 +747,6 @@
     height: 100vh
 }
 
-.h-3\.5 {
-    height: 14px
-}
-
-.\!h-16 {
-    height: 64px !important
-}
-
 .max-h-\[60vh\] {
     max-height: 60vh
 }
@@ -797,6 +781,10 @@
 
 .w-28 {
     width: 112px
+}
+
+.w-3\.5 {
+    width: 14px
 }
 
 .w-4 {
@@ -843,8 +831,8 @@
     width: 100vw
 }
 
-.w-3\.5 {
-    width: 14px
+.min-w-0 {
+    min-width: 0px
 }
 
 .min-w-\[1rem\] {
@@ -853,10 +841,6 @@
 
 .min-w-\[300px\] {
     min-width: 300px
-}
-
-.min-w-0 {
-    min-width: 0px
 }
 
 .max-w-16 {
@@ -941,6 +925,10 @@
 
 .max-w-xl {
     max-width: 576px
+}
+
+.max-w-\[250px\] {
+    max-width: 250px
 }
 
 .flex-1 {
@@ -1336,6 +1324,10 @@
     border-top-right-radius: 6px
 }
 
+.\!border-0 {
+    border-width: 0px !important
+}
+
 .border {
     border-width: 1px
 }
@@ -1354,10 +1346,6 @@
 
 .border-\[3px\] {
     border-width: 3px
-}
-
-.\!border-0 {
-    border-width: 0px !important
 }
 
 .border-y {
@@ -1812,11 +1800,6 @@
     background-color: rgb(255 255 255 / 0.6)
 }
 
-.bg-yellow-300 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(253 224 71 / var(--tw-bg-opacity, 1))
-}
-
 .bg-\[\#FAF8F3\] {
     --tw-bg-opacity: 1;
     background-color: rgb(250 248 243 / var(--tw-bg-opacity, 1))
@@ -1935,10 +1918,6 @@
 
 .p-\[7px\] {
     padding: 7px
-}
-
-.p-5 {
-    padding: 20px
 }
 
 .\!py-4 {
@@ -2642,6 +2621,10 @@
     color: rgb(202 138 4 / var(--tw-text-opacity, 1))
 }
 
+.text-inherit {
+    color: inherit
+}
+
 .underline {
     text-decoration-line: underline
 }
@@ -3280,8 +3263,20 @@
     outline-offset: 2px
 }
 
+.disabled\:pointer-events-auto:disabled {
+    pointer-events: auto
+}
+
+.disabled\:\!pointer-events-auto:disabled {
+    pointer-events: auto !important
+}
+
 .disabled\:cursor-not-allowed:disabled {
     cursor: not-allowed
+}
+
+.disabled\:\!cursor-not-allowed:disabled {
+    cursor: not-allowed !important
 }
 
 .disabled\:bg-gray-400:disabled {
@@ -3840,10 +3835,22 @@
     line-height: 28px !important
 }
 
+.\[\&\]\:after\:\!text-sm::after {
+    content: var(--tw-content);
+    font-size: 14px !important;
+    line-height: 20px !important
+}
+
 .\[\&\]\:after\:text-gray-900::after {
     content: var(--tw-content);
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity, 1))
+}
+
+.\[\&\]\:after\:text-black::after {
+    content: var(--tw-content);
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity, 1))
 }
 
 .\[\&_img\]\:rounded-xl img {
