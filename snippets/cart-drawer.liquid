@@ -463,7 +463,7 @@
 
           {% if cart.total_price != cart.original_total_price %}
             <div class="totals flex-wrap gap-4 !mb-2" role="status">
-              <h2 class="totals__total">Zwischensumme:</h2>
+              <h2 class="totals__total">Delsumma:</h2>
               <p class="totals__total-value">
                 {{ cart.original_total_price | money_with_currency }}
               </p>
@@ -478,7 +478,7 @@
           {% endif %}
 
           <div class="totals flex-wrap gap-4 !mb-3" role="status">
-            <h2 class="totals__total">Gesamt:</h2>
+            <h2 class="totals__total">Totalt:</h2>
             <p class="totals__total-value">
               <span>{{ cart.total_price | money_with_currency }}</span>
             </p>
