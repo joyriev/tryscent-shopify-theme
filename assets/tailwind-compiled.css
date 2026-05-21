@@ -887,6 +887,10 @@
     max-width: 1140px
 }
 
+.max-w-\[250px\] {
+    max-width: 250px
+}
+
 .max-w-\[400px\] {
     max-width: 400px
 }
@@ -925,10 +929,6 @@
 
 .max-w-xl {
     max-width: 576px
-}
-
-.max-w-\[250px\] {
-    max-width: 250px
 }
 
 .flex-1 {
@@ -1418,6 +1418,11 @@
     border-color: rgb(34 97 58 / var(--tw-border-opacity, 1))
 }
 
+.border-\[\#3b82f6\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
+}
+
 .border-\[\#C8A96E\] {
     --tw-border-opacity: 1;
     border-color: rgb(200 169 110 / var(--tw-border-opacity, 1))
@@ -1507,16 +1512,6 @@
 
 .border-white\/10 {
     border-color: rgb(255 255 255 / 0.1)
-}
-
-.border-blue-500 {
-    --tw-border-opacity: 1;
-    border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
-}
-
-.border-\[\#3b82f6\] {
-    --tw-border-opacity: 1;
-    border-color: rgb(59 130 246 / var(--tw-border-opacity, 1))
 }
 
 .border-b-gray-100 {
@@ -1637,6 +1632,11 @@
 .bg-\[\#F9F9F9\] {
     --tw-bg-opacity: 1;
     background-color: rgb(249 249 249 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#FAF8F3\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 248 243 / var(--tw-bg-opacity, 1))
 }
 
 .bg-\[\#FBF4E8\] {
@@ -1808,11 +1808,6 @@
 
 .bg-white\/60 {
     background-color: rgb(255 255 255 / 0.6)
-}
-
-.bg-\[\#FAF8F3\] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(250 248 243 / var(--tw-bg-opacity, 1))
 }
 
 .bg-opacity-50 {
@@ -2457,6 +2452,11 @@
     color: rgb(58 58 58 / var(--tw-text-opacity, 1))
 }
 
+.text-\[\#3b82f6\] {
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity, 1))
+}
+
 .text-\[\#6B6B6B\] {
     --tw-text-opacity: 1;
     color: rgb(107 107 107 / var(--tw-text-opacity, 1))
@@ -2577,6 +2577,10 @@
     color: rgb(21 128 61 / var(--tw-text-opacity, 1))
 }
 
+.text-inherit {
+    color: inherit
+}
+
 .text-red-500 {
     --tw-text-opacity: 1;
     color: rgb(239 68 68 / var(--tw-text-opacity, 1))
@@ -2629,20 +2633,6 @@
 .text-yellow-600 {
     --tw-text-opacity: 1;
     color: rgb(202 138 4 / var(--tw-text-opacity, 1))
-}
-
-.text-inherit {
-    color: inherit
-}
-
-.text-blue-600 {
-    --tw-text-opacity: 1;
-    color: rgb(37 99 235 / var(--tw-text-opacity, 1))
-}
-
-.text-\[\#3b82f6\] {
-    --tw-text-opacity: 1;
-    color: rgb(59 130 246 / var(--tw-text-opacity, 1))
 }
 
 .underline {
@@ -3283,20 +3273,12 @@
     outline-offset: 2px
 }
 
-.disabled\:pointer-events-auto:disabled {
-    pointer-events: auto
-}
-
 .disabled\:\!pointer-events-auto:disabled {
     pointer-events: auto !important
 }
 
 .disabled\:cursor-not-allowed:disabled {
     cursor: not-allowed
-}
-
-.disabled\:\!cursor-not-allowed:disabled {
-    cursor: not-allowed !important
 }
 
 .disabled\:bg-gray-400:disabled {
@@ -3849,28 +3831,28 @@
     text-align: left
 }
 
-.\[\&\]\:after\:\!text-xl::after {
-    content: var(--tw-content);
-    font-size: 20px !important;
-    line-height: 28px !important
-}
-
 .\[\&\]\:after\:\!text-sm::after {
     content: var(--tw-content);
     font-size: 14px !important;
     line-height: 20px !important
 }
 
-.\[\&\]\:after\:text-gray-900::after {
+.\[\&\]\:after\:\!text-xl::after {
     content: var(--tw-content);
-    --tw-text-opacity: 1;
-    color: rgb(17 24 39 / var(--tw-text-opacity, 1))
+    font-size: 20px !important;
+    line-height: 28px !important
 }
 
 .\[\&\]\:after\:text-black::after {
     content: var(--tw-content);
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity, 1))
+}
+
+.\[\&\]\:after\:text-gray-900::after {
+    content: var(--tw-content);
+    --tw-text-opacity: 1;
+    color: rgb(17 24 39 / var(--tw-text-opacity, 1))
 }
 
 .\[\&_img\]\:rounded-xl img {

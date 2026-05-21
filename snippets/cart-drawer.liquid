@@ -460,6 +460,30 @@
 
           <!-- CTAs -->
           <div class="nvd-mini"></div>
+
+          {% if cart.total_price != cart.original_total_price %}
+            <div class="totals flex-wrap gap-4 !mb-3" role="status">
+              <h2 class="totals__total">Zwischensumme:</h2>
+              <p class="totals__total-value">
+                {{ cart.original_total_price | money_with_currency }}
+              </p>
+            </div>
+
+            <div class="totals flex-wrap gap-4 !mb-3" role="status">
+              <h2 class="totals__total">Rabatt:</h2>
+              <p class="totals__total-value">
+                <span class="text-green-700">-{{ cart.original_total_price | minus: cart.total_price | money_with_currency }}</span>
+              </p>
+            </div>
+          {% endif %}
+
+          <div class="totals flex-wrap gap-4" role="status">
+            <h2 class="totals__total">Gesamt:</h2>
+            <p class="totals__total-value">
+              <span>{{ cart.total_price | money_with_currency }}</span>
+            </p>
+          </div>
+
           <div class="cart__ctas" {{ block.shopify_attributes }}>
             <button
               type="submit"
@@ -471,8 +495,6 @@
               disabled
               {% endif %}>
               {{ 'sections.cart.checkout' | t }}
-              <span style="opacity: 0.6; margin: 0 5px;">•</span>
-              {{ cart.total_price | money_with_currency }}
             </button>
           </div>
           <img
