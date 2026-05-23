@@ -184,8 +184,9 @@
                         </span>
                       {% endif %}
                     </div>
+                    {% assign price_per_bottle = product.price | divided_by: product.metafields.custom.choose_your_fragrances_options | money %}
                     <div class="text-lg font-semibold text-black leading-normal">
-                      Works out at just {{ product.price | divided_by: product.metafields.custom.choose_your_fragrances_options | money }}/bottle
+                      {{ 'bundle.price_per_bottle' | t: price: price_per_bottle }}
                     </div>
                   </div>
                 {% endif %}
