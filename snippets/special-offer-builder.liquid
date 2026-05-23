@@ -34,9 +34,9 @@
           stroke-width="2"
           d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
       </svg>
-      <span>Upgrade to
+      <span>
         <a href="{{ next_bundle_product.url }}" class="ml-auto font-medium text-[#22613A] whitespace-nowrap transition-colors">
-          {{ next_size }}ML for {{ price_difference }} more.</a>
+          {{ 'bundle.upgrade_cta' | t: size: next_size, price: price_difference }}</a>
       </span>
     </div>
   </div>
@@ -52,7 +52,7 @@
     <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="product.id">
       <div class="bg-white border border-solid border-green-700 w-full p-[7px] flex items-center gap-2 justify-between rounded-lg relative">
         {% if product.tags contains 'bogo' %}
-          <div x-show="index + 1 === {{ product_count }}" class="bg-[#b72f33] text-white px-2 py-1 font-semibold absolute top-0 right-0 rounded-tr-md leading-none text-sm">Free Bottle</div>
+          <div x-show="index + 1 === {{ product_count }}" class="bg-[#b72f33] text-white px-2 py-1 font-semibold absolute top-0 right-0 rounded-tr-md leading-none text-sm">{{ 'bundle.free_bottle' | t }}</div>
         {% endif %}
         <img
           class="object-cover rounded"
@@ -72,11 +72,11 @@
     <template x-for="i in ({{ product_count }} - $store.bundleBuilder.selectedProducts.length)" :key="i">
       <button @click="$store.bundleBuilder.showModal = true" class="bg-white border border-solid border-gray-200 flex items-center p-[7px] rounded-lg gap-2 pr-4 cursor-pointer relative">
         {% if product.tags contains 'bogo' %}
-          <div x-show="i === {{ product_count }} - $store.bundleBuilder.selectedProducts.length" class="bg-[#b72f33] text-white px-2 py-1 font-semibold absolute top-0 right-0 rounded-tr-md">Free Bottle</div>
+          <div x-show="i === {{ product_count }} - $store.bundleBuilder.selectedProducts.length" class="bg-[#b72f33] text-white px-2 py-1 font-semibold absolute top-0 right-0 rounded-tr-md">{{ 'bundle.free_bottle' | t }}</div>
         {% endif %}
         {% render 'perfume-icon' %}
         <div class="text-base">
-          Choose your perfume
+          {{ 'bundle.choose_your_perfume' | t }}
         </div>
         <span class="inline-block ml-auto">{% render 'arrow-down' %}</span>
       </button>
@@ -92,8 +92,8 @@
         'cursor-pointer hover:bg-[#368856]': $store.bundleBuilder.selectedProducts.length >= {{ product_count }}
       }"
     class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
-    <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text="'SELECT ' + ({{ product_count }} - $store.bundleBuilder.selectedProducts.length) + ' MORE'"></span>
-    <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">SHOP NOW
+    <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text='{{ "bundle.select_more" | t: count: "__count__" | json }}.replace("__count__", {{ product_count }} - $store.bundleBuilder.selectedProducts.length)'></span>
+    <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">{{ 'bundle.shop_now' | t }}
       <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
         <div
           class="inline-block text-lg bg-[#1E5834] px-3 rounded"
