@@ -167,25 +167,20 @@
                 {% endif %}
                 {% if product.tags contains 'Bundle_Price_Show' %}
                   <div id="price-{{ section.id }}" class="bundle-price-pdp" role="status" {{ block.shopify_attributes }}>
-                    {% if product.compare_at_price > product.price %}
-                      {% assign discount = product.compare_at_price | minus: product.price %}
-                      {% assign discount_percent = discount | times: 100 | divided_by: product.compare_at_price | round %}
-                    {% endif %}
-
-                    <div class="flex flex-wrap items-center gap-x-3 text-2xl">
+                    <div class="flex flex-wrap items-end gap-x-3">
                       {% if product.compare_at_price > product.price %}
-                        <span class="text-red-600 font-bold text-[28px] discount-percent">
-                          -{{ discount_percent }}%
+                        <span class="text-gray-500 font-semibold line-through text-[22px] compare-price">
+                          {{ product.compare_at_price | money }}
                         </span>
                       {% endif %}
-
                       <span class="text-black font-bold text-[28px] product-price">
                         {{ product.price | money }}
                       </span>
-
                       {% if product.compare_at_price > product.price %}
-                        <span class="text-gray-500 font-semibold line-through text-[22px] compare-price">
-                         Designer Price: {{ product.compare_at_price | money }}
+                        {% assign discount = product.compare_at_price | minus: product.price %}
+                        {% assign discount_percent = discount | times: 100 | divided_by: product.compare_at_price | round %}
+                        <span class="bg-red-600 text-white text-lg font-bold px-3 py-1">
+                          -{{ discount_percent }}%
                         </span>
                       {% endif %}
                     </div>
