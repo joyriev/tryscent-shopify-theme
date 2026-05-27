@@ -154,7 +154,7 @@
             variants: {
               {% for variant in bundle_product.variants %}
                 "{{ variant.title }}": {
-                  id: {{ variant.id }}
+                  id: "{{ variant.id }}"
                 },
               {% endfor %}
             }
