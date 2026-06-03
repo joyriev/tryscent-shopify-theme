@@ -16,10 +16,6 @@
           "type": "title",
           "settings": {}
         },
-        "judge_me_reviews_preview_badge_kpVGVR": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
         "selling_points_9tdid6": {
           "type": "selling_points",
           "disabled": true,
@@ -28,19 +24,13 @@
         "cheaper_than_yDGYG9": {
           "type": "cheaper_than",
           "settings": {
-            "number": 0
+            "number": 1
           }
         },
         "mobile_gallery_FUEn6Y": {
           "type": "mobile_gallery",
           "disabled": true,
           "settings": {}
-        },
-        "ez_bundles_discounts_complex_bundle_mXVaJA": {
-          "type": "shopify://apps/ez-bundles-discounts/blocks/complex-bundle/f569e784-b0ec-437e-a4bc-70c66e94410d",
-          "settings": {
-            "product": "{{product}}"
-          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -123,11 +113,6 @@
         },
         "cta_review_g7n3R8": {
           "type": "cta_review",
-          "disabled": true,
-          "settings": {}
-        },
-        "judge_me_reviews_review_snippet_widget_R7mLaR": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "disabled": true,
           "settings": {}
         },
@@ -227,11 +212,9 @@
       },
       "block_order": [
         "title",
-        "judge_me_reviews_preview_badge_kpVGVR",
         "selling_points_9tdid6",
         "cheaper_than_yDGYG9",
         "mobile_gallery_FUEn6Y",
-        "ez_bundles_discounts_complex_bundle_mXVaJA",
         "variant_picker",
         "price",
         "quantity_selector",
@@ -244,7 +227,6 @@
         "money_back_eKXfnE",
         "people_purchased_cYxaYJ",
         "cta_review_g7n3R8",
-        "judge_me_reviews_review_snippet_widget_R7mLaR",
         "videos_iXPFhh",
         "collapsible_tab_XYmgtQ",
         "collapsible_tab_PtUaDN",
@@ -347,65 +329,6 @@
     },
     "stacks_up_xtpACd": {
       "type": "stacks-up",
-      "blocks": {
-        "product_UbVFVF": {
-          "type": "product",
-          "disabled": true,
-          "settings": {
-            "name": "Price",
-            "our_stack": "From $7.99",
-            "other_brands": "$325+"
-          }
-        },
-        "product_N4m9Xk": {
-          "type": "product",
-          "settings": {
-            "name": "Longevity",
-            "our_stack": "12 +Hours",
-            "other_brands": "6–8 hours*"
-          }
-        },
-        "product_7gcPEg": {
-          "type": "product",
-          "settings": {
-            "name": "Transparency",
-            "our_stack": "Full note breakdown",
-            "other_brands": "Hidden formula"
-          }
-        },
-        "product_DXc6Vb": {
-          "type": "product",
-          "settings": {
-            "name": "Perfume Grade",
-            "our_stack": "Premium High Concentration",
-            "other_brands": "Various"
-          }
-        },
-        "product_xX66RW": {
-          "type": "product",
-          "settings": {
-            "name": "Returns",
-            "our_stack": "60-Day Satisfaction Guarantee",
-            "other_brands": "Final sale"
-          }
-        },
-        "product_rbFra6": {
-          "type": "product",
-          "settings": {
-            "name": "Skin Friendly",
-            "our_stack": "Formulated for daily wear",
-            "other_brands": "Can be harsh"
-          }
-        }
-      },
-      "block_order": [
-        "product_UbVFVF",
-        "product_N4m9Xk",
-        "product_7gcPEg",
-        "product_DXc6Vb",
-        "product_xX66RW",
-        "product_rbFra6"
-      ],
       "name": "Stacks Up",
       "settings": {
         "background_color": "#faf9f6",
@@ -578,24 +501,6 @@
     },
     "1755117642437d279b": {
       "type": "apps",
-      "blocks": {
-        "instagram_feed_mp_instagram_block_FgtetG": {
-          "type": "shopify://apps/mageplaza-instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
-          "settings": {
-            "mp_instagram_feed_id": ""
-          }
-        },
-        "judge_me_reviews_featured_carousel_TFtrbC": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1080
-          }
-        }
-      },
-      "block_order": [
-        "instagram_feed_mp_instagram_block_FgtetG",
-        "judge_me_reviews_featured_carousel_TFtrbC"
-      ],
       "disabled": true,
       "settings": {
         "include_margins": true
@@ -603,28 +508,6 @@
     },
     "1751863713a9594609": {
       "type": "apps",
-      "blocks": {
-        "judge_me_reviews_featured_carousel_xprgeq": {
-          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1400
-          }
-        },
-        "judge_me_reviews_review_widget_K8hgi4": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "disabled": true,
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_featured_carousel_xprgeq",
-        "judge_me_reviews_review_widget_K8hgi4"
-      ],
       "custom_css": [],
       "settings": {
         "include_margins": true
