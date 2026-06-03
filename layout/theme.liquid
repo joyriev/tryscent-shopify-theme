@@ -373,7 +373,7 @@ body {
     <style>
       /* FlipDown Custom Styles */
       .flipdown {
-        width: 140px;
+        width: 145px;
         height: 42px;
       }
 
@@ -525,9 +525,7 @@ body {
         }
       </style>
     {% endif %}
-    <div
-      class="timebar-section-bg"
-      style="background-image: url(https://downloadmsoffice.com/wp-content/uploads/2025/11/sale-bg.png);">
+    <div class="timebar-section-bg" style="background-image: url(https://downloadmsoffice.com/wp-content/uploads/2025/11/sale-bg.png);">
       <div class="timebar-container">
         <div class="timebar-row">
           <div class="timebar-sale-text">
@@ -540,11 +538,21 @@ body {
         </div>
       </div>
     </div>
+    {% capture countdown_headings_json %}
+      [
+        {{ 'timebar.countdown.days' | t | json }},
+        {{ 'timebar.countdown.hours' | t | json }},
+        {{ 'timebar.countdown.minutes' | t | json }},
+        {{ 'timebar.countdown.seconds' | t | json }}
+      ]
+    {% endcapture %}
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         // FlipDown Countdown - 24 hours
         var twentyFourHoursFromNow = (new Date().getTime() / 1000) + (3600 * 8) + (60 * 23) + 1;
-        var flipdown = new FlipDown(twentyFourHoursFromNow)
+        var flipdown = new FlipDown(twentyFourHoursFromNow, {
+          headings: {{ countdown_headings_json | strip_newlines }},
+        })
           .start()
           .ifEnded(() => {
             console.log('The countdown has ended!');
@@ -657,6 +665,6 @@ body {
     {% unless template.name == 'product' or page.handle == 'listicle-v1' or page.handle == 'listicle-v2' %}
       {% render 'fragrance-search' %}
     {% endunless %}
-  {% render 'checkout-modal' %}
+    {% render 'checkout-modal' %}
   </body>
 </html>
