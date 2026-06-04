@@ -115,16 +115,16 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Prøv i 60 dage",
+      "add_to_cart": "Læg i kurv",
       "description": "Beskrivelse",
       "on_sale": "Udsalg",
       "quantity": {
         "label": "Antal",
         "input_label": "Antal for {{ product }}",
         "increase": "Forøg mængden for {{ product }}",
-        "decrease": "Formindsk mængden for {{ product }}",
+        "decrease": "Reducer mængden for {{ product }}",
         "minimum_of": "Minimum af {{ quantity }}",
-        "maximum_of": "Maksimum {{ quantity }}",
+        "maximum_of": "Maksimum af {{ quantity }}",
         "multiples_of": "Trin på {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i kurv",
         "note": "Se mængderegler",
@@ -134,37 +134,37 @@
       "price": {
         "from_price_html": "Fra {{ price }}",
         "regular_price": "Normalpris",
-        "sale_price": "Salgspris",
+        "sale_price": "Udsalgspris",
         "unit_price": "Enhedspris"
       },
       "share": "Del dette produkt",
       "sold_out": "Udsolgt",
-      "unavailable": "Utilgængelig",
-      "vendor": "Sælger",
+      "unavailable": "Ikke tilgængelig",
+      "vendor": "Leverandør",
       "video_exit_message": "{{ title }} åbner video i fuld skærm i samme vindue.",
       "xr_button": "Se i dit rum",
-      "xr_button_label": "Se i dit rum, indlæser genstand i vindue med udvidet virkelighed",
+      "xr_button_label": "Se i dit rum, indlæser varen i vindue med udvidet virkelighed",
       "pickup_availability": {
-        "view_store_info": "Se butikoplysninger",
+        "view_store_info": "Se butiksinformation",
         "check_other_stores": "Tjek tilgængelighed i andre butikker",
         "pick_up_available": "Afhentning tilgængelig",
-        "pick_up_available_at_html": "Afhentning muligt på <span class=\"color-foreground\">{{ location_name }}</span>",
+        "pick_up_available_at_html": "Afhentning tilgængelig hos <span class=\"color-foreground\">{{ location_name }}</span>",
         "pick_up_unavailable_at_html": "Afhentning er i øjeblikket ikke tilgængelig på <span class=\"color-foreground\">{{ location_name }}</span>",
         "unavailable": "Kunne ikke indlæse afhentningsmuligheder",
         "refresh": "Opdater"
       },
       "media": {
-        "open_media": "Åbn medie {{ index }} i modalvindue",
-        "play_model": "Afspil 3D Viewer",
+        "open_media": "Åbn medie {{ index }} i modal",
+        "play_model": "Afspil 3D-visning",
         "play_video": "Afspil video",
-        "gallery_viewer": "Galleri-fremviser",
+        "gallery_viewer": "Galleri-visning",
         "load_image": "Indlæs billede {{ index }} i gallerivisning",
         "load_model": "Indlæs 3D-model {{ index }} i gallerivisning",
         "load_video": "Afspil video {{ index }} i gallerivisning",
         "image_available": "Billede {{ index }} er nu tilgængeligt i gallerivisning"
       },
       "view_full_details": "Se fulde detaljer",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Forsendelse</a> beregnet ved betaling.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Forsendelse</a> beregnes ved kassen.",
       "choose_options": "Vælg muligheder",
       "choose_product_options": "Vælg muligheder for {{ product_name }}",
       "value_unavailable": "{{ option_value }} - Ikke tilgængelig",
@@ -172,19 +172,19 @@
       "inventory_in_stock": "På lager",
       "inventory_in_stock_show_count": "{{ quantity }} på lager",
       "inventory_low_stock": "Lav lagerbeholdning",
-      "inventory_low_stock_show_count": "Få på lager: {{ quantity }} tilbage",
+      "inventory_low_stock_show_count": "Lav lagerbeholdning: {{ quantity }} tilbage",
       "inventory_out_of_stock": "Udsolgt",
       "inventory_out_of_stock_continue_selling": "På lager",
       "sku": "Varenummer",
       "volume_pricing": {
         "title": "Mængderabat",
-        "note": "Mængderabat tilgængelig",
+        "note": "Volumenpriser tilgængelige",
         "minimum": "Mere end {{ quantity }}",
         "price_range": "{{ minimum }} – {{ maximum }}",
-        "price_at_each_html": "til {{ price }}/stk"
+        "price_at_each_html": "at {{ price }}/stk"
       },
       "product_variants": "Produktvarianter",
-      "duties_included": "Pligter inkluderet."
+      "duties_included": "Opgaver inkluderet."
     },
     "modal": {
       "label": "Mediegalleri"
@@ -203,15 +203,15 @@
       },
       "max_price": "Den højeste pris er {{ price }}",
       "product_count": {
-        "one": "{{ product_count }} af {{ count }} produkt",
-        "other": "{{ product_count }} af {{ count }} varer"
+        "one": "{{ product_count }} af {{ count }} produkter",
+        "other": "{{ product_count }} af {{ count }} produkter"
       },
       "product_count_simple": {
         "one": "{{ count }} produkt",
         "other": "{{ count }} produkter"
       },
       "reset": "Nulstil",
-      "sort_button": "Sorteret",
+      "sort_button": "Sorter",
       "sort_by_label": "Sorter efter:",
       "to": "Til",
       "clear_filter": "Fjern filter",
@@ -509,17 +509,17 @@
   },
   "recipient": {
     "form": {
-      "checkbox": "Jeg vil gerne sende dette som en gave",
-      "email_label": "Modtagerens e-mail",
+      "checkbox": "Jeg vil sende dette som en gave",
+      "email_label": "Modtagers e-mail",
       "email": "E-mail",
-      "name_label": "Modtagernavn (valgfrit)",
+      "name_label": "Modtagerens navn (valgfrit)",
       "name": "Navn",
-      "message_label": "Besked (valgfrit)",
+      "message_label": "Besked (valgfri)",
       "message": "Besked",
       "max_characters": "{{ max_chars }} tegn maks",
-      "email_label_optional_for_no_js_behavior": "Modtagerens e-mail (valgfrit)",
-      "send_on": "ÅÅÅÅ-MM-DD",
-      "send_on_label": "Send videre (valgfrit)",
+      "email_label_optional_for_no_js_behavior": "Modtagers e-mail (valgfrit)",
+      "send_on": "YYYY-MM-DD",
+      "send_on_label": "Send på (valgfrit)",
       "expanded": "Gavekortmodtagerformular udvidet",
       "collapsed": "Gavekortmodtagerformular skjult"
     }
@@ -1901,8 +1901,8 @@
         }
       },
       "alternative_payment_method_banner": {
-        "express_checkout": "Ekspres betaling",
-        "or_check_out_another_way": "Eller prøv en anden måde at Checkout på"
+        "express_checkout": "Hurtig kasse",
+        "or_check_out_another_way": "Eller tjek en anden måde"
       },
       "post_purchase": {
         "components": {
@@ -2039,16 +2039,16 @@
       "change_currency": {
         "credit_card_will_be_charged_html": "Dit kreditkort vil blive opkrævet %{amount}",
         "payment_total_label": "Betalingssum",
-        "card_provider_fx_charges_warning": "Din kortudbyder kan opkræve gebyrer ved transaktioner i %{currency_code}.",
+        "card_provider_fx_charges_warning": "Din kortudbyder kan opkræve gebyrer på %{currency_code} transaktioner.",
         "currency_not_supported_by_shop": "Den valuta, du valgte, er ikke længere tilgængelig. Alle priser er nu i %{currency_code}."
       },
       "change_country": {
-        "cart_updated_based_on_country": "Din indkøbskurv er blevet opdateret baseret på dit leveringsland.",
+        "cart_updated_based_on_country": "Din indkøbskurv er blevet opdateret baseret på dit forsendelsesland.",
         "cart_and_currency_updated_based_on_country": "Din kurv og valuta er blevet opdateret baseret på dit forsendelsesland.",
         "currency_updated_for_country": "Valuta opdateret for %{country}"
       },
       "change_cart_localization": {
-        "verify_shipping_address": "Dit land/område er blevet opdateret. Indtast din leveringsadresse for at fortsætte til kassen."
+        "verify_shipping_address": "Dit land/region er blevet opdateret. Indtast din leveringsadresse for at fortsætte med kassen."
       },
       "tips": {
         "description": "Vis din støtte til holdet hos %{shop_name}",
@@ -2105,7 +2105,7 @@
         }
       },
       "cart_checkout_validation": {
-        "runtime_error": "Der opstod et problem med at behandle din forespørgsel. Kontakt butiksejeren."
+        "runtime_error": "Der opstod et problem med at behandle din anmodning. Kontakt butiksindehaveren."
       },
       "no_address_location": {
         "title": "Placering uden adresse",
@@ -2272,8 +2272,9 @@
         "generic_error": "Din ordre kunne ikke behandles, fordi din rabatkode ikke længere er tilgængelig. Gennemgå din ordretotal og prøv igen."
       },
       "b2b_errors": {
-        "lost_b2b_purchasing_permissions": "Du har ikke længere tilladelse til at afgive B2B-ordrer. %{logout_url} for i stedet at afgive en personlig ordre.",
-        "lost_permissions_title": "Ingen placeringstilladelser"
+        "lost_b2b_purchasing_permissions": "Du har ikke længere tilladelse til at placere B2B-bestillinger. %{logout_url} for i stedet at placere en personlig bestilling.",
+        "lost_permissions_title": "Ingen placeringstilladelser",
+        "lost_permissions_subtitle": "Du har ikke længere tilladelse til at placere B2B-ordrer. Log ud for at placere en personlig ordre."
       },
       "shop_pay_external": {
         "title": "Shop Pay Betaling",
@@ -2448,6 +2449,14 @@
       "split_delivery": {
         "delivery_method": "Opdelt leveringsmetode",
         "delivery_method_menu": "Opdel leveringsmetode-menu"
+      },
+      "billing": {
+        "billing_address_title": "Faktura til",
+        "billing_address_rollup_accessibility_label": "Faktura til muligheder",
+        "same_as_shipping": "Samme som leveringsadresse"
+      },
+      "address_management": {
+        "saved_with_store": "Gemmes med denne butik"
       }
     },
     "sentence": {
@@ -2458,16 +2467,16 @@
       "learn_more": "Lær mere"
     },
     "attributes": {
-      "email": "e-mail",
+      "email": "email",
       "password_confirmation": "Bekræftelse af adgangskode",
       "body": "krop"
     },
     "addresses": {
       "pincode": "Pinkode",
       "region": "Region",
-      "state_and_territory": "Stat/fylke",
+      "state_and_territory": "Stat/område",
       "county": "Amt",
-      "governorate": "Guvernørdømme"
+      "governorate": "Guvernement"
     },
     "collections": {
       "sorting": {

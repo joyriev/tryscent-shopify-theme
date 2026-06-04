@@ -564,7 +564,60 @@
   "shopify": {
     "addresses": {
       "emirate": "Emiraatti",
-      "governorate": "Kuvernoraatti"
+      "governorate": "Kuvernoraatti",
+      "province": "Maakunta"
+    },
+    "checkout": {
+      "billing": {
+        "billing_address_rollup_accessibility_label": "Laskutusvaihtoehdot",
+        "add_address": "Käytä eri osoitetta",
+        "address_more": "Lisää toimintoja tälle osoitteelle"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Nopea kassalle",
+        "or_check_out_another_way": "Tai tutustu toiseen tapaan",
+        "hide_more_options": "Piilota lisää vaihtoehtoja"
+      },
+      "change_currency": {
+        "card_provider_fx_charges_warning": "Kortin tarjoaja saattaa periä maksuja %{currency_code}-tapahtumista."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Ostoskori on päivitetty toimitusmaasi perusteella.",
+        "cart_and_currency_updated_based_on_country": "Ostoskori ja valuutta on päivitetty toimitusmaasi mukaan.",
+        "currency_updated_for_country": "Valuutta päivitetty %{country} varten"
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Maatasi/alueesi on päivitetty. Syötä toimitusosoitteesi jatkaaksesi kassalle."
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Pyyntöäsi käsitettäessä ilmeni ongelma. Ota yhteyttä kaupan omistajaan."
+      },
+      "artifact_errors": {
+        "artifact_dissatisfaction_without_violation": "Tilauksesi käsittelyssä ilmeni ongelma. Yritä uudelleen muutaman minuutin kuluttua."
+      },
+      "captcha": {
+        "title": "Täytä CAPTCHA jatkaaksesi",
+        "errors": {
+          "not_solved": "Täytä CAPTCHA jatkaaksesi"
+        }
+      },
+      "b2b_errors": {
+        "lost_b2b_purchasing_permissions": "Sinulla ei enää ole oikeutta tehdä B2B-tilauksia. %{logout_url} tehdäksesi henkilökohtaisen tilauksen sen sijaan.",
+        "lost_permissions_subtitle": "Sinulla ei enää ole oikeutta tehdä B2B-tilauksia. Kirjaudu ulos tehdäksesi henkilökohtaisen tilauksen.",
+        "lost_permissions_title": "Ei sijaintilupia"
+      },
+      "address_management": {
+        "saved_with_store": "Tallennettu tämän kaupan kanssa"
+      }
+    },
+    "attributes": {
+      "body": "vartalo"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} alennusta on käytetty"
+    },
+    "challenge": {
+      "message": "Jatkaaksesi, kerro meille ettet ole robotti."
     }
   }
 }
