@@ -223,7 +223,7 @@
   },
   "templates": {
     "search": {
-      "no_results": "Inga resultat hittades för ”{{ terms }}”. Kontrollera stavningen eller använd ett annat ord eller uttryck.",
+      "no_results": "Inga resultat hittades för “{{ terms }}”. Kontrollera stavningen eller använd ett annat ord eller uttryck.",
       "results_with_count": {
         "one": "{{ count }} resultat",
         "other": "{{ count }} resultat"
@@ -233,8 +233,8 @@
       "products": "Produkter",
       "search_for": "Sök efter “{{ terms }}”",
       "results_with_count_and_term": {
-        "one": "{{ count }} resultat hittades för ”{{ terms }}”",
-        "other": "{{ count }} resultat hittades för ”{{ terms }}”"
+        "one": "{{ count }} resultat hittades för “{{ terms }}”",
+        "other": "{{ count }} resultat hittades för “{{ terms }}”"
       },
       "results_pages_with_count": {
         "one": "{{ count }} sida",
@@ -256,7 +256,7 @@
     },
     "contact": {
       "form": {
-        "name": "[name]",
+        "name": "Namn",
         "email": "E-post",
         "phone": "Telefonnummer",
         "comment": "Kommentar",
@@ -3954,13 +3954,13 @@
       }
     },
     "search": {
-      "error": "Det uppstod ett problem när dina sökresultat skulle laddas. Vänligen uppdatera sidan eller försök igen senare.",
+      "error": "Det uppstod ett problem med att ladda dina sökresultat. Vänligen uppdatera sidan eller försök igen senare.",
       "sorting": {
-        "price_descending": "Pris, högst till lägst"
+        "price_descending": "Pris, hög till låg"
       }
     },
     "page_titles": {
-      "shopping_cart": "Din Varukorg",
+      "shopping_cart": "Din kundvagn",
       "order": "Beställ %{name}",
       "search_results": {
         "one": "Sök: %{count} resultat hittades för \"%{terms}\"",
@@ -3985,22 +3985,25 @@
     },
     "store_availability": {
       "pick_up_time": {
-        "one_hour": "Vanligtvis klart inom 1 timme",
-        "two_hours": "Vanligtvis klart inom 2 timmar",
-        "four_hours": "Vanligtvis klart inom 4 timmar",
+        "one_hour": "Vanligtvis klart om 1 timme",
+        "two_hours": "Vanligtvis klart om 2 timmar",
+        "four_hours": "Vanligtvis klart om 4 timmar",
         "twenty_four_hours": "Vanligtvis klart inom 24 timmar",
-        "two_to_four_days": "Vanligtvis klart inom 2-4 dagar",
-        "five_or_more_days": "Vanligtvis klart inom 5+ dagar",
-        "zero_to_two_hours": "Vanligtvis klart inom 2 timmar",
-        "two_to_four_hours": "Vanligtvis klart inom 4 timmar",
-        "immediately": "Redo för avhämtning nu",
-        "next_day": "Klar för avhämtning nästa dag"
+        "two_to_four_days": "Vanligtvis klart om 2-4 dagar",
+        "five_or_more_days": "Vanligtvis klart om 5+ dagar",
+        "zero_to_two_hours": "Vanligtvis klart om 2 timmar",
+        "two_to_four_hours": "Vanligtvis klart om 4 timmar",
+        "immediately": "Redo för upphämtning nu",
+        "next_day": "Redo för upphämtning nästa dag"
       }
     },
     "subscriptions": {
-      "buyer_consent_product": "Denna vara är ett återkommande eller uppskjutet köp. Genom att fortsätta godkänner jag %{cancellationPolicyLink} och ger dig tillåtelse att debitera min betalningsmetod till de priser, den frekvens och de datum som anges på denna sida tills min beställning är fullbordad eller jag avbeställer, om det är tillåtet.",
-      "buyer_consent_cart": "En eller flera av varorna i din kundvagn är ett återkommande eller uppskjutet köp. Genom att fortsätta godkänner jag %{cancellationPolicyLink} och ger dig tillåtelse att debitera min betalningsmetod till de priser, den frekvens och de datum som anges på denna sida tills min beställning är fullföljd eller jag avbokar, om det är tillåtet.",
+      "buyer_consent_product": "Denna artikel är ett återkommande eller uppskjutet köp. Genom att fortsätta godkänner jag %{cancellationPolicyLink} och ger er tillstånd att debitera min betalningsmetod enligt de priser, frekvenser och datum som anges på denna sida tills min beställning är fullgjord eller jag avbryter, om det är tillåtet.",
+      "buyer_consent_cart": "En eller flera av artiklarna i din kundvagn är ett återkommande eller uppskjutet köp. Genom att fortsätta godkänner jag %{cancellationPolicyLink} och ger dig tillstånd att debitera min betalningsmetod till de priser, frekvenser och datum som anges på denna sida tills min beställning är fullgjord eller jag avbryter, om det är tillåtet.",
       "cancellation_policy": "avbokningspolicy"
+    },
+    "pagination": {
+      "previous": "Tidigare"
     }
   },
   "bundle": {
