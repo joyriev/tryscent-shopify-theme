@@ -2279,7 +2279,85 @@
           "description": "Nämä tuotteet eivät ole enää saatavilla ja ne poistetaan ostoskoristasi.",
           "items_unavailable": "Jotkin tuotteet eivät ole enää saatavilla ja ne poistetaan ostoskoristasi."
         },
-        "out_of_stock_in_context_label": "Tätä tuotetta ei ole saatavilla maassasi/alueellasi."
+        "out_of_stock_in_context_label": "Tätä tuotetta ei ole saatavilla maassasi/alueellasi.",
+        "unpurchasable_product_generic": {
+          "title": "Ei ostettavissa oleva tuote",
+          "header": "Joitakin tuotteita poistettiin ostoskoristasi",
+          "message": "Näitä tuotteita ei ole saatavilla."
+        },
+        "unshippable_product": {
+          "title": "Toimitusta ei ole saatavilla",
+          "header": {
+            "one": "Toimitusta ei ole saatavilla %{count} tuotteelle",
+            "other": "Toimitusta ei ole saatavilla %{count} tuotteelle"
+          }
+        }
+      },
+      "store_credit_errors": {
+        "generic_error": "Ongelmia kauppaluotollasi. Yritä uudelleen tai lataa sivu uudestaan."
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "other": "%{count} päivää"
+          },
+          "week": {
+            "other": "%{count} viikkoa"
+          },
+          "month": {
+            "other": "%{count} kuukautta"
+          },
+          "year": {
+            "other": "%{count} vuotta"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount": "Ensimmäinen maksu %{total_price_with_discount}, sitten %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "other": "Ensimmäiset %{count} maksua %{total_price} kukin"
+          },
+          "following_cycles": ", sitten %{total_price} joka %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", sitten %{count} maksu summalta %{total_price}",
+            "other": ", sitten %{count} maksua, kukin %{total_price}"
+          }
+        }
+      },
+      "taxes": {
+        "tax_details": "Lisätietoja veroista",
+        "vat_number": {
+          "field": {
+            "tooltip": "Vahvistaa ALV-numeron ja soveltaa automaattisesti käännettyä verovelvollisuutta tilauksiin, kun se on mahdollista"
+          },
+          "domestic_order": "Käännetty verovelvollisuus koskee vain rajat ylittäviä EU-tilauksia. Paikallisista tilauksista peritään normaali arvonlisävero.",
+          "status": {
+            "invalid_format": {
+              "at": "Itävallan ALV-numerot sisältävät AT-kirjaimet ja 9 merkkiä",
+              "be": "Belgian arvonlisäveronumerot sisältävät BE-kirjaimet ja 10 merkkiä",
+              "bg": "Bulgarian ALV-numerot sisältävät BG-kirjaimet ja 9–10 merkkiä",
+              "cy": "Kyproksen ALV-numerot sisältävät CY-kirjaimet ja 9 merkkiä",
+              "cz": "Tšekin tasavallan ALV-numerot sisältävät CZ-kirjaimet ja 8–10 merkkiä",
+              "dk": "Tanskan ALV-numerot sisältävät DK-kirjaimet ja 8 merkkiä",
+              "ee": "Viron ALV-numerot sisältävät EE-kirjaimet ja 9 merkkiä",
+              "fi": "Suomen ALV-numerot sisältävät FI ja 8 merkkiä",
+              "fr": "Ranskan ALV-numerot sisältävät FR-kirjaimet ja 11 merkkiä",
+              "de": "Saksan ALV-numerot sisältävät DE-kirjaimet ja 9 merkkiä",
+              "es": "Espanjan ALV-numerot sisältävät ES-kirjaimet ja 9 merkkiä"
+            }
+          },
+          "accessibility": {
+            "status": {
+              "validating": "ALV-tunnuksen vahvistus on käynnissä",
+              "valid": "ALV-numero on voimassa",
+              "applied": "ALV-vapaus on myönnetty",
+              "domestic": "ALV-vapautusta ei ole sovellettu",
+              "service_unavailable": "Alv-vapautuksen vahvistaminen ei onnistunut",
+              "service_error": "Alv-vapautuksen vahvistaminen ei onnistunut"
+            }
+          }
+        }
       }
     },
     "attributes": {
