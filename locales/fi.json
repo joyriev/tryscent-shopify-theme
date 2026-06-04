@@ -1398,7 +1398,46 @@
         "expand_component_information": {
           "one": "Näytä %{count} kohdetta",
           "other": "Näytä %{count} kohdetta"
-        }
+        },
+        "return_restocking_fee_label": "Täydennysmaksu",
+        "return_shipping_fee_label": "Palautuslähetys",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> alennuskoodi ei ole käytettävissä toimitusosoitteessasi",
+        "subtotal_label_with_quantity": {
+          "one": "Välisumma · %{count} tuotetta"
+        },
+        "pickup_label": "Nouto myymälästä",
+        "pickup_unavailable_banner_title": {
+          "one": "Tuotettasi ei ole saatavilla missään myymälässä",
+          "other": "Ei myymälöitä, joissa olisi valitsemasi tuotteet"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "one": "Ei myymälöitä saatavilla %{country} alueella tuotteellasi",
+          "other": "Ei myymälöitä saatavilla %{country} alueella valitsemillasi tuotteilla"
+        },
+        "pickup_unavailable_banner_body": {
+          "ship_to_address": "Toimitusosoitteeseen"
+        },
+        "shipping_discount_title": "Toimitusalennus",
+        "payment_due_label": "Maksun eräpäivä",
+        "price_per_item": {
+          "accessibility_label": "%{price} per kappale"
+        },
+        "product_change_label": "Vaihda",
+        "scroll_order_summary": "Selaa nähdäksesi lisää tuotteita",
+        "recurring_total_tooltip": "Ei sisällä toimituskuluja, veroja, tulleja tai mahdollisia alennuksia.",
+        "percent_off_shipping": "%{percent}% alennus toimituskuluista",
+        "payment_terms_totals": {
+          "due_today": "Maksettava yhteensä tänään",
+          "due_today_next": "Erääntyy tänään",
+          "due_later": "Maksettava yhteensä %{due_at}",
+          "due_on_fulfillment": "Maksettava kokonaismäärä toimituksen yhteydessä",
+          "due_on_fulfillment_next": "Eräpäivä täytettäessä",
+          "due_on_receipt": "Maksettava yhteensä vastaanotettaessa",
+          "due_later_checkout_to_draft": "Maksettava yhteensä myöhemmin"
+        },
+        "recurring_payments": "Toistuvat maksut",
+        "recurring_total_multiple_label": "Tässä tilauksessa on toistuva veloitus useista tuotteista.",
+        "pay_merchant_label": "Maksa %{merchant_name}"
       },
       "order_payment_collection": {
         "custom_line_item_description": "Maksun määrä tilaukselle %{order_name}",

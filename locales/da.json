@@ -991,11 +991,12 @@
       },
       "merchant_instruction_errors": {
         "invalid_entrypoint_for_remote_negotiation": "Fjernforhandlingsinstruktionen kan ikke gives til en ikke-fjernforhandlingssession.",
-        "empty_stable_id": "Instruktionen for %{position} %{name} varer indeholder en tom stabil ID.",
-        "invalid_stable_id_target": "Instruktionen for %{position} %{name} varer henviser til stable ID %{stable_id}, men den stable ID findes ikke i varelinjerne.",
-        "duplicate_variant_id": "Instruktionen for %{position} %{name} varer indeholder en duplikeret variant-ID %{variant_id}.",
-        "invalid_variant_id_target": "Instruktionen for %{name}-varer henviser til variant-ID %{variant_id}, men den variant findes ikke i varelinjerne.",
-        "invalid_price_override_target": "Prisoverskrivningsinstruktionen for varelinje %{stable_id} er ugyldig, da det er en del af en pakke."
+        "empty_stable_id": "Instruktionen for %{position} %{name} merchandise indeholder en tom stabil ID.",
+        "invalid_stable_id_target": "Den %{position} %{name} merchandise instruktion henviser til stabil ID %{stable_id}, men den stabile ID er ikke i merchandise linjer.",
+        "duplicate_variant_id": "Instruktionen for %{position} %{name} merchandise indeholder en duplikeret variant-ID %{variant_id}.",
+        "invalid_variant_id_target": "Vareinstruktionen for %{name} henviser til variant-ID %{variant_id}, men den variant findes ikke i varelinjerne.",
+        "invalid_price_override_target": "Prisen for override merchandise-instruktionen for linjeelement %{stable_id} er ugyldig, da det er en del af en pakke.",
+        "discount_not_supported": "Instruktionen for anvendelse af merchandise-rabat fra forhandleren understøtter ikke denne type rabat."
       },
       "stock": {
         "out_of_stock_in_context_label": "Dette produkt er ikke tilgængeligt i dit land/område.",
@@ -1649,18 +1650,18 @@
       },
       "merchandise_unavailable_in_buyer_location": {
         "banner_title": {
-          "some_products_one": "Dette produkt kan ikke leveres til %{location_name}.",
-          "some_products_other": "Disse produkter kan ikke leveres til %{location_name}.",
-          "all_products_one": "Produktet i din kurv kan ikke leveres til %{location_name}.",
-          "all_products_other": "Produkterne i din kurv kan ikke leveres til %{location_name}."
+          "some_products_one": "Dette produkt er ikke tilgængeligt for levering til %{location_name}.",
+          "some_products_other": "Disse produkter er ikke tilgængelige for levering til %{location_name}.",
+          "all_products_one": "Produktet i din indkøbskurv er ikke tilgængeligt for levering til %{location_name}.",
+          "all_products_other": "De produkter, der er i din indkøbskurv, er ikke tilgængelige for levering til %{location_name}."
         },
         "indeterminate_location_fallback": "din placering",
-        "change_address_only": "Skift leveringsadresse for at fortsætte.",
-        "change_address_or_remove": "Skift leveringsadresse eller %{remove_action}.",
+        "change_address_only": "Ændre leveringsadresse for at fortsætte.",
+        "change_address_or_remove": "Ændre leveringsadresse eller %{remove_action}.",
         "remove_items_action": {
-          "one": "fjern utilgængeligt element"
+          "one": "fjern utilgængelig vare"
         },
-        "empty_cart_action": "tøm kurv og vend tilbage til butikken"
+        "empty_cart_action": "tøm kurv og returner til butikken"
       },
       "deliverability": {
         "not_deliverable": {
@@ -1827,28 +1828,29 @@
       "localized_fields": {
         "additional_information": {
           "title": "Yderligere information",
-          "shipping_credential_cn": "Bopæls-ID-nummer",
-          "tax_credential_it": "Skatteidentifikationsnummer (valgfrit)",
-          "tax_email_it": "PEC (valgfrit)",
-          "tax_credential_co": "Cédula/ Momsnummer",
-          "tax_credential_type_co": "Type ID-kort",
-          "shipping_credential_co": "Cédula/ Momsnummer",
-          "shipping_credential_type_co": "Type ID-kort",
-          "tax_credential_ec": "CVR/MOMS/IVA",
-          "shipping_credential_ec": "CVR/MOMS/IVA",
-          "tax_credential_gt": "NIT/MOMS",
-          "shipping_credential_gt": "NIT/MOMS",
+          "shipping_credential_cn": "Resident ID-nummer",
+          "tax_credential_it": "Skattekode (valgfri)",
+          "tax_email_it": "PEC (valgfri)",
+          "tax_credential_co": "Cédula/IVA",
+          "tax_credential_type_co": "Type ID",
+          "shipping_credential_co": "Cédula/IVA",
+          "shipping_credential_type_co": "Type ID",
+          "tax_credential_ec": "CI/RUC/IVA",
+          "shipping_credential_ec": "CI/RUC/IVA",
+          "tax_credential_gt": "NIT/IVA",
+          "shipping_credential_gt": "NIT/IVA",
           "tax_credential_my": "TIN/Registreringsnummer",
           "shipping_credential_my": "TIN/Registreringsnummer",
-          "tax_credential_type_mx": "Skatteordning",
+          "tax_credential_type_mx": "Skattesystem",
           "tax_credential_use_mx": "Brug af CFDI",
-          "tax_credential_py": "CVR/MOMS/IVA",
-          "shipping_credential_py": "CVR/MOMS/IVA",
-          "tax_credential_pt": "CVR/MOMS",
-          "shipping_credential_pt": "CVR/MOMS",
-          "shipping_credential_tw": "Nationalt ID-nummer/MOMS",
-          "tax_credential_tr": "Tyrkiets Republik Identitetsnummer/MOMS",
-          "shipping_credential_tr": "Tyrkiets Republik Identitetsnummer/MOMS"
+          "tax_credential_py": "CI/RUC/IVA",
+          "shipping_credential_py": "CI/RUC/IVA",
+          "tax_credential_pt": "NIF/IVA",
+          "shipping_credential_pt": "NIF/IVA",
+          "shipping_credential_tw": "National ID-nummer/Moms",
+          "tax_credential_tr": "Tyrkisk Republik Identitetsnummer/Moms",
+          "shipping_credential_tr": "Tyrkisk Republik Identitetsnummer/Moms",
+          "shipping_credential_kr": "Personlig Toldkode"
         }
       },
       "field_errors": {
@@ -2037,18 +2039,20 @@
         }
       },
       "marketing": {
-        "accept_marketing_checkbox_label": "Send mig e-mails med nyheder og tilbud",
-        "post_accept_marketing_checkbox_label": "Du er tilmeldt for at modtage nyheder og tilbud via e-mail",
+        "accept_marketing_checkbox_label": "Send mig en e-mail med nyheder og tilbud",
+        "post_accept_marketing_checkbox_label": "Du er tilmeldt for at modtage e-mail nyheder og tilbud",
         "pending_accept_marketing_checkbox_label": "Tjek din e-mail for at bekræfte dit abonnement på nyheder og tilbud",
-        "accept_sms_checkbox_label": "Send mig en besked med nyheder og tilbud",
+        "accept_sms_checkbox_label": "Send mig nyheder og tilbud",
         "disclaimer": {
-          "privacy_policy": "Privatlivspolitik"
+          "privacy_policy": "Privatlivspolitik",
+          "terms_of_service": "Brugsvilkår"
         },
         "sms": {
           "disclaimer": {
             "privacy_policy": "Privatlivspolitik",
-            "description_html": "Ved at tilmelde dig via sms accepterer du at modtage tilbagevendende automatiserede markedsføringsbeskeder, herunder påmindelser om indkøbskurv, på det angivne telefonnummer. Samtykke er ikke en betingelse for køb. Svar STOP for at afmelde. Svar HJÆLP for hjælp. Beskedhyppighed varierer. Beskedsatser og datapriser kan forekomme. Se vores %{privacy_policy_link} og %{terms_of_service_link}.",
-            "description_transactional_html": "Du kan modtage sms-beskeder vedrørende ordrebekræftelse og forsendelsesopdateringer. Svar STOP for at afmelde. Svar HJÆLP for hjælp. Beskedfrekvensen varierer. Besked- og datapriser kan forekomme. Se vores %{privacy_policy_modal_link} og %{terms_of_service_modal_link}."
+            "description_html": "Ved at tilmelde dig via tekst, accepterer du at modtage tilbagevendende automatiserede marketingbeskeder, herunder påmindelser om indkøbskurven, på det oplyste telefonnummer. Samtykke er ikke en betingelse for køb. Svar STOP for at afmelde. Svar HJÆLP for hjælp. Beskedfrekvensen varierer. Msg & data takster kan gælde. Se vores %{privacy_policy_link} og %{terms_of_service_link}.",
+            "description_transactional_html": "Du kan modtage tekstbeskeder relateret til ordrebekræftelse og forsendelsesopdateringer. Svar STOP for at afmelde. Svar HJÆLP for hjælp. Beskedfrekvensen varierer. Msg- og datatakster kan gælde. Se vores %{privacy_policy_modal_link} og %{terms_of_service_modal_link}.",
+            "terms_of_service": "Brugsvilkår"
           },
           "mobile_phone_number": "Mobiltelefonnummer"
         },
@@ -2072,11 +2076,11 @@
         "unavailable_policy": "Der er ikke angivet nogen %{policy_name} for denne butik. For yderligere oplysninger, kontakt venligst %{shop_name} direkte."
       },
       "mor_policies": {
-        "terms_and_conditions": "Handelsbetingelser for registreret forhandler",
-        "privacy_policy": "Fortrolighedspolitik for Merchant of Record"
+        "terms_and_conditions": "Handelsvilkår og betingelser",
+        "privacy_policy": "Merchant of Record Privatlivspolitik"
       },
       "markets": {
-        "invalid_market_manager_error": "Gennemse dine kontaktoplysninger, inden du fuldfører betalingen"
+        "invalid_market_manager_error": "Gennemgå dine kontaktoplysninger, før du fuldfører betalingen"
       },
       "notifications": {
         "title": "Underretninger"
@@ -2167,9 +2171,9 @@
         "runtime_error": "Der opstod et problem med at behandle din anmodning. Kontakt butiksindehaveren."
       },
       "no_address_location": {
-        "title": "Placering uden adresse",
-        "header": "Du har ikke en leveringsadresse til denne placering",
-        "message": "Kontakt os for at tilføje en adresse til denne lokation for at fuldføre betalingen.",
+        "title": "Sted uden adresse",
+        "header": "Du har ikke en leveringsadresse for denne placering",
+        "message": "Kontakt os for at tilføje en adresse til denne placering for at fuldføre kassen.",
         "email_us_button_label": "Send os en e-mail"
       },
       "order_errors": {
@@ -2245,34 +2249,35 @@
         }
       },
       "notice_banner": {
-        "return_to_cart_link_text": "Vend tilbage til kurven",
+        "return_to_cart_link_text": "Gå tilbage til kurv",
         "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} for at opdatere mængderne",
         "subscription_changed": "En af dine abonnementer er blevet ændret.",
-        "company_location_changed": "Din indkøbskurv er blevet opdateret. Gennemse din ordre, før du sender den.",
-        "company_location_changed_product_removed": "Din indkøbskurv er blevet opdateret, fordi nogle produkter ikke er tilgængelige på dette sted. Gennemgå din ordre, før du sender den.",
+        "company_location_changed": "Din indkøbskurv er blevet opdateret. Gennemgå din ordre, før du indsender den.",
+        "company_location_changed_product_removed": "Din indkøbskurv er blevet opdateret, fordi nogle produkter ikke er tilgængelige på denne placering. Gennemgå din ordre, før du indsender den.",
         "individual_violations_title": {
-          "OtherViolations": "Bestillingsinformation",
-          "UnhandledViolations": "Bestillingsinformation"
+          "OtherViolations": "Ordreinformation",
+          "UnhandledViolations": "Ordreinformation"
         },
-        "all_violations_content": "Ring eller {{emailLink}} til os for at opdatere disse oplysninger og fuldføre din bestilling:",
-        "all_violations_email_link": "e-mail",
+        "all_violations_content": "Ring eller {{emailLink}} til os for at opdatere disse oplysninger og fuldføre din ordre:",
+        "all_violations_email_link": "email",
         "editable_shipping_address_violations_message_title": "Tilføj disse oplysninger for at fuldføre din ordre:",
-        "editable_shipping_address_violations_message_footer": "For permanent at opdatere adressen for denne placering, {{emailLink}}.",
+        "editable_shipping_address_violations_message_footer": "For at opdatere adressen for denne placering permanent, {{emailLink}}.",
         "editable_shipping_address_violations_email_link": "kontakt os",
         "shipping_address_incomplete_title": "Forsendelsesadressen er ufuldstændig",
-        "calculating_shipping": "Forsendelse beregnes stadig. Prøv igen om et par sekunder. Du er ikke blevet opkrævet.",
+        "calculating_shipping": "Forsendelsen beregnes stadig. Prøv igen om et par sekunder. Du er ikke blevet opkrævet.",
         "calculating_taxes": "Skatter bliver stadig beregnet. Prøv igen om et par sekunder. Du er ikke blevet opkrævet.",
         "generic_processing_error": {
           "title": "Der opstod et problem med at behandle din ordre",
           "body": "Du er ikke blevet opkrævet. Prøv igen eller brug en anden betalingsmetode."
         },
-        "payment_method_not_available_with_payment_terms": "Den betalingsmetode, du valgte, er ikke længere tilgængelig, fordi betalingen for denne ordre nu sker på {{paymentTerms}} vilkår",
-        "payment_method_not_available_with_fulfillment_terms": "Den betalingsmetode, du valgte, er ikke længere tilgængelig, fordi betalingen for denne ordre nu forfalder ved opfyldelse.",
-        "payment_method_not_available_with_fixed_terms": "Den betalingsmetode, du valgte, er ikke længere tilgængelig, fordi betalingen for denne ordre forfalder senere.",
-        "payment_method_not_available_with_review_requirement": "Den betalingsmetode, du valgte, er ikke længere tilgængelig, fordi betalingen forfalder, når din ordre er bekræftet.",
+        "payment_method_not_available_with_payment_terms": "Den betalingsmetode, du har valgt, er ikke længere tilgængelig, fordi betalingen for denne ordre nu er på {{paymentTerms}} vilkår",
+        "payment_method_not_available_with_fulfillment_terms": "Den betalingsmetode, du har valgt, er ikke længere tilgængelig, fordi betalingen for denne ordre nu forfalder ved opfyldelse",
+        "payment_method_not_available_with_fixed_terms": "Den betalingsmetode, du har valgt, er ikke længere tilgængelig, fordi betalingen for denne ordre forfalder senere",
+        "payment_method_not_available_with_review_requirement": "Den betalingsmetode, du har valgt, er ikke længere tilgængelig, fordi betalingen skal ske, når din ordre er bekræftet.",
         "contact_information": {
           "header": "For at opdatere dine oplysninger, {{emailLink}}.",
-          "email_link": "kontakt os"
+          "email_link": "kontakt os",
+          "title": "Kontaktoplysningerne er ugyldige"
         }
       },
       "review_address_modal": {
@@ -2316,21 +2321,22 @@
         "selected_pickup_option_no_longer_available": {
           "title": "Din tidligere valgte placering er ikke længere tilgængelig",
           "description": "Vælg en ny placering eller %{ship_to_address_link}",
-          "ship_to_address_link": "sendes til adresse"
+          "ship_to_address_link": "send til adresse"
         },
         "could_not_resolve_address": "Din adresse kunne ikke findes. Prøv igen eller brug en anden adresse",
         "paginator": {
-          "accessibility_label": "Lokal afhentning sideinddeling"
+          "accessibility_label": "Lokal afhentning pagination"
         },
         "reveal_more_label": {
-          "one": "Vis %{count} flere steder",
+          "one": "Vis %{count} flere placeringer",
           "other": "Vis %{count} flere steder"
         },
         "location_closest": "Nærmeste sted med din vare",
         "location_closest_one_item": "Nærmeste sted med din vare",
         "location_closest_other_items": "Nærmeste sted med dine varer",
         "location_information_far_away": {
-          "one": "Der er %{count} placering med din vare"
+          "one": "Der er %{count} placering med din vare",
+          "other": "Der er %{count} steder med din vare"
         },
         "location_far_away": {
           "one": "%{count} placering med dit produkt",
@@ -2343,6 +2349,56 @@
         "location_far_away_other_items": {
           "one": "%{count} placering med dine varer",
           "other": "%{count} steder med dine varer"
+        },
+        "title": "Sted",
+        "location_information_far_away_one_item": {
+          "one": "Der er %{count} placering med din vare",
+          "other": "Der er %{count} steder med din vare"
+        },
+        "location_information_far_away_other_items": {
+          "one": "Der er %{count} placering med dine varer",
+          "other": "Der er %{count} steder med dine varer"
+        },
+        "location_nearby": {
+          "one": "Der er %{count} nærliggende steder med din vare",
+          "other": "Der er %{count} nærliggende steder med din vare"
+        },
+        "location_nearby_one_item": {
+          "one": "Der er %{count} nærliggende steder med din vare",
+          "other": "Der er %{count} nærliggende steder med din vare"
+        },
+        "location_nearby_other_items": {
+          "one": "Der er %{count} nærliggende steder med dine varer",
+          "other": "Der er %{count} nærliggende steder med dine varer"
+        },
+        "location_nearby_short": {
+          "one": "%{count} nærliggende sted med din vare",
+          "other": "%{count} nærliggende steder med din vare"
+        },
+        "location_nearby_short_one_item": {
+          "one": "%{count} nærliggende sted med din vare",
+          "other": "%{count} nærliggende steder med din vare"
+        },
+        "location_nearby_short_other_items": {
+          "one": "%{count} nærliggende placering med dine varer",
+          "other": "%{count} nærliggende steder med dine varer"
+        },
+        "toggle_more_locations": {
+          "one": "%{count} flere steder",
+          "other": "%{count} flere steder"
+        },
+        "toggle_multiple_locations": "%{count}+ flere steder",
+        "pickup_unavailable_banner_title": {
+          "one": "Ingen steder med din vare",
+          "other": "Ingen steder med dine varer"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "one": "Ingen steder i %{country} med dit produkt",
+          "other": "Ingen steder i %{country} med dine varer"
+        },
+        "pickup_unavailable_banner_body": {
+          "ship_items": "Send dine varer",
+          "search_elsewhere": "søg andetsteds"
         }
       },
       "captcha": {
@@ -2474,7 +2530,8 @@
         "square_foot": "ft²"
       },
       "memberships": {
-        "delivery_promise_unfulfillable": "Adressen understøttes ikke for det nuværende medlemskab."
+        "delivery_promise_unfulfillable": "Adressen understøttes ikke for det nuværende medlemskab.",
+        "items_split_across_locations_unsupported": "Prime levering er ikke tilgængelig for din ordre. Dine forsendelsesmuligheder er blevet opdateret."
       },
       "editor": {
         "navigation": {
