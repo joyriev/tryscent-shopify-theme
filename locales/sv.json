@@ -2257,7 +2257,7 @@
         "detected_card_brand": "Upptäckte kortmärke: {brand}",
         "credit_card_vaulting_sign_in_banner_title": "Spara ditt kreditkort",
         "credit_card_vaulting_sign_in_banner_info": "Logga in eller skapa ett konto för att spara ditt kreditkort för framtida köp.",
-        "ftd_vault_credit_card_label": "Spara detta kreditkort på mitt konto för en snabbare utcheckning",
+        "ftd_vault_credit_card_label": "Spara detta kreditkort till mitt konto för en snabbare kassa",
         "card_information_notice": "Alla transaktioner är säkra och krypterade. Kreditkortsinformation lagras aldrig.",
         "name_on_card_label": "Namn på kortet",
         "name_on_card_placeholder": "Namn på kortet",
@@ -2278,8 +2278,8 @@
         "payment_method_saved": "Betalningsmetod sparad",
         "card_vaulted_company_location": "Kort sparat för denna plats",
         "bank_account_vaulted_company_location": "Bankkonto sparat för denna plats",
-        "expiry_long": "(Upphör %{month}/%{year})",
-        "expiry_short": "(Giltigt till %{month}/%{year})",
+        "expiry_long": "(Utgår %{month}/%{year})",
+        "expiry_short": "(Gäller till %{month}/%{year})",
         "crypto_payment_method": {
           "description": "Säkert anslut din plånbok. Din balans och adress kommer inte att delas.",
           "tooltip": "Din plånboksbalans och adress kommer inte att delas och endast det begärda beloppet kan dras av",
@@ -2329,13 +2329,13 @@
         "continue_to_guest_checkout": "Fortsätt till gästkassa",
         "bancontact_label": "Bancontact",
         "multibanco_label": "Multibank",
-        "eps_label": "eps-överföring",
+        "eps_label": "EPS-överföring",
         "afterpay_label": "Afterpay",
         "cashapppay_label": "Cash App Betala",
         "blik_label": "BLIK",
         "twint_label": "TVILLING",
         "swish_label": "Snabb betalning",
-        "grabpay_label": "FåBetalning",
+        "grabpay_label": "GrabPay",
         "kcp_creditcard_label": "KCP Kreditkort",
         "usdc_cashback_title": "1 % cashback",
         "usdc_cashback_additional_info": "Få 1 % tillbaka i USDC direkt i din plånbok.",
@@ -2421,18 +2421,19 @@
           "delete": "Ta bort"
         },
         "edit_credit_card_modal": {
-          "done": "Klart",
+          "done": "Färdig",
           "description": "Du kan endast ändra faktureringsadressen för ditt kort.",
           "fields": {
             "name": "Namn på kortet",
-            "billing": "Faktureras till"
+            "billing": "Faktura till",
+            "default": "Ställ in som standard"
           }
         },
         "expired_cards_info": {
-          "one": "Det finns %{count} utgången kort, som du kan se och redigera i ditt konto.",
+          "one": "Det finns %{count} utgångna kort, som du kan se och redigera i ditt konto.",
           "other": "Det finns %{count} utgångna kort, som du kan se och redigera i ditt konto."
         },
-        "local_payment_method_receiver_notice": "Efter att du har lagt din beställning kommer du att få betalningsuppgifter. Gör betalningen vid en bankomat eller online inom {{dueDays}} dagar.",
+        "local_payment_method_receiver_notice": "Efter att ha lagt din beställning kommer du att få betalningsinformation. Gör betalningen vid en bankomat eller online inom {{dueDays}} dagar.",
         "order_edit_banner_title": "Betalning av {{amount_owed}} krävs",
         "order_edit_banner_subtitle": "Din beställning {{order_number}} har uppdaterats. Granska dessa ändringar och betala sedan för att bekräfta din beställning.",
         "order_edit_banner_items_added": {
@@ -2469,11 +2470,11 @@
         "custom_onsite_payment_method_modal": {
           "title": "Anpassad betalningsbekräftelse på plats"
         },
-        "markets_pro_disclaimer_label": "Genom att lägga din beställning godkänner du att köpa från Global-e som den registrerade handlaren, underkastad Global-e:s %{markets_pro_terms} och %{privacy_policy}, och att dela din information med %{shop_name}.",
+        "markets_pro_disclaimer_label": "Genom att lägga din beställning godkänner du att köpa från Global-e som den registrerade handlaren, i enlighet med Global-e:s %{markets_pro_terms} och %{privacy_policy}, och dela din information med %{shop_name}.",
         "markets_pro_disclaimer_terms_and_conditions": "Villkor och bestämmelser",
-        "markets_pro_disclaimer_privacy_policy": "Sekretesspolicy",
+        "markets_pro_disclaimer_privacy_policy": "Integritetspolicy",
         "markets_pro_disclaimer_terms_and_conditions_title": "Villkor för Merchant of Record",
-        "markets_pro_disclaimer_privacy_policy_title": "Sekretesspolicy för Merchant of Record",
+        "markets_pro_disclaimer_privacy_policy_title": "Handelsregister Integritetspolicy",
         "purchase_order_number": {
           "title": "PO-nummer",
           "label": "PO-nummer (valfritt)"
@@ -2503,7 +2504,10 @@
           "other": "Visa %{count} fler"
         },
         "delete_customer_mandate_modal_title": "Ta bort detta betalningskort?",
-        "choose_new_payment_method": "Välj en ny betalningsmetod"
+        "choose_new_payment_method": "Välj en ny betalningsmetod",
+        "location_billing_address_label": "Plats faktureringsadress",
+        "location_shipping_address_label": "Leveransadress",
+        "expired_payment_method": "Den valda betalningsmetoden har gått ut"
       },
       "field_errors": {
         "address_address1_too_long": "Den första adressraden är för lång (maximalt 255 tecken)",
