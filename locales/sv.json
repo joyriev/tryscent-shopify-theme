@@ -2702,24 +2702,24 @@
       },
       "shipping_errors": {
         "shipping_method": "Fraktalternativen har ändrats för din beställning. Granska ditt val.",
-        "shipping_method_not_available": "Din kundvagn har uppdaterats och de artiklar du lagt till kan inte skickas till din adress. Ta bort artiklarna för att slutföra din beställning.",
+        "shipping_method_not_available": "Din kundvagn har uppdaterats och de artiklar du lade till kan inte skickas till din adress. Ta bort artiklarna för att slutföra din beställning.",
         "shipping_method_not_available_generic": {
-          "one": "Din beställning kan inte skickas till den valda adressen. Kontrollera din adress för att säkerställa att den är korrekt och försök igen, eller välj en annan adress.",
-          "other": "Vissa artiklar i din kundvagn kan inte skickas till den adress du angav. Kontrollera din adress för att säkerställa att den är korrekt och försök igen, eller välj en annan adress."
+          "one": "Din beställning kan inte skickas till den valda adressen. Granska din adress för att säkerställa att den är korrekt och försök igen, eller välj en annan adress.",
+          "other": "Vissa artiklar i din kundvagn kan inte skickas till den adress du angav. Granska din adress för att säkerställa att den är korrekt och försök igen, eller välj en annan adress."
         },
         "shipping_method_not_available_due_to_unsatisfied_conditions": "Varorna i kundvagnen uppfyller inte pris- eller viktkraven för att kvalificera sig för frakt. Uppdatera din kundvagn och försök igen.",
         "shipping_method_not_available_updated": {
-          "one": "Föremålet du lade till skickas inte till din plats. Ta bort det för att gå till Checkout, eller kontakta butiken.",
-          "other": "En eller flera artiklar du lagt till skickas inte till din plats. Ta bort dem för att Checkout, eller kontakta butiken."
+          "one": "Den artikel du har lagt till skickas inte till din plats. Ta bort den för att kolla ut, eller kontakta butiken.",
+          "other": "En eller flera artiklar du har lagt till kan inte skickas till din plats. Ta bort dem för att kolla ut, eller kontakta butiken."
         },
         "payment_method_not_supported": "Du kan inte använda denna betalningsmetod för %{country}. Använd en annan betalningsmetod för att skicka till detta land.",
-        "title": "Frakt ej tillgänglig",
+        "title": "Frakt inte tillgänglig",
         "invalid_selected_address": "Den valda leveransadressen är inte giltig",
         "invalid_selected_address_with_update_link": "Den valda leveransadressen är inte giltig. %{update_address_link} eller välj en annan adress",
         "unavailable_addresses_only_countries": "Din beställning kan endast skickas till {{countriesList}}. Lägg till en ny adress för att fortsätta.",
-        "unavailable_address_country": "Frakt är inte tillgängligt i det land du valde. Använd en annan adress för att fortsätta",
-        "unavailable_selected_address": "Frakt inte tillgänglig för vald adress",
-        "unavailable_selected_address_for_region": "Frakt är inte tillgänglig för {{region}}. Välj en annan adress för att fortsätta",
+        "unavailable_address_country": "Frakt är inte tillgänglig i det land du valt. Använd en annan adress för att fortsätta",
+        "unavailable_selected_address": "Frakt är inte tillgänglig för den valda adressen",
+        "unavailable_selected_address_for_region": "Frakt är inte tillgängligt för {{region}}. Välj en annan adress för att fortsätta",
         "empty_state": "Ange din leveransadress för att se tillgängliga fraktmetoder."
       },
       "alternative_payment_method_banner": {
@@ -3082,13 +3082,13 @@
         "accept_shop_pay_marketing_checkbox_label": "Anmäl mig för nyheter och erbjudanden från den här butiken"
       },
       "shop_policies": {
-        "policy_label": "Policy: Riktlinjer",
-        "legal_notice": "Juridisk information",
+        "policy_label": "Policy",
+        "legal_notice": "Juridisk meddelande",
         "subscription_policy": "Avbokningar",
         "purchase_options_policy": "Köpalternativspolicy",
         "contact_information": "Kontakt",
         "purchase_options_cancellation_policy": "Avbokningar",
-        "terms_and_policies": "Villkor och riktlinjer"
+        "terms_and_policies": "Villkor och policyer"
       },
       "remote_policies": {
         "unavailable_policy": "Ingen %{policy_name} har tillhandahållits för denna butik. För mer information, kontakta %{shop_name} direkt."
@@ -3396,13 +3396,13 @@
         "lost_permissions_subtitle": "Du har inte längre tillåtelse att lägga B2B-beställningar. Logga ut för att lägga en personlig beställning."
       },
       "shop_pay_external": {
-        "title": "Shop Pay Kassabetalning",
+        "title": "Handla Betala Kassa",
         "errors": {
-          "problem_loading": "Det uppstod ett problem vid inläsning av Shop Pay",
-          "try_again_later": "Kontrollera din anslutning eller stäng detta fönster och försök igen om några ögonblick.",
-          "checkout_has_expired": "Din kassa har gått ut. Stäng detta fönster och försök att slutföra köpet igen från {{shopName}}."
+          "problem_loading": "Det är ett problem med att ladda Shop Pay",
+          "try_again_later": "Kontrollera din anslutning eller stäng det här fönstret och försök igen om några ögonblick.",
+          "checkout_has_expired": "Din kassa har gått ut. Stäng det här fönstret och försök att checka ut igen från {{shopName}}."
         },
-        "return_to_store_simple": "Återvänd till butiken"
+        "return_to_store_simple": "Återvända till butik"
       },
       "wallets": {
         "return_to_store": "Återvänd till butiken",
@@ -3620,6 +3620,31 @@
         "gift_card_current_balance_notice": "Aktuell balans %{amount}",
         "credit_card_expires_on_notice": "Utgår den %{month}/%{year}",
         "manual_payment_gateway_label": "Manual"
+      },
+      "split_delivery": {
+        "delivery_method_menu": "Delad leveransmetod meny",
+        "inventory_issue_banner": {
+          "heading": {
+            "cannot_be_shipped": {
+              "one": "%{count} artikel kan inte skickas",
+              "other": "%{count} artiklar kan inte skickas"
+            }
+          },
+          "remove_item": {
+            "one": "ta bort objekt",
+            "other": "ta bort objekt"
+          },
+          "pick_them_up_in_store": {
+            "one": "Hämta det i butik"
+          }
+        },
+        "cross_border": {
+          "modal": {
+            "content": "Dina upphämtnings- och leveransplatser måste vara i samma land. Att byta land kommer att återställa alla artiklar till leverans.",
+            "country_changed_heading": "Land ändrat"
+          },
+          "banner": "Din leveransmetod har uppdaterats"
+        }
       }
     },
     "links": {
