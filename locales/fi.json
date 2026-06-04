@@ -1057,8 +1057,186 @@
         "list_formatter": {
           "and": {
             "lastWordConnector": "{{previousWords}}, ja {{lastWord}}"
+          },
+          "or": {
+            "lastWordConnector": "{{previousWords}}, tai {{lastWord}}"
+          }
+        },
+        "page_title": "Kassalle",
+        "skip_to_content": "Siirry sisältöön",
+        "submit_for_review_notice_label": "Maksu erääntyy vasta, kun tilauksesi on tarkistettu",
+        "processing": "Käsitellään…",
+        "stepper": {
+          "maximum_reached": "Enintään {{value}} saavutettu"
+        },
+        "map": {
+          "cluster_title": {
+            "one": "Ryhmä, jossa on {{number}} merkkiä",
+            "other": "Ryhmä, jossa on {{number}} merkkiä"
           }
         }
+      },
+      "local_pickup": {
+        "location_closest": "Lähin sijainti, jossa tuotteesi on saatavilla",
+        "location_closest_one_item": "Lähin sijainti, jossa tuotteesi on saatavilla",
+        "location_closest_other_items": "Lähin sijainti, jossa on tuotteesi saatavilla",
+        "location_information": {
+          "one": "Lähelläsi on %{count} varastopaikka",
+          "other": "Lähelläsi on %{count} varastopaikkaa"
+        },
+        "location_information_far_away": {
+          "one": "Paikassa on %{count} kappaletta tuotettasi",
+          "other": "Paikassa on %{count} kappaletta tuotettasi"
+        },
+        "location_far_away": {
+          "one": "%{count} sijainti tuotteellesi",
+          "other": "%{count} sijaintia tuotteellasi"
+        },
+        "location_far_away_one_item": {
+          "one": "%{count} sijainti tuotteellesi",
+          "other": "%{count} sijaintia tuotteellasi"
+        },
+        "location_far_away_other_items": {
+          "one": "%{count} sijainti tuotteillasi",
+          "other": "%{count} sijaintia, joissa on tavarasi"
+        },
+        "all_stores_far_away": {
+          "title": "Lähimmät sijainnit ovat yli %{distance} päässä",
+          "title_with_item": {
+            "one": "Lähin sijainti, jossa tuotteesi on saatavilla, on yli %{distance} %{location} etäisyydellä",
+            "other": "Lähin sijainti, jossa tuotteesi ovat, on yli %{distance} %{location} etäisyydellä"
+          },
+          "title_with_specific_location": "Lähin sijainti, jossa tuotteesi on saatavilla, on yli %{distance} päässä paikasta %{location}",
+          "description": "Valitse sijainti tai %{ship_to_address_link}",
+          "ship_to_address_link": "toimitusosoitteeseen",
+          "change_location_link": "Vaihda sijaintisi"
+        },
+        "location_information_far_away_one_item": {
+          "one": "Paikassa on %{count} kappaletta tuotettasi",
+          "other": "Paikassa on %{count} kappaletta tuotettasi"
+        },
+        "location_information_far_away_other_items": {
+          "one": "Paikassa on %{count} kohdetta, joissa on tavarasi",
+          "other": "Sinulla on tavaroita %{count} sijainnissa"
+        },
+        "location_nearby": {
+          "one": "Läheisyydessä on %{count} sijainti, jossa on tuotteesi",
+          "other": "Lähellä on %{count} sijaintia, joissa on tuotteesi saatavilla"
+        },
+        "location_nearby_one_item": {
+          "one": "Läheisyydessä on %{count} sijainti, jossa on tuotteesi",
+          "other": "Lähellä on %{count} sijaintia, joissa on tuotteesi saatavilla"
+        },
+        "location_nearby_other_items": {
+          "one": "Läheisyydessä on %{count} sijainti, jossa on tavarasi",
+          "other": "Lähellä on %{count} sijaintia, joissa on tuotteitasi"
+        },
+        "location_nearby_short": {
+          "one": "%{count} lähistöllä oleva sijainti tuotteellesi",
+          "other": "%{count} lähialuetta tuotteellesi"
+        },
+        "location_nearby_short_one_item": {
+          "one": "%{count} lähistöllä oleva sijainti tuotteellesi",
+          "other": "%{count} lähialuetta tuotteellesi"
+        },
+        "location_nearby_short_other_items": {
+          "one": "%{count} lähistöllä oleva sijainti tavaroillesi",
+          "other": "%{count} lähellä olevat sijainnit, joissa on tavarasi"
+        },
+        "toggle_more_locations": {
+          "one": "%{count} lisää sijainti",
+          "other": "%{count} lisää sijaintia"
+        },
+        "toggle_multiple_locations": "%{count}+ lisää sijainteja",
+        "your_location": "sijaintisi",
+        "search_button": "Etsi myymälöitä",
+        "selected_pickup_option_no_longer_available": {
+          "title": "Valitsemaasi sijaintia ei enää ole saatavilla",
+          "description": "Valitse uusi sijainti tai %{ship_to_address_link}",
+          "ship_to_address_link": "toimitusosoitteeseen"
+        },
+        "paginator": {
+          "accessibility_label": "Paikallisen noudon sivutus",
+          "label": {
+            "one": "%{first} - %{last} / %{count} myymälästä",
+            "other": "%{first} - %{last} / %{count} kaupasta"
+          }
+        },
+        "reveal_more_label": {
+          "one": "Näytä %{count} lisää sijaintia",
+          "other": "Näytä %{count} lisää sijainteja"
+        },
+        "pickup_unavailable_banner_title": {
+          "one": "Ei sijainteja, joissa olisi tuotteesi",
+          "other": "Ei sijainteja, joissa on tuotteitasi"
+        },
+        "pickup_unavailable_banner_title_with_country": {
+          "one": "Ei sijainteja %{country} alueella tuotteellesi",
+          "other": "Ei sijainteja %{country} alueella, joissa olisi tuotteitasi"
+        },
+        "pickup_unavailable_banner_body": {
+          "ship_items": "Lähetä tuotteesi"
+        }
+      },
+      "localized_fields": {
+        "additional_information": {
+          "shipping_credential_cn": "Asukastunnusnumero",
+          "shipping_credential_co": "Henkilötunnus/ALV",
+          "shipping_credential_cr": "Tunnistenumero/RUT",
+          "shipping_credential_ec": "CI/RUC/ALV",
+          "title": "Lisätietoja",
+          "tax_credential_it": "Veronumero (valinnainen)",
+          "tax_credential_co": "Henkilötunnus/ALV",
+          "tax_credential_type_co": "Cédula-tyyppi",
+          "shipping_credential_type_co": "Cédula-tyyppi",
+          "tax_credential_cr": "Tunnistenumero/RUT",
+          "tax_credential_ec": "CI/RUC/ALV",
+          "tax_credential_gt": "NIT/ALV",
+          "shipping_credential_gt": "NIT/ALV",
+          "tax_credential_my": "TIN/Rekisterinumero",
+          "shipping_credential_my": "TIN/Rekisterinumero",
+          "tax_credential_type_mx": "Verotusjärjestelmä",
+          "tax_credential_use_mx": "CFDI:n käyttö",
+          "tax_credential_py": "CI/RUC/ALV",
+          "shipping_credential_py": "CI/RUC/ALV",
+          "tax_credential_pt": "NIF/ALV",
+          "shipping_credential_pt": "NIF/ALV",
+          "shipping_credential_tw": "Kansallinen tunnistenumero/ALV",
+          "tax_credential_tr": "Turkin tasavallan henkilötunnus/ALV",
+          "shipping_credential_tr": "Turkin tasavallan henkilötunnus/ALV"
+        }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Lähetä minulle sähköpostia uutisista ja tarjouksista",
+        "post_accept_marketing_checkbox_label": "Olet tilannut sähköpostiuutiset ja tarjoukset",
+        "pending_accept_marketing_checkbox_label": "Tarkista sähköpostisi vahvistaaksesi tilauksesi uutisiin ja tarjouksiin",
+        "accept_sms_checkbox_label": "Lähetä minulle viestiä uutisista ja tarjouksista",
+        "disclaimer": {
+          "terms_of_service": "Palveluehdot"
+        },
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Tietosuojakäytäntö",
+            "terms_of_service": "Palveluehdot",
+            "description_html": "Rekisteröitymällä tekstiviestillä hyväksyt vastaanottavasi toistuvia automatisoituja markkinointiviestejä, mukaan lukien ostoskorimuistutukset, annettuun puhelinnumeroon. Suostumus ei ole oston ehto. Vastaa STOP peruuttaaksesi tilauksen. Vastaa HELP saadaksesi apua. Viestien lähetystiheys vaihtelee. Viestien ja datan hinnat saattavat koskea. Katso %{privacy_policy_link} ja %{terms_of_service_link}.",
+            "description_transactional_html": "Saatat saada tekstiviestejä, jotka liittyvät tilauksen vahvistukseen ja toimituspäivityksiin. Vastaa STOP peruuttaaksesi tilauksen. Vastaa HELP saadaksesi apua. Viestien määrä vaihtelee. Viestien ja datan hinnat saattavat koskea. Katso %{privacy_policy_modal_link} ja %{terms_of_service_modal_link}."
+          },
+          "get_offers_by_text": "Saat tarjoukset tekstiviestillä"
+        },
+        "unsubscribe": {
+          "title": "Olet perunut tilauksesi",
+          "description": "Et saa meiltä enää muistutuksia ostoskoristasi."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Ilmoita minut tämän kaupan uutiskirjeen ja tarjousten vastaanottajaksi"
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Arvostelu",
+          "link_label": "{{partnerDisplayName}} Käyttöehdot"
+        }
+      },
+      "memberships": {
+        "delivery_promise_unfulfillable": "Osoitetta ei tueta nykyisellä jäsenyydellä."
       }
     },
     "attributes": {
