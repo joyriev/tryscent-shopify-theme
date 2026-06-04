@@ -3736,74 +3736,79 @@
     },
     "collections": {
       "sorting": {
-        "manual": "Utvalda",
-        "best_selling": "Bäst säljande",
+        "manual": "Utvald",
+        "best_selling": "Bästsäljande",
         "az": "Alfabetiskt, A-Ö",
         "za": "Alfabetiskt, Z-A",
-        "price_descending": "Pris, högst till lägst",
-        "date_descending": "Datum, nyast till äldst"
+        "price_descending": "Pris, hög till låg",
+        "date_descending": "Datum, nyast först",
+        "date_ascending": "Datum, gammal till ny"
       }
     },
     "errors": {
-      "blocked_address": "Den här platsen stöds inte",
-      "credit_card_session_expired": "Kreditkortsauktoriseringen har gått ut, vänligen ange din betalningsinformation igen. Ditt kort har inte debiterats.",
+      "blocked_address": "Denna plats stöds inte",
+      "credit_card_session_expired": "Kreditkortets auktorisering har löpt ut, vänligen ange din betalningsinformation igen. Ditt kort har inte debiterats.",
       "invalid_email": "måste vara en giltig e-postadress",
       "discount_disabled": "Denna rabatt har inaktiverats",
-      "discount_expired": "Denna rabatt är inte giltig längre",
-      "discount_not_found": "Det gick inte att hitta någon giltig rabatt som matchar den angivna koden",
-      "gift_card_already_applied": "Kod har redan tillämpats på din kassa",
-      "gift_card_currency_mismatch": "Ditt presentkort är i %{gift_card_currency}. Kontakta oss för att få det omutfärdat i %{checkout_currency}.",
-      "gift_card_disabled": "Presentkort är inaktiverat",
+      "discount_expired": "Denna rabatt är inte längre giltig",
+      "discount_not_found": "Kunde inte hitta en giltig rabatt som matchar den angivna koden",
+      "gift_card_already_applied": "Koden har redan tillämpats på din kassa",
+      "gift_card_currency_mismatch": "Detta presentkort kan inte användas för detta köp. Kontakta %{shop_name} för att få det återutgivet.",
+      "gift_card_disabled": "Presentkortet är inaktiverat",
       "gift_card_expired": "Presentkortet har gått ut",
       "contains_html_tags": "kan inte innehålla HTML-taggar",
       "too_short": "är för kort (minst %{count} tecken)",
-      "too_long": "är för lång (maximalt %{count} tecken)",
-      "invalid_for_country": "är inte giltigt för %{country}",
-      "invalid_for_country_and_province": "är inte giltigt för %{province} och %{country}",
+      "too_long": "är för lång (maximalt är %{count} tecken)",
+      "invalid_for_country": "är inte giltig för %{country}",
+      "invalid_for_country_and_province": "är inte giltig för %{province} och %{country}",
       "invalid_state_in_country": "är inte en giltig stat i %{country}",
-      "invalid_type": "ursäkta, vi accepterar inte kort av denna typ",
+      "invalid_type": "tyvärr, vi accepterar inte kort av den här typen",
       "expired": "har gått ut",
-      "invalid_start_date_or_issue_number_for_debit": "ett giltigt startdatum eller utgåvenummer krävs",
-      "reset_password_html": "Denna e-postadress är redan kopplad till ett konto. Om detta konto är ditt kan du <a href=\"/account/login#recover\">återställa ditt lösenord</a>",
-      "verify_email": "Vi har skickat ett e-postmeddelande till %{customer_email}, vänligen klicka på länken som finns med för att bekräfta din e-postadress.",
+      "invalid_start_date_or_issue_number_for_debit": "ett giltigt startdatum eller ärendenummer krävs",
+      "reset_password_html": "Denna e-postadress är redan kopplad till ett konto. Om detta konto tillhör dig kan du <a href=\"/account/login#recover\">återställa ditt lösenord</a>",
+      "verify_email": "Vi har skickat ett e-postmeddelande till %{customer_email}, vänligen klicka på länken som ingår för att verifiera din e-postadress.",
       "product_not_available": "produkten är inte publicerad för denna kund.",
       "shop_404": {
         "title": "Skapa en e-handelswebbplats och sälj online! E-handelsprogramvara från Shopify",
         "heros": {
-          "store_unavailable": "Tyvärr, denna butik är för närvarande otillgänglig.",
-          "store_not_exist": "Den här butiken finns inte.",
-          "no_storefront": "Den här butiken har ingen webbplats än."
+          "store_unavailable": "Tyvärr, den här butiken är för närvarande otillgänglig.",
+          "store_not_exist": "Denna butik existerar inte.",
+          "no_storefront": "Denna butik har ännu ingen webbplats."
         },
         "links": {
-          "start_free_trial": "Starta en gratis provperiod"
+          "start_free_trial": "Börja en gratis provperiod"
         },
         "owner_ctas": {
           "header": "Är du butiksägaren?",
-          "fix_domain": "Slutför inställningen av din nya webbadress, gå till %{domain_settings_link}. Klicka på ”Anslut domän” och ange: %{domain}.<br>Om du har svårt att komma in i din butik, prova sidan %{forgot_your_store_link}.",
-          "forgot_your_store_link_text": "glömde din butik",
-          "add_storefront": "Du kan ställa in din webbplats genom att lägga till kanalen Onlinebutik i din %{admin_link}. Om du har svårt att komma in i din butik, prova sidan %{forgot_your_store_link}.",
-          "admin_link_text": "administratör"
+          "fix_domain": "Avsluta inställningen av din nya webbadress, gå till %{domain_settings_link}. Klicka på “Anslut domän” och ange: %{domain}.<br>Om du har problem med att komma in i din butik, försök med sidan %{forgot_your_store_link}.",
+          "forgot_your_store_link_text": "glömt din butik",
+          "add_storefront": "Du kan ställa in din webbplats genom att lägga till Onlinebutik-kanalen i din %{admin_link}. Om du har problem med att komma in i din butik, försök med sidan %{forgot_your_store_link}.",
+          "admin_link_text": "admin"
         },
         "ctas": {
           "sell_in_person": {
-            "caption": "Få de funktioner du behöver för att driva din detaljhandel, oavsett om du precis har startat eller växer.",
-            "link_text": "Starta gratis provperiod"
+            "caption": "Få de funktioner du behöver för att driva din detaljhandel oavsett om du precis har startat eller om du växer.",
+            "link_text": "Börja gratis provperiod"
           },
           "open_a_store": {
-            "caption": "Starta en 3-dagars gratis provperiod, fortsätt sedan för $1/månad under de nästa 3 månaderna."
+            "caption": "Börja en 3-dagars gratis provperiod, fortsätt sedan för 1 $/månad i de kommande 3 månaderna."
           },
           "editions": {
-            "header": "Checkout Shopify-utgåvorna",
+            "header": "Kolla in Shopify Editions",
             "caption": "Med över 100 produktuppdateringar kan du vara mer produktiv och kreativ, och kraftfull inom handel än du någonsin kunnat föreställa dig.",
-            "link_text": "Utforska senaste utgåvorna"
+            "link_text": "Utforska senaste utgåvor"
           },
           "store_owner": {
             "header": "Är du butiksägaren?",
-            "caption": "Har du svårt att komma in i din butik? Prova funktionen %{forgot_your_store_link}. Om du vill återaktivera din butik, kontakta %{shopify_support_link}.",
+            "caption": "Har du problem med att logga in på din butik? Prova %{forgot_your_store_link} funktionen. Om du vill återaktivera din butik, kontakta %{shopify_support_link}.",
             "shopify_support_link_text": "Shopify-support"
           }
         }
-      }
+      },
+      "blank": "kan inte vara tomt",
+      "empty": "kan inte vara tomt",
+      "gift_card_depleted": "Det finns inga medel kvar på detta presentkort",
+      "invalid_for_card_type": "är inte giltig"
     },
     "notices": {
       "customer": {
@@ -3904,40 +3909,43 @@
     },
     "email_marketing": {
       "subscribed": {
-        "disclaimer": "Du kan avregistrera dig när som helst.",
-        "unsubscribe": "Avsluta prenumerationen"
+        "disclaimer": "Du kan avprenumerera när som helst.",
+        "unsubscribe": "Avsluta prenumeration"
       },
       "unsubscribed": {
         "confirmation": "Du har avregistrerat dig från vår e-postlista.",
-        "disclaimer": "Du kommer inte att få några fler marknadsföringsuppdateringar från oss. Du kan prenumerera igen när som helst.",
+        "disclaimer": "Du kommer inte att få fler marknadsföringsuppdateringar från oss. Du kan prenumerera igen när som helst.",
         "preview": "Du förhandsgranskar vad kunderna kommer att se när de avregistrerar sig."
       },
       "open_tracking": {
         "opt_in": {
-          "opted_in_html": "<b>Du har valt att spåra öppning av e-post.</b>",
+          "opted_in_html": "<b>Du har valt att delta i spårning av e-postöppningar.</b>",
           "visibility": "E-postöppningsfrekvenser kommer att rapporteras anonymt. Vi kommer endast att se om du har öppnat ett e-postmeddelande som en del av en sammanställd e-postöppningsfrekvens.",
           "opt_out_html": "Du kan <a style='text-decoration:underline;' href='%{link}'>avstå</a> från att spåra öppning av e-post om du inte vill dela denna information.",
-          "preview_bar": "Du förhandsgranskar vad kunderna kommer att se när de väljer att aktivera e-postöppningsspårning."
+          "preview_bar": "Du förhandsgranskar vad kunderna kommer att se när de väljer att delta i spårning av e-postöppningar."
         },
         "opt_out": {
-          "opted_out_html": "<b>Du har valt att inte spåra öppning av e-post.</b>",
+          "opted_out_html": "<b>Du har valt att inte delta i spårning av e-postöppningar.</b>",
           "visibility": "Vi kommer inte att se om du har öppnat våra e-postmeddelanden.",
-          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Anmäl dig</a> till e-postöppningsspårning.",
-          "preview_bar": "Du förhandsgranskar vad kunderna kommer att se när de väljer att avstå från e-postöppningsspårning."
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Anmäl dig</a> för e-postöppningsspårning.",
+          "preview_bar": "Du förhandsgranskar vad kunderna kommer att se när de väljer att avregistrera sig från spårning av e-postöppningar."
         },
         "no_longer_track": {
           "status_html": "<b>Vi spårar inte längre några e-postöppningar.</b>",
-          "privacy_policy": "Efter att detta e-postmeddelande skickades uppdaterade vi vår integritetspolicy och vi spårar inte längre öppningar."
+          "privacy_policy": "Efter att detta e-postmeddelande skickades, uppdaterade vi vår integritetspolicy och vi spårar inte längre öppningar."
         },
         "track": {
-          "status_html": "<b>E-postöppningsspårning rapporteras.</b>",
-          "visibility": "Vi kommer endast att se om du har öppnat e-postmeddelandet, som en del av den totala öppningsfrekvensen för e-post."
+          "status_html": "<b>Öppningsspårning av e-post rapporteras.</b>",
+          "visibility": "Vi kommer bara att se om du har öppnat e-postmeddelandet, som en del av den totala öppningsfrekvensen för e-post."
         },
         "updated_policy": {
-          "status_html": "<b>E-postöppningsspårning rapporteras.</b>",
-          "visibility": "Vi har uppdaterat vår policy och spårar nu e-postöppningar. Öppningsfrekvenser för e-post kommer att rapporteras anonymt. Vi kommer endast att se om du har öppnat ett e-postmeddelande som en del av den totala öppningsfrekvensen.",
+          "status_html": "<b>Öppningsspårning av e-post rapporteras.</b>",
+          "visibility": "Vi har uppdaterat vår policy och spårar nu e-postöppningar. E-postöppningsfrekvenser kommer att rapporteras anonymt. Vi kommer endast att se om du har öppnat ett e-postmeddelande som en del av den totala e-postöppningsfrekvensen.",
           "opt_out_html": "Om du inte vill dela denna information kan du <a style='text-decoration:underline;' href='%{link}'>avregistrera dig.</a>"
         }
+      },
+      "sms_unsubscribe_confirm": {
+        "button": "Avsluta prenumeration"
       }
     },
     "search": {
