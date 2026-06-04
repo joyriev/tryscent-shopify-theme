@@ -3815,7 +3815,9 @@
         "unsubscribe_error": "Avregistreringsfel",
         "no_account_found": "Inget konto hittades med den e-posten.",
         "invalid_credentials": "Felaktig e-postadress eller lösenord.",
-        "denylisted_reset_password": "Ditt konto kunde inte nås eftersom det nuvarande lösenordet inte är säkert. Du kommer att få ett e-postmeddelande för att uppdatera ditt lösenord."
+        "denylisted_reset_password": "Ditt konto kunde inte nås eftersom det nuvarande lösenordet inte är säkert. Du kommer att få ett e-postmeddelande för att uppdatera ditt lösenord.",
+        "password_reset_error": "Återställningsfel för lösenord",
+        "signup_disabled": "Kundkontoskapande har inaktiverats."
       },
       "address": {
         "updated": "Framgångsrikt uppdaterad adress.",
@@ -3830,33 +3832,35 @@
           "add_variant": "Tillagd %{delta}",
           "increment_item": "Tillagd %{delta}",
           "decrement_item": "Borttaget %{delta} av %{total}",
-          "decrement_fulfilled_line_item": "Returnerat %{delta} av %{total}"
+          "decrement_fulfilled_line_item": "Återvände %{delta} av %{total}"
         }
       },
       "order": {
         "not_available": "Denna beställning är inte tillgänglig",
         "financial_status": {
-          "pending": "Väntande",
-          "expired": "Utgånget"
+          "pending": "Avvaktande",
+          "expired": "Utgått",
+          "voided": "Ogiltig"
         },
         "fulfillment_status": {
           "fulfilled": "Uppfylld",
-          "complete": "Fullständig",
-          "unfulfilled": "Ouppfylld",
-          "restocked": "Påfyllt"
+          "complete": "Komplett",
+          "unfulfilled": "Ej uppfylld",
+          "restocked": "Åter i lager"
         },
         "transaction_status": {
           "success": "Framgång",
-          "pending": "Väntande",
+          "pending": "Avvaktande",
           "failure": "Misslyckande"
         },
         "cancel_reason": {
-          "inventory": "Artiklar ej tillgängliga",
+          "inventory": "Objekt otillgängliga",
           "fraud": "Bedräglig beställning",
-          "customer": "Kunden ändrade/avbröt beställningen",
-          "other": "Annat"
+          "customer": "Kund ändrade/avbröt beställning",
+          "other": "Annat",
+          "declined": "Betalning avvisad"
         },
-        "cash_on_delivery": "Kontant betalning vid Leverans (COD)"
+        "cash_on_delivery": "Kontant vid leverans (C.O.D)"
       },
       "cart": {
         "not_found": "Varukorg hittades inte",
@@ -3899,12 +3903,13 @@
         "merchandise_not_applicable": "Objektet kan inte köpas som det är konfigurerat."
       },
       "storefront": {
-        "invalid_password": "Lösenordet är fel, försök igen."
+        "invalid_password": "Lösenordet är felaktigt, vänligen försök igen."
       },
       "tags": {
-        "add_products": "Begränsa urvalet till produkter som matchar etiketten %{tag}",
-        "remove_articles": "Utöka sökningen till artiklar som inte är märkta %{tag}",
-        "remove_products": "Ta bort taggen %{tag}"
+        "add_products": "Avgränsa urvalet till produkter som matchar tag %{tag}",
+        "remove_articles": "Bredda sökningen till artiklar som inte är taggade %{tag}",
+        "remove_products": "Ta bort tagg %{tag}",
+        "add_articles": "Avgränsa sökningen till artiklar som också har tag %{tag}"
       }
     },
     "email_marketing": {
@@ -3962,7 +3967,7 @@
         "other": "Sök: %{count} resultat hittades för \"%{terms}\""
       },
       "collections": "Kollektioner",
-      "not_found": "404 Ej hittad",
+      "not_found": "404 Inte hittad",
       "checkpoint": "Kontrollpunkt"
     },
     "cart": {
