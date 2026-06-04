@@ -1741,46 +1741,46 @@
         "subscription_pickup": "Abonnementsafhentning",
         "waiting_on_rate_notice": "Henter tilgængelige forsendelsespriser…",
         "waiting_on_pickup_location_notice": "Henter tilgængelige afhentningssteder…",
-        "no_rates_for_cart_or_destination_notice": "Der er ingen forsendelsesmetoder tilgængelige for din kurv eller adresse",
+        "no_rates_for_cart_or_destination_notice": "Der er ingen forsendelsesmetoder tilgængelige for din indkøbskurv eller adresse",
         "no_pickup_location_notice": "Mindst ét af dine produkter er ikke tilgængeligt for afhentning",
-        "no_rates_for_country_notice": "Ingen forsendelsespriser fundet for denne adresse.",
+        "no_rates_for_country_notice": "Ingen forsendelsesomkostninger fundet for denne adresse.",
         "cheapest_rate_label": "Billigst",
-        "delivery_today": "Samme dags levering %{time}",
-        "delivery_tomorrow": "Næste dags levering %{time}",
+        "delivery_today": "Levering samme dag %{time}",
+        "delivery_tomorrow": "Næste-dags levering %{time}",
         "delivery": "Levering %{time}",
         "arrives_time": "Ankommer %{time}",
         "arrives_time_range": "Ankommer %{min_time}–%{max_time}",
-        "estimated_time": "Anslået %{time}",
-        "estimated_time_range": "Anslået %{min_time}–%{max_time}",
+        "estimated_time": "Estimeret %{time}",
+        "estimated_time_range": "Estimeret %{min_time}–%{max_time}",
         "default_description": "Afsendes inden for 1 arbejdsdag",
         "shipping_line_phone_label": "Mobiltelefonnummer (påkrævet)",
         "shipping_line_delivery_phone_label": "Mobiltelefonnummer",
-        "shipping_line_delivery_instructions": "Indtast nødvendige oplysninger som dørkoder eller afleveringsinstruktioner.",
+        "shipping_line_delivery_instructions": "Indtast nødvendige oplysninger som dørkoder eller instruktioner til aflevering.",
         "other_method": {
           "zero": "Ingen andre metoder tilgængelige",
-          "one": "%{count} anden metode tilgængelig på",
-          "other": "%{count} andre metoder tilgængelige fra og med"
+          "one": "%{count} andre metoder tilgængelige ved",
+          "other": "%{count} andre metoder tilgængelige fra"
         },
         "subscription_delivery_description": {
           "free_shipping_cycles": {
-            "one": "Gratis levering for %{count} flere levering",
-            "other": "Gratis levering for %{count} flere forsendelser"
+            "one": "Gratis levering for %{count} mere levering",
+            "other": "Gratis fragt for %{count} flere leveringer"
           },
           "free_shipping_cycles_delivery_not_included": {
-            "one": "Gratis levering for %{count} forsendelse",
-            "other": "Gratis levering for %{count} forsendelser"
+            "one": "Gratis levering for %{count} levering",
+            "other": "Gratis fragt for %{count} leverancer"
           },
           "first_n_order_free_with_cycle": {
-            "one": "Gratis levering for %{count} flere leverancer, derefter %{recurring_order_shipping_price}",
-            "other": "Gratis levering for %{count} flere leverancer, derefter %{recurring_order_shipping_price}"
+            "one": "Gratis levering for %{count} mere levering, derefter %{recurring_order_shipping_price}",
+            "other": "Gratis levering for %{count} flere leveringer, derefter %{recurring_order_shipping_price}"
           },
           "first_n_order_free_with_cycle_delivery_not_included": {
-            "one": "Gratis levering for %{count} forsendelse, derefter %{recurring_order_shipping_price}",
-            "other": "Gratis levering for %{count} forsendelser, derefter %{recurring_order_shipping_price}"
+            "one": "Gratis levering for %{count} levering, derefter %{recurring_order_shipping_price}",
+            "other": "Gratis fragt for %{count} leverancer, derefter %{recurring_order_shipping_price}"
           },
           "max_cycles_base_shipping": {
-            "one": "%{count} flere leveringer for %{shipping_price}",
-            "other": "%{count} flere leverancer til %{shipping_price} hver"
+            "one": "%{count} mere levering for %{shipping_price}",
+            "other": "%{count} flere leveringer til %{shipping_price} hver"
           },
           "max_cycles_base_shipping_delivery_not_included": {
             "other": "%{count} flere leverancer til %{shipping_price} hver"
@@ -1832,41 +1832,44 @@
           "first_n_order_free": {
             "one": "Første ordre gratis",
             "other": "Første %{count} ordrer gratis"
+          },
+          "free_for_first_n_order": {
+            "one": "Til første ordre"
           }
         },
-        "shipping_information_required_notice": "Forsendelsesoplysninger er påkrævet. {{link}}.",
+        "shipping_information_required_notice": "Forsendelsesinformation er påkrævet. {{link}}.",
         "shipping_information_redirect_link": "Indtast dine oplysninger her",
         "no_other_methods_available": "Ingen andre metoder tilgængelige",
         "duties_and_taxes_options": {
-          "ddu_caption": "Der kan forekomme yderligere gebyrer",
+          "ddu_caption": "Yderligere gebyrer kan gælde",
           "ddp_caption": "Ingen ekstra gebyrer ved levering"
         },
         "shipping_used_as_billing_notice": "Dette vil også blive brugt som din faktureringsadresse for denne ordre.",
-        "shipping_address_rollup_accessibility_label": "Forsendelsesadresse muligheder",
+        "shipping_address_rollup_accessibility_label": "Forsendelsesmuligheder til adresse",
         "third_party_address_timeout": "Kan ikke indlæse adresser. Prøv igen eller brug en anden adresse.",
         "third_party_address_error": "Der opstod en fejl under indlæsning af adressevalg. Indtast din adresse manuelt nedenfor.",
         "third_party_payment_timeout": "Kan ikke indlæse betalingsmetoder. Prøv igen eller brug en anden betalingsmetode.",
         "third_party_payment_error": "Der opstod en fejl under indlæsning af betalingsvalg. Brug en anden betalingsmetode.",
         "address_default": "Sæt som standard",
-        "different_shipping_method_summary": "Indtast en anden leveringsadresse for at se tilgængelige forsendelsesmetoder",
-        "invalid_shipping_method_summary": "Indtast en gyldig leveringsadresse for at se tilgængelige forsendelsesmetoder",
+        "different_shipping_method_summary": "Indtast en anden leveringsadresse for at se tilgængelige leveringsmetoder",
+        "invalid_shipping_method_summary": "Indtast en gyldig leveringsadresse for at se tilgængelige leveringsmetoder",
         "invalid_shipping_method_summary_selected": "Vælg en anden leveringsadresse for at se tilgængelige leveringsmetoder",
         "method_summary": {
-          "incomplete_address_entered": "Indtast en komplet leveringsadresse for at se tilgængelige forsendelsesmetoder",
-          "incomplete_address_selected": "Vælg en komplet leveringsadresse for at se tilgængelige forsendelsesmetoder"
+          "incomplete_address_entered": "Indtast en fuldstændig leveringsadresse for at se tilgængelige leveringsmetoder",
+          "incomplete_address_selected": "Vælg en fuldstændig leveringsadresse for at se tilgængelige leveringsmetoder"
         },
         "local_pickup": {
           "rollup_title": "Afhentningssted",
           "rollup_accessibility_label": "Afhentningssted muligheder"
         },
-        "missing_shipping_address": "Forsendelsesadresse mangler",
-        "pre_order_ships_later": "Sendes senere",
-        "split_shipping_shipment_notice": "Din ordre vil ankomme om %{quantity_shipments}",
-        "split_shipping_first_shipment_notice": "Din første ordre vil ankomme om %{quantity_shipments}",
+        "missing_shipping_address": "Leveringsadresse mangler",
+        "pre_order_ships_later": "Afsendes senere",
+        "split_shipping_shipment_notice": "Din ordre vil ankomme i %{quantity_shipments}",
+        "split_shipping_first_shipment_notice": "Din første ordre vil ankomme i %{quantity_shipments}",
         "split_shipping_multiple_shipment_notice": "Din ordre vil ankomme i flere forsendelser",
         "split_shipping_multiple_shipment_notice_one_time_purchase": "Din ordre vil ankomme i %{quantity} forsendelser",
         "split_shipping_more_shipping_options": "Flere forsendelsesmuligheder",
-        "split_shipping_option_free": "Gratis shipping",
+        "split_shipping_option_free": "Gratis fragt",
         "split_shipping_option_fastest": "Hurtigst",
         "split_shipping_option_recommended": "Anbefalet",
         "unbranded_description_with_fulfillment_days": {
@@ -1876,7 +1879,17 @@
         "unbranded_description_with_fulfillment_weeks": {
           "one": "Sendes om %{count} uge",
           "other": "Sendes om %{count} uger"
-        }
+        },
+        "estimated_delivery_time": "Forventet levering %{time}",
+        "estimated_delivery_time_range": "Estimeret levering %{min_time}–%{max_time}",
+        "prime_not_available": {
+          "default": "Prime levering er ikke tilgængelig for din ordre. Dine forsendelsesmuligheder er blevet opdateret."
+        },
+        "pre_order_ships_now": "Skibe nu",
+        "pre_order_ships_date": "Skibe %{date}",
+        "shipping_line_phone": "Din kurér kan bruge dette nummer til at kontakte dig.",
+        "shipping_rate_discounted_amount": "Var: %{original_amount}. Nu: %{amount}",
+        "split_shipping_shipped_by_shop": "Sendt af %{shop_name}"
       },
       "localized_fields": {
         "additional_information": {
