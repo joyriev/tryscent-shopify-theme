@@ -780,7 +780,7 @@
         "not_configured_error": "Denne butik kan ikke acceptere betalinger lige nu.",
         "missing_credit_card_error": "Indtast dine kortoplysninger for at fuldføre betalingen",
         "payment_method_not_available_for_shipping_address_error": "Betalingsmetode ikke tilgængelig for den valgte leveringsadresse. Vælg en anden betalingsmetode.",
-        "sofort_label": "Øjeblikkelig bankoverførsel",
+        "sofort_label": "Sofort bankoverførsel",
         "paypal_wallet_label": "PayPal Tegnebog",
         "shop_pay_installments_label": "Køb med afbetaling",
         "continue_to_guest_checkout": "Fortsæt til gæsteudcheckning",
@@ -790,17 +790,17 @@
         "afterpay_label": "Afterpay",
         "cashapppay_label": "Cash App Betal",
         "blik_label": "BLIK",
-        "twint_label": "TVILLING",
+        "twint_label": "TWINT",
         "swish_label": "Svirp",
         "grabpay_label": "GrabPay",
         "kcp_creditcard_label": "KCP Kreditkort",
-        "usdc_cashback_title": "1% tilbagebetaling",
-        "usdc_cashback_additional_info": "Få 1% tilbage i USDC direkte i din tegnebog.",
+        "usdc_cashback_title": "%{incentive_percentage}% cashback",
+        "usdc_cashback_additional_info": "Betal med USDC på Base og få %{incentive_percentage}% tilbage i din tegnebog om 30 dage.",
         "purchase_options_card_update_agreement_label_html": "Ved at opdatere din betalingsmetode godkender du betalinger for alle tilbagevendende eller udskudte køb i henhold til denne butiks <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">afbestillingspolitik</a>.",
         "subscription_card_update_agreement_label": "Ændring af betalingsmetoden vil opdatere dit abonnement og fremtidige tilbagevendende betalinger.",
-        "subscription_agreement_label": "En eller flere varer i din kurv er et udskudt eller abonnements køb. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og med den hyppighed, der er angivet på denne side, indtil det ophører eller du annullerer. Alle annulleringer er underlagt %{cancelled}.",
+        "subscription_agreement_label": "En eller flere varer i din indkøbskurv er et udsat eller abonnementskøb. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og hyppighed, der er angivet på denne side, indtil det slutter, eller du annullerer. Alle annulleringer er underlagt %{cancelled}.",
         "subscription_agreement_cancelled": "afbestillingspolitik",
-        "subscription_agreement_label_html": "Jeg forstår, at jeg indgår i et abonnement. Det vil blive fornyet til den angivne pris og med den angivne hyppighed, indtil det ophører eller bliver\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">annulleret</a>.",
+        "subscription_agreement_label_html": "Jeg forstår, at jeg accepterer et abonnement. Det fornyes til den angivne pris og hyppighed, indtil det ophører eller bliver\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">annulleret</a>.",
         "purchase_options_agreement_label": "En eller flere varer i din indkøbskurv er et udsat, abonnement eller tilbagevendende køb. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og hyppighed, der er angivet på denne side, indtil det slutter eller du annullerer. Alle annulleringer er underlagt %{cancellation_policy_label}.",
         "purchase_options_agreement_label_html": "Jeg forstår, at en eller flere varer i min kurv er et udskudt, abonnements- eller tilbagevendende køb. Ved at fortsætte accepterer jeg\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">afbestillingspolitikken</a>\nog giver dig tilladelse til at opkræve min betalingsmetode til de priser, den hyppighed og de datoer, der er angivet på denne side, indtil min\nordre er opfyldt eller jeg annullerer, hvis det er tilladt.",
         "purchase_options_agreement_label_wallets": "Ved at fortsætte med din betaling accepterer du de fremtidige gebyrer, der er angivet på denne side, samt afbestillingspolitikken.",
@@ -836,16 +836,16 @@
           "label": "Butikskredit",
           "apply_label": "Anvend butikskredit",
           "add_label": "Tilføj butikskredit",
-          "manage_label": "Administrer butikskredit",
+          "manage_label": "Håndter butikskredit",
           "buying_gift_card": "Du kan ikke bruge butikskredit til at købe et gavekort",
-          "no_fixed_selling_plans": "Du kan ikke bruge butikskredit med udskudte købsoptioner"
+          "no_fixed_selling_plans": "Du kan ikke bruge butikskredit med udsatte købsoptioner"
         },
         "clear": "Klar",
         "location_billing_address_label": "Sted faktureringsadresse",
         "location_shipping_address_label": "Leveringsadresse",
-        "use_order_billing_address_label": "Brug faktureringsadresse fra ordren",
-        "use_location_billing_address_label": "Brug faktureringsadresse som placering",
-        "use_location_shipping_address_label": "Brug leveringsadresse for placering",
+        "use_order_billing_address_label": "Brug faktureringsadresse",
+        "use_location_billing_address_label": "Brug faktureringsadresse for placering",
+        "use_location_shipping_address_label": "Brug leveringsadresse",
         "no_working_method_error": "Denne butik kan ikke acceptere betalinger lige nu. Opdater denne side eller kom tilbage senere.",
         "shipping_rate_updated": "De tilgængelige forsendelsesmetoder er blevet opdateret. Bekræft dit valg, før du går til kassen.",
         "preview_not_available": {
@@ -865,7 +865,7 @@
           }
         },
         "simulated_express_checkout": "Punge er ikke tilgængelige i editorens forhåndsvisning på grund af din region eller browser",
-        "vaulting_agreement_label": "Gem mine betalingsoplysninger hos %{company} for en hurtigere betaling.",
+        "vaulting_agreement_label": "Gem mine betalingsoplysninger hos %{company} for en hurtigere kasse.",
         "business_customer_vaulting_payment_label": "Gem denne betalingsmetode ved kassen og autoriser %{company} til at opkræve den til fremtidige køb for denne placering. Alle kontakter tildelt denne placering kan bruge betalingsmetoden.",
         "business_customer_with_bank_account_vaulting_payment_label": "Gem denne betalingsmetode ved kassen og autoriser %{company} til at trække beløbet fra din konto for fremtidige køb, du godkender for denne placering, indtil du annullerer. Alle kontakter tildelt denne placering kan bruge betalingsmetoden.",
         "purchase_options_and_vaulting_agreement_label": "En eller flere varer i din indkøbskurv er et udsat eller abonnementskøb. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode automatisk vil blive opkrævet til den pris og hyppighed, der er angivet på denne side, indtil det slutter, eller du annullerer. Alle annulleringer er underlagt %{cancellation_policy_label}.",
@@ -930,7 +930,7 @@
         "alternative_payment_currency_total_notice": "Bemærk: du vil blive opkrævet %{amount_due}.",
         "alternative_payment_currency_total_manual_payment_notice": "Bemærk: den konverterede total er %{amount_due}.",
         "waiting_on_taxes_message": "Hvis dine skatter ikke beregnes inden for de næste par sekunder, opdater siden.",
-        "waiting_on_taxes_notice": "Beregning af skatter",
+        "waiting_on_taxes_notice": "Beregner skatter",
         "payment_method_rollup_accessibility_label": "Betalingsmetode muligheder",
         "payment_method_update_failed": "Opdatering af betalingsmetode mislykkedes.",
         "payment_method_incompatible_with_payment_terms": "Betalingsmetoden er inkompatibel med betalingsbetingelserne.",
@@ -951,7 +951,10 @@
         "purchase_options_subscription_consent_text": "du udtrykkeligt og bekræftende accepterer, at du automatisk vil blive opkrævet det tilbagevendende beløb (beløb) vist i din kurv (plus forsendelse og skat), indtil abonnementet/abonnementerne ophører eller du annullerer.",
         "purchase_options_subscription_cancellation_instructions": "%{cancel_text} Se venligst %{cancellation_policy_label}.",
         "purchase_options_subscription_cancel_text": "Du kan til enhver tid annullere ved at gå til din konto eller kontakte butikken.",
-        "separate_payments_label": "Dine varer er fra mere end én butik. Du vil blive opkrævet i %{separate_payments_link}."
+        "separate_payments_label": "Dine varer er fra mere end én butik. Du vil blive opkrævet i %{separate_payments_link}.",
+        "vault_for_payment_later": {
+          "notice": "Du bliver ikke opkrævet nu. Ved at fortsætte med din betaling accepterer du, at din betalingsmetode vil blive opkrævet, når din ordre behandles."
+        }
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte.",
@@ -1594,7 +1597,7 @@
       },
       "payment_collection": {
         "cancelled": "Denne betaling er ikke længere nødvendig. Besøg ordresiden for detaljer.",
-        "paid": "Denne betaling er allerede blevet indsendt. Besøg ordre-siden for detaljer."
+        "paid": "Denne betaling er allerede blevet indsendt. Besøg ordresiden for detaljer."
       },
       "contact": {
         "title": "Information",
@@ -2039,13 +2042,13 @@
       },
       "payment_challenge_modal": {
         "instructions": "Fuldfør dit køb ved at bruge din {{paymentMethod}} kode",
-        "copy_text": "Kopiér {{paymentMethod}} kode",
-        "open_app_text": "Åbn {{paymentMethod}} appen",
+        "copy_text": "Kopier {{paymentMethod}} kode",
+        "open_app_text": "Åbn {{paymentMethod}} app",
         "qr_code": {
           "instructions": "Fuldfør dit køb ved at bruge din {{paymentMethod}} kode"
         },
         "external": {
-          "instructions": "Bekræft betalingen i din app for at fuldføre dette køb"
+          "instructions": "Bekræft betaling i din app for at fuldføre dette køb"
         }
       },
       "failed_payment": {

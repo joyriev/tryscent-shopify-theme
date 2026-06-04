@@ -2051,7 +2051,48 @@
           "rollup_accessibility_label": "Noutopaikkavaihtoehdot"
         },
         "pre_order_ships_later": "Toimitetaan myöhemmin",
-        "pre_order_ships_date": "Toimitetaan %{date}"
+        "pre_order_ships_date": "Toimitetaan %{date}",
+        "shipping_method_one_time_purchase_group_title": "Kertaluonteinen osto",
+        "shipping_line_phone": "Kuljettajasi saattaa käyttää tätä numeroa ottaakseen sinuun yhteyttä.",
+        "subscription_delivery_description": {
+          "free_shipping_cycles": {
+            "one": "Ilmainen toimitus vielä %{count} tuotteelle",
+            "other": "Ilmainen toimitus vielä %{count} toimitukselle"
+          },
+          "free_shipping_cycles_delivery_not_included": {
+            "one": "Ilmainen toimitus %{count} toimitukselle",
+            "other": "Ilmainen toimitus %{count} toimitukselle"
+          },
+          "first_n_order_free_with_cycle": {
+            "one": "Ilmainen toimitus vielä %{count} toimitukselle, sitten %{recurring_order_shipping_price}",
+            "other": "Ilmainen toimitus vielä %{count} toimitukselle, sen jälkeen %{recurring_order_shipping_price}"
+          },
+          "first_n_order_free_with_cycle_delivery_not_included": {
+            "one": "Ilmainen toimitus %{count} toimitukselle, sen jälkeen %{recurring_order_shipping_price}",
+            "other": "Ilmainen toimitus %{count} toimitukselle, sen jälkeen %{recurring_order_shipping_price}"
+          },
+          "max_cycles_base_shipping": {
+            "one": "%{count} lisää toimitus %{shipping_price} hinnalla",
+            "other": "%{count} lisälähetystä hintaan %{shipping_price} kukin"
+          },
+          "initial_order_discounted": "Ensimmäinen toimituskulu %{discounted_shipping_cost}, sitten %{frequency_description}",
+          "first_order_shipping_price_included": "Ensimmäinen tilaus sisältyy hintaan, sen jälkeen %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} per toimitus), jota seuraa %{recurring_order_shipping_price}",
+          "free_for_first_n_order": {
+            "one": "Ensimmäistä tilausta varten"
+          }
+        },
+        "shipping_used_as_billing_notice": "Tätä käytetään myös laskutusosoitteena tälle tilaukselle.",
+        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} lisää",
+        "split_shipping_merchandise_shipment_number": "Toimitus %{number} / %{total}",
+        "split_shipping_shipped_by_shop": "Toimitetaan %{shop_name} kautta",
+        "split_shipping_shipping_label": "Menetelmä",
+        "split_shipping_shipment_notice": "Tilauksesi saapuu %{quantity_shipments} aikana",
+        "split_shipping_first_shipment_notice": "Ensimmäinen tilauksesi saapuu %{quantity_shipments} aikana",
+        "split_shipping_multiple_shipment_quantity_label": "%{quantity} lähetykset",
+        "split_shipping_multiple_shipment_notice": "Tilauksesi saapuu useammassa erässä",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "Tilauksesi saapuu %{quantity} erässä",
+        "split_shipping_option_lowest_price": "Alin hinta"
       },
       "session_errors": {
         "session_not_unique": "Tilauksesi käsittelyssä ilmeni ongelma. Päivitä tämä sivu palataksesi kauppaan.",

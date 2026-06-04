@@ -1952,10 +1952,10 @@
         },
         "order_name_label": "Beställ %{name}",
         "shopping_cart_label": "Shoppingvagn",
-        "discount_not_found": "Det gick inte att hitta någon giltig rabatt som matchar den angivna koden",
+        "discount_not_found": "Kunde inte hitta en giltig rabatt som matchar den angivna koden",
         "discount_code_applied": "Rabattkod tillämpad",
         "discount_code_applied_with_code": "Rabattkod %{code} har tillämpats",
-        "discount_code_replaced": "Rabattkod %{old_code} borttagen och %{code} har tillämpats",
+        "discount_code_replaced": "Rabattkod %{old_code} har tagits bort och %{code} har tillämpats",
         "discount_code_allocations_mismatch": "Din <strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod har ändrats. Granska din kundvagn och försök igen.",
         "order_discounts_apply_to_local_shop": "Beställningsrabatter gäller endast för varor från %{shop_name}",
         "gift_card_applied": "Presentkort tillämpat",
@@ -1964,15 +1964,15 @@
         "remove_gift_card_label": "Rensa presentkort",
         "return_restocking_fee_label": "påfyllningsavgift",
         "free_shipping_discount_label": "Fri frakt",
-        "apply_discount_button_label": "Verkställ",
-        "applied_discount_message": "%{amount} rabatt på totalorderpriset",
+        "apply_discount_button_label": "Ansök",
+        "applied_discount_message": "%{amount} rabatt på totalpriset för beställningen",
         "discount_has_been_applied": "Rabatt har tillämpats",
         "gift_card_has_been_applied": "Presentkort har använts",
         "gift_card_has_been_removed": "Presentkort har tagits bort",
         "gift_card_subscriptions_notice": "Presentkort gäller endast för din första betalning",
         "discount_already_applied": "En rabatt har tillämpats på denna beställning. Du kan inte lägga till en annan rabatt.",
         "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod är inte giltig för varorna i din kundvagn",
-        "discount_requires_customer_notice": "Ange din leveransinformation för att använda rabattkoden <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "discount_requires_customer_notice": "Ange din fraktinformation för att använda rabattkoden <strong style=\"text-transform:uppercase\">%{code}</strong>",
         "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod är inte tillgänglig för dig just nu",
         "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod kräver berättigad kund",
         "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod är inte tillgänglig för din leveransadress",
@@ -2002,7 +2002,7 @@
         "total_due_today_label": "Totalt att betala idag",
         "total_due_later_label": "Totalt att betala senare",
         "payment_due_label": "Betalning förfaller",
-        "cost_table_title": "Kostnadssammanfattning",
+        "cost_table_title": "Kostnadsöversikt",
         "price_per_item": {
           "accessibility_label": "%{price} per styck",
           "label": "%{price}/st"
@@ -2026,18 +2026,18 @@
         "recurring_total_tooltip": "Inkluderar inte frakt, skatt, tullavgifter eller eventuella tillämpliga rabatter.",
         "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> kunde inte användas tillsammans med dina befintliga rabatter.",
         "percent_off_shipping": "%{percent}% rabatt på frakten",
-        "amount_off_shipping": "%{amount} rabatt på frakten",
+        "amount_off_shipping": "%{amount} rabatt på frakt",
         "deferred_payment_info": {
           "title": "Betalning av %{amount_due} förfaller den %{due_at}",
           "description_html": "För frågor om din beställning, %{contact_us}.",
-          "paid_today": "Totalt betalat idag",
+          "paid_today": "Totalt betalt idag",
           "paid_today_next": "Betald idag",
-          "due_on_fulfillment_title": "Betalning av %{amount_due} ska ske vid leverans",
-          "due_on_receipt_title": "Betalning av %{amount_due} ska ske vid mottagandet"
+          "due_on_fulfillment_title": "Betalning av %{amount_due} förfaller vid uppfyllelse",
+          "due_on_receipt_title": "Betalning av %{amount_due} ska göras vid mottagandet"
         },
         "deferred_balance_info": {
-          "title": "Saldo på {{amount_due}} förfaller den {{due_at}}",
-          "due_on_fulfillment_title": "Saldo på {{amount_due}} ska betalas vid leverans"
+          "title": "Saldo av {{amount_due}} förfaller den {{due_at}}",
+          "due_on_fulfillment_title": "Balansen av {{amount_due}} förfaller vid uppfyllelse"
         },
         "payment_terms_totals": {
           "due_today": "Totalt att betala idag",
@@ -2054,14 +2054,24 @@
         "due_on_fulfillment": "Förfallodag vid fullgörande",
         "duties_label": "Tullar",
         "recurring_total_multiple_label": "Denna beställning har en återkommande avgift för flera artiklar.",
-        "deferred_total_due_date_label": "Totalt att betala {{date}}",
+        "deferred_total_due_date_label": "Total att betala {{date}}",
         "full_price": "Fullt pris: %{price}",
         "custom_discount": "Anpassad rabatt",
         "collapse_component_information": {
-          "other": "Dölj %{count} föremål"
+          "other": "Dölj %{count} objekt",
+          "one": "Dölj %{count} objekt"
         },
-        "alternative_payment_currency_total": "Debiterad %{amount_due}",
-        "discount_applies_to_subscription_items_only": "Denna rabatt gäller endast för prenumerationsartiklar"
+        "alternative_payment_currency_total": "Debiterad som %{amount_due}",
+        "discount_applies_to_subscription_items_only": "Denna rabatt gäller endast för prenumerationsartiklar",
+        "discount_order_stacking": {
+          "one": "Beställ rabatt",
+          "other": "Beställningsrabatter"
+        },
+        "discount_code_removed": "Rabattkod %{code} har tagits bort",
+        "deferred_total_due_date_label_next": "Giltig till %{date}",
+        "discount_discovery": {
+          "back_to_finalize_order": "Tillbaka för att slutföra beställningen"
+        }
       },
       "shipping": {
         "shipping_method_rollup_accessibility_label": "Fraktmetodsalternativ",
@@ -3017,15 +3027,15 @@
         "custom_line_item_description": "Belopp att betala för beställning %{order_name}",
         "changes_summary": {
           "added": {
-            "one": "Tillagt",
+            "one": "Tillagd",
             "other": "Tillagd %{count}"
           },
-          "subtracted": "Borttaget %{count}",
+          "subtracted": "Borttagen %{count}",
           "returned": "Returnerad %{count}",
           "return_line_item_removed": "Tog bort %{count} från retur"
         },
-        "additional_payment_requested": "Betalning av %{total_outstanding} krävs",
-        "checkout_review_and_pay": "Din beställning %{order_name} har uppdaterats. Granska dessa ändringar och betala sedan för att bekräfta din beställning.",
+        "additional_payment_requested": "Betalning av %{total_outstanding} behövs",
+        "checkout_review_and_pay": "Din beställning %{order_name} har uppdaterats. Granska dessa ändringar, och betala för att bekräfta din beställning.",
         "order_updated_on": "Din beställning uppdaterades den %{last_edited_at}.",
         "order_review_and_pay": "Din beställning har uppdaterats. Granska och betala för att bekräfta din beställning."
       },
@@ -3051,8 +3061,8 @@
       },
       "open_graph_meta_tag": {
         "title_with_products": {
-          "one": "Köp %{product_name} och %{count} annan vara",
-          "other": "Köp %{product_name} och %{count} andra föremål"
+          "one": "Köp %{product_name} och %{count} andra artiklar",
+          "other": "Köp %{product_name} och %{count} andra artiklar"
         }
       },
       "subscriptions": {
@@ -3101,9 +3111,9 @@
         "email_us_button_label": "Skicka oss ett e-postmeddelande"
       },
       "order_errors": {
-        "creation_failure": "Det uppstod ett problem när din beställning skulle skapas. Försök igen, eller kontakta oss för mer information.",
-        "network_failure": "Din beställning kunde inte skickas på grund av ett nätverksfel. Kontrollera din anslutning och försök igen.",
-        "inventory_reservation_failure": "Vissa artiklar finns inte längre tillgängliga."
+        "creation_failure": "Det uppstod ett problem med att skapa din beställning. Försök igen, eller kontakta oss för mer information.",
+        "network_failure": "Din beställning kunde inte skickas in på grund av ett nätverksfel. Kontrollera din anslutning och försök igen.",
+        "inventory_reservation_failure": "Vissa artiklar är inte längre tillgängliga."
       },
       "session_errors": {
         "session_not_unique": "Det uppstod ett problem vid behandlingen av din beställning. Uppdatera denna sida för att återvända till butiken.",
@@ -3174,10 +3184,10 @@
       },
       "notice_banner": {
         "return_to_cart_link_text": "Återgå till kundvagn",
-        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} för att uppdatera mängderna",
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} för att uppdatera kvantiteterna",
         "company_location_changed": "Din kundvagn har uppdaterats. Granska din beställning innan du skickar in den.",
         "company_location_changed_product_removed": "Din kundvagn har uppdaterats eftersom vissa produkter inte är tillgängliga på denna plats. Granska din beställning innan du skickar in den.",
-        "violations_title": "{{violation}} saknas eller är ogiltigt",
+        "violations_title": "{{violation}} saknas eller är ogiltig",
         "all_violations_content": "Ring eller {{emailLink}} oss för att uppdatera denna information och slutföra din beställning:",
         "editable_shipping_address_violations_message_title": "Lägg till denna information för att slutföra din beställning:",
         "editable_shipping_address_violations_message_footer": "För att permanent uppdatera adressen för denna plats, {{emailLink}}.",
@@ -3198,7 +3208,8 @@
         "individual_violations_title": {
           "OtherViolations": "Beställningsinformation",
           "UnhandledViolations": "Beställningsinformation"
-        }
+        },
+        "shipping_address_incomplete_title": "Fraktadressen är ofullständig"
       },
       "review_address_modal": {
         "title": "Recensionsadress",
@@ -3383,17 +3394,18 @@
         "length_exceeds_maximum": "Minska storleken på anteckningen till 5000 tecken eller färre."
       },
       "offsite_payment_failed": {
-        "title": "Betalning utanför webbplatsen misslyckades",
-        "payment_not_processed_text": "Försök skanna QR-koden igen. Om det fortfarande inte fungerar, meddela vår personal och prova en annan betalningsmetod.",
-        "payment_link_expired_text": "Försök skanna QR-koden igen."
+        "title": "Offsite-betalning misslyckades",
+        "payment_not_processed_text": "Försök att skanna QR-koden igen. Om det fortfarande inte fungerar, låt vår personal veta och försök med en annan betalningsmetod.",
+        "payment_link_expired_text": "Försök att skanna QR-koden igen.",
+        "payment_not_processed_title": "Betalning misslyckades"
       },
       "one": {
         "errors": {
           "merchandise": {
             "gift_card_price_must_be_greater_than_zero": "Presentkortets pris måste vara större än 0.",
             "gift_card_price_must_not_exceed_limit": "Presentkortets pris får inte överstiga %{gift_card_limit}.",
-            "subtotal_limit_reached": "Det maximala värdet för artikelrader har uppnåtts.",
-            "signature_mismatch": "Varumärkessignatur stämmer inte för rad %{stable_id}."
+            "subtotal_limit_reached": "Det maximala värdet för radobjekt har nåtts.",
+            "signature_mismatch": "Varumärkes signatur mismatch för rad %{stable_id}."
           }
         }
       },
@@ -3524,6 +3536,9 @@
         "header": {
           "review_order": "Granska din beställning"
         }
+      },
+      "notifications": {
+        "title": "Notifikationer"
       }
     },
     "links": {
