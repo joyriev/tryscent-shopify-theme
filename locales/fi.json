@@ -72,21 +72,21 @@
     "button_label": "Tilaa"
   },
   "accessibility": {
-    "skip_to_text": "Ohita ja siirry sisältöön",
+    "skip_to_text": "Siirry sisältöön",
     "close": "Sulje",
-    "unit_price_separator": "kohti",
+    "unit_price_separator": "per",
     "vendor": "Myyjä:",
     "error": "Virhe",
-    "refresh_page": "Vaihtoehdon valinta päivittää koko sivun.",
+    "refresh_page": "Valinnan tekeminen päivittää koko sivun.",
     "link_messages": {
-      "new_window": "Avaa uuden ikkunan.",
-      "external": "Avaa ulkoisen verkkosivuston."
+      "new_window": "Avaa uuteen ikkunaan.",
+      "external": "Avaa ulkoinen verkkosivusto."
     },
     "loading": "Ladataan...",
     "skip_to_product_info": "Siirry tuotetietoihin",
-    "total_reviews": "arvosteluja yhteensä",
-    "star_reviews_info": "{{ rating_value }}/{{ rating_max }} tähteä",
-    "collapsible_content_title": "Pienenettävä sisältö",
+    "total_reviews": "arvostelujen kokonaismäärä",
+    "star_reviews_info": "{{ rating_value }} / {{ rating_max }} tähdestä",
+    "collapsible_content_title": "Kutistuva sisältö",
     "complementary_products": "Täydentävät tuotteet"
   },
   "blogs": {
@@ -97,16 +97,16 @@
         "one": "{{ count }} kommentti",
         "other": "{{ count }} kommenttia"
       },
-      "moderated": "Huomaa, että kommenttien täytyy olla hyväksytty ennen niiden julkaisemista.",
-      "comment_form_title": "Kirjoita kommentti",
+      "moderated": "Huomioithan, että kommentit on hyväksyttävä ennen niiden julkaisua.",
+      "comment_form_title": "Jätä kommentti",
       "name": "Nimi",
       "email": "Sähköposti",
       "message": "Kommentti",
-      "post": "Julkaise kommentti",
+      "post": "Jätä kommentti",
       "back_to_blog": "Takaisin blogiin",
       "share": "Jaa tämä artikkeli",
-      "success": "Kommenttisi julkaiseminen onnistui! Kiitos!",
-      "success_moderated": "Kommenttisi julkaiseminen onnistui. Julkaisemme sen jonkin ajan kuluttua, kun blogimme on tarkastettu."
+      "success": "Kommenttisi lähetettiin onnistuneesti! Kiitos!",
+      "success_moderated": "Kommenttisi lähetettiin onnistuneesti. Julkaisemme sen pian, sillä blogiamme valvotaan."
     }
   },
   "onboarding": {
@@ -394,9 +394,9 @@
   "customer": {
     "account": {
       "title": "Tili",
-      "details": "Tilin tiedot",
+      "details": "Tilitiedot",
       "view_addresses": "Näytä osoitteet",
-      "return": "Palaa tilin tietoihin"
+      "return": "Palaa tilitietoihin"
     },
     "account_fallback": "Tili",
     "activate_account": {
@@ -535,23 +535,23 @@
     }
   },
   "bundle": {
-    "upgrade_cta": "Päivitä kokoon {{ size }}ML vain {{ price }} lisää.",
+    "upgrade_cta": "Päivitä {{ size }}ML-kokoon {{ price }} lisähintaan.",
     "free_bottle": "Ilmainen pullo",
-    "choose_your_perfume": "Valitse tuoksusi",
-    "select_more": "VALITSE VIELÄ {{ count }}",
+    "choose_your_perfume": "Valitse hajuvesi",
+    "select_more": "VALITSE {{ count }} LISÄÄ",
     "shop_now": "OSTA NYT",
     "your_bundle_is_ready": "PAKETTISI ON VALMIS! 👑",
-    "add_more_scent": "LISÄÄ VIELÄ {{ count }} TUOKSU",
-    "add_more_scents": "LISÄÄ VIELÄ {{ count }} TUOKSUA",
-    "add_more_prefix": "LISÄÄ VIELÄ ",
-    "add_more_suffix_singular": " TUOKSU",
-    "add_more_suffix_plural": " TUOKSUA",
-    "top_sellers": "Myydyimmät",
-    "top_sellers_men": "Miesten myydyimmät",
-    "top_sellers_women": "Naisten myydyimmät",
-    "redirecting_to_checkout": "Siirrytään kassalle...",
-    "inspired_by": "Inspiroitunut tuoksusta:",
-    "price_per_bottle": "Hinnaksi tulee vain {{ price }} / pullo"
+    "add_more_scent": "LISÄÄ {{ count }} TUOKSUA VIELÄ",
+    "add_more_scents": "LISÄÄ {{ count }} TUOKSUA VIELÄ",
+    "add_more_prefix": "LISÄÄ",
+    "add_more_suffix_singular": "ENEMMÄN TUOKSUA",
+    "add_more_suffix_plural": "LISÄÄ TUOKSUJA",
+    "top_sellers": "Suosituimmat myyjät",
+    "top_sellers_men": "Parhaat myyjät miehille",
+    "top_sellers_women": "Parhaat myyjät naisille",
+    "redirecting_to_checkout": "Uudelleenohjataan kassalle...",
+    "inspired_by": "Innoittamana:",
+    "price_per_bottle": "Hinta on vain {{ price }}/pullo"
   },
   "timebar": {
     "countdown": {
