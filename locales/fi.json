@@ -278,15 +278,15 @@
       "announcement": "Ilmoitus",
       "menu": "Valikko",
       "cart_count": {
-        "one": "{{ count }} tuote",
+        "one": "{{ count }} kohde",
         "other": "{{ count }} tuotetta"
       }
     },
     "cart": {
-      "title": "Ostoskorisi",
+      "title": "Ostoskoriisi",
       "caption": "Ostoskorin tuotteet",
       "remove_title": "Poista {{ title }}",
-      "note": "Tilauksen erityisohjeet",
+      "note": "Tilaa erityisohjeet",
       "checkout": "Kassa",
       "empty": "Ostoskorisi on tyhjä",
       "cart_error": "Ostoskorisi päivityksessä tapahtui virhe. Yritä uudelleen.",
@@ -301,10 +301,10 @@
       "update": "Päivitä",
       "login": {
         "title": "Onko sinulla tili?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Kirjaudu sisään</a>, jotta voit maksaa kassalla nopeammin."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Kirjaudu sisään</a> nopeuttaaksesi kassalle siirtymistä."
       },
       "estimated_total": "Arvioitu kokonaishinta",
-      "new_estimated_total": "Uusi arvioitu kokonaishinta",
+      "new_estimated_total": "Uusi arvioitu kokonaismäärä",
       "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Sisältää tullit ja verot. Alennukset ja <a href=\"{{ link }}\">toimituskulut</a> lasketaan kassalla.",
       "duties_and_taxes_included_shipping_at_checkout_without_policy": "Sisältää tullit ja verot. Alennukset ja toimituskulut lasketaan kassalla.",
       "taxes_included_shipping_at_checkout_with_policy_html": "Sisältää verot. Alennukset ja <a href=\"{{ link }}\">toimituskulut</a> lasketaan kassalla.",
@@ -319,8 +319,8 @@
     },
     "featured_blog": {
       "view_all": "Näytä kaikki",
-      "onboarding_title": "Blogipostaus",
-      "onboarding_content": "Anna asiakkaillesi yhteenveto blogipostauksestasi"
+      "onboarding_title": "Blogikirjoitus",
+      "onboarding_content": "Anna asiakkaillesi yhteenveto blogikirjoituksestasi"
     },
     "featured_collection": {
       "view_all": "Näytä kaikki",
@@ -344,7 +344,7 @@
       "pause_slideshow": "Keskeytä diaesitys",
       "play_slideshow": "Toista diaesitys",
       "carousel": "Karuselli",
-      "slide": "Dia"
+      "slide": "Liukusäädin"
     },
     "page": {
       "title": "Sivun otsikko"
@@ -358,28 +358,28 @@
     },
     "quick_order_list": {
       "product_total": "Tuotteen välisumma",
-      "view_cart": "Katso ostoskori",
+      "view_cart": "Näytä ostoskori",
       "each": "{{ money }}/kpl",
       "product": "Tuote",
-      "variant": "Versio",
-      "variant_total": "Versioiden summa",
+      "variant": "Muunnelma",
+      "variant_total": "Varianttien yhteensä",
       "items_added": {
-        "one": "{{ quantity }} tuote lisätty",
+        "one": "{{ quantity }} tuotetta lisätty",
         "other": "{{ quantity }} tuotetta lisätty"
       },
       "items_removed": {
-        "one": "{{ quantity }} tuote poistettu",
+        "one": "{{ quantity }} tuotetta poistettu",
         "other": "{{ quantity }} tuotetta poistettu"
       },
-      "product_variants": "Tuoteversiot",
-      "total_items": "Tuotteita yhteensä",
-      "remove_all_items_confirmation": "Poistetaanko kaikki {{ quantity }} tuotetta ostoskorista?",
+      "product_variants": "Tuotevariantit",
+      "total_items": "Yhteensä tuotteita",
+      "remove_all_items_confirmation": "Poistetaanko kaikki {{ quantity }} tuotetta ostoskoristasi?",
       "remove_all": "Poista kaikki",
       "cancel": "Peruuta",
-      "remove_all_single_item_confirmation": "Poistetaanko 1 tuote ostoskorista?",
-      "min_error": "Tämän tuotteen vähimmäisarvo on {{ min }}",
-      "max_error": "Tämän tuotteen enimmäisarvo on {{ max }}",
-      "step_error": "Voit lisätä tätä tuotetta vain {{ step }}:n lisäyksinä"
+      "remove_all_single_item_confirmation": "Poistetaanko 1 tuote ostoskoristasi?",
+      "min_error": "Tällä tuotteella on vähimmäismäärä {{ min }}",
+      "max_error": "Tällä tuotteella on enintään {{ max }}",
+      "step_error": "Voit lisätä tämän tuotteen vain {{ step }} kappaleen erissä."
     }
   },
   "localization": {
@@ -1437,7 +1437,26 @@
         },
         "recurring_payments": "Toistuvat maksut",
         "recurring_total_multiple_label": "Tässä tilauksessa on toistuva veloitus useista tuotteista.",
-        "pay_merchant_label": "Maksa %{merchant_name}"
+        "pay_merchant_label": "Maksa %{merchant_name}",
+        "title": "Tilausyhteenveto",
+        "view_all_items": {
+          "one": "Näytä %{count} kohdetta"
+        },
+        "tip_label": "Vinkki",
+        "tax_line": {
+          "gst": "ALV"
+        },
+        "total_savings": "Kokonais säästöt",
+        "total_paid_label": "Maksettu yhteensä",
+        "total_due_today_label": "Maksettava yhteensä tänään",
+        "total_due_later_label": "Maksettava yhteensä myöhemmin",
+        "unit_price": {
+          "per_item": {
+            "single": "%{price} kappaleelta",
+            "one": "%{price} per %{count} kappaleelta",
+            "other": "%{price} per %{count} kappaletta"
+          }
+        }
       },
       "order_payment_collection": {
         "custom_line_item_description": "Maksun määrä tilaukselle %{order_name}",
@@ -1478,6 +1497,21 @@
             "signature_mismatch": "Tuotteen allekirjoitus ei täsmää rivillä %{stable_id}."
           }
         }
+      },
+      "payment": {
+        "amazon_payments_login_hint": "Sinua pyydetään kirjautumaan Amazon-tilillesi.",
+        "amazon_payments_failed_mfa_challenge": "Valittua maksutapaa ei voitu käyttää. Valitse toinen maksutapa tai ota yhteyttä pankkiisi tai kortin myöntäjään.",
+        "amazon_payments_abandoned_mfa_challenge": "Maksusi ei onnistunut. Kokeile toista maksutapaa tai ota yhteyttä pankkiisi tai kortin myöntäjään.",
+        "amazon_payments_could_not_enqueue_authorize": "Maksun käsittelyssä ilmeni ongelma. Yritä uudelleen tai käytä toista maksutapaa.",
+        "amount_left_to_pay_label": "Maksun eräpäivä:",
+        "afterpay_label": "Jälkiveloitus",
+        "apple_pay_payment_error": "Maksusi ei onnistunut. Yritä uudelleen tai käytä toista maksutapaa.",
+        "apple": {
+          "connect": "Napsauta yhdistääksesi Apple Pay -tilisi",
+          "not_available": "Apple Pay ei ole käytettävissä tässä selaimessa. Yhdistääksesi Apple Pay -tilisi sinun täytyy käyttää Safaria Apple-laitteella."
+        },
+        "alternative_payment_currency_total_notice": "Huomautus: sinulta veloitetaan %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Huomautus: muunnettu kokonaissumma on %{amount_due}."
       }
     },
     "attributes": {

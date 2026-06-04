@@ -587,8 +587,8 @@
         },
         "tip_label": "Drikkepenge",
         "unconfirmed_label": "Ubekræftet",
-        "calculating_shipping": "Beregner…",
-        "calculating": "Beregner…",
+        "calculating_shipping": "Beregnede…",
+        "calculating": "Beregnede…",
         "shipping_discount_title": "Forsendelsesrabat",
         "shipping_pending_message": "Endnu ikke tilgængelig",
         "shipping_policy_link": "Forsendelsesomkostninger",
@@ -1547,9 +1547,10 @@
         "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} forfalder, når din bestilling er bekræftet. Restbeløbet forfalder, når din bestilling er opfyldt."
       },
       "offsite_payment_failed": {
-        "title": "Betaling uden for stedet mislykkedes",
-        "payment_not_processed_text": "Prøv at scanne QR-koden igen. Hvis det stadig ikke virker, så giv vores personale besked og prøv en anden betalingsmetode.",
-        "payment_link_expired_title": "Betalingslink udløbet"
+        "title": "Offsite betaling mislykkedes",
+        "payment_not_processed_text": "Prøv at scanne QR-koden igen. Hvis det stadig ikke virker, så lad vores personale vide det og prøv en anden betalingsmetode.",
+        "payment_link_expired_title": "Betalingslinket er udløbet",
+        "payment_not_processed_title": "Betaling mislykkedes"
       },
       "payment_collection": {
         "cancelled": "Denne betaling er ikke længere nødvendig. Besøg ordresiden for detaljer.",
@@ -2083,7 +2084,7 @@
         "invalid_market_manager_error": "Gennemgå dine kontaktoplysninger, før du fuldfører betalingen"
       },
       "notifications": {
-        "title": "Underretninger"
+        "title": "Notifikationer"
       },
       "order_payment_collection": {
         "custom_line_item_description": "Beløb at betale for ordre %{order_name}",
@@ -2093,11 +2094,11 @@
           },
           "subtracted": "Fjernet %{count}",
           "returned": "Returneret %{count}",
-          "return_line_item_removed": "Fjernet %{count} fra retur"
+          "return_line_item_removed": "Fjernet %{count} fra returnering"
         },
         "additional_payment_requested": "Betaling af %{total_outstanding} er nødvendig",
-        "checkout_review_and_pay": "Din ordre %{order_name} blev opdateret. Gennemgå disse ændringer, og betal derefter for at bekræfte din ordre.",
-        "order_review_and_pay": "Din ordre blev opdateret. Gennemse og betal for at bekræfte din ordre."
+        "checkout_review_and_pay": "Din ordre %{order_name} blev opdateret. Gennemgå disse ændringer, og betal for at bekræfte din ordre.",
+        "order_review_and_pay": "Din ordre blev opdateret. Gennemgå og betal for at bekræfte din ordre."
       },
       "change_currency": {
         "credit_card_will_be_charged_html": "Dit kreditkort vil blive opkrævet %{amount}",
@@ -2178,7 +2179,7 @@
       },
       "order_errors": {
         "creation_failure": "Der opstod et problem med at oprette din ordre. Prøv igen, eller kontakt os for flere oplysninger.",
-        "network_failure": "Din ordre kunne ikke sendes på grund af en netværksfejl. Tjek din forbindelse og prøv igen."
+        "network_failure": "Din ordre kunne ikke indsendes på grund af en netværksfejl. Tjek din forbindelse og prøv igen."
       },
       "session_errors": {
         "session_not_unique": "Der opstod et problem med at behandle din ordre. Opdater denne side for at vende tilbage til butikken.",
@@ -2251,7 +2252,7 @@
       "notice_banner": {
         "return_to_cart_link_text": "Gå tilbage til kurv",
         "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} for at opdatere mængderne",
-        "subscription_changed": "En af dine abonnementer er blevet ændret.",
+        "subscription_changed": "En af dine abonnementer er ændret.",
         "company_location_changed": "Din indkøbskurv er blevet opdateret. Gennemgå din ordre, før du indsender den.",
         "company_location_changed_product_removed": "Din indkøbskurv er blevet opdateret, fordi nogle produkter ikke er tilgængelige på denne placering. Gennemgå din ordre, før du indsender den.",
         "individual_violations_title": {
@@ -2263,7 +2264,7 @@
         "editable_shipping_address_violations_message_title": "Tilføj disse oplysninger for at fuldføre din ordre:",
         "editable_shipping_address_violations_message_footer": "For at opdatere adressen for denne placering permanent, {{emailLink}}.",
         "editable_shipping_address_violations_email_link": "kontakt os",
-        "shipping_address_incomplete_title": "Forsendelsesadressen er ufuldstændig",
+        "shipping_address_incomplete_title": "Leveringsadressen er ufuldstændig",
         "calculating_shipping": "Forsendelsen beregnes stadig. Prøv igen om et par sekunder. Du er ikke blevet opkrævet.",
         "calculating_taxes": "Skatter bliver stadig beregnet. Prøv igen om et par sekunder. Du er ikke blevet opkrævet.",
         "generic_processing_error": {
@@ -2297,7 +2298,7 @@
         }
       },
       "online_store_chat": {
-        "title": "Spørgsmål? Chat med os"
+        "title": "Har du spørgsmål? Chat med os"
       },
       "local_pickup": {
         "location_information": {
@@ -2507,10 +2508,10 @@
       "one": {
         "errors": {
           "merchandise": {
-            "gift_card_price_must_be_greater_than_zero": "Gavekortets pris skal være større end 0.",
-            "gift_card_price_must_not_exceed_limit": "Gavekortets pris må ikke overstige %{gift_card_limit}.",
+            "gift_card_price_must_be_greater_than_zero": "Gavekortprisen skal være større end 0.",
+            "gift_card_price_must_not_exceed_limit": "Gavekortprisen må ikke overstige %{gift_card_limit}.",
             "subtotal_limit_reached": "Den maksimale værdi af linjeposter er nået.",
-            "signature_mismatch": "Vareunderskrift stemmer ikke overens for linje %{stable_id}."
+            "signature_mismatch": "Uoverensstemmelse i vareunderskrift for linje %{stable_id}."
           }
         }
       },
@@ -2608,6 +2609,11 @@
       "embed": {
         "shipping": {
           "shipping_options": "Se alle forsendelsesmuligheder"
+        }
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "one": "Køb %{product_name} og %{count} andre varer"
         }
       }
     },
