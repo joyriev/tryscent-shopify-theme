@@ -2823,10 +2823,10 @@
         "confirmed_items_count": "%{confirmed_count} av %{total_count} artiklar är bekräftade",
         "items_fulfilled_by_store": {
           "one": "Varor du har köpt kommer från %{remote_shop_name}.",
-          "other": "Varor du har köpt kommer att skickas från andra butiker."
+          "other": "Varor du har köpt kommer från andra butiker."
         },
-        "gift_card_confirmation_by_text": "Om du inte mottog det, skicka texten igen eller kontakta oss.",
-        "gift_card_confirmation_by_email": "Om du inte mottog det, skicka e-postmeddelandet igen eller kontakta oss.",
+        "gift_card_confirmation_by_text": "Om du inte fick det, skicka texten igen eller kontakta oss.",
+        "gift_card_confirmation_by_email": "Om du inte fick det, skicka e-postmeddelandet igen eller kontakta oss.",
         "resend_gift_cards": "Skicka om presentkort",
         "thank_you_title": "Din beställning är bekräftad",
         "thank_you_title_payment": "Din betalning är bekräftad",
@@ -2945,9 +2945,9 @@
         "order_updates_upcoming_step_prefix": "Kommande steg:",
         "in_transit_title": "Din beställning är på väg",
         "in_transit_description": "Du kommer att få uppdateringar om dess framsteg.",
-        "in_transit_description_days": "Du bör få din beställning inom de kommande %{number} dagarna.",
+        "in_transit_description_days": "Du bör få din beställning inom de nästa %{number} dagarna.",
         "in_transit_description_today": "Du bör få din beställning idag.",
-        "in_transit_description_tomorrow": "Du bör få din beställning inom nästa dag.",
+        "in_transit_description_tomorrow": "Du bör få din beställning nästa dag.",
         "no_tracking_number": "Det finns inget spårningsnummer för denna beställning.",
         "out_for_delivery": "Utleverans pågår",
         "out_for_delivery_title": "Din beställning är ute på leverans",
@@ -2967,13 +2967,13 @@
         "updated_time": "Uppdaterad för %{time_ago} sedan",
         "failure": "Ej levererad",
         "failed_title": "Din beställning kunde inte levereras",
-        "non_shippable_title": "Din beställning är slutförd",
+        "non_shippable_title": "Din beställning är klar",
         "let_us_know": "Låt oss veta",
         "login_title": "Logga in för att se alla orderdetaljer",
-        "login_description": "Du kan hitta ditt ordernummer på kvittot du fick via e-post.",
+        "login_description": "Du kan hitta ditt ordernummer i kvittot du fick via e-post.",
         "login_description_phone": "Du kan hitta ditt ordernummer i kvittot du fick via sms.",
         "login_reorder_link_text": {
-          "one": "köp även denna produkt",
+          "one": "köp den här produkten också",
           "other": "köp även dessa produkter"
         },
         "customer_information_hidden_fields_message": "Logga in för att se all kundinformation.",
@@ -2981,15 +2981,16 @@
         "cancelled_description": "Din beställning avbröts den %{date}. Kontakta oss om du har några frågor.",
         "customer_validation_error": "Ange en giltig e-postadress eller ordernummer.",
         "marker": {
-          "current": "Aktuell leveransplats"
+          "current": "Aktuell fraktplats"
         },
         "pick_up_in_store_marker": {
           "current": "Aktuell leveransplats",
           "shipping": "Upphämtningsplats"
         },
         "fulfillment": {
-          "fulfilled_table_title": "Artiklar i denna leverans",
-          "quantity_label": "Antal"
+          "fulfilled_table_title": "Objekt i denna leverans",
+          "quantity_label": "Kvantitet",
+          "unfulfilled_table_title": "Objekt som förbereds för frakt"
         },
         "order_updates_description_missing": "Du får inga leveransuppdateringar.",
         "qr_code": {
@@ -2997,7 +2998,7 @@
         },
         "breadcrumbs_submitted": "Inlämnad",
         "missing_shipping_address_banner": {
-          "title": "Order har ingen leveransadress"
+          "title": "Beställningen har ingen leveransadress"
         },
         "in_store_purchase": "Köp i butik",
         "thank_you_ready_for_picked_up": "Din beställning hämtades upp på %{address}.",
@@ -3005,29 +3006,30 @@
         "order_updates_subscribe_to_email_notifications_email_already_exists": "E-postadressen du angav finns redan.",
         "manage_order_label": "Hantera din beställning",
         "gift_card_confirmation_by_text_typ": {
-          "one": "Du kommer att få ett sms med ditt presentkort inom några minuter.",
-          "other": "Du kommer att få ett sms med dina presentkort inom några minuter."
+          "one": "Du kommer att få ett meddelande med ditt presentkort om några minuter.",
+          "other": "Du kommer att få ett meddelande med dina presentkort om några minuter."
         },
         "gift_card_confirmation_by_email_typ": {
-          "one": "Du kommer att få ett e-postmeddelande med ditt presentkort inom några minuter.",
-          "other": "Du kommer att få ett e-postmeddelande med dina presentkort inom några minuter."
+          "one": "Du kommer att få ett e-postmeddelande med ditt presentkort om några minuter.",
+          "other": "Du kommer att få ett e-postmeddelande med dina presentkort om några minuter."
         },
         "gift_card_email_title": {
-          "one": "Presentkort skickades via e-post",
+          "one": "Presentkortet skickades via e-post",
           "other": "Presentkort skickades via e-post"
         },
         "gift_card_text_title": {
-          "one": "Presentkort skickades via textmeddelande",
+          "one": "Presentkortet skickades via textmeddelande",
           "other": "Presentkort skickades via textmeddelande"
         },
         "resend_gift_cards_by_email": "Skicka e-post igen",
         "resend_gift_cards_by_text": "Skicka om textmeddelande",
         "gift_card_resent_confirmation": {
-          "one": "Presentkortet skickades om.",
-          "other": "Presentkort skickades om."
+          "one": "Presentkortet har skickats igen.",
+          "other": "Presentkort har skickats igen."
         },
         "gift_card_resend_failure": {
-          "one": "Det uppstod ett problem med att skicka om ditt presentkort. Försök igen eller kontakta oss."
+          "one": "Det uppstod ett problem med att skicka ditt presentkort igen. Försök igen eller kontakta oss.",
+          "other": "Det uppstod ett problem med att skicka dina presentkort igen. Försök igen eller kontakta oss."
         },
         "verify_shop_account_message": "Din information sparades med Shop, verifiera ditt konto för att automatiskt använda det i miljontals butiker.",
         "verify_shop_account_confirmation": "Betalningsuppgifter sparade",

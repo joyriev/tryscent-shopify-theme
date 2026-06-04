@@ -2532,19 +2532,20 @@
         "return_to_store_simple": "Gå tilbage til butikken"
       },
       "wallets": {
-        "return_to_store": "Vend tilbage til butikken",
+        "return_to_store": "Gå tilbage til butikken",
         "return_to_checkout": "Gå tilbage til kassen",
         "redirect_hint": "Du vil blive bedt om at logge ind med {{walletName}}.",
-        "logged_in": "Forbundet til {{email}}",
+        "logged_in": "Forbundet med {{email}}",
         "shipping_line_label": "Forsendelse",
-        "payment_in_progress_title": "Betaling i gang",
-        "payment_in_progress_body": "Din betaling behandles. Din ordre vil snart være færdig.",
+        "payment_in_progress_title": "Betaling under behandling",
+        "payment_in_progress_body": "Din betaling behandles. Din ordre vil snart blive fuldført.",
         "redirection_notice": "Du vil blive omdirigeret til {{walletName}} for at fuldføre dit køb",
         "errors": {
           "unavailable": {
             "title": "{{walletName}} ikke tilgængelig",
             "description": "{{walletName}} var ikke tilgængelig. Brug en anden betalingsmetode eller prøv igen senere.",
-            "instructions": "Der opstod et problem med {{walletName}}. Gå tilbage til butikken for at prøve igen eller vælg en anden betalingsmetode."
+            "instructions": "Der opstod et problem med {{walletName}}. Gå tilbage til butikken for at prøve igen eller vælg en anden betalingsmetode.",
+            "unavailable_for_country": "{{walletName}} er ikke tilgængelig i {{countryName}}. Vælg en anden betalingsmetode for at fuldføre dit køb."
           },
           "unavailable_terminal": {
             "instructions": "{{walletName}} er i øjeblikket ikke tilgængelig for din ordre. For at fortsætte dit køb, vælg en anden betalingsmetode."
@@ -2557,13 +2558,13 @@
             "queue": "Du er blevet sat i kø til kassen. Luk {{walletName}} for at fortsætte."
           },
           "unsupported": {
-            "address": "Forhandleren kan ikke levere til denne adresse",
-            "wallet_is_unavailable": "{{walletName}} kan ikke bruges med denne adresse. Vælg en anden adresse eller luk {{walletName}} for at fuldføre dit køb",
+            "address": "Handelspartneren kan ikke levere til denne adresse",
+            "wallet_is_unavailable": "{{walletName}} kan ikke bruges med denne adresse. Vælg en anden adresse eller luk {{walletName}} for at fuldføre dit køb.",
             "postal_code": "Denne placering understøttes ikke"
           },
           "outdated": {
-            "shipping_method": "Forsendelsesmulighederne er ændret for din ordre. Gennemse dit valg.",
-            "payment_terms": "Betalingsbetingelserne er ændret. Gennemse din ordre"
+            "shipping_method": "Forsendelsesmulighederne er ændret for din ordre. Gennemgå dit valg.",
+            "payment_terms": "Betalingsbetingelserne er ændret. Gennemgå din ordre"
           },
           "invalid": {
             "shipping_option": "Vælg en gyldig forsendelsesmulighed",
@@ -2579,32 +2580,35 @@
           },
           "missing": {
             "first_name": "Indtast et fornavn",
-            "billing_first_name": "Indtast et faktureringsadresses fornavn",
+            "billing_first_name": "Indtast en faktureringsadresse fornavn",
             "last_name": "Indtast et efternavn",
             "address1": "Indtast en adresse",
             "billing_address1": "Indtast en faktureringsadresse",
             "address2": "Indtast en lejlighed, suite osv.",
-            "billing_address2": "Indtast en faktureringsadresse lejlighed, suite osv.",
+            "billing_address2": "Indtast en faktureringsadresse lejlighed, suite, osv.",
             "city": "Indtast en by",
-            "billing_city": "Indtast en faktureringsadresse by",
+            "billing_city": "Indtast en by for faktureringsadressen",
             "province": "Vælg en stat / provins",
             "billing_province": "Vælg en faktureringsadresse stat / provins",
             "country": "Vælg et land/område",
             "zip": "Indtast et postnummer",
-            "billing_zip": "Indtast en faktureringsadresse postnummer / postkode",
+            "billing_zip": "Indtast en faktureringsadresse ZIP / postnummer",
             "phone": "Indtast et telefonnummer",
-            "contact_info": "Indtast kontaktoplysninger"
+            "contact_info": "Indtast kontaktinformation"
           },
           "formatting": {
             "first_name_too_long": "Fornavn indeholder for mange bogstaver",
             "last_name_too_long": "Efternavnet indeholder for mange bogstaver",
             "address_too_long": "Adressen er for lang"
           },
-          "select_different_shipping_address_to_resolve_errors": "Din leveringsadresse er ugyldig. Vælg en anden adresse eller brug en ny."
+          "select_different_shipping_address_to_resolve_errors": "Din leveringsadresse er ugyldig. Vælg en anden adresse eller brug en ny.",
+          "subscription_review_required": "Din ordre inkluderer et abonnement. Du skal gennemgå betingelserne nedenfor, før du fuldfører din ordre.",
+          "terminal": "Der var et problem med {{walletName}}. Brug en anden betalingsmetode.",
+          "processing_error_checkout_as_guest": "Der opstod et problem med at behandle din betaling. Prøv igen eller {{checkout_as_guest_link}}."
         },
         "scrim": {
           "continue_purchase_in_window": "Fortsæt dit køb i {{walletName}} vinduet",
-          "and_return_to_checkout": "og vend tilbage til Checkout"
+          "and_return_to_checkout": "og returner til Kassen"
         },
         "place_order": "Afgiv ordre"
       },
@@ -2802,23 +2806,25 @@
       "sorting": {
         "best_selling": "Bedst sælgende",
         "za": "Alfabetisk, Z-A",
-        "date_ascending": "Dato, ældst til nyest",
-        "date_descending": "Dato, ny til gammel"
+        "date_ascending": "Dato, gammel til ny",
+        "date_descending": "Dato, ny til gammel",
+        "az": "Alfabetisk, A-Z",
+        "most_relevant": "Mest relevant"
       }
     },
     "errors": {
-      "blank": "kan ikke være tom",
+      "blank": "kan ikke være tomt",
       "blocked_address": "Denne placering understøttes ikke",
-      "credit_card_session_expired": "Kreditkortautorisationen er udløbet, indtast venligst dine betalingsoplysninger igen. Dit kort er ikke blevet opkrævet.",
-      "empty": "kan ikke være tom",
+      "credit_card_session_expired": "Autorisation af kreditkortet er udløbet, venligst indtast dine betalingsoplysninger igen. Dit kort er ikke blevet opkrævet.",
+      "empty": "kan ikke være tomt",
       "invalid_email": "skal være en gyldig e-mailadresse",
       "discount_expired": "Denne rabat er ikke længere gyldig",
       "discount_limit_reached": "Denne rabat har nået sin brugsgrænse",
       "discount_not_found": "Kan ikke finde en gyldig rabat, der matcher den indtastede kode",
       "customer_already_used_once_per_customer_discount_notice": "Denne rabat har nået sin brugsgrænse",
-      "gift_card_already_applied": "Koden er allerede blevet anvendt ved din betaling",
-      "gift_card_currency_mismatch": "Dit gavekort er i %{gift_card_currency}. Kontakt os for at få det udstedt igen i %{checkout_currency}.",
-      "gift_card_depleted": "Der er ikke flere midler tilbage på dette gavekort",
+      "gift_card_already_applied": "Koden er allerede blevet anvendt på din kasse.",
+      "gift_card_currency_mismatch": "Dette gavekort kan ikke bruges til dette køb. Kontakt %{shop_name} for at få det genudstedt.",
+      "gift_card_depleted": "Der er ingen penge tilbage på dette gavekort",
       "gift_card_expired": "Gavekortet er udløbet",
       "contains_html_tags": "kan ikke indeholde HTML-tags",
       "password_mismatch": "skal matche den angivne adgangskode",
@@ -2959,38 +2965,42 @@
     "email_marketing": {
       "subscribed": {
         "confirmation": "Tak fordi du har tilmeldt dig vores mailingliste.",
-        "unsubscribe": "Afmeld abonnement"
+        "unsubscribe": "Afmeld"
       },
       "unsubscribed": {
-        "confirmation": "Du er afmeldt vores mailingliste.",
-        "preview": "Du forhåndsviser, hvad kunderne vil se, når de afmelder sig."
+        "confirmation": "Du har afmeldt dig vores nyhedsbrev.",
+        "preview": "Du forhåndsviser, hvad kunderne vil se, når de afmelder sig.",
+        "disclaimer": "Du vil ikke modtage flere marketingopdateringer fra os. Du kan tilmelde dig igen når som helst."
       },
       "open_tracking": {
         "opt_in": {
           "opted_in_html": "<b>Du har tilmeldt dig e-mail åbningssporing.</b>",
-          "visibility": "Åbningsrater for e-mails vil blive rapporteret anonymt. Vi vil kun kunne se, om du har åbnet en e-mail som en del af en samlet åbningsrate for e-mails.",
+          "visibility": "E-mail åbningsrater vil blive rapporteret anonymt. Vi vil kun se, om du har åbnet en e-mail som en del af en samlet e-mail åbningsrate.",
           "opt_out_html": "Du kan <a style='text-decoration:underline;' href='%{link}'>fravælge</a> sporing af åbning af e-mails, hvis du ikke ønsker at dele disse oplysninger.",
-          "preview_bar": "Du forhåndsviser, hvad kunderne vil se, når de vælger at tilmelde sig e-mail-åbningssporing."
+          "preview_bar": "Du får et forhåndsvisning af, hvad kunderne vil se, når de tilmelder sig e-mail åbningssporing."
         },
         "opt_out": {
-          "opted_out_html": "<b>Du har fravalgt e-mail åbningsovervågning.</b>",
-          "visibility": "Vi vil ikke kunne se, om du har åbnet vores e-mails.",
-          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Tilmeld dig</a> til sporing af åbning af e-mails.",
-          "preview_bar": "Du forhåndsviser, hvad kunderne vil se, når de fravælger e-mail-åbningssporing."
+          "opted_out_html": "<b>Du har fravalgt e-mail åbningssporing.</b>",
+          "visibility": "Vi vil ikke se, om du har åbnet vores e-mails.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Tilmeld dig</a> e-mail-åbningssporing.",
+          "preview_bar": "Du får et forhåndsvisning af, hvad kunderne vil se, når de fravælger e-mail åbning tracking."
         },
         "no_longer_track": {
-          "status_html": "<b>Vi sporer ikke længere nogen e-mail-åbninger.</b>",
+          "status_html": "<b>Vi sporer ikke længere nogen e-mail åbninger.</b>",
           "privacy_policy": "Efter denne e-mail blev sendt, opdaterede vi vores privatlivspolitik, og vi sporer ikke længere åbninger."
         },
         "track": {
-          "status_html": "<b>Åbning af e-mail spores.</b>",
-          "visibility": "Vi vil kun kunne se, om du har åbnet e-mailen, som en del af den samlede åbningsrate for e-mails."
+          "status_html": "<b>Email åbning tracking er rapporteret.</b>",
+          "visibility": "Vi vil kun se, om du har åbnet e-mailen, som en del af den samlede åbningsrate for e-mails."
         },
         "updated_policy": {
-          "status_html": "<b>Åbning af e-mail spores.</b>",
-          "visibility": "Vi har opdateret vores politik og sporer nu åbning af e-mails. Åbningsrater for e-mails vil blive rapporteret anonymt. Vi vil kun kunne se, om du har åbnet en e-mail som en del af den samlede åbningsrate for e-mails.",
-          "opt_out_html": "Hvis du ikke ønsker at dele disse oplysninger, kan du <a style='text-decoration:underline;' href='%{link}'>framelde dig.</a>"
+          "status_html": "<b>Email åbning tracking er rapporteret.</b>",
+          "visibility": "Vi har opdateret vores politik, og nu sporer vi åbninger af e-mails. Åbningsrater for e-mails vil blive rapporteret anonymt. Vi vil kun se, om du har åbnet en e-mail som en del af den samlede åbningsrate for e-mails.",
+          "opt_out_html": "Hvis du ikke ønsker at dele disse oplysninger, kan du <a style='text-decoration:underline;' href='%{link}'>afmelde dig.</a>"
         }
+      },
+      "sms_unsubscribe_confirm": {
+        "message": "Er du sikker på, at du vil afmelde dig SMS-markedsføring?"
       }
     },
     "filters": {
