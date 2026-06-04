@@ -2249,12 +2249,12 @@
         "amazon_payments_could_not_enqueue_authorize": "Det uppstod ett problem med att behandla din betalning. Försök igen eller använd en annan betalningsmetod.",
         "amount_left_to_pay_label": "Betalning förfaller:",
         "discount_codes_removed_summary": {
-          "one": "Rabattkoden %{count} togs bort",
-          "other": "%{count} rabattkoder togs bort"
+          "one": "%{count} rabattkod har tagits bort",
+          "other": "%{count} rabattkoder har tagits bort"
         },
         "apply_gift_card_button_label": "Ansök",
         "gift_card_balance_label": "Balans:",
-        "detected_card_brand": "Upptäckt kortmärke: {brand}",
+        "detected_card_brand": "Upptäckte kortmärke: {brand}",
         "credit_card_vaulting_sign_in_banner_title": "Spara ditt kreditkort",
         "credit_card_vaulting_sign_in_banner_info": "Logga in eller skapa ett konto för att spara ditt kreditkort för framtida köp.",
         "ftd_vault_credit_card_label": "Spara detta kreditkort på mitt konto för en snabbare utcheckning",
@@ -2264,9 +2264,9 @@
         "card_expired": "Utgått",
         "card_expiry_label": "Utgångsdatum (MM / YY)",
         "card_expiry_placeholder": "Utgångsdatum (MM / YY)",
-        "delete_customer_mandate_modal_body": "Om du tar bort detta kort måste du lägga till det igen innan du kan använda det för betalningar.",
+        "delete_customer_mandate_modal_body": "Om du tar bort detta kort måste du lägga till det igen innan du använder det för betalningar.",
         "delete_customer_mandate_modal_confirm": "Ta bort kort",
-        "card_verification_confirm": "För verifieringsändamål, ange ditt korts säkerhetskod.",
+        "card_verification_confirm": "För verifieringsändamål, ange din karts säkerhetskod.",
         "card_expiry_date_explanation": "Kortets utgångsdatum i format: månad, månad, år, år",
         "card_verification_value_explanation": "3-siffrig säkerhetskod som vanligtvis finns på baksidan av ditt kort. American Express-kort har en 4-siffrig kod som finns på framsidan.",
         "card_start_label": "Utgivningsdatum (MM / YY)",
@@ -2281,14 +2281,18 @@
         "expiry_long": "(Upphör %{month}/%{year})",
         "expiry_short": "(Giltigt till %{month}/%{year})",
         "crypto_payment_method": {
-          "description": "Anslut säkert till din plånbok på Base-nätverket",
-          "tooltip": "Ditt plånboksaldo och din adress kommer inte att delas och endast det begärda beloppet kan dras."
+          "description": "Säkert anslut din plånbok. Din balans och adress kommer inte att delas.",
+          "tooltip": "Din plånboksbalans och adress kommer inte att delas och endast det begärda beloppet kan dras av",
+          "cashback_descriptor": {
+            "one": "Du kommer att få din cashback efter %{count} dag",
+            "other": "Du kommer att få din cashback efter %{count} dagar"
+          }
         },
         "crypto_modal": {
           "error": {
             "close": "stäng",
             "sandbox_error": "Något gick fel",
-            "web_component_error": "Det uppstod ett problem vid inläsning av denna sida"
+            "web_component_error": "Det uppstod ett problem med att ladda denna sida"
           }
         },
         "different_credit_card_label": "Använd ett annat kreditkort",
@@ -2322,7 +2326,7 @@
         "sofort_label": "Omedelbar banköverföring",
         "paypal_wallet_label": "PayPal-plånbok",
         "shop_pay_installments_label": "Shop Pay delbetalningar",
-        "continue_to_guest_checkout": "Fortsätt till gästutcheckning",
+        "continue_to_guest_checkout": "Fortsätt till gästkassa",
         "bancontact_label": "Bancontact",
         "multibanco_label": "Multibank",
         "eps_label": "eps-överföring",
@@ -2344,7 +2348,7 @@
         "purchase_options_agreement_label": "En eller flera varor i din kundvagn är ett uppskjutet eller återkommande köp. Genom att fortsätta med din betalning godkänner du att din betalningsmetod automatiskt debiteras till det pris och den frekvens som anges på denna sida tills det avslutas eller du avbokar. Alla avbokningar omfattas av %{cancellation_policy_label}.",
         "purchase_options_agreement_label_html": "Jag förstår att en eller flera varor i min kundvagn är ett uppskjutet eller återkommande köp. Genom att fortsätta godkänner jag\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">avbokningsvillkoren</a>\noch ger dig tillåtelse att debitera mitt betalningssätt till de priser, med den frekvens och på de datum som anges på denna sida tills min\nbeställning är fullbordad eller jag avbokar, om det är tillåtet.",
         "purchase_options_agreement_label_wallets": "Genom att fortsätta med din betalning godkänner du de framtida avgifter som anges på denna sida samt avbokningspolicyn.",
-        "change_currency_section_description": "Välj ett valutalternativ",
+        "change_currency_section_description": "Välj ett val av valuta",
         "no_real_orders_dev_store": "Den här butiken kan inte ta emot riktiga beställningar eller riktiga betalningar.",
         "waiting_on_payment_methods": "Hämtar tillgängliga betalningsmetoder...",
         "apple_pay_payment_error": "Din betalning kunde inte slutföras. Försök igen eller använd en annan betalningsmetod.",
@@ -2463,7 +2467,7 @@
         },
         "gift_card_checkbox_label": "Använd presentkort",
         "custom_onsite_payment_method_modal": {
-          "title": "Anpassad bekräftelse av betalning på plats"
+          "title": "Anpassad betalningsbekräftelse på plats"
         },
         "markets_pro_disclaimer_label": "Genom att lägga din beställning godkänner du att köpa från Global-e som den registrerade handlaren, underkastad Global-e:s %{markets_pro_terms} och %{privacy_policy}, och att dela din information med %{shop_name}.",
         "markets_pro_disclaimer_terms_and_conditions": "Villkor och bestämmelser",
@@ -2493,7 +2497,13 @@
         "bank_account_disclaimer": "ACH-betalningar kan ta upp till 4 arbetsdagar att behandla.",
         "bank_account_choose": "Välj ett konto för att säkert slutföra ditt köp",
         "bank_account_missing": "Bankkonto måste kopplas ihop",
-        "bank_account_generic_error": "Kunde inte lägga till bankkonto. Försök igen senare."
+        "bank_account_generic_error": "Kunde inte lägga till bankkonto. Försök igen senare.",
+        "discount_show_more_warnings": {
+          "one": "Visa %{count} fler",
+          "other": "Visa %{count} fler"
+        },
+        "delete_customer_mandate_modal_title": "Ta bort detta betalningskort?",
+        "choose_new_payment_method": "Välj en ny betalningsmetod"
       },
       "field_errors": {
         "address_address1_too_long": "Den första adressraden är för lång (maximalt 255 tecken)",
