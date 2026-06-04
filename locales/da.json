@@ -958,23 +958,23 @@
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte.",
-        "shipping_method": "Forsendelsesmulighederne er ændret for din ordre. Gennemse dit valg.",
+        "shipping_method": "Forsendelsesmulighederne er ændret for din ordre. Gennemgå dit valg.",
         "shipping_method_not_available": "Din indkøbskurv er blevet opdateret, og de varer, du har tilføjet, kan ikke sendes til din adresse. Fjern varerne for at fuldføre din ordre.",
         "shipping_method_not_available_generic": {
           "one": "Din ordre kan ikke sendes til den valgte adresse. Gennemgå din adresse for at sikre, at den er korrekt, og prøv igen, eller vælg en anden adresse.",
-          "other": "Nogle varer i din kurv kan ikke sendes til den adresse, du har indtastet. Gennemgå din adresse for at sikre, at den er korrekt, og prøv igen, eller vælg en anden adresse."
+          "other": "Nogle varer i din indkøbskurv kan ikke sendes til den adresse, du har indtastet. Gennemgå din adresse for at sikre, at den er korrekt, og prøv igen, eller vælg en anden adresse."
         },
-        "shipping_method_not_available_due_to_unsatisfied_conditions": "Varer i kurven opfylder ikke pris- eller vægtkravene for at kvalificere til forsendelse. Opdater din kurv og prøv igen.",
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Varerne i indkøbskurven opfylder ikke pris- eller vægtkravene for at kvalificere sig til forsendelse. Opdater din indkøbskurv og prøv igen.",
         "shipping_method_not_available_updated": {
-          "one": "Den vare, du har tilføjet, kan ikke sendes til din adresse. Fjern den for at gennemføre Checkout, eller kontakt butikken.",
-          "other": "En eller flere varer, du har tilføjet, kan ikke sendes til din adresse. Fjern dem for at gennemføre Checkout, eller kontakt butikken."
+          "one": "Den vare, du har tilføjet, kan ikke sendes til din placering. Fjern den for at betale, eller kontakt butikken.",
+          "other": "En eller flere varer, du har tilføjet, kan ikke sendes til din placering. Fjern dem for at gennemføre købet, eller kontakt butikken."
         },
         "payment_method_not_supported": "Du kan ikke bruge denne betalingsmetode til %{country}. Brug en anden betalingsmetode for at sende til dette land.",
         "empty_state": "Indtast din leveringsadresse for at se tilgængelige leveringsmetoder.",
         "title": "Forsendelse ikke tilgængelig",
         "invalid_selected_address_with_update_link": "Den valgte leveringsadresse er ikke gyldig. %{update_address_link} eller vælg en anden adresse",
         "unavailable_address_country": "Forsendelse er ikke tilgængelig i det land, du har valgt. Brug en anden adresse for at fortsætte",
-        "unavailable_selected_address": "Forsendelse ikke tilgængelig for den valgte adresse",
+        "unavailable_selected_address": "Forsendelse er ikke tilgængelig for den valgte adresse",
         "unavailable_selected_address_for_region": "Forsendelse er ikke tilgængelig for {{region}}. Vælg en anden adresse for at fortsætte"
       },
       "payment_errors": {
@@ -2138,15 +2138,15 @@
         }
       },
       "shop_policies": {
-        "privacy_policy": "Fortrolighedspolitik",
-        "terms_of_service": "Vilkår for service",
+        "privacy_policy": "Privatlivspolitik",
+        "terms_of_service": "Brugsvilkår",
         "shipping_policy": "Forsendelse",
         "terms_of_sale": "Salgsbetingelser",
         "subscription_policy": "Aflysninger",
-        "purchase_options_policy": "Købsmulighedspolitik",
+        "purchase_options_policy": "Købsmuligheder politik",
         "purchase_options_cancellation_policy": "Aflysninger",
-        "cookie_preferences": "Småkager",
-        "terms_and_policies": "Vilkår og retningslinjer"
+        "cookie_preferences": "Cookies",
+        "terms_and_policies": "Vilkår og politikker"
       },
       "remote_policies": {
         "unavailable_policy": "Der er ikke givet nogen %{policy_name} for denne butik. For yderligere information, kontakt venligst %{shop_name} direkte."
@@ -2494,12 +2494,12 @@
       "shop_pay_external": {
         "title": "Shop Pay Betaling",
         "errors": {
-          "problem_loading": "Der opstod et problem med at indlæse Shop Pay",
+          "problem_loading": "Der er et problem med at indlæse Shop Pay",
           "try_again_later": "Tjek din forbindelse eller luk dette vindue og prøv igen om et øjeblik.",
-          "checkout_has_expired": "Din betaling er udløbet. Luk dette vindue og prøv at betale igen fra {{shopName}}."
+          "checkout_has_expired": "Din kasse er udløbet. Luk dette vindue og prøv at tjekke ud igen fra {{shopName}}."
         },
         "return_to_store": "Gå tilbage til {{shopName}}",
-        "return_to_store_simple": "Vend tilbage til butikken"
+        "return_to_store_simple": "Gå tilbage til butikken"
       },
       "wallets": {
         "return_to_store": "Vend tilbage til butikken",
@@ -2663,8 +2663,28 @@
         }
       },
       "split_delivery": {
-        "delivery_method": "Opdelt leveringsmetode",
-        "delivery_method_menu": "Opdel leveringsmetode-menu"
+        "delivery_method": "Split leveringsmetode",
+        "delivery_method_menu": "Split leveringsmetode menu",
+        "inventory_issue_banner": {
+          "heading": {
+            "cannot_be_picked_up": {
+              "one": "%{count} vare kan ikke hentes"
+            },
+            "cannot_be_shipped": {
+              "one": "%{count} vare kan ikke sendes",
+              "other": "%{count} varer kan ikke sendes"
+            }
+          },
+          "pick_them_up_in_store": {
+            "one": "Hent det i butikken"
+          }
+        },
+        "cross_border": {
+          "modal": {
+            "content": "Dine afhentnings- og leveringssteder skal være i samme land. Hvis du ændrer land, nulstilles alle varer til levering.",
+            "country_changed_heading": "Land ændret"
+          }
+        }
       },
       "billing": {
         "billing_address_title": "Faktura til",

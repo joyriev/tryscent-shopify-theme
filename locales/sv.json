@@ -1784,8 +1784,8 @@
         "submit": "Skicka in"
       },
       "payment_collection": {
-        "cancelled": "Denna betalning krävs inte längre. Besök ordersidan för detaljer.",
-        "paid": "Denna betalning har redan skickats in. Besök ordersidan för detaljer."
+        "cancelled": "Denna betalning krävs inte längre. Besök beställningssidan för detaljer.",
+        "paid": "Denna betalning har redan skickats. Besök beställningssidan för detaljer."
       },
       "contact": {
         "shipping_used_as_billing_notice": "Detta kommer också att användas som din faktureringsadress för denna beställning.",
@@ -2323,7 +2323,7 @@
         "payment_method_not_available_for_shipping_address_error": "Betalningsmetod är inte tillgänglig för den valda leveransadressen. Välj en annan betalningsmetod.",
         "billing_address_not_supported_for_payment_method_error": "Denna betalningsmetod är inte tillgänglig för din faktureringsadress och valuta. Försök med en annan betalningsmetod.",
         "generic_incorrect_card_info": "Dina betalningsuppgifter kunde inte verifieras. Kontrollera dina kortuppgifter och försök igen.",
-        "sofort_label": "Omedelbar banköverföring",
+        "sofort_label": "Sofort banköverföring",
         "paypal_wallet_label": "PayPal-plånbok",
         "shop_pay_installments_label": "Handla med delbetalningar",
         "continue_to_guest_checkout": "Fortsätt till gästkassa",
@@ -2333,18 +2333,18 @@
         "afterpay_label": "Afterpay",
         "cashapppay_label": "Cash App Betala",
         "blik_label": "BLIK",
-        "twint_label": "TVILLING",
-        "swish_label": "Snabb betalning",
+        "twint_label": "TWINT",
+        "swish_label": "Swish",
         "grabpay_label": "GrabPay",
         "kcp_creditcard_label": "KCP Kreditkort",
-        "usdc_cashback_title": "1 % cashback",
-        "usdc_cashback_additional_info": "Få 1 % tillbaka i USDC direkt i din plånbok.",
+        "usdc_cashback_title": "%{incentive_percentage}% återbetalning",
+        "usdc_cashback_additional_info": "Betala med USDC på Base och få %{incentive_percentage}% tillbaka i din plånbok om 30 dagar.",
         "purchase_options_card_update_agreement_label_html": "Genom att uppdatera din betalningsmetod godkänner du betalningar för alla återkommande eller uppskjutna köp enligt denna butiks <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">avbokningspolicy</a>.",
-        "subscription_card_update_agreement_label": "Att ändra betalningsmetod kommer att uppdatera din prenumeration och framtida återkommande betalningar.",
-        "subscription_agreement_label": "En eller flera varor i din kundvagn är ett uppskjutet köp eller ett abonnemang. Genom att fortsätta med din betalning godkänner du att din betalningsmetod automatiskt debiteras till det pris och den frekvens som anges på denna sida tills det avslutas eller du avbryter. Alla avbokningar omfattas av %{cancelled}.",
+        "subscription_card_update_agreement_label": "Att ändra betalningsmetoden kommer att uppdatera din prenumeration och framtida återkommande betalningar.",
+        "subscription_agreement_label": "En eller flera artiklar i din kundvagn är ett uppskjutet eller abonnemangsköp. Genom att fortsätta med din betalning godkänner du att din betalningsmetod automatiskt kommer att debiteras till det pris och med den frekvens som anges på denna sida tills det avslutas eller du avbryter. Alla avbokningar är föremål för %{cancelled}.",
         "subscription_agreement_cancelled": "avbokningspolicy",
         "subscription_heading": "Prenumerationsavtal",
-        "subscription_agreement_label_html": "Jag förstår att jag godkänner en prenumeration. Den kommer att förnyas till det pris och med den frekvens som anges tills den avslutas eller <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">avbryts</a>.",
+        "subscription_agreement_label_html": "Jag förstår att jag godkänner en prenumeration. Den kommer att förnyas till det angivna priset och med den angivna frekvensen tills den avslutas eller\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">avbryts</a>.",
         "purchase_options_agreement_label": "En eller flera artiklar i din kundvagn är en uppskjuten, prenumeration eller återkommande köp. Genom att fortsätta med din betalning godkänner du att din betalningsmetod automatiskt kommer att debiteras till det pris och med den frekvens som anges på denna sida tills det avslutas eller du avbokar. Alla avbokningar omfattas av %{cancellation_policy_label}.",
         "purchase_options_agreement_label_html": "Jag förstår att en eller flera varor i min kundvagn är ett uppskjutet, prenumerations- eller återkommande köp. Genom att fortsätta godkänner jag\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">avbokningspolicyn</a>\noch ger dig tillåtelse att debitera min betalningsmetod till de priser, den frekvens och de datum som anges på denna sida tills min\nbeställning är fullföljd eller jag avbokar, om det är tillåtet.",
         "purchase_options_agreement_label_wallets": "Genom att fortsätta med din betalning godkänner du de framtida avgifter som anges på denna sida och avbokningspolicyn.",
@@ -2373,7 +2373,7 @@
         "order_covered_by_store_credit_notice": "Din beställning täcks av din butikskredit.",
         "order_covered_by_redeemables_notice": "Din beställning är täckt.",
         "store_credit": {
-          "label": "Butikskredit",
+          "label": "butikskredit",
           "apply_label": "Använd butikskredit",
           "add_label": "Lägg till butikskredit",
           "manage_label": "Hantera butikskredit",
@@ -2382,8 +2382,8 @@
         },
         "clear": "Klar",
         "billing_must_match_shipping_notice": "Din betalningsmetods faktureringsadress måste matcha leveransadressen.",
-        "use_order_billing_address_label": "Använd beställningens faktureringsadress",
-        "use_location_billing_address_label": "Använd faktureringsadress för platsen",
+        "use_order_billing_address_label": "Använd beställningsfaktureringsadress",
+        "use_location_billing_address_label": "Använd platsens faktureringsadress",
         "no_working_method_error": "Denna butik kan inte ta emot betalningar just nu. Uppdatera denna sida eller kom tillbaka senare.",
         "brand_not_available": "Denna butik accepterar inte {{brand}}. Använd ett annat kort för att betala.",
         "shipping_rate_updated": "Tillgängliga fraktmetoder har uppdaterats. Bekräfta ditt val innan du går till kassan.",
@@ -2403,7 +2403,7 @@
           }
         },
         "simulated_checkout": "Förhandsvisning kommer snart",
-        "simulated_express_checkout": "Plånböcker är inte tillgängliga i redigeringsförhandsvisningen på grund av din region eller webbläsare",
+        "simulated_express_checkout": "Plånböcker är inte tillgängliga i redigerarens förhandsgranskning på grund av din region eller webbläsare",
         "vaulting_agreement_label": "Spara mina betalningsuppgifter hos %{company} för en snabbare kassa.",
         "business_customer_vaulting_payment_label": "Spara denna betalningsmetod vid kassan och auktorisera %{company} att debitera den för framtida köp för denna plats. Alla kontakter som är kopplade till denna plats kan använda betalningsmetoden.",
         "business_customer_with_bank_account_vaulting_payment_label": "Spara denna betalningsmetod vid kassan och auktorisera %{company} att debitera ditt konto för framtida köp som du godkänner för denna plats, tills du avbryter. Alla kontakter som är kopplade till denna plats kan använda betalningsmetoden.",
@@ -2483,7 +2483,7 @@
         },
         "alternative_payment_currency_total_manual_payment_notice": "Observera: det konverterade totalbeloppet är %{amount_due}.",
         "waiting_on_taxes_message": "Om dina skatter inte beräknas inom de närmaste sekunderna, uppdatera sidan.",
-        "waiting_on_taxes_notice": "Beräkna skatter",
+        "waiting_on_taxes_notice": "Beräknar skatter",
         "payment_method_rollup_accessibility_label": "Betalningsmetodalternativ",
         "payment_method_update_failed": "Uppdatering av betalningsmetod misslyckades.",
         "payment_method_incompatible_with_payment_terms": "Betalningsmetoden är inkompatibel med betalningsvillkoren.",
@@ -2519,7 +2519,13 @@
         "paypal": {
           "connect": "Klicka för att koppla ditt PayPal-konto"
         },
-        "separate_payments_label": "Dina artiklar kommer från mer än en butik. Du kommer att debiteras i %{separate_payments_link}."
+        "separate_payments_label": "Dina artiklar kommer från mer än en butik. Du kommer att debiteras i %{separate_payments_link}.",
+        "taxes_not_included": "Skatter ingår inte",
+        "use_location_shipping_address_label": "Använd platsens leveransadress",
+        "vault_for_payment_later": {
+          "pay_button_label": "Lägg beställning",
+          "notice": "Du kommer inte att debiteras nu. Genom att fortsätta med din betalning godkänner du att din betalningsmetod kommer att debiteras när din beställning behandlas."
+        }
       },
       "field_errors": {
         "address_address1_too_long": "Den första adressraden är för lång (maximalt 255 tecken)",
@@ -2633,7 +2639,7 @@
         "discount_not_supported": "Instruktionen för att tillämpa varudiskontot stöder inte denna typ av rabatt."
       },
       "payment_errors": {
-        "amount_too_small": "Det minsta betalningsbeloppet måste vara högre än 0,50 USD. Försök igen med ett högre belopp.",
+        "amount_too_small": "Minimi beloppet för betalning måste vara högre än $0,50 USD. Försök igen med ett högre belopp.",
         "generic_error": "Det uppstod ett problem vid behandlingen av din betalning. Försök igen eller använd en annan betalningsmetod.",
         "rejected_transaction": "Din betalning avvisades. Försök igen eller använd en annan betalningsmetod.",
         "credit_card_processing": "Din betalning kan inte behandlas på grund av tekniska problem. Försök igen om några minuter eller använd en annan betalningsmetod.",
@@ -2671,7 +2677,8 @@
         "shop_pay_wallet_not_available": "Shop Pay är inte tillgängligt för denna kassa.",
         "paypal_over_capture": "Ditt orderbelopp har uppdaterats. Betala med {{walletName}} för att slutföra din beställning.",
         "captcha_required": "Ange betalningsuppgifter och lös captcha för att slutföra ditt köp.",
-        "captcha_required_without_payment_information": "Lös captcha för att slutföra ditt köp."
+        "captcha_required_without_payment_information": "Lös captcha för att slutföra ditt köp.",
+        "call_issuer": "Ditt kort avslogs. Använd en annan betalningsmetod eller kontakta din bank för mer information."
       },
       "shipping_errors": {
         "shipping_method": "Fraktalternativen har ändrats för din beställning. Granska ditt val.",
@@ -2735,7 +2742,9 @@
         },
         "external": {
           "instructions": "Bekräfta betalningen i din app för att slutföra detta köp"
-        }
+        },
+        "timer_message": "Du har {{timeLeft}} att betala",
+        "copy_text": "Kopiera {{paymentMethod}}-koden"
       },
       "failed_payment": {
         "page_title": "Betalningen kunde inte behandlas",
