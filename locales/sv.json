@@ -2258,21 +2258,21 @@
         "credit_card_vaulting_sign_in_banner_title": "Spara ditt kreditkort",
         "credit_card_vaulting_sign_in_banner_info": "Logga in eller skapa ett konto för att spara ditt kreditkort för framtida köp.",
         "ftd_vault_credit_card_label": "Spara detta kreditkort på mitt konto för en snabbare utcheckning",
-        "card_information_notice": "Alla transaktioner är säkra och krypterade. Kreditkortsuppgifter sparas aldrig.",
+        "card_information_notice": "Alla transaktioner är säkra och krypterade. Kreditkortsinformation lagras aldrig.",
         "name_on_card_label": "Namn på kortet",
         "name_on_card_placeholder": "Namn på kortet",
-        "card_expired": "Utgånget",
-        "card_expiry_label": "Utgångsdatum (MM / ÅÅ)",
-        "card_expiry_placeholder": "Utgångsdatum (MM / ÅÅ)",
+        "card_expired": "Utgått",
+        "card_expiry_label": "Utgångsdatum (MM / YY)",
+        "card_expiry_placeholder": "Utgångsdatum (MM / YY)",
         "delete_customer_mandate_modal_body": "Om du tar bort detta kort måste du lägga till det igen innan du kan använda det för betalningar.",
         "delete_customer_mandate_modal_confirm": "Ta bort kort",
         "card_verification_confirm": "För verifieringsändamål, ange ditt korts säkerhetskod.",
-        "card_expiry_date_explanation": "Kortets utgångsdatum i formatet: månad, månad, år, år",
+        "card_expiry_date_explanation": "Kortets utgångsdatum i format: månad, månad, år, år",
         "card_verification_value_explanation": "3-siffrig säkerhetskod som vanligtvis finns på baksidan av ditt kort. American Express-kort har en 4-siffrig kod som finns på framsidan.",
-        "card_start_label": "Utgivningsdatum (MM / ÅÅ)",
-        "card_start_placeholder": "Utgivningsdatum (MM / ÅÅ)",
-        "card_issue_number_label": "Utgåvenummer",
-        "card_issue_number_placeholder": "Utgåvenummer",
+        "card_start_label": "Utgivningsdatum (MM / YY)",
+        "card_start_placeholder": "Utgivningsdatum (MM / YY)",
+        "card_issue_number_label": "Utgåvanummer",
+        "card_issue_number_placeholder": "Utgåvanummer",
         "paypal_disconnect": "Koppla bort",
         "ends_with_label": "slutar med %{last_digits}",
         "payment_method_saved": "Betalningsmetod sparad",
@@ -2293,8 +2293,8 @@
         },
         "different_credit_card_label": "Använd ett annat kreditkort",
         "same_billing_address_label": "Samma som leveransadress",
-        "billing_address_associated_with_mandate": "Använd adress kopplad till betalningsmetoden",
-        "billing_address_associated_with_mandate_info": "Om du vill ändra din faktureringsadress, ta bort och ange dina kreditkortsuppgifter på nytt",
+        "billing_address_associated_with_mandate": "Använd adressen kopplad till betalningsmetoden",
+        "billing_address_associated_with_mandate_info": "Om du vill ändra din faktureringsadress, ta bort och ange dina kreditkortsuppgifter igen",
         "free_order_notice_html": "Din beställning är <strong>gratis</strong>. Ingen betalning krävs.",
         "express_checkout_free_order": "Du kommer inte att debiteras för en gratis beställning",
         "order_covered_by_gift_cards_notice": {
@@ -2309,15 +2309,15 @@
         "no_js_credit_card_fields_redirect_hint": "Du kommer att omdirigeras för att lägga till din betalningsinformation.",
         "card_fields_container_prefix": "Fältbehållare för:",
         "card_fields_unavailable_html": {
-          "one": "Betalningar med kredit- och betalkort är inte tillgängliga just nu.<br><a href=\"%{current_url}\">Uppdatera denna sida</a> eller försök igen senare.",
-          "other": "Betalningar med kredit- och betalkort är inte tillgängliga just nu.<br><a href=\"%{current_url}\">Uppdatera denna sida</a> eller prova en annan betalningsmetod."
+          "one": "Betalningar med kredit- och betalkort är inte tillgängliga just nu.<br><a href=\"%{current_url}\">Uppdatera den här sidan</a> eller försök igen senare.",
+          "other": "Betalningar med kredit- och betalkort är inte tillgängliga just nu.<br><a href=\"%{current_url}\">Uppdatera den här sidan</a> eller prova en annan betalningsmetod."
         },
-        "card_fields_processing_error": "Det uppstod ett problem vid betalningen. Försök att uppdatera sidan eller kontrollera din internetanslutning.",
+        "card_fields_processing_error": "Det uppstod ett problem med att behandla betalningen. Försök att uppdatera denna sida eller kontrollera din internetanslutning.",
         "no_method_error": "Den här butiken kan inte ta emot betalningar just nu.",
         "not_configured_error": "Den här butiken kan inte ta emot betalningar just nu.",
         "shop_pay_ideal_unavailable_error": "iDEAL är inte tillgängligt för denna beställning. Välj en annan betalningsmetod.",
         "payment_method_not_available_for_shipping_address_error": "Betalningsmetod inte tillgänglig för vald leveransadress. Välj en annan betalningsmetod.",
-        "billing_address_not_supported_for_payment_method_error": "Denna betalningsmetod är inte tillgänglig för din faktureringsadress och valuta. Prova en annan betalningsmetod.",
+        "billing_address_not_supported_for_payment_method_error": "Denna betalningsmetod är inte tillgänglig för din faktureringsadress och valuta. Försök med en annan betalningsmetod.",
         "generic_incorrect_card_info": "Dina betalningsuppgifter kunde inte verifieras. Kontrollera dina kortuppgifter och försök igen.",
         "sofort_label": "Omedelbar banköverföring",
         "paypal_wallet_label": "PayPal-plånbok",
@@ -2328,7 +2328,7 @@
         "eps_label": "eps-överföring",
         "afterpay_label": "Afterpay",
         "cashapppay_label": "Cash App Betala",
-        "blik_label": "Blänk",
+        "blik_label": "BLIK",
         "twint_label": "TVILLING",
         "swish_label": "Snabb betalning",
         "grabpay_label": "FåBetalning",
@@ -2375,7 +2375,7 @@
           "no_fixed_selling_plans": "Du kan inte använda butikskredit med uppskjutna köpalternativ"
         },
         "clear": "Klar",
-        "billing_must_match_shipping_notice": "Din betalningsmetods faktureringsadress måste stämma överens med leveransadressen.",
+        "billing_must_match_shipping_notice": "Din betalningsmetods faktureringsadress måste matcha leveransadressen.",
         "use_order_billing_address_label": "Använd beställningens faktureringsadress",
         "use_location_billing_address_label": "Använd faktureringsadress för platsen",
         "no_working_method_error": "Den här butiken kan inte ta emot betalningar just nu. Uppdatera sidan eller kom tillbaka senare.",
@@ -2388,7 +2388,8 @@
         "card_fields": {
           "errors": {
             "required": {
-              "issue_number": "Ange ett giltigt ärendenummer"
+              "issue_number": "Ange ett giltigt ärendenummer",
+              "issue_date": "Ange ett giltigt utgivningsdatum"
             },
             "invalid": {
               "verification_value": "Ange en giltig CVV eller säkerhetskod"
@@ -2398,8 +2399,8 @@
         "simulated_checkout": "Förhandsvisning kommer snart",
         "simulated_express_checkout": "Plånböcker är inte tillgängliga i redigeringsförhandsvisningen på grund av din region eller webbläsare",
         "vaulting_agreement_label": "Spara mina betalningsuppgifter hos %{company} för en snabbare kassa.",
-        "business_customer_vaulting_payment_label": "Spara denna betalningsmetod vid kassan och ge %{company} tillåtelse att debitera den för framtida köp på denna plats. Alla kontakter som är knutna till denna plats kan använda betalningsmetoden.",
-        "business_customer_with_bank_account_vaulting_payment_label": "Spara denna betalningsmetod vid kassan och ge %{company} tillåtelse att dra pengar från ditt konto för framtida köp som du godkänner för denna plats, tills du avbryter. Alla kontakter som är kopplade till denna plats kan använda betalningsmetoden.",
+        "business_customer_vaulting_payment_label": "Spara denna betalningsmetod vid kassan och auktorisera %{company} att debitera den för framtida köp för denna plats. Alla kontakter som är kopplade till denna plats kan använda betalningsmetoden.",
+        "business_customer_with_bank_account_vaulting_payment_label": "Spara denna betalningsmetod vid kassan och auktorisera %{company} att debitera ditt konto för framtida köp som du godkänner för denna plats, tills du avbryter. Alla kontakter som är kopplade till denna plats kan använda betalningsmetoden.",
         "purchase_options_and_vaulting_agreement_label": "En eller flera varor i din kundvagn är ett uppskjutet köp eller ett prenumerationsköp. Genom att fortsätta med din betalning godkänner du att din betalningsmetod automatiskt debiteras till det pris och den frekvens som anges på denna sida tills det avslutas eller du avbeställer. Alla avbeställningar omfattas av %{cancellation_policy_label}.",
         "purchase_options_cancellation_policy_label": "avbokningspolicy",
         "saved_credit_card_info": "Sista fyra siffrorna",
@@ -2487,7 +2488,12 @@
           "checking": "Kontrollerar",
           "savings": "Besparingar"
         },
-        "new_bank_account_disclaimer": "Genom att slutföra din beställning ger du %{shop_name} tillåtelse att dra beloppet från kontot nedan via ACH, vid den angivna tiden."
+        "new_bank_account_disclaimer": "Genom att slutföra din beställning ger du %{shop_name} tillåtelse att dra beloppet från kontot nedan via ACH, vid den angivna tiden.",
+        "billing_address_description_no_shipping_address": "Ange adressen som matchar ditt kort eller betalningsmetod.",
+        "bank_account_disclaimer": "ACH-betalningar kan ta upp till 4 arbetsdagar att behandla.",
+        "bank_account_choose": "Välj ett konto för att säkert slutföra ditt köp",
+        "bank_account_missing": "Bankkonto måste kopplas ihop",
+        "bank_account_generic_error": "Kunde inte lägga till bankkonto. Försök igen senare."
       },
       "field_errors": {
         "address_address1_too_long": "Den första adressraden är för lång (maximalt 255 tecken)",
