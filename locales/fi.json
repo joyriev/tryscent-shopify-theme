@@ -2681,15 +2681,62 @@
             "phone": "Syötä kelvollinen puhelinnumero",
             "billing_phone": "Syötä voimassa oleva laskutusosoitteen puhelinnumero",
             "billing_must_match_shipping": "Täytyy vastata toimitusosoitetta",
-            "billing_zip": "Syötä kelvollinen laskutusosoitteen postinumero"
+            "billing_zip": "Syötä kelvollinen laskutusosoitteen postinumero",
+            "shipping_address": "Syötä kelvollinen toimitusosoite",
+            "zone": "Syötä kelvollinen osavaltio / maakunta",
+            "reduction_code": "Syötä voimassa oleva alennuskoodi tai lahjakortti"
           },
           "formatting": {
             "name_contains_emojis": "Poista hymiö nimestäsi",
             "postal_code_contains_emoji": "Poista hymiö postinumerostasi",
             "first_name_too_long": "Etunimessä on liikaa kirjaimia",
             "last_name_too_long": "Sukunimessä on liikaa kirjaimia"
-          }
-        }
+          },
+          "unavailable": {
+            "title": "{{walletName}} ei ole saatavilla",
+            "description": "{{walletName}} ei ollut saatavilla. Käytä toista maksutapaa tai yritä uudelleen myöhemmin.",
+            "instructions": "{{walletName}}-lompakossa ilmeni ongelma. Palaa kauppaan yrittääksesi uudelleen tai valitse toinen maksutapa.",
+            "unavailable_for_country": "{{walletName}} ei ole saatavilla maassa {{countryName}}. Valitse toinen maksutapa oston viimeistelemiseksi"
+          },
+          "unavailable_terminal": {
+            "instructions": "{{walletName}} ei ole tällä hetkellä saatavilla tilauksellesi. Jatkaaksesi ostostasi, valitse toinen maksutapa."
+          },
+          "subscription_review_required": "Tilaukseesi sisältyy tilaus. Sinun on tarkistettava alla olevat ehdot ennen tilauksesi vahvistamista.",
+          "terminal": "{{walletName}}-lompakossa ilmeni ongelma. Käytä toista maksutapaa.",
+          "unsupported": {
+            "address": "Myyjä ei voi toimittaa tähän osoitteeseen",
+            "wallet_is_unavailable": "{{walletName}} ei voi käyttää tämän osoitteen kanssa. Valitse toinen osoite tai sulje {{walletName}} viimeistelläksesi ostoksesi"
+          },
+          "outdated": {
+            "shipping_method": "Toimitusvaihtoehdot ovat muuttuneet tilauksessasi. Tarkista valintasi.",
+            "payment_terms": "Maksuehdot ovat muuttuneet. Tarkista tilauksesi"
+          },
+          "missing": {
+            "billing_first_name": "Syötä laskutusosoitteen etunimi",
+            "last_name": "Syötä sukunimi",
+            "address1": "Syötä osoite",
+            "billing_address1": "Syötä laskutusosoite",
+            "address2": "Syötä asunto, sviitti jne.",
+            "billing_address2": "Syötä laskutusosoitteen asunto, huoneisto tms.",
+            "city": "Syötä kaupunki",
+            "billing_city": "Syötä laskutusosoitteen kaupunki",
+            "province": "Valitse osavaltio / maakunta",
+            "billing_province": "Valitse laskutusosoitteen osavaltio / maakunta",
+            "zip": "Syötä postinumero",
+            "billing_zip": "Syötä laskutusosoitteen postinumero",
+            "phone": "Syötä puhelinnumero",
+            "contact_info": "Syötä yhteystiedot"
+          },
+          "select_different_shipping_address_to_resolve_errors": "Toimitusosoitteesi on virheellinen. Valitse toinen osoite tai käytä uutta.",
+          "processing_error_checkout_as_guest": "Maksun käsittelyssä ilmeni ongelma. Yritä uudelleen tai {{checkout_as_guest_link}}."
+        },
+        "return_to_checkout": "Palaa kassalle",
+        "redirect_hint": "Sinua pyydetään kirjautumaan sisään {{walletName}}-lompakolla.",
+        "logged_in": "Yhdistetty osoitteeseen {{email}}",
+        "payment_in_progress_title": "Maksu käynnissä",
+        "payment_in_progress_body": "Maksusi käsitellään. Tilauksesi valmistuu pian.",
+        "redirection_notice": "Sinut ohjataan {{walletName}}-palveluun ostoksen viimeistelyä varten",
+        "recovery_notice": "Tilauksesi tiedoissa on ongelma. Päivitä tietosi viimeistelläksesi maksun."
       },
       "units": {
         "liter": "L",
@@ -2716,6 +2763,78 @@
     },
     "challenge": {
       "message": "Jatkaaksesi, kerro meille ettet ole robotti."
+    },
+    "checkpoint": {
+      "message": "Ratkaise Captcha jatkaaksesi",
+      "error": "Captcha-tarkistus epäonnistui"
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "Parhaiten myyvät",
+        "az": "Aakkosjärjestyksessä, A-Ö",
+        "za": "Aakkosjärjestyksessä, Z-A",
+        "price_ascending": "Hinta, nouseva järjestys",
+        "price_descending": "Hinta, korkein ensin",
+        "date_ascending": "Päivämäärä, vanhimmasta uusimpaan",
+        "date_descending": "Päivämäärä, uusin ensin",
+        "most_relevant": "Suurin osa merkityksellisistä"
+      }
+    },
+    "errors": {
+      "credit_card_session_expired": "Luottokortin valtuutus on vanhentunut, ole hyvä ja syötä maksutietosi uudelleen. Korttiasi ei ole veloitettu.",
+      "discount_limit_reached": "Tämän alennuksen käyttöraja on saavutettu",
+      "discount_not_found": "Alennuskoodia ei löytynyt tai se ei ole voimassa",
+      "customer_already_used_once_per_customer_discount_notice": "Tämän alennuksen käyttöraja on saavutettu",
+      "gift_card_already_applied": "Koodi on jo käytetty kassalla",
+      "gift_card_code_invalid": "Koodi on virheellinen",
+      "gift_card_currency_mismatch": "Tätä lahjakorttia ei voi käyttää tähän ostokseen. Ota yhteyttä %{shop_name} saadaksesi sen uudelleenmyönnettyä.",
+      "gift_card_depleted": "Tällä lahjakortilla ei ole enää saldoa jäljellä",
+      "bad_domain": "sisältää virheellisen verkkotunnuksen nimen",
+      "contains_html_tags": "ei voi sisältää HTML-tageja",
+      "contains_spaces": "alkaa tai päättyy välilyönteihin.",
+      "full_name_required": "Syötä etunimi ja sukunimi"
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Kiitos, että tilasit uutiskirjeemme.",
+        "disclaimer": "Voit peruuttaa tilauksesi milloin tahansa.",
+        "unsubscribe": "Peru tilaus"
+      },
+      "unsubscribed": {
+        "confirmation": "Olet perunut tilauksesi postituslistaltamme.",
+        "disclaimer": "Et saa meiltä enää markkinointitiedotteita. Voit tilata ne uudelleen milloin tahansa.",
+        "preview": "Esikatselet, mitä asiakkaat näkevät, kun he peruvat tilauksensa."
+      },
+      "sms_unsubscribe_confirm": {
+        "message": "Haluatko varmasti peruuttaa tilauksen SMS-markkinoinnista?",
+        "button": "Peru tilaus"
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Olet valinnut sähköpostin avaamisen seurannan.</b>",
+          "visibility": "Sähköpostin avaamisprosentit raportoidaan nimettömästi. Näemme vain, oletko avannut sähköpostin osana yhteenlaskettua avaamisprosenttia.",
+          "opt_out_html": "Voit <a style='text-decoration:underline;' href='%{link}'>kieltäytyä</a> sähköpostin avaamisen seurannasta, jos et halua jakaa tätä tietoa.",
+          "preview_bar": "Esikatselet, mitä asiakkaat näkevät, kun he valitsevat sähköpostin avausseurannan."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Olet kieltäytynyt sähköpostin avaamisen seurannasta.</b>",
+          "visibility": "Emme näe, oletko avannut sähköpostimme.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Valitse</a> sähköpostin avausten seuranta.",
+          "preview_bar": "Esikatselet, mitä asiakkaat näkevät, kun he kieltäytyvät sähköpostin avaamisen seurannasta."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Emme enää seuraa sähköpostien avaamisia.</b>",
+          "privacy_policy": "Tämän sähköpostin lähettämisen jälkeen päivitimme tietosuojakäytäntömme emmekä enää seuraa avauksia."
+        },
+        "track": {
+          "status_html": "<b>Sähköpostin avaamisen seuranta on raportoitu.</b>",
+          "visibility": "Näemme vain, oletko avannut sähköpostin osana kokonaisavausprosenttia."
+        },
+        "updated_policy": {
+          "status_html": "<b>Sähköpostin avaamisen seuranta on raportoitu.</b>",
+          "visibility": "Olemme päivittäneet käytäntömme, ja nyt seuraamme sähköpostien avaamisia. Sähköpostien avausprosentit raportoidaan nimettömästi. Näemme vain, oletko avannut sähköpostin osana kokonaisavausprosenttia."
+        }
+      }
     }
   }
 }
