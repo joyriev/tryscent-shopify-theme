@@ -2169,7 +2169,73 @@
       },
       "shipping_errors": {
         "empty_state": "Syötä toimitusosoitteesi nähdäksesi saatavilla olevat toimitustavat.",
-        "invalid_selected_address": "Valittu toimitusosoite ei ole kelvollinen"
+        "invalid_selected_address": "Valittu toimitusosoite ei ole kelvollinen",
+        "shipping_method": "Toimitusvaihtoehdot ovat muuttuneet tilauksessasi. Tarkista valintasi.",
+        "shipping_method_not_available": "Ostoskori on päivitetty, mutta lisäämäsi tuotteet eivät ole toimitettavissa osoitteeseesi. Poista tuotteet jatkaaksesi tilausta.",
+        "shipping_method_not_available_generic": {
+          "one": "Tilauksesi toimitus valittuun osoitteeseen ei ole mahdollista. Tarkista osoitteesi varmistaaksesi, että se on oikein, ja yritä uudelleen, tai valitse toinen osoite.",
+          "other": "Jotkut ostoskorissasi olevat tuotteet eivät voi toimitettavaksi antamaasi osoitteeseen. Tarkista osoitteesi varmistaaksesi, että se on oikein, ja yritä uudelleen, tai valitse toinen osoite."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Ostoskorin tuotteet eivät täytä hintaan tai painoon liittyviä vaatimuksia toimituksen saamiseksi. Päivitä ostoskorisi ja yritä uudelleen.",
+        "shipping_method_not_available_updated": {
+          "one": "Tuotetta, jonka lisäsit, ei toimiteta sijaintiisi. Poista se jatkaaksesi kassalle, tai ota yhteyttä myymälään.",
+          "other": "Yksi tai useampi lisäämäsi tuote ei lähetetä sijaintiisi. Poista ne jatkaaksesi kassalle, tai ota yhteyttä myymälään."
+        },
+        "payment_method_not_supported": "Et voi käyttää tätä maksutapaa kohdemaassa %{country}. Käytä toista maksutapaa lähetykseen tähän maahan.",
+        "title": "Toimitus ei ole saatavilla",
+        "invalid_selected_address_with_update_link": "Valittu toimitusosoite ei ole kelvollinen. %{update_address_link} tai valitse toinen osoite",
+        "unavailable_addresses_only_countries": "Tilauksesi voidaan lähettää vain osoitteisiin {{countriesList}}. Lisää uusi osoite jatkaaksesi.",
+        "unavailable_address_country": "Toimitus ei ole saatavilla valitsemassasi maassa. Jatka käyttämällä eri osoitetta",
+        "unavailable_selected_address_for_region": "Toimitus ei ole saatavilla alueelle {{region}}. Valitse jatkaaksesi eri osoite."
+      },
+      "shop_policies": {
+        "policy_label": "Politiikka",
+        "policies_label": "Säännöt",
+        "select_policy_label": "Valitse vakuutuspolitiikka",
+        "refund_policy": "Hyvityskäytäntö",
+        "terms_of_service": "Palveluehdot",
+        "legal_notice": "Oikeudellinen ilmoitus",
+        "purchase_options_policy": "Ostopolitiikka"
+      },
+      "split_delivery": {
+        "delivery_method": "Toimitustavan jakaminen",
+        "delivery_method_menu": "Toimitustavan valikko erikseen",
+        "inventory_issue_banner": {
+          "heading": {
+            "cannot_be_picked_up": {
+              "one": "%{count} tuotetta ei voi noutaa",
+              "other": "%{count} tuotetta ei voi noutaa"
+            },
+            "cannot_be_shipped": {
+              "one": "%{count} tuotetta ei voida lähettää",
+              "other": "%{count} tuotetta ei voida lähettää"
+            }
+          },
+          "remove_item": {
+            "one": "poista kohde",
+            "other": "poista kohteet"
+          },
+          "pick_them_up_in_store": {
+            "one": "Nouda myymälästä",
+            "other": "Nouda ne myymälästä"
+          }
+        },
+        "cross_border": {
+          "modal": {
+            "heading": "Vaihda maata?",
+            "content": "Nouto- ja toimituspaikkojen on oltava samassa maassa. Maan vaihtaminen nollaa kaikki tuotteet toimitukseen.",
+            "change_country": "Vaihda maa"
+          },
+          "banner": "Toimitustapasi päivitettiin"
+        }
+      },
+      "shop_pay_external": {
+        "errors": {
+          "problem_loading": "Ongelmia Shop Payn lataamisessa",
+          "try_again_later": "Tarkista yhteytesi tai sulje tämä ikkuna ja yritä uudelleen hetken kuluttua.",
+          "checkout_has_expired": "Ostoksesi voimassaoloaika on päättynyt. Sulje tämä ikkuna ja yritä tehdä ostos uudelleen {{shopName}}-kaupasta."
+        },
+        "return_to_store": "Palaa takaisin {{shopName}}-sivulle"
       }
     },
     "attributes": {
