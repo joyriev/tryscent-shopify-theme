@@ -1287,37 +1287,38 @@
         },
         "tooltip_accessibility_label": "Mere information",
         "errors": {
-          "session_identifier_not_unique_error": "Der opstod en fejl med din ordre, prøv at gennemføre købet igen.",
+          "session_identifier_not_unique_error": "Noget gik galt med din ordre, prøv at tjekke ud igen.",
           "line_item_limit_reached": "Det maksimale antal linjeposter er nået.",
           "session_is_already_finished": "Denne betalingssession er allerede blevet afsluttet.",
           "merchandise": {
-            "only_value_constraint": "Kun præcise værdier er tilladt i vareindtastningen.",
-            "merchandise_not_found": "Produkt ikke fundet.",
+            "only_value_constraint": "Kun nøjagtige værdier er tilladt i vareindgangen.",
+            "merchandise_not_found": "Produktet blev ikke fundet.",
             "merchandise_variant_not_found": "Produktvariant ikke fundet.",
-            "merchandise_not_applicable": "Produktvariant kan ikke købes.",
-            "mixed_currencies": "Checkout indeholder varelinjer med forskellige valutaer.",
-            "bundle_products_not_supported_for_b2b": "Pakkevarer kan ikke tilføjes til B2B-ordrer for denne lokation.",
-            "gift_card_quantity_mismatch": "Når der angives gavekortkoder, skal antallet af linjeposter og antallet af gavekortkoder stemme overens.",
-            "gift_card_not_supported": "Gavekort understøttes ikke ved denne betaling.",
-            "gift_card_not_unique": "Gavekort med koden {{code}} forekommer mere end én gang i denne betaling. Koderne formateres før sammenligning.",
+            "merchandise_not_applicable": "Produktvarianten kan ikke købes.",
+            "mixed_currencies": "Kassen indeholder linjeposter med forskellige valutaer.",
+            "bundle_products_not_supported_for_b2b": "Bundtede varer kan ikke tilføjes til B2B-bestillinger for denne placering.",
+            "gift_card_quantity_mismatch": "Når du angiver gavekortkoder, skal antallet af linjeposter og antallet af gavekortkoder matche.",
+            "gift_card_not_supported": "Gavekort understøttes ikke ved denne kasse.",
+            "gift_card_not_unique": "Gavekort med koden {{code}} forekommer mere end én gang i denne kasse. Koderne formateres før sammenligning.",
             "gift_card_used": "Gavekortkode {{code}} er allerede tildelt et gavekort. Koder formateres før sammenligning.",
             "gift_card_invalid": "Gavekortkode {{code}} er ugyldig.",
             "gift_card_code_changed": "Gavekortkode {{proposed_code}} blev ændret til {{formatted_code}} for at overholde formateringsreglerne.",
-            "gift_card_with_attributes_not_supported": "Gavekort med brugerdefinerede attributter understøttes ikke ved denne betaling.",
-            "gift_card_with_components_not_supported": "Gavekort med komponenter understøttes ikke ved denne betaling.",
-            "selling_plan_not_supported_b2b": "Abonnementer understøttes ikke ved B2B-kassen.",
-            "price_mismatch": "Den tidligere foreslåede pris for denne vare var ugyldig og er blevet opdateret.",
-            "inventory_not_found": "Ingen lagerbeholdning fundet for denne vare.",
+            "gift_card_with_attributes_not_supported": "Gavekort med brugerdefinerede attributter understøttes ikke ved denne kasse.",
+            "gift_card_with_components_not_supported": "Gavekort med komponenter understøttes ikke ved denne kasse.",
+            "selling_plan_not_supported_b2b": "Abonnementer understøttes ikke for B2B-kassen.",
+            "price_mismatch": "Den tidligere foreslåede pris for dette merchandise var ugyldig og er blevet opdateret.",
+            "inventory_not_found": "Ingen lagerfundet for denne vare.",
             "product_not_published": "Produktet er ikke offentliggjort.",
-            "product_not_published_in_buyer_location": "Produktet er ikke offentliggjort i køberens område.",
-            "duplicated_stable_id": "Denne varelinje har samme stable-ID som en anden linje.",
+            "product_not_published_in_buyer_location": "Produktet er ikke tilgængeligt i den nuværende køberlokation.",
+            "duplicated_stable_id": "Denne varelinje har den samme stabil-ID som en anden linje.",
             "minimum_quantity_not_met": "Mængden af nogle varer opfylder ikke det krævede minimum.",
-            "maximum_quantity_exceeded": "Mængden af nogle varer overstiger det tilladte maksimum.",
-            "quantity_increment_not_met": "Mængden af nogle varer opfylder ikke ordregrænserne.",
-            "quantity_rules_not_met": "Mængden af nogle varer opfylder ikke ordregrænserne.",
-            "bundle_requires_components": "Denne pakkeløsning har ingen komponenter.",
+            "maximum_quantity_exceeded": "Mængden af nogle varer overstiger det maksimalt tilladte.",
+            "quantity_increment_not_met": "Mængden af nogle varer opfylder ikke bestillingsgrænserne.",
+            "quantity_rules_not_met": "Mængden af nogle varer opfylder ikke bestillingsgrænserne.",
+            "bundle_requires_components": "Denne bundt merchandise har ingen komponenter.",
             "title_too_long": "Varetitel er for lang.",
-            "title_empty": "Varetitel er tom."
+            "title_empty": "Varetitel er tom.",
+            "combined_listing_parent_not_purchasable": "Kombinerede listeforældreprodukter kan ikke købes direkte."
           },
           "buyer_identity": {
             "business_customer_does_not_match_company": "Virksomhedskontakt har ikke adgang til virksomheden.",
@@ -1368,64 +1369,67 @@
             "discount_title_too_long": "Rabattitel må ikke være længere end 255 tegn."
           },
           "tax": {
-            "unresolvable_tax_terms": "De foreslåede vilkår kan ikke løses i den nuværende forhandlingssituation.",
-            "tax_inclusivity_mismatch": "Forhandle på ny med konkret totalTaxAndDutyAmount eller totalAmountIncludedInTarget værdi.",
-            "proposed_allocations_required": "Manglende felt for 'foreslåede tildelinger'.",
+            "unresolvable_tax_terms": "De foreslåede vilkår er uopløselige givet den nuværende forhandlingskontekst.",
+            "tax_inclusivity_mismatch": "Renegotiere med konkret totalTaxAndDutyAmount eller totalAmountIncludedInTarget værdi.",
+            "proposed_allocations_required": "Manglende 'foreslåede tildelinger' felt.",
             "merchandise_terms_must_be_defined": "Vilkår for varer skal defineres.",
             "delivery_terms_must_be_defined": "Leveringsbetingelser skal defineres.",
-            "merchandise_discount_terms_must_be_defined": "Vilkår for rabat på varer skal defineres.",
-            "delivery_discount_terms_must_be_defined": "Betingelser for leveringsrabat skal defineres.",
-            "allocated_required": "Manglende 'allocated' felt.",
-            "value_required": "Manglende 'value'-felt.",
-            "line_splits_not_supported": "'merchandise lines'-feltet skal opdeles, så hver har en enkelt linjekomponent i sælgerforslaget."
+            "merchandise_discount_terms_must_be_defined": "Vilkår for merchandise rabatter skal defineres.",
+            "delivery_discount_terms_must_be_defined": "Leveringsrabatbetingelser skal defineres.",
+            "allocated_required": "Manglende 'allokeret' felt.",
+            "value_required": "Manglende 'value' felt.",
+            "line_splits_not_supported": "'merchandise lines' felt skal opdeles, så hver har en enkelt linjekomponent i sælgerforslaget.",
+            "tax_exemption_not_supported": "Skattefritagelser understøttes ikke for den nuværende forhandlingssession.",
+            "delivery_tax_exemption_not_supported": "Skattefritagelser for leveringslinjer understøttes i øjeblikket ikke."
           },
           "payment": {
             "positive_amount_expected": "Beløbet, der skal betales, skal være større end 0.",
             "total_amount_mismatch": "Det samlede beløb, der skal betales, stemmer ikke overens med summen af betalingsbeløbene.",
             "subscription_terms_not_accepted": "Abonnementsbetingelser ikke accepteret.",
-            "missing_session_id": "Manglende kreditkort-sessioninformation.",
-            "gateway_not_supported": "Betalingsgateway understøtter ikke lagring af betalingsmetoden.",
-            "credit_card_last_name_required": "'efternavn' kan ikke være tom.",
+            "missing_session_id": "Manglende kreditkort session information.",
+            "gateway_not_supported": "Betalingsgatewayen understøtter ikke opbevaring af betalingsmetoden.",
+            "credit_card_last_name_required": "'efternavn' kan ikke være nil.",
             "invalid_address_type": "Den angivne adresse type er ugyldig for denne betalingsmetode.",
-            "missing_retail_attributions": "Detailhandelsangivelser er påkrævet for manuelt indtastede kreditkortbetalinger.",
-            "unexpected_retail_attributions": "Detaljer om detailhandel blev uventet angivet for kreditkortbetaling.",
-            "wallet_content_missing": "Indholdet af tegnebogen mangler.",
+            "missing_retail_attributions": "Detailattributioner er påkrævet for manuelt indtastede kreditkortbetalinger.",
+            "unexpected_retail_attributions": "Detailattributioner blev uventet givet for kreditkortbetaling.",
+            "wallet_content_missing": "Walletindholdet mangler.",
             "payment_instrument_not_found": "Kunne ikke finde betalingsmetode",
             "unauthorized_capture_method": "Konfiguration af betalingsindfangningsmetoden er ikke tilladt.",
             "saved_payment_methods_not_enabled": "Gemte betalingsmetoder er ikke aktiveret for denne butik.",
             "saved_payment_methods_cvv_verification_disabled": "Den valgte betalingsmetode kræver CVV-verifikation, som ikke er aktiveret for denne butik. Vælg en anden betalingsmetode.",
             "store_credit_not_enabled": "Butikskredit er ikke aktiveret for denne butik.",
-            "store_credit_account_not_found": "Butikskreditkonto ikke fundet.",
-            "store_credit_account_mismatch": "Butikskreditkontoen stemmer ikke overens med køberens identitet.",
-            "store_credit_mismatched_currency": "Butikskreditkontoens valuta stemmer ikke overens med betalingsvalutaen.",
-            "store_credit_insufficient_funds": "Der er utilstrækkelige midler på butikskreditkontoen.",
-            "store_credit_buying_gift_card": "Du kan ikke bruge butikskredit til at købe et gavekort.",
+            "store_credit_account_not_found": "Butikkreditkonto ikke fundet.",
+            "store_credit_account_mismatch": "Butikkreditkontoen stemmer ikke overens med køberens identitet.",
+            "store_credit_mismatched_currency": "Valutaen for butiks kreditkontoen matcher ikke valutaen ved kassen.",
+            "store_credit_insufficient_funds": "Der er utilstrækkelige midler på butiks kreditkontoen.",
+            "store_credit_buying_gift_card": "Du kan ikke bruge butiks kredit til at købe et gavekort.",
             "paypal_express_address_invalid": "PayPal returnerede en ugyldig adresse."
           },
           "tip": {
-            "not_accepted_by_shop": "Butikken accepterer ikke drikkepenge.",
-            "only_one_tip_line_allowed": "Flere tiplinjer understøttes ikke.",
-            "currency_change_reset": "Drikkepenge er nulstillet på grund af valutaskift.",
-            "tips_not_allowed_for_deferred_purchase_options": "Tips understøttes endnu ikke for udskudte købsoptioner."
+            "not_accepted_by_shop": "Butik accepterer ikke drikkepenge.",
+            "only_one_tip_line_allowed": "Flere tipslinjer understøttes ikke.",
+            "currency_change_reset": "Tip er blevet nulstillet på grund af valutaskift.",
+            "tips_not_allowed_for_deferred_purchase_options": "Tips understøttes endnu ikke for udsatte købsoptioner.",
+            "tips_not_allowed_for_b2b": "Tips er ikke tilladt i B2B-butikker."
           },
           "sale_attribution": {
-            "draft_order_not_exist": "Denne kladdeordre findes ikke i den nuværende butik.",
+            "draft_order_not_exist": "Denne udkastordre findes ikke i den nuværende butik.",
             "staff_member_not_exist": "Denne medarbejder findes ikke i den nuværende butik.",
             "location_not_exist": "Denne placering findes ikke i den nuværende butik.",
-            "point_of_sale_device_not_exist": "Denne salgsstedsenhed findes ikke i den nuværende butik.",
-            "unresolvable_target_merchandise_lines": "De foreslåede salgsattributioner kan ikke løses i den nuværende forhandlingssituation."
+            "point_of_sale_device_not_exist": "Denne salgssted-enhed findes ikke i den nuværende butik.",
+            "unresolvable_target_merchandise_lines": "De foreslåede salgsattributioner er uopløselige givet den nuværende forhandlingskontekst."
           },
           "non_negotiable": {
-            "missing_non_negotiable_terms": "Din købers forslag skal indeholde ikke-forhandlingsbare_vilkår.",
+            "missing_non_negotiable_terms": "Dit købers forslag skal indeholde ikke-forhandlingsbare_betingelser.",
             "invalid_signature": "Signaturen for {{target_terms}} er ugyldig."
           },
           "inventory": {
             "missing_quantity_value": "Mængdefeltet mangler i køberens lagerlinjer.",
-            "changing_behavior_not_allowed": "Denne kunde har ikke tilladelse til at ændre lageradfærd.",
+            "changing_behavior_not_allowed": "Denne klient har ikke tilladelse til at ændre lageradfærd.",
             "only_one_inventory_behavior_allowed": "I øjeblikket er kun én lageradfærd tilladt pr. kasse."
           },
           "optional_duties": {
-            "optional_duties_not_permitted": "Afvisning af told er ikke tilladt ved denne betaling."
+            "optional_duties_not_permitted": "Afvisning af pligter er ikke tilladt ved denne kasse."
           },
           "attribution": {
             "retail_attribution_not_allowed": "Detailattribution er ikke tilladt for denne kasse.",
@@ -1511,7 +1515,9 @@
         "dropzone": {
           "invalid_file_type": "Filtypen understøttes ikke",
           "dragged_over": "Træk filen for at uploade"
-        }
+        },
+        "finalize_order_accessibility_label": "Afslut ordre",
+        "full_price": "Fulde pris:"
       },
       "payment_gateway": {
         "bank_account_label": "Bankkonto",
