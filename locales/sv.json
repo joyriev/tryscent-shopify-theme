@@ -1706,17 +1706,17 @@
         "google_map_title": "Google Karta",
         "confirm_order_button_label": "Bekräfta beställning",
         "submit_order_button_label": "Skicka beställning",
-        "submit_for_review_button_label": "Skicka för granskning",
+        "submit_for_review_button_label": "Skicka in för granskning",
         "submit_for_review_notice_label": "Betalning förfaller inte förrän din beställning har granskats",
         "autocomplete_zero_item": "Inga artiklar tillgängliga",
         "processing": "Bearbetar…",
         "stepper": {
           "increase": "Öka {{type}}",
           "decrease": "Minska {{type}}",
-          "minimum_reached": "Minst {{value}} uppnått",
-          "maximum_reached": "Maximalt {{value}} uppnått"
+          "minimum_reached": "Minimi av {{value}} nått",
+          "maximum_reached": "Maximalt {{value}} nått"
         },
-        "remove_tag": "Ta bort etikett",
+        "remove_tag": "Ta bort tagg",
         "dates": {
           "weekdays": {
             "tuesday": "tisdag",
@@ -1766,11 +1766,11 @@
         },
         "map": {
           "cluster_title": {
-            "one": "Klunga av {{number}} markör"
+            "one": "Kluster av {{number}} markörer"
           }
         },
         "sheet": {
-          "expand": "Expandera"
+          "expand": "Utöka"
         },
         "dropzone": {
           "invalid_file_type": "Filtypen stöds inte",
@@ -1780,7 +1780,8 @@
         "choose_shipping_method": "Välj en fraktmetod",
         "back_button_label": "Återvänd",
         "continue_to_shipping_method": "Fortsätt till frakt",
-        "finalize_order_accessibility_label": "Slutför beställning"
+        "finalize_order_accessibility_label": "Slutför beställning",
+        "submit": "Skicka in"
       },
       "payment_collection": {
         "cancelled": "Denna betalning krävs inte längre. Besök ordersidan för detaljer.",
@@ -3210,7 +3211,12 @@
       "local_pickup": {
         "all_stores_far_away": {
           "title": "De närmaste platserna ligger mer än %{distance} bort",
-          "ship_to_address_link": "leveransadress"
+          "ship_to_address_link": "skicka till adress",
+          "title_with_item": {
+            "one": "Den närmaste platsen med din artikel är mer än %{distance} från %{location}",
+            "other": "Den närmaste platsen med dina varor är mer än %{distance} från %{location}"
+          },
+          "title_with_specific_location": "Den närmaste platsen med din vara är mer än %{distance} bort från %{location}"
         },
         "selected_pickup_option_no_longer_available": {
           "title": "Din tidigare valda plats är inte längre tillgänglig",
@@ -3223,6 +3229,16 @@
         "reveal_more_label": {
           "one": "Visa %{count} fler platser",
           "other": "Visa %{count} fler platser"
+        },
+        "location_closest": "Närmaste plats med din vara",
+        "location_closest_one_item": "Närmaste plats med din vara",
+        "location_closest_other_items": "Närmaste plats med dina varor",
+        "location_information_far_away": {
+          "one": "Det finns %{count} plats med din artikel"
+        },
+        "location_far_away": {
+          "one": "%{count} plats med din artikel",
+          "other": "%{count} platser med din artikel"
         }
       },
       "captcha": {
