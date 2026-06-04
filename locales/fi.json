@@ -1511,7 +1511,144 @@
           "not_available": "Apple Pay ei ole käytettävissä tässä selaimessa. Yhdistääksesi Apple Pay -tilisi sinun täytyy käyttää Safaria Apple-laitteella."
         },
         "alternative_payment_currency_total_notice": "Huomautus: sinulta veloitetaan %{amount_due}.",
-        "alternative_payment_currency_total_manual_payment_notice": "Huomautus: muunnettu kokonaissumma on %{amount_due}."
+        "alternative_payment_currency_total_manual_payment_notice": "Huomautus: muunnettu kokonaissumma on %{amount_due}.",
+        "card_pay_with": "Maksa käyttäen:",
+        "card_security_notice": "Kaikki tapahtumat ovat suojattuja ja salattuja.",
+        "card_security_vault_notice": "Tarvitsemme tietosi tulevia maksuja varten. Kaikki tapahtumat ovat turvallisia ja salattuja.",
+        "card_information_notice": "Kaikki tapahtumat ovat suojattuja ja salattuja. Luottokorttitietoja ei koskaan tallenneta.",
+        "card_nickname_label": "Lempinimi (valinnainen)",
+        "card_expiry_label": "Viimeinen käyttöpäivä (KK / VV)",
+        "card_expiry_placeholder": "Viimeinen käyttöpäivä (KK / VV)",
+        "card_expiry_date_explanation": "Kortin voimassaolon päättymispäivä muodossa: kuukausi, kuukausi, vuosi, vuosi",
+        "card_expiration_month_label": "Vanhentumiskuukausi",
+        "card_start_label": "Päivämäärä (KK / VV)",
+        "card_start_placeholder": "Päivämäärä (KK / VV)",
+        "card_issue_number_label": "Numero",
+        "card_issue_number_placeholder": "Numero",
+        "card_change_label": "Vaihda",
+        "bank_account_vaulted_company_location": "Pankkitili tallennettu tätä sijaintia varten",
+        "billing_address_associated_with_mandate": "Käytä maksutapaan liitettyä osoitetta",
+        "billing_address_associated_with_mandate_info": "Jos haluat muuttaa laskutusosoitettasi, poista ja syötä luottokorttitietosi uudelleen",
+        "billing_address_rollup_accessibility_label": "Laskutusosoitteen vaihtoehdot",
+        "billing_address_description": "Valitse osoite, joka vastaa korttiasi tai maksutapaasi.",
+        "billing_address_description_no_shipping_address": "Syötä osoite, joka vastaa korttiasi tai maksutapaasi.",
+        "card_fields_container_prefix": "Kenttäkontti kohteelle:",
+        "card_fields_unavailable_html": {
+          "one": "Luotto- ja pankkikorttimaksut eivät ole tällä hetkellä käytettävissä.<br><a href=\"%{current_url}\">Päivitä tämä sivu</a> tai yritä myöhemmin uudelleen.",
+          "other": "Luotto- ja pankkikorttimaksut eivät ole tällä hetkellä käytettävissä.<br><a href=\"%{current_url}\">Päivitä tämä sivu</a> tai kokeile toista maksutapaa."
+        },
+        "card_fields_processing_error": "Maksun käsittelyssä ilmeni ongelma. Yritä päivittää tämä sivu tai tarkista internet-yhteytesi.",
+        "billing_address_not_supported_for_payment_method_error": "Tämä maksutapa ei ole käytettävissä laskutusosoitteellasi ja valuutallasi. Kokeile toista maksutapaa.",
+        "brand_not_available": "Tämä kauppa ei hyväksy {{brand}}-kortteja. Käytä maksamiseen toista korttia.",
+        "billing_address_invalid_phone": "Päivitä puhelinnumero laskutusosoitteessasi kohteelle {{label}} {{last_digits}} jatkaaksesi.",
+        "billing_address_invalid_phone_no_card": "Päivitä laskutusosoitteesi puhelinnumero jatkaaksesi.",
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Syötä voimassa oleva myöntämispäivä",
+              "issue_number": "Syötä kelvollinen ongelman numero"
+            },
+            "invalid": {
+              "verification_value": "Syötä kelvollinen CVV- tai turvakoodi"
+            }
+          }
+        },
+        "business_customer_vaulting_payment_label": "Tallenna tämä maksutapa kassalla ja valtuuta %{company} veloittamaan se tulevista ostoksista tälle sijainnille. Kaikki tälle sijainnille määritellyt yhteystiedot voivat käyttää maksutapaa.",
+        "business_customer_with_bank_account_vaulting_payment_label": "Tallenna tämä maksutapa kassalla ja valtuuta %{company} veloittamaan tililtäsi tulevista ostoksista, jotka hyväksyt tälle sijainnille, kunnes peruutat. Kaikki tälle sijainnille määritellyt yhteystiedot voivat käyttää maksutapaa.",
+        "bank_account_type": {
+          "checking": "Tarkistetaan",
+          "savings": "Säästöt"
+        },
+        "bank_account_disclaimer": "ACH-maksujen käsittely voi kestää jopa 4 arkipäivää.",
+        "bank_account_choose": "Valitse tili turvallista ostoksen viimeistelyä varten",
+        "bank_account_missing": "Pankkitili on liitettävä",
+        "bank_account_generic_error": "Tilin lisääminen epäonnistui. Yritä myöhemmin uudelleen.",
+        "discount_button_action_label": "Käytä alennuskoodi",
+        "discount_codes_removed_summary": {
+          "one": "%{count} alennuskoodi poistettiin",
+          "other": "%{count} alennuskoodia poistettiin"
+        },
+        "discount_codes_modified_summary": {
+          "one": "%{count} alennuskoodi on muutettu",
+          "other": "%{count} alennuskoodia muokattiin"
+        },
+        "discount_codes_removed_or_modified_summary": {
+          "one": "%{count} alennuskoodi poistettiin tai muokattiin",
+          "other": "%{count} alennuskoodia poistettiin tai muokattiin"
+        },
+        "detected_card_brand": "Tunnistettu korttibrändi: {brand}",
+        "delete_customer_mandate_modal_body": "Jos poistat tämän kortin, sinun täytyy lisätä se uudelleen ennen kuin voit käyttää sitä maksuihin.",
+        "card_verification_confirm": "Vahvistusta varten syötä korttisi turvakoodi.",
+        "card_verification_value_explanation": "3-numeroinen turvakoodi, joka löytyy yleensä korttisi takapuolelta. American Express -korteissa on 4-numeroinen koodi kortin etupuolella.",
+        "card_verification_value_explanation_amex": "4-numeroinen turvakoodi korttisi etupuolella",
+        "card_verification_value_explanation_other": "3-numeroinen turvakoodi korttisi takana",
+        "crypto_payment_method": {
+          "description": "Yhdistä lompakkosi turvallisesti. Saldoasi ja osoitettasi ei jaeta.",
+          "tooltip": "Lompakkosi saldoa ja osoitetta ei jaeta, ja ainoastaan pyydetty summa voidaan veloittaa.",
+          "cashback_descriptor": {
+            "one": "Saat käteispalautuksesi %{count} päivän kuluttua",
+            "other": "Saat käteispalautuksesi %{count} päivän kuluttua"
+          }
+        },
+        "crypto_modal": {
+          "header": "Maksa %{shop_name} %{total_price} USDC:llä",
+          "error": {
+            "sandbox_error": "Jokin meni pieleen",
+            "web_component_error": "Sivun lataamisessa ilmeni ongelma"
+          }
+        },
+        "different_credit_card_label": "Käytä eri luottokorttia",
+        "continue_to_guest_checkout": "Jatka vierasostoksena",
+        "cashapppay_label": "Cash App -maksu",
+        "delete_credit_card_modal": {
+          "confirmation": "Haluatko varmasti poistaa {{brandName}}-loppuisen numeron {{lastDigits}}?"
+        },
+        "edit_credit_card_modal": {
+          "description": "Voit muuttaa vain korttisi laskutusosoitetta.",
+          "fields": {
+            "expiry": "Viimeinen käyttöpäivä"
+          }
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "Mukautettu paikan päällä tapahtuvan maksun vahvistus"
+        },
+        "gift_card_code_label": "Lahjakorttikoodi",
+        "gift_card_balance_label": "Tase:",
+        "ftd_vault_credit_card_label": "Tallenna tämä luottokortti tililleni nopeampaa kassalle siirtymistä varten",
+        "ends_with_label": "päättyen numeroihin %{last_digits}",
+        "expiry_long": "(Vanhtuu %{month}/%{year})",
+        "expiry_short": "(Voimassa %{month}/%{year})",
+        "free_order_notice_html": "Tilauksesi on <strong>ilmainen</strong>. Maksua ei vaadita.",
+        "express_checkout_free_order": "Sinulta ei veloiteta ilmaisesta tilauksesta",
+        "generic_incorrect_card_info": "Maksutietojasi ei voitu vahvistaa. Tarkista korttitietosi ja yritä uudelleen.",
+        "klarna_pay_later_label": "Maksa myöhemmin Klarna-palvelulla",
+        "klarna_pay_now_label": "Maksa nyt Klarna-maksulla",
+        "eps_label": "eps-siirto",
+        "klarna_slice_it_label": "Rahoita Klarna-maksulla",
+        "google": {
+          "connect": "Napsauta yhdistääksesi Google Pay -tiliisi",
+          "error_authorizing": "Virhe maksun valtuutuksessa"
+        },
+        "location_shipping_address_label": "Toimitusosoite sijainnille",
+        "expired_cards_info": {
+          "one": "Tililläsi on %{count} vanhentunut kortti, jonka voit tarkastella ja muokata.",
+          "other": "Tililläsi on %{count} vanhentunutta korttia, joita voit tarkastella ja muokata."
+        },
+        "local_payment_method_receiver_notice": "Tilauksen tekemisen jälkeen saat maksutiedot. Suorita maksu pankkiautomaatilla tai verkossa {{dueDays}} päivän kuluessa.",
+        "gift_card_wrapper": {
+          "apply_gift_card_label": "Käytä lahjakortti",
+          "apply_another_gift_card_label": "Käytä toinen lahjakortti",
+          "manage_label": "Hallitse lahjakortteja"
+        },
+        "gift_card_store_credit": {
+          "add_label": "Lisää lahjakortti tai kaupan hyvitys",
+          "manage_label": "Hallitse lahjakortteja tai myymäläluottoa"
+        },
+        "gift_card_checkbox_label": "Käytä lahjakortti",
+        "markets_pro_disclaimer_label": "Tekemällä tilauksesi hyväksyt ostavasi Global-e:ltä kauppiaana, noudattaen Global-e:n %{markets_pro_terms} ja %{privacy_policy}, ja jaat tietosi %{shop_name}:n kanssa.",
+        "markets_pro_disclaimer_terms_and_conditions": "Ehdot ja säännöt",
+        "markets_pro_disclaimer_privacy_policy_title": "Kauppiaan tietosuojakäytäntö",
+        "gift_cards_unavailable": "Lahjakorttiasi ei voi enää käyttää tähän tilaukseen, ja se on poistettu."
       }
     },
     "attributes": {

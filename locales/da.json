@@ -537,19 +537,20 @@
         },
         "order_name_label": "Bestil %{name}",
         "discount_title_stacking": {
-          "other": "Rabat"
+          "other": "Rabat",
+          "one": "Rabatter"
         },
         "discount_order_stacking": {
-          "one": "Ordre rabat",
-          "other": "Ordre rabatter"
+          "one": "Bestil rabat",
+          "other": "Bestil rabatter"
         },
         "discount_not_found": "Kan ikke finde en gyldig rabat, der matcher den indtastede kode",
-        "discount_code_applied": "Rabatkode anvendt",
-        "discount_code_applied_with_code": "Rabatkode %{code} er blevet anvendt",
-        "discount_code_removed": "Rabatkode %{code} er blevet fjernet",
-        "discount_code_replaced": "Rabatkode %{old_code} fjernet, og %{code} er blevet anvendt",
-        "discount_code_replaced_multiple": "Flere rabatkoder er fjernet, og %{code} er blevet anvendt",
-        "discount_code_allocations_mismatch": "Din <strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ændret. Gennemse din kurv og prøv igen.",
+        "discount_code_applied": "Rabattkode anvendt",
+        "discount_code_applied_with_code": "Rabattkode %{code} er blevet anvendt",
+        "discount_code_removed": "Rabattkode %{code} er blevet fjernet",
+        "discount_code_replaced": "Rabattkode %{old_code} er fjernet, og %{code} er blevet anvendt",
+        "discount_code_replaced_multiple": "Flere rabatkoder er blevet fjernet, og %{code} er blevet anvendt",
+        "discount_code_allocations_mismatch": "Din <strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ændret. Gennemgå din kurv og prøv igen.",
         "order_discounts_apply_to_local_shop": "Rabat ved bestilling gælder kun for varer fra %{shop_name}",
         "gift_card_applied": "Gavekort anvendt",
         "enter_shipping_address": "Indtast leveringsadresse",
@@ -560,16 +561,16 @@
         "free_shipping_discount_label": "Gratis shipping",
         "apply_discount_button_label": "Anvend",
         "applied_discount_message": "%{amount} rabat på den samlede ordrepris",
-        "discount_has_been_applied": "Rabat er blevet anvendt",
-        "discount_has_been_removed": "Rabat er fjernet",
+        "discount_has_been_applied": "Rabatten er blevet anvendt",
+        "discount_has_been_removed": "Rabatten er blevet fjernet",
         "gift_card_subscriptions_notice": "Gavekort gælder kun for din første betaling",
-        "discount_already_applied": "Der er blevet anvendt en rabat på denne ordre. Du kan ikke tilføje en anden rabat.",
-        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ikke gyldig for varerne i din kurv",
+        "discount_already_applied": "Der er anvendt en rabat på denne ordre. Du kan ikke tilføje en anden rabat.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkoden er ikke gyldig for de varer, der er i din indkøbskurv",
         "discount_requires_customer_notice": "Indtast dine forsendelsesoplysninger for at anvende rabatkoden <strong style=\"text-transform:uppercase\">%{code}</strong>",
-        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ikke tilgængelig for dig lige nu",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkoden er ikke tilgængelig for dig lige nu",
         "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode kræver berettiget kunde",
         "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabatkode er ikke tilgængelig for din leveringsadresse",
-        "customer_already_used_once_per_customer_discount_notice": "Rabatten med koden <strong style=\"text-transform:uppercase\">%{code}</strong> er allerede brugt",
+        "customer_already_used_once_per_customer_discount_notice": "Rabatten <strong style=\"text-transform:uppercase\">%{code}</strong> er allerede blevet brugt",
         "subtotal_label": "Delsum",
         "subtotal_label_with_quantity": {
           "one": "Delsum · %{count} vare",
@@ -605,7 +606,7 @@
         "payment_due_label": "Betaling forfalder",
         "discount_and_gift_card_savings_notice": "Efter %{discount_amount} i rabatter og %{gift_card_amount} i gavekort",
         "cost_table_title": "Omkostningsoversigt",
-        "cost_table_item_column_header": "Genstand",
+        "cost_table_item_column_header": "Vare",
         "price_per_item": {
           "accessibility_label": "%{price} pr. stk.",
           "label": "%{price}/stk"
@@ -635,13 +636,13 @@
         "deferred_payment_info": {
           "title": "Betaling af %{amount_due} forfalder den %{due_at}",
           "description_html": "For spørgsmål om din ordre, %{contact_us}.",
-          "paid_today": "Samlet betalt i dag",
+          "paid_today": "Total betalt i dag",
           "due_on_fulfillment_title": "Betaling af %{amount_due} forfalder ved opfyldelse",
           "due_on_receipt_title": "Betaling af %{amount_due} forfalder ved modtagelse"
         },
         "deferred_balance_info": {
           "title": "Saldo på {{amount_due}} forfalder den {{due_at}}",
-          "due_on_fulfillment_title": "Restbeløbet på {{amount_due}} forfalder ved opfyldelse"
+          "due_on_fulfillment_title": "Saldoen på {{amount_due}} forfalder ved opfyldelse"
         },
         "payment_terms_totals": {
           "due_today": "Samlet skyldig i dag",
@@ -653,7 +654,7 @@
           "total_paid": "Samlet betalt"
         },
         "maximum_discount_code_limit_reached": "Du har nået det maksimale antal rabatkoder. Fjern en eksisterende kode for at bruge <strong style=\"text-transform:uppercase\">%{code}</strong>.",
-        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> virker ikke lige nu. Kontakt os for hjælp.",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> fungerer ikke lige nu. Kontakt os for hjælp.",
         "due_on_fulfillment": "Forfald ved opfyldelse",
         "duties_label": "Afgifter",
         "may_be_charged_on_delivery": "Kan opkræves ved levering",
@@ -661,8 +662,16 @@
         "recurring_payments": "Gentagne betalinger",
         "recurring_total_multiple_label": "Denne ordre har et tilbagevendende gebyr for flere varer.",
         "deferred_total_due_date_label": "Samlet beløb forfaldent {{date}}",
-        "deferred_total_due_date_label_next": "Forfalden %{date}",
-        "custom_discount": "Brugerdefineret rabat"
+        "deferred_total_due_date_label_next": "Forfalder %{date}",
+        "custom_discount": "Brugerdefineret rabat",
+        "discount_title": "Rabatter",
+        "discount_label": "Rabattkode",
+        "discount_placeholder": "Rabattkode",
+        "discount_code_aria_text": "Rabattkode",
+        "deposit_label": "Indbetaling",
+        "discount_discovery": {
+          "back_to_finalize_order": "Tilbage for at afslutte bestilling"
+        }
       },
       "payment": {
         "payment_option": {

@@ -1563,7 +1563,7 @@
             "title_empty": "Varans titel är tom."
           },
           "buyer_identity": {
-            "business_customer_does_not_match_company": "Företagskontakt har inte tillgång till företaget.",
+            "business_customer_does_not_match_company": "Företagskontakten har inte tillgång till företaget.",
             "customer_account_required": "Du måste logga in för att fortsätta.",
             "company_purchase_permission_required": "Kunden har inte behörighet att lägga företagsbeställningar.",
             "personal_order_not_allowed": "Personliga beställningar är inte tillåtna för denna butik.",
@@ -1573,11 +1573,11 @@
             "email_required": "En e-postadress krävs när varan köps med en prenumeration.",
             "email_domain_is_invalid": "Den angivna domänen kan inte lösas.",
             "missing_contact_method": "Saknar en giltig kontaktmetod.",
-            "checkout_completion_target_is_missing": "Målet för slutförande av Checkout saknas.",
+            "checkout_completion_target_is_missing": "Målet för slutförande av kassan saknas.",
             "invalid_customer_profile": "En ogiltig kundprofil angavs.",
             "customer_profile_access_restricted": "Checkout har inte behörighet att komma åt kundprofilen.",
-            "checkout_completion_target_is_invalid_proc": "Ogiltigt mål för slutförande av utcheckning.",
-            "buyer_identity_presentment_currency_does_not_match": "Det uppstod ett problem vid behandlingen av din beställning. Försök igen om några minuter."
+            "checkout_completion_target_is_invalid_proc": "Ogiltigt mål för slutförande av kassan.",
+            "buyer_identity_presentment_currency_does_not_match": "Det uppstod ett problem med att behandla din beställning. Försök igen om några minuter."
           },
           "delivery": {
             "only_one_delivery_line_allowed": "Varukorg måste ha endast en leveransrad.",
@@ -1672,8 +1672,8 @@
             "optional_duties_not_permitted": "Att vägra avgifter är inte tillåtet för denna kassa."
           },
           "attribution": {
-            "retail_attribution_not_allowed": "Detaljhandelsattribution är inte tillåten för denna kassa.",
-            "retail_attribution_required": "Detaljhandelsattribution krävs för denna kassa."
+            "retail_attribution_not_allowed": "Detaljattribution är inte tillåten för denna kassa.",
+            "retail_attribution_required": "Detaljattribution krävs för denna kassa."
           },
           "captcha": {
             "metadata_missing": "Att slutföra en captcha krävs för detta köp.",
@@ -1715,35 +1715,40 @@
           "weekdays": {
             "tuesday": "tisdag",
             "thursday": "torsdag",
-            "saturday": "lördag"
+            "saturday": "lördag",
+            "wednesday": "onsdag",
+            "friday": "fredag"
           },
           "weekdays_abbreviation": {
-            "monday": "Mån",
+            "monday": "Mo",
             "tuesday": "Du",
             "wednesday": "Vi",
-            "thursday": "t:",
-            "friday": "Franska",
+            "thursday": "Den",
+            "friday": "Fr",
             "saturday": "Så",
             "sunday": "Su"
           },
           "months": {
             "january": "Januari",
-            "february": "Februari",
+            "february": "februari",
             "march": "Mars",
             "may": "Maj",
             "june": "Juni",
-            "july": "Juli",
+            "july": "juli",
             "august": "Augusti",
-            "october": "Oktober",
-            "november": "November"
+            "october": "oktober",
+            "november": "November",
+            "april": "April",
+            "september": "September",
+            "december": "December"
           }
         },
         "datepicker": {
           "show_previous_month": "Visa föregående månad, {{month}} {{year}}",
           "show_next_month": "Visa nästa månad, {{month}} {{year}}",
-          "range_start": "Sortimentsstart",
-          "in_range": "I sortimentet",
-          "range_end": "Slut på sortimentet"
+          "range_start": "Område start",
+          "in_range": "I räckvidd",
+          "range_end": "Område slut"
         },
         "list_formatter": {
           "and": {
@@ -1762,12 +1767,13 @@
           "expand": "Expandera"
         },
         "dropzone": {
-          "invalid_file_type": "Filtyp stöds inte",
-          "dragged_over": "Släpp filen för att ladda upp"
+          "invalid_file_type": "Filtypen stöds inte",
+          "dragged_over": "Dra filen för att ladda upp"
         },
         "back_to_cart": "Återgå till kundvagn",
         "choose_shipping_method": "Välj en fraktmetod",
-        "back_button_label": "Återvänd"
+        "back_button_label": "Återvänd",
+        "continue_to_shipping_method": "Fortsätt till frakt"
       },
       "payment_collection": {
         "cancelled": "Denna betalning krävs inte längre. Besök ordersidan för detaljer.",
