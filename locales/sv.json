@@ -1947,54 +1947,55 @@
         },
         "more_items_modal": {
           "clear_search": "Rensa sökning",
-          "empty_results": "Inga resultat hittades för \"%{searchText}\". Kontrollera stavningen eller använd ett annat ord eller uttryck.",
-          "number_items_shown": "%{shownNumber} av %{totalNumber} föremål"
+          "empty_results": "Inga resultat hittades för \"%{searchText}\". Kontrollera stavningen eller använd ett annat ord eller fras.",
+          "number_items_shown": "%{shownNumber} av %{totalNumber} artiklar"
         },
         "order_name_label": "Beställ %{name}",
-        "shopping_cart_label": "Shoppingvagn",
+        "shopping_cart_label": "Varukorg",
         "discount_not_found": "Kunde inte hitta en giltig rabatt som matchar den angivna koden",
         "discount_code_applied": "Rabattkod tillämpad",
         "discount_code_applied_with_code": "Rabattkod %{code} har tillämpats",
         "discount_code_replaced": "Rabattkod %{old_code} har tagits bort och %{code} har tillämpats",
         "discount_code_allocations_mismatch": "Din <strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod har ändrats. Granska din kundvagn och försök igen.",
-        "order_discounts_apply_to_local_shop": "Beställningsrabatter gäller endast för varor från %{shop_name}",
+        "order_discounts_apply_to_local_shop": "Rabatter på beställningar gäller endast för artiklar från %{shop_name}",
         "gift_card_applied": "Presentkort tillämpat",
         "gift_cards_apply_to_local_shop": "Presentkort gäller endast för varor från %{shop_name}",
         "add_discount_or_gift_card": "Lägg till en rabattkod eller presentkort",
-        "remove_gift_card_label": "Rensa presentkort",
-        "return_restocking_fee_label": "påfyllningsavgift",
+        "remove_gift_card_label": "Tydligt presentkort",
+        "return_restocking_fee_label": "Omställningsavgift",
         "free_shipping_discount_label": "Fri frakt",
         "apply_discount_button_label": "Ansök",
         "applied_discount_message": "%{amount} rabatt på totalpriset för beställningen",
         "discount_has_been_applied": "Rabatt har tillämpats",
-        "gift_card_has_been_applied": "Presentkort har använts",
-        "gift_card_has_been_removed": "Presentkort har tagits bort",
-        "gift_card_subscriptions_notice": "Presentkort gäller endast för din första betalning",
+        "gift_card_has_been_applied": "Presentkortet har tillämpats",
+        "gift_card_has_been_removed": "Presentkortet har tagits bort",
+        "gift_card_subscriptions_notice": "Presentkort kommer endast att gälla för din första betalning",
         "discount_already_applied": "En rabatt har tillämpats på denna beställning. Du kan inte lägga till en annan rabatt.",
         "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod är inte giltig för varorna i din kundvagn",
         "discount_requires_customer_notice": "Ange din fraktinformation för att använda rabattkoden <strong style=\"text-transform:uppercase\">%{code}</strong>",
         "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod är inte tillgänglig för dig just nu",
         "eligible_customer_missing_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod kräver berättigad kund",
         "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> rabattkod är inte tillgänglig för din leveransadress",
-        "pickup_label": "Upphämtning i butik",
+        "pickup_label": "Hämta i butik",
         "no_pickup_location": "Det finns inga upphämtningsplatser tillgängliga.",
         "pickup_unavailable_banner_title": {
-          "other": "Inga butiker tillgängliga med dina varor"
+          "other": "Inga butiker tillgängliga med dina artiklar",
+          "one": "Inga butiker tillgängliga med din vara"
         },
         "pickup_unavailable_banner_title_with_country": {
           "one": "Inga butiker tillgängliga i %{country} med din vara",
-          "other": "Inga butiker tillgängliga i %{country} med dina varor"
+          "other": "Inga butiker tillgängliga i %{country} med dina artiklar"
         },
         "pickup_unavailable_banner_body": {
-          "ship_to_address": "Leveransadress"
+          "ship_to_address": "Skicka till adress"
         },
         "calculating_shipping": "Beräknar…",
         "calculating": "Beräknar…",
         "shipping_discount_title": "Frakt Rabatt",
         "estimated_taxes_label_short": "Beräknad",
-        "estimated_taxes_finalization_tooltip_content_short": "Skatt fastställd efter betalning",
-        "order_total_label": "Ordertotal",
-        "price_before_discount_aria_text": "Originalpris",
+        "estimated_taxes_finalization_tooltip_content_short": "Skatt avslutad efter betalning",
+        "order_total_label": "Beställning Totalt",
+        "price_before_discount_aria_text": "Ursprungligt pris",
         "total_due_label": "Totalt att betala",
         "total_paid_label": "Totalt betalt",
         "total_price_label": "Totalt pris",
@@ -2004,16 +2005,16 @@
         "payment_due_label": "Betalning förfaller",
         "cost_table_title": "Kostnadsöversikt",
         "price_per_item": {
-          "accessibility_label": "%{price} per styck",
+          "accessibility_label": "%{price} per artikel",
           "label": "%{price}/st"
         },
-        "quantity_label": "Antal",
-        "product_image_quantity_label": "Antal",
+        "quantity_label": "Kvantitet",
+        "product_image_quantity_label": "Kvantitet",
         "scroll_order_summary": "Bläddra för fler artiklar",
         "collapse_order_summary": "Dölj ordersammanfattning",
-        "original_price": "Originalpris",
-        "sale_price": "Rea pris",
-        "order_total_updated_label": "Uppdaterat totalt",
+        "original_price": "Ursprungligt pris",
+        "sale_price": "Reapris",
+        "order_total_updated_label": "Uppdaterad total",
         "total_already_paid_label": "Betald",
         "unit_price": {
           "per_item": {
@@ -2023,9 +2024,9 @@
           }
         },
         "multiple_shipping_lines_label": "Frakt totalt",
-        "recurring_total_tooltip": "Inkluderar inte frakt, skatt, tullavgifter eller eventuella tillämpliga rabatter.",
-        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> kunde inte användas tillsammans med dina befintliga rabatter.",
-        "percent_off_shipping": "%{percent}% rabatt på frakten",
+        "recurring_total_tooltip": "Inkluderar inte frakt, skatt, avgifter eller några tillämpliga rabatter.",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}</strong> kunde inte användas med dina befintliga rabatter.",
+        "percent_off_shipping": "%{percent}% rabatt på frakt",
         "amount_off_shipping": "%{amount} rabatt på frakt",
         "deferred_payment_info": {
           "title": "Betalning av %{amount_due} förfaller den %{due_at}",
@@ -2040,22 +2041,22 @@
           "due_on_fulfillment_title": "Balansen av {{amount_due}} förfaller vid uppfyllelse"
         },
         "payment_terms_totals": {
-          "due_today": "Totalt att betala idag",
+          "due_today": "Totalt belopp att betala idag",
           "due_today_next": "Förfaller idag",
           "due_later": "Totalt att betala %{due_at}",
-          "due_on_fulfillment": "Totalt att betala vid leverans",
-          "due_on_fulfillment_next": "Förfallodag vid fullgörande",
+          "due_on_fulfillment": "Totalt belopp vid uppfyllelse",
+          "due_on_fulfillment_next": "Förfallodatum vid uppfyllelse",
           "due_on_receipt": "Totalt att betala vid mottagande",
-          "due_later_checkout_to_draft": "Totalt att betala senare",
+          "due_later_checkout_to_draft": "Totalt belopp som ska betalas senare",
           "total_paid": "Totalt betalt"
         },
-        "maximum_discount_code_limit_reached": "Du har nått det högsta antalet rabattkoder. Ta bort en befintlig kod för att använda <strong style=\"text-transform:uppercase\">%{code}</strong>.",
+        "maximum_discount_code_limit_reached": "Du har nått det maximala antalet rabattkoder. Ta bort en befintlig kod för att använda <strong style=\"text-transform:uppercase\">%{code}</strong>.",
         "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> fungerar inte just nu. Kontakta oss för hjälp.",
-        "due_on_fulfillment": "Förfallodag vid fullgörande",
-        "duties_label": "Tullar",
+        "due_on_fulfillment": "Förfallodatum vid uppfyllelse",
+        "duties_label": "Skyldigheter",
         "recurring_total_multiple_label": "Denna beställning har en återkommande avgift för flera artiklar.",
         "deferred_total_due_date_label": "Total att betala {{date}}",
-        "full_price": "Fullt pris: %{price}",
+        "full_price": "Fullpris: %{price}",
         "custom_discount": "Anpassad rabatt",
         "collapse_component_information": {
           "other": "Dölj %{count} objekt",
@@ -2071,7 +2072,8 @@
         "deferred_total_due_date_label_next": "Giltig till %{date}",
         "discount_discovery": {
           "back_to_finalize_order": "Tillbaka för att slutföra beställningen"
-        }
+        },
+        "shipping_default_value": "Beräknat i nästa steg"
       },
       "shipping": {
         "shipping_method_rollup_accessibility_label": "Fraktmetodsalternativ",
