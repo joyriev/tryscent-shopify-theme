@@ -1067,16 +1067,16 @@
           "message": "Disse varer er ikke tilgængelige for B2B-bestillinger."
         },
         "unpurchasable_product_generic": {
-          "title": "Ikke-købbar vare",
-          "header": "Nogle varer blev fjernet fra din kurv"
+          "title": "Uden for køb produkt",
+          "header": "Nogle varer blev fjernet fra din indkøbskurv"
         },
         "unfulfillable_product": {
           "title": "Levering ikke tilgængelig"
         },
         "unshippable_product": {
           "message": {
-            "one": "Denne vare vil blive fjernet fra din kurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse.",
-            "other": "Disse varer vil blive fjernet fra din kurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse."
+            "one": "Denne vare vil blive fjernet fra din indkøbskurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse.",
+            "other": "Disse varer vil blive fjernet fra din indkøbskurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse."
           }
         },
         "price_update": {
@@ -1099,15 +1099,15 @@
           "other": "%{count} varer"
         },
         "thank_you_from_shop": "Fra %{shop_name}",
-        "confirmation_email_sent_text": "En bekræftelsesmail er blevet sendt til %{email}",
+        "confirmation_email_sent_text": "En bekræftelses-e-mail er sendt til %{email}",
         "return_to_store_link_label": "Fortsæt med at handle",
         "print_link_label": "Udskriv kvittering",
         "page_title": "Tak, %{display_name}!",
         "purchase_order_number_title": "PO nummer #%{purchase_order_number}",
-        "cancelled_page_title": "Bestilling annulleret",
+        "cancelled_page_title": "Ordre annulleret",
         "failed_pending_payment_page_title": "Der er et problem med din betaling",
         "customer_information_title": "Ordredetaljer",
-        "company_location_title": "Placering",
+        "company_location_title": "Sted",
         "shipping_address_map_title": "Google-kort, der viser præcis placering af leveringsadresse: %{address}",
         "payment_method_not_charged": "Ikke opkrævet",
         "shipping_method_title": "Forsendelsesmetode",
@@ -1116,7 +1116,7 @@
         "estimated_arrival": "Forventet leveringsdato:",
         "estimated_delivery": "Nuværende leveringsestimat:",
         "re-order": "Bestil de samme varer igen",
-        "confirmed_items_count": "%{confirmed_count} af %{total_count} ting er bekræftet",
+        "confirmed_items_count": "%{confirmed_count} af %{total_count} varer er bekræftet",
         "items_fulfilled_by_store": {
           "one": "Varer, du har købt, vil komme fra %{remote_shop_name}.",
           "other": "Varer, du har købt, vil komme fra andre butikker."
@@ -1180,9 +1180,9 @@
         "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone_payment": "Efter at have gennemført din betaling, vil du modtage en bekræftelsestekst med dit ordrenummer.",
         "thank_you_payments_app_pending_payment_description_buyer_action_required_with_phone_pick_up": "Efter at have gennemført din betaling, vil du modtage en bekræftelsestekst med dit ordrenummer.",
         "thank_you_payments_app_pending_payment_description_provider_action_required_default": "Din betaling behandles. Du vil modtage en e-mail, når din betaling er bekræftet.",
-        "checkout_again": "Betal igen",
-        "checkout_on_remote_shop_link_text": "Gå til betaling hos %{remoteShopName}",
-        "checkout_on_another_store": "Checkout i en anden butik",
+        "checkout_again": "Gå til kassen igen",
+        "checkout_on_remote_shop_link_text": "Tjek ud på %{remoteShopName}",
+        "checkout_on_another_store": "Tjek ud i en anden butik",
         "order_status_confirmed_order_with_email": "Du vil modtage en e-mail, når din ordre er klar.",
         "order_status_confirmed_order_with_phone": "Du kan modtage en sms, når din ordre er klar.",
         "order_status_confirmed_order_with_email_and_phone": "Du vil modtage en e-mail, når din ordre er klar.",
@@ -1225,7 +1225,7 @@
         "order_status_updates_with_missing": "Vælg, hvordan du ønsker at modtage opdateringer om forsendelse.",
         "order_status_confirmed_with_installments_payment_return": "Vend din opmærksomhed tilbage til salgsassistenten.",
         "order_status_confirmed_with_installments_payment_confirm": "Du vil snart modtage en bekræftelsesmail med dit ordrenummer og detaljer om din afdragsplan.",
-        "confirmed_description": "Vi har modtaget din ordre, og vi gør den klar. Kom tilbage til denne side for opdateringer om din forsendelsesstatus.",
+        "confirmed_description": "Vi har accepteret din ordre, og vi gør den klar. Kom tilbage til denne side for opdateringer om din forsendelsesstatus.",
         "ready_for_pickup_description": "Din ordre er klar til afhentning. Medbring din ordrebekræftelse, når du henter din ordre.",
         "ready_for_delivery_description": "Vi har forberedt din ordre.",
         "shop_phone_description": "Du vil modtage en sms med et link til Shop-appen, som hjælper dig med at spore din ordre.",
@@ -1244,10 +1244,10 @@
         "out_for_delivery_local_title": "Din ordre er på vej til levering",
         "out_for_delivery_local_description_html": "Din ordre vil snart ankomme.",
         "attempted_delivery_title": "Der blev gjort et forsøg på at levere din ordre",
-        "attempted_delivery_description_html": "Der blev gjort et forsøg på at levere din ordre, men det lykkedes ikke. %{contact_us} for at aftale et nyt leveringsforsøg.",
-        "attempted_delivery_local_title": "Mistet levering",
-        "attempted_delivery_local_description_html": "Vi kunne ikke levere din ordre. For at aftale en ny levering, %{contact_us}.",
-        "delivered_description_html": "Din ordre er blevet leveret til den adresse, du har oplyst. Hvis du ikke har modtaget den, eller hvis du har andre problemer, %{contact_us}.",
+        "attempted_delivery_description_html": "Der blev gjort et forsøg på at levere din ordre, men det var ikke succesfuldt. %{contact_us} for at arrangere et nyt leveringsforsøg.",
+        "attempted_delivery_local_title": "Forsinket levering",
+        "attempted_delivery_local_description_html": "Vi kunne ikke levere din ordre. For at planlægge en ny levering, %{contact_us}.",
+        "delivered_description_html": "Din ordre er blevet leveret til den adresse, du har angivet. Hvis du ikke har modtaget den, eller hvis du har andre problemer, %{contact_us}.",
         "contact_us": "Kontakt os",
         "contact_us_lowercase": "kontakt os",
         "updated_time": "Opdateret for %{time_ago} siden",
@@ -1283,7 +1283,7 @@
           "title": "Ordren har ikke en leveringsadresse"
         },
         "first_payment_complete": "Første betaling fuldført",
-        "company_location_section_title": "Firma og placering",
+        "company_location_section_title": "Virksomhed og placering",
         "thank_you_ready_for_picked_up": "Din ordre blev afhentet på %{address}.",
         "order_updates_subscribe_to_email_notifications_failed": "Vi kan ikke gemme denne e-mail til opdateringer. Prøv igen eller brug en anden e-mail.",
         "order_updates_subscribe_to_email_notifications_email_already_exists": "Den e-mail, du indtastede, findes allerede.",
@@ -1314,7 +1314,15 @@
           "other": "Der opstod et problem med at gensende dine gavekort. Prøv igen eller kontakt os."
         },
         "verify_shop_account_message": "Dine oplysninger blev gemt hos Shop, bekræft din konto for automatisk at bruge dem i millioner af butikker.",
-        "verify_shop_account_confirmation": "Checkout oplysninger gemt"
+        "verify_shop_account_confirmation": "Checkout oplysninger gemt",
+        "announcement": {
+          "collapse": "Kollaps"
+        },
+        "cashback_notice": "Du vil modtage din cashback efter 30 dage",
+        "contact_us_html": "Har du brug for hjælp? %{contact_us}",
+        "failed_contact_merchant": "Kontakt %{company} for at arrangere levering.",
+        "customer_validation_error_phone": "Indtast et gyldigt telefon- eller ordrenummer.",
+        "breadcrumbs_in_review": "I anmeldelse"
       },
       "general": {
         "remove_chip": "Fjern vare",
@@ -2021,7 +2029,7 @@
         "split_by_delivery_method_unsupported_method_type": "Opdelt efter leveringsmetode forsøgt med en ikke-understøttet leveringsmetode type."
       },
       "store_credit_errors": {
-        "generic_error": "Der opstod et problem med din butikskredit. Prøv igen eller genindlæs siden."
+        "generic_error": "Der var et problem med din butikskredit. Prøv igen eller genindlæs siden."
       },
       "redeemable_errors": {
         "gift_card": {
@@ -2204,9 +2212,15 @@
         "recurring_totals_with_policies": {
           "first_cycles": {
             "one": "Første betaling %{total_price}",
-            "other": "Første %{count} betalinger à %{total_price} hver"
+            "other": "Første %{count} betalinger %{total_price} hver"
           },
-          "following_cycles": ", derefter %{total_price} hver %{interval}"
+          "following_cycles": ", så %{total_price} hver %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", så %{count} betaling på %{total_price}",
+            "other": ", så %{count} betalinger på %{total_price} hver"
+          }
         }
       },
       "customer_payment_methods": {
@@ -2627,41 +2641,57 @@
       },
       "taxes": {
         "vat_number": {
-          "domestic_order": "Omvendt betalingspligt gælder kun for grænseoverskridende EU-ordrer. Standard moms opkræves for lokale ordrer.",
+          "domestic_order": "Omvendt betalingspligt gælder kun for grænseoverskridende EU-bestillinger. Standard moms opkræves for lokale bestillinger.",
           "status": {
             "invalid_format": {
               "at": "Østrigske momsnumre indeholder AT og 9 tegn",
               "be": "Belgiske momsnumre indeholder BE og 10 tegn",
               "bg": "Bulgarske momsnumre indeholder BG og 9-10 tegn",
               "hr": "Kroatien momsnumre indeholder HR og 11 tegn",
-              "cz": "Tjekkiske momsnumre indeholder CZ og 8-10 tegn",
-              "dk": "Danske momsnumre indeholder DK og 8 tegn",
-              "fr": "Franske momsnumre indeholder FR og 11 tegn",
+              "cz": "Momsnumre i Tjekkiet indeholder CZ og 8-10 tegn",
+              "dk": "Danmarks momsnumre indeholder DK og 8 tegn",
+              "fr": "Frankrigs momsnumre indeholder FR og 11 tegn",
               "de": "Tyske momsnumre indeholder DE og 9 tegn",
-              "gr": "Græske momsnumre indeholder EL og 9 tegn",
-              "hu": "Ungarske momsnumre indeholder HU og 8 tegn",
+              "gr": "Grækenlands momsnumre indeholder EL og 9 tegn",
+              "hu": "Ungarn momsnumre indeholder HU og 8 tegn",
               "it": "Italienske momsnumre indeholder IT og 11 tegn",
-              "lt": "Litauiske momsnumre indeholder LT og 9-12 tegn",
+              "lt": "Litauens momsnumre indeholder LT og 9-12 tegn",
               "lu": "Luxembourg momsnumre indeholder LU og 8 tegn",
-              "mt": "Maltesiske momsnumre indeholder MT og 8 tegn",
+              "mt": "Malta momsnumre indeholder MT og 8 tegn",
               "nl": "Hollandske momsnumre indeholder NL og 12 tegn",
-              "pl": "Polske momsnumre indeholder PL og 10 tegn",
-              "pt": "Portugisiske momsnumre indeholder PT og 9 tegn",
+              "pl": "Polens momsnumre indeholder PL og 10 tegn",
+              "pt": "Portugal momsnumre indeholder PT og 9 tegn",
               "ro": "Rumænske momsnumre indeholder RO og 10 tegn",
               "sk": "Slovakiske momsnumre indeholder SK og 10 tegn",
-              "si": "Slovenske momsnumre indeholder SI og 8 tegn",
+              "si": "Slovenien momsnumre indeholder SI og 8 tegn",
               "es": "Spanske momsnumre indeholder ES og 9 tegn",
               "se": "Svenske momsnumre indeholder SE og 12 tegn",
-              "gb": "Momsnumre i Storbritannien indeholder GB eller XI og 5-12 tegn"
+              "gb": "Momsnumre fra Det Forenede Kongerige indeholder GB eller XI og 5-12 tegn",
+              "ee": "Estisk momsnumre indeholder EE og 9 tegn",
+              "lv": "Latvijas momsnumre indeholder LV og 11 tegn"
             },
             "invalid_number": {
-              "mt": "Indtast et gyldigt maltesisk momsnummer",
-              "nl": "Indtast et gyldigt momsnummer for Nederlandene",
-              "si": "Indtast et gyldigt slovensk momsnummer",
-              "gb": "Indtast et gyldigt momsnummer for Storbritannien"
+              "mt": "Indtast et gyldigt Malta momsnummer",
+              "nl": "Indtast et gyldigt hollandsk momsnummer",
+              "si": "Indtast et gyldigt momsnummer fra Slovenien",
+              "gb": "Indtast et gyldigt momsnummer fra Det Forenede Kongerige",
+              "at": "Indtast et gyldigt Østrigsk momsnummer"
             },
-            "service_unavailable": "Valideringstjeneste utilgængelig",
-            "service_error": "Valideringstjeneste utilgængelig"
+            "service_unavailable": "Valideringstjeneste ikke tilgængelig",
+            "service_error": "Valideringstjeneste ikke tilgængelig"
+          },
+          "field": {
+            "tooltip": "Validerer momsnummer og anvender automatisk omvendt betalingspligt på ordrer, når det er berettiget"
+          },
+          "accessibility": {
+            "status": {
+              "validating": "Momsnummer validering er i gang",
+              "applied": "Momsfritagelse er blevet anvendt",
+              "domestic": "Momsfritagelse ikke anvendt",
+              "invalid_number": "Momsfritagelse mislykkedes",
+              "service_unavailable": "Kan ikke bekræfte momsundtagelse",
+              "service_error": "Kan ikke bekræfte momsundtagelse"
+            }
           }
         }
       },
