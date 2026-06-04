@@ -1811,7 +1811,17 @@
         "paypal_over_capture": "Tilauksesi kokonaissumma päivitettiin. Maksa {{walletName}}-lompakolla viimeistelläksesi tilauksesi.",
         "captcha_required": "Syötä maksutiedot ja ratkaise captcha viimeistelläksesi ostoksesi.",
         "captcha_required_without_payment_information": "Ratkaise captcha viimeistelläksesi ostoksesi.",
-        "payment_credential_delegation_error": "Maksun käsittelyssä ilmeni ongelma. Valitse uusi maksutapa."
+        "payment_credential_delegation_error": "Maksun käsittelyssä ilmeni ongelma. Valitse uusi maksutapa.",
+        "three_d_secure_failed": "Maksuasi ei voitu vahvistaa. Yritä uudelleen tai käytä toista maksutapaa.",
+        "three_d_secure_failed_duplicate": "Luottokortin 3D Secure -todennus epäonnistui, koska toinen todennus on jo käynnissä.",
+        "three_d_secure_failed_payment_method": "Korttiasi ei voitu vahvistaa. Yritä uudelleen tai lisää toinen kortti.",
+        "three_d_secure_throttled": "Liian monta yritystä; odota ennen kuin yrität uudelleen",
+        "subscription_agreement_blank": "Tilauksen ostamista varten maksutietosi on tallennettava. Jatkaaksesi vahvista, että hyväksyt ehdot, tai poista tilauksen kohteet tilauksestasi.",
+        "test_mode_live_card": "Tämä kauppa ei voi vastaanottaa oikeita tilauksia tai maksuja.",
+        "test_mode_enabled_only_test_cards": "Testitila on käytössä, vain testiluottokortteja voi lisätä.",
+        "transient_error": "Maksun käsittelyssä ilmeni ongelma. Yritä päivittää tämä sivu tai tarkista internet-yhteytesi.",
+        "successful_offsite_with_gift_card_error": "Lahjakorttimaksun käsittelyssä ilmeni ongelma. Yritä uudelleen tai käytä toista maksutapaa.",
+        "shop_pay_wallet_not_available": "Shop Pay ei ole käytettävissä tässä kassalla."
       },
       "payment_challenge_modal": {
         "instructions": "Viimeistele ostoksesi käyttämällä {{paymentMethod}}-koodiasi",
@@ -1825,6 +1835,91 @@
         "external": {
           "instructions": "Vahvista maksu sovelluksessasi viimeistelläksesi tämän ostoksen"
         }
+      },
+      "payment_summary": {
+        "credit_card_expires_on_notice": "Vanhenee %{month}/%{year}",
+        "express_payment_gateway_label": "Pikainen",
+        "manual_payment_gateway_label": "Käsikirja"
+      },
+      "payment_gateway": {
+        "credit_card_label": "Luottokortti",
+        "cash_on_delivery_label": "Maksu toimitettaessa (COD)",
+        "money_order_label": "Postiennakko",
+        "debit_card_label": "Pankkikortti",
+        "fixed_payment_label": "Maksusi eräpäivä on {{dueDate}}.",
+        "generic_payment_terms": "Olet {{translatedName}}-ehdoissa. Maksusi erääntyy {{dueDate}}.",
+        "direct_payment_terms": "Olet {{translatedName}}-ehdoissa. Korttiasi veloitetaan {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Maksusi erääntyy, kun tilauksesi on toimitettu.",
+        "order_due_on_fulfillment_payment": "Korttiasi veloitetaan, kun tilauksesi on käsitelty.",
+        "order_due_on_receipt_choose_later": "Maksunne erääntyy vastaanotettaessa.",
+        "order_deposit_due_now": "{{depositAmount}} erääntyy tänään. Jäännössumma on {{translatedName}} ehtojen mukainen ja erääntyy {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} erääntyy maksettavaksi tänään. Jäljellä oleva summa erääntyy, kun tilauksesi on toimitettu.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} erääntyy maksettavaksi tänään. Jäljellä oleva saldo erääntyy myöhemmin.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} erääntyy maksettavaksi tänään. Jäljellä oleva summa erääntyy maksettavaksi {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms": "Maksusi erääntyy, kun tilauksesi on vahvistettu.",
+        "draft_order_payment_due_later_terms": "Olet {{translatedName}}-ehdoissa, kun tilauksesi on vahvistettu.",
+        "draft_order_payment_due_on_fulfillment": "Maksusi erääntyy, kun tilauksesi on vahvistettu ja toimitettu.",
+        "draft_order_deposit_due_later": "{{depositAmount}} eräpäivä on tilauksesi vahvistamisen yhteydessä. Loppusumma maksetaan {{translatedName}} ehtojen mukaisesti.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} eräpäivä on, kun tilauksesi vahvistetaan. Jäännös maksetaan, kun tilauksesi on toimitettu."
+      },
+      "pickup_point": {
+        "geolocation": {
+          "errors": {
+            "unsuported_by_browser": "Sijainnin hakeminen ei ole selaimessasi tuettu. Yritä uudelleen tai käytä toista selainta.",
+            "permission_denied": "Sijaintiasi ei voitu saada. Yritä uudelleen."
+          }
+        },
+        "no_business_hours": "Ei aukioloaikoja saatavilla",
+        "open_twenty_four_hours": "Avoinna 24/7",
+        "search_button": "Hae",
+        "selector_tabs": "Noutopisteen valitsin",
+        "no_pickup_points_near_you": "Noutopisteitä ei löytynyt valitun osoitteen läheltä",
+        "no_pickup_points_near_location": "Noutopisteitä ei löytynyt läheltä sijaintiasi",
+        "pickup_unavailable_banner_title": {
+          "one": "Noutopisteitä ei ole saatavilla tuotteellesi",
+          "other": "Noutopisteitä ei ole saatavilla tuotteillesi"
+        },
+        "no_pickup_points_found": "Noutopisteitä ei löytynyt",
+        "paginator": {
+          "header": {
+            "one": "Näytetään %{first} - %{last} kohteesta %{count} pistettä",
+            "other": "Näytetään %{first} - %{last} kohteesta %{count} pistettä"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} / %{count} pisteestä",
+            "other": "%{pickup_point_index} / %{count} pisteestä"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} / %{count} pistettä",
+            "other": "%{first} - %{last} / %{count} pistettä"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} noutopistettä lähellä sijaintiasi",
+          "other": "%{count} noutopistettä lähellä sijaintiasi"
+        }
+      },
+      "post_purchase": {
+        "page_title": "Oston jälkeinen",
+        "title": "Oston jälkeinen",
+        "components": {
+          "processing": "Käsitellään…"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Uudelleenohjataan…",
+        "redirecting_title": "Uudelleenohjataan…",
+        "redirecting_notice": "Odota, kun ohjaamme sinut eteenpäin.",
+        "redirecting_to_bank": "Uudelleenohjataan sivustolle {{bank}}",
+        "complete_your_purchase_title": "Viimeistele ostoksesi",
+        "continue_to_payment_gateway_notice": "Jatka maksamiseen lisätäksesi maksutietosi.",
+        "continue_to_payment_gateway_button_label": "Jatka maksamaan",
+        "page_title": "Tilauksen käsittelyssä",
+        "title": "Tilauksen käsittelyssä",
+        "remote_shops_payments_processing": "Maksujen käsittely",
+        "action_required": "Toiminta vaaditaan",
+        "modal_notice": "Olemme yhteydessä {{paymentMethod}}-palveluun",
+        "remote_checkout_count": "%{current} / %{total}"
       }
     },
     "attributes": {
