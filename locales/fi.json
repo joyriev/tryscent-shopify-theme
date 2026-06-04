@@ -11,19 +11,19 @@
   "general": {
     "password_page": {
       "login_form_heading": "Kirjaudu kauppaan salasanalla:",
-      "login_password_button": "Siirry sisään käyttämällä salasanaa",
+      "login_password_button": "Kirjaudu sisään salasanalla",
       "login_form_password_label": "Salasana",
       "login_form_password_placeholder": "Salasanasi",
       "login_form_error": "Väärä salasana!",
       "login_form_submit": "Kirjaudu sisään",
       "admin_link_html": "Oletko kaupan omistaja? <a href=\"/admin\" class=\"link underlined-link\">Kirjaudu sisään tästä</a>",
-      "powered_by_shopify_html": "Tämän kaupan alustana on {{ shopify }}"
+      "powered_by_shopify_html": "Tämän kaupan toimii {{ shopify }} avulla"
     },
     "social": {
       "alt_text": {
         "share_on_facebook": "Jaa Facebookissa",
         "share_on_twitter": "Jaa X:ssä",
-        "share_on_pinterest": "Pinnaa Pinterestissä"
+        "share_on_pinterest": "Kiinnitä Pinterestiin"
       },
       "links": {
         "twitter": "X (Twitter)",
@@ -46,7 +46,7 @@
     },
     "search": {
       "search": "Hae",
-      "reset": "Tyhjennä hakutermi"
+      "reset": "Tyhjennä hakusana"
     },
     "cart": {
       "view": "Näytä ostoskori ({{ count }})",
@@ -57,18 +57,18 @@
       "copy_to_clipboard": "Kopioi linkki",
       "share_url": "Linkki",
       "success_message": "Linkki kopioitu leikepöydälle",
-      "close": "Sulje jako"
+      "close": "Sulje jakaminen"
     },
     "slider": {
-      "of": "/",
-      "next_slide": "Liu'uta oikealle",
-      "previous_slide": "Liu'uta vasemmalle",
+      "of": "of",
+      "next_slide": "Liiku oikealle",
+      "previous_slide": "Liukuta vasemmalle",
       "name": "Liukusäädin"
     }
   },
   "newsletter": {
     "label": "Sähköposti",
-    "success": "Kiitos tilauksesta",
+    "success": "Kiitos tilauksestasi",
     "button_label": "Tilaa"
   },
   "accessibility": {
@@ -110,7 +110,7 @@
     }
   },
   "onboarding": {
-    "product_title": "Tuotteen esimerkkinimi",
+    "product_title": "Esimerkkituotteen nimi",
     "collection_title": "Kokoelmasi nimi"
   },
   "products": {
@@ -389,7 +389,7 @@
     "update_country": "Päivitä maa/alue",
     "search": "Hae",
     "popular_countries_regions": "Suositut maat/alueet",
-    "country_results_count": "{{ count }} maata/aluetta löytyi"
+    "country_results_count": "{{ count }} maata/aluetta löydetty"
   },
   "customer": {
     "account": {
@@ -504,17 +504,17 @@
   },
   "gift_cards": {
     "issued": {
-      "title": "Tässä on lahjakorttisi saldo ({{ value }}) kauppaan {{ shop }}!",
+      "title": "Tässä on {{ shop }} -lahjakorttisi {{ value }} saldo!",
       "subtext": "Lahjakorttisi",
-      "gift_card_code": "Lahjakortin koodi",
+      "gift_card_code": "Lahjakorttikoodi",
       "shop_link": "Vieraile verkkokaupassa",
       "add_to_apple_wallet": "Lisää Apple Walletiin",
-      "qr_image_alt": "QR-koodi – lunasta lahjakortti skannaamalla",
-      "copy_code": "Kopioi lahjakortin koodi",
+      "qr_image_alt": "QR-koodi — skannaa lunastaaksesi lahjakortin",
+      "copy_code": "Kopioi lahjakorttikoodi",
       "expired": "Vanhentunut",
-      "copy_code_success": "Koodin kopioiminen onnistui",
-      "how_to_use_gift_card": "Käytä lahjakortin koodia verkossa tai QR-koodia kaupassa",
-      "expiration_date": "Voimassa {{ expires_on }} asti"
+      "copy_code_success": "Koodi kopioitu onnistuneesti",
+      "how_to_use_gift_card": "Käytä lahjakorttikoodia verkossa tai QR-koodia myymälässä",
+      "expiration_date": "Vanhenee {{ expires_on }}"
     }
   },
   "recipient": {
