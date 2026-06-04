@@ -3813,17 +3813,17 @@
     "notices": {
       "customer": {
         "unsubscribe_error": "Avregistreringsfel",
-        "no_account_found": "Inget konto hittades med den e-postadressen.",
+        "no_account_found": "Inget konto hittades med den e-posten.",
         "invalid_credentials": "Felaktig e-postadress eller lösenord.",
         "denylisted_reset_password": "Ditt konto kunde inte nås eftersom det nuvarande lösenordet inte är säkert. Du kommer att få ett e-postmeddelande för att uppdatera ditt lösenord."
       },
       "address": {
-        "updated": "Adress uppdaterad.",
+        "updated": "Framgångsrikt uppdaterad adress.",
         "error_updating": "Fel vid uppdatering av adress",
-        "created": "Adress skapad framgångsrikt",
+        "created": "Framgångsrikt skapad adress",
         "error_creating": "Fel vid skapande av adress.",
-        "deleted": "Adress borttagen framgångsrikt",
-        "error_deleting": "Fel vid borttagning av adress."
+        "deleted": "Framgångsrikt raderad adress",
+        "error_deleting": "Fel vid radering av adress."
       },
       "line_item": {
         "item_status": {
@@ -3860,43 +3860,43 @@
       },
       "cart": {
         "not_found": "Varukorg hittades inte",
-        "only_n_items_available": "Du kan endast lägga till %{count} %{name} i kundvagnen.",
+        "only_n_items_available": "Du kan bara lägga till %{count} %{name} i kundvagnen.",
         "too_many_items_in_cart": "Du kan inte lägga till fler %{name} i kundvagnen.",
         "only_one_added_to_cart": "Endast 1 artikel lades till i din kundvagn på grund av tillgänglighet.",
         "only_n_added_to_cart": "Endast %{quantity} artiklar lades till i din kundvagn på grund av tillgänglighet.",
         "maximum_available_quantity_reached": "Den maximala mängden av denna artikel finns redan i din kundvagn.",
-        "less_than_minimum": "Denna artikel har en minimum på %{min}.",
-        "more_than_maximum": "Denna artikel har en högsta mängd på %{max}.",
-        "not_respect_step": "Du kan endast lägga till denna vara i steg om %{step}.",
+        "less_than_minimum": "Denna artikel har ett minimum av %{min}.",
+        "more_than_maximum": "Denna artikel har ett maximum av %{max}.",
+        "not_respect_step": "Du kan endast lägga till denna artikel i steg om %{step}.",
         "all_items_in_cart": "Alla %{count} %{name} finns i din kundvagn.",
         "empty_update": "kan inte uppdatera tom kundvagn",
-        "missing_parameters": "ingen giltig id- eller linjeparameter",
+        "missing_parameters": "ingen giltig id eller linjeparameter",
         "generic_error": "Varukorgsfel",
         "invalid_input": "%{parameter} parameter är ogiltig.",
-        "product_not_available": "Produkten finns inte tillgänglig",
-        "too_many_line_items_error": "Din kundvagn kan inte innehålla fler än %{max} artiklar.",
+        "product_not_available": "Produkten är inte tillgänglig",
+        "too_many_line_items_error": "Din kundvagn kan inte innehålla mer än %{max} artiklar.",
         "link_expired": "Länken har gått ut",
         "link_no_longer_exists": "Länken finns inte längre.",
-        "stock_problems_html": "En eller flera varor finns inte längre tillgängliga. Vi har lagt till en <a href='%{link}'>uppdaterad kundvagn</a>.",
+        "stock_problems_html": "En eller flera artiklar finns inte längre tillgängliga. Vi har tillhandahållit en <a href='%{link}'>uppdaterad kundvagn</a>.",
         "changed": "Varukorg ändrad",
         "product_sold_out": "Produkten '%{name}' är redan slutsåld.",
         "variant_requires_selling_plan": "Variant kan endast köpas med en försäljningsplan.",
         "selling_plan_not_available_for_company_locations": "Endast engångsköp är tillgängligt för B2B-beställningar",
-        "digital_product_not_available_for_company_locations": "Den här artikeln kan inte läggas till i en B2B-beställning",
-        "buyer_cannot_purchase_for_company_locations": "Du kan inte köpa för denna plats",
+        "digital_product_not_available_for_company_locations": "Denna artikel kan inte läggas till i en B2B-beställning",
+        "buyer_cannot_purchase_for_company_locations": "Du kan inte köpa för den här platsen",
         "selling_plan_not_applicable": "Kan inte tillämpa försäljningsplan på variant",
-        "shipping_address_not_required": "Den här kundvagnen kräver ingen frakt",
-        "shipping_address_invalid": "Det uppstod ett problem vid beräkningen av dina fraktkostnader. Fortsätt till kassan för att välja en fraktsats innan du slutför din beställning.",
-        "bundle_requires_components": "Paketprodukten '%{name}' kan inte läggas till i kundvagnen.",
-        "gift_card_with_components_not_supported": "Paketprodukten '%{name}' kan inte läggas till i kundvagnen.",
-        "gift_card_price_must_be_greater_than_zero": "Paketprodukten '%{name}' kan inte läggas till i kundvagnen.",
-        "gift_card_recipient_validation_error": "Den angivna mottagaren av presentkortet är ogiltig",
-        "cart_too_large": "Varukorg är för stor.",
-        "cart_attributes_error": "Varukorgens egenskaper innehåller ogiltiga uppgifter.",
+        "shipping_address_not_required": "Denna kundvagn kräver ingen frakt",
+        "shipping_address_invalid": "Det uppstod ett problem med att beräkna dina fraktkostnader. Fortsätt till kassan för att välja en fraktkostnad innan du slutför din beställning.",
+        "bundle_requires_components": "Produkten '%{name}' kan inte läggas till i kundvagnen.",
+        "gift_card_with_components_not_supported": "Produkten '%{name}' kan inte läggas till i kundvagnen.",
+        "gift_card_price_must_be_greater_than_zero": "Produkten '%{name}' kan inte läggas till i kundvagnen.",
+        "gift_card_recipient_validation_error": "Den angivna presentkortmottagaren är ogiltig",
+        "cart_too_large": "Korgen är för stor.",
+        "cart_attributes_error": "Varukorgens attribut innehåller ogiltiga uppgifter.",
         "merchandise_line_transformers": {
-          "run_error": "Ett fel uppstod i din kundvagn."
+          "run_error": "Ett fel inträffade i din kundvagn."
         },
-        "merchandise_not_applicable": "Artikeln kan inte köpas i den konfigurerade formen."
+        "merchandise_not_applicable": "Objektet kan inte köpas som det är konfigurerat."
       },
       "storefront": {
         "invalid_password": "Lösenordet är fel, försök igen."
