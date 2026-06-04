@@ -3439,17 +3439,17 @@
         "return_to_store_simple": "Återvända till butik"
       },
       "wallets": {
-        "return_to_store": "Återvänd till butiken",
+        "return_to_store": "Återvända till butik",
         "return_to_checkout": "Återgå till kassan",
         "shipping_line_label": "Frakt",
         "payment_in_progress_body": "Din betalning behandlas. Din beställning kommer att slutföras snart.",
-        "redirection_notice": "Du kommer att omdirigeras till {{walletName}} för att slutföra ditt köp",
+        "redirection_notice": "Du kommer att bli omdirigerad till {{walletName}} för att slutföra ditt köp",
         "errors": {
           "unavailable": {
-            "title": "{{walletName}} finns inte tillgänglig",
+            "title": "{{walletName}} inte tillgänglig",
             "description": "{{walletName}} var inte tillgänglig. Använd en annan betalningsmetod eller försök igen senare.",
             "instructions": "Det uppstod ett problem med {{walletName}}. Gå tillbaka till butiken för att försöka igen eller välj ett annat betalningssätt.",
-            "unavailable_for_country": "{{walletName}} är inte tillgängligt i {{countryName}}. Välj en annan betalningsmetod för att slutföra ditt köp"
+            "unavailable_for_country": "{{walletName}} är inte tillgänglig i {{countryName}}. Välj en annan betalningsmetod för att slutföra ditt köp."
           },
           "unavailable_terminal": {
             "instructions": "{{walletName}} är för närvarande inte tillgänglig för din beställning. För att fortsätta ditt köp, välj en annan betalningsmetod."
@@ -3464,7 +3464,7 @@
           "unsupported": {
             "address": "Handlaren kan inte leverera till denna adress",
             "wallet_is_unavailable": "{{walletName}} kan inte användas med denna adress. Välj en annan adress eller stäng {{walletName}} för att slutföra ditt köp",
-            "postal_code": "Den här platsen stöds inte"
+            "postal_code": "Denna plats stöds inte"
           },
           "outdated": {
             "shipping_method": "Fraktalternativen har ändrats för din beställning. Granska ditt val.",
@@ -3482,14 +3482,14 @@
             "billing_must_match_shipping": "Måste matcha leveransadress"
           },
           "missing": {
-            "billing_first_name": "Ange ett faktureringsadressens förnamn",
+            "billing_first_name": "Ange en faktureringsadress förnamn",
             "address2": "Ange en lägenhet, svit, etc.",
             "billing_address2": "Ange en faktureringsadress lägenhet, svit, etc.",
             "billing_city": "Ange en faktureringsadress stad",
             "province": "Välj en stat / provins",
             "billing_province": "Välj en faktureringsadress stat / provins",
-            "country": "Välj ett land/område",
-            "billing_zip": "Ange en faktureringsadress postnummer",
+            "country": "Välj ett land/region",
+            "billing_zip": "Ange en faktureringsadress ZIP / postnummer",
             "phone": "Ange ett telefonnummer"
           },
           "formatting": {
@@ -3497,12 +3497,17 @@
             "postal_code_contains_emoji": "Ta bort emoji från ditt postnummer",
             "first_name_too_long": "Förnamn innehåller för många bokstäver"
           },
-          "generic": "Det var ett problem med {{walletName}}. Försök igen eller använd en annan betalningsmetod."
+          "generic": "Det var ett problem med {{walletName}}. Försök igen eller använd en annan betalningsmetod.",
+          "subscription_review_required": "Din beställning inkluderar en prenumeration. Du måste granska villkoren nedan innan du slutför din beställning.",
+          "terminal": "Det var ett problem med {{walletName}}. Använd en annan betalningsmetod.",
+          "processing_error_checkout_as_guest": "Det uppstod ett problem med att behandla din betalning. Försök igen eller {{checkout_as_guest_link}}."
         },
         "scrim": {
           "continue_purchase_in_window": "Fortsätt ditt köp i {{walletName}}-fönstret",
-          "and_return_to_checkout": "och återvänd till Checkout"
-        }
+          "and_return_to_checkout": "och återgå till kassan"
+        },
+        "place_order": "Lägg beställning",
+        "recovery_notice": "Det är ett problem med dina beställningsuppgifter. Uppdatera din information för att slutföra betalningen."
       },
       "note": {
         "length_exceeds_maximum": "Minska storleken på anteckningen till 5000 tecken eller färre."
@@ -3962,7 +3967,8 @@
     },
     "checkpoint": {
       "message": "Lös Captcha för att fortsätta",
-      "error": "Captcha-validering misslyckades"
+      "error": "Captcha-validering misslyckades",
+      "submit_button_text": "Skicka in"
     },
     "store_availability": {
       "pick_up_time": {
