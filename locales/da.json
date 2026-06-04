@@ -1676,13 +1676,15 @@
         "invalid_shipping_method_summary": "Vælg en gyldig leveringsadresse for at se tilgængelige leveringsmetoder"
       },
       "remote_merchandise_only": {
-        "remote_only_notice": "Disse varer sælges og sendes af andre butikker. Checkout hos hver butik for at fuldføre dit køb.",
+        "remote_only_notice": "Disse varer sælges og sendes af andre butikker. Tjek ud med hver butik for at fuldføre dit køb.",
         "detail_item_label": {
           "one": "{{count}} vare",
           "other": "{{count}} varer"
         },
-        "checkout_on_shop_label": "Gå til betaling på %{shop_name}",
-        "single_shop_transition": "Omdirigerer dig til %{advertiser} for at fuldføre dit køb."
+        "checkout_on_shop_label": "Tjek ud på %{shop_name}",
+        "single_shop_transition": "Vi omdirigerer dig til %{advertiser} for at fuldføre dit køb.",
+        "title": "Færdiggør dit køb",
+        "return_to_store_label": "Gå tilbage til butikken"
       },
       "contextual_availability": {
         "title": {
@@ -1742,15 +1744,15 @@
         "no_rates_for_cart_or_destination_notice": "Der er ingen forsendelsesmetoder tilgængelige for din kurv eller adresse",
         "no_pickup_location_notice": "Mindst ét af dine produkter er ikke tilgængeligt for afhentning",
         "no_rates_for_country_notice": "Ingen forsendelsespriser fundet for denne adresse.",
-        "cheapest_rate_label": "Billigste",
+        "cheapest_rate_label": "Billigst",
         "delivery_today": "Samme dags levering %{time}",
         "delivery_tomorrow": "Næste dags levering %{time}",
         "delivery": "Levering %{time}",
         "arrives_time": "Ankommer %{time}",
-        "arrives_time_range": "Ankommer om %{min_time}–%{max_time}",
+        "arrives_time_range": "Ankommer %{min_time}–%{max_time}",
         "estimated_time": "Anslået %{time}",
         "estimated_time_range": "Anslået %{min_time}–%{max_time}",
-        "default_description": "Afsendes inden for 1 hverdag",
+        "default_description": "Afsendes inden for 1 arbejdsdag",
         "shipping_line_phone_label": "Mobiltelefonnummer (påkrævet)",
         "shipping_line_delivery_phone_label": "Mobiltelefonnummer",
         "shipping_line_delivery_instructions": "Indtast nødvendige oplysninger som dørkoder eller afleveringsinstruktioner.",
@@ -1845,7 +1847,7 @@
         "third_party_address_error": "Der opstod en fejl under indlæsning af adressevalg. Indtast din adresse manuelt nedenfor.",
         "third_party_payment_timeout": "Kan ikke indlæse betalingsmetoder. Prøv igen eller brug en anden betalingsmetode.",
         "third_party_payment_error": "Der opstod en fejl under indlæsning af betalingsvalg. Brug en anden betalingsmetode.",
-        "address_default": "Indstil som standard",
+        "address_default": "Sæt som standard",
         "different_shipping_method_summary": "Indtast en anden leveringsadresse for at se tilgængelige forsendelsesmetoder",
         "invalid_shipping_method_summary": "Indtast en gyldig leveringsadresse for at se tilgængelige forsendelsesmetoder",
         "invalid_shipping_method_summary_selected": "Vælg en anden leveringsadresse for at se tilgængelige leveringsmetoder",
@@ -2009,7 +2011,7 @@
           "insufficient_funds": "Dette gavekort har ingen penge tilbage",
           "currency_mismatch": "Kun gavekort i %{shop_currency} accepteres",
           "generic": "Gavekortet kunne ikke tilføjes til kassen",
-          "no_longer_available": "Dette gavekort kan ikke længere bruges ved denne betaling"
+          "no_longer_available": "Dette gavekort kan ikke længere bruges med denne kasse"
         }
       },
       "alternative_payment_method_banner": {
@@ -2032,12 +2034,12 @@
         "continue_to_payment_gateway_button_label_error": "Opdater betalingsoplysninger",
         "page_title": "Behandler ordre",
         "title": "Behandler ordre",
-        "you_will_receive_confirmation": "Vi modtager mange ordrer lige nu. Du bør snart modtage en bekræftelse via e-mail eller sms. Hvis du ikke modtager den inden for den næste time, så lad os det vide.",
+        "you_will_receive_confirmation": "Vi får mange ordrer lige nu. Du bør modtage bekræftelse via e-mail eller sms snart. Hvis du ikke modtager det inden for den næste time, så lad os vide det.",
         "you_will_not_be_charged": "Du vil ikke blive opkrævet endnu",
         "wait": {
           "medium": {
-            "one": "Din ordre behandles. Forventet ventetid er %{count} minut.",
-            "other": "Din ordre behandles. Forventet ventetid er %{count} minutter."
+            "one": "Din ordre bliver behandlet. Estimeret ventetid er %{count} minut.",
+            "other": "Din ordre bliver behandlet. Estimeret ventetid er %{count} minutter."
           },
           "long": "Du vil modtage en e-mail, så snart din ordre er behandlet. Der er i øjeblikket et højt antal ordrer.",
           "no_auto_refresh_html": "Hvis du ikke bliver omdirigeret automatisk, %{link}.",
@@ -2066,28 +2068,36 @@
       "review": {
         "title": "Anmeldelse",
         "review_title": "Fuldfør din ordre",
-        "review_and_confirm_title": "Gennemse og bekræft",
-        "checkout_as_guest": "Checkout som gæst",
-        "checkout_a_different_way": "Checkout en anden måde",
+        "review_and_confirm_title": "Gennemgå og bekræft",
+        "checkout_as_guest": "Tjek ud som gæst",
+        "checkout_a_different_way": "Tjek en anden måde",
         "blocks": {
           "shipping_method_title": "Forsendelsesmetode",
-          "change_contact_method_link_label": "Skift kontaktinformation",
-          "change_billing_address_link_label": "Skift faktureringsadresse",
-          "change_company_location_link_label": "Skift virksomhedsplacering",
+          "change_contact_method_link_label": "Ændre kontaktoplysninger",
+          "change_billing_address_link_label": "Ændre faktureringsadresse",
+          "change_company_location_link_label": "Ændre virksomhedsplacering",
           "change_shipping_method_link_label": "Skift forsendelsesmetode",
           "change_payment_method_link_label": "Skift betalingsmetode",
           "purchase_order_number_title": "PO nummer",
-          "change_purchase_order_number_label": "Skift PO-nummer",
-          "no_address": "(Uden adresse)",
-          "no_purchase_order_number": "(Uden PO-nummer)",
-          "due_after_order_reviewed_html": "Forfalder efter ordren er gennemgået",
-          "review_title_free_order": "Gennemse og fuldfør din ordre",
+          "change_purchase_order_number_label": "Ændre PO-nummer",
+          "no_address": "(Ingen adresse)",
+          "no_purchase_order_number": "(ingen PO-nummer)",
+          "due_after_order_reviewed_html": "Forfald efter ordren er gennemgået",
+          "review_title_free_order": "Gennemgå og fuldfør din ordre",
           "payment_method_saved_company_location": "Gem kort til denne placering",
-          "company_location": "Virksomhedens placering"
+          "company_location": "Virksomhedens placering",
+          "change_link_label": "Ændre",
+          "change_shipping_address_link_label": "Ændre leveringsadresse",
+          "change_delivery_method_link_label": "Ændre leveringsmetode",
+          "pickup_items_at": {
+            "one": "Hent %{count} vare ved",
+            "other": "Hent %{count} varer ved"
+          }
         },
-        "block_title": "Gennemse dine oplysninger",
+        "block_title": "Gennemgå dine oplysninger",
         "item_header": {
-          "section": "Sektion"
+          "section": "Sektion",
+          "change_value": "Ændre værdi"
         }
       },
       "marketing": {
@@ -2125,7 +2135,7 @@
         "terms_and_policies": "Vilkår og retningslinjer"
       },
       "remote_policies": {
-        "unavailable_policy": "Der er ikke angivet nogen %{policy_name} for denne butik. For yderligere oplysninger, kontakt venligst %{shop_name} direkte."
+        "unavailable_policy": "Der er ikke givet nogen %{policy_name} for denne butik. For yderligere information, kontakt venligst %{shop_name} direkte."
       },
       "mor_policies": {
         "terms_and_conditions": "Handelsvilkår og betingelser",
@@ -2333,14 +2343,14 @@
         }
       },
       "review_address_modal": {
-        "title": "Anmeldelsesadresse",
+        "title": "Anmeld adresse",
         "subtitle": {
-          "one": "Denne ordre vil blive sendt til den adresse, som {{merchant}} har oplyst.",
-          "other": "Denne ordre vil blive sendt til en adresse oplyst af {{merchant}}. Vælg en leveringsadresse."
+          "one": "Denne ordre vil blive sendt til den adresse, der er angivet af {{merchant}}.",
+          "other": "Denne ordre vil blive sendt til en adresse angivet af {{merchant}}. Vælg en leveringsadresse."
         },
-        "subtitle_no_match": "Denne adresse stemmer ikke overens med nogen af dine gemte adresser.",
+        "subtitle_no_match": "Denne adresse matcher ikke nogen af dine gemte adresser.",
         "subtitle_must_use": "Din ordre vil blive sendt til denne adresse.",
-        "return_to_cart": "Vend tilbage til kurven"
+        "return_to_cart": "Gå tilbage til kurv"
       },
       "marketplaces": {
         "legal_notice": {
@@ -2568,10 +2578,10 @@
       },
       "remote": {
         "errors": {
-          "only_remote_merchandise_lines": "Kassen indeholder kun fjernvarer. En omdirigering til den eksterne butik er nødvendig for at fuldføre købet.",
-          "currency_mismatch": "Denne vare kan ikke tilføjes til din kurv, fordi den kommer fra en butik, der bruger en anden valuta.",
-          "currency_mismatch_removal": "En vare blev fjernet fra din kurv, fordi den kommer fra en butik, der bruger en anden valuta.",
-          "max_remote_shops_exceeded": "Dette produkt kan ikke tilføjes, fordi din kurv allerede har det maksimale fra andre butikker."
+          "only_remote_merchandise_lines": "Kassen indeholder kun fjernvarer. En omdirigering til den fjerne butik er nødvendig for at fuldføre kassen.",
+          "currency_mismatch": "Denne vare kan ikke tilføjes til din indkøbskurv, fordi den er fra en butik, der bruger en anden valuta.",
+          "currency_mismatch_removal": "En vare blev fjernet fra din indkøbskurv, fordi den er fra en butik, der bruger en anden valuta.",
+          "max_remote_shops_exceeded": "Dette produkt kan ikke tilføjes, fordi din indkøbskurv allerede har det maksimale fra andre butikker."
         }
       },
       "units": {
@@ -2595,7 +2605,7 @@
       },
       "required_extensions": {
         "errors": {
-          "interaction_required": "En udvidelsesinteraktion er påkrævet for at fuldføre betalingen."
+          "interaction_required": "En udvidelsesinteraktion er nødvendig for at fuldføre kassen."
         }
       },
       "taxes": {
