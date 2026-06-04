@@ -1547,7 +1547,7 @@
         "email_or_phone_label": "E-mail eller mobiltelefonnummer",
         "email_or_phone_placeholder": "E-mail eller mobiltelefonnummer",
         "optional_first_name_label": "Fornavn (valgfrit)",
-        "storefront_link": "forhandlerens hjemmeside",
+        "storefront_link": "handlerens hjemmeside",
         "company_attention_label": "Firma/Opmærksomhed",
         "optional_company_attention_label": "Firma/Opmærksomhed (valgfrit)",
         "optional_company_label": "Virksomhed (valgfri)",
@@ -1562,8 +1562,8 @@
         "region_none": "Ingen valgt",
         "governorate_label": "Guvernement",
         "governorate_placeholder": "Guvernement",
-        "state_and_territory_label": "Stat/fylke",
-        "state_and_territory_placeholder": "Stat/fylke",
+        "state_and_territory_label": "Stat/område",
+        "state_and_territory_placeholder": "Stat/område",
         "phone_rollup_accessibility_label": "Telefonmuligheder",
         "phone_country_code_label": "Telefonnummer landekode",
         "optional_phone_label": "Telefon (valgfri)",
@@ -1577,7 +1577,8 @@
         "change_location_link_label": "Skift placering",
         "suburb_label": "Forstad",
         "company_label": "Virksomhed",
-        "optional_subdistrict_label": "Underområde (valgfrit)"
+        "optional_subdistrict_label": "Underområde (valgfrit)",
+        "subdistrict_label": "Underområde"
       },
       "delivery_options": {
         "ship": "Skib",
@@ -1612,10 +1613,14 @@
           "other": "Utilgængelige produkter"
         },
         "products_not_available": {
-          "one": "Dette produkt vil blive fjernet fra din kurv, fordi det ikke er tilgængeligt i dit land/område.",
-          "other": "Disse produkter vil blive fjernet fra din kurv, fordi de ikke er tilgængelige i dit land/område."
+          "one": "Dette produkt vil blive fjernet fra din indkøbskurv, fordi det ikke er tilgængeligt i dit land/region.",
+          "other": "Disse produkter vil blive fjernet fra din indkøbskurv, fordi de ikke er tilgængelige i dit land/region."
         },
-        "unavailable_label": "Utilgængelig"
+        "unavailable_label": "Ikke tilgængelig",
+        "all_products_in_cart_unavailable": {
+          "one": "Dette produkt er ikke tilgængeligt i dit land/region.",
+          "other": "Disse produkter er ikke tilgængelige i dit land/region."
+        }
       },
       "merchandise_unavailable_in_buyer_location": {
         "banner_title": {

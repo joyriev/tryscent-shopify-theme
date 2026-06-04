@@ -633,13 +633,100 @@
         "civic_number_warning": "Lisää talon numero, jos sinulla on sellainen",
         "different_shipping_address_label": "Toimitus eri osoitteeseen",
         "different_shipping_address_text": "Käytä kertaluonteista osoitetta tätä tilausta varten",
-        "change_company_location_link_label": "Vaihda yrityksen sijainti"
+        "change_company_location_link_label": "Vaihda yrityksen sijainti",
+        "title": "Tietoa",
+        "shipping_used_as_billing_notice": "Tätä käytetään myös laskutusosoitteena tälle tilaukselle.",
+        "storefront_link": "kauppiaan verkkosivusto",
+        "subdistrict_label": "Alueosasto",
+        "suburb_label": "Esikaupunki",
+        "province_label": "Maakunta",
+        "province_placeholder": "Maakunta",
+        "region_none": "Ei valittu",
+        "phone_rollup_accessibility_label": "Puhelinvaihtoehdot",
+        "phone_tooltip": "Jos meidän tarvitsee ottaa sinuun yhteyttä tilauksesi suhteen",
+        "ship_to_company": "Toimitus osoitteeseen {{companyName}}"
       },
       "company_location": {
         "location_title": "Yrityksen sijainti"
       },
       "clipboard": {
         "failed_to_copy": "Kopiointi epäonnistui"
+      },
+      "customer_account": {
+        "not_user_label": "Eikö ole %{first_name}?",
+        "invalid_address": "Valittu osoite on virheellinen. %{update_address_link} tai valitse toinen osoite.",
+        "rollup_accessibility_label": "Tilitiedot",
+        "invalid_shipping_method_summary": "Valitse kelvollinen toimitusosoite nähdäksesi saatavilla olevat toimitustavat",
+        "saved_address_option_description": {
+          "one": "Sinulla on {{count}} tallennettua osoitetta."
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Tuote ei ole saatavilla",
+          "other": "Ei saatavilla olevat tuotteet"
+        },
+        "products_not_available": {
+          "one": "Tämä tuote poistetaan ostoskoristasi, koska se ei ole saatavilla maassasi/alueellasi."
+        },
+        "all_products_in_cart_unavailable": {
+          "other": "Nämä tuotteet eivät ole saatavilla maassasi/alueellasi."
+        }
+      },
+      "embed": {
+        "payment": {
+          "payment_options": "Näytä kaikki maksuvaihtoehdot"
+        }
+      },
+      "delivery_options": {
+        "ship_to_address": "Toimitusosoitteeseen",
+        "pick_up_from_store": "Nouto myymälästä",
+        "pickup_point_map_title": "Noutopisteen kartta",
+        "pick_up_in_one_hour": "Yleensä valmista tunnissa",
+        "pick_up_in_two_hours": "Yleensä valmiina 2 tunnissa",
+        "pick_up_in_four_hours": "Valmistuu yleensä 4 tunnissa",
+        "pick_up_in_twenty_four_hours": "Yleensä valmiina 24 tunnissa",
+        "pick_up_in_two_to_four_days": "Yleensä valmiina 2–4 päivässä",
+        "pick_up_in_five_or_more_days": "Yleensä valmiina 5+ päivän kuluessa",
+        "pick_up_in_zero_to_two_hours": "Noudettavissa 2 tunnin kuluttua",
+        "pick_up_in_two_to_four_hours": "Noudettavissa 4 tunnin kuluttua",
+        "pick_up_immediately": "Valmiina noudettavaksi nyt",
+        "pick_up_next_day": "Valmiina noudettavaksi seuraavana päivänä",
+        "pickup_point_method_definition": "Toimitus noutopisteeseen",
+        "retail_method_definition": "Vähittäiskaupan toimitus",
+        "company_location_no_address_banner": "Toimitukset osoitteettomiin paikkoihin lähetetään tarkistettavaksi.",
+        "subscription_pickup_information": "Tämä tulee olemaan noutopaikka kaikille tuleville tilauksillesi tilauksessasi."
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Toimitusta ei ole saatavilla %{count} tuotteelle",
+            "other": "Toimitusta ei ole saatavilla %{count} tuotteelle"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "delete_customer_mandate": {
+          "generic_error": "Pyyntösi käsittelyssä ilmeni ongelma.",
+          "success_message": "Maksutapasi on poistettu onnistuneesti"
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "message": "Päivitä tämä sivu tai yritä uudelleen muutaman minuutin kuluttua"
+        },
+        "embed_errors": {
+          "storefront_password_required": "Tämä kauppa on suojattu salasanalla",
+          "customer_account_required": "Asiakastili vaaditaan kassalle siirtymisen viimeistelyyn",
+          "cart_completed": "Tämä kassatoiminto on jo suoritettu loppuun",
+          "not_authorized": "Kassan todennus epäonnistui. Varmista sovellustunnuksesi.",
+          "killswitch_enabled": "Kassan käyttö on tilapäisesti estetty",
+          "policy_violation": "Ei voi suorittaa maksua politiikan määritysten rajoitusten vuoksi",
+          "unrecoverable_failure": "Kassan lataaminen epäonnistui. Yritä uudelleen."
+        }
+      },
+      "discount_errors": {
+        "generic_error": "Tilaustasi ei voitu käsitellä, koska alennuskoodisi ei ole enää voimassa. Tarkista tilauksesi kokonaissumma ja yritä uudelleen."
       }
     },
     "attributes": {
