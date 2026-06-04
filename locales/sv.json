@@ -3454,11 +3454,12 @@
           "unavailable_terminal": {
             "instructions": "{{walletName}} är för närvarande inte tillgänglig för din beställning. För att fortsätta ditt köp, välj en annan betalningsmetod."
           },
-          "discount_code": "Det gick inte att använda denna rabattkod. Kontrollera din kod och försök igen.",
+          "discount_code": "Kunde inte tillämpa denna rabattkod. Kontrollera din kod och försök igen.",
           "detour": {
-            "stock_problems": "Vissa artiklar finns inte längre tillgängliga. Stäng {{walletName}} och försök igen.",
-            "price_change": "Vissa varupriser har ändrats. Stäng {{walletName}} för att granska din beställning och försök igen.",
-            "queue": "Du har placerats i en kö för att slutföra köpet. Stäng {{walletName}} för att fortsätta."
+            "stock_problems": "Vissa artiklar är inte längre tillgängliga. Stäng {{walletName}} och försök igen.",
+            "price_change": "Vissa artikelpriser har ändrats. Stäng {{walletName}} för att granska din beställning och försök igen.",
+            "queue": "Du har placerats i en kö för att checka ut. Stäng {{walletName}} för att fortsätta.",
+            "currency_change": "Du kan inte använda en annan adress med {{walletName}}. Använd den ursprungliga adressen, eller försök med en annan betalningsmetod."
           },
           "unsupported": {
             "address": "Handlaren kan inte leverera till denna adress",
@@ -3473,11 +3474,12 @@
             "shipping_option": "Välj ett giltigt fraktalternativ",
             "zone": "Ange en giltig stat / provins",
             "billing_zone": "Ange en giltig faktureringsadress stat / provins",
-            "emirate": "Ange en giltig emirat",
+            "emirate": "Ange ett giltigt emirat",
             "postal_code": "Ange en giltig postnummer / postkod",
-            "billing_phone": "Ange ett giltigt telefonnummer för faktureringsadressen",
+            "billing_phone": "Ange ett giltigt telefonnummer för faktureringsadress",
             "reduction_code": "Ange en giltig rabattkod eller presentkort",
-            "billing_zip": "Ange en giltig faktureringsadress postnummer / postkod"
+            "billing_zip": "Ange en giltig faktureringsadress ZIP / postnummer",
+            "billing_must_match_shipping": "Måste matcha leveransadress"
           },
           "missing": {
             "billing_first_name": "Ange ett faktureringsadressens förnamn",
@@ -3492,8 +3494,10 @@
           },
           "formatting": {
             "name_contains_emojis": "Ta bort emoji från ditt namn",
-            "postal_code_contains_emoji": "Ta bort emoji från ditt postnummer"
-          }
+            "postal_code_contains_emoji": "Ta bort emoji från ditt postnummer",
+            "first_name_too_long": "Förnamn innehåller för många bokstäver"
+          },
+          "generic": "Det var ett problem med {{walletName}}. Försök igen eller använd en annan betalningsmetod."
         },
         "scrim": {
           "continue_purchase_in_window": "Fortsätt ditt köp i {{walletName}}-fönstret",
@@ -3528,15 +3532,16 @@
         }
       },
       "units": {
-        "centiliter": "kl",
-        "ounce": "uns",
-        "fluid_ounce": "fl uns",
+        "centiliter": "kläder",
+        "ounce": "oz",
+        "fluid_ounce": "fl oz",
         "pint": "pt",
         "quart": "qt",
-        "gallon": "tjej",
+        "gallon": "gal",
         "inch": "i",
         "yard": "yd",
-        "square_foot": "ft²"
+        "square_foot": "ft²",
+        "liter": "L"
       },
       "memberships": {
         "delivery_promise_unfulfillable": "Adressen stöds inte för det aktuella medlemskapet.",
@@ -3702,6 +3707,12 @@
         "items_for_pickup": "Varor för upphämtning",
         "items_for_shipping": "Varor för frakt",
         "items_moved_to_shipping_toast": "Objekt som inte kan hämtas har flyttats till frakt"
+      },
+      "too_many_requests": {
+        "title": "För många försök att slutföra köpet",
+        "body": "Vänligen vänta några minuter och försök igen från din kundvagn.",
+        "body_no_cart": "Vänligen vänta några minuter och försök igen.",
+        "return_to_cart": "Återgå till kundvagn"
       }
     },
     "links": {
