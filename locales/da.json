@@ -722,7 +722,7 @@
         "gift_card_balance_label": "Balance:",
         "supported_card_brands_more_label": "og mere…",
         "detected_card_brand": "Registreret kortmærke: {brand}",
-        "ftd_vault_credit_card_label": "Gem dette kreditkort på min konto for en hurtigere betaling",
+        "ftd_vault_credit_card_label": "Gem dette kreditkort til min konto for en hurtigere betaling",
         "card_security_vault_notice": "Vi har brug for dine oplysninger til fremtidige betalinger. Alle transaktioner er sikre og krypterede.",
         "card_expiry_label": "Udløbsdato (MM / YY)",
         "card_expiry_placeholder": "Udløbsdato (MM / YY)",
@@ -755,7 +755,7 @@
         "same_billing_address_label": "Samme som leveringsadresse",
         "billing_address_associated_with_mandate": "Brug adresse tilknyttet betalingsmetode",
         "billing_address_associated_with_mandate_info": "Hvis du ønsker at ændre din faktureringsadresse, skal du fjerne og indtaste dine kreditkortoplysninger igen.",
-        "free_order_notice_html": "Din ordre er <strong>gratis</strong>. Ingen betaling er påkrævet.",
+        "free_order_notice_html": "Din ordre er <strong>gratis</strong>. Ingen betaling er nødvendig.",
         "express_checkout_free_order": "Du vil ikke blive opkrævet for en gratis ordre",
         "order_covered_by_gift_cards_notice": {
           "one": "Din ordre er dækket af dit gavekort.",
@@ -786,13 +786,13 @@
         "continue_to_guest_checkout": "Fortsæt til gæsteudcheckning",
         "multibanco_label": "Multibank",
         "eps_label": "eps-overførsel",
-        "klarna_slice_it_label": "Finansiering med Klarna",
+        "klarna_slice_it_label": "Finansier med Klarna",
         "afterpay_label": "Afterpay",
         "cashapppay_label": "Cash App Betal",
         "blik_label": "BLIK",
         "twint_label": "TVILLING",
         "swish_label": "Svirp",
-        "grabpay_label": "GribBetaling",
+        "grabpay_label": "GrabPay",
         "kcp_creditcard_label": "KCP Kreditkort",
         "usdc_cashback_title": "1% tilbagebetaling",
         "usdc_cashback_additional_info": "Få 1% tilbage i USDC direkte i din tegnebog.",
@@ -817,7 +817,7 @@
           "not_available": "Apple Pay er ikke tilgængelig i denne browser. For at forbinde din Apple Pay-konto skal du bruge Safari på en Apple-enhed."
         },
         "google": {
-          "connect": "Klik for at forbinde med din Google Pay-konto",
+          "connect": "Klik for at oprette forbindelse til din Google Pay-konto",
           "error_authorizing": "Fejl ved godkendelse af betaling"
         },
         "account_connected": "Konto tilsluttet.",
@@ -841,8 +841,8 @@
           "no_fixed_selling_plans": "Du kan ikke bruge butikskredit med udskudte købsoptioner"
         },
         "clear": "Klar",
-        "location_billing_address_label": "Faktureringsadresse for placering",
-        "location_shipping_address_label": "Leveringsadresse for forsendelse",
+        "location_billing_address_label": "Sted faktureringsadresse",
+        "location_shipping_address_label": "Leveringsadresse",
         "use_order_billing_address_label": "Brug faktureringsadresse fra ordren",
         "use_location_billing_address_label": "Brug faktureringsadresse som placering",
         "use_location_shipping_address_label": "Brug leveringsadresse for placering",
@@ -881,14 +881,16 @@
           "done": "Færdig",
           "description": "Du kan kun ændre faktureringsadressen på dit kort.",
           "fields": {
-            "default": "Indstil som standard"
+            "default": "Sæt som standard",
+            "name": "Navn på kort",
+            "billing": "Faktura til"
           }
         },
         "expired_cards_info": {
           "one": "Der er %{count} udløbet kort, som du kan se og redigere i din konto.",
           "other": "Der er %{count} udløbne kort, som du kan se og redigere i din konto."
         },
-        "local_payment_method_receiver_notice": "Efter du har afgivet din bestilling, vil du modtage betalingsoplysninger. Foretag betalingen i en pengeautomat eller online inden for {{dueDays}} dage.",
+        "local_payment_method_receiver_notice": "Efter at have afgivet din ordre, vil du modtage betalingsoplysninger. Foretag betalingen i en hæveautomat eller online inden for {{dueDays}} dage.",
         "order_edit_banner_title": "Betaling af {{amount_owed}} er nødvendig",
         "order_edit_banner_subtitle": "Din ordre {{order_number}} blev opdateret. Gennemgå disse ændringer, og betal derefter for at bekræfte din ordre.",
         "order_edit_banner_items_added": {
@@ -911,16 +913,16 @@
         "order_edit_banner_single_item_return_line_item_removed": "Fjernet fra retur",
         "order_edit_banner_multiple_items_return_line_item_removed": "Fjernet {{amount}} fra retur",
         "gift_card_store_credit": {
-          "add_label": "Tilføj et gavekort eller butikskredit",
-          "manage_label": "Administrer gavekort eller butikskredit"
+          "add_label": "Tilføj et gavekort eller butiks kredit",
+          "manage_label": "Administrer gavekort eller butiks kredit"
         },
         "custom_onsite_payment_method_modal": {
           "title": "Tilpasset Betalingsbekræftelse på Stedet"
         },
-        "markets_pro_disclaimer_label": "Ved at afgive din ordre accepterer du at købe fra Global-e som den registrerede forhandler, underlagt Global-e’s %{markets_pro_terms} og %{privacy_policy}, og dele dine oplysninger med %{shop_name}.",
+        "markets_pro_disclaimer_label": "Ved at afgive din ordre accepterer du at købe fra Global-e som den registrerede sælger, underlagt Global-e’s %{markets_pro_terms} og %{privacy_policy}, og dele dine oplysninger med %{shop_name}.",
         "markets_pro_disclaimer_privacy_policy": "Privatlivspolitik",
         "markets_pro_disclaimer_terms_and_conditions_title": "Handelsbetingelser for registreret forhandler",
-        "markets_pro_disclaimer_privacy_policy_title": "Fortrolighedspolitik for Merchant of Record",
+        "markets_pro_disclaimer_privacy_policy_title": "Merchant of Record Privatlivspolitik",
         "purchase_order_number": {
           "title": "PO nummer",
           "label": "PO nummer (valgfrit)"
@@ -941,7 +943,8 @@
         "card_change_label": "Ændre",
         "billing_address_description_no_shipping_address": "Indtast den adresse, der matcher dit kort eller betalingsmetode.",
         "bank_account_disclaimer": "ACH-betalinger kan tage op til 4 arbejdsdage at behandle.",
-        "bank_account_missing": "Bankkonto skal være tilsluttet"
+        "bank_account_missing": "Bankkonto skal være tilsluttet",
+        "expiry_short": "(Udløber %{month}/%{year})"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte.",

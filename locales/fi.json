@@ -1964,9 +1964,26 @@
           "change_delivery_method_link_label": "Vaihda toimitustapaa",
           "no_purchase_order_number": "(Ei PO-numeroa)",
           "due_after_order_reviewed_html": "Maksettava tilauksen tarkastamisen jälkeen",
-          "payment_method_saved_company_location": "Tallenna kortti tähän sijaintiin"
+          "payment_method_saved_company_location": "Tallenna kortti tähän sijaintiin",
+          "pick_up_in_store_shipping_method_html": "Nouto myymälästä · %{location_name}",
+          "purchase_order_number_title": "PO-numero",
+          "review_title_free_order": "Tarkista ja viimeistele tilauksesi",
+          "pickup_items_at": {
+            "one": "Nouda %{count} tuote osoitteesta",
+            "other": "Nouda %{count} tuotetta osoitteesta"
+          },
+          "ship_items_to": {
+            "one": "Toimita %{count} tuote osoitteeseen"
+          }
         },
-        "block_title": "Tarkista tietosi"
+        "block_title": "Tarkista tietosi",
+        "review_title": "Viimeistele tilauksesi",
+        "checkout_as_guest": "Jatka vieraana",
+        "checkout_a_different_way": "Tutustu toiseen tapaan",
+        "item_header": {
+          "change_value": "Vaihda arvo",
+          "section": "Osio"
+        }
       },
       "remote_policies": {
         "unavailable_policy": "Tälle kaupalle ei ole annettu %{policy_name}-käytäntöä. Lisätietoja saat ottamalla suoraan yhteyttä %{shop_name}:iin."
@@ -1983,6 +2000,69 @@
         "errors": {
           "interaction_required": "Laajennuksen vuorovaikutus vaaditaan kassalle siirtymisen viimeistelemiseksi."
         }
+      },
+      "shipping": {
+        "cheapest_rate_label": "Halvin",
+        "default_description": "Toimitetaan 1 arkipäivässä",
+        "add_address": "Käytä eri osoitetta",
+        "address_more": "Lisää toimintoja tälle osoitteelle",
+        "address_form": {
+          "generic_error": "Osoitteen tallentamisessa ilmeni ongelma. Yritä uudelleen.",
+          "one_time_address_subtitle": "Käytä kertaluonteista osoitetta tätä tilausta varten"
+        },
+        "no_rates_for_cart_or_destination_notice": "Ostoskoriisi tai osoitteeseesi ei ole saatavilla toimitustapoja",
+        "no_pickup_location_notice": "Vähintään yhtä tuotteistasi ei ole saatavilla noudettavaksi",
+        "no_rates_for_country_notice": "Tälle osoitteelle ei löytynyt toimituskuluja.",
+        "no_rates_contact_notice": "Ota meihin yhteyttä saadaksesi lisätietoja",
+        "estimated_delivery_time": "Arvioitu toimitusaika %{time}",
+        "estimated_delivery_time_range": "Arvioitu toimitusaika %{min_time}–%{max_time}",
+        "delivery_to": "Toimitus kohteeseen",
+        "estimated_time": "Arvioitu %{time}",
+        "estimated_time_range": "Arvioitu %{min_time}–%{max_time}",
+        "shipping_line_delivery_phone": "Sinuun saatetaan ottaa yhteyttä toimituspäivitysten vuoksi.",
+        "shipping_line_delivery_instructions": "Syötä tarvittavat tiedot, kuten ovikoodit tai pudotusohjeet.",
+        "other_method": {
+          "zero": "Muita menetelmiä ei ole saatavilla",
+          "one": "%{count} muu menetelmä saatavilla osoitteessa",
+          "other": "%{count} muuta menetelmää saatavilla alkaen"
+        },
+        "prime_not_available": {
+          "default": "Prime-toimitus ei ole saatavilla tilauksellesi. Toimitusvaihtoehtosi on päivitetty."
+        },
+        "shipping_information_required_notice": "Toimitustiedot ovat pakollisia. {{link}}.",
+        "shipping_information_redirect_link": "Syötä tietosi tähän",
+        "loading_progressive_rates": "Etsitkö lisää hintoja…",
+        "no_other_methods_available": "Muita menetelmiä ei ole saatavilla",
+        "duties_and_taxes_options": {
+          "ddu_caption": "Lisämaksuja saattaa tulla",
+          "ddp_caption": "Ei lisämaksuja toimituksesta"
+        },
+        "shipping_address_rollup_accessibility_label": "Toimitusosoitteen valinnat",
+        "different_shipping_method_summary": "Syötä eri toimitusosoite nähdäksesi saatavilla olevat toimitustavat",
+        "invalid_shipping_method_summary": "Syötä kelvollinen toimitusosoite nähdäksesi saatavilla olevat toimitustavat",
+        "invalid_shipping_method_summary_selected": "Valitse eri toimitusosoite nähdäksesi saatavilla olevat toimitustavat",
+        "method_summary": {
+          "incomplete_address_entered": "Syötä täydellinen toimitusosoite nähdäksesi saatavilla olevat toimitustavat",
+          "incomplete_address_selected": "Valitse täydellinen toimitusosoite nähdäksesi saatavilla olevat toimitustavat"
+        },
+        "local_pickup": {
+          "search_address": "Etsi osoitetta",
+          "rollup_title": "Noutopaikka",
+          "rollup_accessibility_label": "Noutopaikkavaihtoehdot"
+        },
+        "pre_order_ships_later": "Toimitetaan myöhemmin",
+        "pre_order_ships_date": "Toimitetaan %{date}"
+      },
+      "session_errors": {
+        "session_not_unique": "Tilauksesi käsittelyssä ilmeni ongelma. Päivitä tämä sivu palataksesi kauppaan.",
+        "session_already_finished": "Tämä tilaus on jo lähetetty. Voit palata kauppaan aloittaaksesi uuden tilauksen."
+      },
+      "review_address_modal": {
+        "subtitle": {
+          "one": "Tämä tilaus lähetetään osoitteeseen, jonka {{merchant}} on antanut.",
+          "other": "Tämä tilaus lähetetään osoitteeseen, jonka {{merchant}} on antanut. Valitse toimitusosoite."
+        },
+        "use_saved_address": "Käytä eri osoitetta"
       }
     },
     "attributes": {
