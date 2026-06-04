@@ -1122,7 +1122,7 @@
           "other": "Varer, du har købt, vil komme fra andre butikker."
         },
         "gift_card_confirmation_by_text": "Hvis du ikke modtog det, send teksten igen eller kontakt os.",
-        "gift_card_confirmation_by_email": "Hvis du ikke modtog den, send e-mailen igen eller kontakt os.",
+        "gift_card_confirmation_by_email": "Hvis du ikke har modtaget det, send e-mailen igen eller kontakt os.",
         "thank_you_title_payments_app_pending_buyer_action_required": "Din ordre er modtaget",
         "thank_you_confirmed_with_email_description": {
           "single_store": "Du vil snart modtage en bekræftelsesmail",
@@ -1233,11 +1233,11 @@
         "order_updates_current_step_prefix": "Nuværende trin:",
         "order_updates_past_step_prefix": "Forrige trin:",
         "order_updates_upcoming_step_prefix": "Næste trin:",
-        "in_transit_description": "Du vil modtage opdateringer om dens fremskridt.",
+        "in_transit_description": "Du vil modtage opdateringer om dets fremskridt.",
         "in_transit_description_days": "Du bør modtage din ordre inden for de næste %{number} dage.",
         "in_transit_description_today": "Du bør modtage din ordre i dag.",
-        "in_transit_description_tomorrow": "Du bør modtage din ordre inden for den næste dag.",
-        "no_tracking_number": "Der er intet sporingsnummer for denne ordre.",
+        "in_transit_description_tomorrow": "Du bør modtage din ordre den næste dag.",
+        "no_tracking_number": "Der er ikke noget sporingsnummer for denne ordre.",
         "out_for_delivery": "Udleveres",
         "out_for_delivery_title": "Din ordre er på vej til levering",
         "out_for_delivery_description_html": "Din ordre er på vej og burde ankomme i dag. Hvis den ikke bliver leveret inden for de næste 2 dage, %{contact_us}.",
@@ -1254,8 +1254,8 @@
         "failed_contact_merchant_no_company": "Kontakt os for at arrangere levering.",
         "let_us_know": "Lad os vide det",
         "login_title": "Log ind for at se alle ordreoplysninger",
-        "login_description": "Du kan finde dit ordrenummer på kvitteringen, du modtog via e-mail.",
-        "login_description_phone": "Du kan finde dit ordrenummer på kvitteringen, du modtog via sms.",
+        "login_description": "Du kan finde dit ordrenummer i kvitteringen, du modtog via e-mail.",
+        "login_description_phone": "Du kan finde dit ordrenummer i kvitteringen, du modtog via sms.",
         "customer_validation_error": "Indtast en gyldig e-mail eller ordrenummer.",
         "unfulfilled_items_title": "Forbereder til forsendelse",
         "unfulfilled_items_description": "Vi forbereder i øjeblikket disse varer til forsendelse.",
@@ -1267,7 +1267,7 @@
           "shipping": "Afhentningssted"
         },
         "fulfillment": {
-          "unfulfilled_table_title": "Varer, der klargøres til forsendelse"
+          "unfulfilled_table_title": "Varer, der forberedes til forsendelse"
         },
         "order_updates_description_missing": "Du modtager ikke forsendelsesopdateringer.",
         "order_updates_subscribe_to_email_notifications": "Få forsendelsesopdateringer via e-mail",
@@ -1288,26 +1288,26 @@
         "order_updates_subscribe_to_email_notifications_failed": "Vi kan ikke gemme denne e-mail til opdateringer. Prøv igen eller brug en anden e-mail.",
         "order_updates_subscribe_to_email_notifications_email_already_exists": "Den e-mail, du indtastede, findes allerede.",
         "gift_card_confirmation_by_text_typ": {
-          "one": "Du vil modtage en sms med dit gavekort om et par minutter.",
-          "other": "Du vil modtage en sms med dine gavekort om et par minutter."
+          "one": "Du vil modtage en tekst med dit gavekort om et par minutter.",
+          "other": "Du vil modtage en tekst med dine gavekort om et par minutter."
         },
         "gift_card_confirmation_by_email_typ": {
           "one": "Du vil modtage en e-mail med dit gavekort om et par minutter.",
           "other": "Du vil modtage en e-mail med dine gavekort om et par minutter."
         },
         "gift_card_email_title": {
-          "one": "Gavekort blev sendt via e-mail",
+          "one": "Gavekortet blev sendt via e-mail",
           "other": "Gavekort blev sendt via e-mail"
         },
         "gift_card_text_title": {
-          "one": "Gavekort blev sendt via sms",
-          "other": "Gavekort blev sendt via sms-besked"
+          "one": "Gavekortet blev sendt via tekstbesked",
+          "other": "Gavekort blev sendt via tekstbesked"
         },
         "resend_gift_cards_by_email": "Send e-mail igen",
         "resend_gift_cards_by_text": "Send sms-besked igen",
         "gift_card_resent_confirmation": {
           "one": "Gavekortet blev sendt igen.",
-          "other": "Gavekort blev gensendt."
+          "other": "Gavekort blev sendt igen."
         },
         "gift_card_resend_failure": {
           "one": "Der opstod et problem med at gensende dit gavekort. Prøv igen eller kontakt os.",
@@ -1322,7 +1322,13 @@
         "contact_us_html": "Har du brug for hjælp? %{contact_us}",
         "failed_contact_merchant": "Kontakt %{company} for at arrangere levering.",
         "customer_validation_error_phone": "Indtast et gyldigt telefon- eller ordrenummer.",
-        "breadcrumbs_in_review": "I anmeldelse"
+        "breadcrumbs_in_review": "I anmeldelse",
+        "order_status_confirmed_order_local": "Vi forbereder din ordre til levering.",
+        "order_status_confirmed_order_local_pick_up": "Vi forbereder din ordre.",
+        "order_status_confirmed_order_local_payment": "Vi forbereder din ordre.",
+        "login_reorder_link_text": {
+          "one": "køb dette produkt også"
+        }
       },
       "general": {
         "remove_chip": "Fjern vare",
