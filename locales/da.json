@@ -970,7 +970,7 @@
           "other": "En eller flere varer, du har tilføjet, kan ikke sendes til din adresse. Fjern dem for at gennemføre Checkout, eller kontakt butikken."
         },
         "payment_method_not_supported": "Du kan ikke bruge denne betalingsmetode til %{country}. Brug en anden betalingsmetode for at sende til dette land.",
-        "empty_state": "Indtast din leveringsadresse for at se tilgængelige forsendelsesmetoder.",
+        "empty_state": "Indtast din leveringsadresse for at se tilgængelige leveringsmetoder.",
         "title": "Forsendelse ikke tilgængelig",
         "invalid_selected_address_with_update_link": "Den valgte leveringsadresse er ikke gyldig. %{update_address_link} eller vælg en anden adresse",
         "unavailable_address_country": "Forsendelse er ikke tilgængelig i det land, du har valgt. Brug en anden adresse for at fortsætte",
@@ -1783,22 +1783,22 @@
             "other": "%{count} flere leveringer til %{shipping_price} hver"
           },
           "max_cycles_base_shipping_delivery_not_included": {
-            "other": "%{count} flere leverancer til %{shipping_price} hver"
+            "other": "%{count} flere leveringer til %{shipping_price} hver"
           },
           "prepaid_free_shipping_with_cycles": {
-            "one": "Gratis levering for den første %{cycle}, efterfulgt af %{recurring_order_shipping_price}",
-            "other": "Gratis levering for den første %{cycle}, efterfulgt af %{recurring_order_shipping_price}"
+            "one": "Gratis fragt for den første %{cycle}, efterfulgt af %{recurring_order_shipping_price}",
+            "other": "Gratis fragt for den første %{cycle}, efterfulgt af %{recurring_order_shipping_price}"
           },
           "prepaid_order_one_cycle": {
-            "one": "%{shipping_price} for %{count} flere leverancer",
-            "other": "%{shipping_price} for %{count} flere leverancer (%{per_delivery_cost})"
+            "one": "%{shipping_price} for %{count} flere leveringer",
+            "other": "%{shipping_price} for %{count} flere leveringer (%{per_delivery_cost})"
           },
           "prepaid_order_one_cycle_delivery_not_included": {
-            "other": "%{shipping_price} for %{count} leverancer (%{per_delivery_cost})"
+            "other": "%{shipping_price} for %{count} leveringer (%{per_delivery_cost})"
           },
           "prepaid_order_no_cycle": {
-            "one": "%{shipping_price} for %{count} flere leverancer, efterfulgt af %{recurring_order_shipping_price}",
-            "other": "%{shipping_price} for %{count} flere leverancer (%{per_delivery_cost}), efterfulgt af %{recurring_order_shipping_price}"
+            "one": "%{shipping_price} for %{count} mere levering, efterfulgt af %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} for %{count} flere leveringer (%{per_delivery_cost}), efterfulgt af %{recurring_order_shipping_price}"
           },
           "prepaid_order_no_cycle_delivery_not_included": {
             "one": "%{shipping_price} for %{count} levering, efterfulgt af %{recurring_order_shipping_price}",
@@ -1812,13 +1812,14 @@
               "other": "hver %{count} dag(e)"
             },
             "week": {
-              "other": "hver %{count} uge(r)"
+              "other": "hver %{count} uge"
             },
             "month": {
               "other": "hver %{count} måned"
             },
             "year": {
-              "other": "hver %{count} år"
+              "other": "hver %{count} år",
+              "one": "hver år"
             }
           },
           "initial_order_discounted": "Første forsendelsesomkostning %{discounted_shipping_cost}, derefter %{frequency_description}",
@@ -1873,12 +1874,12 @@
         "split_shipping_option_fastest": "Hurtigst",
         "split_shipping_option_recommended": "Anbefalet",
         "unbranded_description_with_fulfillment_days": {
-          "one": "Afsendes næste hverdag",
-          "other": "Afsendes inden for %{count} arbejdsdage"
+          "one": "Afsendes næste arbejdsdag",
+          "other": "Afsendes om %{count} hverdage"
         },
         "unbranded_description_with_fulfillment_weeks": {
-          "one": "Sendes om %{count} uge",
-          "other": "Sendes om %{count} uger"
+          "one": "Afsendes om %{count} uge",
+          "other": "Leveres om %{count} uger"
         },
         "estimated_delivery_time": "Forventet levering %{time}",
         "estimated_delivery_time_range": "Estimeret levering %{min_time}–%{max_time}",
