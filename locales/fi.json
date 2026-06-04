@@ -862,11 +862,68 @@
             "business_customer_does_not_match_company": "Yrityksen yhteyshenkilöllä ei ole pääsyä yritykseen.",
             "company_location_required": "Asiakkaan on valittava yrityksen sijainti jatkaakseen.",
             "checkout_completion_target_is_missing": "Kassan täyttötavoite puuttuu.",
-            "checkout_completion_target_is_invalid_proc": "Virheellinen kassalle siirtymisen kohde."
+            "checkout_completion_target_is_invalid_proc": "Virheellinen kassalle siirtymisen kohde.",
+            "customer_account_required": "Sinun on kirjauduttava sisään jatkaaksesi.",
+            "company_purchase_permission_required": "Asiakkaalla ei ole oikeutta tehdä yritystilausta.",
+            "personal_order_not_allowed": "Henkilökohtaiset tilaukset eivät ole sallittuja tässä kaupassa.",
+            "lost_access_to_company": "Asiakas menetti pääsyn kaikkiin yrityksiin.",
+            "contact_info_does_not_match_customer_account": "Yhteystietojen on vastattava tiliä, johon olet kirjautunut.",
+            "phone_number_does_not_match_expected_pattern": "Määritetty puhelinnumero ei vastaa odotettua muotoa.",
+            "email_required": "Sähköpostiosoite vaaditaan, kun tavara ostetaan tilauksen kautta.",
+            "email_domain_is_invalid": "Tätä määritettyä verkkotunnusta ei voi ratkaista.",
+            "missing_contact_method": "Puuttuu kelvollinen yhteystapa.",
+            "invalid_customer_profile": "Virheellinen asiakasprofiili annettiin.",
+            "customer_profile_access_restricted": "Kassalla ei ole oikeuksia päästä käsiksi asiakasprofiiliin."
           },
           "attribution": {
             "retail_attribution_not_allowed": "Vähittäismyyntiin kohdistaminen ei ole sallittua tässä kassalla.",
             "retail_attribution_required": "Jälleenmyyjän attribuutio vaaditaan tähän kassalle."
+          },
+          "delivery": {
+            "only_one_delivery_line_allowed": "Ostoskori saa sisältää vain yhden toimitusrivin.",
+            "wrong_number_of_delivery_lines": "Toimituslinja on määritettävä jokaiselle tavararyhmälle.",
+            "external_delivery_promise_error": "Ulkoisen toimituslupauksen hakeminen epäonnistui.",
+            "options_instructions_invalid": "Määritetyt ohjeet eivät vastaa odotettua kaavaa.",
+            "destination_address_required": "Jatkaaksesi tarvitset kohdeosoitteen.",
+            "local_pickup_delivery_line_detail_changed": "Nykyinen paikallisen noudon toimitusstrategia on muutettava, jotta voidaan jatkaa.",
+            "selected_pickup_option_no_longer_available": "Aiemmin valittu noutovaihtoehto ei ole enää saatavilla.",
+            "local_pickup_no_delivery_strategy_available": "Paikallisen noutotoimitusstrategian asetuksia ei löytynyt.",
+            "origin_location_id_required": "Lähtöpaikan tunnus vaaditaan, kun pyydetään VÄHITTÄISMYYNTI-toimitustapaa.",
+            "invalid_origin_location_id": "Sijaintoa, joka vastaisi alkuperäisen sijainnin tunnusta, ei löytynyt.",
+            "origin_location_id_not_allowed": "Pyydetyt toimitustavat eivät tue lähtöpaikan tunnistetta.",
+            "auto_fulfill_not_allowed": "Tällä istunnolla ei ole valtuuksia ohittaa täyttökäytäntöä.",
+            "auto_fulfill_required": "Automaattinen täyttö vaaditaan, kun pyydetään VÄHITTÄISMYYNTI-toimitustapaa.",
+            "prefetch_shipping_rates_used": "Esiladatut toimitushinnat eivät saa koskaan palauttaa hintoja.",
+            "fulfillment_constraints_not_satisfied": "Yksi tai useampi toimitusehto ei täyttynyt.",
+            "must_fulfill_from_constraint_not_satisfied": "Toimitusvaatimuksia ei voida täyttää, koska tuotteita ei voida toimittaa vaadituista sijainneista.",
+            "must_fulfill_from_same_location_constraint_not_satisfied": "Toimitusrajoituksia ei voida täyttää, koska tuotteita ei voida toimittaa samasta sijainnista.",
+            "delivery_strategy_conditions_not_satisfied": "Toimitusstrategioita on saatavilla tälle sijainnille, mutta niiden ehdot eivät täyty.",
+            "out_of_stock_at_origin_location": "Ei varastoa alkuperäisessä sijainnissa.",
+            "invalid_signature": "Virheellinen alennusallekirjoitus.",
+            "mixed_destination_countries": "Toimitus ei ole saatavilla, koska toimitusreitit kulkevat useiden maiden kautta."
+          },
+          "discount": {
+            "discounts_not_allowed_for_b2b": "Alennuksia ei sallita B2B-kaupoissa.",
+            "mixed_destination_countries": "Alennuksia ei ole saatavilla, koska toimitusrivit kattavat useita maita.",
+            "custom_discount_not_honoured": "Toimitettua mukautettua alennusta ei hyväksytty.",
+            "unsupported_expectation": "Toimitettu alennusrivi sisälsi odotuksen, jota politiikka ei voinut tulkita.",
+            "additional_requested_discount_code_discarded": "{{code}} on voimassa, mutta sitä ei voi käyttää. Tarkista alennusehdot.",
+            "additional_requested_discount_discarded": "Alennuksesi on voimassa, mutta sitä ei voi käyttää. Tarkista alennusehdot.",
+            "allocations_mismatch": "Alennuskoodisi on muuttunut. Tarkista ostoskorisi ja yritä uudelleen.",
+            "discount_title_too_long": "Alennuksen otsikko ei voi olla pidempi kuin 255 merkkiä."
+          },
+          "captcha": {
+            "metadata_missing": "Captcha-tarkistus on pakollinen tämän kassalle siirtymisen yhteydessä.",
+            "metadata_mismatch": "Annettu captcha-palveluntarjoaja ja tyyppi eivät vastaa odotettuja arvoja.",
+            "token_missing": "Captcha-tunniste on annettava tämän kassatoiminnon suorittamiseksi loppuun.",
+            "job_enqueue_failed": "Captcha-tarkistuksen tehtävän lisääminen jonoon epäonnistui.",
+            "job_already_queued": "Captcha-tarkistus on jo jonossa tälle captcha-tunnukselle.",
+            "token_expired": "Annettu captcha-tunniste on vanhentunut. Täytä uusi captcha jatkaaksesi kassalle siirtymistä.",
+            "token_invalid": "Annettu captcha-tunniste oli virheellinen. Täytä uusi captcha jatkaaksesi kassalle.",
+            "token_not_valid_for_session": "Tätä captcha-koodia ei voi käyttää tässä kassalla."
+          },
+          "checkout_source": {
+            "revoked": "Tätä kassaa ei ole enää saatavilla."
           }
         },
         "continue_to_payment_plans_button_label": "Jatka maksusuunnitelmiin",
