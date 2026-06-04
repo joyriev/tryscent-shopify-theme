@@ -2792,7 +2792,58 @@
       "bad_domain": "sisältää virheellisen verkkotunnuksen nimen",
       "contains_html_tags": "ei voi sisältää HTML-tageja",
       "contains_spaces": "alkaa tai päättyy välilyönteihin.",
-      "full_name_required": "Syötä etunimi ja sukunimi"
+      "full_name_required": "Syötä etunimi ja sukunimi",
+      "invalid_email": "sähköpostiosoitteen on oltava kelvollinen",
+      "invalid": "on virheellinen",
+      "too_short": "on liian lyhyt (vähintään %{count} merkkiä)",
+      "too_long": "on liian pitkä (enintään %{count} merkkiä)",
+      "password_mismatch": "täytyy vastata annettua salasanaa",
+      "invalid_for_country": "ei ole voimassa %{country}",
+      "invalid_for_country_and_province": "ei kelpaa alueelle %{province} ja maahan %{country}",
+      "invalid_province_in_country": "ei ole voimassa oleva maakunta %{country}",
+      "invalid_state_in_country": "ei ole voimassa oleva osavaltio %{country}",
+      "invalid_region_in_country": "ei ole kelvollinen alue %{country}",
+      "less_than_or_equal_to": "täytyy olla enintään %{count}",
+      "invalid_for_card_type": "ei kelpaa",
+      "invalid_type": "valitettavasti emme hyväksy tämän tyyppisiä kortteja",
+      "invalid_format": "muoto ei ole kelvollinen",
+      "invalid_start_date_or_issue_number_for_debit": "voimassa oleva aloituspäivämäärä tai numero vaaditaan",
+      "invalid_expiry_year": "ei ole kelvollinen vanhenemisvuosi",
+      "verify_email": "Olemme lähettäneet sähköpostin osoitteeseen %{customer_email}, ole hyvä ja klikkaa mukana olevaa linkkiä vahvistaaksesi sähköpostiosoitteesi.",
+      "shop_404": {
+        "title": "Luo verkkokauppa ja myy verkossa! Verkkokauppaohjelmisto Shopifyltä",
+        "heros": {
+          "store_unavailable": "Valitettavasti tämä kauppa ei ole tällä hetkellä käytettävissä.",
+          "store_not_exist": "Tätä kauppaa ei ole olemassa."
+        },
+        "links": {
+          "explore_other_stores": "Tutustu muihin myymälöihin",
+          "start_free_trial": "Aloita ilmainen kokeilu"
+        },
+        "owner_ctas": {
+          "fix_domain": "Viimeistele uuden verkkotunnuksesi asetukset siirtymällä kohtaan %{domain_settings_link}. Napsauta ”Yhdistä verkkotunnus” ja kirjoita: %{domain}.<br>Jos sinulla on vaikeuksia päästä kauppaasi, kokeile %{forgot_your_store_link} -sivua.",
+          "forgot_your_store_link_text": "unohtiko kauppasi",
+          "add_storefront": "Voit perustaa verkkosivustosi lisäämällä Verkkokauppa-kanavan %{admin_link}-sivullasi. Jos sinulla on vaikeuksia päästä kauppaasi, kokeile %{forgot_your_store_link}-sivua.",
+          "admin_link_text": "ylläpitäjä"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "Myy henkilökohtaisesti",
+            "caption": "Saat tarvitsemasi ominaisuudet vähittäiskauppasi pyörittämiseen, olitpa sitten aloittamassa tai laajentamassa toimintaa.",
+            "link_text": "Aloita ilmainen kokeilu"
+          },
+          "open_a_store": {
+            "caption": "Aloita 3 päivän ilmainen kokeilu, jatka sitten 1 dollarilla kuukaudessa seuraavat 3 kuukautta."
+          },
+          "editions": {
+            "caption": "Yli 100 tuotepäivityksen avulla voit olla tuottavampi, luovempi ja tehokkaampi kaupankäynnissä kuin koskaan ennen osasit kuvitella.",
+            "link_text": "Tutustu uusimpiin painoksiin"
+          },
+          "store_owner": {
+            "caption": "Onko sinulla vaikeuksia päästä kauppaasi? Kokeile %{forgot_your_store_link} -toimintoa. Jos haluat aktivoida kauppasi uudelleen, ota yhteyttä %{shopify_support_link}."
+          }
+        }
+      }
     },
     "email_marketing": {
       "subscribed": {
@@ -2834,6 +2885,70 @@
           "status_html": "<b>Sähköpostin avaamisen seuranta on raportoitu.</b>",
           "visibility": "Olemme päivittäneet käytäntömme, ja nyt seuraamme sähköpostien avaamisia. Sähköpostien avausprosentit raportoidaan nimettömästi. Näemme vain, oletko avannut sähköpostin osana kokonaisavausprosenttia."
         }
+      }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "out_of_stock": "Loppuunmyyty"
+        }
+      }
+    },
+    "links": {
+      "powered_by_shopify": "Toimii Shopifyn avulla",
+      "learn_more": "Lue lisää"
+    },
+    "notices": {
+      "customer": {
+        "no_account_found": "Sähköpostiosoitteella ei löytynyt tiliä.",
+        "invalid_credentials": "Virheellinen sähköpostiosoite tai salasana.",
+        "denylisted_reset_password": "Tiliisi ei voitu kirjautua, koska nykyinen salasana ei ole turvallinen. Saat sähköpostin salasanasi päivittämistä varten."
+      },
+      "address": {
+        "updated": "Osoite päivitetty onnistuneesti.",
+        "error_updating": "Virhe päivitettäessä osoitetta",
+        "created": "Osoite luotu onnistuneesti",
+        "error_creating": "Virhe osoitetta luodessa.",
+        "deleted": "Osoite poistettu onnistuneesti",
+        "error_deleting": "Virhe osoitetta poistettaessa."
+      },
+      "cart": {
+        "not_found": "Ostoskoria ei löytynyt",
+        "only_n_items_available": "Voit lisätä ostoskoriin vain %{count} %{name}.",
+        "too_many_items_in_cart": "Et voi lisätä enempää %{name} ostoskoriin.",
+        "only_one_added_to_cart": "Vain 1 tuote lisättiin ostoskoriisi saatavuuden vuoksi.",
+        "only_n_added_to_cart": "Vain %{quantity} tuotetta lisättiin ostoskoriisi saatavuuden vuoksi.",
+        "maximum_available_quantity_reached": "Tämän tuotteen enimmäismäärä on jo ostoskorissasi.",
+        "less_than_minimum": "Tällä tuotteella on vähimmäismäärä %{min}.",
+        "more_than_maximum": "Tällä tuotteella on enintään %{max}.",
+        "not_respect_step": "Voit lisätä tätä tuotetta vain %{step} välein.",
+        "missing_parameters": "ei kelvollista tunnistetta tai riviparametria",
+        "generic_error": "Ostoskori-virhe",
+        "invalid_input": "%{parameter}-parametri on virheellinen.",
+        "too_many_line_items_error": "Ostoskoriisi ei voi sisältyä enempää kuin %{max} tuotetta.",
+        "link_no_longer_exists": "Linkki ei enää ole olemassa.",
+        "stock_problems_html": "Yksi tai useampi tuote ei ole enää saatavilla. Olemme laatineet <a href='%{link}'>päivitetyn ostoskorin</a>.",
+        "changed": "Ostoskori muuttui",
+        "items_changed": "Yksi tai useampi tuote on muuttunut.",
+        "product_sold_out": "Tuote '%{name}' on jo loppuunmyyty.",
+        "variant_not_found": "Vaihtoehtoa ei löydy",
+        "variant_requires_selling_plan": "Vaihtoehto on ostettavissa vain myyntisuunnitelman kanssa.",
+        "selling_plan_not_available_for_company_locations": "Vain kertaluonteinen osto on saatavilla B2B-tilauksille",
+        "digital_product_not_available_for_company_locations": "Tätä tuotetta ei voi lisätä B2B-tilaukseen",
+        "buyer_cannot_purchase_for_company_locations": "Et voi tehdä ostoksia tälle sijainnille",
+        "selling_plan_not_applicable": "Myyntisuunnitelmaa ei voi soveltaa varianttiin",
+        "shipping_address_not_required": "Tätä ostoskärryä ei tarvitse lähettää",
+        "shipping_address_invalid": "Toimituskulujen laskemisessa ilmeni ongelma. Jatka kassalle valitaksesi toimitustavan ennen tilauksesi vahvistamista.",
+        "bundle_requires_components": "Tuotepakettia '%{name}' ei voi lisätä ostoskoriin.",
+        "gift_card_with_components_not_supported": "Tuotepakettia '%{name}' ei voi lisätä ostoskoriin.",
+        "gift_card_price_must_be_greater_than_zero": "Tuotepakettia '%{name}' ei voi lisätä ostoskoriin.",
+        "gift_card_recipient_validation_error": "Määrätty lahjakortin vastaanottaja on virheellinen",
+        "view_lines_limit_reached": "Rivien on oltava enintään %{limit} merkkiä pitkiä",
+        "cart_attributes_error": "Ostoskorin ominaisuuksissa on virheellisiä tietoja.",
+        "merchandise_line_transformers": {
+          "run_error": "Ostoskoriisi tuli virhe."
+        },
+        "merchandise_not_applicable": "Tuotetta ei voi ostaa nykyisillä asetuksilla."
       }
     }
   }
