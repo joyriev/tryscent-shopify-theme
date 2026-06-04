@@ -10,12 +10,12 @@
 {
   "general": {
     "password_page": {
-      "login_form_heading": "Siirry kauppaan käyttämällä salasanaa:",
+      "login_form_heading": "Kirjaudu kauppaan salasanalla:",
       "login_password_button": "Siirry sisään käyttämällä salasanaa",
       "login_form_password_label": "Salasana",
       "login_form_password_placeholder": "Salasanasi",
       "login_form_error": "Väärä salasana!",
-      "login_form_submit": "Lähetä",
+      "login_form_submit": "Kirjaudu sisään",
       "admin_link_html": "Oletko kaupan omistaja? <a href=\"/admin\" class=\"link underlined-link\">Kirjaudu sisään tästä</a>",
       "powered_by_shopify_html": "Tämän kaupan alustana on {{ shopify }}"
     },
@@ -39,7 +39,7 @@
     },
     "continue_shopping": "Jatka ostoksia",
     "pagination": {
-      "label": "Sivunumerointi",
+      "label": "Sivutus",
       "page": "Sivu {{ number }}",
       "next": "Seuraava sivu",
       "previous": "Edellinen sivu"
@@ -51,7 +51,7 @@
     "cart": {
       "view": "Näytä ostoskori ({{ count }})",
       "item_added": "Tuote lisätty ostoskoriisi",
-      "view_empty_cart": "Katso ostoskori"
+      "view_empty_cart": "Näytä ostoskori"
     },
     "share": {
       "copy_to_clipboard": "Kopioi linkki",
@@ -447,18 +447,18 @@
     },
     "orders": {
       "title": "Tilaushistoria",
-      "order_number": "Tilaus",
+      "order_number": "Tilaa",
       "order_number_link": "Tilausnumero {{ number }}",
       "date": "Päivämäärä",
       "payment_status": "Maksun tila",
-      "fulfillment_status": "Jakelun tila",
+      "fulfillment_status": "Toimitustila",
       "total": "Yhteensä",
-      "none": "Et ole vielä tehnyt tilauksia."
+      "none": "Et ole vielä tehnyt yhtään tilausta."
     },
     "recover_password": {
       "title": "Nollaa salasanasi",
-      "subtext": "Lähetämme sinulle sähköpostiviestin salasanan nollaamiseksi",
-      "success": "Olemme lähettäneet sinulle sähköpostiviestin, jossa on salasanan päivityslinkki."
+      "subtext": "Lähetämme sinulle sähköpostin salasanan palauttamiseksi",
+      "success": "Olemme lähettäneet sinulle sähköpostin, jossa on linkki salasanasi päivittämiseen."
     },
     "register": {
       "title": "Luo tili",
@@ -470,13 +470,13 @@
     },
     "reset_password": {
       "title": "Nollaa tilin salasana",
-      "subtext": "Syötä uusi salasana",
+      "subtext": "Anna uusi salasana",
       "password": "Salasana",
       "password_confirm": "Vahvista salasana",
       "submit": "Nollaa salasana"
     },
     "order": {
-      "title": "Tilaus {{ name }}",
+      "title": "Tilaa {{ name }}",
       "date_html": "Sijoitettu {{ date }}",
       "cancelled_html": "Tilaus peruutettu {{ date }}",
       "cancelled_reason": "Syy: {{ reason }}",
@@ -488,18 +488,18 @@
       "shipping": "Toimitus",
       "tax": "Vero",
       "product": "Tuote",
-      "sku": "SKU-koodi",
+      "sku": "Tuotekoodi",
       "price": "Hinta",
       "quantity": "Määrä",
       "total": "Yhteensä",
       "fulfilled_at_html": "Toimitettu {{ date }}",
       "track_shipment": "Seuraa lähetystä",
       "tracking_url": "Seurantalinkki",
-      "tracking_company": "Kuljetuspalvelu",
+      "tracking_company": "Kuljettaja",
       "tracking_number": "Seurantanumero",
       "subtotal": "Välisumma",
-      "total_duties": "Tullit",
-      "total_refunded": "Maksu palautettu"
+      "total_duties": "Tullimaksut",
+      "total_refunded": "Hyvitetty"
     }
   },
   "gift_cards": {
