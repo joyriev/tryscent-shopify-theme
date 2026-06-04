@@ -713,7 +713,9 @@
       },
       "error_page": {
         "terminal": {
-          "message": "Päivitä tämä sivu tai yritä uudelleen muutaman minuutin kuluttua"
+          "message": "Päivitä tämä sivu tai yritä uudelleen muutaman minuutin kuluttua",
+          "title": "Oli ongelma kassalla",
+          "request_id": "Pyyntö-ID: {{requestId}}"
         },
         "embed_errors": {
           "storefront_password_required": "Tämä kauppa on suojattu salasanalla",
@@ -727,6 +729,45 @@
       },
       "discount_errors": {
         "generic_error": "Tilaustasi ei voitu käsitellä, koska alennuskoodisi ei ole enää voimassa. Tarkista tilauksesi kokonaissumma ja yritä uudelleen."
+      },
+      "field_errors": {
+        "address_first_name_too_long": "Etunimi on liian pitkä (enintään 255 merkkiä)",
+        "address_first_name_contains_emojis": "Etunimi ei voi sisältää emojeja",
+        "address_first_name_contains_html_tags": "Etunimi ei voi sisältää HTML-tageja.",
+        "address_first_name_contains_mathematical_symbols": "Etunimi ei voi sisältää matemaattisia merkkejä",
+        "address_last_name_blank": "Syötä sukunimi",
+        "address_last_name_too_long": "Sukunimi on liian pitkä (enintään 255 merkkiä)",
+        "address_last_name_contains_emojis": "Sukunimi ei voi sisältää emojeja",
+        "address_last_name_contains_html_tags": "Sukunimi ei voi sisältää HTML-tageja.",
+        "address_last_name_contains_mathematical_symbols": "Sukunimi ei voi sisältää matemaattisia merkkejä",
+        "address_address1_blank": "Syötä osoite",
+        "address_address1_contains_emojis": "Osoite1 ei voi sisältää emojeja",
+        "address_address1_contains_html_tags": "Osoite1 ei voi sisältää HTML-tageja.",
+        "address_address1_contains_mathematical_symbols": "Ensimmäinen osoiterivi ei voi sisältää matemaattisia merkkejä",
+        "address_address2_blank": "Syötä asunto, sviitti jne.",
+        "address_address2_contains_emojis": "Osoite2 ei voi sisältää emojeja",
+        "address_address2_contains_html_tags": "Osoite2 ei voi sisältää HTML-tageja.",
+        "address_address2_contains_mathematical_symbols": "Toinen osoiterivi ei voi sisältää matemaattisia symboleja",
+        "address_city_blank": "Syötä kaupunki",
+        "address_city_contains_emojis": "Kaupunki ei voi sisältää emojeja",
+        "address_city_contains_html_tags": "Kaupunki ei voi sisältää HTML-tageja.",
+        "address_country_not_supported": "Emme lähetä tähän maahan tai alueelle. Syötä uusi toimitusosoite ja yritä uudelleen.",
+        "address_province_blank": "Valitse osavaltio / maakunta",
+        "address_province_invalid": "Valitse kelvollinen osavaltio / maakunta",
+        "address_company_blank": "Syötä yrityksen nimi",
+        "address_company_contains_emojis": "Yrityksen nimessä ei voi olla emojeja",
+        "address_company_contains_html_tags": "Yrityksen nimi ei voi sisältää HTML-tageja.",
+        "address_company_contains_mathematical_symbols": "Yrityksen nimessä ei voi olla matemaattisia symboleja",
+        "address_phone_blank": "Syötä kelvollinen puhelinnumero",
+        "address_phone_contains_emojis": "Puhelinnumero ei voi sisältää emojeja",
+        "address_phone_invalid": "Syötä kelvollinen puhelinnumero",
+        "address_generic_invalid": "Virheellinen syöte",
+        "address_generic_error": "Kenttävirhe",
+        "address_country_invalid": "Valitse maa/alue luettelosta"
+      },
+      "failed_payment": {
+        "payment_not_processed_title": "Maksusi käsittely epäonnistui",
+        "payment_not_processed_text": "Sinulta ei ole veloitettu. Palaa ostoskoriisi viimeistelläksesi ostoksesi."
       }
     },
     "attributes": {

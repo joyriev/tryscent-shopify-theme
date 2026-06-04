@@ -1589,7 +1589,15 @@
         "retail_method_definition": "Detailforsendelse",
         "company_location_no_address_banner": "Ordrer, der sendes til steder uden adresse, vil blive sendt til gennemgang.",
         "none_method_definition": "Ingen forsendelse",
-        "subscription_pickup_information": "Denne leveringsmetode vil gælde for alle varer i denne ordre og for alle fremtidige ordrer til dette abonnement."
+        "subscription_pickup_information": "Dette vil være afhentningsstedet for alle fremtidige ordrer af dit abonnement.",
+        "pick_up_from_store": "Hent i butik",
+        "pickup_point_map_title": "Afhentningspunkt kort",
+        "pick_up_in_one_hour": "Normalt klar om 1 time",
+        "pick_up_in_two_hours": "Normalt klar om 2 timer",
+        "pick_up_in_four_hours": "Normalt klar om 4 timer",
+        "pick_up_in_twenty_four_hours": "Normalt klar om 24 timer",
+        "pick_up_in_two_to_four_days": "Normalt klar om 2-4 dage",
+        "pick_up_in_five_or_more_days": "Normalt klar om 5+ dage"
       },
       "customer_account": {
         "not_user_label": "Ikke %{first_name}?",
@@ -1644,8 +1652,8 @@
             "other": "Ingen levering tilgængelig for %{count} varer"
           },
           "message": {
-            "one": "Denne vare vil blive fjernet fra din kurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse.",
-            "other": "Disse varer vil blive fjernet fra din kurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse."
+            "one": "Denne vare vil blive fjernet fra din indkøbskurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse.",
+            "other": "Disse varer vil blive fjernet fra din indkøbskurv, fordi der ikke er nogen leveringsmetoder tilgængelige for din adresse."
           }
         }
       },
@@ -2177,18 +2185,19 @@
           "title": "Der opstod et problem med vores kasse",
           "message": "Opdater denne side eller prøv igen om et par minutter",
           "action": {
-            "cta": "Opdater side"
+            "cta": "Opdater siden"
           },
           "request_id": "Anmodnings-ID: {{requestId}}"
         },
         "embed_errors": {
-          "storefront_password_required": "Denne butik er adgangskodebeskyttet",
-          "customer_account_required": "Kunde konto er påkrævet for at fuldføre kassen",
+          "storefront_password_required": "Denne butik er beskyttet med adgangskode",
+          "customer_account_required": "Kundeaccount er påkrævet for at fuldføre kassen",
           "invalid_cart": "Kurven er ikke længere gyldig",
-          "not_authorized": "Checkout-godkendelse mislykkedes. Bekræft dine applikationsoplysninger",
-          "killswitch_enabled": "Checkout er midlertidigt utilgængelig",
-          "policy_violation": "Kan ikke fuldføre kassen på grund af begrænsninger i politikindstillingerne",
-          "unrecoverable_failure": "Kan ikke indlæse kassen. Prøv igen"
+          "not_authorized": "Checkout-godkendelse mislykkedes. Bekræft dine applikationslegitimationsoplysninger",
+          "killswitch_enabled": "Kassen er midlertidigt utilgængelig",
+          "policy_violation": "Kan ikke fuldføre kassen på grund af begrænsninger i politikkonfigurationen",
+          "unrecoverable_failure": "Kan ikke indlæse kassen. Prøv igen",
+          "cart_completed": "Denne checkout er allerede blevet gennemført"
         }
       },
       "notice_banner": {
@@ -2276,7 +2285,7 @@
         }
       },
       "discount_errors": {
-        "generic_error": "Din ordre kunne ikke behandles, fordi din rabatkode ikke længere er tilgængelig. Gennemgå din ordretotal og prøv igen."
+        "generic_error": "Din ordre kunne ikke behandles, fordi din rabatkode ikke længere er tilgængelig. Gennemgå dit ordrebeløb og prøv igen."
       },
       "b2b_errors": {
         "lost_b2b_purchasing_permissions": "Du har ikke længere tilladelse til at placere B2B-bestillinger. %{logout_url} for i stedet at placere en personlig bestilling.",
@@ -2402,7 +2411,7 @@
       },
       "editor": {
         "navigation": {
-          "store_logo_accessibility_label": "Gå til Online Butik"
+          "store_logo_accessibility_label": "Naviger til Online Butik"
         }
       },
       "tooltip": {
@@ -2471,6 +2480,11 @@
       },
       "clipboard": {
         "failed_to_copy": "Mislykkedes at kopiere"
+      },
+      "embed": {
+        "shipping": {
+          "shipping_options": "Se alle forsendelsesmuligheder"
+        }
       }
     },
     "sentence": {
