@@ -1544,38 +1544,40 @@
         "email_label": "E-mail",
         "email_rollup_accessibility_label": "E-mailindstillinger",
         "email_placeholder": "E-mail",
-        "email_or_phone_label": "Email eller mobiltelefonnummer",
-        "email_or_phone_placeholder": "Email eller mobiltelefonnummer",
+        "email_or_phone_label": "E-mail eller mobiltelefonnummer",
+        "email_or_phone_placeholder": "E-mail eller mobiltelefonnummer",
         "optional_first_name_label": "Fornavn (valgfrit)",
         "storefront_link": "forhandlerens hjemmeside",
         "company_attention_label": "Firma/Opmærksomhed",
         "optional_company_attention_label": "Firma/Opmærksomhed (valgfrit)",
-        "optional_company_label": "Firma (valgfrit)",
-        "address2_label": "Lejlighed, suite osv.",
-        "optional_address2_label": "Lejlighed, suite osv. (valgfrit)",
+        "optional_company_label": "Virksomhed (valgfri)",
+        "address2_label": "Lejlighed, suite, osv.",
+        "optional_address2_label": "Lejlighed, suite, osv. (valgfrit)",
         "country_label": "Land/Region",
-        "country_code": "Land-/regionskode",
+        "country_code": "Land/Region kode",
         "county_label": "Amt",
         "county_placeholder": "Amt",
         "region_label": "Region",
         "region_placeholder": "Region",
         "region_none": "Ingen valgt",
-        "governorate_label": "Guvernørdømme",
-        "governorate_placeholder": "Guvernørdømme",
+        "governorate_label": "Guvernement",
+        "governorate_placeholder": "Guvernement",
         "state_and_territory_label": "Stat/fylke",
         "state_and_territory_placeholder": "Stat/fylke",
         "phone_rollup_accessibility_label": "Telefonmuligheder",
         "phone_country_code_label": "Telefonnummer landekode",
-        "optional_phone_label": "Telefon (valgfrit)",
+        "optional_phone_label": "Telefon (valgfri)",
         "phone_tooltip": "Hvis vi har brug for at kontakte dig angående din ordre",
         "pincode_label": "PIN-kode",
         "optional_pincode_label": "PIN-kode (valgfri)",
         "pincode_placeholder": "PIN-kode",
         "civic_number_warning": "Tilføj et husnummer, hvis du har et",
         "different_shipping_address_label": "Send til en anden adresse",
-        "change_company_location_link_label": "Skift virksomhedsplacering",
+        "change_company_location_link_label": "Ændre virksomhedsplacering",
         "change_location_link_label": "Skift placering",
-        "suburb_label": "Forstad"
+        "suburb_label": "Forstad",
+        "company_label": "Virksomhed",
+        "optional_subdistrict_label": "Underområde (valgfrit)"
       },
       "delivery_options": {
         "ship": "Skib",
@@ -2038,9 +2040,9 @@
       },
       "change_currency": {
         "credit_card_will_be_charged_html": "Dit kreditkort vil blive opkrævet %{amount}",
-        "payment_total_label": "Betalingssum",
+        "payment_total_label": "Betalingsbeløb",
         "card_provider_fx_charges_warning": "Din kortudbyder kan opkræve gebyrer på %{currency_code} transaktioner.",
-        "currency_not_supported_by_shop": "Den valuta, du valgte, er ikke længere tilgængelig. Alle priser er nu i %{currency_code}."
+        "currency_not_supported_by_shop": "Den valuta, du har valgt, er ikke længere tilgængelig. Alle priser er nu i %{currency_code}."
       },
       "change_country": {
         "cart_updated_based_on_country": "Din indkøbskurv er blevet opdateret baseret på dit forsendelsesland.",
@@ -2457,6 +2459,13 @@
       },
       "address_management": {
         "saved_with_store": "Gemmes med denne butik"
+      },
+      "company_location": {
+        "location_title": "Virksomhedens placering",
+        "location_rollup_accessibility_label": "Virksomhedens placering muligheder"
+      },
+      "clipboard": {
+        "failed_to_copy": "Mislykkedes at kopiere"
       }
     },
     "sentence": {
