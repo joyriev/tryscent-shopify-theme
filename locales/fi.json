@@ -2902,7 +2902,10 @@
       "customer": {
         "no_account_found": "Sähköpostiosoitteella ei löytynyt tiliä.",
         "invalid_credentials": "Virheellinen sähköpostiosoite tai salasana.",
-        "denylisted_reset_password": "Tiliisi ei voitu kirjautua, koska nykyinen salasana ei ole turvallinen. Saat sähköpostin salasanasi päivittämistä varten."
+        "denylisted_reset_password": "Tiliisi ei voitu kirjautua, koska nykyinen salasana ei ole turvallinen. Saat sähköpostin salasanasi päivittämistä varten.",
+        "subscribe_error": "Tilauksen virhe",
+        "unsubscribe_error": "Peruutusvirhe",
+        "signup_disabled": "Asiakkaan tilin luominen on poistettu käytöstä."
       },
       "address": {
         "updated": "Osoite päivitetty onnistuneesti.",
@@ -2949,7 +2952,53 @@
           "run_error": "Ostoskoriisi tuli virhe."
         },
         "merchandise_not_applicable": "Tuotetta ei voi ostaa nykyisillä asetuksilla."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "Lisätty %{delta}",
+          "increment_item": "Lisätty %{delta}",
+          "decrement_item": "Poistettu %{delta} %{total}:sta",
+          "decrement_fulfilled_line_item": "Palautettu %{delta} %{total} määrästä"
+        }
+      },
+      "order": {
+        "not_available": "Tätä tilausta ei ole saatavilla",
+        "financial_status": {
+          "pending": "Odottaa",
+          "unpaid": "Maksamaton",
+          "partially_refunded": "Osittain hyvitetty",
+          "refunded": "Hyvitetty"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Toimitettu",
+          "complete": "Valmis",
+          "unfulfilled": "Täyttämätön",
+          "restocked": "Varastossa uudelleen"
+        },
+        "transaction_status": {
+          "pending": "Odottaa",
+          "failure": "Epäonnistuminen"
+        },
+        "cancel_reason": {
+          "fraud": "Petollinen tilaus",
+          "customer": "Asiakas muutti/peruutti tilauksen",
+          "staff": "Henkilökunnan virhe"
+        },
+        "cash_on_delivery": "Maksu toimitettaessa (COD)"
+      },
+      "storefront": {
+        "invalid_password": "Salasana väärin, yritä uudelleen."
+      },
+      "tags": {
+        "add_articles": "Rajaa haku artikkeleihin, joissa on myös tunniste %{tag}",
+        "add_products": "Rajaa valikoima tuotteisiin, jotka vastaavat tunnistetta %{tag}",
+        "remove_articles": "Laajenna haku koskemaan myös artikkeleita, joita ei ole merkitty tunnisteella %{tag}"
       }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Virhe - %{title}",
+      "order": "Tilaa %{name}",
+      "not_found": "404 Ei Löydy"
     }
   }
 }
