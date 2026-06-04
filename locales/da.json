@@ -1275,7 +1275,7 @@
         "cart": "Kurv",
         "expand_notice_label": "Se mere",
         "continue_to_shipping_method": "Fortsæt til forsendelse",
-        "continue_to_review": "Gennemse ordre",
+        "continue_to_review": "Gennemgå ordre",
         "back_to_cart": "Gå tilbage til kurv",
         "back_to_shipping_method": "Gå tilbage til forsendelse",
         "choose_shipping_method": "Vælg en forsendelsesmetode",
@@ -1329,10 +1329,10 @@
             "phone_number_does_not_match_expected_pattern": "Det angivne telefonnummer stemmer ikke overens med det forventede mønster.",
             "email_required": "En e-mail er påkrævet, når varen købes via et abonnement.",
             "missing_contact_method": "Manglende en gyldig kontaktmetode.",
-            "checkout_completion_target_is_missing": "Målet for gennemførelse af Checkout mangler.",
+            "checkout_completion_target_is_missing": "Checkout fuldførelsesmål mangler.",
             "invalid_customer_profile": "En ugyldig kundeprofil blev angivet.",
             "customer_profile_access_restricted": "Checkout har ikke tilladelse til at få adgang til kundens profil.",
-            "checkout_completion_target_is_invalid_proc": "Ugyldigt mål for gennemførelse af betaling.",
+            "checkout_completion_target_is_invalid_proc": "Ugyldigt mål for afslutning af kassen.",
             "buyer_identity_presentment_currency_does_not_match": "Der opstod et problem med at behandle din ordre. Prøv igen om et par minutter."
           },
           "delivery": {
@@ -1427,8 +1427,8 @@
             "optional_duties_not_permitted": "Afvisning af told er ikke tilladt ved denne betaling."
           },
           "attribution": {
-            "retail_attribution_not_allowed": "Detailhandelstildeling er ikke tilladt for denne betaling.",
-            "retail_attribution_required": "Detailhandelstildeling er påkrævet for denne betaling."
+            "retail_attribution_not_allowed": "Detailattribution er ikke tilladt for denne kasse.",
+            "retail_attribution_required": "Detailattribution er påkrævet for denne kasse."
           },
           "captcha": {
             "metadata_missing": "Det er nødvendigt at gennemføre en captcha for denne betaling.",
@@ -1469,21 +1469,28 @@
             "monday": "Mo",
             "tuesday": "Du",
             "wednesday": "Vi",
-            "thursday": "Tak",
-            "friday": "Fra",
+            "thursday": "Th",
+            "friday": "Fr",
             "saturday": "Sa",
             "sunday": "Su"
           },
           "months": {
             "april": "april",
-            "september": "september"
+            "september": "september",
+            "february": "februar"
+          },
+          "weekdays": {
+            "wednesday": "onsdag",
+            "thursday": "torsdag",
+            "saturday": "lørdag",
+            "sunday": "søndag"
           }
         },
         "datepicker": {
           "show_previous_month": "Vis forrige måned, {{month}} {{year}}",
-          "range_start": "Rækkevidde start",
-          "in_range": "På lager",
-          "range_end": "Rækkevidde slutning"
+          "range_start": "Række start",
+          "in_range": "I sortiment",
+          "range_end": "Række slut"
         },
         "list_formatter": {
           "and": {
@@ -1500,8 +1507,8 @@
           }
         },
         "dropzone": {
-          "invalid_file_type": "Filtype ikke understøttet",
-          "dragged_over": "Slip filen for at uploade"
+          "invalid_file_type": "Filtypen understøttes ikke",
+          "dragged_over": "Træk filen for at uploade"
         }
       },
       "payment_gateway": {
