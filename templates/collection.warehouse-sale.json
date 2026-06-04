@@ -75,10 +75,81 @@
     },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": false,
         "show_collection_image": false,
         "color_scheme": "scheme-2"
+      }
+    },
+    "collection_header_QYFbG9": {
+      "type": "collection-header",
+      "blocks": {
+        "step_AmUxdp": {
+          "type": "step",
+          "settings": {
+            "step_title": "Välj upp till 4 av dina favoritdofter",
+            "step_description": "Och lägg dem i varukorgen"
+          }
+        },
+        "step_hUWJha": {
+          "type": "step",
+          "settings": {
+            "step_title": "Få en helt GRATIS!",
+            "step_description": "Den billigaste flaskan i din varukorg rabatteras automatiskt till GRATIS"
+          }
+        },
+        "step_QBLHD7": {
+          "type": "step",
+          "settings": {
+            "step_title": "Handla för minst 483 SEK",
+            "step_description": "Och få GRATIS frakt!"
+          }
+        },
+        "guarantee_6CKxJc": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/sandwatch.svg",
+            "text": "Håller 12+ timmar"
+          }
+        },
+        "guarantee_XLaTQc": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/icons_quality.webp",
+            "text": "19–21% parfymoljekoncentration"
+          }
+        },
+        "guarantee_LqER7r": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/sheild-star.svg",
+            "text": "60 dagars pengarna-tillbaka-garanti"
+          }
+        }
+      },
+      "block_order": [
+        "step_AmUxdp",
+        "step_hUWJha",
+        "step_QBLHD7",
+        "guarantee_6CKxJc",
+        "guarantee_XLaTQc",
+        "guarantee_LqER7r"
+      ],
+      "name": "Collection Header",
+      "settings": {
+        "background_color": "#242833",
+        "bg_image": "shopify://shop_images/warehouse_banner_shade_desk.png",
+        "bg_mobile_image": "shopify://shop_images/warehouse_banner_shade_mobile.png",
+        "social_proof_text": "Godkänd av 10 000+ nöjda doftälskare",
+        "collection_title": "VI HAR VERKLIGEN KLANTAT OSS 😂",
+        "collection_description": "NU ÄR PARFYMER NÄSTAN GRATIS",
+        "btn_link": "",
+        "btn_text": "Börja handla!",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
       }
     },
     "product-grid": {
@@ -132,6 +203,7 @@
   "order": [
     "insta_story_6kD6Ki",
     "banner",
+    "collection_header_QYFbG9",
     "product-grid",
     "rich_text_fnCgkL"
   ]
