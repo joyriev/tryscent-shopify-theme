@@ -225,9 +225,9 @@
   },
   "templates": {
     "search": {
-      "no_results": "Ei tuloksia haulla \"{{ terms }}\". Tarkista oikeinkirjoitus tai kokeile toista sanaa tai ilmaisua.",
+      "no_results": "Tuloksia ei löytynyt hakusanalla ”{{ terms }}”. Tarkista oikeinkirjoitus tai käytä eri sanaa tai ilmaisua.",
       "results_with_count": {
-        "one": "{{ count }} tulos",
+        "one": "{{ count }} tulosta",
         "other": "{{ count }} tulosta"
       },
       "title": "Hakutulokset",
@@ -235,15 +235,15 @@
       "products": "Tuotteet",
       "search_for": "Hae kohdetta \"{{ terms }}\"",
       "results_with_count_and_term": {
-        "one": "{{ count }} tulos hakuehdolla \"{{ terms }}\"",
-        "other": "{{ count }} tulosta hakuehdolla \"{{ terms }}\""
+        "one": "{{ count }} tulosta löytyi hakusanalla ”{{ terms }}”",
+        "other": "{{ count }} tulosta löytyi hakusanalla ”{{ terms }}”"
       },
       "results_pages_with_count": {
         "one": "{{ count }} sivu",
         "other": "{{ count }} sivua"
       },
       "results_products_with_count": {
-        "one": "{{ count }} tuote",
+        "one": "{{ count }} tuotetta",
         "other": "{{ count }} tuotetta"
       },
       "suggestions": "Ehdotukset",
@@ -263,8 +263,8 @@
         "phone": "Puhelinnumero",
         "comment": "Kommentti",
         "send": "Lähetä",
-        "post_success": "Kiitos, että otit yhteyttä. Palaamme asiaan mahdollisimman pian.",
-        "error_heading": "Mukauta seuraavat:",
+        "post_success": "Kiitos, että otit meihin yhteyttä. Vastaamme sinulle mahdollisimman pian.",
+        "error_heading": "Ole hyvä ja säädä seuraavat:",
         "title": "Yhteydenottolomake"
       }
     },
@@ -2998,7 +2998,45 @@
     "page_titles": {
       "blog_or_article_with_error": "Virhe - %{title}",
       "order": "Tilaa %{name}",
-      "not_found": "404 Ei Löydy"
+      "not_found": "404 Ei Löydy",
+      "shopping_cart": "Ostoskoriisi",
+      "reset_account": "Nollaa tili",
+      "search": "Hae",
+      "search_results": {
+        "one": "Haku: %{count} tulosta löytyi hakusanalla \"%{terms}\"",
+        "other": "Haku: %{count} tulosta löytyi hakusanalla \"%{terms}\""
+      }
+    },
+    "sentence": {
+      "two_words_connector": "ja",
+      "last_word_connector": ", ja"
+    },
+    "search": {
+      "error": "Hakutulosten lataamisessa ilmeni ongelma. Päivitä sivu tai yritä uudelleen myöhemmin.",
+      "sorting": {
+        "relevance": "Merkittävyys",
+        "price_ascending": "Hinta, nouseva järjestys",
+        "price_descending": "Hinta, korkein ensin"
+      }
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Yleensä valmista tunnissa",
+        "two_hours": "Yleensä valmiina 2 tunnissa",
+        "four_hours": "Valmistuu yleensä 4 tunnissa",
+        "twenty_four_hours": "Yleensä valmiina 24 tunnissa",
+        "two_to_four_days": "Yleensä valmiina 2–4 päivässä",
+        "five_or_more_days": "Yleensä valmiina 5+ päivän kuluessa",
+        "zero_to_two_hours": "Yleensä valmiina 2 tunnissa",
+        "two_to_four_hours": "Valmistuu yleensä 4 tunnissa",
+        "immediately": "Valmiina noudettavaksi nyt",
+        "next_day": "Valmiina noudettavaksi seuraavana päivänä"
+      }
+    },
+    "subscriptions": {
+      "buyer_consent_product": "Tämä tuote on toistuva tai viivästetty ostos. Jatkamalla hyväksyn %{cancellationPolicyLink} ja valtuutan teidät veloittamaan maksutapani tämän sivun hinnoilla, tiheydellä ja päivämäärillä, kunnes tilaukseni on täytetty tai peruutan sen, jos se on sallittua.",
+      "buyer_consent_cart": "Yksi tai useampi ostoskorissasi oleva tuote on toistuva tai viivästetty ostos. Jatkamalla hyväksyn %{cancellationPolicyLink} ja valtuutan teidät veloittamaan maksutapani tämän sivun hinnoilla, tiheydellä ja päivämäärillä, kunnes tilaukseni on toimitettu tai peruutan sen, jos se on sallittua.",
+      "cancellation_policy": "peruutusehdot"
     }
   }
 }

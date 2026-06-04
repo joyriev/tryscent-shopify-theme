@@ -2817,7 +2817,7 @@
       }
     },
     "search": {
-      "error": "Det oppsto et problem med å laste inn søkeresultatene dine. Vennligst oppdater siden eller prøv igjen senere.",
+      "error": "Det oppstod et problem med å laste inn søkeresultatene dine. Vennligst oppdater siden eller prøv igjen senere.",
       "sorting": {
         "relevance": "Relevans",
         "price_ascending": "Pris, lav til høy",
@@ -2827,7 +2827,7 @@
     "page_titles": {
       "blog_or_article_with_error": "Feil - %{title}",
       "products": "Produkter",
-      "shopping_cart": "Din handlekurv",
+      "shopping_cart": "Handlekurven din",
       "account": "Konto",
       "create_account": "Opprett konto",
       "reset_account": "Tilbakestill konto",
@@ -2858,21 +2858,21 @@
     },
     "store_availability": {
       "pick_up_time": {
-        "one_hour": "Vanligvis klar om 1 time",
-        "five_or_more_days": "Vanligvis klar om 5+ dager",
-        "two_to_four_days": "Vanligvis klar innen 2-4 dager",
-        "two_hours": "Vanligvis klar om 2 timer",
-        "twenty_four_hours": "Vanligvis klar innen 24 timer",
-        "four_hours": "Vanligvis klar om 4 timer",
-        "zero_to_two_hours": "Vanligvis klar om 2 timer",
-        "two_to_four_hours": "Vanligvis klar om 4 timer",
+        "one_hour": "Vanligvis klart innen 1 time",
+        "five_or_more_days": "Vanligvis klart om 5+ dager",
+        "two_to_four_days": "Vanligvis klart innen 2-4 dager",
+        "two_hours": "Vanligvis klart innen 2 timer",
+        "twenty_four_hours": "Vanligvis klart innen 24 timer",
+        "four_hours": "Vanligvis klart innen 4 timer",
+        "zero_to_two_hours": "Vanligvis klart innen 2 timer",
+        "two_to_four_hours": "Vanligvis klart innen 4 timer",
         "immediately": "Klar for henting nå",
         "next_day": "Klar for henting neste dag"
       }
     },
     "subscriptions": {
-      "buyer_consent_product": "Denne varen er et tilbakevendende eller utsatt kjøp. Ved å fortsette godtar jeg %{cancellationPolicyLink} og gir deg fullmakt til å belaste betalingsmetoden min til prisene, hyppigheten og datoene som er oppført på denne siden, inntil bestillingen min er fullført eller jeg avbestiller, hvis det er tillatt.",
-      "buyer_consent_cart": "Én eller flere av varene i handlekurven din er et tilbakevendende eller utsatt kjøp. Ved å fortsette godtar jeg %{cancellationPolicyLink} og gir deg fullmakt til å belaste betalingsmetoden min til prisene, hyppigheten og datoene som er oppført på denne siden, inntil bestillingen min er fullført eller jeg avbestiller, hvis det er tillatt.",
+      "buyer_consent_product": "Denne varen er et gjentakende eller utsatt kjøp. Ved å fortsette godtar jeg %{cancellationPolicyLink} og gir deg fullmakt til å belaste betalingsmetoden min til prisene, hyppigheten og datoene som er oppført på denne siden, inntil bestillingen min er fullført eller jeg avbestiller, hvis det er tillatt.",
+      "buyer_consent_cart": "Én eller flere av varene i handlekurven din er et gjentakende eller utsatt kjøp. Ved å fortsette godtar jeg %{cancellationPolicyLink} og gir deg tillatelse til å belaste betalingsmetoden min til prisene, hyppigheten og datoene som er oppført på denne siden, inntil bestillingen min er fullført eller jeg avbestiller, hvis det er tillatt.",
       "cancellation_policy": "avbestillingsregler"
     }
   },
@@ -4450,8 +4450,8 @@
       "pages": "Sider",
       "no_results": "Ingen resultater funnet for “{{ terms }}”. Sjekk stavemåten eller bruk et annet ord eller uttrykk.",
       "results_with_count_and_term": {
-        "one": "{{ count }} resultat funnet for “{{ terms }}”",
-        "other": "{{ count }} resultater funnet for “{{ terms }}”"
+        "one": "{{ count }} resultat funnet for «{{ terms }}»",
+        "other": "{{ count }} resultater funnet for «{{ terms }}»"
       },
       "search_for": "Søk etter “{{ terms }}”"
     },
@@ -4465,13 +4465,13 @@
         "email": "E-post",
         "phone": "Telefonnummer",
         "comment": "Kommentar",
-        "send": "Send inn",
-        "post_success": "Takk for at du kontaktet oss. Vi vil komme tilbake til deg så snart som mulig.",
+        "send": "Send",
+        "post_success": "Takk for at du kontaktet oss. Vi svarer deg så snart som mulig.",
         "error_heading": "Vennligst juster følgende:"
       }
     },
     "404": {
-      "title": "Siden ble ikke funnet"
+      "title": "Side ikke funnet"
     }
   },
   "localization": {
