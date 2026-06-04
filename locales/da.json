@@ -709,7 +709,7 @@
         "bank_account_vaulted_company_location": "Bankkonto gemt til denne placering",
         "bank_account_generic_error": "Kunne ikke tilføje bankkonto. Prøv igen senere.",
         "network_card_payment_options": "Vælg et kortnetværk",
-        "network_card_persistence_description": "Det valgte netværk vil blive gemt sammen med din betalingsmetode til fremtidige transaktioner.",
+        "network_card_persistence_description": "Det valgte netværk vil blive gemt med din betalingsmetode til fremtidige transaktioner.",
         "amazon_payments_label": "Amazon Betalingsmetode",
         "amazon_payments_login_hint": "Du vil blive bedt om at logge ind med Amazon.",
         "amazon_payments_logout": "Log ud fra Amazon Pay",
@@ -762,7 +762,7 @@
           "other": "Din ordre er dækket af dine gavekort."
         },
         "offsite_gateway_redirect_hint": "Du vil blive omdirigeret til %{gateway_label} for at fuldføre dit køb.",
-        "offsite_gateway_review_page_redirect_hint": "Efter du har gennemgået din ordre, vil du blive sendt videre til %{gateway_label} for at fuldføre dit køb.",
+        "offsite_gateway_review_page_redirect_hint": "Når du har gennemgået din ordre, vil du blive omdirigeret til %{gateway_label} for at fuldføre dit køb.",
         "offsite_gateway_redirect_hint_multi_currency_html": "%{gateway_label} samlet %{total_shop_price}",
         "offsite_gateway_redirect_hint_no_button_label": "Du vil blive omdirigeret til %{gateway_label} for at fuldføre dit køb.",
         "receiver_payment_experience_hint": "Efter du har afgivet din bestilling, vil du modtage betalingsoplysninger. Foretag betalingen ved Multibanco eller online inden for %{due_days} dage.",
@@ -784,7 +784,7 @@
         "paypal_wallet_label": "PayPal Tegnebog",
         "shop_pay_installments_label": "Shop Pay afbetalinger",
         "continue_to_guest_checkout": "Fortsæt til gæsteudcheckning",
-        "multibanco_label": "Multibank",
+        "multibanco_label": "Multibanco",
         "eps_label": "eps-overførsel",
         "klarna_slice_it_label": "Finansier med Klarna",
         "afterpay_label": "Afterpay",
@@ -808,7 +808,7 @@
         "waiting_on_payment_methods": "Henter tilgængelige betalingsmetoder...",
         "apple_pay_payment_error": "Din betaling kunne ikke gennemføres. Prøv igen eller brug en anden betalingsmetode.",
         "taxes_not_included": "Skatter ikke inkluderet",
-        "no_taxes_banner_content": "Der vil ikke blive opkrævet skat på denne ordre. Når du har modtaget betalingen, kan der ikke længere tilføjes skat.",
+        "no_taxes_banner_content": "Der vil ikke blive opkrævet skat på denne ordre. Når du har indsamlet betaling, kan der ikke længere tilføjes skat.",
         "paypal": {
           "connect": "Klik for at forbinde din PayPal-konto"
         },
@@ -821,7 +821,7 @@
           "error_authorizing": "Fejl ved godkendelse af betaling"
         },
         "account_connected": "Konto tilsluttet.",
-        "mor_disclaimer_html": "Ved at klikke nedenfor og fuldføre din bestilling accepterer du at købe dine vare(r) fra Global-e som registreret sælger for denne transaktion, i henhold til Global-e's <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Vilkår og Betingelser</a> og <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Fortrolighedspolitik</a>. Global-e er en international leveringsserviceudbyder til %{shop_name}",
+        "mor_disclaimer_html": "Ved at klikke nedenfor og fuldføre din ordre accepterer du at købe dine vare(r) fra Global-e som registreret sælger for denne transaktion, i henhold til Global-e's <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">Vilkår og Betingelser</a> og <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">Privatlivspolitik</a>. Global-e er en international leveringsserviceudbyder for %{shop_name}",
         "pending_payment": {
           "due_notice": "Din betaling på %{amount_due} forfalder den %{due_date}.",
           "multibanco": {
@@ -892,7 +892,7 @@
         },
         "local_payment_method_receiver_notice": "Efter at have afgivet din ordre, vil du modtage betalingsoplysninger. Foretag betalingen i en hæveautomat eller online inden for {{dueDays}} dage.",
         "order_edit_banner_title": "Betaling af {{amount_owed}} er nødvendig",
-        "order_edit_banner_subtitle": "Din ordre {{order_number}} blev opdateret. Gennemgå disse ændringer, og betal derefter for at bekræfte din ordre.",
+        "order_edit_banner_subtitle": "Din ordre {{order_number}} er blevet opdateret. Gennemgå disse ændringer, og betal for at bekræfte din ordre.",
         "order_edit_banner_items_added": {
           "other": "Tilføjet %{count}"
         },
@@ -921,7 +921,7 @@
         },
         "markets_pro_disclaimer_label": "Ved at afgive din ordre accepterer du at købe fra Global-e som den registrerede sælger, underlagt Global-e’s %{markets_pro_terms} og %{privacy_policy}, og dele dine oplysninger med %{shop_name}.",
         "markets_pro_disclaimer_privacy_policy": "Privatlivspolitik",
-        "markets_pro_disclaimer_terms_and_conditions_title": "Handelsbetingelser for registreret forhandler",
+        "markets_pro_disclaimer_terms_and_conditions_title": "Handelsvilkår og betingelser",
         "markets_pro_disclaimer_privacy_policy_title": "Merchant of Record Privatlivspolitik",
         "purchase_order_number": {
           "title": "PO nummer",
@@ -933,18 +933,20 @@
         "waiting_on_taxes_notice": "Beregning af skatter",
         "payment_method_rollup_accessibility_label": "Betalingsmetode muligheder",
         "payment_method_update_failed": "Opdatering af betalingsmetode mislykkedes.",
-        "payment_method_incompatible_with_payment_terms": "Betalingsmetoden er ikke kompatibel med betalingsbetingelserne.",
+        "payment_method_incompatible_with_payment_terms": "Betalingsmetoden er inkompatibel med betalingsbetingelserne.",
         "proposed_gateway_unavailable": "Den foreslåede betalingsgateway er utilgængelig",
         "pay_in_installments_split_pay_short": "4 betalinger af %{amount}",
         "gift_cards_unavailable": "Dit gavekort kan ikke længere anvendes til denne ordre og er blevet fjernet",
         "payment_flexibility_terms_id_mismatch": "Betalingsfleksibilitetsbetingelser ID-mismatch",
-        "new_bank_account_disclaimer": "Ved at fuldføre din ordre giver du %{shop_name} tilladelse til at trække beløbet på den nedenstående konto via ACH på det angivne tidspunkt.",
+        "new_bank_account_disclaimer": "Ved at fuldføre din ordre giver du %{shop_name} tilladelse til at debitere den nedenstående konto via ACH for det beløb og på det tidspunkt, der er angivet.",
         "multiple_primary_payment_not_allowed": "Ugyldige betalingsmetoder",
         "card_change_label": "Ændre",
         "billing_address_description_no_shipping_address": "Indtast den adresse, der matcher dit kort eller betalingsmetode.",
         "bank_account_disclaimer": "ACH-betalinger kan tage op til 4 arbejdsdage at behandle.",
         "bank_account_missing": "Bankkonto skal være tilsluttet",
-        "expiry_short": "(Udløber %{month}/%{year})"
+        "expiry_short": "(Udløber %{month}/%{year})",
+        "name_on_card_label": "Navn på kort",
+        "name_on_card_placeholder": "Navn på kort"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Din ordre kan kun sendes til {{countriesList}}. Tilføj en ny adresse for at fortsætte.",
