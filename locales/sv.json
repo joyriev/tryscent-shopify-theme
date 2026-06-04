@@ -2092,11 +2092,11 @@
         "waiting_on_rate_notice": "Hämtar tillgängliga fraktpriser…",
         "waiting_on_pickup_location_notice": "Hämtplatser som blir tillgängliga…",
         "no_rates_for_cart_or_destination_notice": "Det finns inga fraktmetoder tillgängliga för din kundvagn eller adress",
-        "no_pickup_location_notice": "Minst en av dina produkter finns inte tillgänglig för upphämtning",
+        "no_pickup_location_notice": "Minst en av dina produkter är inte tillgänglig för avhämtning",
         "no_rates_contact_notice": "Kontakta oss för mer information",
         "cheapest_rate_label": "Billigast",
-        "delivery_today": "Samma dag leverans %{time}",
-        "delivery_tomorrow": "Leverans nästa dag %{time}",
+        "delivery_today": "Leverans samma dag %{time}",
+        "delivery_tomorrow": "Nästa dags leverans %{time}",
         "arrives_time_range": "Levereras %{min_time}–%{max_time}",
         "estimated_time": "Beräknad %{time}",
         "estimated_time_range": "Beräknad %{min_time}–%{max_time}",
@@ -2109,8 +2109,8 @@
         "shipping_line_delivery_instructions": "Ange nödvändig information som dörrkoder eller instruktioner för avlämning.",
         "other_method": {
           "zero": "Inga andra metoder tillgängliga",
-          "one": "%{count} annan metod tillgänglig på",
-          "other": "%{count} andra metoder tillgängliga från och med"
+          "one": "%{count} andra metoder tillgängliga på",
+          "other": "%{count} andra metoder tillgängliga från"
         },
         "shipping_rate_discounted_amount": "Före: %{original_amount}. Nu: %{amount}",
         "prime_not_available": {
@@ -2176,10 +2176,10 @@
         "no_other_methods_available": "Inga andra metoder tillgängliga",
         "duties_and_taxes_options": {
           "ddp_title": "Betala nu",
-          "ddp_caption": "Inga extra avgifter vid leverans"
+          "ddp_caption": "Inga ytterligare avgifter vid leverans"
         },
         "shipping_used_as_billing_notice": "Detta kommer också att användas som din faktureringsadress för denna beställning.",
-        "shipping_address_title": "Skickas till",
+        "shipping_address_title": "Skicka till",
         "shipping_address_rollup_accessibility_label": "Fraktalternativ till adress",
         "third_party_address_timeout": "Det gick inte att ladda adresser. Försök igen eller använd en annan adress.",
         "third_party_address_error": "Ett fel uppstod vid inläsning av adressval. Ange din adress manuellt nedan.",
@@ -2194,13 +2194,13 @@
         },
         "local_pickup": {
           "rollup_title": "Upphämtningsplats",
-          "rollup_accessibility_label": "Upphämtningsplatsalternativ"
+          "rollup_accessibility_label": "Upphämtningsalternativ"
         },
         "split_shipping_merchandise_quantity_label_additional": "+%{quantity} till",
         "split_shipping_merchandise_shipment_number": "Sändning %{number} av %{total}",
         "pre_order_ships_now": "Skickas nu",
         "pre_order_ships_later": "Skickas senare",
-        "pre_order_ships_date": "Skickas %{date}",
+        "pre_order_ships_date": "Skepp %{date}",
         "split_shipping_shipment_notice": "Din beställning kommer att anlända om %{quantity_shipments}",
         "split_shipping_first_shipment_notice": "Din första beställning kommer att anlända om %{quantity_shipments}",
         "split_shipping_multiple_shipment_notice": "Din beställning kommer att levereras i flera leveranser",
@@ -2208,7 +2208,15 @@
         "split_shipping_more_shipping_options": "Fler fraktalternativ",
         "split_shipping_shipment_number": "Sändning %{number}",
         "split_shipping_merchandise_quantity_label_inline_primary": "Antal: %{quantity}",
-        "split_shipping_option_recommended": "Rekommenderad"
+        "split_shipping_option_recommended": "Rekommenderad",
+        "different_shipping_method_summary": "Ange en annan leveransadress för att se tillgängliga fraktmetoder",
+        "invalid_shipping_method_summary": "Ange en giltig leveransadress för att se tillgängliga fraktmetoder",
+        "invalid_shipping_method_summary_selected": "Välj en annan leveransadress för att se tillgängliga fraktmetoder",
+        "method_summary": {
+          "incomplete_address_entered": "Ange en fullständig leveransadress för att se tillgängliga fraktmetoder",
+          "incomplete_address_selected": "Välj en komplett leveransadress för att se tillgängliga fraktmetoder"
+        },
+        "missing_shipping_address": "Fraktadress saknas"
       },
       "localized_fields": {
         "additional_information": {
