@@ -1847,9 +1847,9 @@
         "invalid_shipping_method_summary": "Välj en giltig leveransadress för att se tillgängliga fraktmetoder"
       },
       "remote_merchandise_only": {
-        "remote_only_notice": "Dessa föremål säljs och skickas av andra butiker. Checkout hos varje butik för att slutföra ditt köp.",
-        "return_to_store_label": "Återvänd till butiken",
-        "checkout_on_shop_label": "Slutför köpet på %{shop_name}",
+        "remote_only_notice": "Dessa artiklar säljs och skickas av andra butiker. Kolla med varje butik för att slutföra ditt köp.",
+        "return_to_store_label": "Återvända till butik",
+        "checkout_on_shop_label": "Kolla in på %{shop_name}",
         "single_shop_transition": "Omdirigerar dig till %{advertiser} för att slutföra ditt köp."
       },
       "stock": {
@@ -2622,12 +2622,13 @@
       },
       "redeemable_errors": {
         "gift_card": {
-          "duplicate": "Presentkortet har redan använts på din beställning",
+          "duplicate": "Presentkortet har redan tillämpats på din beställning",
           "expired": "Detta presentkort har gått ut",
           "currency_mismatch": "Endast presentkort i %{shop_currency} accepteras",
           "generic": "Presentkortet kunde inte läggas till i kassan",
           "throttle_limit_exceeded": "Du har överskridit det maximala antalet försök. Försök igen senare.",
-          "no_longer_available": "Detta presentkort kan inte längre användas vid denna kassa"
+          "no_longer_available": "Detta presentkort kan inte längre användas med denna kassa",
+          "insufficient_funds": "Detta presentkort har inga medel kvar"
         }
       },
       "merchant_instruction_errors": {
@@ -2715,7 +2716,8 @@
         "title": "Efter köp",
         "escape_confirmation": "Du har betalat för din beställning.",
         "components": {
-          "processing": "Bearbetar…"
+          "processing": "Bearbetar…",
+          "submit": "Skicka in"
         }
       },
       "processing": {
@@ -2724,10 +2726,10 @@
         "redirecting_to_bank": "Omdirigerar till {{bank}}",
         "complete_your_purchase_title_error": "Korrigera din betalningsinformation",
         "continue_to_payment_gateway_button_label_error": "Uppdatera betalningsinformation",
-        "page_title": "Bearbetar beställning",
-        "title": "Bearbetar beställning",
+        "page_title": "Behandla beställning",
+        "title": "Behandla beställning",
         "your_order_has_been_received_title": "Tack för din beställning",
-        "you_will_receive_confirmation": "Vi får in många beställningar just nu. Du bör snart få en bekräftelse via e-post eller sms. Om du inte får den inom en timme, hör av dig till oss.",
+        "you_will_receive_confirmation": "Vi får många beställningar just nu. Du bör få bekräftelse via e-post eller sms snart. Om du inte får det inom nästa timme, låt oss veta.",
         "you_will_not_be_charged": "Du kommer inte att debiteras än",
         "wait": {
           "short": "Din beställning behandlas.",
@@ -2735,10 +2737,11 @@
             "one": "Din beställning behandlas. Beräknad väntetid är %{count} minut.",
             "other": "Din beställning behandlas. Beräknad väntetid är %{count} minuter."
           },
-          "long": "Du kommer att få ett e-postmeddelande så snart din beställning har behandlats. Det är för närvarande en hög volym av beställningar.",
+          "long": "Du kommer att få ett e-postmeddelande så snart din beställning har behandlats. Det finns för närvarande en hög volym av beställningar.",
           "no_auto_refresh_html": "Om du inte omdirigeras automatiskt, %{link}.",
-          "refresh_this_page": "uppdatera denna sida"
-        }
+          "refresh_this_page": "uppdatera den här sidan"
+        },
+        "remote_shops_payments_processing": "Behandla betalningar"
       },
       "payment_challenge_modal": {
         "instructions": "Slutför ditt köp med din {{paymentMethod}}-kod",
@@ -3027,18 +3030,18 @@
           "contact_method_title": "Kontakt",
           "shipping_address_title": "Skickas till",
           "shipping_method_title": "Fraktmetod",
-          "change_company_location_link_label": "Byt företagsplats",
-          "change_shipping_address_link_label": "Byt leveransadress",
-          "change_shipping_method_link_label": "Byt leveransmetod",
-          "change_payment_method_link_label": "Byt betalningsmetod",
+          "change_company_location_link_label": "Ändra företagsplats",
+          "change_shipping_address_link_label": "Ändra leveransadress",
+          "change_shipping_method_link_label": "Ändra fraktmetod",
+          "change_payment_method_link_label": "Ändra betalningsmetod",
           "pick_up_in_store_shipping_method_html": "Upphämtning i butik · %{location_name}",
           "purchase_order_number_title": "PO-nummer",
           "change_purchase_order_number_label": "Ändra PO-nummer",
-          "change_delivery_method_link_label": "Byt leveransmetod",
-          "no_purchase_order_number": "(Inget PO-nummer)",
-          "due_after_order_reviewed_html": "Betalas efter att beställningen har granskats",
+          "change_delivery_method_link_label": "Ändra leveransmetod",
+          "no_purchase_order_number": "(Inga PO-nummer)",
+          "due_after_order_reviewed_html": "Due efter att beställningen har granskats",
           "review_title_free_order": "Granska och slutför din beställning",
-          "company_location": "Företagsplats"
+          "company_location": "Företagets plats"
         }
       },
       "marketing": {
@@ -3073,7 +3076,7 @@
         "terms_and_policies": "Villkor och riktlinjer"
       },
       "remote_policies": {
-        "unavailable_policy": "Ingen %{policy_name} har angetts för denna butik. För ytterligare information, kontakta %{shop_name} direkt."
+        "unavailable_policy": "Ingen %{policy_name} har tillhandahållits för denna butik. För mer information, kontakta %{shop_name} direkt."
       },
       "mor_policies": {
         "terms_and_conditions": "Villkor för Merchant of Record",
@@ -3180,24 +3183,25 @@
       },
       "pickup_point": {
         "no_business_hours": "Inga öppettider tillgängliga",
-        "title": "Utlämningsställe",
+        "title": "Upphämtningsställe",
         "search_button": "Sök",
-        "selector_tabs": "Upphämtningsplatsväljare",
+        "selector_tabs": "Upphämtningsställe väljare",
         "could_not_resolve_address": "Din adress kunde inte hittas. Försök igen eller använd en annan adress",
         "no_pickup_points_near_you": "Inga upphämtningsställen hittades nära den valda adressen",
         "no_pickup_points_near_location": "Inga upphämtningsställen hittades nära din plats",
         "pickup_unavailable_banner_title": {
-          "one": "Inga upphämtningsställen tillgängliga för din vara",
+          "one": "Inga upphämtningsställen tillgängliga för din artikel",
           "other": "Inga upphämtningsställen tillgängliga för dina artiklar"
         },
         "no_pickup_points_found": "Inga upphämtningsställen hittades",
         "paginator": {
           "header": {
-            "one": "Visar %{first} - %{last} av %{count} poäng",
+            "one": "Visar %{first} - %{last} av %{count} punkter",
             "other": "Visar %{first} - %{last} av %{count} poäng"
           },
           "selected_pickup_point_label": {
-            "one": "%{pickup_point_index} av %{count} punkt"
+            "one": "%{pickup_point_index} av %{count} punkt",
+            "other": "%{pickup_point_index} av %{count} punkter"
           },
           "selected_page": {
             "one": "%{first} - %{last} av %{count} poäng",
@@ -3205,7 +3209,7 @@
           }
         },
         "number_of_pickup_points_near_location": {
-          "one": "%{count} upphämtningsställe nära din plats",
+          "one": "%{count} upphämtningspunkt nära din plats",
           "other": "%{count} upphämtningsställen nära din plats"
         },
         "change": "Ändra plats",
@@ -3216,7 +3220,8 @@
             "permission_not_allowed": "Tillåt att dela din plats.",
             "permission_denied": "Kunde inte få din plats. Försök igen."
           }
-        }
+        },
+        "open_twenty_four_hours": "Öppet 24/7"
       },
       "error_page": {
         "terminal": {
@@ -3467,10 +3472,10 @@
       },
       "remote": {
         "errors": {
-          "only_remote_merchandise_lines": "Kassan innehåller endast fjärrvaror. En omdirigering till den fjärrbutiken krävs för att slutföra köpet.",
-          "currency_mismatch": "Den här varan kan inte läggas till i din kundvagn eftersom den kommer från en butik som använder en annan valuta.",
-          "currency_mismatch_removal": "En vara togs bort från din kundvagn eftersom den kommer från en butik som använder en annan valuta.",
-          "max_remote_shops_exceeded": "Den här produkten kan inte läggas till eftersom din kundvagn redan har maxantalet från andra butiker."
+          "only_remote_merchandise_lines": "Kassan innehåller endast fjärrvaror. En omdirigering till den fjärran butiken krävs för att slutföra kassan.",
+          "currency_mismatch": "Denna artikel kan inte läggas till i din kundvagn eftersom den kommer från en butik som använder en annan valuta.",
+          "currency_mismatch_removal": "En artikel har tagits bort från din kundvagn eftersom den kommer från en butik som använder en annan valuta.",
+          "max_remote_shops_exceeded": "Denna produkt kan inte läggas till eftersom din kundvagn redan har det maximala från andra butiker."
         }
       },
       "units": {
@@ -3495,7 +3500,7 @@
       },
       "required_extensions": {
         "errors": {
-          "interaction_required": "En tilläggsinteraktion krävs för att slutföra utcheckningen."
+          "interaction_required": "En förlängningsinteraktion krävs för att slutföra kassan."
         }
       },
       "taxes": {
