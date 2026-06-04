@@ -2549,12 +2549,12 @@
           "unavailable_terminal": {
             "instructions": "{{walletName}} er i øjeblikket ikke tilgængelig for din ordre. For at fortsætte dit køb, vælg en anden betalingsmetode."
           },
-          "generic": "Der opstod et problem med {{walletName}}. Prøv igen eller brug en anden betalingsmetode.",
-          "discount_code": "Kan ikke anvende denne rabatkode. Tjek din kode og prøv igen.",
+          "generic": "Der var et problem med {{walletName}}. Prøv igen eller brug en anden betalingsmetode.",
+          "discount_code": "Kan ikke anvende denne rabatkode. Gennemgå din kode og prøv igen.",
           "detour": {
             "stock_problems": "Nogle varer er ikke længere tilgængelige. Luk {{walletName}} og prøv igen.",
             "price_change": "Nogle varepriser er ændret. Luk {{walletName}} for at gennemgå din ordre og prøv igen.",
-            "queue": "Du er blevet sat i kø for at betale. Luk {{walletName}} for at fortsætte."
+            "queue": "Du er blevet sat i kø til kassen. Luk {{walletName}} for at fortsætte."
           },
           "unsupported": {
             "address": "Forhandleren kan ikke levere til denne adresse",
@@ -2567,14 +2567,15 @@
           },
           "invalid": {
             "shipping_option": "Vælg en gyldig forsendelsesmulighed",
-            "email": "Indtast en gyldig e-mailadresse",
+            "email": "Indtast en gyldig e-mail",
             "zone": "Indtast en gyldig stat / provins",
             "billing_zone": "Indtast en gyldig faktureringsadresse stat / provins",
-            "emirate": "Indtast en gyldig emirat",
-            "postal_code": "Indtast et gyldigt postnummer",
-            "billing_phone": "Indtast et gyldigt telefonnummer til faktureringsadressen",
+            "emirate": "Indtast et gyldigt emirate",
+            "postal_code": "Indtast en gyldig postnummer / postkode",
+            "billing_phone": "Indtast et gyldigt telefonnummer til faktureringsadresse",
             "reduction_code": "Indtast en gyldig rabatkode eller gavekort",
-            "billing_zip": "Indtast en gyldig faktureringsadresse postnummer / postnummer"
+            "billing_zip": "Indtast en gyldig faktureringsadresse ZIP / postnummer",
+            "billing_must_match_shipping": "Skal matche leveringsadresse"
           },
           "missing": {
             "first_name": "Indtast et fornavn",
@@ -2596,8 +2597,8 @@
           },
           "formatting": {
             "first_name_too_long": "Fornavn indeholder for mange bogstaver",
-            "last_name_too_long": "Efternavn indeholder for mange bogstaver",
-            "address_too_long": "Adressefeltet er for langt"
+            "last_name_too_long": "Efternavnet indeholder for mange bogstaver",
+            "address_too_long": "Adressen er for lang"
           },
           "select_different_shipping_address_to_resolve_errors": "Din leveringsadresse er ugyldig. Vælg en anden adresse eller brug en ny."
         },
@@ -2629,11 +2630,13 @@
         }
       },
       "units": {
-        "centiliter": "kl",
+        "centiliter": "cl",
         "meter": "min",
         "pound": "lb",
         "inch": "i",
-        "square_foot": "ft²"
+        "square_foot": "ft²",
+        "liter": "L",
+        "foot": "ft"
       },
       "memberships": {
         "delivery_promise_unfulfillable": "Adressen understøttes ikke for det nuværende medlemskab.",
@@ -2766,6 +2769,14 @@
       "payment_summary": {
         "express_payment_gateway_label": "Udtryk",
         "manual_payment_gateway_label": "Manual"
+      },
+      "vaulted": {
+        "change_button": "Ændre"
+      },
+      "too_many_requests": {
+        "body": "Vent venligst et par minutter og prøv igen fra din indkøbskurv.",
+        "body_no_cart": "Vent venligst et par minutter og prøv igen.",
+        "return_to_cart": "Gå tilbage til kurv"
       }
     },
     "sentence": {

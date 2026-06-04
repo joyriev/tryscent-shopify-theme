@@ -1855,40 +1855,40 @@
       "stock": {
         "page_title": "Lagerproblem",
         "title": "Slut i lager",
-        "items_unavailable_notice": "Vissa artiklar finns inte längre tillgängliga.",
-        "quantity_column_header": "Antal",
+        "items_unavailable_notice": "Vissa artiklar är inte längre tillgängliga.",
+        "quantity_column_header": "Kvantitet",
         "removed_from_cart_notice": "Borttagen från kundvagnen",
-        "reduced_label": "Nedsatt",
+        "reduced_label": "Reducerad",
         "reduced_with_quantity_label": "Endast %{quantity_available} kvar",
         "remove_from_cart_button_label": "Ta bort från kundvagn",
         "go_back_to_cart_button_label": "Gå tillbaka till min kundvagn",
-        "return_to_store_label": "Återvänd till butiken",
+        "return_to_store_label": "Återvända till butik",
         "continue_cta_label": "Fortsätt till kassan",
         "empty_cart_label": "Din kundvagn är tom",
         "quantity_update": {
-          "page_title": "Uppdatering av kvantitet",
-          "title": "Uppdatering av kvantitet",
+          "page_title": "Kvantitetsuppdatering",
+          "title": "Kvantitetsuppdatering",
           "description": "Tillgängliga kvantiteter för dessa artiklar har ändrats och uppdateras i din kundvagn."
         },
         "unpurchasable_product": {
-          "title": "Ej köpbar produkt",
-          "header": "Vissa artiklar togs bort från din kundvagn",
+          "title": "Ej köpvärd produkt",
+          "header": "Några artiklar har tagits bort från din kundvagn",
           "message": "Dessa artiklar är inte tillgängliga för B2B-beställningar."
         },
         "unpurchasable_product_generic": {
-          "title": "Ej köpbar produkt",
-          "header": "Vissa artiklar togs bort från din kundvagn",
-          "message": "Dessa artiklar finns inte tillgängliga."
+          "title": "Ej köpvärd produkt",
+          "header": "Några artiklar har tagits bort från din kundvagn",
+          "message": "Dessa artiklar är inte tillgängliga."
         },
         "unfulfillable_product": {
           "message": {
-            "one": "%{delivery_method} är inte längre tillgängligt för denna vara.",
-            "other": "%{delivery_method} är inte längre tillgängligt för dessa artiklar."
+            "one": "%{delivery_method} är inte längre tillgänglig för denna artikel.",
+            "other": "%{delivery_method} är inte längre tillgänglig för dessa artiklar."
           }
         },
         "unshippable_product": {
           "message": {
-            "one": "Den här varan kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress.",
+            "one": "Denna artikel kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress.",
             "other": "Dessa artiklar kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress."
           }
         },
@@ -1900,8 +1900,8 @@
           "description": "Priser och tillgängliga kvantiteter för dessa artiklar har ändrats och uppdateras i din kundvagn."
         },
         "out_of_stock": {
-          "description": "Dessa artiklar finns inte längre tillgängliga och har tagits bort från din kundvagn.",
-          "items_unavailable": "Vissa artiklar finns inte längre tillgängliga och har tagits bort från din kundvagn."
+          "description": "Dessa artiklar är inte längre tillgängliga och kommer att tas bort från din kundvagn.",
+          "items_unavailable": "Vissa artiklar är inte längre tillgängliga och kommer att tas bort från din kundvagn."
         },
         "out_of_stock_in_context_label": "Denna produkt är inte tillgänglig i ditt land/region."
       },
@@ -2632,7 +2632,7 @@
         "split_by_delivery_method_unsupported_method_type": "Delad efter leveransmetod som försökt med en icke stödd leveransmetodstyp."
       },
       "store_credit_errors": {
-        "generic_error": "Det uppstod ett problem med ditt butikskredit. Försök igen eller ladda om sidan."
+        "generic_error": "Det var ett problem med din butikskredit. Försök igen eller ladda om sidan."
       },
       "redeemable_errors": {
         "gift_card": {
@@ -3140,11 +3140,18 @@
         }
       },
       "subscriptions": {
-        "recurring_totals_with_initial_order_shipping_discount": "Första betalningen %{total_price_with_discount}, sedan %{recurring_total}",
+        "recurring_totals_with_initial_order_shipping_discount": "Första betalning %{total_price_with_discount}, sedan %{recurring_total}",
         "recurring_totals_with_policies": {
           "first_cycles": {
-            "one": "Första betalningen %{total_price}",
-            "other": "Första %{count} betalningarna %{total_price} vardera"
+            "one": "Första betalning %{total_price}",
+            "other": "Första %{count} betalningar %{total_price} var och en"
+          },
+          "following_cycles": ", då %{total_price} varje %{interval}"
+        },
+        "recurring_totals": "%{total_price} varje %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", då %{count} betalning på %{total_price}"
           }
         }
       },
@@ -3519,27 +3526,27 @@
         }
       },
       "taxes": {
-        "tax_details": "Ytterligare skattedetaljer",
+        "tax_details": "Ytterligare skatteuppgifter",
         "vat_number": {
           "field": {
-            "tooltip": "Validerar momsnummer och tillämpar automatiskt omvänd skattskyldighet på beställningar när det är tillämpligt"
+            "tooltip": "Validerar momsnummer och tillämpar automatiskt omvänd skattskyldighet på beställningar när det är berättigat"
           },
           "add": "Lägg till ett momsnummer",
           "vaulted": "Momsnummer: %{number}",
           "badge": "Momsnummer: %{number}",
-          "domestic_order": "Omvänd skattskyldighet gäller endast för gränsöverskridande EU-beställningar. Standardmoms debiteras för lokala beställningar.",
+          "domestic_order": "Omvänd skatteplikt gäller endast för gränsöverskridande EU-beställningar. Standardmoms debiteras för lokala beställningar.",
           "status": {
             "invalid_format": {
-              "at": "Österrikiska momsnummer innehåller AT och 9 tecken",
+              "at": "Österrikes momsnummer innehåller AT och 9 tecken",
               "be": "Belgiska momsnummer innehåller BE och 10 tecken",
               "bg": "Bulgariens momsnummer innehåller BG och 9-10 tecken",
               "hr": "Kroatien momsnummer innehåller HR och 11 tecken",
               "cy": "Cyperns momsnummer innehåller CY och 9 tecken",
-              "cz": "Tjeckiska momsnummer innehåller CZ och 8-10 tecken",
-              "dk": "Danska momsnummer innehåller DK och 8 tecken",
-              "ee": "Estniska momsnummer innehåller EE och 9 tecken",
-              "fi": "Finländska momsnummer innehåller FI och 8 tecken",
-              "fr": "Franska momsnummer innehåller FR och 11 tecken",
+              "cz": "Tjeckiska republikens momsnummer innehåller CZ och 8-10 tecken",
+              "dk": "Danmarks momsnummer innehåller DK och 8 tecken",
+              "ee": "Estlands momsnummer innehåller EE och 9 tecken",
+              "fi": "Finlands momsnummer innehåller FI och 8 tecken",
+              "fr": "Frankrikes momsnummer innehåller FR och 11 tecken",
               "de": "Tyska momsnummer innehåller DE och 9 tecken",
               "gr": "Greklands momsnummer innehåller EL och 9 tecken",
               "hu": "Ungerska momsnummer innehåller HU och 8 tecken",
@@ -3589,6 +3596,16 @@
             },
             "service_unavailable": "Valideringstjänst otillgänglig",
             "service_error": "Valideringstjänst otillgänglig"
+          },
+          "accessibility": {
+            "status": {
+              "validating": "Momsregistreringsnummerverifiering pågår",
+              "valid": "Momsregistreringsnummer är giltigt",
+              "applied": "Momsbefrielse har ansökts",
+              "domestic": "Momsbefrielse tillämpas inte",
+              "service_unavailable": "Kan inte verifiera momsundantag",
+              "service_error": "Kan inte verifiera momsundantag"
+            }
           }
         }
       },
@@ -3636,6 +3653,13 @@
           },
           "pick_them_up_in_store": {
             "one": "Hämta det i butik"
+          },
+          "remove_item_only": {
+            "other": "Ta bort objekt"
+          },
+          "ship_separately": {
+            "one": "Skicka det separat",
+            "other": "Skicka dem separat"
           }
         },
         "cross_border": {
@@ -3644,7 +3668,11 @@
             "country_changed_heading": "Land ändrat"
           },
           "banner": "Din leveransmetod har uppdaterats"
-        }
+        },
+        "pickup_all_items": "Plocka upp alla föremål",
+        "items_for_pickup": "Varor för upphämtning",
+        "items_for_shipping": "Varor för frakt",
+        "items_moved_to_shipping_toast": "Objekt som inte kan hämtas har flyttats till frakt"
       }
     },
     "links": {
