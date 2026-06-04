@@ -262,7 +262,7 @@
         "comment": "Kommentar",
         "send": "Send",
         "post_success": "Tak for at kontakte os. Vi vender tilbage til dig så hurtigt som muligt.",
-        "error_heading": "Justér venligst følgende:",
+        "error_heading": "Venligst juster følgende:",
         "title": "Kontaktformular"
       }
     },
@@ -3015,15 +3015,19 @@
       }
     },
     "search": {
-      "error": "Der opstod et problem med at indlæse dine søgeresultater. Opdater venligst siden eller prøv igen senere."
+      "error": "Der opstod et problem med at indlæse dine søgeresultater. Venligst opdater siden eller prøv igen senere."
     },
     "page_titles": {
       "blog_or_article_with_error": "Fejl - %{title}",
-      "shopping_cart": "Din Indkøbskurv",
+      "shopping_cart": "Din indkøbskurv",
       "order": "Bestil %{name}",
-      "search": "Søgning",
+      "search": "Søg",
       "not_found": "404 Ikke Fundet",
-      "checkpoint": "Checkpoint"
+      "checkpoint": "Checkpoint",
+      "search_results": {
+        "one": "Søg: %{count} resultater fundet for \"%{terms}\"",
+        "other": "Søg: %{count} resultater fundet for \"%{terms}\""
+      }
     },
     "challenge": {
       "message": "For at fortsætte, lad os vide, at du ikke er en robot.",
@@ -3034,9 +3038,24 @@
       "error": "Captcha-validering mislykkedes"
     },
     "subscriptions": {
-      "buyer_consent_product": "Denne vare er et tilbagevendende eller udsat køb. Ved at fortsætte accepterer jeg %{cancellationPolicyLink} og giver dig tilladelse til at opkræve min betalingsmetode til de priser, hyppighed og datoer, der er angivet på denne side, indtil min ordre er opfyldt eller jeg annullerer, hvis det er tilladt.",
-      "buyer_consent_cart": "En eller flere af varerne i din kurv er et tilbagevendende eller udsat køb. Ved at fortsætte accepterer jeg %{cancellationPolicyLink} og giver dig tilladelse til at opkræve min betalingsmetode til de priser, hyppighed og datoer, der er angivet på denne side, indtil min ordre er opfyldt eller jeg annullerer, hvis det er tilladt.",
+      "buyer_consent_product": "Denne vare er et tilbagevendende eller udsat køb. Ved at fortsætte accepterer jeg %{cancellationPolicyLink} og giver dig tilladelse til at opkræve min betalingsmetode til de priser, frekvenser og datoer, der er angivet på denne side, indtil min ordre er opfyldt, eller jeg annullerer, hvis det er tilladt.",
+      "buyer_consent_cart": "En eller flere af varerne i din indkøbskurv er et tilbagevendende eller udsat køb. Ved at fortsætte accepterer jeg %{cancellationPolicyLink} og giver dig tilladelse til at opkræve min betalingsmetode til de priser, frekvenser og datoer, der er angivet på denne side, indtil min ordre er opfyldt, eller jeg annullerer, hvis det er tilladt.",
       "cancellation_policy": "afbestillingspolitik"
+    },
+    "pagination": {
+      "previous": "Tidligere"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Normalt klar om 1 time",
+        "two_hours": "Normalt klar om 2 timer",
+        "four_hours": "Normalt klar om 4 timer",
+        "twenty_four_hours": "Normalt klar om 24 timer",
+        "two_to_four_days": "Normalt klar om 2-4 dage",
+        "five_or_more_days": "Normalt klar om 5+ dage",
+        "zero_to_two_hours": "Normalt klar om 2 timer",
+        "two_to_four_hours": "Normalt klar om 4 timer"
+      }
     }
   },
   "customer_accounts": {
