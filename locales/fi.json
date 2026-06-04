@@ -2080,7 +2080,51 @@
           "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} per toimitus), jota seuraa %{recurring_order_shipping_price}",
           "free_for_first_n_order": {
             "one": "Ensimmäistä tilausta varten"
-          }
+          },
+          "max_cycles_base_shipping_delivery_not_included": {
+            "other": "%{count} lisälähetystä hintaan %{shipping_price} kukin"
+          },
+          "prepaid_free_shipping_with_cycles": {
+            "one": "Ilmainen toimitus ensimmäiselle %{cycle} ajanjaksolle, sen jälkeen %{recurring_order_shipping_price}",
+            "other": "Ilmainen toimitus ensimmäiselle %{cycle} ajanjaksolle, sen jälkeen %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_one_cycle": {
+            "one": "%{shipping_price} %{count} lisätoimituksesta",
+            "other": "%{shipping_price} %{count} lisätoimituksesta (%{per_delivery_cost})"
+          },
+          "prepaid_order_one_cycle_delivery_not_included": {
+            "one": "%{shipping_price} %{count} toimituksesta",
+            "other": "%{shipping_price} %{count} toimitukselle (%{per_delivery_cost})"
+          },
+          "prepaid_order_no_cycle": {
+            "one": "%{shipping_price} %{count} lisätoimituksesta, jota seuraa %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} %{count} lisätoimituksesta (%{per_delivery_cost}), jota seuraa %{recurring_order_shipping_price}"
+          },
+          "prepaid_order_no_cycle_delivery_not_included": {
+            "one": "%{shipping_price} %{count} toimituksesta, jonka jälkeen %{recurring_order_shipping_price}",
+            "other": "%{shipping_price} %{count} toimitukselle (%{per_delivery_cost}), jota seuraa %{recurring_order_shipping_price}"
+          },
+          "prepaid_delivery_frequency": {
+            "one": "toimitusta varten %{count}",
+            "other": "%{count} toimitukselle"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "other": "joka %{count}. päivä"
+            },
+            "week": {
+              "other": "joka %{count}. viikko"
+            },
+            "month": {
+              "other": "joka %{count} kuukausi"
+            },
+            "year": {
+              "other": "joka %{count}. vuosi"
+            }
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} per toimitus",
+          "prepaid_shipping_price_label": "%{shipping_price} per toimitus x %{delivery_interval_count}",
+          "recurring_order_shipping_price": "seuraten %{recurring_order_shipping_price}"
         },
         "shipping_used_as_billing_notice": "Tätä käytetään myös laskutusosoitteena tälle tilaukselle.",
         "split_shipping_merchandise_quantity_label_additional": "+%{quantity} lisää",
@@ -2092,7 +2136,25 @@
         "split_shipping_multiple_shipment_quantity_label": "%{quantity} lähetykset",
         "split_shipping_multiple_shipment_notice": "Tilauksesi saapuu useammassa erässä",
         "split_shipping_multiple_shipment_notice_one_time_purchase": "Tilauksesi saapuu %{quantity} erässä",
-        "split_shipping_option_lowest_price": "Alin hinta"
+        "split_shipping_option_lowest_price": "Alin hinta",
+        "subscription_shipping": "Tilauksen toimitus",
+        "waiting_on_rate_notice": "Haetaan saatavilla olevia toimitushintoja…",
+        "waiting_on_pickup_location_notice": "Haetaan saatavilla olevia noutopaikkoja…",
+        "two_day_delivery": "2 päivän toimitus %{time}",
+        "unbranded_default_description": "Valmis lähetettäväksi",
+        "unbranded_description_same_day": "Toimitetaan samana arkipäivänä",
+        "unbranded_description_with_fulfillment_days": {
+          "one": "Toimitetaan seuraavana arkipäivänä",
+          "other": "Toimitetaan %{count} arkipäivässä"
+        },
+        "unbranded_description_with_fulfillment_weeks": {
+          "one": "Toimitetaan %{count} viikon kuluttua",
+          "other": "Toimitetaan %{count} viikossa"
+        },
+        "third_party_address_timeout": "Osoitteiden lataaminen epäonnistui. Yritä uudelleen tai käytä toista osoitetta.",
+        "third_party_address_error": "Virhe tapahtui osoitteen valinnan lataamisen aikana. Syötä osoitteesi manuaalisesti alla.",
+        "third_party_payment_timeout": "Maksutapojen lataaminen epäonnistui. Yritä uudelleen tai käytä toista maksutapaa.",
+        "third_party_payment_error": "Virhe tapahtui maksutavan valinnan lataamisen aikana. Käytä toista maksutapaa."
       },
       "session_errors": {
         "session_not_unique": "Tilauksesi käsittelyssä ilmeni ongelma. Päivitä tämä sivu palataksesi kauppaan.",
@@ -2104,6 +2166,10 @@
           "other": "Tämä tilaus lähetetään osoitteeseen, jonka {{merchant}} on antanut. Valitse toimitusosoite."
         },
         "use_saved_address": "Käytä eri osoitetta"
+      },
+      "shipping_errors": {
+        "empty_state": "Syötä toimitusosoitteesi nähdäksesi saatavilla olevat toimitustavat.",
+        "invalid_selected_address": "Valittu toimitusosoite ei ole kelvollinen"
       }
     },
     "attributes": {
