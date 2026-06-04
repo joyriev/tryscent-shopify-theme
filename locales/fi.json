@@ -924,6 +924,58 @@
           },
           "checkout_source": {
             "revoked": "Tätä kassaa ei ole enää saatavilla."
+          },
+          "only_empty_terms_accepted": "Tämä käytäntö hyväksyy vain tyhjät ehdot.",
+          "merchandise": {
+            "only_value_constraint": "Vain tarkat arvot ovat sallittuja tavarasyötteessä.",
+            "merchandise_variant_not_found": "Tuotevarianttia ei löytynyt.",
+            "merchandise_not_applicable": "Tuotevarianttia ei voi ostaa.",
+            "mixed_currencies": "Ostoskori sisältää eri valuutoilla olevia tuotteita.",
+            "bundle_products_not_supported_for_b2b": "Pakettituotteita ei voi lisätä B2B-tilauksiin tässä sijainnissa.",
+            "gift_card_quantity_mismatch": "Kun määrität lahjakorttikoodeja, rivikohteen määrä ja lahjakorttikoodien lukumäärä on oltava sama.",
+            "gift_card_not_supported": "Lahjakortteja ei tueta tässä kassalla.",
+            "gift_card_not_unique": "Lahjakortti, jonka koodi on {{code}}, esiintyy useammin kuin kerran tässä kassalla. Koodit muotoillaan ennen vertailua.",
+            "gift_card_used": "Lahjakorttikoodi {{code}} on jo liitetty lahjakorttiin. Koodit muotoillaan ennen vertailua.",
+            "gift_card_invalid": "Lahjakorttikoodi {{code}} on virheellinen.",
+            "gift_card_code_changed": "Lahjakorttikoodi {{proposed_code}} muutettiin muotoilun sääntöjen mukaiseksi koodiksi {{formatted_code}}.",
+            "gift_card_with_attributes_not_supported": "Lahjakortteja, joissa on mukautetut ominaisuudet, ei tueta tässä kassalla.",
+            "gift_card_with_components_not_supported": "Lahjakortteja, jotka sisältävät komponentteja, ei tueta tässä kassalla.",
+            "selling_plan_not_supported_b2b": "Tilauksia ei tueta B2B-kassalla.",
+            "price_mismatch": "Aiemmin ehdotettu hinta tälle tuotteelle oli virheellinen ja se on päivitetty.",
+            "inventory_not_found": "Varastoa ei löytynyt tälle tuotteelle.",
+            "product_not_published_in_buyer_location": "Tuotetta ei ole saatavilla nykyisessä ostajan sijainnissa.",
+            "duplicated_stable_id": "Tällä tuotelinjalla on sama vakaa tunniste kuin toisella linjalla.",
+            "minimum_quantity_not_met": "Joidenkin tuotteiden määrä ei täytä vaadittua minimiä.",
+            "quantity_increment_not_met": "Joidenkin tuotteiden määrä ei täytä tilausrajoja.",
+            "quantity_rules_not_met": "Joidenkin tuotteiden määrä ei täytä tilausrajoja.",
+            "bundle_requires_components": "Tässä pakettituotteessa ei ole osia.",
+            "combined_listing_parent_not_purchasable": "Yhdistettyjen listojen päätuotteita ei voi ostaa suoraan.",
+            "title_empty": "Tuotteen nimi on tyhjä."
+          },
+          "payment": {
+            "missing_session_id": "Luottokorttisession tiedot puuttuvat.",
+            "gateway_not_supported": "Maksuyhdyskäytävä ei tue maksutavan tallentamista.",
+            "credit_card_last_name_required": "'sukunimi' ei voi olla tyhjä.",
+            "invalid_address_type": "Annettu osoitetyyppi ei ole kelvollinen tälle maksutavalle.",
+            "missing_retail_attributions": "Vähittäismyyntitiedot vaaditaan manuaalisesti syötettyihin luottokorttimaksuihin.",
+            "invalid_card_source": "Tällä istunnolla ei ole oikeutta käyttää tätä korttilähdettä.",
+            "payment_instrument_not_found": "Maksutapaa ei löytynyt",
+            "method_required": "Maksutapa on ehdotettava."
+          },
+          "non_negotiable": {
+            "missing_non_negotiable_terms": "Tarjouksessasi tulee olla neuvottelemattomat ehdot.",
+            "invalid_signature": "Allekirjoitus {{target_terms}} on virheellinen."
+          },
+          "inventory": {
+            "missing_quantity_value": "Määräkenttä puuttuu ostajan varastoriveiltä.",
+            "changing_behavior_not_allowed": "Tällä asiakkaalla ei ole oikeuksia muuttaa varaston toimintatapaa.",
+            "only_one_inventory_behavior_allowed": "Tällä hetkellä kassalla sallitaan vain yksi varastonhallintatapa."
+          },
+          "optional_duties": {
+            "optional_duties_not_permitted": "Tullimaksujen kieltäminen ei ole sallittua tässä kassalla."
+          },
+          "fx_reconciliation_override": {
+            "shop_currency_mismatch": "Saapuvan summan on oltava kaupan valuutassa."
           }
         },
         "continue_to_payment_plans_button_label": "Jatka maksusuunnitelmiin",
