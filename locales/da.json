@@ -2880,10 +2880,11 @@
       "customer": {
         "password_reset_error": "Fejl ved nulstilling af adgangskode",
         "subscribe_error": "Abonnementsfejl",
-        "unsubscribe_error": "Fejl ved afmelding",
+        "unsubscribe_error": "Afmeldingsfejl",
         "no_account_found": "Ingen konto fundet med den e-mail.",
         "invalid_credentials": "Forkert e-mail eller adgangskode.",
-        "denylisted_reset_password": "Din konto kunne ikke tilgås, fordi den nuværende adgangskode ikke er sikker. Du vil modtage en e-mail for at opdatere din adgangskode."
+        "denylisted_reset_password": "Din konto kunne ikke tilgås, fordi den nuværende adgangskode ikke er sikker. Du vil modtage en e-mail for at opdatere din adgangskode.",
+        "signup_disabled": "Oprettelse af kundekonti er blevet deaktiveret."
       },
       "address": {
         "updated": "Adresse opdateret med succes.",
@@ -2894,26 +2895,26 @@
       },
       "line_item": {
         "item_status": {
-          "decrement_return_line_item": "Fjernet %{delta} fra retur"
+          "decrement_return_line_item": "Fjernet %{delta} fra return"
         }
       },
       "order": {
         "financial_status": {
           "unpaid": "Ubetalt",
-          "voided": "Ugyldig"
+          "voided": "Annulleret"
         },
         "fulfillment_status": {
           "fulfilled": "Opfyldt",
-          "complete": "Fuldstændig",
+          "complete": "Fuldføre",
           "unfulfilled": "Uopfyldt"
         },
         "cancel_reason": {
-          "inventory": "Varer ikke tilgængelige",
-          "fraud": "Falsk ordre",
-          "customer": "Kunden ændrede/annullerede ordren",
-          "staff": "Personale fejl"
+          "inventory": "Varer utilgængelige",
+          "fraud": "Svindelordre",
+          "customer": "Kunde ændrede/annullerede ordre",
+          "staff": "Medarbejderfejl"
         },
-        "cash_on_delivery": "Kontant ved Levering (COD)"
+        "cash_on_delivery": "Kontant ved levering (COD)"
       },
       "cart": {
         "not_found": "Kurv ikke fundet",
@@ -2959,10 +2960,10 @@
         "invalid_password": "Adgangskode forkert, prøv venligst igen."
       },
       "tags": {
-        "add_articles": "Indsnævr søgning til artikler, der også har mærket %{tag}",
-        "add_products": "Indsnævr udvalget til produkter, der matcher mærket %{tag}",
-        "remove_articles": "Udvid søgningen til artikler, der ikke er mærket %{tag}",
-        "remove_products": "Fjern mærke %{tag}"
+        "add_articles": "Indsnævr søgningen til artikler, der også har tag %{tag}",
+        "add_products": "Indsnævr udvalg til produkter, der matcher tag %{tag}",
+        "remove_articles": "Udvid søgningen til artikler, der ikke er tagget %{tag}",
+        "remove_products": "Fjern tag %{tag}"
       }
     },
     "email_marketing": {
@@ -3020,7 +3021,9 @@
       "blog_or_article_with_error": "Fejl - %{title}",
       "shopping_cart": "Din Indkøbskurv",
       "order": "Bestil %{name}",
-      "search": "Søgning"
+      "search": "Søgning",
+      "not_found": "404 Ikke Fundet",
+      "checkpoint": "Checkpoint"
     },
     "challenge": {
       "message": "For at fortsætte, lad os vide, at du ikke er en robot.",
