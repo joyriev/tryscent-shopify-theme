@@ -2654,7 +2654,7 @@
         "paypal_zero_amount": "Du kan inte använda PayPal för %{amount} beställningar. Bekräfta att din beställning är korrekt och gå till kassan utan PayPal.",
         "paypal_invalid_token": "PayPal var inte tillgängligt. Försök igen eller använd ett annat betalningsalternativ.",
         "pay_later_failed": "Det uppstod ett fel vid behandlingen av din betalning med Betala senare. Välj en annan betalningsmetod och försök igen.",
-        "three_d_secure_failed_duplicate": "Kreditkortets 3D Secure-autentisering misslyckades eftersom en annan redan pågår.",
+        "three_d_secure_failed_duplicate": "3D Secure-autentiseringen för kreditkortet misslyckades eftersom en annan redan pågår.",
         "subscription_agreement_blank": "För att köpa en prenumeration måste dina betalningsuppgifter sparas. För att fortsätta, bekräfta att du godkänner eller ta bort prenumerationsartiklar från din beställning.",
         "insufficient_funds": "Din betalning avslogs på grund av otillräckliga medel. Försök igen eller använd en annan betalningsmetod.",
         "multiple_deferred_payment_not_allowed": "Endast en uppskjuten betalning tillåten per begäran. Kontrollera din begäran och försök igen.",
@@ -2665,9 +2665,9 @@
         "processing_error_checkout_as_guest": "Det uppstod ett problem med att behandla din betalning. Försök igen med en annan betalningsmetod eller {{checkout_as_guest_link}}.",
         "selected_payment_method": "Det uppstod ett problem med din valda betalningsmetod och du har inte blivit debiterad. Försök igen eller använd en annan betalningsmetod.",
         "payment_method_billing_address": "Det var ett problem med faktureringsadressen för din valda betalningsmetod. Kontrollera adressen och försök igen eller använd en annan betalningsmetod.",
-        "test_mode_live_card": "Den här butiken kan inte ta emot riktiga beställningar eller riktiga betalningar.",
-        "transient_error": "Det uppstod ett problem vid behandlingen av din betalning. Försök att uppdatera sidan eller kontrollera din internetanslutning.",
-        "successful_offsite_with_gift_card_error": "Det uppstod ett problem vid behandlingen av din presentkortbetalning. Försök igen eller använd en annan betalningsmetod.",
+        "test_mode_live_card": "Denna butik kan inte ta emot riktiga beställningar eller riktiga betalningar.",
+        "transient_error": "Det uppstod ett problem med att behandla din betalning. Försök att uppdatera denna sida eller kontrollera din internetanslutning.",
+        "successful_offsite_with_gift_card_error": "Det uppstod ett problem med att behandla din presentkortbetalning. Försök igen eller använd en annan betalningsmetod.",
         "development_store_order_limit_reached": "Du har nått gränsen för beställningar i utvecklingsbutiken med denna betalningsprocessor. För att göra en annan beställning måste du använda en testbetalningsgateway. Lär dig mer om %{development_store_order_testing_docs_link}.",
         "development_store_with_order_limit": "För att lägga en testbeställning måste du använda en testbetalningsgateway. Läs mer om %{development_store_order_testing_docs_link}.",
         "development_store_order_testing_docs_link": "testa beställningar i utvecklingsbutiker",
@@ -2760,10 +2760,10 @@
       },
       "payment_gateway": {
         "credit_card_label": "Kreditkort",
-        "cash_on_delivery_label": "Kontant betalning vid Leverans (COD)",
+        "cash_on_delivery_label": "Kontant vid leverans (C.O.D)",
         "debit_card_label": "Betalkort",
         "fixed_payment_label": "Din betalning förfaller den {{dueDate}}.",
-        "generic_payment_terms": "Du är på {{translatedName}} villkor. Din betalning ska vara gjord senast {{dueDate}}.",
+        "generic_payment_terms": "Du är på {{translatedName}} villkor. Din betalning förfaller den {{dueDate}}.",
         "login_prompt": {
           "no_access": {
             "message": "{{logIn}} till ett konto med åtkomst till denna plats för att lägga till eller använda sparade betalningsmetoder."
@@ -2771,19 +2771,21 @@
         },
         "direct_payment_terms": "Du är på {{translatedName}} villkor. Ditt kort kommer att debiteras den {{dueDate}}.",
         "fixed_direct_payment_terms": "Ditt kort kommer att debiteras den {{dueDate}}.",
-        "order_due_on_fulfillment_choose_later": "Din betalning förfaller när din beställning har behandlats.",
-        "order_due_on_fulfillment_payment": "Ditt kort kommer att debiteras när din beställning har behandlats.",
+        "order_due_on_fulfillment_choose_later": "Din betalning förfaller när din beställning har uppfyllts.",
+        "order_due_on_fulfillment_payment": "Ditt kort kommer att debiteras när din beställning har uppfyllts.",
         "order_due_on_receipt_choose_later": "Din betalning förfaller vid mottagandet.",
-        "order_deposit_due_now": "{{depositAmount}} förfaller idag. Resterande belopp följer villkoren för {{translatedName}} och förfaller den {{dueDate}}.",
-        "order_deposit_due_on_fulfillment": "{{depositAmount}} ska betalas idag. Resterande belopp ska betalas när din beställning är fullgjord.",
-        "order_deposit_due_on_receipt": "{{depositAmount}} ska betalas idag. Resterande belopp ska betalas senare.",
-        "order_deposit_due_on_fixed_date": "{{depositAmount}} ska betalas idag. Resterande belopp ska betalas den {{dueDate}}.",
-        "draft_order_payment_due_later_no_terms": "Din betalning kommer att förfalla när din beställning har bekräftats.",
-        "draft_order_payment_due_later_no_terms_payment_selected": "Ditt kort kommer att debiteras när din beställning har bekräftats.",
-        "draft_order_payment_due_later_terms": "Du kommer att vara på {{translatedName}} villkor när din beställning har bekräftats.",
-        "draft_order_payment_due_on_fulfillment": "Din betalning kommer att förfalla när din beställning har bekräftats och genomförts.",
-        "draft_order_deposit_due_later": "{{depositAmount}} ska betalas när din beställning bekräftas. Resterande belopp ska betalas enligt {{translatedName}} villkor.",
-        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} ska betalas när din beställning bekräftas. Resterande belopp ska betalas när din beställning är fullbordad."
+        "order_deposit_due_now": "{{depositAmount}} förfaller idag. Saldo är på {{translatedName}} villkor och förfaller den {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} förfaller idag. Saldo kommer att förfalla när din beställning är uppfylld.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} förfaller idag. Saldo kommer att förfalla senare.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} förfaller idag. Saldo ska betalas den {{dueDate}}.",
+        "draft_order_payment_due_later_no_terms": "Din betalning förfaller när din beställning är bekräftad.",
+        "draft_order_payment_due_later_no_terms_payment_selected": "Ditt kort kommer att debiteras när din beställning är bekräftad.",
+        "draft_order_payment_due_later_terms": "Du kommer att vara på {{translatedName}} villkor när din beställning är bekräftad.",
+        "draft_order_payment_due_on_fulfillment": "Din betalning kommer att förfalla så snart din beställning har bekräftats och fullgjorts.",
+        "draft_order_deposit_due_later": "{{depositAmount}} kommer att förfalla när din beställning bekräftas. Saldo kommer att vara på {{translatedName}} villkor.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} kommer att förfalla när din beställning bekräftas. Saldo kommer att vara när din beställning är uppfylld.",
+        "money_order_label": "Pengaröverföring",
+        "credit_or_debit_card_label": "Kredit/Debet"
       },
       "thank_you": {
         "confirmation_email_sent_text": "Ett bekräftelsemejl har skickats till %{email}",
@@ -3206,11 +3208,11 @@
           "one": "%{count} upphämtningsställe nära din plats",
           "other": "%{count} upphämtningsställen nära din plats"
         },
-        "change": "Byt plats",
+        "change": "Ändra plats",
         "waiting_on_pickup_point_location_notice": "Söker efter upphämtningsställen...",
         "geolocation": {
           "errors": {
-            "unsuported_by_browser": "Att hämta geolokalisering stöds inte av din webbläsare. Försök igen eller använd en annan webbläsare.",
+            "unsuported_by_browser": "Att få geolokalisering stöds inte av din webbläsare. Försök igen eller använd en annan webbläsare.",
             "permission_not_allowed": "Tillåt att dela din plats.",
             "permission_denied": "Kunde inte få din plats. Försök igen."
           }
@@ -3593,6 +3595,11 @@
       },
       "notifications": {
         "title": "Notifikationer"
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "Aktuell balans %{amount}",
+        "credit_card_expires_on_notice": "Utgår den %{month}/%{year}",
+        "manual_payment_gateway_label": "Manual"
       }
     },
     "links": {
