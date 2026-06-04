@@ -2632,7 +2632,8 @@
         "description": "Näytä tukesi joukkueelle %{shop_name}",
         "presets_description": "Valitse tippi prosentteina",
         "custom_label": "Mukautettu vinkki",
-        "not_available_with_spi": "Ei saatavilla Shop Pay -erämaksuilla"
+        "not_available_with_spi": "Ei saatavilla Shop Pay -erämaksuilla",
+        "update_tip": "Päivitysvinkki"
       },
       "throttle": {
         "cart_summary_heading": "Ostoskoriisi",
@@ -2656,6 +2657,55 @@
           "heading": "Älä päivitä tätä sivua, se päivittyy automaattisesti.",
           "body": "Ostoskoriisi lisätyt tuotteet eivät ole varattuja ennen kuin suoritat maksun loppuun."
         }
+      },
+      "vaulted": {
+        "change_button": "Vaihda"
+      },
+      "wallets": {
+        "call_to_action": "Maksa {{walletName}}-lompakolla",
+        "errors": {
+          "generic": "{{walletName}}-lompakossa ilmeni ongelma. Yritä uudelleen tai käytä toista maksutapaa.",
+          "discount_code": "Alennuskoodin käyttö ei onnistunut. Tarkista koodisi ja yritä uudelleen.",
+          "detour": {
+            "stock_problems": "Jotkin tuotteet eivät ole enää saatavilla. Sulje {{walletName}} ja yritä uudelleen.",
+            "price_change": "Joitakin tuotteen hintoja on muutettu. Sulje {{walletName}} tarkistaaksesi tilauksesi ja yritä uudelleen.",
+            "queue": "Sinut on asetettu jonoon kassalle siirtymistä varten. Sulje {{walletName}} jatkaaksesi.",
+            "currency_change": "Et voi käyttää eri osoitetta {{walletName}}-lompakon kanssa. Käytä alkuperäistä osoitetta tai kokeile toista maksutapaa."
+          },
+          "invalid": {
+            "billing_address": "Syötä kelvollinen laskutusosoite",
+            "email": "Syötä kelvollinen sähköpostiosoite",
+            "billing_zone": "Syötä kelvollinen laskutusosoitteen osavaltio / maakunta",
+            "emirate": "Syötä kelvollinen emiirikunta",
+            "postal_code": "Syötä kelvollinen postinumero",
+            "phone": "Syötä kelvollinen puhelinnumero",
+            "billing_phone": "Syötä voimassa oleva laskutusosoitteen puhelinnumero",
+            "billing_must_match_shipping": "Täytyy vastata toimitusosoitetta",
+            "billing_zip": "Syötä kelvollinen laskutusosoitteen postinumero"
+          },
+          "formatting": {
+            "name_contains_emojis": "Poista hymiö nimestäsi",
+            "postal_code_contains_emoji": "Poista hymiö postinumerostasi",
+            "first_name_too_long": "Etunimessä on liikaa kirjaimia",
+            "last_name_too_long": "Sukunimessä on liikaa kirjaimia"
+          }
+        }
+      },
+      "units": {
+        "liter": "L",
+        "pound": "pauna",
+        "fluid_ounce": "nestetippaa (fl oz)",
+        "gallon": "kaula",
+        "inch": "sisään",
+        "foot": "jalka (pituusyksikkö)"
+      },
+      "tooltip": {
+        "accessibility_label_context": "Lisätietoja aiheesta %{context}",
+        "additional_payment_methods": "Lisämaksutavat"
+      },
+      "too_many_requests": {
+        "body": "Odota muutama minuutti ja yritä uudelleen ostoskoristasi.",
+        "body_no_cart": "Ole hyvä ja odota muutama minuutti ja yritä uudelleen."
       }
     },
     "attributes": {

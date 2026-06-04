@@ -1046,25 +1046,25 @@
         "discount_not_supported": "Instruktionen for anvendelse af merchandise-rabat fra forhandleren understøtter ikke denne type rabat."
       },
       "stock": {
-        "out_of_stock_in_context_label": "Dette produkt er ikke tilgængeligt i dit land/område.",
+        "out_of_stock_in_context_label": "Dette produkt er ikke tilgængeligt i dit land/region.",
         "page_title": "Lagerproblemer",
         "title": "Udsolgt",
         "removed_from_cart_notice": "Fjernet fra kurv",
-        "reduced_label": "Nedsat",
+        "reduced_label": "Reduceret",
         "remove_from_cart_button_label": "Fjern fra kurv",
         "continue_shopping_button_label": "Fortsæt",
-        "return_to_store_label": "Vend tilbage til butikken",
+        "return_to_store_label": "Gå tilbage til butikken",
         "continue_cta_label": "Fortsæt til betaling",
-        "empty_cart_label": "Din kurv er tom",
+        "empty_cart_label": "Din indkøbskurv er tom",
         "quantity_update": {
           "page_title": "Opdatering af mængde",
           "title": "Opdatering af mængde",
-          "description": "Tilgængelige mængder for disse varer er ændret og opdateret i din indkøbskurv."
+          "description": "De tilgængelige mængder for disse varer er ændret og er opdateret i din indkøbskurv."
         },
         "unpurchasable_product": {
-          "title": "Ikke-købbar vare",
-          "header": "Nogle varer blev fjernet fra din kurv",
-          "message": "Disse varer er ikke tilgængelige for B2B-ordrer."
+          "title": "Uden for køb produkt",
+          "header": "Nogle varer blev fjernet fra din indkøbskurv",
+          "message": "Disse varer er ikke tilgængelige for B2B-bestillinger."
         },
         "unpurchasable_product_generic": {
           "title": "Ikke-købbar vare",
@@ -1080,15 +1080,18 @@
           }
         },
         "price_update": {
-          "description": "Priserne på disse varer er ændret og opdateret i din indkøbskurv."
+          "description": "Priserne for disse varer er ændret og er opdateret i din indkøbskurv.",
+          "title": "Priserne er opdateret"
         },
         "price_and_quantity_update": {
           "title": "Pris- og mængdeopdatering",
-          "description": "Priser og tilgængelige mængder for disse varer er ændret og opdateret i din indkøbskurv."
+          "description": "Priserne og de tilgængelige mængder for disse varer er ændret og er opdateret i din indkøbskurv."
         },
         "out_of_stock": {
-          "description": "Disse varer er ikke længere tilgængelige og er blevet fjernet fra din kurv."
-        }
+          "description": "Disse varer er ikke længere tilgængelige og vil blive fjernet fra din indkøbskurv.",
+          "items_unavailable": "Nogle varer er ikke længere tilgængelige og vil blive fjernet fra din indkøbskurv."
+        },
+        "go_back_to_cart_button_label": "Gå tilbage til min kurv"
       },
       "thank_you": {
         "thank_you_item_label": {
@@ -2677,6 +2680,10 @@
           },
           "pick_them_up_in_store": {
             "one": "Hent det i butikken"
+          },
+          "ship_separately": {
+            "one": "Send det separat",
+            "other": "Send dem separat"
           }
         },
         "cross_border": {
@@ -2684,7 +2691,9 @@
             "content": "Dine afhentnings- og leveringssteder skal være i samme land. Hvis du ændrer land, nulstilles alle varer til levering.",
             "country_changed_heading": "Land ændret"
           }
-        }
+        },
+        "pickup_all_items": "Tag alle varer op",
+        "items_moved_to_shipping_toast": "Varer, der ikke kan afhentes, blev flyttet til forsendelse"
       },
       "billing": {
         "billing_address_title": "Faktura til",
