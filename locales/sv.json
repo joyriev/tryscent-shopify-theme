@@ -1802,24 +1802,25 @@
       },
       "delivery_options": {
         "ship": "Skicka",
-        "ship_to_address": "Leveransadress",
-        "pick_up": "Hämta upp",
-        "pick_up_from_store": "Upphämtning i butik",
+        "ship_to_address": "Skicka till adress",
+        "pick_up": "Hämta",
+        "pick_up_from_store": "Hämta i butik",
         "pick_up_locations": "Upphämtningsplatser",
-        "pick_up_in_one_hour": "Vanligtvis klart inom 1 timme",
-        "pick_up_in_two_hours": "Vanligtvis klart inom 2 timmar",
-        "pick_up_in_four_hours": "Vanligtvis klart inom 4 timmar",
+        "pick_up_in_one_hour": "Vanligtvis klart om 1 timme",
+        "pick_up_in_two_hours": "Vanligtvis klart om 2 timmar",
+        "pick_up_in_four_hours": "Vanligtvis klart om 4 timmar",
         "pick_up_in_twenty_four_hours": "Vanligtvis klart inom 24 timmar",
-        "pick_up_in_two_to_four_days": "Vanligtvis klart inom 2-4 dagar",
-        "pick_up_in_five_or_more_days": "Vanligtvis klart inom 5+ dagar",
-        "pick_up_in_zero_to_two_hours": "Klar för avhämtning om 2 timmar",
-        "pick_up_immediately": "Redo för avhämtning nu",
-        "pick_up_next_day": "Klar för avhämtning nästa dag",
-        "pickup_point_method_definition": "Skicka till upphämtningsställe",
-        "retail_method_definition": "Detaljhandel leverans",
+        "pick_up_in_two_to_four_days": "Vanligtvis klart om 2-4 dagar",
+        "pick_up_in_five_or_more_days": "Vanligtvis klart om 5+ dagar",
+        "pick_up_in_zero_to_two_hours": "Klar för upphämtning om 2 timmar",
+        "pick_up_immediately": "Redo för upphämtning nu",
+        "pick_up_next_day": "Redo för upphämtning nästa dag",
+        "pickup_point_method_definition": "Skicka till upphämtningspunkt",
+        "retail_method_definition": "Detaljhandelsfrakt",
         "company_location_no_address_banner": "Beställningar som skickas till platser utan adress kommer att skickas för granskning.",
         "none_method_definition": "Ingen frakt",
-        "subscription_pickup_information": "Denna leveransmetod kommer att gälla för alla artiklar i denna beställning och för alla framtida beställningar för denna prenumeration."
+        "subscription_pickup_information": "Detta kommer att vara upphämtningsplatsen för alla framtida beställningar av din prenumeration.",
+        "pickup_point_map_title": "Upphämtningspunkt karta"
       },
       "customer_account": {
         "save_my_information_label": "Spara denna information för nästa gång",
@@ -1917,7 +1918,7 @@
       "deliverability": {
         "not_deliverable": {
           "message": {
-            "one": "Den här varan kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress.",
+            "one": "Denna artikel kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress.",
             "other": "Dessa artiklar kommer att tas bort från din kundvagn eftersom det inte finns några leveransmetoder tillgängliga för din adress."
           }
         }
@@ -2454,23 +2455,23 @@
       },
       "field_errors": {
         "address_address1_too_long": "Den första adressraden är för lång (maximalt 255 tecken)",
-        "address_address1_contains_emojis": "Address1 kan inte innehålla emojis",
-        "address_address1_contains_html_tags": "Address1 kan inte innehålla HTML-taggar.",
+        "address_address1_contains_emojis": "Adress1 kan inte innehålla emojis",
+        "address_address1_contains_html_tags": "Adress1 kan inte innehålla HTML-taggar.",
         "address_address2_blank": "Ange en lägenhet, svit, etc.",
         "address_address2_too_long": "Den andra adressraden är för lång (maximalt 255 tecken)",
-        "address_address2_contains_emojis": "Address2 kan inte innehålla emojis",
-        "address_address2_contains_html_tags": "Address2 kan inte innehålla HTML-taggar.",
+        "address_address2_contains_emojis": "Adress2 kan inte innehålla emojis",
+        "address_address2_contains_html_tags": "Adress2 kan inte innehålla HTML-taggar.",
         "address_city_too_long": "Staden är för lång (maximalt 255 tecken)",
-        "address_city_contains_emojis": "Staden kan inte innehålla emojis",
+        "address_city_contains_emojis": "Stad kan inte innehålla emojis",
         "address_city_contains_html_tags": "Staden kan inte innehålla HTML-taggar.",
-        "address_city_contains_mathematical_symbols": "Staden kan inte innehålla matematiska symboler",
-        "address_country_blank": "Välj ett land/område",
+        "address_city_contains_mathematical_symbols": "Stad kan inte innehålla matematiska symboler",
+        "address_country_blank": "Välj ett land/region",
         "address_province_blank": "Välj en stat / provins",
         "address_province_invalid": "Välj en giltig stat / provins",
         "address_company_too_long": "Företagsnamnet är för långt (maximalt 255 tecken)",
         "address_company_contains_emojis": "Företaget kan inte innehålla emojis",
         "address_company_contains_html_tags": "Företaget kan inte innehålla HTML-taggar.",
-        "address_company_contains_mathematical_symbols": "Företagsnamn får inte innehålla matematiska symboler",
+        "address_company_contains_mathematical_symbols": "Företaget kan inte innehålla matematiska symboler",
         "address_phone_contains_emojis": "Telefonnumret kan inte innehålla emojis",
         "address_zip_blocked_address": "Den här platsen stöds inte",
         "address_zip_too_long": "Postnummer är för långt (maximalt 255 tecken)",
@@ -2506,7 +2507,7 @@
         "physical_gift_card_invalid_code": "Fysisk presentkortskod är ogiltig.",
         "email_blank": "Ange en e-postadress",
         "phone_blank": "Ange ett telefonnummer",
-        "address_country_invalid": "Välj ett land/område från listan",
+        "address_country_invalid": "Välj ett land/region från listan",
         "address_zip_invalid": "Ange en giltig postnummer / postkod",
         "gift_card_invalid": "Presentkort \"••••%{last_four_characters}\" är inte längre giltigt",
         "vaulting_agreement_blank": "Din betalningsmetod måste sparas eftersom betalning för saldot på denna beställning förfaller senare.",
@@ -2515,7 +2516,17 @@
         "invalid_delivery_address_reference_handle": "Referenshandtaget för leveransadressen kunde inte kopplas till någon tillgänglig leveransadress.",
         "must_use_available_delivery_address": "Leveransadress måste väljas från de tillgängliga leveransadresserna.",
         "must_use_available_shipping_rate": "Fraktkostnad måste väljas från de tillgängliga fraktpriserna.",
-        "split_by_delivery_method_not_allowed": "Uppdelning efter leveransmetod är inte tillåten för denna session eller butik."
+        "split_by_delivery_method_not_allowed": "Uppdelning efter leveransmetod är inte tillåten för denna session eller butik.",
+        "address_first_name_too_long": "Förnamnet är för långt (maximalt 255 tecken)",
+        "address_first_name_contains_emojis": "Förnamn kan inte innehålla emojis",
+        "address_first_name_contains_url": "Förnamn kan inte innehålla en URL",
+        "address_first_name_contains_mathematical_symbols": "Förnamn kan inte innehålla matematiska symboler",
+        "address_last_name_too_long": "Efternamnet är för långt (maximalt 255 tecken)",
+        "address_last_name_contains_emojis": "Efternamn kan inte innehålla emojis",
+        "address_last_name_contains_url": "Efternamn kan inte innehålla en URL",
+        "address_address1_contains_mathematical_symbols": "Den första adressraden kan inte innehålla matematiska symboler",
+        "address_address2_contains_mathematical_symbols": "Den andra adressraden kan inte innehålla matematiska symboler",
+        "address_country_not_supported": "Vi skickar inte till detta land eller region. Ange en ny leveransadress och försök igen."
       },
       "store_credit_errors": {
         "generic_error": "Det uppstod ett problem med ditt butikskredit. Försök igen eller ladda om sidan."
@@ -2646,7 +2657,8 @@
         "page_title": "Betalningen kunde inte behandlas",
         "title": "Betalningen kunde inte behandlas",
         "payment_not_processed_title": "Din betalning kunde inte behandlas",
-        "payment_not_processed_text": "Du har inte debiterats. Gå tillbaka till din kundvagn för att slutföra ditt köp."
+        "payment_not_processed_text": "Du har inte blivit debiterad. Återvänd till din kundvagn för att slutföra ditt köp.",
+        "return_to_cart_button_label": "Återgå till kundvagn"
       },
       "payment_gateway": {
         "credit_card_label": "Kreditkort",
@@ -3020,8 +3032,8 @@
       },
       "customer_payment_methods": {
         "delete_customer_mandate": {
-          "generic_error": "Det uppstod ett problem när din förfrågan skulle behandlas.",
-          "success_message": "Din betalningsmetod har tagits bort framgångsrikt"
+          "generic_error": "Det uppstod ett problem med att behandla din begäran.",
+          "success_message": "Din betalningsmetod har framgångsrikt tagits bort"
         }
       },
       "throttle": {
@@ -3112,17 +3124,18 @@
           "action": {
             "cta": "Uppdatera sidan"
           },
-          "request_id": "Begäran ID: {{requestId}}"
+          "request_id": "Begäran ID: {{requestId}}",
+          "title": "Det var ett problem med vår kassa"
         },
         "embed_errors": {
-          "storefront_password_required": "Den här butiken är lösenordsskyddad",
+          "storefront_password_required": "Denna butik är lösenordsskyddad",
           "customer_account_required": "Kundkonto krävs för att slutföra kassan",
-          "cart_completed": "Denna utcheckning har redan slutförts",
+          "cart_completed": "Detta kassa har redan slutförts",
           "invalid_cart": "Korgen är inte längre giltig",
-          "not_authorized": "Autentisering vid Checkout misslyckades. Kontrollera dina ansökningsuppgifter",
-          "killswitch_enabled": "Checkout är tillfälligt otillgängligt",
-          "policy_violation": "Kan inte slutföra utcheckningen på grund av begränsningar i policyns konfiguration",
-          "unrecoverable_failure": "Kunde inte ladda kassan. Försök igen."
+          "not_authorized": "Utcheckningsautentisering misslyckades. Verifiera dina applikationsuppgifter",
+          "killswitch_enabled": "Kassan är tillfälligt otillgänglig",
+          "policy_violation": "Kunde inte slutföra kassan på grund av begränsningar i policykonfigurationen",
+          "unrecoverable_failure": "Kunde inte ladda kassan. Försök igen"
         }
       },
       "notice_banner": {
@@ -3191,7 +3204,7 @@
         "failed_to_copy": "Misslyckades med att kopiera"
       },
       "discount_errors": {
-        "generic_error": "Din beställning kunde inte behandlas eftersom din rabattkod inte längre är giltig. Granska din ordertotal och försök igen."
+        "generic_error": "Din beställning kunde inte behandlas eftersom din rabattkod inte längre är tillgänglig. Granska ditt beställningsbelopp och försök igen."
       },
       "b2b_errors": {
         "lost_b2b_purchasing_permissions": "Du har inte längre behörighet att lägga B2B-beställningar. %{logout_url} för att istället lägga en personlig beställning.",
@@ -3311,7 +3324,7 @@
       },
       "editor": {
         "navigation": {
-          "store_logo_accessibility_label": "Navigera till Online Store"
+          "store_logo_accessibility_label": "Navigera till Onlinebutik"
         }
       },
       "required_extensions": {
@@ -3408,6 +3421,11 @@
       "company_location": {
         "location_title": "Företagets plats",
         "location_rollup_accessibility_label": "Företagsplatsalternativ"
+      },
+      "embed": {
+        "header": {
+          "review_order": "Granska din beställning"
+        }
       }
     },
     "links": {
