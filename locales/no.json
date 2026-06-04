@@ -2655,11 +2655,11 @@
       "order": {
         "cancel_reason": {
           "customer": "Kunden endret/avbestilte bestillingen",
-          "inventory": "Elementer utilgjengelige",
+          "inventory": "Varer utilgjengelige",
           "staff": "Ansattfeil",
-          "fraud": "Svindelordre",
+          "fraud": "Svindelbestilling",
           "other": "Annet",
-          "declined": "Betaling avvist"
+          "declined": "Betalingen ble avvist"
         },
         "cash_on_delivery": "Kontant ved levering (COD)",
         "financial_status": {
@@ -2675,11 +2675,11 @@
         },
         "not_available": "Denne bestillingen er ikke tilgjengelig",
         "fulfillment_status": {
-          "fulfilled": "Oppfylt",
-          "complete": "Fullført",
+          "fulfilled": "Fullført",
+          "complete": "Fullfør",
           "partial": "Delvis",
           "unfulfilled": "Uoppfylt",
-          "restocked": "Påfyllt"
+          "restocked": "På lager igjen"
         },
         "transaction_status": {
           "failure": "Feil",
@@ -2733,14 +2733,14 @@
         "add_products": "Begrens utvalget til produkter som matcher taggen %{tag}",
         "add_articles": "Begrens søket til artikler som også har taggen %{tag}",
         "remove_articles": "Utvid søket til artikler som ikke er merket %{tag}",
-        "remove_products": "Fjern tag %{tag}"
+        "remove_products": "Fjern taggen %{tag}"
       },
       "storefront": {
-        "invalid_password": "Passord feil, vennligst prøv igjen."
+        "invalid_password": "Passordet er feil, vennligst prøv igjen."
       },
       "customer": {
-        "password_reset_error": "Feil ved tilbakestilling av passord",
-        "subscribe_error": "Abonneringsfeil",
+        "password_reset_error": "Feil ved tilbakestilling av passordet",
+        "subscribe_error": "Abonnementsfeil",
         "unsubscribe_error": "Avmeldingsfeil",
         "no_account_found": "Ingen konto funnet med den e-posten.",
         "invalid_credentials": "Feil e-post eller passord.",
@@ -2832,16 +2832,16 @@
       "create_account": "Opprett konto",
       "reset_account": "Tilbakestill konto",
       "addresses": "Adresser",
-      "order": "Bestilling %{name}",
+      "order": "Bestill %{name}",
       "search": "Søk",
       "search_results": {
         "one": "Søk: %{count} resultat funnet for \"%{terms}\"",
         "other": "Søk: %{count} resultater funnet for \"%{terms}\""
       },
-      "collections": "Samlinger",
-      "not_found": "404 Ikke Funnet",
+      "collections": "Kolleksjoner",
+      "not_found": "404 Ikke funnet",
       "challenge": "Utfordring",
-      "checkpoint": "Sjekkpunkt"
+      "checkpoint": "Kontrollpunkt"
     },
     "cart": {
       "discounts_with_count": "%{count} rabatter er brukt"

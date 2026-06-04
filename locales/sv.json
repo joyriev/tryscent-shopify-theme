@@ -2081,10 +2081,10 @@
         "updated_shipping_method": "Uppdaterad fraktmetod: %{shipping_method}"
       },
       "shipping": {
-        "shipping_method_rollup_accessibility_label": "Fraktmetodsalternativ",
+        "shipping_method_rollup_accessibility_label": "Fraktmetodalternativ",
         "shipping_method_first_shipment_group_title": {
           "one": "Första leveransen",
-          "other": "Första leveranserna"
+          "other": "Första leveranser"
         },
         "subscription_shipping": "Prenumerationsleverans",
         "subscription_local_delivery": "Prenumeration lokal leverans",
@@ -2103,7 +2103,7 @@
         "default_description": "Skickas inom 1 arbetsdag",
         "unbranded_default_description": "Redo att skickas",
         "shipping_line_phone_label": "Mobiltelefonnummer (obligatoriskt)",
-        "shipping_line_phone": "Din budbärare kan använda detta nummer för att kontakta dig.",
+        "shipping_line_phone": "Din kurir kan använda det här numret för att kontakta dig.",
         "shipping_line_delivery_phone_label": "Mobiltelefonnummer",
         "shipping_line_delivery_phone": "Du kan bli kontaktad med uppdateringar om din leverans.",
         "shipping_line_delivery_instructions": "Ange nödvändig information som dörrkoder eller instruktioner för avlämning.",
@@ -2112,7 +2112,7 @@
           "one": "%{count} andra metoder tillgängliga på",
           "other": "%{count} andra metoder tillgängliga från"
         },
-        "shipping_rate_discounted_amount": "Före: %{original_amount}. Nu: %{amount}",
+        "shipping_rate_discounted_amount": "Var: %{original_amount}. Nu: %{amount}",
         "prime_not_available": {
           "default": "Prime-leverans är inte tillgänglig för din beställning. Dina fraktalternativ har uppdaterats."
         },
@@ -2121,14 +2121,14 @@
             "one": "Fri frakt för %{count} fler leveranser"
           },
           "first_n_order_free_with_cycle": {
-            "one": "Fri frakt för %{count} leveranser till, sedan %{recurring_order_shipping_price}"
+            "one": "Fri frakt för %{count} fler leveranser, sedan %{recurring_order_shipping_price}"
           },
           "first_n_order_free_with_cycle_delivery_not_included": {
             "one": "Fri frakt för %{count} leverans, sedan %{recurring_order_shipping_price}",
             "other": "Fri frakt för %{count} leveranser, sedan %{recurring_order_shipping_price}"
           },
           "max_cycles_base_shipping": {
-            "one": "%{count} fler leveranser för %{shipping_price}",
+            "one": "%{count} mer leverans för %{shipping_price}",
             "other": "%{count} fler leveranser för %{shipping_price} styck"
           },
           "max_cycles_base_shipping_delivery_not_included": {
@@ -2152,7 +2152,7 @@
               "other": "varje %{count} år"
             }
           },
-          "initial_order_discounted": "Först fraktkostnad %{discounted_shipping_cost}, sedan %{frequency_description}",
+          "initial_order_discounted": "Första fraktkostnad %{discounted_shipping_cost}, sedan %{frequency_description}",
           "prepaid_initial_order_discounted": "Första fraktkostnaden %{discounted_shipping_price} %{prepaid_delivery_frequency}",
           "prepaid_initial_order_discounted_with_per_delivery_price": "Första fraktkostnaden %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
           "prepaid_initial_order_discounted_with_renewal": "Första fraktkostnaden %{discounted_shipping_price} %{prepaid_delivery_frequency}, sedan %{shipping_price} %{billing_cycle}",
@@ -2162,10 +2162,10 @@
           "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} per leverans), följt av %{recurring_order_shipping_price}",
           "first_n_order_free": {
             "one": "Första beställningen gratis",
-            "other": "Första %{count} beställningarna gratis"
+            "other": "Första %{count} beställningar gratis"
           },
           "free_for_first_n_order": {
-            "one": "För första beställningen",
+            "one": "För första beställning",
             "other": "För de första %{count} beställningarna"
           }
         },
@@ -2196,18 +2196,18 @@
           "rollup_title": "Upphämtningsplats",
           "rollup_accessibility_label": "Upphämtningsalternativ"
         },
-        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} till",
-        "split_shipping_merchandise_shipment_number": "Sändning %{number} av %{total}",
+        "split_shipping_merchandise_quantity_label_additional": "+%{quantity} mer",
+        "split_shipping_merchandise_shipment_number": "Leverans %{number} av %{total}",
         "pre_order_ships_now": "Skickas nu",
         "pre_order_ships_later": "Skickas senare",
         "pre_order_ships_date": "Skepp %{date}",
         "split_shipping_shipment_notice": "Din beställning kommer att anlända om %{quantity_shipments}",
-        "split_shipping_first_shipment_notice": "Din första beställning kommer att anlända om %{quantity_shipments}",
-        "split_shipping_multiple_shipment_notice": "Din beställning kommer att levereras i flera leveranser",
-        "split_shipping_multiple_shipment_notice_one_time_purchase": "Din beställning kommer att levereras i %{quantity} leveranser",
+        "split_shipping_first_shipment_notice": "Din första beställning kommer att anlända i %{quantity_shipments}",
+        "split_shipping_multiple_shipment_notice": "Din beställning kommer att anlända i flera leveranser",
+        "split_shipping_multiple_shipment_notice_one_time_purchase": "Din beställning kommer att anlända i %{quantity} leveranser",
         "split_shipping_more_shipping_options": "Fler fraktalternativ",
-        "split_shipping_shipment_number": "Sändning %{number}",
-        "split_shipping_merchandise_quantity_label_inline_primary": "Antal: %{quantity}",
+        "split_shipping_shipment_number": "Leverans %{number}",
+        "split_shipping_merchandise_quantity_label_inline_primary": "Kvantitet: %{quantity}",
         "split_shipping_option_recommended": "Rekommenderad",
         "different_shipping_method_summary": "Ange en annan leveransadress för att se tillgängliga fraktmetoder",
         "invalid_shipping_method_summary": "Ange en giltig leveransadress för att se tillgängliga fraktmetoder",
@@ -2216,7 +2216,8 @@
           "incomplete_address_entered": "Ange en fullständig leveransadress för att se tillgängliga fraktmetoder",
           "incomplete_address_selected": "Välj en komplett leveransadress för att se tillgängliga fraktmetoder"
         },
-        "missing_shipping_address": "Fraktadress saknas"
+        "missing_shipping_address": "Fraktadress saknas",
+        "split_shipping_shipped_by_shop": "Skickat av %{shop_name}"
       },
       "localized_fields": {
         "additional_information": {
