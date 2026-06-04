@@ -527,9 +527,9 @@
   "shopify": {
     "checkout": {
       "order_summary": {
-        "total_price_label": "Samlet pris",
-        "total_due_label": "Samlet beløb due",
-        "title": "Ordresammendrag",
+        "total_price_label": "Total pris",
+        "total_due_label": "Total skyldig",
+        "title": "Ordreoversigt",
         "group_title_label": "Del af \"%{group_title}\"",
         "more_items_modal": {
           "search_item": "Søg",
@@ -586,7 +586,7 @@
           "one": "Ingen butikker tilgængelige i %{country} med dit produkt",
           "other": "Ingen butikker tilgængelige i %{country} med dine varer"
         },
-        "tip_label": "Drikkepenge",
+        "tip_label": "Tip",
         "unconfirmed_label": "Ubekræftet",
         "calculating_shipping": "Beregnede…",
         "calculating": "Beregnede…",
@@ -599,10 +599,10 @@
         "order_total_label": "Ordrebeløb",
         "price_before_discount_aria_text": "Original pris",
         "price_after_discount_aria_text": "Rabatteret pris",
-        "total_paid_label": "Samlet betalt",
+        "total_paid_label": "Total betalt",
         "total_outstanding_label": "Beløb at betale",
-        "total_due_today_label": "Samlet skyldig i dag",
-        "total_due_later_label": "Samlet skyldig senere",
+        "total_due_today_label": "Total skyldig i dag",
+        "total_due_later_label": "Total skyldig senere",
         "payment_due_label": "Betaling forfalden",
         "discount_and_gift_card_savings_notice": "Efter %{discount_amount} i rabatter og %{gift_card_amount} i gavekort",
         "cost_table_title": "Omkostningsoversigt",
@@ -620,8 +620,8 @@
         "unit_price": {
           "per_item": {
             "single": "%{price} hver",
-            "one": "%{price} pr. %{count} stk.",
-            "other": "%{price} for %{count} stk."
+            "one": "%{price} per %{count} vare",
+            "other": "%{price} pr %{count} varer"
           }
         },
         "gift_card_ending": "Gavekort, der slutter med %{last_characters}",
@@ -681,7 +681,10 @@
         "gift_card_has_been_removed": "Gavekortet er blevet fjernet",
         "pickup_label": "Hent i butik",
         "partial_total_label": "Total",
-        "product_change_label": "Ændre"
+        "product_change_label": "Ændre",
+        "total_label": "Total",
+        "total_updated_label": "Opdateret totalpris:",
+        "total_updated_label_with_price": "Opdateret totalpris: %{totalPrice}"
       },
       "payment": {
         "payment_option": {
@@ -707,13 +710,13 @@
         "bank_account_generic_error": "Kunne ikke tilføje bankkonto. Prøv igen senere.",
         "network_card_payment_options": "Vælg et kortnetværk",
         "network_card_persistence_description": "Det valgte netværk vil blive gemt sammen med din betalingsmetode til fremtidige transaktioner.",
-        "amazon_payments_label": "Amazon Betaling",
+        "amazon_payments_label": "Amazon Betalingsmetode",
         "amazon_payments_login_hint": "Du vil blive bedt om at logge ind med Amazon.",
         "amazon_payments_logout": "Log ud fra Amazon Pay",
         "amazon_payments_failed_mfa_challenge": "Den valgte betalingsmetode kunne ikke bruges. Vælg en anden metode eller kontakt din bank eller kortudsteder.",
         "amazon_payments_abandoned_mfa_challenge": "Din betaling kunne ikke gennemføres. Prøv en anden betalingsmetode eller kontakt din bank eller kortudsteder.",
-        "amazon_payments_could_not_enqueue_authorize": "Der opstod et problem med behandlingen af din betaling. Prøv igen eller brug en anden betalingsmetode.",
-        "amount_left_to_pay_label": "Betaling forfalder:",
+        "amazon_payments_could_not_enqueue_authorize": "Der opstod et problem med at behandle din betaling. Prøv igen eller brug en anden betalingsmetode.",
+        "amount_left_to_pay_label": "Betaling forfalden:",
         "gift_card_code_label": "Gavekortkode",
         "apply_gift_card_button_label": "Anvend",
         "gift_card_balance_label": "Balance:",
@@ -780,7 +783,7 @@
         "multibanco_label": "Multibank",
         "eps_label": "eps-overførsel",
         "klarna_slice_it_label": "Finansiering med Klarna",
-        "afterpay_label": "Efterbetaling",
+        "afterpay_label": "Afterpay",
         "cashapppay_label": "Cash App Betal",
         "blik_label": "Udsigt",
         "twint_label": "TVILLING",
@@ -919,7 +922,7 @@
           "label": "PO nummer (valgfrit)"
         },
         "alternative_payment_currency_total_notice": "Bemærk: du vil blive opkrævet %{amount_due}.",
-        "alternative_payment_currency_total_manual_payment_notice": "Bemærk: den omregnede total er %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Bemærk: den konverterede total er %{amount_due}.",
         "waiting_on_taxes_message": "Hvis dine skatter ikke beregnes inden for de næste par sekunder, opdater siden.",
         "waiting_on_taxes_notice": "Beregning af skatter",
         "payment_method_rollup_accessibility_label": "Betalingsmetode muligheder",

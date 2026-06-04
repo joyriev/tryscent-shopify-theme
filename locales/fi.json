@@ -1689,7 +1689,54 @@
         "payment_method_incompatible_with_payment_terms": "Maksutapa ei ole yhteensopiva maksuehtojen kanssa.",
         "pay_in_installments_split_pay_short": "4 maksuerää, kukin %{amount}",
         "payment_flexibility_terms_id_mismatch": "Maksun joustavuuden ehtojen tunnisteen ristiriita",
-        "new_bank_account_disclaimer": "Täyttämällä tilauksesi annat %{shop_name}:lle luvan veloittaa alla olevan tilin ACH-siirrolla ilmoitetun summan ja ajankohdan mukaisesti."
+        "new_bank_account_disclaimer": "Täyttämällä tilauksesi annat %{shop_name}:lle luvan veloittaa alla olevan tilin ACH-siirrolla ilmoitetun summan ja ajankohdan mukaisesti.",
+        "saved_by_payment_method": "Tallennettu %{payment_method} avulla",
+        "receiver_payment_experience_hint": "Tilauksesi tekemisen jälkeen saat maksutiedot. Suorita maksu Multibancossa tai verkossa %{due_days} päivän kuluessa.",
+        "shop_pay_ideal_unavailable_error": "iDEAL | Wero ei ole käytettävissä tässä tilauksessa. Valitse toinen maksutapa.",
+        "shop_pay_installments_label": "Shop Pay -erämaksut",
+        "purchase_options_card_update_agreement_label_html": "Päivittämällä maksutapasi hyväksyt maksut kaikista toistuvista tai viivästetyistä ostoista tämän kaupan <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">peruutusehtojen</a> mukaisesti.",
+        "purchase_options_agreement_label": "Yksi tai useampi ostoskorissasi oleva tuote on viivästetty, tilaus- tai toistuva ostos. Jatkamalla maksun suorittamista hyväksyt, että maksutapasi veloitetaan automaattisesti tällä sivulla ilmoitetulla hinnalla ja taajuudella, kunnes se päättyy tai peruutat sen. Kaikki peruutukset ovat %{cancellation_policy_label} alaisia.",
+        "purchase_options_agreement_label_html": "Ymmärrän, että yksi tai useampi ostoskorissani oleva tuote on viivästetty, tilaus- tai toistuva ostos. Jatkamalla hyväksyn\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">peruutusehdot</a>\nja valtuutan teidät veloittamaan maksutapaltani tässä sivulla ilmoitetuilla hinnoilla, tiheydellä ja päivämäärillä, kunnes tilaukseni on toimitettu tai peruutan sen, jos se on sallittua.",
+        "purchase_options_agreement_label_wallets": "Jatkamalla maksun suorittamista hyväksyt tällä sivulla luetellut tulevat maksut ja peruutusehdot.",
+        "purchase_options_subscription_agreement_label": "Ostoskorissasi on automaattisesti uusiutuva tilaus. Napsauttamalla \"%{button_label},\" %{consent_text} %{cancellation_instructions}",
+        "purchase_options_subscription_consent_text": "hyväksyt nimenomaisesti ja myönteisesti, että sinulta veloitetaan automaattisesti ostoskorissasi näkyvät toistuvat summat (plus toimitus ja verot) kunnes tilaus päättyy tai peruutat sen.",
+        "purchase_options_subscription_cancellation_instructions": "%{cancel_text} Ole hyvä ja katso %{cancellation_policy_label}.",
+        "purchase_options_subscription_cancel_text": "Voit peruuttaa milloin tahansa menemällä tiliisi tai ottamalla yhteyttä myymälään.",
+        "paypal": {
+          "connect": "Napsauta yhdistääksesi PayPal-tilisi"
+        },
+        "pending_payment": {
+          "due_notice": "Maksusi, joka on %{amount_due}, erääntyy %{due_date}.",
+          "multibanco": {
+            "buyer_action_info": "Maksusi, joka on %{amount_due}, erääntyy.",
+            "instruction_html": "Suorita maksusi Multibancossa tai verkossa alla olevien tietojen avulla. Kysymyksiä tai maksutietojen päivittämistä varten, %{contact_us}.",
+            "entity": "Entiteetti",
+            "amount": "Määrä",
+            "find_nearest_atm": "Etsi lähin pankkiautomaatti"
+          }
+        },
+        "shipping_rate_updated": "Saatavilla olevat toimitustavat on päivitetty. Vahvista valintasi ennen kassalle siirtymistä.",
+        "preview_not_available": {
+          "title": "Esikatselu ei ole saatavilla",
+          "content": "Älä huoli, tämä pikakassa toimii asiakkaillesi."
+        },
+        "purchase_options_and_vaulting_agreement_label": "Yksi tai useampi ostoskorissasi oleva tuote on maksu, joka on viivästetty tai tilauspohjainen. Jatkamalla maksun suorittamista hyväksyt, että maksutapasi veloitetaan automaattisesti tällä sivulla ilmoitetulla hinnalla ja aikavälillä, kunnes tilaus päättyy tai peruutat sen. Kaikki peruutukset noudattavat %{cancellation_policy_label}-käytäntöä.",
+        "purchase_options_cancellation_policy_label": "peruutusehdot",
+        "saved_credit_card_info": "Viimeiset neljä numeroa",
+        "saved_credit_card_cvv_verification": "Vahvistusta varten syötä korttisi turvakoodi.",
+        "saved_credit_cards_modal": {
+          "view_all_label": "Näytä kaikki tallennetut kortit"
+        },
+        "purchase_order_number": {
+          "title": "PO-numero",
+          "label": "PO-numero (valinnainen)"
+        },
+        "proposed_gateway_unavailable": "Ehdotettu maksuyhdyskäytävä ei ole käytettävissä",
+        "payment_option": {
+          "accessibility_label": "Valitse maksutapa"
+        },
+        "separate_payments_label": "Tuotteesi ovat useammasta kuin yhdestä kaupasta. Sinulta veloitetaan %{separate_payments_link}.",
+        "separate_payments_text": "erilliset maksut"
       }
     },
     "attributes": {
