@@ -1919,7 +1919,70 @@
         "remote_shops_payments_processing": "Maksujen käsittely",
         "action_required": "Toiminta vaaditaan",
         "modal_notice": "Olemme yhteydessä {{paymentMethod}}-palveluun",
-        "remote_checkout_count": "%{current} / %{total}"
+        "remote_checkout_count": "%{current} / %{total}",
+        "you_will_receive_confirmation": "Saamme juuri nyt paljon tilauksia. Sinun pitäisi saada vahvistus sähköpostitse tai tekstiviestillä pian. Jos et saa sitä seuraavan tunnin aikana, ilmoitathan meille.",
+        "you_will_not_be_charged": "Sinulta ei veloiteta vielä",
+        "wait": {
+          "short": "Tilauksesi käsitellään.",
+          "medium": {
+            "one": "Tilauksesi käsitellään. Arvioitu odotusaika on %{count} minuuttia.",
+            "other": "Tilauksesi käsitellään. Arvioitu odotusaika on %{count} minuuttia."
+          },
+          "long": "Saat sähköpostin heti, kun tilauksesi on käsitelty. Tällä hetkellä tilauksia on runsaasti.",
+          "no_auto_refresh_html": "Jos sinua ei ohjata automaattisesti, %{link}."
+        }
+      },
+      "remote_merchandise_only": {
+        "remote_only_notice": "Nämä tuotteet myyvät ja toimittavat muut myymälät. Viimeistele ostoksesi kunkin myymälän kautta.",
+        "detail_item_label": {
+          "one": "{{count}} tuotetta"
+        },
+        "checkout_on_shop_label": "Siirry kassalle %{shop_name} -verkkokaupassa",
+        "single_shop_transition": "Ohjataan sinut %{advertiser}-sivustolle viimeistelemään ostoksesi."
+      },
+      "redeemable_errors": {
+        "gift_card": {
+          "duplicate": "Lahjakortti on jo käytetty tilauksessasi",
+          "insufficient_funds": "Tällä lahjakortilla ei ole enää saldoa",
+          "not_available": "Tämä lahjakortti ei ole enää saatavilla",
+          "invalid": "Syötä kelvollinen lahjakortti",
+          "currency_mismatch": "Vain lahjakortit, jotka ovat %{shop_currency}-valuutassa, hyväksytään",
+          "throttle_limit_exceeded": "Olet ylittänyt sallittujen yritysten enimmäismäärän. Yritä uudelleen myöhemmin.",
+          "no_longer_available": "Tätä lahjakorttia ei voi enää käyttää tässä kassalla"
+        }
+      },
+      "review": {
+        "blocks": {
+          "change_link_label": "Vaihda",
+          "change_contact_method_link_label": "Vaihda yhteystiedot",
+          "change_billing_address_link_label": "Vaihda laskutusosoitetta",
+          "change_company_location_link_label": "Vaihda yrityksen sijainti",
+          "change_shipping_address_link_label": "Vaihda toimitusosoitetta",
+          "change_shipping_method_link_label": "Vaihda toimitustapaa",
+          "change_payment_method_link_label": "Vaihda maksutapaa",
+          "change_purchase_order_number_label": "Vaihda PO-numero",
+          "change_delivery_method_link_label": "Vaihda toimitustapaa",
+          "no_purchase_order_number": "(Ei PO-numeroa)",
+          "due_after_order_reviewed_html": "Maksettava tilauksen tarkastamisen jälkeen",
+          "payment_method_saved_company_location": "Tallenna kortti tähän sijaintiin"
+        },
+        "block_title": "Tarkista tietosi"
+      },
+      "remote_policies": {
+        "unavailable_policy": "Tälle kaupalle ei ole annettu %{policy_name}-käytäntöä. Lisätietoja saat ottamalla suoraan yhteyttä %{shop_name}:iin."
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "Kassalla on vain etämyyntituotteita. Kassan loppuun saattamiseksi tarvitaan uudelleenohjaus etämyymälään.",
+          "currency_mismatch": "Tätä tuotetta ei voi lisätä ostoskoriisi, koska se on kaupasta, joka käyttää eri valuuttaa.",
+          "currency_mismatch_removal": "Tuote poistettiin ostoskoristasi, koska se on kaupasta, joka käyttää eri valuuttaa.",
+          "max_remote_shops_exceeded": "Tätä tuotetta ei voi lisätä, koska ostoskorissasi on jo enimmäismäärä muista kaupoista."
+        }
+      },
+      "required_extensions": {
+        "errors": {
+          "interaction_required": "Laajennuksen vuorovaikutus vaaditaan kassalle siirtymisen viimeistelemiseksi."
+        }
       }
     },
     "attributes": {
