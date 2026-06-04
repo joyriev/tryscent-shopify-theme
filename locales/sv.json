@@ -1774,27 +1774,31 @@
         "shipping_used_as_billing_notice": "Detta kommer också att användas som din faktureringsadress för denna beställning.",
         "email_or_phone_label": "E-post eller mobiltelefonnummer",
         "email_or_phone_placeholder": "E-post eller mobiltelefonnummer",
-        "company_attention_label": "Företag/Attn",
-        "optional_company_attention_label": "Företag/Attn (valfritt)",
+        "company_attention_label": "Företag/Uppmärksamhet",
+        "optional_company_attention_label": "Företag/Attention (valfritt)",
         "address2_label": "Lägenhet, svit, etc.",
         "optional_address2_label": "Lägenhet, svit, etc. (valfritt)",
         "country_label": "Land/Region",
-        "country_code": "Land-/regionskod",
+        "country_code": "Land/Region kod",
         "province_label": "Provins",
         "province_placeholder": "Provins",
-        "state_label": "Status",
-        "state_placeholder": "Status",
-        "region_none": "Inget valt",
-        "governorate_label": "Guvernement",
-        "governorate_placeholder": "Guvernement",
-        "phone_country_code_label": "Telefonnummer landskod",
+        "state_label": "Stat",
+        "state_placeholder": "Stat",
+        "region_none": "Inga valda",
+        "governorate_label": "guvernement",
+        "governorate_placeholder": "guvernement",
+        "phone_country_code_label": "Landskod för telefonnummer",
         "phone_tooltip": "Om vi behöver kontakta dig angående din beställning",
         "pincode_label": "PIN-kod",
         "pincode_placeholder": "PIN-kod",
         "civic_number_warning": "Lägg till ett husnummer om du har ett",
         "different_shipping_address_text": "Använd en engångsadress för denna beställning",
-        "change_company_location_link_label": "Byt företagsplats",
-        "ship_to_company": "Skicka till {{companyName}}"
+        "change_company_location_link_label": "Ändra företagsplats",
+        "ship_to_company": "Skicka till {{companyName}}",
+        "optional_subdistrict_label": "Delområde (valfritt)",
+        "change_location_link_label": "Ändra plats",
+        "subdistrict_label": "Delområde",
+        "suburb_label": "Förort"
       },
       "delivery_options": {
         "ship": "Skicka",
@@ -1818,11 +1822,11 @@
         "subscription_pickup_information": "Denna leveransmetod kommer att gälla för alla artiklar i denna beställning och för alla framtida beställningar för denna prenumeration."
       },
       "customer_account": {
-        "save_my_information_label": "Spara denna information till nästa gång",
-        "invalid_address": "Det valda adressen är ogiltig. %{update_address_link} eller välj en annan adress.",
-        "incomplete_address": "Den valda adressen är ofullständig. %{update_address_link} eller välj en annan adress.",
+        "save_my_information_label": "Spara denna information för nästa gång",
+        "invalid_address": "Den valda adressen är ogiltig. %{update_address_link} eller välj en annan adress.",
+        "incomplete_address": "Vald adress är ofullständig. %{update_address_link} eller välj en annan adress.",
         "rollup_accessibility_label": "Kontoinställningar",
-        "invalid_shipping_method_summary": "Välj en giltig leveransadress för att se tillgängliga leveransmetoder"
+        "invalid_shipping_method_summary": "Välj en giltig leveransadress för att se tillgängliga fraktmetoder"
       },
       "remote_merchandise_only": {
         "remote_only_notice": "Dessa föremål säljs och skickas av andra butiker. Checkout hos varje butik för att slutföra ditt köp.",
@@ -1889,7 +1893,7 @@
           "other": "Otillgängliga produkter"
         },
         "products_not_available": {
-          "one": "Den här produkten kommer att tas bort från din kundvagn eftersom den inte är tillgänglig i ditt land/region.",
+          "one": "Denna produkt kommer att tas bort från din kundvagn eftersom den inte är tillgänglig i ditt land/region.",
           "other": "Dessa produkter kommer att tas bort från din kundvagn eftersom de inte är tillgängliga i ditt land/region."
         },
         "all_products_in_cart_unavailable": {
@@ -2981,10 +2985,10 @@
       },
       "change_currency": {
         "credit_card_will_be_charged_html": "Ditt kreditkort kommer att debiteras %{amount}",
-        "payment_total_label": "Betalningssumma",
-        "change_currency_link": "Byt till %{currency_name}",
+        "payment_total_label": "Betalning totalt",
+        "change_currency_link": "Ändra till %{currency_name}",
         "card_provider_fx_charges_warning": "Din kortleverantör kan ta ut avgifter på %{currency_code} transaktioner.",
-        "currency_not_supported_by_shop": "Den valuta du valde är inte längre tillgänglig. Alla priser är nu i %{currency_code}."
+        "currency_not_supported_by_shop": "Valutan du valde är inte längre tillgänglig. Alla priser är nu i %{currency_code}."
       },
       "change_country": {
         "cart_updated_based_on_country": "Din kundvagn har uppdaterats baserat på ditt fraktland.",
@@ -3400,6 +3404,10 @@
       },
       "address_management": {
         "saved_with_store": "Sparad med den här butiken"
+      },
+      "company_location": {
+        "location_title": "Företagets plats",
+        "location_rollup_accessibility_label": "Företagsplatsalternativ"
       }
     },
     "links": {
