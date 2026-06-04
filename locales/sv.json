@@ -1943,7 +1943,7 @@
       "order_summary": {
         "title": "Orderöversikt",
         "view_all_items": {
-          "other": "Visa alla %{count} föremål"
+          "other": "Visa alla %{count} artiklar"
         },
         "more_items_modal": {
           "clear_search": "Rensa sökning",
@@ -2000,8 +2000,8 @@
         "total_paid_label": "Totalt betalt",
         "total_price_label": "Totalt pris",
         "total_outstanding_label": "Belopp att betala",
-        "total_due_today_label": "Totalt att betala idag",
-        "total_due_later_label": "Totalt att betala senare",
+        "total_due_today_label": "Totalt belopp att betala idag",
+        "total_due_later_label": "Totalt belopp som ska betalas senare",
         "payment_due_label": "Betalning förfaller",
         "cost_table_title": "Kostnadsöversikt",
         "price_per_item": {
@@ -2019,8 +2019,8 @@
         "unit_price": {
           "per_item": {
             "single": "%{price} styck",
-            "one": "%{price} per %{count} styck",
-            "other": "%{price} per %{count} stycken"
+            "one": "%{price} per %{count} artikel",
+            "other": "%{price} per %{count} artiklar"
           }
         },
         "multiple_shipping_lines_label": "Frakt totalt",
@@ -2073,7 +2073,12 @@
         "discount_discovery": {
           "back_to_finalize_order": "Tillbaka för att slutföra beställningen"
         },
-        "shipping_default_value": "Beräknat i nästa steg"
+        "shipping_default_value": "Beräknat i nästa steg",
+        "tip_label": "Tips",
+        "tax_line": {
+          "gst": "MOMS"
+        },
+        "updated_shipping_method": "Uppdaterad fraktmetod: %{shipping_method}"
       },
       "shipping": {
         "shipping_method_rollup_accessibility_label": "Fraktmetodsalternativ",
@@ -2238,16 +2243,16 @@
       "payment": {
         "network_card_payment_options": "Välj ett kortnätverk",
         "network_card_persistence_description": "Det valda nätverket kommer att sparas med din betalningsmetod för framtida transaktioner.",
-        "amazon_payments_label": "Amazon Betalning",
+        "amazon_payments_label": "Amazon Pay",
         "amazon_payments_failed_mfa_challenge": "Den valda betalningsmetoden kunde inte användas. Välj en annan metod eller kontakta din bank eller kortutgivare.",
         "amazon_payments_abandoned_mfa_challenge": "Din betalning kunde inte slutföras. Försök med en annan betalningsmetod eller kontakta din bank eller kortutgivare.",
-        "amazon_payments_could_not_enqueue_authorize": "Det uppstod ett problem vid behandlingen av din betalning. Försök igen eller använd en annan betalningsmetod.",
+        "amazon_payments_could_not_enqueue_authorize": "Det uppstod ett problem med att behandla din betalning. Försök igen eller använd en annan betalningsmetod.",
         "amount_left_to_pay_label": "Betalning förfaller:",
         "discount_codes_removed_summary": {
           "one": "Rabattkoden %{count} togs bort",
           "other": "%{count} rabattkoder togs bort"
         },
-        "apply_gift_card_button_label": "Verkställ",
+        "apply_gift_card_button_label": "Ansök",
         "gift_card_balance_label": "Balans:",
         "detected_card_brand": "Upptäckt kortmärke: {brand}",
         "credit_card_vaulting_sign_in_banner_title": "Spara ditt kreditkort",
@@ -2318,10 +2323,10 @@
         "paypal_wallet_label": "PayPal-plånbok",
         "shop_pay_installments_label": "Shop Pay delbetalningar",
         "continue_to_guest_checkout": "Fortsätt till gästutcheckning",
-        "bancontact_label": "Bankkontakt",
+        "bancontact_label": "Bancontact",
         "multibanco_label": "Multibank",
         "eps_label": "eps-överföring",
-        "afterpay_label": "Efterbetalning",
+        "afterpay_label": "Afterpay",
         "cashapppay_label": "Cash App Betala",
         "blik_label": "Blänk",
         "twint_label": "TVILLING",
@@ -2345,7 +2350,8 @@
         "apple_pay_payment_error": "Din betalning kunde inte slutföras. Försök igen eller använd en annan betalningsmetod.",
         "no_taxes_banner_content": "Skatter kommer inte att debiteras på denna beställning. När du har mottagit betalningen kan skatter inte längre läggas till.",
         "apple": {
-          "not_available": "Apple Pay är inte tillgängligt i denna webbläsare. För att koppla ditt Apple Pay-konto behöver du använda Safari på en Apple-enhet."
+          "not_available": "Apple Pay är inte tillgängligt i den här webbläsaren. För att koppla ditt Apple Pay-konto måste du använda Safari på en Apple-enhet.",
+          "connect": "Klicka för att koppla ditt Apple Pay-konto"
         },
         "google": {
           "connect": "Klicka för att ansluta till ditt Google Pay-konto",
@@ -2467,7 +2473,7 @@
           "title": "PO-nummer",
           "label": "PO-nummer (valfritt)"
         },
-        "alternative_payment_currency_total_manual_payment_notice": "Observera: det omräknade totalbeloppet är %{amount_due}.",
+        "alternative_payment_currency_total_manual_payment_notice": "Observera: det konverterade totalbeloppet är %{amount_due}.",
         "waiting_on_taxes_message": "Om dina skatter inte beräknas inom de närmaste sekunderna, uppdatera sidan.",
         "waiting_on_taxes_notice": "Beräkna skatter",
         "payment_method_rollup_accessibility_label": "Betalningsmetoder",

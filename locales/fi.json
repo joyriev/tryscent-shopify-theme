@@ -2218,6 +2218,10 @@
           "pick_them_up_in_store": {
             "one": "Nouda myymälästä",
             "other": "Nouda ne myymälästä"
+          },
+          "ship_separately": {
+            "one": "Toimita erikseen",
+            "other": "Toimita ne erikseen"
           }
         },
         "cross_border": {
@@ -2227,7 +2231,9 @@
             "change_country": "Vaihda maa"
           },
           "banner": "Toimitustapasi päivitettiin"
-        }
+        },
+        "items_for_shipping": "Lähetettävät tuotteet",
+        "items_moved_to_shipping_toast": "Noudettavaksi kelpaamattomat tuotteet siirrettiin toimitukseen"
       },
       "shop_pay_external": {
         "errors": {
@@ -2236,6 +2242,44 @@
           "checkout_has_expired": "Ostoksesi voimassaoloaika on päättynyt. Sulje tämä ikkuna ja yritä tehdä ostos uudelleen {{shopName}}-kaupasta."
         },
         "return_to_store": "Palaa takaisin {{shopName}}-sivulle"
+      },
+      "stock": {
+        "title": "Loppuunmyyty",
+        "items_unavailable_notice": "Jotkin tuotteet eivät ole enää saatavilla.",
+        "go_back_to_cart_button_label": "Palaa ostoskoriini",
+        "continue_cta_label": "Jatka kassalle",
+        "item_label": {
+          "one": "{{count}} tuotetta"
+        },
+        "empty_cart_label": "Ostoskori on tyhjä",
+        "quantity_update": {
+          "page_title": "Määrän päivitys",
+          "title": "Määrän päivitys",
+          "description": "Näiden tuotteiden saatavilla olevat määrät ovat muuttuneet ja päivitetty ostoskoriisi."
+        },
+        "unpurchasable_product": {
+          "title": "Ei ostettavissa oleva tuote",
+          "header": "Joitakin tuotteita poistettiin ostoskoristasi",
+          "message": "Näitä tuotteita ei ole saatavilla B2B-tilauksissa."
+        },
+        "unfulfillable_product": {
+          "title": "Toimitus ei ole saatavilla",
+          "message": {
+            "one": "%{delivery_method} ei ole enää saatavilla tälle tuotteelle."
+          }
+        },
+        "price_update": {
+          "title": "Hinnan päivitys",
+          "description": "Näiden tuotteiden hinnat ovat muuttuneet ja ne on päivitetty ostoskoriisi."
+        },
+        "price_and_quantity_update": {
+          "description": "Näiden tuotteiden hinnat ja saatavilla olevat määrät ovat muuttuneet ja päivitetty ostoskoriisi."
+        },
+        "out_of_stock": {
+          "description": "Nämä tuotteet eivät ole enää saatavilla ja ne poistetaan ostoskoristasi.",
+          "items_unavailable": "Jotkin tuotteet eivät ole enää saatavilla ja ne poistetaan ostoskoristasi."
+        },
+        "out_of_stock_in_context_label": "Tätä tuotetta ei ole saatavilla maassasi/alueellasi."
       }
     },
     "attributes": {

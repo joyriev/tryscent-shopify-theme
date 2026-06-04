@@ -999,10 +999,10 @@
         "paypal_invalid_token": "PayPal var ikke tilgængelig. Prøv igen eller brug en anden betalingsmulighed.",
         "pay_later_failed": "Der opstod en fejl under behandlingen af din betaling med Betal senere. Vælg en anden betalingsmetode og prøv igen.",
         "three_d_secure_failed": "Din betaling kunne ikke bekræftes. Prøv igen eller brug en anden betalingsmetode.",
-        "three_d_secure_failed_duplicate": "Kortets 3D Secure-godkendelse mislykkedes, fordi en anden allerede er i gang.",
-        "three_d_secure_failed_payment_method": "Dit kort kunne ikke bekræftes. Prøv igen eller tilføj et andet kort.",
+        "three_d_secure_failed_duplicate": "3D Secure-godkendelsen af kreditkortet mislykkedes, fordi en anden allerede er i gang.",
+        "three_d_secure_failed_payment_method": "Dit kort kunne ikke verificeres. Prøv igen eller tilføj et andet kort.",
         "three_d_secure_throttled": "For mange forsøg; vent før du prøver igen",
-        "subscription_agreement_blank": "For at købe et abonnement skal dine betalingsoplysninger gemmes. For at fortsætte, bekræft at du er enig, eller fjern abonnementsvarer fra din ordre.",
+        "subscription_agreement_blank": "For at købe et abonnement skal dine betalingsoplysninger gemmes. For at fortsætte, bekræft at du er enig, eller fjern abonnementsartikler fra din ordre.",
         "insufficient_funds": "Din betaling blev afvist på grund af utilstrækkelige midler. Prøv igen eller brug en anden betalingsmetode.",
         "multiple_deferred_payment_not_allowed": "Kun én udsat betaling tilladt pr. anmodning. Tjek din anmodning og prøv igen.",
         "shipping_must_match_billing": "Faktureringsadressen skal matche leveringsadressen. Brug en anden betalingsmetode.",
@@ -1019,11 +1019,11 @@
         "payment_method_billing_address": "Der var et problem med den valgte betalingsmetodes faktureringsadresse. Tjek adressen og prøv igen, eller brug en anden betalingsmetode.",
         "call_issuer": "Dit kort blev afvist. Brug en anden betalingsmetode eller kontakt din bank for mere information.",
         "test_mode_live_card": "Denne butik kan ikke acceptere rigtige ordrer eller rigtige betalinger.",
-        "test_mode_enabled_only_test_cards": "Testtilstand er aktiveret, kun testkreditkort kan tilføjes.",
+        "test_mode_enabled_only_test_cards": "Testtilstand er aktiveret, kun test kreditkort kan tilføjes.",
         "transient_error": "Der opstod et problem med at behandle din betaling. Prøv at opdatere denne side eller tjek din internetforbindelse.",
         "missing_shipping_address": "Din betaling kunne ikke behandles, fordi din leveringsadresse mangler. Tilføj en leveringsadresse og prøv igen.",
         "invalid_shipping_address": "Din betaling kunne ikke behandles, fordi vi ikke kunne finde din leveringsadresse. Tjek din leveringsadresse og prøv igen.",
-        "successful_offsite_with_gift_card_error": "Der opstod et problem med behandlingen af din gavekortbetaling. Prøv igen eller brug en anden betalingsmetode.",
+        "successful_offsite_with_gift_card_error": "Der opstod et problem med at behandle din gavekortbetaling. Prøv igen eller brug en anden betalingsmetode.",
         "development_store_order_limit_reached": "Du har nået grænsen for udviklingsbutik ordrer med denne betalingsprocessor. For at placere en anden ordre, skal du bruge en test betalingsgateway. Læs mere om %{development_store_order_testing_docs_link}.",
         "development_store_with_order_limit": "For at placere en testordre skal du bruge en test betalingsgateway. Læs mere om %{development_store_order_testing_docs_link}.",
         "development_store_order_testing_docs_link": "testordrer i udviklingsbutikker",
@@ -1572,26 +1572,29 @@
       "payment_gateway": {
         "bank_account_label": "Bankkonto",
         "bank_deposit_label": "Bankindskud",
-        "cash_on_delivery_label": "Kontant ved Levering (COD)",
+        "cash_on_delivery_label": "Kontant ved levering (COD)",
         "generic_payment_terms": "Du er på {{translatedName}} vilkår. Din betaling forfalder den {{dueDate}}.",
         "login_prompt": {
           "no_access": {
-            "message": "{{logIn}} til en konto med adgang til dette sted for at tilføje eller bruge gemte betalingsmetoder."
+            "message": "{{logIn}} til en konto med adgang til denne placering for at tilføje eller bruge gemte betalingsmetoder."
           }
         },
         "direct_payment_terms": "Du er på {{translatedName}} vilkår. Dit kort vil blive opkrævet den {{dueDate}}.",
         "fixed_direct_payment_terms": "Dit kort vil blive opkrævet den {{dueDate}}.",
-        "order_due_on_fulfillment_choose_later": "Din betaling forfalder, når din ordre er gennemført.",
-        "order_due_on_fulfillment_payment": "Dit kort vil blive opkrævet, når din ordre er fuldført.",
-        "order_deposit_due_now": "{{depositAmount}} forfalder i dag. Restbeløbet følger {{translatedName}} betingelser og forfalder den {{dueDate}}.",
-        "order_deposit_due_on_fulfillment": "{{depositAmount}} forfalder i dag. Restbeløbet forfalder, når din ordre er opfyldt.",
-        "order_deposit_due_on_receipt": "{{depositAmount}} forfalder i dag. Restbeløbet forfalder senere.",
-        "order_deposit_due_on_fixed_date": "{{depositAmount}} forfalder i dag. Restbeløbet forfalder den {{dueDate}}.",
+        "order_due_on_fulfillment_choose_later": "Din betaling forfalder, når din ordre er opfyldt.",
+        "order_due_on_fulfillment_payment": "Dit kort vil blive opkrævet, når din ordre er opfyldt.",
+        "order_deposit_due_now": "{{depositAmount}} forfalder i dag. Saldoen er på {{translatedName}} vilkår og forfalder den {{dueDate}}.",
+        "order_deposit_due_on_fulfillment": "{{depositAmount}} forfalder i dag. Saldoen forfalder, når din ordre er opfyldt.",
+        "order_deposit_due_on_receipt": "{{depositAmount}} forfalder i dag. Saldoen forfalder senere.",
+        "order_deposit_due_on_fixed_date": "{{depositAmount}} forfalder i dag. Saldoen forfalder den {{dueDate}}.",
         "draft_order_payment_due_later_no_terms_payment_selected": "Dit kort vil blive opkrævet, når din ordre er bekræftet.",
-        "draft_order_payment_due_later_terms": "Du vil være på {{translatedName}} vilkår, når din bestilling er bekræftet.",
-        "draft_order_payment_due_on_fulfillment": "Din betaling forfalder, når din ordre er bekræftet og gennemført.",
-        "draft_order_deposit_due_later": "{{depositAmount}} forfalder, når din bestilling er bekræftet. Restbeløbet betales efter {{translatedName}}'s betingelser.",
-        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} forfalder, når din bestilling er bekræftet. Restbeløbet forfalder, når din bestilling er opfyldt."
+        "draft_order_payment_due_later_terms": "Du vil være på {{translatedName}} vilkår, når din ordre er bekræftet.",
+        "draft_order_payment_due_on_fulfillment": "Din betaling forfalder, når din ordre er blevet bekræftet og opfyldt.",
+        "draft_order_deposit_due_later": "{{depositAmount}} skal betales, når din ordre er bekræftet. Restbeløbet vil være på {{translatedName}} vilkår.",
+        "draft_order_deposit_due_on_fulfillment": "{{depositAmount}} skal betales, når din ordre er bekræftet. Saldoen vil være, når din ordre er opfyldt.",
+        "money_order_label": "Pengeoverførsel",
+        "credit_or_debit_card_label": "Kredit/Debit",
+        "fixed_payment_label": "Din betaling skal være forfalden den {{dueDate}}."
       },
       "offsite_payment_failed": {
         "title": "Offsite betaling mislykkedes",
@@ -2023,8 +2026,8 @@
       "processing": {
         "redirecting_page_title": "Omdirigerer…",
         "redirecting_title": "Omdirigerer…",
-        "redirecting_notice": "Vent venligst, mens vi omdirigerer dig.",
-        "complete_your_purchase_title": "Fuldfør dit køb",
+        "redirecting_notice": "Vent mens vi omdirigerer dig.",
+        "complete_your_purchase_title": "Færdiggør dit køb",
         "continue_to_payment_gateway_notice_error": "Din betalingsinformation kunne ikke bekræftes.",
         "continue_to_payment_gateway_button_label_error": "Opdater betalingsoplysninger",
         "page_title": "Behandler ordre",
@@ -2040,9 +2043,10 @@
           "no_auto_refresh_html": "Hvis du ikke bliver omdirigeret automatisk, %{link}.",
           "refresh_this_page": "opdater denne side"
         },
-        "remote_shops_payments_processing": "Behandler betalinger",
+        "remote_shops_payments_processing": "Behandling af betalinger",
         "action_required": "Handling påkrævet",
-        "modal_notice": "Vi kontakter {{paymentMethod}}"
+        "modal_notice": "Vi kontakter {{paymentMethod}}",
+        "complete_your_purchase_title_error": "Korriger dine betalingsoplysninger"
       },
       "payment_challenge_modal": {
         "instructions": "Fuldfør dit køb ved at bruge din {{paymentMethod}} kode",
@@ -2238,11 +2242,11 @@
       "pickup_point": {
         "no_business_hours": "Ingen åbningstider tilgængelige",
         "open_twenty_four_hours": "Åben 24/7",
-        "search_button": "Søgning",
+        "search_button": "Søg",
         "selector_tabs": "Afhentningsstedvælger",
         "could_not_resolve_address": "Din adresse kunne ikke findes. Prøv igen eller brug en anden adresse",
-        "no_pickup_points_near_you": "Ingen afhentningssteder fundet i nærheden af den valgte adresse",
-        "no_pickup_points_near_location": "Ingen afhentningssteder fundet i nærheden af din placering",
+        "no_pickup_points_near_you": "Ingen afhentningssteder fundet nær den valgte adresse",
+        "no_pickup_points_near_location": "Ingen afhentningssteder fundet nær din placering",
         "pickup_unavailable_banner_title": {
           "one": "Ingen afhentningssteder tilgængelige for din vare",
           "other": "Ingen afhentningssteder tilgængelige for dine varer"
@@ -2250,15 +2254,15 @@
         "no_pickup_points_found": "Ingen afhentningssteder fundet",
         "paginator": {
           "header": {
-            "one": "Viser %{first} - %{last} af %{count} punkt",
-            "other": "Viser %{first} - %{last} af %{count} point"
+            "one": "Viser %{first} - %{last} af %{count} point",
+            "other": "Viser %{first} - %{last} af %{count} punkter"
           },
           "selected_pickup_point_label": {
             "one": "%{pickup_point_index} af %{count} punkt",
             "other": "%{pickup_point_index} af %{count} punkter"
           },
           "selected_page": {
-            "one": "%{first} - %{last} af %{count} punkt",
+            "one": "%{first} - %{last} af %{count} point",
             "other": "%{first} - %{last} af %{count} point"
           }
         },
@@ -2272,7 +2276,7 @@
           "errors": {
             "unsuported_by_browser": "Geolokalisering understøttes ikke af din browser. Prøv igen eller brug en anden browser.",
             "permission_not_allowed": "Tillad deling af din placering.",
-            "permission_denied": "Kunne ikke finde din placering. Prøv igen."
+            "permission_denied": "Kunne ikke få din placering. Prøv igen."
           }
         }
       },
@@ -2662,6 +2666,10 @@
         "title_with_products": {
           "one": "Køb %{product_name} og %{count} andre varer"
         }
+      },
+      "payment_summary": {
+        "express_payment_gateway_label": "Udtryk",
+        "manual_payment_gateway_label": "Manual"
       }
     },
     "sentence": {
