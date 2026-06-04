@@ -1295,10 +1295,118 @@
         "contact_information": {
           "header": "Päivittääksesi tietosi, {{emailLink}}.",
           "email_link": "ota yhteyttä"
+        },
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} päivittääksesi määrät",
+        "subscription_changed": "Yksi tilauksistasi on muuttunut.",
+        "validation_errors_banner": {
+          "heading": {
+            "one": "On {{count}} virhe:",
+            "other": "On {{count}} virhettä:"
+          },
+          "section_label": {
+            "contact": "Ota yhteyttä"
+          },
+          "errors_in_section": {
+            "one": "{{count}} virhe kohdassa {{section}}",
+            "other": "{{count}} virhettä kohdassa {{section}}"
+          }
         }
       },
       "note": {
         "length_exceeds_maximum": "Vähennä muistiinpanon kokoa 5000 merkkiin tai vähemmän."
+      },
+      "order_summary": {
+        "applied_free_shipping_discount_label": "Käytetty",
+        "applied_discount_message": "%{amount} alennusta kokonaistilauksen hinnasta",
+        "automatic_discount_tooltip": "Automaattisesti sovelletut alennukset eivät ole poistettavissa",
+        "calculating_shipping": "Lasketaan…",
+        "calculating": "Lasketaan…",
+        "amount_off_shipping": "%{amount} alennus toimituskuluista",
+        "alternative_payment_currency_total": "Laskutettu summa: %{amount_due}",
+        "discount_order_stacking": {
+          "one": "Tilaa alennus"
+        },
+        "discount_not_found": "Alennuskoodia ei löytynyt tai se ei ole voimassa",
+        "discount_code_replaced": "Alennuskoodi %{old_code} poistettu ja %{code} on otettu käyttöön",
+        "discount_code_replaced_multiple": "Useita alennuskoodeja poistettu ja %{code} on otettu käyttöön",
+        "discount_code_allocations_mismatch": "Sinun <strong style=\"text-transform:uppercase\">%{code}</strong> alennuskoodisi on muuttunut. Tarkista ostoskorisi ja yritä uudelleen.",
+        "discount_already_applied": "Tähän tilaukseen on sovellettu alennus. Et voi lisätä toista alennusta.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> alennuskoodi ei ole voimassa ostoskorissasi oleville tuotteille",
+        "discount_requires_customer_notice": "Syötä toimitustietosi käyttääksesi alennuskoodia <strong style=\"text-transform:uppercase\">%{code}</strong>",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> alennuskoodi ei ole tällä hetkellä käytettävissä sinulle",
+        "customer_already_used_once_per_customer_discount_notice": "<strong style=\"text-transform:uppercase\">%{code}</strong> alennuskoodia on jo käytetty",
+        "deposit_label": "Talleta",
+        "discount_and_gift_card_savings_notice": "%{discount_amount} alennusten ja %{gift_card_amount} lahjakorttien jälkeen",
+        "discount_savings_notice": "%{discount_amount} alennusten jälkeen",
+        "cost_table_title": "Kustannusyhteenveto",
+        "compare_at_sale": "Alennus (%{sale_amount})",
+        "confirmation_number_label": "Vahvistus #%{confirmation_number}",
+        "deferred_payment_info": {
+          "title": "Maksu %{amount_due} erääntyy maksettavaksi %{due_at}",
+          "description_html": "Jos sinulla on kysyttävää tilauksestasi, %{contact_us}.",
+          "paid_today": "Tänään maksettu yhteensä",
+          "due_on_fulfillment_title": "Maksu, jonka summa on %{amount_due}, erääntyy suoritettavaksi täytön yhteydessä",
+          "due_on_receipt_title": "Maksu %{amount_due} erääntyy vastaanotettaessa"
+        },
+        "deferred_balance_info": {
+          "title": "{{due_at}} eräpäivänä erääntyy maksettavaksi {{amount_due}} saldo",
+          "due_on_fulfillment_title": "{{amount_due}} saldo erääntyy maksettavaksi täytettäessä"
+        },
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}</strong> ei toimi tällä hetkellä. Ota meihin yhteyttä saadaksesi apua.",
+        "deferred_total_due_date_label": "Maksettava yhteensä {{date}}",
+        "deferred_total_due_date_label_next": "Eräpäivä %{date}",
+        "custom_discount": "Mukautettu alennus",
+        "collapse_component_information": {
+          "one": "Piilota %{count} kohde",
+          "other": "Piilota %{count} kohdetta"
+        },
+        "discount_discovery": {
+          "back_to_finalize_order": "Takaisin viimeistelemään tilausta",
+          "merchandise_quantity_label": {
+            "one": "%{count} kohde"
+          }
+        },
+        "discount_applies_to_subscription_items_only": "Tämä alennus koskee vain tilauskohteita"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Maksun määrä tilaukselle %{order_name}",
+        "changes_summary": {
+          "added": {
+            "other": "Lisätty %{count}"
+          },
+          "subtracted": "Poistettu %{count}",
+          "returned": "Palautettu %{count}",
+          "return_line_item_removed": "Poistettu %{count} palautuksesta"
+        },
+        "additional_payment_requested": "Maksu summasta %{total_outstanding} tarvitaan",
+        "checkout_review_and_pay": "Tilauksesi %{order_name} päivitettiin. Tarkista nämä muutokset ja maksa vahvistaaksesi tilauksesi.",
+        "order_review_and_pay": "Tilaustasi on päivitetty. Tarkista ja maksa vahvistaaksesi tilauksesi."
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "one": "Osta %{product_name} ja %{count} muuta tuotetta"
+        }
+      },
+      "order_errors": {
+        "creation_failure": "Tilauksesi luomisessa ilmeni ongelma. Yritä uudelleen tai ota meihin yhteyttä saadaksesi lisätietoja.",
+        "network_failure": "Tilauksesi lähettäminen epäonnistui verkkovirheen vuoksi. Tarkista yhteytesi ja yritä uudelleen.",
+        "inventory_reservation_failure": "Jotkin tuotteet eivät ole enää saatavilla."
+      },
+      "online_store_chat": {
+        "title": "Kysyttävää? Keskustele kanssamme"
+      },
+      "offsite_payment_failed": {
+        "title": "Maksu ulkopuolisessa palvelussa epäonnistui",
+        "payment_not_processed_text": "Yritä skannata QR-koodi uudelleen. Jos se ei vieläkään toimi, ilmoita siitä henkilökunnalle ja kokeile toista maksutapaa."
+      },
+      "one": {
+        "errors": {
+          "merchandise": {
+            "gift_card_price_must_not_exceed_limit": "Lahjakortin hinnan ei saa ylittää %{gift_card_limit}.",
+            "subtotal_limit_reached": "Rivikohtien enimmäismäärä on saavutettu.",
+            "signature_mismatch": "Tuotteen allekirjoitus ei täsmää rivillä %{stable_id}."
+          }
+        }
       }
     },
     "attributes": {

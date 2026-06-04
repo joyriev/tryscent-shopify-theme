@@ -273,7 +273,7 @@
   },
   "sections": {
     "header": {
-      "announcement": "Meddelande",
+      "announcement": "Tillkännagivande",
       "menu": "Meny",
       "cart_count": {
         "one": "{{ count }} artikel",
@@ -281,7 +281,7 @@
       }
     },
     "cart": {
-      "title": "Din varukorg",
+      "title": "Din kundvagn",
       "caption": "Varukorgsartiklar",
       "remove_title": "Ta bort {{ title }}",
       "note": "Beställ särskilda instruktioner",
@@ -299,10 +299,10 @@
       "update": "Uppdatera",
       "login": {
         "title": "Har du ett konto?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logga in</a> för att gå till kassan snabbare."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logga in</a> för att checka ut snabbare."
       },
       "estimated_total": "Beräknad totalsumma",
-      "new_estimated_total": "Nytt beräknat totalbelopp"
+      "new_estimated_total": "Ny beräknad totalsumma"
     },
     "footer": {
       "payment": "Betalningsmetoder"
@@ -310,17 +310,17 @@
     "featured_blog": {
       "view_all": "Visa alla",
       "onboarding_title": "Blogginlägg",
-      "onboarding_content": "Ge en sammanfattning av dina bloggposter till dina kunder"
+      "onboarding_content": "Ge dina kunder en sammanfattning av ditt blogginlägg"
     },
     "featured_collection": {
       "view_all": "Visa alla",
-      "view_all_label": "Visa alla produkter i produktserien {{ collection_name }}"
+      "view_all_label": "Visa alla produkter i {{ collection_name }}-kollektionen"
     },
     "collection_list": {
       "view_all": "Visa alla"
     },
     "collection_template": {
-      "title": "Produktserie",
+      "title": "Kollektion",
       "empty": "Inga produkter hittades",
       "use_fewer_filters_html": "Använd färre filter eller <a class=\"{{ class }}\" href=\"{{ link }}\">ta bort alla</a>"
     },
@@ -328,16 +328,16 @@
       "load_video": "Ladda video: {{ description }}"
     },
     "slideshow": {
-      "load_slide": "Ladda bild",
+      "load_slide": "Ladda bildspel",
       "previous_slideshow": "Föregående bild",
       "next_slideshow": "Nästa bild",
-      "pause_slideshow": "Pausa bildspelet",
+      "pause_slideshow": "Pausa bildspel",
       "play_slideshow": "Spela bildspel",
       "carousel": "Karusell",
-      "slide": "Bild"
+      "slide": "Skjutreglage"
     },
     "page": {
-      "title": "Sidrubrik"
+      "title": "Sidetitel"
     },
     "announcements": {
       "previous_announcement": "Tidigare meddelande",
@@ -347,29 +347,29 @@
       "announcement_bar": "Meddelandefält"
     },
     "quick_order_list": {
-      "product_total": "Delsumma för produkt",
-      "view_cart": "Visa varukorg",
-      "each": "{{ money }}/st.",
+      "product_total": "Produktens delsumma",
+      "view_cart": "Visa kundvagn",
+      "each": "{{ money }}/st",
       "product": "Produkt",
       "variant": "Variant",
-      "variant_total": "Totalbelopp för variant",
+      "variant_total": "Variant totalt",
       "items_added": {
-        "one": "{{ quantity }} artikel lades till",
-        "other": "{{ quantity }} artiklar lades till"
+        "one": "{{ quantity }} artikel tillagd",
+        "other": "{{ quantity }} artiklar tillagda"
       },
       "items_removed": {
-        "one": "{{ quantity }} artikel togs bort",
-        "other": "{{ quantity }} artiklar togs bort"
+        "one": "{{ quantity }} artikel borttagen",
+        "other": "{{ quantity }} artiklar borttagna"
       },
       "product_variants": "Produktvarianter",
       "total_items": "Totalt antal artiklar",
-      "remove_all_items_confirmation": "Ta bort alla {{ quantity }} artiklar från din varukorg?",
-      "remove_all": "Ta bort alla",
+      "remove_all_items_confirmation": "Ta bort alla {{ quantity }} artiklar från din kundvagn?",
+      "remove_all": "Ta bort allt",
       "cancel": "Avbryt",
-      "remove_all_single_item_confirmation": "Vill du ta bort 1 artikel från varukorgen?",
-      "min_error": "Den här artikeln har minst {{ min }}",
-      "max_error": "Den här artikeln har max {{ max }}",
-      "step_error": "Du kan endast lägga till den här artikeln med ökningar om {{ step }}"
+      "remove_all_single_item_confirmation": "Ta bort 1 artikel från din kundvagn?",
+      "min_error": "Denna artikel har ett minimum på {{ min }}",
+      "max_error": "Den här artikeln har ett maximum på {{ max }}",
+      "step_error": "Du kan bara lägga till denna artikel i steg om {{ step }}"
     }
   },
   "localization": {
@@ -2596,7 +2596,7 @@
         "unavailable_selected_address_for_region": "Frakt är inte tillgänglig för {{region}}. Välj en annan adress för att fortsätta"
       },
       "alternative_payment_method_banner": {
-        "or_check_out_another_way": "Eller gå till Checkout på ett annat sätt",
+        "or_check_out_another_way": "Eller kolla in ett annat sätt",
         "or_pay_with_credit_card": "Eller betala med kreditkort"
       },
       "post_purchase": {
@@ -2983,16 +2983,16 @@
         "credit_card_will_be_charged_html": "Ditt kreditkort kommer att debiteras %{amount}",
         "payment_total_label": "Betalningssumma",
         "change_currency_link": "Byt till %{currency_name}",
-        "card_provider_fx_charges_warning": "Din kortutgivare kan ta ut avgifter på transaktioner i %{currency_code}.",
+        "card_provider_fx_charges_warning": "Din kortleverantör kan ta ut avgifter på %{currency_code} transaktioner.",
         "currency_not_supported_by_shop": "Den valuta du valde är inte längre tillgänglig. Alla priser är nu i %{currency_code}."
       },
       "change_country": {
-        "cart_updated_based_on_country": "Din kundvagn har uppdaterats baserat på ditt leveransland.",
-        "cart_and_currency_updated_based_on_country": "Din kundvagn och valuta har uppdaterats baserat på ditt leveransland.",
+        "cart_updated_based_on_country": "Din kundvagn har uppdaterats baserat på ditt fraktland.",
+        "cart_and_currency_updated_based_on_country": "Din kundvagn och valuta har uppdaterats baserat på ditt fraktland.",
         "currency_updated_for_country": "Valuta uppdaterad för %{country}"
       },
       "change_cart_localization": {
-        "verify_shipping_address": "Ditt land/region har uppdaterats. Ange din leveransadress för att fortsätta till kassan."
+        "verify_shipping_address": "Ditt land/region har uppdaterats. Ange din leveransadress för att fortsätta kassan."
       },
       "tips": {
         "description": "Visa ditt stöd för laget på %{shop_name}",
@@ -3042,7 +3042,7 @@
         }
       },
       "cart_checkout_validation": {
-        "runtime_error": "Det uppstod ett problem vid hanteringen av din förfrågan. Kontakta butikens ägare."
+        "runtime_error": "Det uppstod ett problem med att behandla din begäran. Kontakta butiksägaren."
       },
       "no_address_location": {
         "header": "Du har ingen leveransadress för denna plats",
@@ -3060,7 +3060,7 @@
         "session_already_finished": "Denna beställning har redan skickats in. Du kan återvända till butiken för att starta en ny beställning."
       },
       "artifact_errors": {
-        "artifact_dissatisfaction_without_violation": "Det uppstod ett problem vid behandlingen av din beställning. Försök igen om några minuter."
+        "artifact_dissatisfaction_without_violation": "Det uppstod ett problem med att behandla din beställning. Försök igen om några minuter."
       },
       "pickup_point": {
         "no_business_hours": "Inga öppettider tillgängliga",
@@ -3178,9 +3178,9 @@
         }
       },
       "captcha": {
-        "title": "Slutför CAPTCHA för att fortsätta",
+        "title": "Fyll i CAPTCHA:n för att fortsätta",
         "errors": {
-          "not_solved": "Slutför CAPTCHA för att fortsätta"
+          "not_solved": "Fyll i CAPTCHA:n för att fortsätta"
         }
       },
       "clipboard": {
@@ -3190,8 +3190,8 @@
         "generic_error": "Din beställning kunde inte behandlas eftersom din rabattkod inte längre är giltig. Granska din ordertotal och försök igen."
       },
       "b2b_errors": {
-        "lost_b2b_purchasing_permissions": "Du har inte längre tillåtelse att lägga B2B-beställningar. %{logout_url} för att istället lägga en personlig beställning.",
-        "lost_permissions_subtitle": "Du har inte längre behörighet att lägga B2B-beställningar. Logga ut för att lägga en personlig beställning."
+        "lost_b2b_purchasing_permissions": "Du har inte längre behörighet att lägga B2B-beställningar. %{logout_url} för att istället lägga en personlig beställning.",
+        "lost_permissions_subtitle": "Du har inte längre tillåtelse att lägga B2B-beställningar. Logga ut för att lägga en personlig beställning."
       },
       "shop_pay_external": {
         "title": "Shop Pay Kassabetalning",
@@ -3388,6 +3388,18 @@
             "service_error": "Valideringstjänst otillgänglig"
           }
         }
+      },
+      "billing": {
+        "billing_address_title": "Faktura till",
+        "billing_address_rollup_accessibility_label": "Faktureringsalternativ",
+        "same_as_shipping": "Samma som leveransadress",
+        "delete": "Ta bort",
+        "address_more": "Fler åtgärder för denna adress",
+        "address_delete": "Ta bort adress",
+        "address_confirm": "Är du säker på att du vill ta bort den här adressen från ditt konto?"
+      },
+      "address_management": {
+        "saved_with_store": "Sparad med den här butiken"
       }
     },
     "links": {
@@ -3395,12 +3407,12 @@
       "learn_more": "Lär dig mer"
     },
     "attributes": {
-      "password_confirmation": "Lösenordsbekräftelsen",
+      "password_confirmation": "Lösenordsbekräftelse",
       "body": "kropp"
     },
     "addresses": {
       "pincode": "PIN-kod",
-      "state": "Status",
+      "state": "Stat",
       "governorate": "guvernement",
       "confirm": "Är du säker på att du vill ta bort den här adressen?"
     },
@@ -3632,7 +3644,8 @@
     },
     "challenge": {
       "message": "För att fortsätta, låt oss veta att du inte är en robot.",
-      "error": "Ditt svar var inte korrekt, försök igen."
+      "error": "Ditt svar var inte korrekt, vänligen försök igen.",
+      "submit_button_text": "Skicka in"
     },
     "checkpoint": {
       "message": "Lös Captcha för att fortsätta",
