@@ -991,13 +991,13 @@
           "tax_email_it": "PEC (valgfritt)",
           "shipping_credential_br": "CPF/CNPJ",
           "tax_credential_br": "CPF/CNPJ",
-          "tax_credential_co": "ID-/MVA-nummer",
+          "tax_credential_co": "ID/IVA",
           "tax_credential_type_co": "Type ID-kort",
           "shipping_credential_co": "ID-/MVA-nummer",
           "shipping_credential_type_co": "Type ID-kort",
           "shipping_credential_cr": "Identifikasjonsnummer/RUT",
           "tax_credential_cr": "Identifikasjonsnummer/RUT",
-          "tax_credential_ec": "CI/RUC/MVA",
+          "tax_credential_ec": "CI/RUC/IVA",
           "shipping_credential_ec": "CI/RUC/MVA",
           "tax_credential_cl": "RUT",
           "shipping_credential_cl": "RUT",
@@ -1008,18 +1008,18 @@
           "shipping_credential_my": "TIN/Registreringsnummer",
           "tax_credential_type_mx": "Skatteregime",
           "tax_credential_use_mx": "Bruk av CFDI",
-          "tax_credential_py": "CI/RUC/MVA",
-          "shipping_credential_py": "CI/RUC/MVA",
+          "tax_credential_py": "CI/RUC/IVA",
+          "shipping_credential_py": "CI/RUC/IVA",
           "shipping_credential_mx": "RFC",
           "shipping_credential_id": "NPWP",
-          "tax_credential_pt": "NIF/MVA",
+          "tax_credential_pt": "NIF/IVA",
           "tax_credential_mx": "RFC",
-          "shipping_credential_pt": "NIF/MVA",
+          "shipping_credential_pt": "NIF/IVA",
           "shipping_credential_tw": "Nasjonalt ID-nummer/MVA",
           "tax_credential_pe": "DNI/RUC/CE",
           "shipping_credential_pe": "DNI/RUC/CE",
-          "tax_credential_tr": "Tyrkias republikks identitetsnummer/MVA",
-          "shipping_credential_tr": "Tyrkias republikks identitetsnummer/MVA",
+          "tax_credential_tr": "Tyrkisk statsborgerskapsnummer/MVA",
+          "shipping_credential_tr": "Tyrkisk statsborgerskapsnummer/MVA",
           "shipping_credential_es": "DNI/NIF",
           "tax_credential_es": "DNI/NIF"
         }
@@ -2009,27 +2009,27 @@
       "marketing": {
         "accept_marketing_checkbox_label": "Send meg e-post med nyheter og tilbud",
         "post_accept_marketing_checkbox_label": "Du er abonnert på å motta nyheter og tilbud på e-post",
-        "pending_accept_marketing_checkbox_label": "Sjekk e-posten din for å bekrefte abonnementet ditt på nyheter og tilbud",
-        "accept_sms_checkbox_label": "Send meg en melding med nyheter og tilbud",
+        "pending_accept_marketing_checkbox_label": "Sjekk e-posten din for å bekrefte abonnementet på nyheter og tilbud",
+        "accept_sms_checkbox_label": "Send meg meldinger med nyheter og tilbud",
         "disclaimer": {
-          "privacy_policy": "Personvernerklæring",
+          "privacy_policy": "Personvernregler",
           "terms_of_service": "Vilkår for bruk"
         },
         "sms": {
           "disclaimer": {
-            "privacy_policy": "Personvernerklæring",
+            "privacy_policy": "Personvernregler",
             "terms_of_service": "Vilkår for bruk",
-            "description_html": "Ved å registrere deg via tekst, samtykker du i å motta gjentakende automatiserte markedsføringsmeldinger, inkludert påminnelser om handlekurv, på det oppgitte telefonnummeret. Samtykke er ikke en betingelse for kjøp. Svar STOPP for å avslutte abonnementet. Svar HJELP for hjelp. Meldingsfrekvensen varierer. Meldings- og datakostnader kan påløpe. Se vår %{privacy_policy_link} og %{terms_of_service_link}.",
-            "description_transactional_html": "Du kan motta tekstmeldinger relatert til ordrebekreftelse og fraktoppdateringer. Svar STOPP for å avslutte abonnementet. Svar HJELP for hjelp. Meldingsfrekvensen varierer. Meldings- og datakostnader kan påløpe. Se vår %{privacy_policy_modal_link} og %{terms_of_service_modal_link}."
+            "description_html": "Ved å registrere deg via tekst, samtykker du i å motta gjentakende automatiserte markedsføringsmeldinger, inkludert påminnelser om handlekurven, på det oppgitte telefonnummeret. Samtykke er ikke en betingelse for kjøp. Svar STOPP for å avslutte abonnementet. Svar HJELP for hjelp. Meldingsfrekvensen varierer. Meldings- og datakostnader kan påløpe. Se vår %{privacy_policy_link} og %{terms_of_service_link}.",
+            "description_transactional_html": "Du kan motta tekstmeldinger knyttet til ordrebekreftelse og fraktoppdateringer. Svar STOPP for å avslutte abonnementet. Svar HJELP for hjelp. Meldingsfrekvensen varierer. Melding- og datakostnader kan påløpe. Se vår %{privacy_policy_modal_link} og %{terms_of_service_modal_link}."
           },
           "mobile_phone_number": "Mobiltelefonnummer",
-          "get_offers_by_text": "Få tilbud via tekst"
+          "get_offers_by_text": "Få tilbud på SMS"
         },
         "unsubscribe": {
-          "title": "Du har avmeldt deg",
+          "title": "Du har avsluttet abonnementet",
           "description": "Du vil ikke motta flere påminnelser om handlekurven fra oss."
         },
-        "accept_shop_pay_marketing_checkbox_label": "Meld meg på nyheter og tilbud fra denne butikken"
+        "accept_shop_pay_marketing_checkbox_label": "Meld meg på for nyheter og tilbud fra denne butikken"
       },
       "shop_policies": {
         "refund_policy": "Refusjonspolicy",
@@ -2311,7 +2311,7 @@
       },
       "marketplaces": {
         "legal_notice": {
-          "legal_text": "Gjennomgang",
+          "legal_text": "Vurdering",
           "link_label": "{{partnerDisplayName}} Vilkår og betingelser"
         }
       },

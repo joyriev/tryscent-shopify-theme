@@ -119,13 +119,13 @@
       "description": "Beskrivning",
       "on_sale": "Rea",
       "quantity": {
-        "label": "Antal",
+        "label": "Kvantitet",
         "input_label": "Antal för {{ product }}",
         "increase": "Öka mängden för {{ product }}",
         "decrease": "Minska mängden för {{ product }}",
         "minimum_of": "Minst {{ quantity }}",
         "maximum_of": "Maximalt {{ quantity }}",
-        "multiples_of": "Steg om {{ quantity }}",
+        "multiples_of": "Ökningar om {{ quantity }}",
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> i kundvagnen",
         "note": "Visa kvantitetsregler",
         "min_of": "Min {{ quantity }}",
@@ -134,7 +134,7 @@
       "price": {
         "from_price_html": "Från {{ price }}",
         "regular_price": "Ordinarie pris",
-        "sale_price": "Rea pris",
+        "sale_price": "Reapris",
         "unit_price": "Enhetspris"
       },
       "share": "Dela den här produkten",
@@ -142,8 +142,8 @@
       "unavailable": "Ej tillgänglig",
       "vendor": "Leverantör",
       "video_exit_message": "{{ title }} öppnar helskärmsvideo i samma fönster.",
-      "xr_button": "Visa i ditt utrymme",
-      "xr_button_label": "Visa i ditt utrymme, laddar objekt i fönstret för förstärkt verklighet",
+      "xr_button": "Se i ditt utrymme",
+      "xr_button_label": "Visa i ditt utrymme, laddar objekt i fönster för förstärkt verklighet",
       "pickup_availability": {
         "view_store_info": "Visa butikens information",
         "check_other_stores": "Kontrollera tillgänglighet i andra butiker",
@@ -168,7 +168,7 @@
       "choose_options": "Välj alternativ",
       "choose_product_options": "Välj alternativ för {{ product_name }}",
       "value_unavailable": "{{ option_value }} - Otillgänglig",
-      "variant_sold_out_or_unavailable": "Variant slutsåld eller otillgänglig",
+      "variant_sold_out_or_unavailable": "Variant slut i lager eller otillgänglig",
       "inventory_in_stock": "I lager",
       "inventory_in_stock_show_count": "{{ quantity }} i lager",
       "inventory_low_stock": "Lågt lager",
@@ -177,11 +177,11 @@
       "inventory_out_of_stock_continue_selling": "I lager",
       "sku": "Artikelnummer",
       "volume_pricing": {
-        "title": "Volymprissättning",
+        "title": "Volympriser",
         "note": "Volympriser tillgängliga",
         "minimum": "Fler än {{ quantity }}",
         "price_range": "{{ minimum }}–{{ maximum }}",
-        "price_at_each_html": "för {{ price }}/st"
+        "price_at_each_html": "vid {{ price }}/st"
       },
       "product_variants": "Produktvarianter",
       "duties_included": "Arbetsuppgifter ingick."
@@ -513,14 +513,14 @@
       "email_label": "Mottagarens e-postadress",
       "email": "E-post",
       "name_label": "Mottagarens namn (valfritt)",
-      "name": "[name]",
+      "name": "Namn",
       "message_label": "Meddelande (valfritt)",
       "message": "Meddelande",
       "max_characters": "{{ max_chars }} tecken max",
       "email_label_optional_for_no_js_behavior": "Mottagarens e-post (valfritt)",
-      "send_on": "ÅÅÅÅ-MM-DD",
+      "send_on": "YYYY-MM-DD",
       "send_on_label": "Skicka vidare (valfritt)",
-      "expanded": "Formulär för mottagare av presentkort utökat",
+      "expanded": "Formulär för presentkortsmottagare utökat",
       "collapsed": "Formulär för presentkortsmottagare ihopfällt"
     }
   },
@@ -3401,7 +3401,7 @@
     "addresses": {
       "pincode": "PIN-kod",
       "state": "Status",
-      "governorate": "Guvernement",
+      "governorate": "guvernement",
       "confirm": "Är du säker på att du vill ta bort den här adressen?"
     },
     "collections": {

@@ -282,13 +282,13 @@
     },
     "cart": {
       "title": "Din indkøbskurv",
-      "caption": "Varer i indkøbskurv",
+      "caption": "Indkøbskurv varer",
       "remove_title": "Fjern {{ title }}",
       "note": "Særlige instruktioner til ordre",
-      "checkout": "Gå til betaling",
+      "checkout": "Tjek ud",
       "empty": "Din indkøbskurv er tom",
-      "cart_error": "Der opstod en fejl under opdatering af din indkøbskurv. Prøv igen.",
-      "cart_quantity_error_html": "Du kan kun lægge {{ quantity }} af denne vare i indkøbskurven.",
+      "cart_error": "Der opstod en fejl under opdateringen af din indkøbskurv. Prøv venligst igen.",
+      "cart_quantity_error_html": "Du kan kun tilføje {{ quantity }} af denne vare til din indkøbskurv.",
       "headings": {
         "product": "Produkt",
         "price": "Pris",
@@ -301,7 +301,7 @@
         "title": "Har du en konto?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log ind</a> for at betale hurtigere."
       },
-      "estimated_total": "Estimeret totalbeløb",
+      "estimated_total": "Estimeret total",
       "new_estimated_total": "Ny estimeret totalbeløb"
     },
     "footer": {
@@ -340,11 +340,11 @@
       "title": "Sidetitel"
     },
     "announcements": {
-      "previous_announcement": "Forrige meddelelse",
+      "previous_announcement": "Tidligere meddelelse",
       "next_announcement": "Næste meddelelse",
       "carousel": "Karrusel",
       "announcement": "Meddelelse",
-      "announcement_bar": "Meddelelseslinje"
+      "announcement_bar": "Meddelelsesbjælke"
     },
     "quick_order_list": {
       "product_total": "Subtotal for produkt",
@@ -1267,8 +1267,8 @@
       },
       "general": {
         "remove_chip": "Fjern vare",
-        "page_title": "Betaling",
-        "skip_to_content": "Spring til indholdet",
+        "page_title": "Kasse",
+        "skip_to_content": "Spring til indhold",
         "complete_purchase_button_label": "Fuldfør ordre",
         "all_rights_reserved": "Alle rettigheder forbeholdes %{shop_name}",
         "print_policies_link_label": "Udskriv",
@@ -1460,15 +1460,16 @@
         "confirm_order_button_label": "Bekræft ordre",
         "submit_order_button_label": "Indsend ordre",
         "submit_for_review_button_label": "Indsend til gennemgang",
-        "submit_for_review_notice_label": "Betaling forfalder først, når din ordre er gennemgået",
+        "submit_for_review_notice_label": "Betaling forfalder ikke, før din ordre er gennemgået",
         "back_button_label": "Returner",
         "autocomplete_zero_item": "Ingen varer tilgængelige",
         "submit": "Indsend",
         "processing": "Behandler…",
         "stepper": {
           "decrease": "Formindsk {{type}}",
-          "minimum_reached": "Minimum på {{value}} nået",
-          "maximum_reached": "Maksimum på {{value}} nået"
+          "minimum_reached": "Minimum af {{value}} nået",
+          "maximum_reached": "Maksimum af {{value}} nået",
+          "increase": "Øg {{type}}"
         },
         "dates": {
           "weekdays_abbreviation": {
@@ -1508,8 +1509,8 @@
         },
         "map": {
           "cluster_title": {
-            "one": "Klynge af {{number}} markør",
-            "other": "Klynge af {{number}} markører"
+            "one": "Klynge af {{number}} markører",
+            "other": "Cluster af {{number}} markører"
           }
         },
         "dropzone": {
@@ -1517,7 +1518,8 @@
           "dragged_over": "Træk filen for at uploade"
         },
         "finalize_order_accessibility_label": "Afslut ordre",
-        "full_price": "Fulde pris:"
+        "full_price": "Fulde pris:",
+        "qr_code": "QR kode"
       },
       "payment_gateway": {
         "bank_account_label": "Bankkonto",
@@ -2294,7 +2296,7 @@
       },
       "local_pickup": {
         "location_information": {
-          "one": "Der er %{count} sted med lager tæt på dig",
+          "one": "Der er %{count} placering med lager tæt på dig",
           "other": "Der er %{count} steder med lager tæt på dig"
         },
         "toggle_location": "Skift placering",
@@ -2302,9 +2304,14 @@
         "no_stores_found": "Ingen butikker fundet",
         "all_stores_far_away": {
           "title": "De nærmeste steder er mere end %{distance} væk",
-          "description": "Vælg et sted eller %{ship_to_address_link}",
-          "ship_to_address_link": "sendes til adresse",
-          "change_location_link": "Skift din placering"
+          "description": "Vælg en placering eller %{ship_to_address_link}",
+          "ship_to_address_link": "send til adresse",
+          "change_location_link": "Skift din placering",
+          "title_with_item": {
+            "one": "Den nærmeste placering med din vare er mere end %{distance} fra %{location}",
+            "other": "Den nærmeste placering med dine varer er mere end %{distance} fra %{location}"
+          },
+          "title_with_specific_location": "Den nærmeste placering med din vare er mere end %{distance} væk fra %{location}"
         },
         "selected_pickup_option_no_longer_available": {
           "title": "Din tidligere valgte placering er ikke længere tilgængelig",
@@ -2318,6 +2325,24 @@
         "reveal_more_label": {
           "one": "Vis %{count} flere steder",
           "other": "Vis %{count} flere steder"
+        },
+        "location_closest": "Nærmeste sted med din vare",
+        "location_closest_one_item": "Nærmeste sted med din vare",
+        "location_closest_other_items": "Nærmeste sted med dine varer",
+        "location_information_far_away": {
+          "one": "Der er %{count} placering med din vare"
+        },
+        "location_far_away": {
+          "one": "%{count} placering med dit produkt",
+          "other": "%{count} steder med din vare"
+        },
+        "location_far_away_one_item": {
+          "one": "%{count} placering med dit produkt",
+          "other": "%{count} steder med din vare"
+        },
+        "location_far_away_other_items": {
+          "one": "%{count} placering med dine varer",
+          "other": "%{count} steder med dine varer"
         }
       },
       "captcha": {

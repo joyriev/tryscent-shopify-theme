@@ -1237,6 +1237,68 @@
       },
       "memberships": {
         "delivery_promise_unfulfillable": "Osoitetta ei tueta nykyisellä jäsenyydellä."
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "Tätä tuotetta ei ole saatavilla toimitettavaksi osoitteeseen %{location_name}.",
+          "some_products_other": "Näitä tuotteita ei toimiteta osoitteeseen %{location_name}.",
+          "all_products_one": "Tuotetta ostoskorissasi ei ole saatavilla toimitettavaksi osoitteeseen %{location_name}.",
+          "all_products_other": "Ostoskoriisi lisätyt tuotteet eivät ole saatavilla toimitettavaksi osoitteeseen %{location_name}."
+        },
+        "cart_updated": "Ostoskori on päivitetty.",
+        "change_address_only": "Vaihda toimitusosoite jatkaaksesi.",
+        "change_address_or_remove": "Vaihda toimitusosoitetta tai %{remove_action}.",
+        "remove_items_action": {
+          "one": "poista saatavilla oleva tuote",
+          "other": "poista saatavilla olevat tuotteet"
+        }
+      },
+      "merchant_instruction_errors": {
+        "empty_stable_id": "The %{position} %{name} -tuotemääräyksessä on tyhjä vakaa tunnus.",
+        "invalid_stable_id_target": "Tuotemerkintäohje %{position} %{name} viittaa tallin tunnukseen %{stable_id}, mutta kyseistä tallin tunnusta ei ole tuotelinjoissa.",
+        "duplicate_variant_id": "Tuotteen %{position} %{name} ohje sisältää kaksoiskappaleen variantti-ID:n %{variant_id}.",
+        "invalid_variant_id_target": "Tuotteen %{name} ohje viittaa varianttiin %{variant_id}, mutta kyseistä varianttia ei ole tuotelinjoissa.",
+        "invalid_price_override_target": "Hinnan ohitusohje rivikohteelle %{stable_id} on virheellinen, koska se on paketin osa.",
+        "discount_not_supported": "Tuotteen alennuksen soveltamista koskeva kauppiaan ohje ei tue tämän tyyppistä alennusta."
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Myyjän ehdot ja edellytykset",
+        "privacy_policy": "Kauppiaan tietosuojakäytäntö"
+      },
+      "no_address_location": {
+        "title": "Sijainti ilman osoitetta",
+        "header": "Sinulla ei ole toimitusosoitetta tälle sijainnille",
+        "message": "Ota meihin yhteyttä lisätäksesi osoitteen tälle sijainnille, jotta voit viimeistellä kassalle siirtymisen."
+      },
+      "notice_banner": {
+        "company_location_changed": "Ostoskori on päivitetty. Tarkista tilauksesi ennen sen lähettämistä.",
+        "company_location_changed_product_removed": "Ostoskori on päivitetty, koska jotkin tuotteet eivät ole saatavilla tässä myyntipisteessä. Tarkista tilauksesi ennen sen lähettämistä.",
+        "individual_violations_title": {
+          "OtherViolations": "Tilaustiedot",
+          "UnhandledViolations": "Tilaustiedot"
+        },
+        "all_violations_content": "Soita tai ota yhteyttä {{emailLink}} päivittääksesi nämä tiedot ja viimeistelläksesi tilauksesi:",
+        "all_violations_email_link": "sähköposti",
+        "editable_shipping_address_violations_message_title": "Lisää nämä tiedot tilauksesi viimeistelemiseksi:",
+        "editable_shipping_address_violations_message_footer": "Pysyvästi päivittääksesi tämän paikan osoitteen, {{emailLink}}.",
+        "editable_shipping_address_violations_email_link": "ota yhteyttä",
+        "calculating_shipping": "Toimituskuluja lasketaan vielä. Yritä uudelleen muutaman sekunnin kuluttua. Sinulta ei ole veloitettu.",
+        "calculating_taxes": "Verot lasketaan vielä. Yritä uudelleen muutaman sekunnin kuluttua. Sinulta ei ole veloitettu.",
+        "generic_processing_error": {
+          "title": "Tilauksesi käsittelyssä ilmeni ongelma",
+          "body": "Sinulta ei ole veloitettu. Yritä uudelleen tai käytä toista maksutapaa."
+        },
+        "payment_method_not_available_with_payment_terms": "Valitsemasi maksutapa ei ole enää käytettävissä, koska tämän tilauksen maksu on nyt {{paymentTerms}} ehdoilla.",
+        "payment_method_not_available_with_fulfillment_terms": "Valitsemasi maksutapa ei ole enää käytettävissä, koska tämän tilauksen maksu erääntyy nyt toimituksen yhteydessä.",
+        "payment_method_not_available_with_fixed_terms": "Valitsemasi maksutapa ei ole enää käytettävissä, koska tämän tilauksen maksu erääntyy myöhemmin",
+        "payment_method_not_available_with_review_requirement": "Valitsemasi maksutapa ei ole enää käytettävissä, koska maksu erääntyy, kun tilauksesi on vahvistettu.",
+        "contact_information": {
+          "header": "Päivittääksesi tietosi, {{emailLink}}.",
+          "email_link": "ota yhteyttä"
+        }
+      },
+      "note": {
+        "length_exceeds_maximum": "Vähennä muistiinpanon kokoa 5000 merkkiin tai vähemmän."
       }
     },
     "attributes": {
