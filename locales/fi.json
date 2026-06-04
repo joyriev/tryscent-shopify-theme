@@ -806,11 +806,96 @@
         "address_zip_invalid": "Syötä kelvollinen postinumero",
         "gift_card_invalid": "Lahjakortti \"••••%{last_four_characters}\" ei ole enää voimassa",
         "invalid_delivery_address_reference_handle": "Toimitusosoitteen viitetunnistetta ei voitu yhdistää mihinkään saatavilla olevaan toimitusosoitteeseen.",
-        "must_use_available_shipping_rate": "Toimitusmaksu on valittava saatavilla olevista toimitusmaksuista."
+        "must_use_available_shipping_rate": "Toimitusmaksu on valittava saatavilla olevista toimitusmaksuista.",
+        "reduction_code_code_not_found": "Syötä voimassa oleva alennuskoodi tai lahjakortti",
+        "reduction_code_discount_not_found": "Syötä kelvollinen alennuskoodi",
+        "reduction_code_gift_card_code_invalid": "Syötä kelvollinen lahjakortti",
+        "reduction_code_gift_cards_not_supported_with_deferred_purchase_options": "Lahjakortteja ei tueta maksuviivevaihtoehtojen kanssa.",
+        "shipping_line_phone_blank": "Syötä puhelinnumero käyttääksesi tätä toimitustapaa",
+        "shipping_line_phone_invalid": "Syötä kelvollinen puhelinnumero",
+        "tips_invalid_tip_amount": "Anna vinkki, joka on alle %{amount}",
+        "payment_gateway_not_in_test_mode": "ei ole asetettu testaamaan tilauksia. Tämä kauppa ei voi vastaanottaa oikeita tilauksia tai oikeita maksuja.",
+        "payment_gateway_unsupported_for_subscriptions": "Tämä maksutapa ei ole käytettävissä tilausostoille.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Tämä maksutapa ei ole käytettävissä osamaksuvaihtoehdoissa.",
+        "payment_gateway_unsupported_for_country": "Tämä maksutapa ei ole käytettävissä toimitusmaassasi.",
+        "payment_gateway_unsupported_for_development_store_html": "Testitilauksen tekemiseksi sinun tulee käyttää testimaksuyhdyskäytävää. Lue lisää <a href=\"%{docs_link}\">tilausten testaamisesta kehityskaupoissa</a>.",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Olet saavuttanut kehityskaupan tilausten rajan tämän maksunvälittäjän kanssa. Jotta voit tehdä uuden tilauksen, sinun on käytettävä testimaksuyhdyskäytävää. Lue lisää <a href=\"%{docs_link}\">tilausten testaamisesta kehityskaupoissa</a>.",
+        "purchase_options_agreement_blank": "Jatkaaksesi ostostasi, hyväksy maksun lykkäys- tai toistuvien ostojen ehdot.",
+        "physical_gift_card_invalid_quantity": "Fyysisillä lahjakorttien rivikohteilla on oltava määrä, joka vastaa lahjakorttikoodien lukumäärää.",
+        "physical_gift_card_duplicate_code": "Fyysinen lahjakorttirivi sisältää kaksoiskoodin.",
+        "physical_gift_card_invalid_code": "Fyysisen lahjakorttikoodin kelpoisuus on virheellinen.",
+        "phone_blank": "Syötä puhelinnumero",
+        "vaulting_agreement_blank": "Maksutapasi on tallennettava, koska tämän tilauksen saldon maksu erääntyy myöhemmin.",
+        "sms_marketing_phone_invalid": "Syötä kelvollinen puhelinnumero",
+        "shipping_method_invalid_phone_number": "Päivitä puhelinnumero toimitusosoitteessasi nähdäksesi saatavilla olevat toimitustavat.",
+        "split_cart_international_shipping_not_supported": "Kaikkien tuotteiden on käytettävä samaa toimitustapaa kansainvälisessä lähetyksessä. Päivitä toimitustapa tai luo useita tilauksia.",
+        "split_by_delivery_method_not_allowed": "Toimitustavan mukaan jakaminen ei ole sallittua tässä istunnossa tai kaupassa.",
+        "split_by_delivery_method_requires_merchandise_from_single_location": "Toimitustavan mukaan erottaminen vaatii, että yksittäiset tavaralinjat toimitetaan yhdestä sijainnista.",
+        "split_by_delivery_method_unsupported_method_type": "Toimitustavan mukaan jaettu, yritettiin käyttää tukematonta toimitustyyppiä."
       },
       "failed_payment": {
         "payment_not_processed_title": "Maksusi käsittely epäonnistui",
         "payment_not_processed_text": "Sinulta ei ole veloitettu. Palaa ostoskoriisi viimeistelläksesi ostoksesi."
+      },
+      "general": {
+        "breadcrumb": "Murupolku",
+        "complete_purchase_button_label": "Vahvista tilaus",
+        "authenticate_purchase_button_label": "Vahvista maksu",
+        "back_to_contact_information": "Palaa tietosivulle",
+        "back_to_shipping_method": "Palaa toimitukseen",
+        "back_to_payment_method": "Palaa maksamiseen",
+        "autocomplete_title": "Ehdotuksia",
+        "autocomplete_single_item": "1 tuote saatavilla",
+        "autocomplete_multi_item": "{{number}} tuotetta saatavilla",
+        "checkout_context": {
+          "step_one": "%{shop_name} - Kassalle"
+        },
+        "back_button_label": "Paluu",
+        "autocomplete_zero_item": "Ei tuotteita saatavilla",
+        "autocomplete_powered_by_google": "Toimii {{brandName}}-voimalla",
+        "continue_to_shipping_method": "Jatka toimitukseen",
+        "continue_to_payment_method": "Jatka maksamaan",
+        "continue_to_review": "Tarkista tilaus",
+        "contact_us_html": "Ota meihin yhteyttä saadaksesi lisätietoja",
+        "errors": {
+          "buyer_identity": {
+            "business_customer_does_not_match_company": "Yrityksen yhteyshenkilöllä ei ole pääsyä yritykseen.",
+            "company_location_required": "Asiakkaan on valittava yrityksen sijainti jatkaakseen.",
+            "checkout_completion_target_is_missing": "Kassan täyttötavoite puuttuu.",
+            "checkout_completion_target_is_invalid_proc": "Virheellinen kassalle siirtymisen kohde."
+          },
+          "attribution": {
+            "retail_attribution_not_allowed": "Vähittäismyyntiin kohdistaminen ei ole sallittua tässä kassalla.",
+            "retail_attribution_required": "Jälleenmyyjän attribuutio vaaditaan tähän kassalle."
+          }
+        },
+        "continue_to_payment_plans_button_label": "Jatka maksusuunnitelmiin",
+        "dates": {
+          "weekdays": {
+            "monday": "maanantai"
+          },
+          "weekdays_abbreviation": {
+            "monday": "Mo",
+            "tuesday": "Tu",
+            "wednesday": "Me",
+            "thursday": "Th",
+            "friday": "Ranska",
+            "saturday": "Sa"
+          },
+          "months": {
+            "january": "tammikuu",
+            "february": "helmikuu",
+            "may": "toukokuu",
+            "june": "kesäkuu"
+          }
+        },
+        "datepicker": {
+          "range_end": "Alueen päätepiste"
+        },
+        "dropzone": {
+          "invalid_file_type": "Tiedostotyyppi ei ole tuettu",
+          "dragged_over": "Pudota tiedosto ladataksesi"
+        }
       }
     },
     "attributes": {
