@@ -13,13 +13,6 @@
   endfor
 %}
 
-{% unless product.template_suffix == 'expressive-notes' %}
-  <p class="product__text inline-richtext">
-    <strong>Toppnoter:</strong>
-    {{ product.metafields.custom.top_notes.value.heading }}
-  </p>
-{% endunless %}
-
 {% if product.variants.size > 1 %}
   {% comment %} Variant Selector {% endcomment %}
   <div class="flex justify-between items-center mb-3 !mt-6">
