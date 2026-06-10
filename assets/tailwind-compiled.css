@@ -2058,6 +2058,11 @@
     padding-right: 12px !important
 }
 
+.\!px-2 {
+    padding-left: 8px !important;
+    padding-right: 8px !important
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -3888,6 +3893,10 @@
     content: var(--tw-content);
     --tw-text-opacity: 1;
     color: rgb(17 24 39 / var(--tw-text-opacity, 1))
+}
+
+.\[\&_form\]\:flex form {
+    display: flex
 }
 
 .\[\&_img\]\:rounded-xl img {
