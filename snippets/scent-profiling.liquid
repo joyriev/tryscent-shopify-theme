@@ -10,7 +10,7 @@
 </div>
 <div class="product-quick-nav flex flex-wrap items-center gap-6 mt-6 mb-6 font-['Figtree']">
   <a
-    href="#Details-collapsible_tab_XYmgtQ-template--20437930934342__main"
+    href="#expanded-notes"
     data-scroll-to-foldable="1"
     class="text-xs font-bold tracking-wider uppercase text-gray-900 underline underline-offset-4 decoration-2 hover:decoration-[#22613A] cursor-pointer">Fullständig beskrivning</a>
   <a
@@ -238,4 +238,15 @@
     {% else %}
       {{ product.metafields.custom.scent_intensity }}
   {% endcase %}
-</figcaption></figure>{% endif %}</div>
+</figcaption></figure>{% endif %}</div><script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const foldableSummary = document.querySelector('#expanded-notes summary');
+    const foldableLink = document.querySelector('a[href="#expanded-notes"]');
+
+    if (foldableSummary && foldableLink) {
+      foldableLink.addEventListener('click', function () {
+        foldableSummary.click();
+      });
+    }
+  });
+</script>
