@@ -57,12 +57,14 @@
           {{ section.settings.collection_description }}
         </p>
         <div class="mt-8 max-w-[400px] flex flex-col gap-4">
-          <a
-            href="{{ section.settings.btn_link }}"
-            class="no-underline text-white tracking-normal font-medium px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full text-lg text-center transition-colors w-full block"
-            aria-label="View All">
-            {{ section.settings.btn_text }}
-          </a>
+          {% if section.settings.btn_text != blank %}
+            <a
+              href="{{ section.settings.btn_link }}"
+              class="no-underline text-white tracking-normal font-medium px-8 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full text-lg text-center transition-colors w-full block"
+              aria-label="View All">
+              {{ section.settings.btn_text }}
+            </a>
+          {% endif %}
           <ul class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3 list-unstyled">
             {% for block in section.blocks %}
               {% if block.type == 'guarantee' %}
@@ -140,38 +142,46 @@
       {
         "type": "header",
         "content": "Contents"
-      }, {
+      },
+      {
         "type": "text",
         "id": "social_proof_text",
         "label": "Social Proof Text",
         "default": "Join 10,000+ happy customers"
-      }, {
+      },
+      {
         "type": "text",
         "id": "collection_title",
         "label": "Collection Title",
         "default": "Collection Title"
-      }, {
+      },
+      {
         "type": "text",
         "id": "collection_description",
         "label": "Collection Description",
         "default": "Best scents you've ever smelled or your money back."
-      }, {
+      },
+      {
         "type": "url",
         "id": "btn_link",
         "label": "Button Link"
-      }, {
+      },
+      {
         "type": "text",
         "id": "btn_text",
         "label": "Button Text",
         "default": "View All"
-      }, {
+      },
+      {
         "type": "image_picker",
         "id": "quality_badge",
         "label": "Quality Badge"
-      }, {
+      },
+      {
         "type": "header",
         "content": "Section Padding"
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -180,7 +190,8 @@
         "unit": "px",
         "label": "Padding Top",
         "default": 72
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_bottom",
         "min": 0,
@@ -189,10 +200,12 @@
         "unit": "px",
         "label": "Padding Bottom",
         "default": 72
-      }, {
+      },
+      {
         "type": "header",
         "content": "Mobile Padding"
-      }, {
+      },
+      {
         "type": "range",
         "id": "mobile_padding_top",
         "min": 0,
@@ -201,7 +214,8 @@
         "unit": "px",
         "label": "Mobile Padding Top",
         "default": 40
-      }, {
+      },
+      {
         "type": "range",
         "id": "mobile_padding_bottom",
         "min": 0,
@@ -221,13 +235,15 @@
             "type": "image_picker",
             "id": "icon",
             "label": "Icon"
-          }, {
+          },
+          {
             "type": "text",
             "id": "text",
             "label": "Text"
           }
         ]
-      }, {
+      },
+      {
         "type": "step",
         "name": "Step",
         "settings": [
@@ -235,7 +251,8 @@
             "type": "text",
             "id": "step_title",
             "label": "Step Title"
-          }, {
+          },
+          {
             "type": "text",
             "id": "step_description",
             "label": "Step Description"
