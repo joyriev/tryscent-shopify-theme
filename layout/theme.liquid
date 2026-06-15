@@ -48,6 +48,10 @@
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    <script type="text/javascript">
+      var moneyFormat = '{{ shop.money_format }}';
+    </script>
+
     {{ content_for_header }}
 
     {%- liquid
