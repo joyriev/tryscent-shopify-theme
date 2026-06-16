@@ -1929,8 +1929,14 @@
     padding: 7px
 }
 
-.\!p-3 {
-    padding: 12px !important
+.\!px-2 {
+    padding-left: 8px !important;
+    padding-right: 8px !important
+}
+
+.\!px-3 {
+    padding-left: 12px !important;
+    padding-right: 12px !important
 }
 
 .\!py-4 {
@@ -2051,16 +2057,6 @@
 .py-\[2px\] {
     padding-top: 2px;
     padding-bottom: 2px
-}
-
-.\!px-3 {
-    padding-left: 12px !important;
-    padding-right: 12px !important
-}
-
-.\!px-2 {
-    padding-left: 8px !important;
-    padding-right: 8px !important
 }
 
 .\!pb-3 {
@@ -2242,6 +2238,10 @@
     font-size: 11px
 }
 
+.text-\[20px\] {
+    font-size: 20px
+}
+
 .text-\[22px\] {
     font-size: 22px
 }
@@ -2277,10 +2277,6 @@
 .text-xs {
     font-size: 12px;
     line-height: 16px
-}
-
-.text-\[20px\] {
-    font-size: 20px
 }
 
 .\!font-black {
@@ -3653,6 +3649,10 @@
         line-height: 1
     }
 
+    .md\:text-\[24px\] {
+        font-size: 24px
+    }
+
     .md\:text-base {
         font-size: 16px;
         line-height: 24px
@@ -3671,10 +3671,6 @@
     .md\:text-xs {
         font-size: 12px;
         line-height: 16px
-    }
-
-    .md\:text-\[24px\] {
-        font-size: 24px
     }
 
     .md\:tracking-wider {
