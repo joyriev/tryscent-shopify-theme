@@ -8,12 +8,19 @@
  * ------------------------------------------------------------
  */
 {
-  "markets": {
-    "sweden": {
-      "parent": "@default"
-    },
-    "denmark": {
-      "parent": "@default"
+  "parent": "collection.payday-collection.json",
+  "context": {
+    "market": "denmark"
+  },
+  "sections": {
+    "collection_header_UT7VMF": {
+      "blocks": {
+        "step_HhNQEy": {
+          "settings": {
+            "step_description": "Køb for 260 DKK, få 1 gratis. Køb for 487 DKK, få 2 gratis."
+          }
+        }
+      }
     }
   }
 }
