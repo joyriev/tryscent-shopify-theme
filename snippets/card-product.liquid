@@ -132,7 +132,8 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
                 >
               {%- endif -%}
             </div>
-            <div class="card__promo-marquee absolute left-0 right-0 bottom-0 bg-[#137c44] text-white" aria-label="Köp 3, få 1 gratis">
+            {% unless card_product.tags contains 'Bundle_Price_Show' %}
+              <div class="card__promo-marquee absolute left-0 right-0 bottom-0 bg-[#137c44] text-white" aria-label="Köp 3, få 1 gratis">
               <div class="card__promo-marquee-rail">
                 <div class="card__promo-marquee-group">
                   <span class="card__promo-marquee-text">Köp 3, få 1 gratis</span>
@@ -148,6 +149,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
                 </div>
               </div>
             </div>
+            {% endunless %}
           </div>
         {%- endif -%}
         <div class="card__content">
