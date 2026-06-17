@@ -73,23 +73,6 @@
       "disabled": true,
       "settings": {}
     },
-    "177719297559b6f794": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_e785142_aNhdBb": {
-          "type": "ai_gen_block_e785142",
-          "settings": {
-            "desktop_image": "shopify://shop_images/Payday_4_2_Banner.png",
-            "mobile_image": "shopify://shop_images/Payday_sale_mobile.png"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_e785142_aNhdBb"
-      ],
-      "settings": {}
-    },
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
@@ -97,6 +80,90 @@
         "show_collection_description": false,
         "show_collection_image": true,
         "color_scheme": "scheme-2"
+      }
+    },
+    "collection_header_UT7VMF": {
+      "type": "collection-header",
+      "blocks": {
+        "step_iFG4n8": {
+          "type": "step",
+          "settings": {
+            "step_title": "Välj upp till 4 av dina favoritdofter",
+            "step_description": "Och lägg dem i varukorgen"
+          }
+        },
+        "step_HhNQEy": {
+          "type": "step",
+          "settings": {
+            "step_title": "Få en helt GRATIS!",
+            "step_description": "Den billigaste flaskan i din varukorg rabatteras automatiskt till GRATIS"
+          }
+        },
+        "step_ADpq49": {
+          "type": "step",
+          "settings": {
+            "step_title": "Handla för minst 483 SEK",
+            "step_description": "Och få GRATIS frakt!"
+          }
+        },
+        "guarantee_f7VNpU": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/sandwatch.svg",
+            "text": "Håller 12+ timmar"
+          }
+        },
+        "guarantee_dYJyiq": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/icons_quality.webp",
+            "text": "19–21% parfymoljekoncentration"
+          }
+        },
+        "guarantee_Y3gwRj": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/sheild-star.svg",
+            "text": "60 dagars pengarna-tillbaka-garanti"
+          }
+        }
+      },
+      "block_order": [
+        "step_iFG4n8",
+        "step_HhNQEy",
+        "step_ADpq49",
+        "guarantee_f7VNpU",
+        "guarantee_dYJyiq",
+        "guarantee_Y3gwRj"
+      ],
+      "name": "Collection Header",
+      "settings": {
+        "background_color": "#242833",
+        "bg_image": "shopify://shop_images/desktop_shade.png",
+        "bg_mobile_image": "shopify://shop_images/shaded_mobile.png",
+        "social_proof_text": "Godkänd av 10 000+ nöjda doftälskare",
+        "collection_title": "TryScent-dagar!",
+        "collection_description": "NU ÄR PARFYMER NÄSTAN GRATIS",
+        "btn_link": "",
+        "btn_text": "Börja handla!",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "popular_products_CbL6aJ": {
+      "type": "popular-products",
+      "name": "Popular Products",
+      "settings": {
+        "background_color": "#fcfbf9",
+        "title": "TryScent Days-paket",
+        "description": "",
+        "collection": "tryscent-days-bundles",
+        "button_text": "",
+        "button_link": "shopify://collections/all",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "product-grid": {
@@ -148,8 +215,9 @@
   },
   "order": [
     "insta_story_6kD6Ki",
-    "177719297559b6f794",
     "banner",
+    "collection_header_UT7VMF",
+    "popular_products_CbL6aJ",
     "product-grid",
     "rich_text_fnCgkL"
   ]
