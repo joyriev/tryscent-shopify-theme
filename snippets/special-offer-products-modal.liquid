@@ -76,7 +76,7 @@
         <div class="space-y-2">
           <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
             <template x-if="(product.tags.some(tag => tag === $store.bundleBuilder.activeCategory) || $store.bundleBuilder.activeCategory === 'All') &&
-         ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()))">
+         ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()) || (product.inspiration_name && product.inspiration_name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase())))">
               <button
                 @click="$store.bundleBuilder.addRemoveProduct(product)"
                 :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-green-600 border-2' : 'border-gray-200 border'"
