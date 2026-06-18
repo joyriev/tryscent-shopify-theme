@@ -44,10 +44,17 @@
             class="px-4 py-2 rounded border border-solid cursor-pointer">{{ 'bundle.top_sellers_women' | t }}</button>
         </div>
       </div>
+      <div class="mt-2">
+        <input
+          type="text"
+          placeholder="Söka..."
+          x-model="$store.bundleBuilder.searchText"
+          class="block w-full px-4 py-2 rounded border-2 border-solid cursor-pointer bg-white border-gray-200 focus:outline-none focus:border-green-700 focus:shadow-none focus:border-2">
+      </div>
     </div>
 
     {% comment %} Product Grid {% endcomment %}
-    <div class="flex-1 overflow-y-auto mt-4 -mx-2 px-2">
+    <div class="flex-1 overflow-y-auto mt-3 -mx-2 px-2">
       <template x-if="$store.bundleBuilder.selectedProducts.length === $store.bundleBuilder.bundleLength">
         <div class="text-center mt-10">
           <div role="status">
