@@ -117,11 +117,11 @@
                     <div class="flex items-center gap-1 text-xs text-[#297af4] font-medium">
                       <img
                         src="{{ 'verified-badge.svg' | asset_url }}"
-                        alt="Verified Buyer"
+                        alt="Verifierad köpare"
                         width="16"
                         height="16"
                         loading="lazy">
-                      Verified Buyer
+                      Verifierad köpare
                     </div>
                   {% endif %}
                 </div>
@@ -158,7 +158,7 @@
 
                   <div class="flex flex-col">
                     <p class="text-sm font-bold text-slate-900 my-0 line-clamp-2 md:line-clamp-1">{{ block.settings.product.title }}</p>
-                    <div class="text-xs [display:none] md:block">Inspired By {{ block.settings.product.metafields.custom.inspiration.value.name }}</div>
+                    <div class="text-xs [display:none] md:block">Inspirerad av {{ block.settings.product.metafields.custom.inspiration.value.name }}</div>
                   </div>
                 </a>
               </div>
@@ -172,11 +172,11 @@
 
     <div id="load-more-container-{{ section.id }}" class="mt-12 text-center {% if section.blocks.size <= 20 %}hidden{% endif %}">
       <button id="load-more-btn-{{ section.id }}" class="px-5 py-2 border border-solid border-gray-400 rounded-lg text-slate-900 font-bold text-sm uppercase tracking-wide bg-white hover:bg-slate-900 hover:text-white transition-colors cursor-pointer">
-        Show More Reviews
+        Visa fler recensioner
       </button>
       <div id="loading-spinner-{{ section.id }}" class="hidden flex items-center justify-center gap-2 mt-4">
         <div class="loading-spinner"></div>
-        <span class="text-sm text-slate-600">Loading reviews...</span>
+        <span class="text-sm text-slate-600">Laddar recensioner...</span>
       </div>
     </div>
   </div>
@@ -347,15 +347,18 @@
         "id": "button_text",
         "label": "Button Text",
         "default": "Read all reviews"
-      }, {
+      },
+      {
         "type": "url",
         "id": "button_link",
         "label": "Button Link",
         "default": "/collections/all"
-      }, {
+      },
+      {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -364,7 +367,8 @@
         "unit": "px",
         "label": "t:sections.all.padding.padding_top",
         "default": 36
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_bottom",
         "min": 0,
@@ -401,12 +405,14 @@
             "type": "image_picker",
             "id": "author_image",
             "label": "Author Image"
-          }, {
+          },
+          {
             "type": "text",
             "id": "date",
             "label": "Date",
             "default": "2 days ago"
-          }, {
+          },
+          {
             "type": "range",
             "id": "rating",
             "min": 1,
@@ -414,12 +420,14 @@
             "step": 1,
             "label": "Rating",
             "default": 5
-          }, {
+          },
+          {
             "type": "checkbox",
             "id": "show_verified_badge",
             "label": "Show Verified Badge",
             "default": true
-          }, {
+          },
+          {
             "type": "product",
             "id": "product",
             "label": "Product"
