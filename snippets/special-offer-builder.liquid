@@ -1,7 +1,7 @@
 {% assign bundle_collection = collections['best-sellers'] %}
 {% assign product_count = product.metafields.custom.choose_your_fragrances_options %}
 {% assign dropdown_ml = product.metafields.custom.select_bundle_dropdown_ml | default: "50" %}
-{% assign bundle_ml = dropdown_ml | append: "ML" %}
+{% assign bundle_ml = dropdown_ml | append: "ml" %}
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
 <style>
@@ -153,7 +153,7 @@
             tags: {{ bundle_product.tags | json }},
             variants: {
               {% for variant in bundle_product.variants %}
-                "{{ variant.title }}": {
+                "{{ variant.title |  downcase }}": {
                   id: "{{ variant.id }}"
                 },
               {% endfor %}
