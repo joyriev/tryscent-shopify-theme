@@ -177,10 +177,14 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
 
           <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
             {% if card_product.tags contains 'onsale' %}
-              <div>
-                <div class="text-green-600 text-xs font-semibold bg-green-600/10 px-2 py-1 rounded inline-block">
-                  Rea
+              <div class="text-green-600 text-xs font-semibold bg-green-600/10 px-2 py-1 rounded inline-block">
+                Rea
               </div>
+            {% endif %}
+
+            {% if card_product.metafields.custom.custom_label != blank %}
+              <div class="text-blue-500 text-xs font-semibold bg-blue-500/10 px-2 py-1 rounded inline-block">
+                {{ card_product.metafields.custom.custom_label }}
               </div>
             {% endif %}
 
