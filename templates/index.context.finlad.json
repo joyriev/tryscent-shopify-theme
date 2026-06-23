@@ -8,18 +8,16 @@
  * ------------------------------------------------------------
  */
 {
-  "markets": {
-    "sweden": {
-      "parent": "@default"
-    },
-    "denmark": {
-      "parent": "@default"
-    },
-    "norway": {
-      "parent": "@default"
-    },
-    "finlad": {
-      "parent": "@default"
+  "context": {
+    "market": "finlad"
+  },
+  "parent": "index.json",
+  "sections": {
+    "homepage_hero_GDeBtq": {
+      "settings": {
+        "button_text": "Från 49.9 NOK  per flaska"
+      },
+      "blocks": {}
     }
   }
 }
