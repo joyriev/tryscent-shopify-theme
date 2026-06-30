@@ -169,11 +169,11 @@
                   <div id="price-{{ section.id }}" class="bundle-price-pdp" role="status" {{ block.shopify_attributes }}>
                     <div class="flex flex-wrap items-center gap-x-3">
                       {% if product.compare_at_price > product.price %}
-                        <span class="text-gray-500 font-semibold line-through text-[22px] appstle_stand_alone_price_display_selector">
+                        <span class="text-gray-500 font-semibold line-through text-[22px]">
                           {{ product.compare_at_price | money }}
                         </span>
                       {% endif %}
-                      <span class="text-black font-bold text-[28px]">
+                      <span class="text-black font-bold text-[28px] appstle_stand_alone_price_display_selector">
                         {{ product.price | money }}
                       </span>
                       {% if product.compare_at_price > product.price %}
