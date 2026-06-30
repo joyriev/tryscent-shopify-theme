@@ -128,7 +128,7 @@
               {% if selected_variant.compare_at_price > selected_variant.price %}
                 <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
               {% endif %}
-              <span class="current-price appstle_stand_alone_price_display_selector" data-product-data="{{ product | json | escape }}">{{ selected_variant.price | money }}</span>
+              <span class="current-price">{{ selected_variant.price | money }}</span>
             </div>
           </div>
         </div>
