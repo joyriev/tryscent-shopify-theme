@@ -355,7 +355,9 @@ body {
       href="{{ 'tailwind-compiled.css' | asset_url }}"
       media="all">
 
-      {% comment %} Load Swiper Assets {% endcomment %}
+    {{ 'blocky.css' | asset_url | stylesheet_tag }}
+
+    {% comment %} Load Swiper Assets {% endcomment %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script defer="" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -469,9 +471,9 @@ body {
           price.textContent = `{{ cart.currency.symbol }}${convertedPrice.toFixed(2)}`;
         });
       });
-  </script>
-    {% comment %} {% render 'navidium-script' %} {% endcomment %}
-    {% comment %} {% render 'sb-preload-booster' %}  {% endcomment %}
-    {% comment %} {% render 'checkout-modal' %} {% endcomment %}
+    </script>
+  {% comment %} {% render 'navidium-script' %} {% endcomment %}
+  {% comment %} {% render 'sb-preload-booster' %}  {% endcomment %}
+  {% comment %} {% render 'checkout-modal' %} {% endcomment %}
   </body>
 </html>
