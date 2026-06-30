@@ -173,7 +173,7 @@
                           {{ product.compare_at_price | money }}
                         </span>
                       {% endif %}
-                      <span class="text-black font-bold text-[28px] appstle_stand_alone_price_display_selector">
+                      <span class="text-black font-bold text-[28px] appstle_stand_alone_price_display_selector" data-product-data="{{ product | json | escape }}">
                         {{ product.price | money }}
                       </span>
                       {% if product.compare_at_price > product.price %}
