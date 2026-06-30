@@ -169,7 +169,7 @@
                   <div id="price-{{ section.id }}" class="bundle-price-pdp" role="status" {{ block.shopify_attributes }}>
                     <div class="flex flex-wrap items-center gap-x-3">
                       {% if product.compare_at_price > product.price %}
-                        <span class="text-gray-500 font-semibold line-through text-[22px]">
+                        <span class="text-gray-500 font-semibold line-through text-[22px] appstle_stand_alone_price_display_selector">
                           {{ product.compare_at_price | money }}
                         </span>
                       {% endif %}
