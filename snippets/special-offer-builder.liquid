@@ -115,7 +115,7 @@
         name="add"
         value="1"
         :disabled="$store.bundleBuilder.selectedProducts.length < {{ product_count }} || $store.bundleBuilder.addingToCart"
-        class="atc-button shimmer-btn cta_product_from_submit_btn w-full flex flex-wrap items-center !mb-0 text-xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width"
+        class="atc-button shimmer-btn cta_product_from_submit_btn w-full flex flex-wrap items-center !mb-0 text-xl !py-3 !px-2 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width"
         aria-label="{{ 'products.product.add_to_cart' | t }}"
       >
         <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text='{{ "bundle.select_more" | t: count: "__count__" | json }}.replace("__count__", {{ product_count }} - $store.bundleBuilder.selectedProducts.length)'></span>
