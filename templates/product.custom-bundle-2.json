@@ -22,73 +22,19 @@
             "text": "4,9/5 baserat på över 10 000 recensioner"
           }
         },
-        "selling_points_9tdid6": {
-          "type": "selling_points",
-          "disabled": true,
+        "bundle_content_3gEFzk": {
+          "type": "bundle_content",
           "settings": {}
         },
-        "inspired_by_idtdrk": {
-          "type": "inspired_by",
-          "disabled": true,
-          "settings": {}
-        },
-        "designer_price_GYGxtE": {
-          "type": "designer_price",
-          "disabled": true,
-          "settings": {}
-        },
-        "scent_intensity_qajxtz": {
-          "type": "scent_intensity",
-          "disabled": true,
-          "settings": {}
-        },
-        "cheaper_than_yDGYG9": {
-          "type": "cheaper_than",
+        "custom_liquid_zBCeVt": {
+          "type": "custom_liquid",
           "settings": {
-            "number": 0
+            "custom_liquid": "{% render 'bundle-perks' %}"
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
-          "disabled": true,
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "text_fQLMC7": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Scent Notes: {{ product.metafields.custom.top_notes.value.heading.value }}",
-            "text_style": "subtitle"
-          }
-        },
-        "price": {
-          "type": "price",
-          "disabled": true,
+        "bundle_price_NwYQ3q": {
+          "type": "bundle_price",
           "settings": {}
-        },
-        "text_GrNJKg": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<strong>Toppnoter:</strong> {{ product.metafields.custom.top_notes.value.heading.value }}",
-            "text_style": "body"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "disabled": true,
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
-          }
         },
         "atc_bundle_builder_aLJUaV": {
           "type": "atc_bundle_builder",
@@ -263,17 +209,9 @@
       "block_order": [
         "title",
         "custom_rating_text_HwKkAd",
-        "selling_points_9tdid6",
-        "inspired_by_idtdrk",
-        "designer_price_GYGxtE",
-        "scent_intensity_qajxtz",
-        "cheaper_than_yDGYG9",
-        "variant_picker",
-        "text_fQLMC7",
-        "price",
-        "text_GrNJKg",
-        "quantity_selector",
-        "buy_buttons",
+        "bundle_content_3gEFzk",
+        "custom_liquid_zBCeVt",
+        "bundle_price_NwYQ3q",
         "atc_bundle_builder_aLJUaV",
         "dialect_notes_NHiwen",
         "reactive_variant_selector_JyFrkg",
