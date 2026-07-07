@@ -84,7 +84,6 @@
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
-
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
@@ -112,13 +111,11 @@
                   </div>
                 {% endif %}
               {% when 'made_in_the_eu' %}
-                {% unless product.template_suffix == 'magic-perfume' %}
-                 <div>
-                   <div class="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-blue-100 font-semibold">
+                <div {{ block.shopify_attributes }}>
+                  <div class="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-blue-100 font-semibold">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" alt="🇪🇺" height="20" width="20" class="object-cover size-5 rounded-full"> <span>Made in the EU</span>
                   </div>
-                 </div>
-                {% endunless %}
+                </div>
               {% when 'designer_price' %}
                 {% if product.metafields.custom.original_retail_price != blank %}
                   <div>(Designerpris: {{ product.metafields.custom.original_retail_price.value | money }})</div>
@@ -160,11 +157,13 @@
                     </div>
                   {% endif %}
                 </div>
+              {% when 'bundle_content' %}
                 {% if product.metafields.custom.bundle_product_content != blank %}
-                  <div class="flex items-center gap-1 font-normal text-black leading-[normal]">
+                  <div class="flex items-center gap-1 font-normal text-black leading-[normal]" {{ block.shopify_attributes }}>
                     <span class="cheaper_than_text" style="font-size: 14px; line-height: normal;">{{ product.metafields.custom.bundle_product_content }}</span> 
                   </div>
                 {% endif %}
+              {% when 'bundle_price' %}
                 {% if product.tags contains 'Bundle_Price_Show' %}
                   <div id="price-{{ section.id }}" class="bundle-price-pdp" role="status" {{ block.shopify_attributes }}>
                     <div class="flex flex-wrap items-center gap-x-3">
@@ -1120,6 +1119,16 @@
     {
       "type": "selling_points",
       "name": "Selling Points",
+      "limit": 1
+    },
+    {
+      "type": "bundle_content",
+      "name": "Bundle Content",
+      "limit": 1
+    },
+    {
+      "type": "bundle_price",
+      "name": "Bundle Price",
       "limit": 1
     },
     {
