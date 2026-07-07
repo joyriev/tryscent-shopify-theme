@@ -136,7 +136,7 @@
       </button>
     {%- endform -%}
   </product-form>
-  <button class="button mt-3" @click="$store.bundleBuilder.doATCandCheckout()">Add to cart and do checkout</button>
+  {% comment %} <button class="button mt-3" @click="$store.bundleBuilder.doATCandCheckout()">Add to cart and do checkout</button> {% endcomment %}
 </div>
 
 <div class="!my-6">
@@ -201,6 +201,10 @@
           ).join(',');
       },
       doATCandCheckout() {
+        // Check if we have enough products selected
+        if (this.selectedProducts.length < {{ product_count }}) {
+          return;
+        }
         // Set loading state
         this.addingToCart = true;
         
