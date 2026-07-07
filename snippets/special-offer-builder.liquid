@@ -136,6 +136,7 @@
       </button>
     {%- endform -%}
   </product-form>
+  <button class="button mt-3" @click="$store.bundleBuilder.doATCandCheckout()">Add to cart and do checkout</button>
 </div>
 
 <div class="!my-6">
@@ -198,6 +199,56 @@
         return this.selectedProducts.map(product => 
             product.variants[this.selectedVariant].id
           ).join(',');
+      },
+      doATCandCheckout() {
+        // Set loading state
+        this.addingToCart = true;
+        
+        // Create properties object with bundle items
+        const properties = {
+          "_bundle_items": this.selectedProducts.map(product => 
+            product.variants[this.selectedVariant].id
+          ).join(',')
+        };
+        // Add each selected product as a separate property
+        this.selectedProducts.forEach((product, index) => {
+          properties[`Bottle ${index + 1}`] = 
+            `${product.name} Inspired by ${product.nuta} - ${this.selectedVariant}`;
+        });
+        // Prepare cart items
+        const items = {
+          items: [{
+            id: {{ selected_variant.id }},
+            quantity: 1,
+            properties: properties
+          }]
+        };
+
+        // Make the API call
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(items),
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(() => {
+          // Redirect to cart after successful addition
+          window.location.href = '/checkout';
+        })
+        .catch(error => {
+          console.error('Error adding to cart:', error);
+          // Handle error (e.g., show error message to user)
+        })
+        .finally(() => {
+          this.addingToCart = false;
+        });
       }
     });
   });
