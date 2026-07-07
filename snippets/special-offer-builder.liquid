@@ -82,46 +82,74 @@
       </button>
     </template>
   </div>
+</div>
 
-  <button
-    x-data
-    @click="{% if product.tags contains 'bogo' %}$store.bundleBuilder.doCheckout(){% else %}$store.bundleBuilder.doATCandCheckout(){% endif %}"
-    :disabled="$store.bundleBuilder.selectedProducts.length < {{ product_count }} || $store.bundleBuilder.addingToCart"
-    :class="{
+{% comment %} Shadow form element to render Appstle subscription widget {% endcomment %}
+<product-form
+  class="product-form !m-0"
+  data-hide-errors="{{ gift_card_recipient_feature_active }}"
+  data-section-id="{{ section.id }}">
+  {%- form 'product'
+    , product
+    , id: product_form_id
+    , class: 'form'
+    , novalidate: 'novalidate'
+    , data-type: 'add-to-cart-form' -%}
+    <input
+      type="hidden"
+      name="id"
+      id="product-variant-id"
+      value="{{ selected_variant.id }}"
+      class="product-variant-id">
+    <button
+      type="submit"
+      name="add"
+      value="1"
+      class="atc-button shimmer-btn cta_product_from_submit_btn button hidden absolute left[-99999px]"
+      aria-label="{{ 'products.product.add_to_cart' | t }}">
+      <span class="text-[20px] md:text-[24px]">{{ 'products.product.add_to_cart' | t }}</span>
+    </button>
+  {%- endform -%}
+</product-form>
+
+<button
+  x-data
+  @click="{% if product.tags contains 'bogo' %}$store.bundleBuilder.doCheckout(){% else %}$store.bundleBuilder.doATCandCheckout(){% endif %}"
+  :disabled="$store.bundleBuilder.selectedProducts.length < {{ product_count }} || $store.bundleBuilder.addingToCart"
+  :class="{
         'opacity-50 cursor-not-allowed': $store.bundleBuilder.selectedProducts.length < {{ product_count }},
         'cursor-pointer hover:bg-[#368856]': $store.bundleBuilder.selectedProducts.length >= {{ product_count }}
       }"
-    class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
-    <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text='{{ "bundle.select_more" | t: count: "__count__" | json }}.replace("__count__", {{ product_count }} - $store.bundleBuilder.selectedProducts.length)'></span>
-    <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">{{ 'bundle.shop_now' | t }}
-      <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
-        <div
-          class="inline-block text-lg bg-[#1E5834] px-3 rounded"
-          id="product-price"
-          role="status">
-          {% if selected_variant.compare_at_price > selected_variant.price %}
-            <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
-          {% endif %}
-          <span class="current-price">{{ selected_variant.price | money }}</span>
-        </div>
+  class="w-full flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] transition-colors shadow-xl tracking-normal button--full-width">
+  <span x-show="$store.bundleBuilder.selectedProducts.length < {{ product_count }}" x-text='{{ "bundle.select_more" | t: count: "__count__" | json }}.replace("__count__", {{ product_count }} - $store.bundleBuilder.selectedProducts.length)'></span>
+  <div class="flex" x-show="$store.bundleBuilder.selectedProducts.length === {{ product_count }}">{{ 'bundle.shop_now' | t }}
+    <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
+      <div
+        class="inline-block text-lg bg-[#1E5834] px-3 rounded"
+        id="product-price"
+        role="status">
+        {% if selected_variant.compare_at_price > selected_variant.price %}
+          <span class="compare-price line-through text-white/50 text-base">{{ selected_variant.compare_at_price | money }}</span>
+        {% endif %}
+        <span class="current-price">{{ selected_variant.price | money }}</span>
       </div>
     </div>
-    <div x-show="$store.bundleBuilder.addingToCart" class="loading__spinner">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="spinner"
-        viewBox="0 0 66 66">
-        <circle
-          stroke-width="6"
-          cx="33"
-          cy="33"
-          r="30"
-          fill="none"
-          class="path"></circle>
-      </svg>
-    </div>
-  </button>
-</div>
+  </div>
+  <div x-show="$store.bundleBuilder.addingToCart" class="loading__spinner">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="spinner"
+      viewBox="0 0 66 66">
+      <circle
+        stroke-width="6"
+        cx="33"
+        cy="33"
+        r="30"
+        fill="none"
+        class="path"></circle>
+    </svg>
+  </div>
+</button>
 
 <div class="!my-6">
   <p class="my-0 text-center font-semibold tracking-normal">
