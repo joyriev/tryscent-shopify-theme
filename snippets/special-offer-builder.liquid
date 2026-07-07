@@ -84,34 +84,6 @@
   </div>
 </div>
 
-{% comment %} Shadow form element to render Appstle subscription widget {% endcomment %}
-<product-form
-  class="product-form !m-0"
-  data-hide-errors="{{ gift_card_recipient_feature_active }}"
-  data-section-id="{{ section.id }}">
-  {%- form 'product'
-    , product
-    , id: product_form_id
-    , class: 'form'
-    , novalidate: 'novalidate'
-    , data-type: 'add-to-cart-form' -%}
-    <input
-      type="hidden"
-      name="id"
-      id="product-variant-id"
-      value="{{ selected_variant.id }}"
-      class="product-variant-id">
-    <button
-      type="submit"
-      name="add"
-      value="1"
-      class="atc-button shimmer-btn cta_product_from_submit_btn button hidden absolute left[-99999px]"
-      aria-label="{{ 'products.product.add_to_cart' | t }}">
-      <span class="text-[20px] md:text-[24px]">{{ 'products.product.add_to_cart' | t }}</span>
-    </button>
-  {%- endform -%}
-</product-form>
-
 <button
   x-data
   @click="{% if product.tags contains 'bogo' %}$store.bundleBuilder.doCheckout(){% else %}$store.bundleBuilder.doATCandCheckout(){% endif %}"
