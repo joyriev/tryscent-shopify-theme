@@ -168,17 +168,17 @@
                   <div id="price-{{ section.id }}" class="bundle-price-pdp" role="status" {{ block.shopify_attributes }}>
                     <div class="flex flex-wrap items-center gap-x-3">
                       {% if product.compare_at_price > product.price %}
-                        <span class="text-gray-500 font-semibold line-through text-[22px]">
+                        <span class="text-gray-500 font-semibold line-through text-base md:text-[19px]">
                           {{ product.compare_at_price | money }}
                         </span>
                       {% endif %}
-                      <span class="text-black font-bold text-[28px]">
+                      <span class="text-black font-bold text-[23px] md:text-[27px]">
                         {{ product.price | money }}
                       </span>
                       {% if product.compare_at_price > product.price %}
                         {% assign discount = product.compare_at_price | minus: product.price %}
                         {% assign discount_percent = discount | times: 100 | divided_by: product.compare_at_price | round %}
-                        <span class="bg-red-600 text-white font-bold px-2">
+                        <span class="bg-red-600 text-white font-bold px-2 text-xs md:text-base">
                           -{{ discount_percent }}%
                         </span>
                       {% endif %}
@@ -187,6 +187,7 @@
                     <div class="text-lg font-semibold text-black leading-normal">
                       {{ 'bundle.price_per_bottle' | t: price: price_per_bottle }}
                     </div>
+                    <div class="inline-flex items-center gap-1 mt-2 bg-[#F2F8F4] text-[#22613A] font-bold text-sm rounded-full py-1 px-2 border border-solid border-[#cfe6d8]"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"></path></svg>Du sparar 670 kr idag</div>
                   </div>
                 {% endif %}
               {%- when 'mobile_gallery' -%}

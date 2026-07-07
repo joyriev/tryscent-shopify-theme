@@ -1539,6 +1539,11 @@
     border-color: rgb(255 255 255 / 0.1)
 }
 
+.border-\[\#cfe6d8\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(207 230 216 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1856,6 +1861,11 @@
 
 .bg-white\/60 {
     background-color: rgb(255 255 255 / 0.6)
+}
+
+.bg-\[\#F2F8F4\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(242 248 244 / var(--tw-bg-opacity, 1))
 }
 
 .bg-opacity-50 {
@@ -2329,6 +2339,10 @@
 .text-xs {
     font-size: 12px;
     line-height: 16px
+}
+
+.text-\[23px\] {
+    font-size: 23px
 }
 
 .\!font-black {
@@ -3692,6 +3706,14 @@
     .md\:text-xs {
         font-size: 12px;
         line-height: 16px
+    }
+
+    .md\:text-\[19px\] {
+        font-size: 19px
+    }
+
+    .md\:text-\[27px\] {
+        font-size: 27px
     }
 
     .md\:tracking-wider {
