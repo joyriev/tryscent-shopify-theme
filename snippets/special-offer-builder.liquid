@@ -123,6 +123,7 @@
   </div>
 </button>
 
+{% comment %} Shadow form element to render Appstle subscription widget {% endcomment %}
 <product-form
   class="product-form !m-0"
   data-hide-errors="{{ gift_card_recipient_feature_active }}"
@@ -139,37 +140,13 @@
       id="product-variant-id"
       value="{{ selected_variant.id }}"
       class="product-variant-id">
-    {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-      {% render 'bundle-mix-dropdown' %}
-    {% else %}
-      <input
-        type="hidden"
-        name="properties[Inspired By]"
-        value="{{ product.metafields.custom.nuta }}" />
-    {% endif %}
     <button
       type="submit"
       name="add"
       value="1"
-      class="atc-button shimmer-btn cta_product_from_submit_btn flex gap-2 flex-wrap items-center !mb-0 !py-4 !px-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
-      aria-label="{{ 'products.product.add_to_cart' | t }}"
-      {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-      disabled="disabled"
-      {% endif %}>
+      class="atc-button shimmer-btn cta_product_from_submit_btn button hidden absolute left[-99999px]"
+      aria-label="{{ 'products.product.add_to_cart' | t }}">
       <span class="text-[20px] md:text-[24px]">{{ 'products.product.add_to_cart' | t }}</span>
-      <div class="flex items-center">
-        <div
-          class="inline-block text-base md:text-lg bg-[#1E5834] px-3 rounded"
-          id="product-price"
-          role="status"
-          {{ block.shopify_attributes }}>
-          {% if selected_variant.compare_at_price > selected_variant.price %}
-            <span class="compare-price line-through text-white/50 text-sm md:text-base">{{ selected_variant.compare_at_price | money }}</span>
-          {% endif %}
-          <span class="current-price">{{ selected_variant.price | money }}</span>
-        </div>
-      </div>
-      {%- render 'loading-spinner' -%}
     </button>
   {%- endform -%}
 </product-form>
