@@ -461,16 +461,16 @@
 
           {% if cart.total_price != cart.original_total_price %}
             <div class="totals flex-wrap gap-4 !mb-2" role="status">
-              <h2 class="totals__total">Delsumma:</h2>
-              <p class="totals__total-value">
+              <h2 class="original_text">Delsumma:</h2>
+              <p class="original__total-value text-sm font-semibold">
                 {{ cart.original_total_price | money_with_currency }}
               </p>
             </div>
 
             <div class="totals flex-wrap gap-4 !mb-2" role="status">
-              <h2 class="totals__total">Rabatt:</h2>
-              <p class="totals__total-value">
-                <span class="text-green-700">-{{ cart.original_total_price | minus: cart.total_price | money_with_currency }}</span>
+              <h2 class="discount_text">Rabatt:</h2>
+              <p class="discount_value">
+                <span class="text-green-700 text-sm font-semibold">-{{ cart.original_total_price | minus: cart.total_price | money_with_currency }}</span>
               </p>
             </div>
           {% endif %}
