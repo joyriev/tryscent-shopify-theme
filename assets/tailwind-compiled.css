@@ -671,6 +671,16 @@
     height: 14px
 }
 
+.size-1 {
+    width: 4px;
+    height: 4px
+}
+
+.size-2 {
+    width: 8px;
+    height: 8px
+}
+
 .h-0 {
     height: 0px
 }
@@ -1544,6 +1554,11 @@
     border-color: rgb(207 230 216 / var(--tw-border-opacity, 1))
 }
 
+.\!border-\[\#22613A\] {
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(34 97 58 / var(--tw-border-opacity, 1)) !important
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1868,6 +1883,19 @@
     background-color: rgb(242 248 244 / var(--tw-bg-opacity, 1))
 }
 
+.bg-\[\#6b7280\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1))
+}
+
+.bg-white\/80 {
+    background-color: rgb(255 255 255 / 0.8)
+}
+
+.bg-white\/50 {
+    background-color: rgb(255 255 255 / 0.5)
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -2115,6 +2143,11 @@
 .py-\[2px\] {
     padding-top: 2px;
     padding-bottom: 2px
+}
+
+.\!py-3 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important
 }
 
 .\!pb-3 {
@@ -2742,6 +2775,11 @@
     color: rgb(202 138 4 / var(--tw-text-opacity, 1))
 }
 
+.text-\[\#6b7280\] {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128 / var(--tw-text-opacity, 1))
+}
+
 .underline {
     text-decoration-line: underline
 }
@@ -2992,6 +3030,10 @@
     rotate: -45deg
 }
 
+.\[text-overflow\:ellipsis\] {
+    text-overflow: ellipsis
+}
+
 .\[transform\:rotate\(-3deg\)\] {
     transform: rotate(-3deg)
 }
@@ -3203,6 +3245,10 @@
     --tw-border-opacity: 1;
     border-color: rgb(22 163 74 / var(--tw-border-opacity, 1))
 }
+.hover\:border-\[\#22613A\]:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 97 58 / var(--tw-border-opacity, 1))
+}
 .hover\:bg-\[\#02491c\]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(2 73 28 / var(--tw-bg-opacity, 1))
@@ -3393,6 +3439,10 @@
 
     .md\:col-span-6 {
         grid-column: span 6 / span 6
+    }
+
+    .md\:col-span-2 {
+        grid-column: span 2 / span 2
     }
 
     .md\:mx-0 {

@@ -182,13 +182,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               </div>
             {% endif %}
 
-            {% if card_product.metafields.custom.custom_label != blank %}
-              <div class="text-blue-500 text-xs font-semibold bg-blue-500/10 px-2 py-1 rounded inline-block">
-                {{ card_product.metafields.custom.custom_label }}
-              </div>
-            {% endif %}
-
-            {% comment %} <span class="text-gray-300 [display:none] md:inline-block">|</span> {% endcomment %}
+            <span class="text-gray-300 [display:none] md:inline-block">|</span>
 
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
               {% liquid

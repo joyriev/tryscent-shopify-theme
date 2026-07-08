@@ -206,6 +206,8 @@
                     {% render 'reactive-variant-selector', product: product %}
                   {% endif %}
                 </div>
+              {% when 'bundle_builder_2' %}
+                {% render 'bundle-builder-2' %}
               {%- when 'magic_perfume_atc' -%}
                 {% render 'magic-perfume-atc' %}
               {%- when 'shipping_text' -%}
@@ -1130,6 +1132,11 @@
     {
       "type": "bundle_price",
       "name": "Bundle Price",
+      "limit": 1
+    },
+    {
+      "type": "bundle_builder_2",
+      "name": "Bundle builder 2",
       "limit": 1
     },
     {
