@@ -129,6 +129,15 @@
       selectedProducts: [],
       availableProducts: [
         {% for bundle_product in bundle_collection.products %}
+          {% liquid
+            assign collection_handles = ''
+            for collection in product.collections
+              assign collection_handles = collection_handles | append: collection.handle
+              if forloop.last == false
+                assign collection_handles = collection_handles | append: ','
+              endif
+            endfor
+          %}
           {
             id: {{ bundle_product.id }},
             name: "{{ bundle_product.title }}",
@@ -137,6 +146,7 @@
             inspiration_image: "{{ bundle_product.metafields.custom.inspiration.value.image | image_url: width: 90, height: 90 }}",
             inspiration_name: "{{ bundle_product.metafields.custom.inspiration.value.name }}",
             tags: {{ bundle_product.tags | json }},
+            collections: "{{ collection_handles }}",
             variants: {
               {% for variant in bundle_product.variants %}
                 "{{ variant.title | downcase |  replace: ' ml', 'ml' }}": {
