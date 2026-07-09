@@ -75,7 +75,7 @@
         </div>
       </template>
       <template x-if="$store.bundleBuilder.selectedProducts.length < $store.bundleBuilder.bundleLength">
-        <div class="space-y-2">
+        <div class="flex flex-col gap-2">
           <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
             <template x-if="(product.tags.some(tag => tag === $store.bundleBuilder.activeCategory) || $store.bundleBuilder.activeCategory === 'All') &&
          ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()) || (product.inspiration_name && product.inspiration_name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase())))">
