@@ -131,7 +131,7 @@
         {% for bundle_product in bundle_collection.products %}
           {% liquid
             assign collection_handles = ''
-            for collection in product.collections
+            for collection in bundle_product.collections
               assign collection_handles = collection_handles | append: collection.handle
               if forloop.last == false
                 assign collection_handles = collection_handles | append: ','
