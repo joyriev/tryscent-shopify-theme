@@ -1026,7 +1026,11 @@
 </product-info>
 
 {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-  {% render 'special-offer-products-modal' %}
+  {% if product.template_suffix == 'custom-bundle-2' %}
+    {% render 'bundle-builder-modal-2' %}
+  {% else %}
+    {% render 'special-offer-products-modal' %}
+  {% endif %}
 {% endif %}
   
 <script>
