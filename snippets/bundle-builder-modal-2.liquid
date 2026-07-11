@@ -27,8 +27,8 @@
             </span>
           </span>
         </h2>
-        <p class="my-0 text-center text-sm text-[#6b7280]">Build your
-          <span x-text="$store.bundleBuilder.bundleLength"></span>-bottle bundle</p>
+        <p class="my-0 text-center text-sm text-[#6b7280]">Bygg ditt
+          <span x-text="$store.bundleBuilder.bundleLength"></span>-flaskorspaket</p>
       </div>
       <div x-show="$store.bundleBuilder.selectedProducts.length < $store.bundleBuilder.bundleLength" class="px-3 py-2">
         <div class="flex gap-1.5">
@@ -47,11 +47,16 @@
         </div>
       </div>
       <div class="px-3 pb-3">
-        <input
-          type="text"
-          placeholder="Söka..."
-          x-model="$store.bundleBuilder.searchText"
-          class="block w-full px-4 py-2 rounded-xl border-2 border-solid cursor-pointer bg-white border-gray-200 focus:outline-none focus:border-[#22613A] focus:shadow-none focus:border-2">
+        <div class="relative">
+            <div class="absolute top-[7px] left-2">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+            </div>
+            <input
+            type="text"
+            placeholder="Söka..."
+            x-model="$store.bundleBuilder.searchText"
+            class="block w-full p-2 pl-8 rounded-xl border-2 border-solid cursor-pointer bg-white border-gray-200 focus:outline-none focus:border-[#22613A] focus:shadow-none focus:border-2">
+        </div>
       </div>
     </div>
 
@@ -81,8 +86,8 @@
          ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()) || (product.inspiration_name && product.inspiration_name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase())))">
               <button
                 @click="$store.bundleBuilder.addRemoveProduct(product)"
-                :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-green-600 border-2' : 'border-gray-200 border'"
-                class="border-solid w-full p-2 flex items-center gap-2 justify-between cursor-pointer rounded-lg bg-white">
+                :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-[#22613A] border-2' : 'border-gray-200 border'"
+                class="border-solid w-full p-2 flex items-center gap-2 justify-between cursor-pointer rounded-xl bg-white">
                 <img
                   class="object-cover rounded"
                   :src="product.image"
