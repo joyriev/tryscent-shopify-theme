@@ -213,7 +213,7 @@
               {%- when 'shipping_text' -%}
                 <div class="!my-6">
                   <p class="my-0 text-center font-semibold tracking-normal">
-                    5-8 Days Delivery to <span class="shipping_location">Worldwide</span>
+                    5-8 Days Delivery to <span class="shipping_location">{{ localization.country.name }}</span>
                   </p>
                   <p class="my-0 text-center tracking-normal shipping_text_canada">
                     *Shipping Fee Calculated At Checkout
@@ -244,7 +244,7 @@
                     <img class="w-full h-auto" src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/people-images.png?v=1756736550" alt="" height="" width="">
                   </div>
                   <div class="col-span-2">
-                    <p class="my-0 leading-snug tracking-normal">Over <strong>826</strong> peoples from <span class="shipping_location font-semibold">Worldwide</span> have ordered in the last 7 days.</p>
+                    <p class="my-0 leading-snug tracking-normal">Over <strong>826</strong> peoples from <span class="shipping_location font-semibold">{{ localization.country.name }}</span> have ordered in the last 7 days.</p>
                   </div>
                 </div>
               {%- when 'cta_review' -%}
@@ -1033,20 +1033,6 @@
   {% endif %}
 {% endif %}
   
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // update shipping country text
-    const shippingLocation = document.querySelector(".shipping_location");
-    fetch("https://ipapi.co/country_name")
-      .then(response => response.text())
-      .then(countryName => {
-        shippingLocation.textContent = countryName;
-      })
-      .catch(error => {
-        console.error("Error fetching country code:", error);
-      });
-  });
-</script>
 {% render 'schema-breadcrumbs' %}
 {% render 'schema-product' %}
 {% comment %} {% render 'schema-faq' %} {% endcomment %}
