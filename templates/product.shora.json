@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "text_vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -28,7 +35,7 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "none"
           }
         },
         "inventory": {
@@ -50,6 +57,18 @@
             "show_gift_card_recipient": true
           }
         },
+        "icon_with_text": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "truck",
+            "heading_1": "Free Shipping",
+            "icon_2": "check_mark",
+            "heading_2": "Quality Guaranteed",
+            "icon_3": "return",
+            "heading_3": "Easy Returns"
+          }
+        },
         "shipping_text": {
           "type": "shipping_text",
           "settings": {}
@@ -66,6 +85,7 @@
         }
       },
       "block_order": [
+        "text_vendor",
         "title",
         "rating",
         "price",
@@ -73,6 +93,7 @@
         "inventory",
         "quantity_selector",
         "buy_buttons",
+        "icon_with_text",
         "shipping_text",
         "description",
         "share"
@@ -84,8 +105,8 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
-        "mobile_thumbnails": "hide",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
         "media_position": "left",
         "image_zoom": "lightbox",
         "hide_variants": false,
