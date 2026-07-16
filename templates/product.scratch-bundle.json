@@ -22,13 +22,11 @@
             "text": "4,9/5 baserat på över 10 000 recensioner"
           }
         },
-        "atc_bundle_builder_aLJUaV": {
-          "type": "atc_bundle_builder",
-          "settings": {}
-        },
-        "dialect_notes_NHiwen": {
-          "type": "dialect_notes",
-          "settings": {}
+        "custom_liquid_G7fm64": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'scratch-bundle' %}"
+          }
         },
         "reactive_variant_selector_JyFrkg": {
           "type": "reactive_variant_selector",
@@ -39,13 +37,6 @@
           "type": "shipping_text",
           "disabled": true,
           "settings": {}
-        },
-        "custom_liquid_G7fm64": {
-          "type": "custom_liquid",
-          "disabled": true,
-          "settings": {
-            "custom_liquid": "{% render 'atc-bundle-builder' %}"
-          }
         },
         "custom_liquid_eKzwKK": {
           "type": "custom_liquid",
@@ -195,11 +186,9 @@
       "block_order": [
         "title",
         "custom_rating_text_XVDQcU",
-        "atc_bundle_builder_aLJUaV",
-        "dialect_notes_NHiwen",
+        "custom_liquid_G7fm64",
         "reactive_variant_selector_JyFrkg",
         "shipping_text_HCVN8A",
-        "custom_liquid_G7fm64",
         "custom_liquid_eKzwKK",
         "icon_with_text_rgXMXN",
         "money_back_eKXfnE",
