@@ -177,6 +177,14 @@
     top: 7px
 }
 
+.-top-6 {
+    top: -24px
+}
+
+.top-\[-26px\] {
+    top: -26px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -505,6 +513,10 @@
 
 .mt-\[44px\] {
     margin-top: 44px
+}
+
+.-mt-3 {
+    margin-top: -12px
 }
 
 .line-clamp-1 {
@@ -1377,12 +1389,12 @@
     border-width: 4px
 }
 
-.border-\[3px\] {
-    border-width: 3px
-}
-
 .border-\[1\.5px\] {
     border-width: 1.5px
+}
+
+.border-\[3px\] {
+    border-width: 3px
 }
 
 .border-y {
@@ -1903,6 +1915,11 @@
 
 .bg-white\/60 {
     background-color: rgb(255 255 255 / 0.6)
+}
+
+.bg-\[\#df3d3d\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(223 61 61 / var(--tw-bg-opacity, 1))
 }
 
 .bg-opacity-50 {
