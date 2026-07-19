@@ -201,7 +201,7 @@
               {%- when 'atc_bundle_builder' -%}
                 <div class="atc-bundle-builder" {{ block.shopify_attributes }}>
                    {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-                    {% render 'special-offer-builder', product: product %}
+                    {% render 'bundle-builder-2', product: product %}
                   {% else %}
                     {% render 'reactive-variant-selector', product: product %}
                   {% endif %}
@@ -1026,11 +1026,7 @@
 </product-info>
 
 {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-  {% if product.template_suffix == 'custom-bundle-2' %}
     {% render 'bundle-builder-modal-2' %}
-  {% else %}
-    {% render 'special-offer-products-modal' %}
-  {% endif %}
 {% endif %}
   
 {% render 'schema-breadcrumbs' %}
