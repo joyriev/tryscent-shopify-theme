@@ -700,6 +700,16 @@
     height: 14px
 }
 
+.\!size-10 {
+    width: 40px !important;
+    height: 40px !important
+}
+
+.\!size-9 {
+    width: 36px !important;
+    height: 36px !important
+}
+
 .h-0 {
     height: 0px
 }
@@ -4102,6 +4112,12 @@
     content: var(--tw-content);
     font-size: 20px !important;
     line-height: 28px !important
+}
+
+.\[\&\]\:after\:\!text-base::after {
+    content: var(--tw-content);
+    font-size: 16px !important;
+    line-height: 24px !important
 }
 
 .\[\&\]\:after\:text-black::after {
