@@ -20,16 +20,8 @@
 
 <div id="{{ section.id }}" class="section-{{ section.id }}-padding bg-cover bg-center">
   <div class="page-width">
-    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-3">
-      <div class="flex flex-col gap-3 text-center md:text-left">
-        <h2 class="text-3xl md:text-4xl font-black my-0">{{ section.settings.title }}</h2>
-        <div class="[&_p:first-child]:mt-0 [&_p:last-child]:mb-0">
-          {{ section.settings.description }}
-        </div>
-      </div>
-      <a href="{{ section.settings.button_link }}" class="no-underline text-black border-2 border-solid border-black px-6 py-2 shrink-0">{{ section.settings.button_text }}</a>
-    </div>
-    <div class="swiper" id="slider-{{ section.id }}">
+    <h2 class="text-2xl md:text-4xl font-black mt-0 mb-6">{{ section.settings.title }}</h2>
+    <div class="swiper !pt-14 -mt-14" id="slider-{{ section.id }}">
       <div class="swiper-wrapper">
         {% for product in section.settings.collection.products limit: 8 %}
           <div class="swiper-slide max-w-[260px]">
@@ -48,8 +40,11 @@
           </div>
         {% endfor %}
       </div>
-      <button class="swiper-button-prev border-0 rounded-full !flex bg-white !size-8 [&]:after:!text-sm [&]:after:text-black disabled:!pointer-events-auto" aria-label="Previous"></button>
-      <button class="swiper-button-next border-0 rounded-full !flex bg-white !size-8 [&]:after:!text-sm [&]:after:text-black disabled:!pointer-events-auto" aria-label="Next"></button>
+      <button class="swiper-button-prev !top-6 !left-[calc(100%-85px)] border border-solid border-gray-200 rounded-full !flex bg-white !size-8 [&]:after:!text-sm [&]:after:text-black disabled:!pointer-events-auto" aria-label="Previous"></button>
+      <button class="swiper-button-next !top-6 !right-0 border border-solid border-gray-200 rounded-full !flex bg-white !size-8 [&]:after:!text-sm [&]:after:text-black disabled:!pointer-events-auto" aria-label="Next"></button>
+    </div>
+    <div class="text-center mt-6">
+      <a href="{{ section.settings.button_link }}" class="text-black uppercase tracking-wider">{{ section.settings.button_text }}</a>
     </div>
   </div>
 </div>
