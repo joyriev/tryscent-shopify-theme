@@ -121,15 +121,19 @@
     </div>
 
     <div class="col-span-2 p-4 md:p-[18px]">
-      <div class="inline-block rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs font-semibold uppercase">
-        Spara 64%
-      </div>
+      {% if bundle_product.compare_at_price > bundle_product.price %}
+        {% assign discount = bundle_product.compare_at_price | minus: bundle_product.price %}
+        {% assign discount_percent = discount | times: 100 | divided_by: bundle_product.compare_at_price | round %}
+        <div class="inline-block rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs font-semibold uppercase">
+          Spara {{ discount_percent }}%
+        </div>
+      {% endif %}
       <h3 class="my-2 tracking-normal font-semibold text-base md:text-lg">
         Vart bästa erbjudande: skapa ett paket!
       </h3>
       <div class="m-0 tracking-normal text-black text-sm md:text-base">
         Endast
-        <strong>{{ bundle_product.price | divided_by: 8 | money }}</strong>
+        <strong>{{ bundle_product.price | divided_by: metafields.custom.choose_your_fragrances_options | money }}</strong>
         per flaska
       </div>
     </div>
