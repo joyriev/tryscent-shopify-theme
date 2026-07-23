@@ -133,7 +133,7 @@
       </h3>
       <div class="m-0 tracking-normal text-black text-sm md:text-base">
         Endast
-        <strong>{{ bundle_product.price | divided_by: metafields.custom.choose_your_fragrances_options | money }}</strong>
+        <strong>{{ bundle_product.price | divided_by: bundle_product.metafields.custom.choose_your_fragrances_options | money }}</strong>
         per flaska
       </div>
     </div>
