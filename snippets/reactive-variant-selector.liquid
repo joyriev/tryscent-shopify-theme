@@ -104,57 +104,6 @@
   </p>
 </div>
 
-{% assign bundle_product = all_products['6x-50ml-perfume-bottles'] %}
-{% if product.template_suffix == 'tsr-bundle' %}
-  {% assign bundle_product = all_products['6-x-50ml-parfymflasko'] %}
-{% endif %}
-{% if bundle_product != blank and product.template_suffix == 'tsr-promo' or product.template_suffix == 'tsr-bundle' %}
-  <a href="{{ bundle_product.url }}" class="mt-8 [display:grid] grid-cols-3 overflow-hidden rounded-lg border-2 border-[#cc303d] border-solid bg-white text-inherit no-underline shadow-[0_1px_0_rgba(17,24,39,0.03)] md:flex-row">
-    <div class="relative w-full overflow-hidden bg-[#f2ede7] md:max-w-[280px]">
-      <img
-        src="{{ bundle_product.featured_image | image_url: width: 560 }}"
-        alt="{{ bundle_product.title | escape }}"
-        class="h-full w-full object-cover"
-        loading="lazy"
-        width="280"
-        height="280">
-    </div>
-
-    <div class="col-span-2 p-4 md:p-[18px]">
-      {% if bundle_product.compare_at_price > bundle_product.price %}
-        {% assign discount = bundle_product.compare_at_price | minus: bundle_product.price %}
-        {% assign discount_percent = discount | times: 100 | divided_by: bundle_product.compare_at_price | round %}
-        <div class="inline-block rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs font-semibold uppercase">
-          Spara {{ discount_percent }}%
-        </div>
-      {% endif %}
-      <h3 class="my-2 tracking-normal font-semibold text-base md:text-lg">
-        Vart bästa erbjudande: skapa ett paket!
-      </h3>
-      <div class="m-0 tracking-normal text-black text-sm md:text-base">
-        Endast
-        <strong>{{ bundle_product.price | divided_by: bundle_product.metafields.custom.choose_your_fragrances_options | money }}</strong>
-        per flaska
-      </div>
-    </div>
-  </a>
-{% endif %}
-
-<div class="my-6">
-  <div class="flex items-center gap-3 text-base">
-    <img
-      src="https://cdn.shopify.com/s/files/1/0623/0691/0402/files/thimbs_up.png?v=1751372431"
-      alt="Tumme upp märke"
-      class="w-10 h-10 flex-shrink-0"
-      width="40"
-      height="40" />
-    <div class="text-slate-900">
-      <strong class="font-semibold">Prova i 60 dagar, riskfritt.</strong>
-      <span class="block">Färre än 0,5 % av köparna använder vår pengarna-tillbaka-garanti.</span>
-    </div>
-  </div>
-</div>
-
 <script>
   (function() {
     // Variant data object

@@ -229,15 +229,52 @@
                   {% endfor %}
                 </ul>
               {%- when 'money_back' -%}
-                <div class="flex items-center gap-3 bg-[#f0f2ec] p-6 rounded">
-                  <img src="{{ block.settings.image | img_url: '64x64' }}" height="64" width="64" alt="{{ block.settings.label }}" class="size-16" />
-                  <div>
-                    <h3 class="text-lg font-semibold tracking-normal m-0">{{ block.settings.title }}</h3>
-                    <div class="m-0 leading-snug tracking-normal [&>p]:m-0 text-gray-950">
-                      {{ block.settings.text }}
+                <div class="my-6">
+                  <div class="flex items-center gap-3 text-base">
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0623/0691/0402/files/thimbs_up.png?v=1751372431"
+                      alt="Tumme upp märke"
+                      class="w-10 h-10 flex-shrink-0"
+                      width="40"
+                      height="40" />
+                    <div class="text-slate-900">
+                      <strong class="font-semibold">Prova i 60 dagar, riskfritt.</strong>
+                      <span class="block">Färre än 0,5 % av köparna använder vår pengarna-tillbaka-garanti.</span>
                     </div>
                   </div>
                 </div>
+              {% when 'tsr_block' %}
+                {% if block.settings.product != blank %}
+                  <a href="{{ block.settings.product.url }}" class="mt-8 [display:grid] grid-cols-3 overflow-hidden rounded-lg border-2 border-[#cc303d] border-solid bg-white text-inherit no-underline shadow-[0_1px_0_rgba(17,24,39,0.03)] md:flex-row">
+                    <div class="relative w-full overflow-hidden bg-[#f2ede7] md:max-w-[280px]">
+                      <img
+                        src="{{ block.settings.product.featured_image | image_url: width: 560 }}"
+                        alt="{{ block.settings.product.title | escape }}"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                        width="280"
+                        height="280">
+                    </div>
+
+                    <div class="col-span-2 p-4 md:p-[18px]">
+                      {% if block.settings.product.compare_at_price > block.settings.product.price %}
+                        {% assign discount = block.settings.product.compare_at_price | minus: block.settings.product.price %}
+                        {% assign discount_percent = discount | times: 100 | divided_by: block.settings.product.compare_at_price | round %}
+                        <div class="inline-block rounded-xl bg-green-100 text-green-600 px-2 py-1 text-xs font-semibold uppercase">
+                          Spara {{ discount_percent }}%
+                        </div>
+                      {% endif %}
+                      <h3 class="my-2 tracking-normal font-semibold text-base md:text-lg">
+                        Vart bästa erbjudande: skapa ett paket!
+                      </h3>
+                      <div class="m-0 tracking-normal text-black text-sm md:text-base">
+                        Endast
+                        <strong>{{ block.settings.product.price | divided_by: block.settings.product.metafields.custom.choose_your_fragrances_options | money }}</strong>
+                        per flaska
+                      </div>
+                    </div>
+                  </a>
+                {% endif %}
               {% when 'people_purchased' %}
                 <div class="grid grid-cols-3 items-center gap-4 bg-[#f0f2ec] p-6 rounded">
                   <div class="col-span-1 flex">
@@ -1145,6 +1182,17 @@
           "type": "richtext",
           "id": "text",
           "label": "Money Back Guarantee Text"
+        }
+      ]
+    },
+    {
+      "type": "tsr_block",
+      "name": "TSR Block",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
         }
       ]
     },
