@@ -3,12 +3,13 @@
 
 {% liquid
   assign dhl_euro_asset = 'dhl-euro.svg'
-  if localization.country.iso_code == 'SE'
-    assign dhl_euro_asset = 'dhl-euro-swish-klarna.svg'
-  elsif localization.country.iso_code == 'FI' or localization.country.iso_code == 'DK'
-    assign dhl_euro_asset = 'dhl-euro-mobilepay-klarna.svg'
-  endif
 %}
+
+{% comment %} if localization.country.iso_code == 'SE'
+      assign dhl_euro_asset = 'dhl-euro-swish-klarna.svg'
+    elsif localization.country.iso_code == 'FI' or localization.country.iso_code == 'DK'
+      assign dhl_euro_asset = 'dhl-euro-mobilepay-klarna.svg'
+  endif {% endcomment %}
 
 <style>
   /* FlipDown Custom Styles */
@@ -189,7 +190,7 @@
             {{ section.settings.append_text }}
           </span>
           <img
-            style="height: auto; width: 180px;"
+            class="mt-1.5 md:mt-0"
             src="{{ dhl_euro_asset | asset_url }}"
             alt="DHL EURO"
             height="37"
