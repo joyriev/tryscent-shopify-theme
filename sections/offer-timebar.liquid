@@ -1,6 +1,15 @@
 <link rel="stylesheet" href="https://pbutcher.uk/flipdown/css/flipdown/flipdown.css">
 <script defer src="https://pbutcher.uk/flipdown/js/flipdown/flipdown.js"></script>
 
+{% liquid
+  assign dhl_euro_asset = 'dhl-euro.svg'
+  if localization.country.iso_code == 'SE'
+    assign dhl_euro_asset = 'dhl-euro-swish-klarna.svg'
+  elsif localization.country.iso_code == 'FI' or localization.country.iso_code == 'DK'
+    assign dhl_euro_asset = 'dhl-euro-mobilepay-klarna.svg'
+  endif
+%}
+
 <style>
   /* FlipDown Custom Styles */
   .flipdown {
@@ -165,7 +174,7 @@
             {{ section.settings.append_text }}
           </span>
           <img
-            src="{{ 'dhl-euro.svg' |  asset_url }}"
+            src="{{ dhl_euro_asset | asset_url }}"
             alt="DHL EURO"
             height="42"
             width="110">
@@ -180,7 +189,7 @@
             {{ section.settings.append_text }}
           </span>
           <img
-            src="{{ 'dhl-euro.svg' |  asset_url }}"
+            src="{{ dhl_euro_asset | asset_url }}"
             alt="DHL EURO"
             height="42"
             width="110">
