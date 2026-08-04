@@ -344,8 +344,13 @@
                       {% endif %}
                     </div>
                   {%- endif -%}  
-                  <h1 class="font-[700] leading-tight capitalize !tracking-normal flex flex-col text-3xl {% if product.tags contains 'bestseller' or product.tags contains 'onsale' or product.metafields.custom.custom_label != blank %}pt-8{% endif %}">
-                      {{ product.title }}
+                  <h1 class="font-[700] leading-tight !tracking-normal text-3xl {% if product.tags contains 'bestseller' or product.tags contains 'onsale' or product.metafields.custom.custom_label != blank %}pt-8{% endif %}">
+                      {% if product.template_suffix == 'cro-deck' %}
+                        {% assign title_list = product.title |  split: '-' %}
+                        <span class="title-prefix">Inspirerad av</span> {{ product.metafields.custom.inspiration.value.name }} - {{ title_list[1] }}
+                      {% else %}
+                        {{ product.title }}
+                      {% endif %}
                   </h1>
                 </div>
 
