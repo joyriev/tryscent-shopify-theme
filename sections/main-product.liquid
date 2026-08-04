@@ -229,7 +229,7 @@
                   {% endfor %}
                 </ul>
               {%- when 'money_back' -%}
-                <div class="my-6">
+                <div class="my-6" {{ block.shopify_attributes }}>
                   <div class="flex items-center gap-3 text-base">
                     <img
                       src="https://cdn.shopify.com/s/files/1/0623/0691/0402/files/thimbs_up.png?v=1751372431"
@@ -238,8 +238,8 @@
                       width="40"
                       height="40" />
                     <div class="text-slate-900">
-                      <strong class="font-semibold">Prova i 60 dagar, riskfritt.</strong>
-                      <span class="block">Färre än 0,5 % av köparna använder vår pengarna-tillbaka-garanti.</span>
+                      <strong class="font-semibold">{{ block.settings.title }}</strong>
+                      <span class="block">{{ block.settings.text }}</span>
                     </div>
                   </div>
                 </div>
@@ -1181,12 +1181,12 @@
           "type": "text",
           "id": "title",
           "label": "Money Back Guarantee Title",
-          "default": "Smell Before You Commit"
+          "default": "Prova i 60 dagar, riskfritt."
         },
         {
-          "type": "richtext",
+          "type": "text",
           "id": "text",
-          "label": "Money Back Guarantee Text"
+          "label": "Färre än 0,5 % av köparna använder vår pengarna-tillbaka-garanti."
         }
       ]
     },
