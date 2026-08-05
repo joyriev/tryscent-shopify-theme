@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_rating_text_Pzet9h": {
+          "type": "custom_rating_text",
+          "settings": {
+            "text": "4,7/5 · Över 10 000 recensioner"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -64,12 +70,6 @@
           "type": "quantity_selector",
           "disabled": true,
           "settings": {}
-        },
-        "custom_rating_text_Pzet9h": {
-          "type": "custom_rating_text",
-          "settings": {
-            "text": "4,7/5 · Över 10 000 recensioner"
-          }
         },
         "magyx_bundle_magyx_bundle_VBTXAJ": {
           "type": "shopify://apps/magyx-bundle/blocks/magyx-bundle/019f8307-8537-7094-8efe-f29e0fb8cb3b",
@@ -258,6 +258,7 @@
         }
       },
       "block_order": [
+        "custom_rating_text_Pzet9h",
         "title",
         "selling_points_9tdid6",
         "inspired_by_idtdrk",
@@ -268,7 +269,6 @@
         "text_fQLMC7",
         "price",
         "quantity_selector",
-        "custom_rating_text_Pzet9h",
         "magyx_bundle_magyx_bundle_VBTXAJ",
         "money_back_apjBkD",
         "buy_buttons",
