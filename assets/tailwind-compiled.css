@@ -45,6 +45,11 @@
     inset: 0px
 }
 
+.inset-y-0 {
+    top: 0px;
+    bottom: 0px
+}
+
 .\!left-0 {
     left: 0px !important
 }
@@ -717,6 +722,10 @@
     height: 64px
 }
 
+.h-2\.5 {
+    height: 10px
+}
+
 .h-24 {
     height: 96px
 }
@@ -1224,6 +1233,11 @@
 .gap-x-3 {
     -moz-column-gap: 12px;
          column-gap: 12px
+}
+
+.gap-x-4 {
+    -moz-column-gap: 16px;
+         column-gap: 16px
 }
 
 .gap-x-6 {
@@ -1815,6 +1829,14 @@
 
 .bg-\[\#ffffff2e\] {
     background-color: #ffffff2e
+}
+
+.bg-\[var\(--sf-fill\)\] {
+    background-color: var(--sf-fill)
+}
+
+.bg-\[var\(--sf-track\)\] {
+    background-color: var(--sf-track)
 }
 
 .bg-amber-50 {
@@ -2505,6 +2527,11 @@
     font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)
 }
 
+.tabular-nums {
+    --tw-numeric-spacing: tabular-nums;
+    font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)
+}
+
 .\!leading-tight {
     line-height: 1.25 !important
 }
@@ -2727,6 +2754,10 @@
 .text-\[\#ffc109\] {
     --tw-text-opacity: 1;
     color: rgb(255 193 9 / var(--tw-text-opacity, 1))
+}
+
+.text-\[var\(--sf-accent\)\] {
+    color: var(--sf-accent)
 }
 
 .text-amber-700 {
@@ -3015,6 +3046,12 @@
     transition-duration: 150ms
 }
 
+.transition-\[width\] {
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+
 .transition-all {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -3049,6 +3086,10 @@
 
 .duration-500 {
     transition-duration: 500ms
+}
+
+.duration-700 {
+    transition-duration: 700ms
 }
 
 .ease-in {

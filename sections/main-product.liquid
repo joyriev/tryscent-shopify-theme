@@ -275,6 +275,8 @@
                     </div>
                   </a>
                 {% endif %}
+              {%- when 'selling_fast' -%}
+                {% render 'selling-fast', block: block %}
               {% when 'people_purchased' %}
                 <div class="grid grid-cols-3 items-center gap-4 bg-[#f0f2ec] p-6 rounded">
                   <div class="col-span-1 flex">
@@ -1198,6 +1200,99 @@
           "type": "product",
           "id": "product",
           "label": "Select Product"
+        }
+      ]
+    },
+    {
+      "type": "selling_fast",
+      "name": "Selling Out Fast",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Selling out fast",
+          "label": "Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "subheading",
+          "default": "Due to high demand, limited quantities available",
+          "label": "Subheading"
+        },
+        {
+          "type": "text",
+          "id": "sold_text",
+          "default": "[percent]% sold",
+          "label": "Sold text",
+          "info": "Use [percent] where the percentage should appear."
+        },
+        {
+          "type": "header",
+          "content": "Progress"
+        },
+        {
+          "type": "range",
+          "id": "percent_min",
+          "min": 1,
+          "max": 99,
+          "step": 1,
+          "unit": "%",
+          "default": 8,
+          "label": "Minimum sold percentage"
+        },
+        {
+          "type": "range",
+          "id": "percent_max",
+          "min": 1,
+          "max": 99,
+          "step": 1,
+          "unit": "%",
+          "default": 95,
+          "label": "Maximum sold percentage"
+        },
+        {
+          "type": "header",
+          "content": "Countdown"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_countdown",
+          "default": true,
+          "label": "Show countdown"
+        },
+        {
+          "type": "text",
+          "id": "countdown_label",
+          "default": "Ends in",
+          "label": "Countdown label"
+        },
+        {
+          "type": "text",
+          "id": "end_time",
+          "label": "End date and time",
+          "info": "Format: YYYY-MM-DD HH:MM (for example 2026-12-24 18:00). Leave empty to end at midnight + 12 hours, which resets every day."
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "bar_color",
+          "default": "#cf8195",
+          "label": "Progress bar"
+        },
+        {
+          "type": "color",
+          "id": "track_color",
+          "default": "#f7e4e8",
+          "label": "Progress bar background"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "default": "#cf8195",
+          "label": "Countdown text"
         }
       ]
     },
