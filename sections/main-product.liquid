@@ -277,6 +277,8 @@
                 {% endif %}
               {%- when 'selling_fast' -%}
                 {% render 'selling-fast', block: block %}
+              {%- when 'product_statistics' -%}
+                {% render 'product-statistics', block: block %}
               {% when 'people_purchased' %}
                 <div class="grid grid-cols-3 items-center gap-4 bg-[#f0f2ec] p-6 rounded">
                   <div class="col-span-1 flex">
@@ -1200,6 +1202,94 @@
           "type": "product",
           "id": "product",
           "label": "Select Product"
+        }
+      ]
+    },
+    {
+      "type": "product_statistics",
+      "name": "TryScent Statistics",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "10,000+ TryScent Bottles Shipped Worldwide",
+          "label": "Heading"
+        },
+        {
+          "type": "header",
+          "content": "Statistic 1"
+        },
+        {
+          "type": "number",
+          "id": "percent_1",
+          "default": 99,
+          "label": "Percentage"
+        },
+        {
+          "type": "textarea",
+          "id": "text_1",
+          "default": "Said TryScent smells just like the designer fragrance, without the high designer price.",
+          "label": "Description",
+          "info": "Leave empty to hide this statistic."
+        },
+        {
+          "type": "header",
+          "content": "Statistic 2"
+        },
+        {
+          "type": "number",
+          "id": "percent_2",
+          "default": 96,
+          "label": "Percentage"
+        },
+        {
+          "type": "textarea",
+          "id": "text_2",
+          "default": "of our customers said they'd switch to TryScent instead of repurchasing the original.",
+          "label": "Description",
+          "info": "Leave empty to hide this statistic."
+        },
+        {
+          "type": "header",
+          "content": "Statistic 3"
+        },
+        {
+          "type": "number",
+          "id": "percent_3",
+          "default": 93,
+          "label": "Percentage"
+        },
+        {
+          "type": "textarea",
+          "id": "text_3",
+          "default": "said they couldn't tell the difference between TryScent and the original in a blind test.",
+          "label": "Description",
+          "info": "Leave empty to hide this statistic."
+        },
+        {
+          "type": "header",
+          "content": "Statistic 4"
+        },
+        {
+          "type": "number",
+          "id": "percent_4",
+          "label": "Percentage"
+        },
+        {
+          "type": "textarea",
+          "id": "text_4",
+          "label": "Description",
+          "info": "Leave empty to hide this statistic."
+        },
+        {
+          "type": "header",
+          "content": "Footer"
+        },
+        {
+          "type": "text",
+          "id": "disclaimer",
+          "label": "Disclaimer",
+          "info": "Optional. Leave empty to hide."
         }
       ]
     },

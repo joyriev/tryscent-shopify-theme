@@ -1,0 +1,78 @@
+{% comment %}
+  Renders the TryScent statistic rings on the product page.
+
+  Accepts:
+  - block: {Object} block from main-product section
+
+  Usage:
+  {% render 'product-statistics', block: block %}
+{% endcomment %}
+
+{%- assign circumference = 251.2 -%}
+
+<div class="product-statistics mb-6" {{ block.shopify_attributes }}>
+  {%- if block.settings.heading != blank -%}
+    <h2 class="text-2xl md:text-2xl font-black tracking-tight leading-snug text-center mt-0 mb-4">
+      {{ block.settings.heading }}
+    </h2>
+  {%- endif -%}
+
+  {%- for i in (1..4) -%}
+    {%- liquid
+      assign text_key = 'text_' | append: i
+      assign percent_key = 'percent_' | append: i
+      assign stat_text = block.settings[text_key]
+      assign stat_percent = block.settings[percent_key] | default: 0
+
+      if stat_percent > 100
+        assign stat_percent = 100
+      elsif stat_percent < 0
+        assign stat_percent = 0
+      endif
+
+      assign fill = circumference | times: stat_percent | divided_by: 100
+      assign offset = circumference | minus: fill
+    -%}
+
+    {%- if stat_text != blank -%}
+      <div class="m-0 items-center flex gap-2 md:gap-5 border-0 border-b border-solid border-gray-200 pb-3 mb-3 last:pb-0 last:mb-0 last:border-none">
+        <div class="relative w-20 h-20 flex-shrink-0">
+          <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle
+              class="text-gray-200"
+              stroke-width="4"
+              stroke="currentColor"
+              fill="transparent"
+              r="40"
+              cx="50"
+              cy="50" />
+            <circle
+              class="text-green-700"
+              stroke-width="4"
+              stroke="currentColor"
+              fill="transparent"
+              r="40"
+              cx="50"
+              cy="50"
+              stroke-dasharray="{{ circumference }}"
+              stroke-dashoffset="{{ offset }}"
+              stroke-linecap="round" />
+          </svg>
+          <span class="absolute inset-0 flex items-center justify-center text-xl font-bold text-green-700">
+            {{ stat_percent }}%
+          </span>
+        </div>
+
+        <p class="text-xs md:text-sm uppercase font-semibold text-[#121212] flex-1 my-0 leading-snug">
+          {{ stat_text }}
+        </p>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if block.settings.disclaimer != blank -%}
+    <p class="text-xs text-gray-500 text-center mt-4 mb-0">
+      {{ block.settings.disclaimer }}
+    </p>
+  {%- endif -%}
+</div>
