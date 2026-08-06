@@ -27,7 +27,7 @@
   style="--sf-track: {{ block.settings.track_color | default: '#f7e4e8' }}; --sf-fill: {{ block.settings.bar_color | default: '#cf8195' }}; --sf-accent: {{ block.settings.accent_color | default: '#cf8195' }};"
   {{ block.shopify_attributes }}>
   {%- if block.settings.heading != blank -%}
-    <p class="selling-fast__heading my-0 font-semibold tracking-normal text-lg md:text-xl leading-snug">
+    <p class="selling-fast__heading my-0 font-semibold tracking-normal text-lg md:text-xl leading-snug text-black">
       {{- block.settings.heading -}}
     </p>
   {%- endif -%}
