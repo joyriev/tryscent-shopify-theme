@@ -277,8 +277,6 @@
                 {% endif %}
               {%- when 'selling_fast' -%}
                 {% render 'selling-fast', block: block %}
-              {%- when 'product_statistics' -%}
-                {% render 'product-statistics', block: block %}
               {% when 'people_purchased' %}
                 <div class="grid grid-cols-3 items-center gap-4 bg-[#f0f2ec] p-6 rounded">
                   <div class="col-span-1 flex">
@@ -1006,6 +1004,8 @@
                       </div>
                     </details>
                   </div>
+                {%- when 'product_statistics' -%}
+                  {% render 'product-statistics', block: block %}
               {%- endcase -%}
             {%- endfor -%}
           </div>
