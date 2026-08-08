@@ -304,6 +304,10 @@
                     </div>
                   </a>
                 {% endif %}
+              {%- when 'afterpay' -%}
+                <div id="afterpay" class="flex items-center gap-1.5 flex-wrap">
+                  <span>{{ block.settings.text }} <img src="{{ "afterpay-logo.png" |  asset_url }}" height="21" width="60" alt="AfterPay"></span>
+                </div>
               {%- when 'selling_fast' -%}
                 {% render 'selling-fast', block: block %}
               {% when 'people_purchased' %}
@@ -1435,6 +1439,20 @@
           "id": "accent_color",
           "default": "#cf8195",
           "label": "Countdown text"
+        }
+      ]
+    },
+    {
+      "type": "afterpay",
+      "name": "Afterpay",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "<p>4 interest-free payments of <strong>$10</strong> with</p>",
+          "label": "Text",
+          "info": "Shown before the Afterpay logo."
         }
       ]
     },
