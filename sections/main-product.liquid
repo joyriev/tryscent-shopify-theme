@@ -306,7 +306,7 @@
                 {% endif %}
               {%- when 'afterpay' -%}
                 <div id="afterpay" class="flex items-center gap-1.5 flex-wrap">
-                  <span>{{ block.settings.text }}</span> <img src="{{ "afterpay-logo.png" |  asset_url }}" height="21" width="60" alt="AfterPay">
+                  <span class="text-black">{{ block.settings.text }}</span> <img src="{{ "afterpay-logo.png" |  asset_url }}" height="21" width="60" alt="AfterPay">
                 </div>
               {%- when 'selling_fast' -%}
                 {% render 'selling-fast', block: block %}
