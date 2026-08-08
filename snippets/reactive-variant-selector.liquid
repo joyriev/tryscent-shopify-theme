@@ -42,6 +42,7 @@
         data-variant-id="{{ variant.id }}"
         data-variant-title="{{ variant.title }}"
         data-original-price="{{ variant.price | money }}"
+        data-afterpay-price="{{ variant.price |  divided_by: 4 |  money }}"
         data-compare-price="{{ variant.compare_at_price | money }}">
         <div class="text-sm font-semibold">{{ variant.title }}</div>
         {% if variant.title contains '50' %}
@@ -142,7 +143,8 @@
           compareAtPrice: "{{ variant.compare_at_price | money }}",
           hasComparePrice: {% if variant.compare_at_price > variant.price %}true{% else %}false{% endif %},
           nextVariant: "{{ variant.metafields.custom.next_variant | default: '' }}",
-          priceDifference: "{{ variant.metafields.custom.price_difference.value | money | default: '' }}"
+          priceDifference: "{{ variant.metafields.custom.price_difference.value | money | default: '' }}",
+          afterpayPrice: "{{ variant.price |  divided_by: 4 |  money }}"
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     };
@@ -157,6 +159,7 @@
     const comparePriceSpan = priceContainer.querySelector('.compare-price');
     const currentPriceSpan = priceContainer.querySelector('.current-price');
     const variantSuggestion = document.getElementById('variantSuggestion');
+    const afterpayPriceEl = document.getElementById('afterpay_price');
 
     // Update variant selection
     function updateVariant(variantId) {
@@ -194,6 +197,11 @@
       }
 
       currentPriceSpan.innerHTML = variantData.originalPrice;
+      
+      // update afterpay price
+      if (afterpayPriceEl) {
+        afterpayPriceEl.innerHTML = variantData.afterpayPrice;
+      }
 
        // Update all other current-price elements in the page
       const allCurrentPriceElements = document.querySelectorAll('.current-price');
