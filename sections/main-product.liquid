@@ -145,6 +145,8 @@
                     {{ block.settings.review_text }}
                   </p>
                 </div>
+              {%- when 'press_quotes' -%}
+                {% render 'press-quotes', block: block %}
               {% when 'designer_price' %}
                 {% if product.metafields.custom.original_retail_price != blank %}
                   <div>(Designerpris: {{ product.metafields.custom.original_retail_price.value | money }})</div>
@@ -1151,6 +1153,58 @@
           "id": "review_text",
           "label": "Review text",
           "default": "and 100.000+ others purchased"
+        }
+      ]
+    },
+    {
+      "type": "press_quotes",
+      "name": "Press Quotes Slider",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Item 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Quote",
+          "default": "Anything I've ordered has been amazing and has a long lasting scent"
+        },
+        {
+          "type": "header",
+          "content": "Item 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Quote",
+          "default": "\"We seriously couldn't tell the difference between this and the real deal\""
+        },
+        {
+          "type": "header",
+          "content": "Item 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Quote",
+          "default": "The scent lasts all day and gets compliments every time"
         }
       ]
     },
