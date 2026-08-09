@@ -23,7 +23,11 @@
           {%- assign text_key = 'text_' | append: item -%}
           {%- assign press_image = block.settings[image_key] -%}
           {%- assign press_text = block.settings[text_key] -%}
-          <div class="swiper-slide h-auto text-center"{% if pass == 2 %} aria-hidden="true"{% endif %}>
+          <div
+            class="swiper-slide h-auto text-center"
+            {% if pass == 2 %}
+            aria-hidden="true"
+            {% endif %}>
             {%- if press_image != blank -%}
               <img
                 src="{{ press_image | image_url: width: 400 }}"
@@ -31,11 +35,10 @@
                 width="{{ press_image.width }}"
                 height="{{ press_image.height }}"
                 loading="lazy"
-                class="mx-auto h-7 md:h-9 w-auto max-w-full object-contain"
-              >
+                class="mx-auto h-7 md:h-9 w-auto max-w-full object-contain">
             {%- endif -%}
             {%- if press_text != blank -%}
-              <p class="mt-3 mb-0 text-sm md:text-base leading-snug text-gray-800">
+              <p class="my-0 text-sm md:text-base leading-snug text-gray-800">
                 {{- press_text -}}
               </p>
             {%- endif -%}
