@@ -4,6 +4,18 @@
 
 <div class="sticky top-6">
   <div class="flex -mx-[15px] md:mx-0">
+    <div
+      class="doftmatch-tooltip absolute top-1 left-1 z-10 bg-[#137c44] px-2 py-1 text-white text-sm"
+      tabindex="0"
+      aria-describedby="doftmatch-tooltip-{{ product.id }}">
+      ≈95 % Doftmatch ⓘ
+      <span
+        id="doftmatch-tooltip-{{ product.id }}"
+        class="doftmatch-tooltip__content"
+        role="tooltip">
+        Baserat på verifierade kundbetyg av doftlikhet.
+      </span>
+    </div>
     <div id="productSwiper" class="swiper {% unless product.template_suffix == 'draft-three' %}md:w-[calc(100%-144px)]{% endunless %}">
       <div class="swiper-wrapper">
         {% if product.tags contains "local_image" %}
@@ -95,7 +107,7 @@
               stroke="#226139"
               stroke-width="0.25" />
           </svg>
-          <p class="m-0 leading-snug font-semibold text-[#226139] text-xs lg:text-sm">Samma doft                                                                                                          
+          <p class="m-0 leading-snug font-semibold text-[#226139] text-xs lg:text-sm">Samma doft                                                                                                                
           bättre pris</p>
         </div>
         <div class="p-2 lg:px-4 bg-[#EBF4EF] rounded-lg text-center flex flex-col items-center justify-center gap-2">
