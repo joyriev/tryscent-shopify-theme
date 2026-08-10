@@ -69,7 +69,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
         {% if card_product.tags contains '25_edp' %}
           <div class="absolute z-50 bg-[#b72f33] font-medium text-xs tracking-normal md:text-base text-white px-2 py-1 leading-none top-0 left-0 text-center">25% EDP</div>
         {% endif %}
-        {% if card_product.metafields.custom.custom_label != blank %}
+        {% if false %}
           <div class="absolute z-50 bg-[#226139] font-medium text-xs tracking-normal text-white px-2 py-1 leading-none top-0 left-0 text-center">{{ card_product.metafields.custom.custom_label }}</div>
         {% endif %}
         {%- if card_product.featured_media -%}
