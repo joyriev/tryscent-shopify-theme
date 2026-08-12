@@ -136,12 +136,9 @@
                       class="rounded-full object-cover flex-shrink-0 h-6 w-auto"
                     >
                   {%- endif -%}
-                  <p class="text-sm text-gray-800 leading-snug m-0">
+                  <p class="text-sm text-gray-800 leading-snug m-0 flex items-center gap-1">
                     <span class="font-bold">{{ block.settings.author_name }}</span>
-                    <svg class="inline-block" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill="#1d9bf0" d="M12 0l2.845 1.9 3.42-.397 1.026 3.281 3.281 1.026-.397 3.42L24 12l-1.925 2.77.397 3.42-3.281 1.026-1.026 3.281-3.42-.397L12 24l-2.845-1.9-3.42.397-1.026-3.281-3.281-1.026.397-3.42L0 12l1.925-2.77-.397-3.42 3.281-1.026 1.026-3.281 3.42.397z"/>
-                      <path fill="#fff" d="M9.7 16.7l-4-4 1.4-1.4 2.6 2.6 6-6 1.4 1.4z"/>
-                    </svg>
+                    <img src="{{ 'trust-star.svg' |  asset_url }}" alt="Star" height="18" width="18">
                     {{ block.settings.review_text }}
                   </p>
                 </div>
@@ -305,7 +302,7 @@
                   </a>
                 {% endif %}
               {%- when 'afterpay' -%}
-                <div id="afterpay" class="flex items-center gap-1.5 flex-wrap">
+                <div id="afterpay" class="flex items-center gap-1.5 flex-wrap tracking-normal">
                   <span class="text-black">4 räntefria delbetalningar på <span id="afterpay_price">{{ product.price |  divided_by: 4 |  money }}</span> med</span> <img src="{{ "Klarna_Payment_Badge.svg" |  asset_url }}" height="21" width="60" alt="AfterPay">
                 </div>
               {%- when 'selling_fast' -%}
@@ -379,16 +376,17 @@
                       {% endif %}
                     </div>
                   {%- endif -%}  
-                  <h1 class="font-[700] leading-tight !tracking-normal text-3xl {% if product.tags contains 'bestseller' or product.tags contains 'onsale' %}pt-8{% endif %}">
-                      {% if product.template_suffix == 'cro-deck' %}
-                        {% assign title_list = product.title |  split: '-' %}
-                        <span class="title-prefix">Inspirerad av</span> {{ product.metafields.custom.inspiration.value.name }} - {{ title_list[1] }}
-                      {% else %}
-                        {{ product.title }}
-                      {% endif %}
-                  </h1>
+                  {% if product.template_suffix == 'cro-deck' %}
+                    <h1 class="font-[700] leading-tight !tracking-normal text-xl md:text-3xl {% if product.tags contains 'bestseller' or product.tags contains 'onsale' %}pt-8{% endif %}">
+                      {% assign title_list = product.title |  split: '-' %}
+                      <span class="title-prefix">Inspirerad av</span> {{ product.metafields.custom.inspiration.value.name }} - {{ title_list[1] }}
+                    </h1>
+                  {% else %}
+                    <h1 class="font-[700] leading-tight !tracking-normal text-3xl {% if product.tags contains 'bestseller' or product.tags contains 'onsale' %}pt-8{% endif %}">
+                      {{ product.title }}
+                    </h1>
+                  {% endif %}
                 </div>
-
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
