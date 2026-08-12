@@ -1039,6 +1039,8 @@
                   {% render 'product-statistics', block: block %}
                 {%- when 'press_quotes' -%}
                   {% render 'press-quotes', block: block %}
+                {%- when 'review_slider' -%}
+                  {% render 'review-slider', block: block %}
               {%- endcase -%}
             {%- endfor -%}
           </div>
@@ -1203,6 +1205,89 @@
           "id": "text_3",
           "label": "Quote",
           "default": "The scent lasts all day and gets compliments every time"
+        }
+      ]
+    },
+    {
+      "type": "review_slider",
+      "name": "Review Slider",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Review 1"
+        },
+        {
+          "type": "text",
+          "id": "name_1",
+          "label": "Reviewer name",
+          "default": "Hilda"
+        },
+        {
+          "type": "textarea",
+          "id": "text_1",
+          "label": "Review text",
+          "default": "Anything I've ordered has been amazing and has a long lasting scent"
+        },
+        {
+          "type": "header",
+          "content": "Review 2"
+        },
+        {
+          "type": "text",
+          "id": "name_2",
+          "label": "Reviewer name",
+          "default": "Emma"
+        },
+        {
+          "type": "textarea",
+          "id": "text_2",
+          "label": "Review text",
+          "default": "We seriously couldn't tell the difference between this and the real deal"
+        },
+        {
+          "type": "header",
+          "content": "Review 3"
+        },
+        {
+          "type": "text",
+          "id": "name_3",
+          "label": "Reviewer name",
+          "default": "Sofia"
+        },
+        {
+          "type": "textarea",
+          "id": "text_3",
+          "label": "Review text",
+          "default": "The scent lasts all day and gets compliments every time"
+        },
+        {
+          "type": "header",
+          "content": "Review 4"
+        },
+        {
+          "type": "text",
+          "id": "name_4",
+          "label": "Reviewer name"
+        },
+        {
+          "type": "textarea",
+          "id": "text_4",
+          "label": "Review text"
+        },
+        {
+          "type": "header",
+          "content": "Review 5"
+        },
+        {
+          "type": "text",
+          "id": "name_5",
+          "label": "Reviewer name"
+        },
+        {
+          "type": "textarea",
+          "id": "text_5",
+          "label": "Review text"
         }
       ]
     },
