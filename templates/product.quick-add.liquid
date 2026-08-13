@@ -36,48 +36,48 @@
         <section id="ProductInfo-template--21129375285318__main" class="product__info-container product__column-sticky">
           <div class="product__title relative mb-3" {{ block.shopify_attributes }}>
             {%- if product.tags contains 'bestseller' or product.tags contains 'onsale' -%}
-            <div class="absolute top-0 left-0">
+              <div class="absolute top-0 left-0">
                 {% if product.tags contains 'onsale' %}
-                {%- assign discount_percent = 0 -%}
-                {%- if product.compare_at_price > product.price -%}
+                  {%- assign discount_percent = 0 -%}
+                  {%- if product.compare_at_price > product.price -%}
                     {%- assign discount_percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
-                {%- endif -%}
-                <span class="inline-block bg-red-600 text-white text-sm font-bold px-3 py-1">
+                  {%- endif -%}
+                  <span class="inline-block bg-red-600 text-white text-sm font-bold px-3 py-1">
                     {{ discount_percent }}% Off
-                </span>
+                  </span>
                 {% endif %}
                 {% if product.tags contains 'bestseller' %}
-                <span class="inline-block bg-[#22613A] text-white text-sm font-bold px-3 py-1">
+                  <span class="inline-block bg-[#22613A] text-white text-sm font-bold px-3 py-1">
                     Best Seller
-                </span>
+                  </span>
                 {% endif %}
                 {% if false %}
-                <span class="inline-block bg-blue-500 text-white text-sm font-bold px-3 py-1 custom_label">
+                  <span class="inline-block bg-blue-500 text-white text-sm font-bold px-3 py-1 custom_label">
                     {{ product.metafields.custom.custom_label }}
-                </span>
+                  </span>
                 {% endif %}
                 {% if product.template_suffix == 'expressive-notes' %}
-                <span class="inline-flex items-center px-3 py-1 rounded-md border border-solid border-[#3b82f6] text-[#3b82f6] text-sm font-medium bg-white">
-                {% if product.tags contains 'Woman' or product.tags contains 'fuer-frauen' %}
-                    Kvinna
-                {% else %}
-                    Man
+                  <span class="inline-flex items-center px-3 py-1 rounded-md border border-solid border-[#3b82f6] text-[#3b82f6] text-sm font-medium bg-white">
+                    {% if product.tags contains 'Woman' or product.tags contains 'fuer-frauen' %}
+                      Kvinna
+                    {% else %}
+                      Man
+                    {% endif %}
+                  </span>
                 {% endif %}
-                </span>
-                {% endif %}
-            </div>
-            {%- endif -%}  
+              </div>
+            {%- endif -%}
             {% if product.template_suffix == 'cro-deck' %}
-            <h1 class="font-[700] leading-tight !tracking-normal text-xl md:text-2xl my-0 {% if product.tags contains 'bestseller' or product.tags contains 'onsale' %}pt-8{% endif %}">
-                {% assign title_list = product.title |  split: '-' %}
+              <h1 class="font-[700] leading-tight !tracking-normal text-xl md:text-2xl my-0 {% if product.tags contains 'bestseller' or product.tags contains 'onsale' %}pt-8{% endif %}">
+                {% assign title_list = product.title | split: '-' %}
                 <span class="title-prefix">Inspirerad av</span> {{ product.metafields.custom.inspiration.value.name }} - {{ title_list[1] }}
-            </h1>
+              </h1>
             {% else %}
-            <h1 class="font-[700] leading-tight !tracking-normal text-xl md:text-2xl my-0 {% if product.tags contains 'bestseller' or product.tags contains 'onsale' %}pt-8{% endif %}">
+              <h1 class="font-[700] leading-tight !tracking-normal text-xl md:text-2xl my-0 {% if product.tags contains 'bestseller' or product.tags contains 'onsale' %}pt-8{% endif %}">
                 {{ product.title }}
-            </h1>
+              </h1>
             {% endif %}
-        </div>
+          </div>
           <div class="flex gap-1 items-center mb-3">
             <img
               src="/cdn/shop/t/77/assets/rating-stars.svg?v=134568026622208682831785734243"
@@ -89,21 +89,13 @@
           </div>
 
           <div class="flex items-center gap-2 mb-3">
-            <img
-              class="object-contain object-center bg-white"
-              src="/cdn/shop/files/Dior_Sauvage.avif?v=1763049794"
-              alt=""
-              width="45"
-              height="45"
-            >
-            <div>
-              <p class="text-sm my-0">Inspirerad av:</p>
-              <h4 class="font-semibold my-0 line-clamp-1 inspiration_heading">Dior Sauvage</h4>
-            </div>
+            <img class="object-contain object-center bg-white" src="{{ product.metafields.custom.inspiration.value.image | image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="24" height="24">
+            <p class="text-sm my-0">Inspirerad av:</p>
+            <h4 class="font-semibold my-0 line-clamp-1 inspiration_heading">{{ product.metafields.custom.inspiration.value.name }}</h4>
           </div>
 
           {% render 'scent-profiling-quick-add' %}
-          {% render 'reactive-variant-selector' %}
+          {% render 'reactive-variant-selector-quick-add' %}
 
           <a
             href="/products/6-x-50ml-parfymflasko"
