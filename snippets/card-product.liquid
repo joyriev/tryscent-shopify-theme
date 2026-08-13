@@ -227,14 +227,25 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
               id="title-{{ section_id }}-{{ card_product.id }}"
             {% endif %}
           >
-            <a
-              href="{{ card_product.url }}"
-              id="CardLink-{{ section_id }}-{{ card_product.id }}"
-              class="full-unstyled-link text-base md:text-xl font-semibold !no-underline hover:opacity-75 !leading-tight tracking-normal my-2"
-              aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
-            >
-              {{ card_product.title }}
-            </a>
+            {% if collection.template_suffix == 'action-modal' %}
+              <a
+                href="{{ card_product.url }}"
+                id="CardLink-{{ section_id }}-{{ card_product.id }}"
+                class="full-unstyled-link text-sm md:text-lg font-semibold !no-underline hover:opacity-75 !leading-tight tracking-normal my-2"
+                aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+              >
+                {{ card_product.title }}
+              </a>
+            {% else %}
+              <a
+                href="{{ card_product.url }}"
+                id="CardLink-{{ section_id }}-{{ card_product.id }}"
+                class="full-unstyled-link text-base md:text-xl font-semibold !no-underline hover:opacity-75 !leading-tight tracking-normal my-2"
+                aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+              >
+                {{ card_product.title }}
+              </a>
+            {% endif %}
           </h3>
 
           <div class="card-information">
@@ -253,7 +264,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
                 </div>
               {% endif %}
 
-              <div class="font-bold tracking-normal text-lg flex items-center flex-wrap gap-1">
+              <div class="font-bold tracking-normal {% if collection.template_suffix == 'action-modal' %}text-sm{% else %}text-base{% endif %} flex items-center flex-wrap gap-1">
                 {% unless card_product.tags contains 'onsale' %}
                   <span class="starts_at_text">Från</span>
                 {% endunless %}
