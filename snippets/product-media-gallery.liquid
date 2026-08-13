@@ -26,7 +26,7 @@
         Baserat på verifierade kundbetyg av doftlikhet.
       </span>
     </div>
-    <div id="productSwiper" class="swiper {% unless product.template_suffix == 'draft-three' %}md:w-[calc(100%-144px)]{% endunless %}">
+    <div id="productSwiper-{{ section.id }}" class="swiper {% unless product.template_suffix == 'draft-three' %}md:w-[calc(100%-144px)]{% endunless %}">
       <div class="swiper-wrapper">
         {% if product.tags contains "local_image" %}
           {% assign image_found = false %}
@@ -89,11 +89,11 @@
       </div>
       <div
         data-text="text"
-        id="productSwiperPrev"
+        id="productSwiperPrev-{{ section.id }}"
         class="swiper-button-prev !flex bg-white !w-10 [&]:after:!text-xl [&]:after:text-gray-900"></div>
       <div
         data-text="text"
-        id="productSwiperNext"
+        id="productSwiperNext-{{ section.id }}"
         class="swiper-button-next !flex bg-white !w-10 [&]:after:!text-xl [&]:after:text-gray-900"></div>
     </div>
     {% unless product.template_suffix == 'draft-three' %}
@@ -175,7 +175,7 @@
     {% endunless %}
   </div>
   <div>
-    <div id="productThumbnails" class="swiper mt-4">
+    <div id="productThumbnails-{{ section.id }}" class="swiper mt-4">
       <div class="swiper-wrapper [&>.swiper-slide-thumb-active]:border-[#226139] [&>.swiper-slide-thumb-active]:opacity-100">
         {% if product.tags contains "local_image" %}
           {% assign image_found = false %}
@@ -245,56 +245,64 @@
   </div>
 
   <script>
-      // Swiper Slider For product images with thumbnail sync
-      window.addEventListener("DOMContentLoaded", function () {
-    var productThumbnails = new Swiper('#productThumbnails', {
-      slidesPerView: 5,
-      spaceBetween: 8,
-      freeMode: true,
-      watchSlidesProgress: true,
-      watchOverflow: true,
-      direction: 'horizontal',
-      slideToClickedSlide: true,
-      breakpoints: {
-        320: {
-          slidesPerView: 4,
-        },
-        600: {
-          slidesPerView: 4,
-        },
-        900: {
+    // Swiper Slider For product images with thumbnail sync
+    (function () {
+      function initProductGallerySwiper() {
+        var productThumbnails = new Swiper('#productThumbnails-{{ section.id }}', {
           slidesPerView: 5,
-        }
-      }
-    });
+          spaceBetween: 8,
+          freeMode: true,
+          watchSlidesProgress: true,
+          watchOverflow: true,
+          direction: 'horizontal',
+          slideToClickedSlide: true,
+          breakpoints: {
+            320: {
+              slidesPerView: 4,
+            },
+            600: {
+              slidesPerView: 4,
+            },
+            900: {
+              slidesPerView: 5,
+            }
+          }
+        });
 
-    var productImages = new Swiper('#productSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      observer: true,
-      observeParents: true,
-      navigation: {
-        prevEl: "#productSwiperPrev",
-        nextEl: "#productSwiperNext",
-      },
-      thumbs: {
-        swiper: productThumbnails
-      },
-      breakpoints: {
-        320: {
+        var productImages = new Swiper('#productSwiper-{{ section.id }}', {
           slidesPerView: 1,
           spaceBetween: 10,
-        },
-        600: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        800: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-      },
-    });
-      });
+          observer: true,
+          observeParents: true,
+          navigation: {
+            prevEl: "#productSwiperPrev-{{ section.id }}",
+            nextEl: "#productSwiperNext-{{ section.id }}",
+          },
+          thumbs: {
+            swiper: productThumbnails
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            600: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            800: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+          },
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initProductGallerySwiper);
+      } else {
+        initProductGallerySwiper();
+      }
+    })();
   </script>
 </div>
