@@ -170,6 +170,21 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "quiz_promo_card_hA4E9G": {
+          "type": "quiz_promo_card",
+          "settings": {
+            "position": 2,
+            "heading": "Find Your Perfect Scent In 2 Minutes",
+            "image": "shopify://shop_images/ugc-bg.webp",
+            "url": "/#quiz",
+            "button_text": "Gör vårt quiz"
+          }
+        }
+      },
+      "block_order": [
+        "quiz_promo_card_hA4E9G"
+      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
