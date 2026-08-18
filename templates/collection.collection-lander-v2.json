@@ -48,22 +48,45 @@
         "padding_bottom": 0
       }
     },
-    "popular_products_AmFHN4": {
-      "type": "popular-products",
-      "name": "Popular Products",
-      "settings": {
-        "background_color": "#fcfbf9",
-        "title": "Köp mer och spara!",
-        "description": "",
-        "collection": "seasonal-bundles",
-        "button_text": "Kolla in mer!",
-        "button_link": "shopify://collections/seasonal-bundles",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "quiz_promo_card_ypUXqQ": {
+          "type": "quiz_promo_card",
+          "settings": {
+            "position": 7,
+            "heading": "Bygg ditt paket. Spara upp till 50%!",
+            "image": "shopify://shop_images/Choose_Your_Perfumes_10_07fce61b-7d9a-457c-b4f2-3b87a58d4184.png",
+            "url": "shopify://products/build-your-50ml-perfume-box",
+            "button_text": "Få två gratis gåvor"
+          }
+        },
+        "quiz_promo_card_GWqTga": {
+          "type": "quiz_promo_card",
+          "settings": {
+            "position": 3,
+            "heading": "Upptäcktspaket med 6",
+            "image": "shopify://shop_images/bundle_clean.png",
+            "url": "shopify://products/6-x-50ml-parfymflasko",
+            "button_text": "För 48% mindre"
+          }
+        },
+        "quiz_promo_card_bxMEQi": {
+          "type": "quiz_promo_card",
+          "settings": {
+            "position": 11,
+            "heading": "Ditt favoritpaket",
+            "image": "shopify://shop_images/3x100_clean.png",
+            "url": "shopify://products/3-x-100ml-parfymflaskor",
+            "button_text": "3 flaskor för 32% rabatt"
+          }
+        }
+      },
+      "block_order": [
+        "quiz_promo_card_ypUXqQ",
+        "quiz_promo_card_GWqTga",
+        "quiz_promo_card_bxMEQi"
+      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -115,7 +138,6 @@
     "custom_liquid_K7nAnN",
     "custom_liquid_YdYRGB",
     "custom_liquid_37D6Ew",
-    "popular_products_AmFHN4",
     "product-grid",
     "rich_text_fnCgkL"
   ]
