@@ -147,8 +147,8 @@
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               ">
               {% comment %} {% unless collection.handle contains 'bundle-save' %}
-                                                                                                                                                                                                                                                                                                                                                                                                                {% render 'card-product-bogo' %}
-                                                                                                                                                                                                                                                                                                                                                              {% endunless %} {% endcomment %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                {% render 'card-product-bogo' %}
+                                                                                                                                                                                                                                                                                                                                                                                          {% endunless %} {% endcomment %}
               {% assign skip_card_product_styles = false %}
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
@@ -177,7 +177,7 @@
                 {%- assign skip_card_product_styles = true -%}
 
                 {% for block in section.blocks %}
-                  {% if block.settings.postion == forloop.index %}
+                  {% if block.settings.position == forloop.index %}
                     {% if block.type == 'quiz_promo_card' %}
                       {% render 'quiz-promo-card'
                         , block: block %}
@@ -527,6 +527,11 @@
         "type": "quiz_promo_card",
         "name": "Qiz Promo Card",
         "settings": [
+          {
+            "type": "number",
+            "id": "position",
+            "label": "Position"
+          },
           {
             "type": "text",
             "id": "heading",
