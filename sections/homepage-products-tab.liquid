@@ -61,7 +61,7 @@
               </li>
               {%- assign skip_card_product_styles = true -%}
             {%- endfor -%}
-            {% render 'edp-poster' %}
+            {% render 'quiz-promo-card' %}
           </ul>
         {% else %}
           <p class="text-gray-500">No products found in this collection.</p>
@@ -150,24 +150,29 @@
         "id": "button_link",
         "label": "Button Link",
         "default": "/collections/all"
-      }, {
+      },
+      {
         "type": "image_picker",
         "id": "explore_image",
         "label": "Explore Image"
-      }, {
+      },
+      {
         "type": "text",
         "id": "explore_heading",
         "label": "Explore Heading",
         "default": "Explore More"
-      }, {
+      },
+      {
         "type": "text",
         "id": "explore_subheading",
         "label": "Explore Subheading",
         "default": "Discover our latest collections"
-      }, {
+      },
+      {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -176,7 +181,8 @@
         "unit": "px",
         "label": "t:sections.all.padding.padding_top",
         "default": 36
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_bottom",
         "min": 0,
@@ -196,7 +202,8 @@
             "type": "text",
             "id": "tab_title",
             "label": "Tab Title"
-          }, {
+          },
+          {
             "type": "collection",
             "id": "collection",
             "label": "Collection"
