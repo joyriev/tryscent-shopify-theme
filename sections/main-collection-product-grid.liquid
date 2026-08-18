@@ -146,11 +146,22 @@
                 grid--{{ section.settings.columns_desktop }}-col-desktop
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               ">
-              {% comment %} {% unless collection.handle contains 'bundle-save' %}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                {% render 'card-product-bogo' %}
-                                                                                                                                                                                                                                                                                                                                                                                          {% endunless %} {% endcomment %}
-              {% assign skip_card_product_styles = false %}
               {%- for product in collection.products -%}
+                {% assign product_position = forloop.index %}
+
+                {% for block in section.blocks %}
+                  {% if block.settings.position == product_position %}
+                    {% if block.type == 'quiz_promo_card' %}
+                      {% render 'quiz-promo-card'
+                        , block: block
+                        , product_position: product_position %}
+                    {% else %}
+                      {% render 'bundle-promo-card'
+                        , block: block %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
@@ -175,18 +186,6 @@
                   %}
                 </li>
                 {%- assign skip_card_product_styles = true -%}
-
-                {% for block in section.blocks %}
-                  {% if block.settings.position == forloop.index %}
-                    {% if block.type == 'quiz_promo_card' %}
-                      {% render 'quiz-promo-card'
-                        , block: block %}
-                    {% else %}
-                      {% render 'bundle-promo-card'
-                        , block: block %}
-                    {% endif %}
-                  {% endif %}
-                {% endfor %}
               {%- endfor -%}
             </ul>
             {%- if paginate.pages > 1 -%}
