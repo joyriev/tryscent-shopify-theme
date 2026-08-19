@@ -54,6 +54,44 @@
             </details>
           </header-menu>
         </li>
+      {% elsif block.type == 'sub_menu_items' %}
+        <li {{ block.shopify_attributes }}>
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ block.id }}" class="mega-menu">
+              <summary
+                id="HeaderMenu-men"
+                class="header__menu-item list-menu__item link focus-inset"
+                role="button"
+                aria-expanded="true"
+                aria-controls="MegaMenu-Content-{{ block.id }}">
+                <span>{{ block.settings.label }}</span>
+                {{ 'icon-caret.svg' | inline_asset_content }}
+              </summary>
+              <div
+                id="MegaMenu-Content-{{ block.id }}"
+                class="absolute color-scheme-1 gradient motion-reduce global-settings-popup"
+                tabindex="-1">
+                <div class="py-3 px-6">
+                  {% if block.settings.link_list != blank %}
+                    <ul class="m-0 flex list-none flex-col gap-1 p-0" role="list">
+                      {% for link in block.settings.link_list.links %}
+                        <li>
+                          <a
+                            class="text-sm text-gray-700 no-underline transition hover:text-black hover:underline"
+                            href="{{ link.url }}"
+                            {% if link.current %}aria-current="page"{% endif %}
+                          >
+                            {{ link.title | escape }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              </div>
+            </details>
+          </header-menu>
+        </li>
       {% else %}
         <li {{ block.shopify_attributes }}>
           <a

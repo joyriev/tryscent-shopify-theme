@@ -66,6 +66,43 @@
                       </details>
                     </header-menu>
                   </li>
+                {% elsif block.type == 'sub_menu_items' %}
+                  <li {{ block.shopify_attributes }}>
+                    <header-menu>
+                      <details id="Details-HeaderMenu-6" class="mega-menu">
+                        <summary
+                          id="HeaderMenu-men"
+                          class="header__menu-item list-menu__item link focus-inset !pl-0 border-0 border-b border-solid border-gray-200"
+                          role="button"
+                          aria-expanded="true"
+                          aria-controls="MegaMenu-Content-6">
+                          <span>{{ block.settings.label }}</span>
+                          {{ 'icon-caret.svg' | inline_asset_content }}
+                        </summary>
+                        <div
+                          id="MegaMenu-Content-6"
+                          class="color-scheme-1 motion-reduce py-4 border-0 border-b border-solid border-gray-200"
+                          tabindex="-1">
+                          {% if block.settings.link_list != blank %}
+                            <ul class="m-0 flex list-none flex-col gap-1 p-0 pl-4 border-0 border-l-2 border-solid border-gray-300" role="list">
+                              {% for link in block.settings.link_list.links %}
+                                <li>
+                                  <a
+                                    class="text-sm text-gray-700 no-underline transition hover:text-black hover:underline"
+                                    href="{{ link.url }}"
+                                    {% if link.current %}
+                                    aria-current="page"
+                                    {% endif %}>
+                                    {{ link.title | escape }}
+                                  </a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                        </div>
+                      </details>
+                    </header-menu>
+                  </li>
                 {% else %}
                   <li {{ block.shopify_attributes }}>
                     <a
