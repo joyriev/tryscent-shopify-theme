@@ -3,20 +3,20 @@
 
     {% for block in section.blocks %}
       {% if block.type == 'mega_menu_item' %}
-        <li>
+        <li {{ block.shopify_attributes }}>
           <header-menu>
-            <details id="Details-HeaderMenu-6" class="mega-menu">
+            <details id="Details-HeaderMenu-{{ block.id }}" class="mega-menu">
               <summary
                 id="HeaderMenu-men"
                 class="header__menu-item list-menu__item link focus-inset"
                 role="button"
                 aria-expanded="true"
-                aria-controls="MegaMenu-Content-6">
+                aria-controls="MegaMenu-Content-{{ block.id }}">
                 <span>{{ block.settings.label }}</span>
                 {{ 'icon-caret.svg' | inline_asset_content }}
               </summary>
               <div
-                id="MegaMenu-Content-6"
+                id="MegaMenu-Content-{{ block.id }}"
                 class="mega-menu__content color-scheme-1 gradient motion-reduce global-settings-popup"
                 tabindex="-1">
                 <div class="page-width">
@@ -55,9 +55,9 @@
           </header-menu>
         </li>
       {% else %}
-        <li>
+        <li {{ block.shopify_attributes }}>
           <a
-            id="HeaderMenu-bestsellers"
+            id="HeaderMenu-{{ block.id }}"
             href="{{ block.settings.url }}"
             class="header__menu-item list-menu__item link link--text focus-inset">
             <span>{{ block.settings.label }}</span>
