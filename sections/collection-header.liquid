@@ -3,9 +3,8 @@
     padding-top: {{ section.settings.mobile_padding_top }}px;
     padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
     background-color: {{ section.settings.background_color }};
-    {% if section.settings.bg_mobile_image %}
-      background-image: url('{{ section.settings.bg_mobile_image | image_url: width: 1080 }}');
-    {% endif %}
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 50%){% if section.settings.bg_mobile_image %}
+    , url('{{ section.settings.bg_mobile_image | image_url: width: 1080 }}'){% endif %};
     background-size: cover;
     background-position: center;
 
@@ -15,15 +14,15 @@
     .section-{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
-      {% if section.settings.bg_image %}
-        background-image: url('{{ section.settings.bg_image | image_url: width: 1920 }}');
-      {% endif %}
-    }
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 50%){% if section.settings.bg_image %}
+      , url('{{ section.settings.bg_image | image_url: width: 1920 }}'){% endif %};
   }
+}
 
-  .section-{{ section.id }} .ch-text {
-    color: {{ section.settings.text_color }};
-  }
+.section-{{ section.id }}
+.ch-text {
+  color: {{ section.settings.text_color }};
+}
 {%- endstyle -%}
 
 <div class="section-{{ section.id }} bg-cover">
@@ -51,7 +50,7 @@
                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
               </svg>
             </div>
-            <span class="ch-text font-medium text-sm">{{ section.settings.social_proof_text }}</span>
+            <span class="text-white font-medium text-sm">{{ section.settings.social_proof_text }}</span>
           </div>
         </div>
         <h1 class="ch-text text-3xl md:text-5xl font-bold my-4 leading-tight">
@@ -74,7 +73,7 @@
               {% if block.type == 'guarantee' %}
                 <li class="flex items-center gap-1.5" {{ block.shopify_attributes }}>
                   <img
-                    class="[filter:invert(1)]"
+                    class=""
                     src="{{ block.settings.icon | image_url: width: 24 }}"
                     height="16"
                     width="auto"
@@ -107,7 +106,7 @@
               </div>
               <div>
                 <div>
-                  <h3 class="ch-text font-medium text-sm tracking-normal md:text-lg my-0">
+                  <h3 class="text-white font-medium text-sm tracking-normal md:text-lg my-0">
                     {{ block.settings.step_title }}
                   </h3>
                   <p class="text-gray-400 my-0 text-xs md:text-base">
