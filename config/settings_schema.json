@@ -8,6 +8,136 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "Scent Quiz (popup)",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_scent_quiz",
+        "label": "Enable scent quiz popup",
+        "default": false
+      },
+      {
+        "type": "paragraph",
+        "content": "A swipe-based scent quiz shown as a popup site-wide. The visitor saves up to 6 favorites and is linked through to the bundle product with their picks pre-filled. On-site copy stays in Swedish; only these settings are in English."
+      },
+      {
+        "type": "product",
+        "id": "scent_quiz_bundle_product",
+        "label": "Bundle product",
+        "info": "The product the quiz's \"Build my bundle\" button links to, with the visitor's picks pre-filled. Defaults to the 6x-50ml-perfume-bottles product if left blank."
+      },
+      {
+        "type": "header",
+        "content": "Trigger"
+      },
+      {
+        "type": "checkbox",
+        "id": "scent_quiz_show_floating_button",
+        "label": "Show floating button",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "scent_quiz_button_label",
+        "label": "Button text",
+        "default": "Hitta din doft"
+      },
+      {
+        "type": "select",
+        "id": "scent_quiz_button_position",
+        "label": "Button position",
+        "options": [
+          {
+            "value": "bottom_right",
+            "label": "Bottom right"
+          },
+          {
+            "value": "bottom_left",
+            "label": "Bottom left"
+          }
+        ],
+        "default": "bottom_right"
+      },
+      {
+        "type": "range",
+        "id": "scent_quiz_auto_open_delay",
+        "label": "Auto-open after",
+        "info": "0 = auto-open disabled. Visitors can always open the quiz manually via the floating button.",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "unit": "s",
+        "default": 0
+      },
+      {
+        "type": "select",
+        "id": "scent_quiz_frequency",
+        "label": "How often the popup should auto-open",
+        "options": [
+          {
+            "value": "every_visit",
+            "label": "Every page load"
+          },
+          {
+            "value": "once_per_session",
+            "label": "Once per session"
+          },
+          {
+            "value": "once_per_day",
+            "label": "Once per day"
+          },
+          {
+            "value": "once_ever",
+            "label": "Only once, ever"
+          }
+        ],
+        "default": "once_per_session"
+      },
+      {
+        "type": "header",
+        "content": "Appearance"
+      },
+      {
+        "type": "color",
+        "id": "scent_quiz_primary_color",
+        "label": "Primary color",
+        "default": "#23233a"
+      },
+      {
+        "type": "color",
+        "id": "scent_quiz_accent_color",
+        "label": "Accent color (heart / save)",
+        "default": "#b03a5b"
+      },
+      {
+        "type": "header",
+        "content": "Email capture (Klaviyo)"
+      },
+      {
+        "type": "checkbox",
+        "id": "scent_quiz_klaviyo_enabled",
+        "label": "Send saved scent boards to Klaviyo",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "scent_quiz_klaviyo_public_key",
+        "label": "Klaviyo public API key (Site ID)",
+        "info": "Klaviyo > Settings > API Keys > Public API Key. Safe to use in the browser."
+      },
+      {
+        "type": "text",
+        "id": "scent_quiz_klaviyo_list_id",
+        "label": "Klaviyo List ID",
+        "info": "The list the visitor's email should be added to. Klaviyo > Lists & Segments > open the list > List ID is in the URL."
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
