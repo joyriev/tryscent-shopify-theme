@@ -536,12 +536,11 @@
 
       for(var i=0;i<liked.length;i++){
     var th=liked[i];
-    var a=document.createElement('a');
-    a.className='bcard'; a.href=link; a.target='_blank'; a.rel='noopener'; a.dataset.scent=th.name;
+    var a=document.createElement('div');
+    a.className='bcard'; a.dataset.scent=th.name;
     a.innerHTML=
       '<div class="bimg"><span class="dot" style="background:'+th.accent+'"></span><img src="'+imgSrc(th,0)+'" alt="'+th.name+'" loading="lazy"></div>'+
-      '<div class="bbody"><div class="bname">'+th.name+'</div>'+
-      '<div class="blink">Shoppa doften <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>';
+      '<div class="bbody"><div class="bname">'+th.name+'</div></div>';
     board.appendChild(a);
       }
     }
@@ -717,11 +716,6 @@
       show('sq-deck-screen');
       updateSeeMatches();
       setTimeout(showCoach, 500);
-    });
-    /* shop-click tracking (delegated so it survives board re-renders) */
-    document.getElementById('sq-board').addEventListener('click', function(e){
-      var a=e.target.closest ? e.target.closest('.bcard') : null;
-      if(a) track('shop_click', {scent:a.dataset.scent||'', where:'board'});
     });
     document.getElementById('sq-shopAll').addEventListener('click', function(e){
       e.preventDefault();
