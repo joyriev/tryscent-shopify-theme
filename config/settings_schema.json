@@ -18,7 +18,7 @@
         "type": "checkbox",
         "id": "enable_scent_quiz",
         "label": "Enable scent quiz popup",
-        "default": false
+        "default": true
       },
       {
         "type": "paragraph",
@@ -29,6 +29,23 @@
         "id": "scent_quiz_bundle_product",
         "label": "Bundle product",
         "info": "The product the quiz's \"Build my bundle\" button links to, with the visitor's picks pre-filled. Defaults to the 6x-50ml-perfume-bottles product if left blank."
+      },
+      {
+        "type": "header",
+        "content": "Scents"
+      },
+      {
+        "type": "collection",
+        "id": "scent_quiz_collection",
+        "label": "Scent collection",
+        "info": "Required - products swiped through in the quiz deck. Until a collection with products is picked here, the trigger button stays visible but shows a notice instead of opening the quiz. Copy (tagline, \"inspired by\", mood tags, second photo) is read from each product's metafields where set - see the comment at the top of snippets/scent-quiz-popup.liquid for the exact fields."
+      },
+      {
+        "type": "text",
+        "id": "scent_quiz_variant_match",
+        "label": "Variant to use",
+        "default": "50",
+        "info": "For each product in the collection above, the variant whose title contains this text is used (e.g. \"50\" matches \"50 ml\"). Falls back to the product's first available variant if none match."
       },
       {
         "type": "header",

@@ -1518,3 +1518,34 @@
         padding: 14px;
       }
     }
+
+    /* Notice shown above the trigger button when it's clicked with no
+       scent collection configured (settings.scent_quiz_collection). */
+    .sq-fab-notice {
+      position: fixed;
+      z-index: 9998;
+      bottom: calc(env(safe-area-inset-bottom) + 78px);
+      max-width: 240px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #23233a;
+      color: #fff;
+      font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+      box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: translateY(6px);
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .sq-fab-notice.sq-show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .sq-fab-notice--bottom_right {
+      right: calc(env(safe-area-inset-right) + 18px);
+    }
+    .sq-fab-notice--bottom_left {
+      left: calc(env(safe-area-inset-left) + 18px);
+    }

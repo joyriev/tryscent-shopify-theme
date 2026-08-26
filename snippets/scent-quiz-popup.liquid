@@ -13,6 +13,10 @@
   assign sq_accent = settings.scent_quiz_accent_color
   assign sq_bundle_product = settings.scent_quiz_bundle_product | default: all_products['6x-50ml-perfume-bottles']
   assign sq_bundle_url = sq_bundle_product.url | default: ''
+  assign sq_collection = settings.scent_quiz_collection
+  assign sq_variant_match = settings.scent_quiz_variant_match | default: '50'
+  assign sq_known_tags = 'Date,Party,Autumn,Office,Everyday,Summer,Evening,Winter,Spring' | split: ','
+  assign sq_palette = '#a97b2e|#6e4d17,#b03a5b|#732239,#4a6f8f|#2b4258,#6f8f6a|#455c41,#b0623a|#78401f,#7a5a8f|#4c3560,#4a90a4|#2c5a68,#8a7a5a|#5c5039' | split: ','
 -%}
 
 <script>
@@ -25,6 +29,99 @@
     klaviyoListId: {{ settings.scent_quiz_klaviyo_list_id | json | replace: '</', '<\/' }}
   };
 </script>
+
+{%- comment -%}
+  Scent deck source: settings.scent_quiz_collection (Theme settings > Scent
+  Quiz > Scents). Required - there is no built-in fallback list. If left
+  blank, or the collection has zero products, the trigger button stays
+  visible as normal, but assets/scent-quiz-popup.js shows a small notice
+  on click instead of opening an empty deck.
+
+  The variant used for each product is whichever one's title contains
+  settings.scent_quiz_variant_match (default "50", e.g. matches "50 ml"),
+  falling back to the product's first available variant.
+
+  Curated copy comes from these product metafields - create them under
+  Settings > Custom data > Products once ready; every one is optional and
+  falls back to a native product field until it's filled in:
+  custom.scent_quiz_emo_en / custom.scent_quiz_emo_sv (single line text)
+  The one-line emotional hook shown under the scent name. Swedish is
+  shown on-site; English is only used if Swedish is blank.
+  custom.scent_quiz_inspired_by (single line text)
+  e.g. "Inspired by Chanel Bleu." - falls back to the product
+  description (stripped, truncated) if left blank.
+  custom.scent_quiz_tags (list of single line text)
+  From: Date, Party, Autumn, Office, Everyday, Summer, Evening, Winter,
+  Spring - falls back to the product's own tags filtered to that list.
+  custom.scent_quiz_inspiration_image (file, image)
+  The referenced designer-perfume photo shown as the card's 2nd photo.
+  Omitted (single-photo card) if left blank.
+  The catalog number badge (e.g. "773") is not a metafield either - it's
+  parsed straight out of product.title, taking whatever follows "No." up to
+  the next space (title like "...Silver Mountain Water - No. 773" -> "773").
+  Shows "Doftprofil" if the title has no "No." in it.
+
+  Card gradient colors (accent/accent2) are not a metafield - they're
+  auto-cycled from the sq_palette list below, 8 colors repeating in
+  product order.
+{%- endcomment -%}
+{%- if sq_collection -%}
+  <script>
+    window.SQ_QUIZ_SCENTS = [
+      {%- for product in sq_collection.products -%}
+        {%- liquid
+          assign sq_variant = blank
+          for variant in product.variants
+            if variant.title contains sq_variant_match
+              assign sq_variant = variant
+              break
+            endif
+          endfor
+          assign sq_variant = sq_variant | default: product.selected_or_first_available_variant
+
+          assign sq_no = blank
+          if product.title contains 'No.'
+            assign sq_no = product.title | split: 'No.' | last | strip | split: ' ' | first
+          endif
+          assign sq_desc = product.metafields.custom.inspiration.value.name | default: ''
+          assign sq_emo = product.metafields.custom.scent_quiz_emo_sv.value | default: product.metafields.custom.scent_quiz_emo_en.value
+
+          assign sq_tags = product.metafields.custom.scent_quiz_tags.value
+          if sq_tags == blank
+            assign sq_tags_str = ''
+            for kt in sq_known_tags
+              if product.tags contains kt
+                assign sq_tags_str = sq_tags_str | append: kt | append: '|'
+              endif
+            endfor
+            assign sq_tags = sq_tags_str | split: '|'
+          endif
+
+          assign sq_pair_i = forloop.index0 | modulo: 8
+          assign sq_pair = sq_palette[sq_pair_i] | split: '|'
+          assign sq_accent = sq_pair[0]
+          assign sq_accent2 = sq_pair[1]
+
+          assign sq_inspiration_image = product.metafields.custom.scent_quiz_inspiration_image.value
+        -%}
+        {
+          name: {{ product.title | json }},
+          no: {{ sq_no | json }},
+          productId: {{ product.id | json }},
+          variantId: {{ sq_variant.id | json }},
+          accent: {{ sq_accent | json }},
+          accent2: {{ sq_accent2 | json }},
+          desc: {{ sq_desc | json }},
+          {%- if sq_emo != blank %}
+          emo: { en: {{ sq_emo | json }}, sv: {{ sq_emo | json }} },
+          {%- endif %}
+          tags: {{ sq_tags | json }},
+          imgs: [{{ product.featured_image | image_url: width: 800 | json }}{% if sq_inspiration_image %}, {{ sq_inspiration_image | image_url: width: 800 | json }}{% endif %}]
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ];
+  </script>
+{%- endif -%}
 
 <style>
   :root {
