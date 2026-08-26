@@ -30,9 +30,8 @@
     var SCENTS = window.SQ_QUIZ_SCENTS || [];
     var HAS_SCENTS = SCENTS.length > 0;
 
-    /* 6x50ml bundle PDP - destination for the board cards and the
-       post-email CTA (sq-lsCta), which still send visitors to the manual
-       bundle builder. Prefill contract: BUNDLE_URL + '?scents=' + up to 6
+    /* 6x50ml bundle PDP - destination for the board cards, prefilled from
+       current picks. Prefill contract: BUNDLE_URL + '?scents=' + up to 6
        saved productIds. BUNDLE_URL comes from settings.scent_quiz_bundle_product
        (theme settings). */
     var BUNDLE_URL = (window.SQ_QUIZ_CONFIG && window.SQ_QUIZ_CONFIG.bundleUrl) || "";
@@ -504,11 +503,6 @@
       if(empty) empty.parentNode.removeChild(empty);
       board.innerHTML='';
 
-      // sq-lsCta (post-email CTA) still sends visitors to the manual bundle
-      // builder, prefilled from current picks (up to 6).
-      var link=bundleLink();
-      document.getElementById('sq-lsCta').href=link;
-
       // sq-shopAll no longer links anywhere - it adds the bundle product to
       // cart directly (see doShopAllATC below). Just refresh its label and
       // clear any stale error from a previous attempt.
@@ -668,7 +662,6 @@
     function submitLead(email, likedScents){
       var prefill=bundleLink();
       track('email_submit', {saved:likedScents.length, scents:likedScents.join(', '), bundle_url:prefill});
-      document.getElementById('sq-lsCta').href=prefill;
 
       if(!KLAVIYO_CONFIG.enabled){
     // Klaviyo isn't configured in theme settings yet - preview the success
@@ -737,8 +730,6 @@
       track('shop_click', {where:'browse_all'});
       doShopAllATC();
     });
-    document.getElementById('sq-lsCta').addEventListener('click', function(){ track('shop_click', {where:'post_email'}); });
-
     /* ---------------- Popup open/close + trigger ---------------- */
     var overlay = root;
     var fab = document.getElementById('scent-quiz-fab');
