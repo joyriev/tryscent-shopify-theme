@@ -30,15 +30,26 @@
     var SCENTS = window.SQ_QUIZ_SCENTS || [];
     var HAS_SCENTS = SCENTS.length > 0;
 
-    /* 6x50ml bundle PDP - single destination for every shop CTA.
-       Prefill contract: BUNDLE_URL + '?scents=' + up to 6 saved productIds.
-       BUNDLE_URL comes from settings.scent_quiz_bundle_product (theme settings). */
+    /* 6x50ml bundle PDP - destination for the board cards and the
+       post-email CTA (sq-lsCta), which still send visitors to the manual
+       bundle builder. Prefill contract: BUNDLE_URL + '?scents=' + up to 6
+       saved productIds. BUNDLE_URL comes from settings.scent_quiz_bundle_product
+       (theme settings). */
     var BUNDLE_URL = (window.SQ_QUIZ_CONFIG && window.SQ_QUIZ_CONFIG.bundleUrl) || "";
     function bundleLink(){
       var ids = state.liked.map(function(s){ return s.productId; }).slice(0,6);
       if(!BUNDLE_URL) return '#';
       return ids.length ? BUNDLE_URL + '?scents=' + ids.join(',') : BUNDLE_URL;
     }
+
+    /* Primary "Build my bundle" CTA (sq-shopAll): adds the merchant-selected
+       bundle product (settings.scent_quiz_bundle_product) straight to cart -
+       no redirect to another product/page - with the visitor's picks recorded
+       as line item properties, then sends them to checkout. Requires the
+       merchant to actually pick a product in Theme settings; if they haven't,
+       BUNDLE_PRODUCT_VARIANT_ID is null and the button shows an inline error
+       instead of adding to cart. See doShopAllATC() below. */
+    var BUNDLE_PRODUCT_VARIANT_ID = (SQ_CFG.bundleProductVariantId) || null;
 
     /* Real photo per index: 0 = product bottle, 1 = inspiration bottle.
        Graceful SVG gradient fallback ONLY when a URL is missing. */
@@ -493,14 +504,21 @@
       if(empty) empty.parentNode.removeChild(empty);
       board.innerHTML='';
 
-      // recompute the bundle prefill link from current picks (up to 6)
+      // sq-lsCta (post-email CTA) still sends visitors to the manual bundle
+      // builder, prefilled from current picks (up to 6).
       var link=bundleLink();
-      var shopAllEl=document.getElementById('sq-shopAll');
-      shopAllEl.href=link;
-      shopAllEl.textContent = liked.length
-    ? 'Bygg mitt bundle ('+Math.min(liked.length,6)+' av 6 valda)'
-    : 'Bygg mitt bundle med 6 dofter';
       document.getElementById('sq-lsCta').href=link;
+
+      // sq-shopAll no longer links anywhere - it adds the bundle product to
+      // cart directly (see doShopAllATC below). Just refresh its label and
+      // clear any stale error from a previous attempt.
+      var shopAllLabel=document.querySelector('#sq-shopAll .btn-shopall__label');
+      if(shopAllLabel){
+    shopAllLabel.textContent = liked.length
+      ? 'Bygg mitt bundle ('+Math.min(liked.length,6)+' av 6 valda)'
+      : 'Bygg mitt bundle med 6 dofter';
+      }
+      hideShopAllError();
 
       document.getElementById('sq-boardCnt').textContent = liked.length + (liked.length===1?' doft':' dofter');
 
@@ -526,6 +544,84 @@
       '<div class="blink">Shoppa doften <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>';
     board.appendChild(a);
       }
+    }
+
+    /* ---------------- Shop-all: add bundle product to cart + checkout ----------------
+       Triggered by sq-shopAll. Adds the merchant-selected bundle product
+       (BUNDLE_PRODUCT_VARIANT_ID) to the cart with the visitor's picks
+       recorded as line item properties, then sends them straight to
+       checkout - no redirect to another product/page. */
+    function buildBundleProperties(){
+      var liked = state.liked;
+      var properties = {
+        "_bundle_items": liked.map(function(s){ return s.variantId; }).join(',')
+      };
+      liked.forEach(function(scent, index){
+    properties['Bottle ' + (index + 1)] = scent.desc
+      ? scent.name + ' Inspired by ' + scent.desc
+      : scent.name;
+      });
+      return properties;
+    }
+    function shopAllError(){ return document.getElementById('sq-shopAllError'); }
+    function showShopAllError(msg){
+      var el = shopAllError(); if(!el) return;
+      el.textContent = msg;
+      el.hidden = false;
+    }
+    function hideShopAllError(){
+      var el = shopAllError(); if(!el) return;
+      el.hidden = true;
+    }
+    var shopAllBusy = false;
+    function setShopAllLoading(isLoading){
+      var btn = document.getElementById('sq-shopAll'); if(!btn) return;
+      btn.classList.toggle('is-loading', isLoading);
+      btn.setAttribute('aria-busy', isLoading ? 'true' : 'false');
+      var spinner = btn.querySelector('.btn-shopall__spinner');
+      if(spinner) spinner.classList.toggle('hidden', !isLoading);
+    }
+    function doShopAllATC(){
+      if(shopAllBusy) return;
+      hideShopAllError();
+      if(!BUNDLE_PRODUCT_VARIANT_ID){
+    showShopAllError('Bundle product not set up yet - select a product under Theme settings.');
+    return;
+      }
+      if(!state.liked.length){
+    showShopAllError('Spara minst en doft innan du bygger ditt bundle.');
+    return;
+      }
+      shopAllBusy = true;
+      setShopAllLoading(true);
+      fetch('/cart/add.js', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      items: [{
+        id: BUNDLE_PRODUCT_VARIANT_ID,
+        quantity: 1,
+        properties: buildBundleProperties()
+      }]
+    })
+      })
+      .then(function(response){
+    if(!response.ok){
+      return response.json().then(function(data){
+        throw new Error((data && data.description) || 'Network response was not ok');
+      });
+    }
+    return response.json();
+      })
+      .then(function(){
+    window.location.href = '/checkout';
+      })
+      .catch(function(err){
+    try{ console.error('[scent quiz] Add to cart failed', err); }catch(e){}
+    showShopAllError('Något gick fel, försök igen.');
+    setShopAllLoading(false);
+    shopAllBusy = false;
+      });
     }
 
     /* ---------------- Email capture (Klaviyo) ---------------- */
@@ -622,14 +718,16 @@
       updateSeeMatches();
       setTimeout(showCoach, 500);
     });
-    document.getElementById('sq-shopAll').setAttribute('href', BUNDLE_URL || '#');
-
     /* shop-click tracking (delegated so it survives board re-renders) */
     document.getElementById('sq-board').addEventListener('click', function(e){
       var a=e.target.closest ? e.target.closest('.bcard') : null;
       if(a) track('shop_click', {scent:a.dataset.scent||'', where:'board'});
     });
-    document.getElementById('sq-shopAll').addEventListener('click', function(){ track('shop_click', {where:'browse_all'}); });
+    document.getElementById('sq-shopAll').addEventListener('click', function(e){
+      e.preventDefault();
+      track('shop_click', {where:'browse_all'});
+      doShopAllATC();
+    });
     document.getElementById('sq-lsCta').addEventListener('click', function(){ track('shop_click', {where:'post_email'}); });
 
     /* ---------------- Popup open/close + trigger ---------------- */

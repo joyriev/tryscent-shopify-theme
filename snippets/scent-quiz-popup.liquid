@@ -13,6 +13,8 @@
   assign sq_accent = settings.scent_quiz_accent_color
   assign sq_bundle_product = settings.scent_quiz_bundle_product | default: all_products['6x-50ml-perfume-bottles']
   assign sq_bundle_url = sq_bundle_product.url | default: ''
+  assign sq_atc_product = settings.scent_quiz_bundle_product
+  assign sq_atc_variant = sq_atc_product.selected_or_first_available_variant
   assign sq_collection = settings.scent_quiz_collection
   assign sq_variant_match = settings.scent_quiz_variant_match | default: '50'
   assign sq_palette = '#a97b2e|#6e4d17,#b03a5b|#732239,#4a6f8f|#2b4258,#6f8f6a|#455c41,#b0623a|#78401f,#7a5a8f|#4c3560,#4a90a4|#2c5a68,#8a7a5a|#5c5039' | split: ','
@@ -21,6 +23,7 @@
 <script>
   window.SQ_QUIZ_CONFIG = {
     bundleUrl: {{ sq_bundle_url | json | replace: '</', '<\/' }},
+    bundleProductVariantId: {{ sq_atc_variant.id | json }},
     autoOpenDelay: {{ settings.scent_quiz_auto_open_delay | default: 0 }},
     frequency: {{ settings.scent_quiz_frequency | default: 'once_per_session' | json }},
     klaviyoEnabled: {{ settings.scent_quiz_klaviyo_enabled | json }},
@@ -502,8 +505,16 @@
             class="btn-shopall"
             id="sq-shopAll"
             href="#"
-            target="_blank"
-            rel="noopener">Bygg mitt bundle med 6 dofter</a>
+            role="button"
+            aria-busy="false">
+            <span class="btn-shopall__spinner loading__spinner hidden" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" class="spinner" viewBox="0 0 66 66">
+                <circle stroke-width="6" cx="33" cy="33" r="30" fill="none" class="path"></circle>
+              </svg>
+            </span>
+            <span class="btn-shopall__label">Bygg mitt bundle med 6 dofter</span>
+          </a>
+          <div class="btn-shopall__error" id="sq-shopAllError" role="alert" hidden></div>
         </div>
       </section>
 
