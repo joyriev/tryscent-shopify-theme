@@ -593,6 +593,18 @@
       }
       shopAllBusy = true;
       setShopAllLoading(true);
+
+      /* Safety net: if /cart/add.js never resolves (dropped connection,
+         stalled request), don't leave the button spinning forever - abort
+         and fall back to the normal state after ATC_TIMEOUT_MS. */
+      var ATC_TIMEOUT_MS = 10000;
+      var controller = (typeof AbortController!=='undefined') ? new AbortController() : null;
+      var timedOut = false;
+      var timeoutId = setTimeout(function(){
+    timedOut = true;
+    if(controller) controller.abort();
+      }, ATC_TIMEOUT_MS);
+
       fetch('/cart/add.js', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -602,7 +614,8 @@
         quantity: 1,
         properties: buildBundleProperties()
       }]
-    })
+    }),
+    signal: controller ? controller.signal : undefined
       })
       .then(function(response){
     if(!response.ok){
@@ -613,11 +626,13 @@
     return response.json();
       })
       .then(function(){
+    clearTimeout(timeoutId);
     window.location.href = '/checkout';
       })
       .catch(function(err){
+    clearTimeout(timeoutId);
     try{ console.error('[scent quiz] Add to cart failed', err); }catch(e){}
-    showShopAllError('Något gick fel, försök igen.');
+    showShopAllError(timedOut ? 'Det tog för lång tid, försök igen.' : 'Något gick fel, försök igen.');
     setShopAllLoading(false);
     shopAllBusy = false;
       });
