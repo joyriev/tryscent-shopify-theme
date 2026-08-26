@@ -15,7 +15,6 @@
   assign sq_bundle_url = sq_bundle_product.url | default: ''
   assign sq_collection = settings.scent_quiz_collection
   assign sq_variant_match = settings.scent_quiz_variant_match | default: '50'
-  assign sq_known_tags = 'Date,Party,Autumn,Office,Everyday,Summer,Evening,Winter,Spring' | split: ','
   assign sq_palette = '#a97b2e|#6e4d17,#b03a5b|#732239,#4a6f8f|#2b4258,#6f8f6a|#455c41,#b0623a|#78401f,#7a5a8f|#4c3560,#4a90a4|#2c5a68,#8a7a5a|#5c5039' | split: ','
 -%}
 
@@ -50,9 +49,9 @@
   custom.scent_quiz_inspired_by (single line text)
   e.g. "Inspired by Chanel Bleu." - falls back to the product
   description (stripped, truncated) if left blank.
-  custom.scent_quiz_tags (list of single line text)
-  From: Date, Party, Autumn, Office, Everyday, Summer, Evening, Winter,
-  Spring - falls back to the product's own tags filtered to that list.
+  custom.custom_label (single line text, comma-separated)
+  e.g. "Date,Party,Evening" - falls back to the product's own tags
+  (all of them) if left blank.
   custom.scent_quiz_inspiration_image (file, image)
   The referenced designer-perfume photo shown as the card's 2nd photo.
   Omitted (single-photo card) if left blank.
@@ -84,25 +83,17 @@
             assign sq_no = product.title | split: 'No.' | last | strip | split: ' ' | first
           endif
           assign sq_desc = product.metafields.custom.inspiration.value.name | default: ''
-          assign sq_emo = product.metafields.custom.scent_quiz_emo_sv.value | default: product.metafields.custom.scent_quiz_emo_en.value
+          assign sq_emo = product.metafields.custom.scent_quiz_emo | default: ''
 
-          assign sq_tags = product.metafields.custom.scent_quiz_tags.value
-          if sq_tags == blank
-            assign sq_tags_str = ''
-            for kt in sq_known_tags
-              if product.tags contains kt
-                assign sq_tags_str = sq_tags_str | append: kt | append: '|'
-              endif
-            endfor
-            assign sq_tags = sq_tags_str | split: '|'
-          endif
+          assign sq_tags = product.metafields.custom.custom_label | default: ''
+          assign sq_tags = sq_tags | split: ','
 
           assign sq_pair_i = forloop.index0 | modulo: 8
           assign sq_pair = sq_palette[sq_pair_i] | split: '|'
           assign sq_accent = sq_pair[0]
           assign sq_accent2 = sq_pair[1]
 
-          assign sq_inspiration_image = product.metafields.custom.scent_quiz_inspiration_image.value
+          assign sq_inspiration_image = product.metafields.custom.inspiration.value.image
         -%}
         {
           name: {{ product.title | json }},
@@ -268,11 +259,15 @@
               stroke="currentColor"
               stroke-width="2.8"
               stroke-linecap="round"
-              stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>Vänster för att
-            <b>hoppa över</b>
+              stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
+            <span>Vänster för att
+              <b>hoppa över</b>
+            </span>
           </span>
-          <span class="sh-save">Höger för att
-            <b>spara</b>
+          <span class="sh-save">
+            <span>Höger för att
+              <b>spara</b>
+            </span>
             <svg
               viewBox="0 0 24 24"
               fill="none"

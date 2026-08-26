@@ -159,7 +159,7 @@
     '<div class="cat"><span class="dot" style="background:'+scent.accent+'"></span>'+(scent.no ? 'Nr '+scent.no : 'Doftprofil')+'</div>'+
     '<h2>'+scent.name+'</h2>'+
     (scent.emo ? '<p class="desc emo-lead">'+(scent.emo[QUIZ_LANG]||scent.emo.en)+'</p>' : '')+
-    '<p class="desc inspired">'+scent.desc.replace('Inspired by','Inspirerad av')+'</p>'+
+    (scent.desc ? '<p class="desc inspired">'+(QUIZ_LANG==='sv'?'Inspirerad av ':'Inspired by ')+scent.desc+'</p>' : '')+
     '<div class="tags">'+tagHtml+'</div>'+
     '<span class="shop-mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>Spara nu, shoppa ditt board i slutet</span>';
 
@@ -221,6 +221,10 @@
     }
 
     /* ---------------- Swipe engine ---------------- */
+    function inRect(el, x, y){
+      var r=el.getBoundingClientRect();
+      return x>=r.left && x<=r.right && y>=r.top && y<=r.bottom;
+    }
     var drag={active:false, startX:0, startY:0, dx:0, dy:0, card:null, moved:false, id:null};
     function bindTop(){
       var c=topCard(); if(!c) return;
@@ -263,6 +267,10 @@
       if(drag.dx>THRESH){ commitSwipe(c,1); }
       else if(drag.dx<-THRESH){ commitSwipe(c,-1); }
       else if(!drag.moved){
+    // pointer capture retargets clicks to the card, so the dir-cue
+    // pills can't receive their own click events - hit-test them here
+    if(c._cueL && inRect(c._cueL, e.clientX, e.clientY)){ commitSwipe(c,-1); return; }
+    if(c._cueR && inRect(c._cueR, e.clientX, e.clientY)){ commitSwipe(c,1); return; }
     // treat as tap: which side of the photo?
     var rect=c.getBoundingClientRect();
     var rel=(e.clientX-rect.left)/rect.width;

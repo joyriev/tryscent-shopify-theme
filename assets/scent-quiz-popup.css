@@ -495,6 +495,7 @@
       right: 0;
       bottom: 0;
       z-index: 4;
+      min-height: 38%;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -622,7 +623,7 @@
       color: #fff;
       padding: 7px 11px;
       border-radius: 100px;
-      pointer-events: none;
+      cursor: pointer;
       opacity: .9;
       box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
       transition: opacity 0.16s ease;
@@ -676,10 +677,12 @@
       color: var(--sq-muted);
       font-weight: 700;
     }
-    #scent-quiz-popup-overlay .swipe-hint span {
+    #scent-quiz-popup-overlay .swipe-hint .sh-save,
+    #scent-quiz-popup-overlay .swipe-hint .sh-skip {
       display: inline-flex;
       align-items: center;
       gap: 5px;
+      line-height: 1.2;
     }
     #scent-quiz-popup-overlay .swipe-hint b {
       font-weight: 800;
@@ -693,6 +696,7 @@
     }
     #scent-quiz-popup-overlay .swipe-hint .sh-save {
       color: var(--sq-love-dark);
+      text-align: right;
     }
     #scent-quiz-popup-overlay #sq-deck-screen.swiped .swipe-hint {
       display: none;
