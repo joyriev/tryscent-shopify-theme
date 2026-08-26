@@ -48,6 +48,9 @@
         const floatingAtc = document.getElementById('floatingAtc');
         const floatingAtcBtn = document.querySelector('#floatingAtc button');
 
+        // Modify quiz button position
+        const quizButton = document.getElementById('scent-quiz-fab');
+
         if(!atcBtn || !floatingAtc || !floatingAtcBtn) return;
 
         // Observe the scrollToTarget's bottom crossing the viewport top
@@ -57,9 +60,17 @@
                 if (entry.boundingClientRect.bottom < 0) {
                     // scrolled past (above viewport)
                     floatingAtc.classList.add('active');
+
+                    if (quizButton) {
+                      quizButton.style.bottom = '90px';
+                    }
                 } else {
                     // partially or fully visible in viewport
                     floatingAtc.classList.remove('active');
+
+                    if (quizButton) {
+                      quizButton.style.bottom = 'calc(env(safe-area-inset-bottom) + 18px)';
+                    }
                 }
                 });
             },
