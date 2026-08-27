@@ -76,6 +76,26 @@
     },
     "offer_timebar_xLgmJd": {
       "type": "offer-timebar",
+      "blocks": {
+        "payment_icon_6GxdtN": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/090e7fd71af4b4e7589642874d6cae93a0a34f77.png",
+            "label": "Schnell"
+          }
+        },
+        "payment_icon_gqazqP": {
+          "type": "payment_icon",
+          "settings": {
+            "icon": "shopify://shop_images/65f2284e66ff1dcb1a272319f1ef543c429f73e2_1.png",
+            "label": "EU-Versand"
+          }
+        }
+      },
+      "block_order": [
+        "payment_icon_6GxdtN",
+        "payment_icon_gqazqP"
+      ],
       "name": "Offer Timebar",
       "settings": {
         "top_banner_text": "TILLBAKA TILL SKOLAN-KAMPANJ!",
