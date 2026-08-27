@@ -1,0 +1,63 @@
+{% comment %}
+  Renders the UGC video row for the product page, reading its content from
+  the main product section's fuel05_ugc and fuel05_ugc_video blocks. The
+  hosting wrapper div (with the fuel05-ugc reveal classes) lives at the two
+  render sites, not here.
+
+  Accepts:
+  - section: {Object} the main product section (required)
+  - mode: {String} 'desktop' or 'mobile'; mobile adds the Visa alla link
+
+  Usage:
+  {% render 'fuel05-ugc-pdp', section: section, mode: 'mobile' %}
+{% endcomment %}
+
+{%- liquid
+  assign heading = 'Älskad av tusentals'
+  assign has_video = false
+  for b in section.blocks
+    if b.type == 'fuel05_ugc' and b.settings.heading != blank
+      assign heading = b.settings.heading
+    endif
+    if b.type == 'fuel05_ugc_video'
+      if b.settings.video != blank or b.settings.video_url != blank
+        assign has_video = true
+      endif
+    endif
+  endfor
+-%}
+
+{%- if has_video -%}
+  {{ 'fuel05-ugc.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'fuel05-ugc.js' | asset_url }}" defer="defer"></script>
+  <div class="fuel05-ugc__inner">
+    <div class="fuel05-ugc__header">
+      <h2 class="fuel05-ugc__heading">{{ heading | escape }}</h2>
+      <div class="fuel05-ugc__nav">
+        <button class="fuel05-ugc__arrow fuel05-ugc__arrow--prev" type="button" aria-label="Föregående">
+          <svg preserveAspectRatio="none" overflow="visible" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M13 19L20 12L13 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="fuel05-ugc__arrow fuel05-ugc__arrow--next" type="button" aria-label="Nästa">
+          <svg preserveAspectRatio="none" overflow="visible" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M13 19L20 12L13 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="fuel05-ugc__slider swiper">
+      <div class="swiper-wrapper">
+        {%- for b in section.blocks -%}
+          {%- if b.type == 'fuel05_ugc_video' -%}
+            {% render 'fuel05-ugc-tile',
+              video: b.settings.video,
+              video_url: b.settings.video_url,
+              poster: b.settings.video_poster,
+              product_item: b.settings.product
+            %}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+  {%- if mode == 'mobile' -%}
+    <a class="fuel05-ugc__visa-alla" href="{{ routes.collections_url }}/best-sellers">Visa alla</a>
+  {%- endif -%}
+{%- endif -%}

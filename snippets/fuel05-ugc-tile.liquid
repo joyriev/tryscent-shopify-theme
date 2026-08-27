@@ -1,0 +1,70 @@
+{% comment %}
+  Renders one UGC video tile with an optional product pill.
+
+  Accepts:
+  - video: {Object} a video setting value (Shopify Files)
+  - video_url: {String} direct mp4 URL, used when no video is picked
+  - poster: {Object} image setting for the poster frame
+  - product_item: {Object} product shown in the white pill (optional)
+  - shopify_attributes: {String} block attributes for the theme editor
+
+  Usage:
+  {% render 'fuel05-ugc-tile', video: block.settings.video, video_url: block.settings.video_url, poster: block.settings.video_poster, product_item: block.settings.product, shopify_attributes: block.shopify_attributes %}
+{% endcomment %}
+
+{%- if video != blank or video_url != blank -%}
+  <div class="fuel05-ugc__tile swiper-slide" {{ shopify_attributes }}>
+    {%- if video != blank -%}
+      <video
+        class="fuel05-ugc__video"
+        muted
+        loop
+        playsinline
+        preload="none"
+        poster="{% if poster != blank %}{{ poster | image_url: width: 600 }}{% else %}{{ video.preview_image | image_url: width: 600 }}{% endif %}">
+        {%- for source in video.sources -%}
+          {%- if source.format == 'mp4' -%}
+            <source src="{{ source.url }}" type="video/mp4">
+          {%- endif -%}
+        {%- endfor -%}
+      </video>
+    {%- else -%}
+      <video
+        class="fuel05-ugc__video"
+        muted
+        loop
+        playsinline
+        {% if poster != blank %}
+          preload="none"
+          poster="{{ poster | image_url: width: 600 }}"
+        {% else %}
+          preload="metadata"
+        {% endif %}>
+        <source src="{{ video_url }}" type="video/mp4">
+      </video>
+    {%- endif -%}
+    {%- if product_item != blank -%}
+      <a class="fuel05-ugc__pill" href="{{ product_item.url }}">
+        {%- if product_item.featured_image != blank -%}
+          <img
+            class="fuel05-ugc__pill-thumb"
+            src="{{ product_item.featured_image | image_url: width: 132 }}"
+            alt="{{ product_item.featured_image.alt | default: product_item.title | escape }}"
+            width="66"
+            height="66"
+            loading="lazy">
+        {%- endif -%}
+        <span class="fuel05-ugc__pill-info">
+          <span class="fuel05-ugc__pill-title">{{ product_item.title | escape }}</span>
+          <span class="fuel05-ugc__pill-price">{{ product_item.price | money }}</span>
+        </span>
+        <span class="fuel05-ugc__pill-add" aria-hidden="true">
+          <svg preserveAspectRatio="none" overflow="visible" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.53125 2.375H8.46875C8.55208 2.375 8.59375 2.41667 8.59375 2.5V13.5C8.59375 13.5833 8.55208 13.625 8.46875 13.625H7.53125C7.44792 13.625 7.40625 13.5833 7.40625 13.5V2.5C7.40625 2.41667 7.44792 2.375 7.53125 2.375Z" fill="#137C44"/>
+            <path d="M3 7.40625H13.5C13.5833 7.40625 13.625 7.44792 13.625 7.53125V8.46875C13.625 8.55208 13.5833 8.59375 13.5 8.59375H2.5C2.41667 8.59375 2.375 8.55208 2.375 8.46875V7.53125C2.375 7.44792 2.41667 7.40625 2.5 7.40625H3Z" fill="#137C44"/>
+          </svg>
+        </span>
+      </a>
+    {%- endif -%}
+  </div>
+{%- endif -%}
