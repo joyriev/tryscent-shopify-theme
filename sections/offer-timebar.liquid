@@ -86,9 +86,10 @@
   }
 
   .flipdown.flipdown__theme-dark .rotor-group-heading:before {
-    color: #fff;
+    color: #173E34;
     font-size: 8px;
     font-weight: 400;
+    text-transform: uppercase;
   }
 
   /* Timebar Section Styles */
@@ -148,12 +149,23 @@
     background-color: rgba(255, 255, 255, 0.2);
   }
 
-  #copyCodeText {
-    font-weight: 600;
+  .flipdown.flipdown__theme-dark .rotor-bottom,
+  .flipdown.flipdown__theme-dark .rotor-leaf-rear,
+  .flipdown.flipdown__theme-dark .rotor,
+  .flipdown.flipdown__theme-dark .rotor-top,
+  .flipdown.flipdown__theme-dark .rotor-leaf-front,
+  .flipdown.flipdown__theme-dark .rotor-group:nth-child(n + 2):nth-child(-n + 3):before,
+  .flipdown.flipdown__theme-dark .rotor-group:nth-child(n + 2):nth-child(-n + 3):after {
+    background-color: #173E34;
   }
+
+  .flipdown.flipdown__theme-dark .rotor:after {
+    border-color: #173E34;
+  }
+
   {% if section.settings.countdown_date == blank %}
     .flipdown {
-      width: 145px !important;
+      width: 140px !important;
     }
     .flipdown .rotor-group:first-child {
       display: none;
@@ -161,34 +173,29 @@
   {% endif %}
 </style>
 
-<div class="py-2" style="background-color: {{ section.settings.background_color }};">
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-center">
-      {% if section.settings.link != blank %}
-        <a href="{{ section.settings.link }}" class="text-white font-medium no-underline flex flex-wrap gap-x-3 justify-center items-center text-center text-base md:text-lg">
-          <span>
+<div id="{{ section.id }}">
+  {% if section.settings.top_banner_text != blank %}
+    <div class="py-3 bg-[#173E34]">
+      <div class="page-width">
+        <div class="text-center text-white flex items-center justify-center gap-4 leading-none">-
+          <span>{{ section.settings.top_banner_text }}</span>
+          -</div>
+      </div>
+    </div>
+  {% endif %}
+  <div class="py-4 md:py-2 bg-[#DCE9DE]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 justify-center">
+        <div class="flex flex-wrap gap-x-4 gap-y-1 items-center justify-center">
+          <div class="text-[#173E34] font-bold text-xl">
             {{ section.settings.prepend_text }}
-          </span>
-          <div id="flipdown" class="flipdown"></div>
-          <span>
+          </div>
+          <a href="{{ section.settings.link }}" class="text-[#173E34] font-semibold text-lg tracking-wider md:order-1">
             {{ section.settings.append_text }}
-          </span>
-          <img
-            class="mt-1.5 md:mt-0 h-9"
-            src="{{ dhl_euro_asset | asset_url }}"
-            alt="DHL EURO"
-            height=""
-            width="">
-        </a>
-      {% else %}
-        <div class="text-white font-medium flex flex-wrap gap-x-3 justify-center items-center text-center text-base md:text-lg">
-          <span>
-            {{ section.settings.prepend_text }}
-          </span>
+          </a>
           <div id="flipdown" class="flipdown"></div>
-          <span>
-            {{ section.settings.append_text }}
-          </span>
+        </div>
+        <div class="[display:none] md:flex">
           <img
             class="mt-1.5 md:mt-0 h-9"
             src="{{ dhl_euro_asset | asset_url }}"
@@ -196,7 +203,7 @@
             height=""
             width="">
         </div>
-      {% endif %}
+      </div>
     </div>
   </div>
 </div>
@@ -226,7 +233,7 @@
     const deadline = getCountdownDeadline();
 
     new FlipDown(deadline, {
-      headings: ["Dagar", "Timmar", "Minuter", "Sekunder"],
+      headings: ["Dag", "Tim", "Min", "Sek"],
     })
       .start()
       .ifEnded(() => {
@@ -239,18 +246,6 @@
   {
     "name": "Offer Timebar",
     "settings": [
-      {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color",
-        "default": "#15803d"
-      },
-      {
-        "type": "color",
-        "id": "forground_color",
-        "label": "Forground Color",
-        "default": "#15803d"
-      },
       {
         "type": "text",
         "id": "top_banner_text",
@@ -279,6 +274,24 @@
         "type": "url",
         "id": "link",
         "label": "Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "payment_icon",
+        "name": "Payment Icon",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label"
+          }
+        ]
       }
     ],
     "presets": [
