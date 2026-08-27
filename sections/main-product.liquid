@@ -233,13 +233,9 @@
                   {% endif %}
                 </div>
               {%- when 'fuel03_pair_scent' -%}
-                <div class="fuel03-pair-scent fuel03-pair-scent--v1" style="display: none;" {{ block.shopify_attributes }}>
-                  {% render 'fuel03-pair-scent', product: product, section: section, block: block, mode: 'v1' %}
-                </div>
+                {% render 'fuel03-pair-scent', product: product, section: section, block: block, mode: 'v1' %}
               {%- when 'fuel03_pair_scent_v2' -%}
-                <div class="fuel03-pair-scent fuel03-pair-scent--v2m" style="display: none;" {{ block.shopify_attributes }}>
-                  {% render 'fuel03-pair-scent', product: product, section: section, mode: 'v2m' %}
-                </div>
+                {% render 'fuel03-pair-scent', product: product, section: section, host_block: block, mode: 'v2m' %}
               {% when 'bundle_builder_2' %}
                 {% render 'bundle-builder-2' %}
               {%- when 'magic_perfume_atc' -%}
