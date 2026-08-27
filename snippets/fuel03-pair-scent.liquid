@@ -56,6 +56,21 @@
   -%}
   {%- if pair_variant.available -%}
     {{ 'fuel03-pair-scent.css' | asset_url | stylesheet_tag }}
+    <script>
+      // QA and preview reveal, mirrors the one in fuel05-ugc.js. On any theme
+      // that is not the live one, #f03 in the address shows variant 1 and
+      // #f03v2 shows variant 2, so the card can be checked without running
+      // Intelligems. Shopify.theme.role is 'main' on the live theme, so this
+      // can never fire there. The snippet renders more than once per page,
+      // hence the window flag.
+      if (!window.fuel03QaReady) {
+        window.fuel03QaReady = true;
+        if (window.Shopify && Shopify.theme && Shopify.theme.role !== 'main') {
+          if (window.location.hash === '#f03') document.documentElement.classList.add('ab-f03-pair-v1');
+          if (window.location.hash === '#f03v2') document.documentElement.classList.add('ab-f03-pair-v2');
+        }
+      }
+    </script>
     <div class="fuel03-pair-scent__card">
       <div class="fuel03-pair-scent__top">
         <div class="fuel03-pair-scent__text">
