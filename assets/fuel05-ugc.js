@@ -17,14 +17,20 @@
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  // One clip runs at a time, page wide. Every play goes through here, so the
+  // rule holds whether the clip was tapped or scrolled into view.
+  const playOnly = (video) => {
+    document.querySelectorAll('video.fuel05-ugc__video').forEach((other) => {
+      if (other !== video) other.pause();
+    });
+    video.play().catch(() => {});
+  };
+
   const toggleTile = (tile) => {
     const video = tile.querySelector('video.fuel05-ugc__video');
     if (!video) return;
     if (video.paused) {
-      document.querySelectorAll('video.fuel05-ugc__video').forEach((other) => {
-        if (other !== video) other.pause();
-      });
-      video.play().catch(() => {});
+      playOnly(video);
     } else {
       video.pause();
     }
@@ -80,13 +86,20 @@
     if (!videos.length) return;
     const playObserver = new IntersectionObserver(
       (entries) => {
+        // Pause first, then start at most one. A row scrolling into view puts
+        // several cards over the line in the same callback, and this handler
+        // used to call play() on every one of them, so up to four ran at once.
+        // The first card of the batch is the one left running, which is the
+        // one nearest the start of the row.
+        let starting = null;
         entries.forEach((entry) => {
           if (entry.intersectionRatio >= 0.5) {
-            entry.target.play().catch(() => {});
+            if (!starting) starting = entry.target;
           } else {
             entry.target.pause();
           }
         });
+        if (starting) playOnly(starting);
       },
       { threshold: [0, 0.5] }
     );
