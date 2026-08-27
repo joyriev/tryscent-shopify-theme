@@ -5,14 +5,18 @@
   // QA and preview reveal. On any theme that is not the live one, adding #f05 to
   // the address turns the variant on so the test can be checked without running
   // Intelligems. Shopify.theme.role is 'main' on the live theme, so this can
-  // never fire there.
-  if (
-    window.Shopify &&
-    Shopify.theme &&
-    Shopify.theme.role !== 'main' &&
-    window.location.hash === '#f05'
-  ) {
-    document.documentElement.classList.add('ab-f05-ugc');
+  // never fire there. The hash is read again on every hashchange, because typing
+  // #f05 into the bar of a page that is already open never reloads it.
+  if (window.Shopify && Shopify.theme && Shopify.theme.role !== 'main') {
+    const applyHashReveal = () => {
+      document.documentElement.classList.toggle(
+        'ab-f05-ugc',
+        window.location.hash === '#f05'
+      );
+    };
+
+    applyHashReveal();
+    window.addEventListener('hashchange', applyHashReveal);
   }
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
