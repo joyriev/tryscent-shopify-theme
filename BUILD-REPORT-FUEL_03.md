@@ -107,3 +107,91 @@ click tests.
 In `../tryscent-handoff-2026-08-26/QUESTIONS-FOR-FISNIK.md` and the pack's
 `06-OPEN-QUESTIONS.md`, mostly for Korana: size policy, price display, post add
 behaviour, capitalisation.
+
+## Known conditions, 2026-08-27
+
+Four things about this branch that are true today, are not defects to fix on their own, and
+have to be in front of whoever launches it. Everything below was traced in the branch's own
+files; no browser was involved, the `shopify theme dev` preview's token has expired and
+every storefront page it serves now answers 401.
+
+### 1. The card puts up to three extra `/cart/add` forms on the page, in both arms
+
+`snippets/fuel03-pair-scent.liquid:102-116` renders a `<product-form>` wrapping
+`{% form 'product', pair_product %}`, with a hidden variant input and a
+`properties[Inspired By]` input, and a `button name="add"`. Three slots render that markup
+on each of the five test pages: v1 at `sections/main-product.liquid:237`, v2 mobile at
+`:241`, v2 desktop at `snippets/product-media-gallery.liquid:248`. The hiding is CSS only,
+`assets/fuel03-pair-scent.css:2` hides them all and the `ab-f03-pair-*` classes reveal one,
+so **all three exist in the DOM for control shoppers too**.
+
+The one that matters is the v2 desktop slot. The media gallery is emitted at
+`sections/main-product.liquid:79`, before the buy box column at `:81`, so on those five
+pages the first `form[action*="/cart/add"]` and the first `button[name="add"]` in the
+document are a hidden pair card, not the buy box, in both arms.
+
+Traced and currently safe on this template:
+
+* `sections/floating-atc.liquid:47` resolves through `.cta_product_from_submit_btn`, a class
+  the real buy button carries (`snippets/reactive-variant-selector.liquid:94`) and the card's
+  button does not (`snippets/fuel03-pair-scent.liquid:108`). Floating ATC is the bar that is
+  actually on this template.
+* `sections/sticky-atc.liquid:373` does fall through to a bare
+  `document.querySelector('button[name="add"]')`, but `sticky-atc` does not appear anywhere
+  in `templates/product.tsr-bundle.json`.
+* `assets/product-info.js:504` is `get productForm() { return this.querySelector('product-form'); }`
+  and `<product-info>` spans `sections/main-product.liquid:1` to `:1115`, so it contains the
+  media gallery. On these five pages that getter now returns the v2 desktop card instead of
+  the buy box. Nothing reads it today, because this template has neither a variant picker
+  nor a quantity selector, which are the only two paths into it. It becomes a live bug the
+  day anyone adds either one to this template: the buy box's sold out state would be written
+  onto the card's button while the buy box kept looking available.
+
+What cannot be traced from the repo is the app layer, Insureful, Selleasy, Kite, AReviews,
+and the GA4 and Meta add to cart listeners. If any of them binds to the first cart form or
+the first add button it finds, it binds to a hidden card and stops firing from the real buy
+box, on the five highest traffic pages, for control traffic as well. That is the check the
+real test order below is for.
+
+### 2. A sold out 100 ml silently takes a page out of the test, and one product takes out two
+
+`snippets/fuel03-pair-scent.liquid:42-48` walks the pair product's variants and picks the
+first whose downcased title contains `100`; `:57` then gates the whole card on
+`pair_variant.available`. If that 100 ml is out of stock the card disappears even when the
+50 ml and the 30 ml are in stock. The fallback at `:41`,
+`selected_or_first_available_variant`, only applies when **no** variant title contains `100`
+at all, which is not the same thing.
+
+Two of the five pairs point at the same partner product, `bergamot-pepper-ambroxan`:
+`fuel03_pair_1` on the `lavender-mint-vanilla-50-ml-1-7-fl-oz` page and `fuel03_pair_4` on
+the `magic-perfume-no-206m` page. One stockout on that single product therefore quietly
+turns two of the five test pages back into control pages. There is no error, nothing in the
+console, and nothing in the screenshots; the numbers for those pages just go soft.
+
+Two things follow. Stock on the four partner products must be checked before launch and
+again during the run: `bergamot-pepper-ambroxan`, `black-berry-vanilla-musk`,
+`pineapple-smoke-vanilla-50-ml-1-7-fl-oz`, `lavender-mint-vanilla-50-ml-1-7-fl-oz`. And the
+behaviour itself is a decision, not a bug: fall back to the next available size, or keep
+hiding the card. That is Korana's call, and it is the same call as Q7.
+
+### 3. Two product decisions are still open, both with Korana
+
+* **Q7, which size the button adds.** It always adds the 100 ml, including on the
+  `lavender-mint-vanilla-50-ml-1-7-fl-oz` page, where the page's own product is a 50 ml.
+  This matches what the buy box preselects, and it is what the QA run recorded on all five
+  pages, but it changes the money the test measures, so it is hers.
+* **Q8, the card shows no price.** There is no price slot in the design, and the card sits
+  next to an add to cart button that puts a bottle in the cart. Beyond the user experience
+  question, adding a priced item from a card that displays no price is a Swedish price
+  marking question, which is why it is not something to settle here.
+
+### 4. The real test order is still owed
+
+Rule B2 says anything that adds, removes or modifies an input inside a
+`form[action*="/cart/add"]` is a functional change, and functional changes need one real
+test order placed and read in the Shopify admin. FUEL_03 adds a second bottle to the cart,
+so it is squarely inside that rule. The order has not been placed. It needs admin access to
+the store, which this laptop does not have, and it is the check that would also settle the
+app layer question in item 1: place the order, then read the order in the admin and confirm
+the line item, its `Inspired By` property, and that the apps and the analytics events fired
+from the real buy box.
