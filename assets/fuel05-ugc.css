@@ -220,6 +220,13 @@ html.ab-f05-ugc .fuel05-ugc--home,
   height: 16px;
 }
 
+/* The design draws the pill on desktop cards only. */
+@media screen and (max-width: 749px) {
+  .fuel05-ugc__pill {
+    display: none;
+  }
+}
+
 .fuel05-ugc__visa-alla {
   display: inline-block;
   margin-top: 24px;
