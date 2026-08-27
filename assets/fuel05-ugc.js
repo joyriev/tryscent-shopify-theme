@@ -18,19 +18,27 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // One clip runs at a time, page wide. Every play goes through here, so the
-  // rule holds whether the clip was tapped or scrolled into view.
-  const playOnly = (video) => {
+  // rule holds whether the clip was tapped or scrolled into view, and so does
+  // the sound rule: the second argument is set on the clip right before it
+  // starts, and scrolling always passes false. A clip can only ever come up
+  // with sound from a tap, which is what browsers allow.
+  const playOnly = (video, withSound) => {
     document.querySelectorAll('video.fuel05-ugc__video').forEach((other) => {
       if (other !== video) other.pause();
     });
+    video.muted = !withSound;
     video.play().catch(() => {});
   };
 
+  // A tap turns the sound on. The clips are people talking, so a silent one is
+  // pointless, and a tap is the gesture the browser wants before it lets audio
+  // through. First tap on a silent clip, running or not, unmutes it and keeps
+  // it running. After that it is a plain play and pause, sound still on.
   const toggleTile = (tile) => {
     const video = tile.querySelector('video.fuel05-ugc__video');
     if (!video) return;
-    if (video.paused) {
-      playOnly(video);
+    if (video.muted || video.paused) {
+      playOnly(video, true);
     } else {
       video.pause();
     }
@@ -96,10 +104,13 @@
           if (entry.intersectionRatio >= 0.5) {
             if (!starting) starting = entry.target;
           } else {
+            // Muted again on the way out, so a clip somebody had tapped for
+            // sound is silent again the next time scrolling brings it back.
             entry.target.pause();
+            entry.target.muted = true;
           }
         });
-        if (starting) playOnly(starting);
+        if (starting) playOnly(starting, false);
       },
       { threshold: [0, 0.5] }
     );
