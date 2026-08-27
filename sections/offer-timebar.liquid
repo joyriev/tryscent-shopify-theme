@@ -215,9 +215,9 @@
 {% if section.blocks.size > 0 %}
   <div class="md:hidden py-3 border-0 border-b border-solid border-gray-200">
     <div class="page-width">
-      <div class="flex gap-4 justify-between">
+      <div class="flex gap-2 justify-between">
         {% for block in section.blocks %}
-          <div class="flex flex-col items-center {% unless forloop.last %}pr-4 border-0 border-r border-solid border-gray-200{% endunless %}">
+          <div class="flex flex-col items-center">
             <img
               class="rounded"
               src="{{ block.settings.icon |  image_url  }}"
@@ -228,6 +228,9 @@
               {{ block.settings.label }}
             </div>
           </div>
+          {% unless forloop.last %}
+            <div class="!block w-[1px] bg-gray-200 self-stretch"></div>
+          {% endunless %}
         {% endfor %}
       </div>
     </div>
