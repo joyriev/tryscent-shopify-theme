@@ -13,10 +13,28 @@
 {% endcomment %}
 
 {%- if video != blank or video_url != blank -%}
-  <div class="fuel05-ugc__tile swiper-slide" tabindex="0" {{ shopify_attributes }}>
+  {%- comment -%}
+    The card takes the tap and the keyboard, so it needs a role and a name of
+    its own or a screen reader reaches a focusable thing it cannot announce.
+    The video itself has no name to give, and naming it as well would read the
+    card out twice, so it stays out of the tree.
+  {%- endcomment -%}
+  {%- liquid
+    assign tile_label = 'Spela video'
+    if product_item != blank
+      assign tile_label = tile_label | append: ', ' | append: product_item.title
+    endif
+  -%}
+  <div
+    class="fuel05-ugc__tile swiper-slide"
+    role="button"
+    tabindex="0"
+    aria-label="{{ tile_label | escape }}"
+    {{ shopify_attributes }}>
     {%- if video != blank -%}
       <video
         class="fuel05-ugc__video"
+        aria-hidden="true"
         muted
         loop
         playsinline
@@ -31,6 +49,7 @@
     {%- else -%}
       <video
         class="fuel05-ugc__video"
+        aria-hidden="true"
         muted
         loop
         playsinline
