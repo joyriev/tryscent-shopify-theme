@@ -435,3 +435,19 @@ no CSS, no new control on the page.
   is ever audible.
 * Whether the client's clips carry usable audio at all, and at what level. The two copy
   problems flagged last round are unchanged and still need Korana.
+
+## Fix round 4, 2026-08-27
+
+The clips on the product page were showing as empty boxes. Not one of the clips configured
+so far has a thumbnail image set, and `snippets/fuel05-ugc-tile.liquid` told the browser to
+fetch nothing up front, so a tile had no poster to show and no frame of the video file
+either, and it sat blank until it played. Since round 2 only one clip plays at a time, so
+every other tile in the row was one of those blank boxes: on the pink mirage product page
+all four visible tiles were blank. The snippet now decides per clip. A clip that has a
+thumbnail keeps `preload="none"` and its poster exactly as before, and a clip with no
+thumbnail asks for `preload="metadata"` instead, which is enough of the file for the browser
+to paint the first frame into the tile. That narrows the F2 note above, which said no video
+preloads any more: the ones with a thumbnail still do not. Nothing else in the tile
+moved, same classes, same aria, same play and pause, same pill. When the client's real
+thumbnails come through the pipeline and land in the block setting, those clips go back to
+fetching nothing until they play, automatically, with no further code change.
