@@ -183,7 +183,7 @@
       </div>
     </div>
   {% endif %}
-  <div class="py-4 md:py-2 bg-[#DCE9DE]">
+  <div class="py-3 md:py-2 bg-[#DCE9DE]">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap items-center gap-x-4 gap-y-1 justify-center">
         <div class="flex flex-wrap gap-x-4 gap-y-1 items-center justify-center">
@@ -193,7 +193,12 @@
           <a href="{{ section.settings.link }}" class="text-[#173E34] font-semibold text-lg tracking-wider md:order-1">
             {{ section.settings.append_text }}
           </a>
-          <div id="flipdown" class="flipdown"></div>
+          <div class="flex items-center gap-2">
+            <div class="text-base font-bold leading-none text-[#1F2E1F] md:hidden">
+              Endet in
+            </div>
+            <div id="flipdown" class="flipdown"></div>
+          </div>
         </div>
         <div class="[display:none] md:flex">
           <img
