@@ -195,3 +195,37 @@ the store, which this laptop does not have, and it is the check that would also 
 app layer question in item 1: place the order, then read the order in the admin and confirm
 the line item, its `Inspired By` property, and that the apps and the analytics events fired
 from the real buy box.
+
+## Fix round 2, 2026-08-27
+
+Two markup defects came out of a storefront sweep of the QA theme. Both are fixed on this
+branch. The design, the copy, the reveal classes and the hidden by default behaviour are
+all unchanged.
+
+* **The card slots no longer print anything on pages outside the test.** The three wrapper
+  divs used to sit at the call sites, so they were printed on every product page in the
+  shop even when the snippet inside them had nothing to show. That left one empty
+  `fuel03-pair-scent` div on every product page, and seven of them on every bundle page
+  that is not one of the five. The wrapper now lives inside
+  `snippets/fuel03-pair-scent.liquid` behind the same conditions as the card, so a page
+  with no matching Pair Scent block gets zero bytes of our markup. The five test pages
+  still render the same three slots, with the same classes, the same inline hiding and the
+  same margins.
+* **The stylesheet and the QA reveal script are printed once per page.** They used to sit
+  inside the card, so each of the five test pages carried three copies of the stylesheet
+  link and three copies of the script. `sections/main-product.liquid` now asks for them a
+  single time, near the top of the product section, and only when that product really has
+  a card to show.
+* **The QA reveal now follows the address bar.** It read `#f03` only once, while the page
+  was loading, so a reviewer who opened a page first and typed the hash afterwards saw
+  nothing at all and would fairly conclude the build was broken. It now also listens for
+  hash changes: `#f03` shows variant 1, `#f03v2` shows variant 2, any other hash shows
+  neither. The gate around it is untouched, so it still cannot run on the live theme.
+
+One consequence worth knowing. On a preview or QA theme, moving to some other hash now
+also clears a reveal class that Intelligems set itself, because the reveal simply follows
+whatever the address bar says. On the live theme the whole script is switched off, so a
+running test cannot be affected by this.
+
+Theme Check before and after the round: 953 errors and 522 warnings both times, and no new
+warning or error on any of the files touched.
