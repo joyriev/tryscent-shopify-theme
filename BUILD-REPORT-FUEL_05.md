@@ -108,3 +108,121 @@ The list lives in `../tryscent-handoff-2026-08-26/QUESTIONS-FOR-FISNIK.md`, item
 19: placeholder videos, push down instead of takeover on the grid, pill plus button
 opens the product page, four mobile cards, Visa alla target, no badge, 24px mobile
 heading assumption, Figtree instead of Plus Jakarta Sans.
+
+## Fix round, 2026-08-27
+
+Second pass over the branch after the code review in
+`~/day-prep-2026-08-27/tryscent-review/review-fuel05.md`. Six items were fixed. The
+scope was the review's F1, F2, F3, F7 and F8 plus one new QA aid. Nothing else was
+touched: the men's clips question (Q17), the FUEL_03 merge collision and the home
+section limit are all still open and still belong to the team.
+
+### What changed
+
+* **Collection tiles now survive filters, sorts and later pages (F1).**
+  `assets/fuel05-ugc.js` does all of its own wiring. It arms on load, on
+  `shopify:section:load`, and on every change inside `#ProductGridContainer`, which it
+  watches with a MutationObserver. That container element survives both paths that
+  rebuild the grid, so one observer covers the theme's infinite scroll appending cells
+  to `#product-grid` and `facets.js` replacing the container's whole `innerHTML`. The
+  re-scan is safe to run as often as it likes: `arm()` and `initRow()` both stamp the
+  root and return early on a second pass, so nothing gets a second IntersectionObserver
+  or a second Swiper. The section's stylesheet and script tags moved out of
+  `#ProductGridContainer` in `sections/main-collection-product-grid.liquid`, because a
+  script tag put back through `innerHTML` never runs, and the file only needs to load
+  once now.
+* **Tiles render on page one only (F1, second half).** Desktop puts 16 products plus 3
+  visible tiles on a page and 19 does not divide by 4, so from page two the grid starts
+  mid row and the tiles slide to columns 2, 3, 1 instead of the drawn 3, 4, 2. Putting
+  them back would mean either changing how many cells a page emits or moving the tiles
+  for desktop only, which then breaks mobile, where 16 plus 2 divides cleanly and the
+  columns are already correct. The design draws page one, so page one is what ships.
+  The gate is `paginate.current_page == 1`.
+* **No video preloads any more (F2).** `snippets/fuel05-ugc-tile.liquid` sets
+  `preload="none"` on both branches, with or without a poster. The poster setting still
+  works exactly as before. The IntersectionObserver fetches the file when it plays it.
+* **The pill prints the price the way the rest of the shop does (F3).**
+  `snippets/fuel05-ugc-tile.liquid` now carries the same `Från` rule as
+  `snippets/card-product.liquid:268-270`, the theme's own product card: the prefix is
+  printed unless the product carries the `onsale` tag. The pill reads
+  "Från 129,99 kr", the same string the design draws on that product's card two cells
+  away.
+* **The product page loads the CSS and the JS once (F7).**
+  `snippets/fuel05-ugc-pdp.liquid` takes a new `with_assets` parameter and only the
+  desktop render site passes it. A page level counter was tried first and does not
+  work: `render` gives a snippet its own scope and `increment` counters do not cross
+  it, measured on the preview, both renders came back as pass 0.
+* **Video cards answer the keyboard (F8).** The tile carries `tabindex="0"` and
+  `assets/fuel05-ugc.js` has a `keydown` handler beside the existing click one, so
+  Enter and Space play and pause the card. Focus inside the pill link still belongs to
+  the link, the handler steps aside for it.
+* **New, a reveal for QA.** `assets/fuel05-ugc.js` adds `ab-f05-ugc` to the html
+  element when the address ends in `#f05` and `Shopify.theme.role` is not `main`. It
+  lets anyone check the variant on a preview or development theme without Intelligems,
+  and it can never fire on the live theme, where the role is `main`.
+
+### Checked, on the preview
+
+Development theme 152118100038 on `globisoft.myshopify.com`, WebKit, real store data,
+1440 and 390.
+
+* Best Sellers at 1440 with `#f05`: three desktop tiles, cells 3, 8 and 10 of a four
+  column grid, which is row 1 column 3, row 2 column 4 and row 3 column 2, the drawn
+  positions. Two mobile tiles hidden. Videos start when scrolled into view and pause
+  when they leave. Pill reads "Från 129,99 kr". One stylesheet tag, one script tag.
+* Filter applied and then cleared (brand, Tom Ford): the grid re-rendered to 12 visible
+  cells and back to 19, and both times all five roots came back armed with none left
+  unarmed, the tiles held columns 3, 4 and 2, and the tile in view played again. The
+  video's `currentTime` reset on each re-render, which is the proof the elements really
+  were replaced and the new ones were picked up.
+* Infinite scroll at 1440: the grid grew from 21 cells to 37, the page one tiles stayed
+  in place, stayed armed and played again on scroll back, and the appended page brought
+  no tiles of its own.
+* `?page=2` opened directly: 16 product cells, no tiles, no horizontal scroll.
+* Product page at 1440 with `#f05`: the desktop row is present with four cards, exactly
+  one `fuel05-ugc.css` link and one `fuel05-ugc.js` script in the DOM, and all four
+  videos play once the row is scrolled into view. Zero video requests were made before
+  that scroll, 8 after it.
+* Best Sellers at 390 with `#f05`: two mobile tiles at cells 2 and 5, row 1 right and
+  row 3 left, the drawn positions, desktop tiles hidden, video playing. Product page at
+  390: the mobile row is present and playing.
+* Keyboard: the tile takes focus, Enter pauses a playing card and Space starts it again.
+* Control arm, no hash, both pages, after scrolling the whole page: `ab-f05-ugc` absent,
+  zero modules visible, and **zero video requests on the network**. Every `<video>` in
+  the control DOM carries `preload="none"`.
+* No horizontal scroll on any run, at 1440 or 390, in either arm.
+
+### Found this pass, not ours, not fixed
+
+* The theme's infinite scroll fetches
+  `?page=N&section_id=main-collection-product-grid`. That id is the section file name,
+  not the id the collection templates use, which is `product-grid`, so Shopify renders
+  the section standalone with its schema defaults and no blocks at all. Appended pages
+  therefore never carried our tiles, and never carried the theme's own quiz promo card
+  either. Pre-existing, and it makes the page one decision above cost nothing in
+  practice.
+* After any facet filter the theme's own load more stops working. `facets.js` replaces
+  `#ProductGridContainer.innerHTML`, and the inline infinite scroll script keeps
+  observing the button element that replacement detached. Pre-existing, present in the
+  control arm too.
+* F9 from the review is unchanged and still open: the pill title clamps to two lines at
+  the shipped width, and the price line is now one word longer.
+
+### Not examined this pass
+
+* The live theme, in any way. The QA reveal's `role !== 'main'` guard is read from the
+  code and from the development theme reporting `role: "development"`; it was not and
+  cannot be exercised against the live theme.
+* The home placement, still blocked by the 25 section limit.
+* The theme editor, real phones, and widths other than 1440 and 390.
+* Whether the sticky bar price mismatch, the `collection-lander-v2` mobile redirect or
+  the FUEL_03 collision have moved. All three are still open items for Korana.
+
+### Preview note
+
+`shopify theme dev` came up with both `templates/collection.collection-lander-v1.json`
+and `templates/product.tsr-bundle.json` refused, "Type must be defined in schema", for
+the fuel05 blocks. The cause is upload order, the templates went up before the section
+files that declare those block types. Re-saving the two templates cleared it and the
+storefront served 200 from then on. Both files are byte identical to what the branch
+already had.

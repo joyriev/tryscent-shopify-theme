@@ -7,6 +7,11 @@
   Accepts:
   - section: {Object} the main product section (required)
   - mode: {String} 'desktop' or 'mobile'; mobile adds the Visa alla link
+  - with_assets: {Boolean} emit the stylesheet and script tags; pass it on exactly
+    one of the two render sites per page, or the product page loads both twice.
+    The desktop site owns it because it comes first in the markup. render gives a
+    snippet its own scope and increment counters do not cross it, checked on the
+    preview, so the guard has to be a parameter and cannot be a page level flag.
 
   Usage:
   {% render 'fuel05-ugc-pdp', section: section, mode: 'mobile' %}
@@ -28,8 +33,10 @@
 -%}
 
 {%- if has_video -%}
-  {{ 'fuel05-ugc.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'fuel05-ugc.js' | asset_url }}" defer="defer"></script>
+  {%- if with_assets -%}
+    {{ 'fuel05-ugc.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'fuel05-ugc.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
   <div class="fuel05-ugc__inner">
     <div class="fuel05-ugc__header">
       <h2 class="fuel05-ugc__heading">{{ heading | escape }}</h2>

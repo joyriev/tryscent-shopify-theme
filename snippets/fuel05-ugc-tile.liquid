@@ -13,7 +13,7 @@
 {% endcomment %}
 
 {%- if video != blank or video_url != blank -%}
-  <div class="fuel05-ugc__tile swiper-slide" {{ shopify_attributes }}>
+  <div class="fuel05-ugc__tile swiper-slide" tabindex="0" {{ shopify_attributes }}>
     {%- if video != blank -%}
       <video
         class="fuel05-ugc__video"
@@ -34,12 +34,8 @@
         muted
         loop
         playsinline
-        {% if poster != blank %}
-          preload="none"
-          poster="{{ poster | image_url: width: 600 }}"
-        {% else %}
-          preload="metadata"
-        {% endif %}>
+        preload="none"
+        {% if poster != blank %}poster="{{ poster | image_url: width: 600 }}"{% endif %}>
         <source src="{{ video_url }}" type="video/mp4">
       </video>
     {%- endif -%}
@@ -56,7 +52,11 @@
         {%- endif -%}
         <span class="fuel05-ugc__pill-info">
           <span class="fuel05-ugc__pill-title">{{ product_item.title | escape }}</span>
-          <span class="fuel05-ugc__pill-price">{{ product_item.price | money }}</span>
+          {%- comment -%}
+            Same "Från" rule the theme's own card uses, snippets/card-product.liquid:268-270,
+            so the pill reads the way every other price on the page does.
+          {%- endcomment -%}
+          <span class="fuel05-ugc__pill-price">{% unless product_item.tags contains 'onsale' %}<span class="starts_at_text">Från</span> {% endunless %}{{ product_item.price | money }}</span>
         </span>
         <span class="fuel05-ugc__pill-add" aria-hidden="true">
           <svg preserveAspectRatio="none" overflow="visible" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
