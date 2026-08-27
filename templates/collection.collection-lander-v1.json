@@ -64,6 +64,55 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "fuel05_td_1": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 3,
+            "device": "desktop",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dab0d228f62c433fb114e9598a8a8533.mp4"
+          }
+        },
+        "fuel05_td_2": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 7,
+            "device": "desktop",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/caf54270ff754201acaa0098b9c83e3a.mp4"
+          }
+        },
+        "fuel05_td_3": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 8,
+            "device": "desktop",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/b970244f9eb641e9ad567fd5029737c0.mp4"
+          }
+        },
+        "fuel05_tm_1": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 2,
+            "device": "mobile",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/dab0d228f62c433fb114e9598a8a8533.mp4"
+          }
+        },
+        "fuel05_tm_2": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 4,
+            "device": "mobile",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/caf54270ff754201acaa0098b9c83e3a.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "fuel05_td_1",
+        "fuel05_td_2",
+        "fuel05_td_3",
+        "fuel05_tm_1",
+        "fuel05_tm_2"
+      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,

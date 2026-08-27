@@ -1,6 +1,23 @@
 (() => {
+  if (window.fuel05UgcReady) return;
+  window.fuel05UgcReady = true;
+
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const armed = new WeakSet();
+
+  document.addEventListener('click', (event) => {
+    const tile = event.target.closest('.fuel05-ugc__tile');
+    if (!tile || event.target.closest('a')) return;
+    const video = tile.querySelector('video.fuel05-ugc__video');
+    if (!video) return;
+    if (video.paused) {
+      document.querySelectorAll('video.fuel05-ugc__video').forEach((other) => {
+        if (other !== video) other.pause();
+      });
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
 
   const initRow = (root) => {
     if (root.dataset.fuel05Init === 'true') return;
@@ -24,49 +41,27 @@
       });
     }
 
-    const videos = [...root.querySelectorAll('video.fuel05-ugc__video')];
+    if (prefersReduced.matches || !('IntersectionObserver' in window)) return;
+    const videos = root.querySelectorAll('video.fuel05-ugc__video');
     if (!videos.length) return;
-
-    const pauseOthers = (current) => {
-      videos.forEach((video) => {
-        if (video !== current) video.pause();
-      });
-    };
-
-    videos.forEach((video) => {
-      video.muted = true;
-      const tile = video.closest('.fuel05-ugc__tile');
-      tile?.addEventListener('click', (event) => {
-        if (event.target.closest('a')) return;
-        if (video.paused) {
-          pauseOthers(video);
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
-    });
-
-    if (!prefersReduced.matches && 'IntersectionObserver' in window) {
-      const playObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.intersectionRatio >= 0.5) {
-              entry.target.play().catch(() => {});
-            } else {
-              entry.target.pause();
-            }
-          });
-        },
-        { threshold: [0, 0.5] }
-      );
-      videos.forEach((video) => playObserver.observe(video));
-    }
+    const playObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio >= 0.5) {
+            entry.target.play().catch(() => {});
+          } else {
+            entry.target.pause();
+          }
+        });
+      },
+      { threshold: [0, 0.5] }
+    );
+    videos.forEach((video) => playObserver.observe(video));
   };
 
   const arm = (root) => {
-    if (armed.has(root)) return;
-    armed.add(root);
+    if (root.dataset.fuel05Armed === 'true') return;
+    root.dataset.fuel05Armed = 'true';
     const visibilityObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

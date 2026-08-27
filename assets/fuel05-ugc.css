@@ -2,20 +2,22 @@
   display: none !important;
 }
 
-html.ab-f05-ugc .fuel05-ugc,
+html.ab-f05-ugc .fuel05-ugc--home,
 .shopify-design-mode .fuel05-ugc {
   display: block !important;
 }
 
 @media screen and (min-width: 750px) {
-  html.ab-f05-ugc .fuel05-ugc--pdp-mobile {
-    display: none !important;
+  html.ab-f05-ugc .fuel05-ugc--pdp-desktop,
+  html.ab-f05-ugc .fuel05-ugc--grid-desktop {
+    display: block !important;
   }
 }
 
 @media screen and (max-width: 749px) {
-  html.ab-f05-ugc .fuel05-ugc--pdp-desktop {
-    display: none !important;
+  html.ab-f05-ugc .fuel05-ugc--pdp-mobile,
+  html.ab-f05-ugc .fuel05-ugc--grid-mobile {
+    display: block !important;
   }
 }
 
@@ -129,6 +131,17 @@ html.ab-f05-ugc .fuel05-ugc,
 .fuel05-ugc--pdp .fuel05-ugc__tile {
   width: 126px;
   aspect-ratio: 126 / 210;
+}
+
+.fuel05-ugc--grid .fuel05-ugc__tile {
+  width: 100%;
+  aspect-ratio: 260 / 494;
+}
+
+@media screen and (max-width: 749px) {
+  .fuel05-ugc--grid .fuel05-ugc__tile {
+    aspect-ratio: 175 / 331;
+  }
 }
 
 .fuel05-ugc__video {

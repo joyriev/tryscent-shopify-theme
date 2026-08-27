@@ -137,6 +137,17 @@
         {%- else -%}
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
+            {%- assign fuel05_has_tiles = false -%}
+            {%- for b in section.blocks -%}
+              {%- if b.type == 'fuel05_ugc_video' -%}
+                {%- assign fuel05_has_tiles = true -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if fuel05_has_tiles -%}
+              {{ 'fuel05-ugc.css' | asset_url | stylesheet_tag }}
+              <script src="{{ 'fuel05-ugc.js' | asset_url }}" defer="defer"></script>
+            {%- endif -%}
             <ul
               id="product-grid"
               data-id="{{ section.id }}"
@@ -155,6 +166,19 @@
                       {% render 'quiz-promo-card'
                         , block: block
                         , product_position: product_position %}
+                    {% elsif block.type == 'fuel05_ugc_video' %}
+                      <li
+                        class="grid__item fuel05-ugc fuel05-ugc--grid fuel05-ugc--grid-{{ block.settings.device | default: 'desktop' }}"
+                        data-fuel05-row
+                        style="display: none;"
+                        {{ block.shopify_attributes }}>
+                        {% render 'fuel05-ugc-tile',
+                          video: block.settings.video,
+                          video_url: block.settings.video_url,
+                          poster: block.settings.video_poster,
+                          product_item: block.settings.product
+                        %}
+                      </li>
                     {% else %}
                       <li
                         {{ block.shopify_attributes }}
@@ -585,6 +609,54 @@
             "type": "product",
             "id": "product",
             "label": "Select Product"
+          }
+        ]
+      },
+      {
+        "type": "fuel05_ugc_video",
+        "name": "UGC video",
+        "settings": [
+          {
+            "type": "number",
+            "id": "position",
+            "label": "Position"
+          },
+          {
+            "type": "select",
+            "id": "device",
+            "label": "Show on",
+            "options": [
+              {
+                "value": "desktop",
+                "label": "Desktop"
+              },
+              {
+                "value": "mobile",
+                "label": "Mobile"
+              }
+            ],
+            "default": "desktop"
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "text",
+            "id": "video_url",
+            "label": "Video URL",
+            "info": "Used when no video is picked above"
+          },
+          {
+            "type": "image_picker",
+            "id": "video_poster",
+            "label": "Poster image"
+          },
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Linked product"
           }
         ]
       }
