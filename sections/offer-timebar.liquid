@@ -185,7 +185,7 @@
   {% endif %}
   <div class="py-3 md:py-2 bg-[#DCE9DE]">
     <div class="container mx-auto px-4">
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 justify-center">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-1 justify-center">
         <div class="flex flex-wrap gap-x-4 gap-y-1 items-center justify-center">
           <div class="text-[#173E34] font-bold text-xl">
             {{ section.settings.prepend_text }}
@@ -200,18 +200,48 @@
             <div id="flipdown" class="flipdown"></div>
           </div>
         </div>
-        <div class="[display:none] md:flex">
-          <img
-            class="mt-1.5 md:mt-0 h-9"
-            src="{{ dhl_euro_asset | asset_url }}"
-            alt="DHL EURO"
-            height=""
-            width="">
-        </div>
+        {% if section.blocks.size > 0 %}
+          <div class="[display:none] md:flex gap-4">
+            {% for block in section.blocks %}
+              <div class="flex flex-col items-center {% unless forloop.last %}pr-4 border-0 border-r border-solid border-gray-300{% endunless %}">
+                <img
+                  class="rounded"
+                  src="{{ block.settings.icon |  image_url  }}"
+                  height="25"
+                  width=""
+                  alt="{{ block.settings.label }}">
+                <div class="leading-none text-xs mt-1 font-semibold text-black">
+                  {{ block.settings.label }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
 </div>
+{% if section.blocks.size > 0 %}
+  <div class="md:hidden py-3 border-0 border-b border-solid border-gray-200">
+    <div class="page-width">
+      <div class="flex gap-4 justify-between">
+        {% for block in section.blocks %}
+          <div class="flex flex-col items-center {% unless forloop.last %}pr-4 border-0 border-r border-solid border-gray-200{% endunless %}">
+            <img
+              class="rounded"
+              src="{{ block.settings.icon |  image_url  }}"
+              height="25"
+              width=""
+              alt="{{ block.settings.label }}">
+            <div class="leading-none text-xs mt-1 font-semibold text-black">
+              {{ block.settings.label }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
