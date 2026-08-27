@@ -75,13 +75,20 @@
         // that is not the live one, #f03 in the address shows variant 1 and
         // #f03v2 shows variant 2, so the card can be checked without running
         // Intelligems. Shopify.theme.role is 'main' on the live theme, so this
-        // can never fire there. The window flag is belt and braces in case the
-        // snippet is ever rendered more than once.
+        // can never fire there. The hash is read again on every hashchange,
+        // because typing #f03 into the bar of a page that is already open
+        // never reloads it. The window flag keeps this to one listener.
         if (!window.fuel03QaReady) {
           window.fuel03QaReady = true;
           if (window.Shopify && Shopify.theme && Shopify.theme.role !== 'main') {
-            if (window.location.hash === '#f03') document.documentElement.classList.add('ab-f03-pair-v1');
-            if (window.location.hash === '#f03v2') document.documentElement.classList.add('ab-f03-pair-v2');
+            var fuel03ApplyHash = function () {
+              var root = document.documentElement;
+              root.classList.remove('ab-f03-pair-v1', 'ab-f03-pair-v2');
+              if (window.location.hash === '#f03') root.classList.add('ab-f03-pair-v1');
+              if (window.location.hash === '#f03v2') root.classList.add('ab-f03-pair-v2');
+            };
+            fuel03ApplyHash();
+            window.addEventListener('hashchange', fuel03ApplyHash);
           }
         }
       </script>
