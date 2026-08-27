@@ -226,3 +226,150 @@ the fuel05 blocks. The cause is upload order, the templates went up before the s
 files that declare those block types. Re-saving the two templates cleared it and the
 storefront served 200 from then on. Both files are byte identical to what the branch
 already had.
+
+## Fix round 2, 2026-08-27
+
+Third pass over the branch, covering the audit's audience setting gap, the simultaneous
+playback bug, the unnamed video card, and the invalid home template that was blocking the
+whole branch from uploading.
+
+**The preview could not be used this round.** The `shopify theme dev` server on
+127.0.0.1:9292 is still listening, but its access token has expired: every storefront page
+answers 401 ("The access token provided is expired, revoked, malformed, or invalid for
+other reasons") and `/collections/best-sellers` answers 502. Only `/cdn/shop/t/1/assets/`
+still serves. Nothing in this round was seen rendered in a browser. Everything below was
+checked by parsing the files, by Theme Check, and by driving the JavaScript against a stub
+of the observer, and each item says which. The two checks the audit called vacuous are
+answered honestly at the end rather than repeated.
+
+### What changed
+
+* **The home template ships unchanged again, and the branch tip uploads (commit
+  `b1209939`).** `templates/index.json` is back to the version on `boring`. The row itself
+  is untouched in `sections/fuel05-ugc-row.liquid` and keeps its preset, it is simply not
+  referenced by the home template, so it can be wired in later with one small edit: the
+  section entry plus one line in the `order` array.
+  *Verified:* both versions parsed as JSON and their `order` and `sections` counted. The
+  committed tip carried 26 of each, one over Shopify's hard limit of 25; the new commit
+  carries 25 of each. The new file is byte identical to `origin/boring`'s copy (`diff`
+  reports no difference).
+
+* **A clip on the product page can be limited to products carrying a tag.** Each
+  `fuel05_ugc_video` block gained one optional text setting,
+  `sections/main-product.liquid:1450-1455`: label "Show only when product is tagged", info
+  "Leave empty to show everywhere. Example: Herr". The filter itself is
+  `snippets/fuel05-ugc-pdp.liquid:41-54`, and it downcases both sides, so a merchant who
+  types `herr` still matches the `Herr` tag instead of silently getting nothing. Both
+  render sites now pass the page product in rather than leaning on the global:
+  `sections/main-product.liquid:243` and `snippets/product-media-gallery.liquid:253`.
+  Empty is the default and all four shipped clips leave it empty, so the rendered page is
+  byte for byte what it was.
+  *Verified:* the section's `{% schema %}` was extracted and parsed as JSON, and the block
+  now reads `['video', 'video_url', 'video_poster', 'product', 'audience_tag']`. Theme
+  Check over the whole theme reports exactly the same 953 errors and 523 warnings as before
+  the change, with no new offense on any touched file. The filter was **not** exercised
+  against real product tags, because the preview is down.
+
+* **An all filtered row renders nothing at all, heading included.** The old snippet had the
+  same rule written twice, a scan loop that set `has_video` and a render loop that printed
+  the tiles, and the filter would have let the two drift apart. There is now one loop: the
+  tiles are built into a capture at `snippets/fuel05-ugc-pdp.liquid:38-66` and the row is
+  printed only if something came out of it, `:68`. A product that matches none of the clips
+  gets no heading and no empty slider, structurally, not by a second rule agreeing with the
+  first.
+  *Verified:* by reading the control flow and by Theme Check parsing the file clean. Not
+  seen rendered.
+
+* **Only one clip plays at a time now, on scroll as well as on tap.** The observer called
+  `play()` on every video that crossed the 50 per cent line, and a row coming into view
+  crosses all of its cards in the same callback, so up to four ran together. Play now goes
+  through one helper, `playOnly`, at `assets/fuel05-ugc.js:20-27`, which pauses every other
+  fuel05 video first, the same rule the tap path has always had. The observer,
+  `:87-105`, pauses the cards that are leaving and then starts at most one of the cards
+  that are arriving, the first of the batch, so the card nearest the start of the row is
+  the one left running.
+  *Verified:* `node --check` on the file, then the file was run inside a stub of the DOM and
+  the observer and driven through four scenarios. Against the previous file (`dfcabea2`):
+  a row scrolling in with four entries left `[video1, video2, video3, video4]` playing; one
+  card leaving while another arrived left three playing. Against the new file, the same two
+  scenarios left `[video1]` and `[video2]`, one in each case. The whole row scrolling out
+  left nothing playing in both.
+
+* **The video card has a role and a name.** It carried `tabindex="0"` and nothing else, so
+  a screen reader landed on a focusable element it could not announce. It is now
+  `role="button"` with an `aria-label` built at `snippets/fuel05-ugc-tile.liquid:22-33`:
+  "Spela video", plus the linked product's name on the two cards that carry the pill, so
+  those read as "Spela video, Doftar som... Uomo Born in Roma - No. 360". The `<video>` is
+  `aria-hidden="true"` on both branches, `:37` and `:52`; it has no name of its own, it is
+  not focusable, and leaving it in the tree only meant an unlabelled media node inside the
+  named card.
+  *Verified:* Theme Check clean on the file, and the label string traced by reading. **Not**
+  checked with a real screen reader or in a browser. One thing to know: the pill is an `<a>`
+  inside the card, so a link now sits inside an element with `role="button"`. That nesting
+  predates this change (a `tabindex` div wrapped the link already) and the role makes it
+  explicit rather than creating it. Worth a look whenever the pill's plus button decision
+  (Q19) is settled.
+
+### The two checks the audit called vacuous
+
+* **prefers-reduced-motion, product page.** Not reproduced in a browser this round; the
+  preview is down. What was done instead: the file was run in the stub with
+  `matchMedia().matches` returning true, and no play observer is created at all, so no video
+  is ever asked to play. The guard is `assets/fuel05-ugc.js:84`, and it returns before the
+  observer is built. The tap path still works under reduced motion, which is deliberate and
+  unchanged. This is a code level result, not a rendered one, and it should be redone on a
+  live preview before launch.
+* **`.shopify-design-mode`, editor reveal.** Not reproducible from outside the Shopify
+  admin. The reveal is CSS only, `assets/fuel05-ugc.css:6`, and the class is put on `<body>`
+  by Shopify itself only when the storefront is loaded inside the theme editor frame. There
+  is no way to make Shopify emit it from a local page or a curl, and forcing the class by
+  hand would prove the CSS rule, not the reveal. Recording it as untested rather than
+  claiming it: someone needs to open the theme editor on the QA theme (152119279686) and
+  look.
+
+### Correction to the fix round above
+
+The earlier round recorded "all four videos play once the row is scrolled into view"
+(line 183 of this file) as a passing result. It was the bug, not the behaviour: the tap
+path had a one at a time rule, the scroll path did not, and the report described the two as
+if they matched. The measurement above is the correction, and the fix is in this round.
+
+### Pre launch items, both for Korana
+
+* **FUEL_03 and FUEL_05 collide in three files, at the same anchors.** A git conflict on
+  merge is certain, and if both experiments run at once a session bucketed into both gets
+  FUEL_03's pair card and FUEL_05's UGC row stacked in the same slot.
+
+  | File | FUEL_03 | FUEL_05 |
+  |---|---|---|
+  | `sections/main-product.liquid` | new `when` cases after line 232 | new `when` cases after line 232 |
+  | `snippets/product-media-gallery.liquid` | wrapper inserted after line 244 | wrapper inserted after line 244 |
+  | `templates/product.tsr-bundle.json` | `fuel03_pair_v2` right after `tsr_block_CWYfba` | `fuel05_ugc_slot` plus four video blocks right after `tsr_block_CWYfba` |
+
+  Both tests also want the same mobile slot, after the bundle card, which the FUEL_05 brief
+  flagged in its section 5. Korana decides whether the two are sequenced or their slots are
+  separated; whoever merges second resolves three conflicts by hand either way.
+
+* **Two clips carry copy nobody has approved for these pages.** Placeholder videos are
+  allowed, so this is not a rule breach, but neither can go live unnamed. One of the four
+  placeholders has English marketing copy burned into the picture, "From 0 to 100 in
+  self-esteem with 2 sprays", playing on a Swedish product page. And one of the client's own
+  clips carries a burned in "Le Male / ALTERNATIV" comparative claim, which the PDP's
+  "ANSVARSFRISKRIVNING FÖR JÄMFÖRANDE REKLAM" accordion does not cover, on a client the
+  brief describes as legally sensitive about designer brand comparisons. Both need to be in
+  front of Korana before launch, with the second one probably needing the disclaimer copy
+  extended or the clip swapped.
+
+### Not examined this round
+
+* Anything rendered. No browser ran at all: no reveal check, no scroll check, no console
+  check, no horizontal scroll check, at any width, on any page. The whole of the previous
+  round's rendered evidence still stands as the last time these pages were seen, but it
+  predates all four changes above.
+* The audience filter against real product tags, including whether the store's men's
+  products actually carry a `Herr` tag or something else. The setting matches whatever the
+  merchant types; nobody has confirmed what that string should be.
+* The theme editor, real phones, the live theme, and a real test order.
+* The three older open items are unchanged: the `collection-lander-v2` mobile redirect, the
+  home section limit decision, and Q17's audience rule, which now has a mechanism but still
+  has no recorded decision about which clips get which tag.
