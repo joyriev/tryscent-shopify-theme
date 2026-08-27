@@ -240,7 +240,7 @@
                   data-gap-desktop="8"
                   style="display: none;"
                   {{ block.shopify_attributes }}>
-                  {% render 'fuel05-ugc-pdp', section: section, mode: 'mobile' %}
+                  {% render 'fuel05-ugc-pdp', section: section, product: product, mode: 'mobile' %}
                 </div>
               {%- when 'fuel05_ugc_video' -%}
                 <div {{ block.shopify_attributes }}></div>
@@ -1446,6 +1446,12 @@
           "type": "product",
           "id": "product",
           "label": "Linked product"
+        },
+        {
+          "type": "text",
+          "id": "audience_tag",
+          "label": "Show only when product is tagged",
+          "info": "Leave empty to show everywhere. Example: Herr"
         }
       ]
     },

@@ -182,6 +182,15 @@
                         cell count per page or moving the tiles for desktop only, which then
                         breaks mobile, where 16 plus 2 divides cleanly and the columns are
                         already right. The design draws page one, so page one is what we ship.
+
+                        No audience tag setting on this block, unlike the product page one. A
+                        grid cell has no product of its own to test a tag against, and the
+                        tiles are only placed on collection.collection-lander-v1, which is
+                        assigned to Best Sellers, a single mixed collection. Reading the tag
+                        off collection.title there is either a no op or it blanks every tile,
+                        and a setting labelled for product tags that quietly tests a title
+                        would mislead whoever fills it in. The client's rule names product
+                        pages, "mens also for mens pages", so the filter lives there.
                       {%- endcomment -%}
                       {%- if paginate.current_page == 1 -%}
                         <li

@@ -21,6 +21,12 @@
     </div>
     <div class="fuel05-ugc__slider swiper">
       <div class="swiper-wrapper">
+        {%- comment -%}
+          No audience tag setting on these blocks either. The home page has no
+          product in scope for the filter to read, so there is nothing to test a
+          tag against. The setting lives on the product page block, in
+          sections/main-product.liquid.
+        {%- endcomment -%}
         {%- for block in section.blocks -%}
           {% render 'fuel05-ugc-tile',
             video: block.settings.video,
