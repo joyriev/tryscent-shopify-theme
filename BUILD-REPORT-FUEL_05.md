@@ -373,3 +373,65 @@ if they matched. The measurement above is the correction, and the fix is in this
 * The three older open items are unchanged: the `collection-lander-v2` mobile redirect, the
   home section limit decision, and Q17's audience rule, which now has a mechanism but still
   has no recorded decision about which clips get which tag.
+
+## Fix round 3, 2026-08-27
+
+One change, in `assets/fuel05-ugc.js` only: a tap on a clip turns the sound on. No markup,
+no CSS, no new control on the page.
+
+### What changed
+
+* **A tap plays the clip with sound, the next tap pauses it.** The clips are creators
+  talking to camera, so clips that stayed silent whatever you did with them were pointless.
+  Scrolling still starts them silent, because the only thing a browser blocks is a clip
+  that starts itself with sound already on. A tap is a user gesture, and after a gesture
+  the browser lets the sound through, so nothing had to be added to the page for this: no
+  button, no speaker icon, no second state to design. The tap rule now reads: a silent
+  clip, running or not, unmutes and keeps running; a clip that already has sound pauses on
+  the next tap, and the tap after that starts it again with the sound still on
+  (`assets/fuel05-ugc.js:37-45`). A clip that scrolls out of view is paused and muted again
+  (`:106-111`), so scrolling back to it is silent, the same as the first time. Reduced
+  motion is untouched: nothing autoplays there, and a tap plays with sound the same way.
+  Both places that show clips reach this, because they render the same card and the tap is
+  read once on the document: the collection grid at
+  `sections/main-collection-product-grid.liquid:201`, and both product page slots through
+  `snippets/fuel05-ugc-pdp.liquid:56`.
+
+* **The safety property: sound can only ever start from a tap.** Every play goes through
+  the one helper, `playOnly` (`:25-31`), and the helper sets the clip's mute flag from its
+  own argument in the line before it calls `play()`. Scrolling passes false, so anything
+  the observer starts is muted first, every single time, including a clip somebody had
+  tapped for sound a moment earlier. The tap handler is the only caller that passes true.
+  There is no path that starts a clip and leaves whatever sound state it happened to be in.
+
+### Checked
+
+* `node --check assets/fuel05-ugc.js` passes.
+* The file was run inside the same stub of the DOM as last round, extended with the tap
+  path and a mute flag on each stubbed video, and driven through both the old file
+  (`3ad49872`) and the new one. Old file, every scenario: nothing is ever unmuted, and a
+  tap on the clip the scroll had started paused it instead. New file: scrolled into view
+  leaves one clip playing and none with sound; a tap on a second card leaves that one card
+  playing, with sound, and the first paused; a tap on the card that was already running
+  silently gives it sound and keeps it running; a second tap pauses it and it stays
+  unmuted; a third tap plays it with sound again; a tapped card scrolled out comes back
+  paused and muted, and scrolling it back in plays it silent. Reduced motion: no play
+  observer is built and nothing autoplays, and a tap plays with sound. Two rows on one page
+  (collection plus product page): a tap in either row reaches the handler and pauses the
+  other row's clip, so one clip at a time still holds across the two surfaces.
+* Theme Check, whole theme, before and after on the same tree: 953 errors and 523 warnings
+  both times, which is this theme's known baseline, no per file difference anywhere, and no
+  offence at all on `assets/fuel05-ugc.js`.
+* The `shopify theme dev` server on 127.0.0.1:9292 is answering again this round, and the
+  file it serves for `assets/fuel05-ugc.js` is byte identical to the one in the branch, so
+  the change is what a page on the preview would load.
+
+### Not examined this round
+
+* Playback itself. No browser ran, nothing was tapped by hand, and no sound came out of a
+  speaker. The behaviour above is a code level result plus the stub, exactly like round 2.
+  Somebody should open the preview on a phone and a desktop, tap a clip on the collection
+  page and on the product page, and confirm the audio actually plays and that only one clip
+  is ever audible.
+* Whether the client's clips carry usable audio at all, and at what level. The two copy
+  problems flagged last round are unchanged and still need Korana.
