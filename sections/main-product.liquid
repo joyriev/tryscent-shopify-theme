@@ -77,6 +77,9 @@
     <div style="display: flex;" class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper pb-6">
         {% render 'product-media-gallery', variant_images: variant_images %}
+        <div class="fuel03-pair-scent fuel03-pair-scent--v2d" style="display: none;">
+          {% render 'fuel03-pair-scent', product: product, section: section, mode: 'v2d' %}
+        </div>
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -231,6 +234,14 @@
                   {% else %}
                     {% render 'reactive-variant-selector', product: product %}
                   {% endif %}
+                </div>
+              {%- when 'fuel03_pair_scent' -%}
+                <div class="fuel03-pair-scent fuel03-pair-scent--v1" style="display: none;" {{ block.shopify_attributes }}>
+                  {% render 'fuel03-pair-scent', product: product, section: section, block: block, mode: 'v1' %}
+                </div>
+              {%- when 'fuel03_pair_scent_v2' -%}
+                <div class="fuel03-pair-scent fuel03-pair-scent--v2m" style="display: none;" {{ block.shopify_attributes }}>
+                  {% render 'fuel03-pair-scent', product: product, section: section, mode: 'v2m' %}
                 </div>
               {% when 'bundle_builder_2' %}
                 {% render 'bundle-builder-2' %}
@@ -1397,6 +1408,43 @@
           "label": "Select Product"
         }
       ]
+    },
+    {
+      "type": "fuel03_pair_scent",
+      "name": "Pair Scent",
+      "settings": [
+        {
+          "type": "product",
+          "id": "page_product",
+          "label": "Show on product"
+        },
+        {
+          "type": "product",
+          "id": "pair_product",
+          "label": "Recommended product"
+        },
+        {
+          "type": "text",
+          "id": "pair_name",
+          "label": "Displayed name"
+        },
+        {
+          "type": "text",
+          "id": "reason",
+          "label": "Reason line"
+        },
+        {
+          "type": "text",
+          "id": "inspired_name",
+          "label": "Inspired by",
+          "info": "Leave blank to use the recommended product's own data"
+        }
+      ]
+    },
+    {
+      "type": "fuel03_pair_scent_v2",
+      "name": "Pair Scent alt position",
+      "settings": []
     },
     {
       "type": "product_statistics",
