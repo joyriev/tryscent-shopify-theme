@@ -41,6 +41,17 @@
   </div>
 </div>
 
+{% comment %}
+  RETIRED. The homepage cannot take this section (the template is at
+  Shopify's 25-section cap), so the home row ships as
+  snippets/fuel05-ugc-home-row.liquid rendered from
+  sections/popular-products.liquid instead. No presets in the schema below,
+  deliberately: that keeps this file out of the editor's Add section picker,
+  where adding it would create a second, unconfigured copy of the row.
+  Kept in the repo because it is the blocks-based implementation to promote
+  if FUEL_05 wins and homepage slots get freed.
+{% endcomment %}
+
 {% schema %}
 {
   "name": "UGC Video Row",
@@ -81,10 +92,6 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "name": "UGC Video Row"
-    }
-  ]
+  "presets": []
 }
 {% endschema %}

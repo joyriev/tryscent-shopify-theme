@@ -2,21 +2,27 @@
   display: none !important;
 }
 
+/* Design mode mirrors the real breakpoints: revealing every placement at
+   once would show the editor a page that exists at no real width. */
 html.ab-f05-ugc .fuel05-ugc--home,
-.shopify-design-mode .fuel05-ugc {
+.shopify-design-mode .fuel05-ugc--home {
   display: block !important;
 }
 
 @media screen and (min-width: 750px) {
   html.ab-f05-ugc .fuel05-ugc--pdp-desktop,
-  html.ab-f05-ugc .fuel05-ugc--grid-desktop {
+  html.ab-f05-ugc .fuel05-ugc--grid-desktop,
+  .shopify-design-mode .fuel05-ugc--pdp-desktop,
+  .shopify-design-mode .fuel05-ugc--grid-desktop {
     display: block !important;
   }
 }
 
 @media screen and (max-width: 749px) {
   html.ab-f05-ugc .fuel05-ugc--pdp-mobile,
-  html.ab-f05-ugc .fuel05-ugc--grid-mobile {
+  html.ab-f05-ugc .fuel05-ugc--grid-mobile,
+  .shopify-design-mode .fuel05-ugc--pdp-mobile,
+  .shopify-design-mode .fuel05-ugc--grid-mobile {
     display: block !important;
   }
 }

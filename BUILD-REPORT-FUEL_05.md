@@ -6,14 +6,14 @@ globisoft.myshopify.com). The live theme was not touched at any point.
 
 ## Read this first: two blockers found on real Shopify
 
-1. **The home placement cannot upload as built.** The home template is at Shopify's hard
-   limit of 25 sections (13 of them disabled leftovers the client keeps). Our video row
-   was built as its own section, number 26, and Shopify rejects the whole template, which
-   blocks every FUEL_05 placement from uploading, not just the home one. Fisnik decided
-   to hand off as built and let the team choose the fix. Both options and effort
-   estimates are in `../tryscent-handoff-2026-08-26/QUESTIONS-FOR-FISNIK.md`. Until one
-   is done, hold back `templates/index.json` when pushing (one `--only` per file makes
-   this easy) or the push fails.
+1. **RESOLVED 2026-08-28 — the home placement no longer needs a template slot.** The
+   home template is at Shopify's hard limit of 25 sections (13 of them disabled
+   leftovers the client keeps), so the row could not ship as section 26. It now renders
+   from inside the client's "Senaste dofterna" section instead
+   (`sections/popular-products.liquid`, gated to that one instance, rendering
+   `snippets/fuel05-ugc-home-row.liquid`), the same pattern as the collection tiles.
+   `templates/index.json` ships untouched and byte-identical to the client's live copy.
+   Full detail in fix round 5 at the end of this report.
 2. **The client is already running an Intelligems experiment on Best Sellers, mobile.**
    It redirects phone sessions to an alternate template view, `collection-lander-v2`.
    Our tiles live on the assigned template, `collection-lander-v1`. Phone sessions their
@@ -42,8 +42,11 @@ design draws there; phone cards never show the pill, per the design.
 New:
 
 * `assets/fuel05-ugc.css`, `assets/fuel05-ugc.js`
-* `sections/fuel05-ugc-row.liquid` (the home section, the one blocked by the limit)
+* `sections/fuel05-ugc-row.liquid` (retired in round 5: the home section the 25-cap
+  blocked; kept without presets)
 * `snippets/fuel05-ugc-tile.liquid`, `snippets/fuel05-ugc-pdp.liquid`
+* `snippets/fuel05-ugc-home-row.liquid` (round 5: the home row as a snippet, rendered
+  from `sections/popular-products.liquid`)
 
 Edited:
 
@@ -54,9 +57,12 @@ Edited:
 
 ## Swapping in the real creator videos
 
-Every video slot is a theme editor setting on its block: pick a file from the shop's
-library, or paste a URL, plus an optional poster image. The four placeholders are brand
-videos already in the shop's own file library. No video path is in code.
+On the product page and collection, every video slot is a theme editor setting on its
+block: pick a file from the shop's library, or paste a URL, plus an optional poster
+image. Round 5 wired the client's real clips into all of them. The one exception is the
+home row, whose six clips are hard-coded CDN URLs in
+`snippets/fuel05-ugc-home-row.liquid` (a snippet has no video-pick settings) — see fix
+round 5.
 
 ## Check results
 
@@ -84,10 +90,8 @@ videos already in the shop's own file library. No video path is in code.
 
 **Not examined:**
 
-* The home placement on real Shopify, in any state. Blocked by the section limit; its
-  layout file was held back from the preview upload. The home row's look is evidenced
-  only by the local page injection photos in the pack
-  (`../tryscent-handoff-2026-08-26/qa/` and the fuel05 comparison page).
+* ~~The home placement on real Shopify, in any state.~~ Superseded: fix round 5 shipped
+  and verified the home row on the QA theme (152119279686), see the end of this report.
 * Best Sellers mobile with the client's Intelligems experiment running, beyond
   documenting the redirect itself.
 * The collection page's load more behaviour with tiles on later pages (known: the theme
@@ -213,7 +217,8 @@ Development theme 152118100038 on `globisoft.myshopify.com`, WebKit, real store 
 * The live theme, in any way. The QA reveal's `role !== 'main'` guard is read from the
   code and from the development theme reporting `role: "development"`; it was not and
   cannot be exercised against the live theme.
-* The home placement, still blocked by the 25 section limit.
+* ~~The home placement, still blocked by the 25 section limit.~~ Superseded by fix
+  round 5 below.
 * The theme editor, real phones, and widths other than 1440 and 390.
 * Whether the sticky bar price mismatch, the `collection-lander-v2` mobile redirect or
   the FUEL_03 collision have moved. All three are still open items for Korana.
@@ -451,3 +456,51 @@ preloads any more: the ones with a thumbnail still do not. Nothing else in the t
 moved, same classes, same aria, same play and pause, same pill. When the client's real
 thumbnails come through the pipeline and land in the block setting, those clips go back to
 fetching nothing until they play, automatically, with no further code change.
+
+## Fix round 5, 2026-08-28: real clips wired, QA-pass fixes, and the home placement shipped
+
+Everything this round is on QA theme **152119279686** ("FUEL_05 UGC QA") and pushed to
+`fuelerate-org/tryscent-globisoft`, branch `test/fuel-05-multiplacement-ugc`.
+
+**Clips.** The client's seven real UGC clips (Slack, Aug 26) were uploaded to Files by
+Fisnik and wired as native video picks on the PDP (six slides, `fuel05_vid_1..6`) and
+the collection template. The seventh, `brand_JoacimE` (the one mens clip), is uploaded
+but deliberately unplaced: the tested pages are womens pages and the client's own note
+says "mens also for mens pages".
+
+**QA pass fixes, all verified rendered:** PDP desktop stray 24px top margin removed;
+PDP mobile gap now the design's 15px (margin + inner padding-top); mobile heading uses
+the shared mobile shell (24/32/800, cards +56); collection tile height freed from
+Swiper's `.swiper-slide{height:100%}` (now exactly 260x494 / 175x331); pill price on
+one line without the "Från" prefix (pill 241x90 vs drawn 240x89); pill add button back
+to 32x32 (`box-sizing` leak from `.swiper-wrapper`); home mobile shell 51/39 padding
+(477 total, the drawn number); tablet range follows theme gutters; disabled arrow
+opacity 0.4; collection tiles join the grid's scroll reveal; a `keepView()` guard
+re-asserts `?view=collection-lander-v1` after Intelligems strips it (QA reveal block,
+preview themes only).
+
+**The home placement.** Shipped without a template slot: `sections/popular-products.liquid`
+renders `snippets/fuel05-ugc-home-row.liquid` for the "Senaste dofterna" instance only,
+gated on `section.id contains 'popular_products_XDHbay' or section.settings.title ==
+'🔥Senaste dofterna'` (belt and braces: the key dies if the section is deleted and
+re-added, the title dies if reworded; either alone keeps the row). The six clips are
+hard-coded CDN transcode URLs in the snippet (a snippet has no video-pick settings);
+the pill product is `all_products['magic-perfume-no-360m']`. Verified rendered on the
+QA theme: revealed state shows the row between the two carousels (6 tiles, posters,
+pill, heading; mobile shell exactly 477, tiles 175x331); control state renders
+`display:none`, zero height, zero video bytes; css/js tags emit exactly once;
+`templates/index.json` byte-identical to the client's live copy (pulled and diffed).
+
+**Retired:** `sections/fuel05-ugc-row.liquid` stays in the repo as the blocks-based
+implementation to promote if the test wins, but its schema now has no presets so the
+editor's Add-section picker no longer offers it.
+
+**Known trade-offs, accepted for the test round and disclosed at delivery:** the home
+row's heading, clips and pill product are code-edits, not editor-editable (the other
+two placements keep block-driven editability); the hard-coded transcode URLs break if a
+clip is deleted or re-uploaded in Files (fix: refresh the URLs); design-mode reveal now
+mirrors the real breakpoints.
+
+**Not examined this round:** the theme editor visually; real phones; live theme (still
+untouched, `role !== 'main'` guard unchanged); the Intelligems v1/v2 collection
+collision and the FUEL_03 template collision, both still open for Korana.
