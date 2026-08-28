@@ -49,6 +49,17 @@
   </div>
 </div>
 
+{%- comment -%}
+  FUEL_05: the UGC video row rides inside this section because the homepage
+  template sits at Shopify's 25-section cap, so the row cannot be its own
+  section. Gated to the "Senaste dofterna" instance only. The row ships
+  hidden; the test (or the #f05 QA hash) reveals it. Remove with the FUEL_05
+  cleanup.
+{%- endcomment -%}
+{%- if section.id == 'popular_products_XDHbay' -%}
+  {% render 'fuel05-ugc-home-row' %}
+{%- endif -%}
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     new Swiper('#slider-{{ section.id }}', {
