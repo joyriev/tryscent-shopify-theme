@@ -56,7 +56,11 @@
   hidden; the test (or the #f05 QA hash) reveals it. Remove with the FUEL_05
   cleanup.
 {%- endcomment -%}
-{%- if section.id == 'popular_products_XDHbay' -%}
+{%- comment -%}
+  contains, not ==: in a JSON template section.id is the long
+  "template--<id>__popular_products_XDHbay" form, never the bare key.
+{%- endcomment -%}
+{%- if section.id contains 'popular_products_XDHbay' -%}
   {% render 'fuel05-ugc-home-row' %}
 {%- endif -%}
 
