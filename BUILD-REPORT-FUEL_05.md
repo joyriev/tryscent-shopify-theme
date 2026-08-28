@@ -464,9 +464,17 @@ Everything this round is on QA theme **152119279686** ("FUEL_05 UGC QA") and pus
 
 **Clips.** The client's seven real UGC clips (Slack, Aug 26) were uploaded to Files by
 Fisnik and wired as native video picks on the PDP (six slides, `fuel05_vid_1..6`) and
-the collection template. The seventh, `brand_JoacimE` (the one mens clip), is uploaded
-but deliberately unplaced: the tested pages are womens pages and the client's own note
-says "mens also for mens pages".
+the collection template. The seventh, `brand_JoacimE`, is uploaded but deliberately
+unplaced: the client's own note says "mens also for mens pages", and the tested pages
+are womens pages.
+
+**Correction (2026-08-28, Fisnik's catch):** an earlier version of this paragraph
+called JoacimE "the one mens clip". Wrong. Checked against the actual footage: TWO of
+the seven clips feature male creators. `brand_JoacimE` (man in a car, backwards cap,
+"vindpust av en..." captions) is the parked one. `brand_DannieN` (man in a bathroom,
+"Er deodorant ikke nok?" captions) is PLACED on all three pages. Which of the two
+ronnie's "mens" note covers is not stated anywhere; the question is in the delivery
+message and Dannie stays placed until the answer says otherwise.
 
 **QA pass fixes, all verified rendered:** PDP desktop stray 24px top margin removed;
 PDP mobile gap now the design's 15px (margin + inner padding-top); mobile heading uses
