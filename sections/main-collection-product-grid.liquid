@@ -194,9 +194,14 @@
                       {%- endcomment -%}
                       {%- if paginate.current_page == 1 -%}
                         <li
-                          class="grid__item fuel05-ugc fuel05-ugc--grid fuel05-ugc--grid-{{ block.settings.device | default: 'desktop' }}"
+                          class="grid__item fuel05-ugc fuel05-ugc--grid fuel05-ugc--grid-{{ block.settings.device | default: 'desktop' }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                           data-fuel05-row
+                          {% if settings.animations_reveal_on_scroll %}
+                          data-cascade
+                          style="display: none; --animation-order: {{ product_position }};"
+                          {% else %}
                           style="display: none;"
+                          {% endif %}
                           {{ block.shopify_attributes }}>
                           {% render 'fuel05-ugc-tile',
                             video: block.settings.video,

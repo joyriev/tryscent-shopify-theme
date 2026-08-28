@@ -77,10 +77,12 @@
         <span class="fuel05-ugc__pill-info">
           <span class="fuel05-ugc__pill-title">{{ product_item.title | escape }}</span>
           {%- comment -%}
-            Same "Från" rule the theme's own card uses, snippets/card-product.liquid:268-270,
-            so the pill reads the way every other price on the page does.
+            No "Från" prefix here even though the theme's own card carries one:
+            the design draws the price on a single line inside a 93px column,
+            and "Från 129,99 kr" needs 124px, so the prefix wraps the pill a
+            full text-line taller than drawn.
           {%- endcomment -%}
-          <span class="fuel05-ugc__pill-price">{% unless product_item.tags contains 'onsale' %}<span class="starts_at_text">Från</span> {% endunless %}{{ product_item.price | money }}</span>
+          <span class="fuel05-ugc__pill-price">{{ product_item.price | money }}</span>
         </span>
         <span class="fuel05-ugc__pill-add" aria-hidden="true">
           <svg preserveAspectRatio="none" overflow="visible" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

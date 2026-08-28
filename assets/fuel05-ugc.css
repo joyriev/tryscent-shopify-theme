@@ -36,13 +36,12 @@ html.ab-f05-ugc .fuel05-ugc--home,
 }
 
 .fuel05-ugc--pdp-desktop {
-  margin-top: 24px;
   max-width: 530px;
   padding: 24px 0;
 }
 
 .fuel05-ugc--pdp-mobile {
-  margin: 24px 0;
+  margin: 0 0 24px;
 }
 
 .fuel05-ugc--pdp .fuel05-ugc__inner {
@@ -106,7 +105,7 @@ html.ab-f05-ugc .fuel05-ugc--home,
 }
 
 .fuel05-ugc__arrow.swiper-button-disabled {
-  opacity: 0.35;
+  opacity: 0.4;
   cursor: default;
 }
 
@@ -135,6 +134,9 @@ html.ab-f05-ugc .fuel05-ugc--home,
 
 .fuel05-ugc--grid .fuel05-ugc__tile {
   width: 100%;
+  /* Swiper's global .swiper-slide sets height: 100%, which would hand the tile
+     whatever height the neighbouring product cards have. */
+  height: auto;
   aspect-ratio: 260 / 494;
 }
 
@@ -201,9 +203,13 @@ html.ab-f05-ugc .fuel05-ugc--home,
   font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .fuel05-ugc__pill-add {
+  /* Swiper's .swiper-wrapper sets box-sizing: content-box, which every
+     descendant inherits and which grows this box to 34px. */
+  box-sizing: border-box;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
@@ -237,18 +243,41 @@ html.ab-f05-ugc .fuel05-ugc--home,
   text-underline-offset: 3px;
 }
 
+/* Tablet range: the fixed 90px + 52px desktop insets would leave the row 184px
+   narrower than every other section, so it follows the theme's own gutters
+   until the drawn 1100px+ frame applies. */
+@media screen and (min-width: 750px) and (max-width: 1099px) {
+  .fuel05-ugc--home {
+    padding: 36px 0;
+  }
+
+  .fuel05-ugc--home .fuel05-ugc__inner {
+    padding: 0 50px;
+  }
+}
+
 @media screen and (max-width: 749px) {
   .fuel05-ugc--home {
-    padding: 24px 15px;
+    padding: 51px 15px 39px;
   }
 
   .fuel05-ugc--home .fuel05-ugc__inner {
     padding: 0;
   }
 
-  .fuel05-ugc--home .fuel05-ugc__heading {
+  .fuel05-ugc--home .fuel05-ugc__heading,
+  .fuel05-ugc--pdp .fuel05-ugc__heading {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 800;
+  }
+
+  /* The design's shared mobile shell: the card row starts 56px under the
+     heading box (32 + 24), and the block above supplies the 15px gap, so the
+     inner padding-top goes. */
+  .fuel05-ugc--pdp .fuel05-ugc__inner {
+    padding-top: 0;
+    gap: 24px;
   }
 
   .fuel05-ugc--home .fuel05-ugc__tile,

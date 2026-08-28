@@ -17,6 +17,21 @@
 
     applyHashReveal();
     window.addEventListener('hashchange', applyHashReveal);
+
+    // Intelligems' removeViewQueryParam() drops ?view= from the address bar at
+    // startup, so the history entry for the collection page points at the
+    // default collection template, which carries none of this markup. Back and
+    // reload then show a page with no tiles. Preview themes only, QA hash only.
+    const keepView = () => {
+      if (window.location.hash !== '#f05') return;
+      if (!document.querySelector('.fuel05-ugc--grid')) return;
+      if (/[?&]view=/.test(window.location.search)) return;
+      const url = new URL(window.location.href);
+      url.searchParams.set('view', 'collection-lander-v1');
+      history.replaceState(history.state, '', url.toString());
+    };
+    window.addEventListener('load', keepView);
+    window.addEventListener('pagehide', keepView);
   }
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
