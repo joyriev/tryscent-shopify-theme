@@ -219,6 +219,17 @@
         slidesPerView: 'auto',
         spaceBetween: gapMobile,
         watchOverflow: true,
+        // The a11y module jumps the row to any slide whose focus it cannot
+        // prove is already on screen, and it can only prove it when visible
+        // slides are tracked. Without this, a tap that focuses a card (the
+        // tiles are buttons) snapped the row one card over and the observer
+        // then started the newly revealed clip muted: tap the second card,
+        // watch the third slide in and play. Guarded only by a frame-timing
+        // race on Safari, so real fingers hit it and clean automated taps do
+        // not. Tracking visibility makes the guard deterministic, and focus
+        // from the keyboard still brings a genuinely off-screen card into
+        // view, which is the part worth keeping.
+        watchSlidesProgress: true,
         navigation: {
           prevEl: root.querySelector('.fuel05-ugc__arrow--prev'),
           nextEl: root.querySelector('.fuel05-ugc__arrow--next'),
