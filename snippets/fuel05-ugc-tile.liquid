@@ -106,6 +106,12 @@
         The resolution below is the poster attribute's own, so a clip with no
         poster source gets no overlay, which is the same clip that asks for
         metadata and paints its first frame itself.
+
+        Eager, not lazy: the overlay IS the card. Safari only starts a lazy
+        image when its box reaches the viewport, and during a horizontal
+        swipe that is after the card is already on screen, so the row showed
+        its grey placeholder and then popped the picture in. Chrome fetches
+        lazy images far ahead, which is why the flash was Safari-only.
       {%- endcomment -%}
       {%- liquid
         assign poster_image = poster
@@ -121,7 +127,7 @@
           height="{{ poster_image.height }}"
           alt=""
           aria-hidden="true"
-          loading="lazy">
+          loading="eager">
       {%- endif -%}
     {%- else -%}
       <video
@@ -150,7 +156,7 @@
           height="{{ poster.height }}"
           alt=""
           aria-hidden="true"
-          loading="lazy">
+          loading="eager">
       {%- elsif poster_url != blank -%}
         <img
           class="fuel05-ugc__poster"
@@ -159,7 +165,7 @@
           height="1067"
           alt=""
           aria-hidden="true"
-          loading="lazy">
+          loading="eager">
       {%- endif -%}
     {%- endif -%}
     {%- if product_item != blank -%}

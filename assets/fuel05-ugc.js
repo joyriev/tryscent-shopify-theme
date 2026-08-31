@@ -43,7 +43,11 @@
   // with sound from a tap, which is what browsers allow.
   const playOnly = (video, withSound) => {
     document.querySelectorAll('video.fuel05-ugc__video').forEach((other) => {
-      if (other !== video) other.pause();
+      // A clip mid-warm-up is left alone: it is muted, it pauses itself on
+      // its first frame, and pausing it here rejects its pending play() and,
+      // on iOS, stops it buffering, which put the far cards right back in
+      // the cold state the warm-up exists to prevent.
+      if (other !== video && other.dataset.fuel05Warming !== 'true') other.pause();
     });
     // A real start outranks the warm-up below: without this line the warm-up's
     // first-frame handler would pause the clip the shopper just asked for.
@@ -258,34 +262,38 @@
     // re-scanned rather than walked from the top.
     videos.forEach(holdPoster);
 
-    // Buffering starts when a card is half on screen, not when it is tapped.
-    // The postered clips deliberately load nothing up front, so the first tap
-    // used to pay for the whole fetch before a frame could show, which read
-    // as a dead or slow tap on both phone and desktop. preload is bumped for
-    // every clip and load() is only called on one that has fetched nothing,
-    // because load() resets an element that has. Also above the reduced
-    // motion return: warming the buffer moves no pixels, and those shoppers
-    // tap cold clips too.
-    if ('IntersectionObserver' in window && videos.length) {
-      const warm = (video) => {
-        if (video.dataset.fuel05Warm === 'true') return;
+    // Every clip in the row starts buffering the moment the row itself is
+    // reached, not when its own card scrolls into view. The postered clips
+    // deliberately load nothing up front, so a tap used to pay for the whole
+    // fetch before a frame could show; warming on card visibility then moved
+    // the problem to the end of the row, because the last cards were tapped
+    // a beat after they appeared and their fetch lost the race every time,
+    // on every platform. The cards warm two at a time: six parallel fetches
+    // fight each other and iOS's small pool of decoders.
+    //
+    // iOS Safari ignores preload and load() for video. The one request it
+    // honours is playback itself, so a card warms by running its clip muted
+    // and stopping on the first frame, which is the poster image, so nothing
+    // moves on screen. A real start outranks a pending warm: playOnly clears
+    // the flag and the started clip keeps running. Shoppers who asked for
+    // less motion get the plain hint instead, because this path really is a
+    // playback.
+    const warmOne = (video, done) => {
+      if (video.dataset.fuel05Warm === 'true' || video.readyState >= 2 || !video.paused) {
         video.dataset.fuel05Warm = 'true';
-        video.preload = 'auto';
-        if (video.readyState >= 2 || !video.paused) return;
-
-        // iOS Safari ignores preload and load() for video, so the hint above
-        // buys nothing exactly where the slow taps were reported. The one
-        // request it honours is playback itself: run the clip muted and stop
-        // it on the first frame. That frame is the poster image, so nothing
-        // moves on screen, and the shopper who asked for less motion keeps
-        // the plain hint because this path really is a playback.
-        if (prefersReduced.matches) {
-          video.load();
-          return;
-        }
-        const stop = () => {
-          video.removeEventListener('loadeddata', stop);
-          if (video.dataset.fuel05Warming !== 'true') return;
+        done();
+        return;
+      }
+      video.dataset.fuel05Warm = 'true';
+      video.preload = 'auto';
+      if (prefersReduced.matches) {
+        video.load();
+        done();
+        return;
+      }
+      const stop = () => {
+        video.removeEventListener('loadeddata', stop);
+        if (video.dataset.fuel05Warming === 'true') {
           delete video.dataset.fuel05Warming;
           video.pause();
           try {
@@ -293,32 +301,53 @@
           } catch (error) {
             // A clip that cannot seek just stays on its first frame.
           }
-        };
-        video.dataset.fuel05Warming = 'true';
-        video.addEventListener('loadeddata', stop);
-        video.muted = true;
-        const attempt = video.play();
-        if (attempt && attempt.catch) {
-          attempt.catch(() => {
+        }
+        done();
+      };
+      video.dataset.fuel05Warming = 'true';
+      video.addEventListener('loadeddata', stop);
+      video.muted = true;
+      const attempt = video.play();
+      if (attempt && attempt.catch) {
+        attempt.catch((error) => {
+          if (video.dataset.fuel05Warming === 'true') {
             delete video.dataset.fuel05Warming;
             video.removeEventListener('loadeddata', stop);
-            video.load();
-          });
-        }
+            // load() only when the browser refused to play at all, where it
+            // is the last way to ask for bytes and nothing is fetched yet.
+            // On an interruption (a pause() while play() was still pending)
+            // load() would throw away exactly the buffer the warm-up built.
+            if (error && error.name === 'NotAllowedError') video.load();
+          }
+          done();
+        });
+      }
+    };
+
+    const warmQueue = [...videos];
+    const warmNext = () => {
+      const video = warmQueue.shift();
+      if (!video) return;
+      let advanced = false;
+      // The guard advances the queue past a stalled fetch; loadeddata and a
+      // refused play() advance it sooner. Whichever comes first, once.
+      const advance = () => {
+        if (advanced) return;
+        advanced = true;
+        clearTimeout(guard);
+        warmNext();
       };
-      const warmObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.intersectionRatio >= 0.5) {
-              warm(entry.target);
-              warmObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: [0.5] }
-      );
-      videos.forEach((video) => warmObserver.observe(video));
-    }
+      const guard = setTimeout(advance, 2500);
+      warmOne(video, advance);
+    };
+    // Two chains drain the queue side by side: strictly one at a time made
+    // the far end of the row wait through every clip before it, which on a
+    // slow connection was long enough for a shopper to swipe there and find
+    // it cold anyway. Two is still far from the parallel free-for-all that
+    // fights iOS's small pool of decoders, and a tap always outranks the
+    // queue either way.
+    warmNext();
+    warmNext();
 
     if (prefersReduced.matches || !('IntersectionObserver' in window)) return;
     if (!videos.length) return;
@@ -339,8 +368,10 @@
             // Muted again on the way out, so a clip somebody had tapped for
             // sound is silent again the next time scrolling brings it back.
             // The engaged clip is at half visibility or better by definition,
-            // so it never reaches this branch until it really leaves.
-            entry.target.pause();
+            // so it never reaches this branch until it really leaves. A clip
+            // mid-warm-up is not paused here either, for the same reason as
+            // in playOnly: it pauses itself on its first frame.
+            if (entry.target.dataset.fuel05Warming !== 'true') entry.target.pause();
             entry.target.muted = true;
           }
         });
