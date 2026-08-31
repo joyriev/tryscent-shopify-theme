@@ -13,6 +13,14 @@
   because a snippet has no settings to hold a video pick. If a clip is ever
   re-uploaded, refresh the URLs from the Files entries.
 
+  SD-480p-1.5Mbps, not the HD-1080p-7.2Mbps file these started on: the card is
+  265px wide at most and the 1080p stream had to buffer before a tap could
+  produce a frame, which is what read as a dead tap. Each clip has three
+  transcodes (SD-480p-1.5Mbps, HD-720p-4.5Mbps, HD-1080p-7.2Mbps) sharing one
+  trailing id, so only the rendition name in the middle of the URL differs;
+  the 480p files run 5-17MB against 22-77MB. The tile snippet makes the same
+  choice on its own for the placements that pass a picked video.
+
   Remove this file and its render site with the FUEL_05 cleanup.
 
   Usage:
@@ -33,38 +41,38 @@
       <h2 class="fuel05-ugc__heading">Älskad av tusentals</h2>
       <div class="fuel05-ugc__nav">
         <button class="fuel05-ugc__arrow fuel05-ugc__arrow--prev" type="button" aria-label="Föregående">
-          <svg preserveAspectRatio="none" overflow="visible" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M13 19L20 12L13 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg preserveAspectRatio="none" overflow="visible" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 4L17 12L9 20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <button class="fuel05-ugc__arrow fuel05-ugc__arrow--next" type="button" aria-label="Nästa">
-          <svg preserveAspectRatio="none" overflow="visible" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H20M13 19L20 12L13 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg preserveAspectRatio="none" overflow="visible" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 4L17 12L9 20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
     </div>
     <div class="fuel05-ugc__slider swiper">
       <div class="swiper-wrapper">
         {% render 'fuel05-ugc-tile',
-          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/b58364a24e90479d995c8cc6dc96a73b/b58364a24e90479d995c8cc6dc96a73b.HD-1080p-7.2Mbps-92843392.mp4?v=0',
+          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/b58364a24e90479d995c8cc6dc96a73b/b58364a24e90479d995c8cc6dc96a73b.SD-480p-1.5Mbps-92843392.mp4?v=0',
           poster_url: 'https://tryscent.co/cdn/shop/files/preview_images/b58364a24e90479d995c8cc6dc96a73b.thumbnail.0000000000.jpg?v=1787894772&width=600',
           product_item: all_products['magic-perfume-no-360m']
         %}
         {% render 'fuel05-ugc-tile',
-          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/f5fcc4ff10f64169ae5095bfe2f58bcc/f5fcc4ff10f64169ae5095bfe2f58bcc.HD-1080p-7.2Mbps-92843390.mp4?v=0',
+          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/f5fcc4ff10f64169ae5095bfe2f58bcc/f5fcc4ff10f64169ae5095bfe2f58bcc.SD-480p-1.5Mbps-92843390.mp4?v=0',
           poster_url: 'https://tryscent.co/cdn/shop/files/preview_images/f5fcc4ff10f64169ae5095bfe2f58bcc.thumbnail.0000000000.jpg?v=1787894759&width=600'
         %}
         {% render 'fuel05-ugc-tile',
-          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/dfd1f525b8464586ac0e9bd32baea9cd/dfd1f525b8464586ac0e9bd32baea9cd.HD-1080p-7.2Mbps-92843394.mp4?v=0',
+          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/dfd1f525b8464586ac0e9bd32baea9cd/dfd1f525b8464586ac0e9bd32baea9cd.SD-480p-1.5Mbps-92843394.mp4?v=0',
           poster_url: 'https://tryscent.co/cdn/shop/files/preview_images/dfd1f525b8464586ac0e9bd32baea9cd.thumbnail.0000000000.jpg?v=1787894753&width=600'
         %}
         {% render 'fuel05-ugc-tile',
-          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/818572396d674cd5910b24ef0fe6a1a3/818572396d674cd5910b24ef0fe6a1a3.HD-1080p-7.2Mbps-92843389.mp4?v=0',
+          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/818572396d674cd5910b24ef0fe6a1a3/818572396d674cd5910b24ef0fe6a1a3.SD-480p-1.5Mbps-92843389.mp4?v=0',
           poster_url: 'https://tryscent.co/cdn/shop/files/preview_images/818572396d674cd5910b24ef0fe6a1a3.thumbnail.0000000000.jpg?v=1787894737&width=600'
         %}
         {% render 'fuel05-ugc-tile',
-          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/7705e2bb5703441490ef5ef222fc9c22/7705e2bb5703441490ef5ef222fc9c22.HD-1080p-7.2Mbps-92843393.mp4?v=0',
+          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/7705e2bb5703441490ef5ef222fc9c22/7705e2bb5703441490ef5ef222fc9c22.SD-480p-1.5Mbps-92843393.mp4?v=0',
           poster_url: 'https://tryscent.co/cdn/shop/files/preview_images/7705e2bb5703441490ef5ef222fc9c22.thumbnail.0000000000.jpg?v=1787894747&width=600'
         %}
         {% render 'fuel05-ugc-tile',
-          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/938402e6513447aab5b85b254fea9984/938402e6513447aab5b85b254fea9984.HD-1080p-7.2Mbps-92843388.mp4?v=0',
+          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/938402e6513447aab5b85b254fea9984/938402e6513447aab5b85b254fea9984.SD-480p-1.5Mbps-92843388.mp4?v=0',
           poster_url: 'https://tryscent.co/cdn/shop/files/preview_images/938402e6513447aab5b85b254fea9984.thumbnail.0000000000.jpg?v=1787894717&width=600'
         %}
       </div>

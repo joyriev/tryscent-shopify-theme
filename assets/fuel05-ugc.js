@@ -86,6 +86,85 @@
     toggleTile(tile);
   });
 
+  // The store's Klaviyo "10% RABATT" form leaves its container in the page
+  // after a shopper closes it, and on Roi's devices the leftover kept sitting
+  // over everything with pointer-events on: a tap on an arrow or a card hit a
+  // kl div instead of ours, and the body kept Klaviyo's scroll lock. The form
+  // is not ours to configure, so the row defends itself and stops the dead
+  // leftover taking hits. Variant only, and the class is read when the event
+  // fires because this file loads in both arms.
+  const KL_SELECTOR = '[class*="kl-private-reset-css"]';
+
+  const klaviyoShowsForm = (root) =>
+    [...root.querySelectorAll('form.klaviyo-form')].some((form) => form.getClientRects().length > 0);
+
+  const klaviyoCoversViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return rect.width >= window.innerWidth * 0.9 && rect.height >= window.innerHeight * 0.9;
+  };
+
+  // The container, and anything left inside it still covering the viewport.
+  // Both, not just the container: pointer-events inherits only until something
+  // declares its own, and the node sitting over the page declares auto.
+  const klaviyoResidue = () => {
+    const dead = new Set();
+    document.querySelectorAll(KL_SELECTOR).forEach((root) => {
+      // Outermost container per form only.
+      if (root.parentElement && root.parentElement.closest(KL_SELECTOR)) return;
+      // A form still on screen wants its own clicks, embedded ones included.
+      if (klaviyoShowsForm(root)) return;
+      // And only where something big enough to swallow a tap is left. A teaser
+      // tab or an inline signup box is small and stays live.
+      const blockers = [root, ...root.querySelectorAll('*')].filter(klaviyoCoversViewport);
+      if (!blockers.length) return;
+      dead.add(root);
+      blockers.forEach((el) => dead.add(el));
+    });
+    return dead;
+  };
+
+  const muteKlaviyoResidue = () => {
+    if (!document.documentElement.classList.contains('ab-f05-ugc')) return;
+    klaviyoResidue().forEach((el) => {
+      el.dataset.fuel05KlMuted = 'true';
+      el.style.pointerEvents = 'none';
+    });
+    // Klaviyo holds the page still with this class while a form is open, and
+    // it has been seen to leave it on. Nothing is on screen here, so it goes.
+    if (!klaviyoShowsForm(document)) {
+      document.body.classList.remove('klaviyo-prevent-body-scrolling');
+    }
+  };
+
+  const unmuteKlaviyo = () => {
+    document.querySelectorAll('[data-fuel05-kl-muted]').forEach((el) => {
+      delete el.dataset.fuel05KlMuted;
+      el.style.pointerEvents = '';
+    });
+  };
+
+  window.addEventListener('klaviyoForms', (event) => {
+    const type = (event.detail && event.detail.type) || '';
+    if (type === 'close' || type === 'embedClose' || type === 'submit') {
+      muteKlaviyoResidue();
+      // Klaviyo fades the form out, so the first pass can still see it on
+      // screen and skip the container. One deferred retry, not a poll.
+      setTimeout(muteKlaviyoResidue, 500);
+    } else {
+      unmuteKlaviyo();
+    }
+  });
+
+  // The clip a shopper tapped for sound keeps the playhead. Ratios are written
+  // by the row observers below, so a clip in a row that has not armed yet
+  // reads as not visible, exactly as it did before this existed.
+  const visibleRatio = new WeakMap();
+
+  const engagedVideo = () =>
+    [...document.querySelectorAll('video.fuel05-ugc__video')].find(
+      (video) => !video.muted && !video.paused && (visibleRatio.get(video) || 0) >= 0.5
+    ) || null;
+
   const initRow = (root) => {
     if (root.dataset.fuel05Init === 'true') return;
     root.dataset.fuel05Init = 'true';
@@ -113,6 +192,15 @@
     if (!videos.length) return;
     const playObserver = new IntersectionObserver(
       (entries) => {
+        entries.forEach((entry) => visibleRatio.set(entry.target, entry.intersectionRatio));
+
+        // A clip playing with sound was tapped, and scrolling a little must
+        // not take it away again: this callback used to hand playback to
+        // whichever card came first in the batch, which paused and muted the
+        // one the shopper had just asked to hear. Read before the loop, so the
+        // pauses below cannot change the answer half way through.
+        const engaged = engagedVideo();
+
         // Pause first, then start at most one. A row scrolling into view puts
         // several cards over the line in the same callback, and this handler
         // used to call play() on every one of them, so up to four ran at once.
@@ -125,11 +213,13 @@
           } else {
             // Muted again on the way out, so a clip somebody had tapped for
             // sound is silent again the next time scrolling brings it back.
+            // The engaged clip is at half visibility or better by definition,
+            // so it never reaches this branch until it really leaves.
             entry.target.pause();
             entry.target.muted = true;
           }
         });
-        if (starting) playOnly(starting, false);
+        if (starting && !engaged) playOnly(starting, false);
       },
       { threshold: [0, 0.5] }
     );
@@ -180,6 +270,9 @@
   const start = () => {
     armAll();
     watchGrid();
+    // A page can load with a leftover already in it, from a form the shopper
+    // closed before this script ran.
+    muteKlaviyoResidue();
   };
 
   if (document.readyState === 'loading') {

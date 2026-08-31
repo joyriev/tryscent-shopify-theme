@@ -88,30 +88,42 @@ html.ab-f05-ugc .fuel05-ugc--home,
   flex-shrink: 0;
 }
 
+/* The theme draws its own slider navigation as a 36px white circle with a 1px
+   grey rule and a small black chevron: sections/popular-products.liquid hangs
+   "!size-9 border border-solid border-gray-200 rounded-full bg-white
+   [&]:after:!text-base" on Swiper's default buttons. Roi asked for the row to
+   read the same, so the values below are those utilities resolved, and
+   box-sizing is stated because the 36px is the outer edge there.
+   -webkit-tap-highlight-color kills the grey plate iOS paints over the button
+   on touch, which was part of the flash across the row. */
 .fuel05-ugc__arrow {
-  width: 24px;
-  height: 24px;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
   padding: 0;
-  background: none;
-  border: none;
+  background: #fff;
+  border: 1px solid rgb(229 231 235);
+  border-radius: 9999px;
   cursor: pointer;
   color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .fuel05-ugc__arrow svg {
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
 }
 
 .fuel05-ugc__arrow--prev svg {
   transform: rotate(180deg);
 }
 
+/* Swiper's own disabled treatment, which is what the theme's buttons show. */
 .fuel05-ugc__arrow.swiper-button-disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: default;
 }
 
@@ -120,12 +132,16 @@ html.ab-f05-ugc .fuel05-ugc--home,
   width: 100%;
 }
 
+/* No -webkit-tap-highlight-color: iOS paints a grey plate over the whole card
+   on touch, and with the cards side by side that read as a white flash across
+   the row on the way into a tap or a swipe. */
 .fuel05-ugc__tile {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
   background: #eee;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .fuel05-ugc--home .fuel05-ugc__tile {
@@ -147,11 +163,21 @@ html.ab-f05-ugc .fuel05-ugc--home,
 }
 
 @media screen and (max-width: 749px) {
+  /* The grid cell is taller than the card drawn in it, because the product
+     cards beside it carry a title and a price under their image and the row
+     stretches every cell to the tallest. A fixed ratio left 35px of page
+     showing under the tile, which is the white strip Roi boxed. Filling the
+     cell instead bottom-aligns the card with its neighbours, and the video is
+     already inset with object-fit: cover, so it absorbs the extra height. */
   .fuel05-ugc--grid .fuel05-ugc__tile {
-    aspect-ratio: 175 / 331;
+    height: 100%;
+    aspect-ratio: auto;
   }
 }
 
+/* Same grey as the card behind it. A video element paints white until its
+   poster decodes, and six of those coming up at once was the other half of
+   the flash; on the card's own grey they read as placeholders instead. */
 .fuel05-ugc__video {
   position: absolute;
   inset: 0;
@@ -159,6 +185,7 @@ html.ab-f05-ugc .fuel05-ugc--home,
   height: 100%;
   object-fit: cover;
   display: block;
+  background: #eee;
 }
 
 .fuel05-ugc__pill {
