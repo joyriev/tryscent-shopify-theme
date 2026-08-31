@@ -191,7 +191,13 @@ html.ab-f05-ugc .fuel05-ugc--home,
 /* The poster picture, held over the video until the clip presents its first
    frame. No z-index anywhere in the card: these three are all positioned with
    z-index auto, so they paint in the order they are written, which puts the
-   poster over the video and the pill over both. */
+   poster over the video and the pill over both.
+
+   pointer-events: none, because the overlay must never be the tap target.
+   Swiper cancels pointerdown for targets outside its focusable list, video is
+   on that list and img is not, and a cancelled pointerdown costs the click in
+   some WebKit builds. With the overlay inert the tap lands on the video
+   either way. */
 .fuel05-ugc__poster {
   position: absolute;
   inset: 0;
@@ -199,6 +205,7 @@ html.ab-f05-ugc .fuel05-ugc--home,
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
 }
 
 /* No transition. The overlay is frame 0 of the clip, so a straight swap to the
