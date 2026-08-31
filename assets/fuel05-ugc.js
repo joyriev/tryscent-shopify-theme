@@ -39,26 +39,40 @@
   // A tap is the one moment somebody is actively waiting, so the tapped clip
   // gets the connection to itself: the background warm-up parks its chains
   // and clips that were mid-warm-up are paused with whatever they buffered
-  // kept. The hold lifts when the tapped clip can play through, when the
-  // shopper pauses it, on a stream error, or after ten seconds, whichever
-  // comes first, and the parked chains then pick up where they stopped. A
-  // clip that is already fully buffered takes no hold, because there is
-  // nothing left to starve it of.
+  // kept. The hold lasts until the tapped clip is fully downloaded, paused,
+  // ended, or broken, and the parked chains then pick up where they stopped.
+  // Not until canplaythrough, and with no timer: both were tried, and both
+  // release while the clip is still streaming. canplaythrough is only the
+  // browser's guess that the rest will arrive in time, and on the kind of
+  // connection where the hold matters the guess is wrong, so the resumed
+  // warm-up re-starved the playing clip: a few seconds of playback, then a
+  // long stall to rebuffer. Fully buffered is a fact, not a guess. A clip
+  // already fully buffered takes no hold at all.
   let warmHoldVideo = null;
   const parkedWarmChains = [];
+  const fullyBuffered = (video) => {
+    const ranges = video.buffered;
+    return ranges.length > 0 && video.duration > 0 && ranges.end(ranges.length - 1) >= video.duration - 0.5;
+  };
   const releaseWarmHold = (video) => {
     if (warmHoldVideo !== video) return;
     warmHoldVideo = null;
     while (parkedWarmChains.length) parkedWarmChains.shift()();
   };
   const holdWarmsFor = (video) => {
-    if (video.readyState >= 4) return;
+    if (fullyBuffered(video)) return;
     warmHoldVideo = video;
-    const release = () => releaseWarmHold(video);
-    video.addEventListener('canplaythrough', release, { once: true });
+    const onProgress = () => {
+      if (fullyBuffered(video)) release();
+    };
+    const release = () => {
+      video.removeEventListener('progress', onProgress);
+      releaseWarmHold(video);
+    };
     video.addEventListener('pause', release, { once: true });
+    video.addEventListener('ended', release, { once: true });
     video.addEventListener('error', release, { once: true });
-    setTimeout(release, 10000);
+    video.addEventListener('progress', onProgress);
   };
 
   // One clip runs at a time, page wide. Every play goes through here, so the
@@ -67,20 +81,45 @@
   // starts, and scrolling always passes false. A clip can only ever come up
   // with sound from a tap, which is what browsers allow.
   const playOnly = (video, withSound) => {
+    // The hold moves to the new clip before the old one is paused below, so
+    // the old clip's pause release finds the hold already re-owned and the
+    // chains never get a burst between two taps.
+    if (withSound) holdWarmsFor(video);
     document.querySelectorAll('video.fuel05-ugc__video').forEach((other) => {
       if (other === video) return;
       // On a muted start a clip mid-warm-up is left alone: it is muted, it
       // pauses itself on its first frame, and pausing it here would, on iOS,
       // stop it buffering. On a tap the trade flips, and warming clips are
       // paused too so their fetches stop competing with the clip somebody
-      // is waiting on. Their pending play() rejects as an interruption,
-      // which keeps the buffer (see the warm-up's catch).
+      // is waiting on.
       if (other.dataset.fuel05Warming !== 'true' || withSound) other.pause();
+      // Paused is not enough on a tap: Chrome keeps an already-started
+      // download running to the end of the file, and measured on a slow
+      // line those leftovers took nearly the whole connection while the
+      // tapped clip crawled. So a tap tears the others down: preload none
+      // first so the reset does not immediately refetch, then load() to
+      // abort the stream. Only muted clips, so the one somebody watched
+      // keeps its frame and its buffer; only loading ones, so settled
+      // buffers stay. The card gets its poster back because the reset
+      // blanks the element, and the warm flag clears so the clip can warm
+      // again once the line is free.
+      if (withSound && other.muted && other.networkState === 2 && !fullyBuffered(other)) {
+        other.preload = 'none';
+        other.load();
+        delete other.dataset.fuel05Warm;
+        const tile = other.closest('.fuel05-ugc__tile');
+        if (tile) tile.classList.remove('fuel05-ugc__tile--started');
+        // holdPoster runs once per clip by its own stamp, and its frame
+        // callback has already fired, so the stamp comes off to arm a fresh
+        // one; without this the poster would sit over the clip for good the
+        // next time it plays.
+        delete other.dataset.fuel05Poster;
+        holdPoster(other);
+      }
     });
     // A real start outranks the warm-up below: without this line the warm-up's
     // first-frame handler would pause the clip the shopper just asked for.
     delete video.dataset.fuel05Warming;
-    if (withSound) holdWarmsFor(video);
     video.muted = !withSound;
     video.play().catch(() => {});
   };
