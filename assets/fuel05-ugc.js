@@ -58,9 +58,14 @@
     if (!video) return;
     if (video.muted || video.paused) {
       playOnly(video, true);
-    } else {
+    } else if (video.readyState >= 2 || video.currentTime > 0) {
       video.pause();
     }
+    // A clip that is "playing" but has produced no frame yet is still
+    // fetching, and paused reads false the moment play() is called. Without
+    // the guard above, the natural second tap of somebody waiting on a slow
+    // connection cancelled the start they had just asked for, which read as
+    // "tap twice to play". While it loads, a tap does nothing.
   };
 
   const tileFromEvent = (event) => {
@@ -250,6 +255,35 @@
     // re-scanned rather than walked from the top.
     videos.forEach(holdPoster);
 
+    // Buffering starts when a card is half on screen, not when it is tapped.
+    // The postered clips deliberately load nothing up front, so the first tap
+    // used to pay for the whole fetch before a frame could show, which read
+    // as a dead or slow tap on both phone and desktop. preload is bumped for
+    // every clip and load() is only called on one that has fetched nothing,
+    // because load() resets an element that has. Also above the reduced
+    // motion return: warming the buffer moves no pixels, and those shoppers
+    // tap cold clips too.
+    if ('IntersectionObserver' in window && videos.length) {
+      const warm = (video) => {
+        if (video.dataset.fuel05Warm === 'true') return;
+        video.dataset.fuel05Warm = 'true';
+        video.preload = 'auto';
+        if (video.readyState === 0 && video.paused) video.load();
+      };
+      const warmObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.intersectionRatio >= 0.5) {
+              warm(entry.target);
+              warmObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: [0.5] }
+      );
+      videos.forEach((video) => warmObserver.observe(video));
+    }
+
     if (prefersReduced.matches || !('IntersectionObserver' in window)) return;
     if (!videos.length) return;
     const playObserver = new IntersectionObserver(
@@ -263,16 +297,9 @@
         // pauses below cannot change the answer half way through.
         const engaged = engagedVideo();
 
-        // Pause first, then start at most one. A row scrolling into view puts
-        // several cards over the line in the same callback, and this handler
-        // used to call play() on every one of them, so up to four ran at once.
-        // The first card of the batch is the one left running, which is the
-        // one nearest the start of the row.
-        let starting = null;
+        // Pause what left, then start at most one.
         entries.forEach((entry) => {
-          if (entry.intersectionRatio >= 0.5) {
-            if (!starting) starting = entry.target;
-          } else {
+          if (entry.intersectionRatio < 0.5) {
             // Muted again on the way out, so a clip somebody had tapped for
             // sound is silent again the next time scrolling brings it back.
             // The engaged clip is at half visibility or better by definition,
@@ -281,6 +308,20 @@
             entry.target.muted = true;
           }
         });
+
+        // The card left running is the leftmost one at least half on screen,
+        // read from the tracked ratios, not from this batch. The batch only
+        // holds cards whose visibility CHANGED, so picking from it handed
+        // playback to the card a swipe had just revealed on the right while
+        // the settled card beside it stayed dark: swipe one notch and the
+        // third clip started instead of the second. DOM order is row order.
+        let starting = null;
+        for (const video of videos) {
+          if ((visibleRatio.get(video) || 0) >= 0.5) {
+            starting = video;
+            break;
+          }
+        }
         if (starting && !engaged) playOnly(starting, false);
       },
       { threshold: [0, 0.5] }
