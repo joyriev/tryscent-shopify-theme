@@ -165,6 +165,48 @@
       (video) => !video.muted && !video.paused && (visibleRatio.get(video) || 0) >= 0.5
     ) || null;
 
+  // The poster overlay comes off exactly when the clip has really put a frame
+  // on screen, and never goes back on. iOS Safari throws the poster attribute
+  // away as soon as play() is called, and with preload="none" there is nothing
+  // decoded to replace it, so the card fell back to its own grey for the fetch
+  // and decode: the flash, then the blank, then the video. Holding a plain
+  // image over the video instead keeps that frame painted for the whole gap.
+  const holdPoster = (video) => {
+    if (video.dataset.fuel05Poster === 'true') return;
+    video.dataset.fuel05Poster = 'true';
+
+    const tile = video.closest('.fuel05-ugc__tile');
+    const overlay = tile && tile.querySelector('.fuel05-ugc__poster');
+    // A clip with no poster to hold renders no overlay and asks for metadata
+    // instead, so the browser paints its own first frame and there is no gap.
+    if (!overlay) return;
+
+    const started = () => tile.classList.add('fuel05-ugc__tile--started');
+
+    // The frame callback is the only thing that reports a frame presented to
+    // the screen rather than a state the element has reached, and Safari, the
+    // browser this was reported on, has it. It fires once, which is all we
+    // want, so nothing has to be taken off again.
+    if (typeof video.requestVideoFrameCallback === 'function') {
+      video.requestVideoFrameCallback(started);
+      return;
+    }
+
+    // Without it: playing and timeupdate both say playback is running, and
+    // readyState says whether the position being played has data behind it,
+    // which is as close to "a frame exists" as the events get. Either event
+    // can be the first to arrive with data, so both are listened for and the
+    // pair comes off together.
+    const onFrame = () => {
+      if (video.readyState < 2) return;
+      video.removeEventListener('playing', onFrame);
+      video.removeEventListener('timeupdate', onFrame);
+      started();
+    };
+    video.addEventListener('playing', onFrame);
+    video.addEventListener('timeupdate', onFrame);
+  };
+
   const initRow = (root) => {
     if (root.dataset.fuel05Init === 'true') return;
     root.dataset.fuel05Init = 'true';
@@ -187,8 +229,17 @@
       });
     }
 
-    if (prefersReduced.matches || !('IntersectionObserver' in window)) return;
     const videos = root.querySelectorAll('video.fuel05-ugc__video');
+
+    // Above the return below, deliberately. Nothing starts on its own for a
+    // shopper who asked for less motion, but a tap still starts a clip, and
+    // that tap needs the poster held exactly as much as any other. This is
+    // also the one place every clip passes through, cards the collection grid
+    // writes after first paint included, because the row is stamped and
+    // re-scanned rather than walked from the top.
+    videos.forEach(holdPoster);
+
+    if (prefersReduced.matches || !('IntersectionObserver' in window)) return;
     if (!videos.length) return;
     const playObserver = new IntersectionObserver(
       (entries) => {

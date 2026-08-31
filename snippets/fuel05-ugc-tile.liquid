@@ -95,6 +95,34 @@
           <source src="{{ source_url }}" type="video/mp4">
         {%- endif -%}
       </video>
+      {%- comment -%}
+        The same picture the poster attribute points at, drawn over the video as
+        an image the browser cannot take away. iOS Safari drops the poster the
+        moment play() is called, and preload="none" means no frame is decoded
+        yet, so the card showed its own grey until the clip produced one. The
+        image is frame 0 of the clip, so the swap to real frames is invisible.
+        Decorative: the card above already carries the name.
+
+        The resolution below is the poster attribute's own, so a clip with no
+        poster source gets no overlay, which is the same clip that asks for
+        metadata and paints its first frame itself.
+      {%- endcomment -%}
+      {%- liquid
+        assign poster_image = poster
+        if poster_image == blank
+          assign poster_image = video.preview_image
+        endif
+      -%}
+      {%- if poster_image != blank -%}
+        <img
+          class="fuel05-ugc__poster"
+          src="{{ poster_image | image_url: width: 600 }}"
+          width="{{ poster_image.width }}"
+          height="{{ poster_image.height }}"
+          alt=""
+          aria-hidden="true"
+          loading="lazy">
+      {%- endif -%}
     {%- else -%}
       <video
         class="fuel05-ugc__video"
@@ -106,6 +134,33 @@
         {% if poster != blank %}poster="{{ poster | image_url: width: 600 }}"{% elsif poster_url != blank %}poster="{{ poster_url }}"{% endif %}>
         <source src="{{ video_url }}" type="video/mp4">
       </video>
+      {%- comment -%}
+        Same hold as the branch above, reading the URL the row passed instead of
+        a picked video's preview image. A URL is a string and carries no size,
+        so that branch states the size the rows ask the CDN for: every poster
+        passed here is a frame 0 thumbnail of a 9:16 clip requested at width
+        600, measured 600x1067. Nothing is laid out from it either way, because
+        the overlay is sized by the card it fills, not by its own picture.
+      {%- endcomment -%}
+      {%- if poster != blank -%}
+        <img
+          class="fuel05-ugc__poster"
+          src="{{ poster | image_url: width: 600 }}"
+          width="{{ poster.width }}"
+          height="{{ poster.height }}"
+          alt=""
+          aria-hidden="true"
+          loading="lazy">
+      {%- elsif poster_url != blank -%}
+        <img
+          class="fuel05-ugc__poster"
+          src="{{ poster_url }}"
+          width="600"
+          height="1067"
+          alt=""
+          aria-hidden="true"
+          loading="lazy">
+      {%- endif -%}
     {%- endif -%}
     {%- if product_item != blank -%}
       <a class="fuel05-ugc__pill" href="{{ product_item.url }}">
