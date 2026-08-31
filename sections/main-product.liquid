@@ -306,16 +306,16 @@
                         {% assign discount = block.settings.product.compare_at_price | minus: block.settings.product.price %}
                         {% assign discount_percent = discount | times: 100 | divided_by: block.settings.product.compare_at_price | round %}
                         <span class="inline-block self-start rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide">
-                          Spare {{ discount_percent }}%
+                          {{ 'bundle.tsr_offer_save' | t: percent: discount_percent }}
                         </span>
                       {% endif %}
                       <h3 class="mt-2 mb-1 tracking-normal font-semibold leading-snug text-slate-900 text-sm sm:text-base md:text-lg">
-                        Unser bestes Angebot: Stell dein Paket zusammen!
+                        {{ 'bundle.tsr_offer_heading' | t }}
                       </h3>
                       <p class="m-0 tracking-normal text-slate-600 text-sm md:text-base">
-                        Nur
+                        {{ 'bundle.tsr_offer_price_prefix' | t }}
                         <strong class="text-slate-900">{{ block.settings.product.price | divided_by: block.settings.product.metafields.custom.choose_your_fragrances_options | money }}</strong>
-                        pro Flasche
+                        {{ 'bundle.tsr_offer_price_suffix' | t }}
                       </p>
                     </div>
                   </a>
