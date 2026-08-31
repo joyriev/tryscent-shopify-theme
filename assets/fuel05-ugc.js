@@ -36,6 +36,31 @@
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  // A tap is the one moment somebody is actively waiting, so the tapped clip
+  // gets the connection to itself: the background warm-up parks its chains
+  // and clips that were mid-warm-up are paused with whatever they buffered
+  // kept. The hold lifts when the tapped clip can play through, when the
+  // shopper pauses it, on a stream error, or after ten seconds, whichever
+  // comes first, and the parked chains then pick up where they stopped. A
+  // clip that is already fully buffered takes no hold, because there is
+  // nothing left to starve it of.
+  let warmHoldVideo = null;
+  const parkedWarmChains = [];
+  const releaseWarmHold = (video) => {
+    if (warmHoldVideo !== video) return;
+    warmHoldVideo = null;
+    while (parkedWarmChains.length) parkedWarmChains.shift()();
+  };
+  const holdWarmsFor = (video) => {
+    if (video.readyState >= 4) return;
+    warmHoldVideo = video;
+    const release = () => releaseWarmHold(video);
+    video.addEventListener('canplaythrough', release, { once: true });
+    video.addEventListener('pause', release, { once: true });
+    video.addEventListener('error', release, { once: true });
+    setTimeout(release, 10000);
+  };
+
   // One clip runs at a time, page wide. Every play goes through here, so the
   // rule holds whether the clip was tapped or scrolled into view, and so does
   // the sound rule: the second argument is set on the clip right before it
@@ -43,15 +68,19 @@
   // with sound from a tap, which is what browsers allow.
   const playOnly = (video, withSound) => {
     document.querySelectorAll('video.fuel05-ugc__video').forEach((other) => {
-      // A clip mid-warm-up is left alone: it is muted, it pauses itself on
-      // its first frame, and pausing it here rejects its pending play() and,
-      // on iOS, stops it buffering, which put the far cards right back in
-      // the cold state the warm-up exists to prevent.
-      if (other !== video && other.dataset.fuel05Warming !== 'true') other.pause();
+      if (other === video) return;
+      // On a muted start a clip mid-warm-up is left alone: it is muted, it
+      // pauses itself on its first frame, and pausing it here would, on iOS,
+      // stop it buffering. On a tap the trade flips, and warming clips are
+      // paused too so their fetches stop competing with the clip somebody
+      // is waiting on. Their pending play() rejects as an interruption,
+      // which keeps the buffer (see the warm-up's catch).
+      if (other.dataset.fuel05Warming !== 'true' || withSound) other.pause();
     });
     // A real start outranks the warm-up below: without this line the warm-up's
     // first-frame handler would pause the clip the shopper just asked for.
     delete video.dataset.fuel05Warming;
+    if (withSound) holdWarmsFor(video);
     video.muted = !withSound;
     video.play().catch(() => {});
   };
@@ -326,6 +355,12 @@
 
     const warmQueue = [...videos];
     const warmNext = () => {
+      // While a tapped clip is buffering, the chain parks instead of taking
+      // the next clip; releaseWarmHold restarts every parked chain.
+      if (warmHoldVideo) {
+        parkedWarmChains.push(warmNext);
+        return;
+      }
       const video = warmQueue.shift();
       if (!video) return;
       let advanced = false;
@@ -354,6 +389,17 @@
     const playObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => visibleRatio.set(entry.target, entry.intersectionRatio));
+
+        // A card the shopper just swiped to must not wait for the background
+        // queue to work through the whole row: a cold clip that comes into
+        // view warms right away, and the queue skips it later by its flag.
+        // Not while a tapped clip holds the connection, though; the parked
+        // chains reach it after the hold lifts.
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0 && !warmHoldVideo && entry.target.dataset.fuel05Warm !== 'true') {
+            warmOne(entry.target, () => {});
+          }
+        });
 
         // A clip playing with sound was tapped, and scrolling a little must
         // not take it away again: this callback used to hand playback to
@@ -399,14 +445,20 @@
   const arm = (root) => {
     if (root.dataset.fuel05Armed === 'true') return;
     root.dataset.fuel05Armed = 'true';
-    const visibilityObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          initRow(root);
-          visibilityObserver.disconnect();
-        }
-      });
-    });
+    // A full viewport of margin: the row initialises, and so starts warming
+    // its clips, a screen before it is reached, so even somebody scrolling
+    // straight down to it arrives after the buffering has begun.
+    const visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            initRow(root);
+            visibilityObserver.disconnect();
+          }
+        });
+      },
+      { rootMargin: '100% 0px' }
+    );
     visibilityObserver.observe(root);
   };
 
