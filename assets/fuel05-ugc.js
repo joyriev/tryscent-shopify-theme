@@ -45,6 +45,9 @@
     document.querySelectorAll('video.fuel05-ugc__video').forEach((other) => {
       if (other !== video) other.pause();
     });
+    // A real start outranks the warm-up below: without this line the warm-up's
+    // first-frame handler would pause the clip the shopper just asked for.
+    delete video.dataset.fuel05Warming;
     video.muted = !withSound;
     video.play().catch(() => {});
   };
@@ -268,7 +271,40 @@
         if (video.dataset.fuel05Warm === 'true') return;
         video.dataset.fuel05Warm = 'true';
         video.preload = 'auto';
-        if (video.readyState === 0 && video.paused) video.load();
+        if (video.readyState >= 2 || !video.paused) return;
+
+        // iOS Safari ignores preload and load() for video, so the hint above
+        // buys nothing exactly where the slow taps were reported. The one
+        // request it honours is playback itself: run the clip muted and stop
+        // it on the first frame. That frame is the poster image, so nothing
+        // moves on screen, and the shopper who asked for less motion keeps
+        // the plain hint because this path really is a playback.
+        if (prefersReduced.matches) {
+          video.load();
+          return;
+        }
+        const stop = () => {
+          video.removeEventListener('loadeddata', stop);
+          if (video.dataset.fuel05Warming !== 'true') return;
+          delete video.dataset.fuel05Warming;
+          video.pause();
+          try {
+            video.currentTime = 0;
+          } catch (error) {
+            // A clip that cannot seek just stays on its first frame.
+          }
+        };
+        video.dataset.fuel05Warming = 'true';
+        video.addEventListener('loadeddata', stop);
+        video.muted = true;
+        const attempt = video.play();
+        if (attempt && attempt.catch) {
+          attempt.catch(() => {
+            delete video.dataset.fuel05Warming;
+            video.removeEventListener('loadeddata', stop);
+            video.load();
+          });
+        }
       };
       const warmObserver = new IntersectionObserver(
         (entries) => {
