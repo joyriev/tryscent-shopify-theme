@@ -24,6 +24,7 @@
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
+  {% render 'fuel03-pair-scent', product: product, section: section, mode: 'assets' %}
 
   {%- style -%}
     .section-{{ section.id }}-padding {
@@ -232,6 +233,10 @@
                     {% render 'reactive-variant-selector', product: product %}
                   {% endif %}
                 </div>
+              {%- when 'fuel03_pair_scent' -%}
+                {% render 'fuel03-pair-scent', product: product, section: section, block: block, mode: 'v1' %}
+              {%- when 'fuel03_pair_scent_v2' -%}
+                {% render 'fuel03-pair-scent', product: product, section: section, host_block: block, mode: 'v2m' %}
               {% when 'bundle_builder_2' %}
                 {% render 'bundle-builder-2' %}
               {%- when 'magic_perfume_atc' -%}
@@ -1416,6 +1421,43 @@
           "label": "Select Product"
         }
       ]
+    },
+    {
+      "type": "fuel03_pair_scent",
+      "name": "Pair Scent",
+      "settings": [
+        {
+          "type": "product",
+          "id": "page_product",
+          "label": "Show on product"
+        },
+        {
+          "type": "product",
+          "id": "pair_product",
+          "label": "Recommended product"
+        },
+        {
+          "type": "text",
+          "id": "pair_name",
+          "label": "Displayed name"
+        },
+        {
+          "type": "text",
+          "id": "reason",
+          "label": "Reason line"
+        },
+        {
+          "type": "text",
+          "id": "inspired_name",
+          "label": "Inspired by",
+          "info": "Leave blank to use the recommended product's own data"
+        }
+      ]
+    },
+    {
+      "type": "fuel03_pair_scent_v2",
+      "name": "Pair Scent alt position",
+      "settings": []
     },
     {
       "type": "product_statistics",
