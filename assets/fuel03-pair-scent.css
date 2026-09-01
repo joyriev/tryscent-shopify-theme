@@ -106,9 +106,7 @@ html.ab-f03-pair-v2 .fuel03-pair-scent--v2d,
 }
 
 .fuel03-pair-scent__inspired span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .fuel03-pair-scent__media {
@@ -179,7 +177,28 @@ html.ab-f03-pair-v2 .fuel03-pair-scent--v2d,
     color: #000;
   }
 
+  /* The inspired line leaves the text column and takes the card's full
+     width, so the sentence fits on one line beside the image's empty
+     bottom corner instead of truncating against the column edge. */
+  .fuel03-pair-scent__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    row-gap: 6px;
+    align-items: center;
+  }
+
+  .fuel03-pair-scent__text {
+    display: contents;
+  }
+
+  .fuel03-pair-scent__media {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
   .fuel03-pair-scent__inspired {
+    grid-column: 1 / -1;
     font-size: 12px;
     line-height: 18px;
   }
@@ -196,5 +215,38 @@ html.ab-f03-pair-v2 .fuel03-pair-scent--v2d,
 
   .fuel03-pair-scent__atc {
     font-size: 14px;
+  }
+}
+
+/* iPads and narrow windows render the desktop instance inside a column too
+   narrow for the 14px line beside the image, so the same full-width row
+   applies there too, at the mobile type size. */
+@media screen and (min-width: 750px) and (max-width: 1024px) {
+  .fuel03-pair-scent__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    row-gap: 8px;
+    align-items: center;
+  }
+
+  .fuel03-pair-scent__text {
+    display: contents;
+  }
+
+  .fuel03-pair-scent__media {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .fuel03-pair-scent__inspired {
+    grid-column: 1 / -1;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .fuel03-pair-scent__inspired svg {
+    width: 14px;
+    height: 14px;
   }
 }
