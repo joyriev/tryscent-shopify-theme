@@ -10,6 +10,9 @@
   if localization.country.iso_code == 'DK'
     assign marketing_images = shop.metaobjects['marketing_images']['danish'].images.value
   endif
+  if localization.country.iso_code == 'NO'
+    assign marketing_images = shop.metaobjects['marketing_images']['norwegian'].images.value
+  endif
 %}
 
 <div class="sticky top-6">
@@ -126,7 +129,7 @@
               stroke="#226139"
               stroke-width="0.25" />
           </svg>
-          <p class="m-0 leading-snug font-semibold text-[#226139] text-xs lg:text-sm">Samma doft                                                                                                                                    
+          <p class="m-0 leading-snug font-semibold text-[#226139] text-xs lg:text-sm">Samma doft                                                                                                                                          
           bättre pris</p>
         </div>
         <div class="p-2 lg:px-4 bg-[#EBF4EF] rounded-lg text-center flex flex-col items-center justify-center gap-2">
