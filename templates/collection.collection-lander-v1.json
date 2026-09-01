@@ -64,6 +64,56 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "fuel05_td_1": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 3,
+            "device": "desktop",
+            "video": "shopify://files/videos/brand_SofiaK_6df4295a_sdr.mp4",
+            "product": "magic-perfume-no-360m"
+          }
+        },
+        "fuel05_td_2": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 7,
+            "device": "desktop",
+            "video": "shopify://files/videos/brand_DannieN_4e6dc2b2.mp4"
+          }
+        },
+        "fuel05_td_3": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 8,
+            "device": "desktop",
+            "video": "shopify://files/videos/brand_EmelieS_e278788a.mov"
+          }
+        },
+        "fuel05_tm_1": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 2,
+            "device": "mobile",
+            "video": "shopify://files/videos/brand_SofiaK_6df4295a_sdr.mp4"
+          }
+        },
+        "fuel05_tm_2": {
+          "type": "fuel05_ugc_video",
+          "settings": {
+            "position": 4,
+            "device": "mobile",
+            "video": "shopify://files/videos/brand_DannieN_4e6dc2b2.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "fuel05_td_1",
+        "fuel05_td_2",
+        "fuel05_td_3",
+        "fuel05_tm_1",
+        "fuel05_tm_2"
+      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,

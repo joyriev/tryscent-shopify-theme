@@ -112,6 +112,24 @@
         </aside>
       {%- endif -%}
 
+      {%- assign fuel05_has_tiles = false -%}
+      {%- for b in section.blocks -%}
+        {%- if b.type == 'fuel05_ugc_video' -%}
+          {%- assign fuel05_has_tiles = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- comment -%}
+        The asset tags sit outside #ProductGridContainer on purpose: facets.js replaces
+        that container's innerHTML on every filter and sort, and a script tag inserted
+        through innerHTML never runs. fuel05-ugc.js arms itself and re-scans on its own,
+        so it only has to load once, here.
+      {%- endcomment -%}
+      {%- if fuel05_has_tiles -%}
+        {{ 'fuel05-ugc.css' | asset_url | stylesheet_tag }}
+        <script src="{{ 'fuel05-ugc.js' | asset_url }}" defer="defer"></script>
+      {%- endif -%}
+
       <div
         class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         id="ProductGridContainer"
@@ -155,6 +173,44 @@
                       {% render 'quiz-promo-card'
                         , block: block
                         , product_position: product_position %}
+                    {% elsif block.type == 'fuel05_ugc_video' %}
+                      {%- comment -%}
+                        Page one only. Desktop emits 16 products plus 3 visible tiles per
+                        page and 19 does not divide by 4, so from page two the whole grid
+                        starts mid row and the tiles land in columns 2, 3, 1 instead of the
+                        drawn 3, 4, 2. Nothing can put them back without either changing the
+                        cell count per page or moving the tiles for desktop only, which then
+                        breaks mobile, where 16 plus 2 divides cleanly and the columns are
+                        already right. The design draws page one, so page one is what we ship.
+
+                        No audience tag setting on this block, unlike the product page one. A
+                        grid cell has no product of its own to test a tag against, and the
+                        tiles are only placed on collection.collection-lander-v1, which is
+                        assigned to Best Sellers, a single mixed collection. Reading the tag
+                        off collection.title there is either a no op or it blanks every tile,
+                        and a setting labelled for product tags that quietly tests a title
+                        would mislead whoever fills it in. The client's rule names product
+                        pages, "mens also for mens pages", so the filter lives there.
+                      {%- endcomment -%}
+                      {%- if paginate.current_page == 1 -%}
+                        <li
+                          class="grid__item fuel05-ugc fuel05-ugc--grid fuel05-ugc--grid-{{ block.settings.device | default: 'desktop' }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                          data-fuel05-row
+                          {% if settings.animations_reveal_on_scroll %}
+                          data-cascade
+                          style="display: none; --animation-order: {{ product_position }};"
+                          {% else %}
+                          style="display: none;"
+                          {% endif %}
+                          {{ block.shopify_attributes }}>
+                          {% render 'fuel05-ugc-tile',
+                            video: block.settings.video,
+                            video_url: block.settings.video_url,
+                            poster: block.settings.video_poster,
+                            product_item: block.settings.product
+                          %}
+                        </li>
+                      {%- endif -%}
                     {% else %}
                       <li
                         {{ block.shopify_attributes }}
@@ -585,6 +641,54 @@
             "type": "product",
             "id": "product",
             "label": "Select Product"
+          }
+        ]
+      },
+      {
+        "type": "fuel05_ugc_video",
+        "name": "UGC video",
+        "settings": [
+          {
+            "type": "number",
+            "id": "position",
+            "label": "Position"
+          },
+          {
+            "type": "select",
+            "id": "device",
+            "label": "Show on",
+            "options": [
+              {
+                "value": "desktop",
+                "label": "Desktop"
+              },
+              {
+                "value": "mobile",
+                "label": "Mobile"
+              }
+            ],
+            "default": "desktop"
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "text",
+            "id": "video_url",
+            "label": "Video URL",
+            "info": "Used when no video is picked above"
+          },
+          {
+            "type": "image_picker",
+            "id": "video_poster",
+            "label": "Poster image"
+          },
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Linked product"
           }
         ]
       }
