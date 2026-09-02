@@ -175,13 +175,13 @@
                         , product_position: product_position %}
                     {% elsif block.type == 'fuel05_ugc_video' %}
                       {%- comment -%}
-                        Page one only. Desktop emits 16 products plus 3 visible tiles per
-                        page and 19 does not divide by 4, so from page two the whole grid
-                        starts mid row and the tiles land in columns 2, 3, 1 instead of the
-                        drawn 3, 4, 2. Nothing can put them back without either changing the
-                        cell count per page or moving the tiles for desktop only, which then
-                        breaks mobile, where 16 plus 2 divides cleanly and the columns are
-                        already right. The design draws page one, so page one is what we ship.
+                        Page one only. Desktop emits 16 products plus 7 visible tiles per
+                        page and 23 does not divide by 4, so from page two the whole grid
+                        would start mid row and the tiles would land a column off the drawn
+                        3, 1, 2, 4, 3, 1, 2. Nothing can put them back without either
+                        changing the cell count per page or moving the tiles for desktop
+                        only, which then breaks mobile, where 16 plus 7 is odd as well. The
+                        design draws page one, so page one is what we ship.
 
                         No audience tag setting on this block, unlike the product page one. A
                         grid cell has no product of its own to test a tag against, and the

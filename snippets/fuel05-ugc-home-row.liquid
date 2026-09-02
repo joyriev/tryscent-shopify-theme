@@ -7,7 +7,8 @@
   section (sections/popular-products.liquid, gated to that one instance), so
   it takes no template slot. Same approach as the collection-page tiles.
 
-  The six clips are the client's uploads (Slack, Aug 26). The sources and
+  The seven clips are the client's uploads (six Slack, Aug 26; JoacimE added
+  Sep 2). The sources and
   posters below are Shopify's own transcodes of those Files entries, the same
   URLs the product-page slider serves through its video picks. Hard-coded here
   because a snippet has no settings to hold a video pick. If a clip is ever
@@ -26,7 +27,11 @@
        the women's No. 437.
     6. DannieN (Danish, man): names no scent; the best-selling men's scent,
        Ginger Amber No. 230.
-  Tiles 3, 4 and 6 are fallbacks the client may want to swap.
+    7. JoacimE (car): holds a Magic Perfume bottle and quotes 129 kr, but the
+       number on the label is not readable at any transcode we have and he
+       names no scent, so this is the second best-selling men's scent,
+       Stronger With You Intensely No. 318.
+  Tiles 3, 4, 6 and 7 are fallbacks the client may want to swap.
 
   The two SofiaK clips (third and fifth below) point at the _sdr Files entries,
   not the originals: those two were recorded as iPhone HLG HDR, every Shopify
@@ -42,6 +47,12 @@
   trailing id, so only the rendition name in the middle of the URL differs;
   the 480p files run 5-17MB against 22-77MB. The tile snippet makes the same
   choice on its own for the placements that pass a picked video.
+
+  The seventh clip is the exception: Shopify built it one rendition only,
+  HD-1080p-2.5Mbps, and both SD-480p-1.5Mbps and HD-720p-4.5Mbps return 404
+  for its id, so the URL below is the 1080p one. Its bitrate is a third of the
+  7.2Mbps files the others started on, but if Shopify ever adds the ladder for
+  this id, swap the rendition label here the way the other six read.
 
   Remove this file and its render site with the FUEL_05 cleanup.
 
@@ -101,6 +112,11 @@
           video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/938402e6513447aab5b85b254fea9984/938402e6513447aab5b85b254fea9984.SD-480p-1.5Mbps-92843388.mp4?v=0',
           poster_url: 'https://tryscent.co/cdn/shop/files/preview_images/938402e6513447aab5b85b254fea9984.thumbnail.0000000000.jpg?v=1787894717&width=600',
           product_item: all_products['bergamot-pepper-ambroxan']
+        %}
+        {% render 'fuel05-ugc-tile',
+          video_url: 'https://tryscent.co/cdn/shop/videos/c/vp/73022be108864290bab62feaa5898a34/73022be108864290bab62feaa5898a34.HD-1080p-2.5Mbps-92843391.mp4?v=0',
+          poster_url: 'https://tryscent.co/cdn/shop/files/preview_images/73022be108864290bab62feaa5898a34.thumbnail.0000000000.jpg?v=1787894721&width=600',
+          product_item: all_products['magic-perfume-no-318m']
         %}
       </div>
     </div>
