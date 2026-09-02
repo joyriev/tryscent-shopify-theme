@@ -299,13 +299,36 @@ html.ab-f01-v1 body:not(.shopify-design-mode) .shopify-section-group-footer-grou
    * the frame's 191 slot, so the same share of a narrower one. The width
    * is on the button so the picture's percentage reads the slot and not
    * its own box. */
-  .fuel01-slot__remove {
+  .fuel01-slot__pick {
+    position: relative;
     display: block;
     width: min(63.492%, 120px);
+  }
+
+  /* The remove control, on the picture's top right corner. The picture
+   * itself used to be the button, and a stray tap emptied the slot. */
+  .fuel01-slot__x {
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
     padding: 0;
-    border: 0;
-    background: none;
+    border: 1px solid #e6e5e2;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #121212;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     cursor: pointer;
+  }
+
+  .fuel01-slot__x:hover,
+  .fuel01-slot__x:focus-visible {
+    border-color: #121212;
   }
 
   .fuel01-slot__img {
@@ -660,13 +683,16 @@ html.ab-f01-v1 body:not(.shopify-design-mode) .shopify-section-group-footer-grou
   display: flex;
 }
 
-/* Inside the row, so below 750px it comes with the "Filtrera och sortera"
- * disclosure rather than being hidden from phones altogether. */
+/* Above the disclosure at every width. On a phone it is the first thing in
+ * the block and takes the whole row; from 750px it shares the row with the
+ * filters. It used to sit inside the disclosure, where a phone never saw it
+ * and used the header's search (same placeholder) instead. */
 .fuel01-search {
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 1 100%;
+  order: -1;
   align-items: center;
-  max-width: 689px;
+  max-width: none;
   border-radius: 4px;
   background: #e9e9e9;
 }
@@ -735,18 +761,30 @@ html.ab-f01-v1 body:not(.shopify-design-mode) .shopify-section-group-footer-grou
 }
 
 @media screen and (min-width: 750px) {
+  .fuel01-controls {
+    flex-wrap: nowrap;
+    gap: 12px 24px;
+    padding: 22px 0 16px;
+  }
+
   .fuel01-controls__toggle,
   .fuel01-controls__count {
     display: none;
   }
 
+  .fuel01-search {
+    flex: 1 1 auto;
+    max-width: 689px;
+  }
+
   .fuel01-controls__row {
     display: flex;
+    flex: 0 0 auto;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 24px;
-    padding: 12px 0;
+    padding: 0;
   }
 
   .fuel01-controls__select {
@@ -1283,11 +1321,46 @@ html.ab-f01-v1 body:not(.shopify-design-mode) .shopify-section-group-footer-grou
   stroke: #729e87;
 }
 
+.fuel01-sticky__pick {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .fuel01-sticky__thumb {
+  display: block;
   width: 100%;
   height: 100%;
   border-radius: 7px;
   object-fit: cover;
+}
+
+/* Remove control on every filled thumb. Below 750px this row is the only
+ * picture of the pack, and the card button in the grid was the only way to
+ * take a pick back out. */
+.fuel01-sticky__x {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid #e6e5e2;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #121212;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.fuel01-sticky__x:hover,
+.fuel01-sticky__x:focus-visible {
+  border-color: #121212;
 }
 
 .fuel01-sticky__pill {
@@ -1559,5 +1632,51 @@ html.ab-f01-v1 body:not(.shopify-design-mode) .shopify-section-group-footer-grou
 
   .fuel01-sticky__cta {
     padding: 12px 48px;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Review round, Sep 2. Card picture and name open the scent's page in a
+ * new tab; the size sits after the price so nobody wonders which bottle
+ * the pack is built from; and the theme's own header search is hidden
+ * on this page in the variant below the desktop header, because its
+ * placeholder is the same "Hitta din parfym" and a phone that scrolled
+ * back up found it first and landed on the site search.
+ * ------------------------------------------------------------------ */
+
+.fuel01-card__link {
+  display: block;
+  color: inherit;
+}
+
+.fuel01-card__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fuel01-card__title-link:hover,
+.fuel01-card__title-link:focus-visible {
+  text-decoration: underline;
+}
+
+.fuel01-card__size {
+  color: rgba(18, 18, 18, 0.6);
+  font-family: var(--fuel01-card-font);
+  font-size: 10px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 750px) {
+  .fuel01-card__size {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  html.ab-f01-v1 .header .\[grid-area\:search\],
+  html.ab-f01-v1 .header predictive-search.search-modal__form,
+  html.ab-f01-v1 .header search-form.search-modal__form {
+    display: none !important;
   }
 }

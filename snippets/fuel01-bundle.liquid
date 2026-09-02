@@ -185,23 +185,40 @@
       {%- liquid
         comment
           Your price is the variant the buy button actually adds, so the summary
-          can never drift from what is charged. The ordinary total is that
-          variant's own compare at price, falling back to the product's when the
-          variant carries none. With no compare at price anywhere there is no
-          saving to talk about, so only the your price row shows.
+          can never drift from what is charged. The ordinary total is the same
+          number of scents bought one by one at the bundle size, read off the
+          pool the builder offers (collections['best-sellers'], the list that
+          snippets/bundle-builder-2.liquid declares), and the discount is the
+          difference. No compare-at price any more: the first cut showed the
+          bundle's own compare-at (1.449 kr against 790) and review could not
+          trace the number. The rows repaint from the actual picks through the
+          fuel01Summary component below; before any pick every slot counts as
+          one scent at the pool's price.
         endcomment
         assign summary_variant = product.selected_or_first_available_variant
         assign your_price = summary_variant.price
-        assign ordinary_price = summary_variant.compare_at_price | default: 0
-        assign product_compare = product.compare_at_price | default: 0
-        if product_compare > ordinary_price
-          assign ordinary_price = product_compare
-        endif
-        assign saving = 0
-        if ordinary_price > your_price
-          assign saving = ordinary_price | minus: your_price
-        else
+        assign summary_ml = bottle_size | append: 'ml'
+        assign summary_pool = collections['best-sellers']
+        assign unit_default = 0
+        for pool_product in summary_pool.products
+          for v in pool_product.variants
+            assign vt = v.title | downcase | replace: ' ml', 'ml'
+            if vt == summary_ml
+              if unit_default == 0
+                assign unit_default = v.price
+              endif
+              break
+            endif
+          endfor
+          if unit_default > 0
+            break
+          endif
+        endfor
+        assign ordinary_price = unit_default | times: bottle_count
+        assign saving = ordinary_price | minus: your_price
+        if unit_default == 0 or saving < 0
           assign ordinary_price = your_price
+          assign saving = 0
         endif
 
         assign total_label = block.settings.total_label | replace: '[count]', bottle_count | replace: '[size]', bottle_size
@@ -230,21 +247,84 @@
           assign discount_label_note = discount_label | remove_first: discount_label_main | strip
         endif
       -%}
-      <div class="fuel01-summary">
+      {%- comment -%}
+        Bundle-size price of every scent the builder offers, by product id, so
+        the rows can be repainted from the picks. Read only: nothing here
+        writes to the builder's store.
+      {%- endcomment -%}
+      {%- capture price_map -%}
+        {
+        {%- for pool_product in summary_pool.products -%}
+          {%- for v in pool_product.variants -%}
+            {%- assign vt = v.title | downcase | replace: ' ml', 'ml' -%}
+            {%- if vt == summary_ml -%}
+              "{{ pool_product.id }}": {{ v.price }},
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+        "0": 0 }
+      {%- endcapture -%}
+      <script>
+        document.addEventListener('alpine:init', function () {
+          if (window.fuel01SummaryRegistered) return;
+          window.fuel01SummaryRegistered = true;
+
+          Alpine.data('fuel01Summary', function (total, bundlePrice, unitDefault, moneyFormat, prices) {
+            return {
+              get ordTotal() {
+                var store = Alpine.store('bundleBuilder');
+                var picks = store && Array.isArray(store.selectedProducts) ? store.selectedProducts : [];
+                var sum = 0;
+                for (var i = 0; i < total; i++) {
+                  var p = picks[i];
+                  var price = p ? Number(prices[String(p.id)]) : 0;
+                  sum += price > 0 ? price : unitDefault;
+                }
+                return sum;
+              },
+              get discount() {
+                return Math.max(0, this.ordTotal - bundlePrice);
+              },
+              money(cents) {
+                var n = Math.round(Number(cents) || 0);
+                var abs = Math.abs(n);
+                var int = String(Math.floor(abs / 100));
+                var dec = String(abs % 100).padStart(2, '0');
+                var grp = function (s, sep) { return s.replace(/\B(?=(\d{3})+(?!\d))/g, sep); };
+                var forms = {
+                  amount: grp(int, ',') + '.' + dec,
+                  amount_no_decimals: grp(int, ','),
+                  amount_with_comma_separator: grp(int, '.') + ',' + dec,
+                  amount_no_decimals_with_comma_separator: grp(int, '.'),
+                  amount_with_space_separator: grp(int, ' ') + ',' + dec,
+                  amount_no_decimals_with_space_separator: grp(int, ' '),
+                  amount_with_apostrophe_separator: grp(int, "'") + '.' + dec
+                };
+                var out = String(moneyFormat || '{' + '{amount}' + '}').replace(/\{\{\s*(\w+)\s*\}\}/g, function (m, k) { return forms[k] !== undefined ? forms[k] : forms.amount; }).replace(/<[^>]+>/g, '');
+                return (n < 0 ? '-' : '') + out;
+              }
+            };
+          });
+        });
+      </script>
+      <div
+        class="fuel01-summary"
+        x-data="fuel01Summary({{ bottle_count }}, {{ your_price }}, {{ unit_default }}, {{ shop.money_format | json | escape }}, {{ price_map | strip_newlines | escape }})"
+      >
         {%- if saving > 0 -%}
           <div class="fuel01-summary__row">
             <span class="fuel01-summary__label">
               {{- total_label_main | escape -}}
               {%- if total_label_note != blank %} <span class="fuel01-summary__label-note">{{ total_label_note | escape }}</span>{% endif -%}
             </span>
-            <span class="fuel01-summary__value">{{ ordinary_price | money }}</span>
+            <span class="fuel01-summary__value" x-text="money(ordTotal)">{{ ordinary_price | money }}</span>
           </div>
           <div class="fuel01-summary__row fuel01-summary__row--discount">
             <span class="fuel01-summary__label">
               {{- discount_label_main | escape -}}
               {%- if discount_label_note != blank %} <span class="fuel01-summary__label-note">{{ discount_label_note | escape }}</span>{% endif -%}
             </span>
-            <span class="fuel01-summary__value">&minus;{{ saving | money }}</span>
+            <span class="fuel01-summary__value" x-text="'\u2212' + money(discount)">&minus;{{ saving | money }}</span>
           </div>
         {%- endif -%}
         <div class="fuel01-summary__row fuel01-summary__row--total">
@@ -254,7 +334,7 @@
         {%- if saving > 0 -%}
           <p class="fuel01-summary__pill">
             <span class="fuel01-summary__pill-label">{{ savings_label | escape }}</span>
-            <span class="fuel01-summary__pill-value">{{ saving | money }}</span>
+            <span class="fuel01-summary__pill-value" x-text="money(discount)">{{ saving | money }}</span>
           </p>
         {%- endif -%}
       </div>

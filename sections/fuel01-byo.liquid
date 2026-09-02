@@ -50,23 +50,13 @@
     assign paid_count = slot_count | minus: 1
 
     comment
-      Same price rule as the summary block in fuel01-bundle.liquid: the variant
-      the builder's buy button actually adds, its compare at price, and no
-      saving talk when there is no compare at price anywhere.
+      What the customer pays is the bundle product's own price: the builder on
+      the bundle page adds that product and nothing here changes the charge.
+      The ordinary total and the discount are worked out further down, once
+      the pool has been read, from what the same scents cost one by one.
     endcomment
     assign price_variant = bundle_product.selected_or_first_available_variant
     assign your_price = price_variant.price
-    assign ordinary_price = price_variant.compare_at_price | default: 0
-    assign product_compare = bundle_product.compare_at_price | default: 0
-    if product_compare > ordinary_price
-      assign ordinary_price = product_compare
-    endif
-    assign saving = 0
-    if ordinary_price > your_price
-      assign saving = ordinary_price | minus: your_price
-    else
-      assign ordinary_price = your_price
-    endif
 
     comment
       The two top summary labels carry a bracket the design keeps whole:
@@ -103,12 +93,16 @@
     assign eligible_handles = ''
     assign brand_acc = ''
     assign gender_acc = ''
+    assign unit_default = 0
     for p in grid_pool.products
       assign has_ml = false
       for v in p.variants
         assign vt = v.title | downcase | replace: ' ml', 'ml'
         if vt == bundle_ml
           assign has_ml = true
+          if unit_default == 0
+            assign unit_default = v.price
+          endif
           break
         endif
       endfor
@@ -128,6 +122,24 @@
     assign brand_options = brand_acc | split: '||' | uniq | sort_natural
     assign gender_options = gender_acc | split: '||' | uniq | sort_natural
     assign eligible_count = eligible_handles | split: '||' | size
+
+    comment
+      The summary's three numbers. Your price is the bundle product's price,
+      which is what the builder on the bundle page charges. The ordinary total
+      is the same number of scents bought one by one at the bundle size, and
+      the discount is the difference. Neither reads a compare-at price: the
+      first cut showed the bundle product's own compare-at (1.449 kr against
+      790) and was called out in review as a number nobody could trace. The
+      page repaints the two from the actual picks (ordTotal in fuel01Byo);
+      before any pick every slot counts as one scent at the pool's price, which
+      is the same for every scent in the pool today.
+    endcomment
+    assign ordinary_price = unit_default | times: slot_count
+    assign saving = ordinary_price | minus: your_price
+    if unit_default == 0 or saving < 0
+      assign ordinary_price = your_price
+      assign saving = 0
+    endif
 
     comment
       The sticky bar paints the two numbers green and the rest of the counter
@@ -217,15 +229,23 @@
                 {%- else -%}
                   <span class="fuel01-slot__badge" :class="{ 'fuel01-slot__badge--filled': slot({{ slot_index }}) }">{{ forloop.index }}</span>
                 {%- endif -%}
+                {%- comment -%}
+                  The remove control is the X in the corner, not the picture:
+                  a tap on the picture took the scent out of the pack, which
+                  in review read as an easy way to lose a pick by accident.
+                {%- endcomment -%}
                 <template x-if="slot({{ slot_index }})">
-                  <button
-                    type="button"
-                    class="fuel01-slot__remove"
-                    :title="slot({{ slot_index }}).name"
-                    aria-label="Ta bort doft {{ forloop.index }}"
-                    @click="removeAt({{ slot_index }})">
+                  <span class="fuel01-slot__pick">
                     <img class="fuel01-slot__img" :src="slot({{ slot_index }}).image" alt="" width="151" height="151">
-                  </button>
+                    <button
+                      type="button"
+                      class="fuel01-slot__x"
+                      :aria-label="'Ta bort ' + slot({{ slot_index }}).name"
+                      :title="'Ta bort ' + slot({{ slot_index }}).name"
+                      @click="removeAt({{ slot_index }})">
+                      <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                    </button>
+                  </span>
                 </template>
                 <template x-if="!slot({{ slot_index }})">
                   <svg class="fuel01-slot__bottle" width="62" height="120" viewBox="0 0 62 120" aria-hidden="true">
@@ -287,14 +307,14 @@
                   {{- total_label_main | escape -}}
                   {%- if total_label_note != blank %} <span class="fuel01-summary__label-note">{{ total_label_note | escape }}</span>{% endif -%}
                 </span>
-                <span class="fuel01-summary__value">{{ ordinary_price | money }}</span>
+                <span class="fuel01-summary__value" x-text="money(ordTotal)">{{ ordinary_price | money }}</span>
               </div>
               <div class="fuel01-summary__row fuel01-summary__row--discount">
                 <span class="fuel01-summary__label">
                   {{- discount_label_main | escape -}}
                   {%- if discount_label_note != blank %} <span class="fuel01-summary__label-note">{{ discount_label_note | escape }}</span>{% endif -%}
                 </span>
-                <span class="fuel01-summary__value">&minus;{{ saving | money }}</span>
+                <span class="fuel01-summary__value" x-text="'\u2212' + money(discount)">&minus;{{ saving | money }}</span>
               </div>
             </div>
           {%- endif -%}
@@ -309,7 +329,7 @@
             {%- endcomment -%}
             <p class="fuel01-summary__pill">
               <span class="fuel01-summary__pill-label">{{ st.savings_label | escape }}</span>
-              <span class="fuel01-summary__pill-value">{{ saving | money }}</span>
+              <span class="fuel01-summary__pill-value" x-text="money(discount)">{{ saving | money }}</span>
             </p>
           {%- endif -%}
         </aside>
@@ -358,30 +378,42 @@
         <span class="fuel01-controls__count" x-text="countText">
           {%- if eligible_count == 1 -%}1 produkt{%- else -%}{{ eligible_count }} produkter{%- endif -%}
         </span>
+        {%- comment -%}
+          The search stands on its own above the disclosure, at every width.
+          Inside it, a phone showed no search until "Filtrera och sortera" was
+          opened, and the theme's own header search (same placeholder) was the
+          one people found instead; that one is hidden on this page in the
+          variant by a rule in fuel01-byo.css.
+        {%- endcomment -%}
+        <form class="fuel01-search" role="search" @submit.prevent>
+          <input
+            class="fuel01-search__field"
+            type="search"
+            placeholder="{{ st.search_placeholder | escape }}"
+            aria-label="{{ st.search_placeholder | escape }}"
+            x-model="q">
+          {%- comment -%}
+            Decoration, not a control: the grid filters as the field is typed
+            in, so this never had anything to submit.
+          {%- endcomment -%}
+          <span class="fuel01-search__btn" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" stroke-width="2"/>
+              <path d="M14.5 14.5 19 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </form>
         <div class="fuel01-controls__row">
-          <form class="fuel01-search" role="search" @submit.prevent>
-            <input
-              class="fuel01-search__field"
-              type="search"
-              placeholder="{{ st.search_placeholder | escape }}"
-              aria-label="{{ st.search_placeholder | escape }}"
-              x-model="q">
-            {%- comment -%}
-              Decoration, not a control: the grid filters as the field is typed
-              in, so this never had anything to submit.
-            {%- endcomment -%}
-            <span class="fuel01-search__btn" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" stroke-width="2"/>
-                <path d="M14.5 14.5 19 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </span>
-          </form>
           <div class="fuel01-controls__filters">
             <span class="fuel01-controls__label" aria-hidden="true">Filter:</span>
+            {%- comment -%}
+              The list is the designer-house names from the brand metafield,
+              which is what a scent is inspired by, not who makes it. The label
+              says so: "Varumärke" read as if the store sold Dior.
+            {%- endcomment -%}
             {%- if brand_options.size > 0 -%}
-              <select class="fuel01-controls__select" aria-label="Varumärke" x-model="brand">
-                <option value="">Varumärke</option>
+              <select class="fuel01-controls__select" aria-label="Inspirerad av" x-model="brand">
+                <option value="">Inspirerad av</option>
                 {%- for option in brand_options -%}
                   <option value="{{ option | escape }}">{{ option | escape }}</option>
                 {%- endfor -%}
@@ -429,6 +461,33 @@
             if grid_product.metafields.custom.inspiration.value
               assign insp = grid_product.metafields.custom.inspiration.value.name
             endif
+
+            comment
+              Everything the search may match, in one attribute: the name, the
+              house and scent it is inspired by, the gender, the tags (which
+              carry the inspiration names, the scent family and the occasion),
+              and the notes from the three note lists plus the three note
+              write-ups. The first cut matched the name, the brand and the
+              inspiration only, so "sandelträ" or "körsbär" found nothing.
+            endcomment
+            assign tag_text = grid_product.tags | join: ' ' | replace: 'scent:', ' ' | replace: 'occasion:', ' ' | replace: 'säsong:', ' '
+            assign hay = grid_product.title | append: ' ' | append: card_brand | append: ' ' | append: insp | append: ' ' | append: card_gender | append: ' ' | append: tag_text
+            for note in grid_product.metafields.custom.upper_notes.value
+              assign hay = hay | append: ' ' | append: note.name
+            endfor
+            for note in grid_product.metafields.custom.center_notes.value
+              assign hay = hay | append: ' ' | append: note.name
+            endfor
+            for note in grid_product.metafields.custom.deeper_notes.value
+              assign hay = hay | append: ' ' | append: note.name
+            endfor
+            assign note_text = grid_product.metafields.custom.top_notes.value.description | metafield_text | default: ''
+            assign hay = hay | append: ' ' | append: note_text
+            assign note_text = grid_product.metafields.custom.middle_notes.value.description | metafield_text | default: ''
+            assign hay = hay | append: ' ' | append: note_text
+            assign note_text = grid_product.metafields.custom.base_notes.value.description | metafield_text | default: ''
+            assign hay = hay | append: ' ' | append: note_text
+            assign hay = hay | replace: '||', ' ' | strip_newlines | strip
           -%}
           <div
             class="fuel01-card"
@@ -439,11 +498,19 @@
             data-brand="{{ card_brand | escape }}"
             data-gender="{{ card_gender | escape }}"
             data-insp="{{ insp | escape }}"
+            data-search="{{ hay | escape }}"
             data-price="{{ match.price }}"
             {% if card_index >= 8 %}style="display: none;"{% endif %}
             x-show="visible($el.dataset)">
+            {%- comment -%}
+              Picture and name open the scent's own page in a new tab, so the
+              pack being built stays where it is. The button below stays the
+              pick. In review the card could not be opened at all.
+            {%- endcomment -%}
             <div class="fuel01-card__media">
-              {{ grid_product.featured_image | image_url: width: 560 | image_tag: class: 'fuel01-card__img', widths: '280, 560', loading: 'lazy', alt: grid_product.title }}
+              <a class="fuel01-card__link" href="{{ grid_product.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                {{ grid_product.featured_image | image_url: width: 560 | image_tag: class: 'fuel01-card__img', widths: '280, 560', loading: 'lazy', alt: grid_product.title }}
+              </a>
               {%- if ribbon != blank -%}
                 <span class="fuel01-card__ribbon">
                   <span class="fuel01-card__ribbon-track">
@@ -455,17 +522,22 @@
                 </span>
               {%- endif -%}
             </div>
+            {%- comment -%}
+              The name is the product's own title from Shopify and nothing
+              else. The first cut set the designer-house name from the brand
+              metafield above it, which read as if that were the product.
+            {%- endcomment -%}
             <div class="fuel01-card__titles">
-              {%- if card_brand != blank -%}
-                <p class="fuel01-card__brand">{{ card_brand | replace: '||', ' · ' | escape }}</p>
-              {%- endif -%}
-              <p class="fuel01-card__title">{{ grid_product.title | escape }}</p>
+              <p class="fuel01-card__title">
+                <a class="fuel01-card__title-link" href="{{ grid_product.url }}" target="_blank" rel="noopener">{{ grid_product.title | escape }}<span class="visually-hidden"> (öppnas i ny flik)</span></a>
+              </p>
             </div>
             <p class="fuel01-card__price">
               <span class="fuel01-card__price-now">{{ match.price | money }}</span>
               {%- if match.compare_at_price > match.price -%}
                 <s class="fuel01-card__price-was">{{ match.compare_at_price | money }}</s>
               {%- endif -%}
+              <span class="fuel01-card__size">{{ dropdown_ml }} ml</span>
             </p>
             {%- comment -%}
               The button is the pick and the un-pick: tapping a card that is
@@ -541,13 +613,28 @@
 
     <div class="fuel01-sticky fuel01-sticky--on">
       <div class="fuel01-sticky__panel">
-        <div class="fuel01-sticky__slots" aria-hidden="true">
+        {%- comment -%}
+          Below 750px this row is the only picture of the pack, so each filled
+          thumb carries its own remove control; above, it mirrors the X on the
+          builder's slots. No aria-hidden any more for that reason.
+        {%- endcomment -%}
+        <div class="fuel01-sticky__slots">
           {%- for i in (1..slot_count) -%}
             <div
               class="fuel01-sticky__slot{% if forloop.last %} fuel01-sticky__slot--free{% endif %}"
               :class="{ 'fuel01-sticky__slot--filled': slot({{ forloop.index0 }}) }">
               <template x-if="slot({{ forloop.index0 }})">
-                <img class="fuel01-sticky__thumb" :src="slot({{ forloop.index0 }}).image" alt="" width="66" height="66">
+                <span class="fuel01-sticky__pick">
+                  <img class="fuel01-sticky__thumb" :src="slot({{ forloop.index0 }}).image" alt="" width="66" height="66">
+                  <button
+                    type="button"
+                    class="fuel01-sticky__x"
+                    :aria-label="'Ta bort ' + slot({{ forloop.index0 }}).name"
+                    :title="'Ta bort ' + slot({{ forloop.index0 }}).name"
+                    @click="removeAt({{ forloop.index0 }})">
+                    <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                  </button>
+                </span>
               </template>
               <template x-if="!slot({{ forloop.index0 }})">
                 <svg class="fuel01-sticky__bottle" width="24" height="44" viewBox="0 0 24 44" aria-hidden="true">
@@ -594,7 +681,7 @@
             <span class="fuel01-sticky__price-row">
               <span class="fuel01-sticky__price-now">{{ your_price | money }}</span>
               {%- if saving > 0 -%}
-                <s class="fuel01-sticky__price-was">{{ ordinary_price | money }}</s>
+                <s class="fuel01-sticky__price-was" x-text="money(ordTotal)">{{ ordinary_price | money }}</s>
               {%- endif -%}
             </span>
           </div>
@@ -696,6 +783,12 @@
               id: {{ grid_product.id }},
               name: {{ grid_product.title | json }},
               image: {{ grid_product.featured_image | image_url: width: 320, height: 320 | json }},
+              {%- for variant in grid_product.variants -%}
+                {%- assign vt = variant.title | downcase | replace: ' ml', 'ml' -%}
+                {%- if vt == bundle_ml %}
+              price: {{ variant.price }},
+                {%- endif -%}
+              {%- endfor %}
               variants: {
                 {%- for variant in grid_product.variants -%}
                   {{ variant.title | downcase | replace: ' ml', 'ml' | json }}: {
@@ -724,6 +817,9 @@
           filtersOpen: false,
           limited: true,
           total: {{ slot_count }},
+          bundlePrice: {{ your_price }},
+          unitDefault: {{ unit_default }},
+          moneyFormat: {{ shop.money_format | json }},
           get store() {
             try {
               return (window.Alpine && typeof Alpine.store === 'function') ? Alpine.store('bundleBuilder') || null : null;
@@ -758,19 +854,57 @@
           get ctaView() {
             return {{ st.sticky_cta_view | json }}.replace('[count]', this.picked);
           },
+          get ordTotal() {
+            // What the pack would cost bought scent by scent: every filled slot
+            // at its own bundle-size price, every empty one at the pool's.
+            let sum = 0;
+            for (let i = 0; i < this.total; i++) {
+              const p = this.slot(i);
+              sum += p && Number(p.price) > 0 ? Number(p.price) : this.unitDefault;
+            }
+            return sum;
+          },
+          get discount() {
+            return Math.max(0, this.ordTotal - this.bundlePrice);
+          },
+          money(cents) {
+            // The shop's own money format, so the live numbers read the way
+            // the Liquid-rendered ones do (1.449,00 kr on this store).
+            const n = Math.round(Number(cents) || 0);
+            const abs = Math.abs(n);
+            const int = String(Math.floor(abs / 100));
+            const dec = String(abs % 100).padStart(2, '0');
+            const grp = (s, sep) => s.replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+            const forms = {
+              amount: grp(int, ',') + '.' + dec,
+              amount_no_decimals: grp(int, ','),
+              amount_with_comma_separator: grp(int, '.') + ',' + dec,
+              amount_no_decimals_with_comma_separator: grp(int, '.'),
+              amount_with_space_separator: grp(int, ' ') + ',' + dec,
+              amount_no_decimals_with_space_separator: grp(int, ' '),
+              amount_with_apostrophe_separator: grp(int, "'") + '.' + dec
+            };
+            const out = String(this.moneyFormat || '{' + '{amount}' + '}').replace(/\{\{\s*(\w+)\s*\}\}/g, (m, k) => (forms[k] !== undefined ? forms[k] : forms.amount)).replace(/<[^>]+>/g, '');
+            return (n < 0 ? '-' : '') + out;
+          },
           get filtering() {
             // Sorting is not filtering: it re-orders the whole list but leaves
             // the eight-card gate and its "show more" button where they were.
             return this.q.trim() !== '' || this.brand !== '' || this.gender !== '';
           },
+          fold(s) {
+            // Case and accent insensitive, so "sandeltra" finds "Sandelträ".
+            return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          },
           matches(ds) {
             if (this.brand && (ds.brand || '').split('||').indexOf(this.brand) === -1) return false;
             if (this.gender && (ds.gender || '').split('||').indexOf(this.gender) === -1) return false;
-            const q = this.q.trim().toLowerCase();
+            const q = this.fold(this.q.trim());
             if (!q) return true;
-            return (ds.name || '').toLowerCase().includes(q)
-              || (ds.brand || '').toLowerCase().includes(q)
-              || (ds.insp || '').toLowerCase().includes(q);
+            // Every typed word has to be found somewhere in the card's haystack
+            // (name, inspiration, tags, notes), in any order.
+            const hay = this.fold([ds.name, ds.brand, ds.insp, ds.search].join(' '));
+            return q.split(/\s+/).every((w) => hay.includes(w));
           },
           visible(ds) {
             // A picked card always renders, whatever the filters or the

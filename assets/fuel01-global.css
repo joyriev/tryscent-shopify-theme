@@ -43,15 +43,18 @@ html.ab-f01-v1 div:has(> a .fuel01-bar) + div {
   display: none !important;
 }
 
+/* Phone: two tight rows, 52px in all. The first cut stood 73px tall at
+ * 390 (16px copy, 25px icons, 8px gaps) and was called out in review as
+ * the banner "all messed up, should be more narrow". */
 .fuel01-bar {
-  padding: 8px 16px;
+  padding: 6px 12px;
 }
 
 .fuel01-bar__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -63,10 +66,10 @@ html.ab-f01-v1 div:has(> a .fuel01-bar) + div {
    * secondary background, both written inline by the snippet. White
    * was 1.25:1 on that pale green and could not be read. */
   color: inherit;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.6px;
+  line-height: 18px;
+  letter-spacing: 0.3px;
   text-align: center;
 }
 
@@ -74,32 +77,36 @@ html.ab-f01-v1 div:has(> a .fuel01-bar) + div {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .fuel01-bar__offer {
   color: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.6px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.4px;
   white-space: nowrap;
 }
 
 .fuel01-bar__icons {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .fuel01-bar__icon {
   display: block;
-  height: 25px;
+  height: 18px;
   width: auto;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 @media screen and (min-width: 768px) {
+  .fuel01-bar {
+    padding: 8px 16px;
+  }
+
   .fuel01-bar__inner {
     flex-direction: row;
     justify-content: center;
@@ -109,6 +116,12 @@ html.ab-f01-v1 div:has(> a .fuel01-bar) + div {
   .fuel01-bar__copy {
     font-size: 18px;
     line-height: 28px;
+    letter-spacing: 0.6px;
+  }
+
+  .fuel01-bar__icon {
+    height: 25px;
+    border-radius: 4px;
   }
 
   /* The design drops the offer text on desktop and keeps it on mobile. */
