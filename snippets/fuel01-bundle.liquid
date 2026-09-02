@@ -184,12 +184,15 @@
     {%- when 'summary' -%}
       {%- liquid
         comment
-          Your price is the variant the buy button actually adds, so the summary
-          can never drift from what is charged. The ordinary total is the same
-          number of scents bought one by one at the bundle size, read off the
-          pool the builder offers (collections['best-sellers'], the list that
-          snippets/bundle-builder-2.liquid declares), and the discount is the
-          difference. No compare-at price any more: the first cut showed the
+          The ordinary total is the pack's scents bought one by one at the
+          bundle size, read off the pool the builder offers
+          (collections['best-sellers'], the list that
+          snippets/bundle-builder-2.liquid declares), the discount is one
+          scent, and your price is the difference (review, Sep 2: "four times
+          that minus one times that", one perfume free). The variant the buy
+          button adds is not read for the price, so the bundle product in
+          Shopify must be priced at that figure or checkout charges something
+          else. No compare-at price any more: the first cut showed the
           bundle's own compare-at (1.449 kr against 790) and review could not
           trace the number. The rows repaint from the actual picks through the
           fuel01Summary component below. Nothing is pre-filled: the box starts
@@ -218,8 +221,10 @@
           endif
         endfor
         assign ordinary_price = unit_default | times: bottle_count
-        assign saving = ordinary_price | minus: your_price
-        if unit_default == 0 or saving < 0
+        assign saving = unit_default
+        assign your_price = ordinary_price | minus: saving
+        if unit_default == 0
+          assign your_price = summary_variant.price
           assign ordinary_price = your_price
           assign saving = 0
         endif

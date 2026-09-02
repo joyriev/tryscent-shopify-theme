@@ -124,10 +124,12 @@
     assign eligible_count = eligible_handles | split: '||' | size
 
     comment
-      The summary's three numbers. Your price is the bundle product's price,
-      which is what the builder on the bundle page charges. The ordinary total
-      is the same number of scents bought one by one at the bundle size, and
-      the discount is the difference. Neither reads a compare-at price: the
+      The summary's three numbers. The ordinary total is the pack's scents
+      bought one by one at the bundle size, the discount is one scent, and
+      your price is the difference (review, Sep 2: "four times that minus one
+      times that", one perfume free). The bundle product's own price is not
+      read, so the bundle product in Shopify must be priced at that figure or
+      checkout charges something else. Neither reads a compare-at price: the
       first cut showed the bundle product's own compare-at (1.449 kr against
       790) and was called out in review as a number nobody could trace. The
       page repaints the two from the actual picks (ordTotal in fuel01Byo).
@@ -138,8 +140,10 @@
       start hidden.
     endcomment
     assign ordinary_price = unit_default | times: slot_count
-    assign saving = ordinary_price | minus: your_price
-    if unit_default == 0 or saving < 0
+    assign saving = unit_default
+    assign your_price = ordinary_price | minus: saving
+    if unit_default == 0
+      assign your_price = price_variant.price
       assign ordinary_price = your_price
       assign saving = 0
     endif
