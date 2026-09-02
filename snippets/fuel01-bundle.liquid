@@ -192,8 +192,11 @@
           difference. No compare-at price any more: the first cut showed the
           bundle's own compare-at (1.449 kr against 790) and review could not
           trace the number. The rows repaint from the actual picks through the
-          fuel01Summary component below; before any pick every slot counts as
-          one scent at the pool's price.
+          fuel01Summary component below. Nothing is pre-filled: the box starts
+          at 0 kr and climbs one scent at a time, and the ordinary total, the
+          discount and the saving only appear once the pack is full, because
+          that is when the bundle price applies. The Liquid values are the
+          full-pack figures for the rows that start hidden.
         endcomment
         assign summary_variant = product.selected_or_first_available_variant
         assign your_price = summary_variant.price
@@ -278,12 +281,20 @@
                 for (var i = 0; i < total; i++) {
                   var p = picks[i];
                   var price = p ? Number(prices[String(p.id)]) : 0;
-                  sum += price > 0 ? price : unitDefault;
+                  if (price > 0) sum += price;
                 }
                 return sum;
               },
+              get full() {
+                var store = Alpine.store('bundleBuilder');
+                var picks = store && Array.isArray(store.selectedProducts) ? store.selectedProducts : [];
+                return total > 0 && picks.length >= total;
+              },
+              get yourPrice() {
+                return this.full ? bundlePrice : this.ordTotal;
+              },
               get discount() {
-                return Math.max(0, this.ordTotal - bundlePrice);
+                return this.full ? Math.max(0, this.ordTotal - bundlePrice) : 0;
               },
               money(cents) {
                 var n = Math.round(Number(cents) || 0);
@@ -312,14 +323,14 @@
         x-data="fuel01Summary({{ bottle_count }}, {{ your_price }}, {{ unit_default }}, {{ shop.money_format | json | escape }}, {{ price_map | strip_newlines | escape }})"
       >
         {%- if saving > 0 -%}
-          <div class="fuel01-summary__row">
+          <div class="fuel01-summary__row" x-show="full" x-cloak>
             <span class="fuel01-summary__label">
               {{- total_label_main | escape -}}
               {%- if total_label_note != blank %} <span class="fuel01-summary__label-note">{{ total_label_note | escape }}</span>{% endif -%}
             </span>
             <span class="fuel01-summary__value" x-text="money(ordTotal)">{{ ordinary_price | money }}</span>
           </div>
-          <div class="fuel01-summary__row fuel01-summary__row--discount">
+          <div class="fuel01-summary__row fuel01-summary__row--discount" x-show="full && discount > 0" x-cloak>
             <span class="fuel01-summary__label">
               {{- discount_label_main | escape -}}
               {%- if discount_label_note != blank %} <span class="fuel01-summary__label-note">{{ discount_label_note | escape }}</span>{% endif -%}
@@ -329,10 +340,10 @@
         {%- endif -%}
         <div class="fuel01-summary__row fuel01-summary__row--total">
           <span class="fuel01-summary__label">{{ price_label | escape }}</span>
-          <span class="fuel01-summary__value">{{ your_price | money }}</span>
+          <span class="fuel01-summary__value" x-text="money(yourPrice)">{{ 0 | money }}</span>
         </div>
         {%- if saving > 0 -%}
-          <p class="fuel01-summary__pill">
+          <p class="fuel01-summary__pill" x-show="full && discount > 0" x-cloak>
             <span class="fuel01-summary__pill-label">{{ savings_label | escape }}</span>
             <span class="fuel01-summary__pill-value" x-text="money(discount)">{{ saving | money }}</span>
           </p>

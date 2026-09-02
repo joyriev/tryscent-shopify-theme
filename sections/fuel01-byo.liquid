@@ -130,9 +130,12 @@
       the discount is the difference. Neither reads a compare-at price: the
       first cut showed the bundle product's own compare-at (1.449 kr against
       790) and was called out in review as a number nobody could trace. The
-      page repaints the two from the actual picks (ordTotal in fuel01Byo);
-      before any pick every slot counts as one scent at the pool's price, which
-      is the same for every scent in the pool today.
+      page repaints the two from the actual picks (ordTotal in fuel01Byo).
+      Nothing is pre-filled: the box starts at 0 kr and climbs one scent at a
+      time, and the ordinary total, the discount and the saving only appear
+      once the pack is full, because that is when the bundle price applies.
+      The Liquid values below are the full-pack figures for the rows that
+      start hidden.
     endcomment
     assign ordinary_price = unit_default | times: slot_count
     assign saving = ordinary_price | minus: your_price
@@ -301,7 +304,7 @@
         </div>
         <aside class="fuel01-summary">
           {%- if saving > 0 -%}
-            <div class="fuel01-summary__rows">
+            <div class="fuel01-summary__rows" x-show="full" x-cloak>
               <div class="fuel01-summary__row">
                 <span class="fuel01-summary__label">
                   {{- total_label_main | escape -}}
@@ -320,14 +323,14 @@
           {%- endif -%}
           <div class="fuel01-summary__row fuel01-summary__row--total">
             <span class="fuel01-summary__label">{{ st.price_label | escape }}</span>
-            <span class="fuel01-summary__value">{{ your_price | money }}</span>
+            <span class="fuel01-summary__value" x-text="money(yourPrice)">{{ 0 | money }}</span>
           </div>
           {%- if saving > 0 -%}
             {%- comment -%}
               Label and amount are separate so the uppercase treatment can stay
               on the label and leave the shop's own money formatting alone.
             {%- endcomment -%}
-            <p class="fuel01-summary__pill">
+            <p class="fuel01-summary__pill" x-show="full && discount > 0" x-cloak>
               <span class="fuel01-summary__pill-label">{{ st.savings_label | escape }}</span>
               <span class="fuel01-summary__pill-value" x-text="money(discount)">{{ saving | money }}</span>
             </p>
@@ -679,9 +682,9 @@
           <div class="fuel01-sticky__price">
             <span class="fuel01-sticky__price-label">{{ st.sticky_price_label | escape }}</span>
             <span class="fuel01-sticky__price-row">
-              <span class="fuel01-sticky__price-now">{{ your_price | money }}</span>
+              <span class="fuel01-sticky__price-now" x-text="money(yourPrice)">{{ 0 | money }}</span>
               {%- if saving > 0 -%}
-                <s class="fuel01-sticky__price-was" x-text="money(ordTotal)">{{ ordinary_price | money }}</s>
+                <s class="fuel01-sticky__price-was" x-text="money(ordTotal)" x-show="full && discount > 0" x-cloak>{{ ordinary_price | money }}</s>
               {%- endif -%}
             </span>
           </div>
@@ -855,17 +858,22 @@
             return {{ st.sticky_cta_view | json }}.replace('[count]', this.picked);
           },
           get ordTotal() {
-            // What the pack would cost bought scent by scent: every filled slot
-            // at its own bundle-size price, every empty one at the pool's.
+            // The picked scents bought one by one at the bundle size. Empty
+            // slots count nothing, so the figure climbs with every pick.
             let sum = 0;
             for (let i = 0; i < this.total; i++) {
               const p = this.slot(i);
-              sum += p && Number(p.price) > 0 ? Number(p.price) : this.unitDefault;
+              if (p && Number(p.price) > 0) sum += Number(p.price);
             }
             return sum;
           },
+          get yourPrice() {
+            // A running subtotal while the pack is being filled; the bundle
+            // product's own price, the one that is charged, once it is full.
+            return this.full ? this.bundlePrice : this.ordTotal;
+          },
           get discount() {
-            return Math.max(0, this.ordTotal - this.bundlePrice);
+            return this.full ? Math.max(0, this.ordTotal - this.bundlePrice) : 0;
           },
           money(cents) {
             // The shop's own money format, so the live numbers read the way
