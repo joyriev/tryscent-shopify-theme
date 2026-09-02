@@ -9,6 +9,50 @@
  */
 {
   "sections": {
+    "fuel01_byo": {
+      "type": "fuel01-byo",
+      "blocks": {
+        "perk_hours": {
+          "type": "fuel01_perk",
+          "settings": {
+            "icon_asset": "fuel01-perk-hours.png",
+            "title": "Håller i 12+ timmar",
+            "text": "En doft som håller hela dagen."
+          }
+        },
+        "perk_guarantee": {
+          "type": "fuel01_perk",
+          "settings": {
+            "icon_asset": "fuel01-perk-guarantee.png",
+            "title": "60 dagars garanti",
+            "text": "Pengarna tillbaka inom 60 dagar."
+          }
+        },
+        "perk_quality": {
+          "type": "fuel01_perk",
+          "settings": {
+            "icon_asset": "fuel01-perk-quality.png",
+            "title": "Fransk kvalitetsstandard",
+            "text": "Kvalitet i nivå med designerdofter."
+          }
+        },
+        "perk_eu": {
+          "type": "fuel01_perk",
+          "settings": {
+            "icon_asset": "fuel01-perk-eu.png",
+            "title": "Tillverkad i EU",
+            "text": "Vegansk & cruelty-free."
+          }
+        }
+      },
+      "block_order": [
+        "perk_hours",
+        "perk_guarantee",
+        "perk_quality",
+        "perk_eu"
+      ],
+      "settings": {}
+    },
     "insta_story_6kD6Ki": {
       "type": "insta-story",
       "blocks": {
@@ -242,6 +286,7 @@
     }
   },
   "order": [
+    "fuel01_byo",
     "insta_story_6kD6Ki",
     "collection_header_UAKfye",
     "banner",

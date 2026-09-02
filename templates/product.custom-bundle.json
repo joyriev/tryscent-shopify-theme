@@ -16,6 +16,28 @@
           "type": "title",
           "settings": {}
         },
+        "fuel01_heading": {
+          "type": "fuel01_heading",
+          "settings": {
+            "subheading": "[count] × [size] ml parfymer – välj dina favoriter till paketpris"
+          }
+        },
+        "fuel01_steps": {
+          "type": "fuel01_steps",
+          "settings": {
+            "hint_text": "Lägg till [remaining] dofter till för att göra ditt paket klart!",
+            "hint_text_one": "Lägg till 1 doft till för att göra ditt paket klart!"
+          }
+        },
+        "fuel01_summary": {
+          "type": "fuel01_summary",
+          "settings": {
+            "total_label": "Ord. totalpris ([count] × [size] ml)",
+            "discount_label": "Paketrabatt",
+            "price_label": "Ditt pris",
+            "savings_label": "DU SPARAR"
+          }
+        },
         "made_in_the_eu_78caec": {
           "type": "made_in_the_eu",
           "settings": {}
@@ -198,10 +220,13 @@
       },
       "block_order": [
         "title",
+        "fuel01_heading",
         "made_in_the_eu_78caec",
         "bundle_content_Fp4nMk",
         "bundle_price_BXLEVb",
+        "fuel01_steps",
         "atc_bundle_builder_aLJUaV",
+        "fuel01_summary",
         "dialect_notes_NHiwen",
         "reactive_variant_selector_JyFrkg",
         "shipping_text_HCVN8A",

@@ -230,7 +230,7 @@
                    {% if product.metafields.custom.choose_your_fragrances_options != blank %}
                     {% render 'bundle-builder-2', product: product %}
                   {% else %}
-                    {% render 'reactive-variant-selector', product: product %}
+                    {% render 'reactive-variant-selector', product: product, section: section %}
                   {% endif %}
                 </div>
               {%- when 'fuel03_pair_scent' -%}
@@ -253,6 +253,18 @@
                 {% render 'bundle-builder-2' %}
               {%- when 'magic_perfume_atc' -%}
                 {% render 'magic-perfume-atc' %}
+              {%- when 'fuel01_heading' -%}
+                <div class="fuel01 fuel01--heading" style="display: none;" {{ block.shopify_attributes }}>
+                  {% render 'fuel01-bundle', product: product, block: block, mode: 'heading', with_assets: true %}
+                </div>
+              {%- when 'fuel01_steps' -%}
+                <div class="fuel01 fuel01--steps" style="display: none;" {{ block.shopify_attributes }}>
+                  {% render 'fuel01-bundle', product: product, block: block, mode: 'steps' %}
+                </div>
+              {%- when 'fuel01_summary' -%}
+                <div class="fuel01 fuel01--summary" style="display: none;" {{ block.shopify_attributes }}>
+                  {% render 'fuel01-bundle', product: product, block: block, mode: 'summary' %}
+                </div>
               {%- when 'shipping_text' -%}
                 <div class="!my-6">
                   <p class="my-0 text-center font-semibold tracking-normal">
@@ -3118,6 +3130,135 @@
           "default": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.default",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
+        }
+      ]
+    },
+    {
+      "type": "fuel01_heading",
+      "name": "FUEL_01 Bundle heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Shown only in the FUEL_01 test variant. [count] becomes the number of bottles in the pack and [size] becomes the bottle size in ml."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Bygg ditt eget Välj & spara",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "default": "3 × 100 ml parfymer – få den 4:e helt gratis",
+          "label": "Line under the heading"
+        }
+      ]
+    },
+    {
+      "type": "fuel01_steps",
+      "name": "FUEL_01 Bundle steps bar",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Shown only in the FUEL_01 test variant. [selected] becomes how many bottles are picked, [total] the pack size and [remaining] how many are left to pick."
+        },
+        {
+          "type": "text",
+          "id": "counter_text",
+          "default": "[selected] / [total] valda",
+          "label": "Counter"
+        },
+        {
+          "type": "text",
+          "id": "hint_text",
+          "default": "Lägg till [remaining] dofter till för att låsa upp din gratis doft!",
+          "label": "Line while the pack is unfinished"
+        },
+        {
+          "type": "text",
+          "id": "hint_text_one",
+          "default": "Lägg till 1 doft till för att låsa upp din gratis doft!",
+          "label": "Line when one bottle is left",
+          "info": "Swedish needs 1 doft and 2 dofter, so the last one has its own line"
+        },
+        {
+          "type": "text",
+          "id": "done_text",
+          "default": "Ditt paket är klart!",
+          "label": "Line when the pack is full"
+        }
+      ]
+    },
+    {
+      "type": "fuel01_summary",
+      "name": "FUEL_01 Bundle summary",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Shown only in the FUEL_01 test variant. Every amount is read from the product itself, so nothing here needs a price typed into it. [count] becomes the number of bottles in the pack and [size] becomes the bottle size in ml."
+        },
+        {
+          "type": "text",
+          "id": "total_label",
+          "default": "Ord. totalpris ([count] × [size] ml)",
+          "label": "Ordinary total label"
+        },
+        {
+          "type": "text",
+          "id": "discount_label",
+          "default": "Rabatt (1 doft gratis)",
+          "label": "Discount label"
+        },
+        {
+          "type": "text",
+          "id": "price_label",
+          "default": "Ditt pris",
+          "label": "Your price label"
+        },
+        {
+          "type": "text",
+          "id": "savings_label",
+          "default": "DU SPARAR",
+          "label": "Savings label"
+        }
+      ]
+    },
+    {
+      "type": "fuel01_pdp",
+      "name": "FUEL_01 Doftgarderob",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Shown only in the FUEL_01 test variant. It always sits between the size buttons and the add to cart button, whatever position this block holds in the list."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Fyll på din doftgarderob",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "subline",
+          "default": "Välj 3 dofter – få 1 gratis.",
+          "label": "Line under the heading"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "default": "Välj dina dofter",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button link",
+          "info": "Empty goes to /collections/bundle-save."
         }
       ]
     }
