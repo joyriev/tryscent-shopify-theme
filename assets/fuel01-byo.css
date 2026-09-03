@@ -850,14 +850,14 @@ html.ab-f01-v1 body:not(.shopify-design-mode) .shopify-section-group-footer-grou
 /* Review, Sep 3: the one size the client marked. The strip read 8px on a
  * phone against the 14px it has always had from 750 up, which is the only
  * place on the card where the phone and the desktop disagree. The phone now
- * carries 16, twice the old 8 (the client's own words). The band does not grow with it: its height is
+ * carries the desktop's own 14. The band does not grow with it: its height is
  * the line box of this block, and that is set by the card's inherited 15px
  * strut (27px), which is taller than a 14px item on a 1.1 line - measured 39px
  * before and after at 390. Nothing else on the page changes size. */
 .fuel01-card__ribbon-item {
   color: #ffffff;
   font-family: var(--fuel01-card-font);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: 0.4px;
