@@ -417,12 +417,19 @@
               The list is the designer-house names from the brand metafield,
               which is what a scent is inspired by, not who makes it. The label
               says so: "Varumärke" read as if the store sold Dior.
+
+              Review, Sep 3: a house name on its own cannot be shown, it has to
+              be read as what the scent is like. So every name is printed as
+              "Doftar som <house>", the way the shop already names the products
+              themselves. The option's value is the bare name and does not
+              change: the filter in fuel01Byo matches the card's data-brand
+              against it, and a prefix on the value would match nothing.
             {%- endcomment -%}
             {%- if brand_options.size > 0 -%}
               <select class="fuel01-controls__select" aria-label="Inspirerad av" x-model="brand">
                 <option value="">Inspirerad av</option>
                 {%- for option in brand_options -%}
-                  <option value="{{ option | escape }}">{{ option | escape }}</option>
+                  <option value="{{ option | escape }}">Doftar som {{ option | escape }}</option>
                 {%- endfor -%}
               </select>
             {%- endif -%}
