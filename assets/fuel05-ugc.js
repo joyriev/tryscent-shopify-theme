@@ -4,15 +4,22 @@
 
   // QA and preview reveal. On any theme that is not the live one, adding #f05 to
   // the address turns the variant on so the test can be checked without running
-  // Intelligems. Shopify.theme.role is 'main' on the live theme, so this can
-  // never fire there. The hash is read again on every hashchange, because typing
-  // #f05 into the bar of a page that is already open never reloads it.
+  // Intelligems, and #f05-off turns it off again. Shopify.theme.role is 'main'
+  // on the live theme, so this can never fire there. The hash is read again on
+  // every hashchange, because typing #f05 into the bar of a page that is already
+  // open never reloads it.
+  //
+  // The switch only ever adds the class on #f05 and removes it on #f05-off. It
+  // must not toggle on every other address, because the testing tool's preview
+  // puts the same class on the page without any hash, and a toggle would take
+  // that straight back off on any theme that is not the live one.
   if (window.Shopify && Shopify.theme && Shopify.theme.role !== 'main') {
     const applyHashReveal = () => {
-      document.documentElement.classList.toggle(
-        'ab-f05-ugc',
-        window.location.hash === '#f05'
-      );
+      if (window.location.hash === '#f05') {
+        document.documentElement.classList.add('ab-f05-ugc');
+      } else if (window.location.hash === '#f05-off') {
+        document.documentElement.classList.remove('ab-f05-ugc');
+      }
     };
 
     applyHashReveal();
