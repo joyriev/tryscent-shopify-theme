@@ -34,7 +34,6 @@
 
     assign bundle_product = st.bundle_product | default: all_products['4x-100ml-perfume-bottles']
     assign grid_pool = st.grid_collection | default: collections['best-sellers']
-    assign premade = st.premade_collection | default: collection
 
     comment
       Same variant key the builder itself derives on the PDP
@@ -591,39 +590,16 @@
       {%- endif -%}
     </div>
 
-    {%- if premade != blank and premade.products.size > 0 -%}
-      <div class="fuel01-premade" x-data="fuel01Premade">
-        <div class="fuel01-premade__head">
-          {%- if st.premade_title != blank -%}
-            <p class="fuel01-premade__title">{{ st.premade_title | escape }}</p>
-          {%- endif -%}
-          <div class="fuel01-premade__nav">
-            <button type="button" class="fuel01-premade__arrow fuel01-premade__arrow--prev" :disabled="atStart" aria-label="Föregående" @click="nav(-1)">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <button type="button" class="fuel01-premade__arrow" :disabled="atEnd" aria-label="Nästa" @click="nav(1)">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="fuel01-premade__cards" x-ref="row" @scroll.passive="check()">
-          {%- for premade_product in premade.products limit: 8 -%}
-            <a class="fuel01-premade__card" href="{{ premade_product.url }}">
-              <span class="fuel01-premade__media">
-                {{ premade_product.featured_image | image_url: width: 560 | image_tag: class: 'fuel01-premade__img', widths: '280, 560', loading: 'lazy', alt: premade_product.title }}
-              </span>
-              <span class="fuel01-premade__name">{{ premade_product.title | escape }}</span>
-              <span class="fuel01-premade__price">{{ st.from_label | escape }} {{ premade_product.price_min | money }}</span>
-              <span class="fuel01-premade__cta">{{ st.premade_cta_label | escape }}</span>
-            </a>
-          {%- endfor -%}
-        </div>
-      </div>
-    {%- endif -%}
+    {%- comment -%}
+      Review, Sep 3: the "Färdiga doftpaket" carousel that stood here is gone.
+      It listed the shop's ready-made packs, and none of them can be picked
+      into this pack: they are whole bundles of their own, so they carry a
+      single Default Title variant and never the 100ml one the builder needs.
+      Offering them beside the scents was a second, unrelated way to buy on
+      the one page the test is measuring. The scent grid itself never showed
+      them - the bundle-size filter above already drops every product without
+      that variant - so nothing else here changes.
+    {%- endcomment -%}
 
     <div class="fuel01-sticky fuel01-sticky--on">
       <div class="fuel01-sticky__panel">
@@ -1055,31 +1031,6 @@
           }
         };
       });
-
-      Alpine.data('fuel01Premade', function () {
-        return {
-          atStart: true,
-          atEnd: false,
-          init() {
-            this.$nextTick(() => this.check());
-          },
-          check() {
-            const row = this.$refs.row;
-            if (!row) return;
-            // The row rests snapped to its 18px start padding, not 0.
-            this.atStart = row.scrollLeft <= 20;
-            this.atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 8;
-          },
-          nav(dir) {
-            const row = this.$refs.row;
-            if (!row) return;
-            const card = row.querySelector('.fuel01-premade__card');
-            const step = card ? card.offsetWidth + 12 : row.clientWidth;
-            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            row.scrollBy({ left: dir * step, behavior: reduce ? 'auto' : 'smooth' });
-          }
-        };
-      });
     });
   </script>
 {%- endif -%}
@@ -1109,12 +1060,6 @@
       "id": "grid_collection",
       "label": "Scent grid collection",
       "info": "Defaults to best-sellers, the pool the builder itself offers. Keep it on that pool: the bundle product's own builder offers a fixed list of scents, and a pick that is not in that list is dropped on the way over."
-    },
-    {
-      "type": "collection",
-      "id": "premade_collection",
-      "label": "Ready-made bundles collection",
-      "info": "Defaults to the collection the page is on."
     },
     { "type": "header", "content": "Heading" },
     {
@@ -1257,26 +1202,6 @@
       "id": "reveal_label",
       "label": "Show more label",
       "default": "Kolla in mer!"
-    },
-    { "type": "header", "content": "Ready-made bundles" },
-    {
-      "type": "text",
-      "id": "premade_title",
-      "label": "Panel title",
-      "default": "Färdiga doftpaket"
-    },
-    {
-      "type": "text",
-      "id": "from_label",
-      "label": "From label",
-      "default": "Från"
-    },
-    {
-      "type": "text",
-      "id": "premade_cta_label",
-      "label": "Premade card button",
-      "info": "These cards open the bundle's own page, they do not add anything here.",
-      "default": "Se paketet"
     },
     { "type": "header", "content": "Sticky bar" },
     {
