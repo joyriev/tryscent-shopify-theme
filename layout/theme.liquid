@@ -373,6 +373,8 @@ body {
   </head>
 
   <body class="{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+    {{ 'subscribfy-custom-styles.css' | asset_url | stylesheet_tag }}
+
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -486,5 +488,9 @@ body {
       {%- render 'quiz-bundle-prefill' -%}
     {%- endif -%}
   {%- endif -%}
+    {% render 'subscribfy-custom' %}
+    <script>
+      !function(){var e="https://subscribfy.nyc3.cdn.digitaloceanspaces.com/js/script-subscribify.js?"+(new Date).getTime(),t=document.createElement("script");t.type="text/javascript",t.src=e,document.querySelector("body").appendChild(t)}();
+    </script>
   </body>
 </html>

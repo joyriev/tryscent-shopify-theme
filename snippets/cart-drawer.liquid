@@ -73,6 +73,7 @@
                         <tr
                           id="CartDrawer-Item-{{ item.index | plus: 1 }}"
                           class="cart-item"
+                          data-variant-id="{{ item.variant.id }}"
                           role="row">
                           <td
                             class="cart-item__media"
@@ -411,6 +412,11 @@
             </div>
             <div id="CartDrawer-CartErrors" role="alert"></div>
           </form>
+          {%- if cart != empty -%}
+            <div id="subscribfy-widget-drawer" data-exm-managed="1">
+              {% render 'subscribfy-widget' %}
+            </div>
+          {%- endif -%}
         </cart-drawer-items>
         {% render 'cart-upsells' %}
       </div>
