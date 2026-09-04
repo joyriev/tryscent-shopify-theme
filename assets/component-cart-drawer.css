@@ -183,8 +183,20 @@ cart-drawer {
   width: 100%;
 }
 
+/* The cart body scrolls in .drawer__inner > .overflow-y-auto, not in
+   cart-drawer-items, so cart-drawer-items never gets a block box of its own. */
+cart-drawer-items {
+  display: block;
+}
+
 @media screen and (max-height: 650px) {
   cart-drawer-items {
+    overflow: visible;
+  }
+
+  /* Release the wrapper that actually scrolls too, otherwise the cart body
+     stays a short porthole and the Tryscent+ chooser can never be seen whole. */
+  .drawer__inner > .overflow-y-auto {
     overflow: visible;
   }
 
