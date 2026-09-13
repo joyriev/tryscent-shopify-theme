@@ -157,7 +157,8 @@
         </div>
       </div>
     {% endif %}
-    {% render 'fuel01-announcement', section: section %}
+    {% render 'fuel01-announcement'
+      , section: section %}
     <div class="py-3 md:py-2" style="background-color: {{ section.settings.secondary_color }};">
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap items-center gap-x-6 gap-y-1 justify-center">
@@ -249,7 +250,7 @@
     // Countdown headings per Weglot language (falls back to "sv")
     const countdownHeadings = {
       sv: ["Dag", "Tim", "Min", "Sek"],
-      da: ["Dag", "Time", "Min", "Sek"],
+      da: ["Dag", "Timer", "Min", "Sek"],
       fi: ["Päivä", "Tunti", "Min", "Sek"],
       no: ["Dag", "Time", "Min", "Sek"],
     };
