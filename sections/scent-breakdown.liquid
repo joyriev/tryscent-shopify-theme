@@ -90,7 +90,7 @@
   (function () {
     // Scent breakdown image per Weglot language (falls back to "sv")
     var localImages = {
-      sv: "{{ sv_marketing_images.first | image_url: width: 1080 }}",
+      sv: "{{ sv_marketing_images[0] | image_url: width: 1080 }}",
       fi: {% if fi_marketing_images.first %}{{ fi_marketing_images.first | image_url | json }}{% else %}null{% endif %},
       da: {% if da_marketing_images.first %}{{ da_marketing_images.first | image_url | json }}{% else %}null{% endif %},
       no: {% if no_marketing_images.first %}{{ no_marketing_images.first | image_url | json }}{% else %}null{% endif %}
