@@ -90,7 +90,7 @@
   (function () {
     // Scent breakdown image per Weglot language (falls back to "sv")
     var localImages = {
-      sv: {% if sv_marketing_images.first %}{{ sv_marketing_images.first | image_url | json }}{% else %}null{% endif %},
+      sv: "{{ sv_marketing_image[0] | image_url: width: 1080 }}",
       fi: {% if fi_marketing_images.first %}{{ fi_marketing_images.first | image_url | json }}{% else %}null{% endif %},
       da: {% if da_marketing_images.first %}{{ da_marketing_images.first | image_url | json }}{% else %}null{% endif %},
       no: {% if no_marketing_images.first %}{{ no_marketing_images.first | image_url | json }}{% else %}null{% endif %}
@@ -134,10 +134,12 @@
         "id": "background_color",
         "label": "Background Color",
         "default": "#fcfbf9"
-      }, {
+      },
+      {
         "type": "header",
         "content": "t:sections.all.padding.section_padding_heading"
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_top",
         "min": 0,
@@ -146,7 +148,8 @@
         "unit": "px",
         "label": "t:sections.all.padding.padding_top",
         "default": 36
-      }, {
+      },
+      {
         "type": "range",
         "id": "padding_bottom",
         "min": 0,
