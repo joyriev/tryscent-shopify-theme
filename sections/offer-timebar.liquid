@@ -170,7 +170,16 @@
             </div>
             <div class="flex items-center gap-2">
               <div style="color: {{ section.settings.primary_color }};" class="text-sm md:text-base font-bold leading-none md:hidden">
-                Endet in
+                {%- case localization.language.iso_code -%}
+                  {%- when 'da' -%}
+                    Slutter om
+                  {%- when 'fi' -%}
+                    Päättyy
+                  {%- when 'no' -%}
+                    Slutter om
+                  {%- else -%}
+                    Slutar om
+                {%- endcase -%}
               </div>
               <div id="flipdown" class="flipdown"></div>
             </div>
@@ -246,8 +255,19 @@
 
     const deadline = getCountdownDeadline();
 
+    {%- case localization.language.iso_code -%}
+      {%- when 'da' -%}
+        {%- assign flipdown_headings = "Dag,Time,Min,Sek" -%}
+      {%- when 'fi' -%}
+        {%- assign flipdown_headings = "Päivä,Tunti,Min,Sek" -%}
+      {%- when 'no' -%}
+        {%- assign flipdown_headings = "Dag,Time,Min,Sek" -%}
+      {%- else -%}
+        {%- assign flipdown_headings = "Dag,Tim,Min,Sek" -%}
+    {%- endcase -%}
+
     new FlipDown(deadline, {
-      headings: ["Dag", "Tim", "Min", "Sek"],
+      headings: {{ flipdown_headings | split: ',' | json }},
     })
       .start()
       .ifEnded(() => {
