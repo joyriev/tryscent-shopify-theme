@@ -4,7 +4,10 @@
   assign da_marketing_images = shop.metaobjects['marketing_images']['danish'].images.value
   assign no_marketing_images = shop.metaobjects['marketing_images']['norwegian'].images.value
 
-  assign breakdown_image = sv_marketing_images.first
+  assign breakdown_image = blank
+  for item in sv_marketing_images limit: 1
+    assign breakdown_image = item
+  endfor
   if breakdown_image == blank
     assign breakdown_image = product.images[1]
   endif
@@ -90,10 +93,26 @@
   (function () {
     // Scent breakdown image per Weglot language (falls back to "sv")
     var localImages = {
-      sv: "{{ sv_marketing_images[0] | image_url: width: 1080 }}",
-      fi: {% if fi_marketing_images.first %}{{ fi_marketing_images.first | image_url | json }}{% else %}null{% endif %},
-      da: {% if da_marketing_images.first %}{{ da_marketing_images.first | image_url | json }}{% else %}null{% endif %},
-      no: {% if no_marketing_images.first %}{{ no_marketing_images.first | image_url | json }}{% else %}null{% endif %}
+      sv: [
+        {% for item in sv_marketing_images limit: 1 %}
+          "{{ item | image_url: width: 1080 }}"
+        {% endfor %}
+      ][0] || null,
+      fi: [
+        {% for item in fi_marketing_images limit: 1 %}
+          "{{ item | image_url: width: 1080 }}"
+        {% endfor %}
+      ][0] || null,
+      da: [
+        {% for item in da_marketing_images limit: 1 %}
+          "{{ item | image_url: width: 1080 }}"
+        {% endfor %}
+      ][0] || null,
+      no: [
+        {% for item in no_marketing_images limit: 1 %}
+          "{{ item | image_url: width: 1080 }}"
+        {% endfor %}
+      ][0] || null
     };
 
     function changeLocalImage(newLang) {
