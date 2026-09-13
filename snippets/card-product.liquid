@@ -35,6 +35,44 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+
+  <script>
+    (function () {
+      if (window.__cardProductI18nInit) return;
+      window.__cardProductI18nInit = true;
+
+      // Card price labels per Weglot language (falls back to "sv")
+      var cardLabels = {
+        sv: { startsAt: 'Från', discountOff: 'Av' },
+        da: { startsAt: 'Fra', discountOff: 'Af' },
+        fi: { startsAt: 'Alkaen', discountOff: 'alennus' },
+        no: { startsAt: 'Fra', discountOff: 'Av' },
+      };
+
+      function translateCardLabels(lang) {
+        var labels = cardLabels[lang] || cardLabels.sv;
+
+        document.querySelectorAll('.starts_at_text').forEach(function (el) {
+          el.textContent = labels.startsAt;
+        });
+
+        document.querySelectorAll('.discount_off_text').forEach(function (el) {
+          el.textContent = labels.discountOff;
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var currentLang = (window.Weglot && typeof Weglot.getCurrentLang === 'function' && Weglot.getCurrentLang()) || 'sv';
+        translateCardLabels(currentLang);
+
+        if (window.Weglot && typeof Weglot.on === 'function') {
+          Weglot.on('languageChanged', function (newLang) {
+            translateCardLabels(newLang);
+          });
+        }
+      });
+    })();
+  </script>
 {%- endunless -%}
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -280,7 +318,7 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
                 {% assign discount_percent = card_product.compare_at_price | minus: card_product.price | times: 100.0 | divided_by: card_product.compare_at_price | round %}
               {% endif %}
               <span class="inline-block bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                {{ discount_percent }}% Av
+                {{ discount_percent }}% <span class="discount_off_text">Av</span>
               </span>
             {% endif %}
               </div>
