@@ -1,3 +1,15 @@
+{% liquid
+  assign sv_marketing_images = shop.metaobjects['marketing_images']['swedish'].images.value
+  assign fi_marketing_images = shop.metaobjects['marketing_images']['finnish'].images.value
+  assign da_marketing_images = shop.metaobjects['marketing_images']['danish'].images.value
+  assign no_marketing_images = shop.metaobjects['marketing_images']['norwegian'].images.value
+
+  assign breakdown_image = sv_marketing_images.first
+  if breakdown_image == blank
+    assign breakdown_image = product.images[1]
+  endif
+%}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -20,11 +32,12 @@
     <div class="grid md:grid-cols-2 gap-8">
       <div>
         <img
+          id="scent-breakdown-img-{{ section.id }}"
           class="w-full h-full rounded-lg object-cover"
-          src="{{ product.images[1].src | image_url }}"
+          src="{{ breakdown_image | image_url }}"
           alt="{{ product.title }}"
-          height="{{ product.images[1].height }}"
-          width="{{ product.images[1].width }}">
+          height="{{ breakdown_image.height }}"
+          width="{{ breakdown_image.width }}">
       </div>
       <div>
         <div class="bg-[#f0f2ec] px-4 py-6 rounded-lg !mb-4">
@@ -70,6 +83,45 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    // Scent breakdown image per Weglot language (falls back to "sv")
+    var localImages = {
+      sv: {{ sv_marketing_images.first | image_url | json }},
+      fi: {{ fi_marketing_images.first | image_url | json }},
+      da: {{ da_marketing_images.first | image_url | json }},
+      no: {{ no_marketing_images.first | image_url | json }}
+    };
+
+    function changeLocalImage(newLang) {
+      var src = localImages[newLang] || localImages.sv;
+      if (!src) return;
+
+      var breakdownImageEl = document.getElementById('scent-breakdown-img-{{ section.id }}');
+      if (breakdownImageEl) {
+        breakdownImageEl.src = src;
+      }
+    }
+
+    function initLocalImage() {
+      var currentLang = (window.Weglot && typeof Weglot.getCurrentLang === 'function' && Weglot.getCurrentLang()) || 'sv';
+      changeLocalImage(currentLang);
+
+      if (window.Weglot && typeof Weglot.on === 'function') {
+        Weglot.on('languageChanged', function (newLang) {
+          changeLocalImage(newLang);
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLocalImage);
+    } else {
+      initLocalImage();
+    }
+  })();
+</script>
 
 {% schema %}
   {

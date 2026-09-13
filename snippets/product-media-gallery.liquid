@@ -4,15 +4,9 @@
 
 {% liquid
   assign marketing_images = shop.metaobjects['marketing_images']['swedish'].images.value
-  if localization.country.iso_code == 'FI'
-    assign marketing_images = shop.metaobjects['marketing_images']['finnish'].images.value
-  endif
-  if localization.country.iso_code == 'DK'
-    assign marketing_images = shop.metaobjects['marketing_images']['danish'].images.value
-  endif
-  if localization.country.iso_code == 'NO'
-    assign marketing_images = shop.metaobjects['marketing_images']['norwegian'].images.value
-  endif
+  assign fi_marketing_images = shop.metaobjects['marketing_images']['finnish'].images.value
+  assign da_marketing_images = shop.metaobjects['marketing_images']['danish'].images.value
+  assign no_marketing_images = shop.metaobjects['marketing_images']['norwegian'].images.value
 %}
 
 <div class="sticky top-6">
@@ -32,12 +26,9 @@
     <div id="productSwiper-{{ section.id }}" class="swiper {% unless product.template_suffix == 'draft-three' %}md:w-[calc(100%-144px)]{% endunless %}">
       <div class="swiper-wrapper">
         {% if product.tags contains "local_image" %}
-          {% assign image_found = false %}
           {% for image in product.images %}
-            {% assign curr_currency = localization.country.iso_code | prepend: "bundle_" | downcase %}
             {% assign img_alt = image.alt | downcase %}
-            {% if img_alt contains "bundle_" and img_alt == curr_currency %}
-              {% assign image_found = true %}
+            {% if img_alt contains "bundle_usd" %}
               <img
                 src="{{ image.src | img_url: 'master' }}"
                 alt="{{ image.alt }}"
@@ -46,19 +37,6 @@
                 class="productSwiperImage swiper-slide md:rounded-lg">
             {% endif %}
           {% endfor %}
-          {% if image_found == false %}
-            {% for image in product.images %}
-              {% assign img_alt = image.alt | downcase %}
-              {% if img_alt contains "bundle_usd" %}
-                <img
-                  src="{{ image.src | img_url: 'master' }}"
-                  alt="{{ image.alt }}"
-                  height="{{ image.height }}"
-                  width="{{ image.width }}"
-                  class="productSwiperImage swiper-slide md:rounded-lg">
-              {% endif %}
-            {% endfor %}
-          {% endif %}
           {% if marketing_images != blank %}
             {% for image in marketing_images %}
               <img
@@ -181,12 +159,9 @@
     <div id="productThumbnails-{{ section.id }}" class="swiper mt-4">
       <div class="swiper-wrapper [&>.swiper-slide-thumb-active]:border-[#226139] [&>.swiper-slide-thumb-active]:opacity-100">
         {% if product.tags contains "local_image" %}
-          {% assign image_found = false %}
           {% for image in product.images %}
-            {% assign curr_currency = localization.country.iso_code | prepend: "bundle_" | downcase %}
             {% assign img_alt = image.alt | downcase %}
-            {% if img_alt contains "bundle_" and img_alt == curr_currency %}
-              {% assign image_found = true %}
+            {% if img_alt contains "bundle_usd" %}
               <img
                 id="slider-thumbnail-{{ forloop.index0 }}"
                 src="{{ image | image_url: width: 150, height: 150 }}"
@@ -196,20 +171,6 @@
                 class="productThumbnail swiper-slide slide max-w-16 md:max-w-24 opacity-70 border-2 border-solid border-gray-200 rounded-lg cursor-pointer" />
             {% endif %}
           {% endfor %}
-          {% if image_found == false %}
-            {% for image in product.images %}
-              {% assign img_alt = image.alt | downcase %}
-              {% if img_alt contains "bundle_usd" %}
-                <img
-                  id="slider-thumbnail-{{ forloop.index0 }}"
-                  src="{{ image | image_url: width: 150, height: 150 }}"
-                  alt="{{ image.alt }}"
-                  height="150"
-                  width="150"
-                  class="productThumbnail swiper-slide slide max-w-16 md:max-w-24 opacity-70 border-2 border-solid border-gray-200 rounded-lg cursor-pointer" />
-              {% endif %}
-            {% endfor %}
-          {% endif %}
           {% if marketing_images != blank %}
             {% for image in marketing_images %}
               <img
@@ -316,6 +277,92 @@
         document.addEventListener('DOMContentLoaded', initProductGallerySwiper);
       } else {
         initProductGallerySwiper();
+      }
+
+      // Marketing images per Weglot language (falls back to "sv")
+      var localImages = {
+        sv: {
+          main: [
+            {% for item in marketing_images %}
+              "{{ item | image_url: width: 1080 }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ],
+          thumbnail: [
+            {% for item in marketing_images %}
+              "{{ item | image_url: width: 150, height: 150 }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        },
+        fi: {
+          main: [
+            {% for item in fi_marketing_images %}
+              "{{ item | image_url: width: 1080 }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ],
+          thumbnail: [
+            {% for item in fi_marketing_images %}
+              "{{ item | image_url: width: 150, height: 150 }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        },
+        da: {
+          main: [
+            {% for item in da_marketing_images %}
+              "{{ item | image_url: width: 1080 }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ],
+          thumbnail: [
+            {% for item in da_marketing_images %}
+              "{{ item | image_url: width: 150, height: 150 }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        },
+        no: {
+          main: [
+            {% for item in no_marketing_images %}
+              "{{ item | image_url: width: 1080 }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ],
+          thumbnail: [
+            {% for item in no_marketing_images %}
+              "{{ item | image_url: width: 150, height: 150 }}"{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        }
+      };
+
+      function changeLocalImages(newLang) {
+        var images = localImages[newLang] || localImages.sv;
+
+        var mainImages = Array.from(document.querySelectorAll('#productSwiper-{{ section.id }} .marketing_image'));
+        var thumbnailImages = Array.from(document.querySelectorAll('#productThumbnails-{{ section.id }} .marketing_image'));
+
+        if (images.main.length === mainImages.length && images.thumbnail.length === thumbnailImages.length) {
+          mainImages.forEach(function (image, index) {
+            image.src = images.main[index];
+          });
+
+          thumbnailImages.forEach(function (image, index) {
+            image.src = images.thumbnail[index];
+          });
+        }
+      }
+
+      function initLocalImages() {
+        var currentLang = (window.Weglot && typeof Weglot.getCurrentLang === 'function' && Weglot.getCurrentLang()) || 'sv';
+        changeLocalImages(currentLang);
+
+        if (window.Weglot && typeof Weglot.on === 'function') {
+          Weglot.on('languageChanged', function (newLang) {
+            changeLocalImages(newLang);
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLocalImages);
+      } else {
+        initLocalImages();
       }
     })();
   </script>
