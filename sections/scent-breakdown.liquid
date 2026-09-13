@@ -31,13 +31,15 @@
   <div class="page-width">
     <div class="grid md:grid-cols-2 gap-8">
       <div>
-        <img
-          id="scent-breakdown-img-{{ section.id }}"
-          class="w-full h-full rounded-lg object-cover"
-          src="{{ breakdown_image | image_url }}"
-          alt="{{ product.title }}"
-          height="{{ breakdown_image.height }}"
-          width="{{ breakdown_image.width }}">
+        {%- if breakdown_image -%}
+          <img
+            id="scent-breakdown-img-{{ section.id }}"
+            class="w-full h-full rounded-lg object-cover"
+            src="{{ breakdown_image | image_url }}"
+            alt="{{ product.title }}"
+            height="{{ breakdown_image.height }}"
+            width="{{ breakdown_image.width }}">
+        {%- endif -%}
       </div>
       <div>
         <div class="bg-[#f0f2ec] px-4 py-6 rounded-lg !mb-4">
@@ -88,10 +90,10 @@
   (function () {
     // Scent breakdown image per Weglot language (falls back to "sv")
     var localImages = {
-      sv: {{ sv_marketing_images.first | image_url | json }},
-      fi: {{ fi_marketing_images.first | image_url | json }},
-      da: {{ da_marketing_images.first | image_url | json }},
-      no: {{ no_marketing_images.first | image_url | json }}
+      sv: {% if sv_marketing_images.first %}{{ sv_marketing_images.first | image_url | json }}{% else %}null{% endif %},
+      fi: {% if fi_marketing_images.first %}{{ fi_marketing_images.first | image_url | json }}{% else %}null{% endif %},
+      da: {% if da_marketing_images.first %}{{ da_marketing_images.first | image_url | json }}{% else %}null{% endif %},
+      no: {% if no_marketing_images.first %}{{ no_marketing_images.first | image_url | json }}{% else %}null{% endif %}
     };
 
     function changeLocalImage(newLang) {
