@@ -170,16 +170,7 @@
             </div>
             <div class="flex items-center gap-2">
               <div style="color: {{ section.settings.primary_color }};" class="text-sm md:text-base font-bold leading-none md:hidden">
-                {%- case localization.language.iso_code -%}
-                  {%- when 'da' -%}
-                    Slutter om
-                  {%- when 'fi' -%}
-                    Päättyy
-                  {%- when 'no' -%}
-                    Slutter om
-                  {%- else -%}
-                    Slutar om
-                {%- endcase -%}
+                Slutar om
               </div>
               <div id="flipdown" class="flipdown"></div>
             </div>
@@ -255,24 +246,41 @@
 
     const deadline = getCountdownDeadline();
 
-    {%- case localization.language.iso_code -%}
-      {%- when 'da' -%}
-        {%- assign flipdown_headings = "Dag,Time,Min,Sek" -%}
-      {%- when 'fi' -%}
-        {%- assign flipdown_headings = "Päivä,Tunti,Min,Sek" -%}
-      {%- when 'no' -%}
-        {%- assign flipdown_headings = "Dag,Time,Min,Sek" -%}
-      {%- else -%}
-        {%- assign flipdown_headings = "Dag,Tim,Min,Sek" -%}
-    {%- endcase -%}
+    // Countdown headings per Weglot language (falls back to "sv")
+    const countdownHeadings = {
+      sv: ["Dag", "Tim", "Min", "Sek"],
+      da: ["Dag", "Time", "Min", "Sek"],
+      fi: ["Päivä", "Tunti", "Min", "Sek"],
+      no: ["Dag", "Time", "Min", "Sek"],
+    };
 
-    new FlipDown(deadline, {
-      headings: {{ flipdown_headings | split: ',' | json }},
-    })
-      .start()
-      .ifEnded(() => {
-        console.log('Countdown ended');
+    const flipdownEl = document.getElementById('flipdown');
+
+    function buildFlipdown(lang) {
+      const headings = countdownHeadings[lang] || countdownHeadings.sv;
+
+      // Clear any previously rendered rotors before re-instantiating
+      if (flipdownEl) {
+        flipdownEl.innerHTML = '';
+      }
+
+      new FlipDown(deadline, {
+        headings: headings,
+      })
+        .start()
+        .ifEnded(() => {
+          console.log('Countdown ended');
+        });
+    }
+
+    const currentLang = (window.Weglot && typeof Weglot.getCurrentLang === 'function' && Weglot.getCurrentLang()) || 'sv';
+    buildFlipdown(currentLang);
+
+    if (window.Weglot && typeof Weglot.on === 'function') {
+      Weglot.on('languageChanged', function (newLang) {
+        buildFlipdown(newLang);
       });
+    }
   });
 </script>
 

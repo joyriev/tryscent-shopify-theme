@@ -214,18 +214,7 @@
               spellcheck="false"
             {%- endif -%}
           >
-          <label class="field__label top-2.5" for="Search-In-Modal-2">
-            {%- case localization.language.iso_code -%}
-              {%- when 'da' -%}
-                Find din parfume
-              {%- when 'fi' -%}
-                Löydä hajuvetesi
-              {%- when 'no' -%}
-                Finn din parfyme
-              {%- else -%}
-                Hitta din parfym
-            {%- endcase -%}
-          </label>
+          <label class="field__label top-2.5" for="Search-In-Modal-2">Hitta din parfym</label>
           <input type="hidden" name="options[prefix]" value="last">
           <button
             type="reset"
