@@ -189,10 +189,10 @@
           (collections['best-sellers'], the list that
           snippets/bundle-builder-2.liquid declares), the discount is one
           scent, and your price is the difference (review, Sep 2: "four times
-          that minus one times that", one perfume free). The variant the buy
-          button adds is not read for the price, so the bundle product in
-          Shopify must be priced at that figure or checkout charges something
-          else. No compare-at price any more: the first cut showed the
+          that minus one times that", one perfume free). The bundle product in
+          Shopify is meant to be priced at that figure; since Sep 14 the page
+          reads that product's own price for "your price", see below.
+          No compare-at price any more: the first cut showed the
           bundle's own compare-at (1.449 kr against 790) and review could not
           trace the number. The rows repaint from the actual picks through the
           fuel01Summary component below. Nothing is pre-filled: the box starts
@@ -220,11 +220,17 @@
             break
           endif
         endfor
+        comment
+          Sep 14: your price stays the bundle product's own price, read above,
+          because that is what checkout charges. The ordinary total is still
+          the singles, so the saving is the difference today. If the singles
+          rise before the bundle product is repriced, the page keeps showing
+          the figure checkout will charge and the saving grows; it can no
+          longer show one number and charge another.
+        endcomment
         assign ordinary_price = unit_default | times: bottle_count
-        assign saving = unit_default
-        assign your_price = ordinary_price | minus: saving
-        if unit_default == 0
-          assign your_price = summary_variant.price
+        assign saving = ordinary_price | minus: your_price
+        if unit_default == 0 or saving < 0
           assign ordinary_price = your_price
           assign saving = 0
         endif

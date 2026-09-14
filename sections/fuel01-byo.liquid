@@ -126,9 +126,9 @@
       The summary's three numbers. The ordinary total is the pack's scents
       bought one by one at the bundle size, the discount is one scent, and
       your price is the difference (review, Sep 2: "four times that minus one
-      times that", one perfume free). The bundle product's own price is not
-      read, so the bundle product in Shopify must be priced at that figure or
-      checkout charges something else. Neither reads a compare-at price: the
+      times that", one perfume free). The bundle product in Shopify is meant to
+      be priced at that figure; since Sep 14 the page reads that product's own
+      price for "your price", see below. Neither reads a compare-at price: the
       first cut showed the bundle product's own compare-at (1.449 kr against
       790) and was called out in review as a number nobody could trace. The
       page repaints the two from the actual picks (ordTotal in fuel01Byo).
@@ -138,11 +138,17 @@
       The Liquid values below are the full-pack figures for the rows that
       start hidden.
     endcomment
+    comment
+      Sep 14: your price is the bundle product's own price, read above, because
+      that is what checkout charges. The ordinary total is still the singles,
+      so the saving is whatever the difference is today. If the singles rise
+      and the bundle product is not repriced, the page keeps showing the figure
+      checkout will charge and the saving simply grows; it can no longer show
+      one number and charge another.
+    endcomment
     assign ordinary_price = unit_default | times: slot_count
-    assign saving = unit_default
-    assign your_price = ordinary_price | minus: saving
-    if unit_default == 0
-      assign your_price = price_variant.price
+    assign saving = ordinary_price | minus: your_price
+    if unit_default == 0 or saving < 0
       assign ordinary_price = your_price
       assign saving = 0
     endif
@@ -1169,7 +1175,7 @@
       "type": "text",
       "id": "ribbon_text",
       "label": "Card ribbon",
-      "info": "Leave empty to build it from the bundle size, e.g. Köp 2, få 1 gratis."
+      "info": "Leave empty to build it from the bundle size, e.g. Köp 3, få 1 gratis."
     },
     {
       "type": "text",
