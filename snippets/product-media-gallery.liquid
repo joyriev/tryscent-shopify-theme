@@ -26,9 +26,12 @@
     <div id="productSwiper-{{ section.id }}" class="swiper {% unless product.template_suffix == 'draft-three' %}md:w-[calc(100%-144px)]{% endunless %}">
       <div class="swiper-wrapper">
         {% if product.tags contains "local_image" %}
+          {% assign image_found = false %}
           {% for image in product.images %}
+            {% assign curr_currency = localization.country.iso_code | prepend: "bundle_" | downcase %}
             {% assign img_alt = image.alt | downcase %}
-            {% if img_alt contains "bundle_usd" %}
+            {% if img_alt contains "bundle_" and img_alt == curr_currency %}
+              {% assign image_found = true %}
               <img
                 src="{{ image.src | img_url: 'master' }}"
                 alt="{{ image.alt }}"
@@ -37,6 +40,19 @@
                 class="productSwiperImage swiper-slide md:rounded-lg">
             {% endif %}
           {% endfor %}
+          {% if image_found == false %}
+            {% for image in product.images %}
+              {% assign img_alt = image.alt | downcase %}
+              {% if img_alt contains "bundle_usd" %}
+                <img
+                  src="{{ image.src | img_url: 'master' }}"
+                  alt="{{ image.alt }}"
+                  height="{{ image.height }}"
+                  width="{{ image.width }}"
+                  class="productSwiperImage swiper-slide md:rounded-lg">
+              {% endif %}
+            {% endfor %}
+          {% endif %}
           {% if marketing_images != blank %}
             {% for image in marketing_images %}
               <img
@@ -107,7 +123,7 @@
               stroke="#226139"
               stroke-width="0.25" />
           </svg>
-          <p class="m-0 leading-snug font-semibold text-[#226139] text-xs lg:text-sm">Samma doft                                                                                                                                          
+          <p class="m-0 leading-snug font-semibold text-[#226139] text-xs lg:text-sm">Samma doft                                                                                                                                             
           bättre pris</p>
         </div>
         <div class="p-2 lg:px-4 bg-[#EBF4EF] rounded-lg text-center flex flex-col items-center justify-center gap-2">
@@ -159,9 +175,12 @@
     <div id="productThumbnails-{{ section.id }}" class="swiper mt-4">
       <div class="swiper-wrapper [&>.swiper-slide-thumb-active]:border-[#226139] [&>.swiper-slide-thumb-active]:opacity-100">
         {% if product.tags contains "local_image" %}
+          {% assign image_found = false %}
           {% for image in product.images %}
+            {% assign curr_currency = localization.country.iso_code | prepend: "bundle_" | downcase %}
             {% assign img_alt = image.alt | downcase %}
-            {% if img_alt contains "bundle_usd" %}
+            {% if img_alt contains "bundle_" and img_alt == curr_currency %}
+              {% assign image_found = true %}
               <img
                 id="slider-thumbnail-{{ forloop.index0 }}"
                 src="{{ image | image_url: width: 150, height: 150 }}"
@@ -171,6 +190,20 @@
                 class="productThumbnail swiper-slide slide max-w-16 md:max-w-24 opacity-70 border-2 border-solid border-gray-200 rounded-lg cursor-pointer" />
             {% endif %}
           {% endfor %}
+          {% if image_found == false %}
+            {% for image in product.images %}
+              {% assign img_alt = image.alt | downcase %}
+              {% if img_alt contains "bundle_usd" %}
+                <img
+                  id="slider-thumbnail-{{ forloop.index0 }}"
+                  src="{{ image | image_url: width: 150, height: 150 }}"
+                  alt="{{ image.alt }}"
+                  height="150"
+                  width="150"
+                  class="productThumbnail swiper-slide slide max-w-16 md:max-w-24 opacity-70 border-2 border-solid border-gray-200 rounded-lg cursor-pointer" />
+              {% endif %}
+            {% endfor %}
+          {% endif %}
           {% if marketing_images != blank %}
             {% for image in marketing_images %}
               <img
@@ -208,7 +241,10 @@
     </div>
   </div>
 
-  {% render 'fuel03-pair-scent', product: product, section: section, mode: 'v2d' %}
+  {% render 'fuel03-pair-scent'
+    , product: product
+    , section: section
+    , mode: 'v2d' %}
 
   <div
     class="fuel05-ugc fuel05-ugc--pdp fuel05-ugc--pdp-desktop"
@@ -216,7 +252,11 @@
     data-gap-mobile="10"
     data-gap-desktop="8"
     style="display: none;">
-    {% render 'fuel05-ugc-pdp', section: section, product: product, mode: 'desktop', with_assets: true %}
+    {% render 'fuel05-ugc-pdp'
+      , section: section
+      , product: product
+      , mode: 'desktop'
+      , with_assets: true %}
   </div>
 
   <script>
