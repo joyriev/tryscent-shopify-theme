@@ -55,7 +55,7 @@
       the pool has been read, from what the same scents cost one by one.
     endcomment
     assign price_variant = bundle_product.selected_or_first_available_variant
-    assign your_price = price_variant.price
+    assign your_price = price_variant.price | default: 0
 
     comment
       The two top summary labels carry a bracket the design keeps whole:
